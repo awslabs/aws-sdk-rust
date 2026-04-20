@@ -126,8 +126,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ListAtt
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("ListAttachedUserPolicies")
-            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-            .with_interceptor(ListAttachedUserPoliciesEndpointParamsInterceptor)
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ListAttachedUserPoliciesEndpointParamsInterceptor,
+            ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::list_attached_user_policies::ListAttachedUserPoliciesError,
             >::new())
@@ -216,6 +220,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListAttached
 #[derive(Debug)]
 struct ListAttachedUserPoliciesEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListAttachedUserPoliciesEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "ListAttachedUserPoliciesEndpointParamsInterceptor"

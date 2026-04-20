@@ -132,8 +132,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for DeleteC
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("DeleteConfiguredTableAssociation")
-            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-            .with_interceptor(DeleteConfiguredTableAssociationEndpointParamsInterceptor)
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                DeleteConfiguredTableAssociationEndpointParamsInterceptor,
+            ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::delete_configured_table_association::DeleteConfiguredTableAssociationError,
             >::new())
@@ -249,6 +253,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for DeleteConfig
 #[derive(Debug)]
 struct DeleteConfiguredTableAssociationEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DeleteConfiguredTableAssociationEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "DeleteConfiguredTableAssociationEndpointParamsInterceptor"

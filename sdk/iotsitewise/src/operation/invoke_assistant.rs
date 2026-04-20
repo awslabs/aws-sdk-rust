@@ -126,7 +126,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for InvokeA
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("InvokeAssistant")
-            .with_interceptor(InvokeAssistantEndpointParamsInterceptor)
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                InvokeAssistantEndpointParamsInterceptor,
+            ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::invoke_assistant::InvokeAssistantError,
             >::new())
@@ -224,6 +226,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for InvokeAssist
 #[derive(Debug)]
 struct InvokeAssistantEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for InvokeAssistantEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "InvokeAssistantEndpointParamsInterceptor"

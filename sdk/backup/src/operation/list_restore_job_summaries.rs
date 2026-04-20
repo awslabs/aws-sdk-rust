@@ -126,8 +126,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ListRes
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("ListRestoreJobSummaries")
-            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-            .with_interceptor(ListRestoreJobSummariesEndpointParamsInterceptor)
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ListRestoreJobSummariesEndpointParamsInterceptor,
+            ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::list_restore_job_summaries::ListRestoreJobSummariesError,
             >::new())
@@ -201,7 +205,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListRestoreJ
                 }
                 if let ::std::option::Option::Some(inner_2) = &_input.state {
                     {
-                        query.push_kv("State", &::aws_smithy_http::query::fmt_string(inner_2));
+                        query.push_kv("State", &::aws_smithy_http::query::fmt_string(inner_2.as_str()));
                     }
                 }
                 if let ::std::option::Option::Some(inner_3) = &_input.resource_type {
@@ -211,7 +215,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListRestoreJ
                 }
                 if let ::std::option::Option::Some(inner_4) = &_input.aggregation_period {
                     {
-                        query.push_kv("AggregationPeriod", &::aws_smithy_http::query::fmt_string(inner_4));
+                        query.push_kv("AggregationPeriod", &::aws_smithy_http::query::fmt_string(inner_4.as_str()));
                     }
                 }
                 if let ::std::option::Option::Some(inner_5) = &_input.max_results {
@@ -247,6 +251,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListRestoreJ
 #[derive(Debug)]
 struct ListRestoreJobSummariesEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListRestoreJobSummariesEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "ListRestoreJobSummariesEndpointParamsInterceptor"

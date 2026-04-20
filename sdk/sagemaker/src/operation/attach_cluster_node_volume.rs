@@ -126,8 +126,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for AttachC
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("AttachClusterNodeVolume")
-            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-            .with_interceptor(AttachClusterNodeVolumeEndpointParamsInterceptor)
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                AttachClusterNodeVolumeEndpointParamsInterceptor,
+            ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::attach_cluster_node_volume::AttachClusterNodeVolumeError,
             >::new())
@@ -220,6 +224,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for AttachCluste
 #[derive(Debug)]
 struct AttachClusterNodeVolumeEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for AttachClusterNodeVolumeEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "AttachClusterNodeVolumeEndpointParamsInterceptor"

@@ -116,8 +116,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for VerifyS
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("VerifySession")
-            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-            .with_interceptor(VerifySessionEndpointParamsInterceptor)
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                VerifySessionEndpointParamsInterceptor,
+            ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::verify_session::VerifySessionError,
             >::new())
@@ -199,6 +203,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for VerifySessio
 #[derive(Debug)]
 struct VerifySessionEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for VerifySessionEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "VerifySessionEndpointParamsInterceptor"

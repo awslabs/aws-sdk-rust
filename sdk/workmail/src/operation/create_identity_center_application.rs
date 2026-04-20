@@ -140,8 +140,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for CreateI
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("CreateIdentityCenterApplication")
-            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-            .with_interceptor(CreateIdentityCenterApplicationEndpointParamsInterceptor)
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                CreateIdentityCenterApplicationEndpointParamsInterceptor,
+            ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::create_identity_center_application::CreateIdentityCenterApplicationError,
             >::new())
@@ -236,6 +240,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for CreateIdenti
 #[derive(Debug)]
 struct CreateIdentityCenterApplicationEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CreateIdentityCenterApplicationEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "CreateIdentityCenterApplicationEndpointParamsInterceptor"

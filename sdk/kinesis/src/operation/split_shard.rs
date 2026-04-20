@@ -123,8 +123,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for SplitSh
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("SplitShard")
-            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-            .with_interceptor(SplitShardEndpointParamsInterceptor)
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                SplitShardEndpointParamsInterceptor,
+            ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::split_shard::SplitShardError,
             >::new())
@@ -213,6 +217,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for SplitShardRe
 #[derive(Debug)]
 struct SplitShardEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for SplitShardEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "SplitShardEndpointParamsInterceptor"

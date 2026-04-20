@@ -132,8 +132,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for DeleteW
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("DeleteWorkerConfiguration")
-            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-            .with_interceptor(DeleteWorkerConfigurationEndpointParamsInterceptor)
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                DeleteWorkerConfigurationEndpointParamsInterceptor,
+            ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::delete_worker_configuration::DeleteWorkerConfigurationError,
             >::new())
@@ -231,6 +235,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for DeleteWorker
 #[derive(Debug)]
 struct DeleteWorkerConfigurationEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DeleteWorkerConfigurationEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "DeleteWorkerConfigurationEndpointParamsInterceptor"

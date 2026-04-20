@@ -126,8 +126,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ListTes
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("ListTestCaseExecutions")
-            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-            .with_interceptor(ListTestCaseExecutionsEndpointParamsInterceptor)
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ListTestCaseExecutionsEndpointParamsInterceptor,
+            ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::list_test_case_executions::ListTestCaseExecutionsError,
             >::new())
@@ -227,7 +231,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListTestCase
                 }
                 if let ::std::option::Option::Some(inner_6) = &_input.status {
                     {
-                        query.push_kv("status", &::aws_smithy_http::query::fmt_string(inner_6));
+                        query.push_kv("status", &::aws_smithy_http::query::fmt_string(inner_6.as_str()));
                     }
                 }
                 if let ::std::option::Option::Some(inner_7) = &_input.next_token {
@@ -263,6 +267,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListTestCase
 #[derive(Debug)]
 struct ListTestCaseExecutionsEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListTestCaseExecutionsEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "ListTestCaseExecutionsEndpointParamsInterceptor"

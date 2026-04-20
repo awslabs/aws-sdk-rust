@@ -132,8 +132,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ListBul
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("ListBulkDeploymentDetailedReports")
-            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-            .with_interceptor(ListBulkDeploymentDetailedReportsEndpointParamsInterceptor)
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ListBulkDeploymentDetailedReportsEndpointParamsInterceptor,
+            ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::list_bulk_deployment_detailed_reports::ListBulkDeploymentDetailedReportsError,
             >::new())
@@ -253,6 +257,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListBulkDepl
 #[derive(Debug)]
 struct ListBulkDeploymentDetailedReportsEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListBulkDeploymentDetailedReportsEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "ListBulkDeploymentDetailedReportsEndpointParamsInterceptor"

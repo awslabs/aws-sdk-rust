@@ -264,4 +264,21 @@ impl CreateServiceLevelObjectiveFluentBuilder {
     pub fn get_burn_rate_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BurnRateConfiguration>> {
         self.inner.get_burn_rate_configurations()
     }
+    /// <p>Set this to <code>true</code> to create a recommended SLO out of the box. When set to <code>true</code>, you don't need to specify the <code>MetricThreshold</code> or <code>ComparisonOperator</code> in the <code>SliConfig</code> or <code>RequestBasedSliConfig</code>. The default value is <code>false</code>.</p>
+    /// <p>This is supported for SLOs on a service, service operation, or a dependency.</p>
+    pub fn create_recommended_slo(mut self, input: bool) -> Self {
+        self.inner = self.inner.create_recommended_slo(input);
+        self
+    }
+    /// <p>Set this to <code>true</code> to create a recommended SLO out of the box. When set to <code>true</code>, you don't need to specify the <code>MetricThreshold</code> or <code>ComparisonOperator</code> in the <code>SliConfig</code> or <code>RequestBasedSliConfig</code>. The default value is <code>false</code>.</p>
+    /// <p>This is supported for SLOs on a service, service operation, or a dependency.</p>
+    pub fn set_create_recommended_slo(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_create_recommended_slo(input);
+        self
+    }
+    /// <p>Set this to <code>true</code> to create a recommended SLO out of the box. When set to <code>true</code>, you don't need to specify the <code>MetricThreshold</code> or <code>ComparisonOperator</code> in the <code>SliConfig</code> or <code>RequestBasedSliConfig</code>. The default value is <code>false</code>.</p>
+    /// <p>This is supported for SLOs on a service, service operation, or a dependency.</p>
+    pub fn get_create_recommended_slo(&self) -> &::std::option::Option<bool> {
+        self.inner.get_create_recommended_slo()
+    }
 }

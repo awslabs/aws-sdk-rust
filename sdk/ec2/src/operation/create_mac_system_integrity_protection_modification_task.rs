@@ -135,8 +135,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for CreateM
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new(
             "CreateMacSystemIntegrityProtectionModificationTask",
         )
-        .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-        .with_interceptor(CreateMacSystemIntegrityProtectionModificationTaskEndpointParamsInterceptor)
+        .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+            ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+        ))
+        .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+            CreateMacSystemIntegrityProtectionModificationTaskEndpointParamsInterceptor,
+        ))
         .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
             crate::operation::create_mac_system_integrity_protection_modification_task::CreateMacSystemIntegrityProtectionModificationTaskError,
         >::new())
@@ -221,6 +225,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for CreateMacSys
 #[derive(Debug)]
 struct CreateMacSystemIntegrityProtectionModificationTaskEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CreateMacSystemIntegrityProtectionModificationTaskEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "CreateMacSystemIntegrityProtectionModificationTaskEndpointParamsInterceptor"

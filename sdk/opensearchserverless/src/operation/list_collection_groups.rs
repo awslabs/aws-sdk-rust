@@ -132,8 +132,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ListCol
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("ListCollectionGroups")
-            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-            .with_interceptor(ListCollectionGroupsEndpointParamsInterceptor)
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ListCollectionGroupsEndpointParamsInterceptor,
+            ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::list_collection_groups::ListCollectionGroupsError,
             >::new())
@@ -226,6 +230,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListCollecti
 #[derive(Debug)]
 struct ListCollectionGroupsEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListCollectionGroupsEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "ListCollectionGroupsEndpointParamsInterceptor"

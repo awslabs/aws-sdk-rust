@@ -132,8 +132,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ExportL
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("ExportLambdaFunctionRecommendations")
-            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-            .with_interceptor(ExportLambdaFunctionRecommendationsEndpointParamsInterceptor)
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ExportLambdaFunctionRecommendationsEndpointParamsInterceptor,
+            ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::export_lambda_function_recommendations::ExportLambdaFunctionRecommendationsError,
             >::new())
@@ -230,6 +234,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ExportLambda
 #[derive(Debug)]
 struct ExportLambdaFunctionRecommendationsEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ExportLambdaFunctionRecommendationsEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "ExportLambdaFunctionRecommendationsEndpointParamsInterceptor"

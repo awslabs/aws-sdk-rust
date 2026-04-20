@@ -132,8 +132,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for Disasso
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("DisassociateResource")
-            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-            .with_interceptor(DisassociateResourceEndpointParamsInterceptor)
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                DisassociateResourceEndpointParamsInterceptor,
+            ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::disassociate_resource::DisassociateResourceError,
             >::new())
@@ -207,7 +211,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for Disassociate
                 let input_2 = input_2
                     .as_ref()
                     .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("resource_type", "cannot be empty or unset"))?;
-                let resource_type = ::aws_smithy_http::label::fmt_string(input_2, ::aws_smithy_http::label::EncodingStrategy::Default);
+                let resource_type = ::aws_smithy_http::label::fmt_string(input_2.as_str(), ::aws_smithy_http::label::EncodingStrategy::Default);
                 if resource_type.is_empty() {
                     return ::std::result::Result::Err(::aws_smithy_types::error::operation::BuildError::missing_field(
                         "resource_type",
@@ -255,6 +259,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for Disassociate
 #[derive(Debug)]
 struct DisassociateResourceEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DisassociateResourceEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "DisassociateResourceEndpointParamsInterceptor"

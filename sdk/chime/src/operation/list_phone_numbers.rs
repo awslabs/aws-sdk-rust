@@ -124,8 +124,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ListPho
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("ListPhoneNumbers")
-            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-            .with_interceptor(ListPhoneNumbersEndpointParamsInterceptor)
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ListPhoneNumbersEndpointParamsInterceptor,
+            ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::list_phone_numbers::ListPhoneNumbersError,
             >::new())
@@ -194,17 +198,17 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListPhoneNum
                 let mut query = ::aws_smithy_http::query::Writer::new(output);
                 if let ::std::option::Option::Some(inner_1) = &_input.status {
                     {
-                        query.push_kv("status", &::aws_smithy_http::query::fmt_string(inner_1));
+                        query.push_kv("status", &::aws_smithy_http::query::fmt_string(inner_1.as_str()));
                     }
                 }
                 if let ::std::option::Option::Some(inner_2) = &_input.product_type {
                     {
-                        query.push_kv("product-type", &::aws_smithy_http::query::fmt_string(inner_2));
+                        query.push_kv("product-type", &::aws_smithy_http::query::fmt_string(inner_2.as_str()));
                     }
                 }
                 if let ::std::option::Option::Some(inner_3) = &_input.filter_name {
                     {
-                        query.push_kv("filter-name", &::aws_smithy_http::query::fmt_string(inner_3));
+                        query.push_kv("filter-name", &::aws_smithy_http::query::fmt_string(inner_3.as_str()));
                     }
                 }
                 if let ::std::option::Option::Some(inner_4) = &_input.filter_value {
@@ -245,6 +249,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListPhoneNum
 #[derive(Debug)]
 struct ListPhoneNumbersEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListPhoneNumbersEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "ListPhoneNumbersEndpointParamsInterceptor"

@@ -128,8 +128,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for DeleteP
         #[allow(unused_mut)]
         let mut rcb =
             ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("DeleteProtectConfigurationRuleSetNumberOverride")
-                .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-                .with_interceptor(DeleteProtectConfigurationRuleSetNumberOverrideEndpointParamsInterceptor)
+                .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                    ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+                ))
+                .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                    DeleteProtectConfigurationRuleSetNumberOverrideEndpointParamsInterceptor,
+                ))
                 .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                     crate::operation::delete_protect_configuration_rule_set_number_override::DeleteProtectConfigurationRuleSetNumberOverrideError,
                 >::new())
@@ -218,6 +222,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for DeleteProtec
 #[derive(Debug)]
 struct DeleteProtectConfigurationRuleSetNumberOverrideEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DeleteProtectConfigurationRuleSetNumberOverrideEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "DeleteProtectConfigurationRuleSetNumberOverrideEndpointParamsInterceptor"

@@ -132,8 +132,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ListAss
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("ListAssetModelProperties")
-            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-            .with_interceptor(ListAssetModelPropertiesEndpointParamsInterceptor)
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ListAssetModelPropertiesEndpointParamsInterceptor,
+            ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::list_asset_model_properties::ListAssetModelPropertiesError,
             >::new())
@@ -223,7 +227,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListAssetMod
                 }
                 if let ::std::option::Option::Some(inner_4) = &_input.filter {
                     {
-                        query.push_kv("filter", &::aws_smithy_http::query::fmt_string(inner_4));
+                        query.push_kv("filter", &::aws_smithy_http::query::fmt_string(inner_4.as_str()));
                     }
                 }
                 if let ::std::option::Option::Some(inner_5) = &_input.asset_model_version {
@@ -254,6 +258,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListAssetMod
 #[derive(Debug)]
 struct ListAssetModelPropertiesEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListAssetModelPropertiesEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "ListAssetModelPropertiesEndpointParamsInterceptor"

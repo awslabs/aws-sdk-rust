@@ -123,8 +123,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ListImp
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("ListImportErrors")
-            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-            .with_interceptor(ListImportErrorsEndpointParamsInterceptor)
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ListImportErrorsEndpointParamsInterceptor,
+            ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::list_import_errors::ListImportErrorsError,
             >::new())
@@ -210,6 +214,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListImportEr
 #[derive(Debug)]
 struct ListImportErrorsEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListImportErrorsEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "ListImportErrorsEndpointParamsInterceptor"

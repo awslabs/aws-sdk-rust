@@ -133,8 +133,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ListInb
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("ListInboundResponsibilityTransfers")
-            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-            .with_interceptor(ListInboundResponsibilityTransfersEndpointParamsInterceptor)
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ListInboundResponsibilityTransfersEndpointParamsInterceptor,
+            ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::list_inbound_responsibility_transfers::ListInboundResponsibilityTransfersError,
             >::new())
@@ -231,6 +235,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListInboundR
 #[derive(Debug)]
 struct ListInboundResponsibilityTransfersEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListInboundResponsibilityTransfersEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "ListInboundResponsibilityTransfersEndpointParamsInterceptor"

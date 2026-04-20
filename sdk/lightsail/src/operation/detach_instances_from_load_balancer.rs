@@ -132,8 +132,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for DetachI
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("DetachInstancesFromLoadBalancer")
-            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-            .with_interceptor(DetachInstancesFromLoadBalancerEndpointParamsInterceptor)
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                DetachInstancesFromLoadBalancerEndpointParamsInterceptor,
+            ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::detach_instances_from_load_balancer::DetachInstancesFromLoadBalancerError,
             >::new())
@@ -228,6 +232,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for DetachInstan
 #[derive(Debug)]
 struct DetachInstancesFromLoadBalancerEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DetachInstancesFromLoadBalancerEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "DetachInstancesFromLoadBalancerEndpointParamsInterceptor"

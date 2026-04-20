@@ -132,8 +132,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for SetVoic
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("SetVoiceMessageSpendLimitOverride")
-            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-            .with_interceptor(SetVoiceMessageSpendLimitOverrideEndpointParamsInterceptor)
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                SetVoiceMessageSpendLimitOverrideEndpointParamsInterceptor,
+            ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::set_voice_message_spend_limit_override::SetVoiceMessageSpendLimitOverrideError,
             >::new())
@@ -230,6 +234,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for SetVoiceMess
 #[derive(Debug)]
 struct SetVoiceMessageSpendLimitOverrideEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for SetVoiceMessageSpendLimitOverrideEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "SetVoiceMessageSpendLimitOverrideEndpointParamsInterceptor"

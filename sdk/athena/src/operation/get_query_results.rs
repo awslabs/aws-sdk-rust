@@ -123,8 +123,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for GetQuer
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("GetQueryResults")
-            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-            .with_interceptor(GetQueryResultsEndpointParamsInterceptor)
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                GetQueryResultsEndpointParamsInterceptor,
+            ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::get_query_results::GetQueryResultsError,
             >::new())
@@ -215,6 +219,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetQueryResu
 #[derive(Debug)]
 struct GetQueryResultsEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for GetQueryResultsEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "GetQueryResultsEndpointParamsInterceptor"

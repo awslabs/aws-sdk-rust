@@ -133,8 +133,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ListBro
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("ListBrowserProfiles")
-            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-            .with_interceptor(ListBrowserProfilesEndpointParamsInterceptor)
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ListBrowserProfilesEndpointParamsInterceptor,
+            ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::list_browser_profiles::ListBrowserProfilesError,
             >::new())
@@ -240,6 +244,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListBrowserP
 #[derive(Debug)]
 struct ListBrowserProfilesEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListBrowserProfilesEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "ListBrowserProfilesEndpointParamsInterceptor"

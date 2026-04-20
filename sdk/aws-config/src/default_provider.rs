@@ -72,3 +72,6 @@ pub mod account_id_endpoint_mode;
 
 /// Default provider chain for auth scheme preference list
 pub mod auth_scheme_preference;
+
+/// Default provider chain for SigV4a signing region set
+pub(crate) mod sigv4a_signing_region_set;

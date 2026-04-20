@@ -126,8 +126,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ListAct
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("ListActiveViolations")
-            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-            .with_interceptor(ListActiveViolationsEndpointParamsInterceptor)
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ListActiveViolationsEndpointParamsInterceptor,
+            ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::list_active_violations::ListActiveViolationsError,
             >::new())
@@ -206,7 +210,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListActiveVi
                 }
                 if let ::std::option::Option::Some(inner_3) = &_input.behavior_criteria_type {
                     {
-                        query.push_kv("behaviorCriteriaType", &::aws_smithy_http::query::fmt_string(inner_3));
+                        query.push_kv("behaviorCriteriaType", &::aws_smithy_http::query::fmt_string(inner_3.as_str()));
                     }
                 }
                 if let ::std::option::Option::Some(inner_4) = &_input.list_suppressed_alerts {
@@ -216,7 +220,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListActiveVi
                 }
                 if let ::std::option::Option::Some(inner_5) = &_input.verification_state {
                     {
-                        query.push_kv("verificationState", &::aws_smithy_http::query::fmt_string(inner_5));
+                        query.push_kv("verificationState", &::aws_smithy_http::query::fmt_string(inner_5.as_str()));
                     }
                 }
                 if let ::std::option::Option::Some(inner_6) = &_input.next_token {
@@ -252,6 +256,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListActiveVi
 #[derive(Debug)]
 struct ListActiveViolationsEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListActiveViolationsEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "ListActiveViolationsEndpointParamsInterceptor"

@@ -132,8 +132,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for Validat
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("ValidateSolFunctionPackageContent")
-            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-            .with_interceptor(ValidateSolFunctionPackageContentEndpointParamsInterceptor)
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ValidateSolFunctionPackageContentEndpointParamsInterceptor,
+            ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::validate_sol_function_package_content::ValidateSolFunctionPackageContentError,
             >::new())
@@ -244,6 +248,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ValidateSolF
 #[derive(Debug)]
 struct ValidateSolFunctionPackageContentEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ValidateSolFunctionPackageContentEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "ValidateSolFunctionPackageContentEndpointParamsInterceptor"

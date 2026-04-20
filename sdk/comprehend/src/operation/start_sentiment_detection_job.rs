@@ -140,8 +140,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for StartSe
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("StartSentimentDetectionJob")
-            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-            .with_interceptor(StartSentimentDetectionJobEndpointParamsInterceptor)
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                StartSentimentDetectionJobEndpointParamsInterceptor,
+            ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::start_sentiment_detection_job::StartSentimentDetectionJobError,
             >::new())
@@ -234,6 +238,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for StartSentime
 #[derive(Debug)]
 struct StartSentimentDetectionJobEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for StartSentimentDetectionJobEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "StartSentimentDetectionJobEndpointParamsInterceptor"

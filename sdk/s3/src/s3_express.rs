@@ -51,6 +51,7 @@ pub(crate) mod identity_cache {
     use aws_smithy_runtime_api::client::identity::Identity;
     use aws_smithy_types::DateTime;
     use fastrand::Rng;
+    use hmac::KeyInit;
     use hmac::{digest::FixedOutput, Hmac, Mac};
     use lru::LruCache;
     use sha2::Sha256;

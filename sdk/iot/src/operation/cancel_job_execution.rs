@@ -123,8 +123,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for CancelJ
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("CancelJobExecution")
-            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-            .with_interceptor(CancelJobExecutionEndpointParamsInterceptor)
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                CancelJobExecutionEndpointParamsInterceptor,
+            ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::cancel_job_execution::CancelJobExecutionError,
             >::new())
@@ -247,6 +251,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for CancelJobExe
 #[derive(Debug)]
 struct CancelJobExecutionEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CancelJobExecutionEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "CancelJobExecutionEndpointParamsInterceptor"

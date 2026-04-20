@@ -241,14 +241,15 @@ mod loader {
     use aws_types::endpoint_config::AccountIdEndpointMode;
     use aws_types::origin::Origin;
     use aws_types::os_shim_internal::{Env, Fs};
+    use aws_types::region::SigningRegionSet;
     use aws_types::sdk_config::SharedHttpClient;
     use aws_types::SdkConfig;
 
     use crate::default_provider::{
         account_id_endpoint_mode, app_name, auth_scheme_preference, checksums, credentials,
         disable_request_compression, endpoint_url, ignore_configured_endpoint_urls as ignore_ep,
-        region, request_min_compression_size_bytes, retry_config, timeout_config, use_dual_stack,
-        use_fips,
+        region, request_min_compression_size_bytes, retry_config, sigv4a_signing_region_set,
+        timeout_config, use_dual_stack, use_fips,
     };
     use crate::meta::region::ProvideRegion;
     #[allow(deprecated)]
@@ -276,6 +277,7 @@ mod loader {
     pub struct ConfigLoader {
         app_name: Option<AppName>,
         auth_scheme_preference: Option<AuthSchemePreference>,
+        sigv4a_signing_region_set: Option<SigningRegionSet>,
         identity_cache: Option<SharedIdentityCache>,
         credentials_provider: TriStateOption<SharedCredentialsProvider>,
         token_provider: Option<SharedTokenProvider>,
@@ -427,6 +429,15 @@ mod loader {
             auth_scheme_preference: impl Into<AuthSchemePreference>,
         ) -> Self {
             self.auth_scheme_preference = Some(auth_scheme_preference.into());
+            self
+        }
+
+        #[doc = docs_for!(sigv4a_signing_region_set)]
+        pub fn sigv4a_signing_region_set(
+            mut self,
+            sigv4a_signing_region_set: impl Into<SigningRegionSet>,
+        ) -> Self {
+            self.sigv4a_signing_region_set = Some(sigv4a_signing_region_set.into());
             self
         }
 
@@ -1005,6 +1016,13 @@ mod loader {
                     // it's not programmatically set in the shared config.
                 };
 
+            let sigv4a_signing_region_set =
+                if let Some(sigv4a_signing_region_set) = self.sigv4a_signing_region_set {
+                    Some(sigv4a_signing_region_set)
+                } else {
+                    sigv4a_signing_region_set::sigv4a_signing_region_set_provider(&conf).await
+                };
+
             builder.set_request_checksum_calculation(request_checksum_calculation);
             builder.set_response_checksum_validation(response_checksum_validation);
             builder.set_identity_cache(identity_cache);
@@ -1018,6 +1036,7 @@ mod loader {
             builder.set_stalled_stream_protection(self.stalled_stream_protection_config);
             builder.set_account_id_endpoint_mode(account_id_endpoint_mode);
             builder.set_auth_scheme_preference(auth_scheme_preference);
+            builder.set_sigv4a_signing_region_set(sigv4a_signing_region_set);
             builder.build()
         }
     }

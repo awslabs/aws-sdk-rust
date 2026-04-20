@@ -141,8 +141,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for SendAgr
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("SendAgreementCancellationRequest")
-            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-            .with_interceptor(SendAgreementCancellationRequestEndpointParamsInterceptor)
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                SendAgreementCancellationRequestEndpointParamsInterceptor,
+            ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::send_agreement_cancellation_request::SendAgreementCancellationRequestError,
             >::new())
@@ -237,6 +241,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for SendAgreemen
 #[derive(Debug)]
 struct SendAgreementCancellationRequestEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for SendAgreementCancellationRequestEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "SendAgreementCancellationRequestEndpointParamsInterceptor"

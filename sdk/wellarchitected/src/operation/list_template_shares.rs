@@ -132,8 +132,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ListTem
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("ListTemplateShares")
-            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-            .with_interceptor(ListTemplateSharesEndpointParamsInterceptor)
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ListTemplateSharesEndpointParamsInterceptor,
+            ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::list_template_shares::ListTemplateSharesError,
             >::new())
@@ -228,7 +232,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListTemplate
                 }
                 if let ::std::option::Option::Some(inner_5) = &_input.status {
                     {
-                        query.push_kv("Status", &::aws_smithy_http::query::fmt_string(inner_5));
+                        query.push_kv("Status", &::aws_smithy_http::query::fmt_string(inner_5.as_str()));
                     }
                 }
                 ::std::result::Result::Ok(())
@@ -254,6 +258,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListTemplate
 #[derive(Debug)]
 struct ListTemplateSharesEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListTemplateSharesEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "ListTemplateSharesEndpointParamsInterceptor"

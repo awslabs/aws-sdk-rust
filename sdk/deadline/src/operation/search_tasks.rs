@@ -124,8 +124,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for SearchT
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("SearchTasks")
-            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-            .with_interceptor(SearchTasksEndpointParamsInterceptor)
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                SearchTasksEndpointParamsInterceptor,
+            ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::search_tasks::SearchTasksError,
             >::new())
@@ -222,6 +226,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for SearchTasksR
 #[derive(Debug)]
 struct SearchTasksEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for SearchTasksEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "SearchTasksEndpointParamsInterceptor"

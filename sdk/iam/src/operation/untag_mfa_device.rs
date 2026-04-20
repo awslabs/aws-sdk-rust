@@ -123,8 +123,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for UntagMF
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("UntagMFADevice")
-            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-            .with_interceptor(UntagMFADeviceEndpointParamsInterceptor)
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                UntagMFADeviceEndpointParamsInterceptor,
+            ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::untag_mfa_device::UntagMFADeviceError,
             >::new())
@@ -213,6 +217,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for UntagMFADevi
 #[derive(Debug)]
 struct UntagMFADeviceEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for UntagMFADeviceEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "UntagMFADeviceEndpointParamsInterceptor"

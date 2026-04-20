@@ -134,8 +134,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for PutRule
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("PutRuleGroupsNamespace")
-            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-            .with_interceptor(PutRuleGroupsNamespaceEndpointParamsInterceptor)
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                PutRuleGroupsNamespaceEndpointParamsInterceptor,
+            ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::put_rule_groups_namespace::PutRuleGroupsNamespaceError,
             >::new())
@@ -251,6 +255,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for PutRuleGroup
 #[derive(Debug)]
 struct PutRuleGroupsNamespaceEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for PutRuleGroupsNamespaceEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "PutRuleGroupsNamespaceEndpointParamsInterceptor"

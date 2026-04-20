@@ -132,8 +132,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ListTar
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("ListTargetedSentimentDetectionJobs")
-            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-            .with_interceptor(ListTargetedSentimentDetectionJobsEndpointParamsInterceptor)
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ListTargetedSentimentDetectionJobsEndpointParamsInterceptor,
+            ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::list_targeted_sentiment_detection_jobs::ListTargetedSentimentDetectionJobsError,
             >::new())
@@ -230,6 +234,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListTargeted
 #[derive(Debug)]
 struct ListTargetedSentimentDetectionJobsEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListTargetedSentimentDetectionJobsEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "ListTargetedSentimentDetectionJobsEndpointParamsInterceptor"

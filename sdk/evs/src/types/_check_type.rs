@@ -16,6 +16,9 @@
 ///     CheckType::KeyCoverage => { /* ... */ },
 ///     CheckType::KeyReuse => { /* ... */ },
 ///     CheckType::Reachability => { /* ... */ },
+///     CheckType::VcenterReachability => { /* ... */ },
+///     CheckType::VcenterVmEvent => { /* ... */ },
+///     CheckType::VcenterVmSync => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -52,6 +55,12 @@ pub enum CheckType {
     KeyReuse,
     #[allow(missing_docs)] // documentation missing in model
     Reachability,
+    #[allow(missing_docs)] // documentation missing in model
+    VcenterReachability,
+    #[allow(missing_docs)] // documentation missing in model
+    VcenterVmEvent,
+    #[allow(missing_docs)] // documentation missing in model
+    VcenterVmSync,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -63,6 +72,9 @@ impl ::std::convert::From<&str> for CheckType {
             "KEY_COVERAGE" => CheckType::KeyCoverage,
             "KEY_REUSE" => CheckType::KeyReuse,
             "REACHABILITY" => CheckType::Reachability,
+            "VCENTER_REACHABILITY" => CheckType::VcenterReachability,
+            "VCENTER_VM_EVENT" => CheckType::VcenterVmEvent,
+            "VCENTER_VM_SYNC" => CheckType::VcenterVmSync,
             other => CheckType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -82,12 +94,23 @@ impl CheckType {
             CheckType::KeyCoverage => "KEY_COVERAGE",
             CheckType::KeyReuse => "KEY_REUSE",
             CheckType::Reachability => "REACHABILITY",
+            CheckType::VcenterReachability => "VCENTER_REACHABILITY",
+            CheckType::VcenterVmEvent => "VCENTER_VM_EVENT",
+            CheckType::VcenterVmSync => "VCENTER_VM_SYNC",
             CheckType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["HOST_COUNT", "KEY_COVERAGE", "KEY_REUSE", "REACHABILITY"]
+        &[
+            "HOST_COUNT",
+            "KEY_COVERAGE",
+            "KEY_REUSE",
+            "REACHABILITY",
+            "VCENTER_REACHABILITY",
+            "VCENTER_VM_EVENT",
+            "VCENTER_VM_SYNC",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for CheckType {
@@ -114,6 +137,9 @@ impl ::std::fmt::Display for CheckType {
             CheckType::KeyCoverage => write!(f, "KEY_COVERAGE"),
             CheckType::KeyReuse => write!(f, "KEY_REUSE"),
             CheckType::Reachability => write!(f, "REACHABILITY"),
+            CheckType::VcenterReachability => write!(f, "VCENTER_REACHABILITY"),
+            CheckType::VcenterVmEvent => write!(f, "VCENTER_VM_EVENT"),
+            CheckType::VcenterVmSync => write!(f, "VCENTER_VM_SYNC"),
             CheckType::Unknown(value) => write!(f, "{value}"),
         }
     }

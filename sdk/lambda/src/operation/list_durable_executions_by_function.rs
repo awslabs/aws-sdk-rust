@@ -132,8 +132,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ListDur
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("ListDurableExecutionsByFunction")
-            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-            .with_interceptor(ListDurableExecutionsByFunctionEndpointParamsInterceptor)
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ListDurableExecutionsByFunctionEndpointParamsInterceptor,
+            ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::list_durable_executions_by_function::ListDurableExecutionsByFunctionError,
             >::new())
@@ -231,7 +235,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListDurableE
                 if let ::std::option::Option::Some(inner_4) = &_input.statuses {
                     {
                         for inner_5 in inner_4 {
-                            query.push_kv("Statuses", &::aws_smithy_http::query::fmt_string(inner_5));
+                            query.push_kv("Statuses", &::aws_smithy_http::query::fmt_string(inner_5.as_str()));
                         }
                     }
                 }
@@ -289,6 +293,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListDurableE
 #[derive(Debug)]
 struct ListDurableExecutionsByFunctionEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListDurableExecutionsByFunctionEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "ListDurableExecutionsByFunctionEndpointParamsInterceptor"

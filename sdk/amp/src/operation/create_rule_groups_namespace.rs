@@ -134,8 +134,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for CreateR
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("CreateRuleGroupsNamespace")
-            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-            .with_interceptor(CreateRuleGroupsNamespaceEndpointParamsInterceptor)
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                CreateRuleGroupsNamespaceEndpointParamsInterceptor,
+            ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::create_rule_groups_namespace::CreateRuleGroupsNamespaceError,
             >::new())
@@ -235,6 +239,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for CreateRuleGr
 #[derive(Debug)]
 struct CreateRuleGroupsNamespaceEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CreateRuleGroupsNamespaceEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "CreateRuleGroupsNamespaceEndpointParamsInterceptor"

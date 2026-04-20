@@ -132,8 +132,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for GetAsse
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("GetAssetPropertyAggregates")
-            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-            .with_interceptor(GetAssetPropertyAggregatesEndpointParamsInterceptor)
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                GetAssetPropertyAggregatesEndpointParamsInterceptor,
+            ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::get_asset_property_aggregates::GetAssetPropertyAggregatesError,
             >::new())
@@ -220,7 +224,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetAssetProp
                     .as_ref()
                     .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("aggregate_types", "cannot be empty or unset"))?;
                 for inner_5 in inner_4 {
-                    query.push_kv("aggregateTypes", &::aws_smithy_http::query::fmt_string(inner_5));
+                    query.push_kv("aggregateTypes", &::aws_smithy_http::query::fmt_string(inner_5.as_str()));
                 }
                 let inner_6 = &_input.resolution;
                 let inner_6 = inner_6
@@ -236,7 +240,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetAssetProp
                 if let ::std::option::Option::Some(inner_7) = &_input.qualities {
                     {
                         for inner_8 in inner_7 {
-                            query.push_kv("qualities", &::aws_smithy_http::query::fmt_string(inner_8));
+                            query.push_kv("qualities", &::aws_smithy_http::query::fmt_string(inner_8.as_str()));
                         }
                     }
                 }
@@ -258,7 +262,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetAssetProp
                 );
                 if let ::std::option::Option::Some(inner_11) = &_input.time_ordering {
                     {
-                        query.push_kv("timeOrdering", &::aws_smithy_http::query::fmt_string(inner_11));
+                        query.push_kv("timeOrdering", &::aws_smithy_http::query::fmt_string(inner_11.as_str()));
                     }
                 }
                 if let ::std::option::Option::Some(inner_12) = &_input.next_token {
@@ -294,6 +298,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetAssetProp
 #[derive(Debug)]
 struct GetAssetPropertyAggregatesEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for GetAssetPropertyAggregatesEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "GetAssetPropertyAggregatesEndpointParamsInterceptor"

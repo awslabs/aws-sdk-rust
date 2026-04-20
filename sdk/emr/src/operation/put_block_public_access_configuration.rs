@@ -132,8 +132,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for PutBloc
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("PutBlockPublicAccessConfiguration")
-            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-            .with_interceptor(PutBlockPublicAccessConfigurationEndpointParamsInterceptor)
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                PutBlockPublicAccessConfigurationEndpointParamsInterceptor,
+            ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::put_block_public_access_configuration::PutBlockPublicAccessConfigurationError,
             >::new())
@@ -230,6 +234,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for PutBlockPubl
 #[derive(Debug)]
 struct PutBlockPublicAccessConfigurationEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for PutBlockPublicAccessConfigurationEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "PutBlockPublicAccessConfigurationEndpointParamsInterceptor"

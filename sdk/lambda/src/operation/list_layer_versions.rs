@@ -126,8 +126,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ListLay
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("ListLayerVersions")
-            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-            .with_interceptor(ListLayerVersionsEndpointParamsInterceptor)
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ListLayerVersionsEndpointParamsInterceptor,
+            ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::list_layer_versions::ListLayerVersionsError,
             >::new())
@@ -207,7 +211,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListLayerVer
                 let mut query = ::aws_smithy_http::query::Writer::new(output);
                 if let ::std::option::Option::Some(inner_2) = &_input.compatible_runtime {
                     {
-                        query.push_kv("CompatibleRuntime", &::aws_smithy_http::query::fmt_string(inner_2));
+                        query.push_kv("CompatibleRuntime", &::aws_smithy_http::query::fmt_string(inner_2.as_str()));
                     }
                 }
                 if let ::std::option::Option::Some(inner_3) = &_input.marker {
@@ -222,7 +226,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListLayerVer
                 }
                 if let ::std::option::Option::Some(inner_5) = &_input.compatible_architecture {
                     {
-                        query.push_kv("CompatibleArchitecture", &::aws_smithy_http::query::fmt_string(inner_5));
+                        query.push_kv("CompatibleArchitecture", &::aws_smithy_http::query::fmt_string(inner_5.as_str()));
                     }
                 }
                 ::std::result::Result::Ok(())
@@ -248,6 +252,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListLayerVer
 #[derive(Debug)]
 struct ListLayerVersionsEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListLayerVersionsEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "ListLayerVersionsEndpointParamsInterceptor"

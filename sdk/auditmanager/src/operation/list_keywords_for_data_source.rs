@@ -132,8 +132,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ListKey
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("ListKeywordsForDataSource")
-            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-            .with_interceptor(ListKeywordsForDataSourceEndpointParamsInterceptor)
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ListKeywordsForDataSourceEndpointParamsInterceptor,
+            ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::list_keywords_for_data_source::ListKeywordsForDataSourceError,
             >::new())
@@ -204,7 +208,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListKeywords
                 let inner_1 = inner_1
                     .as_ref()
                     .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("source", "cannot be empty or unset"))?;
-                query.push_kv("source", &::aws_smithy_http::query::fmt_string(inner_1));
+                query.push_kv("source", &::aws_smithy_http::query::fmt_string(inner_1.as_str()));
                 if let ::std::option::Option::Some(inner_2) = &_input.next_token {
                     {
                         query.push_kv("nextToken", &::aws_smithy_http::query::fmt_string(inner_2));
@@ -238,6 +242,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListKeywords
 #[derive(Debug)]
 struct ListKeywordsForDataSourceEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListKeywordsForDataSourceEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "ListKeywordsForDataSourceEndpointParamsInterceptor"

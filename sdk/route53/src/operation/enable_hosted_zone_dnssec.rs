@@ -126,10 +126,16 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for EnableH
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("EnableHostedZoneDNSSEC")
-            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-            .with_interceptor(EnableHostedZoneDNSSECEndpointParamsInterceptor)
-            .with_interceptor(crate::route53_resource_id_preprocessor::Route53ResourceIdInterceptor::new(
-                |input: &mut crate::operation::enable_hosted_zone_dnssec::EnableHostedZoneDnssecInput| &mut input.hosted_zone_id,
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                EnableHostedZoneDNSSECEndpointParamsInterceptor,
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                crate::route53_resource_id_preprocessor::Route53ResourceIdInterceptor::new(
+                    |input: &mut crate::operation::enable_hosted_zone_dnssec::EnableHostedZoneDnssecInput| &mut input.hosted_zone_id,
+                ),
             ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::enable_hosted_zone_dnssec::EnableHostedZoneDNSSECError,
@@ -228,6 +234,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for EnableHosted
 #[derive(Debug)]
 struct EnableHostedZoneDNSSECEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for EnableHostedZoneDNSSECEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "EnableHostedZoneDNSSECEndpointParamsInterceptor"

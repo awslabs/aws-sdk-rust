@@ -126,8 +126,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ListTem
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("ListTemplates")
-            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-            .with_interceptor(ListTemplatesEndpointParamsInterceptor)
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ListTemplatesEndpointParamsInterceptor,
+            ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::list_templates::ListTemplatesError,
             >::new())
@@ -218,7 +222,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListTemplate
                 if let ::std::option::Option::Some(inner_4) = &_input.status {
                     {
                         for inner_5 in inner_4 {
-                            query.push_kv("status", &::aws_smithy_http::query::fmt_string(inner_5));
+                            query.push_kv("status", &::aws_smithy_http::query::fmt_string(inner_5.as_str()));
                         }
                     }
                 }
@@ -245,6 +249,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListTemplate
 #[derive(Debug)]
 struct ListTemplatesEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListTemplatesEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "ListTemplatesEndpointParamsInterceptor"

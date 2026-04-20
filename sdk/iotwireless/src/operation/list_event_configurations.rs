@@ -132,8 +132,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ListEve
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("ListEventConfigurations")
-            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-            .with_interceptor(ListEventConfigurationsEndpointParamsInterceptor)
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ListEventConfigurationsEndpointParamsInterceptor,
+            ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::list_event_configurations::ListEventConfigurationsError,
             >::new())
@@ -204,7 +208,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListEventCon
                 let inner_1 = inner_1
                     .as_ref()
                     .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("resource_type", "cannot be empty or unset"))?;
-                query.push_kv("resourceType", &::aws_smithy_http::query::fmt_string(inner_1));
+                query.push_kv("resourceType", &::aws_smithy_http::query::fmt_string(inner_1.as_str()));
                 if let ::std::option::Option::Some(inner_2) = &_input.max_results {
                     {
                         query.push_kv("maxResults", ::aws_smithy_types::primitive::Encoder::from(*inner_2).encode());
@@ -238,6 +242,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListEventCon
 #[derive(Debug)]
 struct ListEventConfigurationsEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListEventConfigurationsEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "ListEventConfigurationsEndpointParamsInterceptor"

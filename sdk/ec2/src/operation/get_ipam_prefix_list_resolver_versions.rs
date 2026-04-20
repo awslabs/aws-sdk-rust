@@ -132,8 +132,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for GetIpam
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("GetIpamPrefixListResolverVersions")
-            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-            .with_interceptor(GetIpamPrefixListResolverVersionsEndpointParamsInterceptor)
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                GetIpamPrefixListResolverVersionsEndpointParamsInterceptor,
+            ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::get_ipam_prefix_list_resolver_versions::GetIpamPrefixListResolverVersionsError,
             >::new())
@@ -228,6 +232,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetIpamPrefi
 #[derive(Debug)]
 struct GetIpamPrefixListResolverVersionsEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for GetIpamPrefixListResolverVersionsEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "GetIpamPrefixListResolverVersionsEndpointParamsInterceptor"

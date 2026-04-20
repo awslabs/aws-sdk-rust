@@ -11,7 +11,7 @@ use http_1x::{HeaderName, HeaderValue};
 
 use aws_smithy_runtime_api::box_error::BoxError;
 use aws_smithy_runtime_api::client::interceptors::context::BeforeTransmitInterceptorContextMut;
-use aws_smithy_runtime_api::client::interceptors::Intercept;
+use aws_smithy_runtime_api::client::interceptors::{dyn_dispatch_hint, Intercept};
 use aws_smithy_runtime_api::client::runtime_components::RuntimeComponents;
 use aws_smithy_types::config_bag::{ConfigBag, Storable, StoreReplace};
 #[cfg(feature = "test-util")]
@@ -93,6 +93,7 @@ impl InvocationIdInterceptor {
     }
 }
 
+#[dyn_dispatch_hint]
 impl Intercept for InvocationIdInterceptor {
     fn name(&self) -> &'static str {
         "InvocationIdInterceptor"

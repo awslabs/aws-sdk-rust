@@ -16,6 +16,8 @@ pub struct TelemetryRule {
     pub scope: ::std::option::Option<::std::string::String>,
     /// <p>Criteria for selecting which resources the rule applies to, such as resource tags.</p>
     pub selection_criteria: ::std::option::Option<::std::string::String>,
+    /// <p>If set to <code>true</code>, Amazon CloudWatch Observability Admin detects and remediates configuration drift in telemetry resources that it manages. For example, if a VPC flow log's format, traffic type, or aggregation interval no longer matches the rule's destination configuration, the flow log is replaced with one that matches. Only Observability Admin-managed resources are updated; customer-created resources are never modified. Currently supported for <code>AWS::EC2::VPC</code> resources (VPC flow logs).</p>
+    pub allow_field_updates: ::std::option::Option<bool>,
     /// <p>An optional list of Amazon Web Services Regions where this telemetry rule should be replicated. When specified, the rule is created in the home region and automatically replicated to all listed regions. Mutually exclusive with <code>AllRegions</code>.</p>
     pub regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>If set to <code>true</code>, the telemetry rule is replicated to all Amazon Web Services Regions where Amazon CloudWatch Observability Admin is available in the current partition. When new regions become available, the rule automatically replicates to them. Mutually exclusive with <code>Regions</code>.</p>
@@ -48,6 +50,10 @@ impl TelemetryRule {
     pub fn selection_criteria(&self) -> ::std::option::Option<&str> {
         self.selection_criteria.as_deref()
     }
+    /// <p>If set to <code>true</code>, Amazon CloudWatch Observability Admin detects and remediates configuration drift in telemetry resources that it manages. For example, if a VPC flow log's format, traffic type, or aggregation interval no longer matches the rule's destination configuration, the flow log is replaced with one that matches. Only Observability Admin-managed resources are updated; customer-created resources are never modified. Currently supported for <code>AWS::EC2::VPC</code> resources (VPC flow logs).</p>
+    pub fn allow_field_updates(&self) -> ::std::option::Option<bool> {
+        self.allow_field_updates
+    }
     /// <p>An optional list of Amazon Web Services Regions where this telemetry rule should be replicated. When specified, the rule is created in the home region and automatically replicated to all listed regions. Mutually exclusive with <code>AllRegions</code>.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.regions.is_none()`.
@@ -76,6 +82,7 @@ pub struct TelemetryRuleBuilder {
     pub(crate) destination_configuration: ::std::option::Option<crate::types::TelemetryDestinationConfiguration>,
     pub(crate) scope: ::std::option::Option<::std::string::String>,
     pub(crate) selection_criteria: ::std::option::Option<::std::string::String>,
+    pub(crate) allow_field_updates: ::std::option::Option<bool>,
     pub(crate) regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) all_regions: ::std::option::Option<bool>,
 }
@@ -171,6 +178,20 @@ impl TelemetryRuleBuilder {
     pub fn get_selection_criteria(&self) -> &::std::option::Option<::std::string::String> {
         &self.selection_criteria
     }
+    /// <p>If set to <code>true</code>, Amazon CloudWatch Observability Admin detects and remediates configuration drift in telemetry resources that it manages. For example, if a VPC flow log's format, traffic type, or aggregation interval no longer matches the rule's destination configuration, the flow log is replaced with one that matches. Only Observability Admin-managed resources are updated; customer-created resources are never modified. Currently supported for <code>AWS::EC2::VPC</code> resources (VPC flow logs).</p>
+    pub fn allow_field_updates(mut self, input: bool) -> Self {
+        self.allow_field_updates = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>If set to <code>true</code>, Amazon CloudWatch Observability Admin detects and remediates configuration drift in telemetry resources that it manages. For example, if a VPC flow log's format, traffic type, or aggregation interval no longer matches the rule's destination configuration, the flow log is replaced with one that matches. Only Observability Admin-managed resources are updated; customer-created resources are never modified. Currently supported for <code>AWS::EC2::VPC</code> resources (VPC flow logs).</p>
+    pub fn set_allow_field_updates(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.allow_field_updates = input;
+        self
+    }
+    /// <p>If set to <code>true</code>, Amazon CloudWatch Observability Admin detects and remediates configuration drift in telemetry resources that it manages. For example, if a VPC flow log's format, traffic type, or aggregation interval no longer matches the rule's destination configuration, the flow log is replaced with one that matches. Only Observability Admin-managed resources are updated; customer-created resources are never modified. Currently supported for <code>AWS::EC2::VPC</code> resources (VPC flow logs).</p>
+    pub fn get_allow_field_updates(&self) -> &::std::option::Option<bool> {
+        &self.allow_field_updates
+    }
     /// Appends an item to `regions`.
     ///
     /// To override the contents of this collection use [`set_regions`](Self::set_regions).
@@ -221,6 +242,7 @@ impl TelemetryRuleBuilder {
             destination_configuration: self.destination_configuration,
             scope: self.scope,
             selection_criteria: self.selection_criteria,
+            allow_field_updates: self.allow_field_updates,
             regions: self.regions,
             all_regions: self.all_regions,
         })

@@ -126,8 +126,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ListInd
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("ListIndexedRecoveryPoints")
-            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-            .with_interceptor(ListIndexedRecoveryPointsEndpointParamsInterceptor)
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ListIndexedRecoveryPointsEndpointParamsInterceptor,
+            ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::list_indexed_recovery_points::ListIndexedRecoveryPointsError,
             >::new())
@@ -232,7 +236,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListIndexedR
                 }
                 if let ::std::option::Option::Some(inner_7) = &_input.index_status {
                     {
-                        query.push_kv("indexStatus", &::aws_smithy_http::query::fmt_string(inner_7));
+                        query.push_kv("indexStatus", &::aws_smithy_http::query::fmt_string(inner_7.as_str()));
                     }
                 }
                 ::std::result::Result::Ok(())
@@ -258,6 +262,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListIndexedR
 #[derive(Debug)]
 struct ListIndexedRecoveryPointsEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListIndexedRecoveryPointsEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "ListIndexedRecoveryPointsEndpointParamsInterceptor"

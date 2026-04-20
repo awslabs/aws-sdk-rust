@@ -127,8 +127,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for GetConf
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("GetConfigurationProfile")
-            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-            .with_interceptor(GetConfigurationProfileEndpointParamsInterceptor)
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                GetConfigurationProfileEndpointParamsInterceptor,
+            ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::get_configuration_profile::GetConfigurationProfileError,
             >::new())
@@ -238,6 +242,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetConfigura
 #[derive(Debug)]
 struct GetConfigurationProfileEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for GetConfigurationProfileEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "GetConfigurationProfileEndpointParamsInterceptor"

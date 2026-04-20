@@ -13,7 +13,7 @@ use crate::app_name::AppName;
 use crate::docs_for;
 use crate::endpoint_config::AccountIdEndpointMode;
 use crate::origin::Origin;
-use crate::region::Region;
+use crate::region::{Region, SigningRegionSet};
 use crate::service_config::LoadServiceConfig;
 use aws_credential_types::provider::token::SharedTokenProvider;
 pub use aws_credential_types::provider::SharedCredentialsProvider;
@@ -94,6 +94,12 @@ can reorder the schemes resolved by the auth scheme resolver.
 The preference list is intended as a hint rather than a strict override.
 Any schemes not present in the originally resolved auth schemes will be ignored.
 " };
+        (sigv4a_signing_region_set) => {
+"Set the signing region set for SigV4a authentication.
+
+When using SigV4a (asymmetric) signing, this specifies which regions the request
+signature is valid for. Use `*` for a universal signature valid in all regions.
+" };
     }
 }
 
@@ -102,6 +108,7 @@ Any schemes not present in the originally resolved auth schemes will be ignored.
 pub struct SdkConfig {
     app_name: Option<AppName>,
     auth_scheme_preference: Option<AuthSchemePreference>,
+    sigv4a_signing_region_set: Option<SigningRegionSet>,
     identity_cache: Option<SharedIdentityCache>,
     credentials_provider: Option<SharedCredentialsProvider>,
     token_provider: Option<SharedTokenProvider>,
@@ -134,6 +141,7 @@ pub struct SdkConfig {
 pub struct Builder {
     app_name: Option<AppName>,
     auth_scheme_preference: Option<AuthSchemePreference>,
+    sigv4a_signing_region_set: Option<SigningRegionSet>,
     identity_cache: Option<SharedIdentityCache>,
     credentials_provider: Option<SharedCredentialsProvider>,
     token_provider: Option<SharedTokenProvider>,
@@ -809,6 +817,24 @@ impl Builder {
         self
     }
 
+    #[doc = docs_for!(sigv4a_signing_region_set)]
+    pub fn sigv4a_signing_region_set(
+        mut self,
+        sigv4a_signing_region_set: impl Into<SigningRegionSet>,
+    ) -> Self {
+        self.set_sigv4a_signing_region_set(Some(sigv4a_signing_region_set));
+        self
+    }
+
+    #[doc = docs_for!(sigv4a_signing_region_set)]
+    pub fn set_sigv4a_signing_region_set(
+        &mut self,
+        sigv4a_signing_region_set: Option<impl Into<SigningRegionSet>>,
+    ) -> &mut Self {
+        self.sigv4a_signing_region_set = sigv4a_signing_region_set.map(|v| v.into());
+        self
+    }
+
     /// Set the origin of a setting.
     ///
     /// This is used internally to understand how to merge config structs while
@@ -822,6 +848,7 @@ impl Builder {
         SdkConfig {
             app_name: self.app_name,
             auth_scheme_preference: self.auth_scheme_preference,
+            sigv4a_signing_region_set: self.sigv4a_signing_region_set,
             identity_cache: self.identity_cache,
             credentials_provider: self.credentials_provider,
             token_provider: self.token_provider,
@@ -932,6 +959,11 @@ impl SdkConfig {
     /// Configured auth scheme preference
     pub fn auth_scheme_preference(&self) -> Option<&AuthSchemePreference> {
         self.auth_scheme_preference.as_ref()
+    }
+
+    /// Configured SigV4a signing region set
+    pub fn sigv4a_signing_region_set(&self) -> Option<&SigningRegionSet> {
+        self.sigv4a_signing_region_set.as_ref()
     }
 
     /// Configured endpoint URL
@@ -1059,6 +1091,7 @@ impl SdkConfig {
         Builder {
             app_name: self.app_name,
             auth_scheme_preference: self.auth_scheme_preference,
+            sigv4a_signing_region_set: self.sigv4a_signing_region_set,
             identity_cache: self.identity_cache,
             credentials_provider: self.credentials_provider,
             token_provider: self.token_provider,

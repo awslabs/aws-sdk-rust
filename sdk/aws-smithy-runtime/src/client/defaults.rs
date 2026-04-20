@@ -19,6 +19,7 @@ use aws_smithy_async::time::SystemTimeSource;
 use aws_smithy_runtime_api::box_error::BoxError;
 use aws_smithy_runtime_api::client::behavior_version::BehaviorVersion;
 use aws_smithy_runtime_api::client::http::SharedHttpClient;
+use aws_smithy_runtime_api::client::interceptors::SharedInterceptor;
 use aws_smithy_runtime_api::client::runtime_components::{
     RuntimeComponentsBuilder, SharedConfigValidator,
 };
@@ -139,7 +140,9 @@ pub fn default_retry_config_plugin(
                 .with_config_validator(SharedConfigValidator::base_client_config_fn(
                     validate_retry_config,
                 ))
-                .with_interceptor(TokenBucketProvider::new(retry_partition.clone()))
+                .with_interceptor(SharedInterceptor::permanent(TokenBucketProvider::new(
+                    retry_partition.clone(),
+                )))
         })
         .with_config(layer("default_retry_config", |layer| {
             layer.store_put(RetryConfig::disabled());
@@ -172,7 +175,9 @@ pub fn default_retry_config_plugin_v2(params: &DefaultPluginParams) -> Option<Sh
                 .with_config_validator(SharedConfigValidator::base_client_config_fn(
                     validate_retry_config,
                 ))
-                .with_interceptor(TokenBucketProvider::new(retry_partition.clone()))
+                .with_interceptor(SharedInterceptor::permanent(TokenBucketProvider::new(
+                    retry_partition.clone(),
+                )))
         })
         .with_config(layer("default_retry_config", |layer| {
             let retry_config =

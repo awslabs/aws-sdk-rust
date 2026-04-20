@@ -132,8 +132,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for GetDoma
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("GetDomainNameAccessAssociations")
-            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-            .with_interceptor(GetDomainNameAccessAssociationsEndpointParamsInterceptor)
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                GetDomainNameAccessAssociationsEndpointParamsInterceptor,
+            ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::get_domain_name_access_associations::GetDomainNameAccessAssociationsError,
             >::new())
@@ -214,7 +218,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetDomainNam
                 }
                 if let ::std::option::Option::Some(inner_3) = &_input.resource_owner {
                     {
-                        query.push_kv("resourceOwner", &::aws_smithy_http::query::fmt_string(inner_3));
+                        query.push_kv("resourceOwner", &::aws_smithy_http::query::fmt_string(inner_3.as_str()));
                     }
                 }
                 ::std::result::Result::Ok(())
@@ -240,6 +244,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetDomainNam
 #[derive(Debug)]
 struct GetDomainNameAccessAssociationsEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for GetDomainNameAccessAssociationsEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "GetDomainNameAccessAssociationsEndpointParamsInterceptor"

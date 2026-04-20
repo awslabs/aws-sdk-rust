@@ -133,8 +133,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for GetSavi
         #[allow(unused_mut)]
         let mut rcb =
             ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("GetSavingsPlanPurchaseRecommendationDetails")
-                .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-                .with_interceptor(GetSavingsPlanPurchaseRecommendationDetailsEndpointParamsInterceptor)
+                .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                    ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+                ))
+                .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                    GetSavingsPlanPurchaseRecommendationDetailsEndpointParamsInterceptor,
+                ))
                 .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                     crate::operation::get_savings_plan_purchase_recommendation_details::GetSavingsPlanPurchaseRecommendationDetailsError,
                 >::new())
@@ -225,6 +229,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetSavingsPl
 #[derive(Debug)]
 struct GetSavingsPlanPurchaseRecommendationDetailsEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for GetSavingsPlanPurchaseRecommendationDetailsEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "GetSavingsPlanPurchaseRecommendationDetailsEndpointParamsInterceptor"

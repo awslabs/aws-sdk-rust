@@ -126,8 +126,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for Describ
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("DescribeClusterVersions")
-            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-            .with_interceptor(DescribeClusterVersionsEndpointParamsInterceptor)
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                DescribeClusterVersionsEndpointParamsInterceptor,
+            ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::describe_cluster_versions::DescribeClusterVersionsError,
             >::new())
@@ -228,12 +232,12 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for DescribeClus
                 }
                 if let ::std::option::Option::Some(inner_8) = &_input.status {
                     {
-                        query.push_kv("status", &::aws_smithy_http::query::fmt_string(inner_8));
+                        query.push_kv("status", &::aws_smithy_http::query::fmt_string(inner_8.as_str()));
                     }
                 }
                 if let ::std::option::Option::Some(inner_9) = &_input.version_status {
                     {
-                        query.push_kv("versionStatus", &::aws_smithy_http::query::fmt_string(inner_9));
+                        query.push_kv("versionStatus", &::aws_smithy_http::query::fmt_string(inner_9.as_str()));
                     }
                 }
                 ::std::result::Result::Ok(())
@@ -259,6 +263,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for DescribeClus
 #[derive(Debug)]
 struct DescribeClusterVersionsEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DescribeClusterVersionsEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "DescribeClusterVersionsEndpointParamsInterceptor"

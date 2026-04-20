@@ -133,8 +133,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for BatchGe
         #[allow(unused_mut)]
         let mut rcb =
             ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("BatchGetServiceLevelObjectiveBudgetReport")
-                .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-                .with_interceptor(BatchGetServiceLevelObjectiveBudgetReportEndpointParamsInterceptor)
+                .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                    ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+                ))
+                .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                    BatchGetServiceLevelObjectiveBudgetReportEndpointParamsInterceptor,
+                ))
                 .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                     crate::operation::batch_get_service_level_objective_budget_report::BatchGetServiceLevelObjectiveBudgetReportError,
                 >::new())
@@ -224,6 +228,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for BatchGetServ
 #[derive(Debug)]
 struct BatchGetServiceLevelObjectiveBudgetReportEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for BatchGetServiceLevelObjectiveBudgetReportEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "BatchGetServiceLevelObjectiveBudgetReportEndpointParamsInterceptor"

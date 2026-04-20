@@ -133,8 +133,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ListFlo
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("ListFlowExecutionEvents")
-            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-            .with_interceptor(ListFlowExecutionEventsEndpointParamsInterceptor)
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ListFlowExecutionEventsEndpointParamsInterceptor,
+            ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::list_flow_execution_events::ListFlowExecutionEventsError,
             >::new())
@@ -255,7 +259,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListFlowExec
                 let inner_6 = inner_6
                     .as_ref()
                     .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("event_type", "cannot be empty or unset"))?;
-                query.push_kv("eventType", &::aws_smithy_http::query::fmt_string(inner_6));
+                query.push_kv("eventType", &::aws_smithy_http::query::fmt_string(inner_6.as_str()));
                 ::std::result::Result::Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -279,6 +283,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListFlowExec
 #[derive(Debug)]
 struct ListFlowExecutionEventsEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListFlowExecutionEventsEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "ListFlowExecutionEventsEndpointParamsInterceptor"

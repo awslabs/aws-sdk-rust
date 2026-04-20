@@ -4,11 +4,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AppleApp {
-    /// <p>The unique identifier of the app across all Apple platforms (iOS, macOS, tvOS, watchOS, etc.)</p>
+    /// <p>The unique identifier of the app across all Apple platforms (iOS, macOS, tvOS and watchOS).</p>
+    /// <p>Example: <code>com.mydomain.appname</code></p>
     pub bundle_id: ::std::string::String,
 }
 impl AppleApp {
-    /// <p>The unique identifier of the app across all Apple platforms (iOS, macOS, tvOS, watchOS, etc.)</p>
+    /// <p>The unique identifier of the app across all Apple platforms (iOS, macOS, tvOS and watchOS).</p>
+    /// <p>Example: <code>com.mydomain.appname</code></p>
     pub fn bundle_id(&self) -> &str {
         use std::ops::Deref;
         self.bundle_id.deref()
@@ -28,18 +30,21 @@ pub struct AppleAppBuilder {
     pub(crate) bundle_id: ::std::option::Option<::std::string::String>,
 }
 impl AppleAppBuilder {
-    /// <p>The unique identifier of the app across all Apple platforms (iOS, macOS, tvOS, watchOS, etc.)</p>
+    /// <p>The unique identifier of the app across all Apple platforms (iOS, macOS, tvOS and watchOS).</p>
+    /// <p>Example: <code>com.mydomain.appname</code></p>
     /// This field is required.
     pub fn bundle_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bundle_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique identifier of the app across all Apple platforms (iOS, macOS, tvOS, watchOS, etc.)</p>
+    /// <p>The unique identifier of the app across all Apple platforms (iOS, macOS, tvOS and watchOS).</p>
+    /// <p>Example: <code>com.mydomain.appname</code></p>
     pub fn set_bundle_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bundle_id = input;
         self
     }
-    /// <p>The unique identifier of the app across all Apple platforms (iOS, macOS, tvOS, watchOS, etc.)</p>
+    /// <p>The unique identifier of the app across all Apple platforms (iOS, macOS, tvOS and watchOS).</p>
+    /// <p>Example: <code>com.mydomain.appname</code></p>
     pub fn get_bundle_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.bundle_id
     }

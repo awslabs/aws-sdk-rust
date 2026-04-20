@@ -132,8 +132,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for Authori
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("AuthorizeCacheSecurityGroupIngress")
-            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-            .with_interceptor(AuthorizeCacheSecurityGroupIngressEndpointParamsInterceptor)
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                AuthorizeCacheSecurityGroupIngressEndpointParamsInterceptor,
+            ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::authorize_cache_security_group_ingress::AuthorizeCacheSecurityGroupIngressError,
             >::new())
@@ -228,6 +232,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for AuthorizeCac
 #[derive(Debug)]
 struct AuthorizeCacheSecurityGroupIngressEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for AuthorizeCacheSecurityGroupIngressEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "AuthorizeCacheSecurityGroupIngressEndpointParamsInterceptor"

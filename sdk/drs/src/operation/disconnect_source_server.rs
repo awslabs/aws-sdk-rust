@@ -127,8 +127,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for Disconn
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("DisconnectSourceServer")
-            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-            .with_interceptor(DisconnectSourceServerEndpointParamsInterceptor)
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                DisconnectSourceServerEndpointParamsInterceptor,
+            ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::disconnect_source_server::DisconnectSourceServerError,
             >::new())
@@ -216,6 +220,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for DisconnectSo
 #[derive(Debug)]
 struct DisconnectSourceServerEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DisconnectSourceServerEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "DisconnectSourceServerEndpointParamsInterceptor"

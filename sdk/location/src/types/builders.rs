@@ -7,6 +7,16 @@ pub use crate::types::_forecast_geofence_events_device_state::ForecastGeofenceEv
 
 pub use crate::types::_geofence_geometry::GeofenceGeometryBuilder;
 
+pub use crate::types::_jobs_filter::JobsFilterBuilder;
+
+pub use crate::types::_job_action_options::JobActionOptionsBuilder;
+
+pub use crate::types::_job_input_options::JobInputOptionsBuilder;
+
+pub use crate::types::_job_output_options::JobOutputOptionsBuilder;
+
+pub use crate::types::_job_error::JobErrorBuilder;
+
 pub use crate::types::_map_configuration::MapConfigurationBuilder;
 
 pub use crate::types::_map_configuration_update::MapConfigurationUpdateBuilder;
@@ -60,6 +70,10 @@ pub use crate::types::_forecasted_event::ForecastedEventBuilder;
 pub use crate::types::_circle::CircleBuilder;
 
 pub use crate::types::_list_geofence_response_entry::ListGeofenceResponseEntryBuilder;
+
+pub use crate::types::_list_jobs_response_entry::ListJobsResponseEntryBuilder;
+
+pub use crate::types::_validate_address_action_options::ValidateAddressActionOptionsBuilder;
 
 pub use crate::types::_list_maps_response_entry::ListMapsResponseEntryBuilder;
 

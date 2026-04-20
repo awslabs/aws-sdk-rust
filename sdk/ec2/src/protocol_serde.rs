@@ -35,6 +35,10 @@ pub(crate) mod shape_accept_reserved_instances_exchange_quote;
 
 pub(crate) mod shape_accept_reserved_instances_exchange_quote_input;
 
+pub(crate) mod shape_accept_transit_gateway_client_vpn_attachment;
+
+pub(crate) mod shape_accept_transit_gateway_client_vpn_attachment_input;
+
 pub(crate) mod shape_accept_transit_gateway_multicast_domain_associations;
 
 pub(crate) mod shape_accept_transit_gateway_multicast_domain_associations_input;
@@ -936,6 +940,10 @@ pub(crate) mod shape_delete_traffic_mirror_target;
 pub(crate) mod shape_delete_traffic_mirror_target_input;
 
 pub(crate) mod shape_delete_transit_gateway;
+
+pub(crate) mod shape_delete_transit_gateway_client_vpn_attachment;
+
+pub(crate) mod shape_delete_transit_gateway_client_vpn_attachment_input;
 
 pub(crate) mod shape_delete_transit_gateway_connect;
 
@@ -2815,6 +2823,10 @@ pub(crate) mod shape_reject_capacity_reservation_billing_ownership;
 
 pub(crate) mod shape_reject_capacity_reservation_billing_ownership_input;
 
+pub(crate) mod shape_reject_transit_gateway_client_vpn_attachment;
+
+pub(crate) mod shape_reject_transit_gateway_client_vpn_attachment_input;
+
 pub(crate) mod shape_reject_transit_gateway_multicast_domain_associations;
 
 pub(crate) mod shape_reject_transit_gateway_multicast_domain_associations_input;
@@ -3340,6 +3352,8 @@ pub(crate) mod shape_target_capacity_specification_request;
 pub(crate) mod shape_target_configuration_request;
 
 pub(crate) mod shape_traffic_mirror_port_range_request;
+
+pub(crate) mod shape_transit_gateway_configuration_input_structure;
 
 pub(crate) mod shape_transit_gateway_connect_request_bgp_options;
 
@@ -4174,6 +4188,8 @@ pub(crate) mod shape_transit_gateway_association;
 pub(crate) mod shape_transit_gateway_attachment_list;
 
 pub(crate) mod shape_transit_gateway_attachment_propagation_list;
+
+pub(crate) mod shape_transit_gateway_client_vpn_attachment;
 
 pub(crate) mod shape_transit_gateway_connect;
 
@@ -5077,6 +5093,10 @@ pub(crate) mod shape_client_route_enforcement_response_options;
 
 pub(crate) mod shape_client_vpn_authentication_list;
 
+pub(crate) mod shape_client_vpn_availability_zone_id_set;
+
+pub(crate) mod shape_client_vpn_availability_zone_set;
+
 pub(crate) mod shape_client_vpn_connection_status;
 
 pub(crate) mod shape_connection_log_response_options;
@@ -5386,6 +5406,8 @@ pub(crate) mod shape_total_local_storage_gb;
 pub(crate) mod shape_transit_gateway_attachment_association;
 
 pub(crate) mod shape_transit_gateway_attachment_bgp_configuration_list;
+
+pub(crate) mod shape_transit_gateway_configuration_describe_endpoint_structure;
 
 pub(crate) mod shape_transit_gateway_policy_rule;
 

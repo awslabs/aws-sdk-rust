@@ -12,6 +12,7 @@
 /// ```text
 /// # let transitgatewayattachmentresourcetype = unimplemented!();
 /// match transitgatewayattachmentresourcetype {
+///     TransitGatewayAttachmentResourceType::ClientVpn => { /* ... */ },
 ///     TransitGatewayAttachmentResourceType::Connect => { /* ... */ },
 ///     TransitGatewayAttachmentResourceType::DirectConnectGateway => { /* ... */ },
 ///     TransitGatewayAttachmentResourceType::NetworkFunction => { /* ... */ },
@@ -49,6 +50,8 @@
 )]
 pub enum TransitGatewayAttachmentResourceType {
     #[allow(missing_docs)] // documentation missing in model
+    ClientVpn,
+    #[allow(missing_docs)] // documentation missing in model
     Connect,
     #[allow(missing_docs)] // documentation missing in model
     DirectConnectGateway,
@@ -71,6 +74,7 @@ pub enum TransitGatewayAttachmentResourceType {
 impl ::std::convert::From<&str> for TransitGatewayAttachmentResourceType {
     fn from(s: &str) -> Self {
         match s {
+            "client-vpn" => TransitGatewayAttachmentResourceType::ClientVpn,
             "connect" => TransitGatewayAttachmentResourceType::Connect,
             "direct-connect-gateway" => TransitGatewayAttachmentResourceType::DirectConnectGateway,
             "network-function" => TransitGatewayAttachmentResourceType::NetworkFunction,
@@ -94,6 +98,7 @@ impl TransitGatewayAttachmentResourceType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            TransitGatewayAttachmentResourceType::ClientVpn => "client-vpn",
             TransitGatewayAttachmentResourceType::Connect => "connect",
             TransitGatewayAttachmentResourceType::DirectConnectGateway => "direct-connect-gateway",
             TransitGatewayAttachmentResourceType::NetworkFunction => "network-function",
@@ -108,6 +113,7 @@ impl TransitGatewayAttachmentResourceType {
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
+            "client-vpn",
             "connect",
             "direct-connect-gateway",
             "network-function",
@@ -139,6 +145,7 @@ impl TransitGatewayAttachmentResourceType {
 impl ::std::fmt::Display for TransitGatewayAttachmentResourceType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            TransitGatewayAttachmentResourceType::ClientVpn => write!(f, "client-vpn"),
             TransitGatewayAttachmentResourceType::Connect => write!(f, "connect"),
             TransitGatewayAttachmentResourceType::DirectConnectGateway => write!(f, "direct-connect-gateway"),
             TransitGatewayAttachmentResourceType::NetworkFunction => write!(f, "network-function"),

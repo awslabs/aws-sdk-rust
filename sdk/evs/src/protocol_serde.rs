@@ -25,11 +25,19 @@ pub fn parse_http_error_metadata(
 
 pub(crate) mod shape_associate_eip_to_vlan;
 
+pub(crate) mod shape_create_entitlement;
+
 pub(crate) mod shape_create_environment;
+
+pub(crate) mod shape_create_environment_connector;
 
 pub(crate) mod shape_create_environment_host;
 
+pub(crate) mod shape_delete_entitlement;
+
 pub(crate) mod shape_delete_environment;
+
+pub(crate) mod shape_delete_environment_connector;
 
 pub(crate) mod shape_delete_environment_host;
 
@@ -39,6 +47,8 @@ pub(crate) mod shape_get_environment;
 
 pub(crate) mod shape_get_versions;
 
+pub(crate) mod shape_list_environment_connectors;
+
 pub(crate) mod shape_list_environment_hosts;
 
 pub(crate) mod shape_list_environment_vlans;
@@ -47,9 +57,13 @@ pub(crate) mod shape_list_environments;
 
 pub(crate) mod shape_list_tags_for_resource;
 
+pub(crate) mod shape_list_vm_entitlements;
+
 pub(crate) mod shape_tag_resource;
 
 pub(crate) mod shape_untag_resource;
+
+pub(crate) mod shape_update_environment_connector;
 
 pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
     if data.is_empty() {
@@ -61,9 +75,17 @@ pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
 
 pub(crate) mod shape_associate_eip_to_vlan_input;
 
+pub(crate) mod shape_create_entitlement_input;
+
+pub(crate) mod shape_create_environment_connector_input;
+
 pub(crate) mod shape_create_environment_host_input;
 
 pub(crate) mod shape_create_environment_input;
+
+pub(crate) mod shape_delete_entitlement_input;
+
+pub(crate) mod shape_delete_environment_connector_input;
 
 pub(crate) mod shape_delete_environment_host_input;
 
@@ -75,6 +97,8 @@ pub(crate) mod shape_get_environment_input;
 
 pub(crate) mod shape_internal_server_exception;
 
+pub(crate) mod shape_list_environment_connectors_input;
+
 pub(crate) mod shape_list_environment_hosts_input;
 
 pub(crate) mod shape_list_environment_vlans_input;
@@ -82,6 +106,8 @@ pub(crate) mod shape_list_environment_vlans_input;
 pub(crate) mod shape_list_environments_input;
 
 pub(crate) mod shape_list_tags_for_resource_input;
+
+pub(crate) mod shape_list_vm_entitlements_input;
 
 pub(crate) mod shape_resource_not_found_exception;
 
@@ -97,9 +123,15 @@ pub(crate) mod shape_too_many_tags_exception;
 
 pub(crate) mod shape_untag_resource_input;
 
+pub(crate) mod shape_update_environment_connector_input;
+
 pub(crate) mod shape_validation_exception;
 
 pub(crate) mod shape_connectivity_info;
+
+pub(crate) mod shape_connector;
+
+pub(crate) mod shape_connector_list;
 
 pub(crate) mod shape_environment;
 
@@ -133,7 +165,11 @@ pub(crate) mod shape_vlan;
 
 pub(crate) mod shape_vlan_list;
 
+pub(crate) mod shape_vm_entitlement_list;
+
 pub(crate) mod shape_checks_list;
+
+pub(crate) mod shape_connectors_checks_list;
 
 pub(crate) mod shape_eip_association_list;
 
@@ -151,9 +187,15 @@ pub(crate) mod shape_validation_exception_field;
 
 pub(crate) mod shape_vcf_version_info;
 
+pub(crate) mod shape_vm_entitlement;
+
 pub(crate) mod shape_check;
 
+pub(crate) mod shape_connector_check;
+
 pub(crate) mod shape_eip_association;
+
+pub(crate) mod shape_error_detail;
 
 pub(crate) mod shape_esx_version_list;
 

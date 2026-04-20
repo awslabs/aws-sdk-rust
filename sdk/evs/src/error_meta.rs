@@ -100,6 +100,30 @@ impl From<crate::operation::associate_eip_to_vlan::AssociateEipToVlanError> for 
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_entitlement::CreateEntitlementError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_entitlement::CreateEntitlementError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_entitlement::CreateEntitlementError> for Error {
+    fn from(err: crate::operation::create_entitlement::CreateEntitlementError) -> Self {
+        match err {
+            crate::operation::create_entitlement::CreateEntitlementError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::create_entitlement::CreateEntitlementError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_entitlement::CreateEntitlementError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::create_entitlement::CreateEntitlementError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_environment::CreateEnvironmentError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -119,6 +143,39 @@ impl From<crate::operation::create_environment::CreateEnvironmentError> for Erro
         match err {
             crate::operation::create_environment::CreateEnvironmentError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::create_environment::CreateEnvironmentError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_environment_connector::CreateEnvironmentConnectorError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_environment_connector::CreateEnvironmentConnectorError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_environment_connector::CreateEnvironmentConnectorError> for Error {
+    fn from(err: crate::operation::create_environment_connector::CreateEnvironmentConnectorError) -> Self {
+        match err {
+            crate::operation::create_environment_connector::CreateEnvironmentConnectorError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::create_environment_connector::CreateEnvironmentConnectorError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::create_environment_connector::CreateEnvironmentConnectorError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::create_environment_connector::CreateEnvironmentConnectorError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -147,6 +204,30 @@ impl From<crate::operation::create_environment_host::CreateEnvironmentHostError>
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_entitlement::DeleteEntitlementError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_entitlement::DeleteEntitlementError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_entitlement::DeleteEntitlementError> for Error {
+    fn from(err: crate::operation::delete_entitlement::DeleteEntitlementError) -> Self {
+        match err {
+            crate::operation::delete_entitlement::DeleteEntitlementError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_entitlement::DeleteEntitlementError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_entitlement::DeleteEntitlementError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_entitlement::DeleteEntitlementError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_environment::DeleteEnvironmentError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -167,6 +248,39 @@ impl From<crate::operation::delete_environment::DeleteEnvironmentError> for Erro
             crate::operation::delete_environment::DeleteEnvironmentError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::delete_environment::DeleteEnvironmentError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::delete_environment::DeleteEnvironmentError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_environment_connector::DeleteEnvironmentConnectorError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_environment_connector::DeleteEnvironmentConnectorError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_environment_connector::DeleteEnvironmentConnectorError> for Error {
+    fn from(err: crate::operation::delete_environment_connector::DeleteEnvironmentConnectorError) -> Self {
+        match err {
+            crate::operation::delete_environment_connector::DeleteEnvironmentConnectorError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_environment_connector::DeleteEnvironmentConnectorError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::delete_environment_connector::DeleteEnvironmentConnectorError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::delete_environment_connector::DeleteEnvironmentConnectorError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -276,6 +390,36 @@ impl From<crate::operation::get_versions::GetVersionsError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_environment_connectors::ListEnvironmentConnectorsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_environment_connectors::ListEnvironmentConnectorsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_environment_connectors::ListEnvironmentConnectorsError> for Error {
+    fn from(err: crate::operation::list_environment_connectors::ListEnvironmentConnectorsError) -> Self {
+        match err {
+            crate::operation::list_environment_connectors::ListEnvironmentConnectorsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_environment_connectors::ListEnvironmentConnectorsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::list_environment_connectors::ListEnvironmentConnectorsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_environment_hosts::ListEnvironmentHostsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -372,6 +516,31 @@ impl From<crate::operation::list_tags_for_resource::ListTagsForResourceError> fo
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_vm_entitlements::ListVmEntitlementsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_vm_entitlements::ListVmEntitlementsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_vm_entitlements::ListVmEntitlementsError> for Error {
+    fn from(err: crate::operation::list_vm_entitlements::ListVmEntitlementsError) -> Self {
+        match err {
+            crate::operation::list_vm_entitlements::ListVmEntitlementsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_vm_entitlements::ListVmEntitlementsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_vm_entitlements::ListVmEntitlementsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::tag_resource::TagResourceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -417,6 +586,39 @@ impl From<crate::operation::untag_resource::UntagResourceError> for Error {
             crate::operation::untag_resource::UntagResourceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::untag_resource::UntagResourceError::TagPolicyException(inner) => Error::TagPolicyException(inner),
             crate::operation::untag_resource::UntagResourceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_environment_connector::UpdateEnvironmentConnectorError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_environment_connector::UpdateEnvironmentConnectorError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_environment_connector::UpdateEnvironmentConnectorError> for Error {
+    fn from(err: crate::operation::update_environment_connector::UpdateEnvironmentConnectorError) -> Self {
+        match err {
+            crate::operation::update_environment_connector::UpdateEnvironmentConnectorError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_environment_connector::UpdateEnvironmentConnectorError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::update_environment_connector::UpdateEnvironmentConnectorError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::update_environment_connector::UpdateEnvironmentConnectorError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

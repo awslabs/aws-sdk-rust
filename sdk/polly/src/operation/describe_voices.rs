@@ -123,8 +123,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for Describ
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("DescribeVoices")
-            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-            .with_interceptor(DescribeVoicesEndpointParamsInterceptor)
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                DescribeVoicesEndpointParamsInterceptor,
+            ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::describe_voices::DescribeVoicesError,
             >::new())
@@ -193,12 +197,12 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for DescribeVoic
                 let mut query = ::aws_smithy_http::query::Writer::new(output);
                 if let ::std::option::Option::Some(inner_1) = &_input.engine {
                     {
-                        query.push_kv("Engine", &::aws_smithy_http::query::fmt_string(inner_1));
+                        query.push_kv("Engine", &::aws_smithy_http::query::fmt_string(inner_1.as_str()));
                     }
                 }
                 if let ::std::option::Option::Some(inner_2) = &_input.language_code {
                     {
-                        query.push_kv("LanguageCode", &::aws_smithy_http::query::fmt_string(inner_2));
+                        query.push_kv("LanguageCode", &::aws_smithy_http::query::fmt_string(inner_2.as_str()));
                     }
                 }
                 if let ::std::option::Option::Some(inner_3) = &_input.include_additional_language_codes {
@@ -237,6 +241,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for DescribeVoic
 #[derive(Debug)]
 struct DescribeVoicesEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DescribeVoicesEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "DescribeVoicesEndpointParamsInterceptor"

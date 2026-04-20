@@ -12,17 +12,29 @@ pub fn ser_update_replication_info_input_input(
     if let Some(var_3) = &input.current_version {
         object.key("currentVersion").string(var_3.as_str());
     }
-    if let Some(var_4) = &input.source_kafka_cluster_arn {
-        object.key("sourceKafkaClusterArn").string(var_4.as_str());
-    }
-    if let Some(var_5) = &input.target_kafka_cluster_arn {
-        object.key("targetKafkaClusterArn").string(var_5.as_str());
-    }
-    if let Some(var_6) = &input.topic_replication {
+    if let Some(var_4) = &input.log_delivery {
         #[allow(unused_mut)]
-        let mut object_7 = object.key("topicReplication").start_object();
-        crate::protocol_serde::shape_topic_replication_update::ser_topic_replication_update(&mut object_7, var_6)?;
-        object_7.finish();
+        let mut object_5 = object.key("logDelivery").start_object();
+        crate::protocol_serde::shape_log_delivery::ser_log_delivery(&mut object_5, var_4)?;
+        object_5.finish();
+    }
+    if let Some(var_6) = &input.source_kafka_cluster_arn {
+        object.key("sourceKafkaClusterArn").string(var_6.as_str());
+    }
+    if let Some(var_7) = &input.source_kafka_cluster_id {
+        object.key("sourceKafkaClusterId").string(var_7.as_str());
+    }
+    if let Some(var_8) = &input.target_kafka_cluster_arn {
+        object.key("targetKafkaClusterArn").string(var_8.as_str());
+    }
+    if let Some(var_9) = &input.target_kafka_cluster_id {
+        object.key("targetKafkaClusterId").string(var_9.as_str());
+    }
+    if let Some(var_10) = &input.topic_replication {
+        #[allow(unused_mut)]
+        let mut object_11 = object.key("topicReplication").start_object();
+        crate::protocol_serde::shape_topic_replication_update::ser_topic_replication_update(&mut object_11, var_10)?;
+        object_11.finish();
     }
     Ok(())
 }

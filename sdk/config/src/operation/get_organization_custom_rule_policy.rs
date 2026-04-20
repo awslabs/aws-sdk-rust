@@ -132,8 +132,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for GetOrga
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("GetOrganizationCustomRulePolicy")
-            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-            .with_interceptor(GetOrganizationCustomRulePolicyEndpointParamsInterceptor)
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                GetOrganizationCustomRulePolicyEndpointParamsInterceptor,
+            ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::get_organization_custom_rule_policy::GetOrganizationCustomRulePolicyError,
             >::new())
@@ -228,6 +232,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetOrganizat
 #[derive(Debug)]
 struct GetOrganizationCustomRulePolicyEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for GetOrganizationCustomRulePolicyEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "GetOrganizationCustomRulePolicyEndpointParamsInterceptor"

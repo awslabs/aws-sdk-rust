@@ -128,8 +128,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ListAss
         #[allow(unused_mut)]
         let mut rcb =
             ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("ListAssociatedApprovalRuleTemplatesForRepository")
-                .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-                .with_interceptor(ListAssociatedApprovalRuleTemplatesForRepositoryEndpointParamsInterceptor)
+                .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                    ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+                ))
+                .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                    ListAssociatedApprovalRuleTemplatesForRepositoryEndpointParamsInterceptor,
+                ))
                 .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                     crate::operation::list_associated_approval_rule_templates_for_repository::ListAssociatedApprovalRuleTemplatesForRepositoryError,
                 >::new())
@@ -218,6 +222,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListAssociat
 #[derive(Debug)]
 struct ListAssociatedApprovalRuleTemplatesForRepositoryEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListAssociatedApprovalRuleTemplatesForRepositoryEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "ListAssociatedApprovalRuleTemplatesForRepositoryEndpointParamsInterceptor"

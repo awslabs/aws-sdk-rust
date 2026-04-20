@@ -95,6 +95,19 @@ pub fn de_client_vpn_route(
                 builder = builder.set_description(var_7);
             }
             ,
+            s if s.matches("transitGatewayAttachmentId") /* TransitGatewayAttachmentId com.amazonaws.ec2#ClientVpnRoute$TransitGatewayAttachmentId */ =>  {
+                let var_8 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_transit_gateway_attachment_id(var_8);
+            }
+            ,
             _ => {}
         }
     }

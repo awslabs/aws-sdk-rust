@@ -123,11 +123,15 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for GetVaul
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("GetVaultLock")
-            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-            .with_interceptor(GetVaultLockEndpointParamsInterceptor)
-            .with_interceptor(crate::glacier_interceptors::GlacierAccountIdAutofillInterceptor::<
-                crate::operation::get_vault_lock::GetVaultLockInput,
-            >::new())
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                GetVaultLockEndpointParamsInterceptor,
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                crate::glacier_interceptors::GlacierAccountIdAutofillInterceptor::<crate::operation::get_vault_lock::GetVaultLockInput>::new(),
+            ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::get_vault_lock::GetVaultLockError,
             >::new())
@@ -237,6 +241,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetVaultLock
 #[derive(Debug)]
 struct GetVaultLockEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for GetVaultLockEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "GetVaultLockEndpointParamsInterceptor"

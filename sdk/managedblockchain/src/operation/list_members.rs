@@ -126,8 +126,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ListMem
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("ListMembers")
-            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-            .with_interceptor(ListMembersEndpointParamsInterceptor)
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ListMembersEndpointParamsInterceptor,
+            ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::list_members::ListMembersError,
             >::new())
@@ -212,7 +216,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListMembersR
                 }
                 if let ::std::option::Option::Some(inner_3) = &_input.status {
                     {
-                        query.push_kv("status", &::aws_smithy_http::query::fmt_string(inner_3));
+                        query.push_kv("status", &::aws_smithy_http::query::fmt_string(inner_3.as_str()));
                     }
                 }
                 if let ::std::option::Option::Some(inner_4) = &_input.is_owned {
@@ -253,6 +257,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListMembersR
 #[derive(Debug)]
 struct ListMembersEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListMembersEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "ListMembersEndpointParamsInterceptor"

@@ -127,8 +127,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ListPro
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("ListPromptRouters")
-            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-            .with_interceptor(ListPromptRoutersEndpointParamsInterceptor)
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ListPromptRoutersEndpointParamsInterceptor,
+            ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::list_prompt_routers::ListPromptRoutersError,
             >::new())
@@ -207,7 +211,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListPromptRo
                 }
                 if let ::std::option::Option::Some(inner_3) = &_input.r#type {
                     {
-                        query.push_kv("type", &::aws_smithy_http::query::fmt_string(inner_3));
+                        query.push_kv("type", &::aws_smithy_http::query::fmt_string(inner_3.as_str()));
                     }
                 }
                 ::std::result::Result::Ok(())
@@ -233,6 +237,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListPromptRo
 #[derive(Debug)]
 struct ListPromptRoutersEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListPromptRoutersEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "ListPromptRoutersEndpointParamsInterceptor"

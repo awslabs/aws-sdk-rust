@@ -126,8 +126,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for CopyPac
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("CopyPackageVersions")
-            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-            .with_interceptor(CopyPackageVersionsEndpointParamsInterceptor)
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                CopyPackageVersionsEndpointParamsInterceptor,
+            ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::copy_package_versions::CopyPackageVersionsError,
             >::new())
@@ -236,7 +240,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for CopyPackageV
                 let inner_5 = inner_5
                     .as_ref()
                     .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("format", "cannot be empty or unset"))?;
-                query.push_kv("format", &::aws_smithy_http::query::fmt_string(inner_5));
+                query.push_kv("format", &::aws_smithy_http::query::fmt_string(inner_5.as_str()));
                 if let ::std::option::Option::Some(inner_6) = &_input.namespace {
                     {
                         query.push_kv("namespace", &::aws_smithy_http::query::fmt_string(inner_6));
@@ -282,6 +286,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for CopyPackageV
 #[derive(Debug)]
 struct CopyPackageVersionsEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CopyPackageVersionsEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "CopyPackageVersionsEndpointParamsInterceptor"

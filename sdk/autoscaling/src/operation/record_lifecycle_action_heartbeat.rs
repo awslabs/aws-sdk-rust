@@ -132,8 +132,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for RecordL
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("RecordLifecycleActionHeartbeat")
-            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-            .with_interceptor(RecordLifecycleActionHeartbeatEndpointParamsInterceptor)
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                RecordLifecycleActionHeartbeatEndpointParamsInterceptor,
+            ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::record_lifecycle_action_heartbeat::RecordLifecycleActionHeartbeatError,
             >::new())
@@ -222,6 +226,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for RecordLifecy
 #[derive(Debug)]
 struct RecordLifecycleActionHeartbeatEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for RecordLifecycleActionHeartbeatEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "RecordLifecycleActionHeartbeatEndpointParamsInterceptor"

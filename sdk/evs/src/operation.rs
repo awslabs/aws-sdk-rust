@@ -4,14 +4,26 @@ pub use ::aws_types::request_id::RequestId;
 /// Types for the `AssociateEipToVlan` operation.
 pub mod associate_eip_to_vlan;
 
+/// Types for the `CreateEntitlement` operation.
+pub mod create_entitlement;
+
 /// Types for the `CreateEnvironment` operation.
 pub mod create_environment;
+
+/// Types for the `CreateEnvironmentConnector` operation.
+pub mod create_environment_connector;
 
 /// Types for the `CreateEnvironmentHost` operation.
 pub mod create_environment_host;
 
+/// Types for the `DeleteEntitlement` operation.
+pub mod delete_entitlement;
+
 /// Types for the `DeleteEnvironment` operation.
 pub mod delete_environment;
+
+/// Types for the `DeleteEnvironmentConnector` operation.
+pub mod delete_environment_connector;
 
 /// Types for the `DeleteEnvironmentHost` operation.
 pub mod delete_environment_host;
@@ -25,6 +37,9 @@ pub mod get_environment;
 /// Types for the `GetVersions` operation.
 pub mod get_versions;
 
+/// Types for the `ListEnvironmentConnectors` operation.
+pub mod list_environment_connectors;
+
 /// Types for the `ListEnvironmentHosts` operation.
 pub mod list_environment_hosts;
 
@@ -37,8 +52,14 @@ pub mod list_environments;
 /// Types for the `ListTagsForResource` operation.
 pub mod list_tags_for_resource;
 
+/// Types for the `ListVmEntitlements` operation.
+pub mod list_vm_entitlements;
+
 /// Types for the `TagResource` operation.
 pub mod tag_resource;
 
 /// Types for the `UntagResource` operation.
 pub mod untag_resource;
+
+/// Types for the `UpdateEnvironmentConnector` operation.
+pub mod update_environment_connector;

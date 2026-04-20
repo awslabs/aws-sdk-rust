@@ -129,8 +129,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for GetQuer
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new(
             "GetQueryResultsWorkloadInsightsTopContributorsData",
         )
-        .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-        .with_interceptor(GetQueryResultsWorkloadInsightsTopContributorsDataEndpointParamsInterceptor)
+        .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+            ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+        ))
+        .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+            GetQueryResultsWorkloadInsightsTopContributorsDataEndpointParamsInterceptor,
+        ))
         .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
             crate::operation::get_query_results_workload_insights_top_contributors_data::GetQueryResultsWorkloadInsightsTopContributorsDataError,
         >::new())
@@ -256,6 +260,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetQueryResu
 #[derive(Debug)]
 struct GetQueryResultsWorkloadInsightsTopContributorsDataEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for GetQueryResultsWorkloadInsightsTopContributorsDataEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "GetQueryResultsWorkloadInsightsTopContributorsDataEndpointParamsInterceptor"

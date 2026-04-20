@@ -126,11 +126,16 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ListTag
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("ListTagsForVault")
-            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-            .with_interceptor(ListTagsForVaultEndpointParamsInterceptor)
-            .with_interceptor(crate::glacier_interceptors::GlacierAccountIdAutofillInterceptor::<
-                crate::operation::list_tags_for_vault::ListTagsForVaultInput,
-            >::new())
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ListTagsForVaultEndpointParamsInterceptor,
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                crate::glacier_interceptors::GlacierAccountIdAutofillInterceptor::<crate::operation::list_tags_for_vault::ListTagsForVaultInput>::new(
+                ),
+            ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::list_tags_for_vault::ListTagsForVaultError,
             >::new())
@@ -240,6 +245,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListTagsForV
 #[derive(Debug)]
 struct ListTagsForVaultEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListTagsForVaultEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "ListTagsForVaultEndpointParamsInterceptor"

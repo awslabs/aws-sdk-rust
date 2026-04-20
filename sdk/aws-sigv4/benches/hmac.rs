@@ -5,7 +5,7 @@
 
 use criterion::{criterion_group, criterion_main, Criterion};
 use hmac::digest::FixedOutput;
-use hmac::{Hmac, Mac};
+use hmac::{Hmac, KeyInit, Mac};
 #[cfg(not(any(target_arch = "powerpc", target_arch = "powerpc64")))]
 use ring::hmac::{sign, Context, Key, HMAC_SHA256};
 use sha2::Sha256;

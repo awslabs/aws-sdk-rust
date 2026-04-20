@@ -7,7 +7,7 @@
 use aws_runtime::sdk_feature::AwsSdkFeature;
 use aws_smithy_runtime_api::{
     box_error::BoxError,
-    client::interceptors::{context::BeforeSerializationInterceptorContextRef, Intercept},
+    client::interceptors::{context::BeforeSerializationInterceptorContextRef, dyn_dispatch_hint, Intercept},
 };
 use aws_smithy_types::config_bag::ConfigBag;
 use aws_types::endpoint_config::AccountIdEndpointMode;
@@ -16,6 +16,7 @@ use aws_types::endpoint_config::AccountIdEndpointMode;
 #[derive(Debug, Default)]
 pub(crate) struct AccountIdEndpointFeatureTrackerInterceptor;
 
+#[dyn_dispatch_hint]
 impl Intercept for AccountIdEndpointFeatureTrackerInterceptor {
     fn name(&self) -> &'static str {
         "AccountIdEndpointFeatureTrackerInterceptor"

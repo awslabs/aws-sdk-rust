@@ -132,8 +132,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for UpdateC
         #[allow(unused_mut)]
         let mut rcb =
             ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("UpdateConfiguredTableAssociationAnalysisRule")
-                .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-                .with_interceptor(UpdateConfiguredTableAssociationAnalysisRuleEndpointParamsInterceptor)
+                .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                    ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+                ))
+                .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                    UpdateConfiguredTableAssociationAnalysisRuleEndpointParamsInterceptor,
+                ))
                 .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                     crate::operation::update_configured_table_association_analysis_rule::UpdateConfiguredTableAssociationAnalysisRuleError,
                 >::new())
@@ -222,7 +226,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for UpdateConfig
                 let input_3 = input_3.as_ref().ok_or_else(|| {
                     ::aws_smithy_types::error::operation::BuildError::missing_field("analysis_rule_type", "cannot be empty or unset")
                 })?;
-                let analysis_rule_type = ::aws_smithy_http::label::fmt_string(input_3, ::aws_smithy_http::label::EncodingStrategy::Default);
+                let analysis_rule_type = ::aws_smithy_http::label::fmt_string(input_3.as_str(), ::aws_smithy_http::label::EncodingStrategy::Default);
                 if analysis_rule_type.is_empty() {
                     return ::std::result::Result::Err(::aws_smithy_types::error::operation::BuildError::missing_field(
                         "analysis_rule_type",
@@ -256,6 +260,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for UpdateConfig
 #[derive(Debug)]
 struct UpdateConfiguredTableAssociationAnalysisRuleEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for UpdateConfiguredTableAssociationAnalysisRuleEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "UpdateConfiguredTableAssociationAnalysisRuleEndpointParamsInterceptor"

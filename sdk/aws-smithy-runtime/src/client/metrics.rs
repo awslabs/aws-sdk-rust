@@ -9,7 +9,9 @@ use aws_smithy_observability::{
     ObservabilityError,
 };
 use aws_smithy_runtime_api::client::{
-    interceptors::Intercept, orchestrator::Metadata, runtime_components::RuntimeComponentsBuilder,
+    interceptors::{dyn_dispatch_hint, Intercept, SharedInterceptor},
+    orchestrator::Metadata,
+    runtime_components::RuntimeComponentsBuilder,
     runtime_plugin::RuntimePlugin,
 };
 use aws_smithy_types::config_bag::{FrozenLayer, Layer, Storable, StoreReplace};
@@ -105,6 +107,7 @@ impl MetricsInterceptor {
     }
 }
 
+#[dyn_dispatch_hint]
 impl Intercept for MetricsInterceptor {
     fn name(&self) -> &'static str {
         "MetricsInterceptor"
@@ -208,7 +211,10 @@ impl RuntimePlugin for MetricsRuntimePlugin {
     ) -> Cow<'_, RuntimeComponentsBuilder> {
         let interceptor = MetricsInterceptor::new(self.time_source.clone());
         if let Ok(interceptor) = interceptor {
-            Cow::Owned(RuntimeComponentsBuilder::new("Metrics").with_interceptor(interceptor))
+            Cow::Owned(
+                RuntimeComponentsBuilder::new("Metrics")
+                    .with_interceptor(SharedInterceptor::permanent(interceptor)),
+            )
         } else {
             Cow::Owned(RuntimeComponentsBuilder::new("Metrics"))
         }

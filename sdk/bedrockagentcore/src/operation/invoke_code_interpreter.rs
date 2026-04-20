@@ -132,7 +132,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for InvokeC
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("InvokeCodeInterpreter")
-            .with_interceptor(InvokeCodeInterpreterEndpointParamsInterceptor)
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                InvokeCodeInterpreterEndpointParamsInterceptor,
+            ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::invoke_code_interpreter::InvokeCodeInterpreterError,
             >::new())
@@ -251,6 +253,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for InvokeCodeIn
 #[derive(Debug)]
 struct InvokeCodeInterpreterEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for InvokeCodeInterpreterEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "InvokeCodeInterpreterEndpointParamsInterceptor"

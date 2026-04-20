@@ -132,8 +132,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for Describ
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("DescribeComputationModelExecutionSummary")
-            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-            .with_interceptor(DescribeComputationModelExecutionSummaryEndpointParamsInterceptor)
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                DescribeComputationModelExecutionSummaryEndpointParamsInterceptor,
+            ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::describe_computation_model_execution_summary::DescribeComputationModelExecutionSummaryError,
             >::new())
@@ -222,7 +226,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for DescribeComp
                 let mut query = ::aws_smithy_http::query::Writer::new(output);
                 if let ::std::option::Option::Some(inner_2) = &_input.resolve_to_resource_type {
                     {
-                        query.push_kv("resolveToResourceType", &::aws_smithy_http::query::fmt_string(inner_2));
+                        query.push_kv("resolveToResourceType", &::aws_smithy_http::query::fmt_string(inner_2.as_str()));
                     }
                 }
                 if let ::std::option::Option::Some(inner_3) = &_input.resolve_to_resource_id {
@@ -253,6 +257,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for DescribeComp
 #[derive(Debug)]
 struct DescribeComputationModelExecutionSummaryEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DescribeComputationModelExecutionSummaryEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "DescribeComputationModelExecutionSummaryEndpointParamsInterceptor"

@@ -133,8 +133,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for CancelA
         #[allow(unused_mut)]
         let mut rcb =
             ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("CancelAutomatedReasoningPolicyBuildWorkflow")
-                .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-                .with_interceptor(CancelAutomatedReasoningPolicyBuildWorkflowEndpointParamsInterceptor)
+                .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                    ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+                ))
+                .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                    CancelAutomatedReasoningPolicyBuildWorkflowEndpointParamsInterceptor,
+                ))
                 .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                     crate::operation::cancel_automated_reasoning_policy_build_workflow::CancelAutomatedReasoningPolicyBuildWorkflowError,
                 >::new())
@@ -244,6 +248,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for CancelAutoma
 #[derive(Debug)]
 struct CancelAutomatedReasoningPolicyBuildWorkflowEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CancelAutomatedReasoningPolicyBuildWorkflowEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "CancelAutomatedReasoningPolicyBuildWorkflowEndpointParamsInterceptor"

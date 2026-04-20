@@ -133,7 +133,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for InvokeE
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("InvokeEndpointWithBidirectionalStream")
-            .with_interceptor(InvokeEndpointWithBidirectionalStreamEndpointParamsInterceptor)
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                InvokeEndpointWithBidirectionalStreamEndpointParamsInterceptor,
+            ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::invoke_endpoint_with_bidirectional_stream::InvokeEndpointWithBidirectionalStreamError,
             >::new())
@@ -266,6 +268,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for InvokeEndpoi
 #[derive(Debug)]
 struct InvokeEndpointWithBidirectionalStreamEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for InvokeEndpointWithBidirectionalStreamEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "InvokeEndpointWithBidirectionalStreamEndpointParamsInterceptor"

@@ -27,6 +27,9 @@ pub fn ser_consumer_group_replication(
     if let Some(var_8) = &input.synchronise_consumer_group_offsets {
         object.key("synchroniseConsumerGroupOffsets").boolean(*var_8);
     }
+    if let Some(var_9) = &input.consumer_group_offset_sync_mode {
+        object.key("consumerGroupOffsetSyncMode").string(var_9.as_str());
+    }
     Ok(())
 }
 
@@ -63,6 +66,13 @@ where
                         "synchroniseConsumerGroupOffsets" => {
                             builder = builder
                                 .set_synchronise_consumer_group_offsets(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
+                        "consumerGroupOffsetSyncMode" => {
+                            builder = builder.set_consumer_group_offset_sync_mode(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::ConsumerGroupOffsetSyncMode::from(u.as_ref())))
+                                    .transpose()?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

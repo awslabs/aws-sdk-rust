@@ -132,8 +132,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for GetAgen
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("GetAgentMemory")
-            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-            .with_interceptor(GetAgentMemoryEndpointParamsInterceptor)
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                GetAgentMemoryEndpointParamsInterceptor,
+            ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::get_agent_memory::GetAgentMemoryError,
             >::new())
@@ -242,7 +246,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetAgentMemo
                 let inner_5 = inner_5
                     .as_ref()
                     .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("memory_type", "cannot be empty or unset"))?;
-                query.push_kv("memoryType", &::aws_smithy_http::query::fmt_string(inner_5));
+                query.push_kv("memoryType", &::aws_smithy_http::query::fmt_string(inner_5.as_str()));
                 let inner_6 = &_input.memory_id;
                 let inner_6 = inner_6
                     .as_ref()
@@ -277,6 +281,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetAgentMemo
 #[derive(Debug)]
 struct GetAgentMemoryEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for GetAgentMemoryEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "GetAgentMemoryEndpointParamsInterceptor"

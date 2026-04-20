@@ -132,8 +132,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ListMan
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("ListManagedNotificationChildEvents")
-            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-            .with_interceptor(ListManagedNotificationChildEventsEndpointParamsInterceptor)
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ListManagedNotificationChildEventsEndpointParamsInterceptor,
+            ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::list_managed_notification_child_events::ListManagedNotificationChildEventsError,
             >::new())
@@ -242,7 +246,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListManagedN
                 }
                 if let ::std::option::Option::Some(inner_4) = &_input.locale {
                     {
-                        query.push_kv("locale", &::aws_smithy_http::query::fmt_string(inner_4));
+                        query.push_kv("locale", &::aws_smithy_http::query::fmt_string(inner_4.as_str()));
                     }
                 }
                 if let ::std::option::Option::Some(inner_5) = &_input.max_results {
@@ -288,6 +292,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListManagedN
 #[derive(Debug)]
 struct ListManagedNotificationChildEventsEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListManagedNotificationChildEventsEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "ListManagedNotificationChildEventsEndpointParamsInterceptor"

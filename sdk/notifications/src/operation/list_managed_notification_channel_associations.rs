@@ -133,8 +133,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ListMan
         #[allow(unused_mut)]
         let mut rcb =
             ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("ListManagedNotificationChannelAssociations")
-                .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-                .with_interceptor(ListManagedNotificationChannelAssociationsEndpointParamsInterceptor)
+                .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                    ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+                ))
+                .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                    ListManagedNotificationChannelAssociationsEndpointParamsInterceptor,
+                ))
                 .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                     crate::operation::list_managed_notification_channel_associations::ListManagedNotificationChannelAssociationsError,
                 >::new())
@@ -250,6 +254,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListManagedN
 #[derive(Debug)]
 struct ListManagedNotificationChannelAssociationsEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListManagedNotificationChannelAssociationsEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "ListManagedNotificationChannelAssociationsEndpointParamsInterceptor"

@@ -133,8 +133,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for StartQu
         #[allow(unused_mut)]
         let mut rcb =
             ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("StartQueryWorkloadInsightsTopContributors")
-                .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-                .with_interceptor(StartQueryWorkloadInsightsTopContributorsEndpointParamsInterceptor)
+                .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                    ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+                ))
+                .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                    StartQueryWorkloadInsightsTopContributorsEndpointParamsInterceptor,
+                ))
                 .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                     crate::operation::start_query_workload_insights_top_contributors::StartQueryWorkloadInsightsTopContributorsError,
                 >::new())
@@ -237,6 +241,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for StartQueryWo
 #[derive(Debug)]
 struct StartQueryWorkloadInsightsTopContributorsEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for StartQueryWorkloadInsightsTopContributorsEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "StartQueryWorkloadInsightsTopContributorsEndpointParamsInterceptor"

@@ -130,8 +130,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for UpdateA
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("UpdateAccessEntry")
-            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-            .with_interceptor(UpdateAccessEntryEndpointParamsInterceptor)
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                UpdateAccessEntryEndpointParamsInterceptor,
+            ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::update_access_entry::UpdateAccessEntryError,
             >::new())
@@ -245,6 +249,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for UpdateAccess
 #[derive(Debug)]
 struct UpdateAccessEntryEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for UpdateAccessEntryEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "UpdateAccessEntryEndpointParamsInterceptor"

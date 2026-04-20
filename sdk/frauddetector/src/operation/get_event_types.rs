@@ -127,8 +127,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for GetEven
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("GetEventTypes")
-            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-            .with_interceptor(GetEventTypesEndpointParamsInterceptor)
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                GetEventTypesEndpointParamsInterceptor,
+            ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::get_event_types::GetEventTypesError,
             >::new())
@@ -219,6 +223,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetEventType
 #[derive(Debug)]
 struct GetEventTypesEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for GetEventTypesEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "GetEventTypesEndpointParamsInterceptor"

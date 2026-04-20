@@ -124,8 +124,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for GetGlos
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("GetGlossary")
-            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-            .with_interceptor(GetGlossaryEndpointParamsInterceptor)
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                GetGlossaryEndpointParamsInterceptor,
+            ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::get_glossary::GetGlossaryError,
             >::new())
@@ -235,6 +239,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetGlossaryR
 #[derive(Debug)]
 struct GetGlossaryEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for GetGlossaryEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "GetGlossaryEndpointParamsInterceptor"

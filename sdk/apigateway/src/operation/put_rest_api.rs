@@ -123,8 +123,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for PutRest
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("PutRestApi")
-            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-            .with_interceptor(PutRestApiEndpointParamsInterceptor)
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                PutRestApiEndpointParamsInterceptor,
+            ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::put_rest_api::PutRestApiError,
             >::new())
@@ -212,7 +216,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for PutRestApiRe
                 }
                 if let ::std::option::Option::Some(inner_3) = &_input.mode {
                     {
-                        query.push_kv("mode", &::aws_smithy_http::query::fmt_string(inner_3));
+                        query.push_kv("mode", &::aws_smithy_http::query::fmt_string(inner_3.as_str()));
                     }
                 }
                 if let ::std::option::Option::Some(inner_4) = &_input.fail_on_warnings {
@@ -247,6 +251,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for PutRestApiRe
 #[derive(Debug)]
 struct PutRestApiEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for PutRestApiEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "PutRestApiEndpointParamsInterceptor"

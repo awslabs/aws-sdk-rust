@@ -128,8 +128,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for DeleteL
         #[allow(unused_mut)]
         let mut rcb =
             ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("DeleteLakeFormationIdentityCenterConfiguration")
-                .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-                .with_interceptor(DeleteLakeFormationIdentityCenterConfigurationEndpointParamsInterceptor)
+                .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                    ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+                ))
+                .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                    DeleteLakeFormationIdentityCenterConfigurationEndpointParamsInterceptor,
+                ))
                 .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                     crate::operation::delete_lake_formation_identity_center_configuration::DeleteLakeFormationIdentityCenterConfigurationError,
                 >::new())
@@ -215,6 +219,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for DeleteLakeFo
 #[derive(Debug)]
 struct DeleteLakeFormationIdentityCenterConfigurationEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DeleteLakeFormationIdentityCenterConfigurationEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "DeleteLakeFormationIdentityCenterConfigurationEndpointParamsInterceptor"

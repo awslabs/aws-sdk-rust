@@ -65,6 +65,8 @@ pub struct ClientVpnEndpoint {
     pub endpoint_ip_address_type: ::std::option::Option<crate::types::EndpointIpAddressType>,
     /// <p>The IP address type of the Client VPN endpoint. Possible values are either <code>ipv4</code> for IPv4 addressing only, <code>ipv6</code> for IPv6 addressing only, or <code>dual-stack</code> for both IPv4 and IPv6 addressing.</p>
     pub traffic_ip_address_type: ::std::option::Option<crate::types::TrafficIpAddressType>,
+    /// <p>The Transit Gateway configuration for the Client VPN endpoint.</p>
+    pub transit_gateway_configuration: ::std::option::Option<crate::types::TransitGatewayConfigurationDescribeEndpointStructure>,
 }
 impl ClientVpnEndpoint {
     /// <p>The ID of the Client VPN endpoint.</p>
@@ -192,6 +194,10 @@ impl ClientVpnEndpoint {
     pub fn traffic_ip_address_type(&self) -> ::std::option::Option<&crate::types::TrafficIpAddressType> {
         self.traffic_ip_address_type.as_ref()
     }
+    /// <p>The Transit Gateway configuration for the Client VPN endpoint.</p>
+    pub fn transit_gateway_configuration(&self) -> ::std::option::Option<&crate::types::TransitGatewayConfigurationDescribeEndpointStructure> {
+        self.transit_gateway_configuration.as_ref()
+    }
 }
 impl ClientVpnEndpoint {
     /// Creates a new builder-style object to manufacture [`ClientVpnEndpoint`](crate::types::ClientVpnEndpoint).
@@ -231,6 +237,7 @@ pub struct ClientVpnEndpointBuilder {
     pub(crate) disconnect_on_session_timeout: ::std::option::Option<bool>,
     pub(crate) endpoint_ip_address_type: ::std::option::Option<crate::types::EndpointIpAddressType>,
     pub(crate) traffic_ip_address_type: ::std::option::Option<crate::types::TrafficIpAddressType>,
+    pub(crate) transit_gateway_configuration: ::std::option::Option<crate::types::TransitGatewayConfigurationDescribeEndpointStructure>,
 }
 impl ClientVpnEndpointBuilder {
     /// <p>The ID of the Client VPN endpoint.</p>
@@ -662,6 +669,23 @@ impl ClientVpnEndpointBuilder {
     pub fn get_traffic_ip_address_type(&self) -> &::std::option::Option<crate::types::TrafficIpAddressType> {
         &self.traffic_ip_address_type
     }
+    /// <p>The Transit Gateway configuration for the Client VPN endpoint.</p>
+    pub fn transit_gateway_configuration(mut self, input: crate::types::TransitGatewayConfigurationDescribeEndpointStructure) -> Self {
+        self.transit_gateway_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The Transit Gateway configuration for the Client VPN endpoint.</p>
+    pub fn set_transit_gateway_configuration(
+        mut self,
+        input: ::std::option::Option<crate::types::TransitGatewayConfigurationDescribeEndpointStructure>,
+    ) -> Self {
+        self.transit_gateway_configuration = input;
+        self
+    }
+    /// <p>The Transit Gateway configuration for the Client VPN endpoint.</p>
+    pub fn get_transit_gateway_configuration(&self) -> &::std::option::Option<crate::types::TransitGatewayConfigurationDescribeEndpointStructure> {
+        &self.transit_gateway_configuration
+    }
     /// Consumes the builder and constructs a [`ClientVpnEndpoint`](crate::types::ClientVpnEndpoint).
     pub fn build(self) -> crate::types::ClientVpnEndpoint {
         crate::types::ClientVpnEndpoint {
@@ -692,6 +716,7 @@ impl ClientVpnEndpointBuilder {
             disconnect_on_session_timeout: self.disconnect_on_session_timeout,
             endpoint_ip_address_type: self.endpoint_ip_address_type,
             traffic_ip_address_type: self.traffic_ip_address_type,
+            transit_gateway_configuration: self.transit_gateway_configuration,
         }
     }
 }

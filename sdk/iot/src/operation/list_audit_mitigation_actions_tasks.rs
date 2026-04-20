@@ -132,8 +132,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ListAud
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("ListAuditMitigationActionsTasks")
-            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-            .with_interceptor(ListAuditMitigationActionsTasksEndpointParamsInterceptor)
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ListAuditMitigationActionsTasksEndpointParamsInterceptor,
+            ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::list_audit_mitigation_actions_tasks::ListAuditMitigationActionsTasksError,
             >::new())
@@ -214,7 +218,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListAuditMit
                 }
                 if let ::std::option::Option::Some(inner_3) = &_input.task_status {
                     {
-                        query.push_kv("taskStatus", &::aws_smithy_http::query::fmt_string(inner_3));
+                        query.push_kv("taskStatus", &::aws_smithy_http::query::fmt_string(inner_3.as_str()));
                     }
                 }
                 if let ::std::option::Option::Some(inner_4) = &_input.max_results {
@@ -266,6 +270,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListAuditMit
 #[derive(Debug)]
 struct ListAuditMitigationActionsTasksEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListAuditMitigationActionsTasksEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "ListAuditMitigationActionsTasksEndpointParamsInterceptor"

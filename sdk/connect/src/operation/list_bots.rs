@@ -119,8 +119,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ListBot
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("ListBots")
-            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-            .with_interceptor(ListBotsEndpointParamsInterceptor)
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ListBotsEndpointParamsInterceptor,
+            ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::list_bots::ListBotsError,
             >::new())
@@ -210,7 +214,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListBotsRequ
                 let inner_4 = inner_4
                     .as_ref()
                     .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("lex_version", "cannot be empty or unset"))?;
-                query.push_kv("lexVersion", &::aws_smithy_http::query::fmt_string(inner_4));
+                query.push_kv("lexVersion", &::aws_smithy_http::query::fmt_string(inner_4.as_str()));
                 ::std::result::Result::Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -234,6 +238,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListBotsRequ
 #[derive(Debug)]
 struct ListBotsEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListBotsEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "ListBotsEndpointParamsInterceptor"

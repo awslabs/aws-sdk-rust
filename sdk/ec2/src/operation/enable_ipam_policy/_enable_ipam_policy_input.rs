@@ -7,8 +7,8 @@ pub struct EnableIpamPolicyInput {
     pub dry_run: ::std::option::Option<bool>,
     /// <p>The ID of the IPAM policy to enable.</p>
     pub ipam_policy_id: ::std::option::Option<::std::string::String>,
-    /// <p>The ID of the Amazon Web Services Organizations target for which to enable the IPAM policy. This parameter is required only when IPAM is integrated with Amazon Web Services Organizations. When IPAM is not integrated with Amazon Web Services Organizations, omit this parameter and the policy will apply to the current account.</p>
     /// <p>A target can be an individual Amazon Web Services account or an entity within an Amazon Web Services Organization to which an IPAM policy can be applied.</p>
+    /// <p>The ID of the Amazon Web Services Organizations target for which to enable the IPAM policy. This parameter is required only when IPAM is integrated with Amazon Web Services Organizations. When IPAM is not integrated with Amazon Web Services Organizations, omit this parameter and the policy will apply to the current account.</p>
     pub organization_target_id: ::std::option::Option<::std::string::String>,
 }
 impl EnableIpamPolicyInput {
@@ -20,8 +20,8 @@ impl EnableIpamPolicyInput {
     pub fn ipam_policy_id(&self) -> ::std::option::Option<&str> {
         self.ipam_policy_id.as_deref()
     }
-    /// <p>The ID of the Amazon Web Services Organizations target for which to enable the IPAM policy. This parameter is required only when IPAM is integrated with Amazon Web Services Organizations. When IPAM is not integrated with Amazon Web Services Organizations, omit this parameter and the policy will apply to the current account.</p>
     /// <p>A target can be an individual Amazon Web Services account or an entity within an Amazon Web Services Organization to which an IPAM policy can be applied.</p>
+    /// <p>The ID of the Amazon Web Services Organizations target for which to enable the IPAM policy. This parameter is required only when IPAM is integrated with Amazon Web Services Organizations. When IPAM is not integrated with Amazon Web Services Organizations, omit this parameter and the policy will apply to the current account.</p>
     pub fn organization_target_id(&self) -> ::std::option::Option<&str> {
         self.organization_target_id.as_deref()
     }
@@ -71,20 +71,20 @@ impl EnableIpamPolicyInputBuilder {
     pub fn get_ipam_policy_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.ipam_policy_id
     }
-    /// <p>The ID of the Amazon Web Services Organizations target for which to enable the IPAM policy. This parameter is required only when IPAM is integrated with Amazon Web Services Organizations. When IPAM is not integrated with Amazon Web Services Organizations, omit this parameter and the policy will apply to the current account.</p>
     /// <p>A target can be an individual Amazon Web Services account or an entity within an Amazon Web Services Organization to which an IPAM policy can be applied.</p>
+    /// <p>The ID of the Amazon Web Services Organizations target for which to enable the IPAM policy. This parameter is required only when IPAM is integrated with Amazon Web Services Organizations. When IPAM is not integrated with Amazon Web Services Organizations, omit this parameter and the policy will apply to the current account.</p>
     pub fn organization_target_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.organization_target_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the Amazon Web Services Organizations target for which to enable the IPAM policy. This parameter is required only when IPAM is integrated with Amazon Web Services Organizations. When IPAM is not integrated with Amazon Web Services Organizations, omit this parameter and the policy will apply to the current account.</p>
     /// <p>A target can be an individual Amazon Web Services account or an entity within an Amazon Web Services Organization to which an IPAM policy can be applied.</p>
+    /// <p>The ID of the Amazon Web Services Organizations target for which to enable the IPAM policy. This parameter is required only when IPAM is integrated with Amazon Web Services Organizations. When IPAM is not integrated with Amazon Web Services Organizations, omit this parameter and the policy will apply to the current account.</p>
     pub fn set_organization_target_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.organization_target_id = input;
         self
     }
-    /// <p>The ID of the Amazon Web Services Organizations target for which to enable the IPAM policy. This parameter is required only when IPAM is integrated with Amazon Web Services Organizations. When IPAM is not integrated with Amazon Web Services Organizations, omit this parameter and the policy will apply to the current account.</p>
     /// <p>A target can be an individual Amazon Web Services account or an entity within an Amazon Web Services Organization to which an IPAM policy can be applied.</p>
+    /// <p>The ID of the Amazon Web Services Organizations target for which to enable the IPAM policy. This parameter is required only when IPAM is integrated with Amazon Web Services Organizations. When IPAM is not integrated with Amazon Web Services Organizations, omit this parameter and the policy will apply to the current account.</p>
     pub fn get_organization_target_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.organization_target_id
     }

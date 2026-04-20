@@ -10,6 +10,9 @@ pub mod accept_capacity_reservation_billing_ownership;
 /// Types for the `AcceptReservedInstancesExchangeQuote` operation.
 pub mod accept_reserved_instances_exchange_quote;
 
+/// Types for the `AcceptTransitGatewayClientVpnAttachment` operation.
+pub mod accept_transit_gateway_client_vpn_attachment;
+
 /// Types for the `AcceptTransitGatewayMulticastDomainAssociations` operation.
 pub mod accept_transit_gateway_multicast_domain_associations;
 
@@ -687,6 +690,9 @@ pub mod delete_traffic_mirror_target;
 
 /// Types for the `DeleteTransitGateway` operation.
 pub mod delete_transit_gateway;
+
+/// Types for the `DeleteTransitGatewayClientVpnAttachment` operation.
+pub mod delete_transit_gateway_client_vpn_attachment;
 
 /// Types for the `DeleteTransitGatewayConnect` operation.
 pub mod delete_transit_gateway_connect;
@@ -2094,6 +2100,9 @@ pub mod register_transit_gateway_multicast_group_sources;
 
 /// Types for the `RejectCapacityReservationBillingOwnership` operation.
 pub mod reject_capacity_reservation_billing_ownership;
+
+/// Types for the `RejectTransitGatewayClientVpnAttachment` operation.
+pub mod reject_transit_gateway_client_vpn_attachment;
 
 /// Types for the `RejectTransitGatewayMulticastDomainAssociations` operation.
 pub mod reject_transit_gateway_multicast_domain_associations;

@@ -5,9 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Condition {
     /// <p>Represents the <i>equal</i> condition to be applied to a single field when querying for findings.</p>
+    /// <p>Max values: 50</p>
     #[deprecated]
     pub eq: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Represents the <i>not equal</i> condition to be applied to a single field when querying for findings.</p>
+    /// <p>Max values: 50</p>
     #[deprecated]
     pub neq: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Represents a <i>greater than</i> condition to be applied to a single field when querying for findings.</p>
@@ -23,8 +25,10 @@ pub struct Condition {
     #[deprecated]
     pub lte: ::std::option::Option<i32>,
     /// <p>Represents an <i>equal</i> <b></b> condition to be applied to a single field when querying for findings.</p>
+    /// <p>Max values: 50</p>
     pub equals: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Represents a <i>not equal</i> <b></b> condition to be applied to a single field when querying for findings.</p>
+    /// <p>Max values: 50</p>
     pub not_equals: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Represents a <i>greater than</i> condition to be applied to a single field when querying for findings.</p>
     pub greater_than: ::std::option::Option<i64>,
@@ -45,6 +49,7 @@ pub struct Condition {
 }
 impl Condition {
     /// <p>Represents the <i>equal</i> condition to be applied to a single field when querying for findings.</p>
+    /// <p>Max values: 50</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.eq.is_none()`.
     #[deprecated]
@@ -52,6 +57,7 @@ impl Condition {
         self.eq.as_deref().unwrap_or_default()
     }
     /// <p>Represents the <i>not equal</i> condition to be applied to a single field when querying for findings.</p>
+    /// <p>Max values: 50</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.neq.is_none()`.
     #[deprecated]
@@ -79,12 +85,14 @@ impl Condition {
         self.lte
     }
     /// <p>Represents an <i>equal</i> <b></b> condition to be applied to a single field when querying for findings.</p>
+    /// <p>Max values: 50</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.equals.is_none()`.
     pub fn equals(&self) -> &[::std::string::String] {
         self.equals.as_deref().unwrap_or_default()
     }
     /// <p>Represents a <i>not equal</i> <b></b> condition to be applied to a single field when querying for findings.</p>
+    /// <p>Max values: 50</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.not_equals.is_none()`.
     pub fn not_equals(&self) -> &[::std::string::String] {
@@ -155,6 +163,7 @@ impl ConditionBuilder {
     /// To override the contents of this collection use [`set_eq`](Self::set_eq).
     ///
     /// <p>Represents the <i>equal</i> condition to be applied to a single field when querying for findings.</p>
+    /// <p>Max values: 50</p>
     #[deprecated]
     pub fn eq(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.eq.unwrap_or_default();
@@ -163,12 +172,14 @@ impl ConditionBuilder {
         self
     }
     /// <p>Represents the <i>equal</i> condition to be applied to a single field when querying for findings.</p>
+    /// <p>Max values: 50</p>
     #[deprecated]
     pub fn set_eq(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.eq = input;
         self
     }
     /// <p>Represents the <i>equal</i> condition to be applied to a single field when querying for findings.</p>
+    /// <p>Max values: 50</p>
     #[deprecated]
     pub fn get_eq(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.eq
@@ -178,6 +189,7 @@ impl ConditionBuilder {
     /// To override the contents of this collection use [`set_neq`](Self::set_neq).
     ///
     /// <p>Represents the <i>not equal</i> condition to be applied to a single field when querying for findings.</p>
+    /// <p>Max values: 50</p>
     #[deprecated]
     pub fn neq(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.neq.unwrap_or_default();
@@ -186,12 +198,14 @@ impl ConditionBuilder {
         self
     }
     /// <p>Represents the <i>not equal</i> condition to be applied to a single field when querying for findings.</p>
+    /// <p>Max values: 50</p>
     #[deprecated]
     pub fn set_neq(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.neq = input;
         self
     }
     /// <p>Represents the <i>not equal</i> condition to be applied to a single field when querying for findings.</p>
+    /// <p>Max values: 50</p>
     #[deprecated]
     pub fn get_neq(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.neq
@@ -269,6 +283,7 @@ impl ConditionBuilder {
     /// To override the contents of this collection use [`set_equals`](Self::set_equals).
     ///
     /// <p>Represents an <i>equal</i> <b></b> condition to be applied to a single field when querying for findings.</p>
+    /// <p>Max values: 50</p>
     pub fn equals(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.equals.unwrap_or_default();
         v.push(input.into());
@@ -276,11 +291,13 @@ impl ConditionBuilder {
         self
     }
     /// <p>Represents an <i>equal</i> <b></b> condition to be applied to a single field when querying for findings.</p>
+    /// <p>Max values: 50</p>
     pub fn set_equals(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.equals = input;
         self
     }
     /// <p>Represents an <i>equal</i> <b></b> condition to be applied to a single field when querying for findings.</p>
+    /// <p>Max values: 50</p>
     pub fn get_equals(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.equals
     }
@@ -289,6 +306,7 @@ impl ConditionBuilder {
     /// To override the contents of this collection use [`set_not_equals`](Self::set_not_equals).
     ///
     /// <p>Represents a <i>not equal</i> <b></b> condition to be applied to a single field when querying for findings.</p>
+    /// <p>Max values: 50</p>
     pub fn not_equals(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.not_equals.unwrap_or_default();
         v.push(input.into());
@@ -296,11 +314,13 @@ impl ConditionBuilder {
         self
     }
     /// <p>Represents a <i>not equal</i> <b></b> condition to be applied to a single field when querying for findings.</p>
+    /// <p>Max values: 50</p>
     pub fn set_not_equals(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.not_equals = input;
         self
     }
     /// <p>Represents a <i>not equal</i> <b></b> condition to be applied to a single field when querying for findings.</p>
+    /// <p>Max values: 50</p>
     pub fn get_not_equals(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.not_equals
     }

@@ -126,8 +126,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ListAss
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("ListAssetProperties")
-            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-            .with_interceptor(ListAssetPropertiesEndpointParamsInterceptor)
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ListAssetPropertiesEndpointParamsInterceptor,
+            ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::list_asset_properties::ListAssetPropertiesError,
             >::new())
@@ -217,7 +221,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListAssetPro
                 }
                 if let ::std::option::Option::Some(inner_4) = &_input.filter {
                     {
-                        query.push_kv("filter", &::aws_smithy_http::query::fmt_string(inner_4));
+                        query.push_kv("filter", &::aws_smithy_http::query::fmt_string(inner_4.as_str()));
                     }
                 }
                 ::std::result::Result::Ok(())
@@ -243,6 +247,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListAssetPro
 #[derive(Debug)]
 struct ListAssetPropertiesEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListAssetPropertiesEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "ListAssetPropertiesEndpointParamsInterceptor"

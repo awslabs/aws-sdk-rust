@@ -1311,19 +1311,31 @@ impl ServiceRuntimePlugin {
             use crate::config::endpoint::ResolveEndpoint;
             crate::config::endpoint::DefaultResolver::new().into_shared_resolver()
         }));
-        runtime_components.push_interceptor(::aws_smithy_runtime::client::http::connection_poisoning::ConnectionPoisoningInterceptor::new());
+        runtime_components.push_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+            ::aws_smithy_runtime::client::http::connection_poisoning::ConnectionPoisoningInterceptor::new(),
+        ));
         runtime_components.push_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::HttpStatusCodeClassifier::default());
-        runtime_components.push_interceptor(crate::sdk_feature_tracker::retry_mode::RetryModeFeatureTrackerInterceptor::new());
-        runtime_components.push_interceptor(::aws_runtime::service_clock_skew::ServiceClockSkewInterceptor::new());
+        runtime_components.push_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+            crate::sdk_feature_tracker::retry_mode::RetryModeFeatureTrackerInterceptor::new(),
+        ));
+        runtime_components.push_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+            ::aws_runtime::service_clock_skew::ServiceClockSkewInterceptor::new(),
+        ));
         runtime_components.push_interceptor(::aws_runtime::request_info::RequestInfoInterceptor::new());
         runtime_components.push_interceptor(::aws_runtime::user_agent::UserAgentInterceptor::new());
         runtime_components.push_interceptor(::aws_runtime::invocation_id::InvocationIdInterceptor::new());
-        runtime_components.push_interceptor(::aws_runtime::recursion_detection::RecursionDetectionInterceptor::new());
+        runtime_components.push_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+            ::aws_runtime::recursion_detection::RecursionDetectionInterceptor::new(),
+        ));
         runtime_components.push_auth_scheme(::aws_smithy_runtime_api::client::auth::SharedAuthScheme::new(
             ::aws_runtime::auth::sigv4::SigV4AuthScheme::new(),
         ));
-        runtime_components.push_interceptor(crate::config::endpoint::EndpointOverrideFeatureTrackerInterceptor);
-        runtime_components.push_interceptor(crate::observability_feature::ObservabilityFeatureTrackerInterceptor);
+        runtime_components.push_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+            crate::config::endpoint::EndpointOverrideFeatureTrackerInterceptor,
+        ));
+        runtime_components.push_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+            crate::observability_feature::ObservabilityFeatureTrackerInterceptor,
+        ));
         Self { config, runtime_components }
     }
 }
@@ -1377,6 +1389,20 @@ impl ConfigOverrideRuntimePlugin {
             .map(|r| resolver.config_mut().store_put(::aws_types::region::SigningRegion::from(r)));
 
         let _ = resolver;
+
+        // When the config override supplies an identity resolver for any auth scheme
+        // known to the client or the override itself, we give this operation its own
+        // short-lived identity cache so that new partitions don't accumulate in the
+        // shared client cache. A lazy cache (not `no_cache`) is used so that resolved
+        // identities are served from the short-lived identity cache on retries.
+        //
+        // This is skipped if the override already sets its own identity cache.
+        if components.has_identity_resolvers() && components.identity_cache().is_none() {
+            components.set_identity_cache(::std::option::Option::Some(
+                ::aws_smithy_runtime::client::identity::IdentityCache::lazy().max_partitions(1).build(),
+            ));
+        }
+
         Self {
             config: ::aws_smithy_types::config_bag::Layer::from(layer)
                 .with_name("aws_sdk_route53domains::config::ConfigOverrideRuntimePlugin")

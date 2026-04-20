@@ -133,8 +133,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ListReg
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("ListRegistryRecords")
-            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-            .with_interceptor(ListRegistryRecordsEndpointParamsInterceptor)
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ListRegistryRecordsEndpointParamsInterceptor,
+            ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::list_registry_records::ListRegistryRecordsError,
             >::new())
@@ -229,12 +233,12 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListRegistry
                 }
                 if let ::std::option::Option::Some(inner_5) = &_input.status {
                     {
-                        query.push_kv("status", &::aws_smithy_http::query::fmt_string(inner_5));
+                        query.push_kv("status", &::aws_smithy_http::query::fmt_string(inner_5.as_str()));
                     }
                 }
                 if let ::std::option::Option::Some(inner_6) = &_input.descriptor_type {
                     {
-                        query.push_kv("descriptorType", &::aws_smithy_http::query::fmt_string(inner_6));
+                        query.push_kv("descriptorType", &::aws_smithy_http::query::fmt_string(inner_6.as_str()));
                     }
                 }
                 ::std::result::Result::Ok(())
@@ -260,6 +264,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListRegistry
 #[derive(Debug)]
 struct ListRegistryRecordsEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListRegistryRecordsEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "ListRegistryRecordsEndpointParamsInterceptor"

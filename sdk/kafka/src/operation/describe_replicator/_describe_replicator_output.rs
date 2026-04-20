@@ -29,6 +29,8 @@ pub struct DescribeReplicatorOutput {
     pub state_info: ::std::option::Option<crate::types::ReplicationStateInfo>,
     /// <p>List of tags attached to the Replicator.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p>Configuration for log delivery.</p>
+    pub log_delivery: ::std::option::Option<crate::types::LogDelivery>,
     _request_id: Option<String>,
 }
 impl DescribeReplicatorOutput {
@@ -88,6 +90,10 @@ impl DescribeReplicatorOutput {
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
+    /// <p>Configuration for log delivery.</p>
+    pub fn log_delivery(&self) -> ::std::option::Option<&crate::types::LogDelivery> {
+        self.log_delivery.as_ref()
+    }
 }
 impl ::aws_types::request_id::RequestId for DescribeReplicatorOutput {
     fn request_id(&self) -> Option<&str> {
@@ -118,6 +124,7 @@ pub struct DescribeReplicatorOutputBuilder {
     pub(crate) service_execution_role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) state_info: ::std::option::Option<crate::types::ReplicationStateInfo>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) log_delivery: ::std::option::Option<crate::types::LogDelivery>,
     _request_id: Option<String>,
 }
 impl DescribeReplicatorOutputBuilder {
@@ -321,6 +328,20 @@ impl DescribeReplicatorOutputBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
+    /// <p>Configuration for log delivery.</p>
+    pub fn log_delivery(mut self, input: crate::types::LogDelivery) -> Self {
+        self.log_delivery = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Configuration for log delivery.</p>
+    pub fn set_log_delivery(mut self, input: ::std::option::Option<crate::types::LogDelivery>) -> Self {
+        self.log_delivery = input;
+        self
+    }
+    /// <p>Configuration for log delivery.</p>
+    pub fn get_log_delivery(&self) -> &::std::option::Option<crate::types::LogDelivery> {
+        &self.log_delivery
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -346,6 +367,7 @@ impl DescribeReplicatorOutputBuilder {
             service_execution_role_arn: self.service_execution_role_arn,
             state_info: self.state_info,
             tags: self.tags,
+            log_delivery: self.log_delivery,
             _request_id: self._request_id,
         }
     }

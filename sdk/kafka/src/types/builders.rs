@@ -19,6 +19,8 @@ pub use crate::types::_serverless_request::ServerlessRequestBuilder;
 
 pub use crate::types::_configuration_revision::ConfigurationRevisionBuilder;
 
+pub use crate::types::_log_delivery::LogDeliveryBuilder;
+
 pub use crate::types::_cluster_info::ClusterInfoBuilder;
 
 pub use crate::types::_cluster_operation_info::ClusterOperationInfoBuilder;
@@ -60,6 +62,8 @@ pub use crate::types::_serverless_client_authentication::ServerlessClientAuthent
 pub use crate::types::_kafka_cluster::KafkaClusterBuilder;
 
 pub use crate::types::_replication_info::ReplicationInfoBuilder;
+
+pub use crate::types::_replicator_log_delivery::ReplicatorLogDeliveryBuilder;
 
 pub use crate::types::_broker_software_info::BrokerSoftwareInfoBuilder;
 
@@ -133,11 +137,23 @@ pub use crate::types::_serverless_sasl::ServerlessSaslBuilder;
 
 pub use crate::types::_amazon_msk_cluster::AmazonMskClusterBuilder;
 
+pub use crate::types::_apache_kafka_cluster::ApacheKafkaClusterBuilder;
+
 pub use crate::types::_kafka_cluster_client_vpc_config::KafkaClusterClientVpcConfigBuilder;
+
+pub use crate::types::_kafka_cluster_client_authentication::KafkaClusterClientAuthenticationBuilder;
+
+pub use crate::types::_kafka_cluster_encryption_in_transit::KafkaClusterEncryptionInTransitBuilder;
 
 pub use crate::types::_consumer_group_replication::ConsumerGroupReplicationBuilder;
 
 pub use crate::types::_topic_replication::TopicReplicationBuilder;
+
+pub use crate::types::_replicator_cloud_watch_logs::ReplicatorCloudWatchLogsBuilder;
+
+pub use crate::types::_replicator_firehose::ReplicatorFirehoseBuilder;
+
+pub use crate::types::_replicator_s3::ReplicatorS3Builder;
 
 pub use crate::types::_prometheus::PrometheusBuilder;
 
@@ -158,6 +174,8 @@ pub use crate::types::_controller_node_info::ControllerNodeInfoBuilder;
 pub use crate::types::_zookeeper_node_info::ZookeeperNodeInfoBuilder;
 
 pub use crate::types::_vpc_connectivity_client_authentication::VpcConnectivityClientAuthenticationBuilder;
+
+pub use crate::types::_kafka_cluster_sasl_scram_authentication::KafkaClusterSaslScramAuthenticationBuilder;
 
 pub use crate::types::_replication_starting_position::ReplicationStartingPositionBuilder;
 

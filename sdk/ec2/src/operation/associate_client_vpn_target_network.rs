@@ -140,8 +140,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for Associa
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("AssociateClientVpnTargetNetwork")
-            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-            .with_interceptor(AssociateClientVpnTargetNetworkEndpointParamsInterceptor)
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                AssociateClientVpnTargetNetworkEndpointParamsInterceptor,
+            ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::associate_client_vpn_target_network::AssociateClientVpnTargetNetworkError,
             >::new())
@@ -234,6 +238,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for AssociateCli
 #[derive(Debug)]
 struct AssociateClientVpnTargetNetworkEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for AssociateClientVpnTargetNetworkEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "AssociateClientVpnTargetNetworkEndpointParamsInterceptor"

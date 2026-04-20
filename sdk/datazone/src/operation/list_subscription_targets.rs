@@ -127,8 +127,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ListSub
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("ListSubscriptionTargets")
-            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-            .with_interceptor(ListSubscriptionTargetsEndpointParamsInterceptor)
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ListSubscriptionTargetsEndpointParamsInterceptor,
+            ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::list_subscription_targets::ListSubscriptionTargetsError,
             >::new())
@@ -225,12 +229,12 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListSubscrip
                 let mut query = ::aws_smithy_http::query::Writer::new(output);
                 if let ::std::option::Option::Some(inner_3) = &_input.sort_by {
                     {
-                        query.push_kv("sortBy", &::aws_smithy_http::query::fmt_string(inner_3));
+                        query.push_kv("sortBy", &::aws_smithy_http::query::fmt_string(inner_3.as_str()));
                     }
                 }
                 if let ::std::option::Option::Some(inner_4) = &_input.sort_order {
                     {
-                        query.push_kv("sortOrder", &::aws_smithy_http::query::fmt_string(inner_4));
+                        query.push_kv("sortOrder", &::aws_smithy_http::query::fmt_string(inner_4.as_str()));
                     }
                 }
                 if let ::std::option::Option::Some(inner_5) = &_input.max_results {
@@ -266,6 +270,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListSubscrip
 #[derive(Debug)]
 struct ListSubscriptionTargetsEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListSubscriptionTargetsEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "ListSubscriptionTargetsEndpointParamsInterceptor"

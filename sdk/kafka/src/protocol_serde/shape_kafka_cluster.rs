@@ -9,11 +9,29 @@ pub fn ser_kafka_cluster(
         crate::protocol_serde::shape_amazon_msk_cluster::ser_amazon_msk_cluster(&mut object_2, var_1)?;
         object_2.finish();
     }
-    if let Some(var_3) = &input.vpc_config {
+    if let Some(var_3) = &input.apache_kafka_cluster {
         #[allow(unused_mut)]
-        let mut object_4 = object.key("vpcConfig").start_object();
-        crate::protocol_serde::shape_kafka_cluster_client_vpc_config::ser_kafka_cluster_client_vpc_config(&mut object_4, var_3)?;
+        let mut object_4 = object.key("apacheKafkaCluster").start_object();
+        crate::protocol_serde::shape_apache_kafka_cluster::ser_apache_kafka_cluster(&mut object_4, var_3)?;
         object_4.finish();
+    }
+    if let Some(var_5) = &input.vpc_config {
+        #[allow(unused_mut)]
+        let mut object_6 = object.key("vpcConfig").start_object();
+        crate::protocol_serde::shape_kafka_cluster_client_vpc_config::ser_kafka_cluster_client_vpc_config(&mut object_6, var_5)?;
+        object_6.finish();
+    }
+    if let Some(var_7) = &input.client_authentication {
+        #[allow(unused_mut)]
+        let mut object_8 = object.key("clientAuthentication").start_object();
+        crate::protocol_serde::shape_kafka_cluster_client_authentication::ser_kafka_cluster_client_authentication(&mut object_8, var_7)?;
+        object_8.finish();
+    }
+    if let Some(var_9) = &input.encryption_in_transit {
+        #[allow(unused_mut)]
+        let mut object_10 = object.key("encryptionInTransit").start_object();
+        crate::protocol_serde::shape_kafka_cluster_encryption_in_transit::ser_kafka_cluster_encryption_in_transit(&mut object_10, var_9)?;
+        object_10.finish();
     }
     Ok(())
 }

@@ -126,8 +126,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for GetDocu
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("GetDocumentationParts")
-            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-            .with_interceptor(GetDocumentationPartsEndpointParamsInterceptor)
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                GetDocumentationPartsEndpointParamsInterceptor,
+            ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::get_documentation_parts::GetDocumentationPartsError,
             >::new())
@@ -207,7 +211,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetDocumenta
                 let mut query = ::aws_smithy_http::query::Writer::new(output);
                 if let ::std::option::Option::Some(inner_2) = &_input.r#type {
                     {
-                        query.push_kv("type", &::aws_smithy_http::query::fmt_string(inner_2));
+                        query.push_kv("type", &::aws_smithy_http::query::fmt_string(inner_2.as_str()));
                     }
                 }
                 if let ::std::option::Option::Some(inner_3) = &_input.name_query {
@@ -232,7 +236,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetDocumenta
                 }
                 if let ::std::option::Option::Some(inner_7) = &_input.location_status {
                     {
-                        query.push_kv("locationStatus", &::aws_smithy_http::query::fmt_string(inner_7));
+                        query.push_kv("locationStatus", &::aws_smithy_http::query::fmt_string(inner_7.as_str()));
                     }
                 }
                 ::std::result::Result::Ok(())
@@ -258,6 +262,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetDocumenta
 #[derive(Debug)]
 struct GetDocumentationPartsEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for GetDocumentationPartsEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "GetDocumentationPartsEndpointParamsInterceptor"

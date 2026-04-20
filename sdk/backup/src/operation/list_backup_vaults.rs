@@ -126,8 +126,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ListBac
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("ListBackupVaults")
-            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-            .with_interceptor(ListBackupVaultsEndpointParamsInterceptor)
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ListBackupVaultsEndpointParamsInterceptor,
+            ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::list_backup_vaults::ListBackupVaultsError,
             >::new())
@@ -196,7 +200,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListBackupVa
                 let mut query = ::aws_smithy_http::query::Writer::new(output);
                 if let ::std::option::Option::Some(inner_1) = &_input.by_vault_type {
                     {
-                        query.push_kv("vaultType", &::aws_smithy_http::query::fmt_string(inner_1));
+                        query.push_kv("vaultType", &::aws_smithy_http::query::fmt_string(inner_1.as_str()));
                     }
                 }
                 if let ::std::option::Option::Some(inner_2) = &_input.by_shared {
@@ -237,6 +241,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListBackupVa
 #[derive(Debug)]
 struct ListBackupVaultsEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListBackupVaultsEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "ListBackupVaultsEndpointParamsInterceptor"

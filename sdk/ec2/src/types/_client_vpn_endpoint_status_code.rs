@@ -15,6 +15,7 @@
 ///     ClientVpnEndpointStatusCode::Available => { /* ... */ },
 ///     ClientVpnEndpointStatusCode::Deleted => { /* ... */ },
 ///     ClientVpnEndpointStatusCode::Deleting => { /* ... */ },
+///     ClientVpnEndpointStatusCode::Pending => { /* ... */ },
 ///     ClientVpnEndpointStatusCode::PendingAssociate => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -51,6 +52,8 @@ pub enum ClientVpnEndpointStatusCode {
     #[allow(missing_docs)] // documentation missing in model
     Deleting,
     #[allow(missing_docs)] // documentation missing in model
+    Pending,
+    #[allow(missing_docs)] // documentation missing in model
     PendingAssociate,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -62,6 +65,7 @@ impl ::std::convert::From<&str> for ClientVpnEndpointStatusCode {
             "available" => ClientVpnEndpointStatusCode::Available,
             "deleted" => ClientVpnEndpointStatusCode::Deleted,
             "deleting" => ClientVpnEndpointStatusCode::Deleting,
+            "pending" => ClientVpnEndpointStatusCode::Pending,
             "pending-associate" => ClientVpnEndpointStatusCode::PendingAssociate,
             other => ClientVpnEndpointStatusCode::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -81,13 +85,14 @@ impl ClientVpnEndpointStatusCode {
             ClientVpnEndpointStatusCode::Available => "available",
             ClientVpnEndpointStatusCode::Deleted => "deleted",
             ClientVpnEndpointStatusCode::Deleting => "deleting",
+            ClientVpnEndpointStatusCode::Pending => "pending",
             ClientVpnEndpointStatusCode::PendingAssociate => "pending-associate",
             ClientVpnEndpointStatusCode::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["available", "deleted", "deleting", "pending-associate"]
+        &["available", "deleted", "deleting", "pending", "pending-associate"]
     }
 }
 impl ::std::convert::AsRef<str> for ClientVpnEndpointStatusCode {
@@ -113,6 +118,7 @@ impl ::std::fmt::Display for ClientVpnEndpointStatusCode {
             ClientVpnEndpointStatusCode::Available => write!(f, "available"),
             ClientVpnEndpointStatusCode::Deleted => write!(f, "deleted"),
             ClientVpnEndpointStatusCode::Deleting => write!(f, "deleting"),
+            ClientVpnEndpointStatusCode::Pending => write!(f, "pending"),
             ClientVpnEndpointStatusCode::PendingAssociate => write!(f, "pending-associate"),
             ClientVpnEndpointStatusCode::Unknown(value) => write!(f, "{value}"),
         }

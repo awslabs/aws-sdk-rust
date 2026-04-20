@@ -380,6 +380,31 @@ impl From<crate::operation::calculate_route_matrix::CalculateRouteMatrixError> f
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::cancel_job::CancelJobError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::cancel_job::CancelJobError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::cancel_job::CancelJobError> for Error {
+    fn from(err: crate::operation::cancel_job::CancelJobError) -> Self {
+        match err {
+            crate::operation::cancel_job::CancelJobError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::cancel_job::CancelJobError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::cancel_job::CancelJobError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::cancel_job::CancelJobError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::cancel_job::CancelJobError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_geofence_collection::CreateGeofenceCollectionError, R>>
     for Error
 where
@@ -1092,6 +1117,32 @@ impl From<crate::operation::get_geofence::GetGeofenceError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_job::GetJobError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_job::GetJobError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_job::GetJobError> for Error {
+    fn from(err: crate::operation::get_job::GetJobError) -> Self {
+        match err {
+            crate::operation::get_job::GetJobError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_job::GetJobError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_job::GetJobError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_job::GetJobError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_job::GetJobError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_job::GetJobError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_map_glyphs::GetMapGlyphsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1316,6 +1367,31 @@ impl From<crate::operation::list_geofences::ListGeofencesError> for Error {
             crate::operation::list_geofences::ListGeofencesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::list_geofences::ListGeofencesError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_geofences::ListGeofencesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_jobs::ListJobsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_jobs::ListJobsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_jobs::ListJobsError> for Error {
+    fn from(err: crate::operation::list_jobs::ListJobsError) -> Self {
+        match err {
+            crate::operation::list_jobs::ListJobsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_jobs::ListJobsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_jobs::ListJobsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_jobs::ListJobsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_jobs::ListJobsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1662,6 +1738,31 @@ impl From<crate::operation::search_place_index_for_text::SearchPlaceIndexForText
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_job::StartJobError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_job::StartJobError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::start_job::StartJobError> for Error {
+    fn from(err: crate::operation::start_job::StartJobError) -> Self {
+        match err {
+            crate::operation::start_job::StartJobError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::start_job::StartJobError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::start_job::StartJobError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::start_job::StartJobError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::start_job::StartJobError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::tag_resource::TagResourceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1919,6 +2020,18 @@ impl From<crate::operation::verify_device_position::VerifyDevicePositionError> f
             crate::operation::verify_device_position::VerifyDevicePositionError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::verify_device_position::VerifyDevicePositionError::Unhandled(inner) => Error::Unhandled(inner),
         }
+    }
+}
+impl<O, E> ::std::convert::From<::aws_smithy_runtime_api::client::waiters::error::WaiterError<O, E>> for Error
+where
+    O: ::std::fmt::Debug + ::std::marker::Send + ::std::marker::Sync + 'static,
+    E: ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::waiters::error::WaiterError<O, E>) -> Self {
+        Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+            meta: ::std::default::Default::default(),
+            source: err.into(),
+        })
     }
 }
 impl ::std::error::Error for Error {

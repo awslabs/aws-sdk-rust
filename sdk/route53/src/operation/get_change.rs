@@ -123,10 +123,16 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for GetChan
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("GetChange")
-            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-            .with_interceptor(GetChangeEndpointParamsInterceptor)
-            .with_interceptor(crate::route53_resource_id_preprocessor::Route53ResourceIdInterceptor::new(
-                |input: &mut crate::operation::get_change::GetChangeInput| &mut input.id,
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                GetChangeEndpointParamsInterceptor,
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                crate::route53_resource_id_preprocessor::Route53ResourceIdInterceptor::new(
+                    |input: &mut crate::operation::get_change::GetChangeInput| &mut input.id,
+                ),
             ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::get_change::GetChangeError,
@@ -218,6 +224,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetChangeReq
 #[derive(Debug)]
 struct GetChangeEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for GetChangeEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "GetChangeEndpointParamsInterceptor"

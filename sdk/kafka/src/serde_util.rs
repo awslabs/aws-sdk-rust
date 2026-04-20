@@ -125,6 +125,18 @@ pub(crate) fn amazon_msk_cluster_correct_errors(
     builder
 }
 
+pub(crate) fn apache_kafka_cluster_correct_errors(
+    mut builder: crate::types::builders::ApacheKafkaClusterBuilder,
+) -> crate::types::builders::ApacheKafkaClusterBuilder {
+    if builder.apache_kafka_cluster_id.is_none() {
+        builder.apache_kafka_cluster_id = Some(Default::default())
+    }
+    if builder.bootstrap_broker_string.is_none() {
+        builder.bootstrap_broker_string = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn configuration_info_correct_errors(
     mut builder: crate::types::builders::ConfigurationInfoBuilder,
 ) -> crate::types::builders::ConfigurationInfoBuilder {
@@ -155,11 +167,32 @@ pub(crate) fn encryption_at_rest_correct_errors(
     builder
 }
 
+pub(crate) fn kafka_cluster_client_authentication_correct_errors(
+    mut builder: crate::types::builders::KafkaClusterClientAuthenticationBuilder,
+) -> crate::types::builders::KafkaClusterClientAuthenticationBuilder {
+    if builder.sasl_scram.is_none() {
+        builder.sasl_scram = {
+            let builder = crate::types::builders::KafkaClusterSaslScramAuthenticationBuilder::default();
+            Some(crate::serde_util::kafka_cluster_sasl_scram_authentication_correct_errors(builder).build())
+        }
+    }
+    builder
+}
+
 pub(crate) fn kafka_cluster_client_vpc_config_correct_errors(
     mut builder: crate::types::builders::KafkaClusterClientVpcConfigBuilder,
 ) -> crate::types::builders::KafkaClusterClientVpcConfigBuilder {
     if builder.subnet_ids.is_none() {
         builder.subnet_ids = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn kafka_cluster_encryption_in_transit_correct_errors(
+    mut builder: crate::types::builders::KafkaClusterEncryptionInTransitBuilder,
+) -> crate::types::builders::KafkaClusterEncryptionInTransitBuilder {
+    if builder.encryption_type.is_none() {
+        builder.encryption_type = "no value was set".parse::<crate::types::KafkaClusterEncryptionInTransitType>().ok()
     }
     builder
 }
@@ -172,6 +205,31 @@ pub(crate) fn open_monitoring_info_correct_errors(
             let builder = crate::types::builders::PrometheusInfoBuilder::default();
             Some(builder.build())
         }
+    }
+    builder
+}
+
+pub(crate) fn replicator_cloud_watch_logs_correct_errors(
+    mut builder: crate::types::builders::ReplicatorCloudWatchLogsBuilder,
+) -> crate::types::builders::ReplicatorCloudWatchLogsBuilder {
+    if builder.enabled.is_none() {
+        builder.enabled = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn replicator_firehose_correct_errors(
+    mut builder: crate::types::builders::ReplicatorFirehoseBuilder,
+) -> crate::types::builders::ReplicatorFirehoseBuilder {
+    if builder.enabled.is_none() {
+        builder.enabled = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn replicator_s3_correct_errors(mut builder: crate::types::builders::ReplicatorS3Builder) -> crate::types::builders::ReplicatorS3Builder {
+    if builder.enabled.is_none() {
+        builder.enabled = Some(Default::default())
     }
     builder
 }
@@ -213,6 +271,18 @@ pub(crate) fn firehose_correct_errors(mut builder: crate::types::builders::Fireh
 pub(crate) fn jmx_exporter_correct_errors(mut builder: crate::types::builders::JmxExporterBuilder) -> crate::types::builders::JmxExporterBuilder {
     if builder.enabled_in_broker.is_none() {
         builder.enabled_in_broker = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn kafka_cluster_sasl_scram_authentication_correct_errors(
+    mut builder: crate::types::builders::KafkaClusterSaslScramAuthenticationBuilder,
+) -> crate::types::builders::KafkaClusterSaslScramAuthenticationBuilder {
+    if builder.mechanism.is_none() {
+        builder.mechanism = "no value was set".parse::<crate::types::KafkaClusterSaslScramMechanism>().ok()
+    }
+    if builder.secret_arn.is_none() {
+        builder.secret_arn = Some(Default::default())
     }
     builder
 }

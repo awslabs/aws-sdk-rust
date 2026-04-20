@@ -127,8 +127,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for GetConn
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("GetConnectionFunction")
-            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-            .with_interceptor(GetConnectionFunctionEndpointParamsInterceptor)
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                GetConnectionFunctionEndpointParamsInterceptor,
+            ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::get_connection_function::GetConnectionFunctionError,
             >::new())
@@ -208,7 +212,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetConnectio
                 let mut query = ::aws_smithy_http::query::Writer::new(output);
                 if let ::std::option::Option::Some(inner_2) = &_input.stage {
                     {
-                        query.push_kv("Stage", &::aws_smithy_http::query::fmt_string(inner_2));
+                        query.push_kv("Stage", &::aws_smithy_http::query::fmt_string(inner_2.as_str()));
                     }
                 }
                 ::std::result::Result::Ok(())
@@ -234,6 +238,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetConnectio
 #[derive(Debug)]
 struct GetConnectionFunctionEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for GetConnectionFunctionEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "GetConnectionFunctionEndpointParamsInterceptor"

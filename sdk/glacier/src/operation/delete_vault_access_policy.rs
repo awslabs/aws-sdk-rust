@@ -126,11 +126,17 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for DeleteV
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("DeleteVaultAccessPolicy")
-            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-            .with_interceptor(DeleteVaultAccessPolicyEndpointParamsInterceptor)
-            .with_interceptor(crate::glacier_interceptors::GlacierAccountIdAutofillInterceptor::<
-                crate::operation::delete_vault_access_policy::DeleteVaultAccessPolicyInput,
-            >::new())
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                DeleteVaultAccessPolicyEndpointParamsInterceptor,
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                crate::glacier_interceptors::GlacierAccountIdAutofillInterceptor::<
+                    crate::operation::delete_vault_access_policy::DeleteVaultAccessPolicyInput,
+                >::new(),
+            ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::delete_vault_access_policy::DeleteVaultAccessPolicyError,
             >::new())
@@ -240,6 +246,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for DeleteVaultA
 #[derive(Debug)]
 struct DeleteVaultAccessPolicyEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DeleteVaultAccessPolicyEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "DeleteVaultAccessPolicyEndpointParamsInterceptor"

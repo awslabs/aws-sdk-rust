@@ -295,6 +295,8 @@ pub(crate) mod shape_list_of_unprocessed_scram_secret;
 
 pub(crate) mod shape_list_of_vpc_connection;
 
+pub(crate) mod shape_log_delivery;
+
 pub(crate) mod shape_logging_info;
 
 pub(crate) mod shape_map_of_string;
@@ -316,6 +318,8 @@ pub(crate) mod shape_serverless_request;
 pub(crate) mod shape_topic_replication_update;
 
 pub(crate) mod shape_amazon_msk_cluster;
+
+pub(crate) mod shape_apache_kafka_cluster;
 
 pub(crate) mod shape_broker_logs;
 
@@ -341,9 +345,13 @@ pub(crate) mod shape_encryption_in_transit;
 
 pub(crate) mod shape_error_info;
 
+pub(crate) mod shape_kafka_cluster_client_authentication;
+
 pub(crate) mod shape_kafka_cluster_client_vpc_config;
 
 pub(crate) mod shape_kafka_cluster_description;
+
+pub(crate) mod shape_kafka_cluster_encryption_in_transit;
 
 pub(crate) mod shape_kafka_version;
 
@@ -362,6 +370,8 @@ pub(crate) mod shape_provisioned;
 pub(crate) mod shape_public_access;
 
 pub(crate) mod shape_replication_info_description;
+
+pub(crate) mod shape_replicator_log_delivery;
 
 pub(crate) mod shape_replicator_summary;
 
@@ -413,6 +423,8 @@ pub(crate) mod shape_iam;
 
 pub(crate) mod shape_jmx_exporter_info;
 
+pub(crate) mod shape_kafka_cluster_sasl_scram_authentication;
+
 pub(crate) mod shape_list_of_broker_ebs_volume_info;
 
 pub(crate) mod shape_list_of_integer;
@@ -430,6 +442,12 @@ pub(crate) mod shape_prometheus;
 pub(crate) mod shape_replication_starting_position;
 
 pub(crate) mod shape_replication_topic_name_configuration;
+
+pub(crate) mod shape_replicator_cloud_watch_logs;
+
+pub(crate) mod shape_replicator_firehose;
+
+pub(crate) mod shape_replicator_s3;
 
 pub(crate) mod shape_s3;
 

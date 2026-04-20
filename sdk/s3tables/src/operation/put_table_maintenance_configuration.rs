@@ -132,8 +132,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for PutTabl
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("PutTableMaintenanceConfiguration")
-            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-            .with_interceptor(PutTableMaintenanceConfigurationEndpointParamsInterceptor)
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                PutTableMaintenanceConfigurationEndpointParamsInterceptor,
+            ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::put_table_maintenance_configuration::PutTableMaintenanceConfigurationError,
             >::new())
@@ -231,7 +235,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for PutTableMain
                 let input_4 = input_4
                     .as_ref()
                     .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("r#type", "cannot be empty or unset"))?;
-                let r#type = ::aws_smithy_http::label::fmt_string(input_4, ::aws_smithy_http::label::EncodingStrategy::Default);
+                let r#type = ::aws_smithy_http::label::fmt_string(input_4.as_str(), ::aws_smithy_http::label::EncodingStrategy::Default);
                 if r#type.is_empty() {
                     return ::std::result::Result::Err(::aws_smithy_types::error::operation::BuildError::missing_field(
                         "r#type",
@@ -267,6 +271,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for PutTableMain
 #[derive(Debug)]
 struct PutTableMaintenanceConfigurationEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for PutTableMaintenanceConfigurationEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "PutTableMaintenanceConfigurationEndpointParamsInterceptor"

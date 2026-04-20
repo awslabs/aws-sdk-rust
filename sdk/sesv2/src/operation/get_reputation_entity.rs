@@ -126,8 +126,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for GetRepu
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("GetReputationEntity")
-            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-            .with_interceptor(GetReputationEntityEndpointParamsInterceptor)
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                GetReputationEntityEndpointParamsInterceptor,
+            ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::get_reputation_entity::GetReputationEntityError,
             >::new())
@@ -190,7 +194,8 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetReputatio
                 let input_1 = input_1.as_ref().ok_or_else(|| {
                     ::aws_smithy_types::error::operation::BuildError::missing_field("reputation_entity_type", "cannot be empty or unset")
                 })?;
-                let reputation_entity_type = ::aws_smithy_http::label::fmt_string(input_1, ::aws_smithy_http::label::EncodingStrategy::Default);
+                let reputation_entity_type =
+                    ::aws_smithy_http::label::fmt_string(input_1.as_str(), ::aws_smithy_http::label::EncodingStrategy::Default);
                 if reputation_entity_type.is_empty() {
                     return ::std::result::Result::Err(::aws_smithy_types::error::operation::BuildError::missing_field(
                         "reputation_entity_type",
@@ -237,6 +242,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetReputatio
 #[derive(Debug)]
 struct GetReputationEntityEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for GetReputationEntityEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "GetReputationEntityEndpointParamsInterceptor"

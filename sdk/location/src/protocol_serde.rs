@@ -41,6 +41,8 @@ pub(crate) mod shape_calculate_route;
 
 pub(crate) mod shape_calculate_route_matrix;
 
+pub(crate) mod shape_cancel_job;
+
 pub(crate) mod shape_create_geofence_collection;
 
 pub(crate) mod shape_create_key;
@@ -87,6 +89,8 @@ pub(crate) mod shape_get_device_position_history;
 
 pub(crate) mod shape_get_geofence;
 
+pub(crate) mod shape_get_job;
+
 pub(crate) mod shape_get_map_glyphs;
 
 pub(crate) mod shape_get_map_sprites;
@@ -102,6 +106,8 @@ pub(crate) mod shape_list_device_positions;
 pub(crate) mod shape_list_geofence_collections;
 
 pub(crate) mod shape_list_geofences;
+
+pub(crate) mod shape_list_jobs;
 
 pub(crate) mod shape_list_keys;
 
@@ -124,6 +130,8 @@ pub(crate) mod shape_search_place_index_for_position;
 pub(crate) mod shape_search_place_index_for_suggestions;
 
 pub(crate) mod shape_search_place_index_for_text;
+
+pub(crate) mod shape_start_job;
 
 pub(crate) mod shape_tag_resource;
 
@@ -171,6 +179,8 @@ pub(crate) mod shape_calculate_route_input;
 
 pub(crate) mod shape_calculate_route_matrix_input;
 
+pub(crate) mod shape_cancel_job_input;
+
 pub(crate) mod shape_conflict_exception;
 
 pub(crate) mod shape_create_geofence_collection_input;
@@ -205,6 +215,8 @@ pub(crate) mod shape_list_geofence_collections_input;
 
 pub(crate) mod shape_list_geofences_input;
 
+pub(crate) mod shape_list_jobs_input;
+
 pub(crate) mod shape_list_keys_input;
 
 pub(crate) mod shape_list_maps_input;
@@ -228,6 +240,8 @@ pub(crate) mod shape_search_place_index_for_suggestions_input;
 pub(crate) mod shape_search_place_index_for_text_input;
 
 pub(crate) mod shape_service_quota_exceeded_exception;
+
+pub(crate) mod shape_start_job_input;
 
 pub(crate) mod shape_tag_resource_input;
 
@@ -295,6 +309,16 @@ pub(crate) mod shape_geofence_geometry;
 
 pub(crate) mod shape_inferred_state;
 
+pub(crate) mod shape_job_action_options;
+
+pub(crate) mod shape_job_error;
+
+pub(crate) mod shape_job_input_options;
+
+pub(crate) mod shape_job_output_options;
+
+pub(crate) mod shape_jobs_filter;
+
 pub(crate) mod shape_leg_list;
 
 pub(crate) mod shape_list_device_positions_response_entry_list;
@@ -302,6 +326,8 @@ pub(crate) mod shape_list_device_positions_response_entry_list;
 pub(crate) mod shape_list_geofence_collections_response_entry_list;
 
 pub(crate) mod shape_list_geofence_response_entry_list;
+
+pub(crate) mod shape_list_jobs_response_entry_list;
 
 pub(crate) mod shape_list_keys_response_entry_list;
 
@@ -391,6 +417,8 @@ pub(crate) mod shape_forecasted_event;
 
 pub(crate) mod shape_geo_arn_list;
 
+pub(crate) mod shape_job_error_messages_list;
+
 pub(crate) mod shape_leg;
 
 pub(crate) mod shape_linear_rings;
@@ -400,6 +428,8 @@ pub(crate) mod shape_list_device_positions_response_entry;
 pub(crate) mod shape_list_geofence_collections_response_entry;
 
 pub(crate) mod shape_list_geofence_response_entry;
+
+pub(crate) mod shape_list_jobs_response_entry;
 
 pub(crate) mod shape_list_keys_response_entry;
 
@@ -435,6 +465,8 @@ pub(crate) mod shape_truck_dimensions;
 
 pub(crate) mod shape_truck_weight;
 
+pub(crate) mod shape_validate_address_action_options;
+
 pub(crate) mod shape_validation_exception_field;
 
 pub(crate) mod shape_wi_fi_access_point;
@@ -450,6 +482,8 @@ pub(crate) mod shape_lte_cell_details;
 pub(crate) mod shape_route_matrix_entry;
 
 pub(crate) mod shape_step_list;
+
+pub(crate) mod shape_validate_address_additional_feature_list;
 
 pub(crate) mod shape_line_string;
 

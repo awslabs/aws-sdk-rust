@@ -126,8 +126,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for DeleteQ
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("DeleteQueuedMessages")
-            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-            .with_interceptor(DeleteQueuedMessagesEndpointParamsInterceptor)
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                DeleteQueuedMessagesEndpointParamsInterceptor,
+            ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::delete_queued_messages::DeleteQueuedMessagesError,
             >::new())
@@ -218,7 +222,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for DeleteQueued
                 query.push_kv("messageId", &::aws_smithy_http::query::fmt_string(inner_2));
                 if let ::std::option::Option::Some(inner_3) = &_input.wireless_device_type {
                     {
-                        query.push_kv("WirelessDeviceType", &::aws_smithy_http::query::fmt_string(inner_3));
+                        query.push_kv("WirelessDeviceType", &::aws_smithy_http::query::fmt_string(inner_3.as_str()));
                     }
                 }
                 ::std::result::Result::Ok(())
@@ -244,6 +248,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for DeleteQueued
 #[derive(Debug)]
 struct DeleteQueuedMessagesEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DeleteQueuedMessagesEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "DeleteQueuedMessagesEndpointParamsInterceptor"

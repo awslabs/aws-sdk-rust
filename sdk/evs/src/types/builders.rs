@@ -11,6 +11,8 @@ pub use crate::types::_environment::EnvironmentBuilder;
 
 pub use crate::types::_vlan::VlanBuilder;
 
+pub use crate::types::_connector::ConnectorBuilder;
+
 pub use crate::types::_host_info_for_create::HostInfoForCreateBuilder;
 
 pub use crate::types::_environment_summary::EnvironmentSummaryBuilder;
@@ -27,10 +29,16 @@ pub use crate::types::_license_info::LicenseInfoBuilder;
 
 pub use crate::types::_initial_vlan_info::InitialVlanInfoBuilder;
 
+pub use crate::types::_vm_entitlement::VmEntitlementBuilder;
+
 pub use crate::types::_check::CheckBuilder;
 
 pub use crate::types::_secret::SecretBuilder;
 
 pub use crate::types::_eip_association::EipAssociationBuilder;
+
+pub use crate::types::_error_detail::ErrorDetailBuilder;
+
+pub use crate::types::_connector_check::ConnectorCheckBuilder;
 
 pub use crate::types::_network_interface::NetworkInterfaceBuilder;

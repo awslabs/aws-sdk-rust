@@ -132,8 +132,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ListAll
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("ListAllowedRepositoriesForGroup")
-            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-            .with_interceptor(ListAllowedRepositoriesForGroupEndpointParamsInterceptor)
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ListAllowedRepositoriesForGroupEndpointParamsInterceptor,
+            ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::list_allowed_repositories_for_group::ListAllowedRepositoriesForGroupError,
             >::new())
@@ -233,7 +237,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListAllowedR
                 let inner_4 = inner_4.as_ref().ok_or_else(|| {
                     ::aws_smithy_types::error::operation::BuildError::missing_field("origin_restriction_type", "cannot be empty or unset")
                 })?;
-                query.push_kv("originRestrictionType", &::aws_smithy_http::query::fmt_string(inner_4));
+                query.push_kv("originRestrictionType", &::aws_smithy_http::query::fmt_string(inner_4.as_str()));
                 if let ::std::option::Option::Some(inner_5) = &_input.max_results {
                     {
                         query.push_kv("max-results", ::aws_smithy_types::primitive::Encoder::from(*inner_5).encode());
@@ -267,6 +271,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListAllowedR
 #[derive(Debug)]
 struct ListAllowedRepositoriesForGroupEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListAllowedRepositoriesForGroupEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "ListAllowedRepositoriesForGroupEndpointParamsInterceptor"

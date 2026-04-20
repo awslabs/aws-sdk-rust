@@ -126,8 +126,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for DeleteV
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("DeleteV2LoggingLevel")
-            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-            .with_interceptor(DeleteV2LoggingLevelEndpointParamsInterceptor)
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                DeleteV2LoggingLevelEndpointParamsInterceptor,
+            ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::delete_v2_logging_level::DeleteV2LoggingLevelError,
             >::new())
@@ -198,7 +202,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for DeleteV2Logg
                 let inner_1 = inner_1
                     .as_ref()
                     .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("target_type", "cannot be empty or unset"))?;
-                query.push_kv("targetType", &::aws_smithy_http::query::fmt_string(inner_1));
+                query.push_kv("targetType", &::aws_smithy_http::query::fmt_string(inner_1.as_str()));
                 let inner_2 = &_input.target_name;
                 let inner_2 = inner_2
                     .as_ref()
@@ -233,6 +237,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for DeleteV2Logg
 #[derive(Debug)]
 struct DeleteV2LoggingLevelEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DeleteV2LoggingLevelEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "DeleteV2LoggingLevelEndpointParamsInterceptor"

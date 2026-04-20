@@ -132,8 +132,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ListFun
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("ListFunctionsByCodeSigningConfig")
-            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-            .with_interceptor(ListFunctionsByCodeSigningConfigEndpointParamsInterceptor)
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ListFunctionsByCodeSigningConfigEndpointParamsInterceptor,
+            ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::list_functions_by_code_signing_config::ListFunctionsByCodeSigningConfigError,
             >::new())
@@ -253,6 +257,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListFunction
 #[derive(Debug)]
 struct ListFunctionsByCodeSigningConfigEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListFunctionsByCodeSigningConfigEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "ListFunctionsByCodeSigningConfigEndpointParamsInterceptor"

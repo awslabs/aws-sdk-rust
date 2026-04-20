@@ -20,6 +20,9 @@ pub struct CreateServiceLevelObjectiveInput {
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>Use this array to create <i>burn rates</i> for this SLO. Each burn rate is a metric that indicates how fast the service is consuming the error budget, relative to the attainment goal of the SLO.</p>
     pub burn_rate_configurations: ::std::option::Option<::std::vec::Vec<crate::types::BurnRateConfiguration>>,
+    /// <p>Set this to <code>true</code> to create a recommended SLO out of the box. When set to <code>true</code>, you don't need to specify the <code>MetricThreshold</code> or <code>ComparisonOperator</code> in the <code>SliConfig</code> or <code>RequestBasedSliConfig</code>. The default value is <code>false</code>.</p>
+    /// <p>This is supported for SLOs on a service, service operation, or a dependency.</p>
+    pub create_recommended_slo: ::std::option::Option<bool>,
 }
 impl CreateServiceLevelObjectiveInput {
     /// <p>A name for this SLO.</p>
@@ -57,6 +60,11 @@ impl CreateServiceLevelObjectiveInput {
     pub fn burn_rate_configurations(&self) -> &[crate::types::BurnRateConfiguration] {
         self.burn_rate_configurations.as_deref().unwrap_or_default()
     }
+    /// <p>Set this to <code>true</code> to create a recommended SLO out of the box. When set to <code>true</code>, you don't need to specify the <code>MetricThreshold</code> or <code>ComparisonOperator</code> in the <code>SliConfig</code> or <code>RequestBasedSliConfig</code>. The default value is <code>false</code>.</p>
+    /// <p>This is supported for SLOs on a service, service operation, or a dependency.</p>
+    pub fn create_recommended_slo(&self) -> ::std::option::Option<bool> {
+        self.create_recommended_slo
+    }
 }
 impl CreateServiceLevelObjectiveInput {
     /// Creates a new builder-style object to manufacture [`CreateServiceLevelObjectiveInput`](crate::operation::create_service_level_objective::CreateServiceLevelObjectiveInput).
@@ -76,6 +84,7 @@ pub struct CreateServiceLevelObjectiveInputBuilder {
     pub(crate) goal: ::std::option::Option<crate::types::Goal>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) burn_rate_configurations: ::std::option::Option<::std::vec::Vec<crate::types::BurnRateConfiguration>>,
+    pub(crate) create_recommended_slo: ::std::option::Option<bool>,
 }
 impl CreateServiceLevelObjectiveInputBuilder {
     /// <p>A name for this SLO.</p>
@@ -198,6 +207,23 @@ impl CreateServiceLevelObjectiveInputBuilder {
     pub fn get_burn_rate_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BurnRateConfiguration>> {
         &self.burn_rate_configurations
     }
+    /// <p>Set this to <code>true</code> to create a recommended SLO out of the box. When set to <code>true</code>, you don't need to specify the <code>MetricThreshold</code> or <code>ComparisonOperator</code> in the <code>SliConfig</code> or <code>RequestBasedSliConfig</code>. The default value is <code>false</code>.</p>
+    /// <p>This is supported for SLOs on a service, service operation, or a dependency.</p>
+    pub fn create_recommended_slo(mut self, input: bool) -> Self {
+        self.create_recommended_slo = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Set this to <code>true</code> to create a recommended SLO out of the box. When set to <code>true</code>, you don't need to specify the <code>MetricThreshold</code> or <code>ComparisonOperator</code> in the <code>SliConfig</code> or <code>RequestBasedSliConfig</code>. The default value is <code>false</code>.</p>
+    /// <p>This is supported for SLOs on a service, service operation, or a dependency.</p>
+    pub fn set_create_recommended_slo(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.create_recommended_slo = input;
+        self
+    }
+    /// <p>Set this to <code>true</code> to create a recommended SLO out of the box. When set to <code>true</code>, you don't need to specify the <code>MetricThreshold</code> or <code>ComparisonOperator</code> in the <code>SliConfig</code> or <code>RequestBasedSliConfig</code>. The default value is <code>false</code>.</p>
+    /// <p>This is supported for SLOs on a service, service operation, or a dependency.</p>
+    pub fn get_create_recommended_slo(&self) -> &::std::option::Option<bool> {
+        &self.create_recommended_slo
+    }
     /// Consumes the builder and constructs a [`CreateServiceLevelObjectiveInput`](crate::operation::create_service_level_objective::CreateServiceLevelObjectiveInput).
     pub fn build(
         self,
@@ -213,6 +239,7 @@ impl CreateServiceLevelObjectiveInputBuilder {
             goal: self.goal,
             tags: self.tags,
             burn_rate_configurations: self.burn_rate_configurations,
+            create_recommended_slo: self.create_recommended_slo,
         })
     }
 }

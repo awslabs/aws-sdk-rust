@@ -127,8 +127,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ListDat
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("ListDataSources")
-            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-            .with_interceptor(ListDataSourcesEndpointParamsInterceptor)
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ListDataSourcesEndpointParamsInterceptor,
+            ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::list_data_sources::ListDataSourcesError,
             >::new())
@@ -239,7 +243,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListDataSour
                 }
                 if let ::std::option::Option::Some(inner_6) = &_input.status {
                     {
-                        query.push_kv("status", &::aws_smithy_http::query::fmt_string(inner_6));
+                        query.push_kv("status", &::aws_smithy_http::query::fmt_string(inner_6.as_str()));
                     }
                 }
                 if let ::std::option::Option::Some(inner_7) = &_input.name {
@@ -280,6 +284,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListDataSour
 #[derive(Debug)]
 struct ListDataSourcesEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListDataSourcesEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "ListDataSourcesEndpointParamsInterceptor"

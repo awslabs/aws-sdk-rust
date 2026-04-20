@@ -132,8 +132,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ListSch
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("ListSchemaVersions")
-            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-            .with_interceptor(ListSchemaVersionsEndpointParamsInterceptor)
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ListSchemaVersionsEndpointParamsInterceptor,
+            ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::list_schema_versions::ListSchemaVersionsError,
             >::new())
@@ -196,7 +200,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListSchemaVe
                 let input_1 = input_1
                     .as_ref()
                     .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("r#type", "cannot be empty or unset"))?;
-                let r#type = ::aws_smithy_http::label::fmt_string(input_1, ::aws_smithy_http::label::EncodingStrategy::Default);
+                let r#type = ::aws_smithy_http::label::fmt_string(input_1.as_str(), ::aws_smithy_http::label::EncodingStrategy::Default);
                 if r#type.is_empty() {
                     return ::std::result::Result::Err(::aws_smithy_types::error::operation::BuildError::missing_field(
                         "r#type",
@@ -233,7 +237,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListSchemaVe
                 }
                 if let ::std::option::Option::Some(inner_6) = &_input.visibility {
                     {
-                        query.push_kv("VisibilityFilter", &::aws_smithy_http::query::fmt_string(inner_6));
+                        query.push_kv("VisibilityFilter", &::aws_smithy_http::query::fmt_string(inner_6.as_str()));
                     }
                 }
                 if let ::std::option::Option::Some(inner_7) = &_input.semantic_version {
@@ -264,6 +268,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListSchemaVe
 #[derive(Debug)]
 struct ListSchemaVersionsEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListSchemaVersionsEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "ListSchemaVersionsEndpointParamsInterceptor"

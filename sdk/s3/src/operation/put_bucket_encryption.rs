@@ -124,9 +124,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for PutBuck
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
                     let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("PutBucketEncryption")
-                            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-.with_interceptor(PutBucketEncryptionEndpointParamsInterceptor)
-.with_interceptor(crate::http_request_checksum::RequestChecksumInterceptor::new(
+                            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default()))
+.with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(PutBucketEncryptionEndpointParamsInterceptor))
+.with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(crate::http_request_checksum::RequestChecksumInterceptor::new(
                                 |input: &::aws_smithy_runtime_api::client::interceptors::context::Input| {
                                     let input: &crate::operation::put_bucket_encryption::PutBucketEncryptionInput = input.downcast_ref().expect("correct type");
                                     let checksum_algorithm = input.checksum_algorithm();
@@ -187,7 +187,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for PutBuck
                                     // we can short circuit and exit the interceptor early.
                                     Ok(user_set_checksum_value)
                                 }
-                                ))
+                                )))
                             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<crate::operation::put_bucket_encryption::PutBucketEncryptionError>::new())
 .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::ModeledAsRetryableClassifier::<crate::operation::put_bucket_encryption::PutBucketEncryptionError>::new())
 .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<crate::operation::put_bucket_encryption::PutBucketEncryptionError>::builder().transient_errors({
@@ -289,6 +289,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for PutBucketEnc
 #[derive(Debug)]
 struct PutBucketEncryptionEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for PutBucketEncryptionEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "PutBucketEncryptionEndpointParamsInterceptor"

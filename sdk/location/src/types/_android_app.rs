@@ -4,18 +4,22 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AndroidApp {
-    /// <p>Unique package name for an Android app.</p>
+    /// <p>Unique package name identifier for an Android app.</p>
+    /// <p>Example: <code>com.mydomain.appname</code></p>
     pub package: ::std::string::String,
     /// <p>20 byte SHA-1 certificate fingerprint associated with the Android app signing certificate.</p>
+    /// <p>Example: <code>BB:0D:AC:74:D3:21:E1:43:67:71:9B:62:91:AF:A1:66:6E:44:5D:75</code></p>
     pub certificate_fingerprint: ::std::string::String,
 }
 impl AndroidApp {
-    /// <p>Unique package name for an Android app.</p>
+    /// <p>Unique package name identifier for an Android app.</p>
+    /// <p>Example: <code>com.mydomain.appname</code></p>
     pub fn package(&self) -> &str {
         use std::ops::Deref;
         self.package.deref()
     }
     /// <p>20 byte SHA-1 certificate fingerprint associated with the Android app signing certificate.</p>
+    /// <p>Example: <code>BB:0D:AC:74:D3:21:E1:43:67:71:9B:62:91:AF:A1:66:6E:44:5D:75</code></p>
     pub fn certificate_fingerprint(&self) -> &str {
         use std::ops::Deref;
         self.certificate_fingerprint.deref()
@@ -36,33 +40,39 @@ pub struct AndroidAppBuilder {
     pub(crate) certificate_fingerprint: ::std::option::Option<::std::string::String>,
 }
 impl AndroidAppBuilder {
-    /// <p>Unique package name for an Android app.</p>
+    /// <p>Unique package name identifier for an Android app.</p>
+    /// <p>Example: <code>com.mydomain.appname</code></p>
     /// This field is required.
     pub fn package(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.package = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Unique package name for an Android app.</p>
+    /// <p>Unique package name identifier for an Android app.</p>
+    /// <p>Example: <code>com.mydomain.appname</code></p>
     pub fn set_package(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.package = input;
         self
     }
-    /// <p>Unique package name for an Android app.</p>
+    /// <p>Unique package name identifier for an Android app.</p>
+    /// <p>Example: <code>com.mydomain.appname</code></p>
     pub fn get_package(&self) -> &::std::option::Option<::std::string::String> {
         &self.package
     }
     /// <p>20 byte SHA-1 certificate fingerprint associated with the Android app signing certificate.</p>
+    /// <p>Example: <code>BB:0D:AC:74:D3:21:E1:43:67:71:9B:62:91:AF:A1:66:6E:44:5D:75</code></p>
     /// This field is required.
     pub fn certificate_fingerprint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_fingerprint = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>20 byte SHA-1 certificate fingerprint associated with the Android app signing certificate.</p>
+    /// <p>Example: <code>BB:0D:AC:74:D3:21:E1:43:67:71:9B:62:91:AF:A1:66:6E:44:5D:75</code></p>
     pub fn set_certificate_fingerprint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.certificate_fingerprint = input;
         self
     }
     /// <p>20 byte SHA-1 certificate fingerprint associated with the Android app signing certificate.</p>
+    /// <p>Example: <code>BB:0D:AC:74:D3:21:E1:43:67:71:9B:62:91:AF:A1:66:6E:44:5D:75</code></p>
     pub fn get_certificate_fingerprint(&self) -> &::std::option::Option<::std::string::String> {
         &self.certificate_fingerprint
     }

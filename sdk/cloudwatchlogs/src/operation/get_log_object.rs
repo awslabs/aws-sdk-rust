@@ -126,7 +126,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for GetLogO
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("GetLogObject")
-            .with_interceptor(GetLogObjectEndpointParamsInterceptor)
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                GetLogObjectEndpointParamsInterceptor,
+            ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::get_log_object::GetLogObjectError,
             >::new())
@@ -229,6 +231,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetLogObject
 #[derive(Debug)]
 struct GetLogObjectEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for GetLogObjectEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "GetLogObjectEndpointParamsInterceptor"

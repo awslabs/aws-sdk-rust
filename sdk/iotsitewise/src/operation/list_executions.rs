@@ -126,8 +126,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ListExe
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("ListExecutions")
-            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-            .with_interceptor(ListExecutionsEndpointParamsInterceptor)
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ListExecutionsEndpointParamsInterceptor,
+            ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::list_executions::ListExecutionsError,
             >::new())
@@ -198,7 +202,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListExecutio
                 let inner_1 = inner_1.as_ref().ok_or_else(|| {
                     ::aws_smithy_types::error::operation::BuildError::missing_field("target_resource_type", "cannot be empty or unset")
                 })?;
-                query.push_kv("targetResourceType", &::aws_smithy_http::query::fmt_string(inner_1));
+                query.push_kv("targetResourceType", &::aws_smithy_http::query::fmt_string(inner_1.as_str()));
                 let inner_2 = &_input.target_resource_id;
                 let inner_2 = inner_2.as_ref().ok_or_else(|| {
                     ::aws_smithy_types::error::operation::BuildError::missing_field("target_resource_id", "cannot be empty or unset")
@@ -212,7 +216,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListExecutio
                 query.push_kv("targetResourceId", &::aws_smithy_http::query::fmt_string(inner_2));
                 if let ::std::option::Option::Some(inner_3) = &_input.resolve_to_resource_type {
                     {
-                        query.push_kv("resolveToResourceType", &::aws_smithy_http::query::fmt_string(inner_3));
+                        query.push_kv("resolveToResourceType", &::aws_smithy_http::query::fmt_string(inner_3.as_str()));
                     }
                 }
                 if let ::std::option::Option::Some(inner_4) = &_input.resolve_to_resource_id {
@@ -258,6 +262,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListExecutio
 #[derive(Debug)]
 struct ListExecutionsEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListExecutionsEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "ListExecutionsEndpointParamsInterceptor"

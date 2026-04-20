@@ -132,8 +132,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for GetProp
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("GetPropertygraphStream")
-            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-            .with_interceptor(GetPropertygraphStreamEndpointParamsInterceptor)
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                GetPropertygraphStreamEndpointParamsInterceptor,
+            ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::get_propertygraph_stream::GetPropertygraphStreamError,
             >::new())
@@ -207,7 +211,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetPropertyg
                 }
                 if let ::std::option::Option::Some(inner_2) = &_input.iterator_type {
                     {
-                        query.push_kv("iteratorType", &::aws_smithy_http::query::fmt_string(inner_2));
+                        query.push_kv("iteratorType", &::aws_smithy_http::query::fmt_string(inner_2.as_str()));
                     }
                 }
                 if let ::std::option::Option::Some(inner_3) = &_input.commit_num {
@@ -244,6 +248,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetPropertyg
 #[derive(Debug)]
 struct GetPropertygraphStreamEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for GetPropertygraphStreamEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "GetPropertygraphStreamEndpointParamsInterceptor"

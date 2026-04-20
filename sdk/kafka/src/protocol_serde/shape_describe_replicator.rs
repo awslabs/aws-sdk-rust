@@ -185,6 +185,9 @@ pub(crate) fn de_describe_replicator(
                         crate::protocol_serde::shape_list_of_kafka_cluster_description::de_list_of_kafka_cluster_description(tokens, _value)?,
                     );
                 }
+                "logDelivery" => {
+                    builder = builder.set_log_delivery(crate::protocol_serde::shape_log_delivery::de_log_delivery(tokens, _value)?);
+                }
                 "replicationInfoList" => {
                     builder = builder.set_replication_info_list(
                         crate::protocol_serde::shape_list_of_replication_info_description::de_list_of_replication_info_description(tokens, _value)?,

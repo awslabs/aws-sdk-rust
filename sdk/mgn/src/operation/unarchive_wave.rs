@@ -124,8 +124,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for Unarchi
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("UnarchiveWave")
-            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-            .with_interceptor(UnarchiveWaveEndpointParamsInterceptor)
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                UnarchiveWaveEndpointParamsInterceptor,
+            ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::unarchive_wave::UnarchiveWaveError,
             >::new())
@@ -211,6 +215,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for UnarchiveWav
 #[derive(Debug)]
 struct UnarchiveWaveEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for UnarchiveWaveEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "UnarchiveWaveEndpointParamsInterceptor"

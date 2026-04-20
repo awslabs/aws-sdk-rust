@@ -132,8 +132,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ListRec
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("ListReceivedDataGrants")
-            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-            .with_interceptor(ListReceivedDataGrantsEndpointParamsInterceptor)
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ListReceivedDataGrantsEndpointParamsInterceptor,
+            ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::list_received_data_grants::ListReceivedDataGrantsError,
             >::new())
@@ -213,7 +217,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListReceived
                 if let ::std::option::Option::Some(inner_3) = &_input.acceptance_state {
                     {
                         for inner_4 in inner_3 {
-                            query.push_kv("acceptanceState", &::aws_smithy_http::query::fmt_string(inner_4));
+                            query.push_kv("acceptanceState", &::aws_smithy_http::query::fmt_string(inner_4.as_str()));
                         }
                     }
                 }
@@ -240,6 +244,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListReceived
 #[derive(Debug)]
 struct ListReceivedDataGrantsEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListReceivedDataGrantsEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "ListReceivedDataGrantsEndpointParamsInterceptor"

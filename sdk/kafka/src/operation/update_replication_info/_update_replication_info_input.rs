@@ -12,10 +12,16 @@ pub struct UpdateReplicationInfoInput {
     pub replicator_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the source Kafka cluster.</p>
     pub source_kafka_cluster_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The ID of the source Kafka cluster.</p>
+    pub source_kafka_cluster_id: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the target Kafka cluster.</p>
     pub target_kafka_cluster_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The ID of the target Kafka cluster.</p>
+    pub target_kafka_cluster_id: ::std::option::Option<::std::string::String>,
     /// <p>Updated topic replication information.</p>
     pub topic_replication: ::std::option::Option<crate::types::TopicReplicationUpdate>,
+    /// <p>Configuration for delivering replicator logs to customer destinations.</p>
+    pub log_delivery: ::std::option::Option<crate::types::LogDelivery>,
 }
 impl UpdateReplicationInfoInput {
     /// <p>Updated consumer group replication information.</p>
@@ -34,13 +40,25 @@ impl UpdateReplicationInfoInput {
     pub fn source_kafka_cluster_arn(&self) -> ::std::option::Option<&str> {
         self.source_kafka_cluster_arn.as_deref()
     }
+    /// <p>The ID of the source Kafka cluster.</p>
+    pub fn source_kafka_cluster_id(&self) -> ::std::option::Option<&str> {
+        self.source_kafka_cluster_id.as_deref()
+    }
     /// <p>The ARN of the target Kafka cluster.</p>
     pub fn target_kafka_cluster_arn(&self) -> ::std::option::Option<&str> {
         self.target_kafka_cluster_arn.as_deref()
     }
+    /// <p>The ID of the target Kafka cluster.</p>
+    pub fn target_kafka_cluster_id(&self) -> ::std::option::Option<&str> {
+        self.target_kafka_cluster_id.as_deref()
+    }
     /// <p>Updated topic replication information.</p>
     pub fn topic_replication(&self) -> ::std::option::Option<&crate::types::TopicReplicationUpdate> {
         self.topic_replication.as_ref()
+    }
+    /// <p>Configuration for delivering replicator logs to customer destinations.</p>
+    pub fn log_delivery(&self) -> ::std::option::Option<&crate::types::LogDelivery> {
+        self.log_delivery.as_ref()
     }
 }
 impl UpdateReplicationInfoInput {
@@ -58,8 +76,11 @@ pub struct UpdateReplicationInfoInputBuilder {
     pub(crate) current_version: ::std::option::Option<::std::string::String>,
     pub(crate) replicator_arn: ::std::option::Option<::std::string::String>,
     pub(crate) source_kafka_cluster_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) source_kafka_cluster_id: ::std::option::Option<::std::string::String>,
     pub(crate) target_kafka_cluster_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) target_kafka_cluster_id: ::std::option::Option<::std::string::String>,
     pub(crate) topic_replication: ::std::option::Option<crate::types::TopicReplicationUpdate>,
+    pub(crate) log_delivery: ::std::option::Option<crate::types::LogDelivery>,
 }
 impl UpdateReplicationInfoInputBuilder {
     /// <p>Updated consumer group replication information.</p>
@@ -107,7 +128,6 @@ impl UpdateReplicationInfoInputBuilder {
         &self.replicator_arn
     }
     /// <p>The ARN of the source Kafka cluster.</p>
-    /// This field is required.
     pub fn source_kafka_cluster_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_kafka_cluster_arn = ::std::option::Option::Some(input.into());
         self
@@ -121,8 +141,21 @@ impl UpdateReplicationInfoInputBuilder {
     pub fn get_source_kafka_cluster_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.source_kafka_cluster_arn
     }
+    /// <p>The ID of the source Kafka cluster.</p>
+    pub fn source_kafka_cluster_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.source_kafka_cluster_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the source Kafka cluster.</p>
+    pub fn set_source_kafka_cluster_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.source_kafka_cluster_id = input;
+        self
+    }
+    /// <p>The ID of the source Kafka cluster.</p>
+    pub fn get_source_kafka_cluster_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_kafka_cluster_id
+    }
     /// <p>The ARN of the target Kafka cluster.</p>
-    /// This field is required.
     pub fn target_kafka_cluster_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_kafka_cluster_arn = ::std::option::Option::Some(input.into());
         self
@@ -135,6 +168,20 @@ impl UpdateReplicationInfoInputBuilder {
     /// <p>The ARN of the target Kafka cluster.</p>
     pub fn get_target_kafka_cluster_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.target_kafka_cluster_arn
+    }
+    /// <p>The ID of the target Kafka cluster.</p>
+    pub fn target_kafka_cluster_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.target_kafka_cluster_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the target Kafka cluster.</p>
+    pub fn set_target_kafka_cluster_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.target_kafka_cluster_id = input;
+        self
+    }
+    /// <p>The ID of the target Kafka cluster.</p>
+    pub fn get_target_kafka_cluster_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_kafka_cluster_id
     }
     /// <p>Updated topic replication information.</p>
     pub fn topic_replication(mut self, input: crate::types::TopicReplicationUpdate) -> Self {
@@ -150,6 +197,20 @@ impl UpdateReplicationInfoInputBuilder {
     pub fn get_topic_replication(&self) -> &::std::option::Option<crate::types::TopicReplicationUpdate> {
         &self.topic_replication
     }
+    /// <p>Configuration for delivering replicator logs to customer destinations.</p>
+    pub fn log_delivery(mut self, input: crate::types::LogDelivery) -> Self {
+        self.log_delivery = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Configuration for delivering replicator logs to customer destinations.</p>
+    pub fn set_log_delivery(mut self, input: ::std::option::Option<crate::types::LogDelivery>) -> Self {
+        self.log_delivery = input;
+        self
+    }
+    /// <p>Configuration for delivering replicator logs to customer destinations.</p>
+    pub fn get_log_delivery(&self) -> &::std::option::Option<crate::types::LogDelivery> {
+        &self.log_delivery
+    }
     /// Consumes the builder and constructs a [`UpdateReplicationInfoInput`](crate::operation::update_replication_info::UpdateReplicationInfoInput).
     pub fn build(
         self,
@@ -160,8 +221,11 @@ impl UpdateReplicationInfoInputBuilder {
             current_version: self.current_version,
             replicator_arn: self.replicator_arn,
             source_kafka_cluster_arn: self.source_kafka_cluster_arn,
+            source_kafka_cluster_id: self.source_kafka_cluster_id,
             target_kafka_cluster_arn: self.target_kafka_cluster_arn,
+            target_kafka_cluster_id: self.target_kafka_cluster_id,
             topic_replication: self.topic_replication,
+            log_delivery: self.log_delivery,
         })
     }
 }

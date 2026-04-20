@@ -10,7 +10,7 @@ required-features = ["sigv4a"]
 
 [package]
 name = "aws-sigv4"
-version = "1.4.2"
+version = "1.4.3"
 authors = ["AWS Rust SDK Team <aws-sdk-rust@amazon.com>", "David Barsky <me@davidbarsky.com>"]
 description = "SigV4 signer for HTTP requests and Event Stream messages."
 edition = "2021"
@@ -38,8 +38,8 @@ sigv4a = ["dep:p256", "dep:crypto-bigint", "dep:subtle", "dep:zeroize", "dep:rin
 [dependencies]
 bytes = "1.11.1"
 hex = "0.4.3"
-hmac = "0.12"
-sha2 = "0.10"
+hmac = "0.13"
+sha2 = "0.11"
 time = "0.3.5"
 tracing = "0.1.44"
 
@@ -59,7 +59,7 @@ version = "0.63.6"
 [dependencies.aws-smithy-runtime-api]
 path = "../aws-smithy-runtime-api"
 features = ["client"]
-version = "1.11.6"
+version = "1.12.0"
 
 [dependencies.aws-smithy-types]
 path = "../aws-smithy-types"
@@ -122,7 +122,7 @@ version = "1.2.14"
 [dev-dependencies.aws-smithy-runtime-api]
 path = "../aws-smithy-runtime-api"
 features = ["client", "test-util"]
-version = "1.11.6"
+version = "1.12.0"
 
 [dev-dependencies.time]
 version = "0.3.5"

@@ -130,8 +130,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for EnableM
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("EnableMacie")
-            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-            .with_interceptor(EnableMacieEndpointParamsInterceptor)
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                EnableMacieEndpointParamsInterceptor,
+            ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::enable_macie::EnableMacieError,
             >::new())
@@ -217,6 +221,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for EnableMacieR
 #[derive(Debug)]
 struct EnableMacieEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for EnableMacieEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "EnableMacieEndpointParamsInterceptor"

@@ -165,6 +165,16 @@ pub(crate) fn vcf_version_info_correct_errors(
     builder
 }
 
+pub(crate) fn error_detail_correct_errors(mut builder: crate::types::builders::ErrorDetailBuilder) -> crate::types::builders::ErrorDetailBuilder {
+    if builder.error_code.is_none() {
+        builder.error_code = Some(Default::default())
+    }
+    if builder.error_message.is_none() {
+        builder.error_message = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn license_info_correct_errors(mut builder: crate::types::builders::LicenseInfoBuilder) -> crate::types::builders::LicenseInfoBuilder {
     if builder.solution_key.is_none() {
         builder.solution_key = Some(Default::default())

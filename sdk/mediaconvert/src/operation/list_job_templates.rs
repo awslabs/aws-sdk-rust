@@ -126,8 +126,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ListJob
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("ListJobTemplates")
-            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-            .with_interceptor(ListJobTemplatesEndpointParamsInterceptor)
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ListJobTemplatesEndpointParamsInterceptor,
+            ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::list_job_templates::ListJobTemplatesError,
             >::new())
@@ -201,7 +205,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListJobTempl
                 }
                 if let ::std::option::Option::Some(inner_2) = &_input.list_by {
                     {
-                        query.push_kv("listBy", &::aws_smithy_http::query::fmt_string(inner_2));
+                        query.push_kv("listBy", &::aws_smithy_http::query::fmt_string(inner_2.as_str()));
                     }
                 }
                 if let ::std::option::Option::Some(inner_3) = &_input.max_results {
@@ -216,7 +220,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListJobTempl
                 }
                 if let ::std::option::Option::Some(inner_5) = &_input.order {
                     {
-                        query.push_kv("order", &::aws_smithy_http::query::fmt_string(inner_5));
+                        query.push_kv("order", &::aws_smithy_http::query::fmt_string(inner_5.as_str()));
                     }
                 }
                 ::std::result::Result::Ok(())
@@ -242,6 +246,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListJobTempl
 #[derive(Debug)]
 struct ListJobTemplatesEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListJobTemplatesEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "ListJobTemplatesEndpointParamsInterceptor"

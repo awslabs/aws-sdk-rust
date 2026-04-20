@@ -123,8 +123,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ListRul
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("ListRules")
-            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-            .with_interceptor(ListRulesEndpointParamsInterceptor)
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ListRulesEndpointParamsInterceptor,
+            ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::list_rules::ListRulesError,
             >::new())
@@ -202,12 +206,12 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListRulesReq
                 let mut query = ::aws_smithy_http::query::Writer::new(output);
                 if let ::std::option::Option::Some(inner_2) = &_input.publish_status {
                     {
-                        query.push_kv("publishStatus", &::aws_smithy_http::query::fmt_string(inner_2));
+                        query.push_kv("publishStatus", &::aws_smithy_http::query::fmt_string(inner_2.as_str()));
                     }
                 }
                 if let ::std::option::Option::Some(inner_3) = &_input.event_source_name {
                     {
-                        query.push_kv("eventSourceName", &::aws_smithy_http::query::fmt_string(inner_3));
+                        query.push_kv("eventSourceName", &::aws_smithy_http::query::fmt_string(inner_3.as_str()));
                     }
                 }
                 if let ::std::option::Option::Some(inner_4) = &_input.max_results {
@@ -243,6 +247,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListRulesReq
 #[derive(Debug)]
 struct ListRulesEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListRulesEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "ListRulesEndpointParamsInterceptor"

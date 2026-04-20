@@ -128,8 +128,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for BatchUp
         #[allow(unused_mut)]
         let mut rcb =
             ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("BatchUpdateBillScenarioCommitmentModification")
-                .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-                .with_interceptor(BatchUpdateBillScenarioCommitmentModificationEndpointParamsInterceptor)
+                .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                    ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+                ))
+                .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                    BatchUpdateBillScenarioCommitmentModificationEndpointParamsInterceptor,
+                ))
                 .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                     crate::operation::batch_update_bill_scenario_commitment_modification::BatchUpdateBillScenarioCommitmentModificationError,
                 >::new())
@@ -220,6 +224,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for BatchUpdateB
 #[derive(Debug)]
 struct BatchUpdateBillScenarioCommitmentModificationEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for BatchUpdateBillScenarioCommitmentModificationEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "BatchUpdateBillScenarioCommitmentModificationEndpointParamsInterceptor"

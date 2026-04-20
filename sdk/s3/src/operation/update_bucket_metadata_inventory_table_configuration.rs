@@ -128,9 +128,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for UpdateB
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
                     let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("UpdateBucketMetadataInventoryTableConfiguration")
-                            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-.with_interceptor(UpdateBucketMetadataInventoryTableConfigurationEndpointParamsInterceptor)
-.with_interceptor(crate::http_request_checksum::RequestChecksumInterceptor::new(
+                            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default()))
+.with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(UpdateBucketMetadataInventoryTableConfigurationEndpointParamsInterceptor))
+.with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(crate::http_request_checksum::RequestChecksumInterceptor::new(
                                 |input: &::aws_smithy_runtime_api::client::interceptors::context::Input| {
                                     let input: &crate::operation::update_bucket_metadata_inventory_table_configuration::UpdateBucketMetadataInventoryTableConfigurationInput = input.downcast_ref().expect("correct type");
                                     let checksum_algorithm = input.checksum_algorithm();
@@ -191,7 +191,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for UpdateB
                                     // we can short circuit and exit the interceptor early.
                                     Ok(user_set_checksum_value)
                                 }
-                                ))
+                                )))
                             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<crate::operation::update_bucket_metadata_inventory_table_configuration::UpdateBucketMetadataInventoryTableConfigurationError>::new())
 .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::ModeledAsRetryableClassifier::<crate::operation::update_bucket_metadata_inventory_table_configuration::UpdateBucketMetadataInventoryTableConfigurationError>::new())
 .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<crate::operation::update_bucket_metadata_inventory_table_configuration::UpdateBucketMetadataInventoryTableConfigurationError>::builder().transient_errors({
@@ -294,6 +294,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for UpdateBucket
 #[derive(Debug)]
 struct UpdateBucketMetadataInventoryTableConfigurationEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for UpdateBucketMetadataInventoryTableConfigurationEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "UpdateBucketMetadataInventoryTableConfigurationEndpointParamsInterceptor"

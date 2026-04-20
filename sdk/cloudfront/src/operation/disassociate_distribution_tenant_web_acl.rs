@@ -132,8 +132,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for Disasso
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("DisassociateDistributionTenantWebACL")
-            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-            .with_interceptor(DisassociateDistributionTenantWebACLEndpointParamsInterceptor)
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                DisassociateDistributionTenantWebACLEndpointParamsInterceptor,
+            ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::disassociate_distribution_tenant_web_acl::DisassociateDistributionTenantWebACLError,
             >::new())
@@ -234,6 +238,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for Disassociate
 #[derive(Debug)]
 struct DisassociateDistributionTenantWebACLEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DisassociateDistributionTenantWebACLEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "DisassociateDistributionTenantWebACLEndpointParamsInterceptor"

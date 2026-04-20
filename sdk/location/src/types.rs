@@ -15,6 +15,20 @@ pub use crate::types::_speed_unit::SpeedUnit;
 
 pub use crate::types::_geofence_geometry::GeofenceGeometry;
 
+pub use crate::types::_jobs_filter::JobsFilter;
+
+pub use crate::types::_job_action::JobAction;
+
+pub use crate::types::_job_action_options::JobActionOptions;
+
+pub use crate::types::_job_input_options::JobInputOptions;
+
+pub use crate::types::_job_output_options::JobOutputOptions;
+
+pub use crate::types::_job_status::JobStatus;
+
+pub use crate::types::_job_error::JobError;
+
 pub use crate::types::_map_configuration::MapConfiguration;
 
 pub use crate::types::_map_configuration_update::MapConfigurationUpdate;
@@ -77,6 +91,16 @@ pub use crate::types::_circle::Circle;
 
 pub use crate::types::_list_geofence_response_entry::ListGeofenceResponseEntry;
 
+pub use crate::types::_list_jobs_response_entry::ListJobsResponseEntry;
+
+pub use crate::types::_validate_address_action_options::ValidateAddressActionOptions;
+
+pub use crate::types::_job_input_format::JobInputFormat;
+
+pub use crate::types::_job_output_format::JobOutputFormat;
+
+pub use crate::types::_job_error_code::JobErrorCode;
+
 pub use crate::types::_list_maps_response_entry::ListMapsResponseEntry;
 
 pub use crate::types::_list_place_indexes_response_entry::ListPlaceIndexesResponseEntry;
@@ -134,6 +158,8 @@ pub use crate::types::_route_matrix_entry::RouteMatrixEntry;
 pub use crate::types::_wi_fi_access_point::WiFiAccessPoint;
 
 pub use crate::types::_batch_item_error_code::BatchItemErrorCode;
+
+pub use crate::types::_validate_address_additional_feature::ValidateAddressAdditionalFeature;
 
 pub use crate::types::_step::Step;
 
@@ -211,6 +237,26 @@ mod _inferred_state;
 
 mod _intended_use;
 
+mod _job_action;
+
+mod _job_action_options;
+
+mod _job_error;
+
+mod _job_error_code;
+
+mod _job_input_format;
+
+mod _job_input_options;
+
+mod _job_output_format;
+
+mod _job_output_options;
+
+mod _job_status;
+
+mod _jobs_filter;
+
 mod _leg;
 
 mod _leg_geometry;
@@ -220,6 +266,8 @@ mod _list_device_positions_response_entry;
 mod _list_geofence_collections_response_entry;
 
 mod _list_geofence_response_entry;
+
+mod _list_jobs_response_entry;
 
 mod _list_keys_response_entry;
 
@@ -286,6 +334,10 @@ mod _travel_mode;
 mod _truck_dimensions;
 
 mod _truck_weight;
+
+mod _validate_address_action_options;
+
+mod _validate_address_additional_feature;
 
 mod _validation_exception_field;
 

@@ -126,8 +126,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for GetServ
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("GetServiceEndpoint")
-            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-            .with_interceptor(GetServiceEndpointEndpointParamsInterceptor)
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                GetServiceEndpointEndpointParamsInterceptor,
+            ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::get_service_endpoint::GetServiceEndpointError,
             >::new())
@@ -196,7 +200,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetServiceEn
                 let mut query = ::aws_smithy_http::query::Writer::new(output);
                 if let ::std::option::Option::Some(inner_1) = &_input.service_type {
                     {
-                        query.push_kv("serviceType", &::aws_smithy_http::query::fmt_string(inner_1));
+                        query.push_kv("serviceType", &::aws_smithy_http::query::fmt_string(inner_1.as_str()));
                     }
                 }
                 ::std::result::Result::Ok(())
@@ -222,6 +226,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetServiceEn
 #[derive(Debug)]
 struct GetServiceEndpointEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for GetServiceEndpointEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "GetServiceEndpointEndpointParamsInterceptor"

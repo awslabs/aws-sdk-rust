@@ -311,13 +311,30 @@ impl ProviderConfig {
     }
 
     /// Override the `use_fips` setting.
-    pub(crate) fn with_use_fips(mut self, use_fips: Option<bool>) -> Self {
+    ///
+    /// When set to `Some(true)`, credential providers configured with this
+    /// `ProviderConfig` (e.g., [`DefaultCredentialsChain`], `AssumeRoleProvider`,
+    /// `WebIdentityTokenCredentialsProvider`) will use FIPS-compliant endpoints.
+    ///
+    /// This is the `ProviderConfig` equivalent of
+    /// [`ConfigLoader::use_fips`](crate::ConfigLoader::use_fips). It is needed
+    /// when constructing a `ProviderConfig` directly (e.g., via
+    /// [`ProviderConfig::empty()`]) rather than going through the `ConfigLoader`.
+    ///
+    /// [`DefaultCredentialsChain`]: crate::default_provider::credentials::DefaultCredentialsChain
+    pub fn with_use_fips(mut self, use_fips: Option<bool>) -> Self {
         self.use_fips = use_fips;
         self
     }
 
     /// Override the `use_dual_stack` setting.
-    pub(crate) fn with_use_dual_stack(mut self, use_dual_stack: Option<bool>) -> Self {
+    ///
+    /// When set to `Some(true)`, credential providers configured with this
+    /// `ProviderConfig` will use dual-stack endpoints.
+    ///
+    /// This is the `ProviderConfig` equivalent of
+    /// [`ConfigLoader::use_dual_stack`](crate::ConfigLoader::use_dual_stack).
+    pub fn with_use_dual_stack(mut self, use_dual_stack: Option<bool>) -> Self {
         self.use_dual_stack = use_dual_stack;
         self
     }

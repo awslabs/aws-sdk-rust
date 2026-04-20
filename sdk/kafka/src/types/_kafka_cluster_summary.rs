@@ -6,6 +6,8 @@
 pub struct KafkaClusterSummary {
     /// <p>Details of an Amazon MSK Cluster.</p>
     pub amazon_msk_cluster: ::std::option::Option<crate::types::AmazonMskCluster>,
+    /// <p>Details of an Apache Kafka Cluster.</p>
+    pub apache_kafka_cluster: ::std::option::Option<crate::types::ApacheKafkaCluster>,
     /// <p>The alias of the Kafka cluster. Used to prefix names of replicated topics.</p>
     pub kafka_cluster_alias: ::std::option::Option<::std::string::String>,
 }
@@ -13,6 +15,10 @@ impl KafkaClusterSummary {
     /// <p>Details of an Amazon MSK Cluster.</p>
     pub fn amazon_msk_cluster(&self) -> ::std::option::Option<&crate::types::AmazonMskCluster> {
         self.amazon_msk_cluster.as_ref()
+    }
+    /// <p>Details of an Apache Kafka Cluster.</p>
+    pub fn apache_kafka_cluster(&self) -> ::std::option::Option<&crate::types::ApacheKafkaCluster> {
+        self.apache_kafka_cluster.as_ref()
     }
     /// <p>The alias of the Kafka cluster. Used to prefix names of replicated topics.</p>
     pub fn kafka_cluster_alias(&self) -> ::std::option::Option<&str> {
@@ -31,6 +37,7 @@ impl KafkaClusterSummary {
 #[non_exhaustive]
 pub struct KafkaClusterSummaryBuilder {
     pub(crate) amazon_msk_cluster: ::std::option::Option<crate::types::AmazonMskCluster>,
+    pub(crate) apache_kafka_cluster: ::std::option::Option<crate::types::ApacheKafkaCluster>,
     pub(crate) kafka_cluster_alias: ::std::option::Option<::std::string::String>,
 }
 impl KafkaClusterSummaryBuilder {
@@ -47,6 +54,20 @@ impl KafkaClusterSummaryBuilder {
     /// <p>Details of an Amazon MSK Cluster.</p>
     pub fn get_amazon_msk_cluster(&self) -> &::std::option::Option<crate::types::AmazonMskCluster> {
         &self.amazon_msk_cluster
+    }
+    /// <p>Details of an Apache Kafka Cluster.</p>
+    pub fn apache_kafka_cluster(mut self, input: crate::types::ApacheKafkaCluster) -> Self {
+        self.apache_kafka_cluster = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Details of an Apache Kafka Cluster.</p>
+    pub fn set_apache_kafka_cluster(mut self, input: ::std::option::Option<crate::types::ApacheKafkaCluster>) -> Self {
+        self.apache_kafka_cluster = input;
+        self
+    }
+    /// <p>Details of an Apache Kafka Cluster.</p>
+    pub fn get_apache_kafka_cluster(&self) -> &::std::option::Option<crate::types::ApacheKafkaCluster> {
+        &self.apache_kafka_cluster
     }
     /// <p>The alias of the Kafka cluster. Used to prefix names of replicated topics.</p>
     pub fn kafka_cluster_alias(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -66,6 +87,7 @@ impl KafkaClusterSummaryBuilder {
     pub fn build(self) -> crate::types::KafkaClusterSummary {
         crate::types::KafkaClusterSummary {
             amazon_msk_cluster: self.amazon_msk_cluster,
+            apache_kafka_cluster: self.apache_kafka_cluster,
             kafka_cluster_alias: self.kafka_cluster_alias,
         }
     }

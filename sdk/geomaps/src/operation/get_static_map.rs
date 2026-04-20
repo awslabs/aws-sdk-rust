@@ -123,8 +123,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for GetStat
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("GetStaticMap")
-            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-            .with_interceptor(GetStaticMapEndpointParamsInterceptor)
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                GetStaticMapEndpointParamsInterceptor,
+            ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::get_static_map::GetStaticMapError,
             >::new())
@@ -219,7 +223,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetStaticMap
                 }
                 if let ::std::option::Option::Some(inner_5) = &_input.color_scheme {
                     {
-                        query.push_kv("color-scheme", &::aws_smithy_http::query::fmt_string(inner_5));
+                        query.push_kv("color-scheme", &::aws_smithy_http::query::fmt_string(inner_5.as_str()));
                     }
                 }
                 if let ::std::option::Option::Some(inner_6) = &_input.compact_overlay {
@@ -249,7 +253,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetStaticMap
                 }
                 if let ::std::option::Option::Some(inner_11) = &_input.label_size {
                     {
-                        query.push_kv("label-size", &::aws_smithy_http::query::fmt_string(inner_11));
+                        query.push_kv("label-size", &::aws_smithy_http::query::fmt_string(inner_11.as_str()));
                     }
                 }
                 if let ::std::option::Option::Some(inner_12) = &_input.language {
@@ -269,7 +273,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetStaticMap
                 }
                 if let ::std::option::Option::Some(inner_15) = &_input.points_of_interests {
                     {
-                        query.push_kv("pois", &::aws_smithy_http::query::fmt_string(inner_15));
+                        query.push_kv("pois", &::aws_smithy_http::query::fmt_string(inner_15.as_str()));
                     }
                 }
                 if let ::std::option::Option::Some(inner_16) = &_input.radius {
@@ -279,12 +283,12 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetStaticMap
                 }
                 if let ::std::option::Option::Some(inner_17) = &_input.scale_bar_unit {
                     {
-                        query.push_kv("scale-unit", &::aws_smithy_http::query::fmt_string(inner_17));
+                        query.push_kv("scale-unit", &::aws_smithy_http::query::fmt_string(inner_17.as_str()));
                     }
                 }
                 if let ::std::option::Option::Some(inner_18) = &_input.style {
                     {
-                        query.push_kv("style", &::aws_smithy_http::query::fmt_string(inner_18));
+                        query.push_kv("style", &::aws_smithy_http::query::fmt_string(inner_18.as_str()));
                     }
                 }
                 let inner_19 = &_input.width;
@@ -320,6 +324,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetStaticMap
 #[derive(Debug)]
 struct GetStaticMapEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for GetStaticMapEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "GetStaticMapEndpointParamsInterceptor"

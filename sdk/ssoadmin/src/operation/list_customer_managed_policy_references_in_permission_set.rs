@@ -129,8 +129,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ListCus
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new(
             "ListCustomerManagedPolicyReferencesInPermissionSet",
         )
-        .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-        .with_interceptor(ListCustomerManagedPolicyReferencesInPermissionSetEndpointParamsInterceptor)
+        .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+            ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+        ))
+        .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+            ListCustomerManagedPolicyReferencesInPermissionSetEndpointParamsInterceptor,
+        ))
         .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
             crate::operation::list_customer_managed_policy_references_in_permission_set::ListCustomerManagedPolicyReferencesInPermissionSetError,
         >::new())
@@ -219,6 +223,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListCustomer
 #[derive(Debug)]
 struct ListCustomerManagedPolicyReferencesInPermissionSetEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListCustomerManagedPolicyReferencesInPermissionSetEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "ListCustomerManagedPolicyReferencesInPermissionSetEndpointParamsInterceptor"

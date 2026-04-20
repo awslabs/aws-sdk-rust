@@ -124,8 +124,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for Promote
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("PromoteReadReplica")
-            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-            .with_interceptor(PromoteReadReplicaEndpointParamsInterceptor)
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                PromoteReadReplicaEndpointParamsInterceptor,
+            ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::promote_read_replica::PromoteReadReplicaError,
             >::new())
@@ -214,6 +218,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for PromoteReadR
 #[derive(Debug)]
 struct PromoteReadReplicaEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for PromoteReadReplicaEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "PromoteReadReplicaEndpointParamsInterceptor"

@@ -132,7 +132,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for StartMe
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("StartMedicalScribeStream")
-            .with_interceptor(StartMedicalScribeStreamEndpointParamsInterceptor)
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                StartMedicalScribeStreamEndpointParamsInterceptor,
+            ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::start_medical_scribe_stream::StartMedicalScribeStreamError,
             >::new())
@@ -244,6 +246,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for StartMedical
 #[derive(Debug)]
 struct StartMedicalScribeStreamEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for StartMedicalScribeStreamEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "StartMedicalScribeStreamEndpointParamsInterceptor"

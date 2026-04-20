@@ -132,8 +132,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ListSup
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("ListSupportedPhoneNumberCountries")
-            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-            .with_interceptor(ListSupportedPhoneNumberCountriesEndpointParamsInterceptor)
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ListSupportedPhoneNumberCountriesEndpointParamsInterceptor,
+            ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::list_supported_phone_number_countries::ListSupportedPhoneNumberCountriesError,
             >::new())
@@ -208,7 +212,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListSupporte
                 let inner_1 = inner_1
                     .as_ref()
                     .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("product_type", "cannot be empty or unset"))?;
-                query.push_kv("product-type", &::aws_smithy_http::query::fmt_string(inner_1));
+                query.push_kv("product-type", &::aws_smithy_http::query::fmt_string(inner_1.as_str()));
                 ::std::result::Result::Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -232,6 +236,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListSupporte
 #[derive(Debug)]
 struct ListSupportedPhoneNumberCountriesEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListSupportedPhoneNumberCountriesEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "ListSupportedPhoneNumberCountriesEndpointParamsInterceptor"

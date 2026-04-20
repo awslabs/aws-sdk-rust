@@ -126,8 +126,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for UploadR
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("UploadReadSetPart")
-            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-            .with_interceptor(UploadReadSetPartEndpointParamsInterceptor)
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                UploadReadSetPartEndpointParamsInterceptor,
+            ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::upload_read_set_part::UploadReadSetPartError,
             >::new())
@@ -226,7 +230,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for UploadReadSe
                 let inner_3 = inner_3
                     .as_ref()
                     .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("part_source", "cannot be empty or unset"))?;
-                query.push_kv("partSource", &::aws_smithy_http::query::fmt_string(inner_3));
+                query.push_kv("partSource", &::aws_smithy_http::query::fmt_string(inner_3.as_str()));
                 let inner_4 = &_input.part_number;
                 let inner_4 = inner_4
                     .as_ref()
@@ -259,6 +263,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for UploadReadSe
 #[derive(Debug)]
 struct UploadReadSetPartEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for UploadReadSetPartEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "UploadReadSetPartEndpointParamsInterceptor"

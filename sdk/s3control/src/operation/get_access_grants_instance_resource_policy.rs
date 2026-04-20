@@ -132,8 +132,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for GetAcce
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("GetAccessGrantsInstanceResourcePolicy")
-            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-            .with_interceptor(GetAccessGrantsInstanceResourcePolicyEndpointParamsInterceptor)
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                GetAccessGrantsInstanceResourcePolicyEndpointParamsInterceptor,
+            ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::get_access_grants_instance_resource_policy::GetAccessGrantsInstanceResourcePolicyError,
             >::new())
@@ -223,6 +227,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetAccessGra
 #[derive(Debug)]
 struct GetAccessGrantsInstanceResourcePolicyEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for GetAccessGrantsInstanceResourcePolicyEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "GetAccessGrantsInstanceResourcePolicyEndpointParamsInterceptor"

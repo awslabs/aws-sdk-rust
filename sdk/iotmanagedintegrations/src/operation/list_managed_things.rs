@@ -133,8 +133,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ListMan
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("ListManagedThings")
-            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-            .with_interceptor(ListManagedThingsEndpointParamsInterceptor)
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ListManagedThingsEndpointParamsInterceptor,
+            ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::list_managed_things::ListManagedThingsError,
             >::new())
@@ -213,7 +217,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListManagedT
                 }
                 if let ::std::option::Option::Some(inner_3) = &_input.role_filter {
                     {
-                        query.push_kv("RoleFilter", &::aws_smithy_http::query::fmt_string(inner_3));
+                        query.push_kv("RoleFilter", &::aws_smithy_http::query::fmt_string(inner_3.as_str()));
                     }
                 }
                 if let ::std::option::Option::Some(inner_4) = &_input.parent_controller_identifier_filter {
@@ -243,7 +247,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListManagedT
                 }
                 if let ::std::option::Option::Some(inner_9) = &_input.provisioning_status_filter {
                     {
-                        query.push_kv("ProvisioningStatusFilter", &::aws_smithy_http::query::fmt_string(inner_9));
+                        query.push_kv("ProvisioningStatusFilter", &::aws_smithy_http::query::fmt_string(inner_9.as_str()));
                     }
                 }
                 if let ::std::option::Option::Some(inner_10) = &_input.next_token {
@@ -279,6 +283,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListManagedT
 #[derive(Debug)]
 struct ListManagedThingsEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListManagedThingsEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "ListManagedThingsEndpointParamsInterceptor"

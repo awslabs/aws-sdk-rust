@@ -132,8 +132,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for DeleteR
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("DeleteRecord")
-            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-            .with_interceptor(DeleteRecordEndpointParamsInterceptor)
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                DeleteRecordEndpointParamsInterceptor,
+            ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::delete_record::DeleteRecordError,
             >::new())
@@ -236,13 +240,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for DeleteRecord
                 if let ::std::option::Option::Some(inner_4) = &_input.target_stores {
                     {
                         for inner_5 in inner_4 {
-                            query.push_kv("TargetStores", &::aws_smithy_http::query::fmt_string(inner_5));
+                            query.push_kv("TargetStores", &::aws_smithy_http::query::fmt_string(inner_5.as_str()));
                         }
                     }
                 }
                 if let ::std::option::Option::Some(inner_6) = &_input.deletion_mode {
                     {
-                        query.push_kv("DeletionMode", &::aws_smithy_http::query::fmt_string(inner_6));
+                        query.push_kv("DeletionMode", &::aws_smithy_http::query::fmt_string(inner_6.as_str()));
                     }
                 }
                 ::std::result::Result::Ok(())
@@ -268,6 +272,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for DeleteRecord
 #[derive(Debug)]
 struct DeleteRecordEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DeleteRecordEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "DeleteRecordEndpointParamsInterceptor"

@@ -126,8 +126,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ListSig
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("ListSigningProfiles")
-            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-            .with_interceptor(ListSigningProfilesEndpointParamsInterceptor)
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ListSigningProfilesEndpointParamsInterceptor,
+            ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::list_signing_profiles::ListSigningProfilesError,
             >::new())
@@ -217,7 +221,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListSigningP
                 if let ::std::option::Option::Some(inner_5) = &_input.statuses {
                     {
                         for inner_6 in inner_5 {
-                            query.push_kv("statuses", &::aws_smithy_http::query::fmt_string(inner_6));
+                            query.push_kv("statuses", &::aws_smithy_http::query::fmt_string(inner_6.as_str()));
                         }
                     }
                 }
@@ -244,6 +248,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListSigningP
 #[derive(Debug)]
 struct ListSigningProfilesEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListSigningProfilesEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "ListSigningProfilesEndpointParamsInterceptor"

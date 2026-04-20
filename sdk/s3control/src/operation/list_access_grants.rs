@@ -126,8 +126,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ListAcc
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("ListAccessGrants")
-            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-            .with_interceptor(ListAccessGrantsEndpointParamsInterceptor)
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ListAccessGrantsEndpointParamsInterceptor,
+            ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::list_access_grants::ListAccessGrantsError,
             >::new())
@@ -206,7 +210,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListAccessGr
                 }
                 if let ::std::option::Option::Some(inner_3) = &_input.grantee_type {
                     {
-                        query.push_kv("granteetype", &::aws_smithy_http::query::fmt_string(inner_3));
+                        query.push_kv("granteetype", &::aws_smithy_http::query::fmt_string(inner_3.as_str()));
                     }
                 }
                 if let ::std::option::Option::Some(inner_4) = &_input.grantee_identifier {
@@ -216,7 +220,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListAccessGr
                 }
                 if let ::std::option::Option::Some(inner_5) = &_input.permission {
                     {
-                        query.push_kv("permission", &::aws_smithy_http::query::fmt_string(inner_5));
+                        query.push_kv("permission", &::aws_smithy_http::query::fmt_string(inner_5.as_str()));
                     }
                 }
                 if let ::std::option::Option::Some(inner_6) = &_input.grant_scope {
@@ -253,6 +257,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListAccessGr
 #[derive(Debug)]
 struct ListAccessGrantsEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListAccessGrantsEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "ListAccessGrantsEndpointParamsInterceptor"

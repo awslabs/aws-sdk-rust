@@ -133,8 +133,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ListCha
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("ListChannelMessages")
-            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-            .with_interceptor(ListChannelMessagesEndpointParamsInterceptor)
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ListChannelMessagesEndpointParamsInterceptor,
+            ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::list_channel_messages::ListChannelMessagesError,
             >::new())
@@ -214,7 +218,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListChannelM
                 let mut query = ::aws_smithy_http::query::Writer::new(output);
                 if let ::std::option::Option::Some(inner_2) = &_input.sort_order {
                     {
-                        query.push_kv("sort-order", &::aws_smithy_http::query::fmt_string(inner_2));
+                        query.push_kv("sort-order", &::aws_smithy_http::query::fmt_string(inner_2.as_str()));
                     }
                 }
                 if let ::std::option::Option::Some(inner_3) = &_input.not_before {
@@ -272,6 +276,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListChannelM
 #[derive(Debug)]
 struct ListChannelMessagesEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListChannelMessagesEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "ListChannelMessagesEndpointParamsInterceptor"

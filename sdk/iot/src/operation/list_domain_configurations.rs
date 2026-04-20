@@ -126,8 +126,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ListDom
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("ListDomainConfigurations")
-            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-            .with_interceptor(ListDomainConfigurationsEndpointParamsInterceptor)
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ListDomainConfigurationsEndpointParamsInterceptor,
+            ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::list_domain_configurations::ListDomainConfigurationsError,
             >::new())
@@ -206,7 +210,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListDomainCo
                 }
                 if let ::std::option::Option::Some(inner_3) = &_input.service_type {
                     {
-                        query.push_kv("serviceType", &::aws_smithy_http::query::fmt_string(inner_3));
+                        query.push_kv("serviceType", &::aws_smithy_http::query::fmt_string(inner_3.as_str()));
                     }
                 }
                 ::std::result::Result::Ok(())
@@ -232,6 +236,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListDomainCo
 #[derive(Debug)]
 struct ListDomainConfigurationsEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListDomainConfigurationsEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "ListDomainConfigurationsEndpointParamsInterceptor"

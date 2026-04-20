@@ -134,8 +134,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for UpdateI
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("UpdateInstanceAttribute")
-            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-            .with_interceptor(UpdateInstanceAttributeEndpointParamsInterceptor)
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                UpdateInstanceAttributeEndpointParamsInterceptor,
+            ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::update_instance_attribute::UpdateInstanceAttributeError,
             >::new())
@@ -209,7 +213,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for UpdateInstan
                 let input_2 = input_2
                     .as_ref()
                     .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("attribute_type", "cannot be empty or unset"))?;
-                let attribute_type = ::aws_smithy_http::label::fmt_string(input_2, ::aws_smithy_http::label::EncodingStrategy::Default);
+                let attribute_type = ::aws_smithy_http::label::fmt_string(input_2.as_str(), ::aws_smithy_http::label::EncodingStrategy::Default);
                 if attribute_type.is_empty() {
                     return ::std::result::Result::Err(::aws_smithy_types::error::operation::BuildError::missing_field(
                         "attribute_type",
@@ -251,6 +255,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for UpdateInstan
 #[derive(Debug)]
 struct UpdateInstanceAttributeEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for UpdateInstanceAttributeEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "UpdateInstanceAttributeEndpointParamsInterceptor"

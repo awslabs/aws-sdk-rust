@@ -123,8 +123,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ListDev
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("ListDevices")
-            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-            .with_interceptor(ListDevicesEndpointParamsInterceptor)
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ListDevicesEndpointParamsInterceptor,
+            ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::list_devices::ListDevicesError,
             >::new())
@@ -203,12 +207,12 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListDevicesR
                 }
                 if let ::std::option::Option::Some(inner_3) = &_input.sort_by {
                     {
-                        query.push_kv("SortBy", &::aws_smithy_http::query::fmt_string(inner_3));
+                        query.push_kv("SortBy", &::aws_smithy_http::query::fmt_string(inner_3.as_str()));
                     }
                 }
                 if let ::std::option::Option::Some(inner_4) = &_input.sort_order {
                     {
-                        query.push_kv("SortOrder", &::aws_smithy_http::query::fmt_string(inner_4));
+                        query.push_kv("SortOrder", &::aws_smithy_http::query::fmt_string(inner_4.as_str()));
                     }
                 }
                 if let ::std::option::Option::Some(inner_5) = &_input.name_filter {
@@ -218,7 +222,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListDevicesR
                 }
                 if let ::std::option::Option::Some(inner_6) = &_input.device_aggregated_status_filter {
                     {
-                        query.push_kv("DeviceAggregatedStatusFilter", &::aws_smithy_http::query::fmt_string(inner_6));
+                        query.push_kv("DeviceAggregatedStatusFilter", &::aws_smithy_http::query::fmt_string(inner_6.as_str()));
                     }
                 }
                 ::std::result::Result::Ok(())
@@ -244,6 +248,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListDevicesR
 #[derive(Debug)]
 struct ListDevicesEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListDevicesEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "ListDevicesEndpointParamsInterceptor"

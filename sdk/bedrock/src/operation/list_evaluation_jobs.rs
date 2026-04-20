@@ -126,8 +126,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ListEva
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("ListEvaluationJobs")
-            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-            .with_interceptor(ListEvaluationJobsEndpointParamsInterceptor)
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ListEvaluationJobsEndpointParamsInterceptor,
+            ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::list_evaluation_jobs::ListEvaluationJobsError,
             >::new())
@@ -212,12 +216,12 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListEvaluati
                 }
                 if let ::std::option::Option::Some(inner_3) = &_input.status_equals {
                     {
-                        query.push_kv("statusEquals", &::aws_smithy_http::query::fmt_string(inner_3));
+                        query.push_kv("statusEquals", &::aws_smithy_http::query::fmt_string(inner_3.as_str()));
                     }
                 }
                 if let ::std::option::Option::Some(inner_4) = &_input.application_type_equals {
                     {
-                        query.push_kv("applicationTypeEquals", &::aws_smithy_http::query::fmt_string(inner_4));
+                        query.push_kv("applicationTypeEquals", &::aws_smithy_http::query::fmt_string(inner_4.as_str()));
                     }
                 }
                 if let ::std::option::Option::Some(inner_5) = &_input.name_contains {
@@ -237,12 +241,12 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListEvaluati
                 }
                 if let ::std::option::Option::Some(inner_8) = &_input.sort_by {
                     {
-                        query.push_kv("sortBy", &::aws_smithy_http::query::fmt_string(inner_8));
+                        query.push_kv("sortBy", &::aws_smithy_http::query::fmt_string(inner_8.as_str()));
                     }
                 }
                 if let ::std::option::Option::Some(inner_9) = &_input.sort_order {
                     {
-                        query.push_kv("sortOrder", &::aws_smithy_http::query::fmt_string(inner_9));
+                        query.push_kv("sortOrder", &::aws_smithy_http::query::fmt_string(inner_9.as_str()));
                     }
                 }
                 ::std::result::Result::Ok(())
@@ -268,6 +272,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListEvaluati
 #[derive(Debug)]
 struct ListEvaluationJobsEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListEvaluationJobsEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "ListEvaluationJobsEndpointParamsInterceptor"

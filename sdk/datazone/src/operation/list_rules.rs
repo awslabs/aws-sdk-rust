@@ -124,8 +124,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ListRul
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("ListRules")
-            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-            .with_interceptor(ListRulesEndpointParamsInterceptor)
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ListRulesEndpointParamsInterceptor,
+            ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::list_rules::ListRulesError,
             >::new())
@@ -197,7 +201,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListRulesReq
                 let input_2 = input_2
                     .as_ref()
                     .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("target_type", "cannot be empty or unset"))?;
-                let target_type = ::aws_smithy_http::label::fmt_string(input_2, ::aws_smithy_http::label::EncodingStrategy::Default);
+                let target_type = ::aws_smithy_http::label::fmt_string(input_2.as_str(), ::aws_smithy_http::label::EncodingStrategy::Default);
                 if target_type.is_empty() {
                     return ::std::result::Result::Err(::aws_smithy_types::error::operation::BuildError::missing_field(
                         "target_type",
@@ -232,12 +236,12 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListRulesReq
                 let mut query = ::aws_smithy_http::query::Writer::new(output);
                 if let ::std::option::Option::Some(inner_4) = &_input.rule_type {
                     {
-                        query.push_kv("ruleType", &::aws_smithy_http::query::fmt_string(inner_4));
+                        query.push_kv("ruleType", &::aws_smithy_http::query::fmt_string(inner_4.as_str()));
                     }
                 }
                 if let ::std::option::Option::Some(inner_5) = &_input.action {
                     {
-                        query.push_kv("ruleAction", &::aws_smithy_http::query::fmt_string(inner_5));
+                        query.push_kv("ruleAction", &::aws_smithy_http::query::fmt_string(inner_5.as_str()));
                     }
                 }
                 if let ::std::option::Option::Some(inner_6) = &_input.project_ids {
@@ -297,6 +301,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListRulesReq
 #[derive(Debug)]
 struct ListRulesEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListRulesEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "ListRulesEndpointParamsInterceptor"

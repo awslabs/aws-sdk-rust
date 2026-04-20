@@ -126,8 +126,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ListCon
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("ListContactFlows")
-            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-            .with_interceptor(ListContactFlowsEndpointParamsInterceptor)
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ListContactFlowsEndpointParamsInterceptor,
+            ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::list_contact_flows::ListContactFlowsError,
             >::new())
@@ -208,7 +212,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListContactF
                 if let ::std::option::Option::Some(inner_2) = &_input.contact_flow_types {
                     {
                         for inner_3 in inner_2 {
-                            query.push_kv("contactFlowTypes", &::aws_smithy_http::query::fmt_string(inner_3));
+                            query.push_kv("contactFlowTypes", &::aws_smithy_http::query::fmt_string(inner_3.as_str()));
                         }
                     }
                 }
@@ -245,6 +249,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListContactF
 #[derive(Debug)]
 struct ListContactFlowsEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListContactFlowsEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "ListContactFlowsEndpointParamsInterceptor"

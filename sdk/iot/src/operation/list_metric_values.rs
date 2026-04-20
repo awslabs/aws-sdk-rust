@@ -123,8 +123,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ListMet
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("ListMetricValues")
-            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-            .with_interceptor(ListMetricValuesEndpointParamsInterceptor)
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ListMetricValuesEndpointParamsInterceptor,
+            ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::list_metric_values::ListMetricValuesError,
             >::new())
@@ -220,7 +224,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListMetricVa
                 }
                 if let ::std::option::Option::Some(inner_4) = &_input.dimension_value_operator {
                     {
-                        query.push_kv("dimensionValueOperator", &::aws_smithy_http::query::fmt_string(inner_4));
+                        query.push_kv("dimensionValueOperator", &::aws_smithy_http::query::fmt_string(inner_4.as_str()));
                     }
                 }
                 let inner_5 = &_input.start_time;
@@ -272,6 +276,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListMetricVa
 #[derive(Debug)]
 struct ListMetricValuesEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListMetricValuesEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "ListMetricValuesEndpointParamsInterceptor"

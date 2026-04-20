@@ -133,8 +133,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ListRec
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("ListRecommendationTemplates")
-            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-            .with_interceptor(ListRecommendationTemplatesEndpointParamsInterceptor)
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ListRecommendationTemplatesEndpointParamsInterceptor,
+            ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::list_recommendation_templates::ListRecommendationTemplatesError,
             >::new())
@@ -214,7 +218,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListRecommen
                 if let ::std::option::Option::Some(inner_3) = &_input.status {
                     {
                         for inner_4 in inner_3 {
-                            query.push_kv("status", &::aws_smithy_http::query::fmt_string(inner_4));
+                            query.push_kv("status", &::aws_smithy_http::query::fmt_string(inner_4.as_str()));
                         }
                     }
                 }
@@ -261,6 +265,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListRecommen
 #[derive(Debug)]
 struct ListRecommendationTemplatesEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListRecommendationTemplatesEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "ListRecommendationTemplatesEndpointParamsInterceptor"

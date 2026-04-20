@@ -122,8 +122,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for StopDev
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("StopDevEnvironmentSession")
-            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-            .with_interceptor(StopDevEnvironmentSessionEndpointParamsInterceptor)
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                StopDevEnvironmentSessionEndpointParamsInterceptor,
+            ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::stop_dev_environment_session::StopDevEnvironmentSessionError,
             >::new())
@@ -257,6 +261,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for StopDevEnvir
 #[derive(Debug)]
 struct StopDevEnvironmentSessionEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for StopDevEnvironmentSessionEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "StopDevEnvironmentSessionEndpointParamsInterceptor"

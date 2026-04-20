@@ -388,4 +388,21 @@ impl ModifyClientVpnEndpointFluentBuilder {
     pub fn get_disconnect_on_session_timeout(&self) -> &::std::option::Option<bool> {
         self.inner.get_disconnect_on_session_timeout()
     }
+    /// <p>The Transit Gateway configuration for the Client VPN endpoint. This option is currently not supported.</p>
+    pub fn transit_gateway_configuration(mut self, input: crate::types::TransitGatewayConfigurationInputStructure) -> Self {
+        self.inner = self.inner.transit_gateway_configuration(input);
+        self
+    }
+    /// <p>The Transit Gateway configuration for the Client VPN endpoint. This option is currently not supported.</p>
+    pub fn set_transit_gateway_configuration(
+        mut self,
+        input: ::std::option::Option<crate::types::TransitGatewayConfigurationInputStructure>,
+    ) -> Self {
+        self.inner = self.inner.set_transit_gateway_configuration(input);
+        self
+    }
+    /// <p>The Transit Gateway configuration for the Client VPN endpoint. This option is currently not supported.</p>
+    pub fn get_transit_gateway_configuration(&self) -> &::std::option::Option<crate::types::TransitGatewayConfigurationInputStructure> {
+        self.inner.get_transit_gateway_configuration()
+    }
 }

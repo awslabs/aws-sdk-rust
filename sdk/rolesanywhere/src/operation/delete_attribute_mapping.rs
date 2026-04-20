@@ -132,8 +132,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for DeleteA
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("DeleteAttributeMapping")
-            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-            .with_interceptor(DeleteAttributeMappingEndpointParamsInterceptor)
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                DeleteAttributeMappingEndpointParamsInterceptor,
+            ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::delete_attribute_mapping::DeleteAttributeMappingError,
             >::new())
@@ -215,7 +219,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for DeleteAttrib
                 let inner_2 = inner_2.as_ref().ok_or_else(|| {
                     ::aws_smithy_types::error::operation::BuildError::missing_field("certificate_field", "cannot be empty or unset")
                 })?;
-                query.push_kv("certificateField", &::aws_smithy_http::query::fmt_string(inner_2));
+                query.push_kv("certificateField", &::aws_smithy_http::query::fmt_string(inner_2.as_str()));
                 if let ::std::option::Option::Some(inner_3) = &_input.specifiers {
                     {
                         for inner_4 in inner_3 {
@@ -246,6 +250,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for DeleteAttrib
 #[derive(Debug)]
 struct DeleteAttributeMappingEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DeleteAttributeMappingEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "DeleteAttributeMappingEndpointParamsInterceptor"

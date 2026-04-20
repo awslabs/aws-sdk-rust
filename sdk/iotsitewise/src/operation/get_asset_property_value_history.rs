@@ -132,8 +132,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for GetAsse
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("GetAssetPropertyValueHistory")
-            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-            .with_interceptor(GetAssetPropertyValueHistoryEndpointParamsInterceptor)
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                GetAssetPropertyValueHistoryEndpointParamsInterceptor,
+            ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::get_asset_property_value_history::GetAssetPropertyValueHistoryError,
             >::new())
@@ -234,13 +238,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetAssetProp
                 if let ::std::option::Option::Some(inner_6) = &_input.qualities {
                     {
                         for inner_7 in inner_6 {
-                            query.push_kv("qualities", &::aws_smithy_http::query::fmt_string(inner_7));
+                            query.push_kv("qualities", &::aws_smithy_http::query::fmt_string(inner_7.as_str()));
                         }
                     }
                 }
                 if let ::std::option::Option::Some(inner_8) = &_input.time_ordering {
                     {
-                        query.push_kv("timeOrdering", &::aws_smithy_http::query::fmt_string(inner_8));
+                        query.push_kv("timeOrdering", &::aws_smithy_http::query::fmt_string(inner_8.as_str()));
                     }
                 }
                 if let ::std::option::Option::Some(inner_9) = &_input.next_token {
@@ -276,6 +280,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetAssetProp
 #[derive(Debug)]
 struct GetAssetPropertyValueHistoryEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for GetAssetPropertyValueHistoryEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "GetAssetPropertyValueHistoryEndpointParamsInterceptor"

@@ -126,8 +126,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ListChe
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("ListChecks")
-            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-            .with_interceptor(ListChecksEndpointParamsInterceptor)
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ListChecksEndpointParamsInterceptor,
+            ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::list_checks::ListChecksError,
             >::new())
@@ -204,7 +208,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListChecksRe
                 }
                 if let ::std::option::Option::Some(inner_3) = &_input.pillar {
                     {
-                        query.push_kv("pillar", &::aws_smithy_http::query::fmt_string(inner_3));
+                        query.push_kv("pillar", &::aws_smithy_http::query::fmt_string(inner_3.as_str()));
                     }
                 }
                 if let ::std::option::Option::Some(inner_4) = &_input.aws_service {
@@ -214,12 +218,12 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListChecksRe
                 }
                 if let ::std::option::Option::Some(inner_5) = &_input.source {
                     {
-                        query.push_kv("source", &::aws_smithy_http::query::fmt_string(inner_5));
+                        query.push_kv("source", &::aws_smithy_http::query::fmt_string(inner_5.as_str()));
                     }
                 }
                 if let ::std::option::Option::Some(inner_6) = &_input.language {
                     {
-                        query.push_kv("language", &::aws_smithy_http::query::fmt_string(inner_6));
+                        query.push_kv("language", &::aws_smithy_http::query::fmt_string(inner_6.as_str()));
                     }
                 }
                 ::std::result::Result::Ok(())
@@ -245,6 +249,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListChecksRe
 #[derive(Debug)]
 struct ListChecksEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListChecksEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "ListChecksEndpointParamsInterceptor"

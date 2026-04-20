@@ -126,8 +126,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for UpdateC
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("UpdateCACertificate")
-            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-            .with_interceptor(UpdateCACertificateEndpointParamsInterceptor)
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                UpdateCACertificateEndpointParamsInterceptor,
+            ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::update_ca_certificate::UpdateCACertificateError,
             >::new())
@@ -207,12 +211,12 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for UpdateCACert
                 let mut query = ::aws_smithy_http::query::Writer::new(output);
                 if let ::std::option::Option::Some(inner_2) = &_input.new_status {
                     {
-                        query.push_kv("newStatus", &::aws_smithy_http::query::fmt_string(inner_2));
+                        query.push_kv("newStatus", &::aws_smithy_http::query::fmt_string(inner_2.as_str()));
                     }
                 }
                 if let ::std::option::Option::Some(inner_3) = &_input.new_auto_registration_status {
                     {
-                        query.push_kv("newAutoRegistrationStatus", &::aws_smithy_http::query::fmt_string(inner_3));
+                        query.push_kv("newAutoRegistrationStatus", &::aws_smithy_http::query::fmt_string(inner_3.as_str()));
                     }
                 }
                 ::std::result::Result::Ok(())
@@ -244,6 +248,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for UpdateCACert
 #[derive(Debug)]
 struct UpdateCACertificateEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for UpdateCACertificateEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "UpdateCACertificateEndpointParamsInterceptor"

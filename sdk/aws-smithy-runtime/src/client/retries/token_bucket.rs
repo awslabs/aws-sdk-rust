@@ -264,11 +264,13 @@ impl TokenBucket {
 
     /// Returns true if the token bucket is full, false otherwise
     pub fn is_full(&self) -> bool {
+        self.convert_fractional_tokens();
         self.semaphore.available_permits() >= self.max_permits
     }
 
     /// Returns true if the token bucket is empty, false otherwise
     pub fn is_empty(&self) -> bool {
+        self.convert_fractional_tokens();
         self.semaphore.available_permits() == 0
     }
 
@@ -969,5 +971,59 @@ mod tests {
 
         // Fractional should be 0 after conversion
         assert!(bucket.fractional_tokens.load().abs() < 0.0001);
+    }
+
+    /// Regression test for https://github.com/awslabs/aws-sdk-rust/issues/1423
+    #[test]
+    fn test_is_full_accounts_for_fractional_tokens() {
+        let bucket = TokenBucket::builder()
+            .capacity(2)
+            .retry_cost(1)
+            .success_reward(0.9)
+            .build();
+
+        assert!(bucket.is_full());
+
+        let _p1 = bucket
+            .acquire(&ErrorKind::ServerError, &*TIME_SOURCE)
+            .unwrap();
+        let _p2 = bucket
+            .acquire(&ErrorKind::ServerError, &*TIME_SOURCE)
+            .unwrap();
+
+        assert!(bucket.is_empty());
+
+        // 3 rewards of 0.9 = 2.7 fractional tokens, which converts to 2 whole
+        // permits — enough to fill the bucket (capacity 2).
+        bucket.reward_success();
+        bucket.reward_success();
+        bucket.reward_success();
+
+        // Before the fix, is_full() returned false here because fractional
+        // tokens hadn't been converted to real permits.
+        assert!(bucket.is_full());
+        assert!(!bucket.is_empty());
+    }
+
+    #[test]
+    fn test_is_empty_accounts_for_fractional_tokens() {
+        let bucket = TokenBucket::builder()
+            .capacity(10)
+            .retry_cost(10)
+            .success_reward(0.5)
+            .build();
+
+        let _p = bucket
+            .acquire(&ErrorKind::ServerError, &*TIME_SOURCE)
+            .unwrap();
+        assert_eq!(bucket.semaphore.available_permits(), 0);
+
+        // 0.5 fractional tokens can't convert to a whole permit
+        bucket.reward_success();
+        assert!(bucket.is_empty());
+
+        // 1.0 fractional tokens converts to a permit
+        bucket.reward_success();
+        assert!(!bucket.is_empty());
     }
 }

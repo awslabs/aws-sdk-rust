@@ -140,8 +140,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for CreateT
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("CreateTransitGatewayRouteTableAttachment")
-            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-            .with_interceptor(CreateTransitGatewayRouteTableAttachmentEndpointParamsInterceptor)
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                CreateTransitGatewayRouteTableAttachmentEndpointParamsInterceptor,
+            ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::create_transit_gateway_route_table_attachment::CreateTransitGatewayRouteTableAttachmentError,
             >::new())
@@ -235,6 +239,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for CreateTransi
 #[derive(Debug)]
 struct CreateTransitGatewayRouteTableAttachmentEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CreateTransitGatewayRouteTableAttachmentEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "CreateTransitGatewayRouteTableAttachmentEndpointParamsInterceptor"

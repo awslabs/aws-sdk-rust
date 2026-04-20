@@ -123,8 +123,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for TestDNS
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("TestDNSAnswer")
-            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-            .with_interceptor(TestDNSAnswerEndpointParamsInterceptor)
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                TestDNSAnswerEndpointParamsInterceptor,
+            ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::test_dns_answer::TestDNSAnswerError,
             >::new())
@@ -217,7 +221,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for TestDNSAnswe
                 let inner_3 = inner_3
                     .as_ref()
                     .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("record_type", "cannot be empty or unset"))?;
-                query.push_kv("recordtype", &::aws_smithy_http::query::fmt_string(inner_3));
+                query.push_kv("recordtype", &::aws_smithy_http::query::fmt_string(inner_3.as_str()));
                 if let ::std::option::Option::Some(inner_4) = &_input.resolver_ip {
                     {
                         query.push_kv("resolverip", &::aws_smithy_http::query::fmt_string(inner_4));
@@ -256,6 +260,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for TestDNSAnswe
 #[derive(Debug)]
 struct TestDNSAnswerEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for TestDNSAnswerEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "TestDNSAnswerEndpointParamsInterceptor"

@@ -132,8 +132,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ListRep
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("ListRepositoryAssociations")
-            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-            .with_interceptor(ListRepositoryAssociationsEndpointParamsInterceptor)
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ListRepositoryAssociationsEndpointParamsInterceptor,
+            ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::list_repository_associations::ListRepositoryAssociationsError,
             >::new())
@@ -203,14 +207,14 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListReposito
                 if let ::std::option::Option::Some(inner_1) = &_input.provider_types {
                     {
                         for inner_2 in inner_1 {
-                            query.push_kv("ProviderType", &::aws_smithy_http::query::fmt_string(inner_2));
+                            query.push_kv("ProviderType", &::aws_smithy_http::query::fmt_string(inner_2.as_str()));
                         }
                     }
                 }
                 if let ::std::option::Option::Some(inner_3) = &_input.states {
                     {
                         for inner_4 in inner_3 {
-                            query.push_kv("State", &::aws_smithy_http::query::fmt_string(inner_4));
+                            query.push_kv("State", &::aws_smithy_http::query::fmt_string(inner_4.as_str()));
                         }
                     }
                 }
@@ -261,6 +265,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListReposito
 #[derive(Debug)]
 struct ListRepositoryAssociationsEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListRepositoryAssociationsEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "ListRepositoryAssociationsEndpointParamsInterceptor"

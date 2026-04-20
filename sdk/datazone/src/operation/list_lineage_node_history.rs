@@ -126,8 +126,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ListLin
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("ListLineageNodeHistory")
-            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-            .with_interceptor(ListLineageNodeHistoryEndpointParamsInterceptor)
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ListLineageNodeHistoryEndpointParamsInterceptor,
+            ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::list_lineage_node_history::ListLineageNodeHistoryError,
             >::new())
@@ -234,7 +238,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListLineageN
                 }
                 if let ::std::option::Option::Some(inner_5) = &_input.direction {
                     {
-                        query.push_kv("direction", &::aws_smithy_http::query::fmt_string(inner_5));
+                        query.push_kv("direction", &::aws_smithy_http::query::fmt_string(inner_5.as_str()));
                     }
                 }
                 if let ::std::option::Option::Some(inner_6) = &_input.event_timestamp_gte {
@@ -255,7 +259,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListLineageN
                 }
                 if let ::std::option::Option::Some(inner_8) = &_input.sort_order {
                     {
-                        query.push_kv("sortOrder", &::aws_smithy_http::query::fmt_string(inner_8));
+                        query.push_kv("sortOrder", &::aws_smithy_http::query::fmt_string(inner_8.as_str()));
                     }
                 }
                 ::std::result::Result::Ok(())
@@ -281,6 +285,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListLineageN
 #[derive(Debug)]
 struct ListLineageNodeHistoryEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListLineageNodeHistoryEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "ListLineageNodeHistoryEndpointParamsInterceptor"

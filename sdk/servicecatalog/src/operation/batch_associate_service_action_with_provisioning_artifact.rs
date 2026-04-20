@@ -129,8 +129,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for BatchAs
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new(
             "BatchAssociateServiceActionWithProvisioningArtifact",
         )
-        .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-        .with_interceptor(BatchAssociateServiceActionWithProvisioningArtifactEndpointParamsInterceptor)
+        .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+            ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+        ))
+        .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+            BatchAssociateServiceActionWithProvisioningArtifactEndpointParamsInterceptor,
+        ))
         .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
             crate::operation::batch_associate_service_action_with_provisioning_artifact::BatchAssociateServiceActionWithProvisioningArtifactError,
         >::new())
@@ -219,6 +223,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for BatchAssocia
 #[derive(Debug)]
 struct BatchAssociateServiceActionWithProvisioningArtifactEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for BatchAssociateServiceActionWithProvisioningArtifactEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "BatchAssociateServiceActionWithProvisioningArtifactEndpointParamsInterceptor"

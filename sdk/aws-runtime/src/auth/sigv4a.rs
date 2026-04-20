@@ -18,7 +18,7 @@ use aws_smithy_runtime_api::client::identity::{Identity, SharedIdentityResolver}
 use aws_smithy_runtime_api::client::orchestrator::HttpRequest;
 use aws_smithy_runtime_api::client::runtime_components::{GetIdentityResolver, RuntimeComponents};
 use aws_smithy_types::config_bag::ConfigBag;
-use aws_types::region::SigningRegionSet;
+use aws_types::region::{Region, SigningRegionSet};
 use aws_types::SigningName;
 use std::borrow::Cow;
 use std::time::SystemTime;
@@ -122,9 +122,16 @@ impl SigV4aSigner {
         let name = extract_endpoint_auth_scheme_signing_name(&auth_scheme_endpoint_config)?
             .or(config_bag.load::<SigningName>().cloned());
 
-        let region_set =
-            extract_endpoint_auth_scheme_signing_region_set(&auth_scheme_endpoint_config)?
-                .or(config_bag.load::<SigningRegionSet>().cloned());
+        let region_set = config_bag
+            .load::<SigningRegionSet>()
+            .cloned()
+            .or(extract_endpoint_auth_scheme_signing_region_set(
+                &auth_scheme_endpoint_config,
+            )?)
+            .or(config_bag
+                .load::<Region>()
+                .cloned()
+                .map(SigningRegionSet::from));
 
         let signing_options = extract_endpoint_auth_scheme_signing_options(
             &auth_scheme_endpoint_config,
@@ -229,6 +236,7 @@ mod tests {
     use aws_smithy_runtime_api::client::auth::AuthSchemeEndpointConfig;
     use aws_smithy_types::config_bag::{ConfigBag, Layer};
     use aws_smithy_types::Document;
+    use aws_types::region::{Region, SigningRegionSet};
     use aws_types::SigningName;
     use std::borrow::Cow;
     use std::collections::HashMap;
@@ -321,5 +329,142 @@ mod tests {
         assert_eq!(result.region_set, Some("us-east-1".into()));
         assert_eq!(result.name, Some(SigningName::from_static("qldb")));
         assert!(matches!(result, Cow::Borrowed(_)));
+    }
+
+    #[test]
+    fn user_config_wins_over_endpoint_rules() {
+        let mut layer = Layer::new("test");
+        layer.store_put(SigV4OperationSigningConfig::default());
+        layer.store_put(SigningRegionSet::from("*"));
+        let config = Document::Object({
+            let mut out = HashMap::new();
+            out.insert("name".to_owned(), "sigv4a".to_owned().into());
+            out.insert(
+                "signingRegionSet".to_string(),
+                Document::Array(vec!["us-west-2".to_string().into()]),
+            );
+            out
+        });
+        let config = AuthSchemeEndpointConfig::from(Some(&config));
+
+        let cfg = ConfigBag::of_layers(vec![layer]);
+        let result = SigV4aSigner::extract_operation_config(config, &cfg).expect("success");
+
+        assert_eq!(result.region_set, Some("*".into()));
+    }
+
+    #[test]
+    fn endpoint_rules_used_when_no_user_config() {
+        let mut layer = Layer::new("test");
+        layer.store_put(SigV4OperationSigningConfig::default());
+        let config = Document::Object({
+            let mut out = HashMap::new();
+            out.insert("name".to_owned(), "sigv4a".to_owned().into());
+            out.insert(
+                "signingRegionSet".to_string(),
+                Document::Array(vec!["*".to_string().into()]),
+            );
+            out
+        });
+        let config = AuthSchemeEndpointConfig::from(Some(&config));
+
+        let cfg = ConfigBag::of_layers(vec![layer]);
+        let result = SigV4aSigner::extract_operation_config(config, &cfg).expect("success");
+
+        assert_eq!(result.region_set, Some("*".into()));
+    }
+
+    #[test]
+    fn falls_back_to_client_region_when_nothing_configured() {
+        let mut layer = Layer::new("test");
+        layer.store_put(SigV4OperationSigningConfig::default());
+        layer.store_put(Region::new("us-west-2"));
+        let config = AuthSchemeEndpointConfig::empty();
+
+        let cfg = ConfigBag::of_layers(vec![layer]);
+        let result = SigV4aSigner::extract_operation_config(config, &cfg).expect("success");
+
+        assert_eq!(result.region_set, Some("us-west-2".into()));
+    }
+
+    #[test]
+    fn endpoint_rules_win_over_client_region_when_no_user_config() {
+        let mut layer = Layer::new("test");
+        layer.store_put(SigV4OperationSigningConfig::default());
+        layer.store_put(Region::new("us-west-2"));
+        let config = Document::Object({
+            let mut out = HashMap::new();
+            out.insert("name".to_owned(), "sigv4a".to_owned().into());
+            out.insert(
+                "signingRegionSet".to_string(),
+                Document::Array(vec!["*".to_string().into()]),
+            );
+            out
+        });
+        let config = AuthSchemeEndpointConfig::from(Some(&config));
+
+        let cfg = ConfigBag::of_layers(vec![layer]);
+        let result = SigV4aSigner::extract_operation_config(config, &cfg).expect("success");
+
+        assert_eq!(result.region_set, Some("*".into()));
+    }
+
+    #[test]
+    fn user_config_wins_over_both_endpoint_and_region() {
+        let mut layer = Layer::new("test");
+        layer.store_put(SigV4OperationSigningConfig::default());
+        layer.store_put(SigningRegionSet::from("eu-west-1"));
+        layer.store_put(Region::new("us-west-2"));
+        let config = Document::Object({
+            let mut out = HashMap::new();
+            out.insert("name".to_owned(), "sigv4a".to_owned().into());
+            out.insert(
+                "signingRegionSet".to_string(),
+                Document::Array(vec!["*".to_string().into()]),
+            );
+            out
+        });
+        let config = AuthSchemeEndpointConfig::from(Some(&config));
+
+        let cfg = ConfigBag::of_layers(vec![layer]);
+        let result = SigV4aSigner::extract_operation_config(config, &cfg).expect("success");
+
+        assert_eq!(result.region_set, Some("eu-west-1".into()));
+    }
+
+    #[test]
+    fn region_set_is_none_when_nothing_is_configured() {
+        let mut layer = Layer::new("test");
+        layer.store_put(SigV4OperationSigningConfig::default());
+        let config = AuthSchemeEndpointConfig::empty();
+
+        let cfg = ConfigBag::of_layers(vec![layer]);
+        let result = SigV4aSigner::extract_operation_config(config, &cfg).expect("success");
+
+        assert_eq!(result.region_set, None);
+    }
+
+    #[test]
+    fn multi_region_endpoint_rules_preserved() {
+        let mut layer = Layer::new("test");
+        layer.store_put(SigV4OperationSigningConfig::default());
+        let config = Document::Object({
+            let mut out = HashMap::new();
+            out.insert("name".to_owned(), "sigv4a".to_owned().into());
+            out.insert(
+                "signingRegionSet".to_string(),
+                Document::Array(vec![
+                    "us-east-1".to_string().into(),
+                    "eu-west-1".to_string().into(),
+                ]),
+            );
+            out
+        });
+        let config = AuthSchemeEndpointConfig::from(Some(&config));
+
+        let cfg = ConfigBag::of_layers(vec![layer]);
+        let result = SigV4aSigner::extract_operation_config(config, &cfg).expect("success");
+
+        assert_eq!(result.region_set, Some("us-east-1,eu-west-1".into()));
     }
 }

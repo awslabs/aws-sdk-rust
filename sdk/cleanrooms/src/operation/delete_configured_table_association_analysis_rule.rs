@@ -132,8 +132,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for DeleteC
         #[allow(unused_mut)]
         let mut rcb =
             ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("DeleteConfiguredTableAssociationAnalysisRule")
-                .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-                .with_interceptor(DeleteConfiguredTableAssociationAnalysisRuleEndpointParamsInterceptor)
+                .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                    ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+                ))
+                .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                    DeleteConfiguredTableAssociationAnalysisRuleEndpointParamsInterceptor,
+                ))
                 .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                     crate::operation::delete_configured_table_association_analysis_rule::DeleteConfiguredTableAssociationAnalysisRuleError,
                 >::new())
@@ -222,7 +226,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for DeleteConfig
                 let input_3 = input_3.as_ref().ok_or_else(|| {
                     ::aws_smithy_types::error::operation::BuildError::missing_field("analysis_rule_type", "cannot be empty or unset")
                 })?;
-                let analysis_rule_type = ::aws_smithy_http::label::fmt_string(input_3, ::aws_smithy_http::label::EncodingStrategy::Default);
+                let analysis_rule_type = ::aws_smithy_http::label::fmt_string(input_3.as_str(), ::aws_smithy_http::label::EncodingStrategy::Default);
                 if analysis_rule_type.is_empty() {
                     return ::std::result::Result::Err(::aws_smithy_types::error::operation::BuildError::missing_field(
                         "analysis_rule_type",
@@ -252,6 +256,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for DeleteConfig
 #[derive(Debug)]
 struct DeleteConfiguredTableAssociationAnalysisRuleEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DeleteConfiguredTableAssociationAnalysisRuleEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "DeleteConfiguredTableAssociationAnalysisRuleEndpointParamsInterceptor"

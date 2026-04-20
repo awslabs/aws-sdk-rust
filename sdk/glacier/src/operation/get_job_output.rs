@@ -123,11 +123,15 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for GetJobO
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("GetJobOutput")
-            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-            .with_interceptor(GetJobOutputEndpointParamsInterceptor)
-            .with_interceptor(crate::glacier_interceptors::GlacierAccountIdAutofillInterceptor::<
-                crate::operation::get_job_output::GetJobOutputInput,
-            >::new())
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                GetJobOutputEndpointParamsInterceptor,
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                crate::glacier_interceptors::GlacierAccountIdAutofillInterceptor::<crate::operation::get_job_output::GetJobOutputInput>::new(),
+            ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::get_job_output::GetJobOutputError,
             >::new())
@@ -262,6 +266,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetJobOutput
 #[derive(Debug)]
 struct GetJobOutputEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for GetJobOutputEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "GetJobOutputEndpointParamsInterceptor"

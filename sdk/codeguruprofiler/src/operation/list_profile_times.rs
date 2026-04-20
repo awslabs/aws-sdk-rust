@@ -126,8 +126,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ListPro
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("ListProfileTimes")
-            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-            .with_interceptor(ListProfileTimesEndpointParamsInterceptor)
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ListProfileTimesEndpointParamsInterceptor,
+            ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::list_profile_times::ListProfileTimesError,
             >::new())
@@ -230,10 +234,10 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListProfileT
                 let inner_4 = inner_4
                     .as_ref()
                     .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("period", "cannot be empty or unset"))?;
-                query.push_kv("period", &::aws_smithy_http::query::fmt_string(inner_4));
+                query.push_kv("period", &::aws_smithy_http::query::fmt_string(inner_4.as_str()));
                 if let ::std::option::Option::Some(inner_5) = &_input.order_by {
                     {
-                        query.push_kv("orderBy", &::aws_smithy_http::query::fmt_string(inner_5));
+                        query.push_kv("orderBy", &::aws_smithy_http::query::fmt_string(inner_5.as_str()));
                     }
                 }
                 if let ::std::option::Option::Some(inner_6) = &_input.max_results {
@@ -269,6 +273,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListProfileT
 #[derive(Debug)]
 struct ListProfileTimesEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListProfileTimesEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "ListProfileTimesEndpointParamsInterceptor"

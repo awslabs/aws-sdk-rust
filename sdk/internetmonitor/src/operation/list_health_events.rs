@@ -126,8 +126,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ListHea
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("ListHealthEvents")
-            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-            .with_interceptor(ListHealthEventsEndpointParamsInterceptor)
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ListHealthEventsEndpointParamsInterceptor,
+            ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::list_health_events::ListHealthEventsError,
             >::new())
@@ -234,7 +238,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListHealthEv
                 }
                 if let ::std::option::Option::Some(inner_6) = &_input.event_status {
                     {
-                        query.push_kv("EventStatus", &::aws_smithy_http::query::fmt_string(inner_6));
+                        query.push_kv("EventStatus", &::aws_smithy_http::query::fmt_string(inner_6.as_str()));
                     }
                 }
                 if let ::std::option::Option::Some(inner_7) = &_input.linked_account_id {
@@ -265,6 +269,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListHealthEv
 #[derive(Debug)]
 struct ListHealthEventsEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListHealthEventsEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "ListHealthEventsEndpointParamsInterceptor"

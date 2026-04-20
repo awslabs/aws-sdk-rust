@@ -133,8 +133,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for UpdateO
         #[allow(unused_mut)]
         let mut rcb =
             ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("UpdateOrganizationRecommendationLifecycle")
-                .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-                .with_interceptor(UpdateOrganizationRecommendationLifecycleEndpointParamsInterceptor)
+                .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                    ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+                ))
+                .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                    UpdateOrganizationRecommendationLifecycleEndpointParamsInterceptor,
+                ))
                 .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                     crate::operation::update_organization_recommendation_lifecycle::UpdateOrganizationRecommendationLifecycleError,
                 >::new())
@@ -248,6 +252,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for UpdateOrgani
 #[derive(Debug)]
 struct UpdateOrganizationRecommendationLifecycleEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for UpdateOrganizationRecommendationLifecycleEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "UpdateOrganizationRecommendationLifecycleEndpointParamsInterceptor"

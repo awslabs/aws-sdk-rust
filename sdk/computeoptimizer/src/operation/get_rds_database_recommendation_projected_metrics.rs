@@ -132,8 +132,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for GetRDSD
         #[allow(unused_mut)]
         let mut rcb =
             ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("GetRDSDatabaseRecommendationProjectedMetrics")
-                .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-                .with_interceptor(GetRDSDatabaseRecommendationProjectedMetricsEndpointParamsInterceptor)
+                .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                    ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+                ))
+                .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                    GetRDSDatabaseRecommendationProjectedMetricsEndpointParamsInterceptor,
+                ))
                 .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                     crate::operation::get_rds_database_recommendation_projected_metrics::GetRDSDatabaseRecommendationProjectedMetricsError,
                 >::new())
@@ -224,6 +228,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetRDSDataba
 #[derive(Debug)]
 struct GetRDSDatabaseRecommendationProjectedMetricsEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for GetRDSDatabaseRecommendationProjectedMetricsEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "GetRDSDatabaseRecommendationProjectedMetricsEndpointParamsInterceptor"

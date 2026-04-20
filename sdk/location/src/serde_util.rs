@@ -158,6 +158,21 @@ pub(crate) fn calculate_route_matrix_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn cancel_job_output_output_correct_errors(
+    mut builder: crate::operation::cancel_job::builders::CancelJobOutputBuilder,
+) -> crate::operation::cancel_job::builders::CancelJobOutputBuilder {
+    if builder.job_arn.is_none() {
+        builder.job_arn = Some(Default::default())
+    }
+    if builder.job_id.is_none() {
+        builder.job_id = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::JobStatus>().ok()
+    }
+    builder
+}
+
 pub(crate) fn create_geofence_collection_output_output_correct_errors(
     mut builder: crate::operation::create_geofence_collection::builders::CreateGeofenceCollectionOutputBuilder,
 ) -> crate::operation::create_geofence_collection::builders::CreateGeofenceCollectionOutputBuilder {
@@ -470,6 +485,45 @@ pub(crate) fn get_geofence_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn get_job_output_output_correct_errors(
+    mut builder: crate::operation::get_job::builders::GetJobOutputBuilder,
+) -> crate::operation::get_job::builders::GetJobOutputBuilder {
+    if builder.action.is_none() {
+        builder.action = "no value was set".parse::<crate::types::JobAction>().ok()
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.execution_role_arn.is_none() {
+        builder.execution_role_arn = Some(Default::default())
+    }
+    if builder.input_options.is_none() {
+        builder.input_options = {
+            let builder = crate::types::builders::JobInputOptionsBuilder::default();
+            crate::serde_util::job_input_options_correct_errors(builder).build().ok()
+        }
+    }
+    if builder.job_arn.is_none() {
+        builder.job_arn = Some(Default::default())
+    }
+    if builder.job_id.is_none() {
+        builder.job_id = Some(Default::default())
+    }
+    if builder.output_options.is_none() {
+        builder.output_options = {
+            let builder = crate::types::builders::JobOutputOptionsBuilder::default();
+            crate::serde_util::job_output_options_correct_errors(builder).build().ok()
+        }
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::JobStatus>().ok()
+    }
+    if builder.updated_at.is_none() {
+        builder.updated_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
 pub(crate) fn get_place_output_output_correct_errors(
     mut builder: crate::operation::get_place::builders::GetPlaceOutputBuilder,
 ) -> crate::operation::get_place::builders::GetPlaceOutputBuilder {
@@ -503,6 +557,15 @@ pub(crate) fn list_geofence_collections_output_output_correct_errors(
 pub(crate) fn list_geofences_output_output_correct_errors(
     mut builder: crate::operation::list_geofences::builders::ListGeofencesOutputBuilder,
 ) -> crate::operation::list_geofences::builders::ListGeofencesOutputBuilder {
+    if builder.entries.is_none() {
+        builder.entries = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn list_jobs_output_output_correct_errors(
+    mut builder: crate::operation::list_jobs::builders::ListJobsOutputBuilder,
+) -> crate::operation::list_jobs::builders::ListJobsOutputBuilder {
     if builder.entries.is_none() {
         builder.entries = Some(Default::default())
     }
@@ -625,6 +688,24 @@ pub(crate) fn search_place_index_for_text_output_output_correct_errors(
     }
     if builder.results.is_none() {
         builder.results = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn start_job_output_output_correct_errors(
+    mut builder: crate::operation::start_job::builders::StartJobOutputBuilder,
+) -> crate::operation::start_job::builders::StartJobOutputBuilder {
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.job_arn.is_none() {
+        builder.job_arn = Some(Default::default())
+    }
+    if builder.job_id.is_none() {
+        builder.job_id = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::JobStatus>().ok()
     }
     builder
 }
@@ -803,6 +884,30 @@ pub(crate) fn map_configuration_correct_errors(
     builder
 }
 
+pub(crate) fn job_input_options_correct_errors(
+    mut builder: crate::types::builders::JobInputOptionsBuilder,
+) -> crate::types::builders::JobInputOptionsBuilder {
+    if builder.location.is_none() {
+        builder.location = Some(Default::default())
+    }
+    if builder.format.is_none() {
+        builder.format = "no value was set".parse::<crate::types::JobInputFormat>().ok()
+    }
+    builder
+}
+
+pub(crate) fn job_output_options_correct_errors(
+    mut builder: crate::types::builders::JobOutputOptionsBuilder,
+) -> crate::types::builders::JobOutputOptionsBuilder {
+    if builder.format.is_none() {
+        builder.format = "no value was set".parse::<crate::types::JobOutputFormat>().ok()
+    }
+    if builder.location.is_none() {
+        builder.location = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn place_correct_errors(mut builder: crate::types::builders::PlaceBuilder) -> crate::types::builders::PlaceBuilder {
     if builder.geometry.is_none() {
         builder.geometry = {
@@ -854,6 +959,13 @@ pub(crate) fn inferred_state_correct_errors(
 ) -> crate::types::builders::InferredStateBuilder {
     if builder.proxy_detected.is_none() {
         builder.proxy_detected = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn job_error_correct_errors(mut builder: crate::types::builders::JobErrorBuilder) -> crate::types::builders::JobErrorBuilder {
+    if builder.code.is_none() {
+        builder.code = "no value was set".parse::<crate::types::JobErrorCode>().ok()
     }
     builder
 }
@@ -1096,6 +1208,45 @@ pub(crate) fn list_geofence_response_entry_correct_errors(
     }
     if builder.update_time.is_none() {
         builder.update_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
+pub(crate) fn list_jobs_response_entry_correct_errors(
+    mut builder: crate::types::builders::ListJobsResponseEntryBuilder,
+) -> crate::types::builders::ListJobsResponseEntryBuilder {
+    if builder.action.is_none() {
+        builder.action = "no value was set".parse::<crate::types::JobAction>().ok()
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.execution_role_arn.is_none() {
+        builder.execution_role_arn = Some(Default::default())
+    }
+    if builder.input_options.is_none() {
+        builder.input_options = {
+            let builder = crate::types::builders::JobInputOptionsBuilder::default();
+            crate::serde_util::job_input_options_correct_errors(builder).build().ok()
+        }
+    }
+    if builder.job_id.is_none() {
+        builder.job_id = Some(Default::default())
+    }
+    if builder.job_arn.is_none() {
+        builder.job_arn = Some(Default::default())
+    }
+    if builder.output_options.is_none() {
+        builder.output_options = {
+            let builder = crate::types::builders::JobOutputOptionsBuilder::default();
+            crate::serde_util::job_output_options_correct_errors(builder).build().ok()
+        }
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::JobStatus>().ok()
+    }
+    if builder.updated_at.is_none() {
+        builder.updated_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
     }
     builder
 }

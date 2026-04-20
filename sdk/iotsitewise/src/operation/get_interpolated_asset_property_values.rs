@@ -132,8 +132,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for GetInte
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("GetInterpolatedAssetPropertyValues")
-            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-            .with_interceptor(GetInterpolatedAssetPropertyValuesEndpointParamsInterceptor)
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                GetInterpolatedAssetPropertyValuesEndpointParamsInterceptor,
+            ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::get_interpolated_asset_property_values::GetInterpolatedAssetPropertyValuesError,
             >::new())
@@ -243,7 +247,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetInterpola
                 let inner_8 = inner_8
                     .as_ref()
                     .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("quality", "cannot be empty or unset"))?;
-                query.push_kv("quality", &::aws_smithy_http::query::fmt_string(inner_8));
+                query.push_kv("quality", &::aws_smithy_http::query::fmt_string(inner_8.as_str()));
                 let inner_9 = &_input.interval_in_seconds;
                 let inner_9 = inner_9.as_ref().ok_or_else(|| {
                     ::aws_smithy_types::error::operation::BuildError::missing_field("interval_in_seconds", "cannot be empty or unset")
@@ -301,6 +305,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetInterpola
 #[derive(Debug)]
 struct GetInterpolatedAssetPropertyValuesEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for GetInterpolatedAssetPropertyValuesEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "GetInterpolatedAssetPropertyValuesEndpointParamsInterceptor"

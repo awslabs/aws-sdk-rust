@@ -18,7 +18,7 @@ use aws_runtime::auth::SigV4OperationSigningConfig;
 use aws_sigv4::http_request::SignableBody;
 use aws_smithy_runtime_api::box_error::BoxError;
 use aws_smithy_runtime_api::client::interceptors::context::{BeforeSerializationInterceptorContextMut, BeforeTransmitInterceptorContextMut};
-use aws_smithy_runtime_api::client::interceptors::Intercept;
+use aws_smithy_runtime_api::client::interceptors::{dyn_dispatch_hint, Intercept};
 use aws_smithy_runtime_api::client::orchestrator::{HttpRequest, LoadedRequestBody};
 use aws_smithy_runtime_api::client::runtime_components::RuntimeComponents;
 use aws_smithy_types::byte_stream;
@@ -64,6 +64,7 @@ impl<I> GlacierAccountIdAutofillInterceptor<I> {
     }
 }
 
+#[dyn_dispatch_hint]
 impl<I: GlacierAccountId + Send + Sync + 'static> Intercept for GlacierAccountIdAutofillInterceptor<I> {
     fn name(&self) -> &'static str {
         "GlacierAccountIdAutofillInterceptor"
@@ -95,6 +96,7 @@ impl GlacierApiVersionInterceptor {
     }
 }
 
+#[dyn_dispatch_hint]
 impl Intercept for GlacierApiVersionInterceptor {
     fn name(&self) -> &'static str {
         "GlacierApiVersionInterceptor"
@@ -120,6 +122,7 @@ pub(crate) struct GlacierTreeHashHeaderInterceptor {
     _priv: (),
 }
 
+#[dyn_dispatch_hint]
 impl Intercept for GlacierTreeHashHeaderInterceptor {
     fn name(&self) -> &'static str {
         "GlacierTreeHashHeaderInterceptor"

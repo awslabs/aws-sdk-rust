@@ -126,8 +126,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for DeleteF
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("DeleteFolderMembership")
-            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-            .with_interceptor(DeleteFolderMembershipEndpointParamsInterceptor)
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                DeleteFolderMembershipEndpointParamsInterceptor,
+            ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::delete_folder_membership::DeleteFolderMembershipError,
             >::new())
@@ -212,7 +216,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for DeleteFolder
                 let input_3 = input_3
                     .as_ref()
                     .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("member_type", "cannot be empty or unset"))?;
-                let member_type = ::aws_smithy_http::label::fmt_string(input_3, ::aws_smithy_http::label::EncodingStrategy::Default);
+                let member_type = ::aws_smithy_http::label::fmt_string(input_3.as_str(), ::aws_smithy_http::label::EncodingStrategy::Default);
                 if member_type.is_empty() {
                     return ::std::result::Result::Err(::aws_smithy_types::error::operation::BuildError::missing_field(
                         "member_type",
@@ -261,6 +265,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for DeleteFolder
 #[derive(Debug)]
 struct DeleteFolderMembershipEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DeleteFolderMembershipEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "DeleteFolderMembershipEndpointParamsInterceptor"

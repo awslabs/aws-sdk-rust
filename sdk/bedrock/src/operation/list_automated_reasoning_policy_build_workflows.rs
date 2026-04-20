@@ -133,8 +133,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ListAut
         #[allow(unused_mut)]
         let mut rcb =
             ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("ListAutomatedReasoningPolicyBuildWorkflows")
-                .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-                .with_interceptor(ListAutomatedReasoningPolicyBuildWorkflowsEndpointParamsInterceptor)
+                .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                    ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+                ))
+                .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                    ListAutomatedReasoningPolicyBuildWorkflowsEndpointParamsInterceptor,
+                ))
                 .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                     crate::operation::list_automated_reasoning_policy_build_workflows::ListAutomatedReasoningPolicyBuildWorkflowsError,
                 >::new())
@@ -250,6 +254,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListAutomate
 #[derive(Debug)]
 struct ListAutomatedReasoningPolicyBuildWorkflowsEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListAutomatedReasoningPolicyBuildWorkflowsEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "ListAutomatedReasoningPolicyBuildWorkflowsEndpointParamsInterceptor"

@@ -30,17 +30,20 @@ pub fn ser_telemetry_rule(
     if let Some(var_8) = &input.selection_criteria {
         object.key("SelectionCriteria").string(var_8.as_str());
     }
-    if let Some(var_9) = &input.regions {
-        let mut array_10 = object.key("Regions").start_array();
-        for item_11 in var_9 {
+    if let Some(var_9) = &input.allow_field_updates {
+        object.key("AllowFieldUpdates").boolean(*var_9);
+    }
+    if let Some(var_10) = &input.regions {
+        let mut array_11 = object.key("Regions").start_array();
+        for item_12 in var_10 {
             {
-                array_10.value().string(item_11.as_str());
+                array_11.value().string(item_12.as_str());
             }
         }
-        array_10.finish();
+        array_11.finish();
     }
-    if let Some(var_12) = &input.all_regions {
-        object.key("AllRegions").boolean(*var_12);
+    if let Some(var_13) = &input.all_regions {
+        object.key("AllRegions").boolean(*var_13);
     }
     Ok(())
 }
@@ -100,6 +103,9 @@ where
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
                             );
+                        }
+                        "AllowFieldUpdates" => {
+                            builder = builder.set_allow_field_updates(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         "Regions" => {
                             builder = builder.set_regions(crate::protocol_serde::shape_regions::de_regions(tokens, _value)?);

@@ -133,8 +133,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for PutEmai
         #[allow(unused_mut)]
         let mut rcb =
             ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("PutEmailIdentityConfigurationSetAttributes")
-                .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-                .with_interceptor(PutEmailIdentityConfigurationSetAttributesEndpointParamsInterceptor)
+                .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                    ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+                ))
+                .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                    PutEmailIdentityConfigurationSetAttributesEndpointParamsInterceptor,
+                ))
                 .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                     crate::operation::put_email_identity_configuration_set_attributes::PutEmailIdentityConfigurationSetAttributesError,
                 >::new())
@@ -240,6 +244,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for PutEmailIden
 #[derive(Debug)]
 struct PutEmailIdentityConfigurationSetAttributesEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for PutEmailIdentityConfigurationSetAttributesEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "PutEmailIdentityConfigurationSetAttributesEndpointParamsInterceptor"

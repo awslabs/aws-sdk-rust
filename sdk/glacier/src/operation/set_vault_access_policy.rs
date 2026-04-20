@@ -126,11 +126,17 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for SetVaul
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("SetVaultAccessPolicy")
-            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-            .with_interceptor(SetVaultAccessPolicyEndpointParamsInterceptor)
-            .with_interceptor(crate::glacier_interceptors::GlacierAccountIdAutofillInterceptor::<
-                crate::operation::set_vault_access_policy::SetVaultAccessPolicyInput,
-            >::new())
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                SetVaultAccessPolicyEndpointParamsInterceptor,
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                crate::glacier_interceptors::GlacierAccountIdAutofillInterceptor::<
+                    crate::operation::set_vault_access_policy::SetVaultAccessPolicyInput,
+                >::new(),
+            ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::set_vault_access_policy::SetVaultAccessPolicyError,
             >::new())
@@ -246,6 +252,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for SetVaultAcce
 #[derive(Debug)]
 struct SetVaultAccessPolicyEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for SetVaultAccessPolicyEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "SetVaultAccessPolicyEndpointParamsInterceptor"

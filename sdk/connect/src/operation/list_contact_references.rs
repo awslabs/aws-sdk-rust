@@ -126,8 +126,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ListCon
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("ListContactReferences")
-            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-            .with_interceptor(ListContactReferencesEndpointParamsInterceptor)
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ListContactReferencesEndpointParamsInterceptor,
+            ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::list_contact_references::ListContactReferencesError,
             >::new())
@@ -227,7 +231,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListContactR
                     .as_ref()
                     .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("reference_types", "cannot be empty or unset"))?;
                 for inner_4 in inner_3 {
-                    query.push_kv("referenceTypes", &::aws_smithy_http::query::fmt_string(inner_4));
+                    query.push_kv("referenceTypes", &::aws_smithy_http::query::fmt_string(inner_4.as_str()));
                 }
                 if let ::std::option::Option::Some(inner_5) = &_input.next_token {
                     {
@@ -257,6 +261,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListContactR
 #[derive(Debug)]
 struct ListContactReferencesEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListContactReferencesEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "ListContactReferencesEndpointParamsInterceptor"

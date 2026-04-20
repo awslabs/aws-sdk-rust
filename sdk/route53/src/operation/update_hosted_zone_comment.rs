@@ -126,10 +126,16 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for UpdateH
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("UpdateHostedZoneComment")
-            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-            .with_interceptor(UpdateHostedZoneCommentEndpointParamsInterceptor)
-            .with_interceptor(crate::route53_resource_id_preprocessor::Route53ResourceIdInterceptor::new(
-                |input: &mut crate::operation::update_hosted_zone_comment::UpdateHostedZoneCommentInput| &mut input.id,
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                UpdateHostedZoneCommentEndpointParamsInterceptor,
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                crate::route53_resource_id_preprocessor::Route53ResourceIdInterceptor::new(
+                    |input: &mut crate::operation::update_hosted_zone_comment::UpdateHostedZoneCommentInput| &mut input.id,
+                ),
             ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::update_hosted_zone_comment::UpdateHostedZoneCommentError,
@@ -229,6 +235,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for UpdateHosted
 #[derive(Debug)]
 struct UpdateHostedZoneCommentEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for UpdateHostedZoneCommentEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "UpdateHostedZoneCommentEndpointParamsInterceptor"

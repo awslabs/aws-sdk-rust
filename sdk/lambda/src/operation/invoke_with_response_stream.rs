@@ -127,7 +127,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for InvokeW
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("InvokeWithResponseStream")
-            .with_interceptor(InvokeWithResponseStreamEndpointParamsInterceptor)
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                InvokeWithResponseStreamEndpointParamsInterceptor,
+            ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::invoke_with_response_stream::InvokeWithResponseStreamError,
             >::new())
@@ -259,6 +261,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for InvokeWithRe
 #[derive(Debug)]
 struct InvokeWithResponseStreamEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for InvokeWithResponseStreamEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "InvokeWithResponseStreamEndpointParamsInterceptor"

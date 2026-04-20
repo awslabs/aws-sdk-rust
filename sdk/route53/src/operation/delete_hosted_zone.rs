@@ -126,10 +126,16 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for DeleteH
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("DeleteHostedZone")
-            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-            .with_interceptor(DeleteHostedZoneEndpointParamsInterceptor)
-            .with_interceptor(crate::route53_resource_id_preprocessor::Route53ResourceIdInterceptor::new(
-                |input: &mut crate::operation::delete_hosted_zone::DeleteHostedZoneInput| &mut input.id,
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                DeleteHostedZoneEndpointParamsInterceptor,
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                crate::route53_resource_id_preprocessor::Route53ResourceIdInterceptor::new(
+                    |input: &mut crate::operation::delete_hosted_zone::DeleteHostedZoneInput| &mut input.id,
+                ),
             ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::delete_hosted_zone::DeleteHostedZoneError,
@@ -223,6 +229,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for DeleteHosted
 #[derive(Debug)]
 struct DeleteHostedZoneEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DeleteHostedZoneEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "DeleteHostedZoneEndpointParamsInterceptor"

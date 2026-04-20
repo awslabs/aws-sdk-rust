@@ -132,8 +132,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for UpdateC
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("UpdateCampaignChannelSubtypeConfig")
-            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-            .with_interceptor(UpdateCampaignChannelSubtypeConfigEndpointParamsInterceptor)
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                UpdateCampaignChannelSubtypeConfigEndpointParamsInterceptor,
+            ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::update_campaign_channel_subtype_config::UpdateCampaignChannelSubtypeConfigError,
             >::new())
@@ -236,6 +240,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for UpdateCampai
 #[derive(Debug)]
 struct UpdateCampaignChannelSubtypeConfigEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for UpdateCampaignChannelSubtypeConfigEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "UpdateCampaignChannelSubtypeConfigEndpointParamsInterceptor"

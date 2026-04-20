@@ -67,6 +67,8 @@ pub struct CreateClientVpnEndpointInput {
     pub endpoint_ip_address_type: ::std::option::Option<crate::types::EndpointIpAddressType>,
     /// <p>The IP address type for traffic within the Client VPN tunnel. Valid values are <code>ipv4</code> (default) for IPv4 traffic only, <code>ipv6</code> for IPv6 addressing only, or <code>dual-stack</code> for both IPv4 and IPv6 traffic. When set to <code>dual-stack</code>, clients can access both IPv4 and IPv6 resources through the VPN .</p>
     pub traffic_ip_address_type: ::std::option::Option<crate::types::TrafficIpAddressType>,
+    /// <p>The Transit Gateway configuration for the Client VPN endpoint. Use this parameter to associate the endpoint with a Transit Gateway instead of a VPC. You cannot specify both <code>TransitGatewayConfiguration</code> and <code>VpcId</code>/<code>SecurityGroupIds</code>.</p>
+    pub transit_gateway_configuration: ::std::option::Option<crate::types::TransitGatewayConfigurationInputStructure>,
 }
 impl CreateClientVpnEndpointInput {
     /// <p>The IPv4 address range, in CIDR notation, from which to assign client IP addresses. The address range cannot overlap with the local CIDR of the VPC in which the associated subnet is located, or the routes that you add manually. The address range cannot be changed after the Client VPN endpoint has been created. Client CIDR range must have a size of at least /22 and must not be greater than /12.</p>
@@ -185,6 +187,10 @@ impl CreateClientVpnEndpointInput {
     pub fn traffic_ip_address_type(&self) -> ::std::option::Option<&crate::types::TrafficIpAddressType> {
         self.traffic_ip_address_type.as_ref()
     }
+    /// <p>The Transit Gateway configuration for the Client VPN endpoint. Use this parameter to associate the endpoint with a Transit Gateway instead of a VPC. You cannot specify both <code>TransitGatewayConfiguration</code> and <code>VpcId</code>/<code>SecurityGroupIds</code>.</p>
+    pub fn transit_gateway_configuration(&self) -> ::std::option::Option<&crate::types::TransitGatewayConfigurationInputStructure> {
+        self.transit_gateway_configuration.as_ref()
+    }
 }
 impl CreateClientVpnEndpointInput {
     /// Creates a new builder-style object to manufacture [`CreateClientVpnEndpointInput`](crate::operation::create_client_vpn_endpoint::CreateClientVpnEndpointInput).
@@ -219,6 +225,7 @@ pub struct CreateClientVpnEndpointInputBuilder {
     pub(crate) disconnect_on_session_timeout: ::std::option::Option<bool>,
     pub(crate) endpoint_ip_address_type: ::std::option::Option<crate::types::EndpointIpAddressType>,
     pub(crate) traffic_ip_address_type: ::std::option::Option<crate::types::TrafficIpAddressType>,
+    pub(crate) transit_gateway_configuration: ::std::option::Option<crate::types::TransitGatewayConfigurationInputStructure>,
 }
 impl CreateClientVpnEndpointInputBuilder {
     /// <p>The IPv4 address range, in CIDR notation, from which to assign client IP addresses. The address range cannot overlap with the local CIDR of the VPC in which the associated subnet is located, or the routes that you add manually. The address range cannot be changed after the Client VPN endpoint has been created. Client CIDR range must have a size of at least /22 and must not be greater than /12.</p>
@@ -615,6 +622,23 @@ impl CreateClientVpnEndpointInputBuilder {
     pub fn get_traffic_ip_address_type(&self) -> &::std::option::Option<crate::types::TrafficIpAddressType> {
         &self.traffic_ip_address_type
     }
+    /// <p>The Transit Gateway configuration for the Client VPN endpoint. Use this parameter to associate the endpoint with a Transit Gateway instead of a VPC. You cannot specify both <code>TransitGatewayConfiguration</code> and <code>VpcId</code>/<code>SecurityGroupIds</code>.</p>
+    pub fn transit_gateway_configuration(mut self, input: crate::types::TransitGatewayConfigurationInputStructure) -> Self {
+        self.transit_gateway_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The Transit Gateway configuration for the Client VPN endpoint. Use this parameter to associate the endpoint with a Transit Gateway instead of a VPC. You cannot specify both <code>TransitGatewayConfiguration</code> and <code>VpcId</code>/<code>SecurityGroupIds</code>.</p>
+    pub fn set_transit_gateway_configuration(
+        mut self,
+        input: ::std::option::Option<crate::types::TransitGatewayConfigurationInputStructure>,
+    ) -> Self {
+        self.transit_gateway_configuration = input;
+        self
+    }
+    /// <p>The Transit Gateway configuration for the Client VPN endpoint. Use this parameter to associate the endpoint with a Transit Gateway instead of a VPC. You cannot specify both <code>TransitGatewayConfiguration</code> and <code>VpcId</code>/<code>SecurityGroupIds</code>.</p>
+    pub fn get_transit_gateway_configuration(&self) -> &::std::option::Option<crate::types::TransitGatewayConfigurationInputStructure> {
+        &self.transit_gateway_configuration
+    }
     /// Consumes the builder and constructs a [`CreateClientVpnEndpointInput`](crate::operation::create_client_vpn_endpoint::CreateClientVpnEndpointInput).
     pub fn build(
         self,
@@ -645,6 +669,7 @@ impl CreateClientVpnEndpointInputBuilder {
             disconnect_on_session_timeout: self.disconnect_on_session_timeout,
             endpoint_ip_address_type: self.endpoint_ip_address_type,
             traffic_ip_address_type: self.traffic_ip_address_type,
+            transit_gateway_configuration: self.transit_gateway_configuration,
         })
     }
 }

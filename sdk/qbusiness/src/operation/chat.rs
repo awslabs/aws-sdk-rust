@@ -121,7 +121,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for Chat {
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("Chat")
-            .with_interceptor(ChatEndpointParamsInterceptor)
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ChatEndpointParamsInterceptor,
+            ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::chat::ChatError,
             >::new())
@@ -275,6 +277,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ChatRequestS
 #[derive(Debug)]
 struct ChatEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ChatEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "ChatEndpointParamsInterceptor"

@@ -496,4 +496,21 @@ impl CreateClientVpnEndpointFluentBuilder {
     pub fn get_traffic_ip_address_type(&self) -> &::std::option::Option<crate::types::TrafficIpAddressType> {
         self.inner.get_traffic_ip_address_type()
     }
+    /// <p>The Transit Gateway configuration for the Client VPN endpoint. Use this parameter to associate the endpoint with a Transit Gateway instead of a VPC. You cannot specify both <code>TransitGatewayConfiguration</code> and <code>VpcId</code>/<code>SecurityGroupIds</code>.</p>
+    pub fn transit_gateway_configuration(mut self, input: crate::types::TransitGatewayConfigurationInputStructure) -> Self {
+        self.inner = self.inner.transit_gateway_configuration(input);
+        self
+    }
+    /// <p>The Transit Gateway configuration for the Client VPN endpoint. Use this parameter to associate the endpoint with a Transit Gateway instead of a VPC. You cannot specify both <code>TransitGatewayConfiguration</code> and <code>VpcId</code>/<code>SecurityGroupIds</code>.</p>
+    pub fn set_transit_gateway_configuration(
+        mut self,
+        input: ::std::option::Option<crate::types::TransitGatewayConfigurationInputStructure>,
+    ) -> Self {
+        self.inner = self.inner.set_transit_gateway_configuration(input);
+        self
+    }
+    /// <p>The Transit Gateway configuration for the Client VPN endpoint. Use this parameter to associate the endpoint with a Transit Gateway instead of a VPC. You cannot specify both <code>TransitGatewayConfiguration</code> and <code>VpcId</code>/<code>SecurityGroupIds</code>.</p>
+    pub fn get_transit_gateway_configuration(&self) -> &::std::option::Option<crate::types::TransitGatewayConfigurationInputStructure> {
+        self.inner.get_transit_gateway_configuration()
+    }
 }

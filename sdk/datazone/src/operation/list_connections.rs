@@ -127,8 +127,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ListCon
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("ListConnections")
-            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-            .with_interceptor(ListConnectionsEndpointParamsInterceptor)
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ListConnectionsEndpointParamsInterceptor,
+            ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::list_connections::ListConnectionsError,
             >::new())
@@ -219,12 +223,12 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListConnecti
                 }
                 if let ::std::option::Option::Some(inner_4) = &_input.sort_by {
                     {
-                        query.push_kv("sortBy", &::aws_smithy_http::query::fmt_string(inner_4));
+                        query.push_kv("sortBy", &::aws_smithy_http::query::fmt_string(inner_4.as_str()));
                     }
                 }
                 if let ::std::option::Option::Some(inner_5) = &_input.sort_order {
                     {
-                        query.push_kv("sortOrder", &::aws_smithy_http::query::fmt_string(inner_5));
+                        query.push_kv("sortOrder", &::aws_smithy_http::query::fmt_string(inner_5.as_str()));
                     }
                 }
                 if let ::std::option::Option::Some(inner_6) = &_input.name {
@@ -244,12 +248,12 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListConnecti
                 }
                 if let ::std::option::Option::Some(inner_9) = &_input.r#type {
                     {
-                        query.push_kv("type", &::aws_smithy_http::query::fmt_string(inner_9));
+                        query.push_kv("type", &::aws_smithy_http::query::fmt_string(inner_9.as_str()));
                     }
                 }
                 if let ::std::option::Option::Some(inner_10) = &_input.scope {
                     {
-                        query.push_kv("scope", &::aws_smithy_http::query::fmt_string(inner_10));
+                        query.push_kv("scope", &::aws_smithy_http::query::fmt_string(inner_10.as_str()));
                     }
                 }
                 ::std::result::Result::Ok(())
@@ -275,6 +279,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListConnecti
 #[derive(Debug)]
 struct ListConnectionsEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListConnectionsEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "ListConnectionsEndpointParamsInterceptor"

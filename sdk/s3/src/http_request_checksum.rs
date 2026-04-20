@@ -17,7 +17,7 @@ use aws_smithy_checksums::ChecksumAlgorithm;
 use aws_smithy_runtime::client::sdk_feature::SmithySdkFeature;
 use aws_smithy_runtime_api::box_error::BoxError;
 use aws_smithy_runtime_api::client::interceptors::context::{BeforeSerializationInterceptorContextMut, BeforeTransmitInterceptorContextMut, Input};
-use aws_smithy_runtime_api::client::interceptors::Intercept;
+use aws_smithy_runtime_api::client::interceptors::{dyn_dispatch_hint, Intercept};
 use aws_smithy_runtime_api::client::runtime_components::RuntimeComponents;
 use aws_smithy_runtime_api::http::Request;
 use aws_smithy_types::body::SdkBody;
@@ -123,6 +123,7 @@ impl<AP, CM> RequestChecksumInterceptor<AP, CM> {
     }
 }
 
+#[dyn_dispatch_hint]
 impl<AP, CM> Intercept for RequestChecksumInterceptor<AP, CM>
 where
     AP: Fn(&Input) -> (Option<String>, bool) + Send + Sync,

@@ -126,8 +126,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ListMod
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("ListModelManifests")
-            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-            .with_interceptor(ListModelManifestsEndpointParamsInterceptor)
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ListModelManifestsEndpointParamsInterceptor,
+            ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::list_model_manifests::ListModelManifestsError,
             >::new())
@@ -211,7 +215,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListModelMan
                 }
                 if let ::std::option::Option::Some(inner_4) = &_input.list_response_scope {
                     {
-                        query.push_kv("listResponseScope", &::aws_smithy_http::query::fmt_string(inner_4));
+                        query.push_kv("listResponseScope", &::aws_smithy_http::query::fmt_string(inner_4.as_str()));
                     }
                 }
                 ::std::result::Result::Ok(())
@@ -247,6 +251,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListModelMan
 #[derive(Debug)]
 struct ListModelManifestsEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListModelManifestsEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "ListModelManifestsEndpointParamsInterceptor"

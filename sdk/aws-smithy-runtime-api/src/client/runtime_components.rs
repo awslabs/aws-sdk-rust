@@ -647,6 +647,13 @@ impl RuntimeComponentsBuilder {
             .map(|tracked| tracked.value.clone())
     }
 
+    /// Returns `true` if any identity resolvers have been configured in this builder.
+    pub fn has_identity_resolvers(&self) -> bool {
+        self.identity_resolvers
+            .as_ref()
+            .is_some_and(|resolvers| !resolvers.is_empty())
+    }
+
     /// This method is broken since it does not replace an existing identity resolver of the given auth scheme ID.
     /// Use `set_identity_resolver` instead.
     #[deprecated(

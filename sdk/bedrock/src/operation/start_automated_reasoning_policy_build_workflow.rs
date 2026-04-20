@@ -141,8 +141,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for StartAu
         #[allow(unused_mut)]
         let mut rcb =
             ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("StartAutomatedReasoningPolicyBuildWorkflow")
-                .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-                .with_interceptor(StartAutomatedReasoningPolicyBuildWorkflowEndpointParamsInterceptor)
+                .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                    ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+                ))
+                .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                    StartAutomatedReasoningPolicyBuildWorkflowEndpointParamsInterceptor,
+                ))
                 .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                     crate::operation::start_automated_reasoning_policy_build_workflow::StartAutomatedReasoningPolicyBuildWorkflowError,
                 >::new())
@@ -216,7 +220,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for StartAutomat
                 let input_2 = input_2.as_ref().ok_or_else(|| {
                     ::aws_smithy_types::error::operation::BuildError::missing_field("build_workflow_type", "cannot be empty or unset")
                 })?;
-                let build_workflow_type = ::aws_smithy_http::label::fmt_string(input_2, ::aws_smithy_http::label::EncodingStrategy::Default);
+                let build_workflow_type = ::aws_smithy_http::label::fmt_string(input_2.as_str(), ::aws_smithy_http::label::EncodingStrategy::Default);
                 if build_workflow_type.is_empty() {
                     return ::std::result::Result::Err(::aws_smithy_types::error::operation::BuildError::missing_field(
                         "build_workflow_type",
@@ -261,6 +265,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for StartAutomat
 #[derive(Debug)]
 struct StartAutomatedReasoningPolicyBuildWorkflowEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for StartAutomatedReasoningPolicyBuildWorkflowEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "StartAutomatedReasoningPolicyBuildWorkflowEndpointParamsInterceptor"

@@ -123,8 +123,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ListRes
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("ListRestoreJobs")
-            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-            .with_interceptor(ListRestoreJobsEndpointParamsInterceptor)
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ListRestoreJobsEndpointParamsInterceptor,
+            ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::list_restore_jobs::ListRestoreJobsError,
             >::new())
@@ -229,7 +233,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListRestoreJ
                 }
                 if let ::std::option::Option::Some(inner_7) = &_input.by_status {
                     {
-                        query.push_kv("status", &::aws_smithy_http::query::fmt_string(inner_7));
+                        query.push_kv("status", &::aws_smithy_http::query::fmt_string(inner_7.as_str()));
                     }
                 }
                 if let ::std::option::Option::Some(inner_8) = &_input.by_complete_before {
@@ -281,6 +285,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListRestoreJ
 #[derive(Debug)]
 struct ListRestoreJobsEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListRestoreJobsEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "ListRestoreJobsEndpointParamsInterceptor"

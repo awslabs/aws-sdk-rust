@@ -124,9 +124,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for PutObje
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
                     let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("PutObjectLegalHold")
-                            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-.with_interceptor(PutObjectLegalHoldEndpointParamsInterceptor)
-.with_interceptor(crate::http_request_checksum::RequestChecksumInterceptor::new(
+                            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default()))
+.with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(PutObjectLegalHoldEndpointParamsInterceptor))
+.with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(crate::http_request_checksum::RequestChecksumInterceptor::new(
                                 |input: &::aws_smithy_runtime_api::client::interceptors::context::Input| {
                                     let input: &crate::operation::put_object_legal_hold::PutObjectLegalHoldInput = input.downcast_ref().expect("correct type");
                                     let checksum_algorithm = input.checksum_algorithm();
@@ -187,7 +187,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for PutObje
                                     // we can short circuit and exit the interceptor early.
                                     Ok(user_set_checksum_value)
                                 }
-                                ))
+                                )))
                             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<crate::operation::put_object_legal_hold::PutObjectLegalHoldError>::new())
 .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::ModeledAsRetryableClassifier::<crate::operation::put_object_legal_hold::PutObjectLegalHoldError>::new())
 .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<crate::operation::put_object_legal_hold::PutObjectLegalHoldError>::builder().transient_errors({
@@ -303,6 +303,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for PutObjectLeg
 #[derive(Debug)]
 struct PutObjectLegalHoldEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for PutObjectLegalHoldEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "PutObjectLegalHoldEndpointParamsInterceptor"

@@ -8,7 +8,7 @@
 
 use aws_smithy_runtime_api::box_error::BoxError;
 use aws_smithy_runtime_api::client::interceptors::context::BeforeTransmitInterceptorContextMut;
-use aws_smithy_runtime_api::client::interceptors::Intercept;
+use aws_smithy_runtime_api::client::interceptors::{dyn_dispatch_hint, Intercept};
 use aws_smithy_runtime_api::client::runtime_components::RuntimeComponents;
 use aws_smithy_types::config_bag::ConfigBag;
 use http_1x::header::ACCEPT;
@@ -20,6 +20,7 @@ pub(crate) struct AcceptHeaderInterceptor {
     _priv: (),
 }
 
+#[dyn_dispatch_hint]
 impl Intercept for AcceptHeaderInterceptor {
     fn name(&self) -> &'static str {
         "AcceptHeaderInterceptor"

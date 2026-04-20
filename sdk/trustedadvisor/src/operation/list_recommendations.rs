@@ -132,8 +132,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ListRec
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("ListRecommendations")
-            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-            .with_interceptor(ListRecommendationsEndpointParamsInterceptor)
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ListRecommendationsEndpointParamsInterceptor,
+            ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::list_recommendations::ListRecommendationsError,
             >::new())
@@ -212,17 +216,17 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListRecommen
                 }
                 if let ::std::option::Option::Some(inner_3) = &_input.r#type {
                     {
-                        query.push_kv("type", &::aws_smithy_http::query::fmt_string(inner_3));
+                        query.push_kv("type", &::aws_smithy_http::query::fmt_string(inner_3.as_str()));
                     }
                 }
                 if let ::std::option::Option::Some(inner_4) = &_input.status {
                     {
-                        query.push_kv("status", &::aws_smithy_http::query::fmt_string(inner_4));
+                        query.push_kv("status", &::aws_smithy_http::query::fmt_string(inner_4.as_str()));
                     }
                 }
                 if let ::std::option::Option::Some(inner_5) = &_input.pillar {
                     {
-                        query.push_kv("pillar", &::aws_smithy_http::query::fmt_string(inner_5));
+                        query.push_kv("pillar", &::aws_smithy_http::query::fmt_string(inner_5.as_str()));
                     }
                 }
                 if let ::std::option::Option::Some(inner_6) = &_input.aws_service {
@@ -232,7 +236,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListRecommen
                 }
                 if let ::std::option::Option::Some(inner_7) = &_input.source {
                     {
-                        query.push_kv("source", &::aws_smithy_http::query::fmt_string(inner_7));
+                        query.push_kv("source", &::aws_smithy_http::query::fmt_string(inner_7.as_str()));
                     }
                 }
                 if let ::std::option::Option::Some(inner_8) = &_input.check_identifier {
@@ -258,7 +262,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListRecommen
                 }
                 if let ::std::option::Option::Some(inner_11) = &_input.language {
                     {
-                        query.push_kv("language", &::aws_smithy_http::query::fmt_string(inner_11));
+                        query.push_kv("language", &::aws_smithy_http::query::fmt_string(inner_11.as_str()));
                     }
                 }
                 ::std::result::Result::Ok(())
@@ -284,6 +288,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListRecommen
 #[derive(Debug)]
 struct ListRecommendationsEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListRecommendationsEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "ListRecommendationsEndpointParamsInterceptor"

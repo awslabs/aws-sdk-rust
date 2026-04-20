@@ -126,10 +126,16 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ListRes
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("ListResourceRecordSets")
-            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-            .with_interceptor(ListResourceRecordSetsEndpointParamsInterceptor)
-            .with_interceptor(crate::route53_resource_id_preprocessor::Route53ResourceIdInterceptor::new(
-                |input: &mut crate::operation::list_resource_record_sets::ListResourceRecordSetsInput| &mut input.hosted_zone_id,
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ListResourceRecordSetsEndpointParamsInterceptor,
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                crate::route53_resource_id_preprocessor::Route53ResourceIdInterceptor::new(
+                    |input: &mut crate::operation::list_resource_record_sets::ListResourceRecordSetsInput| &mut input.hosted_zone_id,
+                ),
             ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::list_resource_record_sets::ListResourceRecordSetsError,
@@ -216,7 +222,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListResource
                 }
                 if let ::std::option::Option::Some(inner_3) = &_input.start_record_type {
                     {
-                        query.push_kv("type", &::aws_smithy_http::query::fmt_string(inner_3));
+                        query.push_kv("type", &::aws_smithy_http::query::fmt_string(inner_3.as_str()));
                     }
                 }
                 if let ::std::option::Option::Some(inner_4) = &_input.start_record_identifier {
@@ -252,6 +258,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListResource
 #[derive(Debug)]
 struct ListResourceRecordSetsEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListResourceRecordSetsEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "ListResourceRecordSetsEndpointParamsInterceptor"

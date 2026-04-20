@@ -15,6 +15,12 @@ pub use crate::types::_environment::Environment;
 
 pub use crate::types::_vlan::Vlan;
 
+pub use crate::types::_entitlement_type::EntitlementType;
+
+pub use crate::types::_connector_type::ConnectorType;
+
+pub use crate::types::_connector::Connector;
+
 pub use crate::types::_host_info_for_create::HostInfoForCreate;
 
 pub use crate::types::_environment_summary::EnvironmentSummary;
@@ -37,6 +43,10 @@ pub use crate::types::_check_result::CheckResult;
 
 pub use crate::types::_vlan_state::VlanState;
 
+pub use crate::types::_vm_entitlement::VmEntitlement;
+
+pub use crate::types::_connector_state::ConnectorState;
+
 pub use crate::types::_instance_type::InstanceType;
 
 pub use crate::types::_host_state::HostState;
@@ -46,6 +56,12 @@ pub use crate::types::_check::Check;
 pub use crate::types::_secret::Secret;
 
 pub use crate::types::_eip_association::EipAssociation;
+
+pub use crate::types::_entitlement_status::EntitlementStatus;
+
+pub use crate::types::_error_detail::ErrorDetail;
+
+pub use crate::types::_connector_check::ConnectorCheck;
 
 pub use crate::types::_network_interface::NetworkInterface;
 
@@ -59,13 +75,27 @@ mod _check_type;
 
 mod _connectivity_info;
 
+mod _connector;
+
+mod _connector_check;
+
+mod _connector_state;
+
+mod _connector_type;
+
 mod _eip_association;
+
+mod _entitlement_status;
+
+mod _entitlement_type;
 
 mod _environment;
 
 mod _environment_state;
 
 mod _environment_summary;
+
+mod _error_detail;
 
 mod _host;
 
@@ -102,6 +132,8 @@ mod _vcf_version_info;
 mod _vlan;
 
 mod _vlan_state;
+
+mod _vm_entitlement;
 
 /// Builders
 pub mod builders;

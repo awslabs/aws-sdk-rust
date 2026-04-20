@@ -99,6 +99,13 @@ pub fn ser_modify_client_vpn_endpoint_input_input_input(
     if let Some(var_35) = &input.disconnect_on_session_timeout {
         scope_34.boolean(*var_35);
     }
+    #[allow(unused_mut)]
+    let mut scope_36 = writer.prefix("TransitGatewayConfiguration");
+    if let Some(var_37) = &input.transit_gateway_configuration {
+        crate::protocol_serde::shape_transit_gateway_configuration_input_structure::ser_transit_gateway_configuration_input_structure(
+            scope_36, var_37,
+        )?;
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

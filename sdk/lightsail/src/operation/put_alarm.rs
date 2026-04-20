@@ -119,8 +119,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for PutAlar
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("PutAlarm")
-            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-            .with_interceptor(PutAlarmEndpointParamsInterceptor)
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                PutAlarmEndpointParamsInterceptor,
+            ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::put_alarm::PutAlarmError,
             >::new())
@@ -209,6 +213,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for PutAlarmRequ
 #[derive(Debug)]
 struct PutAlarmEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for PutAlarmEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "PutAlarmEndpointParamsInterceptor"

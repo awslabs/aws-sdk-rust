@@ -126,8 +126,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ListDev
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("ListDevicesForUser")
-            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-            .with_interceptor(ListDevicesForUserEndpointParamsInterceptor)
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ListDevicesForUserEndpointParamsInterceptor,
+            ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::list_devices_for_user::ListDevicesForUserError,
             >::new())
@@ -239,7 +243,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListDevicesF
                 }
                 if let ::std::option::Option::Some(inner_6) = &_input.sort_direction {
                     {
-                        query.push_kv("sortDirection", &::aws_smithy_http::query::fmt_string(inner_6));
+                        query.push_kv("sortDirection", &::aws_smithy_http::query::fmt_string(inner_6.as_str()));
                     }
                 }
                 ::std::result::Result::Ok(())
@@ -265,6 +269,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListDevicesF
 #[derive(Debug)]
 struct ListDevicesForUserEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListDevicesForUserEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "ListDevicesForUserEndpointParamsInterceptor"

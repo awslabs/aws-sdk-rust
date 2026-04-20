@@ -132,7 +132,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for StartMe
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("StartMedicalScribeListeningSession")
-            .with_interceptor(StartMedicalScribeListeningSessionEndpointParamsInterceptor)
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                StartMedicalScribeListeningSessionEndpointParamsInterceptor,
+            ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::start_medical_scribe_listening_session::StartMedicalScribeListeningSessionError,
             >::new())
@@ -247,6 +249,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for StartMedical
 #[derive(Debug)]
 struct StartMedicalScribeListeningSessionEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for StartMedicalScribeListeningSessionEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "StartMedicalScribeListeningSessionEndpointParamsInterceptor"

@@ -153,6 +153,13 @@ pub fn ser_create_client_vpn_endpoint_input_input_input(
     if let Some(var_56) = &input.traffic_ip_address_type {
         scope_55.string(var_56.as_str());
     }
+    #[allow(unused_mut)]
+    let mut scope_57 = writer.prefix("TransitGatewayConfiguration");
+    if let Some(var_58) = &input.transit_gateway_configuration {
+        crate::protocol_serde::shape_transit_gateway_configuration_input_structure::ser_transit_gateway_configuration_input_structure(
+            scope_57, var_58,
+        )?;
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

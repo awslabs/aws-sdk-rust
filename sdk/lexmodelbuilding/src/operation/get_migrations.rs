@@ -132,8 +132,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for GetMigr
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("GetMigrations")
-            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-            .with_interceptor(GetMigrationsEndpointParamsInterceptor)
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                GetMigrationsEndpointParamsInterceptor,
+            ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::get_migrations::GetMigrationsError,
             >::new())
@@ -202,12 +206,12 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetMigration
                 let mut query = ::aws_smithy_http::query::Writer::new(output);
                 if let ::std::option::Option::Some(inner_1) = &_input.sort_by_attribute {
                     {
-                        query.push_kv("sortByAttribute", &::aws_smithy_http::query::fmt_string(inner_1));
+                        query.push_kv("sortByAttribute", &::aws_smithy_http::query::fmt_string(inner_1.as_str()));
                     }
                 }
                 if let ::std::option::Option::Some(inner_2) = &_input.sort_by_order {
                     {
-                        query.push_kv("sortByOrder", &::aws_smithy_http::query::fmt_string(inner_2));
+                        query.push_kv("sortByOrder", &::aws_smithy_http::query::fmt_string(inner_2.as_str()));
                     }
                 }
                 if let ::std::option::Option::Some(inner_3) = &_input.v1_bot_name_contains {
@@ -217,7 +221,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetMigration
                 }
                 if let ::std::option::Option::Some(inner_4) = &_input.migration_status_equals {
                     {
-                        query.push_kv("migrationStatusEquals", &::aws_smithy_http::query::fmt_string(inner_4));
+                        query.push_kv("migrationStatusEquals", &::aws_smithy_http::query::fmt_string(inner_4.as_str()));
                     }
                 }
                 if let ::std::option::Option::Some(inner_5) = &_input.max_results {
@@ -253,6 +257,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetMigration
 #[derive(Debug)]
 struct GetMigrationsEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for GetMigrationsEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "GetMigrationsEndpointParamsInterceptor"

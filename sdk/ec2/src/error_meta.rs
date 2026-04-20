@@ -134,6 +134,40 @@ impl From<crate::operation::accept_reserved_instances_exchange_quote::AcceptRese
 impl<R>
     From<
         ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::accept_transit_gateway_client_vpn_attachment::AcceptTransitGatewayClientVpnAttachmentError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::accept_transit_gateway_client_vpn_attachment::AcceptTransitGatewayClientVpnAttachmentError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::accept_transit_gateway_client_vpn_attachment::AcceptTransitGatewayClientVpnAttachmentError> for Error {
+    fn from(err: crate::operation::accept_transit_gateway_client_vpn_attachment::AcceptTransitGatewayClientVpnAttachmentError) -> Self {
+        match err {
+            crate::operation::accept_transit_gateway_client_vpn_attachment::AcceptTransitGatewayClientVpnAttachmentError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::accept_transit_gateway_multicast_domain_associations::AcceptTransitGatewayMulticastDomainAssociationsError,
             R,
         >,
@@ -5938,6 +5972,40 @@ impl From<crate::operation::delete_transit_gateway::DeleteTransitGatewayError> f
     fn from(err: crate::operation::delete_transit_gateway::DeleteTransitGatewayError) -> Self {
         match err {
             crate::operation::delete_transit_gateway::DeleteTransitGatewayError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_transit_gateway_client_vpn_attachment::DeleteTransitGatewayClientVpnAttachmentError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_transit_gateway_client_vpn_attachment::DeleteTransitGatewayClientVpnAttachmentError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_transit_gateway_client_vpn_attachment::DeleteTransitGatewayClientVpnAttachmentError> for Error {
+    fn from(err: crate::operation::delete_transit_gateway_client_vpn_attachment::DeleteTransitGatewayClientVpnAttachmentError) -> Self {
+        match err {
+            crate::operation::delete_transit_gateway_client_vpn_attachment::DeleteTransitGatewayClientVpnAttachmentError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }
@@ -18864,6 +18932,40 @@ impl From<crate::operation::reject_capacity_reservation_billing_ownership::Rejec
     fn from(err: crate::operation::reject_capacity_reservation_billing_ownership::RejectCapacityReservationBillingOwnershipError) -> Self {
         match err {
             crate::operation::reject_capacity_reservation_billing_ownership::RejectCapacityReservationBillingOwnershipError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::reject_transit_gateway_client_vpn_attachment::RejectTransitGatewayClientVpnAttachmentError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::reject_transit_gateway_client_vpn_attachment::RejectTransitGatewayClientVpnAttachmentError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::reject_transit_gateway_client_vpn_attachment::RejectTransitGatewayClientVpnAttachmentError> for Error {
+    fn from(err: crate::operation::reject_transit_gateway_client_vpn_attachment::RejectTransitGatewayClientVpnAttachmentError) -> Self {
+        match err {
+            crate::operation::reject_transit_gateway_client_vpn_attachment::RejectTransitGatewayClientVpnAttachmentError::Unhandled(inner) => {
                 Error::Unhandled(inner)
             }
         }

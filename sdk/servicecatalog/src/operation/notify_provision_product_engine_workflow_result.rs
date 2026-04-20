@@ -141,8 +141,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for NotifyP
         #[allow(unused_mut)]
         let mut rcb =
             ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("NotifyProvisionProductEngineWorkflowResult")
-                .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-                .with_interceptor(NotifyProvisionProductEngineWorkflowResultEndpointParamsInterceptor)
+                .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                    ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+                ))
+                .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                    NotifyProvisionProductEngineWorkflowResultEndpointParamsInterceptor,
+                ))
                 .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                     crate::operation::notify_provision_product_engine_workflow_result::NotifyProvisionProductEngineWorkflowResultError,
                 >::new())
@@ -237,6 +241,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for NotifyProvis
 #[derive(Debug)]
 struct NotifyProvisionProductEngineWorkflowResultEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for NotifyProvisionProductEngineWorkflowResultEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "NotifyProvisionProductEngineWorkflowResultEndpointParamsInterceptor"

@@ -19,6 +19,11 @@ where
                             builder = builder
                                 .set_amazon_msk_cluster(crate::protocol_serde::shape_amazon_msk_cluster::de_amazon_msk_cluster(tokens, _value)?);
                         }
+                        "apacheKafkaCluster" => {
+                            builder = builder.set_apache_kafka_cluster(crate::protocol_serde::shape_apache_kafka_cluster::de_apache_kafka_cluster(
+                                tokens, _value,
+                            )?);
+                        }
                         "kafkaClusterAlias" => {
                             builder = builder.set_kafka_cluster_alias(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
@@ -29,6 +34,20 @@ where
                         "vpcConfig" => {
                             builder = builder.set_vpc_config(
                                 crate::protocol_serde::shape_kafka_cluster_client_vpc_config::de_kafka_cluster_client_vpc_config(tokens, _value)?,
+                            );
+                        }
+                        "clientAuthentication" => {
+                            builder = builder.set_client_authentication(
+                                crate::protocol_serde::shape_kafka_cluster_client_authentication::de_kafka_cluster_client_authentication(
+                                    tokens, _value,
+                                )?,
+                            );
+                        }
+                        "encryptionInTransit" => {
+                            builder = builder.set_encryption_in_transit(
+                                crate::protocol_serde::shape_kafka_cluster_encryption_in_transit::de_kafka_cluster_encryption_in_transit(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

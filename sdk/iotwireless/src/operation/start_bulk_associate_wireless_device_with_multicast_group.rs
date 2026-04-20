@@ -129,8 +129,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for StartBu
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new(
             "StartBulkAssociateWirelessDeviceWithMulticastGroup",
         )
-        .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-        .with_interceptor(StartBulkAssociateWirelessDeviceWithMulticastGroupEndpointParamsInterceptor)
+        .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+            ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+        ))
+        .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+            StartBulkAssociateWirelessDeviceWithMulticastGroupEndpointParamsInterceptor,
+        ))
         .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
             crate::operation::start_bulk_associate_wireless_device_with_multicast_group::StartBulkAssociateWirelessDeviceWithMulticastGroupError,
         >::new())
@@ -225,6 +229,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for StartBulkAss
 #[derive(Debug)]
 struct StartBulkAssociateWirelessDeviceWithMulticastGroupEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for StartBulkAssociateWirelessDeviceWithMulticastGroupEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "StartBulkAssociateWirelessDeviceWithMulticastGroupEndpointParamsInterceptor"

@@ -126,8 +126,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for GetStyl
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("GetStyleDescriptor")
-            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-            .with_interceptor(GetStyleDescriptorEndpointParamsInterceptor)
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                GetStyleDescriptorEndpointParamsInterceptor,
+            ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::get_style_descriptor::GetStyleDescriptorError,
             >::new())
@@ -190,7 +194,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetStyleDesc
                 let input_1 = input_1
                     .as_ref()
                     .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("style", "cannot be empty or unset"))?;
-                let style = ::aws_smithy_http::label::fmt_string(input_1, ::aws_smithy_http::label::EncodingStrategy::Default);
+                let style = ::aws_smithy_http::label::fmt_string(input_1.as_str(), ::aws_smithy_http::label::EncodingStrategy::Default);
                 if style.is_empty() {
                     return ::std::result::Result::Err(::aws_smithy_types::error::operation::BuildError::missing_field(
                         "style",
@@ -207,7 +211,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetStyleDesc
                 let mut query = ::aws_smithy_http::query::Writer::new(output);
                 if let ::std::option::Option::Some(inner_2) = &_input.color_scheme {
                     {
-                        query.push_kv("color-scheme", &::aws_smithy_http::query::fmt_string(inner_2));
+                        query.push_kv("color-scheme", &::aws_smithy_http::query::fmt_string(inner_2.as_str()));
                     }
                 }
                 if let ::std::option::Option::Some(inner_3) = &_input.political_view {
@@ -217,29 +221,29 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetStyleDesc
                 }
                 if let ::std::option::Option::Some(inner_4) = &_input.terrain {
                     {
-                        query.push_kv("terrain", &::aws_smithy_http::query::fmt_string(inner_4));
+                        query.push_kv("terrain", &::aws_smithy_http::query::fmt_string(inner_4.as_str()));
                     }
                 }
                 if let ::std::option::Option::Some(inner_5) = &_input.contour_density {
                     {
-                        query.push_kv("contour-density", &::aws_smithy_http::query::fmt_string(inner_5));
+                        query.push_kv("contour-density", &::aws_smithy_http::query::fmt_string(inner_5.as_str()));
                     }
                 }
                 if let ::std::option::Option::Some(inner_6) = &_input.traffic {
                     {
-                        query.push_kv("traffic", &::aws_smithy_http::query::fmt_string(inner_6));
+                        query.push_kv("traffic", &::aws_smithy_http::query::fmt_string(inner_6.as_str()));
                     }
                 }
                 if let ::std::option::Option::Some(inner_7) = &_input.travel_modes {
                     {
                         for inner_8 in inner_7 {
-                            query.push_kv("travel-modes", &::aws_smithy_http::query::fmt_string(inner_8));
+                            query.push_kv("travel-modes", &::aws_smithy_http::query::fmt_string(inner_8.as_str()));
                         }
                     }
                 }
                 if let ::std::option::Option::Some(inner_9) = &_input.buildings {
                     {
-                        query.push_kv("buildings", &::aws_smithy_http::query::fmt_string(inner_9));
+                        query.push_kv("buildings", &::aws_smithy_http::query::fmt_string(inner_9.as_str()));
                     }
                 }
                 if let ::std::option::Option::Some(inner_10) = &_input.key {
@@ -270,6 +274,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetStyleDesc
 #[derive(Debug)]
 struct GetStyleDescriptorEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for GetStyleDescriptorEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "GetStyleDescriptorEndpointParamsInterceptor"

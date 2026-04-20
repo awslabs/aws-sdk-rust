@@ -130,8 +130,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for GetAuto
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new(
             "GetAutomatedReasoningPolicyBuildWorkflowResultAssets",
         )
-        .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-        .with_interceptor(GetAutomatedReasoningPolicyBuildWorkflowResultAssetsEndpointParamsInterceptor)
+        .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+            ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+        ))
+        .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+            GetAutomatedReasoningPolicyBuildWorkflowResultAssetsEndpointParamsInterceptor,
+        ))
         .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
             crate::operation::get_automated_reasoning_policy_build_workflow_result_assets::GetAutomatedReasoningPolicyBuildWorkflowResultAssetsError,
         >::new())
@@ -228,7 +232,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetAutomated
                 let inner_3 = inner_3
                     .as_ref()
                     .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("asset_type", "cannot be empty or unset"))?;
-                query.push_kv("assetType", &::aws_smithy_http::query::fmt_string(inner_3));
+                query.push_kv("assetType", &::aws_smithy_http::query::fmt_string(inner_3.as_str()));
                 if let ::std::option::Option::Some(inner_4) = &_input.asset_id {
                     {
                         query.push_kv("assetId", &::aws_smithy_http::query::fmt_string(inner_4));
@@ -257,6 +261,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetAutomated
 #[derive(Debug)]
 struct GetAutomatedReasoningPolicyBuildWorkflowResultAssetsEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for GetAutomatedReasoningPolicyBuildWorkflowResultAssetsEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "GetAutomatedReasoningPolicyBuildWorkflowResultAssetsEndpointParamsInterceptor"

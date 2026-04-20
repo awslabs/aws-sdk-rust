@@ -132,8 +132,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for GetLink
         #[allow(unused_mut)]
         let mut rcb =
             ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("GetLinkedWhatsAppBusinessAccountPhoneNumber")
-                .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-                .with_interceptor(GetLinkedWhatsAppBusinessAccountPhoneNumberEndpointParamsInterceptor)
+                .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                    ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+                ))
+                .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                    GetLinkedWhatsAppBusinessAccountPhoneNumberEndpointParamsInterceptor,
+                ))
                 .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                     crate::operation::get_linked_whats_app_business_account_phone_number::GetLinkedWhatsAppBusinessAccountPhoneNumberError,
                 >::new())
@@ -234,6 +238,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetLinkedWha
 #[derive(Debug)]
 struct GetLinkedWhatsAppBusinessAccountPhoneNumberEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for GetLinkedWhatsAppBusinessAccountPhoneNumberEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "GetLinkedWhatsAppBusinessAccountPhoneNumberEndpointParamsInterceptor"

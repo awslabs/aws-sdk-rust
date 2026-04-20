@@ -15,44 +15,47 @@ pub fn ser_create_service_level_objective_input_input(
         }
         array_2.finish();
     }
-    if let Some(var_5) = &input.description {
-        object.key("Description").string(var_5.as_str());
+    if let Some(var_5) = &input.create_recommended_slo {
+        object.key("CreateRecommendedSlo").boolean(*var_5);
     }
-    if let Some(var_6) = &input.goal {
+    if let Some(var_6) = &input.description {
+        object.key("Description").string(var_6.as_str());
+    }
+    if let Some(var_7) = &input.goal {
         #[allow(unused_mut)]
-        let mut object_7 = object.key("Goal").start_object();
-        crate::protocol_serde::shape_goal::ser_goal(&mut object_7, var_6)?;
-        object_7.finish();
+        let mut object_8 = object.key("Goal").start_object();
+        crate::protocol_serde::shape_goal::ser_goal(&mut object_8, var_7)?;
+        object_8.finish();
     }
-    if let Some(var_8) = &input.name {
-        object.key("Name").string(var_8.as_str());
+    if let Some(var_9) = &input.name {
+        object.key("Name").string(var_9.as_str());
     }
-    if let Some(var_9) = &input.request_based_sli_config {
+    if let Some(var_10) = &input.request_based_sli_config {
         #[allow(unused_mut)]
-        let mut object_10 = object.key("RequestBasedSliConfig").start_object();
+        let mut object_11 = object.key("RequestBasedSliConfig").start_object();
         crate::protocol_serde::shape_request_based_service_level_indicator_config::ser_request_based_service_level_indicator_config(
-            &mut object_10,
-            var_9,
+            &mut object_11,
+            var_10,
         )?;
-        object_10.finish();
+        object_11.finish();
     }
-    if let Some(var_11) = &input.sli_config {
+    if let Some(var_12) = &input.sli_config {
         #[allow(unused_mut)]
-        let mut object_12 = object.key("SliConfig").start_object();
-        crate::protocol_serde::shape_service_level_indicator_config::ser_service_level_indicator_config(&mut object_12, var_11)?;
-        object_12.finish();
+        let mut object_13 = object.key("SliConfig").start_object();
+        crate::protocol_serde::shape_service_level_indicator_config::ser_service_level_indicator_config(&mut object_13, var_12)?;
+        object_13.finish();
     }
-    if let Some(var_13) = &input.tags {
-        let mut array_14 = object.key("Tags").start_array();
-        for item_15 in var_13 {
+    if let Some(var_14) = &input.tags {
+        let mut array_15 = object.key("Tags").start_array();
+        for item_16 in var_14 {
             {
                 #[allow(unused_mut)]
-                let mut object_16 = array_14.value().start_object();
-                crate::protocol_serde::shape_tag::ser_tag(&mut object_16, item_15)?;
-                object_16.finish();
+                let mut object_17 = array_15.value().start_object();
+                crate::protocol_serde::shape_tag::ser_tag(&mut object_17, item_16)?;
+                object_17.finish();
             }
         }
-        array_14.finish();
+        array_15.finish();
     }
     Ok(())
 }

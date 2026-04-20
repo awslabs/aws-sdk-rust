@@ -123,8 +123,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ListRun
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("ListRunsInBatch")
-            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-            .with_interceptor(ListRunsInBatchEndpointParamsInterceptor)
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ListRunsInBatchEndpointParamsInterceptor,
+            ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::list_runs_in_batch::ListRunsInBatchError,
             >::new())
@@ -214,7 +218,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListRunsInBa
                 }
                 if let ::std::option::Option::Some(inner_4) = &_input.submission_status {
                     {
-                        query.push_kv("submissionStatus", &::aws_smithy_http::query::fmt_string(inner_4));
+                        query.push_kv("submissionStatus", &::aws_smithy_http::query::fmt_string(inner_4.as_str()));
                     }
                 }
                 if let ::std::option::Option::Some(inner_5) = &_input.run_setting_id {
@@ -250,6 +254,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListRunsInBa
 #[derive(Debug)]
 struct ListRunsInBatchEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListRunsInBatchEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "ListRunsInBatchEndpointParamsInterceptor"

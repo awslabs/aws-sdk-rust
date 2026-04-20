@@ -12,6 +12,8 @@ pub struct ConsumerGroupReplication {
     pub detect_and_copy_new_consumer_groups: ::std::option::Option<bool>,
     /// <p>Enables synchronization of consumer group offsets to target cluster. The translated offsets will be written to topic __consumer_offsets.</p>
     pub synchronise_consumer_group_offsets: ::std::option::Option<bool>,
+    /// <p>The consumer group offset synchronization mode. With LEGACY, offsets are synchronized when producers write to the source cluster. With ENHANCED, consumer offsets are synchronized regardless of producer location. ENHANCED requires a corresponding replicator that replicates data from the target cluster to the source cluster.</p>
+    pub consumer_group_offset_sync_mode: ::std::option::Option<crate::types::ConsumerGroupOffsetSyncMode>,
 }
 impl ConsumerGroupReplication {
     /// <p>List of regular expression patterns indicating the consumer groups that should not be replicated.</p>
@@ -34,6 +36,10 @@ impl ConsumerGroupReplication {
     pub fn synchronise_consumer_group_offsets(&self) -> ::std::option::Option<bool> {
         self.synchronise_consumer_group_offsets
     }
+    /// <p>The consumer group offset synchronization mode. With LEGACY, offsets are synchronized when producers write to the source cluster. With ENHANCED, consumer offsets are synchronized regardless of producer location. ENHANCED requires a corresponding replicator that replicates data from the target cluster to the source cluster.</p>
+    pub fn consumer_group_offset_sync_mode(&self) -> ::std::option::Option<&crate::types::ConsumerGroupOffsetSyncMode> {
+        self.consumer_group_offset_sync_mode.as_ref()
+    }
 }
 impl ConsumerGroupReplication {
     /// Creates a new builder-style object to manufacture [`ConsumerGroupReplication`](crate::types::ConsumerGroupReplication).
@@ -50,6 +56,7 @@ pub struct ConsumerGroupReplicationBuilder {
     pub(crate) consumer_groups_to_replicate: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) detect_and_copy_new_consumer_groups: ::std::option::Option<bool>,
     pub(crate) synchronise_consumer_group_offsets: ::std::option::Option<bool>,
+    pub(crate) consumer_group_offset_sync_mode: ::std::option::Option<crate::types::ConsumerGroupOffsetSyncMode>,
 }
 impl ConsumerGroupReplicationBuilder {
     /// Appends an item to `consumer_groups_to_exclude`.
@@ -120,6 +127,20 @@ impl ConsumerGroupReplicationBuilder {
     pub fn get_synchronise_consumer_group_offsets(&self) -> &::std::option::Option<bool> {
         &self.synchronise_consumer_group_offsets
     }
+    /// <p>The consumer group offset synchronization mode. With LEGACY, offsets are synchronized when producers write to the source cluster. With ENHANCED, consumer offsets are synchronized regardless of producer location. ENHANCED requires a corresponding replicator that replicates data from the target cluster to the source cluster.</p>
+    pub fn consumer_group_offset_sync_mode(mut self, input: crate::types::ConsumerGroupOffsetSyncMode) -> Self {
+        self.consumer_group_offset_sync_mode = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The consumer group offset synchronization mode. With LEGACY, offsets are synchronized when producers write to the source cluster. With ENHANCED, consumer offsets are synchronized regardless of producer location. ENHANCED requires a corresponding replicator that replicates data from the target cluster to the source cluster.</p>
+    pub fn set_consumer_group_offset_sync_mode(mut self, input: ::std::option::Option<crate::types::ConsumerGroupOffsetSyncMode>) -> Self {
+        self.consumer_group_offset_sync_mode = input;
+        self
+    }
+    /// <p>The consumer group offset synchronization mode. With LEGACY, offsets are synchronized when producers write to the source cluster. With ENHANCED, consumer offsets are synchronized regardless of producer location. ENHANCED requires a corresponding replicator that replicates data from the target cluster to the source cluster.</p>
+    pub fn get_consumer_group_offset_sync_mode(&self) -> &::std::option::Option<crate::types::ConsumerGroupOffsetSyncMode> {
+        &self.consumer_group_offset_sync_mode
+    }
     /// Consumes the builder and constructs a [`ConsumerGroupReplication`](crate::types::ConsumerGroupReplication).
     pub fn build(self) -> crate::types::ConsumerGroupReplication {
         crate::types::ConsumerGroupReplication {
@@ -127,6 +148,7 @@ impl ConsumerGroupReplicationBuilder {
             consumer_groups_to_replicate: self.consumer_groups_to_replicate,
             detect_and_copy_new_consumer_groups: self.detect_and_copy_new_consumer_groups,
             synchronise_consumer_group_offsets: self.synchronise_consumer_group_offsets,
+            consumer_group_offset_sync_mode: self.consumer_group_offset_sync_mode,
         }
     }
 }

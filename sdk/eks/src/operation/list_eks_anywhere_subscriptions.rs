@@ -126,8 +126,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ListEks
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("ListEksAnywhereSubscriptions")
-            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-            .with_interceptor(ListEksAnywhereSubscriptionsEndpointParamsInterceptor)
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ListEksAnywhereSubscriptionsEndpointParamsInterceptor,
+            ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::list_eks_anywhere_subscriptions::ListEksAnywhereSubscriptionsError,
             >::new())
@@ -207,7 +211,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListEksAnywh
                 if let ::std::option::Option::Some(inner_3) = &_input.include_status {
                     {
                         for inner_4 in inner_3 {
-                            query.push_kv("includeStatus", &::aws_smithy_http::query::fmt_string(inner_4));
+                            query.push_kv("includeStatus", &::aws_smithy_http::query::fmt_string(inner_4.as_str()));
                         }
                     }
                 }
@@ -234,6 +238,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListEksAnywh
 #[derive(Debug)]
 struct ListEksAnywhereSubscriptionsEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListEksAnywhereSubscriptionsEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "ListEksAnywhereSubscriptionsEndpointParamsInterceptor"

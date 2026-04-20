@@ -340,6 +340,16 @@ pub fn de_client_vpn_endpoint(
                 builder = builder.set_traffic_ip_address_type(var_27);
             }
             ,
+            s if s.matches("transitGatewayConfiguration") /* TransitGatewayConfiguration com.amazonaws.ec2#ClientVpnEndpoint$TransitGatewayConfiguration */ =>  {
+                let var_28 =
+                    Some(
+                        crate::protocol_serde::shape_transit_gateway_configuration_describe_endpoint_structure::de_transit_gateway_configuration_describe_endpoint_structure(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_transit_gateway_configuration(var_28);
+            }
+            ,
             _ => {}
         }
     }

@@ -10,4 +10,21 @@ pub use ::aws_smithy_types::error::display::DisplayErrorContext;
 pub use ::aws_smithy_types::error::metadata::ErrorMetadata;
 pub use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
 
+/// The given enum value failed to parse since it is not a known value.
+#[derive(Debug)]
+pub struct UnknownVariantError {
+    value: ::std::string::String,
+}
+impl UnknownVariantError {
+    pub(crate) fn new(value: impl ::std::convert::Into<::std::string::String>) -> Self {
+        Self { value: value.into() }
+    }
+}
+impl ::std::fmt::Display for UnknownVariantError {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::result::Result<(), ::std::fmt::Error> {
+        write!(f, "unknown enum variant: '{}'", self.value)
+    }
+}
+impl ::std::error::Error for UnknownVariantError {}
+
 pub(crate) mod sealed_unhandled;

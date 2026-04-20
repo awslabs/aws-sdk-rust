@@ -126,8 +126,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ListCus
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("ListCustomModels")
-            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-            .with_interceptor(ListCustomModelsEndpointParamsInterceptor)
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ListCustomModelsEndpointParamsInterceptor,
+            ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::list_custom_models::ListCustomModelsError,
             >::new())
@@ -237,12 +241,12 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListCustomMo
                 }
                 if let ::std::option::Option::Some(inner_8) = &_input.sort_by {
                     {
-                        query.push_kv("sortBy", &::aws_smithy_http::query::fmt_string(inner_8));
+                        query.push_kv("sortBy", &::aws_smithy_http::query::fmt_string(inner_8.as_str()));
                     }
                 }
                 if let ::std::option::Option::Some(inner_9) = &_input.sort_order {
                     {
-                        query.push_kv("sortOrder", &::aws_smithy_http::query::fmt_string(inner_9));
+                        query.push_kv("sortOrder", &::aws_smithy_http::query::fmt_string(inner_9.as_str()));
                     }
                 }
                 if let ::std::option::Option::Some(inner_10) = &_input.is_owned {
@@ -252,7 +256,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListCustomMo
                 }
                 if let ::std::option::Option::Some(inner_11) = &_input.model_status {
                     {
-                        query.push_kv("modelStatus", &::aws_smithy_http::query::fmt_string(inner_11));
+                        query.push_kv("modelStatus", &::aws_smithy_http::query::fmt_string(inner_11.as_str()));
                     }
                 }
                 ::std::result::Result::Ok(())
@@ -278,6 +282,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListCustomMo
 #[derive(Debug)]
 struct ListCustomModelsEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListCustomModelsEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "ListCustomModelsEndpointParamsInterceptor"

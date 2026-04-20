@@ -132,8 +132,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for StopVoi
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("StopVoiceToneAnalysisTask")
-            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-            .with_interceptor(StopVoiceToneAnalysisTaskEndpointParamsInterceptor)
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                StopVoiceToneAnalysisTaskEndpointParamsInterceptor,
+            ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::stop_voice_tone_analysis_task::StopVoiceToneAnalysisTaskError,
             >::new())
@@ -252,6 +256,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for StopVoiceTon
 #[derive(Debug)]
 struct StopVoiceToneAnalysisTaskEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for StopVoiceToneAnalysisTaskEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "StopVoiceToneAnalysisTaskEndpointParamsInterceptor"

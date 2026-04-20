@@ -18,6 +18,7 @@ impl super::Client {
     ///   - [`service_execution_role_arn(Option<String>)`](crate::operation::describe_replicator::DescribeReplicatorOutput::service_execution_role_arn): <p>The Amazon Resource Name (ARN) of the IAM role used by the replicator to access resources in the customer's account (e.g source and target clusters)</p>
     ///   - [`state_info(Option<ReplicationStateInfo>)`](crate::operation::describe_replicator::DescribeReplicatorOutput::state_info): <p>Details about the state of the replicator.</p>
     ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::describe_replicator::DescribeReplicatorOutput::tags): <p>List of tags attached to the Replicator.</p>
+    ///   - [`log_delivery(Option<LogDelivery>)`](crate::operation::describe_replicator::DescribeReplicatorOutput::log_delivery): <p>Configuration for log delivery.</p>
     /// - On failure, responds with [`SdkError<DescribeReplicatorError>`](crate::operation::describe_replicator::DescribeReplicatorError)
     pub fn describe_replicator(&self) -> crate::operation::describe_replicator::builders::DescribeReplicatorFluentBuilder {
         crate::operation::describe_replicator::builders::DescribeReplicatorFluentBuilder::new(self.handle.clone())

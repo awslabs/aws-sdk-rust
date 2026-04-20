@@ -29,6 +29,8 @@ pub use crate::types::_configuration_revision::ConfigurationRevision;
 
 pub use crate::types::_configuration_state::ConfigurationState;
 
+pub use crate::types::_log_delivery::LogDelivery;
+
 pub use crate::types::_replicator_state::ReplicatorState;
 
 pub use crate::types::_topic_state::TopicState;
@@ -80,6 +82,8 @@ pub use crate::types::_serverless_client_authentication::ServerlessClientAuthent
 pub use crate::types::_kafka_cluster::KafkaCluster;
 
 pub use crate::types::_replication_info::ReplicationInfo;
+
+pub use crate::types::_replicator_log_delivery::ReplicatorLogDelivery;
 
 pub use crate::types::_broker_software_info::BrokerSoftwareInfo;
 
@@ -159,13 +163,25 @@ pub use crate::types::_serverless_sasl::ServerlessSasl;
 
 pub use crate::types::_amazon_msk_cluster::AmazonMskCluster;
 
+pub use crate::types::_apache_kafka_cluster::ApacheKafkaCluster;
+
 pub use crate::types::_kafka_cluster_client_vpc_config::KafkaClusterClientVpcConfig;
+
+pub use crate::types::_kafka_cluster_client_authentication::KafkaClusterClientAuthentication;
+
+pub use crate::types::_kafka_cluster_encryption_in_transit::KafkaClusterEncryptionInTransit;
 
 pub use crate::types::_consumer_group_replication::ConsumerGroupReplication;
 
 pub use crate::types::_target_compression_type::TargetCompressionType;
 
 pub use crate::types::_topic_replication::TopicReplication;
+
+pub use crate::types::_replicator_cloud_watch_logs::ReplicatorCloudWatchLogs;
+
+pub use crate::types::_replicator_firehose::ReplicatorFirehose;
+
+pub use crate::types::_replicator_s3::ReplicatorS3;
 
 pub use crate::types::_prometheus::Prometheus;
 
@@ -191,6 +207,12 @@ pub use crate::types::_zookeeper_node_info::ZookeeperNodeInfo;
 
 pub use crate::types::_vpc_connectivity_client_authentication::VpcConnectivityClientAuthentication;
 
+pub use crate::types::_kafka_cluster_sasl_scram_authentication::KafkaClusterSaslScramAuthentication;
+
+pub use crate::types::_kafka_cluster_encryption_in_transit_type::KafkaClusterEncryptionInTransitType;
+
+pub use crate::types::_consumer_group_offset_sync_mode::ConsumerGroupOffsetSyncMode;
+
 pub use crate::types::_replication_starting_position::ReplicationStartingPosition;
 
 pub use crate::types::_replication_topic_name_configuration::ReplicationTopicNameConfiguration;
@@ -211,6 +233,8 @@ pub use crate::types::_vpc_connectivity_sasl::VpcConnectivitySasl;
 
 pub use crate::types::_vpc_connectivity_tls::VpcConnectivityTls;
 
+pub use crate::types::_kafka_cluster_sasl_scram_mechanism::KafkaClusterSaslScramMechanism;
+
 pub use crate::types::_replication_starting_position_type::ReplicationStartingPositionType;
 
 pub use crate::types::_replication_topic_name_configuration_type::ReplicationTopicNameConfigurationType;
@@ -220,6 +244,8 @@ pub use crate::types::_vpc_connectivity_scram::VpcConnectivityScram;
 pub use crate::types::_vpc_connectivity_iam::VpcConnectivityIam;
 
 mod _amazon_msk_cluster;
+
+mod _apache_kafka_cluster;
 
 mod _broker_az_distribution;
 
@@ -277,6 +303,8 @@ mod _configuration_state;
 
 mod _connectivity_info;
 
+mod _consumer_group_offset_sync_mode;
+
 mod _consumer_group_replication;
 
 mod _consumer_group_replication_update;
@@ -307,15 +335,27 @@ mod _jmx_exporter_info;
 
 mod _kafka_cluster;
 
+mod _kafka_cluster_client_authentication;
+
 mod _kafka_cluster_client_vpc_config;
 
 mod _kafka_cluster_description;
+
+mod _kafka_cluster_encryption_in_transit;
+
+mod _kafka_cluster_encryption_in_transit_type;
+
+mod _kafka_cluster_sasl_scram_authentication;
+
+mod _kafka_cluster_sasl_scram_mechanism;
 
 mod _kafka_cluster_summary;
 
 mod _kafka_version;
 
 mod _kafka_version_status;
+
+mod _log_delivery;
 
 mod _logging_info;
 
@@ -366,6 +406,14 @@ mod _replication_state_info;
 mod _replication_topic_name_configuration;
 
 mod _replication_topic_name_configuration_type;
+
+mod _replicator_cloud_watch_logs;
+
+mod _replicator_firehose;
+
+mod _replicator_log_delivery;
+
+mod _replicator_s3;
 
 mod _replicator_state;
 

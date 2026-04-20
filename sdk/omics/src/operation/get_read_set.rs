@@ -123,8 +123,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for GetRead
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("GetReadSet")
-            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-            .with_interceptor(GetReadSetEndpointParamsInterceptor)
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                GetReadSetEndpointParamsInterceptor,
+            ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::get_read_set::GetReadSetError,
             >::new())
@@ -231,7 +235,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetReadSetRe
                 let mut query = ::aws_smithy_http::query::Writer::new(output);
                 if let ::std::option::Option::Some(inner_3) = &_input.file {
                     {
-                        query.push_kv("file", &::aws_smithy_http::query::fmt_string(inner_3));
+                        query.push_kv("file", &::aws_smithy_http::query::fmt_string(inner_3.as_str()));
                     }
                 }
                 let inner_4 = &_input.part_number;
@@ -262,6 +266,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetReadSetRe
 #[derive(Debug)]
 struct GetReadSetEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for GetReadSetEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "GetReadSetEndpointParamsInterceptor"

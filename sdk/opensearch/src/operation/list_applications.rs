@@ -126,8 +126,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ListApp
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("ListApplications")
-            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-            .with_interceptor(ListApplicationsEndpointParamsInterceptor)
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ListApplicationsEndpointParamsInterceptor,
+            ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::list_applications::ListApplicationsError,
             >::new())
@@ -202,7 +206,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListApplicat
                 if let ::std::option::Option::Some(inner_2) = &_input.statuses {
                     {
                         for inner_3 in inner_2 {
-                            query.push_kv("statuses", &::aws_smithy_http::query::fmt_string(inner_3));
+                            query.push_kv("statuses", &::aws_smithy_http::query::fmt_string(inner_3.as_str()));
                         }
                     }
                 }
@@ -234,6 +238,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListApplicat
 #[derive(Debug)]
 struct ListApplicationsEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListApplicationsEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "ListApplicationsEndpointParamsInterceptor"

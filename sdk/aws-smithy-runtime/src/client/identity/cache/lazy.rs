@@ -26,6 +26,7 @@ const DEFAULT_LOAD_TIMEOUT: Duration = Duration::from_secs(5);
 const DEFAULT_EXPIRATION: Duration = Duration::from_secs(15 * 60);
 const DEFAULT_BUFFER_TIME: Duration = Duration::from_secs(10);
 const DEFAULT_BUFFER_TIME_JITTER_FRACTION: fn() -> f64 = || fastrand::f64() * 0.5;
+const DEFAULT_MAX_PARTITIONS: usize = 64;
 
 /// Builder for lazy identity caching.
 #[derive(Default, Debug)]
@@ -36,6 +37,7 @@ pub struct LazyCacheBuilder {
     buffer_time: Option<Duration>,
     buffer_time_jitter_fraction: Option<fn() -> f64>,
     default_expiration: Option<Duration>,
+    max_partitions: Option<usize>,
 }
 
 impl LazyCacheBuilder {
@@ -161,6 +163,41 @@ impl LazyCacheBuilder {
         self
     }
 
+    /// Maximum number of identity cache partitions before eviction occurs.
+    ///
+    /// A normally functioning application should not have more than 5-10
+    /// credential providers active at any given time. This limit acts as
+    /// a safety net against memory leaks.
+    ///
+    /// Defaults to 64.
+    ///
+    /// # Panics
+    ///
+    /// Panics if `max` is 0.
+    pub fn max_partitions(mut self, max: usize) -> Self {
+        self.set_max_partitions(Some(max));
+        self
+    }
+
+    /// Maximum number of identity cache partitions before eviction occurs.
+    ///
+    /// A normally functioning application should not have more than 5-10
+    /// credential providers active at any given time. This limit acts as
+    /// a safety net against memory leaks.
+    ///
+    /// Defaults to 64.
+    ///
+    /// # Panics
+    ///
+    /// Panics if `max` is `Some(0)`.
+    pub fn set_max_partitions(&mut self, max: Option<usize>) -> &mut Self {
+        if let Some(0) = max {
+            panic!("max_partitions must be greater than 0");
+        }
+        self.max_partitions = max;
+        self
+    }
+
     /// Builds a [`SharedIdentityCache`] from this builder.
     ///
     /// # Panics
@@ -178,6 +215,7 @@ impl LazyCacheBuilder {
             self.buffer_time_jitter_fraction
                 .unwrap_or(DEFAULT_BUFFER_TIME_JITTER_FRACTION),
             default_expiration,
+            self.max_partitions.unwrap_or(DEFAULT_MAX_PARTITIONS),
         )
         .into_shared()
     }
@@ -187,32 +225,44 @@ impl LazyCacheBuilder {
 struct CachePartitions {
     partitions: RwLock<HashMap<IdentityCachePartition, ExpiringCache<Identity, BoxError>>>,
     buffer_time: Duration,
+    max_partitions: usize,
 }
 
 impl CachePartitions {
-    fn new(buffer_time: Duration) -> Self {
+    fn new(buffer_time: Duration, max_partitions: usize) -> Self {
         Self {
             partitions: RwLock::new(HashMap::new()),
             buffer_time,
+            max_partitions,
         }
     }
 
     fn partition(&self, key: IdentityCachePartition) -> ExpiringCache<Identity, BoxError> {
-        let mut partition = self.partitions.read().unwrap().get(&key).cloned();
-        // Add the partition to the cache if it doesn't already exist.
-        // Partitions will never be removed.
-        if partition.is_none() {
-            let mut partitions = self.partitions.write().unwrap();
-            // Another thread could have inserted the partition before we acquired the lock,
-            // so double check before inserting it.
-            partitions
-                .entry(key)
-                .or_insert_with(|| ExpiringCache::new(self.buffer_time));
-            drop(partitions);
-
-            partition = self.partitions.read().unwrap().get(&key).cloned();
+        // Fast path: read lock for cache hits
+        if let Some(partition) = self.partitions.read().unwrap().get(&key).cloned() {
+            return partition;
         }
-        partition.expect("inserted above if not present")
+        // Slow path: write lock for cache misses
+        let mut partitions = self.partitions.write().unwrap();
+        // Another thread may have inserted while we waited for the write lock
+        if let Some(partition) = partitions.get(&key).cloned() {
+            return partition;
+        }
+        // Evict an arbitrary entry if at capacity. Eviction order doesn't matter
+        // because a normally functioning application should not have more than
+        // 5-10 credential providers active at any given time, well under the cap.
+        if partitions.len() >= self.max_partitions {
+            if let Some(&evict_key) = partitions.keys().next() {
+                partitions.remove(&evict_key);
+            }
+        }
+        let partition = ExpiringCache::new(self.buffer_time);
+        partitions.insert(key, partition.clone());
+        tracing::debug!(
+            partition_count = partitions.len(),
+            "identity cache partition created"
+        );
+        partition
     }
 }
 
@@ -231,9 +281,10 @@ impl LazyCache {
         buffer_time: Duration,
         buffer_time_jitter_fraction: fn() -> f64,
         default_expiration: Duration,
+        max_partitions: usize,
     ) -> Self {
         Self {
-            partitions: CachePartitions::new(buffer_time),
+            partitions: CachePartitions::new(buffer_time, max_partitions),
             load_timeout,
             buffer_time,
             buffer_time_jitter_fraction,
@@ -458,6 +509,7 @@ mod tests {
             DEFAULT_BUFFER_TIME,
             buffer_time_jitter_fraction,
             DEFAULT_EXPIRATION,
+            DEFAULT_MAX_PARTITIONS,
         );
         (cache, identity_resolver)
     }
@@ -503,6 +555,7 @@ mod tests {
             DEFAULT_BUFFER_TIME,
             BUFFER_TIME_NO_JITTER,
             DEFAULT_EXPIRATION,
+            DEFAULT_MAX_PARTITIONS,
         );
         assert_eq!(
             epoch_secs(1000),
@@ -641,6 +694,7 @@ mod tests {
             DEFAULT_BUFFER_TIME,
             BUFFER_TIME_NO_JITTER,
             DEFAULT_EXPIRATION,
+            DEFAULT_MAX_PARTITIONS,
         );
 
         let err: BoxError = cache
@@ -767,5 +821,188 @@ mod tests {
         assert_eq!("A", identity.data::<Token>().unwrap().token());
         assert_eq!(1, resolver_a_calls.load(Ordering::Relaxed));
         assert_eq!(1, resolver_b_calls.load(Ordering::Relaxed));
+    }
+
+    #[tokio::test]
+    async fn eviction_when_at_capacity() {
+        let time = ManualTimeSource::new(epoch_secs(0));
+        let components = RuntimeComponentsBuilder::for_tests()
+            .with_time_source(Some(time.clone()))
+            .with_sleep_impl(Some(TokioSleep::new()))
+            .build()
+            .unwrap();
+        // Create a cache with max_partitions=2
+        let cache = LazyCache::new(
+            DEFAULT_LOAD_TIMEOUT,
+            DEFAULT_BUFFER_TIME,
+            BUFFER_TIME_NO_JITTER,
+            DEFAULT_EXPIRATION,
+            2,
+        );
+
+        #[allow(clippy::disallowed_methods)]
+        let far_future = SystemTime::now() + Duration::from_secs(10_000);
+
+        let resolver_a_calls = Arc::new(AtomicUsize::new(0));
+        let resolver_b_calls = Arc::new(AtomicUsize::new(0));
+        let resolver_c_calls = Arc::new(AtomicUsize::new(0));
+
+        let resolver_a = resolver_fn({
+            let calls = resolver_a_calls.clone();
+            move || {
+                calls.fetch_add(1, Ordering::Relaxed);
+                IdentityFuture::ready(Ok(Identity::new(
+                    Token::new("A", Some(far_future)),
+                    Some(far_future),
+                )))
+            }
+        });
+        let resolver_b = resolver_fn({
+            let calls = resolver_b_calls.clone();
+            move || {
+                calls.fetch_add(1, Ordering::Relaxed);
+                IdentityFuture::ready(Ok(Identity::new(
+                    Token::new("B", Some(far_future)),
+                    Some(far_future),
+                )))
+            }
+        });
+        let resolver_c = resolver_fn({
+            let calls = resolver_c_calls.clone();
+            move || {
+                calls.fetch_add(1, Ordering::Relaxed);
+                IdentityFuture::ready(Ok(Identity::new(
+                    Token::new("C", Some(far_future)),
+                    Some(far_future),
+                )))
+            }
+        });
+
+        let config_bag = ConfigBag::base();
+
+        // Fill the cache with A and B
+        cache
+            .resolve_cached_identity(resolver_a.clone(), &components, &config_bag)
+            .await
+            .unwrap();
+        cache
+            .resolve_cached_identity(resolver_b.clone(), &components, &config_bag)
+            .await
+            .unwrap();
+        assert_eq!(1, resolver_a_calls.load(Ordering::Relaxed));
+        assert_eq!(1, resolver_b_calls.load(Ordering::Relaxed));
+
+        // Adding C should evict one of A or B (arbitrary eviction order)
+        cache
+            .resolve_cached_identity(resolver_c.clone(), &components, &config_bag)
+            .await
+            .unwrap();
+        assert_eq!(1, resolver_c_calls.load(Ordering::Relaxed));
+
+        // Resolve all three again — at least one of A or B must be re-resolved because
+        // the cache only holds 2 partitions. Depending on HashMap iteration order, re-inserting
+        // the evicted entry may cascade-evict the other, leading to 4 or 5 total calls.
+        cache
+            .resolve_cached_identity(resolver_a.clone(), &components, &config_bag)
+            .await
+            .unwrap();
+        cache
+            .resolve_cached_identity(resolver_b.clone(), &components, &config_bag)
+            .await
+            .unwrap();
+        let total_calls = resolver_a_calls.load(Ordering::Relaxed)
+            + resolver_b_calls.load(Ordering::Relaxed)
+            + resolver_c_calls.load(Ordering::Relaxed);
+        // Initial: 3 calls (A, B, C). At least one of A or B was evicted and re-resolved (+1).
+        // If re-inserting the evicted entry cascade-evicts the other, both need re-resolution (+2).
+        assert!(
+            (4..=5).contains(&total_calls),
+            "expected 4 or 5 total calls (3 initial + 1 or 2 re-resolutions), got {total_calls}"
+        );
+    }
+
+    #[tokio::test]
+    async fn single_partition_cache() {
+        let time = ManualTimeSource::new(epoch_secs(0));
+        let components = RuntimeComponentsBuilder::for_tests()
+            .with_time_source(Some(time.clone()))
+            .with_sleep_impl(Some(TokioSleep::new()))
+            .build()
+            .unwrap();
+        // Mimics the operation-scoped cache used for config overrides
+        let cache = LazyCache::new(
+            DEFAULT_LOAD_TIMEOUT,
+            DEFAULT_BUFFER_TIME,
+            BUFFER_TIME_NO_JITTER,
+            DEFAULT_EXPIRATION,
+            1,
+        );
+
+        #[allow(clippy::disallowed_methods)]
+        let far_future = SystemTime::now() + Duration::from_secs(10_000);
+
+        let resolver_a_calls = Arc::new(AtomicUsize::new(0));
+        let resolver_b_calls = Arc::new(AtomicUsize::new(0));
+
+        let resolver_a = resolver_fn({
+            let calls = resolver_a_calls.clone();
+            move || {
+                calls.fetch_add(1, Ordering::Relaxed);
+                IdentityFuture::ready(Ok(Identity::new(
+                    Token::new("A", Some(far_future)),
+                    Some(far_future),
+                )))
+            }
+        });
+        let resolver_b = resolver_fn({
+            let calls = resolver_b_calls.clone();
+            move || {
+                calls.fetch_add(1, Ordering::Relaxed);
+                IdentityFuture::ready(Ok(Identity::new(
+                    Token::new("B", Some(far_future)),
+                    Some(far_future),
+                )))
+            }
+        });
+
+        let config_bag = ConfigBag::base();
+
+        // First call resolves A
+        let identity = cache
+            .resolve_cached_identity(resolver_a.clone(), &components, &config_bag)
+            .await
+            .unwrap();
+        assert_eq!("A", identity.data::<Token>().unwrap().token());
+        assert_eq!(1, resolver_a_calls.load(Ordering::Relaxed));
+
+        // Second call with same resolver is cached
+        let identity = cache
+            .resolve_cached_identity(resolver_a.clone(), &components, &config_bag)
+            .await
+            .unwrap();
+        assert_eq!("A", identity.data::<Token>().unwrap().token());
+        assert_eq!(1, resolver_a_calls.load(Ordering::Relaxed));
+
+        // Resolving B evicts A (only 1 partition)
+        let identity = cache
+            .resolve_cached_identity(resolver_b.clone(), &components, &config_bag)
+            .await
+            .unwrap();
+        assert_eq!("B", identity.data::<Token>().unwrap().token());
+        assert_eq!(1, resolver_b_calls.load(Ordering::Relaxed));
+
+        // A must be re-resolved
+        let identity = cache
+            .resolve_cached_identity(resolver_a.clone(), &components, &config_bag)
+            .await
+            .unwrap();
+        assert_eq!("A", identity.data::<Token>().unwrap().token());
+        assert_eq!(2, resolver_a_calls.load(Ordering::Relaxed));
+    }
+
+    #[test]
+    #[should_panic(expected = "max_partitions must be greater than 0")]
+    fn max_partitions_zero_panics() {
+        LazyCacheBuilder::new().max_partitions(0);
     }
 }

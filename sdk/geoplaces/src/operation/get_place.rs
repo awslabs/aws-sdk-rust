@@ -120,8 +120,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for GetPlac
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("GetPlace")
-            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-            .with_interceptor(GetPlaceEndpointParamsInterceptor)
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                GetPlaceEndpointParamsInterceptor,
+            ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::get_place::GetPlaceError,
             >::new())
@@ -200,7 +204,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetPlaceRequ
                 if let ::std::option::Option::Some(inner_2) = &_input.additional_features {
                     {
                         for inner_3 in inner_2 {
-                            query.push_kv("additional-features", &::aws_smithy_http::query::fmt_string(inner_3));
+                            query.push_kv("additional-features", &::aws_smithy_http::query::fmt_string(inner_3.as_str()));
                         }
                     }
                 }
@@ -216,7 +220,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetPlaceRequ
                 }
                 if let ::std::option::Option::Some(inner_6) = &_input.intended_use {
                     {
-                        query.push_kv("intended-use", &::aws_smithy_http::query::fmt_string(inner_6));
+                        query.push_kv("intended-use", &::aws_smithy_http::query::fmt_string(inner_6.as_str()));
                     }
                 }
                 if let ::std::option::Option::Some(inner_7) = &_input.key {
@@ -247,6 +251,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetPlaceRequ
 #[derive(Debug)]
 struct GetPlaceEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for GetPlaceEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "GetPlaceEndpointParamsInterceptor"

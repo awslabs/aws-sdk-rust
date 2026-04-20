@@ -123,8 +123,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for GetQuan
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("GetQuantumTask")
-            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-            .with_interceptor(GetQuantumTaskEndpointParamsInterceptor)
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                GetQuantumTaskEndpointParamsInterceptor,
+            ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::get_quantum_task::GetQuantumTaskError,
             >::new())
@@ -205,7 +209,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetQuantumTa
                 if let ::std::option::Option::Some(inner_2) = &_input.additional_attribute_names {
                     {
                         for inner_3 in inner_2 {
-                            query.push_kv("additionalAttributeNames", &::aws_smithy_http::query::fmt_string(inner_3));
+                            query.push_kv("additionalAttributeNames", &::aws_smithy_http::query::fmt_string(inner_3.as_str()));
                         }
                     }
                 }
@@ -232,6 +236,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetQuantumTa
 #[derive(Debug)]
 struct GetQuantumTaskEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for GetQuantumTaskEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "GetQuantumTaskEndpointParamsInterceptor"

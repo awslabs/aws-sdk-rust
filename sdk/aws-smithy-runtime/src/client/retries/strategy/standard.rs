@@ -13,7 +13,7 @@ use aws_smithy_runtime_api::box_error::BoxError;
 use aws_smithy_runtime_api::client::interceptors::context::{
     BeforeTransmitInterceptorContextMut, InterceptorContext,
 };
-use aws_smithy_runtime_api::client::interceptors::Intercept;
+use aws_smithy_runtime_api::client::interceptors::{dyn_dispatch_hint, Intercept};
 use aws_smithy_runtime_api::client::retries::classifiers::{RetryAction, RetryReason};
 use aws_smithy_runtime_api::client::retries::{RequestAttempts, RetryStrategy, ShouldAttempt};
 use aws_smithy_runtime_api::client::runtime_components::RuntimeComponents;
@@ -383,6 +383,7 @@ impl TokenBucketProvider {
     }
 }
 
+#[dyn_dispatch_hint]
 impl Intercept for TokenBucketProvider {
     fn name(&self) -> &'static str {
         "TokenBucketProvider"

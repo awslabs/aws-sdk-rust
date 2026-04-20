@@ -8,7 +8,7 @@ use std::borrow::Cow;
 
 use aws_smithy_runtime_api::box_error::BoxError;
 use aws_smithy_runtime_api::client::interceptors::context::BeforeTransmitInterceptorContextMut;
-use aws_smithy_runtime_api::client::interceptors::{Intercept, SharedInterceptor};
+use aws_smithy_runtime_api::client::interceptors::{dyn_dispatch_hint, Intercept, SharedInterceptor};
 use aws_smithy_runtime_api::client::runtime_components::{RuntimeComponents, RuntimeComponentsBuilder};
 use aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin;
 use aws_smithy_types::base64;
@@ -23,7 +23,7 @@ impl HttpChecksumRequiredRuntimePlugin {
     pub(crate) fn new() -> Self {
         Self {
             runtime_components: RuntimeComponentsBuilder::new("HttpChecksumRequiredRuntimePlugin")
-                .with_interceptor(SharedInterceptor::new(HttpChecksumRequiredInterceptor)),
+                .with_interceptor(SharedInterceptor::permanent(HttpChecksumRequiredInterceptor)),
         }
     }
 }
@@ -37,6 +37,7 @@ impl RuntimePlugin for HttpChecksumRequiredRuntimePlugin {
 #[derive(Debug)]
 struct HttpChecksumRequiredInterceptor;
 
+#[dyn_dispatch_hint]
 impl Intercept for HttpChecksumRequiredInterceptor {
     fn name(&self) -> &'static str {
         "HttpChecksumRequiredInterceptor"

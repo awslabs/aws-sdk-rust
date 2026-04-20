@@ -13,7 +13,7 @@ use aws_smithy_runtime_api::box_error::BoxError;
 use aws_smithy_runtime_api::client::interceptors::context::{
     BeforeDeserializationInterceptorContextMut, BeforeTransmitInterceptorContextMut,
 };
-use aws_smithy_runtime_api::client::interceptors::Intercept;
+use aws_smithy_runtime_api::client::interceptors::{dyn_dispatch_hint, Intercept};
 use aws_smithy_runtime_api::client::runtime_components::RuntimeComponents;
 use aws_smithy_runtime_api::client::stalled_stream_protection::StalledStreamProtectionConfig;
 use aws_smithy_types::body::SdkBody;
@@ -52,6 +52,7 @@ impl StalledStreamProtectionInterceptor {
     }
 }
 
+#[dyn_dispatch_hint]
 impl Intercept for StalledStreamProtectionInterceptor {
     fn name(&self) -> &'static str {
         "StalledStreamProtectionInterceptor"

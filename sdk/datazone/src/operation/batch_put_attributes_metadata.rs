@@ -140,8 +140,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for BatchPu
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("BatchPutAttributesMetadata")
-            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-            .with_interceptor(BatchPutAttributesMetadataEndpointParamsInterceptor)
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                BatchPutAttributesMetadataEndpointParamsInterceptor,
+            ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::batch_put_attributes_metadata::BatchPutAttributesMetadataError,
             >::new())
@@ -215,7 +219,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for BatchPutAttr
                 let input_2 = input_2
                     .as_ref()
                     .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("entity_type", "cannot be empty or unset"))?;
-                let entity_type = ::aws_smithy_http::label::fmt_string(input_2, ::aws_smithy_http::label::EncodingStrategy::Default);
+                let entity_type = ::aws_smithy_http::label::fmt_string(input_2.as_str(), ::aws_smithy_http::label::EncodingStrategy::Default);
                 if entity_type.is_empty() {
                     return ::std::result::Result::Err(::aws_smithy_types::error::operation::BuildError::missing_field(
                         "entity_type",
@@ -269,6 +273,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for BatchPutAttr
 #[derive(Debug)]
 struct BatchPutAttributesMetadataEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for BatchPutAttributesMetadataEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "BatchPutAttributesMetadataEndpointParamsInterceptor"

@@ -125,21 +125,30 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for Initiat
         _: &::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder,
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
-        let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("InitiateVaultLock")
-            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-            .with_interceptor(InitiateVaultLockEndpointParamsInterceptor)
-            .with_interceptor(crate::glacier_interceptors::GlacierAccountIdAutofillInterceptor::<
-                crate::operation::initiate_vault_lock::InitiateVaultLockInput,
-            >::new())
-            .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
-                crate::operation::initiate_vault_lock::InitiateVaultLockError,
-            >::new())
-            .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::ModeledAsRetryableClassifier::<
-                crate::operation::initiate_vault_lock::InitiateVaultLockError,
-            >::new())
-            .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
-                crate::operation::initiate_vault_lock::InitiateVaultLockError,
-            >::new());
+        let mut rcb =
+            ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("InitiateVaultLock")
+                .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                    ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+                ))
+                .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                    InitiateVaultLockEndpointParamsInterceptor,
+                ))
+                .with_interceptor(
+                    ::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                        crate::glacier_interceptors::GlacierAccountIdAutofillInterceptor::<
+                            crate::operation::initiate_vault_lock::InitiateVaultLockInput,
+                        >::new(),
+                    ),
+                )
+                .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
+                    crate::operation::initiate_vault_lock::InitiateVaultLockError,
+                >::new())
+                .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::ModeledAsRetryableClassifier::<
+                    crate::operation::initiate_vault_lock::InitiateVaultLockError,
+                >::new())
+                .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
+                    crate::operation::initiate_vault_lock::InitiateVaultLockError,
+                >::new());
 
         ::std::borrow::Cow::Owned(rcb)
     }
@@ -246,6 +255,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for InitiateVaul
 #[derive(Debug)]
 struct InitiateVaultLockEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for InitiateVaultLockEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "InitiateVaultLockEndpointParamsInterceptor"

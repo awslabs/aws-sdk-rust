@@ -125,21 +125,28 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for RemoveT
         _: &::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder,
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
-        let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("RemoveTagsFromVault")
-            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-            .with_interceptor(RemoveTagsFromVaultEndpointParamsInterceptor)
-            .with_interceptor(crate::glacier_interceptors::GlacierAccountIdAutofillInterceptor::<
-                crate::operation::remove_tags_from_vault::RemoveTagsFromVaultInput,
-            >::new())
-            .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
-                crate::operation::remove_tags_from_vault::RemoveTagsFromVaultError,
-            >::new())
-            .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::ModeledAsRetryableClassifier::<
-                crate::operation::remove_tags_from_vault::RemoveTagsFromVaultError,
-            >::new())
-            .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
-                crate::operation::remove_tags_from_vault::RemoveTagsFromVaultError,
-            >::new());
+        let mut rcb =
+            ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("RemoveTagsFromVault")
+                .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                    ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+                ))
+                .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                    RemoveTagsFromVaultEndpointParamsInterceptor,
+                ))
+                .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                    crate::glacier_interceptors::GlacierAccountIdAutofillInterceptor::<
+                        crate::operation::remove_tags_from_vault::RemoveTagsFromVaultInput,
+                    >::new(),
+                ))
+                .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
+                    crate::operation::remove_tags_from_vault::RemoveTagsFromVaultError,
+                >::new())
+                .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::ModeledAsRetryableClassifier::<
+                    crate::operation::remove_tags_from_vault::RemoveTagsFromVaultError,
+                >::new())
+                .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
+                    crate::operation::remove_tags_from_vault::RemoveTagsFromVaultError,
+                >::new());
 
         ::std::borrow::Cow::Owned(rcb)
     }
@@ -255,6 +262,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for RemoveTagsFr
 #[derive(Debug)]
 struct RemoveTagsFromVaultEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for RemoveTagsFromVaultEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "RemoveTagsFromVaultEndpointParamsInterceptor"

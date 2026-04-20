@@ -25,6 +25,16 @@ pub fn ser_associate_client_vpn_target_network_input_input_input(
     if let Some(var_8) = &input.dry_run {
         scope_7.boolean(*var_8);
     }
+    #[allow(unused_mut)]
+    let mut scope_9 = writer.prefix("AvailabilityZone");
+    if let Some(var_10) = &input.availability_zone {
+        scope_9.string(var_10);
+    }
+    #[allow(unused_mut)]
+    let mut scope_11 = writer.prefix("AvailabilityZoneId");
+    if let Some(var_12) = &input.availability_zone_id {
+        scope_11.string(var_12);
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

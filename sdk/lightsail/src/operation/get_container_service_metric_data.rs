@@ -132,8 +132,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for GetCont
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("GetContainerServiceMetricData")
-            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-            .with_interceptor(GetContainerServiceMetricDataEndpointParamsInterceptor)
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                GetContainerServiceMetricDataEndpointParamsInterceptor,
+            ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::get_container_service_metric_data::GetContainerServiceMetricDataError,
             >::new())
@@ -204,7 +208,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetContainer
                 let inner_1 = inner_1
                     .as_ref()
                     .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("metric_name", "cannot be empty or unset"))?;
-                query.push_kv("metricName", &::aws_smithy_http::query::fmt_string(inner_1));
+                query.push_kv("metricName", &::aws_smithy_http::query::fmt_string(inner_1.as_str()));
                 let inner_2 = &_input.start_time;
                 let inner_2 = inner_2
                     .as_ref()
@@ -231,7 +235,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetContainer
                     .as_ref()
                     .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("statistics", "cannot be empty or unset"))?;
                 for inner_6 in inner_5 {
-                    query.push_kv("statistics", &::aws_smithy_http::query::fmt_string(inner_6));
+                    query.push_kv("statistics", &::aws_smithy_http::query::fmt_string(inner_6.as_str()));
                 }
                 ::std::result::Result::Ok(())
             }
@@ -267,6 +271,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetContainer
 #[derive(Debug)]
 struct GetContainerServiceMetricDataEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for GetContainerServiceMetricDataEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "GetContainerServiceMetricDataEndpointParamsInterceptor"

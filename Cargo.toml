@@ -2,9 +2,9 @@
 resolver = "2"
 exclude = [
     "tests/no-default-features",
-    "tests/webassembly-no-os",
     "tests/webassembly-wstd",
-    "tests/telemetry"
+    "tests/telemetry",
+    "tests/webassembly-no-os"
 ]
 members = [
     "sdk/accessanalyzer",
@@ -63,6 +63,7 @@ members = [
     "sdk/aws-smithy-query",
     "sdk/aws-smithy-runtime",
     "sdk/aws-smithy-runtime-api",
+    "sdk/aws-smithy-runtime-api-macros",
     "sdk/aws-smithy-types",
     "sdk/aws-smithy-types-convert",
     "sdk/aws-smithy-wasm",

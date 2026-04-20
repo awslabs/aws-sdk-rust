@@ -124,65 +124,71 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for DeleteO
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("DeleteObjects")
-            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-            .with_interceptor(DeleteObjectsEndpointParamsInterceptor)
-            .with_interceptor(crate::http_request_checksum::RequestChecksumInterceptor::new(
-                |input: &::aws_smithy_runtime_api::client::interceptors::context::Input| {
-                    let input: &crate::operation::delete_objects::DeleteObjectsInput = input.downcast_ref().expect("correct type");
-                    let checksum_algorithm = input.checksum_algorithm();
-                    let checksum_algorithm = checksum_algorithm.map(|algorithm| algorithm.as_str());
-                    (checksum_algorithm.map(|s| s.to_string()), true)
-                },
-                |request: &mut ::aws_smithy_runtime_api::http::Request, cfg: &::aws_smithy_types::config_bag::ConfigBag| {
-                    // We check if the user has set any of the checksum values manually
-                    let mut user_set_checksum_value = false;
-                    let headers_to_check =
-                        request
-                            .headers()
-                            .iter()
-                            .filter_map(|(name, _val)| if name.starts_with("x-amz-checksum-") { Some(name) } else { None });
-                    for algo_header in headers_to_check {
-                        if request.headers().get(algo_header).is_some() {
-                            user_set_checksum_value = true;
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                DeleteObjectsEndpointParamsInterceptor,
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                crate::http_request_checksum::RequestChecksumInterceptor::new(
+                    |input: &::aws_smithy_runtime_api::client::interceptors::context::Input| {
+                        let input: &crate::operation::delete_objects::DeleteObjectsInput = input.downcast_ref().expect("correct type");
+                        let checksum_algorithm = input.checksum_algorithm();
+                        let checksum_algorithm = checksum_algorithm.map(|algorithm| algorithm.as_str());
+                        (checksum_algorithm.map(|s| s.to_string()), true)
+                    },
+                    |request: &mut ::aws_smithy_runtime_api::http::Request, cfg: &::aws_smithy_types::config_bag::ConfigBag| {
+                        // We check if the user has set any of the checksum values manually
+                        let mut user_set_checksum_value = false;
+                        let headers_to_check =
+                            request
+                                .headers()
+                                .iter()
+                                .filter_map(|(name, _val)| if name.starts_with("x-amz-checksum-") { Some(name) } else { None });
+                        for algo_header in headers_to_check {
+                            if request.headers().get(algo_header).is_some() {
+                                user_set_checksum_value = true;
+                            }
                         }
-                    }
 
-                    // We check if the user set the checksum algo manually
-                    let user_set_checksum_algo = request.headers().get("x-amz-sdk-checksum-algorithm").is_some();
+                        // We check if the user set the checksum algo manually
+                        let user_set_checksum_algo = request.headers().get("x-amz-sdk-checksum-algorithm").is_some();
 
-                    // This value is set by the user on the SdkConfig to indicate their preference
-                    let request_checksum_calculation = cfg
-                        .load::<::aws_smithy_types::checksum_config::RequestChecksumCalculation>()
-                        .unwrap_or(&::aws_smithy_types::checksum_config::RequestChecksumCalculation::WhenSupported);
+                        // This value is set by the user on the SdkConfig to indicate their preference
+                        let request_checksum_calculation = cfg
+                            .load::<::aws_smithy_types::checksum_config::RequestChecksumCalculation>()
+                            .unwrap_or(&::aws_smithy_types::checksum_config::RequestChecksumCalculation::WhenSupported);
 
-                    // From the httpChecksum trait
-                    let http_checksum_required = true;
+                        // From the httpChecksum trait
+                        let http_checksum_required = true;
 
-                    let is_presigned_req = cfg.load::<crate::presigning::PresigningMarker>().is_some();
+                        let is_presigned_req = cfg.load::<crate::presigning::PresigningMarker>().is_some();
 
-                    // If the request is presigned we do not set a default.
-                    // If the RequestChecksumCalculation is WhenSupported and the user has not set a checksum value or algo
-                    // we set the default. If it is WhenRequired and a checksum is required by the trait and the user has not
-                    // set a checksum value or algo we also set the default. In all other cases we do nothing.
-                    match (
-                        request_checksum_calculation,
-                        http_checksum_required,
-                        user_set_checksum_value,
-                        user_set_checksum_algo,
-                        is_presigned_req,
-                    ) {
-                        (_, _, _, _, true) => {}
-                        (::aws_smithy_types::checksum_config::RequestChecksumCalculation::WhenSupported, _, false, false, _)
-                        | (::aws_smithy_types::checksum_config::RequestChecksumCalculation::WhenRequired, true, false, false, _) => {
-                            request.headers_mut().insert("x-amz-sdk-checksum-algorithm", "CRC32");
+                        // If the request is presigned we do not set a default.
+                        // If the RequestChecksumCalculation is WhenSupported and the user has not set a checksum value or algo
+                        // we set the default. If it is WhenRequired and a checksum is required by the trait and the user has not
+                        // set a checksum value or algo we also set the default. In all other cases we do nothing.
+                        match (
+                            request_checksum_calculation,
+                            http_checksum_required,
+                            user_set_checksum_value,
+                            user_set_checksum_algo,
+                            is_presigned_req,
+                        ) {
+                            (_, _, _, _, true) => {}
+                            (::aws_smithy_types::checksum_config::RequestChecksumCalculation::WhenSupported, _, false, false, _)
+                            | (::aws_smithy_types::checksum_config::RequestChecksumCalculation::WhenRequired, true, false, false, _) => {
+                                request.headers_mut().insert("x-amz-sdk-checksum-algorithm", "CRC32");
+                            }
+                            _ => {}
                         }
-                        _ => {}
-                    }
 
-                    // We return a bool indicating if the user did set the checksum value, if they did
-                    // we can short circuit and exit the interceptor early.
-                    Ok(user_set_checksum_value)
-                },
+                        // We return a bool indicating if the user did set the checksum value, if they did
+                        // we can short circuit and exit the interceptor early.
+                        Ok(user_set_checksum_value)
+                    },
+                ),
             ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::delete_objects::DeleteObjectsError,
@@ -290,6 +296,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for DeleteObject
 #[derive(Debug)]
 struct DeleteObjectsEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DeleteObjectsEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "DeleteObjectsEndpointParamsInterceptor"

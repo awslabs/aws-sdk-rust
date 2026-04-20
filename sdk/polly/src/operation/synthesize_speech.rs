@@ -123,8 +123,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for Synthes
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("SynthesizeSpeech")
-            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-            .with_interceptor(SynthesizeSpeechEndpointParamsInterceptor)
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                SynthesizeSpeechEndpointParamsInterceptor,
+            ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::synthesize_speech::SynthesizeSpeechError,
             >::new())
@@ -222,6 +226,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for SynthesizeSp
 #[derive(Debug)]
 struct SynthesizeSpeechEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for SynthesizeSpeechEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "SynthesizeSpeechEndpointParamsInterceptor"
@@ -488,12 +493,12 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for SynthesizeSp
                 let mut query = ::aws_smithy_http::query::Writer::new(output);
                 if let ::std::option::Option::Some(inner_1) = &_input.engine {
                     {
-                        query.push_kv("Engine", &::aws_smithy_http::query::fmt_string(inner_1));
+                        query.push_kv("Engine", &::aws_smithy_http::query::fmt_string(inner_1.as_str()));
                     }
                 }
                 if let ::std::option::Option::Some(inner_2) = &_input.language_code {
                     {
-                        query.push_kv("LanguageCode", &::aws_smithy_http::query::fmt_string(inner_2));
+                        query.push_kv("LanguageCode", &::aws_smithy_http::query::fmt_string(inner_2.as_str()));
                     }
                 }
                 if let ::std::option::Option::Some(inner_3) = &_input.lexicon_names {
@@ -507,7 +512,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for SynthesizeSp
                 let inner_5 = inner_5
                     .as_ref()
                     .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("output_format", "cannot be empty or unset"))?;
-                query.push_kv("OutputFormat", &::aws_smithy_http::query::fmt_string(inner_5));
+                query.push_kv("OutputFormat", &::aws_smithy_http::query::fmt_string(inner_5.as_str()));
                 if let ::std::option::Option::Some(inner_6) = &_input.sample_rate {
                     {
                         query.push_kv("SampleRate", &::aws_smithy_http::query::fmt_string(inner_6));
@@ -516,7 +521,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for SynthesizeSp
                 if let ::std::option::Option::Some(inner_7) = &_input.speech_mark_types {
                     {
                         for inner_8 in inner_7 {
-                            query.push_kv("SpeechMarkTypes", &::aws_smithy_http::query::fmt_string(inner_8));
+                            query.push_kv("SpeechMarkTypes", &::aws_smithy_http::query::fmt_string(inner_8.as_str()));
                         }
                     }
                 }
@@ -533,14 +538,14 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for SynthesizeSp
                 query.push_kv("Text", &::aws_smithy_http::query::fmt_string(inner_9));
                 if let ::std::option::Option::Some(inner_10) = &_input.text_type {
                     {
-                        query.push_kv("TextType", &::aws_smithy_http::query::fmt_string(inner_10));
+                        query.push_kv("TextType", &::aws_smithy_http::query::fmt_string(inner_10.as_str()));
                     }
                 }
                 let inner_11 = &_input.voice_id;
                 let inner_11 = inner_11
                     .as_ref()
                     .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("voice_id", "cannot be empty or unset"))?;
-                query.push_kv("VoiceId", &::aws_smithy_http::query::fmt_string(inner_11));
+                query.push_kv("VoiceId", &::aws_smithy_http::query::fmt_string(inner_11.as_str()));
                 ::std::result::Result::Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]

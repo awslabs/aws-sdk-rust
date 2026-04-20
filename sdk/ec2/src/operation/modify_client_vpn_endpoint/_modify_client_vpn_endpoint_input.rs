@@ -52,6 +52,8 @@ pub struct ModifyClientVpnEndpointInput {
     pub client_route_enforcement_options: ::std::option::Option<crate::types::ClientRouteEnforcementOptions>,
     /// <p>Indicates whether the client VPN session is disconnected after the maximum timeout specified in <code>sessionTimeoutHours</code> is reached. If <code>true</code>, users are prompted to reconnect client VPN. If <code>false</code>, client VPN attempts to reconnect automatically. The default value is <code>true</code>.</p>
     pub disconnect_on_session_timeout: ::std::option::Option<bool>,
+    /// <p>The Transit Gateway configuration for the Client VPN endpoint. This option is currently not supported.</p>
+    pub transit_gateway_configuration: ::std::option::Option<crate::types::TransitGatewayConfigurationInputStructure>,
 }
 impl ModifyClientVpnEndpointInput {
     /// <p>The ID of the Client VPN endpoint to modify.</p>
@@ -137,6 +139,10 @@ impl ModifyClientVpnEndpointInput {
     pub fn disconnect_on_session_timeout(&self) -> ::std::option::Option<bool> {
         self.disconnect_on_session_timeout
     }
+    /// <p>The Transit Gateway configuration for the Client VPN endpoint. This option is currently not supported.</p>
+    pub fn transit_gateway_configuration(&self) -> ::std::option::Option<&crate::types::TransitGatewayConfigurationInputStructure> {
+        self.transit_gateway_configuration.as_ref()
+    }
 }
 impl ModifyClientVpnEndpointInput {
     /// Creates a new builder-style object to manufacture [`ModifyClientVpnEndpointInput`](crate::operation::modify_client_vpn_endpoint::ModifyClientVpnEndpointInput).
@@ -165,6 +171,7 @@ pub struct ModifyClientVpnEndpointInputBuilder {
     pub(crate) client_login_banner_options: ::std::option::Option<crate::types::ClientLoginBannerOptions>,
     pub(crate) client_route_enforcement_options: ::std::option::Option<crate::types::ClientRouteEnforcementOptions>,
     pub(crate) disconnect_on_session_timeout: ::std::option::Option<bool>,
+    pub(crate) transit_gateway_configuration: ::std::option::Option<crate::types::TransitGatewayConfigurationInputStructure>,
 }
 impl ModifyClientVpnEndpointInputBuilder {
     /// <p>The ID of the Client VPN endpoint to modify.</p>
@@ -449,6 +456,23 @@ impl ModifyClientVpnEndpointInputBuilder {
     pub fn get_disconnect_on_session_timeout(&self) -> &::std::option::Option<bool> {
         &self.disconnect_on_session_timeout
     }
+    /// <p>The Transit Gateway configuration for the Client VPN endpoint. This option is currently not supported.</p>
+    pub fn transit_gateway_configuration(mut self, input: crate::types::TransitGatewayConfigurationInputStructure) -> Self {
+        self.transit_gateway_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The Transit Gateway configuration for the Client VPN endpoint. This option is currently not supported.</p>
+    pub fn set_transit_gateway_configuration(
+        mut self,
+        input: ::std::option::Option<crate::types::TransitGatewayConfigurationInputStructure>,
+    ) -> Self {
+        self.transit_gateway_configuration = input;
+        self
+    }
+    /// <p>The Transit Gateway configuration for the Client VPN endpoint. This option is currently not supported.</p>
+    pub fn get_transit_gateway_configuration(&self) -> &::std::option::Option<crate::types::TransitGatewayConfigurationInputStructure> {
+        &self.transit_gateway_configuration
+    }
     /// Consumes the builder and constructs a [`ModifyClientVpnEndpointInput`](crate::operation::modify_client_vpn_endpoint::ModifyClientVpnEndpointInput).
     pub fn build(
         self,
@@ -473,6 +497,7 @@ impl ModifyClientVpnEndpointInputBuilder {
             client_login_banner_options: self.client_login_banner_options,
             client_route_enforcement_options: self.client_route_enforcement_options,
             disconnect_on_session_timeout: self.disconnect_on_session_timeout,
+            transit_gateway_configuration: self.transit_gateway_configuration,
         })
     }
 }

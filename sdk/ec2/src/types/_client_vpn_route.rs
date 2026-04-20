@@ -18,6 +18,8 @@ pub struct ClientVpnRoute {
     pub status: ::std::option::Option<crate::types::ClientVpnRouteStatus>,
     /// <p>A brief description of the route.</p>
     pub description: ::std::option::Option<::std::string::String>,
+    /// <p>The ID of the Transit Gateway attachment, if the route targets a Transit Gateway.</p>
+    pub transit_gateway_attachment_id: ::std::option::Option<::std::string::String>,
 }
 impl ClientVpnRoute {
     /// <p>The ID of the Client VPN endpoint with which the route is associated.</p>
@@ -48,6 +50,10 @@ impl ClientVpnRoute {
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
+    /// <p>The ID of the Transit Gateway attachment, if the route targets a Transit Gateway.</p>
+    pub fn transit_gateway_attachment_id(&self) -> ::std::option::Option<&str> {
+        self.transit_gateway_attachment_id.as_deref()
+    }
 }
 impl ClientVpnRoute {
     /// Creates a new builder-style object to manufacture [`ClientVpnRoute`](crate::types::ClientVpnRoute).
@@ -67,6 +73,7 @@ pub struct ClientVpnRouteBuilder {
     pub(crate) origin: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::ClientVpnRouteStatus>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) transit_gateway_attachment_id: ::std::option::Option<::std::string::String>,
 }
 impl ClientVpnRouteBuilder {
     /// <p>The ID of the Client VPN endpoint with which the route is associated.</p>
@@ -167,6 +174,20 @@ impl ClientVpnRouteBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
+    /// <p>The ID of the Transit Gateway attachment, if the route targets a Transit Gateway.</p>
+    pub fn transit_gateway_attachment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.transit_gateway_attachment_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the Transit Gateway attachment, if the route targets a Transit Gateway.</p>
+    pub fn set_transit_gateway_attachment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.transit_gateway_attachment_id = input;
+        self
+    }
+    /// <p>The ID of the Transit Gateway attachment, if the route targets a Transit Gateway.</p>
+    pub fn get_transit_gateway_attachment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.transit_gateway_attachment_id
+    }
     /// Consumes the builder and constructs a [`ClientVpnRoute`](crate::types::ClientVpnRoute).
     pub fn build(self) -> crate::types::ClientVpnRoute {
         crate::types::ClientVpnRoute {
@@ -177,6 +198,7 @@ impl ClientVpnRouteBuilder {
             origin: self.origin,
             status: self.status,
             description: self.description,
+            transit_gateway_attachment_id: self.transit_gateway_attachment_id,
         }
     }
 }

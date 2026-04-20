@@ -126,8 +126,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ListFou
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("ListFoundationModels")
-            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-            .with_interceptor(ListFoundationModelsEndpointParamsInterceptor)
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ListFoundationModelsEndpointParamsInterceptor,
+            ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::list_foundation_models::ListFoundationModelsError,
             >::new())
@@ -201,17 +205,17 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListFoundati
                 }
                 if let ::std::option::Option::Some(inner_2) = &_input.by_customization_type {
                     {
-                        query.push_kv("byCustomizationType", &::aws_smithy_http::query::fmt_string(inner_2));
+                        query.push_kv("byCustomizationType", &::aws_smithy_http::query::fmt_string(inner_2.as_str()));
                     }
                 }
                 if let ::std::option::Option::Some(inner_3) = &_input.by_output_modality {
                     {
-                        query.push_kv("byOutputModality", &::aws_smithy_http::query::fmt_string(inner_3));
+                        query.push_kv("byOutputModality", &::aws_smithy_http::query::fmt_string(inner_3.as_str()));
                     }
                 }
                 if let ::std::option::Option::Some(inner_4) = &_input.by_inference_type {
                     {
-                        query.push_kv("byInferenceType", &::aws_smithy_http::query::fmt_string(inner_4));
+                        query.push_kv("byInferenceType", &::aws_smithy_http::query::fmt_string(inner_4.as_str()));
                     }
                 }
                 ::std::result::Result::Ok(())
@@ -237,6 +241,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListFoundati
 #[derive(Debug)]
 struct ListFoundationModelsEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListFoundationModelsEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "ListFoundationModelsEndpointParamsInterceptor"

@@ -16,6 +16,10 @@ pub struct TargetNetwork {
     pub status: ::std::option::Option<crate::types::AssociationStatus>,
     /// <p>The IDs of the security groups applied to the target network association.</p>
     pub security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>The Availability Zone names for the target network association, if the Client VPN endpoint uses a Transit Gateway.</p>
+    pub availability_zones: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>The Availability Zone IDs for the target network association, if the Client VPN endpoint uses a Transit Gateway.</p>
+    pub availability_zone_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl TargetNetwork {
     /// <p>The ID of the association.</p>
@@ -44,6 +48,18 @@ impl TargetNetwork {
     pub fn security_groups(&self) -> &[::std::string::String] {
         self.security_groups.as_deref().unwrap_or_default()
     }
+    /// <p>The Availability Zone names for the target network association, if the Client VPN endpoint uses a Transit Gateway.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.availability_zones.is_none()`.
+    pub fn availability_zones(&self) -> &[::std::string::String] {
+        self.availability_zones.as_deref().unwrap_or_default()
+    }
+    /// <p>The Availability Zone IDs for the target network association, if the Client VPN endpoint uses a Transit Gateway.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.availability_zone_ids.is_none()`.
+    pub fn availability_zone_ids(&self) -> &[::std::string::String] {
+        self.availability_zone_ids.as_deref().unwrap_or_default()
+    }
 }
 impl TargetNetwork {
     /// Creates a new builder-style object to manufacture [`TargetNetwork`](crate::types::TargetNetwork).
@@ -62,6 +78,8 @@ pub struct TargetNetworkBuilder {
     pub(crate) client_vpn_endpoint_id: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::AssociationStatus>,
     pub(crate) security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) availability_zones: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) availability_zone_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl TargetNetworkBuilder {
     /// <p>The ID of the association.</p>
@@ -154,6 +172,46 @@ impl TargetNetworkBuilder {
     pub fn get_security_groups(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.security_groups
     }
+    /// Appends an item to `availability_zones`.
+    ///
+    /// To override the contents of this collection use [`set_availability_zones`](Self::set_availability_zones).
+    ///
+    /// <p>The Availability Zone names for the target network association, if the Client VPN endpoint uses a Transit Gateway.</p>
+    pub fn availability_zones(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.availability_zones.unwrap_or_default();
+        v.push(input.into());
+        self.availability_zones = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The Availability Zone names for the target network association, if the Client VPN endpoint uses a Transit Gateway.</p>
+    pub fn set_availability_zones(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.availability_zones = input;
+        self
+    }
+    /// <p>The Availability Zone names for the target network association, if the Client VPN endpoint uses a Transit Gateway.</p>
+    pub fn get_availability_zones(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.availability_zones
+    }
+    /// Appends an item to `availability_zone_ids`.
+    ///
+    /// To override the contents of this collection use [`set_availability_zone_ids`](Self::set_availability_zone_ids).
+    ///
+    /// <p>The Availability Zone IDs for the target network association, if the Client VPN endpoint uses a Transit Gateway.</p>
+    pub fn availability_zone_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.availability_zone_ids.unwrap_or_default();
+        v.push(input.into());
+        self.availability_zone_ids = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The Availability Zone IDs for the target network association, if the Client VPN endpoint uses a Transit Gateway.</p>
+    pub fn set_availability_zone_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.availability_zone_ids = input;
+        self
+    }
+    /// <p>The Availability Zone IDs for the target network association, if the Client VPN endpoint uses a Transit Gateway.</p>
+    pub fn get_availability_zone_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.availability_zone_ids
+    }
     /// Consumes the builder and constructs a [`TargetNetwork`](crate::types::TargetNetwork).
     pub fn build(self) -> crate::types::TargetNetwork {
         crate::types::TargetNetwork {
@@ -163,6 +221,8 @@ impl TargetNetworkBuilder {
             client_vpn_endpoint_id: self.client_vpn_endpoint_id,
             status: self.status,
             security_groups: self.security_groups,
+            availability_zones: self.availability_zones,
+            availability_zone_ids: self.availability_zone_ids,
         }
     }
 }

@@ -409,6 +409,8 @@ mod accept_capacity_reservation_billing_ownership;
 
 mod accept_reserved_instances_exchange_quote;
 
+mod accept_transit_gateway_client_vpn_attachment;
+
 mod accept_transit_gateway_multicast_domain_associations;
 
 mod accept_transit_gateway_peering_attachment;
@@ -887,6 +889,8 @@ mod delete_traffic_mirror_session;
 mod delete_traffic_mirror_target;
 
 mod delete_transit_gateway;
+
+mod delete_transit_gateway_client_vpn_attachment;
 
 mod delete_transit_gateway_connect;
 
@@ -1825,6 +1829,8 @@ mod register_transit_gateway_multicast_group_members;
 mod register_transit_gateway_multicast_group_sources;
 
 mod reject_capacity_reservation_billing_ownership;
+
+mod reject_transit_gateway_client_vpn_attachment;
 
 mod reject_transit_gateway_multicast_domain_associations;
 

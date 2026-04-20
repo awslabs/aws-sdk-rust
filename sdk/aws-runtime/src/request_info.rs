@@ -7,7 +7,7 @@ use crate::service_clock_skew::ServiceClockSkew;
 use aws_smithy_async::time::TimeSource;
 use aws_smithy_runtime_api::box_error::BoxError;
 use aws_smithy_runtime_api::client::interceptors::context::BeforeTransmitInterceptorContextMut;
-use aws_smithy_runtime_api::client::interceptors::Intercept;
+use aws_smithy_runtime_api::client::interceptors::{dyn_dispatch_hint, Intercept};
 use aws_smithy_runtime_api::client::retries::RequestAttempts;
 use aws_smithy_runtime_api::client::runtime_components::RuntimeComponents;
 use aws_smithy_types::config_bag::ConfigBag;
@@ -91,6 +91,7 @@ impl RequestInfoInterceptor {
     }
 }
 
+#[dyn_dispatch_hint]
 impl Intercept for RequestInfoInterceptor {
     fn name(&self) -> &'static str {
         "RequestInfoInterceptor"

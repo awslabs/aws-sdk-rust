@@ -125,22 +125,31 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for UploadM
         _: &::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder,
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
-        let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("UploadMultipartPart")
-            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-            .with_interceptor(UploadMultipartPartEndpointParamsInterceptor)
-            .with_interceptor(crate::glacier_interceptors::GlacierAccountIdAutofillInterceptor::<
-                crate::operation::upload_multipart_part::UploadMultipartPartInput,
-            >::new())
-            .with_interceptor(crate::glacier_interceptors::GlacierTreeHashHeaderInterceptor::default())
-            .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
-                crate::operation::upload_multipart_part::UploadMultipartPartError,
-            >::new())
-            .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::ModeledAsRetryableClassifier::<
-                crate::operation::upload_multipart_part::UploadMultipartPartError,
-            >::new())
-            .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
-                crate::operation::upload_multipart_part::UploadMultipartPartError,
-            >::new());
+        let mut rcb =
+            ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("UploadMultipartPart")
+                .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                    ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+                ))
+                .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                    UploadMultipartPartEndpointParamsInterceptor,
+                ))
+                .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                    crate::glacier_interceptors::GlacierAccountIdAutofillInterceptor::<
+                        crate::operation::upload_multipart_part::UploadMultipartPartInput,
+                    >::new(),
+                ))
+                .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                    crate::glacier_interceptors::GlacierTreeHashHeaderInterceptor::default(),
+                ))
+                .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
+                    crate::operation::upload_multipart_part::UploadMultipartPartError,
+                >::new())
+                .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::ModeledAsRetryableClassifier::<
+                    crate::operation::upload_multipart_part::UploadMultipartPartError,
+                >::new())
+                .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
+                    crate::operation::upload_multipart_part::UploadMultipartPartError,
+                >::new());
 
         ::std::borrow::Cow::Owned(rcb)
     }
@@ -258,6 +267,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for UploadMultip
 #[derive(Debug)]
 struct UploadMultipartPartEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for UploadMultipartPartEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "UploadMultipartPartEndpointParamsInterceptor"

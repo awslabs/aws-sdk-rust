@@ -132,10 +132,18 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ListVPC
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("ListVPCAssociationAuthorizations")
-            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-            .with_interceptor(ListVPCAssociationAuthorizationsEndpointParamsInterceptor)
-            .with_interceptor(crate::route53_resource_id_preprocessor::Route53ResourceIdInterceptor::new(
-                |input: &mut crate::operation::list_vpc_association_authorizations::ListVpcAssociationAuthorizationsInput| &mut input.hosted_zone_id,
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ListVPCAssociationAuthorizationsEndpointParamsInterceptor,
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                crate::route53_resource_id_preprocessor::Route53ResourceIdInterceptor::new(
+                    |input: &mut crate::operation::list_vpc_association_authorizations::ListVpcAssociationAuthorizationsInput| {
+                        &mut input.hosted_zone_id
+                    },
+                ),
             ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::list_vpc_association_authorizations::ListVPCAssociationAuthorizationsError,
@@ -254,6 +262,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListVPCAssoc
 #[derive(Debug)]
 struct ListVPCAssociationAuthorizationsEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListVPCAssociationAuthorizationsEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "ListVPCAssociationAuthorizationsEndpointParamsInterceptor"

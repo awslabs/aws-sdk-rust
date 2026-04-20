@@ -207,4 +207,18 @@ impl CreateReplicatorFluentBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
+    /// <p>Configuration for delivering replicator logs to customer destinations.</p>
+    pub fn log_delivery(mut self, input: crate::types::LogDelivery) -> Self {
+        self.inner = self.inner.log_delivery(input);
+        self
+    }
+    /// <p>Configuration for delivering replicator logs to customer destinations.</p>
+    pub fn set_log_delivery(mut self, input: ::std::option::Option<crate::types::LogDelivery>) -> Self {
+        self.inner = self.inner.set_log_delivery(input);
+        self
+    }
+    /// <p>Configuration for delivering replicator logs to customer destinations.</p>
+    pub fn get_log_delivery(&self) -> &::std::option::Option<crate::types::LogDelivery> {
+        self.inner.get_log_delivery()
+    }
 }

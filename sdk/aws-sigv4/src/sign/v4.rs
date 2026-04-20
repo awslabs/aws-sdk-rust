@@ -11,7 +11,7 @@ use crate::{
 use aws_credential_types::Credentials;
 use aws_smithy_runtime_api::{client::identity::Identity, http::Headers};
 use bytes::Bytes;
-use hmac::{digest::FixedOutput, Hmac, Mac};
+use hmac::{digest::FixedOutput, Hmac, KeyInit, Mac};
 use sha2::{Digest, Sha256};
 use std::time::SystemTime;
 

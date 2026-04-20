@@ -27,6 +27,13 @@ where
                                 crate::protocol_serde::shape_mcp_tool_schema_configuration::de_mcp_tool_schema_configuration(tokens, _value)?,
                             );
                         }
+                        "listingMode" => {
+                            builder = builder.set_listing_mode(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::ListingMode::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {
@@ -60,6 +67,9 @@ pub fn ser_mcp_server_target_configuration(
         let mut object_2 = object.key("mcpToolSchema").start_object();
         crate::protocol_serde::shape_mcp_tool_schema_configuration::ser_mcp_tool_schema_configuration(&mut object_2, var_1)?;
         object_2.finish();
+    }
+    if let Some(var_3) = &input.listing_mode {
+        object.key("listingMode").string(var_3.as_str());
     }
     Ok(())
 }

@@ -133,8 +133,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ListAss
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("ListAssessmentFrameworkShareRequests")
-            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-            .with_interceptor(ListAssessmentFrameworkShareRequestsEndpointParamsInterceptor)
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ListAssessmentFrameworkShareRequestsEndpointParamsInterceptor,
+            ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::list_assessment_framework_share_requests::ListAssessmentFrameworkShareRequestsError,
             >::new())
@@ -209,7 +213,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListAssessme
                 let inner_1 = inner_1
                     .as_ref()
                     .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("request_type", "cannot be empty or unset"))?;
-                query.push_kv("requestType", &::aws_smithy_http::query::fmt_string(inner_1));
+                query.push_kv("requestType", &::aws_smithy_http::query::fmt_string(inner_1.as_str()));
                 if let ::std::option::Option::Some(inner_2) = &_input.next_token {
                     {
                         query.push_kv("nextToken", &::aws_smithy_http::query::fmt_string(inner_2));
@@ -243,6 +247,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListAssessme
 #[derive(Debug)]
 struct ListAssessmentFrameworkShareRequestsEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListAssessmentFrameworkShareRequestsEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "ListAssessmentFrameworkShareRequestsEndpointParamsInterceptor"

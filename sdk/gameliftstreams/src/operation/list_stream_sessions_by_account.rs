@@ -132,8 +132,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ListStr
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("ListStreamSessionsByAccount")
-            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-            .with_interceptor(ListStreamSessionsByAccountEndpointParamsInterceptor)
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ListStreamSessionsByAccountEndpointParamsInterceptor,
+            ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::list_stream_sessions_by_account::ListStreamSessionsByAccountError,
             >::new())
@@ -202,12 +206,12 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListStreamSe
                 let mut query = ::aws_smithy_http::query::Writer::new(output);
                 if let ::std::option::Option::Some(inner_1) = &_input.status {
                     {
-                        query.push_kv("Status", &::aws_smithy_http::query::fmt_string(inner_1));
+                        query.push_kv("Status", &::aws_smithy_http::query::fmt_string(inner_1.as_str()));
                     }
                 }
                 if let ::std::option::Option::Some(inner_2) = &_input.export_files_status {
                     {
-                        query.push_kv("ExportFilesStatus", &::aws_smithy_http::query::fmt_string(inner_2));
+                        query.push_kv("ExportFilesStatus", &::aws_smithy_http::query::fmt_string(inner_2.as_str()));
                     }
                 }
                 if let ::std::option::Option::Some(inner_3) = &_input.next_token {
@@ -243,6 +247,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListStreamSe
 #[derive(Debug)]
 struct ListStreamSessionsByAccountEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListStreamSessionsByAccountEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "ListStreamSessionsByAccountEndpointParamsInterceptor"

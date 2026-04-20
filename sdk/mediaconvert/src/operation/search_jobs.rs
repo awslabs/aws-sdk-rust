@@ -126,8 +126,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for SearchJ
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("SearchJobs")
-            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-            .with_interceptor(SearchJobsEndpointParamsInterceptor)
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                SearchJobsEndpointParamsInterceptor,
+            ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::search_jobs::SearchJobsError,
             >::new())
@@ -209,7 +213,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for SearchJobsRe
                 }
                 if let ::std::option::Option::Some(inner_4) = &_input.order {
                     {
-                        query.push_kv("order", &::aws_smithy_http::query::fmt_string(inner_4));
+                        query.push_kv("order", &::aws_smithy_http::query::fmt_string(inner_4.as_str()));
                     }
                 }
                 if let ::std::option::Option::Some(inner_5) = &_input.queue {
@@ -219,7 +223,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for SearchJobsRe
                 }
                 if let ::std::option::Option::Some(inner_6) = &_input.status {
                     {
-                        query.push_kv("status", &::aws_smithy_http::query::fmt_string(inner_6));
+                        query.push_kv("status", &::aws_smithy_http::query::fmt_string(inner_6.as_str()));
                     }
                 }
                 ::std::result::Result::Ok(())
@@ -245,6 +249,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for SearchJobsRe
 #[derive(Debug)]
 struct SearchJobsEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for SearchJobsEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "SearchJobsEndpointParamsInterceptor"

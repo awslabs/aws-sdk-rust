@@ -126,8 +126,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for GetLife
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("GetLifecyclePolicies")
-            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-            .with_interceptor(GetLifecyclePoliciesEndpointParamsInterceptor)
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                GetLifecyclePoliciesEndpointParamsInterceptor,
+            ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::get_lifecycle_policies::GetLifecyclePoliciesError,
             >::new())
@@ -203,13 +207,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetLifecycle
                 }
                 if let ::std::option::Option::Some(inner_3) = &_input.state {
                     {
-                        query.push_kv("state", &::aws_smithy_http::query::fmt_string(inner_3));
+                        query.push_kv("state", &::aws_smithy_http::query::fmt_string(inner_3.as_str()));
                     }
                 }
                 if let ::std::option::Option::Some(inner_4) = &_input.resource_types {
                     {
                         for inner_5 in inner_4 {
-                            query.push_kv("resourceTypes", &::aws_smithy_http::query::fmt_string(inner_5));
+                            query.push_kv("resourceTypes", &::aws_smithy_http::query::fmt_string(inner_5.as_str()));
                         }
                     }
                 }
@@ -229,7 +233,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetLifecycle
                 }
                 if let ::std::option::Option::Some(inner_10) = &_input.default_policy_type {
                     {
-                        query.push_kv("defaultPolicyType", &::aws_smithy_http::query::fmt_string(inner_10));
+                        query.push_kv("defaultPolicyType", &::aws_smithy_http::query::fmt_string(inner_10.as_str()));
                     }
                 }
                 ::std::result::Result::Ok(())
@@ -255,6 +259,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetLifecycle
 #[derive(Debug)]
 struct GetLifecyclePoliciesEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for GetLifecyclePoliciesEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "GetLifecyclePoliciesEndpointParamsInterceptor"

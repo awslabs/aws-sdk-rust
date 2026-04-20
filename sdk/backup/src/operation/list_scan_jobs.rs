@@ -123,8 +123,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ListSca
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("ListScanJobs")
-            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-            .with_interceptor(ListScanJobsEndpointParamsInterceptor)
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ListScanJobsEndpointParamsInterceptor,
+            ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::list_scan_jobs::ListScanJobsError,
             >::new())
@@ -219,7 +223,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListScanJobs
                 }
                 if let ::std::option::Option::Some(inner_5) = &_input.by_malware_scanner {
                     {
-                        query.push_kv("ByMalwareScanner", &::aws_smithy_http::query::fmt_string(inner_5));
+                        query.push_kv("ByMalwareScanner", &::aws_smithy_http::query::fmt_string(inner_5.as_str()));
                     }
                 }
                 if let ::std::option::Option::Some(inner_6) = &_input.by_recovery_point_arn {
@@ -234,17 +238,17 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListScanJobs
                 }
                 if let ::std::option::Option::Some(inner_8) = &_input.by_resource_type {
                     {
-                        query.push_kv("ByResourceType", &::aws_smithy_http::query::fmt_string(inner_8));
+                        query.push_kv("ByResourceType", &::aws_smithy_http::query::fmt_string(inner_8.as_str()));
                     }
                 }
                 if let ::std::option::Option::Some(inner_9) = &_input.by_scan_result_status {
                     {
-                        query.push_kv("ByScanResultStatus", &::aws_smithy_http::query::fmt_string(inner_9));
+                        query.push_kv("ByScanResultStatus", &::aws_smithy_http::query::fmt_string(inner_9.as_str()));
                     }
                 }
                 if let ::std::option::Option::Some(inner_10) = &_input.by_state {
                     {
-                        query.push_kv("ByState", &::aws_smithy_http::query::fmt_string(inner_10));
+                        query.push_kv("ByState", &::aws_smithy_http::query::fmt_string(inner_10.as_str()));
                     }
                 }
                 if let ::std::option::Option::Some(inner_11) = &_input.max_results {
@@ -280,6 +284,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListScanJobs
 #[derive(Debug)]
 struct ListScanJobsEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListScanJobsEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "ListScanJobsEndpointParamsInterceptor"

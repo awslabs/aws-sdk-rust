@@ -123,8 +123,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for GetRefe
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("GetReference")
-            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-            .with_interceptor(GetReferenceEndpointParamsInterceptor)
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                GetReferenceEndpointParamsInterceptor,
+            ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::get_reference::GetReferenceError,
             >::new())
@@ -238,7 +242,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetReference
                 query.push_kv("partNumber", ::aws_smithy_types::primitive::Encoder::from(*inner_3).encode());
                 if let ::std::option::Option::Some(inner_4) = &_input.file {
                     {
-                        query.push_kv("file", &::aws_smithy_http::query::fmt_string(inner_4));
+                        query.push_kv("file", &::aws_smithy_http::query::fmt_string(inner_4.as_str()));
                     }
                 }
                 ::std::result::Result::Ok(())
@@ -265,6 +269,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetReference
 #[derive(Debug)]
 struct GetReferenceEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for GetReferenceEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "GetReferenceEndpointParamsInterceptor"

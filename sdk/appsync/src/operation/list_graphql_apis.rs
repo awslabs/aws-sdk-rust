@@ -126,8 +126,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ListGra
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("ListGraphqlApis")
-            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-            .with_interceptor(ListGraphqlApisEndpointParamsInterceptor)
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ListGraphqlApisEndpointParamsInterceptor,
+            ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::list_graphql_apis::ListGraphqlApisError,
             >::new())
@@ -206,12 +210,12 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListGraphqlA
                 }
                 if let ::std::option::Option::Some(inner_3) = &_input.api_type {
                     {
-                        query.push_kv("apiType", &::aws_smithy_http::query::fmt_string(inner_3));
+                        query.push_kv("apiType", &::aws_smithy_http::query::fmt_string(inner_3.as_str()));
                     }
                 }
                 if let ::std::option::Option::Some(inner_4) = &_input.owner {
                     {
-                        query.push_kv("owner", &::aws_smithy_http::query::fmt_string(inner_4));
+                        query.push_kv("owner", &::aws_smithy_http::query::fmt_string(inner_4.as_str()));
                     }
                 }
                 ::std::result::Result::Ok(())
@@ -237,6 +241,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListGraphqlA
 #[derive(Debug)]
 struct ListGraphqlApisEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListGraphqlApisEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "ListGraphqlApisEndpointParamsInterceptor"

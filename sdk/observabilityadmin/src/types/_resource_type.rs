@@ -26,6 +26,7 @@
 ///     ResourceType::AwsLamdbaFunction => { /* ... */ },
 ///     ResourceType::AwsRoute53ResolverResolverEndpoint => { /* ... */ },
 ///     ResourceType::AwsSecurityHub => { /* ... */ },
+///     ResourceType::AwsSecurityHubHubv2 => { /* ... */ },
 ///     ResourceType::AwsWafV2WebAcl => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -84,6 +85,8 @@ pub enum ResourceType {
     #[allow(missing_docs)] // documentation missing in model
     AwsSecurityHub,
     #[allow(missing_docs)] // documentation missing in model
+    AwsSecurityHubHubv2,
+    #[allow(missing_docs)] // documentation missing in model
     AwsWafV2WebAcl,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -106,6 +109,7 @@ impl ::std::convert::From<&str> for ResourceType {
             "AWS::Lambda::Function" => ResourceType::AwsLamdbaFunction,
             "AWS::Route53Resolver::ResolverEndpoint" => ResourceType::AwsRoute53ResolverResolverEndpoint,
             "AWS::SecurityHub::Hub" => ResourceType::AwsSecurityHub,
+            "AWS::SecurityHub::HubV2" => ResourceType::AwsSecurityHubHubv2,
             "AWS::WAFv2::WebACL" => ResourceType::AwsWafV2WebAcl,
             other => ResourceType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -136,6 +140,7 @@ impl ResourceType {
             ResourceType::AwsLamdbaFunction => "AWS::Lambda::Function",
             ResourceType::AwsRoute53ResolverResolverEndpoint => "AWS::Route53Resolver::ResolverEndpoint",
             ResourceType::AwsSecurityHub => "AWS::SecurityHub::Hub",
+            ResourceType::AwsSecurityHubHubv2 => "AWS::SecurityHub::HubV2",
             ResourceType::AwsWafV2WebAcl => "AWS::WAFv2::WebACL",
             ResourceType::Unknown(value) => value.as_str(),
         }
@@ -157,6 +162,7 @@ impl ResourceType {
             "AWS::Lambda::Function",
             "AWS::Route53Resolver::ResolverEndpoint",
             "AWS::SecurityHub::Hub",
+            "AWS::SecurityHub::HubV2",
             "AWS::WAFv2::WebACL",
         ]
     }
@@ -195,6 +201,7 @@ impl ::std::fmt::Display for ResourceType {
             ResourceType::AwsLamdbaFunction => write!(f, "AWS::Lambda::Function"),
             ResourceType::AwsRoute53ResolverResolverEndpoint => write!(f, "AWS::Route53Resolver::ResolverEndpoint"),
             ResourceType::AwsSecurityHub => write!(f, "AWS::SecurityHub::Hub"),
+            ResourceType::AwsSecurityHubHubv2 => write!(f, "AWS::SecurityHub::HubV2"),
             ResourceType::AwsWafV2WebAcl => write!(f, "AWS::WAFv2::WebACL"),
             ResourceType::Unknown(value) => write!(f, "{value}"),
         }

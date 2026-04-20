@@ -133,7 +133,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for Retriev
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("RetrieveAndGenerateStream")
-            .with_interceptor(RetrieveAndGenerateStreamEndpointParamsInterceptor)
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                RetrieveAndGenerateStreamEndpointParamsInterceptor,
+            ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::retrieve_and_generate_stream::RetrieveAndGenerateStreamError,
             >::new())
@@ -235,6 +237,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for RetrieveAndG
 #[derive(Debug)]
 struct RetrieveAndGenerateStreamEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for RetrieveAndGenerateStreamEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "RetrieveAndGenerateStreamEndpointParamsInterceptor"

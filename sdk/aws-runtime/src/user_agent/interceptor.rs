@@ -15,7 +15,7 @@ use aws_smithy_runtime_api::client::http::HttpClient;
 use aws_smithy_runtime_api::client::interceptors::context::{
     BeforeTransmitInterceptorContextMut, BeforeTransmitInterceptorContextRef,
 };
-use aws_smithy_runtime_api::client::interceptors::Intercept;
+use aws_smithy_runtime_api::client::interceptors::{dyn_dispatch_hint, Intercept};
 use aws_smithy_runtime_api::client::runtime_components::RuntimeComponents;
 use aws_smithy_types::config_bag::ConfigBag;
 use aws_types::app_name::AppName;
@@ -119,6 +119,7 @@ fn header_values(
     ))
 }
 
+#[dyn_dispatch_hint]
 impl Intercept for UserAgentInterceptor {
     fn name(&self) -> &'static str {
         "UserAgentInterceptor"

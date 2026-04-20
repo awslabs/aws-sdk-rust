@@ -127,8 +127,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for GetData
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("GetDataAccess")
-            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-            .with_interceptor(GetDataAccessEndpointParamsInterceptor)
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                GetDataAccessEndpointParamsInterceptor,
+            ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::get_data_access::GetDataAccessError,
             >::new())
@@ -210,7 +214,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetDataAcces
                 let inner_2 = inner_2
                     .as_ref()
                     .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("permission", "cannot be empty or unset"))?;
-                query.push_kv("permission", &::aws_smithy_http::query::fmt_string(inner_2));
+                query.push_kv("permission", &::aws_smithy_http::query::fmt_string(inner_2.as_str()));
                 if let ::std::option::Option::Some(inner_3) = &_input.duration_seconds {
                     {
                         query.push_kv("durationSeconds", ::aws_smithy_types::primitive::Encoder::from(*inner_3).encode());
@@ -218,12 +222,12 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetDataAcces
                 }
                 if let ::std::option::Option::Some(inner_4) = &_input.privilege {
                     {
-                        query.push_kv("privilege", &::aws_smithy_http::query::fmt_string(inner_4));
+                        query.push_kv("privilege", &::aws_smithy_http::query::fmt_string(inner_4.as_str()));
                     }
                 }
                 if let ::std::option::Option::Some(inner_5) = &_input.target_type {
                     {
-                        query.push_kv("targetType", &::aws_smithy_http::query::fmt_string(inner_5));
+                        query.push_kv("targetType", &::aws_smithy_http::query::fmt_string(inner_5.as_str()));
                     }
                 }
                 if let ::std::option::Option::Some(inner_6) = &_input.audit_context {
@@ -255,6 +259,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetDataAcces
 #[derive(Debug)]
 struct GetDataAccessEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for GetDataAccessEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "GetDataAccessEndpointParamsInterceptor"

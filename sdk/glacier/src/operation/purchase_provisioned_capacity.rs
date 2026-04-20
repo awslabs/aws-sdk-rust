@@ -132,11 +132,17 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for Purchas
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("PurchaseProvisionedCapacity")
-            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-            .with_interceptor(PurchaseProvisionedCapacityEndpointParamsInterceptor)
-            .with_interceptor(crate::glacier_interceptors::GlacierAccountIdAutofillInterceptor::<
-                crate::operation::purchase_provisioned_capacity::PurchaseProvisionedCapacityInput,
-            >::new())
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                PurchaseProvisionedCapacityEndpointParamsInterceptor,
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                crate::glacier_interceptors::GlacierAccountIdAutofillInterceptor::<
+                    crate::operation::purchase_provisioned_capacity::PurchaseProvisionedCapacityInput,
+                >::new(),
+            ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::purchase_provisioned_capacity::PurchaseProvisionedCapacityError,
             >::new())
@@ -229,6 +235,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for PurchaseProv
 #[derive(Debug)]
 struct PurchaseProvisionedCapacityEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for PurchaseProvisionedCapacityEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "PurchaseProvisionedCapacityEndpointParamsInterceptor"

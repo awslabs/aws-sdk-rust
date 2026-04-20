@@ -8,6 +8,8 @@ pub struct McpServerTargetConfiguration {
     pub endpoint: ::std::string::String,
     /// <p>The tool schema configuration for the MCP server target. Supported only when the credential provider is configured with an authorization code grant type. Dynamic tool discovery/synchronization will be disabled when target is configured with mcpToolSchema.</p>
     pub mcp_tool_schema: ::std::option::Option<crate::types::McpToolSchemaConfiguration>,
+    /// <p>The listing mode for the MCP server target configuration. MCP resources for default targets are cached at the control plane for faster access. MCP resources for dynamic targets will be dynamically retrieved when listing tools.</p>
+    pub listing_mode: ::std::option::Option<crate::types::ListingMode>,
 }
 impl McpServerTargetConfiguration {
     /// <p>The endpoint for the MCP server target configuration.</p>
@@ -18,6 +20,10 @@ impl McpServerTargetConfiguration {
     /// <p>The tool schema configuration for the MCP server target. Supported only when the credential provider is configured with an authorization code grant type. Dynamic tool discovery/synchronization will be disabled when target is configured with mcpToolSchema.</p>
     pub fn mcp_tool_schema(&self) -> ::std::option::Option<&crate::types::McpToolSchemaConfiguration> {
         self.mcp_tool_schema.as_ref()
+    }
+    /// <p>The listing mode for the MCP server target configuration. MCP resources for default targets are cached at the control plane for faster access. MCP resources for dynamic targets will be dynamically retrieved when listing tools.</p>
+    pub fn listing_mode(&self) -> ::std::option::Option<&crate::types::ListingMode> {
+        self.listing_mode.as_ref()
     }
 }
 impl McpServerTargetConfiguration {
@@ -33,6 +39,7 @@ impl McpServerTargetConfiguration {
 pub struct McpServerTargetConfigurationBuilder {
     pub(crate) endpoint: ::std::option::Option<::std::string::String>,
     pub(crate) mcp_tool_schema: ::std::option::Option<crate::types::McpToolSchemaConfiguration>,
+    pub(crate) listing_mode: ::std::option::Option<crate::types::ListingMode>,
 }
 impl McpServerTargetConfigurationBuilder {
     /// <p>The endpoint for the MCP server target configuration.</p>
@@ -64,6 +71,20 @@ impl McpServerTargetConfigurationBuilder {
     pub fn get_mcp_tool_schema(&self) -> &::std::option::Option<crate::types::McpToolSchemaConfiguration> {
         &self.mcp_tool_schema
     }
+    /// <p>The listing mode for the MCP server target configuration. MCP resources for default targets are cached at the control plane for faster access. MCP resources for dynamic targets will be dynamically retrieved when listing tools.</p>
+    pub fn listing_mode(mut self, input: crate::types::ListingMode) -> Self {
+        self.listing_mode = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The listing mode for the MCP server target configuration. MCP resources for default targets are cached at the control plane for faster access. MCP resources for dynamic targets will be dynamically retrieved when listing tools.</p>
+    pub fn set_listing_mode(mut self, input: ::std::option::Option<crate::types::ListingMode>) -> Self {
+        self.listing_mode = input;
+        self
+    }
+    /// <p>The listing mode for the MCP server target configuration. MCP resources for default targets are cached at the control plane for faster access. MCP resources for dynamic targets will be dynamically retrieved when listing tools.</p>
+    pub fn get_listing_mode(&self) -> &::std::option::Option<crate::types::ListingMode> {
+        &self.listing_mode
+    }
     /// Consumes the builder and constructs a [`McpServerTargetConfiguration`](crate::types::McpServerTargetConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`endpoint`](crate::types::builders::McpServerTargetConfigurationBuilder::endpoint)
@@ -76,6 +97,7 @@ impl McpServerTargetConfigurationBuilder {
                 )
             })?,
             mcp_tool_schema: self.mcp_tool_schema,
+            listing_mode: self.listing_mode,
         })
     }
 }

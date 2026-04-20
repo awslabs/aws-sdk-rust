@@ -127,8 +127,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ListNot
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("ListNotifications")
-            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-            .with_interceptor(ListNotificationsEndpointParamsInterceptor)
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ListNotificationsEndpointParamsInterceptor,
+            ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::list_notifications::ListNotificationsError,
             >::new())
@@ -215,7 +219,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListNotifica
                 let inner_2 = inner_2
                     .as_ref()
                     .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("r#type", "cannot be empty or unset"))?;
-                query.push_kv("type", &::aws_smithy_http::query::fmt_string(inner_2));
+                query.push_kv("type", &::aws_smithy_http::query::fmt_string(inner_2.as_str()));
                 if let ::std::option::Option::Some(inner_3) = &_input.after_timestamp {
                     {
                         query.push_kv(
@@ -241,7 +245,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListNotifica
                 }
                 if let ::std::option::Option::Some(inner_7) = &_input.task_status {
                     {
-                        query.push_kv("taskStatus", &::aws_smithy_http::query::fmt_string(inner_7));
+                        query.push_kv("taskStatus", &::aws_smithy_http::query::fmt_string(inner_7.as_str()));
                     }
                 }
                 if let ::std::option::Option::Some(inner_8) = &_input.max_results {
@@ -277,6 +281,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListNotifica
 #[derive(Debug)]
 struct ListNotificationsEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListNotificationsEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "ListNotificationsEndpointParamsInterceptor"

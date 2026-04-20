@@ -126,8 +126,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ListPac
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("ListPackageVersions")
-            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-            .with_interceptor(ListPackageVersionsEndpointParamsInterceptor)
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ListPackageVersionsEndpointParamsInterceptor,
+            ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::list_package_versions::ListPackageVersionsError,
             >::new())
@@ -225,7 +229,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListPackageV
                 let inner_4 = inner_4
                     .as_ref()
                     .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("format", "cannot be empty or unset"))?;
-                query.push_kv("format", &::aws_smithy_http::query::fmt_string(inner_4));
+                query.push_kv("format", &::aws_smithy_http::query::fmt_string(inner_4.as_str()));
                 if let ::std::option::Option::Some(inner_5) = &_input.namespace {
                     {
                         query.push_kv("namespace", &::aws_smithy_http::query::fmt_string(inner_5));
@@ -244,12 +248,12 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListPackageV
                 query.push_kv("package", &::aws_smithy_http::query::fmt_string(inner_6));
                 if let ::std::option::Option::Some(inner_7) = &_input.status {
                     {
-                        query.push_kv("status", &::aws_smithy_http::query::fmt_string(inner_7));
+                        query.push_kv("status", &::aws_smithy_http::query::fmt_string(inner_7.as_str()));
                     }
                 }
                 if let ::std::option::Option::Some(inner_8) = &_input.sort_by {
                     {
-                        query.push_kv("sortBy", &::aws_smithy_http::query::fmt_string(inner_8));
+                        query.push_kv("sortBy", &::aws_smithy_http::query::fmt_string(inner_8.as_str()));
                     }
                 }
                 if let ::std::option::Option::Some(inner_9) = &_input.max_results {
@@ -264,7 +268,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListPackageV
                 }
                 if let ::std::option::Option::Some(inner_11) = &_input.origin_type {
                     {
-                        query.push_kv("originType", &::aws_smithy_http::query::fmt_string(inner_11));
+                        query.push_kv("originType", &::aws_smithy_http::query::fmt_string(inner_11.as_str()));
                     }
                 }
                 ::std::result::Result::Ok(())
@@ -290,6 +294,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListPackageV
 #[derive(Debug)]
 struct ListPackageVersionsEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListPackageVersionsEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "ListPackageVersionsEndpointParamsInterceptor"

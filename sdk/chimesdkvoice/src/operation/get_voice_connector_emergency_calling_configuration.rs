@@ -129,8 +129,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for GetVoic
         #[allow(unused_mut)]
         let mut rcb =
             ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("GetVoiceConnectorEmergencyCallingConfiguration")
-                .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-                .with_interceptor(GetVoiceConnectorEmergencyCallingConfigurationEndpointParamsInterceptor)
+                .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                    ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+                ))
+                .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                    GetVoiceConnectorEmergencyCallingConfigurationEndpointParamsInterceptor,
+                ))
                 .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                     crate::operation::get_voice_connector_emergency_calling_configuration::GetVoiceConnectorEmergencyCallingConfigurationError,
                 >::new())
@@ -228,6 +232,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetVoiceConn
 #[derive(Debug)]
 struct GetVoiceConnectorEmergencyCallingConfigurationEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for GetVoiceConnectorEmergencyCallingConfigurationEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "GetVoiceConnectorEmergencyCallingConfigurationEndpointParamsInterceptor"

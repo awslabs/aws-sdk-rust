@@ -134,8 +134,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for Replace
         #[allow(unused_mut)]
         let mut rcb =
             ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("ReplaceImageCriteriaInAllowedImagesSettings")
-                .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-                .with_interceptor(ReplaceImageCriteriaInAllowedImagesSettingsEndpointParamsInterceptor)
+                .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                    ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+                ))
+                .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                    ReplaceImageCriteriaInAllowedImagesSettingsEndpointParamsInterceptor,
+                ))
                 .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                     crate::operation::replace_image_criteria_in_allowed_images_settings::ReplaceImageCriteriaInAllowedImagesSettingsError,
                 >::new())
@@ -222,6 +226,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ReplaceImage
 #[derive(Debug)]
 struct ReplaceImageCriteriaInAllowedImagesSettingsEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ReplaceImageCriteriaInAllowedImagesSettingsEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "ReplaceImageCriteriaInAllowedImagesSettingsEndpointParamsInterceptor"

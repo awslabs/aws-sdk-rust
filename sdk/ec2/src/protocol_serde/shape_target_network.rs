@@ -79,6 +79,26 @@ pub fn de_target_network(
                 builder = builder.set_security_groups(var_6);
             }
             ,
+            s if s.matches("availabilityZoneSet") /* AvailabilityZones com.amazonaws.ec2#TargetNetwork$AvailabilityZones */ =>  {
+                let var_7 =
+                    Some(
+                        crate::protocol_serde::shape_client_vpn_availability_zone_set::de_client_vpn_availability_zone_set(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_availability_zones(var_7);
+            }
+            ,
+            s if s.matches("availabilityZoneIdSet") /* AvailabilityZoneIds com.amazonaws.ec2#TargetNetwork$AvailabilityZoneIds */ =>  {
+                let var_8 =
+                    Some(
+                        crate::protocol_serde::shape_client_vpn_availability_zone_id_set::de_client_vpn_availability_zone_id_set(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_availability_zone_ids(var_8);
+            }
+            ,
             _ => {}
         }
     }

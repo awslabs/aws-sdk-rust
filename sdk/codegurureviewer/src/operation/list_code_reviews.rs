@@ -126,8 +126,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ListCod
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("ListCodeReviews")
-            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-            .with_interceptor(ListCodeReviewsEndpointParamsInterceptor)
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ListCodeReviewsEndpointParamsInterceptor,
+            ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::list_code_reviews::ListCodeReviewsError,
             >::new())
@@ -197,14 +201,14 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListCodeRevi
                 if let ::std::option::Option::Some(inner_1) = &_input.provider_types {
                     {
                         for inner_2 in inner_1 {
-                            query.push_kv("ProviderTypes", &::aws_smithy_http::query::fmt_string(inner_2));
+                            query.push_kv("ProviderTypes", &::aws_smithy_http::query::fmt_string(inner_2.as_str()));
                         }
                     }
                 }
                 if let ::std::option::Option::Some(inner_3) = &_input.states {
                     {
                         for inner_4 in inner_3 {
-                            query.push_kv("States", &::aws_smithy_http::query::fmt_string(inner_4));
+                            query.push_kv("States", &::aws_smithy_http::query::fmt_string(inner_4.as_str()));
                         }
                     }
                 }
@@ -219,7 +223,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListCodeRevi
                 let inner_7 = inner_7
                     .as_ref()
                     .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("r#type", "cannot be empty or unset"))?;
-                query.push_kv("Type", &::aws_smithy_http::query::fmt_string(inner_7));
+                query.push_kv("Type", &::aws_smithy_http::query::fmt_string(inner_7.as_str()));
                 if let ::std::option::Option::Some(inner_8) = &_input.max_results {
                     {
                         query.push_kv("MaxResults", ::aws_smithy_types::primitive::Encoder::from(*inner_8).encode());
@@ -253,6 +257,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListCodeRevi
 #[derive(Debug)]
 struct ListCodeReviewsEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListCodeReviewsEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "ListCodeReviewsEndpointParamsInterceptor"

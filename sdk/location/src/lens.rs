@@ -49,6 +49,16 @@ pub(crate) fn reflens_list_geofences_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_jobs_output_output_next_token(
+    input: &crate::operation::list_jobs::ListJobsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_keys_output_output_next_token(
     input: &crate::operation::list_keys::ListKeysOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -140,6 +150,13 @@ pub(crate) fn lens_list_geofence_collections_output_output_entries(
 pub(crate) fn lens_list_geofences_output_output_entries(
     input: crate::operation::list_geofences::ListGeofencesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ListGeofenceResponseEntry>> {
+    let input = input.entries;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_jobs_output_output_entries(
+    input: crate::operation::list_jobs::ListJobsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::ListJobsResponseEntry>> {
     let input = input.entries;
     ::std::option::Option::Some(input)
 }

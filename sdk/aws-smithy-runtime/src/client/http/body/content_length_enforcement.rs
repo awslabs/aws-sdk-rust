@@ -9,7 +9,8 @@ use aws_smithy_runtime_api::box_error::BoxError;
 use aws_smithy_runtime_api::client::interceptors::context::{
     BeforeDeserializationInterceptorContextMut, BeforeTransmitInterceptorContextRef,
 };
-use aws_smithy_runtime_api::client::interceptors::Intercept;
+use aws_smithy_runtime_api::client::interceptors::SharedInterceptor;
+use aws_smithy_runtime_api::client::interceptors::{dyn_dispatch_hint, Intercept};
 use aws_smithy_runtime_api::client::runtime_components::{
     RuntimeComponents, RuntimeComponentsBuilder,
 };
@@ -121,6 +122,7 @@ impl Storable for EnableContentLengthEnforcement {
     type Storer = StoreReplace<EnableContentLengthEnforcement>;
 }
 
+#[dyn_dispatch_hint]
 impl Intercept for EnforceContentLengthInterceptor {
     fn name(&self) -> &'static str {
         "EnforceContentLength"
@@ -200,8 +202,9 @@ impl RuntimePlugin for EnforceContentLengthRuntimePlugin {
         _current_components: &RuntimeComponentsBuilder,
     ) -> Cow<'_, RuntimeComponentsBuilder> {
         Cow::Owned(
-            RuntimeComponentsBuilder::new("EnforceContentLength")
-                .with_interceptor(EnforceContentLengthInterceptor {}),
+            RuntimeComponentsBuilder::new("EnforceContentLength").with_interceptor(
+                SharedInterceptor::permanent(EnforceContentLengthInterceptor {}),
+            ),
         )
     }
 }

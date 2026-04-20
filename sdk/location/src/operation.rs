@@ -28,6 +28,9 @@ pub mod calculate_route;
 /// Types for the `CalculateRouteMatrix` operation.
 pub mod calculate_route_matrix;
 
+/// Types for the `CancelJob` operation.
+pub mod cancel_job;
+
 /// Types for the `CreateGeofenceCollection` operation.
 pub mod create_geofence_collection;
 
@@ -97,6 +100,9 @@ pub mod get_device_position_history;
 /// Types for the `GetGeofence` operation.
 pub mod get_geofence;
 
+/// Types for the `GetJob` operation.
+pub mod get_job;
+
 /// Types for the `GetMapGlyphs` operation.
 pub mod get_map_glyphs;
 
@@ -120,6 +126,9 @@ pub mod list_geofence_collections;
 
 /// Types for the `ListGeofences` operation.
 pub mod list_geofences;
+
+/// Types for the `ListJobs` operation.
+pub mod list_jobs;
 
 /// Types for the `ListKeys` operation.
 pub mod list_keys;
@@ -153,6 +162,9 @@ pub mod search_place_index_for_suggestions;
 
 /// Types for the `SearchPlaceIndexForText` operation.
 pub mod search_place_index_for_text;
+
+/// Types for the `StartJob` operation.
+pub mod start_job;
 
 /// Types for the `TagResource` operation.
 pub mod tag_resource;

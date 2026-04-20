@@ -123,7 +123,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for SelectO
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
                     let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("SelectObjectContent")
-                            .with_interceptor(SelectObjectContentEndpointParamsInterceptor)
+                            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(SelectObjectContentEndpointParamsInterceptor))
                             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<crate::operation::select_object_content::SelectObjectContentError>::new())
 .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::ModeledAsRetryableClassifier::<crate::operation::select_object_content::SelectObjectContentError>::new())
 .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<crate::operation::select_object_content::SelectObjectContentError>::builder().transient_errors({
@@ -244,6 +244,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for SelectObject
 #[derive(Debug)]
 struct SelectObjectContentEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for SelectObjectContentEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "SelectObjectContentEndpointParamsInterceptor"

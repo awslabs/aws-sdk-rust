@@ -7,6 +7,7 @@ pub use ::aws_smithy_types::endpoint::Endpoint;
 #[derive(Debug, Default)]
 pub(crate) struct EndpointOverrideFeatureTrackerInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for EndpointOverrideFeatureTrackerInterceptor {
     fn name(&self) -> &'static str {
         "EndpointOverrideFeatureTrackerInterceptor"

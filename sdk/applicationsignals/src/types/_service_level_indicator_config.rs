@@ -7,8 +7,10 @@ pub struct ServiceLevelIndicatorConfig {
     /// <p>Use this structure to specify the metric to be used for the SLO.</p>
     pub sli_metric_config: ::std::option::Option<crate::types::ServiceLevelIndicatorMetricConfig>,
     /// <p>This parameter is used only when a request-based SLO tracks the <code>Latency</code> metric. Specify the threshold value that the observed <code>Latency</code> metric values are to be compared to.</p>
+    /// <p>This is not required if <code>CreateRecommendedSlo</code> is set to <code>true</code>.</p>
     pub metric_threshold: f64,
     /// <p>The arithmetic operation to use when comparing the specified metric to the threshold.</p>
+    /// <p>This is not required if <code>CreateRecommendedSlo</code> is set to <code>true</code>.</p>
     pub comparison_operator: crate::types::ServiceLevelIndicatorComparisonOperator,
 }
 impl ServiceLevelIndicatorConfig {
@@ -17,10 +19,12 @@ impl ServiceLevelIndicatorConfig {
         self.sli_metric_config.as_ref()
     }
     /// <p>This parameter is used only when a request-based SLO tracks the <code>Latency</code> metric. Specify the threshold value that the observed <code>Latency</code> metric values are to be compared to.</p>
+    /// <p>This is not required if <code>CreateRecommendedSlo</code> is set to <code>true</code>.</p>
     pub fn metric_threshold(&self) -> f64 {
         self.metric_threshold
     }
     /// <p>The arithmetic operation to use when comparing the specified metric to the threshold.</p>
+    /// <p>This is not required if <code>CreateRecommendedSlo</code> is set to <code>true</code>.</p>
     pub fn comparison_operator(&self) -> &crate::types::ServiceLevelIndicatorComparisonOperator {
         &self.comparison_operator
     }
@@ -57,54 +61,49 @@ impl ServiceLevelIndicatorConfigBuilder {
         &self.sli_metric_config
     }
     /// <p>This parameter is used only when a request-based SLO tracks the <code>Latency</code> metric. Specify the threshold value that the observed <code>Latency</code> metric values are to be compared to.</p>
-    /// This field is required.
+    /// <p>This is not required if <code>CreateRecommendedSlo</code> is set to <code>true</code>.</p>
     pub fn metric_threshold(mut self, input: f64) -> Self {
         self.metric_threshold = ::std::option::Option::Some(input);
         self
     }
     /// <p>This parameter is used only when a request-based SLO tracks the <code>Latency</code> metric. Specify the threshold value that the observed <code>Latency</code> metric values are to be compared to.</p>
+    /// <p>This is not required if <code>CreateRecommendedSlo</code> is set to <code>true</code>.</p>
     pub fn set_metric_threshold(mut self, input: ::std::option::Option<f64>) -> Self {
         self.metric_threshold = input;
         self
     }
     /// <p>This parameter is used only when a request-based SLO tracks the <code>Latency</code> metric. Specify the threshold value that the observed <code>Latency</code> metric values are to be compared to.</p>
+    /// <p>This is not required if <code>CreateRecommendedSlo</code> is set to <code>true</code>.</p>
     pub fn get_metric_threshold(&self) -> &::std::option::Option<f64> {
         &self.metric_threshold
     }
     /// <p>The arithmetic operation to use when comparing the specified metric to the threshold.</p>
-    /// This field is required.
+    /// <p>This is not required if <code>CreateRecommendedSlo</code> is set to <code>true</code>.</p>
     pub fn comparison_operator(mut self, input: crate::types::ServiceLevelIndicatorComparisonOperator) -> Self {
         self.comparison_operator = ::std::option::Option::Some(input);
         self
     }
     /// <p>The arithmetic operation to use when comparing the specified metric to the threshold.</p>
+    /// <p>This is not required if <code>CreateRecommendedSlo</code> is set to <code>true</code>.</p>
     pub fn set_comparison_operator(mut self, input: ::std::option::Option<crate::types::ServiceLevelIndicatorComparisonOperator>) -> Self {
         self.comparison_operator = input;
         self
     }
     /// <p>The arithmetic operation to use when comparing the specified metric to the threshold.</p>
+    /// <p>This is not required if <code>CreateRecommendedSlo</code> is set to <code>true</code>.</p>
     pub fn get_comparison_operator(&self) -> &::std::option::Option<crate::types::ServiceLevelIndicatorComparisonOperator> {
         &self.comparison_operator
     }
     /// Consumes the builder and constructs a [`ServiceLevelIndicatorConfig`](crate::types::ServiceLevelIndicatorConfig).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`metric_threshold`](crate::types::builders::ServiceLevelIndicatorConfigBuilder::metric_threshold)
-    /// - [`comparison_operator`](crate::types::builders::ServiceLevelIndicatorConfigBuilder::comparison_operator)
-    pub fn build(self) -> ::std::result::Result<crate::types::ServiceLevelIndicatorConfig, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ServiceLevelIndicatorConfig {
+    pub fn build(self) -> crate::types::ServiceLevelIndicatorConfig {
+        crate::types::ServiceLevelIndicatorConfig {
             sli_metric_config: self.sli_metric_config,
-            metric_threshold: self.metric_threshold.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "metric_threshold",
-                    "metric_threshold was not specified but it is required when building ServiceLevelIndicatorConfig",
-                )
-            })?,
-            comparison_operator: self.comparison_operator.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "comparison_operator",
-                    "comparison_operator was not specified but it is required when building ServiceLevelIndicatorConfig",
-                )
-            })?,
-        })
+            metric_threshold: self.metric_threshold.unwrap_or_default(),
+            comparison_operator: self.comparison_operator.unwrap_or(
+                "LessThan"
+                    .parse::<crate::types::ServiceLevelIndicatorComparisonOperator>()
+                    .expect("static value validated to member"),
+            ),
+        }
     }
 }

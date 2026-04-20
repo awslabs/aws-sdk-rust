@@ -18,33 +18,39 @@ pub fn ser_create_replicator_input_input(
         }
         array_3.finish();
     }
-    if let Some(var_6) = &input.replication_info_list {
-        let mut array_7 = object.key("replicationInfoList").start_array();
-        for item_8 in var_6 {
+    if let Some(var_6) = &input.log_delivery {
+        #[allow(unused_mut)]
+        let mut object_7 = object.key("logDelivery").start_object();
+        crate::protocol_serde::shape_log_delivery::ser_log_delivery(&mut object_7, var_6)?;
+        object_7.finish();
+    }
+    if let Some(var_8) = &input.replication_info_list {
+        let mut array_9 = object.key("replicationInfoList").start_array();
+        for item_10 in var_8 {
             {
                 #[allow(unused_mut)]
-                let mut object_9 = array_7.value().start_object();
-                crate::protocol_serde::shape_replication_info::ser_replication_info(&mut object_9, item_8)?;
-                object_9.finish();
+                let mut object_11 = array_9.value().start_object();
+                crate::protocol_serde::shape_replication_info::ser_replication_info(&mut object_11, item_10)?;
+                object_11.finish();
             }
         }
-        array_7.finish();
+        array_9.finish();
     }
-    if let Some(var_10) = &input.replicator_name {
-        object.key("replicatorName").string(var_10.as_str());
+    if let Some(var_12) = &input.replicator_name {
+        object.key("replicatorName").string(var_12.as_str());
     }
-    if let Some(var_11) = &input.service_execution_role_arn {
-        object.key("serviceExecutionRoleArn").string(var_11.as_str());
+    if let Some(var_13) = &input.service_execution_role_arn {
+        object.key("serviceExecutionRoleArn").string(var_13.as_str());
     }
-    if let Some(var_12) = &input.tags {
+    if let Some(var_14) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_13 = object.key("tags").start_object();
-        for (key_14, value_15) in var_12 {
+        let mut object_15 = object.key("tags").start_object();
+        for (key_16, value_17) in var_14 {
             {
-                object_13.key(key_14.as_str()).string(value_15.as_str());
+                object_15.key(key_16.as_str()).string(value_17.as_str());
             }
         }
-        object_13.finish();
+        object_15.finish();
     }
     Ok(())
 }

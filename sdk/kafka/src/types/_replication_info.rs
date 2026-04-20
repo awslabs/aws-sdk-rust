@@ -8,10 +8,14 @@ pub struct ReplicationInfo {
     pub consumer_group_replication: ::std::option::Option<crate::types::ConsumerGroupReplication>,
     /// <p>The ARN of the source Kafka cluster.</p>
     pub source_kafka_cluster_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The ID of the source Kafka cluster.</p>
+    pub source_kafka_cluster_id: ::std::option::Option<::std::string::String>,
     /// <p>The compression type to use when producing records to target cluster.</p>
     pub target_compression_type: ::std::option::Option<crate::types::TargetCompressionType>,
     /// <p>The ARN of the target Kafka cluster.</p>
     pub target_kafka_cluster_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The ID of the target Kafka cluster.</p>
+    pub target_kafka_cluster_id: ::std::option::Option<::std::string::String>,
     /// <p>Configuration relating to topic replication.</p>
     pub topic_replication: ::std::option::Option<crate::types::TopicReplication>,
 }
@@ -24,6 +28,10 @@ impl ReplicationInfo {
     pub fn source_kafka_cluster_arn(&self) -> ::std::option::Option<&str> {
         self.source_kafka_cluster_arn.as_deref()
     }
+    /// <p>The ID of the source Kafka cluster.</p>
+    pub fn source_kafka_cluster_id(&self) -> ::std::option::Option<&str> {
+        self.source_kafka_cluster_id.as_deref()
+    }
     /// <p>The compression type to use when producing records to target cluster.</p>
     pub fn target_compression_type(&self) -> ::std::option::Option<&crate::types::TargetCompressionType> {
         self.target_compression_type.as_ref()
@@ -31,6 +39,10 @@ impl ReplicationInfo {
     /// <p>The ARN of the target Kafka cluster.</p>
     pub fn target_kafka_cluster_arn(&self) -> ::std::option::Option<&str> {
         self.target_kafka_cluster_arn.as_deref()
+    }
+    /// <p>The ID of the target Kafka cluster.</p>
+    pub fn target_kafka_cluster_id(&self) -> ::std::option::Option<&str> {
+        self.target_kafka_cluster_id.as_deref()
     }
     /// <p>Configuration relating to topic replication.</p>
     pub fn topic_replication(&self) -> ::std::option::Option<&crate::types::TopicReplication> {
@@ -50,8 +62,10 @@ impl ReplicationInfo {
 pub struct ReplicationInfoBuilder {
     pub(crate) consumer_group_replication: ::std::option::Option<crate::types::ConsumerGroupReplication>,
     pub(crate) source_kafka_cluster_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) source_kafka_cluster_id: ::std::option::Option<::std::string::String>,
     pub(crate) target_compression_type: ::std::option::Option<crate::types::TargetCompressionType>,
     pub(crate) target_kafka_cluster_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) target_kafka_cluster_id: ::std::option::Option<::std::string::String>,
     pub(crate) topic_replication: ::std::option::Option<crate::types::TopicReplication>,
 }
 impl ReplicationInfoBuilder {
@@ -71,7 +85,6 @@ impl ReplicationInfoBuilder {
         &self.consumer_group_replication
     }
     /// <p>The ARN of the source Kafka cluster.</p>
-    /// This field is required.
     pub fn source_kafka_cluster_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_kafka_cluster_arn = ::std::option::Option::Some(input.into());
         self
@@ -84,6 +97,20 @@ impl ReplicationInfoBuilder {
     /// <p>The ARN of the source Kafka cluster.</p>
     pub fn get_source_kafka_cluster_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.source_kafka_cluster_arn
+    }
+    /// <p>The ID of the source Kafka cluster.</p>
+    pub fn source_kafka_cluster_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.source_kafka_cluster_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the source Kafka cluster.</p>
+    pub fn set_source_kafka_cluster_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.source_kafka_cluster_id = input;
+        self
+    }
+    /// <p>The ID of the source Kafka cluster.</p>
+    pub fn get_source_kafka_cluster_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_kafka_cluster_id
     }
     /// <p>The compression type to use when producing records to target cluster.</p>
     /// This field is required.
@@ -101,7 +128,6 @@ impl ReplicationInfoBuilder {
         &self.target_compression_type
     }
     /// <p>The ARN of the target Kafka cluster.</p>
-    /// This field is required.
     pub fn target_kafka_cluster_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_kafka_cluster_arn = ::std::option::Option::Some(input.into());
         self
@@ -114,6 +140,20 @@ impl ReplicationInfoBuilder {
     /// <p>The ARN of the target Kafka cluster.</p>
     pub fn get_target_kafka_cluster_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.target_kafka_cluster_arn
+    }
+    /// <p>The ID of the target Kafka cluster.</p>
+    pub fn target_kafka_cluster_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.target_kafka_cluster_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the target Kafka cluster.</p>
+    pub fn set_target_kafka_cluster_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.target_kafka_cluster_id = input;
+        self
+    }
+    /// <p>The ID of the target Kafka cluster.</p>
+    pub fn get_target_kafka_cluster_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_kafka_cluster_id
     }
     /// <p>Configuration relating to topic replication.</p>
     /// This field is required.
@@ -135,8 +175,10 @@ impl ReplicationInfoBuilder {
         crate::types::ReplicationInfo {
             consumer_group_replication: self.consumer_group_replication,
             source_kafka_cluster_arn: self.source_kafka_cluster_arn,
+            source_kafka_cluster_id: self.source_kafka_cluster_id,
             target_compression_type: self.target_compression_type,
             target_kafka_cluster_arn: self.target_kafka_cluster_arn,
+            target_kafka_cluster_id: self.target_kafka_cluster_id,
             topic_replication: self.topic_replication,
         }
     }

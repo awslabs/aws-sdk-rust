@@ -162,7 +162,13 @@ impl Fs {
         match &self.0 {
             // TODO(https://github.com/awslabs/aws-sdk-rust/issues/867): Use async IO below
             Inner::Real => {
-                std::fs::write(path, contents)?;
+                std::fs::write(&path, contents)?;
+
+                #[cfg(unix)]
+                {
+                    use std::os::unix::fs::PermissionsExt;
+                    std::fs::set_permissions(path, std::fs::Permissions::from_mode(0o600))?;
+                }
             }
             Inner::Fake(fake) => match fake.as_ref() {
                 Fake::MapFs(fs) => {
@@ -324,5 +330,24 @@ mod test {
 
         let result = fs.read_to_end(&path).await.expect("success");
         assert_eq!(b"test", &result[..]);
+    }
+
+    #[cfg(unix)]
+    #[tokio::test]
+    async fn real_fs_write_sets_owner_only_permissions_on_unix() {
+        use std::os::unix::fs::PermissionsExt;
+
+        let dir = tempfile::tempdir().expect("create temp dir");
+        let path = dir.path().join("secret.txt");
+        let fs = Fs::real();
+
+        fs.write(&path, b"sensitive").await.expect("write succeeds");
+
+        let mode = std::fs::metadata(&path)
+            .expect("metadata")
+            .permissions()
+            .mode()
+            & 0o777; // mask off file type bits, keep only permission bits
+        assert_eq!(mode, 0o600, "file should be owner read/write only");
     }
 }

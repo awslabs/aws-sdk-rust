@@ -132,8 +132,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for CreateC
         #[allow(unused_mut)]
         let mut rcb =
             ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("CreateConfiguredTableAssociationAnalysisRule")
-                .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-                .with_interceptor(CreateConfiguredTableAssociationAnalysisRuleEndpointParamsInterceptor)
+                .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                    ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+                ))
+                .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                    CreateConfiguredTableAssociationAnalysisRuleEndpointParamsInterceptor,
+                ))
                 .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                     crate::operation::create_configured_table_association_analysis_rule::CreateConfiguredTableAssociationAnalysisRuleError,
                 >::new())
@@ -251,6 +255,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for CreateConfig
 #[derive(Debug)]
 struct CreateConfiguredTableAssociationAnalysisRuleEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CreateConfiguredTableAssociationAnalysisRuleEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "CreateConfiguredTableAssociationAnalysisRuleEndpointParamsInterceptor"

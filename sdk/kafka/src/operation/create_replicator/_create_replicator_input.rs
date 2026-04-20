@@ -16,6 +16,8 @@ pub struct CreateReplicatorInput {
     pub service_execution_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>List of tags to attach to created Replicator.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p>Configuration for delivering replicator logs to customer destinations.</p>
+    pub log_delivery: ::std::option::Option<crate::types::LogDelivery>,
 }
 impl CreateReplicatorInput {
     /// <p>A summary description of the replicator.</p>
@@ -46,6 +48,10 @@ impl CreateReplicatorInput {
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
+    /// <p>Configuration for delivering replicator logs to customer destinations.</p>
+    pub fn log_delivery(&self) -> ::std::option::Option<&crate::types::LogDelivery> {
+        self.log_delivery.as_ref()
+    }
 }
 impl CreateReplicatorInput {
     /// Creates a new builder-style object to manufacture [`CreateReplicatorInput`](crate::operation::create_replicator::CreateReplicatorInput).
@@ -64,6 +70,7 @@ pub struct CreateReplicatorInputBuilder {
     pub(crate) replicator_name: ::std::option::Option<::std::string::String>,
     pub(crate) service_execution_role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) log_delivery: ::std::option::Option<crate::types::LogDelivery>,
 }
 impl CreateReplicatorInputBuilder {
     /// <p>A summary description of the replicator.</p>
@@ -170,6 +177,20 @@ impl CreateReplicatorInputBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
+    /// <p>Configuration for delivering replicator logs to customer destinations.</p>
+    pub fn log_delivery(mut self, input: crate::types::LogDelivery) -> Self {
+        self.log_delivery = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Configuration for delivering replicator logs to customer destinations.</p>
+    pub fn set_log_delivery(mut self, input: ::std::option::Option<crate::types::LogDelivery>) -> Self {
+        self.log_delivery = input;
+        self
+    }
+    /// <p>Configuration for delivering replicator logs to customer destinations.</p>
+    pub fn get_log_delivery(&self) -> &::std::option::Option<crate::types::LogDelivery> {
+        &self.log_delivery
+    }
     /// Consumes the builder and constructs a [`CreateReplicatorInput`](crate::operation::create_replicator::CreateReplicatorInput).
     pub fn build(
         self,
@@ -181,6 +202,7 @@ impl CreateReplicatorInputBuilder {
             replicator_name: self.replicator_name,
             service_execution_role_arn: self.service_execution_role_arn,
             tags: self.tags,
+            log_delivery: self.log_delivery,
         })
     }
 }

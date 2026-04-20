@@ -47,6 +47,12 @@ impl<T, E: StdError + Send + Sync + 'static> EventStreamSender<T, E> {
     ) -> MessageStreamAdapter<T, E> {
         MessageStreamAdapter::new(marshaller, error_marshaller, signer, self.input_stream)
     }
+
+    /// Extract the inner stream. This is used internally for composing streams.
+    #[doc(hidden)]
+    pub fn into_inner(self) -> Pin<Box<dyn Stream<Item = Result<T, E>> + Send + Sync>> {
+        self.input_stream
+    }
 }
 
 impl<T, E, S> From<S> for EventStreamSender<T, E>

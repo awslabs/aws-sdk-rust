@@ -124,9 +124,15 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for HeadObj
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("HeadObject")
-            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-            .with_interceptor(HeadObjectEndpointParamsInterceptor)
-            .with_interceptor(crate::s3_expires_interceptor::S3ExpiresInterceptor)
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                HeadObjectEndpointParamsInterceptor,
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                crate::s3_expires_interceptor::S3ExpiresInterceptor,
+            ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::head_object::HeadObjectError,
             >::new())
@@ -279,6 +285,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for HeadObjectRe
 #[derive(Debug)]
 struct HeadObjectEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for HeadObjectEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "HeadObjectEndpointParamsInterceptor"

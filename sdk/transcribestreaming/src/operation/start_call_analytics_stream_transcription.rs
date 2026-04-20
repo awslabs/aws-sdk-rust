@@ -132,7 +132,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for StartCa
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("StartCallAnalyticsStreamTranscription")
-            .with_interceptor(StartCallAnalyticsStreamTranscriptionEndpointParamsInterceptor)
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                StartCallAnalyticsStreamTranscriptionEndpointParamsInterceptor,
+            ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::start_call_analytics_stream_transcription::StartCallAnalyticsStreamTranscriptionError,
             >::new())
@@ -249,6 +251,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for StartCallAna
 #[derive(Debug)]
 struct StartCallAnalyticsStreamTranscriptionEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for StartCallAnalyticsStreamTranscriptionEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "StartCallAnalyticsStreamTranscriptionEndpointParamsInterceptor"

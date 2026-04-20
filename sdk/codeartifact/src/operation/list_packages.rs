@@ -126,8 +126,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ListPac
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("ListPackages")
-            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-            .with_interceptor(ListPackagesEndpointParamsInterceptor)
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ListPackagesEndpointParamsInterceptor,
+            ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::list_packages::ListPackagesError,
             >::new())
@@ -223,7 +227,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListPackages
                 query.push_kv("repository", &::aws_smithy_http::query::fmt_string(inner_3));
                 if let ::std::option::Option::Some(inner_4) = &_input.format {
                     {
-                        query.push_kv("format", &::aws_smithy_http::query::fmt_string(inner_4));
+                        query.push_kv("format", &::aws_smithy_http::query::fmt_string(inner_4.as_str()));
                     }
                 }
                 if let ::std::option::Option::Some(inner_5) = &_input.namespace {
@@ -248,12 +252,12 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListPackages
                 }
                 if let ::std::option::Option::Some(inner_9) = &_input.publish {
                     {
-                        query.push_kv("publish", &::aws_smithy_http::query::fmt_string(inner_9));
+                        query.push_kv("publish", &::aws_smithy_http::query::fmt_string(inner_9.as_str()));
                     }
                 }
                 if let ::std::option::Option::Some(inner_10) = &_input.upstream {
                     {
-                        query.push_kv("upstream", &::aws_smithy_http::query::fmt_string(inner_10));
+                        query.push_kv("upstream", &::aws_smithy_http::query::fmt_string(inner_10.as_str()));
                     }
                 }
                 ::std::result::Result::Ok(())
@@ -279,6 +283,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListPackages
 #[derive(Debug)]
 struct ListPackagesEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListPackagesEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "ListPackagesEndpointParamsInterceptor"

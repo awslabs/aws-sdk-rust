@@ -6,17 +6,35 @@
 pub struct KafkaCluster {
     /// <p>Details of an Amazon MSK Cluster.</p>
     pub amazon_msk_cluster: ::std::option::Option<crate::types::AmazonMskCluster>,
+    /// <p>Details of an Apache Kafka Cluster.</p>
+    pub apache_kafka_cluster: ::std::option::Option<crate::types::ApacheKafkaCluster>,
     /// <p>Details of an Amazon VPC which has network connectivity to the Apache Kafka cluster.</p>
     pub vpc_config: ::std::option::Option<crate::types::KafkaClusterClientVpcConfig>,
+    /// <p>Details of the client authentication used by the Apache Kafka cluster.</p>
+    pub client_authentication: ::std::option::Option<crate::types::KafkaClusterClientAuthentication>,
+    /// <p>Details of encryption in transit to the Apache Kafka cluster.</p>
+    pub encryption_in_transit: ::std::option::Option<crate::types::KafkaClusterEncryptionInTransit>,
 }
 impl KafkaCluster {
     /// <p>Details of an Amazon MSK Cluster.</p>
     pub fn amazon_msk_cluster(&self) -> ::std::option::Option<&crate::types::AmazonMskCluster> {
         self.amazon_msk_cluster.as_ref()
     }
+    /// <p>Details of an Apache Kafka Cluster.</p>
+    pub fn apache_kafka_cluster(&self) -> ::std::option::Option<&crate::types::ApacheKafkaCluster> {
+        self.apache_kafka_cluster.as_ref()
+    }
     /// <p>Details of an Amazon VPC which has network connectivity to the Apache Kafka cluster.</p>
     pub fn vpc_config(&self) -> ::std::option::Option<&crate::types::KafkaClusterClientVpcConfig> {
         self.vpc_config.as_ref()
+    }
+    /// <p>Details of the client authentication used by the Apache Kafka cluster.</p>
+    pub fn client_authentication(&self) -> ::std::option::Option<&crate::types::KafkaClusterClientAuthentication> {
+        self.client_authentication.as_ref()
+    }
+    /// <p>Details of encryption in transit to the Apache Kafka cluster.</p>
+    pub fn encryption_in_transit(&self) -> ::std::option::Option<&crate::types::KafkaClusterEncryptionInTransit> {
+        self.encryption_in_transit.as_ref()
     }
 }
 impl KafkaCluster {
@@ -31,11 +49,13 @@ impl KafkaCluster {
 #[non_exhaustive]
 pub struct KafkaClusterBuilder {
     pub(crate) amazon_msk_cluster: ::std::option::Option<crate::types::AmazonMskCluster>,
+    pub(crate) apache_kafka_cluster: ::std::option::Option<crate::types::ApacheKafkaCluster>,
     pub(crate) vpc_config: ::std::option::Option<crate::types::KafkaClusterClientVpcConfig>,
+    pub(crate) client_authentication: ::std::option::Option<crate::types::KafkaClusterClientAuthentication>,
+    pub(crate) encryption_in_transit: ::std::option::Option<crate::types::KafkaClusterEncryptionInTransit>,
 }
 impl KafkaClusterBuilder {
     /// <p>Details of an Amazon MSK Cluster.</p>
-    /// This field is required.
     pub fn amazon_msk_cluster(mut self, input: crate::types::AmazonMskCluster) -> Self {
         self.amazon_msk_cluster = ::std::option::Option::Some(input);
         self
@@ -49,8 +69,21 @@ impl KafkaClusterBuilder {
     pub fn get_amazon_msk_cluster(&self) -> &::std::option::Option<crate::types::AmazonMskCluster> {
         &self.amazon_msk_cluster
     }
+    /// <p>Details of an Apache Kafka Cluster.</p>
+    pub fn apache_kafka_cluster(mut self, input: crate::types::ApacheKafkaCluster) -> Self {
+        self.apache_kafka_cluster = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Details of an Apache Kafka Cluster.</p>
+    pub fn set_apache_kafka_cluster(mut self, input: ::std::option::Option<crate::types::ApacheKafkaCluster>) -> Self {
+        self.apache_kafka_cluster = input;
+        self
+    }
+    /// <p>Details of an Apache Kafka Cluster.</p>
+    pub fn get_apache_kafka_cluster(&self) -> &::std::option::Option<crate::types::ApacheKafkaCluster> {
+        &self.apache_kafka_cluster
+    }
     /// <p>Details of an Amazon VPC which has network connectivity to the Apache Kafka cluster.</p>
-    /// This field is required.
     pub fn vpc_config(mut self, input: crate::types::KafkaClusterClientVpcConfig) -> Self {
         self.vpc_config = ::std::option::Option::Some(input);
         self
@@ -64,11 +97,42 @@ impl KafkaClusterBuilder {
     pub fn get_vpc_config(&self) -> &::std::option::Option<crate::types::KafkaClusterClientVpcConfig> {
         &self.vpc_config
     }
+    /// <p>Details of the client authentication used by the Apache Kafka cluster.</p>
+    pub fn client_authentication(mut self, input: crate::types::KafkaClusterClientAuthentication) -> Self {
+        self.client_authentication = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Details of the client authentication used by the Apache Kafka cluster.</p>
+    pub fn set_client_authentication(mut self, input: ::std::option::Option<crate::types::KafkaClusterClientAuthentication>) -> Self {
+        self.client_authentication = input;
+        self
+    }
+    /// <p>Details of the client authentication used by the Apache Kafka cluster.</p>
+    pub fn get_client_authentication(&self) -> &::std::option::Option<crate::types::KafkaClusterClientAuthentication> {
+        &self.client_authentication
+    }
+    /// <p>Details of encryption in transit to the Apache Kafka cluster.</p>
+    pub fn encryption_in_transit(mut self, input: crate::types::KafkaClusterEncryptionInTransit) -> Self {
+        self.encryption_in_transit = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Details of encryption in transit to the Apache Kafka cluster.</p>
+    pub fn set_encryption_in_transit(mut self, input: ::std::option::Option<crate::types::KafkaClusterEncryptionInTransit>) -> Self {
+        self.encryption_in_transit = input;
+        self
+    }
+    /// <p>Details of encryption in transit to the Apache Kafka cluster.</p>
+    pub fn get_encryption_in_transit(&self) -> &::std::option::Option<crate::types::KafkaClusterEncryptionInTransit> {
+        &self.encryption_in_transit
+    }
     /// Consumes the builder and constructs a [`KafkaCluster`](crate::types::KafkaCluster).
     pub fn build(self) -> crate::types::KafkaCluster {
         crate::types::KafkaCluster {
             amazon_msk_cluster: self.amazon_msk_cluster,
+            apache_kafka_cluster: self.apache_kafka_cluster,
             vpc_config: self.vpc_config,
+            client_authentication: self.client_authentication,
+            encryption_in_transit: self.encryption_in_transit,
         }
     }
 }

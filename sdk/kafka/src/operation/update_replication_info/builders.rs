@@ -164,6 +164,20 @@ impl UpdateReplicationInfoFluentBuilder {
     pub fn get_source_kafka_cluster_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_source_kafka_cluster_arn()
     }
+    /// <p>The ID of the source Kafka cluster.</p>
+    pub fn source_kafka_cluster_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.source_kafka_cluster_id(input.into());
+        self
+    }
+    /// <p>The ID of the source Kafka cluster.</p>
+    pub fn set_source_kafka_cluster_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_source_kafka_cluster_id(input);
+        self
+    }
+    /// <p>The ID of the source Kafka cluster.</p>
+    pub fn get_source_kafka_cluster_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_source_kafka_cluster_id()
+    }
     /// <p>The ARN of the target Kafka cluster.</p>
     pub fn target_kafka_cluster_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.target_kafka_cluster_arn(input.into());
@@ -178,6 +192,20 @@ impl UpdateReplicationInfoFluentBuilder {
     pub fn get_target_kafka_cluster_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_target_kafka_cluster_arn()
     }
+    /// <p>The ID of the target Kafka cluster.</p>
+    pub fn target_kafka_cluster_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.target_kafka_cluster_id(input.into());
+        self
+    }
+    /// <p>The ID of the target Kafka cluster.</p>
+    pub fn set_target_kafka_cluster_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_target_kafka_cluster_id(input);
+        self
+    }
+    /// <p>The ID of the target Kafka cluster.</p>
+    pub fn get_target_kafka_cluster_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_target_kafka_cluster_id()
+    }
     /// <p>Updated topic replication information.</p>
     pub fn topic_replication(mut self, input: crate::types::TopicReplicationUpdate) -> Self {
         self.inner = self.inner.topic_replication(input);
@@ -191,5 +219,19 @@ impl UpdateReplicationInfoFluentBuilder {
     /// <p>Updated topic replication information.</p>
     pub fn get_topic_replication(&self) -> &::std::option::Option<crate::types::TopicReplicationUpdate> {
         self.inner.get_topic_replication()
+    }
+    /// <p>Configuration for delivering replicator logs to customer destinations.</p>
+    pub fn log_delivery(mut self, input: crate::types::LogDelivery) -> Self {
+        self.inner = self.inner.log_delivery(input);
+        self
+    }
+    /// <p>Configuration for delivering replicator logs to customer destinations.</p>
+    pub fn set_log_delivery(mut self, input: ::std::option::Option<crate::types::LogDelivery>) -> Self {
+        self.inner = self.inner.set_log_delivery(input);
+        self
+    }
+    /// <p>Configuration for delivering replicator logs to customer destinations.</p>
+    pub fn get_log_delivery(&self) -> &::std::option::Option<crate::types::LogDelivery> {
+        self.inner.get_log_delivery()
     }
 }

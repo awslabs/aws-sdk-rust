@@ -126,8 +126,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ListPri
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("ListPrivacyBudgets")
-            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-            .with_interceptor(ListPrivacyBudgetsEndpointParamsInterceptor)
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ListPrivacyBudgetsEndpointParamsInterceptor,
+            ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::list_privacy_budgets::ListPrivacyBudgetsError,
             >::new())
@@ -214,7 +218,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListPrivacyB
                 let inner_2 = inner_2.as_ref().ok_or_else(|| {
                     ::aws_smithy_types::error::operation::BuildError::missing_field("privacy_budget_type", "cannot be empty or unset")
                 })?;
-                query.push_kv("privacyBudgetType", &::aws_smithy_http::query::fmt_string(inner_2));
+                query.push_kv("privacyBudgetType", &::aws_smithy_http::query::fmt_string(inner_2.as_str()));
                 if let ::std::option::Option::Some(inner_3) = &_input.next_token {
                     {
                         query.push_kv("nextToken", &::aws_smithy_http::query::fmt_string(inner_3));
@@ -253,6 +257,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListPrivacyB
 #[derive(Debug)]
 struct ListPrivacyBudgetsEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListPrivacyBudgetsEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "ListPrivacyBudgetsEndpointParamsInterceptor"

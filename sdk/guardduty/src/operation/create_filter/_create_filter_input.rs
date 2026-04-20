@@ -11,57 +11,231 @@ pub struct CreateFilterInput {
     /// <p>The description of the filter. Valid characters include alphanumeric characters, and special characters such as hyphen, period, colon, underscore, parentheses (<code>{ }</code>, <code>\[ \]</code>, and <code>( )</code>), forward slash, horizontal tab, vertical tab, newline, form feed, return, and whitespace.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the action that is to be applied to the findings that match the filter.</p>
+    /// <p>Default: NOOP</p>
     pub action: ::std::option::Option<crate::types::FilterAction>,
     /// <p>Specifies the position of the filter in the list of current filters. Also specifies the order in which this filter is applied to the findings.</p>
     pub rank: ::std::option::Option<i32>,
-    /// <p>Represents the criteria to be used in the filter for querying findings.</p>
-    /// <p>You can only use the following attributes to query findings:</p>
+    /// <p>Represents the criteria to be used in the filter for querying findings. The following fields are available for filtering:</p>
     /// <ul>
     /// <li>
     /// <p>accountId</p></li>
     /// <li>
+    /// <p>arn</p></li>
+    /// <li>
+    /// <p>associatedAttackSequenceArn</p></li>
+    /// <li>
+    /// <p>confidence</p></li>
+    /// <li>
+    /// <p>createdAt</p>
+    /// <p>Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000</p></li>
+    /// <li>
+    /// <p>description</p></li>
+    /// <li>
     /// <p>id</p></li>
     /// <li>
+    /// <p>partition</p></li>
+    /// <li>
     /// <p>region</p></li>
-    /// <li>
-    /// <p>severity</p>
-    /// <p>To filter on the basis of severity, the API and CLI use the following input list for the <a href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_FindingCriteria.html">FindingCriteria</a> condition:</p>
-    /// <ul>
-    /// <li>
-    /// <p><b>Low</b>: <code>\["1", "2", "3"\]</code></p></li>
-    /// <li>
-    /// <p><b>Medium</b>: <code>\["4", "5", "6"\]</code></p></li>
-    /// <li>
-    /// <p><b>High</b>: <code>\["7", "8"\]</code></p></li>
-    /// <li>
-    /// <p><b>Critical</b>: <code>\["9", "10"\]</code></p></li>
-    /// </ul>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings-severity.html">Findings severity levels</a> in the <i>Amazon GuardDuty User Guide</i>.</p></li>
-    /// <li>
-    /// <p>type</p></li>
-    /// <li>
-    /// <p>updatedAt</p>
-    /// <p>Type: ISO 8601 string format: YYYY-MM-DDTHH:MM:SS.SSSZ or YYYY-MM-DDTHH:MM:SSZ depending on whether the value contains milliseconds.</p></li>
     /// <li>
     /// <p>resource.accessKeyDetails.accessKeyId</p></li>
     /// <li>
     /// <p>resource.accessKeyDetails.principalId</p></li>
     /// <li>
+    /// <p>resource.accessKeyDetails.userIdentity.accessKeyId</p></li>
+    /// <li>
+    /// <p>resource.accessKeyDetails.userIdentity.accountId</p></li>
+    /// <li>
+    /// <p>resource.accessKeyDetails.userIdentity.arn</p></li>
+    /// <li>
+    /// <p>resource.accessKeyDetails.userIdentity.principalId</p></li>
+    /// <li>
+    /// <p>resource.accessKeyDetails.userIdentity.sessionContext.attributes.mfaAuthenticated</p></li>
+    /// <li>
+    /// <p>resource.accessKeyDetails.userIdentity.sessionContext.ec2RoleDelivery</p></li>
+    /// <li>
+    /// <p>resource.accessKeyDetails.userIdentity.sessionContext.invokedBy</p></li>
+    /// <li>
+    /// <p>resource.accessKeyDetails.userIdentity.sessionContext.sessionIssuer.accountId</p></li>
+    /// <li>
+    /// <p>resource.accessKeyDetails.userIdentity.sessionContext.sessionIssuer.arn</p></li>
+    /// <li>
+    /// <p>resource.accessKeyDetails.userIdentity.sessionContext.sessionIssuer.principalId</p></li>
+    /// <li>
+    /// <p>resource.accessKeyDetails.userIdentity.sessionContext.sessionIssuer.type</p></li>
+    /// <li>
+    /// <p>resource.accessKeyDetails.userIdentity.sessionContext.sessionIssuer.userName</p></li>
+    /// <li>
+    /// <p>resource.accessKeyDetails.userIdentity.sessionContext.sourceIdentity</p></li>
+    /// <li>
+    /// <p>resource.accessKeyDetails.userIdentity.sessionContext.webIdFederationData.attributes</p></li>
+    /// <li>
+    /// <p>resource.accessKeyDetails.userIdentity.sessionContext.webIdFederationData.federatedProvider</p></li>
+    /// <li>
+    /// <p>resource.accessKeyDetails.userIdentity.type</p></li>
+    /// <li>
+    /// <p>resource.accessKeyDetails.userIdentity.userName</p></li>
+    /// <li>
     /// <p>resource.accessKeyDetails.userName</p></li>
     /// <li>
     /// <p>resource.accessKeyDetails.userType</p></li>
     /// <li>
+    /// <p>resource.bedrockGuardrailDetails.guardrailArn</p></li>
+    /// <li>
+    /// <p>resource.bedrockGuardrailDetails.guardrailVersion</p></li>
+    /// <li>
+    /// <p>resource.containerDetails.containerRuntime</p></li>
+    /// <li>
+    /// <p>resource.containerDetails.id</p></li>
+    /// <li>
+    /// <p>resource.containerDetails.image</p></li>
+    /// <li>
+    /// <p>resource.containerDetails.imagePrefix</p></li>
+    /// <li>
+    /// <p>resource.containerDetails.name</p></li>
+    /// <li>
+    /// <p>resource.containerDetails.securityContext.allowPrivilegeEscalation</p></li>
+    /// <li>
+    /// <p>resource.containerDetails.securityContext.privileged</p></li>
+    /// <li>
+    /// <p>resource.containerDetails.volumeMounts.mountPath</p></li>
+    /// <li>
+    /// <p>resource.containerDetails.volumeMounts.name</p></li>
+    /// <li>
+    /// <p>resource.ebsSnapshotDetails.snapshotArn</p></li>
+    /// <li>
+    /// <p>resource.ebsVolumeDetails.scannedVolumeDetails.deviceName</p></li>
+    /// <li>
+    /// <p>resource.ebsVolumeDetails.scannedVolumeDetails.encryptionType</p></li>
+    /// <li>
+    /// <p>resource.ebsVolumeDetails.scannedVolumeDetails.kmsKeyArn</p></li>
+    /// <li>
+    /// <p>resource.ebsVolumeDetails.scannedVolumeDetails.snapshotArn</p></li>
+    /// <li>
+    /// <p>resource.ebsVolumeDetails.scannedVolumeDetails.volumeArn</p></li>
+    /// <li>
+    /// <p>resource.ebsVolumeDetails.scannedVolumeDetails.volumeSizeInGB</p></li>
+    /// <li>
+    /// <p>resource.ebsVolumeDetails.scannedVolumeDetails.volumeType</p></li>
+    /// <li>
+    /// <p>resource.ebsVolumeDetails.skippedVolumeDetails.deviceName</p></li>
+    /// <li>
+    /// <p>resource.ebsVolumeDetails.skippedVolumeDetails.encryptionType</p></li>
+    /// <li>
+    /// <p>resource.ebsVolumeDetails.skippedVolumeDetails.kmsKeyArn</p></li>
+    /// <li>
+    /// <p>resource.ebsVolumeDetails.skippedVolumeDetails.snapshotArn</p></li>
+    /// <li>
+    /// <p>resource.ebsVolumeDetails.skippedVolumeDetails.volumeArn</p></li>
+    /// <li>
+    /// <p>resource.ebsVolumeDetails.skippedVolumeDetails.volumeSizeInGB</p></li>
+    /// <li>
+    /// <p>resource.ebsVolumeDetails.skippedVolumeDetails.volumeType</p></li>
+    /// <li>
+    /// <p>resource.ec2ImageDetails.imageArn</p></li>
+    /// <li>
+    /// <p>resource.ecsClusterDetails.activeServicesCount</p></li>
+    /// <li>
+    /// <p>resource.ecsClusterDetails.arn</p></li>
+    /// <li>
+    /// <p>resource.ecsClusterDetails.name</p></li>
+    /// <li>
+    /// <p>resource.ecsClusterDetails.registeredContainerInstancesCount</p></li>
+    /// <li>
+    /// <p>resource.ecsClusterDetails.runningTasksCount</p></li>
+    /// <li>
+    /// <p>resource.ecsClusterDetails.status</p></li>
+    /// <li>
+    /// <p>resource.ecsClusterDetails.tags.key</p></li>
+    /// <li>
+    /// <p>resource.ecsClusterDetails.tags.value</p></li>
+    /// <li>
+    /// <p>resource.ecsClusterDetails.taskDetails.arn</p></li>
+    /// <li>
+    /// <p>resource.ecsClusterDetails.taskDetails.containers.containerRuntime</p></li>
+    /// <li>
+    /// <p>resource.ecsClusterDetails.taskDetails.containers.id</p></li>
+    /// <li>
+    /// <p>resource.ecsClusterDetails.taskDetails.containers.image</p></li>
+    /// <li>
+    /// <p>resource.ecsClusterDetails.taskDetails.containers.imagePrefix</p></li>
+    /// <li>
+    /// <p>resource.ecsClusterDetails.taskDetails.containers.name</p></li>
+    /// <li>
+    /// <p>resource.ecsClusterDetails.taskDetails.containers.securityContext.allowPrivilegeEscalation</p></li>
+    /// <li>
+    /// <p>resource.ecsClusterDetails.taskDetails.containers.securityContext.privileged</p></li>
+    /// <li>
+    /// <p>resource.ecsClusterDetails.taskDetails.containers.volumeMounts.mountPath</p></li>
+    /// <li>
+    /// <p>resource.ecsClusterDetails.taskDetails.containers.volumeMounts.name</p></li>
+    /// <li>
+    /// <p>resource.ecsClusterDetails.taskDetails.createdAt</p>
+    /// <p>Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000</p></li>
+    /// <li>
+    /// <p>resource.ecsClusterDetails.taskDetails.definitionArn</p></li>
+    /// <li>
+    /// <p>resource.ecsClusterDetails.taskDetails.group</p></li>
+    /// <li>
+    /// <p>resource.ecsClusterDetails.taskDetails.launchType</p></li>
+    /// <li>
+    /// <p>resource.ecsClusterDetails.taskDetails.startedAt</p>
+    /// <p>Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000</p></li>
+    /// <li>
+    /// <p>resource.ecsClusterDetails.taskDetails.startedBy</p></li>
+    /// <li>
+    /// <p>resource.ecsClusterDetails.taskDetails.tags.key</p></li>
+    /// <li>
+    /// <p>resource.ecsClusterDetails.taskDetails.tags.value</p></li>
+    /// <li>
+    /// <p>resource.ecsClusterDetails.taskDetails.version</p></li>
+    /// <li>
+    /// <p>resource.ecsClusterDetails.taskDetails.volumes.hostPath.path</p></li>
+    /// <li>
+    /// <p>resource.ecsClusterDetails.taskDetails.volumes.name</p></li>
+    /// <li>
+    /// <p>resource.eksClusterDetails.arn</p></li>
+    /// <li>
+    /// <p>resource.eksClusterDetails.createdAt</p>
+    /// <p>Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000</p></li>
+    /// <li>
+    /// <p>resource.eksClusterDetails.name</p></li>
+    /// <li>
+    /// <p>resource.eksClusterDetails.status</p></li>
+    /// <li>
+    /// <p>resource.eksClusterDetails.tags.key</p></li>
+    /// <li>
+    /// <p>resource.eksClusterDetails.tags.value</p></li>
+    /// <li>
+    /// <p>resource.eksClusterDetails.vpcId</p></li>
+    /// <li>
+    /// <p>resource.instanceDetails.availabilityZone</p></li>
+    /// <li>
+    /// <p>resource.instanceDetails.iamInstanceProfile.arn</p></li>
+    /// <li>
     /// <p>resource.instanceDetails.iamInstanceProfile.id</p></li>
+    /// <li>
+    /// <p>resource.instanceDetails.imageDescription</p></li>
     /// <li>
     /// <p>resource.instanceDetails.imageId</p></li>
     /// <li>
     /// <p>resource.instanceDetails.instanceId</p></li>
     /// <li>
-    /// <p>resource.instanceDetails.tags.key</p></li>
+    /// <p>resource.instanceDetails.instanceState</p></li>
     /// <li>
-    /// <p>resource.instanceDetails.tags.value</p></li>
+    /// <p>resource.instanceDetails.instanceType</p></li>
+    /// <li>
+    /// <p>resource.instanceDetails.launchTime</p>
+    /// <p>Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000</p></li>
     /// <li>
     /// <p>resource.instanceDetails.networkInterfaces.ipv6Addresses</p></li>
+    /// <li>
+    /// <p>resource.instanceDetails.networkInterfaces.networkInterfaceId</p></li>
+    /// <li>
+    /// <p>resource.instanceDetails.networkInterfaces.privateDnsName</p></li>
+    /// <li>
+    /// <p>resource.instanceDetails.networkInterfaces.privateIpAddress</p></li>
+    /// <li>
+    /// <p>resource.instanceDetails.networkInterfaces.privateIpAddresses.privateDnsName</p></li>
     /// <li>
     /// <p>resource.instanceDetails.networkInterfaces.privateIpAddresses.privateIpAddress</p></li>
     /// <li>
@@ -79,11 +253,203 @@ pub struct CreateFilterInput {
     /// <li>
     /// <p>resource.instanceDetails.outpostArn</p></li>
     /// <li>
+    /// <p>resource.instanceDetails.platform</p></li>
+    /// <li>
+    /// <p>resource.instanceDetails.productCodes.productCodeId</p></li>
+    /// <li>
+    /// <p>resource.instanceDetails.productCodes.productCodeType</p></li>
+    /// <li>
+    /// <p>resource.instanceDetails.tags.key</p></li>
+    /// <li>
+    /// <p>resource.instanceDetails.tags.value</p></li>
+    /// <li>
+    /// <p>resource.kubernetesDetails.kubernetesUserDetails.groups</p></li>
+    /// <li>
+    /// <p>resource.kubernetesDetails.kubernetesUserDetails.impersonatedUser.groups</p></li>
+    /// <li>
+    /// <p>resource.kubernetesDetails.kubernetesUserDetails.impersonatedUser.username</p></li>
+    /// <li>
+    /// <p>resource.kubernetesDetails.kubernetesUserDetails.sessionName</p></li>
+    /// <li>
+    /// <p>resource.kubernetesDetails.kubernetesUserDetails.uid</p></li>
+    /// <li>
+    /// <p>resource.kubernetesDetails.kubernetesUserDetails.username</p></li>
+    /// <li>
+    /// <p>resource.kubernetesDetails.kubernetesWorkloadDetails.containers.containerRuntime</p></li>
+    /// <li>
+    /// <p>resource.kubernetesDetails.kubernetesWorkloadDetails.containers.id</p></li>
+    /// <li>
+    /// <p>resource.kubernetesDetails.kubernetesWorkloadDetails.containers.image</p></li>
+    /// <li>
+    /// <p>resource.kubernetesDetails.kubernetesWorkloadDetails.containers.imagePrefix</p></li>
+    /// <li>
+    /// <p>resource.kubernetesDetails.kubernetesWorkloadDetails.containers.name</p></li>
+    /// <li>
+    /// <p>resource.kubernetesDetails.kubernetesWorkloadDetails.containers.securityContext.allowPrivilegeEscalation</p></li>
+    /// <li>
+    /// <p>resource.kubernetesDetails.kubernetesWorkloadDetails.containers.securityContext.privileged</p></li>
+    /// <li>
+    /// <p>resource.kubernetesDetails.kubernetesWorkloadDetails.containers.volumeMounts.mountPath</p></li>
+    /// <li>
+    /// <p>resource.kubernetesDetails.kubernetesWorkloadDetails.containers.volumeMounts.name</p></li>
+    /// <li>
+    /// <p>resource.kubernetesDetails.kubernetesWorkloadDetails.hostIpc</p></li>
+    /// <li>
+    /// <p>resource.kubernetesDetails.kubernetesWorkloadDetails.hostNetwork</p></li>
+    /// <li>
+    /// <p>resource.kubernetesDetails.kubernetesWorkloadDetails.hostPid</p></li>
+    /// <li>
+    /// <p>resource.kubernetesDetails.kubernetesWorkloadDetails.name</p></li>
+    /// <li>
+    /// <p>resource.kubernetesDetails.kubernetesWorkloadDetails.namespace</p></li>
+    /// <li>
+    /// <p>resource.kubernetesDetails.kubernetesWorkloadDetails.serviceAccountName</p></li>
+    /// <li>
+    /// <p>resource.kubernetesDetails.kubernetesWorkloadDetails.type</p></li>
+    /// <li>
+    /// <p>resource.kubernetesDetails.kubernetesWorkloadDetails.uid</p></li>
+    /// <li>
+    /// <p>resource.kubernetesDetails.kubernetesWorkloadDetails.volumes.hostPath.path</p></li>
+    /// <li>
+    /// <p>resource.kubernetesDetails.kubernetesWorkloadDetails.volumes.name</p></li>
+    /// <li>
+    /// <p>resource.lambdaDetails.description</p></li>
+    /// <li>
+    /// <p>resource.lambdaDetails.functionArn</p></li>
+    /// <li>
+    /// <p>resource.lambdaDetails.functionName</p></li>
+    /// <li>
+    /// <p>resource.lambdaDetails.functionVersion</p></li>
+    /// <li>
+    /// <p>resource.lambdaDetails.lastModifiedAt</p>
+    /// <p>Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000</p></li>
+    /// <li>
+    /// <p>resource.lambdaDetails.revisionId</p></li>
+    /// <li>
+    /// <p>resource.lambdaDetails.role</p></li>
+    /// <li>
+    /// <p>resource.lambdaDetails.tags.key</p></li>
+    /// <li>
+    /// <p>resource.lambdaDetails.tags.value</p></li>
+    /// <li>
+    /// <p>resource.lambdaDetails.vpcConfig.securityGroups.groupId</p></li>
+    /// <li>
+    /// <p>resource.lambdaDetails.vpcConfig.securityGroups.groupName</p></li>
+    /// <li>
+    /// <p>resource.lambdaDetails.vpcConfig.subnetIds</p></li>
+    /// <li>
+    /// <p>resource.lambdaDetails.vpcConfig.vpcId</p></li>
+    /// <li>
+    /// <p>resource.rdsDbInstanceDetails.dbClusterIdentifier</p></li>
+    /// <li>
+    /// <p>resource.rdsDbInstanceDetails.dbInstanceArn</p></li>
+    /// <li>
+    /// <p>resource.rdsDbInstanceDetails.dbInstanceIdentifier</p></li>
+    /// <li>
+    /// <p>resource.rdsDbInstanceDetails.dbSecurityGroups.name</p></li>
+    /// <li>
+    /// <p>resource.rdsDbInstanceDetails.dbSecurityGroups.status</p></li>
+    /// <li>
+    /// <p>resource.rdsDbInstanceDetails.dbiResourceId</p></li>
+    /// <li>
+    /// <p>resource.rdsDbInstanceDetails.engine</p></li>
+    /// <li>
+    /// <p>resource.rdsDbInstanceDetails.engineVersion</p></li>
+    /// <li>
+    /// <p>resource.rdsDbInstanceDetails.iamDatabaseAuthenticationEnabled</p></li>
+    /// <li>
+    /// <p>resource.rdsDbInstanceDetails.publiclyAccessible</p></li>
+    /// <li>
+    /// <p>resource.rdsDbInstanceDetails.tags.key</p></li>
+    /// <li>
+    /// <p>resource.rdsDbInstanceDetails.tags.value</p></li>
+    /// <li>
+    /// <p>resource.rdsDbInstanceDetails.vpcId</p></li>
+    /// <li>
+    /// <p>resource.rdsDbInstanceDetails.vpcSecurityGroups.status</p></li>
+    /// <li>
+    /// <p>resource.rdsDbInstanceDetails.vpcSecurityGroups.vpcSecurityGroupId</p></li>
+    /// <li>
+    /// <p>resource.rdsDbUserDetails.application</p></li>
+    /// <li>
+    /// <p>resource.rdsDbUserDetails.authMethod</p></li>
+    /// <li>
+    /// <p>resource.rdsDbUserDetails.database</p></li>
+    /// <li>
+    /// <p>resource.rdsDbUserDetails.ssl</p></li>
+    /// <li>
+    /// <p>resource.rdsDbUserDetails.user</p></li>
+    /// <li>
+    /// <p>resource.rdsLimitlessDbDetails.dbClusterIdentifier</p></li>
+    /// <li>
+    /// <p>resource.rdsLimitlessDbDetails.dbShardGroupArn</p></li>
+    /// <li>
+    /// <p>resource.rdsLimitlessDbDetails.dbShardGroupIdentifier</p></li>
+    /// <li>
+    /// <p>resource.rdsLimitlessDbDetails.dbShardGroupResourceId</p></li>
+    /// <li>
+    /// <p>resource.rdsLimitlessDbDetails.engine</p></li>
+    /// <li>
+    /// <p>resource.rdsLimitlessDbDetails.engineVersion</p></li>
+    /// <li>
+    /// <p>resource.rdsLimitlessDbDetails.tags.key</p></li>
+    /// <li>
+    /// <p>resource.rdsLimitlessDbDetails.tags.value</p></li>
+    /// <li>
+    /// <p>resource.recoveryPointDetails.backupVaultName</p></li>
+    /// <li>
+    /// <p>resource.recoveryPointDetails.recoveryPointArn</p></li>
+    /// <li>
     /// <p>resource.resourceType</p></li>
     /// <li>
-    /// <p>resource.s3BucketDetails.publicAccess.effectivePermissions</p></li>
+    /// <p>resource.s3BucketDetails.arn</p></li>
+    /// <li>
+    /// <p>resource.s3BucketDetails.createdAt</p>
+    /// <p>Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000</p></li>
+    /// <li>
+    /// <p>resource.s3BucketDetails.defaultServerSideEncryption.encryptionType</p></li>
+    /// <li>
+    /// <p>resource.s3BucketDetails.defaultServerSideEncryption.kmsMasterKeyArn</p></li>
     /// <li>
     /// <p>resource.s3BucketDetails.name</p></li>
+    /// <li>
+    /// <p>resource.s3BucketDetails.owner.id</p></li>
+    /// <li>
+    /// <p>resource.s3BucketDetails.publicAccess.effectivePermission</p></li>
+    /// <li>
+    /// <p>resource.s3BucketDetails.publicAccess.permissionConfiguration.accountLevelPermissions.blockPublicAccess.blockPublicAcls</p></li>
+    /// <li>
+    /// <p>resource.s3BucketDetails.publicAccess.permissionConfiguration.accountLevelPermissions.blockPublicAccess.blockPublicPolicy</p></li>
+    /// <li>
+    /// <p>resource.s3BucketDetails.publicAccess.permissionConfiguration.accountLevelPermissions.blockPublicAccess.ignorePublicAcls</p></li>
+    /// <li>
+    /// <p>resource.s3BucketDetails.publicAccess.permissionConfiguration.accountLevelPermissions.blockPublicAccess.restrictPublicBuckets</p></li>
+    /// <li>
+    /// <p>resource.s3BucketDetails.publicAccess.permissionConfiguration.bucketLevelPermissions.accessControlList.allowsPublicReadAccess</p></li>
+    /// <li>
+    /// <p>resource.s3BucketDetails.publicAccess.permissionConfiguration.bucketLevelPermissions.accessControlList.allowsPublicWriteAccess</p></li>
+    /// <li>
+    /// <p>resource.s3BucketDetails.publicAccess.permissionConfiguration.bucketLevelPermissions.blockPublicAccess.blockPublicAcls</p></li>
+    /// <li>
+    /// <p>resource.s3BucketDetails.publicAccess.permissionConfiguration.bucketLevelPermissions.blockPublicAccess.blockPublicPolicy</p></li>
+    /// <li>
+    /// <p>resource.s3BucketDetails.publicAccess.permissionConfiguration.bucketLevelPermissions.blockPublicAccess.ignorePublicAcls</p></li>
+    /// <li>
+    /// <p>resource.s3BucketDetails.publicAccess.permissionConfiguration.bucketLevelPermissions.blockPublicAccess.restrictPublicBuckets</p></li>
+    /// <li>
+    /// <p>resource.s3BucketDetails.publicAccess.permissionConfiguration.bucketLevelPermissions.bucketPolicy.allowsPublicReadAccess</p></li>
+    /// <li>
+    /// <p>resource.s3BucketDetails.publicAccess.permissionConfiguration.bucketLevelPermissions.bucketPolicy.allowsPublicWriteAccess</p></li>
+    /// <li>
+    /// <p>resource.s3BucketDetails.s3ObjectDetails.eTag</p></li>
+    /// <li>
+    /// <p>resource.s3BucketDetails.s3ObjectDetails.hash</p></li>
+    /// <li>
+    /// <p>resource.s3BucketDetails.s3ObjectDetails.key</p></li>
+    /// <li>
+    /// <p>resource.s3BucketDetails.s3ObjectDetails.objectArn</p></li>
+    /// <li>
+    /// <p>resource.s3BucketDetails.s3ObjectDetails.versionId</p></li>
     /// <li>
     /// <p>resource.s3BucketDetails.tags.key</p></li>
     /// <li>
@@ -91,17 +457,35 @@ pub struct CreateFilterInput {
     /// <li>
     /// <p>resource.s3BucketDetails.type</p></li>
     /// <li>
+    /// <p>schemaVersion</p></li>
+    /// <li>
     /// <p>service.action.actionType</p></li>
+    /// <li>
+    /// <p>service.action.awsApiCallAction.affectedResources</p></li>
     /// <li>
     /// <p>service.action.awsApiCallAction.api</p></li>
     /// <li>
     /// <p>service.action.awsApiCallAction.callerType</p></li>
     /// <li>
+    /// <p>service.action.awsApiCallAction.domainDetails.domain</p></li>
+    /// <li>
     /// <p>service.action.awsApiCallAction.errorCode</p></li>
+    /// <li>
+    /// <p>service.action.awsApiCallAction.remoteAccountDetails.accountId</p></li>
+    /// <li>
+    /// <p>service.action.awsApiCallAction.remoteAccountDetails.affiliated</p></li>
+    /// <li>
+    /// <p>service.action.awsApiCallAction.remoteAccountDetails.awsServiceName</p></li>
     /// <li>
     /// <p>service.action.awsApiCallAction.remoteIpDetails.city.cityName</p></li>
     /// <li>
+    /// <p>service.action.awsApiCallAction.remoteIpDetails.country.countryCode</p></li>
+    /// <li>
     /// <p>service.action.awsApiCallAction.remoteIpDetails.country.countryName</p></li>
+    /// <li>
+    /// <p>service.action.awsApiCallAction.remoteIpDetails.geoLocation.lat</p></li>
+    /// <li>
+    /// <p>service.action.awsApiCallAction.remoteIpDetails.geoLocation.lon</p></li>
     /// <li>
     /// <p>service.action.awsApiCallAction.remoteIpDetails.ipAddressV4</p></li>
     /// <li>
@@ -111,25 +495,115 @@ pub struct CreateFilterInput {
     /// <li>
     /// <p>service.action.awsApiCallAction.remoteIpDetails.organization.asnOrg</p></li>
     /// <li>
+    /// <p>service.action.awsApiCallAction.remoteIpDetails.organization.isp</p></li>
+    /// <li>
+    /// <p>service.action.awsApiCallAction.remoteIpDetails.organization.org</p></li>
+    /// <li>
     /// <p>service.action.awsApiCallAction.serviceName</p></li>
+    /// <li>
+    /// <p>service.action.awsApiCallAction.userAgent</p></li>
+    /// <li>
+    /// <p>service.action.dnsRequestAction.blocked</p></li>
     /// <li>
     /// <p>service.action.dnsRequestAction.domain</p></li>
     /// <li>
     /// <p>service.action.dnsRequestAction.domainWithSuffix</p></li>
     /// <li>
+    /// <p>service.action.dnsRequestAction.protocol</p></li>
+    /// <li>
     /// <p>service.action.dnsRequestAction.vpcOwnerAccountId</p></li>
+    /// <li>
+    /// <p>service.action.kubernetesApiCallAction.namespace</p></li>
+    /// <li>
+    /// <p>service.action.kubernetesApiCallAction.parameters</p></li>
+    /// <li>
+    /// <p>service.action.kubernetesApiCallAction.remoteIpDetails.city.cityName</p></li>
+    /// <li>
+    /// <p>service.action.kubernetesApiCallAction.remoteIpDetails.country.countryCode</p></li>
+    /// <li>
+    /// <p>service.action.kubernetesApiCallAction.remoteIpDetails.country.countryName</p></li>
+    /// <li>
+    /// <p>service.action.kubernetesApiCallAction.remoteIpDetails.geoLocation.lat</p></li>
+    /// <li>
+    /// <p>service.action.kubernetesApiCallAction.remoteIpDetails.geoLocation.lon</p></li>
+    /// <li>
+    /// <p>service.action.kubernetesApiCallAction.remoteIpDetails.ipAddressV4</p></li>
+    /// <li>
+    /// <p>service.action.kubernetesApiCallAction.remoteIpDetails.ipAddressV6</p></li>
+    /// <li>
+    /// <p>service.action.kubernetesApiCallAction.remoteIpDetails.organization.asn</p></li>
+    /// <li>
+    /// <p>service.action.kubernetesApiCallAction.remoteIpDetails.organization.asnOrg</p></li>
+    /// <li>
+    /// <p>service.action.kubernetesApiCallAction.remoteIpDetails.organization.isp</p></li>
+    /// <li>
+    /// <p>service.action.kubernetesApiCallAction.remoteIpDetails.organization.org</p></li>
+    /// <li>
+    /// <p>service.action.kubernetesApiCallAction.requestUri</p></li>
+    /// <li>
+    /// <p>service.action.kubernetesApiCallAction.resource</p></li>
+    /// <li>
+    /// <p>service.action.kubernetesApiCallAction.resourceName</p></li>
+    /// <li>
+    /// <p>service.action.kubernetesApiCallAction.sourceIPs</p></li>
+    /// <li>
+    /// <p>service.action.kubernetesApiCallAction.statusCode</p></li>
+    /// <li>
+    /// <p>service.action.kubernetesApiCallAction.subresource</p></li>
+    /// <li>
+    /// <p>service.action.kubernetesApiCallAction.userAgent</p></li>
+    /// <li>
+    /// <p>service.action.kubernetesApiCallAction.verb</p></li>
+    /// <li>
+    /// <p>service.action.kubernetesPermissionCheckedDetails.allowed</p></li>
+    /// <li>
+    /// <p>service.action.kubernetesPermissionCheckedDetails.namespace</p></li>
+    /// <li>
+    /// <p>service.action.kubernetesPermissionCheckedDetails.resource</p></li>
+    /// <li>
+    /// <p>service.action.kubernetesPermissionCheckedDetails.verb</p></li>
+    /// <li>
+    /// <p>service.action.kubernetesRoleBindingDetails.kind</p></li>
+    /// <li>
+    /// <p>service.action.kubernetesRoleBindingDetails.name</p></li>
+    /// <li>
+    /// <p>service.action.kubernetesRoleBindingDetails.roleRefKind</p></li>
+    /// <li>
+    /// <p>service.action.kubernetesRoleBindingDetails.roleRefName</p></li>
+    /// <li>
+    /// <p>service.action.kubernetesRoleBindingDetails.uid</p></li>
+    /// <li>
+    /// <p>service.action.kubernetesRoleDetails.kind</p></li>
+    /// <li>
+    /// <p>service.action.kubernetesRoleDetails.name</p></li>
+    /// <li>
+    /// <p>service.action.kubernetesRoleDetails.uid</p></li>
     /// <li>
     /// <p>service.action.networkConnectionAction.blocked</p></li>
     /// <li>
     /// <p>service.action.networkConnectionAction.connectionDirection</p></li>
     /// <li>
+    /// <p>service.action.networkConnectionAction.localIpDetails.ipAddressV4</p></li>
+    /// <li>
+    /// <p>service.action.networkConnectionAction.localIpDetails.ipAddressV6</p></li>
+    /// <li>
+    /// <p>service.action.networkConnectionAction.localNetworkInterface</p></li>
+    /// <li>
     /// <p>service.action.networkConnectionAction.localPortDetails.port</p></li>
+    /// <li>
+    /// <p>service.action.networkConnectionAction.localPortDetails.portName</p></li>
     /// <li>
     /// <p>service.action.networkConnectionAction.protocol</p></li>
     /// <li>
     /// <p>service.action.networkConnectionAction.remoteIpDetails.city.cityName</p></li>
     /// <li>
+    /// <p>service.action.networkConnectionAction.remoteIpDetails.country.countryCode</p></li>
+    /// <li>
     /// <p>service.action.networkConnectionAction.remoteIpDetails.country.countryName</p></li>
+    /// <li>
+    /// <p>service.action.networkConnectionAction.remoteIpDetails.geoLocation.lat</p></li>
+    /// <li>
+    /// <p>service.action.networkConnectionAction.remoteIpDetails.geoLocation.lon</p></li>
     /// <li>
     /// <p>service.action.networkConnectionAction.remoteIpDetails.ipAddressV4</p></li>
     /// <li>
@@ -139,89 +613,707 @@ pub struct CreateFilterInput {
     /// <li>
     /// <p>service.action.networkConnectionAction.remoteIpDetails.organization.asnOrg</p></li>
     /// <li>
+    /// <p>service.action.networkConnectionAction.remoteIpDetails.organization.isp</p></li>
+    /// <li>
+    /// <p>service.action.networkConnectionAction.remoteIpDetails.organization.org</p></li>
+    /// <li>
     /// <p>service.action.networkConnectionAction.remotePortDetails.port</p></li>
     /// <li>
-    /// <p>service.action.awsApiCallAction.remoteAccountDetails.affiliated</p></li>
+    /// <p>service.action.networkConnectionAction.remotePortDetails.portName</p></li>
     /// <li>
-    /// <p>service.action.kubernetesApiCallAction.remoteIpDetails.ipAddressV4</p></li>
+    /// <p>service.action.portProbeAction.blocked</p></li>
     /// <li>
-    /// <p>service.action.kubernetesApiCallAction.remoteIpDetails.ipAddressV6</p></li>
+    /// <p>service.action.portProbeAction.portProbeDetails.localIpDetails.ipAddressV4</p></li>
     /// <li>
-    /// <p>service.action.kubernetesApiCallAction.namespace</p></li>
+    /// <p>service.action.portProbeAction.portProbeDetails.localIpDetails.ipAddressV6</p></li>
     /// <li>
-    /// <p>service.action.kubernetesApiCallAction.remoteIpDetails.organization.asn</p></li>
+    /// <p>service.action.portProbeAction.portProbeDetails.localPortDetails.port</p></li>
     /// <li>
-    /// <p>service.action.kubernetesApiCallAction.requestUri</p></li>
+    /// <p>service.action.portProbeAction.portProbeDetails.localPortDetails.portName</p></li>
     /// <li>
-    /// <p>service.action.kubernetesApiCallAction.statusCode</p></li>
+    /// <p>service.action.portProbeAction.portProbeDetails.remoteIpDetails.city.cityName</p></li>
     /// <li>
-    /// <p>service.action.networkConnectionAction.localIpDetails.ipAddressV4</p></li>
+    /// <p>service.action.portProbeAction.portProbeDetails.remoteIpDetails.country.countryCode</p></li>
     /// <li>
-    /// <p>service.action.networkConnectionAction.localIpDetails.ipAddressV6</p></li>
+    /// <p>service.action.portProbeAction.portProbeDetails.remoteIpDetails.country.countryName</p></li>
     /// <li>
-    /// <p>service.action.networkConnectionAction.protocol</p></li>
+    /// <p>service.action.portProbeAction.portProbeDetails.remoteIpDetails.geoLocation.lat</p></li>
     /// <li>
-    /// <p>service.action.awsApiCallAction.serviceName</p></li>
+    /// <p>service.action.portProbeAction.portProbeDetails.remoteIpDetails.geoLocation.lon</p></li>
     /// <li>
-    /// <p>service.action.awsApiCallAction.remoteAccountDetails.accountId</p></li>
+    /// <p>service.action.portProbeAction.portProbeDetails.remoteIpDetails.ipAddressV4</p></li>
+    /// <li>
+    /// <p>service.action.portProbeAction.portProbeDetails.remoteIpDetails.ipAddressV6</p></li>
+    /// <li>
+    /// <p>service.action.portProbeAction.portProbeDetails.remoteIpDetails.organization.asn</p></li>
+    /// <li>
+    /// <p>service.action.portProbeAction.portProbeDetails.remoteIpDetails.organization.asnOrg</p></li>
+    /// <li>
+    /// <p>service.action.portProbeAction.portProbeDetails.remoteIpDetails.organization.isp</p></li>
+    /// <li>
+    /// <p>service.action.portProbeAction.portProbeDetails.remoteIpDetails.organization.org</p></li>
+    /// <li>
+    /// <p>service.action.rdsLoginAttemptAction.loginAttributes.application</p></li>
+    /// <li>
+    /// <p>service.action.rdsLoginAttemptAction.loginAttributes.failedLoginAttempts</p></li>
+    /// <li>
+    /// <p>service.action.rdsLoginAttemptAction.loginAttributes.successfulLoginAttempts</p></li>
+    /// <li>
+    /// <p>service.action.rdsLoginAttemptAction.loginAttributes.user</p></li>
+    /// <li>
+    /// <p>service.action.rdsLoginAttemptAction.remoteIpDetails.city.cityName</p></li>
+    /// <li>
+    /// <p>service.action.rdsLoginAttemptAction.remoteIpDetails.country.countryCode</p></li>
+    /// <li>
+    /// <p>service.action.rdsLoginAttemptAction.remoteIpDetails.country.countryName</p></li>
+    /// <li>
+    /// <p>service.action.rdsLoginAttemptAction.remoteIpDetails.geoLocation.lat</p></li>
+    /// <li>
+    /// <p>service.action.rdsLoginAttemptAction.remoteIpDetails.geoLocation.lon</p></li>
+    /// <li>
+    /// <p>service.action.rdsLoginAttemptAction.remoteIpDetails.ipAddressV4</p></li>
+    /// <li>
+    /// <p>service.action.rdsLoginAttemptAction.remoteIpDetails.ipAddressV6</p></li>
+    /// <li>
+    /// <p>service.action.rdsLoginAttemptAction.remoteIpDetails.organization.asn</p></li>
+    /// <li>
+    /// <p>service.action.rdsLoginAttemptAction.remoteIpDetails.organization.asnOrg</p></li>
+    /// <li>
+    /// <p>service.action.rdsLoginAttemptAction.remoteIpDetails.organization.isp</p></li>
+    /// <li>
+    /// <p>service.action.rdsLoginAttemptAction.remoteIpDetails.organization.org</p></li>
+    /// <li>
+    /// <p>service.additionalInfo.agentDetails.agentId</p></li>
+    /// <li>
+    /// <p>service.additionalInfo.agentDetails.agentVersion</p></li>
+    /// <li>
+    /// <p>service.additionalInfo.anomalies.anomalousAPIs</p></li>
+    /// <li>
+    /// <p>service.additionalInfo.authenticationMethod</p></li>
+    /// <li>
+    /// <p>service.additionalInfo.averagePacketSizeIn</p></li>
+    /// <li>
+    /// <p>service.additionalInfo.averagePacketSizeOut</p></li>
+    /// <li>
+    /// <p>service.additionalInfo.context</p></li>
+    /// <li>
+    /// <p>service.additionalInfo.domain</p></li>
+    /// <li>
+    /// <p>service.additionalInfo.inBytes</p></li>
+    /// <li>
+    /// <p>service.additionalInfo.localNetworkInterfaceOwner</p></li>
+    /// <li>
+    /// <p>service.additionalInfo.localPort</p></li>
+    /// <li>
+    /// <p>service.additionalInfo.outBytes</p></li>
+    /// <li>
+    /// <p>service.additionalInfo.packetsIn</p></li>
+    /// <li>
+    /// <p>service.additionalInfo.packetsOut</p></li>
+    /// <li>
+    /// <p>service.additionalInfo.policyArn</p></li>
+    /// <li>
+    /// <p>service.additionalInfo.policyName</p></li>
+    /// <li>
+    /// <p>service.additionalInfo.remotePort</p></li>
+    /// <li>
+    /// <p>service.additionalInfo.sample</p></li>
+    /// <li>
+    /// <p>service.additionalInfo.scannedPort</p></li>
+    /// <li>
+    /// <p>service.additionalInfo.threatFileSha256</p></li>
     /// <li>
     /// <p>service.additionalInfo.threatListName</p></li>
     /// <li>
-    /// <p>service.resourceRole</p></li>
+    /// <p>service.additionalInfo.threatName</p></li>
     /// <li>
-    /// <p>resource.eksClusterDetails.name</p></li>
+    /// <p>service.additionalInfo.totalBytesIn</p></li>
     /// <li>
-    /// <p>resource.kubernetesDetails.kubernetesWorkloadDetails.name</p></li>
+    /// <p>service.additionalInfo.totalBytesOut</p></li>
     /// <li>
-    /// <p>resource.kubernetesDetails.kubernetesWorkloadDetails.namespace</p></li>
+    /// <p>service.additionalInfo.type</p></li>
     /// <li>
-    /// <p>resource.kubernetesDetails.kubernetesUserDetails.username</p></li>
+    /// <p>service.additionalInfo.unusual.asnOrg</p></li>
     /// <li>
-    /// <p>resource.kubernetesDetails.kubernetesWorkloadDetails.containers.image</p></li>
+    /// <p>service.additionalInfo.unusual.port</p></li>
     /// <li>
-    /// <p>resource.kubernetesDetails.kubernetesWorkloadDetails.containers.imagePrefix</p></li>
+    /// <p>service.additionalInfo.unusualProtocol</p></li>
     /// <li>
-    /// <p>service.ebsVolumeScanDetails.scanId</p></li>
+    /// <p>service.additionalInfo.userAgent.fullUserAgent</p></li>
+    /// <li>
+    /// <p>service.additionalInfo.userAgent.userAgentCategory</p></li>
+    /// <li>
+    /// <p>service.additionalInfo.value</p></li>
+    /// <li>
+    /// <p>service.additionalInfo.vpcOwnerAccountId</p></li>
+    /// <li>
+    /// <p>service.archived</p></li>
+    /// <li>
+    /// <p>service.count</p></li>
+    /// <li>
+    /// <p>service.detection.anomaly.profiles</p></li>
+    /// <li>
+    /// <p>service.detection.anomaly.unusual.behavior</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.actors.id</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.actors.process.name</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.actors.process.path</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.actors.process.sha256</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.actors.session.createdTime</p>
+    /// <p>Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.actors.session.issuer</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.actors.session.mfaStatus</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.actors.session.uid</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.actors.user.account.account</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.actors.user.account.uid</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.actors.user.credentialUid</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.actors.user.name</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.actors.user.type</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.actors.user.uid</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.additionalSequenceTypes</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.description</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.endpoints.autonomousSystem.name</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.endpoints.autonomousSystem.number</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.endpoints.connection.direction</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.endpoints.domain</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.endpoints.id</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.endpoints.ip</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.endpoints.location.city</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.endpoints.location.country</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.endpoints.location.lat</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.endpoints.location.lon</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.endpoints.port</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.accountId</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.cloudPartition</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.accessKey.principalId</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.accessKey.userName</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.accessKey.userType</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.autoscalingAutoScalingGroup.ec2InstanceUids</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.cloudformationStack.ec2InstanceUids</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.container.image</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.container.imageUid</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.ec2Image.ec2InstanceUids</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.ec2Instance.availabilityZone</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.ec2Instance.ec2NetworkInterfaceUids</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.ec2Instance.iamInstanceProfile.arn</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.ec2Instance.iamInstanceProfile.id</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.ec2Instance.imageDescription</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.ec2Instance.instanceState</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.ec2Instance.instanceType</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.ec2Instance.outpostArn</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.ec2Instance.platform</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.ec2Instance.productCodes.productCodeId</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.ec2Instance.productCodes.productCodeType</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.ec2LaunchTemplate.ec2InstanceUids</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.ec2LaunchTemplate.version</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.ec2NetworkInterface.ipv6Addresses</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.ec2NetworkInterface.privateIpAddresses.privateDnsName</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.ec2NetworkInterface.privateIpAddresses.privateIpAddress</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.ec2NetworkInterface.publicIp</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.ec2NetworkInterface.securityGroups.groupId</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.ec2NetworkInterface.securityGroups.groupName</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.ec2NetworkInterface.subNetId</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.ec2NetworkInterface.vpcId</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.ec2Vpc.ec2InstanceUids</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.ecsCluster.ec2InstanceUids</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.ecsCluster.status</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.ecsTask.containerUids</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.ecsTask.createdAt</p>
+    /// <p>Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.ecsTask.launchType</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.ecsTask.taskDefinitionArn</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.eksCluster.arn</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.eksCluster.createdAt</p>
+    /// <p>Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.eksCluster.ec2InstanceUids</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.eksCluster.status</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.eksCluster.vpcId</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.iamInstanceProfile.ec2InstanceUids</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.iamInstanceProfile.id</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.kubernetesWorkload.containerUids</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.kubernetesWorkload.namespace</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.kubernetesWorkload.type</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.s3Bucket.accountPublicAccess.publicAclAccess</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.s3Bucket.accountPublicAccess.publicAclIgnoreBehavior</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.s3Bucket.accountPublicAccess.publicBucketRestrictBehavior</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.s3Bucket.accountPublicAccess.publicPolicyAccess</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.s3Bucket.bucketPublicAccess.publicAclAccess</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.s3Bucket.bucketPublicAccess.publicAclIgnoreBehavior</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.s3Bucket.bucketPublicAccess.publicBucketRestrictBehavior</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.s3Bucket.bucketPublicAccess.publicPolicyAccess</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.s3Bucket.createdAt</p>
+    /// <p>Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.s3Bucket.effectivePermission</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.s3Bucket.encryptionKeyArn</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.s3Bucket.encryptionType</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.s3Bucket.ownerId</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.s3Bucket.publicReadAccess</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.s3Bucket.publicWriteAccess</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.s3Bucket.s3ObjectUids</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.s3Object.eTag</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.s3Object.key</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.s3Object.versionId</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.name</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.region</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.resourceType</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.service</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.tags.key</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.tags.value</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.uid</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.sequenceIndicators.key</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.sequenceIndicators.title</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.sequenceIndicators.values</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.signals.actorIds</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.signals.count</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.signals.createdAt</p>
+    /// <p>Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.signals.description</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.signals.endpointIds</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.signals.firstSeenAt</p>
+    /// <p>Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.signals.lastSeenAt</p>
+    /// <p>Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.signals.name</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.signals.resourceUids</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.signals.severity</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.signals.signalIndicators.key</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.signals.signalIndicators.title</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.signals.signalIndicators.values</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.signals.type</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.signals.uid</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.signals.updatedAt</p>
+    /// <p>Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.uid</p></li>
+    /// <li>
+    /// <p>service.detectorId</p></li>
+    /// <li>
+    /// <p>service.ebsVolumeScanDetails.scanCompletedAt</p>
+    /// <p>Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000</p></li>
+    /// <li>
+    /// <p>service.ebsVolumeScanDetails.scanDetections.highestSeverityThreatDetails.count</p></li>
+    /// <li>
+    /// <p>service.ebsVolumeScanDetails.scanDetections.highestSeverityThreatDetails.severity</p></li>
+    /// <li>
+    /// <p>service.ebsVolumeScanDetails.scanDetections.highestSeverityThreatDetails.threatName</p></li>
+    /// <li>
+    /// <p>service.ebsVolumeScanDetails.scanDetections.scannedItemCount.files</p></li>
+    /// <li>
+    /// <p>service.ebsVolumeScanDetails.scanDetections.scannedItemCount.totalGb</p></li>
+    /// <li>
+    /// <p>service.ebsVolumeScanDetails.scanDetections.scannedItemCount.volumes</p></li>
+    /// <li>
+    /// <p>service.ebsVolumeScanDetails.scanDetections.threatDetectedByName.itemCount</p></li>
+    /// <li>
+    /// <p>service.ebsVolumeScanDetails.scanDetections.threatDetectedByName.shortened</p></li>
+    /// <li>
+    /// <p>service.ebsVolumeScanDetails.scanDetections.threatDetectedByName.threatNames.filePaths.fileName</p></li>
+    /// <li>
+    /// <p>service.ebsVolumeScanDetails.scanDetections.threatDetectedByName.threatNames.filePaths.filePath</p></li>
+    /// <li>
+    /// <p>service.ebsVolumeScanDetails.scanDetections.threatDetectedByName.threatNames.filePaths.hash</p></li>
+    /// <li>
+    /// <p>service.ebsVolumeScanDetails.scanDetections.threatDetectedByName.threatNames.filePaths.volumeArn</p></li>
+    /// <li>
+    /// <p>service.ebsVolumeScanDetails.scanDetections.threatDetectedByName.threatNames.itemCount</p></li>
     /// <li>
     /// <p>service.ebsVolumeScanDetails.scanDetections.threatDetectedByName.threatNames.name</p></li>
     /// <li>
     /// <p>service.ebsVolumeScanDetails.scanDetections.threatDetectedByName.threatNames.severity</p></li>
     /// <li>
-    /// <p>service.ebsVolumeScanDetails.scanDetections.threatDetectedByName.threatNames.filePaths.hash</p></li>
+    /// <p>service.ebsVolumeScanDetails.scanDetections.threatDetectedByName.uniqueThreatNameCount</p></li>
     /// <li>
-    /// <p>resource.ecsClusterDetails.name</p></li>
+    /// <p>service.ebsVolumeScanDetails.scanDetections.threatsDetectedItemCount.files</p></li>
     /// <li>
-    /// <p>resource.ecsClusterDetails.taskDetails.containers.image</p></li>
+    /// <p>service.ebsVolumeScanDetails.scanId</p></li>
     /// <li>
-    /// <p>resource.ecsClusterDetails.taskDetails.definitionArn</p></li>
+    /// <p>service.ebsVolumeScanDetails.scanStartedAt</p>
+    /// <p>Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000</p></li>
     /// <li>
-    /// <p>resource.containerDetails.image</p></li>
+    /// <p>service.ebsVolumeScanDetails.scanType</p></li>
     /// <li>
-    /// <p>resource.rdsDbInstanceDetails.dbInstanceIdentifier</p></li>
+    /// <p>service.ebsVolumeScanDetails.sources</p></li>
     /// <li>
-    /// <p>resource.rdsDbInstanceDetails.dbClusterIdentifier</p></li>
+    /// <p>service.ebsVolumeScanDetails.triggerFindingId</p></li>
     /// <li>
-    /// <p>resource.rdsDbInstanceDetails.engine</p></li>
+    /// <p>service.eventFirstSeen</p>
+    /// <p>Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000</p></li>
     /// <li>
-    /// <p>resource.rdsDbUserDetails.user</p></li>
+    /// <p>service.eventLastSeen</p>
+    /// <p>Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000</p></li>
     /// <li>
-    /// <p>resource.rdsDbInstanceDetails.tags.key</p></li>
+    /// <p>service.evidence.threatIntelligenceDetails.threatFileSha256</p></li>
     /// <li>
-    /// <p>resource.rdsDbInstanceDetails.tags.value</p></li>
+    /// <p>service.evidence.threatIntelligenceDetails.threatListName</p></li>
     /// <li>
-    /// <p>service.runtimeDetails.process.executableSha256</p></li>
+    /// <p>service.evidence.threatIntelligenceDetails.threatNames</p></li>
     /// <li>
-    /// <p>service.runtimeDetails.process.name</p></li>
+    /// <p>service.featureName</p></li>
+    /// <li>
+    /// <p>service.malwareScanDetails.scanCategory</p></li>
+    /// <li>
+    /// <p>service.malwareScanDetails.scanConfiguration.incrementalScanDetails.baselineResourceArn</p></li>
+    /// <li>
+    /// <p>service.malwareScanDetails.scanConfiguration.triggerType</p></li>
+    /// <li>
+    /// <p>service.malwareScanDetails.scanId</p></li>
+    /// <li>
+    /// <p>service.malwareScanDetails.scanType</p></li>
+    /// <li>
+    /// <p>service.malwareScanDetails.threats.count</p></li>
+    /// <li>
+    /// <p>service.malwareScanDetails.threats.hash</p></li>
+    /// <li>
+    /// <p>service.malwareScanDetails.threats.itemDetails.additionalInfo.deviceName</p></li>
+    /// <li>
+    /// <p>service.malwareScanDetails.threats.itemDetails.additionalInfo.versionId</p></li>
+    /// <li>
+    /// <p>service.malwareScanDetails.threats.itemDetails.hash</p></li>
+    /// <li>
+    /// <p>service.malwareScanDetails.threats.itemDetails.itemPath</p></li>
+    /// <li>
+    /// <p>service.malwareScanDetails.threats.itemDetails.resourceArn</p></li>
+    /// <li>
+    /// <p>service.malwareScanDetails.threats.itemPaths.hash</p></li>
+    /// <li>
+    /// <p>service.malwareScanDetails.threats.itemPaths.nestedItemPath</p></li>
+    /// <li>
+    /// <p>service.malwareScanDetails.threats.name</p></li>
+    /// <li>
+    /// <p>service.malwareScanDetails.threats.source</p></li>
+    /// <li>
+    /// <p>service.malwareScanDetails.uniqueThreatCount</p></li>
+    /// <li>
+    /// <p>service.resourceRole</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.addressFamily</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.commandLineExample</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.fileOperation</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.filePath</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.fileSystemType</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.flags</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.ianaProtocolNumber</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.ldPreloadValue</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.libraryPath</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.memoryRegions</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.modifiedAt</p>
+    /// <p>Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.modifyingProcess.euid</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.modifyingProcess.executablePath</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.modifyingProcess.executableSha256</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.modifyingProcess.lineage.euid</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.modifyingProcess.lineage.executablePath</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.modifyingProcess.lineage.name</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.modifyingProcess.lineage.namespacePid</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.modifyingProcess.lineage.parentUuid</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.modifyingProcess.lineage.pid</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.modifyingProcess.lineage.startTime</p>
+    /// <p>Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.modifyingProcess.lineage.userId</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.modifyingProcess.lineage.uuid</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.modifyingProcess.name</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.modifyingProcess.namespacePid</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.modifyingProcess.parentUuid</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.modifyingProcess.pid</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.modifyingProcess.pwd</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.modifyingProcess.startTime</p>
+    /// <p>Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.modifyingProcess.user</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.modifyingProcess.userId</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.modifyingProcess.uuid</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.moduleFilePath</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.moduleName</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.moduleSha256</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.mountSource</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.mountTarget</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.relatedFilePaths</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.releaseAgentPath</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.runcBinaryPath</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.scriptPath</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.serviceName</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.shellHistoryFilePath</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.socketPath</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.targetProcess.euid</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.targetProcess.executablePath</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.targetProcess.executableSha256</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.targetProcess.lineage.euid</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.targetProcess.lineage.executablePath</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.targetProcess.lineage.name</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.targetProcess.lineage.namespacePid</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.targetProcess.lineage.parentUuid</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.targetProcess.lineage.pid</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.targetProcess.lineage.startTime</p>
+    /// <p>Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.targetProcess.lineage.userId</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.targetProcess.lineage.uuid</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.targetProcess.name</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.targetProcess.namespacePid</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.targetProcess.parentUuid</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.targetProcess.pid</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.targetProcess.pwd</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.targetProcess.startTime</p>
+    /// <p>Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.targetProcess.user</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.targetProcess.userId</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.targetProcess.uuid</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.threatFilePath</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.toolCategory</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.toolName</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.process.euid</p></li>
     /// <li>
     /// <p>service.runtimeDetails.process.executablePath</p></li>
     /// <li>
-    /// <p>resource.lambdaDetails.functionName</p></li>
+    /// <p>service.runtimeDetails.process.executableSha256</p></li>
     /// <li>
-    /// <p>resource.lambdaDetails.functionArn</p></li>
+    /// <p>service.runtimeDetails.process.lineage.euid</p></li>
     /// <li>
-    /// <p>resource.lambdaDetails.tags.key</p></li>
+    /// <p>service.runtimeDetails.process.lineage.executablePath</p></li>
     /// <li>
-    /// <p>resource.lambdaDetails.tags.value</p></li>
+    /// <p>service.runtimeDetails.process.lineage.name</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.process.lineage.namespacePid</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.process.lineage.parentUuid</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.process.lineage.pid</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.process.lineage.startTime</p>
+    /// <p>Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.process.lineage.userId</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.process.lineage.uuid</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.process.name</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.process.namespacePid</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.process.parentUuid</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.process.pid</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.process.pwd</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.process.startTime</p>
+    /// <p>Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.process.user</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.process.userId</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.process.uuid</p></li>
+    /// <li>
+    /// <p>service.serviceName</p></li>
+    /// <li>
+    /// <p>service.userFeedback</p></li>
+    /// <li>
+    /// <p>severity</p>
+    /// <p>To configure severity based filters, use the following for the <a href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_FindingCriteria.html">FindingCriteria</a> condition:</p>
+    /// <ul>
+    /// <li>
+    /// <p><b>Low</b>: <code>\["1", "2", "3"\]</code></p></li>
+    /// <li>
+    /// <p><b>Medium</b>: <code>\["4", "5", "6"\]</code></p></li>
+    /// <li>
+    /// <p><b>High</b>: <code>\["7", "8"\]</code></p></li>
+    /// <li>
+    /// <p><b>Critical</b>: <code>\["9", "10"\]</code></p></li>
+    /// </ul>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings-severity.html">Findings severity levels</a> in the <i>Amazon GuardDuty User Guide</i>.</p></li>
+    /// <li>
+    /// <p>title</p></li>
+    /// <li>
+    /// <p>type</p></li>
+    /// <li>
+    /// <p>updatedAt</p>
+    /// <p>Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000</p></li>
     /// </ul>
     pub finding_criteria: ::std::option::Option<crate::types::FindingCriteria>,
     /// <p>The idempotency token for the create request.</p>
@@ -244,6 +1336,7 @@ impl CreateFilterInput {
         self.description.as_deref()
     }
     /// <p>Specifies the action that is to be applied to the findings that match the filter.</p>
+    /// <p>Default: NOOP</p>
     pub fn action(&self) -> ::std::option::Option<&crate::types::FilterAction> {
         self.action.as_ref()
     }
@@ -251,54 +1344,227 @@ impl CreateFilterInput {
     pub fn rank(&self) -> ::std::option::Option<i32> {
         self.rank
     }
-    /// <p>Represents the criteria to be used in the filter for querying findings.</p>
-    /// <p>You can only use the following attributes to query findings:</p>
+    /// <p>Represents the criteria to be used in the filter for querying findings. The following fields are available for filtering:</p>
     /// <ul>
     /// <li>
     /// <p>accountId</p></li>
     /// <li>
+    /// <p>arn</p></li>
+    /// <li>
+    /// <p>associatedAttackSequenceArn</p></li>
+    /// <li>
+    /// <p>confidence</p></li>
+    /// <li>
+    /// <p>createdAt</p>
+    /// <p>Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000</p></li>
+    /// <li>
+    /// <p>description</p></li>
+    /// <li>
     /// <p>id</p></li>
     /// <li>
+    /// <p>partition</p></li>
+    /// <li>
     /// <p>region</p></li>
-    /// <li>
-    /// <p>severity</p>
-    /// <p>To filter on the basis of severity, the API and CLI use the following input list for the <a href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_FindingCriteria.html">FindingCriteria</a> condition:</p>
-    /// <ul>
-    /// <li>
-    /// <p><b>Low</b>: <code>\["1", "2", "3"\]</code></p></li>
-    /// <li>
-    /// <p><b>Medium</b>: <code>\["4", "5", "6"\]</code></p></li>
-    /// <li>
-    /// <p><b>High</b>: <code>\["7", "8"\]</code></p></li>
-    /// <li>
-    /// <p><b>Critical</b>: <code>\["9", "10"\]</code></p></li>
-    /// </ul>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings-severity.html">Findings severity levels</a> in the <i>Amazon GuardDuty User Guide</i>.</p></li>
-    /// <li>
-    /// <p>type</p></li>
-    /// <li>
-    /// <p>updatedAt</p>
-    /// <p>Type: ISO 8601 string format: YYYY-MM-DDTHH:MM:SS.SSSZ or YYYY-MM-DDTHH:MM:SSZ depending on whether the value contains milliseconds.</p></li>
     /// <li>
     /// <p>resource.accessKeyDetails.accessKeyId</p></li>
     /// <li>
     /// <p>resource.accessKeyDetails.principalId</p></li>
     /// <li>
+    /// <p>resource.accessKeyDetails.userIdentity.accessKeyId</p></li>
+    /// <li>
+    /// <p>resource.accessKeyDetails.userIdentity.accountId</p></li>
+    /// <li>
+    /// <p>resource.accessKeyDetails.userIdentity.arn</p></li>
+    /// <li>
+    /// <p>resource.accessKeyDetails.userIdentity.principalId</p></li>
+    /// <li>
+    /// <p>resource.accessKeyDetails.userIdentity.sessionContext.attributes.mfaAuthenticated</p></li>
+    /// <li>
+    /// <p>resource.accessKeyDetails.userIdentity.sessionContext.ec2RoleDelivery</p></li>
+    /// <li>
+    /// <p>resource.accessKeyDetails.userIdentity.sessionContext.invokedBy</p></li>
+    /// <li>
+    /// <p>resource.accessKeyDetails.userIdentity.sessionContext.sessionIssuer.accountId</p></li>
+    /// <li>
+    /// <p>resource.accessKeyDetails.userIdentity.sessionContext.sessionIssuer.arn</p></li>
+    /// <li>
+    /// <p>resource.accessKeyDetails.userIdentity.sessionContext.sessionIssuer.principalId</p></li>
+    /// <li>
+    /// <p>resource.accessKeyDetails.userIdentity.sessionContext.sessionIssuer.type</p></li>
+    /// <li>
+    /// <p>resource.accessKeyDetails.userIdentity.sessionContext.sessionIssuer.userName</p></li>
+    /// <li>
+    /// <p>resource.accessKeyDetails.userIdentity.sessionContext.sourceIdentity</p></li>
+    /// <li>
+    /// <p>resource.accessKeyDetails.userIdentity.sessionContext.webIdFederationData.attributes</p></li>
+    /// <li>
+    /// <p>resource.accessKeyDetails.userIdentity.sessionContext.webIdFederationData.federatedProvider</p></li>
+    /// <li>
+    /// <p>resource.accessKeyDetails.userIdentity.type</p></li>
+    /// <li>
+    /// <p>resource.accessKeyDetails.userIdentity.userName</p></li>
+    /// <li>
     /// <p>resource.accessKeyDetails.userName</p></li>
     /// <li>
     /// <p>resource.accessKeyDetails.userType</p></li>
     /// <li>
+    /// <p>resource.bedrockGuardrailDetails.guardrailArn</p></li>
+    /// <li>
+    /// <p>resource.bedrockGuardrailDetails.guardrailVersion</p></li>
+    /// <li>
+    /// <p>resource.containerDetails.containerRuntime</p></li>
+    /// <li>
+    /// <p>resource.containerDetails.id</p></li>
+    /// <li>
+    /// <p>resource.containerDetails.image</p></li>
+    /// <li>
+    /// <p>resource.containerDetails.imagePrefix</p></li>
+    /// <li>
+    /// <p>resource.containerDetails.name</p></li>
+    /// <li>
+    /// <p>resource.containerDetails.securityContext.allowPrivilegeEscalation</p></li>
+    /// <li>
+    /// <p>resource.containerDetails.securityContext.privileged</p></li>
+    /// <li>
+    /// <p>resource.containerDetails.volumeMounts.mountPath</p></li>
+    /// <li>
+    /// <p>resource.containerDetails.volumeMounts.name</p></li>
+    /// <li>
+    /// <p>resource.ebsSnapshotDetails.snapshotArn</p></li>
+    /// <li>
+    /// <p>resource.ebsVolumeDetails.scannedVolumeDetails.deviceName</p></li>
+    /// <li>
+    /// <p>resource.ebsVolumeDetails.scannedVolumeDetails.encryptionType</p></li>
+    /// <li>
+    /// <p>resource.ebsVolumeDetails.scannedVolumeDetails.kmsKeyArn</p></li>
+    /// <li>
+    /// <p>resource.ebsVolumeDetails.scannedVolumeDetails.snapshotArn</p></li>
+    /// <li>
+    /// <p>resource.ebsVolumeDetails.scannedVolumeDetails.volumeArn</p></li>
+    /// <li>
+    /// <p>resource.ebsVolumeDetails.scannedVolumeDetails.volumeSizeInGB</p></li>
+    /// <li>
+    /// <p>resource.ebsVolumeDetails.scannedVolumeDetails.volumeType</p></li>
+    /// <li>
+    /// <p>resource.ebsVolumeDetails.skippedVolumeDetails.deviceName</p></li>
+    /// <li>
+    /// <p>resource.ebsVolumeDetails.skippedVolumeDetails.encryptionType</p></li>
+    /// <li>
+    /// <p>resource.ebsVolumeDetails.skippedVolumeDetails.kmsKeyArn</p></li>
+    /// <li>
+    /// <p>resource.ebsVolumeDetails.skippedVolumeDetails.snapshotArn</p></li>
+    /// <li>
+    /// <p>resource.ebsVolumeDetails.skippedVolumeDetails.volumeArn</p></li>
+    /// <li>
+    /// <p>resource.ebsVolumeDetails.skippedVolumeDetails.volumeSizeInGB</p></li>
+    /// <li>
+    /// <p>resource.ebsVolumeDetails.skippedVolumeDetails.volumeType</p></li>
+    /// <li>
+    /// <p>resource.ec2ImageDetails.imageArn</p></li>
+    /// <li>
+    /// <p>resource.ecsClusterDetails.activeServicesCount</p></li>
+    /// <li>
+    /// <p>resource.ecsClusterDetails.arn</p></li>
+    /// <li>
+    /// <p>resource.ecsClusterDetails.name</p></li>
+    /// <li>
+    /// <p>resource.ecsClusterDetails.registeredContainerInstancesCount</p></li>
+    /// <li>
+    /// <p>resource.ecsClusterDetails.runningTasksCount</p></li>
+    /// <li>
+    /// <p>resource.ecsClusterDetails.status</p></li>
+    /// <li>
+    /// <p>resource.ecsClusterDetails.tags.key</p></li>
+    /// <li>
+    /// <p>resource.ecsClusterDetails.tags.value</p></li>
+    /// <li>
+    /// <p>resource.ecsClusterDetails.taskDetails.arn</p></li>
+    /// <li>
+    /// <p>resource.ecsClusterDetails.taskDetails.containers.containerRuntime</p></li>
+    /// <li>
+    /// <p>resource.ecsClusterDetails.taskDetails.containers.id</p></li>
+    /// <li>
+    /// <p>resource.ecsClusterDetails.taskDetails.containers.image</p></li>
+    /// <li>
+    /// <p>resource.ecsClusterDetails.taskDetails.containers.imagePrefix</p></li>
+    /// <li>
+    /// <p>resource.ecsClusterDetails.taskDetails.containers.name</p></li>
+    /// <li>
+    /// <p>resource.ecsClusterDetails.taskDetails.containers.securityContext.allowPrivilegeEscalation</p></li>
+    /// <li>
+    /// <p>resource.ecsClusterDetails.taskDetails.containers.securityContext.privileged</p></li>
+    /// <li>
+    /// <p>resource.ecsClusterDetails.taskDetails.containers.volumeMounts.mountPath</p></li>
+    /// <li>
+    /// <p>resource.ecsClusterDetails.taskDetails.containers.volumeMounts.name</p></li>
+    /// <li>
+    /// <p>resource.ecsClusterDetails.taskDetails.createdAt</p>
+    /// <p>Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000</p></li>
+    /// <li>
+    /// <p>resource.ecsClusterDetails.taskDetails.definitionArn</p></li>
+    /// <li>
+    /// <p>resource.ecsClusterDetails.taskDetails.group</p></li>
+    /// <li>
+    /// <p>resource.ecsClusterDetails.taskDetails.launchType</p></li>
+    /// <li>
+    /// <p>resource.ecsClusterDetails.taskDetails.startedAt</p>
+    /// <p>Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000</p></li>
+    /// <li>
+    /// <p>resource.ecsClusterDetails.taskDetails.startedBy</p></li>
+    /// <li>
+    /// <p>resource.ecsClusterDetails.taskDetails.tags.key</p></li>
+    /// <li>
+    /// <p>resource.ecsClusterDetails.taskDetails.tags.value</p></li>
+    /// <li>
+    /// <p>resource.ecsClusterDetails.taskDetails.version</p></li>
+    /// <li>
+    /// <p>resource.ecsClusterDetails.taskDetails.volumes.hostPath.path</p></li>
+    /// <li>
+    /// <p>resource.ecsClusterDetails.taskDetails.volumes.name</p></li>
+    /// <li>
+    /// <p>resource.eksClusterDetails.arn</p></li>
+    /// <li>
+    /// <p>resource.eksClusterDetails.createdAt</p>
+    /// <p>Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000</p></li>
+    /// <li>
+    /// <p>resource.eksClusterDetails.name</p></li>
+    /// <li>
+    /// <p>resource.eksClusterDetails.status</p></li>
+    /// <li>
+    /// <p>resource.eksClusterDetails.tags.key</p></li>
+    /// <li>
+    /// <p>resource.eksClusterDetails.tags.value</p></li>
+    /// <li>
+    /// <p>resource.eksClusterDetails.vpcId</p></li>
+    /// <li>
+    /// <p>resource.instanceDetails.availabilityZone</p></li>
+    /// <li>
+    /// <p>resource.instanceDetails.iamInstanceProfile.arn</p></li>
+    /// <li>
     /// <p>resource.instanceDetails.iamInstanceProfile.id</p></li>
+    /// <li>
+    /// <p>resource.instanceDetails.imageDescription</p></li>
     /// <li>
     /// <p>resource.instanceDetails.imageId</p></li>
     /// <li>
     /// <p>resource.instanceDetails.instanceId</p></li>
     /// <li>
-    /// <p>resource.instanceDetails.tags.key</p></li>
+    /// <p>resource.instanceDetails.instanceState</p></li>
     /// <li>
-    /// <p>resource.instanceDetails.tags.value</p></li>
+    /// <p>resource.instanceDetails.instanceType</p></li>
+    /// <li>
+    /// <p>resource.instanceDetails.launchTime</p>
+    /// <p>Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000</p></li>
     /// <li>
     /// <p>resource.instanceDetails.networkInterfaces.ipv6Addresses</p></li>
+    /// <li>
+    /// <p>resource.instanceDetails.networkInterfaces.networkInterfaceId</p></li>
+    /// <li>
+    /// <p>resource.instanceDetails.networkInterfaces.privateDnsName</p></li>
+    /// <li>
+    /// <p>resource.instanceDetails.networkInterfaces.privateIpAddress</p></li>
+    /// <li>
+    /// <p>resource.instanceDetails.networkInterfaces.privateIpAddresses.privateDnsName</p></li>
     /// <li>
     /// <p>resource.instanceDetails.networkInterfaces.privateIpAddresses.privateIpAddress</p></li>
     /// <li>
@@ -316,11 +1582,203 @@ impl CreateFilterInput {
     /// <li>
     /// <p>resource.instanceDetails.outpostArn</p></li>
     /// <li>
+    /// <p>resource.instanceDetails.platform</p></li>
+    /// <li>
+    /// <p>resource.instanceDetails.productCodes.productCodeId</p></li>
+    /// <li>
+    /// <p>resource.instanceDetails.productCodes.productCodeType</p></li>
+    /// <li>
+    /// <p>resource.instanceDetails.tags.key</p></li>
+    /// <li>
+    /// <p>resource.instanceDetails.tags.value</p></li>
+    /// <li>
+    /// <p>resource.kubernetesDetails.kubernetesUserDetails.groups</p></li>
+    /// <li>
+    /// <p>resource.kubernetesDetails.kubernetesUserDetails.impersonatedUser.groups</p></li>
+    /// <li>
+    /// <p>resource.kubernetesDetails.kubernetesUserDetails.impersonatedUser.username</p></li>
+    /// <li>
+    /// <p>resource.kubernetesDetails.kubernetesUserDetails.sessionName</p></li>
+    /// <li>
+    /// <p>resource.kubernetesDetails.kubernetesUserDetails.uid</p></li>
+    /// <li>
+    /// <p>resource.kubernetesDetails.kubernetesUserDetails.username</p></li>
+    /// <li>
+    /// <p>resource.kubernetesDetails.kubernetesWorkloadDetails.containers.containerRuntime</p></li>
+    /// <li>
+    /// <p>resource.kubernetesDetails.kubernetesWorkloadDetails.containers.id</p></li>
+    /// <li>
+    /// <p>resource.kubernetesDetails.kubernetesWorkloadDetails.containers.image</p></li>
+    /// <li>
+    /// <p>resource.kubernetesDetails.kubernetesWorkloadDetails.containers.imagePrefix</p></li>
+    /// <li>
+    /// <p>resource.kubernetesDetails.kubernetesWorkloadDetails.containers.name</p></li>
+    /// <li>
+    /// <p>resource.kubernetesDetails.kubernetesWorkloadDetails.containers.securityContext.allowPrivilegeEscalation</p></li>
+    /// <li>
+    /// <p>resource.kubernetesDetails.kubernetesWorkloadDetails.containers.securityContext.privileged</p></li>
+    /// <li>
+    /// <p>resource.kubernetesDetails.kubernetesWorkloadDetails.containers.volumeMounts.mountPath</p></li>
+    /// <li>
+    /// <p>resource.kubernetesDetails.kubernetesWorkloadDetails.containers.volumeMounts.name</p></li>
+    /// <li>
+    /// <p>resource.kubernetesDetails.kubernetesWorkloadDetails.hostIpc</p></li>
+    /// <li>
+    /// <p>resource.kubernetesDetails.kubernetesWorkloadDetails.hostNetwork</p></li>
+    /// <li>
+    /// <p>resource.kubernetesDetails.kubernetesWorkloadDetails.hostPid</p></li>
+    /// <li>
+    /// <p>resource.kubernetesDetails.kubernetesWorkloadDetails.name</p></li>
+    /// <li>
+    /// <p>resource.kubernetesDetails.kubernetesWorkloadDetails.namespace</p></li>
+    /// <li>
+    /// <p>resource.kubernetesDetails.kubernetesWorkloadDetails.serviceAccountName</p></li>
+    /// <li>
+    /// <p>resource.kubernetesDetails.kubernetesWorkloadDetails.type</p></li>
+    /// <li>
+    /// <p>resource.kubernetesDetails.kubernetesWorkloadDetails.uid</p></li>
+    /// <li>
+    /// <p>resource.kubernetesDetails.kubernetesWorkloadDetails.volumes.hostPath.path</p></li>
+    /// <li>
+    /// <p>resource.kubernetesDetails.kubernetesWorkloadDetails.volumes.name</p></li>
+    /// <li>
+    /// <p>resource.lambdaDetails.description</p></li>
+    /// <li>
+    /// <p>resource.lambdaDetails.functionArn</p></li>
+    /// <li>
+    /// <p>resource.lambdaDetails.functionName</p></li>
+    /// <li>
+    /// <p>resource.lambdaDetails.functionVersion</p></li>
+    /// <li>
+    /// <p>resource.lambdaDetails.lastModifiedAt</p>
+    /// <p>Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000</p></li>
+    /// <li>
+    /// <p>resource.lambdaDetails.revisionId</p></li>
+    /// <li>
+    /// <p>resource.lambdaDetails.role</p></li>
+    /// <li>
+    /// <p>resource.lambdaDetails.tags.key</p></li>
+    /// <li>
+    /// <p>resource.lambdaDetails.tags.value</p></li>
+    /// <li>
+    /// <p>resource.lambdaDetails.vpcConfig.securityGroups.groupId</p></li>
+    /// <li>
+    /// <p>resource.lambdaDetails.vpcConfig.securityGroups.groupName</p></li>
+    /// <li>
+    /// <p>resource.lambdaDetails.vpcConfig.subnetIds</p></li>
+    /// <li>
+    /// <p>resource.lambdaDetails.vpcConfig.vpcId</p></li>
+    /// <li>
+    /// <p>resource.rdsDbInstanceDetails.dbClusterIdentifier</p></li>
+    /// <li>
+    /// <p>resource.rdsDbInstanceDetails.dbInstanceArn</p></li>
+    /// <li>
+    /// <p>resource.rdsDbInstanceDetails.dbInstanceIdentifier</p></li>
+    /// <li>
+    /// <p>resource.rdsDbInstanceDetails.dbSecurityGroups.name</p></li>
+    /// <li>
+    /// <p>resource.rdsDbInstanceDetails.dbSecurityGroups.status</p></li>
+    /// <li>
+    /// <p>resource.rdsDbInstanceDetails.dbiResourceId</p></li>
+    /// <li>
+    /// <p>resource.rdsDbInstanceDetails.engine</p></li>
+    /// <li>
+    /// <p>resource.rdsDbInstanceDetails.engineVersion</p></li>
+    /// <li>
+    /// <p>resource.rdsDbInstanceDetails.iamDatabaseAuthenticationEnabled</p></li>
+    /// <li>
+    /// <p>resource.rdsDbInstanceDetails.publiclyAccessible</p></li>
+    /// <li>
+    /// <p>resource.rdsDbInstanceDetails.tags.key</p></li>
+    /// <li>
+    /// <p>resource.rdsDbInstanceDetails.tags.value</p></li>
+    /// <li>
+    /// <p>resource.rdsDbInstanceDetails.vpcId</p></li>
+    /// <li>
+    /// <p>resource.rdsDbInstanceDetails.vpcSecurityGroups.status</p></li>
+    /// <li>
+    /// <p>resource.rdsDbInstanceDetails.vpcSecurityGroups.vpcSecurityGroupId</p></li>
+    /// <li>
+    /// <p>resource.rdsDbUserDetails.application</p></li>
+    /// <li>
+    /// <p>resource.rdsDbUserDetails.authMethod</p></li>
+    /// <li>
+    /// <p>resource.rdsDbUserDetails.database</p></li>
+    /// <li>
+    /// <p>resource.rdsDbUserDetails.ssl</p></li>
+    /// <li>
+    /// <p>resource.rdsDbUserDetails.user</p></li>
+    /// <li>
+    /// <p>resource.rdsLimitlessDbDetails.dbClusterIdentifier</p></li>
+    /// <li>
+    /// <p>resource.rdsLimitlessDbDetails.dbShardGroupArn</p></li>
+    /// <li>
+    /// <p>resource.rdsLimitlessDbDetails.dbShardGroupIdentifier</p></li>
+    /// <li>
+    /// <p>resource.rdsLimitlessDbDetails.dbShardGroupResourceId</p></li>
+    /// <li>
+    /// <p>resource.rdsLimitlessDbDetails.engine</p></li>
+    /// <li>
+    /// <p>resource.rdsLimitlessDbDetails.engineVersion</p></li>
+    /// <li>
+    /// <p>resource.rdsLimitlessDbDetails.tags.key</p></li>
+    /// <li>
+    /// <p>resource.rdsLimitlessDbDetails.tags.value</p></li>
+    /// <li>
+    /// <p>resource.recoveryPointDetails.backupVaultName</p></li>
+    /// <li>
+    /// <p>resource.recoveryPointDetails.recoveryPointArn</p></li>
+    /// <li>
     /// <p>resource.resourceType</p></li>
     /// <li>
-    /// <p>resource.s3BucketDetails.publicAccess.effectivePermissions</p></li>
+    /// <p>resource.s3BucketDetails.arn</p></li>
+    /// <li>
+    /// <p>resource.s3BucketDetails.createdAt</p>
+    /// <p>Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000</p></li>
+    /// <li>
+    /// <p>resource.s3BucketDetails.defaultServerSideEncryption.encryptionType</p></li>
+    /// <li>
+    /// <p>resource.s3BucketDetails.defaultServerSideEncryption.kmsMasterKeyArn</p></li>
     /// <li>
     /// <p>resource.s3BucketDetails.name</p></li>
+    /// <li>
+    /// <p>resource.s3BucketDetails.owner.id</p></li>
+    /// <li>
+    /// <p>resource.s3BucketDetails.publicAccess.effectivePermission</p></li>
+    /// <li>
+    /// <p>resource.s3BucketDetails.publicAccess.permissionConfiguration.accountLevelPermissions.blockPublicAccess.blockPublicAcls</p></li>
+    /// <li>
+    /// <p>resource.s3BucketDetails.publicAccess.permissionConfiguration.accountLevelPermissions.blockPublicAccess.blockPublicPolicy</p></li>
+    /// <li>
+    /// <p>resource.s3BucketDetails.publicAccess.permissionConfiguration.accountLevelPermissions.blockPublicAccess.ignorePublicAcls</p></li>
+    /// <li>
+    /// <p>resource.s3BucketDetails.publicAccess.permissionConfiguration.accountLevelPermissions.blockPublicAccess.restrictPublicBuckets</p></li>
+    /// <li>
+    /// <p>resource.s3BucketDetails.publicAccess.permissionConfiguration.bucketLevelPermissions.accessControlList.allowsPublicReadAccess</p></li>
+    /// <li>
+    /// <p>resource.s3BucketDetails.publicAccess.permissionConfiguration.bucketLevelPermissions.accessControlList.allowsPublicWriteAccess</p></li>
+    /// <li>
+    /// <p>resource.s3BucketDetails.publicAccess.permissionConfiguration.bucketLevelPermissions.blockPublicAccess.blockPublicAcls</p></li>
+    /// <li>
+    /// <p>resource.s3BucketDetails.publicAccess.permissionConfiguration.bucketLevelPermissions.blockPublicAccess.blockPublicPolicy</p></li>
+    /// <li>
+    /// <p>resource.s3BucketDetails.publicAccess.permissionConfiguration.bucketLevelPermissions.blockPublicAccess.ignorePublicAcls</p></li>
+    /// <li>
+    /// <p>resource.s3BucketDetails.publicAccess.permissionConfiguration.bucketLevelPermissions.blockPublicAccess.restrictPublicBuckets</p></li>
+    /// <li>
+    /// <p>resource.s3BucketDetails.publicAccess.permissionConfiguration.bucketLevelPermissions.bucketPolicy.allowsPublicReadAccess</p></li>
+    /// <li>
+    /// <p>resource.s3BucketDetails.publicAccess.permissionConfiguration.bucketLevelPermissions.bucketPolicy.allowsPublicWriteAccess</p></li>
+    /// <li>
+    /// <p>resource.s3BucketDetails.s3ObjectDetails.eTag</p></li>
+    /// <li>
+    /// <p>resource.s3BucketDetails.s3ObjectDetails.hash</p></li>
+    /// <li>
+    /// <p>resource.s3BucketDetails.s3ObjectDetails.key</p></li>
+    /// <li>
+    /// <p>resource.s3BucketDetails.s3ObjectDetails.objectArn</p></li>
+    /// <li>
+    /// <p>resource.s3BucketDetails.s3ObjectDetails.versionId</p></li>
     /// <li>
     /// <p>resource.s3BucketDetails.tags.key</p></li>
     /// <li>
@@ -328,17 +1786,35 @@ impl CreateFilterInput {
     /// <li>
     /// <p>resource.s3BucketDetails.type</p></li>
     /// <li>
+    /// <p>schemaVersion</p></li>
+    /// <li>
     /// <p>service.action.actionType</p></li>
+    /// <li>
+    /// <p>service.action.awsApiCallAction.affectedResources</p></li>
     /// <li>
     /// <p>service.action.awsApiCallAction.api</p></li>
     /// <li>
     /// <p>service.action.awsApiCallAction.callerType</p></li>
     /// <li>
+    /// <p>service.action.awsApiCallAction.domainDetails.domain</p></li>
+    /// <li>
     /// <p>service.action.awsApiCallAction.errorCode</p></li>
+    /// <li>
+    /// <p>service.action.awsApiCallAction.remoteAccountDetails.accountId</p></li>
+    /// <li>
+    /// <p>service.action.awsApiCallAction.remoteAccountDetails.affiliated</p></li>
+    /// <li>
+    /// <p>service.action.awsApiCallAction.remoteAccountDetails.awsServiceName</p></li>
     /// <li>
     /// <p>service.action.awsApiCallAction.remoteIpDetails.city.cityName</p></li>
     /// <li>
+    /// <p>service.action.awsApiCallAction.remoteIpDetails.country.countryCode</p></li>
+    /// <li>
     /// <p>service.action.awsApiCallAction.remoteIpDetails.country.countryName</p></li>
+    /// <li>
+    /// <p>service.action.awsApiCallAction.remoteIpDetails.geoLocation.lat</p></li>
+    /// <li>
+    /// <p>service.action.awsApiCallAction.remoteIpDetails.geoLocation.lon</p></li>
     /// <li>
     /// <p>service.action.awsApiCallAction.remoteIpDetails.ipAddressV4</p></li>
     /// <li>
@@ -348,25 +1824,115 @@ impl CreateFilterInput {
     /// <li>
     /// <p>service.action.awsApiCallAction.remoteIpDetails.organization.asnOrg</p></li>
     /// <li>
+    /// <p>service.action.awsApiCallAction.remoteIpDetails.organization.isp</p></li>
+    /// <li>
+    /// <p>service.action.awsApiCallAction.remoteIpDetails.organization.org</p></li>
+    /// <li>
     /// <p>service.action.awsApiCallAction.serviceName</p></li>
+    /// <li>
+    /// <p>service.action.awsApiCallAction.userAgent</p></li>
+    /// <li>
+    /// <p>service.action.dnsRequestAction.blocked</p></li>
     /// <li>
     /// <p>service.action.dnsRequestAction.domain</p></li>
     /// <li>
     /// <p>service.action.dnsRequestAction.domainWithSuffix</p></li>
     /// <li>
+    /// <p>service.action.dnsRequestAction.protocol</p></li>
+    /// <li>
     /// <p>service.action.dnsRequestAction.vpcOwnerAccountId</p></li>
+    /// <li>
+    /// <p>service.action.kubernetesApiCallAction.namespace</p></li>
+    /// <li>
+    /// <p>service.action.kubernetesApiCallAction.parameters</p></li>
+    /// <li>
+    /// <p>service.action.kubernetesApiCallAction.remoteIpDetails.city.cityName</p></li>
+    /// <li>
+    /// <p>service.action.kubernetesApiCallAction.remoteIpDetails.country.countryCode</p></li>
+    /// <li>
+    /// <p>service.action.kubernetesApiCallAction.remoteIpDetails.country.countryName</p></li>
+    /// <li>
+    /// <p>service.action.kubernetesApiCallAction.remoteIpDetails.geoLocation.lat</p></li>
+    /// <li>
+    /// <p>service.action.kubernetesApiCallAction.remoteIpDetails.geoLocation.lon</p></li>
+    /// <li>
+    /// <p>service.action.kubernetesApiCallAction.remoteIpDetails.ipAddressV4</p></li>
+    /// <li>
+    /// <p>service.action.kubernetesApiCallAction.remoteIpDetails.ipAddressV6</p></li>
+    /// <li>
+    /// <p>service.action.kubernetesApiCallAction.remoteIpDetails.organization.asn</p></li>
+    /// <li>
+    /// <p>service.action.kubernetesApiCallAction.remoteIpDetails.organization.asnOrg</p></li>
+    /// <li>
+    /// <p>service.action.kubernetesApiCallAction.remoteIpDetails.organization.isp</p></li>
+    /// <li>
+    /// <p>service.action.kubernetesApiCallAction.remoteIpDetails.organization.org</p></li>
+    /// <li>
+    /// <p>service.action.kubernetesApiCallAction.requestUri</p></li>
+    /// <li>
+    /// <p>service.action.kubernetesApiCallAction.resource</p></li>
+    /// <li>
+    /// <p>service.action.kubernetesApiCallAction.resourceName</p></li>
+    /// <li>
+    /// <p>service.action.kubernetesApiCallAction.sourceIPs</p></li>
+    /// <li>
+    /// <p>service.action.kubernetesApiCallAction.statusCode</p></li>
+    /// <li>
+    /// <p>service.action.kubernetesApiCallAction.subresource</p></li>
+    /// <li>
+    /// <p>service.action.kubernetesApiCallAction.userAgent</p></li>
+    /// <li>
+    /// <p>service.action.kubernetesApiCallAction.verb</p></li>
+    /// <li>
+    /// <p>service.action.kubernetesPermissionCheckedDetails.allowed</p></li>
+    /// <li>
+    /// <p>service.action.kubernetesPermissionCheckedDetails.namespace</p></li>
+    /// <li>
+    /// <p>service.action.kubernetesPermissionCheckedDetails.resource</p></li>
+    /// <li>
+    /// <p>service.action.kubernetesPermissionCheckedDetails.verb</p></li>
+    /// <li>
+    /// <p>service.action.kubernetesRoleBindingDetails.kind</p></li>
+    /// <li>
+    /// <p>service.action.kubernetesRoleBindingDetails.name</p></li>
+    /// <li>
+    /// <p>service.action.kubernetesRoleBindingDetails.roleRefKind</p></li>
+    /// <li>
+    /// <p>service.action.kubernetesRoleBindingDetails.roleRefName</p></li>
+    /// <li>
+    /// <p>service.action.kubernetesRoleBindingDetails.uid</p></li>
+    /// <li>
+    /// <p>service.action.kubernetesRoleDetails.kind</p></li>
+    /// <li>
+    /// <p>service.action.kubernetesRoleDetails.name</p></li>
+    /// <li>
+    /// <p>service.action.kubernetesRoleDetails.uid</p></li>
     /// <li>
     /// <p>service.action.networkConnectionAction.blocked</p></li>
     /// <li>
     /// <p>service.action.networkConnectionAction.connectionDirection</p></li>
     /// <li>
+    /// <p>service.action.networkConnectionAction.localIpDetails.ipAddressV4</p></li>
+    /// <li>
+    /// <p>service.action.networkConnectionAction.localIpDetails.ipAddressV6</p></li>
+    /// <li>
+    /// <p>service.action.networkConnectionAction.localNetworkInterface</p></li>
+    /// <li>
     /// <p>service.action.networkConnectionAction.localPortDetails.port</p></li>
+    /// <li>
+    /// <p>service.action.networkConnectionAction.localPortDetails.portName</p></li>
     /// <li>
     /// <p>service.action.networkConnectionAction.protocol</p></li>
     /// <li>
     /// <p>service.action.networkConnectionAction.remoteIpDetails.city.cityName</p></li>
     /// <li>
+    /// <p>service.action.networkConnectionAction.remoteIpDetails.country.countryCode</p></li>
+    /// <li>
     /// <p>service.action.networkConnectionAction.remoteIpDetails.country.countryName</p></li>
+    /// <li>
+    /// <p>service.action.networkConnectionAction.remoteIpDetails.geoLocation.lat</p></li>
+    /// <li>
+    /// <p>service.action.networkConnectionAction.remoteIpDetails.geoLocation.lon</p></li>
     /// <li>
     /// <p>service.action.networkConnectionAction.remoteIpDetails.ipAddressV4</p></li>
     /// <li>
@@ -376,89 +1942,707 @@ impl CreateFilterInput {
     /// <li>
     /// <p>service.action.networkConnectionAction.remoteIpDetails.organization.asnOrg</p></li>
     /// <li>
+    /// <p>service.action.networkConnectionAction.remoteIpDetails.organization.isp</p></li>
+    /// <li>
+    /// <p>service.action.networkConnectionAction.remoteIpDetails.organization.org</p></li>
+    /// <li>
     /// <p>service.action.networkConnectionAction.remotePortDetails.port</p></li>
     /// <li>
-    /// <p>service.action.awsApiCallAction.remoteAccountDetails.affiliated</p></li>
+    /// <p>service.action.networkConnectionAction.remotePortDetails.portName</p></li>
     /// <li>
-    /// <p>service.action.kubernetesApiCallAction.remoteIpDetails.ipAddressV4</p></li>
+    /// <p>service.action.portProbeAction.blocked</p></li>
     /// <li>
-    /// <p>service.action.kubernetesApiCallAction.remoteIpDetails.ipAddressV6</p></li>
+    /// <p>service.action.portProbeAction.portProbeDetails.localIpDetails.ipAddressV4</p></li>
     /// <li>
-    /// <p>service.action.kubernetesApiCallAction.namespace</p></li>
+    /// <p>service.action.portProbeAction.portProbeDetails.localIpDetails.ipAddressV6</p></li>
     /// <li>
-    /// <p>service.action.kubernetesApiCallAction.remoteIpDetails.organization.asn</p></li>
+    /// <p>service.action.portProbeAction.portProbeDetails.localPortDetails.port</p></li>
     /// <li>
-    /// <p>service.action.kubernetesApiCallAction.requestUri</p></li>
+    /// <p>service.action.portProbeAction.portProbeDetails.localPortDetails.portName</p></li>
     /// <li>
-    /// <p>service.action.kubernetesApiCallAction.statusCode</p></li>
+    /// <p>service.action.portProbeAction.portProbeDetails.remoteIpDetails.city.cityName</p></li>
     /// <li>
-    /// <p>service.action.networkConnectionAction.localIpDetails.ipAddressV4</p></li>
+    /// <p>service.action.portProbeAction.portProbeDetails.remoteIpDetails.country.countryCode</p></li>
     /// <li>
-    /// <p>service.action.networkConnectionAction.localIpDetails.ipAddressV6</p></li>
+    /// <p>service.action.portProbeAction.portProbeDetails.remoteIpDetails.country.countryName</p></li>
     /// <li>
-    /// <p>service.action.networkConnectionAction.protocol</p></li>
+    /// <p>service.action.portProbeAction.portProbeDetails.remoteIpDetails.geoLocation.lat</p></li>
     /// <li>
-    /// <p>service.action.awsApiCallAction.serviceName</p></li>
+    /// <p>service.action.portProbeAction.portProbeDetails.remoteIpDetails.geoLocation.lon</p></li>
     /// <li>
-    /// <p>service.action.awsApiCallAction.remoteAccountDetails.accountId</p></li>
+    /// <p>service.action.portProbeAction.portProbeDetails.remoteIpDetails.ipAddressV4</p></li>
+    /// <li>
+    /// <p>service.action.portProbeAction.portProbeDetails.remoteIpDetails.ipAddressV6</p></li>
+    /// <li>
+    /// <p>service.action.portProbeAction.portProbeDetails.remoteIpDetails.organization.asn</p></li>
+    /// <li>
+    /// <p>service.action.portProbeAction.portProbeDetails.remoteIpDetails.organization.asnOrg</p></li>
+    /// <li>
+    /// <p>service.action.portProbeAction.portProbeDetails.remoteIpDetails.organization.isp</p></li>
+    /// <li>
+    /// <p>service.action.portProbeAction.portProbeDetails.remoteIpDetails.organization.org</p></li>
+    /// <li>
+    /// <p>service.action.rdsLoginAttemptAction.loginAttributes.application</p></li>
+    /// <li>
+    /// <p>service.action.rdsLoginAttemptAction.loginAttributes.failedLoginAttempts</p></li>
+    /// <li>
+    /// <p>service.action.rdsLoginAttemptAction.loginAttributes.successfulLoginAttempts</p></li>
+    /// <li>
+    /// <p>service.action.rdsLoginAttemptAction.loginAttributes.user</p></li>
+    /// <li>
+    /// <p>service.action.rdsLoginAttemptAction.remoteIpDetails.city.cityName</p></li>
+    /// <li>
+    /// <p>service.action.rdsLoginAttemptAction.remoteIpDetails.country.countryCode</p></li>
+    /// <li>
+    /// <p>service.action.rdsLoginAttemptAction.remoteIpDetails.country.countryName</p></li>
+    /// <li>
+    /// <p>service.action.rdsLoginAttemptAction.remoteIpDetails.geoLocation.lat</p></li>
+    /// <li>
+    /// <p>service.action.rdsLoginAttemptAction.remoteIpDetails.geoLocation.lon</p></li>
+    /// <li>
+    /// <p>service.action.rdsLoginAttemptAction.remoteIpDetails.ipAddressV4</p></li>
+    /// <li>
+    /// <p>service.action.rdsLoginAttemptAction.remoteIpDetails.ipAddressV6</p></li>
+    /// <li>
+    /// <p>service.action.rdsLoginAttemptAction.remoteIpDetails.organization.asn</p></li>
+    /// <li>
+    /// <p>service.action.rdsLoginAttemptAction.remoteIpDetails.organization.asnOrg</p></li>
+    /// <li>
+    /// <p>service.action.rdsLoginAttemptAction.remoteIpDetails.organization.isp</p></li>
+    /// <li>
+    /// <p>service.action.rdsLoginAttemptAction.remoteIpDetails.organization.org</p></li>
+    /// <li>
+    /// <p>service.additionalInfo.agentDetails.agentId</p></li>
+    /// <li>
+    /// <p>service.additionalInfo.agentDetails.agentVersion</p></li>
+    /// <li>
+    /// <p>service.additionalInfo.anomalies.anomalousAPIs</p></li>
+    /// <li>
+    /// <p>service.additionalInfo.authenticationMethod</p></li>
+    /// <li>
+    /// <p>service.additionalInfo.averagePacketSizeIn</p></li>
+    /// <li>
+    /// <p>service.additionalInfo.averagePacketSizeOut</p></li>
+    /// <li>
+    /// <p>service.additionalInfo.context</p></li>
+    /// <li>
+    /// <p>service.additionalInfo.domain</p></li>
+    /// <li>
+    /// <p>service.additionalInfo.inBytes</p></li>
+    /// <li>
+    /// <p>service.additionalInfo.localNetworkInterfaceOwner</p></li>
+    /// <li>
+    /// <p>service.additionalInfo.localPort</p></li>
+    /// <li>
+    /// <p>service.additionalInfo.outBytes</p></li>
+    /// <li>
+    /// <p>service.additionalInfo.packetsIn</p></li>
+    /// <li>
+    /// <p>service.additionalInfo.packetsOut</p></li>
+    /// <li>
+    /// <p>service.additionalInfo.policyArn</p></li>
+    /// <li>
+    /// <p>service.additionalInfo.policyName</p></li>
+    /// <li>
+    /// <p>service.additionalInfo.remotePort</p></li>
+    /// <li>
+    /// <p>service.additionalInfo.sample</p></li>
+    /// <li>
+    /// <p>service.additionalInfo.scannedPort</p></li>
+    /// <li>
+    /// <p>service.additionalInfo.threatFileSha256</p></li>
     /// <li>
     /// <p>service.additionalInfo.threatListName</p></li>
     /// <li>
-    /// <p>service.resourceRole</p></li>
+    /// <p>service.additionalInfo.threatName</p></li>
     /// <li>
-    /// <p>resource.eksClusterDetails.name</p></li>
+    /// <p>service.additionalInfo.totalBytesIn</p></li>
     /// <li>
-    /// <p>resource.kubernetesDetails.kubernetesWorkloadDetails.name</p></li>
+    /// <p>service.additionalInfo.totalBytesOut</p></li>
     /// <li>
-    /// <p>resource.kubernetesDetails.kubernetesWorkloadDetails.namespace</p></li>
+    /// <p>service.additionalInfo.type</p></li>
     /// <li>
-    /// <p>resource.kubernetesDetails.kubernetesUserDetails.username</p></li>
+    /// <p>service.additionalInfo.unusual.asnOrg</p></li>
     /// <li>
-    /// <p>resource.kubernetesDetails.kubernetesWorkloadDetails.containers.image</p></li>
+    /// <p>service.additionalInfo.unusual.port</p></li>
     /// <li>
-    /// <p>resource.kubernetesDetails.kubernetesWorkloadDetails.containers.imagePrefix</p></li>
+    /// <p>service.additionalInfo.unusualProtocol</p></li>
     /// <li>
-    /// <p>service.ebsVolumeScanDetails.scanId</p></li>
+    /// <p>service.additionalInfo.userAgent.fullUserAgent</p></li>
+    /// <li>
+    /// <p>service.additionalInfo.userAgent.userAgentCategory</p></li>
+    /// <li>
+    /// <p>service.additionalInfo.value</p></li>
+    /// <li>
+    /// <p>service.additionalInfo.vpcOwnerAccountId</p></li>
+    /// <li>
+    /// <p>service.archived</p></li>
+    /// <li>
+    /// <p>service.count</p></li>
+    /// <li>
+    /// <p>service.detection.anomaly.profiles</p></li>
+    /// <li>
+    /// <p>service.detection.anomaly.unusual.behavior</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.actors.id</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.actors.process.name</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.actors.process.path</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.actors.process.sha256</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.actors.session.createdTime</p>
+    /// <p>Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.actors.session.issuer</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.actors.session.mfaStatus</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.actors.session.uid</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.actors.user.account.account</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.actors.user.account.uid</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.actors.user.credentialUid</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.actors.user.name</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.actors.user.type</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.actors.user.uid</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.additionalSequenceTypes</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.description</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.endpoints.autonomousSystem.name</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.endpoints.autonomousSystem.number</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.endpoints.connection.direction</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.endpoints.domain</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.endpoints.id</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.endpoints.ip</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.endpoints.location.city</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.endpoints.location.country</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.endpoints.location.lat</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.endpoints.location.lon</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.endpoints.port</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.accountId</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.cloudPartition</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.accessKey.principalId</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.accessKey.userName</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.accessKey.userType</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.autoscalingAutoScalingGroup.ec2InstanceUids</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.cloudformationStack.ec2InstanceUids</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.container.image</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.container.imageUid</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.ec2Image.ec2InstanceUids</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.ec2Instance.availabilityZone</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.ec2Instance.ec2NetworkInterfaceUids</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.ec2Instance.iamInstanceProfile.arn</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.ec2Instance.iamInstanceProfile.id</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.ec2Instance.imageDescription</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.ec2Instance.instanceState</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.ec2Instance.instanceType</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.ec2Instance.outpostArn</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.ec2Instance.platform</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.ec2Instance.productCodes.productCodeId</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.ec2Instance.productCodes.productCodeType</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.ec2LaunchTemplate.ec2InstanceUids</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.ec2LaunchTemplate.version</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.ec2NetworkInterface.ipv6Addresses</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.ec2NetworkInterface.privateIpAddresses.privateDnsName</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.ec2NetworkInterface.privateIpAddresses.privateIpAddress</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.ec2NetworkInterface.publicIp</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.ec2NetworkInterface.securityGroups.groupId</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.ec2NetworkInterface.securityGroups.groupName</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.ec2NetworkInterface.subNetId</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.ec2NetworkInterface.vpcId</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.ec2Vpc.ec2InstanceUids</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.ecsCluster.ec2InstanceUids</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.ecsCluster.status</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.ecsTask.containerUids</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.ecsTask.createdAt</p>
+    /// <p>Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.ecsTask.launchType</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.ecsTask.taskDefinitionArn</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.eksCluster.arn</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.eksCluster.createdAt</p>
+    /// <p>Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.eksCluster.ec2InstanceUids</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.eksCluster.status</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.eksCluster.vpcId</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.iamInstanceProfile.ec2InstanceUids</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.iamInstanceProfile.id</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.kubernetesWorkload.containerUids</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.kubernetesWorkload.namespace</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.kubernetesWorkload.type</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.s3Bucket.accountPublicAccess.publicAclAccess</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.s3Bucket.accountPublicAccess.publicAclIgnoreBehavior</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.s3Bucket.accountPublicAccess.publicBucketRestrictBehavior</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.s3Bucket.accountPublicAccess.publicPolicyAccess</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.s3Bucket.bucketPublicAccess.publicAclAccess</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.s3Bucket.bucketPublicAccess.publicAclIgnoreBehavior</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.s3Bucket.bucketPublicAccess.publicBucketRestrictBehavior</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.s3Bucket.bucketPublicAccess.publicPolicyAccess</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.s3Bucket.createdAt</p>
+    /// <p>Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.s3Bucket.effectivePermission</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.s3Bucket.encryptionKeyArn</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.s3Bucket.encryptionType</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.s3Bucket.ownerId</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.s3Bucket.publicReadAccess</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.s3Bucket.publicWriteAccess</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.s3Bucket.s3ObjectUids</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.s3Object.eTag</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.s3Object.key</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.s3Object.versionId</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.name</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.region</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.resourceType</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.service</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.tags.key</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.tags.value</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.uid</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.sequenceIndicators.key</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.sequenceIndicators.title</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.sequenceIndicators.values</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.signals.actorIds</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.signals.count</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.signals.createdAt</p>
+    /// <p>Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.signals.description</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.signals.endpointIds</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.signals.firstSeenAt</p>
+    /// <p>Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.signals.lastSeenAt</p>
+    /// <p>Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.signals.name</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.signals.resourceUids</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.signals.severity</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.signals.signalIndicators.key</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.signals.signalIndicators.title</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.signals.signalIndicators.values</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.signals.type</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.signals.uid</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.signals.updatedAt</p>
+    /// <p>Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.uid</p></li>
+    /// <li>
+    /// <p>service.detectorId</p></li>
+    /// <li>
+    /// <p>service.ebsVolumeScanDetails.scanCompletedAt</p>
+    /// <p>Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000</p></li>
+    /// <li>
+    /// <p>service.ebsVolumeScanDetails.scanDetections.highestSeverityThreatDetails.count</p></li>
+    /// <li>
+    /// <p>service.ebsVolumeScanDetails.scanDetections.highestSeverityThreatDetails.severity</p></li>
+    /// <li>
+    /// <p>service.ebsVolumeScanDetails.scanDetections.highestSeverityThreatDetails.threatName</p></li>
+    /// <li>
+    /// <p>service.ebsVolumeScanDetails.scanDetections.scannedItemCount.files</p></li>
+    /// <li>
+    /// <p>service.ebsVolumeScanDetails.scanDetections.scannedItemCount.totalGb</p></li>
+    /// <li>
+    /// <p>service.ebsVolumeScanDetails.scanDetections.scannedItemCount.volumes</p></li>
+    /// <li>
+    /// <p>service.ebsVolumeScanDetails.scanDetections.threatDetectedByName.itemCount</p></li>
+    /// <li>
+    /// <p>service.ebsVolumeScanDetails.scanDetections.threatDetectedByName.shortened</p></li>
+    /// <li>
+    /// <p>service.ebsVolumeScanDetails.scanDetections.threatDetectedByName.threatNames.filePaths.fileName</p></li>
+    /// <li>
+    /// <p>service.ebsVolumeScanDetails.scanDetections.threatDetectedByName.threatNames.filePaths.filePath</p></li>
+    /// <li>
+    /// <p>service.ebsVolumeScanDetails.scanDetections.threatDetectedByName.threatNames.filePaths.hash</p></li>
+    /// <li>
+    /// <p>service.ebsVolumeScanDetails.scanDetections.threatDetectedByName.threatNames.filePaths.volumeArn</p></li>
+    /// <li>
+    /// <p>service.ebsVolumeScanDetails.scanDetections.threatDetectedByName.threatNames.itemCount</p></li>
     /// <li>
     /// <p>service.ebsVolumeScanDetails.scanDetections.threatDetectedByName.threatNames.name</p></li>
     /// <li>
     /// <p>service.ebsVolumeScanDetails.scanDetections.threatDetectedByName.threatNames.severity</p></li>
     /// <li>
-    /// <p>service.ebsVolumeScanDetails.scanDetections.threatDetectedByName.threatNames.filePaths.hash</p></li>
+    /// <p>service.ebsVolumeScanDetails.scanDetections.threatDetectedByName.uniqueThreatNameCount</p></li>
     /// <li>
-    /// <p>resource.ecsClusterDetails.name</p></li>
+    /// <p>service.ebsVolumeScanDetails.scanDetections.threatsDetectedItemCount.files</p></li>
     /// <li>
-    /// <p>resource.ecsClusterDetails.taskDetails.containers.image</p></li>
+    /// <p>service.ebsVolumeScanDetails.scanId</p></li>
     /// <li>
-    /// <p>resource.ecsClusterDetails.taskDetails.definitionArn</p></li>
+    /// <p>service.ebsVolumeScanDetails.scanStartedAt</p>
+    /// <p>Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000</p></li>
     /// <li>
-    /// <p>resource.containerDetails.image</p></li>
+    /// <p>service.ebsVolumeScanDetails.scanType</p></li>
     /// <li>
-    /// <p>resource.rdsDbInstanceDetails.dbInstanceIdentifier</p></li>
+    /// <p>service.ebsVolumeScanDetails.sources</p></li>
     /// <li>
-    /// <p>resource.rdsDbInstanceDetails.dbClusterIdentifier</p></li>
+    /// <p>service.ebsVolumeScanDetails.triggerFindingId</p></li>
     /// <li>
-    /// <p>resource.rdsDbInstanceDetails.engine</p></li>
+    /// <p>service.eventFirstSeen</p>
+    /// <p>Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000</p></li>
     /// <li>
-    /// <p>resource.rdsDbUserDetails.user</p></li>
+    /// <p>service.eventLastSeen</p>
+    /// <p>Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000</p></li>
     /// <li>
-    /// <p>resource.rdsDbInstanceDetails.tags.key</p></li>
+    /// <p>service.evidence.threatIntelligenceDetails.threatFileSha256</p></li>
     /// <li>
-    /// <p>resource.rdsDbInstanceDetails.tags.value</p></li>
+    /// <p>service.evidence.threatIntelligenceDetails.threatListName</p></li>
     /// <li>
-    /// <p>service.runtimeDetails.process.executableSha256</p></li>
+    /// <p>service.evidence.threatIntelligenceDetails.threatNames</p></li>
     /// <li>
-    /// <p>service.runtimeDetails.process.name</p></li>
+    /// <p>service.featureName</p></li>
+    /// <li>
+    /// <p>service.malwareScanDetails.scanCategory</p></li>
+    /// <li>
+    /// <p>service.malwareScanDetails.scanConfiguration.incrementalScanDetails.baselineResourceArn</p></li>
+    /// <li>
+    /// <p>service.malwareScanDetails.scanConfiguration.triggerType</p></li>
+    /// <li>
+    /// <p>service.malwareScanDetails.scanId</p></li>
+    /// <li>
+    /// <p>service.malwareScanDetails.scanType</p></li>
+    /// <li>
+    /// <p>service.malwareScanDetails.threats.count</p></li>
+    /// <li>
+    /// <p>service.malwareScanDetails.threats.hash</p></li>
+    /// <li>
+    /// <p>service.malwareScanDetails.threats.itemDetails.additionalInfo.deviceName</p></li>
+    /// <li>
+    /// <p>service.malwareScanDetails.threats.itemDetails.additionalInfo.versionId</p></li>
+    /// <li>
+    /// <p>service.malwareScanDetails.threats.itemDetails.hash</p></li>
+    /// <li>
+    /// <p>service.malwareScanDetails.threats.itemDetails.itemPath</p></li>
+    /// <li>
+    /// <p>service.malwareScanDetails.threats.itemDetails.resourceArn</p></li>
+    /// <li>
+    /// <p>service.malwareScanDetails.threats.itemPaths.hash</p></li>
+    /// <li>
+    /// <p>service.malwareScanDetails.threats.itemPaths.nestedItemPath</p></li>
+    /// <li>
+    /// <p>service.malwareScanDetails.threats.name</p></li>
+    /// <li>
+    /// <p>service.malwareScanDetails.threats.source</p></li>
+    /// <li>
+    /// <p>service.malwareScanDetails.uniqueThreatCount</p></li>
+    /// <li>
+    /// <p>service.resourceRole</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.addressFamily</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.commandLineExample</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.fileOperation</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.filePath</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.fileSystemType</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.flags</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.ianaProtocolNumber</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.ldPreloadValue</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.libraryPath</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.memoryRegions</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.modifiedAt</p>
+    /// <p>Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.modifyingProcess.euid</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.modifyingProcess.executablePath</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.modifyingProcess.executableSha256</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.modifyingProcess.lineage.euid</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.modifyingProcess.lineage.executablePath</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.modifyingProcess.lineage.name</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.modifyingProcess.lineage.namespacePid</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.modifyingProcess.lineage.parentUuid</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.modifyingProcess.lineage.pid</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.modifyingProcess.lineage.startTime</p>
+    /// <p>Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.modifyingProcess.lineage.userId</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.modifyingProcess.lineage.uuid</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.modifyingProcess.name</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.modifyingProcess.namespacePid</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.modifyingProcess.parentUuid</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.modifyingProcess.pid</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.modifyingProcess.pwd</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.modifyingProcess.startTime</p>
+    /// <p>Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.modifyingProcess.user</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.modifyingProcess.userId</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.modifyingProcess.uuid</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.moduleFilePath</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.moduleName</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.moduleSha256</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.mountSource</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.mountTarget</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.relatedFilePaths</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.releaseAgentPath</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.runcBinaryPath</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.scriptPath</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.serviceName</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.shellHistoryFilePath</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.socketPath</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.targetProcess.euid</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.targetProcess.executablePath</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.targetProcess.executableSha256</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.targetProcess.lineage.euid</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.targetProcess.lineage.executablePath</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.targetProcess.lineage.name</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.targetProcess.lineage.namespacePid</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.targetProcess.lineage.parentUuid</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.targetProcess.lineage.pid</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.targetProcess.lineage.startTime</p>
+    /// <p>Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.targetProcess.lineage.userId</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.targetProcess.lineage.uuid</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.targetProcess.name</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.targetProcess.namespacePid</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.targetProcess.parentUuid</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.targetProcess.pid</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.targetProcess.pwd</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.targetProcess.startTime</p>
+    /// <p>Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.targetProcess.user</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.targetProcess.userId</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.targetProcess.uuid</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.threatFilePath</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.toolCategory</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.toolName</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.process.euid</p></li>
     /// <li>
     /// <p>service.runtimeDetails.process.executablePath</p></li>
     /// <li>
-    /// <p>resource.lambdaDetails.functionName</p></li>
+    /// <p>service.runtimeDetails.process.executableSha256</p></li>
     /// <li>
-    /// <p>resource.lambdaDetails.functionArn</p></li>
+    /// <p>service.runtimeDetails.process.lineage.euid</p></li>
     /// <li>
-    /// <p>resource.lambdaDetails.tags.key</p></li>
+    /// <p>service.runtimeDetails.process.lineage.executablePath</p></li>
     /// <li>
-    /// <p>resource.lambdaDetails.tags.value</p></li>
+    /// <p>service.runtimeDetails.process.lineage.name</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.process.lineage.namespacePid</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.process.lineage.parentUuid</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.process.lineage.pid</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.process.lineage.startTime</p>
+    /// <p>Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.process.lineage.userId</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.process.lineage.uuid</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.process.name</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.process.namespacePid</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.process.parentUuid</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.process.pid</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.process.pwd</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.process.startTime</p>
+    /// <p>Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.process.user</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.process.userId</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.process.uuid</p></li>
+    /// <li>
+    /// <p>service.serviceName</p></li>
+    /// <li>
+    /// <p>service.userFeedback</p></li>
+    /// <li>
+    /// <p>severity</p>
+    /// <p>To configure severity based filters, use the following for the <a href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_FindingCriteria.html">FindingCriteria</a> condition:</p>
+    /// <ul>
+    /// <li>
+    /// <p><b>Low</b>: <code>\["1", "2", "3"\]</code></p></li>
+    /// <li>
+    /// <p><b>Medium</b>: <code>\["4", "5", "6"\]</code></p></li>
+    /// <li>
+    /// <p><b>High</b>: <code>\["7", "8"\]</code></p></li>
+    /// <li>
+    /// <p><b>Critical</b>: <code>\["9", "10"\]</code></p></li>
+    /// </ul>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings-severity.html">Findings severity levels</a> in the <i>Amazon GuardDuty User Guide</i>.</p></li>
+    /// <li>
+    /// <p>title</p></li>
+    /// <li>
+    /// <p>type</p></li>
+    /// <li>
+    /// <p>updatedAt</p>
+    /// <p>Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000</p></li>
     /// </ul>
     pub fn finding_criteria(&self) -> ::std::option::Option<&crate::types::FindingCriteria> {
         self.finding_criteria.as_ref()
@@ -541,16 +2725,19 @@ impl CreateFilterInputBuilder {
         &self.description
     }
     /// <p>Specifies the action that is to be applied to the findings that match the filter.</p>
+    /// <p>Default: NOOP</p>
     pub fn action(mut self, input: crate::types::FilterAction) -> Self {
         self.action = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies the action that is to be applied to the findings that match the filter.</p>
+    /// <p>Default: NOOP</p>
     pub fn set_action(mut self, input: ::std::option::Option<crate::types::FilterAction>) -> Self {
         self.action = input;
         self
     }
     /// <p>Specifies the action that is to be applied to the findings that match the filter.</p>
+    /// <p>Default: NOOP</p>
     pub fn get_action(&self) -> &::std::option::Option<crate::types::FilterAction> {
         &self.action
     }
@@ -568,54 +2755,227 @@ impl CreateFilterInputBuilder {
     pub fn get_rank(&self) -> &::std::option::Option<i32> {
         &self.rank
     }
-    /// <p>Represents the criteria to be used in the filter for querying findings.</p>
-    /// <p>You can only use the following attributes to query findings:</p>
+    /// <p>Represents the criteria to be used in the filter for querying findings. The following fields are available for filtering:</p>
     /// <ul>
     /// <li>
     /// <p>accountId</p></li>
     /// <li>
+    /// <p>arn</p></li>
+    /// <li>
+    /// <p>associatedAttackSequenceArn</p></li>
+    /// <li>
+    /// <p>confidence</p></li>
+    /// <li>
+    /// <p>createdAt</p>
+    /// <p>Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000</p></li>
+    /// <li>
+    /// <p>description</p></li>
+    /// <li>
     /// <p>id</p></li>
     /// <li>
+    /// <p>partition</p></li>
+    /// <li>
     /// <p>region</p></li>
-    /// <li>
-    /// <p>severity</p>
-    /// <p>To filter on the basis of severity, the API and CLI use the following input list for the <a href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_FindingCriteria.html">FindingCriteria</a> condition:</p>
-    /// <ul>
-    /// <li>
-    /// <p><b>Low</b>: <code>\["1", "2", "3"\]</code></p></li>
-    /// <li>
-    /// <p><b>Medium</b>: <code>\["4", "5", "6"\]</code></p></li>
-    /// <li>
-    /// <p><b>High</b>: <code>\["7", "8"\]</code></p></li>
-    /// <li>
-    /// <p><b>Critical</b>: <code>\["9", "10"\]</code></p></li>
-    /// </ul>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings-severity.html">Findings severity levels</a> in the <i>Amazon GuardDuty User Guide</i>.</p></li>
-    /// <li>
-    /// <p>type</p></li>
-    /// <li>
-    /// <p>updatedAt</p>
-    /// <p>Type: ISO 8601 string format: YYYY-MM-DDTHH:MM:SS.SSSZ or YYYY-MM-DDTHH:MM:SSZ depending on whether the value contains milliseconds.</p></li>
     /// <li>
     /// <p>resource.accessKeyDetails.accessKeyId</p></li>
     /// <li>
     /// <p>resource.accessKeyDetails.principalId</p></li>
     /// <li>
+    /// <p>resource.accessKeyDetails.userIdentity.accessKeyId</p></li>
+    /// <li>
+    /// <p>resource.accessKeyDetails.userIdentity.accountId</p></li>
+    /// <li>
+    /// <p>resource.accessKeyDetails.userIdentity.arn</p></li>
+    /// <li>
+    /// <p>resource.accessKeyDetails.userIdentity.principalId</p></li>
+    /// <li>
+    /// <p>resource.accessKeyDetails.userIdentity.sessionContext.attributes.mfaAuthenticated</p></li>
+    /// <li>
+    /// <p>resource.accessKeyDetails.userIdentity.sessionContext.ec2RoleDelivery</p></li>
+    /// <li>
+    /// <p>resource.accessKeyDetails.userIdentity.sessionContext.invokedBy</p></li>
+    /// <li>
+    /// <p>resource.accessKeyDetails.userIdentity.sessionContext.sessionIssuer.accountId</p></li>
+    /// <li>
+    /// <p>resource.accessKeyDetails.userIdentity.sessionContext.sessionIssuer.arn</p></li>
+    /// <li>
+    /// <p>resource.accessKeyDetails.userIdentity.sessionContext.sessionIssuer.principalId</p></li>
+    /// <li>
+    /// <p>resource.accessKeyDetails.userIdentity.sessionContext.sessionIssuer.type</p></li>
+    /// <li>
+    /// <p>resource.accessKeyDetails.userIdentity.sessionContext.sessionIssuer.userName</p></li>
+    /// <li>
+    /// <p>resource.accessKeyDetails.userIdentity.sessionContext.sourceIdentity</p></li>
+    /// <li>
+    /// <p>resource.accessKeyDetails.userIdentity.sessionContext.webIdFederationData.attributes</p></li>
+    /// <li>
+    /// <p>resource.accessKeyDetails.userIdentity.sessionContext.webIdFederationData.federatedProvider</p></li>
+    /// <li>
+    /// <p>resource.accessKeyDetails.userIdentity.type</p></li>
+    /// <li>
+    /// <p>resource.accessKeyDetails.userIdentity.userName</p></li>
+    /// <li>
     /// <p>resource.accessKeyDetails.userName</p></li>
     /// <li>
     /// <p>resource.accessKeyDetails.userType</p></li>
     /// <li>
+    /// <p>resource.bedrockGuardrailDetails.guardrailArn</p></li>
+    /// <li>
+    /// <p>resource.bedrockGuardrailDetails.guardrailVersion</p></li>
+    /// <li>
+    /// <p>resource.containerDetails.containerRuntime</p></li>
+    /// <li>
+    /// <p>resource.containerDetails.id</p></li>
+    /// <li>
+    /// <p>resource.containerDetails.image</p></li>
+    /// <li>
+    /// <p>resource.containerDetails.imagePrefix</p></li>
+    /// <li>
+    /// <p>resource.containerDetails.name</p></li>
+    /// <li>
+    /// <p>resource.containerDetails.securityContext.allowPrivilegeEscalation</p></li>
+    /// <li>
+    /// <p>resource.containerDetails.securityContext.privileged</p></li>
+    /// <li>
+    /// <p>resource.containerDetails.volumeMounts.mountPath</p></li>
+    /// <li>
+    /// <p>resource.containerDetails.volumeMounts.name</p></li>
+    /// <li>
+    /// <p>resource.ebsSnapshotDetails.snapshotArn</p></li>
+    /// <li>
+    /// <p>resource.ebsVolumeDetails.scannedVolumeDetails.deviceName</p></li>
+    /// <li>
+    /// <p>resource.ebsVolumeDetails.scannedVolumeDetails.encryptionType</p></li>
+    /// <li>
+    /// <p>resource.ebsVolumeDetails.scannedVolumeDetails.kmsKeyArn</p></li>
+    /// <li>
+    /// <p>resource.ebsVolumeDetails.scannedVolumeDetails.snapshotArn</p></li>
+    /// <li>
+    /// <p>resource.ebsVolumeDetails.scannedVolumeDetails.volumeArn</p></li>
+    /// <li>
+    /// <p>resource.ebsVolumeDetails.scannedVolumeDetails.volumeSizeInGB</p></li>
+    /// <li>
+    /// <p>resource.ebsVolumeDetails.scannedVolumeDetails.volumeType</p></li>
+    /// <li>
+    /// <p>resource.ebsVolumeDetails.skippedVolumeDetails.deviceName</p></li>
+    /// <li>
+    /// <p>resource.ebsVolumeDetails.skippedVolumeDetails.encryptionType</p></li>
+    /// <li>
+    /// <p>resource.ebsVolumeDetails.skippedVolumeDetails.kmsKeyArn</p></li>
+    /// <li>
+    /// <p>resource.ebsVolumeDetails.skippedVolumeDetails.snapshotArn</p></li>
+    /// <li>
+    /// <p>resource.ebsVolumeDetails.skippedVolumeDetails.volumeArn</p></li>
+    /// <li>
+    /// <p>resource.ebsVolumeDetails.skippedVolumeDetails.volumeSizeInGB</p></li>
+    /// <li>
+    /// <p>resource.ebsVolumeDetails.skippedVolumeDetails.volumeType</p></li>
+    /// <li>
+    /// <p>resource.ec2ImageDetails.imageArn</p></li>
+    /// <li>
+    /// <p>resource.ecsClusterDetails.activeServicesCount</p></li>
+    /// <li>
+    /// <p>resource.ecsClusterDetails.arn</p></li>
+    /// <li>
+    /// <p>resource.ecsClusterDetails.name</p></li>
+    /// <li>
+    /// <p>resource.ecsClusterDetails.registeredContainerInstancesCount</p></li>
+    /// <li>
+    /// <p>resource.ecsClusterDetails.runningTasksCount</p></li>
+    /// <li>
+    /// <p>resource.ecsClusterDetails.status</p></li>
+    /// <li>
+    /// <p>resource.ecsClusterDetails.tags.key</p></li>
+    /// <li>
+    /// <p>resource.ecsClusterDetails.tags.value</p></li>
+    /// <li>
+    /// <p>resource.ecsClusterDetails.taskDetails.arn</p></li>
+    /// <li>
+    /// <p>resource.ecsClusterDetails.taskDetails.containers.containerRuntime</p></li>
+    /// <li>
+    /// <p>resource.ecsClusterDetails.taskDetails.containers.id</p></li>
+    /// <li>
+    /// <p>resource.ecsClusterDetails.taskDetails.containers.image</p></li>
+    /// <li>
+    /// <p>resource.ecsClusterDetails.taskDetails.containers.imagePrefix</p></li>
+    /// <li>
+    /// <p>resource.ecsClusterDetails.taskDetails.containers.name</p></li>
+    /// <li>
+    /// <p>resource.ecsClusterDetails.taskDetails.containers.securityContext.allowPrivilegeEscalation</p></li>
+    /// <li>
+    /// <p>resource.ecsClusterDetails.taskDetails.containers.securityContext.privileged</p></li>
+    /// <li>
+    /// <p>resource.ecsClusterDetails.taskDetails.containers.volumeMounts.mountPath</p></li>
+    /// <li>
+    /// <p>resource.ecsClusterDetails.taskDetails.containers.volumeMounts.name</p></li>
+    /// <li>
+    /// <p>resource.ecsClusterDetails.taskDetails.createdAt</p>
+    /// <p>Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000</p></li>
+    /// <li>
+    /// <p>resource.ecsClusterDetails.taskDetails.definitionArn</p></li>
+    /// <li>
+    /// <p>resource.ecsClusterDetails.taskDetails.group</p></li>
+    /// <li>
+    /// <p>resource.ecsClusterDetails.taskDetails.launchType</p></li>
+    /// <li>
+    /// <p>resource.ecsClusterDetails.taskDetails.startedAt</p>
+    /// <p>Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000</p></li>
+    /// <li>
+    /// <p>resource.ecsClusterDetails.taskDetails.startedBy</p></li>
+    /// <li>
+    /// <p>resource.ecsClusterDetails.taskDetails.tags.key</p></li>
+    /// <li>
+    /// <p>resource.ecsClusterDetails.taskDetails.tags.value</p></li>
+    /// <li>
+    /// <p>resource.ecsClusterDetails.taskDetails.version</p></li>
+    /// <li>
+    /// <p>resource.ecsClusterDetails.taskDetails.volumes.hostPath.path</p></li>
+    /// <li>
+    /// <p>resource.ecsClusterDetails.taskDetails.volumes.name</p></li>
+    /// <li>
+    /// <p>resource.eksClusterDetails.arn</p></li>
+    /// <li>
+    /// <p>resource.eksClusterDetails.createdAt</p>
+    /// <p>Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000</p></li>
+    /// <li>
+    /// <p>resource.eksClusterDetails.name</p></li>
+    /// <li>
+    /// <p>resource.eksClusterDetails.status</p></li>
+    /// <li>
+    /// <p>resource.eksClusterDetails.tags.key</p></li>
+    /// <li>
+    /// <p>resource.eksClusterDetails.tags.value</p></li>
+    /// <li>
+    /// <p>resource.eksClusterDetails.vpcId</p></li>
+    /// <li>
+    /// <p>resource.instanceDetails.availabilityZone</p></li>
+    /// <li>
+    /// <p>resource.instanceDetails.iamInstanceProfile.arn</p></li>
+    /// <li>
     /// <p>resource.instanceDetails.iamInstanceProfile.id</p></li>
+    /// <li>
+    /// <p>resource.instanceDetails.imageDescription</p></li>
     /// <li>
     /// <p>resource.instanceDetails.imageId</p></li>
     /// <li>
     /// <p>resource.instanceDetails.instanceId</p></li>
     /// <li>
-    /// <p>resource.instanceDetails.tags.key</p></li>
+    /// <p>resource.instanceDetails.instanceState</p></li>
     /// <li>
-    /// <p>resource.instanceDetails.tags.value</p></li>
+    /// <p>resource.instanceDetails.instanceType</p></li>
+    /// <li>
+    /// <p>resource.instanceDetails.launchTime</p>
+    /// <p>Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000</p></li>
     /// <li>
     /// <p>resource.instanceDetails.networkInterfaces.ipv6Addresses</p></li>
+    /// <li>
+    /// <p>resource.instanceDetails.networkInterfaces.networkInterfaceId</p></li>
+    /// <li>
+    /// <p>resource.instanceDetails.networkInterfaces.privateDnsName</p></li>
+    /// <li>
+    /// <p>resource.instanceDetails.networkInterfaces.privateIpAddress</p></li>
+    /// <li>
+    /// <p>resource.instanceDetails.networkInterfaces.privateIpAddresses.privateDnsName</p></li>
     /// <li>
     /// <p>resource.instanceDetails.networkInterfaces.privateIpAddresses.privateIpAddress</p></li>
     /// <li>
@@ -633,11 +2993,203 @@ impl CreateFilterInputBuilder {
     /// <li>
     /// <p>resource.instanceDetails.outpostArn</p></li>
     /// <li>
+    /// <p>resource.instanceDetails.platform</p></li>
+    /// <li>
+    /// <p>resource.instanceDetails.productCodes.productCodeId</p></li>
+    /// <li>
+    /// <p>resource.instanceDetails.productCodes.productCodeType</p></li>
+    /// <li>
+    /// <p>resource.instanceDetails.tags.key</p></li>
+    /// <li>
+    /// <p>resource.instanceDetails.tags.value</p></li>
+    /// <li>
+    /// <p>resource.kubernetesDetails.kubernetesUserDetails.groups</p></li>
+    /// <li>
+    /// <p>resource.kubernetesDetails.kubernetesUserDetails.impersonatedUser.groups</p></li>
+    /// <li>
+    /// <p>resource.kubernetesDetails.kubernetesUserDetails.impersonatedUser.username</p></li>
+    /// <li>
+    /// <p>resource.kubernetesDetails.kubernetesUserDetails.sessionName</p></li>
+    /// <li>
+    /// <p>resource.kubernetesDetails.kubernetesUserDetails.uid</p></li>
+    /// <li>
+    /// <p>resource.kubernetesDetails.kubernetesUserDetails.username</p></li>
+    /// <li>
+    /// <p>resource.kubernetesDetails.kubernetesWorkloadDetails.containers.containerRuntime</p></li>
+    /// <li>
+    /// <p>resource.kubernetesDetails.kubernetesWorkloadDetails.containers.id</p></li>
+    /// <li>
+    /// <p>resource.kubernetesDetails.kubernetesWorkloadDetails.containers.image</p></li>
+    /// <li>
+    /// <p>resource.kubernetesDetails.kubernetesWorkloadDetails.containers.imagePrefix</p></li>
+    /// <li>
+    /// <p>resource.kubernetesDetails.kubernetesWorkloadDetails.containers.name</p></li>
+    /// <li>
+    /// <p>resource.kubernetesDetails.kubernetesWorkloadDetails.containers.securityContext.allowPrivilegeEscalation</p></li>
+    /// <li>
+    /// <p>resource.kubernetesDetails.kubernetesWorkloadDetails.containers.securityContext.privileged</p></li>
+    /// <li>
+    /// <p>resource.kubernetesDetails.kubernetesWorkloadDetails.containers.volumeMounts.mountPath</p></li>
+    /// <li>
+    /// <p>resource.kubernetesDetails.kubernetesWorkloadDetails.containers.volumeMounts.name</p></li>
+    /// <li>
+    /// <p>resource.kubernetesDetails.kubernetesWorkloadDetails.hostIpc</p></li>
+    /// <li>
+    /// <p>resource.kubernetesDetails.kubernetesWorkloadDetails.hostNetwork</p></li>
+    /// <li>
+    /// <p>resource.kubernetesDetails.kubernetesWorkloadDetails.hostPid</p></li>
+    /// <li>
+    /// <p>resource.kubernetesDetails.kubernetesWorkloadDetails.name</p></li>
+    /// <li>
+    /// <p>resource.kubernetesDetails.kubernetesWorkloadDetails.namespace</p></li>
+    /// <li>
+    /// <p>resource.kubernetesDetails.kubernetesWorkloadDetails.serviceAccountName</p></li>
+    /// <li>
+    /// <p>resource.kubernetesDetails.kubernetesWorkloadDetails.type</p></li>
+    /// <li>
+    /// <p>resource.kubernetesDetails.kubernetesWorkloadDetails.uid</p></li>
+    /// <li>
+    /// <p>resource.kubernetesDetails.kubernetesWorkloadDetails.volumes.hostPath.path</p></li>
+    /// <li>
+    /// <p>resource.kubernetesDetails.kubernetesWorkloadDetails.volumes.name</p></li>
+    /// <li>
+    /// <p>resource.lambdaDetails.description</p></li>
+    /// <li>
+    /// <p>resource.lambdaDetails.functionArn</p></li>
+    /// <li>
+    /// <p>resource.lambdaDetails.functionName</p></li>
+    /// <li>
+    /// <p>resource.lambdaDetails.functionVersion</p></li>
+    /// <li>
+    /// <p>resource.lambdaDetails.lastModifiedAt</p>
+    /// <p>Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000</p></li>
+    /// <li>
+    /// <p>resource.lambdaDetails.revisionId</p></li>
+    /// <li>
+    /// <p>resource.lambdaDetails.role</p></li>
+    /// <li>
+    /// <p>resource.lambdaDetails.tags.key</p></li>
+    /// <li>
+    /// <p>resource.lambdaDetails.tags.value</p></li>
+    /// <li>
+    /// <p>resource.lambdaDetails.vpcConfig.securityGroups.groupId</p></li>
+    /// <li>
+    /// <p>resource.lambdaDetails.vpcConfig.securityGroups.groupName</p></li>
+    /// <li>
+    /// <p>resource.lambdaDetails.vpcConfig.subnetIds</p></li>
+    /// <li>
+    /// <p>resource.lambdaDetails.vpcConfig.vpcId</p></li>
+    /// <li>
+    /// <p>resource.rdsDbInstanceDetails.dbClusterIdentifier</p></li>
+    /// <li>
+    /// <p>resource.rdsDbInstanceDetails.dbInstanceArn</p></li>
+    /// <li>
+    /// <p>resource.rdsDbInstanceDetails.dbInstanceIdentifier</p></li>
+    /// <li>
+    /// <p>resource.rdsDbInstanceDetails.dbSecurityGroups.name</p></li>
+    /// <li>
+    /// <p>resource.rdsDbInstanceDetails.dbSecurityGroups.status</p></li>
+    /// <li>
+    /// <p>resource.rdsDbInstanceDetails.dbiResourceId</p></li>
+    /// <li>
+    /// <p>resource.rdsDbInstanceDetails.engine</p></li>
+    /// <li>
+    /// <p>resource.rdsDbInstanceDetails.engineVersion</p></li>
+    /// <li>
+    /// <p>resource.rdsDbInstanceDetails.iamDatabaseAuthenticationEnabled</p></li>
+    /// <li>
+    /// <p>resource.rdsDbInstanceDetails.publiclyAccessible</p></li>
+    /// <li>
+    /// <p>resource.rdsDbInstanceDetails.tags.key</p></li>
+    /// <li>
+    /// <p>resource.rdsDbInstanceDetails.tags.value</p></li>
+    /// <li>
+    /// <p>resource.rdsDbInstanceDetails.vpcId</p></li>
+    /// <li>
+    /// <p>resource.rdsDbInstanceDetails.vpcSecurityGroups.status</p></li>
+    /// <li>
+    /// <p>resource.rdsDbInstanceDetails.vpcSecurityGroups.vpcSecurityGroupId</p></li>
+    /// <li>
+    /// <p>resource.rdsDbUserDetails.application</p></li>
+    /// <li>
+    /// <p>resource.rdsDbUserDetails.authMethod</p></li>
+    /// <li>
+    /// <p>resource.rdsDbUserDetails.database</p></li>
+    /// <li>
+    /// <p>resource.rdsDbUserDetails.ssl</p></li>
+    /// <li>
+    /// <p>resource.rdsDbUserDetails.user</p></li>
+    /// <li>
+    /// <p>resource.rdsLimitlessDbDetails.dbClusterIdentifier</p></li>
+    /// <li>
+    /// <p>resource.rdsLimitlessDbDetails.dbShardGroupArn</p></li>
+    /// <li>
+    /// <p>resource.rdsLimitlessDbDetails.dbShardGroupIdentifier</p></li>
+    /// <li>
+    /// <p>resource.rdsLimitlessDbDetails.dbShardGroupResourceId</p></li>
+    /// <li>
+    /// <p>resource.rdsLimitlessDbDetails.engine</p></li>
+    /// <li>
+    /// <p>resource.rdsLimitlessDbDetails.engineVersion</p></li>
+    /// <li>
+    /// <p>resource.rdsLimitlessDbDetails.tags.key</p></li>
+    /// <li>
+    /// <p>resource.rdsLimitlessDbDetails.tags.value</p></li>
+    /// <li>
+    /// <p>resource.recoveryPointDetails.backupVaultName</p></li>
+    /// <li>
+    /// <p>resource.recoveryPointDetails.recoveryPointArn</p></li>
+    /// <li>
     /// <p>resource.resourceType</p></li>
     /// <li>
-    /// <p>resource.s3BucketDetails.publicAccess.effectivePermissions</p></li>
+    /// <p>resource.s3BucketDetails.arn</p></li>
+    /// <li>
+    /// <p>resource.s3BucketDetails.createdAt</p>
+    /// <p>Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000</p></li>
+    /// <li>
+    /// <p>resource.s3BucketDetails.defaultServerSideEncryption.encryptionType</p></li>
+    /// <li>
+    /// <p>resource.s3BucketDetails.defaultServerSideEncryption.kmsMasterKeyArn</p></li>
     /// <li>
     /// <p>resource.s3BucketDetails.name</p></li>
+    /// <li>
+    /// <p>resource.s3BucketDetails.owner.id</p></li>
+    /// <li>
+    /// <p>resource.s3BucketDetails.publicAccess.effectivePermission</p></li>
+    /// <li>
+    /// <p>resource.s3BucketDetails.publicAccess.permissionConfiguration.accountLevelPermissions.blockPublicAccess.blockPublicAcls</p></li>
+    /// <li>
+    /// <p>resource.s3BucketDetails.publicAccess.permissionConfiguration.accountLevelPermissions.blockPublicAccess.blockPublicPolicy</p></li>
+    /// <li>
+    /// <p>resource.s3BucketDetails.publicAccess.permissionConfiguration.accountLevelPermissions.blockPublicAccess.ignorePublicAcls</p></li>
+    /// <li>
+    /// <p>resource.s3BucketDetails.publicAccess.permissionConfiguration.accountLevelPermissions.blockPublicAccess.restrictPublicBuckets</p></li>
+    /// <li>
+    /// <p>resource.s3BucketDetails.publicAccess.permissionConfiguration.bucketLevelPermissions.accessControlList.allowsPublicReadAccess</p></li>
+    /// <li>
+    /// <p>resource.s3BucketDetails.publicAccess.permissionConfiguration.bucketLevelPermissions.accessControlList.allowsPublicWriteAccess</p></li>
+    /// <li>
+    /// <p>resource.s3BucketDetails.publicAccess.permissionConfiguration.bucketLevelPermissions.blockPublicAccess.blockPublicAcls</p></li>
+    /// <li>
+    /// <p>resource.s3BucketDetails.publicAccess.permissionConfiguration.bucketLevelPermissions.blockPublicAccess.blockPublicPolicy</p></li>
+    /// <li>
+    /// <p>resource.s3BucketDetails.publicAccess.permissionConfiguration.bucketLevelPermissions.blockPublicAccess.ignorePublicAcls</p></li>
+    /// <li>
+    /// <p>resource.s3BucketDetails.publicAccess.permissionConfiguration.bucketLevelPermissions.blockPublicAccess.restrictPublicBuckets</p></li>
+    /// <li>
+    /// <p>resource.s3BucketDetails.publicAccess.permissionConfiguration.bucketLevelPermissions.bucketPolicy.allowsPublicReadAccess</p></li>
+    /// <li>
+    /// <p>resource.s3BucketDetails.publicAccess.permissionConfiguration.bucketLevelPermissions.bucketPolicy.allowsPublicWriteAccess</p></li>
+    /// <li>
+    /// <p>resource.s3BucketDetails.s3ObjectDetails.eTag</p></li>
+    /// <li>
+    /// <p>resource.s3BucketDetails.s3ObjectDetails.hash</p></li>
+    /// <li>
+    /// <p>resource.s3BucketDetails.s3ObjectDetails.key</p></li>
+    /// <li>
+    /// <p>resource.s3BucketDetails.s3ObjectDetails.objectArn</p></li>
+    /// <li>
+    /// <p>resource.s3BucketDetails.s3ObjectDetails.versionId</p></li>
     /// <li>
     /// <p>resource.s3BucketDetails.tags.key</p></li>
     /// <li>
@@ -645,17 +3197,35 @@ impl CreateFilterInputBuilder {
     /// <li>
     /// <p>resource.s3BucketDetails.type</p></li>
     /// <li>
+    /// <p>schemaVersion</p></li>
+    /// <li>
     /// <p>service.action.actionType</p></li>
+    /// <li>
+    /// <p>service.action.awsApiCallAction.affectedResources</p></li>
     /// <li>
     /// <p>service.action.awsApiCallAction.api</p></li>
     /// <li>
     /// <p>service.action.awsApiCallAction.callerType</p></li>
     /// <li>
+    /// <p>service.action.awsApiCallAction.domainDetails.domain</p></li>
+    /// <li>
     /// <p>service.action.awsApiCallAction.errorCode</p></li>
+    /// <li>
+    /// <p>service.action.awsApiCallAction.remoteAccountDetails.accountId</p></li>
+    /// <li>
+    /// <p>service.action.awsApiCallAction.remoteAccountDetails.affiliated</p></li>
+    /// <li>
+    /// <p>service.action.awsApiCallAction.remoteAccountDetails.awsServiceName</p></li>
     /// <li>
     /// <p>service.action.awsApiCallAction.remoteIpDetails.city.cityName</p></li>
     /// <li>
+    /// <p>service.action.awsApiCallAction.remoteIpDetails.country.countryCode</p></li>
+    /// <li>
     /// <p>service.action.awsApiCallAction.remoteIpDetails.country.countryName</p></li>
+    /// <li>
+    /// <p>service.action.awsApiCallAction.remoteIpDetails.geoLocation.lat</p></li>
+    /// <li>
+    /// <p>service.action.awsApiCallAction.remoteIpDetails.geoLocation.lon</p></li>
     /// <li>
     /// <p>service.action.awsApiCallAction.remoteIpDetails.ipAddressV4</p></li>
     /// <li>
@@ -665,25 +3235,115 @@ impl CreateFilterInputBuilder {
     /// <li>
     /// <p>service.action.awsApiCallAction.remoteIpDetails.organization.asnOrg</p></li>
     /// <li>
+    /// <p>service.action.awsApiCallAction.remoteIpDetails.organization.isp</p></li>
+    /// <li>
+    /// <p>service.action.awsApiCallAction.remoteIpDetails.organization.org</p></li>
+    /// <li>
     /// <p>service.action.awsApiCallAction.serviceName</p></li>
+    /// <li>
+    /// <p>service.action.awsApiCallAction.userAgent</p></li>
+    /// <li>
+    /// <p>service.action.dnsRequestAction.blocked</p></li>
     /// <li>
     /// <p>service.action.dnsRequestAction.domain</p></li>
     /// <li>
     /// <p>service.action.dnsRequestAction.domainWithSuffix</p></li>
     /// <li>
+    /// <p>service.action.dnsRequestAction.protocol</p></li>
+    /// <li>
     /// <p>service.action.dnsRequestAction.vpcOwnerAccountId</p></li>
+    /// <li>
+    /// <p>service.action.kubernetesApiCallAction.namespace</p></li>
+    /// <li>
+    /// <p>service.action.kubernetesApiCallAction.parameters</p></li>
+    /// <li>
+    /// <p>service.action.kubernetesApiCallAction.remoteIpDetails.city.cityName</p></li>
+    /// <li>
+    /// <p>service.action.kubernetesApiCallAction.remoteIpDetails.country.countryCode</p></li>
+    /// <li>
+    /// <p>service.action.kubernetesApiCallAction.remoteIpDetails.country.countryName</p></li>
+    /// <li>
+    /// <p>service.action.kubernetesApiCallAction.remoteIpDetails.geoLocation.lat</p></li>
+    /// <li>
+    /// <p>service.action.kubernetesApiCallAction.remoteIpDetails.geoLocation.lon</p></li>
+    /// <li>
+    /// <p>service.action.kubernetesApiCallAction.remoteIpDetails.ipAddressV4</p></li>
+    /// <li>
+    /// <p>service.action.kubernetesApiCallAction.remoteIpDetails.ipAddressV6</p></li>
+    /// <li>
+    /// <p>service.action.kubernetesApiCallAction.remoteIpDetails.organization.asn</p></li>
+    /// <li>
+    /// <p>service.action.kubernetesApiCallAction.remoteIpDetails.organization.asnOrg</p></li>
+    /// <li>
+    /// <p>service.action.kubernetesApiCallAction.remoteIpDetails.organization.isp</p></li>
+    /// <li>
+    /// <p>service.action.kubernetesApiCallAction.remoteIpDetails.organization.org</p></li>
+    /// <li>
+    /// <p>service.action.kubernetesApiCallAction.requestUri</p></li>
+    /// <li>
+    /// <p>service.action.kubernetesApiCallAction.resource</p></li>
+    /// <li>
+    /// <p>service.action.kubernetesApiCallAction.resourceName</p></li>
+    /// <li>
+    /// <p>service.action.kubernetesApiCallAction.sourceIPs</p></li>
+    /// <li>
+    /// <p>service.action.kubernetesApiCallAction.statusCode</p></li>
+    /// <li>
+    /// <p>service.action.kubernetesApiCallAction.subresource</p></li>
+    /// <li>
+    /// <p>service.action.kubernetesApiCallAction.userAgent</p></li>
+    /// <li>
+    /// <p>service.action.kubernetesApiCallAction.verb</p></li>
+    /// <li>
+    /// <p>service.action.kubernetesPermissionCheckedDetails.allowed</p></li>
+    /// <li>
+    /// <p>service.action.kubernetesPermissionCheckedDetails.namespace</p></li>
+    /// <li>
+    /// <p>service.action.kubernetesPermissionCheckedDetails.resource</p></li>
+    /// <li>
+    /// <p>service.action.kubernetesPermissionCheckedDetails.verb</p></li>
+    /// <li>
+    /// <p>service.action.kubernetesRoleBindingDetails.kind</p></li>
+    /// <li>
+    /// <p>service.action.kubernetesRoleBindingDetails.name</p></li>
+    /// <li>
+    /// <p>service.action.kubernetesRoleBindingDetails.roleRefKind</p></li>
+    /// <li>
+    /// <p>service.action.kubernetesRoleBindingDetails.roleRefName</p></li>
+    /// <li>
+    /// <p>service.action.kubernetesRoleBindingDetails.uid</p></li>
+    /// <li>
+    /// <p>service.action.kubernetesRoleDetails.kind</p></li>
+    /// <li>
+    /// <p>service.action.kubernetesRoleDetails.name</p></li>
+    /// <li>
+    /// <p>service.action.kubernetesRoleDetails.uid</p></li>
     /// <li>
     /// <p>service.action.networkConnectionAction.blocked</p></li>
     /// <li>
     /// <p>service.action.networkConnectionAction.connectionDirection</p></li>
     /// <li>
+    /// <p>service.action.networkConnectionAction.localIpDetails.ipAddressV4</p></li>
+    /// <li>
+    /// <p>service.action.networkConnectionAction.localIpDetails.ipAddressV6</p></li>
+    /// <li>
+    /// <p>service.action.networkConnectionAction.localNetworkInterface</p></li>
+    /// <li>
     /// <p>service.action.networkConnectionAction.localPortDetails.port</p></li>
+    /// <li>
+    /// <p>service.action.networkConnectionAction.localPortDetails.portName</p></li>
     /// <li>
     /// <p>service.action.networkConnectionAction.protocol</p></li>
     /// <li>
     /// <p>service.action.networkConnectionAction.remoteIpDetails.city.cityName</p></li>
     /// <li>
+    /// <p>service.action.networkConnectionAction.remoteIpDetails.country.countryCode</p></li>
+    /// <li>
     /// <p>service.action.networkConnectionAction.remoteIpDetails.country.countryName</p></li>
+    /// <li>
+    /// <p>service.action.networkConnectionAction.remoteIpDetails.geoLocation.lat</p></li>
+    /// <li>
+    /// <p>service.action.networkConnectionAction.remoteIpDetails.geoLocation.lon</p></li>
     /// <li>
     /// <p>service.action.networkConnectionAction.remoteIpDetails.ipAddressV4</p></li>
     /// <li>
@@ -693,143 +3353,934 @@ impl CreateFilterInputBuilder {
     /// <li>
     /// <p>service.action.networkConnectionAction.remoteIpDetails.organization.asnOrg</p></li>
     /// <li>
+    /// <p>service.action.networkConnectionAction.remoteIpDetails.organization.isp</p></li>
+    /// <li>
+    /// <p>service.action.networkConnectionAction.remoteIpDetails.organization.org</p></li>
+    /// <li>
     /// <p>service.action.networkConnectionAction.remotePortDetails.port</p></li>
     /// <li>
-    /// <p>service.action.awsApiCallAction.remoteAccountDetails.affiliated</p></li>
+    /// <p>service.action.networkConnectionAction.remotePortDetails.portName</p></li>
     /// <li>
-    /// <p>service.action.kubernetesApiCallAction.remoteIpDetails.ipAddressV4</p></li>
+    /// <p>service.action.portProbeAction.blocked</p></li>
     /// <li>
-    /// <p>service.action.kubernetesApiCallAction.remoteIpDetails.ipAddressV6</p></li>
+    /// <p>service.action.portProbeAction.portProbeDetails.localIpDetails.ipAddressV4</p></li>
     /// <li>
-    /// <p>service.action.kubernetesApiCallAction.namespace</p></li>
+    /// <p>service.action.portProbeAction.portProbeDetails.localIpDetails.ipAddressV6</p></li>
     /// <li>
-    /// <p>service.action.kubernetesApiCallAction.remoteIpDetails.organization.asn</p></li>
+    /// <p>service.action.portProbeAction.portProbeDetails.localPortDetails.port</p></li>
     /// <li>
-    /// <p>service.action.kubernetesApiCallAction.requestUri</p></li>
+    /// <p>service.action.portProbeAction.portProbeDetails.localPortDetails.portName</p></li>
     /// <li>
-    /// <p>service.action.kubernetesApiCallAction.statusCode</p></li>
+    /// <p>service.action.portProbeAction.portProbeDetails.remoteIpDetails.city.cityName</p></li>
     /// <li>
-    /// <p>service.action.networkConnectionAction.localIpDetails.ipAddressV4</p></li>
+    /// <p>service.action.portProbeAction.portProbeDetails.remoteIpDetails.country.countryCode</p></li>
     /// <li>
-    /// <p>service.action.networkConnectionAction.localIpDetails.ipAddressV6</p></li>
+    /// <p>service.action.portProbeAction.portProbeDetails.remoteIpDetails.country.countryName</p></li>
     /// <li>
-    /// <p>service.action.networkConnectionAction.protocol</p></li>
+    /// <p>service.action.portProbeAction.portProbeDetails.remoteIpDetails.geoLocation.lat</p></li>
     /// <li>
-    /// <p>service.action.awsApiCallAction.serviceName</p></li>
+    /// <p>service.action.portProbeAction.portProbeDetails.remoteIpDetails.geoLocation.lon</p></li>
     /// <li>
-    /// <p>service.action.awsApiCallAction.remoteAccountDetails.accountId</p></li>
+    /// <p>service.action.portProbeAction.portProbeDetails.remoteIpDetails.ipAddressV4</p></li>
+    /// <li>
+    /// <p>service.action.portProbeAction.portProbeDetails.remoteIpDetails.ipAddressV6</p></li>
+    /// <li>
+    /// <p>service.action.portProbeAction.portProbeDetails.remoteIpDetails.organization.asn</p></li>
+    /// <li>
+    /// <p>service.action.portProbeAction.portProbeDetails.remoteIpDetails.organization.asnOrg</p></li>
+    /// <li>
+    /// <p>service.action.portProbeAction.portProbeDetails.remoteIpDetails.organization.isp</p></li>
+    /// <li>
+    /// <p>service.action.portProbeAction.portProbeDetails.remoteIpDetails.organization.org</p></li>
+    /// <li>
+    /// <p>service.action.rdsLoginAttemptAction.loginAttributes.application</p></li>
+    /// <li>
+    /// <p>service.action.rdsLoginAttemptAction.loginAttributes.failedLoginAttempts</p></li>
+    /// <li>
+    /// <p>service.action.rdsLoginAttemptAction.loginAttributes.successfulLoginAttempts</p></li>
+    /// <li>
+    /// <p>service.action.rdsLoginAttemptAction.loginAttributes.user</p></li>
+    /// <li>
+    /// <p>service.action.rdsLoginAttemptAction.remoteIpDetails.city.cityName</p></li>
+    /// <li>
+    /// <p>service.action.rdsLoginAttemptAction.remoteIpDetails.country.countryCode</p></li>
+    /// <li>
+    /// <p>service.action.rdsLoginAttemptAction.remoteIpDetails.country.countryName</p></li>
+    /// <li>
+    /// <p>service.action.rdsLoginAttemptAction.remoteIpDetails.geoLocation.lat</p></li>
+    /// <li>
+    /// <p>service.action.rdsLoginAttemptAction.remoteIpDetails.geoLocation.lon</p></li>
+    /// <li>
+    /// <p>service.action.rdsLoginAttemptAction.remoteIpDetails.ipAddressV4</p></li>
+    /// <li>
+    /// <p>service.action.rdsLoginAttemptAction.remoteIpDetails.ipAddressV6</p></li>
+    /// <li>
+    /// <p>service.action.rdsLoginAttemptAction.remoteIpDetails.organization.asn</p></li>
+    /// <li>
+    /// <p>service.action.rdsLoginAttemptAction.remoteIpDetails.organization.asnOrg</p></li>
+    /// <li>
+    /// <p>service.action.rdsLoginAttemptAction.remoteIpDetails.organization.isp</p></li>
+    /// <li>
+    /// <p>service.action.rdsLoginAttemptAction.remoteIpDetails.organization.org</p></li>
+    /// <li>
+    /// <p>service.additionalInfo.agentDetails.agentId</p></li>
+    /// <li>
+    /// <p>service.additionalInfo.agentDetails.agentVersion</p></li>
+    /// <li>
+    /// <p>service.additionalInfo.anomalies.anomalousAPIs</p></li>
+    /// <li>
+    /// <p>service.additionalInfo.authenticationMethod</p></li>
+    /// <li>
+    /// <p>service.additionalInfo.averagePacketSizeIn</p></li>
+    /// <li>
+    /// <p>service.additionalInfo.averagePacketSizeOut</p></li>
+    /// <li>
+    /// <p>service.additionalInfo.context</p></li>
+    /// <li>
+    /// <p>service.additionalInfo.domain</p></li>
+    /// <li>
+    /// <p>service.additionalInfo.inBytes</p></li>
+    /// <li>
+    /// <p>service.additionalInfo.localNetworkInterfaceOwner</p></li>
+    /// <li>
+    /// <p>service.additionalInfo.localPort</p></li>
+    /// <li>
+    /// <p>service.additionalInfo.outBytes</p></li>
+    /// <li>
+    /// <p>service.additionalInfo.packetsIn</p></li>
+    /// <li>
+    /// <p>service.additionalInfo.packetsOut</p></li>
+    /// <li>
+    /// <p>service.additionalInfo.policyArn</p></li>
+    /// <li>
+    /// <p>service.additionalInfo.policyName</p></li>
+    /// <li>
+    /// <p>service.additionalInfo.remotePort</p></li>
+    /// <li>
+    /// <p>service.additionalInfo.sample</p></li>
+    /// <li>
+    /// <p>service.additionalInfo.scannedPort</p></li>
+    /// <li>
+    /// <p>service.additionalInfo.threatFileSha256</p></li>
     /// <li>
     /// <p>service.additionalInfo.threatListName</p></li>
     /// <li>
-    /// <p>service.resourceRole</p></li>
+    /// <p>service.additionalInfo.threatName</p></li>
     /// <li>
-    /// <p>resource.eksClusterDetails.name</p></li>
+    /// <p>service.additionalInfo.totalBytesIn</p></li>
     /// <li>
-    /// <p>resource.kubernetesDetails.kubernetesWorkloadDetails.name</p></li>
+    /// <p>service.additionalInfo.totalBytesOut</p></li>
     /// <li>
-    /// <p>resource.kubernetesDetails.kubernetesWorkloadDetails.namespace</p></li>
+    /// <p>service.additionalInfo.type</p></li>
     /// <li>
-    /// <p>resource.kubernetesDetails.kubernetesUserDetails.username</p></li>
+    /// <p>service.additionalInfo.unusual.asnOrg</p></li>
     /// <li>
-    /// <p>resource.kubernetesDetails.kubernetesWorkloadDetails.containers.image</p></li>
+    /// <p>service.additionalInfo.unusual.port</p></li>
     /// <li>
-    /// <p>resource.kubernetesDetails.kubernetesWorkloadDetails.containers.imagePrefix</p></li>
+    /// <p>service.additionalInfo.unusualProtocol</p></li>
     /// <li>
-    /// <p>service.ebsVolumeScanDetails.scanId</p></li>
+    /// <p>service.additionalInfo.userAgent.fullUserAgent</p></li>
+    /// <li>
+    /// <p>service.additionalInfo.userAgent.userAgentCategory</p></li>
+    /// <li>
+    /// <p>service.additionalInfo.value</p></li>
+    /// <li>
+    /// <p>service.additionalInfo.vpcOwnerAccountId</p></li>
+    /// <li>
+    /// <p>service.archived</p></li>
+    /// <li>
+    /// <p>service.count</p></li>
+    /// <li>
+    /// <p>service.detection.anomaly.profiles</p></li>
+    /// <li>
+    /// <p>service.detection.anomaly.unusual.behavior</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.actors.id</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.actors.process.name</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.actors.process.path</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.actors.process.sha256</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.actors.session.createdTime</p>
+    /// <p>Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.actors.session.issuer</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.actors.session.mfaStatus</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.actors.session.uid</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.actors.user.account.account</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.actors.user.account.uid</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.actors.user.credentialUid</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.actors.user.name</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.actors.user.type</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.actors.user.uid</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.additionalSequenceTypes</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.description</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.endpoints.autonomousSystem.name</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.endpoints.autonomousSystem.number</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.endpoints.connection.direction</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.endpoints.domain</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.endpoints.id</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.endpoints.ip</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.endpoints.location.city</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.endpoints.location.country</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.endpoints.location.lat</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.endpoints.location.lon</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.endpoints.port</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.accountId</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.cloudPartition</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.accessKey.principalId</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.accessKey.userName</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.accessKey.userType</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.autoscalingAutoScalingGroup.ec2InstanceUids</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.cloudformationStack.ec2InstanceUids</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.container.image</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.container.imageUid</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.ec2Image.ec2InstanceUids</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.ec2Instance.availabilityZone</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.ec2Instance.ec2NetworkInterfaceUids</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.ec2Instance.iamInstanceProfile.arn</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.ec2Instance.iamInstanceProfile.id</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.ec2Instance.imageDescription</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.ec2Instance.instanceState</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.ec2Instance.instanceType</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.ec2Instance.outpostArn</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.ec2Instance.platform</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.ec2Instance.productCodes.productCodeId</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.ec2Instance.productCodes.productCodeType</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.ec2LaunchTemplate.ec2InstanceUids</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.ec2LaunchTemplate.version</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.ec2NetworkInterface.ipv6Addresses</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.ec2NetworkInterface.privateIpAddresses.privateDnsName</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.ec2NetworkInterface.privateIpAddresses.privateIpAddress</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.ec2NetworkInterface.publicIp</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.ec2NetworkInterface.securityGroups.groupId</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.ec2NetworkInterface.securityGroups.groupName</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.ec2NetworkInterface.subNetId</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.ec2NetworkInterface.vpcId</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.ec2Vpc.ec2InstanceUids</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.ecsCluster.ec2InstanceUids</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.ecsCluster.status</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.ecsTask.containerUids</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.ecsTask.createdAt</p>
+    /// <p>Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.ecsTask.launchType</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.ecsTask.taskDefinitionArn</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.eksCluster.arn</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.eksCluster.createdAt</p>
+    /// <p>Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.eksCluster.ec2InstanceUids</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.eksCluster.status</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.eksCluster.vpcId</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.iamInstanceProfile.ec2InstanceUids</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.iamInstanceProfile.id</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.kubernetesWorkload.containerUids</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.kubernetesWorkload.namespace</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.kubernetesWorkload.type</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.s3Bucket.accountPublicAccess.publicAclAccess</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.s3Bucket.accountPublicAccess.publicAclIgnoreBehavior</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.s3Bucket.accountPublicAccess.publicBucketRestrictBehavior</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.s3Bucket.accountPublicAccess.publicPolicyAccess</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.s3Bucket.bucketPublicAccess.publicAclAccess</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.s3Bucket.bucketPublicAccess.publicAclIgnoreBehavior</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.s3Bucket.bucketPublicAccess.publicBucketRestrictBehavior</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.s3Bucket.bucketPublicAccess.publicPolicyAccess</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.s3Bucket.createdAt</p>
+    /// <p>Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.s3Bucket.effectivePermission</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.s3Bucket.encryptionKeyArn</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.s3Bucket.encryptionType</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.s3Bucket.ownerId</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.s3Bucket.publicReadAccess</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.s3Bucket.publicWriteAccess</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.s3Bucket.s3ObjectUids</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.s3Object.eTag</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.s3Object.key</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.s3Object.versionId</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.name</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.region</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.resourceType</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.service</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.tags.key</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.tags.value</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.uid</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.sequenceIndicators.key</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.sequenceIndicators.title</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.sequenceIndicators.values</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.signals.actorIds</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.signals.count</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.signals.createdAt</p>
+    /// <p>Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.signals.description</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.signals.endpointIds</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.signals.firstSeenAt</p>
+    /// <p>Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.signals.lastSeenAt</p>
+    /// <p>Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.signals.name</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.signals.resourceUids</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.signals.severity</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.signals.signalIndicators.key</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.signals.signalIndicators.title</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.signals.signalIndicators.values</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.signals.type</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.signals.uid</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.signals.updatedAt</p>
+    /// <p>Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.uid</p></li>
+    /// <li>
+    /// <p>service.detectorId</p></li>
+    /// <li>
+    /// <p>service.ebsVolumeScanDetails.scanCompletedAt</p>
+    /// <p>Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000</p></li>
+    /// <li>
+    /// <p>service.ebsVolumeScanDetails.scanDetections.highestSeverityThreatDetails.count</p></li>
+    /// <li>
+    /// <p>service.ebsVolumeScanDetails.scanDetections.highestSeverityThreatDetails.severity</p></li>
+    /// <li>
+    /// <p>service.ebsVolumeScanDetails.scanDetections.highestSeverityThreatDetails.threatName</p></li>
+    /// <li>
+    /// <p>service.ebsVolumeScanDetails.scanDetections.scannedItemCount.files</p></li>
+    /// <li>
+    /// <p>service.ebsVolumeScanDetails.scanDetections.scannedItemCount.totalGb</p></li>
+    /// <li>
+    /// <p>service.ebsVolumeScanDetails.scanDetections.scannedItemCount.volumes</p></li>
+    /// <li>
+    /// <p>service.ebsVolumeScanDetails.scanDetections.threatDetectedByName.itemCount</p></li>
+    /// <li>
+    /// <p>service.ebsVolumeScanDetails.scanDetections.threatDetectedByName.shortened</p></li>
+    /// <li>
+    /// <p>service.ebsVolumeScanDetails.scanDetections.threatDetectedByName.threatNames.filePaths.fileName</p></li>
+    /// <li>
+    /// <p>service.ebsVolumeScanDetails.scanDetections.threatDetectedByName.threatNames.filePaths.filePath</p></li>
+    /// <li>
+    /// <p>service.ebsVolumeScanDetails.scanDetections.threatDetectedByName.threatNames.filePaths.hash</p></li>
+    /// <li>
+    /// <p>service.ebsVolumeScanDetails.scanDetections.threatDetectedByName.threatNames.filePaths.volumeArn</p></li>
+    /// <li>
+    /// <p>service.ebsVolumeScanDetails.scanDetections.threatDetectedByName.threatNames.itemCount</p></li>
     /// <li>
     /// <p>service.ebsVolumeScanDetails.scanDetections.threatDetectedByName.threatNames.name</p></li>
     /// <li>
     /// <p>service.ebsVolumeScanDetails.scanDetections.threatDetectedByName.threatNames.severity</p></li>
     /// <li>
-    /// <p>service.ebsVolumeScanDetails.scanDetections.threatDetectedByName.threatNames.filePaths.hash</p></li>
+    /// <p>service.ebsVolumeScanDetails.scanDetections.threatDetectedByName.uniqueThreatNameCount</p></li>
     /// <li>
-    /// <p>resource.ecsClusterDetails.name</p></li>
+    /// <p>service.ebsVolumeScanDetails.scanDetections.threatsDetectedItemCount.files</p></li>
     /// <li>
-    /// <p>resource.ecsClusterDetails.taskDetails.containers.image</p></li>
+    /// <p>service.ebsVolumeScanDetails.scanId</p></li>
     /// <li>
-    /// <p>resource.ecsClusterDetails.taskDetails.definitionArn</p></li>
+    /// <p>service.ebsVolumeScanDetails.scanStartedAt</p>
+    /// <p>Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000</p></li>
     /// <li>
-    /// <p>resource.containerDetails.image</p></li>
+    /// <p>service.ebsVolumeScanDetails.scanType</p></li>
     /// <li>
-    /// <p>resource.rdsDbInstanceDetails.dbInstanceIdentifier</p></li>
+    /// <p>service.ebsVolumeScanDetails.sources</p></li>
     /// <li>
-    /// <p>resource.rdsDbInstanceDetails.dbClusterIdentifier</p></li>
+    /// <p>service.ebsVolumeScanDetails.triggerFindingId</p></li>
     /// <li>
-    /// <p>resource.rdsDbInstanceDetails.engine</p></li>
+    /// <p>service.eventFirstSeen</p>
+    /// <p>Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000</p></li>
     /// <li>
-    /// <p>resource.rdsDbUserDetails.user</p></li>
+    /// <p>service.eventLastSeen</p>
+    /// <p>Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000</p></li>
     /// <li>
-    /// <p>resource.rdsDbInstanceDetails.tags.key</p></li>
+    /// <p>service.evidence.threatIntelligenceDetails.threatFileSha256</p></li>
     /// <li>
-    /// <p>resource.rdsDbInstanceDetails.tags.value</p></li>
+    /// <p>service.evidence.threatIntelligenceDetails.threatListName</p></li>
     /// <li>
-    /// <p>service.runtimeDetails.process.executableSha256</p></li>
+    /// <p>service.evidence.threatIntelligenceDetails.threatNames</p></li>
     /// <li>
-    /// <p>service.runtimeDetails.process.name</p></li>
+    /// <p>service.featureName</p></li>
+    /// <li>
+    /// <p>service.malwareScanDetails.scanCategory</p></li>
+    /// <li>
+    /// <p>service.malwareScanDetails.scanConfiguration.incrementalScanDetails.baselineResourceArn</p></li>
+    /// <li>
+    /// <p>service.malwareScanDetails.scanConfiguration.triggerType</p></li>
+    /// <li>
+    /// <p>service.malwareScanDetails.scanId</p></li>
+    /// <li>
+    /// <p>service.malwareScanDetails.scanType</p></li>
+    /// <li>
+    /// <p>service.malwareScanDetails.threats.count</p></li>
+    /// <li>
+    /// <p>service.malwareScanDetails.threats.hash</p></li>
+    /// <li>
+    /// <p>service.malwareScanDetails.threats.itemDetails.additionalInfo.deviceName</p></li>
+    /// <li>
+    /// <p>service.malwareScanDetails.threats.itemDetails.additionalInfo.versionId</p></li>
+    /// <li>
+    /// <p>service.malwareScanDetails.threats.itemDetails.hash</p></li>
+    /// <li>
+    /// <p>service.malwareScanDetails.threats.itemDetails.itemPath</p></li>
+    /// <li>
+    /// <p>service.malwareScanDetails.threats.itemDetails.resourceArn</p></li>
+    /// <li>
+    /// <p>service.malwareScanDetails.threats.itemPaths.hash</p></li>
+    /// <li>
+    /// <p>service.malwareScanDetails.threats.itemPaths.nestedItemPath</p></li>
+    /// <li>
+    /// <p>service.malwareScanDetails.threats.name</p></li>
+    /// <li>
+    /// <p>service.malwareScanDetails.threats.source</p></li>
+    /// <li>
+    /// <p>service.malwareScanDetails.uniqueThreatCount</p></li>
+    /// <li>
+    /// <p>service.resourceRole</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.addressFamily</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.commandLineExample</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.fileOperation</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.filePath</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.fileSystemType</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.flags</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.ianaProtocolNumber</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.ldPreloadValue</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.libraryPath</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.memoryRegions</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.modifiedAt</p>
+    /// <p>Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.modifyingProcess.euid</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.modifyingProcess.executablePath</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.modifyingProcess.executableSha256</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.modifyingProcess.lineage.euid</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.modifyingProcess.lineage.executablePath</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.modifyingProcess.lineage.name</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.modifyingProcess.lineage.namespacePid</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.modifyingProcess.lineage.parentUuid</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.modifyingProcess.lineage.pid</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.modifyingProcess.lineage.startTime</p>
+    /// <p>Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.modifyingProcess.lineage.userId</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.modifyingProcess.lineage.uuid</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.modifyingProcess.name</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.modifyingProcess.namespacePid</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.modifyingProcess.parentUuid</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.modifyingProcess.pid</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.modifyingProcess.pwd</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.modifyingProcess.startTime</p>
+    /// <p>Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.modifyingProcess.user</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.modifyingProcess.userId</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.modifyingProcess.uuid</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.moduleFilePath</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.moduleName</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.moduleSha256</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.mountSource</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.mountTarget</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.relatedFilePaths</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.releaseAgentPath</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.runcBinaryPath</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.scriptPath</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.serviceName</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.shellHistoryFilePath</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.socketPath</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.targetProcess.euid</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.targetProcess.executablePath</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.targetProcess.executableSha256</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.targetProcess.lineage.euid</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.targetProcess.lineage.executablePath</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.targetProcess.lineage.name</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.targetProcess.lineage.namespacePid</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.targetProcess.lineage.parentUuid</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.targetProcess.lineage.pid</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.targetProcess.lineage.startTime</p>
+    /// <p>Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.targetProcess.lineage.userId</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.targetProcess.lineage.uuid</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.targetProcess.name</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.targetProcess.namespacePid</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.targetProcess.parentUuid</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.targetProcess.pid</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.targetProcess.pwd</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.targetProcess.startTime</p>
+    /// <p>Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.targetProcess.user</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.targetProcess.userId</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.targetProcess.uuid</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.threatFilePath</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.toolCategory</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.toolName</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.process.euid</p></li>
     /// <li>
     /// <p>service.runtimeDetails.process.executablePath</p></li>
     /// <li>
-    /// <p>resource.lambdaDetails.functionName</p></li>
+    /// <p>service.runtimeDetails.process.executableSha256</p></li>
     /// <li>
-    /// <p>resource.lambdaDetails.functionArn</p></li>
+    /// <p>service.runtimeDetails.process.lineage.euid</p></li>
     /// <li>
-    /// <p>resource.lambdaDetails.tags.key</p></li>
+    /// <p>service.runtimeDetails.process.lineage.executablePath</p></li>
     /// <li>
-    /// <p>resource.lambdaDetails.tags.value</p></li>
+    /// <p>service.runtimeDetails.process.lineage.name</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.process.lineage.namespacePid</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.process.lineage.parentUuid</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.process.lineage.pid</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.process.lineage.startTime</p>
+    /// <p>Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.process.lineage.userId</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.process.lineage.uuid</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.process.name</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.process.namespacePid</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.process.parentUuid</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.process.pid</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.process.pwd</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.process.startTime</p>
+    /// <p>Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.process.user</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.process.userId</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.process.uuid</p></li>
+    /// <li>
+    /// <p>service.serviceName</p></li>
+    /// <li>
+    /// <p>service.userFeedback</p></li>
+    /// <li>
+    /// <p>severity</p>
+    /// <p>To configure severity based filters, use the following for the <a href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_FindingCriteria.html">FindingCriteria</a> condition:</p>
+    /// <ul>
+    /// <li>
+    /// <p><b>Low</b>: <code>\["1", "2", "3"\]</code></p></li>
+    /// <li>
+    /// <p><b>Medium</b>: <code>\["4", "5", "6"\]</code></p></li>
+    /// <li>
+    /// <p><b>High</b>: <code>\["7", "8"\]</code></p></li>
+    /// <li>
+    /// <p><b>Critical</b>: <code>\["9", "10"\]</code></p></li>
+    /// </ul>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings-severity.html">Findings severity levels</a> in the <i>Amazon GuardDuty User Guide</i>.</p></li>
+    /// <li>
+    /// <p>title</p></li>
+    /// <li>
+    /// <p>type</p></li>
+    /// <li>
+    /// <p>updatedAt</p>
+    /// <p>Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000</p></li>
     /// </ul>
     /// This field is required.
     pub fn finding_criteria(mut self, input: crate::types::FindingCriteria) -> Self {
         self.finding_criteria = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Represents the criteria to be used in the filter for querying findings.</p>
-    /// <p>You can only use the following attributes to query findings:</p>
+    /// <p>Represents the criteria to be used in the filter for querying findings. The following fields are available for filtering:</p>
     /// <ul>
     /// <li>
     /// <p>accountId</p></li>
     /// <li>
+    /// <p>arn</p></li>
+    /// <li>
+    /// <p>associatedAttackSequenceArn</p></li>
+    /// <li>
+    /// <p>confidence</p></li>
+    /// <li>
+    /// <p>createdAt</p>
+    /// <p>Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000</p></li>
+    /// <li>
+    /// <p>description</p></li>
+    /// <li>
     /// <p>id</p></li>
     /// <li>
+    /// <p>partition</p></li>
+    /// <li>
     /// <p>region</p></li>
-    /// <li>
-    /// <p>severity</p>
-    /// <p>To filter on the basis of severity, the API and CLI use the following input list for the <a href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_FindingCriteria.html">FindingCriteria</a> condition:</p>
-    /// <ul>
-    /// <li>
-    /// <p><b>Low</b>: <code>\["1", "2", "3"\]</code></p></li>
-    /// <li>
-    /// <p><b>Medium</b>: <code>\["4", "5", "6"\]</code></p></li>
-    /// <li>
-    /// <p><b>High</b>: <code>\["7", "8"\]</code></p></li>
-    /// <li>
-    /// <p><b>Critical</b>: <code>\["9", "10"\]</code></p></li>
-    /// </ul>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings-severity.html">Findings severity levels</a> in the <i>Amazon GuardDuty User Guide</i>.</p></li>
-    /// <li>
-    /// <p>type</p></li>
-    /// <li>
-    /// <p>updatedAt</p>
-    /// <p>Type: ISO 8601 string format: YYYY-MM-DDTHH:MM:SS.SSSZ or YYYY-MM-DDTHH:MM:SSZ depending on whether the value contains milliseconds.</p></li>
     /// <li>
     /// <p>resource.accessKeyDetails.accessKeyId</p></li>
     /// <li>
     /// <p>resource.accessKeyDetails.principalId</p></li>
     /// <li>
+    /// <p>resource.accessKeyDetails.userIdentity.accessKeyId</p></li>
+    /// <li>
+    /// <p>resource.accessKeyDetails.userIdentity.accountId</p></li>
+    /// <li>
+    /// <p>resource.accessKeyDetails.userIdentity.arn</p></li>
+    /// <li>
+    /// <p>resource.accessKeyDetails.userIdentity.principalId</p></li>
+    /// <li>
+    /// <p>resource.accessKeyDetails.userIdentity.sessionContext.attributes.mfaAuthenticated</p></li>
+    /// <li>
+    /// <p>resource.accessKeyDetails.userIdentity.sessionContext.ec2RoleDelivery</p></li>
+    /// <li>
+    /// <p>resource.accessKeyDetails.userIdentity.sessionContext.invokedBy</p></li>
+    /// <li>
+    /// <p>resource.accessKeyDetails.userIdentity.sessionContext.sessionIssuer.accountId</p></li>
+    /// <li>
+    /// <p>resource.accessKeyDetails.userIdentity.sessionContext.sessionIssuer.arn</p></li>
+    /// <li>
+    /// <p>resource.accessKeyDetails.userIdentity.sessionContext.sessionIssuer.principalId</p></li>
+    /// <li>
+    /// <p>resource.accessKeyDetails.userIdentity.sessionContext.sessionIssuer.type</p></li>
+    /// <li>
+    /// <p>resource.accessKeyDetails.userIdentity.sessionContext.sessionIssuer.userName</p></li>
+    /// <li>
+    /// <p>resource.accessKeyDetails.userIdentity.sessionContext.sourceIdentity</p></li>
+    /// <li>
+    /// <p>resource.accessKeyDetails.userIdentity.sessionContext.webIdFederationData.attributes</p></li>
+    /// <li>
+    /// <p>resource.accessKeyDetails.userIdentity.sessionContext.webIdFederationData.federatedProvider</p></li>
+    /// <li>
+    /// <p>resource.accessKeyDetails.userIdentity.type</p></li>
+    /// <li>
+    /// <p>resource.accessKeyDetails.userIdentity.userName</p></li>
+    /// <li>
     /// <p>resource.accessKeyDetails.userName</p></li>
     /// <li>
     /// <p>resource.accessKeyDetails.userType</p></li>
     /// <li>
+    /// <p>resource.bedrockGuardrailDetails.guardrailArn</p></li>
+    /// <li>
+    /// <p>resource.bedrockGuardrailDetails.guardrailVersion</p></li>
+    /// <li>
+    /// <p>resource.containerDetails.containerRuntime</p></li>
+    /// <li>
+    /// <p>resource.containerDetails.id</p></li>
+    /// <li>
+    /// <p>resource.containerDetails.image</p></li>
+    /// <li>
+    /// <p>resource.containerDetails.imagePrefix</p></li>
+    /// <li>
+    /// <p>resource.containerDetails.name</p></li>
+    /// <li>
+    /// <p>resource.containerDetails.securityContext.allowPrivilegeEscalation</p></li>
+    /// <li>
+    /// <p>resource.containerDetails.securityContext.privileged</p></li>
+    /// <li>
+    /// <p>resource.containerDetails.volumeMounts.mountPath</p></li>
+    /// <li>
+    /// <p>resource.containerDetails.volumeMounts.name</p></li>
+    /// <li>
+    /// <p>resource.ebsSnapshotDetails.snapshotArn</p></li>
+    /// <li>
+    /// <p>resource.ebsVolumeDetails.scannedVolumeDetails.deviceName</p></li>
+    /// <li>
+    /// <p>resource.ebsVolumeDetails.scannedVolumeDetails.encryptionType</p></li>
+    /// <li>
+    /// <p>resource.ebsVolumeDetails.scannedVolumeDetails.kmsKeyArn</p></li>
+    /// <li>
+    /// <p>resource.ebsVolumeDetails.scannedVolumeDetails.snapshotArn</p></li>
+    /// <li>
+    /// <p>resource.ebsVolumeDetails.scannedVolumeDetails.volumeArn</p></li>
+    /// <li>
+    /// <p>resource.ebsVolumeDetails.scannedVolumeDetails.volumeSizeInGB</p></li>
+    /// <li>
+    /// <p>resource.ebsVolumeDetails.scannedVolumeDetails.volumeType</p></li>
+    /// <li>
+    /// <p>resource.ebsVolumeDetails.skippedVolumeDetails.deviceName</p></li>
+    /// <li>
+    /// <p>resource.ebsVolumeDetails.skippedVolumeDetails.encryptionType</p></li>
+    /// <li>
+    /// <p>resource.ebsVolumeDetails.skippedVolumeDetails.kmsKeyArn</p></li>
+    /// <li>
+    /// <p>resource.ebsVolumeDetails.skippedVolumeDetails.snapshotArn</p></li>
+    /// <li>
+    /// <p>resource.ebsVolumeDetails.skippedVolumeDetails.volumeArn</p></li>
+    /// <li>
+    /// <p>resource.ebsVolumeDetails.skippedVolumeDetails.volumeSizeInGB</p></li>
+    /// <li>
+    /// <p>resource.ebsVolumeDetails.skippedVolumeDetails.volumeType</p></li>
+    /// <li>
+    /// <p>resource.ec2ImageDetails.imageArn</p></li>
+    /// <li>
+    /// <p>resource.ecsClusterDetails.activeServicesCount</p></li>
+    /// <li>
+    /// <p>resource.ecsClusterDetails.arn</p></li>
+    /// <li>
+    /// <p>resource.ecsClusterDetails.name</p></li>
+    /// <li>
+    /// <p>resource.ecsClusterDetails.registeredContainerInstancesCount</p></li>
+    /// <li>
+    /// <p>resource.ecsClusterDetails.runningTasksCount</p></li>
+    /// <li>
+    /// <p>resource.ecsClusterDetails.status</p></li>
+    /// <li>
+    /// <p>resource.ecsClusterDetails.tags.key</p></li>
+    /// <li>
+    /// <p>resource.ecsClusterDetails.tags.value</p></li>
+    /// <li>
+    /// <p>resource.ecsClusterDetails.taskDetails.arn</p></li>
+    /// <li>
+    /// <p>resource.ecsClusterDetails.taskDetails.containers.containerRuntime</p></li>
+    /// <li>
+    /// <p>resource.ecsClusterDetails.taskDetails.containers.id</p></li>
+    /// <li>
+    /// <p>resource.ecsClusterDetails.taskDetails.containers.image</p></li>
+    /// <li>
+    /// <p>resource.ecsClusterDetails.taskDetails.containers.imagePrefix</p></li>
+    /// <li>
+    /// <p>resource.ecsClusterDetails.taskDetails.containers.name</p></li>
+    /// <li>
+    /// <p>resource.ecsClusterDetails.taskDetails.containers.securityContext.allowPrivilegeEscalation</p></li>
+    /// <li>
+    /// <p>resource.ecsClusterDetails.taskDetails.containers.securityContext.privileged</p></li>
+    /// <li>
+    /// <p>resource.ecsClusterDetails.taskDetails.containers.volumeMounts.mountPath</p></li>
+    /// <li>
+    /// <p>resource.ecsClusterDetails.taskDetails.containers.volumeMounts.name</p></li>
+    /// <li>
+    /// <p>resource.ecsClusterDetails.taskDetails.createdAt</p>
+    /// <p>Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000</p></li>
+    /// <li>
+    /// <p>resource.ecsClusterDetails.taskDetails.definitionArn</p></li>
+    /// <li>
+    /// <p>resource.ecsClusterDetails.taskDetails.group</p></li>
+    /// <li>
+    /// <p>resource.ecsClusterDetails.taskDetails.launchType</p></li>
+    /// <li>
+    /// <p>resource.ecsClusterDetails.taskDetails.startedAt</p>
+    /// <p>Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000</p></li>
+    /// <li>
+    /// <p>resource.ecsClusterDetails.taskDetails.startedBy</p></li>
+    /// <li>
+    /// <p>resource.ecsClusterDetails.taskDetails.tags.key</p></li>
+    /// <li>
+    /// <p>resource.ecsClusterDetails.taskDetails.tags.value</p></li>
+    /// <li>
+    /// <p>resource.ecsClusterDetails.taskDetails.version</p></li>
+    /// <li>
+    /// <p>resource.ecsClusterDetails.taskDetails.volumes.hostPath.path</p></li>
+    /// <li>
+    /// <p>resource.ecsClusterDetails.taskDetails.volumes.name</p></li>
+    /// <li>
+    /// <p>resource.eksClusterDetails.arn</p></li>
+    /// <li>
+    /// <p>resource.eksClusterDetails.createdAt</p>
+    /// <p>Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000</p></li>
+    /// <li>
+    /// <p>resource.eksClusterDetails.name</p></li>
+    /// <li>
+    /// <p>resource.eksClusterDetails.status</p></li>
+    /// <li>
+    /// <p>resource.eksClusterDetails.tags.key</p></li>
+    /// <li>
+    /// <p>resource.eksClusterDetails.tags.value</p></li>
+    /// <li>
+    /// <p>resource.eksClusterDetails.vpcId</p></li>
+    /// <li>
+    /// <p>resource.instanceDetails.availabilityZone</p></li>
+    /// <li>
+    /// <p>resource.instanceDetails.iamInstanceProfile.arn</p></li>
+    /// <li>
     /// <p>resource.instanceDetails.iamInstanceProfile.id</p></li>
+    /// <li>
+    /// <p>resource.instanceDetails.imageDescription</p></li>
     /// <li>
     /// <p>resource.instanceDetails.imageId</p></li>
     /// <li>
     /// <p>resource.instanceDetails.instanceId</p></li>
     /// <li>
-    /// <p>resource.instanceDetails.tags.key</p></li>
+    /// <p>resource.instanceDetails.instanceState</p></li>
     /// <li>
-    /// <p>resource.instanceDetails.tags.value</p></li>
+    /// <p>resource.instanceDetails.instanceType</p></li>
+    /// <li>
+    /// <p>resource.instanceDetails.launchTime</p>
+    /// <p>Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000</p></li>
     /// <li>
     /// <p>resource.instanceDetails.networkInterfaces.ipv6Addresses</p></li>
+    /// <li>
+    /// <p>resource.instanceDetails.networkInterfaces.networkInterfaceId</p></li>
+    /// <li>
+    /// <p>resource.instanceDetails.networkInterfaces.privateDnsName</p></li>
+    /// <li>
+    /// <p>resource.instanceDetails.networkInterfaces.privateIpAddress</p></li>
+    /// <li>
+    /// <p>resource.instanceDetails.networkInterfaces.privateIpAddresses.privateDnsName</p></li>
     /// <li>
     /// <p>resource.instanceDetails.networkInterfaces.privateIpAddresses.privateIpAddress</p></li>
     /// <li>
@@ -847,11 +4298,203 @@ impl CreateFilterInputBuilder {
     /// <li>
     /// <p>resource.instanceDetails.outpostArn</p></li>
     /// <li>
+    /// <p>resource.instanceDetails.platform</p></li>
+    /// <li>
+    /// <p>resource.instanceDetails.productCodes.productCodeId</p></li>
+    /// <li>
+    /// <p>resource.instanceDetails.productCodes.productCodeType</p></li>
+    /// <li>
+    /// <p>resource.instanceDetails.tags.key</p></li>
+    /// <li>
+    /// <p>resource.instanceDetails.tags.value</p></li>
+    /// <li>
+    /// <p>resource.kubernetesDetails.kubernetesUserDetails.groups</p></li>
+    /// <li>
+    /// <p>resource.kubernetesDetails.kubernetesUserDetails.impersonatedUser.groups</p></li>
+    /// <li>
+    /// <p>resource.kubernetesDetails.kubernetesUserDetails.impersonatedUser.username</p></li>
+    /// <li>
+    /// <p>resource.kubernetesDetails.kubernetesUserDetails.sessionName</p></li>
+    /// <li>
+    /// <p>resource.kubernetesDetails.kubernetesUserDetails.uid</p></li>
+    /// <li>
+    /// <p>resource.kubernetesDetails.kubernetesUserDetails.username</p></li>
+    /// <li>
+    /// <p>resource.kubernetesDetails.kubernetesWorkloadDetails.containers.containerRuntime</p></li>
+    /// <li>
+    /// <p>resource.kubernetesDetails.kubernetesWorkloadDetails.containers.id</p></li>
+    /// <li>
+    /// <p>resource.kubernetesDetails.kubernetesWorkloadDetails.containers.image</p></li>
+    /// <li>
+    /// <p>resource.kubernetesDetails.kubernetesWorkloadDetails.containers.imagePrefix</p></li>
+    /// <li>
+    /// <p>resource.kubernetesDetails.kubernetesWorkloadDetails.containers.name</p></li>
+    /// <li>
+    /// <p>resource.kubernetesDetails.kubernetesWorkloadDetails.containers.securityContext.allowPrivilegeEscalation</p></li>
+    /// <li>
+    /// <p>resource.kubernetesDetails.kubernetesWorkloadDetails.containers.securityContext.privileged</p></li>
+    /// <li>
+    /// <p>resource.kubernetesDetails.kubernetesWorkloadDetails.containers.volumeMounts.mountPath</p></li>
+    /// <li>
+    /// <p>resource.kubernetesDetails.kubernetesWorkloadDetails.containers.volumeMounts.name</p></li>
+    /// <li>
+    /// <p>resource.kubernetesDetails.kubernetesWorkloadDetails.hostIpc</p></li>
+    /// <li>
+    /// <p>resource.kubernetesDetails.kubernetesWorkloadDetails.hostNetwork</p></li>
+    /// <li>
+    /// <p>resource.kubernetesDetails.kubernetesWorkloadDetails.hostPid</p></li>
+    /// <li>
+    /// <p>resource.kubernetesDetails.kubernetesWorkloadDetails.name</p></li>
+    /// <li>
+    /// <p>resource.kubernetesDetails.kubernetesWorkloadDetails.namespace</p></li>
+    /// <li>
+    /// <p>resource.kubernetesDetails.kubernetesWorkloadDetails.serviceAccountName</p></li>
+    /// <li>
+    /// <p>resource.kubernetesDetails.kubernetesWorkloadDetails.type</p></li>
+    /// <li>
+    /// <p>resource.kubernetesDetails.kubernetesWorkloadDetails.uid</p></li>
+    /// <li>
+    /// <p>resource.kubernetesDetails.kubernetesWorkloadDetails.volumes.hostPath.path</p></li>
+    /// <li>
+    /// <p>resource.kubernetesDetails.kubernetesWorkloadDetails.volumes.name</p></li>
+    /// <li>
+    /// <p>resource.lambdaDetails.description</p></li>
+    /// <li>
+    /// <p>resource.lambdaDetails.functionArn</p></li>
+    /// <li>
+    /// <p>resource.lambdaDetails.functionName</p></li>
+    /// <li>
+    /// <p>resource.lambdaDetails.functionVersion</p></li>
+    /// <li>
+    /// <p>resource.lambdaDetails.lastModifiedAt</p>
+    /// <p>Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000</p></li>
+    /// <li>
+    /// <p>resource.lambdaDetails.revisionId</p></li>
+    /// <li>
+    /// <p>resource.lambdaDetails.role</p></li>
+    /// <li>
+    /// <p>resource.lambdaDetails.tags.key</p></li>
+    /// <li>
+    /// <p>resource.lambdaDetails.tags.value</p></li>
+    /// <li>
+    /// <p>resource.lambdaDetails.vpcConfig.securityGroups.groupId</p></li>
+    /// <li>
+    /// <p>resource.lambdaDetails.vpcConfig.securityGroups.groupName</p></li>
+    /// <li>
+    /// <p>resource.lambdaDetails.vpcConfig.subnetIds</p></li>
+    /// <li>
+    /// <p>resource.lambdaDetails.vpcConfig.vpcId</p></li>
+    /// <li>
+    /// <p>resource.rdsDbInstanceDetails.dbClusterIdentifier</p></li>
+    /// <li>
+    /// <p>resource.rdsDbInstanceDetails.dbInstanceArn</p></li>
+    /// <li>
+    /// <p>resource.rdsDbInstanceDetails.dbInstanceIdentifier</p></li>
+    /// <li>
+    /// <p>resource.rdsDbInstanceDetails.dbSecurityGroups.name</p></li>
+    /// <li>
+    /// <p>resource.rdsDbInstanceDetails.dbSecurityGroups.status</p></li>
+    /// <li>
+    /// <p>resource.rdsDbInstanceDetails.dbiResourceId</p></li>
+    /// <li>
+    /// <p>resource.rdsDbInstanceDetails.engine</p></li>
+    /// <li>
+    /// <p>resource.rdsDbInstanceDetails.engineVersion</p></li>
+    /// <li>
+    /// <p>resource.rdsDbInstanceDetails.iamDatabaseAuthenticationEnabled</p></li>
+    /// <li>
+    /// <p>resource.rdsDbInstanceDetails.publiclyAccessible</p></li>
+    /// <li>
+    /// <p>resource.rdsDbInstanceDetails.tags.key</p></li>
+    /// <li>
+    /// <p>resource.rdsDbInstanceDetails.tags.value</p></li>
+    /// <li>
+    /// <p>resource.rdsDbInstanceDetails.vpcId</p></li>
+    /// <li>
+    /// <p>resource.rdsDbInstanceDetails.vpcSecurityGroups.status</p></li>
+    /// <li>
+    /// <p>resource.rdsDbInstanceDetails.vpcSecurityGroups.vpcSecurityGroupId</p></li>
+    /// <li>
+    /// <p>resource.rdsDbUserDetails.application</p></li>
+    /// <li>
+    /// <p>resource.rdsDbUserDetails.authMethod</p></li>
+    /// <li>
+    /// <p>resource.rdsDbUserDetails.database</p></li>
+    /// <li>
+    /// <p>resource.rdsDbUserDetails.ssl</p></li>
+    /// <li>
+    /// <p>resource.rdsDbUserDetails.user</p></li>
+    /// <li>
+    /// <p>resource.rdsLimitlessDbDetails.dbClusterIdentifier</p></li>
+    /// <li>
+    /// <p>resource.rdsLimitlessDbDetails.dbShardGroupArn</p></li>
+    /// <li>
+    /// <p>resource.rdsLimitlessDbDetails.dbShardGroupIdentifier</p></li>
+    /// <li>
+    /// <p>resource.rdsLimitlessDbDetails.dbShardGroupResourceId</p></li>
+    /// <li>
+    /// <p>resource.rdsLimitlessDbDetails.engine</p></li>
+    /// <li>
+    /// <p>resource.rdsLimitlessDbDetails.engineVersion</p></li>
+    /// <li>
+    /// <p>resource.rdsLimitlessDbDetails.tags.key</p></li>
+    /// <li>
+    /// <p>resource.rdsLimitlessDbDetails.tags.value</p></li>
+    /// <li>
+    /// <p>resource.recoveryPointDetails.backupVaultName</p></li>
+    /// <li>
+    /// <p>resource.recoveryPointDetails.recoveryPointArn</p></li>
+    /// <li>
     /// <p>resource.resourceType</p></li>
     /// <li>
-    /// <p>resource.s3BucketDetails.publicAccess.effectivePermissions</p></li>
+    /// <p>resource.s3BucketDetails.arn</p></li>
+    /// <li>
+    /// <p>resource.s3BucketDetails.createdAt</p>
+    /// <p>Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000</p></li>
+    /// <li>
+    /// <p>resource.s3BucketDetails.defaultServerSideEncryption.encryptionType</p></li>
+    /// <li>
+    /// <p>resource.s3BucketDetails.defaultServerSideEncryption.kmsMasterKeyArn</p></li>
     /// <li>
     /// <p>resource.s3BucketDetails.name</p></li>
+    /// <li>
+    /// <p>resource.s3BucketDetails.owner.id</p></li>
+    /// <li>
+    /// <p>resource.s3BucketDetails.publicAccess.effectivePermission</p></li>
+    /// <li>
+    /// <p>resource.s3BucketDetails.publicAccess.permissionConfiguration.accountLevelPermissions.blockPublicAccess.blockPublicAcls</p></li>
+    /// <li>
+    /// <p>resource.s3BucketDetails.publicAccess.permissionConfiguration.accountLevelPermissions.blockPublicAccess.blockPublicPolicy</p></li>
+    /// <li>
+    /// <p>resource.s3BucketDetails.publicAccess.permissionConfiguration.accountLevelPermissions.blockPublicAccess.ignorePublicAcls</p></li>
+    /// <li>
+    /// <p>resource.s3BucketDetails.publicAccess.permissionConfiguration.accountLevelPermissions.blockPublicAccess.restrictPublicBuckets</p></li>
+    /// <li>
+    /// <p>resource.s3BucketDetails.publicAccess.permissionConfiguration.bucketLevelPermissions.accessControlList.allowsPublicReadAccess</p></li>
+    /// <li>
+    /// <p>resource.s3BucketDetails.publicAccess.permissionConfiguration.bucketLevelPermissions.accessControlList.allowsPublicWriteAccess</p></li>
+    /// <li>
+    /// <p>resource.s3BucketDetails.publicAccess.permissionConfiguration.bucketLevelPermissions.blockPublicAccess.blockPublicAcls</p></li>
+    /// <li>
+    /// <p>resource.s3BucketDetails.publicAccess.permissionConfiguration.bucketLevelPermissions.blockPublicAccess.blockPublicPolicy</p></li>
+    /// <li>
+    /// <p>resource.s3BucketDetails.publicAccess.permissionConfiguration.bucketLevelPermissions.blockPublicAccess.ignorePublicAcls</p></li>
+    /// <li>
+    /// <p>resource.s3BucketDetails.publicAccess.permissionConfiguration.bucketLevelPermissions.blockPublicAccess.restrictPublicBuckets</p></li>
+    /// <li>
+    /// <p>resource.s3BucketDetails.publicAccess.permissionConfiguration.bucketLevelPermissions.bucketPolicy.allowsPublicReadAccess</p></li>
+    /// <li>
+    /// <p>resource.s3BucketDetails.publicAccess.permissionConfiguration.bucketLevelPermissions.bucketPolicy.allowsPublicWriteAccess</p></li>
+    /// <li>
+    /// <p>resource.s3BucketDetails.s3ObjectDetails.eTag</p></li>
+    /// <li>
+    /// <p>resource.s3BucketDetails.s3ObjectDetails.hash</p></li>
+    /// <li>
+    /// <p>resource.s3BucketDetails.s3ObjectDetails.key</p></li>
+    /// <li>
+    /// <p>resource.s3BucketDetails.s3ObjectDetails.objectArn</p></li>
+    /// <li>
+    /// <p>resource.s3BucketDetails.s3ObjectDetails.versionId</p></li>
     /// <li>
     /// <p>resource.s3BucketDetails.tags.key</p></li>
     /// <li>
@@ -859,17 +4502,35 @@ impl CreateFilterInputBuilder {
     /// <li>
     /// <p>resource.s3BucketDetails.type</p></li>
     /// <li>
+    /// <p>schemaVersion</p></li>
+    /// <li>
     /// <p>service.action.actionType</p></li>
+    /// <li>
+    /// <p>service.action.awsApiCallAction.affectedResources</p></li>
     /// <li>
     /// <p>service.action.awsApiCallAction.api</p></li>
     /// <li>
     /// <p>service.action.awsApiCallAction.callerType</p></li>
     /// <li>
+    /// <p>service.action.awsApiCallAction.domainDetails.domain</p></li>
+    /// <li>
     /// <p>service.action.awsApiCallAction.errorCode</p></li>
+    /// <li>
+    /// <p>service.action.awsApiCallAction.remoteAccountDetails.accountId</p></li>
+    /// <li>
+    /// <p>service.action.awsApiCallAction.remoteAccountDetails.affiliated</p></li>
+    /// <li>
+    /// <p>service.action.awsApiCallAction.remoteAccountDetails.awsServiceName</p></li>
     /// <li>
     /// <p>service.action.awsApiCallAction.remoteIpDetails.city.cityName</p></li>
     /// <li>
+    /// <p>service.action.awsApiCallAction.remoteIpDetails.country.countryCode</p></li>
+    /// <li>
     /// <p>service.action.awsApiCallAction.remoteIpDetails.country.countryName</p></li>
+    /// <li>
+    /// <p>service.action.awsApiCallAction.remoteIpDetails.geoLocation.lat</p></li>
+    /// <li>
+    /// <p>service.action.awsApiCallAction.remoteIpDetails.geoLocation.lon</p></li>
     /// <li>
     /// <p>service.action.awsApiCallAction.remoteIpDetails.ipAddressV4</p></li>
     /// <li>
@@ -879,25 +4540,115 @@ impl CreateFilterInputBuilder {
     /// <li>
     /// <p>service.action.awsApiCallAction.remoteIpDetails.organization.asnOrg</p></li>
     /// <li>
+    /// <p>service.action.awsApiCallAction.remoteIpDetails.organization.isp</p></li>
+    /// <li>
+    /// <p>service.action.awsApiCallAction.remoteIpDetails.organization.org</p></li>
+    /// <li>
     /// <p>service.action.awsApiCallAction.serviceName</p></li>
+    /// <li>
+    /// <p>service.action.awsApiCallAction.userAgent</p></li>
+    /// <li>
+    /// <p>service.action.dnsRequestAction.blocked</p></li>
     /// <li>
     /// <p>service.action.dnsRequestAction.domain</p></li>
     /// <li>
     /// <p>service.action.dnsRequestAction.domainWithSuffix</p></li>
     /// <li>
+    /// <p>service.action.dnsRequestAction.protocol</p></li>
+    /// <li>
     /// <p>service.action.dnsRequestAction.vpcOwnerAccountId</p></li>
+    /// <li>
+    /// <p>service.action.kubernetesApiCallAction.namespace</p></li>
+    /// <li>
+    /// <p>service.action.kubernetesApiCallAction.parameters</p></li>
+    /// <li>
+    /// <p>service.action.kubernetesApiCallAction.remoteIpDetails.city.cityName</p></li>
+    /// <li>
+    /// <p>service.action.kubernetesApiCallAction.remoteIpDetails.country.countryCode</p></li>
+    /// <li>
+    /// <p>service.action.kubernetesApiCallAction.remoteIpDetails.country.countryName</p></li>
+    /// <li>
+    /// <p>service.action.kubernetesApiCallAction.remoteIpDetails.geoLocation.lat</p></li>
+    /// <li>
+    /// <p>service.action.kubernetesApiCallAction.remoteIpDetails.geoLocation.lon</p></li>
+    /// <li>
+    /// <p>service.action.kubernetesApiCallAction.remoteIpDetails.ipAddressV4</p></li>
+    /// <li>
+    /// <p>service.action.kubernetesApiCallAction.remoteIpDetails.ipAddressV6</p></li>
+    /// <li>
+    /// <p>service.action.kubernetesApiCallAction.remoteIpDetails.organization.asn</p></li>
+    /// <li>
+    /// <p>service.action.kubernetesApiCallAction.remoteIpDetails.organization.asnOrg</p></li>
+    /// <li>
+    /// <p>service.action.kubernetesApiCallAction.remoteIpDetails.organization.isp</p></li>
+    /// <li>
+    /// <p>service.action.kubernetesApiCallAction.remoteIpDetails.organization.org</p></li>
+    /// <li>
+    /// <p>service.action.kubernetesApiCallAction.requestUri</p></li>
+    /// <li>
+    /// <p>service.action.kubernetesApiCallAction.resource</p></li>
+    /// <li>
+    /// <p>service.action.kubernetesApiCallAction.resourceName</p></li>
+    /// <li>
+    /// <p>service.action.kubernetesApiCallAction.sourceIPs</p></li>
+    /// <li>
+    /// <p>service.action.kubernetesApiCallAction.statusCode</p></li>
+    /// <li>
+    /// <p>service.action.kubernetesApiCallAction.subresource</p></li>
+    /// <li>
+    /// <p>service.action.kubernetesApiCallAction.userAgent</p></li>
+    /// <li>
+    /// <p>service.action.kubernetesApiCallAction.verb</p></li>
+    /// <li>
+    /// <p>service.action.kubernetesPermissionCheckedDetails.allowed</p></li>
+    /// <li>
+    /// <p>service.action.kubernetesPermissionCheckedDetails.namespace</p></li>
+    /// <li>
+    /// <p>service.action.kubernetesPermissionCheckedDetails.resource</p></li>
+    /// <li>
+    /// <p>service.action.kubernetesPermissionCheckedDetails.verb</p></li>
+    /// <li>
+    /// <p>service.action.kubernetesRoleBindingDetails.kind</p></li>
+    /// <li>
+    /// <p>service.action.kubernetesRoleBindingDetails.name</p></li>
+    /// <li>
+    /// <p>service.action.kubernetesRoleBindingDetails.roleRefKind</p></li>
+    /// <li>
+    /// <p>service.action.kubernetesRoleBindingDetails.roleRefName</p></li>
+    /// <li>
+    /// <p>service.action.kubernetesRoleBindingDetails.uid</p></li>
+    /// <li>
+    /// <p>service.action.kubernetesRoleDetails.kind</p></li>
+    /// <li>
+    /// <p>service.action.kubernetesRoleDetails.name</p></li>
+    /// <li>
+    /// <p>service.action.kubernetesRoleDetails.uid</p></li>
     /// <li>
     /// <p>service.action.networkConnectionAction.blocked</p></li>
     /// <li>
     /// <p>service.action.networkConnectionAction.connectionDirection</p></li>
     /// <li>
+    /// <p>service.action.networkConnectionAction.localIpDetails.ipAddressV4</p></li>
+    /// <li>
+    /// <p>service.action.networkConnectionAction.localIpDetails.ipAddressV6</p></li>
+    /// <li>
+    /// <p>service.action.networkConnectionAction.localNetworkInterface</p></li>
+    /// <li>
     /// <p>service.action.networkConnectionAction.localPortDetails.port</p></li>
+    /// <li>
+    /// <p>service.action.networkConnectionAction.localPortDetails.portName</p></li>
     /// <li>
     /// <p>service.action.networkConnectionAction.protocol</p></li>
     /// <li>
     /// <p>service.action.networkConnectionAction.remoteIpDetails.city.cityName</p></li>
     /// <li>
+    /// <p>service.action.networkConnectionAction.remoteIpDetails.country.countryCode</p></li>
+    /// <li>
     /// <p>service.action.networkConnectionAction.remoteIpDetails.country.countryName</p></li>
+    /// <li>
+    /// <p>service.action.networkConnectionAction.remoteIpDetails.geoLocation.lat</p></li>
+    /// <li>
+    /// <p>service.action.networkConnectionAction.remoteIpDetails.geoLocation.lon</p></li>
     /// <li>
     /// <p>service.action.networkConnectionAction.remoteIpDetails.ipAddressV4</p></li>
     /// <li>
@@ -907,142 +4658,933 @@ impl CreateFilterInputBuilder {
     /// <li>
     /// <p>service.action.networkConnectionAction.remoteIpDetails.organization.asnOrg</p></li>
     /// <li>
+    /// <p>service.action.networkConnectionAction.remoteIpDetails.organization.isp</p></li>
+    /// <li>
+    /// <p>service.action.networkConnectionAction.remoteIpDetails.organization.org</p></li>
+    /// <li>
     /// <p>service.action.networkConnectionAction.remotePortDetails.port</p></li>
     /// <li>
-    /// <p>service.action.awsApiCallAction.remoteAccountDetails.affiliated</p></li>
+    /// <p>service.action.networkConnectionAction.remotePortDetails.portName</p></li>
     /// <li>
-    /// <p>service.action.kubernetesApiCallAction.remoteIpDetails.ipAddressV4</p></li>
+    /// <p>service.action.portProbeAction.blocked</p></li>
     /// <li>
-    /// <p>service.action.kubernetesApiCallAction.remoteIpDetails.ipAddressV6</p></li>
+    /// <p>service.action.portProbeAction.portProbeDetails.localIpDetails.ipAddressV4</p></li>
     /// <li>
-    /// <p>service.action.kubernetesApiCallAction.namespace</p></li>
+    /// <p>service.action.portProbeAction.portProbeDetails.localIpDetails.ipAddressV6</p></li>
     /// <li>
-    /// <p>service.action.kubernetesApiCallAction.remoteIpDetails.organization.asn</p></li>
+    /// <p>service.action.portProbeAction.portProbeDetails.localPortDetails.port</p></li>
     /// <li>
-    /// <p>service.action.kubernetesApiCallAction.requestUri</p></li>
+    /// <p>service.action.portProbeAction.portProbeDetails.localPortDetails.portName</p></li>
     /// <li>
-    /// <p>service.action.kubernetesApiCallAction.statusCode</p></li>
+    /// <p>service.action.portProbeAction.portProbeDetails.remoteIpDetails.city.cityName</p></li>
     /// <li>
-    /// <p>service.action.networkConnectionAction.localIpDetails.ipAddressV4</p></li>
+    /// <p>service.action.portProbeAction.portProbeDetails.remoteIpDetails.country.countryCode</p></li>
     /// <li>
-    /// <p>service.action.networkConnectionAction.localIpDetails.ipAddressV6</p></li>
+    /// <p>service.action.portProbeAction.portProbeDetails.remoteIpDetails.country.countryName</p></li>
     /// <li>
-    /// <p>service.action.networkConnectionAction.protocol</p></li>
+    /// <p>service.action.portProbeAction.portProbeDetails.remoteIpDetails.geoLocation.lat</p></li>
     /// <li>
-    /// <p>service.action.awsApiCallAction.serviceName</p></li>
+    /// <p>service.action.portProbeAction.portProbeDetails.remoteIpDetails.geoLocation.lon</p></li>
     /// <li>
-    /// <p>service.action.awsApiCallAction.remoteAccountDetails.accountId</p></li>
+    /// <p>service.action.portProbeAction.portProbeDetails.remoteIpDetails.ipAddressV4</p></li>
+    /// <li>
+    /// <p>service.action.portProbeAction.portProbeDetails.remoteIpDetails.ipAddressV6</p></li>
+    /// <li>
+    /// <p>service.action.portProbeAction.portProbeDetails.remoteIpDetails.organization.asn</p></li>
+    /// <li>
+    /// <p>service.action.portProbeAction.portProbeDetails.remoteIpDetails.organization.asnOrg</p></li>
+    /// <li>
+    /// <p>service.action.portProbeAction.portProbeDetails.remoteIpDetails.organization.isp</p></li>
+    /// <li>
+    /// <p>service.action.portProbeAction.portProbeDetails.remoteIpDetails.organization.org</p></li>
+    /// <li>
+    /// <p>service.action.rdsLoginAttemptAction.loginAttributes.application</p></li>
+    /// <li>
+    /// <p>service.action.rdsLoginAttemptAction.loginAttributes.failedLoginAttempts</p></li>
+    /// <li>
+    /// <p>service.action.rdsLoginAttemptAction.loginAttributes.successfulLoginAttempts</p></li>
+    /// <li>
+    /// <p>service.action.rdsLoginAttemptAction.loginAttributes.user</p></li>
+    /// <li>
+    /// <p>service.action.rdsLoginAttemptAction.remoteIpDetails.city.cityName</p></li>
+    /// <li>
+    /// <p>service.action.rdsLoginAttemptAction.remoteIpDetails.country.countryCode</p></li>
+    /// <li>
+    /// <p>service.action.rdsLoginAttemptAction.remoteIpDetails.country.countryName</p></li>
+    /// <li>
+    /// <p>service.action.rdsLoginAttemptAction.remoteIpDetails.geoLocation.lat</p></li>
+    /// <li>
+    /// <p>service.action.rdsLoginAttemptAction.remoteIpDetails.geoLocation.lon</p></li>
+    /// <li>
+    /// <p>service.action.rdsLoginAttemptAction.remoteIpDetails.ipAddressV4</p></li>
+    /// <li>
+    /// <p>service.action.rdsLoginAttemptAction.remoteIpDetails.ipAddressV6</p></li>
+    /// <li>
+    /// <p>service.action.rdsLoginAttemptAction.remoteIpDetails.organization.asn</p></li>
+    /// <li>
+    /// <p>service.action.rdsLoginAttemptAction.remoteIpDetails.organization.asnOrg</p></li>
+    /// <li>
+    /// <p>service.action.rdsLoginAttemptAction.remoteIpDetails.organization.isp</p></li>
+    /// <li>
+    /// <p>service.action.rdsLoginAttemptAction.remoteIpDetails.organization.org</p></li>
+    /// <li>
+    /// <p>service.additionalInfo.agentDetails.agentId</p></li>
+    /// <li>
+    /// <p>service.additionalInfo.agentDetails.agentVersion</p></li>
+    /// <li>
+    /// <p>service.additionalInfo.anomalies.anomalousAPIs</p></li>
+    /// <li>
+    /// <p>service.additionalInfo.authenticationMethod</p></li>
+    /// <li>
+    /// <p>service.additionalInfo.averagePacketSizeIn</p></li>
+    /// <li>
+    /// <p>service.additionalInfo.averagePacketSizeOut</p></li>
+    /// <li>
+    /// <p>service.additionalInfo.context</p></li>
+    /// <li>
+    /// <p>service.additionalInfo.domain</p></li>
+    /// <li>
+    /// <p>service.additionalInfo.inBytes</p></li>
+    /// <li>
+    /// <p>service.additionalInfo.localNetworkInterfaceOwner</p></li>
+    /// <li>
+    /// <p>service.additionalInfo.localPort</p></li>
+    /// <li>
+    /// <p>service.additionalInfo.outBytes</p></li>
+    /// <li>
+    /// <p>service.additionalInfo.packetsIn</p></li>
+    /// <li>
+    /// <p>service.additionalInfo.packetsOut</p></li>
+    /// <li>
+    /// <p>service.additionalInfo.policyArn</p></li>
+    /// <li>
+    /// <p>service.additionalInfo.policyName</p></li>
+    /// <li>
+    /// <p>service.additionalInfo.remotePort</p></li>
+    /// <li>
+    /// <p>service.additionalInfo.sample</p></li>
+    /// <li>
+    /// <p>service.additionalInfo.scannedPort</p></li>
+    /// <li>
+    /// <p>service.additionalInfo.threatFileSha256</p></li>
     /// <li>
     /// <p>service.additionalInfo.threatListName</p></li>
     /// <li>
-    /// <p>service.resourceRole</p></li>
+    /// <p>service.additionalInfo.threatName</p></li>
     /// <li>
-    /// <p>resource.eksClusterDetails.name</p></li>
+    /// <p>service.additionalInfo.totalBytesIn</p></li>
     /// <li>
-    /// <p>resource.kubernetesDetails.kubernetesWorkloadDetails.name</p></li>
+    /// <p>service.additionalInfo.totalBytesOut</p></li>
     /// <li>
-    /// <p>resource.kubernetesDetails.kubernetesWorkloadDetails.namespace</p></li>
+    /// <p>service.additionalInfo.type</p></li>
     /// <li>
-    /// <p>resource.kubernetesDetails.kubernetesUserDetails.username</p></li>
+    /// <p>service.additionalInfo.unusual.asnOrg</p></li>
     /// <li>
-    /// <p>resource.kubernetesDetails.kubernetesWorkloadDetails.containers.image</p></li>
+    /// <p>service.additionalInfo.unusual.port</p></li>
     /// <li>
-    /// <p>resource.kubernetesDetails.kubernetesWorkloadDetails.containers.imagePrefix</p></li>
+    /// <p>service.additionalInfo.unusualProtocol</p></li>
     /// <li>
-    /// <p>service.ebsVolumeScanDetails.scanId</p></li>
+    /// <p>service.additionalInfo.userAgent.fullUserAgent</p></li>
+    /// <li>
+    /// <p>service.additionalInfo.userAgent.userAgentCategory</p></li>
+    /// <li>
+    /// <p>service.additionalInfo.value</p></li>
+    /// <li>
+    /// <p>service.additionalInfo.vpcOwnerAccountId</p></li>
+    /// <li>
+    /// <p>service.archived</p></li>
+    /// <li>
+    /// <p>service.count</p></li>
+    /// <li>
+    /// <p>service.detection.anomaly.profiles</p></li>
+    /// <li>
+    /// <p>service.detection.anomaly.unusual.behavior</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.actors.id</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.actors.process.name</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.actors.process.path</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.actors.process.sha256</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.actors.session.createdTime</p>
+    /// <p>Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.actors.session.issuer</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.actors.session.mfaStatus</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.actors.session.uid</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.actors.user.account.account</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.actors.user.account.uid</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.actors.user.credentialUid</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.actors.user.name</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.actors.user.type</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.actors.user.uid</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.additionalSequenceTypes</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.description</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.endpoints.autonomousSystem.name</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.endpoints.autonomousSystem.number</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.endpoints.connection.direction</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.endpoints.domain</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.endpoints.id</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.endpoints.ip</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.endpoints.location.city</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.endpoints.location.country</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.endpoints.location.lat</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.endpoints.location.lon</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.endpoints.port</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.accountId</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.cloudPartition</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.accessKey.principalId</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.accessKey.userName</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.accessKey.userType</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.autoscalingAutoScalingGroup.ec2InstanceUids</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.cloudformationStack.ec2InstanceUids</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.container.image</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.container.imageUid</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.ec2Image.ec2InstanceUids</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.ec2Instance.availabilityZone</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.ec2Instance.ec2NetworkInterfaceUids</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.ec2Instance.iamInstanceProfile.arn</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.ec2Instance.iamInstanceProfile.id</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.ec2Instance.imageDescription</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.ec2Instance.instanceState</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.ec2Instance.instanceType</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.ec2Instance.outpostArn</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.ec2Instance.platform</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.ec2Instance.productCodes.productCodeId</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.ec2Instance.productCodes.productCodeType</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.ec2LaunchTemplate.ec2InstanceUids</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.ec2LaunchTemplate.version</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.ec2NetworkInterface.ipv6Addresses</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.ec2NetworkInterface.privateIpAddresses.privateDnsName</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.ec2NetworkInterface.privateIpAddresses.privateIpAddress</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.ec2NetworkInterface.publicIp</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.ec2NetworkInterface.securityGroups.groupId</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.ec2NetworkInterface.securityGroups.groupName</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.ec2NetworkInterface.subNetId</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.ec2NetworkInterface.vpcId</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.ec2Vpc.ec2InstanceUids</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.ecsCluster.ec2InstanceUids</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.ecsCluster.status</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.ecsTask.containerUids</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.ecsTask.createdAt</p>
+    /// <p>Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.ecsTask.launchType</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.ecsTask.taskDefinitionArn</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.eksCluster.arn</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.eksCluster.createdAt</p>
+    /// <p>Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.eksCluster.ec2InstanceUids</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.eksCluster.status</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.eksCluster.vpcId</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.iamInstanceProfile.ec2InstanceUids</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.iamInstanceProfile.id</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.kubernetesWorkload.containerUids</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.kubernetesWorkload.namespace</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.kubernetesWorkload.type</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.s3Bucket.accountPublicAccess.publicAclAccess</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.s3Bucket.accountPublicAccess.publicAclIgnoreBehavior</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.s3Bucket.accountPublicAccess.publicBucketRestrictBehavior</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.s3Bucket.accountPublicAccess.publicPolicyAccess</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.s3Bucket.bucketPublicAccess.publicAclAccess</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.s3Bucket.bucketPublicAccess.publicAclIgnoreBehavior</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.s3Bucket.bucketPublicAccess.publicBucketRestrictBehavior</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.s3Bucket.bucketPublicAccess.publicPolicyAccess</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.s3Bucket.createdAt</p>
+    /// <p>Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.s3Bucket.effectivePermission</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.s3Bucket.encryptionKeyArn</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.s3Bucket.encryptionType</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.s3Bucket.ownerId</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.s3Bucket.publicReadAccess</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.s3Bucket.publicWriteAccess</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.s3Bucket.s3ObjectUids</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.s3Object.eTag</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.s3Object.key</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.s3Object.versionId</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.name</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.region</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.resourceType</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.service</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.tags.key</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.tags.value</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.uid</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.sequenceIndicators.key</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.sequenceIndicators.title</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.sequenceIndicators.values</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.signals.actorIds</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.signals.count</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.signals.createdAt</p>
+    /// <p>Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.signals.description</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.signals.endpointIds</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.signals.firstSeenAt</p>
+    /// <p>Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.signals.lastSeenAt</p>
+    /// <p>Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.signals.name</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.signals.resourceUids</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.signals.severity</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.signals.signalIndicators.key</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.signals.signalIndicators.title</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.signals.signalIndicators.values</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.signals.type</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.signals.uid</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.signals.updatedAt</p>
+    /// <p>Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.uid</p></li>
+    /// <li>
+    /// <p>service.detectorId</p></li>
+    /// <li>
+    /// <p>service.ebsVolumeScanDetails.scanCompletedAt</p>
+    /// <p>Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000</p></li>
+    /// <li>
+    /// <p>service.ebsVolumeScanDetails.scanDetections.highestSeverityThreatDetails.count</p></li>
+    /// <li>
+    /// <p>service.ebsVolumeScanDetails.scanDetections.highestSeverityThreatDetails.severity</p></li>
+    /// <li>
+    /// <p>service.ebsVolumeScanDetails.scanDetections.highestSeverityThreatDetails.threatName</p></li>
+    /// <li>
+    /// <p>service.ebsVolumeScanDetails.scanDetections.scannedItemCount.files</p></li>
+    /// <li>
+    /// <p>service.ebsVolumeScanDetails.scanDetections.scannedItemCount.totalGb</p></li>
+    /// <li>
+    /// <p>service.ebsVolumeScanDetails.scanDetections.scannedItemCount.volumes</p></li>
+    /// <li>
+    /// <p>service.ebsVolumeScanDetails.scanDetections.threatDetectedByName.itemCount</p></li>
+    /// <li>
+    /// <p>service.ebsVolumeScanDetails.scanDetections.threatDetectedByName.shortened</p></li>
+    /// <li>
+    /// <p>service.ebsVolumeScanDetails.scanDetections.threatDetectedByName.threatNames.filePaths.fileName</p></li>
+    /// <li>
+    /// <p>service.ebsVolumeScanDetails.scanDetections.threatDetectedByName.threatNames.filePaths.filePath</p></li>
+    /// <li>
+    /// <p>service.ebsVolumeScanDetails.scanDetections.threatDetectedByName.threatNames.filePaths.hash</p></li>
+    /// <li>
+    /// <p>service.ebsVolumeScanDetails.scanDetections.threatDetectedByName.threatNames.filePaths.volumeArn</p></li>
+    /// <li>
+    /// <p>service.ebsVolumeScanDetails.scanDetections.threatDetectedByName.threatNames.itemCount</p></li>
     /// <li>
     /// <p>service.ebsVolumeScanDetails.scanDetections.threatDetectedByName.threatNames.name</p></li>
     /// <li>
     /// <p>service.ebsVolumeScanDetails.scanDetections.threatDetectedByName.threatNames.severity</p></li>
     /// <li>
-    /// <p>service.ebsVolumeScanDetails.scanDetections.threatDetectedByName.threatNames.filePaths.hash</p></li>
+    /// <p>service.ebsVolumeScanDetails.scanDetections.threatDetectedByName.uniqueThreatNameCount</p></li>
     /// <li>
-    /// <p>resource.ecsClusterDetails.name</p></li>
+    /// <p>service.ebsVolumeScanDetails.scanDetections.threatsDetectedItemCount.files</p></li>
     /// <li>
-    /// <p>resource.ecsClusterDetails.taskDetails.containers.image</p></li>
+    /// <p>service.ebsVolumeScanDetails.scanId</p></li>
     /// <li>
-    /// <p>resource.ecsClusterDetails.taskDetails.definitionArn</p></li>
+    /// <p>service.ebsVolumeScanDetails.scanStartedAt</p>
+    /// <p>Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000</p></li>
     /// <li>
-    /// <p>resource.containerDetails.image</p></li>
+    /// <p>service.ebsVolumeScanDetails.scanType</p></li>
     /// <li>
-    /// <p>resource.rdsDbInstanceDetails.dbInstanceIdentifier</p></li>
+    /// <p>service.ebsVolumeScanDetails.sources</p></li>
     /// <li>
-    /// <p>resource.rdsDbInstanceDetails.dbClusterIdentifier</p></li>
+    /// <p>service.ebsVolumeScanDetails.triggerFindingId</p></li>
     /// <li>
-    /// <p>resource.rdsDbInstanceDetails.engine</p></li>
+    /// <p>service.eventFirstSeen</p>
+    /// <p>Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000</p></li>
     /// <li>
-    /// <p>resource.rdsDbUserDetails.user</p></li>
+    /// <p>service.eventLastSeen</p>
+    /// <p>Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000</p></li>
     /// <li>
-    /// <p>resource.rdsDbInstanceDetails.tags.key</p></li>
+    /// <p>service.evidence.threatIntelligenceDetails.threatFileSha256</p></li>
     /// <li>
-    /// <p>resource.rdsDbInstanceDetails.tags.value</p></li>
+    /// <p>service.evidence.threatIntelligenceDetails.threatListName</p></li>
     /// <li>
-    /// <p>service.runtimeDetails.process.executableSha256</p></li>
+    /// <p>service.evidence.threatIntelligenceDetails.threatNames</p></li>
     /// <li>
-    /// <p>service.runtimeDetails.process.name</p></li>
+    /// <p>service.featureName</p></li>
+    /// <li>
+    /// <p>service.malwareScanDetails.scanCategory</p></li>
+    /// <li>
+    /// <p>service.malwareScanDetails.scanConfiguration.incrementalScanDetails.baselineResourceArn</p></li>
+    /// <li>
+    /// <p>service.malwareScanDetails.scanConfiguration.triggerType</p></li>
+    /// <li>
+    /// <p>service.malwareScanDetails.scanId</p></li>
+    /// <li>
+    /// <p>service.malwareScanDetails.scanType</p></li>
+    /// <li>
+    /// <p>service.malwareScanDetails.threats.count</p></li>
+    /// <li>
+    /// <p>service.malwareScanDetails.threats.hash</p></li>
+    /// <li>
+    /// <p>service.malwareScanDetails.threats.itemDetails.additionalInfo.deviceName</p></li>
+    /// <li>
+    /// <p>service.malwareScanDetails.threats.itemDetails.additionalInfo.versionId</p></li>
+    /// <li>
+    /// <p>service.malwareScanDetails.threats.itemDetails.hash</p></li>
+    /// <li>
+    /// <p>service.malwareScanDetails.threats.itemDetails.itemPath</p></li>
+    /// <li>
+    /// <p>service.malwareScanDetails.threats.itemDetails.resourceArn</p></li>
+    /// <li>
+    /// <p>service.malwareScanDetails.threats.itemPaths.hash</p></li>
+    /// <li>
+    /// <p>service.malwareScanDetails.threats.itemPaths.nestedItemPath</p></li>
+    /// <li>
+    /// <p>service.malwareScanDetails.threats.name</p></li>
+    /// <li>
+    /// <p>service.malwareScanDetails.threats.source</p></li>
+    /// <li>
+    /// <p>service.malwareScanDetails.uniqueThreatCount</p></li>
+    /// <li>
+    /// <p>service.resourceRole</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.addressFamily</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.commandLineExample</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.fileOperation</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.filePath</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.fileSystemType</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.flags</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.ianaProtocolNumber</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.ldPreloadValue</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.libraryPath</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.memoryRegions</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.modifiedAt</p>
+    /// <p>Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.modifyingProcess.euid</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.modifyingProcess.executablePath</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.modifyingProcess.executableSha256</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.modifyingProcess.lineage.euid</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.modifyingProcess.lineage.executablePath</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.modifyingProcess.lineage.name</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.modifyingProcess.lineage.namespacePid</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.modifyingProcess.lineage.parentUuid</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.modifyingProcess.lineage.pid</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.modifyingProcess.lineage.startTime</p>
+    /// <p>Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.modifyingProcess.lineage.userId</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.modifyingProcess.lineage.uuid</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.modifyingProcess.name</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.modifyingProcess.namespacePid</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.modifyingProcess.parentUuid</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.modifyingProcess.pid</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.modifyingProcess.pwd</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.modifyingProcess.startTime</p>
+    /// <p>Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.modifyingProcess.user</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.modifyingProcess.userId</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.modifyingProcess.uuid</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.moduleFilePath</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.moduleName</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.moduleSha256</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.mountSource</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.mountTarget</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.relatedFilePaths</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.releaseAgentPath</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.runcBinaryPath</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.scriptPath</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.serviceName</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.shellHistoryFilePath</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.socketPath</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.targetProcess.euid</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.targetProcess.executablePath</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.targetProcess.executableSha256</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.targetProcess.lineage.euid</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.targetProcess.lineage.executablePath</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.targetProcess.lineage.name</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.targetProcess.lineage.namespacePid</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.targetProcess.lineage.parentUuid</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.targetProcess.lineage.pid</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.targetProcess.lineage.startTime</p>
+    /// <p>Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.targetProcess.lineage.userId</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.targetProcess.lineage.uuid</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.targetProcess.name</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.targetProcess.namespacePid</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.targetProcess.parentUuid</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.targetProcess.pid</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.targetProcess.pwd</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.targetProcess.startTime</p>
+    /// <p>Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.targetProcess.user</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.targetProcess.userId</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.targetProcess.uuid</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.threatFilePath</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.toolCategory</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.toolName</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.process.euid</p></li>
     /// <li>
     /// <p>service.runtimeDetails.process.executablePath</p></li>
     /// <li>
-    /// <p>resource.lambdaDetails.functionName</p></li>
+    /// <p>service.runtimeDetails.process.executableSha256</p></li>
     /// <li>
-    /// <p>resource.lambdaDetails.functionArn</p></li>
+    /// <p>service.runtimeDetails.process.lineage.euid</p></li>
     /// <li>
-    /// <p>resource.lambdaDetails.tags.key</p></li>
+    /// <p>service.runtimeDetails.process.lineage.executablePath</p></li>
     /// <li>
-    /// <p>resource.lambdaDetails.tags.value</p></li>
+    /// <p>service.runtimeDetails.process.lineage.name</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.process.lineage.namespacePid</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.process.lineage.parentUuid</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.process.lineage.pid</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.process.lineage.startTime</p>
+    /// <p>Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.process.lineage.userId</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.process.lineage.uuid</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.process.name</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.process.namespacePid</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.process.parentUuid</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.process.pid</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.process.pwd</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.process.startTime</p>
+    /// <p>Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.process.user</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.process.userId</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.process.uuid</p></li>
+    /// <li>
+    /// <p>service.serviceName</p></li>
+    /// <li>
+    /// <p>service.userFeedback</p></li>
+    /// <li>
+    /// <p>severity</p>
+    /// <p>To configure severity based filters, use the following for the <a href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_FindingCriteria.html">FindingCriteria</a> condition:</p>
+    /// <ul>
+    /// <li>
+    /// <p><b>Low</b>: <code>\["1", "2", "3"\]</code></p></li>
+    /// <li>
+    /// <p><b>Medium</b>: <code>\["4", "5", "6"\]</code></p></li>
+    /// <li>
+    /// <p><b>High</b>: <code>\["7", "8"\]</code></p></li>
+    /// <li>
+    /// <p><b>Critical</b>: <code>\["9", "10"\]</code></p></li>
+    /// </ul>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings-severity.html">Findings severity levels</a> in the <i>Amazon GuardDuty User Guide</i>.</p></li>
+    /// <li>
+    /// <p>title</p></li>
+    /// <li>
+    /// <p>type</p></li>
+    /// <li>
+    /// <p>updatedAt</p>
+    /// <p>Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000</p></li>
     /// </ul>
     pub fn set_finding_criteria(mut self, input: ::std::option::Option<crate::types::FindingCriteria>) -> Self {
         self.finding_criteria = input;
         self
     }
-    /// <p>Represents the criteria to be used in the filter for querying findings.</p>
-    /// <p>You can only use the following attributes to query findings:</p>
+    /// <p>Represents the criteria to be used in the filter for querying findings. The following fields are available for filtering:</p>
     /// <ul>
     /// <li>
     /// <p>accountId</p></li>
     /// <li>
+    /// <p>arn</p></li>
+    /// <li>
+    /// <p>associatedAttackSequenceArn</p></li>
+    /// <li>
+    /// <p>confidence</p></li>
+    /// <li>
+    /// <p>createdAt</p>
+    /// <p>Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000</p></li>
+    /// <li>
+    /// <p>description</p></li>
+    /// <li>
     /// <p>id</p></li>
     /// <li>
+    /// <p>partition</p></li>
+    /// <li>
     /// <p>region</p></li>
-    /// <li>
-    /// <p>severity</p>
-    /// <p>To filter on the basis of severity, the API and CLI use the following input list for the <a href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_FindingCriteria.html">FindingCriteria</a> condition:</p>
-    /// <ul>
-    /// <li>
-    /// <p><b>Low</b>: <code>\["1", "2", "3"\]</code></p></li>
-    /// <li>
-    /// <p><b>Medium</b>: <code>\["4", "5", "6"\]</code></p></li>
-    /// <li>
-    /// <p><b>High</b>: <code>\["7", "8"\]</code></p></li>
-    /// <li>
-    /// <p><b>Critical</b>: <code>\["9", "10"\]</code></p></li>
-    /// </ul>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings-severity.html">Findings severity levels</a> in the <i>Amazon GuardDuty User Guide</i>.</p></li>
-    /// <li>
-    /// <p>type</p></li>
-    /// <li>
-    /// <p>updatedAt</p>
-    /// <p>Type: ISO 8601 string format: YYYY-MM-DDTHH:MM:SS.SSSZ or YYYY-MM-DDTHH:MM:SSZ depending on whether the value contains milliseconds.</p></li>
     /// <li>
     /// <p>resource.accessKeyDetails.accessKeyId</p></li>
     /// <li>
     /// <p>resource.accessKeyDetails.principalId</p></li>
     /// <li>
+    /// <p>resource.accessKeyDetails.userIdentity.accessKeyId</p></li>
+    /// <li>
+    /// <p>resource.accessKeyDetails.userIdentity.accountId</p></li>
+    /// <li>
+    /// <p>resource.accessKeyDetails.userIdentity.arn</p></li>
+    /// <li>
+    /// <p>resource.accessKeyDetails.userIdentity.principalId</p></li>
+    /// <li>
+    /// <p>resource.accessKeyDetails.userIdentity.sessionContext.attributes.mfaAuthenticated</p></li>
+    /// <li>
+    /// <p>resource.accessKeyDetails.userIdentity.sessionContext.ec2RoleDelivery</p></li>
+    /// <li>
+    /// <p>resource.accessKeyDetails.userIdentity.sessionContext.invokedBy</p></li>
+    /// <li>
+    /// <p>resource.accessKeyDetails.userIdentity.sessionContext.sessionIssuer.accountId</p></li>
+    /// <li>
+    /// <p>resource.accessKeyDetails.userIdentity.sessionContext.sessionIssuer.arn</p></li>
+    /// <li>
+    /// <p>resource.accessKeyDetails.userIdentity.sessionContext.sessionIssuer.principalId</p></li>
+    /// <li>
+    /// <p>resource.accessKeyDetails.userIdentity.sessionContext.sessionIssuer.type</p></li>
+    /// <li>
+    /// <p>resource.accessKeyDetails.userIdentity.sessionContext.sessionIssuer.userName</p></li>
+    /// <li>
+    /// <p>resource.accessKeyDetails.userIdentity.sessionContext.sourceIdentity</p></li>
+    /// <li>
+    /// <p>resource.accessKeyDetails.userIdentity.sessionContext.webIdFederationData.attributes</p></li>
+    /// <li>
+    /// <p>resource.accessKeyDetails.userIdentity.sessionContext.webIdFederationData.federatedProvider</p></li>
+    /// <li>
+    /// <p>resource.accessKeyDetails.userIdentity.type</p></li>
+    /// <li>
+    /// <p>resource.accessKeyDetails.userIdentity.userName</p></li>
+    /// <li>
     /// <p>resource.accessKeyDetails.userName</p></li>
     /// <li>
     /// <p>resource.accessKeyDetails.userType</p></li>
     /// <li>
+    /// <p>resource.bedrockGuardrailDetails.guardrailArn</p></li>
+    /// <li>
+    /// <p>resource.bedrockGuardrailDetails.guardrailVersion</p></li>
+    /// <li>
+    /// <p>resource.containerDetails.containerRuntime</p></li>
+    /// <li>
+    /// <p>resource.containerDetails.id</p></li>
+    /// <li>
+    /// <p>resource.containerDetails.image</p></li>
+    /// <li>
+    /// <p>resource.containerDetails.imagePrefix</p></li>
+    /// <li>
+    /// <p>resource.containerDetails.name</p></li>
+    /// <li>
+    /// <p>resource.containerDetails.securityContext.allowPrivilegeEscalation</p></li>
+    /// <li>
+    /// <p>resource.containerDetails.securityContext.privileged</p></li>
+    /// <li>
+    /// <p>resource.containerDetails.volumeMounts.mountPath</p></li>
+    /// <li>
+    /// <p>resource.containerDetails.volumeMounts.name</p></li>
+    /// <li>
+    /// <p>resource.ebsSnapshotDetails.snapshotArn</p></li>
+    /// <li>
+    /// <p>resource.ebsVolumeDetails.scannedVolumeDetails.deviceName</p></li>
+    /// <li>
+    /// <p>resource.ebsVolumeDetails.scannedVolumeDetails.encryptionType</p></li>
+    /// <li>
+    /// <p>resource.ebsVolumeDetails.scannedVolumeDetails.kmsKeyArn</p></li>
+    /// <li>
+    /// <p>resource.ebsVolumeDetails.scannedVolumeDetails.snapshotArn</p></li>
+    /// <li>
+    /// <p>resource.ebsVolumeDetails.scannedVolumeDetails.volumeArn</p></li>
+    /// <li>
+    /// <p>resource.ebsVolumeDetails.scannedVolumeDetails.volumeSizeInGB</p></li>
+    /// <li>
+    /// <p>resource.ebsVolumeDetails.scannedVolumeDetails.volumeType</p></li>
+    /// <li>
+    /// <p>resource.ebsVolumeDetails.skippedVolumeDetails.deviceName</p></li>
+    /// <li>
+    /// <p>resource.ebsVolumeDetails.skippedVolumeDetails.encryptionType</p></li>
+    /// <li>
+    /// <p>resource.ebsVolumeDetails.skippedVolumeDetails.kmsKeyArn</p></li>
+    /// <li>
+    /// <p>resource.ebsVolumeDetails.skippedVolumeDetails.snapshotArn</p></li>
+    /// <li>
+    /// <p>resource.ebsVolumeDetails.skippedVolumeDetails.volumeArn</p></li>
+    /// <li>
+    /// <p>resource.ebsVolumeDetails.skippedVolumeDetails.volumeSizeInGB</p></li>
+    /// <li>
+    /// <p>resource.ebsVolumeDetails.skippedVolumeDetails.volumeType</p></li>
+    /// <li>
+    /// <p>resource.ec2ImageDetails.imageArn</p></li>
+    /// <li>
+    /// <p>resource.ecsClusterDetails.activeServicesCount</p></li>
+    /// <li>
+    /// <p>resource.ecsClusterDetails.arn</p></li>
+    /// <li>
+    /// <p>resource.ecsClusterDetails.name</p></li>
+    /// <li>
+    /// <p>resource.ecsClusterDetails.registeredContainerInstancesCount</p></li>
+    /// <li>
+    /// <p>resource.ecsClusterDetails.runningTasksCount</p></li>
+    /// <li>
+    /// <p>resource.ecsClusterDetails.status</p></li>
+    /// <li>
+    /// <p>resource.ecsClusterDetails.tags.key</p></li>
+    /// <li>
+    /// <p>resource.ecsClusterDetails.tags.value</p></li>
+    /// <li>
+    /// <p>resource.ecsClusterDetails.taskDetails.arn</p></li>
+    /// <li>
+    /// <p>resource.ecsClusterDetails.taskDetails.containers.containerRuntime</p></li>
+    /// <li>
+    /// <p>resource.ecsClusterDetails.taskDetails.containers.id</p></li>
+    /// <li>
+    /// <p>resource.ecsClusterDetails.taskDetails.containers.image</p></li>
+    /// <li>
+    /// <p>resource.ecsClusterDetails.taskDetails.containers.imagePrefix</p></li>
+    /// <li>
+    /// <p>resource.ecsClusterDetails.taskDetails.containers.name</p></li>
+    /// <li>
+    /// <p>resource.ecsClusterDetails.taskDetails.containers.securityContext.allowPrivilegeEscalation</p></li>
+    /// <li>
+    /// <p>resource.ecsClusterDetails.taskDetails.containers.securityContext.privileged</p></li>
+    /// <li>
+    /// <p>resource.ecsClusterDetails.taskDetails.containers.volumeMounts.mountPath</p></li>
+    /// <li>
+    /// <p>resource.ecsClusterDetails.taskDetails.containers.volumeMounts.name</p></li>
+    /// <li>
+    /// <p>resource.ecsClusterDetails.taskDetails.createdAt</p>
+    /// <p>Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000</p></li>
+    /// <li>
+    /// <p>resource.ecsClusterDetails.taskDetails.definitionArn</p></li>
+    /// <li>
+    /// <p>resource.ecsClusterDetails.taskDetails.group</p></li>
+    /// <li>
+    /// <p>resource.ecsClusterDetails.taskDetails.launchType</p></li>
+    /// <li>
+    /// <p>resource.ecsClusterDetails.taskDetails.startedAt</p>
+    /// <p>Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000</p></li>
+    /// <li>
+    /// <p>resource.ecsClusterDetails.taskDetails.startedBy</p></li>
+    /// <li>
+    /// <p>resource.ecsClusterDetails.taskDetails.tags.key</p></li>
+    /// <li>
+    /// <p>resource.ecsClusterDetails.taskDetails.tags.value</p></li>
+    /// <li>
+    /// <p>resource.ecsClusterDetails.taskDetails.version</p></li>
+    /// <li>
+    /// <p>resource.ecsClusterDetails.taskDetails.volumes.hostPath.path</p></li>
+    /// <li>
+    /// <p>resource.ecsClusterDetails.taskDetails.volumes.name</p></li>
+    /// <li>
+    /// <p>resource.eksClusterDetails.arn</p></li>
+    /// <li>
+    /// <p>resource.eksClusterDetails.createdAt</p>
+    /// <p>Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000</p></li>
+    /// <li>
+    /// <p>resource.eksClusterDetails.name</p></li>
+    /// <li>
+    /// <p>resource.eksClusterDetails.status</p></li>
+    /// <li>
+    /// <p>resource.eksClusterDetails.tags.key</p></li>
+    /// <li>
+    /// <p>resource.eksClusterDetails.tags.value</p></li>
+    /// <li>
+    /// <p>resource.eksClusterDetails.vpcId</p></li>
+    /// <li>
+    /// <p>resource.instanceDetails.availabilityZone</p></li>
+    /// <li>
+    /// <p>resource.instanceDetails.iamInstanceProfile.arn</p></li>
+    /// <li>
     /// <p>resource.instanceDetails.iamInstanceProfile.id</p></li>
+    /// <li>
+    /// <p>resource.instanceDetails.imageDescription</p></li>
     /// <li>
     /// <p>resource.instanceDetails.imageId</p></li>
     /// <li>
     /// <p>resource.instanceDetails.instanceId</p></li>
     /// <li>
-    /// <p>resource.instanceDetails.tags.key</p></li>
+    /// <p>resource.instanceDetails.instanceState</p></li>
     /// <li>
-    /// <p>resource.instanceDetails.tags.value</p></li>
+    /// <p>resource.instanceDetails.instanceType</p></li>
+    /// <li>
+    /// <p>resource.instanceDetails.launchTime</p>
+    /// <p>Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000</p></li>
     /// <li>
     /// <p>resource.instanceDetails.networkInterfaces.ipv6Addresses</p></li>
+    /// <li>
+    /// <p>resource.instanceDetails.networkInterfaces.networkInterfaceId</p></li>
+    /// <li>
+    /// <p>resource.instanceDetails.networkInterfaces.privateDnsName</p></li>
+    /// <li>
+    /// <p>resource.instanceDetails.networkInterfaces.privateIpAddress</p></li>
+    /// <li>
+    /// <p>resource.instanceDetails.networkInterfaces.privateIpAddresses.privateDnsName</p></li>
     /// <li>
     /// <p>resource.instanceDetails.networkInterfaces.privateIpAddresses.privateIpAddress</p></li>
     /// <li>
@@ -1060,11 +5602,203 @@ impl CreateFilterInputBuilder {
     /// <li>
     /// <p>resource.instanceDetails.outpostArn</p></li>
     /// <li>
+    /// <p>resource.instanceDetails.platform</p></li>
+    /// <li>
+    /// <p>resource.instanceDetails.productCodes.productCodeId</p></li>
+    /// <li>
+    /// <p>resource.instanceDetails.productCodes.productCodeType</p></li>
+    /// <li>
+    /// <p>resource.instanceDetails.tags.key</p></li>
+    /// <li>
+    /// <p>resource.instanceDetails.tags.value</p></li>
+    /// <li>
+    /// <p>resource.kubernetesDetails.kubernetesUserDetails.groups</p></li>
+    /// <li>
+    /// <p>resource.kubernetesDetails.kubernetesUserDetails.impersonatedUser.groups</p></li>
+    /// <li>
+    /// <p>resource.kubernetesDetails.kubernetesUserDetails.impersonatedUser.username</p></li>
+    /// <li>
+    /// <p>resource.kubernetesDetails.kubernetesUserDetails.sessionName</p></li>
+    /// <li>
+    /// <p>resource.kubernetesDetails.kubernetesUserDetails.uid</p></li>
+    /// <li>
+    /// <p>resource.kubernetesDetails.kubernetesUserDetails.username</p></li>
+    /// <li>
+    /// <p>resource.kubernetesDetails.kubernetesWorkloadDetails.containers.containerRuntime</p></li>
+    /// <li>
+    /// <p>resource.kubernetesDetails.kubernetesWorkloadDetails.containers.id</p></li>
+    /// <li>
+    /// <p>resource.kubernetesDetails.kubernetesWorkloadDetails.containers.image</p></li>
+    /// <li>
+    /// <p>resource.kubernetesDetails.kubernetesWorkloadDetails.containers.imagePrefix</p></li>
+    /// <li>
+    /// <p>resource.kubernetesDetails.kubernetesWorkloadDetails.containers.name</p></li>
+    /// <li>
+    /// <p>resource.kubernetesDetails.kubernetesWorkloadDetails.containers.securityContext.allowPrivilegeEscalation</p></li>
+    /// <li>
+    /// <p>resource.kubernetesDetails.kubernetesWorkloadDetails.containers.securityContext.privileged</p></li>
+    /// <li>
+    /// <p>resource.kubernetesDetails.kubernetesWorkloadDetails.containers.volumeMounts.mountPath</p></li>
+    /// <li>
+    /// <p>resource.kubernetesDetails.kubernetesWorkloadDetails.containers.volumeMounts.name</p></li>
+    /// <li>
+    /// <p>resource.kubernetesDetails.kubernetesWorkloadDetails.hostIpc</p></li>
+    /// <li>
+    /// <p>resource.kubernetesDetails.kubernetesWorkloadDetails.hostNetwork</p></li>
+    /// <li>
+    /// <p>resource.kubernetesDetails.kubernetesWorkloadDetails.hostPid</p></li>
+    /// <li>
+    /// <p>resource.kubernetesDetails.kubernetesWorkloadDetails.name</p></li>
+    /// <li>
+    /// <p>resource.kubernetesDetails.kubernetesWorkloadDetails.namespace</p></li>
+    /// <li>
+    /// <p>resource.kubernetesDetails.kubernetesWorkloadDetails.serviceAccountName</p></li>
+    /// <li>
+    /// <p>resource.kubernetesDetails.kubernetesWorkloadDetails.type</p></li>
+    /// <li>
+    /// <p>resource.kubernetesDetails.kubernetesWorkloadDetails.uid</p></li>
+    /// <li>
+    /// <p>resource.kubernetesDetails.kubernetesWorkloadDetails.volumes.hostPath.path</p></li>
+    /// <li>
+    /// <p>resource.kubernetesDetails.kubernetesWorkloadDetails.volumes.name</p></li>
+    /// <li>
+    /// <p>resource.lambdaDetails.description</p></li>
+    /// <li>
+    /// <p>resource.lambdaDetails.functionArn</p></li>
+    /// <li>
+    /// <p>resource.lambdaDetails.functionName</p></li>
+    /// <li>
+    /// <p>resource.lambdaDetails.functionVersion</p></li>
+    /// <li>
+    /// <p>resource.lambdaDetails.lastModifiedAt</p>
+    /// <p>Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000</p></li>
+    /// <li>
+    /// <p>resource.lambdaDetails.revisionId</p></li>
+    /// <li>
+    /// <p>resource.lambdaDetails.role</p></li>
+    /// <li>
+    /// <p>resource.lambdaDetails.tags.key</p></li>
+    /// <li>
+    /// <p>resource.lambdaDetails.tags.value</p></li>
+    /// <li>
+    /// <p>resource.lambdaDetails.vpcConfig.securityGroups.groupId</p></li>
+    /// <li>
+    /// <p>resource.lambdaDetails.vpcConfig.securityGroups.groupName</p></li>
+    /// <li>
+    /// <p>resource.lambdaDetails.vpcConfig.subnetIds</p></li>
+    /// <li>
+    /// <p>resource.lambdaDetails.vpcConfig.vpcId</p></li>
+    /// <li>
+    /// <p>resource.rdsDbInstanceDetails.dbClusterIdentifier</p></li>
+    /// <li>
+    /// <p>resource.rdsDbInstanceDetails.dbInstanceArn</p></li>
+    /// <li>
+    /// <p>resource.rdsDbInstanceDetails.dbInstanceIdentifier</p></li>
+    /// <li>
+    /// <p>resource.rdsDbInstanceDetails.dbSecurityGroups.name</p></li>
+    /// <li>
+    /// <p>resource.rdsDbInstanceDetails.dbSecurityGroups.status</p></li>
+    /// <li>
+    /// <p>resource.rdsDbInstanceDetails.dbiResourceId</p></li>
+    /// <li>
+    /// <p>resource.rdsDbInstanceDetails.engine</p></li>
+    /// <li>
+    /// <p>resource.rdsDbInstanceDetails.engineVersion</p></li>
+    /// <li>
+    /// <p>resource.rdsDbInstanceDetails.iamDatabaseAuthenticationEnabled</p></li>
+    /// <li>
+    /// <p>resource.rdsDbInstanceDetails.publiclyAccessible</p></li>
+    /// <li>
+    /// <p>resource.rdsDbInstanceDetails.tags.key</p></li>
+    /// <li>
+    /// <p>resource.rdsDbInstanceDetails.tags.value</p></li>
+    /// <li>
+    /// <p>resource.rdsDbInstanceDetails.vpcId</p></li>
+    /// <li>
+    /// <p>resource.rdsDbInstanceDetails.vpcSecurityGroups.status</p></li>
+    /// <li>
+    /// <p>resource.rdsDbInstanceDetails.vpcSecurityGroups.vpcSecurityGroupId</p></li>
+    /// <li>
+    /// <p>resource.rdsDbUserDetails.application</p></li>
+    /// <li>
+    /// <p>resource.rdsDbUserDetails.authMethod</p></li>
+    /// <li>
+    /// <p>resource.rdsDbUserDetails.database</p></li>
+    /// <li>
+    /// <p>resource.rdsDbUserDetails.ssl</p></li>
+    /// <li>
+    /// <p>resource.rdsDbUserDetails.user</p></li>
+    /// <li>
+    /// <p>resource.rdsLimitlessDbDetails.dbClusterIdentifier</p></li>
+    /// <li>
+    /// <p>resource.rdsLimitlessDbDetails.dbShardGroupArn</p></li>
+    /// <li>
+    /// <p>resource.rdsLimitlessDbDetails.dbShardGroupIdentifier</p></li>
+    /// <li>
+    /// <p>resource.rdsLimitlessDbDetails.dbShardGroupResourceId</p></li>
+    /// <li>
+    /// <p>resource.rdsLimitlessDbDetails.engine</p></li>
+    /// <li>
+    /// <p>resource.rdsLimitlessDbDetails.engineVersion</p></li>
+    /// <li>
+    /// <p>resource.rdsLimitlessDbDetails.tags.key</p></li>
+    /// <li>
+    /// <p>resource.rdsLimitlessDbDetails.tags.value</p></li>
+    /// <li>
+    /// <p>resource.recoveryPointDetails.backupVaultName</p></li>
+    /// <li>
+    /// <p>resource.recoveryPointDetails.recoveryPointArn</p></li>
+    /// <li>
     /// <p>resource.resourceType</p></li>
     /// <li>
-    /// <p>resource.s3BucketDetails.publicAccess.effectivePermissions</p></li>
+    /// <p>resource.s3BucketDetails.arn</p></li>
+    /// <li>
+    /// <p>resource.s3BucketDetails.createdAt</p>
+    /// <p>Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000</p></li>
+    /// <li>
+    /// <p>resource.s3BucketDetails.defaultServerSideEncryption.encryptionType</p></li>
+    /// <li>
+    /// <p>resource.s3BucketDetails.defaultServerSideEncryption.kmsMasterKeyArn</p></li>
     /// <li>
     /// <p>resource.s3BucketDetails.name</p></li>
+    /// <li>
+    /// <p>resource.s3BucketDetails.owner.id</p></li>
+    /// <li>
+    /// <p>resource.s3BucketDetails.publicAccess.effectivePermission</p></li>
+    /// <li>
+    /// <p>resource.s3BucketDetails.publicAccess.permissionConfiguration.accountLevelPermissions.blockPublicAccess.blockPublicAcls</p></li>
+    /// <li>
+    /// <p>resource.s3BucketDetails.publicAccess.permissionConfiguration.accountLevelPermissions.blockPublicAccess.blockPublicPolicy</p></li>
+    /// <li>
+    /// <p>resource.s3BucketDetails.publicAccess.permissionConfiguration.accountLevelPermissions.blockPublicAccess.ignorePublicAcls</p></li>
+    /// <li>
+    /// <p>resource.s3BucketDetails.publicAccess.permissionConfiguration.accountLevelPermissions.blockPublicAccess.restrictPublicBuckets</p></li>
+    /// <li>
+    /// <p>resource.s3BucketDetails.publicAccess.permissionConfiguration.bucketLevelPermissions.accessControlList.allowsPublicReadAccess</p></li>
+    /// <li>
+    /// <p>resource.s3BucketDetails.publicAccess.permissionConfiguration.bucketLevelPermissions.accessControlList.allowsPublicWriteAccess</p></li>
+    /// <li>
+    /// <p>resource.s3BucketDetails.publicAccess.permissionConfiguration.bucketLevelPermissions.blockPublicAccess.blockPublicAcls</p></li>
+    /// <li>
+    /// <p>resource.s3BucketDetails.publicAccess.permissionConfiguration.bucketLevelPermissions.blockPublicAccess.blockPublicPolicy</p></li>
+    /// <li>
+    /// <p>resource.s3BucketDetails.publicAccess.permissionConfiguration.bucketLevelPermissions.blockPublicAccess.ignorePublicAcls</p></li>
+    /// <li>
+    /// <p>resource.s3BucketDetails.publicAccess.permissionConfiguration.bucketLevelPermissions.blockPublicAccess.restrictPublicBuckets</p></li>
+    /// <li>
+    /// <p>resource.s3BucketDetails.publicAccess.permissionConfiguration.bucketLevelPermissions.bucketPolicy.allowsPublicReadAccess</p></li>
+    /// <li>
+    /// <p>resource.s3BucketDetails.publicAccess.permissionConfiguration.bucketLevelPermissions.bucketPolicy.allowsPublicWriteAccess</p></li>
+    /// <li>
+    /// <p>resource.s3BucketDetails.s3ObjectDetails.eTag</p></li>
+    /// <li>
+    /// <p>resource.s3BucketDetails.s3ObjectDetails.hash</p></li>
+    /// <li>
+    /// <p>resource.s3BucketDetails.s3ObjectDetails.key</p></li>
+    /// <li>
+    /// <p>resource.s3BucketDetails.s3ObjectDetails.objectArn</p></li>
+    /// <li>
+    /// <p>resource.s3BucketDetails.s3ObjectDetails.versionId</p></li>
     /// <li>
     /// <p>resource.s3BucketDetails.tags.key</p></li>
     /// <li>
@@ -1072,17 +5806,35 @@ impl CreateFilterInputBuilder {
     /// <li>
     /// <p>resource.s3BucketDetails.type</p></li>
     /// <li>
+    /// <p>schemaVersion</p></li>
+    /// <li>
     /// <p>service.action.actionType</p></li>
+    /// <li>
+    /// <p>service.action.awsApiCallAction.affectedResources</p></li>
     /// <li>
     /// <p>service.action.awsApiCallAction.api</p></li>
     /// <li>
     /// <p>service.action.awsApiCallAction.callerType</p></li>
     /// <li>
+    /// <p>service.action.awsApiCallAction.domainDetails.domain</p></li>
+    /// <li>
     /// <p>service.action.awsApiCallAction.errorCode</p></li>
+    /// <li>
+    /// <p>service.action.awsApiCallAction.remoteAccountDetails.accountId</p></li>
+    /// <li>
+    /// <p>service.action.awsApiCallAction.remoteAccountDetails.affiliated</p></li>
+    /// <li>
+    /// <p>service.action.awsApiCallAction.remoteAccountDetails.awsServiceName</p></li>
     /// <li>
     /// <p>service.action.awsApiCallAction.remoteIpDetails.city.cityName</p></li>
     /// <li>
+    /// <p>service.action.awsApiCallAction.remoteIpDetails.country.countryCode</p></li>
+    /// <li>
     /// <p>service.action.awsApiCallAction.remoteIpDetails.country.countryName</p></li>
+    /// <li>
+    /// <p>service.action.awsApiCallAction.remoteIpDetails.geoLocation.lat</p></li>
+    /// <li>
+    /// <p>service.action.awsApiCallAction.remoteIpDetails.geoLocation.lon</p></li>
     /// <li>
     /// <p>service.action.awsApiCallAction.remoteIpDetails.ipAddressV4</p></li>
     /// <li>
@@ -1092,25 +5844,115 @@ impl CreateFilterInputBuilder {
     /// <li>
     /// <p>service.action.awsApiCallAction.remoteIpDetails.organization.asnOrg</p></li>
     /// <li>
+    /// <p>service.action.awsApiCallAction.remoteIpDetails.organization.isp</p></li>
+    /// <li>
+    /// <p>service.action.awsApiCallAction.remoteIpDetails.organization.org</p></li>
+    /// <li>
     /// <p>service.action.awsApiCallAction.serviceName</p></li>
+    /// <li>
+    /// <p>service.action.awsApiCallAction.userAgent</p></li>
+    /// <li>
+    /// <p>service.action.dnsRequestAction.blocked</p></li>
     /// <li>
     /// <p>service.action.dnsRequestAction.domain</p></li>
     /// <li>
     /// <p>service.action.dnsRequestAction.domainWithSuffix</p></li>
     /// <li>
+    /// <p>service.action.dnsRequestAction.protocol</p></li>
+    /// <li>
     /// <p>service.action.dnsRequestAction.vpcOwnerAccountId</p></li>
+    /// <li>
+    /// <p>service.action.kubernetesApiCallAction.namespace</p></li>
+    /// <li>
+    /// <p>service.action.kubernetesApiCallAction.parameters</p></li>
+    /// <li>
+    /// <p>service.action.kubernetesApiCallAction.remoteIpDetails.city.cityName</p></li>
+    /// <li>
+    /// <p>service.action.kubernetesApiCallAction.remoteIpDetails.country.countryCode</p></li>
+    /// <li>
+    /// <p>service.action.kubernetesApiCallAction.remoteIpDetails.country.countryName</p></li>
+    /// <li>
+    /// <p>service.action.kubernetesApiCallAction.remoteIpDetails.geoLocation.lat</p></li>
+    /// <li>
+    /// <p>service.action.kubernetesApiCallAction.remoteIpDetails.geoLocation.lon</p></li>
+    /// <li>
+    /// <p>service.action.kubernetesApiCallAction.remoteIpDetails.ipAddressV4</p></li>
+    /// <li>
+    /// <p>service.action.kubernetesApiCallAction.remoteIpDetails.ipAddressV6</p></li>
+    /// <li>
+    /// <p>service.action.kubernetesApiCallAction.remoteIpDetails.organization.asn</p></li>
+    /// <li>
+    /// <p>service.action.kubernetesApiCallAction.remoteIpDetails.organization.asnOrg</p></li>
+    /// <li>
+    /// <p>service.action.kubernetesApiCallAction.remoteIpDetails.organization.isp</p></li>
+    /// <li>
+    /// <p>service.action.kubernetesApiCallAction.remoteIpDetails.organization.org</p></li>
+    /// <li>
+    /// <p>service.action.kubernetesApiCallAction.requestUri</p></li>
+    /// <li>
+    /// <p>service.action.kubernetesApiCallAction.resource</p></li>
+    /// <li>
+    /// <p>service.action.kubernetesApiCallAction.resourceName</p></li>
+    /// <li>
+    /// <p>service.action.kubernetesApiCallAction.sourceIPs</p></li>
+    /// <li>
+    /// <p>service.action.kubernetesApiCallAction.statusCode</p></li>
+    /// <li>
+    /// <p>service.action.kubernetesApiCallAction.subresource</p></li>
+    /// <li>
+    /// <p>service.action.kubernetesApiCallAction.userAgent</p></li>
+    /// <li>
+    /// <p>service.action.kubernetesApiCallAction.verb</p></li>
+    /// <li>
+    /// <p>service.action.kubernetesPermissionCheckedDetails.allowed</p></li>
+    /// <li>
+    /// <p>service.action.kubernetesPermissionCheckedDetails.namespace</p></li>
+    /// <li>
+    /// <p>service.action.kubernetesPermissionCheckedDetails.resource</p></li>
+    /// <li>
+    /// <p>service.action.kubernetesPermissionCheckedDetails.verb</p></li>
+    /// <li>
+    /// <p>service.action.kubernetesRoleBindingDetails.kind</p></li>
+    /// <li>
+    /// <p>service.action.kubernetesRoleBindingDetails.name</p></li>
+    /// <li>
+    /// <p>service.action.kubernetesRoleBindingDetails.roleRefKind</p></li>
+    /// <li>
+    /// <p>service.action.kubernetesRoleBindingDetails.roleRefName</p></li>
+    /// <li>
+    /// <p>service.action.kubernetesRoleBindingDetails.uid</p></li>
+    /// <li>
+    /// <p>service.action.kubernetesRoleDetails.kind</p></li>
+    /// <li>
+    /// <p>service.action.kubernetesRoleDetails.name</p></li>
+    /// <li>
+    /// <p>service.action.kubernetesRoleDetails.uid</p></li>
     /// <li>
     /// <p>service.action.networkConnectionAction.blocked</p></li>
     /// <li>
     /// <p>service.action.networkConnectionAction.connectionDirection</p></li>
     /// <li>
+    /// <p>service.action.networkConnectionAction.localIpDetails.ipAddressV4</p></li>
+    /// <li>
+    /// <p>service.action.networkConnectionAction.localIpDetails.ipAddressV6</p></li>
+    /// <li>
+    /// <p>service.action.networkConnectionAction.localNetworkInterface</p></li>
+    /// <li>
     /// <p>service.action.networkConnectionAction.localPortDetails.port</p></li>
+    /// <li>
+    /// <p>service.action.networkConnectionAction.localPortDetails.portName</p></li>
     /// <li>
     /// <p>service.action.networkConnectionAction.protocol</p></li>
     /// <li>
     /// <p>service.action.networkConnectionAction.remoteIpDetails.city.cityName</p></li>
     /// <li>
+    /// <p>service.action.networkConnectionAction.remoteIpDetails.country.countryCode</p></li>
+    /// <li>
     /// <p>service.action.networkConnectionAction.remoteIpDetails.country.countryName</p></li>
+    /// <li>
+    /// <p>service.action.networkConnectionAction.remoteIpDetails.geoLocation.lat</p></li>
+    /// <li>
+    /// <p>service.action.networkConnectionAction.remoteIpDetails.geoLocation.lon</p></li>
     /// <li>
     /// <p>service.action.networkConnectionAction.remoteIpDetails.ipAddressV4</p></li>
     /// <li>
@@ -1120,89 +5962,707 @@ impl CreateFilterInputBuilder {
     /// <li>
     /// <p>service.action.networkConnectionAction.remoteIpDetails.organization.asnOrg</p></li>
     /// <li>
+    /// <p>service.action.networkConnectionAction.remoteIpDetails.organization.isp</p></li>
+    /// <li>
+    /// <p>service.action.networkConnectionAction.remoteIpDetails.organization.org</p></li>
+    /// <li>
     /// <p>service.action.networkConnectionAction.remotePortDetails.port</p></li>
     /// <li>
-    /// <p>service.action.awsApiCallAction.remoteAccountDetails.affiliated</p></li>
+    /// <p>service.action.networkConnectionAction.remotePortDetails.portName</p></li>
     /// <li>
-    /// <p>service.action.kubernetesApiCallAction.remoteIpDetails.ipAddressV4</p></li>
+    /// <p>service.action.portProbeAction.blocked</p></li>
     /// <li>
-    /// <p>service.action.kubernetesApiCallAction.remoteIpDetails.ipAddressV6</p></li>
+    /// <p>service.action.portProbeAction.portProbeDetails.localIpDetails.ipAddressV4</p></li>
     /// <li>
-    /// <p>service.action.kubernetesApiCallAction.namespace</p></li>
+    /// <p>service.action.portProbeAction.portProbeDetails.localIpDetails.ipAddressV6</p></li>
     /// <li>
-    /// <p>service.action.kubernetesApiCallAction.remoteIpDetails.organization.asn</p></li>
+    /// <p>service.action.portProbeAction.portProbeDetails.localPortDetails.port</p></li>
     /// <li>
-    /// <p>service.action.kubernetesApiCallAction.requestUri</p></li>
+    /// <p>service.action.portProbeAction.portProbeDetails.localPortDetails.portName</p></li>
     /// <li>
-    /// <p>service.action.kubernetesApiCallAction.statusCode</p></li>
+    /// <p>service.action.portProbeAction.portProbeDetails.remoteIpDetails.city.cityName</p></li>
     /// <li>
-    /// <p>service.action.networkConnectionAction.localIpDetails.ipAddressV4</p></li>
+    /// <p>service.action.portProbeAction.portProbeDetails.remoteIpDetails.country.countryCode</p></li>
     /// <li>
-    /// <p>service.action.networkConnectionAction.localIpDetails.ipAddressV6</p></li>
+    /// <p>service.action.portProbeAction.portProbeDetails.remoteIpDetails.country.countryName</p></li>
     /// <li>
-    /// <p>service.action.networkConnectionAction.protocol</p></li>
+    /// <p>service.action.portProbeAction.portProbeDetails.remoteIpDetails.geoLocation.lat</p></li>
     /// <li>
-    /// <p>service.action.awsApiCallAction.serviceName</p></li>
+    /// <p>service.action.portProbeAction.portProbeDetails.remoteIpDetails.geoLocation.lon</p></li>
     /// <li>
-    /// <p>service.action.awsApiCallAction.remoteAccountDetails.accountId</p></li>
+    /// <p>service.action.portProbeAction.portProbeDetails.remoteIpDetails.ipAddressV4</p></li>
+    /// <li>
+    /// <p>service.action.portProbeAction.portProbeDetails.remoteIpDetails.ipAddressV6</p></li>
+    /// <li>
+    /// <p>service.action.portProbeAction.portProbeDetails.remoteIpDetails.organization.asn</p></li>
+    /// <li>
+    /// <p>service.action.portProbeAction.portProbeDetails.remoteIpDetails.organization.asnOrg</p></li>
+    /// <li>
+    /// <p>service.action.portProbeAction.portProbeDetails.remoteIpDetails.organization.isp</p></li>
+    /// <li>
+    /// <p>service.action.portProbeAction.portProbeDetails.remoteIpDetails.organization.org</p></li>
+    /// <li>
+    /// <p>service.action.rdsLoginAttemptAction.loginAttributes.application</p></li>
+    /// <li>
+    /// <p>service.action.rdsLoginAttemptAction.loginAttributes.failedLoginAttempts</p></li>
+    /// <li>
+    /// <p>service.action.rdsLoginAttemptAction.loginAttributes.successfulLoginAttempts</p></li>
+    /// <li>
+    /// <p>service.action.rdsLoginAttemptAction.loginAttributes.user</p></li>
+    /// <li>
+    /// <p>service.action.rdsLoginAttemptAction.remoteIpDetails.city.cityName</p></li>
+    /// <li>
+    /// <p>service.action.rdsLoginAttemptAction.remoteIpDetails.country.countryCode</p></li>
+    /// <li>
+    /// <p>service.action.rdsLoginAttemptAction.remoteIpDetails.country.countryName</p></li>
+    /// <li>
+    /// <p>service.action.rdsLoginAttemptAction.remoteIpDetails.geoLocation.lat</p></li>
+    /// <li>
+    /// <p>service.action.rdsLoginAttemptAction.remoteIpDetails.geoLocation.lon</p></li>
+    /// <li>
+    /// <p>service.action.rdsLoginAttemptAction.remoteIpDetails.ipAddressV4</p></li>
+    /// <li>
+    /// <p>service.action.rdsLoginAttemptAction.remoteIpDetails.ipAddressV6</p></li>
+    /// <li>
+    /// <p>service.action.rdsLoginAttemptAction.remoteIpDetails.organization.asn</p></li>
+    /// <li>
+    /// <p>service.action.rdsLoginAttemptAction.remoteIpDetails.organization.asnOrg</p></li>
+    /// <li>
+    /// <p>service.action.rdsLoginAttemptAction.remoteIpDetails.organization.isp</p></li>
+    /// <li>
+    /// <p>service.action.rdsLoginAttemptAction.remoteIpDetails.organization.org</p></li>
+    /// <li>
+    /// <p>service.additionalInfo.agentDetails.agentId</p></li>
+    /// <li>
+    /// <p>service.additionalInfo.agentDetails.agentVersion</p></li>
+    /// <li>
+    /// <p>service.additionalInfo.anomalies.anomalousAPIs</p></li>
+    /// <li>
+    /// <p>service.additionalInfo.authenticationMethod</p></li>
+    /// <li>
+    /// <p>service.additionalInfo.averagePacketSizeIn</p></li>
+    /// <li>
+    /// <p>service.additionalInfo.averagePacketSizeOut</p></li>
+    /// <li>
+    /// <p>service.additionalInfo.context</p></li>
+    /// <li>
+    /// <p>service.additionalInfo.domain</p></li>
+    /// <li>
+    /// <p>service.additionalInfo.inBytes</p></li>
+    /// <li>
+    /// <p>service.additionalInfo.localNetworkInterfaceOwner</p></li>
+    /// <li>
+    /// <p>service.additionalInfo.localPort</p></li>
+    /// <li>
+    /// <p>service.additionalInfo.outBytes</p></li>
+    /// <li>
+    /// <p>service.additionalInfo.packetsIn</p></li>
+    /// <li>
+    /// <p>service.additionalInfo.packetsOut</p></li>
+    /// <li>
+    /// <p>service.additionalInfo.policyArn</p></li>
+    /// <li>
+    /// <p>service.additionalInfo.policyName</p></li>
+    /// <li>
+    /// <p>service.additionalInfo.remotePort</p></li>
+    /// <li>
+    /// <p>service.additionalInfo.sample</p></li>
+    /// <li>
+    /// <p>service.additionalInfo.scannedPort</p></li>
+    /// <li>
+    /// <p>service.additionalInfo.threatFileSha256</p></li>
     /// <li>
     /// <p>service.additionalInfo.threatListName</p></li>
     /// <li>
-    /// <p>service.resourceRole</p></li>
+    /// <p>service.additionalInfo.threatName</p></li>
     /// <li>
-    /// <p>resource.eksClusterDetails.name</p></li>
+    /// <p>service.additionalInfo.totalBytesIn</p></li>
     /// <li>
-    /// <p>resource.kubernetesDetails.kubernetesWorkloadDetails.name</p></li>
+    /// <p>service.additionalInfo.totalBytesOut</p></li>
     /// <li>
-    /// <p>resource.kubernetesDetails.kubernetesWorkloadDetails.namespace</p></li>
+    /// <p>service.additionalInfo.type</p></li>
     /// <li>
-    /// <p>resource.kubernetesDetails.kubernetesUserDetails.username</p></li>
+    /// <p>service.additionalInfo.unusual.asnOrg</p></li>
     /// <li>
-    /// <p>resource.kubernetesDetails.kubernetesWorkloadDetails.containers.image</p></li>
+    /// <p>service.additionalInfo.unusual.port</p></li>
     /// <li>
-    /// <p>resource.kubernetesDetails.kubernetesWorkloadDetails.containers.imagePrefix</p></li>
+    /// <p>service.additionalInfo.unusualProtocol</p></li>
     /// <li>
-    /// <p>service.ebsVolumeScanDetails.scanId</p></li>
+    /// <p>service.additionalInfo.userAgent.fullUserAgent</p></li>
+    /// <li>
+    /// <p>service.additionalInfo.userAgent.userAgentCategory</p></li>
+    /// <li>
+    /// <p>service.additionalInfo.value</p></li>
+    /// <li>
+    /// <p>service.additionalInfo.vpcOwnerAccountId</p></li>
+    /// <li>
+    /// <p>service.archived</p></li>
+    /// <li>
+    /// <p>service.count</p></li>
+    /// <li>
+    /// <p>service.detection.anomaly.profiles</p></li>
+    /// <li>
+    /// <p>service.detection.anomaly.unusual.behavior</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.actors.id</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.actors.process.name</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.actors.process.path</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.actors.process.sha256</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.actors.session.createdTime</p>
+    /// <p>Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.actors.session.issuer</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.actors.session.mfaStatus</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.actors.session.uid</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.actors.user.account.account</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.actors.user.account.uid</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.actors.user.credentialUid</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.actors.user.name</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.actors.user.type</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.actors.user.uid</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.additionalSequenceTypes</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.description</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.endpoints.autonomousSystem.name</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.endpoints.autonomousSystem.number</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.endpoints.connection.direction</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.endpoints.domain</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.endpoints.id</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.endpoints.ip</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.endpoints.location.city</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.endpoints.location.country</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.endpoints.location.lat</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.endpoints.location.lon</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.endpoints.port</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.accountId</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.cloudPartition</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.accessKey.principalId</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.accessKey.userName</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.accessKey.userType</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.autoscalingAutoScalingGroup.ec2InstanceUids</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.cloudformationStack.ec2InstanceUids</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.container.image</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.container.imageUid</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.ec2Image.ec2InstanceUids</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.ec2Instance.availabilityZone</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.ec2Instance.ec2NetworkInterfaceUids</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.ec2Instance.iamInstanceProfile.arn</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.ec2Instance.iamInstanceProfile.id</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.ec2Instance.imageDescription</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.ec2Instance.instanceState</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.ec2Instance.instanceType</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.ec2Instance.outpostArn</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.ec2Instance.platform</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.ec2Instance.productCodes.productCodeId</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.ec2Instance.productCodes.productCodeType</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.ec2LaunchTemplate.ec2InstanceUids</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.ec2LaunchTemplate.version</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.ec2NetworkInterface.ipv6Addresses</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.ec2NetworkInterface.privateIpAddresses.privateDnsName</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.ec2NetworkInterface.privateIpAddresses.privateIpAddress</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.ec2NetworkInterface.publicIp</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.ec2NetworkInterface.securityGroups.groupId</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.ec2NetworkInterface.securityGroups.groupName</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.ec2NetworkInterface.subNetId</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.ec2NetworkInterface.vpcId</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.ec2Vpc.ec2InstanceUids</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.ecsCluster.ec2InstanceUids</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.ecsCluster.status</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.ecsTask.containerUids</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.ecsTask.createdAt</p>
+    /// <p>Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.ecsTask.launchType</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.ecsTask.taskDefinitionArn</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.eksCluster.arn</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.eksCluster.createdAt</p>
+    /// <p>Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.eksCluster.ec2InstanceUids</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.eksCluster.status</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.eksCluster.vpcId</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.iamInstanceProfile.ec2InstanceUids</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.iamInstanceProfile.id</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.kubernetesWorkload.containerUids</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.kubernetesWorkload.namespace</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.kubernetesWorkload.type</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.s3Bucket.accountPublicAccess.publicAclAccess</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.s3Bucket.accountPublicAccess.publicAclIgnoreBehavior</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.s3Bucket.accountPublicAccess.publicBucketRestrictBehavior</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.s3Bucket.accountPublicAccess.publicPolicyAccess</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.s3Bucket.bucketPublicAccess.publicAclAccess</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.s3Bucket.bucketPublicAccess.publicAclIgnoreBehavior</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.s3Bucket.bucketPublicAccess.publicBucketRestrictBehavior</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.s3Bucket.bucketPublicAccess.publicPolicyAccess</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.s3Bucket.createdAt</p>
+    /// <p>Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.s3Bucket.effectivePermission</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.s3Bucket.encryptionKeyArn</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.s3Bucket.encryptionType</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.s3Bucket.ownerId</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.s3Bucket.publicReadAccess</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.s3Bucket.publicWriteAccess</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.s3Bucket.s3ObjectUids</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.s3Object.eTag</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.s3Object.key</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.data.s3Object.versionId</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.name</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.region</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.resourceType</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.service</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.tags.key</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.tags.value</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.resources.uid</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.sequenceIndicators.key</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.sequenceIndicators.title</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.sequenceIndicators.values</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.signals.actorIds</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.signals.count</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.signals.createdAt</p>
+    /// <p>Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.signals.description</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.signals.endpointIds</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.signals.firstSeenAt</p>
+    /// <p>Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.signals.lastSeenAt</p>
+    /// <p>Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.signals.name</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.signals.resourceUids</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.signals.severity</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.signals.signalIndicators.key</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.signals.signalIndicators.title</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.signals.signalIndicators.values</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.signals.type</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.signals.uid</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.signals.updatedAt</p>
+    /// <p>Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000</p></li>
+    /// <li>
+    /// <p>service.detection.sequence.uid</p></li>
+    /// <li>
+    /// <p>service.detectorId</p></li>
+    /// <li>
+    /// <p>service.ebsVolumeScanDetails.scanCompletedAt</p>
+    /// <p>Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000</p></li>
+    /// <li>
+    /// <p>service.ebsVolumeScanDetails.scanDetections.highestSeverityThreatDetails.count</p></li>
+    /// <li>
+    /// <p>service.ebsVolumeScanDetails.scanDetections.highestSeverityThreatDetails.severity</p></li>
+    /// <li>
+    /// <p>service.ebsVolumeScanDetails.scanDetections.highestSeverityThreatDetails.threatName</p></li>
+    /// <li>
+    /// <p>service.ebsVolumeScanDetails.scanDetections.scannedItemCount.files</p></li>
+    /// <li>
+    /// <p>service.ebsVolumeScanDetails.scanDetections.scannedItemCount.totalGb</p></li>
+    /// <li>
+    /// <p>service.ebsVolumeScanDetails.scanDetections.scannedItemCount.volumes</p></li>
+    /// <li>
+    /// <p>service.ebsVolumeScanDetails.scanDetections.threatDetectedByName.itemCount</p></li>
+    /// <li>
+    /// <p>service.ebsVolumeScanDetails.scanDetections.threatDetectedByName.shortened</p></li>
+    /// <li>
+    /// <p>service.ebsVolumeScanDetails.scanDetections.threatDetectedByName.threatNames.filePaths.fileName</p></li>
+    /// <li>
+    /// <p>service.ebsVolumeScanDetails.scanDetections.threatDetectedByName.threatNames.filePaths.filePath</p></li>
+    /// <li>
+    /// <p>service.ebsVolumeScanDetails.scanDetections.threatDetectedByName.threatNames.filePaths.hash</p></li>
+    /// <li>
+    /// <p>service.ebsVolumeScanDetails.scanDetections.threatDetectedByName.threatNames.filePaths.volumeArn</p></li>
+    /// <li>
+    /// <p>service.ebsVolumeScanDetails.scanDetections.threatDetectedByName.threatNames.itemCount</p></li>
     /// <li>
     /// <p>service.ebsVolumeScanDetails.scanDetections.threatDetectedByName.threatNames.name</p></li>
     /// <li>
     /// <p>service.ebsVolumeScanDetails.scanDetections.threatDetectedByName.threatNames.severity</p></li>
     /// <li>
-    /// <p>service.ebsVolumeScanDetails.scanDetections.threatDetectedByName.threatNames.filePaths.hash</p></li>
+    /// <p>service.ebsVolumeScanDetails.scanDetections.threatDetectedByName.uniqueThreatNameCount</p></li>
     /// <li>
-    /// <p>resource.ecsClusterDetails.name</p></li>
+    /// <p>service.ebsVolumeScanDetails.scanDetections.threatsDetectedItemCount.files</p></li>
     /// <li>
-    /// <p>resource.ecsClusterDetails.taskDetails.containers.image</p></li>
+    /// <p>service.ebsVolumeScanDetails.scanId</p></li>
     /// <li>
-    /// <p>resource.ecsClusterDetails.taskDetails.definitionArn</p></li>
+    /// <p>service.ebsVolumeScanDetails.scanStartedAt</p>
+    /// <p>Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000</p></li>
     /// <li>
-    /// <p>resource.containerDetails.image</p></li>
+    /// <p>service.ebsVolumeScanDetails.scanType</p></li>
     /// <li>
-    /// <p>resource.rdsDbInstanceDetails.dbInstanceIdentifier</p></li>
+    /// <p>service.ebsVolumeScanDetails.sources</p></li>
     /// <li>
-    /// <p>resource.rdsDbInstanceDetails.dbClusterIdentifier</p></li>
+    /// <p>service.ebsVolumeScanDetails.triggerFindingId</p></li>
     /// <li>
-    /// <p>resource.rdsDbInstanceDetails.engine</p></li>
+    /// <p>service.eventFirstSeen</p>
+    /// <p>Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000</p></li>
     /// <li>
-    /// <p>resource.rdsDbUserDetails.user</p></li>
+    /// <p>service.eventLastSeen</p>
+    /// <p>Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000</p></li>
     /// <li>
-    /// <p>resource.rdsDbInstanceDetails.tags.key</p></li>
+    /// <p>service.evidence.threatIntelligenceDetails.threatFileSha256</p></li>
     /// <li>
-    /// <p>resource.rdsDbInstanceDetails.tags.value</p></li>
+    /// <p>service.evidence.threatIntelligenceDetails.threatListName</p></li>
     /// <li>
-    /// <p>service.runtimeDetails.process.executableSha256</p></li>
+    /// <p>service.evidence.threatIntelligenceDetails.threatNames</p></li>
     /// <li>
-    /// <p>service.runtimeDetails.process.name</p></li>
+    /// <p>service.featureName</p></li>
+    /// <li>
+    /// <p>service.malwareScanDetails.scanCategory</p></li>
+    /// <li>
+    /// <p>service.malwareScanDetails.scanConfiguration.incrementalScanDetails.baselineResourceArn</p></li>
+    /// <li>
+    /// <p>service.malwareScanDetails.scanConfiguration.triggerType</p></li>
+    /// <li>
+    /// <p>service.malwareScanDetails.scanId</p></li>
+    /// <li>
+    /// <p>service.malwareScanDetails.scanType</p></li>
+    /// <li>
+    /// <p>service.malwareScanDetails.threats.count</p></li>
+    /// <li>
+    /// <p>service.malwareScanDetails.threats.hash</p></li>
+    /// <li>
+    /// <p>service.malwareScanDetails.threats.itemDetails.additionalInfo.deviceName</p></li>
+    /// <li>
+    /// <p>service.malwareScanDetails.threats.itemDetails.additionalInfo.versionId</p></li>
+    /// <li>
+    /// <p>service.malwareScanDetails.threats.itemDetails.hash</p></li>
+    /// <li>
+    /// <p>service.malwareScanDetails.threats.itemDetails.itemPath</p></li>
+    /// <li>
+    /// <p>service.malwareScanDetails.threats.itemDetails.resourceArn</p></li>
+    /// <li>
+    /// <p>service.malwareScanDetails.threats.itemPaths.hash</p></li>
+    /// <li>
+    /// <p>service.malwareScanDetails.threats.itemPaths.nestedItemPath</p></li>
+    /// <li>
+    /// <p>service.malwareScanDetails.threats.name</p></li>
+    /// <li>
+    /// <p>service.malwareScanDetails.threats.source</p></li>
+    /// <li>
+    /// <p>service.malwareScanDetails.uniqueThreatCount</p></li>
+    /// <li>
+    /// <p>service.resourceRole</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.addressFamily</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.commandLineExample</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.fileOperation</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.filePath</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.fileSystemType</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.flags</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.ianaProtocolNumber</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.ldPreloadValue</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.libraryPath</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.memoryRegions</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.modifiedAt</p>
+    /// <p>Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.modifyingProcess.euid</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.modifyingProcess.executablePath</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.modifyingProcess.executableSha256</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.modifyingProcess.lineage.euid</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.modifyingProcess.lineage.executablePath</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.modifyingProcess.lineage.name</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.modifyingProcess.lineage.namespacePid</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.modifyingProcess.lineage.parentUuid</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.modifyingProcess.lineage.pid</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.modifyingProcess.lineage.startTime</p>
+    /// <p>Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.modifyingProcess.lineage.userId</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.modifyingProcess.lineage.uuid</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.modifyingProcess.name</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.modifyingProcess.namespacePid</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.modifyingProcess.parentUuid</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.modifyingProcess.pid</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.modifyingProcess.pwd</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.modifyingProcess.startTime</p>
+    /// <p>Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.modifyingProcess.user</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.modifyingProcess.userId</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.modifyingProcess.uuid</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.moduleFilePath</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.moduleName</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.moduleSha256</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.mountSource</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.mountTarget</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.relatedFilePaths</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.releaseAgentPath</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.runcBinaryPath</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.scriptPath</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.serviceName</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.shellHistoryFilePath</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.socketPath</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.targetProcess.euid</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.targetProcess.executablePath</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.targetProcess.executableSha256</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.targetProcess.lineage.euid</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.targetProcess.lineage.executablePath</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.targetProcess.lineage.name</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.targetProcess.lineage.namespacePid</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.targetProcess.lineage.parentUuid</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.targetProcess.lineage.pid</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.targetProcess.lineage.startTime</p>
+    /// <p>Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.targetProcess.lineage.userId</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.targetProcess.lineage.uuid</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.targetProcess.name</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.targetProcess.namespacePid</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.targetProcess.parentUuid</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.targetProcess.pid</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.targetProcess.pwd</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.targetProcess.startTime</p>
+    /// <p>Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.targetProcess.user</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.targetProcess.userId</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.targetProcess.uuid</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.threatFilePath</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.toolCategory</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.context.toolName</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.process.euid</p></li>
     /// <li>
     /// <p>service.runtimeDetails.process.executablePath</p></li>
     /// <li>
-    /// <p>resource.lambdaDetails.functionName</p></li>
+    /// <p>service.runtimeDetails.process.executableSha256</p></li>
     /// <li>
-    /// <p>resource.lambdaDetails.functionArn</p></li>
+    /// <p>service.runtimeDetails.process.lineage.euid</p></li>
     /// <li>
-    /// <p>resource.lambdaDetails.tags.key</p></li>
+    /// <p>service.runtimeDetails.process.lineage.executablePath</p></li>
     /// <li>
-    /// <p>resource.lambdaDetails.tags.value</p></li>
+    /// <p>service.runtimeDetails.process.lineage.name</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.process.lineage.namespacePid</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.process.lineage.parentUuid</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.process.lineage.pid</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.process.lineage.startTime</p>
+    /// <p>Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.process.lineage.userId</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.process.lineage.uuid</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.process.name</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.process.namespacePid</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.process.parentUuid</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.process.pid</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.process.pwd</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.process.startTime</p>
+    /// <p>Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.process.user</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.process.userId</p></li>
+    /// <li>
+    /// <p>service.runtimeDetails.process.uuid</p></li>
+    /// <li>
+    /// <p>service.serviceName</p></li>
+    /// <li>
+    /// <p>service.userFeedback</p></li>
+    /// <li>
+    /// <p>severity</p>
+    /// <p>To configure severity based filters, use the following for the <a href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_FindingCriteria.html">FindingCriteria</a> condition:</p>
+    /// <ul>
+    /// <li>
+    /// <p><b>Low</b>: <code>\["1", "2", "3"\]</code></p></li>
+    /// <li>
+    /// <p><b>Medium</b>: <code>\["4", "5", "6"\]</code></p></li>
+    /// <li>
+    /// <p><b>High</b>: <code>\["7", "8"\]</code></p></li>
+    /// <li>
+    /// <p><b>Critical</b>: <code>\["9", "10"\]</code></p></li>
+    /// </ul>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings-severity.html">Findings severity levels</a> in the <i>Amazon GuardDuty User Guide</i>.</p></li>
+    /// <li>
+    /// <p>title</p></li>
+    /// <li>
+    /// <p>type</p></li>
+    /// <li>
+    /// <p>updatedAt</p>
+    /// <p>Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000</p></li>
     /// </ul>
     pub fn get_finding_criteria(&self) -> &::std::option::Option<crate::types::FindingCriteria> {
         &self.finding_criteria

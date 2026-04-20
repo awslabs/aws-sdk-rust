@@ -138,7 +138,11 @@ impl Client {
 
 mod associate_eip_to_vlan;
 
+mod create_entitlement;
+
 mod create_environment;
+
+mod create_environment_connector;
 
 mod create_environment_host;
 
@@ -169,7 +173,11 @@ mod create_environment_host;
 /// ```
 pub mod customize;
 
+mod delete_entitlement;
+
 mod delete_environment;
+
+mod delete_environment_connector;
 
 mod delete_environment_host;
 
@@ -179,6 +187,8 @@ mod get_environment;
 
 mod get_versions;
 
+mod list_environment_connectors;
+
 mod list_environment_hosts;
 
 mod list_environment_vlans;
@@ -187,6 +197,10 @@ mod list_environments;
 
 mod list_tags_for_resource;
 
+mod list_vm_entitlements;
+
 mod tag_resource;
 
 mod untag_resource;
+
+mod update_environment_connector;

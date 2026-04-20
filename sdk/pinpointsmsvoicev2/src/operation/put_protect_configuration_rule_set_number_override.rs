@@ -139,8 +139,12 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for PutProt
         #[allow(unused_mut)]
         let mut rcb =
             ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("PutProtectConfigurationRuleSetNumberOverride")
-                .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
-                .with_interceptor(PutProtectConfigurationRuleSetNumberOverrideEndpointParamsInterceptor)
+                .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                    ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
+                ))
+                .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                    PutProtectConfigurationRuleSetNumberOverrideEndpointParamsInterceptor,
+                ))
                 .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                     crate::operation::put_protect_configuration_rule_set_number_override::PutProtectConfigurationRuleSetNumberOverrideError,
                 >::new())
@@ -231,6 +235,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for PutProtectCo
 #[derive(Debug)]
 struct PutProtectConfigurationRuleSetNumberOverrideEndpointParamsInterceptor;
 
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
 impl ::aws_smithy_runtime_api::client::interceptors::Intercept for PutProtectConfigurationRuleSetNumberOverrideEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "PutProtectConfigurationRuleSetNumberOverrideEndpointParamsInterceptor"

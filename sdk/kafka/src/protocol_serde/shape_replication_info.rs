@@ -12,17 +12,23 @@ pub fn ser_replication_info(
     if let Some(var_3) = &input.source_kafka_cluster_arn {
         object.key("sourceKafkaClusterArn").string(var_3.as_str());
     }
-    if let Some(var_4) = &input.target_compression_type {
-        object.key("targetCompressionType").string(var_4.as_str());
+    if let Some(var_4) = &input.source_kafka_cluster_id {
+        object.key("sourceKafkaClusterId").string(var_4.as_str());
     }
-    if let Some(var_5) = &input.target_kafka_cluster_arn {
-        object.key("targetKafkaClusterArn").string(var_5.as_str());
+    if let Some(var_5) = &input.target_compression_type {
+        object.key("targetCompressionType").string(var_5.as_str());
     }
-    if let Some(var_6) = &input.topic_replication {
+    if let Some(var_6) = &input.target_kafka_cluster_arn {
+        object.key("targetKafkaClusterArn").string(var_6.as_str());
+    }
+    if let Some(var_7) = &input.target_kafka_cluster_id {
+        object.key("targetKafkaClusterId").string(var_7.as_str());
+    }
+    if let Some(var_8) = &input.topic_replication {
         #[allow(unused_mut)]
-        let mut object_7 = object.key("topicReplication").start_object();
-        crate::protocol_serde::shape_topic_replication::ser_topic_replication(&mut object_7, var_6)?;
-        object_7.finish();
+        let mut object_9 = object.key("topicReplication").start_object();
+        crate::protocol_serde::shape_topic_replication::ser_topic_replication(&mut object_9, var_8)?;
+        object_9.finish();
     }
     Ok(())
 }

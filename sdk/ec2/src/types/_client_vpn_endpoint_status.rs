@@ -14,6 +14,8 @@ pub struct ClientVpnEndpointStatus {
     /// <p><code>deleting</code> - The Client VPN endpoint is being deleted. The Client VPN endpoint cannot accept connections.</p></li>
     /// <li>
     /// <p><code>deleted</code> - The Client VPN endpoint has been deleted. The Client VPN endpoint cannot accept connections.</p></li>
+    /// <li>
+    /// <p><code>pending</code> - The Client VPN endpoint has been created with a Transit Gateway configuration and is waiting for the Transit Gateway attachment to be accepted. The Client VPN endpoint cannot accept connections.</p></li>
     /// </ul>
     pub code: ::std::option::Option<crate::types::ClientVpnEndpointStatusCode>,
     /// <p>A message about the status of the Client VPN endpoint.</p>
@@ -30,6 +32,8 @@ impl ClientVpnEndpointStatus {
     /// <p><code>deleting</code> - The Client VPN endpoint is being deleted. The Client VPN endpoint cannot accept connections.</p></li>
     /// <li>
     /// <p><code>deleted</code> - The Client VPN endpoint has been deleted. The Client VPN endpoint cannot accept connections.</p></li>
+    /// <li>
+    /// <p><code>pending</code> - The Client VPN endpoint has been created with a Transit Gateway configuration and is waiting for the Transit Gateway attachment to be accepted. The Client VPN endpoint cannot accept connections.</p></li>
     /// </ul>
     pub fn code(&self) -> ::std::option::Option<&crate::types::ClientVpnEndpointStatusCode> {
         self.code.as_ref()
@@ -64,6 +68,8 @@ impl ClientVpnEndpointStatusBuilder {
     /// <p><code>deleting</code> - The Client VPN endpoint is being deleted. The Client VPN endpoint cannot accept connections.</p></li>
     /// <li>
     /// <p><code>deleted</code> - The Client VPN endpoint has been deleted. The Client VPN endpoint cannot accept connections.</p></li>
+    /// <li>
+    /// <p><code>pending</code> - The Client VPN endpoint has been created with a Transit Gateway configuration and is waiting for the Transit Gateway attachment to be accepted. The Client VPN endpoint cannot accept connections.</p></li>
     /// </ul>
     pub fn code(mut self, input: crate::types::ClientVpnEndpointStatusCode) -> Self {
         self.code = ::std::option::Option::Some(input);
@@ -79,6 +85,8 @@ impl ClientVpnEndpointStatusBuilder {
     /// <p><code>deleting</code> - The Client VPN endpoint is being deleted. The Client VPN endpoint cannot accept connections.</p></li>
     /// <li>
     /// <p><code>deleted</code> - The Client VPN endpoint has been deleted. The Client VPN endpoint cannot accept connections.</p></li>
+    /// <li>
+    /// <p><code>pending</code> - The Client VPN endpoint has been created with a Transit Gateway configuration and is waiting for the Transit Gateway attachment to be accepted. The Client VPN endpoint cannot accept connections.</p></li>
     /// </ul>
     pub fn set_code(mut self, input: ::std::option::Option<crate::types::ClientVpnEndpointStatusCode>) -> Self {
         self.code = input;
@@ -94,6 +102,8 @@ impl ClientVpnEndpointStatusBuilder {
     /// <p><code>deleting</code> - The Client VPN endpoint is being deleted. The Client VPN endpoint cannot accept connections.</p></li>
     /// <li>
     /// <p><code>deleted</code> - The Client VPN endpoint has been deleted. The Client VPN endpoint cannot accept connections.</p></li>
+    /// <li>
+    /// <p><code>pending</code> - The Client VPN endpoint has been created with a Transit Gateway configuration and is waiting for the Transit Gateway attachment to be accepted. The Client VPN endpoint cannot accept connections.</p></li>
     /// </ul>
     pub fn get_code(&self) -> &::std::option::Option<crate::types::ClientVpnEndpointStatusCode> {
         &self.code
