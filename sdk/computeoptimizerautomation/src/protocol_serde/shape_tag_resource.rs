@@ -6,7 +6,7 @@ pub fn de_tag_resource_http_error(
     _response_body: &[u8],
 ) -> std::result::Result<crate::operation::tag_resource::TagResourceOutput, crate::operation::tag_resource::TagResourceError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+    let mut generic_builder = crate::cbor_errors::parse_error_metadata(_response_status, _response_headers, _response_body)
         .map_err(crate::operation::tag_resource::TagResourceError::unhandled)?;
     generic_builder = ::aws_types::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
@@ -22,7 +22,7 @@ pub fn de_tag_resource_http_error(
             let mut tmp = {
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::AccessDeniedExceptionBuilder::default();
-                output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(_response_body, output)
+                output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_cbor_err(_response_body, output)
                     .map_err(crate::operation::tag_resource::TagResourceError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
@@ -37,7 +37,7 @@ pub fn de_tag_resource_http_error(
             let mut tmp = {
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::ForbiddenExceptionBuilder::default();
-                output = crate::protocol_serde::shape_forbidden_exception::de_forbidden_exception_json_err(_response_body, output)
+                output = crate::protocol_serde::shape_forbidden_exception::de_forbidden_exception_cbor_err(_response_body, output)
                     .map_err(crate::operation::tag_resource::TagResourceError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
@@ -52,7 +52,7 @@ pub fn de_tag_resource_http_error(
             let mut tmp = {
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::IdempotencyTokenInUseExceptionBuilder::default();
-                output = crate::protocol_serde::shape_idempotency_token_in_use_exception::de_idempotency_token_in_use_exception_json_err(
+                output = crate::protocol_serde::shape_idempotency_token_in_use_exception::de_idempotency_token_in_use_exception_cbor_err(
                     _response_body,
                     output,
                 )
@@ -70,7 +70,7 @@ pub fn de_tag_resource_http_error(
             let mut tmp = {
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::IdempotentParameterMismatchExceptionBuilder::default();
-                output = crate::protocol_serde::shape_idempotent_parameter_mismatch_exception::de_idempotent_parameter_mismatch_exception_json_err(
+                output = crate::protocol_serde::shape_idempotent_parameter_mismatch_exception::de_idempotent_parameter_mismatch_exception_cbor_err(
                     _response_body,
                     output,
                 )
@@ -88,7 +88,7 @@ pub fn de_tag_resource_http_error(
             let mut tmp = {
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::InternalServerExceptionBuilder::default();
-                output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(_response_body, output)
+                output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_cbor_err(_response_body, output)
                     .map_err(crate::operation::tag_resource::TagResourceError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
@@ -103,7 +103,7 @@ pub fn de_tag_resource_http_error(
             let mut tmp = {
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::InvalidParameterValueExceptionBuilder::default();
-                output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_json_err(
+                output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_cbor_err(
                     _response_body,
                     output,
                 )
@@ -121,7 +121,7 @@ pub fn de_tag_resource_http_error(
             let mut tmp = {
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::OptInRequiredExceptionBuilder::default();
-                output = crate::protocol_serde::shape_opt_in_required_exception::de_opt_in_required_exception_json_err(_response_body, output)
+                output = crate::protocol_serde::shape_opt_in_required_exception::de_opt_in_required_exception_cbor_err(_response_body, output)
                     .map_err(crate::operation::tag_resource::TagResourceError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
@@ -136,7 +136,7 @@ pub fn de_tag_resource_http_error(
             let mut tmp = {
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
-                output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output)
+                output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_cbor_err(_response_body, output)
                     .map_err(crate::operation::tag_resource::TagResourceError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
@@ -152,7 +152,7 @@ pub fn de_tag_resource_http_error(
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::ServiceUnavailableExceptionBuilder::default();
                 output =
-                    crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(_response_body, output)
+                    crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_cbor_err(_response_body, output)
                         .map_err(crate::operation::tag_resource::TagResourceError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
@@ -167,7 +167,7 @@ pub fn de_tag_resource_http_error(
             let mut tmp = {
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::ThrottlingExceptionBuilder::default();
-                output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(_response_body, output)
+                output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_cbor_err(_response_body, output)
                     .map_err(crate::operation::tag_resource::TagResourceError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
@@ -198,9 +198,10 @@ pub fn de_tag_resource_http_response(
 pub fn ser_tag_resource_input(
     input: &crate::operation::tag_resource::TagResourceInput,
 ) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
-    let mut out = String::new();
-    let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
-    crate::protocol_serde::shape_tag_resource_input::ser_tag_resource_input_input(&mut object, input)?;
-    object.finish();
-    Ok(::aws_smithy_types::body::SdkBody::from(out))
+    let mut encoder = ::aws_smithy_cbor::Encoder::new(Vec::new());
+    {
+        let encoder = &mut encoder;
+        crate::protocol_serde::shape_tag_resource_input::ser_tag_resource_input_input(encoder, input)?;
+    }
+    Ok(::aws_smithy_types::body::SdkBody::from(encoder.into_writer()))
 }

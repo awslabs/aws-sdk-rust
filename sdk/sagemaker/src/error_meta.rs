@@ -299,6 +299,89 @@ impl From<crate::operation::create_action::CreateActionError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_ai_benchmark_job::CreateAIBenchmarkJobError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_ai_benchmark_job::CreateAIBenchmarkJobError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_ai_benchmark_job::CreateAIBenchmarkJobError> for Error {
+    fn from(err: crate::operation::create_ai_benchmark_job::CreateAIBenchmarkJobError) -> Self {
+        match err {
+            crate::operation::create_ai_benchmark_job::CreateAIBenchmarkJobError::ResourceInUse(inner) => Error::ResourceInUse(inner),
+            crate::operation::create_ai_benchmark_job::CreateAIBenchmarkJobError::ResourceLimitExceeded(inner) => Error::ResourceLimitExceeded(inner),
+            crate::operation::create_ai_benchmark_job::CreateAIBenchmarkJobError::ResourceNotFound(inner) => Error::ResourceNotFound(inner),
+            crate::operation::create_ai_benchmark_job::CreateAIBenchmarkJobError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_ai_recommendation_job::CreateAIRecommendationJobError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_ai_recommendation_job::CreateAIRecommendationJobError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_ai_recommendation_job::CreateAIRecommendationJobError> for Error {
+    fn from(err: crate::operation::create_ai_recommendation_job::CreateAIRecommendationJobError) -> Self {
+        match err {
+            crate::operation::create_ai_recommendation_job::CreateAIRecommendationJobError::ResourceInUse(inner) => Error::ResourceInUse(inner),
+            crate::operation::create_ai_recommendation_job::CreateAIRecommendationJobError::ResourceLimitExceeded(inner) => {
+                Error::ResourceLimitExceeded(inner)
+            }
+            crate::operation::create_ai_recommendation_job::CreateAIRecommendationJobError::ResourceNotFound(inner) => Error::ResourceNotFound(inner),
+            crate::operation::create_ai_recommendation_job::CreateAIRecommendationJobError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_ai_workload_config::CreateAIWorkloadConfigError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_ai_workload_config::CreateAIWorkloadConfigError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_ai_workload_config::CreateAIWorkloadConfigError> for Error {
+    fn from(err: crate::operation::create_ai_workload_config::CreateAIWorkloadConfigError) -> Self {
+        match err {
+            crate::operation::create_ai_workload_config::CreateAIWorkloadConfigError::ResourceInUse(inner) => Error::ResourceInUse(inner),
+            crate::operation::create_ai_workload_config::CreateAIWorkloadConfigError::ResourceLimitExceeded(inner) => {
+                Error::ResourceLimitExceeded(inner)
+            }
+            crate::operation::create_ai_workload_config::CreateAIWorkloadConfigError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_algorithm::CreateAlgorithmError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -2082,6 +2165,81 @@ impl From<crate::operation::delete_action::DeleteActionError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_ai_benchmark_job::DeleteAIBenchmarkJobError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_ai_benchmark_job::DeleteAIBenchmarkJobError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_ai_benchmark_job::DeleteAIBenchmarkJobError> for Error {
+    fn from(err: crate::operation::delete_ai_benchmark_job::DeleteAIBenchmarkJobError) -> Self {
+        match err {
+            crate::operation::delete_ai_benchmark_job::DeleteAIBenchmarkJobError::ResourceNotFound(inner) => Error::ResourceNotFound(inner),
+            crate::operation::delete_ai_benchmark_job::DeleteAIBenchmarkJobError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_ai_recommendation_job::DeleteAIRecommendationJobError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_ai_recommendation_job::DeleteAIRecommendationJobError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_ai_recommendation_job::DeleteAIRecommendationJobError> for Error {
+    fn from(err: crate::operation::delete_ai_recommendation_job::DeleteAIRecommendationJobError) -> Self {
+        match err {
+            crate::operation::delete_ai_recommendation_job::DeleteAIRecommendationJobError::ResourceNotFound(inner) => Error::ResourceNotFound(inner),
+            crate::operation::delete_ai_recommendation_job::DeleteAIRecommendationJobError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_ai_workload_config::DeleteAIWorkloadConfigError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_ai_workload_config::DeleteAIWorkloadConfigError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_ai_workload_config::DeleteAIWorkloadConfigError> for Error {
+    fn from(err: crate::operation::delete_ai_workload_config::DeleteAIWorkloadConfigError) -> Self {
+        match err {
+            crate::operation::delete_ai_workload_config::DeleteAIWorkloadConfigError::ResourceInUse(inner) => Error::ResourceInUse(inner),
+            crate::operation::delete_ai_workload_config::DeleteAIWorkloadConfigError::ResourceNotFound(inner) => Error::ResourceNotFound(inner),
+            crate::operation::delete_ai_workload_config::DeleteAIWorkloadConfigError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_algorithm::DeleteAlgorithmError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -3519,6 +3677,87 @@ impl From<crate::operation::describe_action::DescribeActionError> for Error {
         match err {
             crate::operation::describe_action::DescribeActionError::ResourceNotFound(inner) => Error::ResourceNotFound(inner),
             crate::operation::describe_action::DescribeActionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_ai_benchmark_job::DescribeAIBenchmarkJobError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_ai_benchmark_job::DescribeAIBenchmarkJobError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_ai_benchmark_job::DescribeAIBenchmarkJobError> for Error {
+    fn from(err: crate::operation::describe_ai_benchmark_job::DescribeAIBenchmarkJobError) -> Self {
+        match err {
+            crate::operation::describe_ai_benchmark_job::DescribeAIBenchmarkJobError::ResourceNotFound(inner) => Error::ResourceNotFound(inner),
+            crate::operation::describe_ai_benchmark_job::DescribeAIBenchmarkJobError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_ai_recommendation_job::DescribeAIRecommendationJobError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_ai_recommendation_job::DescribeAIRecommendationJobError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_ai_recommendation_job::DescribeAIRecommendationJobError> for Error {
+    fn from(err: crate::operation::describe_ai_recommendation_job::DescribeAIRecommendationJobError) -> Self {
+        match err {
+            crate::operation::describe_ai_recommendation_job::DescribeAIRecommendationJobError::ResourceNotFound(inner) => {
+                Error::ResourceNotFound(inner)
+            }
+            crate::operation::describe_ai_recommendation_job::DescribeAIRecommendationJobError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_ai_workload_config::DescribeAIWorkloadConfigError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_ai_workload_config::DescribeAIWorkloadConfigError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_ai_workload_config::DescribeAIWorkloadConfigError> for Error {
+    fn from(err: crate::operation::describe_ai_workload_config::DescribeAIWorkloadConfigError) -> Self {
+        match err {
+            crate::operation::describe_ai_workload_config::DescribeAIWorkloadConfigError::ResourceNotFound(inner) => Error::ResourceNotFound(inner),
+            crate::operation::describe_ai_workload_config::DescribeAIWorkloadConfigError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -5620,6 +5859,74 @@ impl From<crate::operation::list_actions::ListActionsError> for Error {
         match err {
             crate::operation::list_actions::ListActionsError::ResourceNotFound(inner) => Error::ResourceNotFound(inner),
             crate::operation::list_actions::ListActionsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_ai_benchmark_jobs::ListAIBenchmarkJobsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_ai_benchmark_jobs::ListAIBenchmarkJobsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_ai_benchmark_jobs::ListAIBenchmarkJobsError> for Error {
+    fn from(err: crate::operation::list_ai_benchmark_jobs::ListAIBenchmarkJobsError) -> Self {
+        match err {
+            crate::operation::list_ai_benchmark_jobs::ListAIBenchmarkJobsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_ai_recommendation_jobs::ListAIRecommendationJobsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_ai_recommendation_jobs::ListAIRecommendationJobsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_ai_recommendation_jobs::ListAIRecommendationJobsError> for Error {
+    fn from(err: crate::operation::list_ai_recommendation_jobs::ListAIRecommendationJobsError) -> Self {
+        match err {
+            crate::operation::list_ai_recommendation_jobs::ListAIRecommendationJobsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_ai_workload_configs::ListAIWorkloadConfigsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_ai_workload_configs::ListAIWorkloadConfigsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_ai_workload_configs::ListAIWorkloadConfigsError> for Error {
+    fn from(err: crate::operation::list_ai_workload_configs::ListAIWorkloadConfigsError) -> Self {
+        match err {
+            crate::operation::list_ai_workload_configs::ListAIWorkloadConfigsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -8077,6 +8384,53 @@ impl From<crate::operation::start_session::StartSessionError> for Error {
             crate::operation::start_session::StartSessionError::ResourceLimitExceeded(inner) => Error::ResourceLimitExceeded(inner),
             crate::operation::start_session::StartSessionError::ResourceNotFound(inner) => Error::ResourceNotFound(inner),
             crate::operation::start_session::StartSessionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::stop_ai_benchmark_job::StopAIBenchmarkJobError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::stop_ai_benchmark_job::StopAIBenchmarkJobError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::stop_ai_benchmark_job::StopAIBenchmarkJobError> for Error {
+    fn from(err: crate::operation::stop_ai_benchmark_job::StopAIBenchmarkJobError) -> Self {
+        match err {
+            crate::operation::stop_ai_benchmark_job::StopAIBenchmarkJobError::ResourceNotFound(inner) => Error::ResourceNotFound(inner),
+            crate::operation::stop_ai_benchmark_job::StopAIBenchmarkJobError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::stop_ai_recommendation_job::StopAIRecommendationJobError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::stop_ai_recommendation_job::StopAIRecommendationJobError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::stop_ai_recommendation_job::StopAIRecommendationJobError> for Error {
+    fn from(err: crate::operation::stop_ai_recommendation_job::StopAIRecommendationJobError) -> Self {
+        match err {
+            crate::operation::stop_ai_recommendation_job::StopAIRecommendationJobError::ResourceNotFound(inner) => Error::ResourceNotFound(inner),
+            crate::operation::stop_ai_recommendation_job::StopAIRecommendationJobError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

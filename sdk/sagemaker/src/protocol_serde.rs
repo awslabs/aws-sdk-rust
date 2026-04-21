@@ -43,6 +43,12 @@ pub(crate) mod shape_batch_replace_cluster_nodes;
 
 pub(crate) mod shape_create_action;
 
+pub(crate) mod shape_create_ai_benchmark_job;
+
+pub(crate) mod shape_create_ai_recommendation_job;
+
+pub(crate) mod shape_create_ai_workload_config;
+
 pub(crate) mod shape_create_algorithm;
 
 pub(crate) mod shape_create_app;
@@ -179,6 +185,12 @@ pub(crate) mod shape_create_workteam;
 
 pub(crate) mod shape_delete_action;
 
+pub(crate) mod shape_delete_ai_benchmark_job;
+
+pub(crate) mod shape_delete_ai_recommendation_job;
+
+pub(crate) mod shape_delete_ai_workload_config;
+
 pub(crate) mod shape_delete_algorithm;
 
 pub(crate) mod shape_delete_app;
@@ -296,6 +308,12 @@ pub(crate) mod shape_delete_workteam;
 pub(crate) mod shape_deregister_devices;
 
 pub(crate) mod shape_describe_action;
+
+pub(crate) mod shape_describe_ai_benchmark_job;
+
+pub(crate) mod shape_describe_ai_recommendation_job;
+
+pub(crate) mod shape_describe_ai_workload_config;
 
 pub(crate) mod shape_describe_algorithm;
 
@@ -462,6 +480,12 @@ pub(crate) mod shape_get_search_suggestions;
 pub(crate) mod shape_import_hub_content;
 
 pub(crate) mod shape_list_actions;
+
+pub(crate) mod shape_list_ai_benchmark_jobs;
+
+pub(crate) mod shape_list_ai_recommendation_jobs;
+
+pub(crate) mod shape_list_ai_workload_configs;
 
 pub(crate) mod shape_list_algorithms;
 
@@ -665,6 +689,10 @@ pub(crate) mod shape_start_pipeline_execution;
 
 pub(crate) mod shape_start_session;
 
+pub(crate) mod shape_stop_ai_benchmark_job;
+
+pub(crate) mod shape_stop_ai_recommendation_job;
+
 pub(crate) mod shape_stop_auto_ml_job;
 
 pub(crate) mod shape_stop_compilation_job;
@@ -817,6 +845,12 @@ pub(crate) mod shape_conflict_exception;
 
 pub(crate) mod shape_create_action_input;
 
+pub(crate) mod shape_create_ai_benchmark_job_input;
+
+pub(crate) mod shape_create_ai_recommendation_job_input;
+
+pub(crate) mod shape_create_ai_workload_config_input;
+
 pub(crate) mod shape_create_algorithm_input;
 
 pub(crate) mod shape_create_app_image_config_input;
@@ -953,6 +987,12 @@ pub(crate) mod shape_create_workteam_input;
 
 pub(crate) mod shape_delete_action_input;
 
+pub(crate) mod shape_delete_ai_benchmark_job_input;
+
+pub(crate) mod shape_delete_ai_recommendation_job_input;
+
+pub(crate) mod shape_delete_ai_workload_config_input;
+
 pub(crate) mod shape_delete_algorithm_input;
 
 pub(crate) mod shape_delete_app_image_config_input;
@@ -1070,6 +1110,12 @@ pub(crate) mod shape_delete_workteam_input;
 pub(crate) mod shape_deregister_devices_input;
 
 pub(crate) mod shape_describe_action_input;
+
+pub(crate) mod shape_describe_ai_benchmark_job_input;
+
+pub(crate) mod shape_describe_ai_recommendation_job_input;
+
+pub(crate) mod shape_describe_ai_workload_config_input;
 
 pub(crate) mod shape_describe_algorithm_input;
 
@@ -1230,6 +1276,12 @@ pub(crate) mod shape_get_search_suggestions_input;
 pub(crate) mod shape_import_hub_content_input;
 
 pub(crate) mod shape_list_actions_input;
+
+pub(crate) mod shape_list_ai_benchmark_jobs_input;
+
+pub(crate) mod shape_list_ai_recommendation_jobs_input;
+
+pub(crate) mod shape_list_ai_workload_configs_input;
 
 pub(crate) mod shape_list_algorithms_input;
 
@@ -1439,6 +1491,10 @@ pub(crate) mod shape_start_pipeline_execution_input;
 
 pub(crate) mod shape_start_session_input;
 
+pub(crate) mod shape_stop_ai_benchmark_job_input;
+
+pub(crate) mod shape_stop_ai_recommendation_job_input;
+
 pub(crate) mod shape_stop_auto_ml_job_input;
 
 pub(crate) mod shape_stop_compilation_job_input;
@@ -1574,6 +1630,38 @@ pub(crate) mod shape_additional_inference_specification_definition;
 pub(crate) mod shape_additional_inference_specifications;
 
 pub(crate) mod shape_agent_versions;
+
+pub(crate) mod shape_ai_benchmark_job_summary_list;
+
+pub(crate) mod shape_ai_benchmark_network_config;
+
+pub(crate) mod shape_ai_benchmark_output_config;
+
+pub(crate) mod shape_ai_benchmark_output_result;
+
+pub(crate) mod shape_ai_benchmark_target;
+
+pub(crate) mod shape_ai_dataset_config;
+
+pub(crate) mod shape_ai_model_source;
+
+pub(crate) mod shape_ai_recommendation_compute_spec;
+
+pub(crate) mod shape_ai_recommendation_inference_specification;
+
+pub(crate) mod shape_ai_recommendation_job_summary_list;
+
+pub(crate) mod shape_ai_recommendation_list;
+
+pub(crate) mod shape_ai_recommendation_output_config;
+
+pub(crate) mod shape_ai_recommendation_output_result;
+
+pub(crate) mod shape_ai_recommendation_performance_target;
+
+pub(crate) mod shape_ai_workload_config_summary_list;
+
+pub(crate) mod shape_ai_workload_configs;
 
 pub(crate) mod shape_algorithm_specification;
 
@@ -2371,6 +2459,32 @@ pub(crate) mod shape_additional_s3_data_source;
 
 pub(crate) mod shape_agent_version;
 
+pub(crate) mod shape_ai_benchmark_endpoint;
+
+pub(crate) mod shape_ai_benchmark_job_summary;
+
+pub(crate) mod shape_ai_capacity_reservation_config;
+
+pub(crate) mod shape_ai_cloud_watch_logs_list;
+
+pub(crate) mod shape_ai_model_source_s3;
+
+pub(crate) mod shape_ai_recommendation;
+
+pub(crate) mod shape_ai_recommendation_constraint;
+
+pub(crate) mod shape_ai_recommendation_constraint_list;
+
+pub(crate) mod shape_ai_recommendation_instance_type_list;
+
+pub(crate) mod shape_ai_recommendation_job_summary;
+
+pub(crate) mod shape_ai_workload_config_summary;
+
+pub(crate) mod shape_ai_workload_input_data_config;
+
+pub(crate) mod shape_ai_workload_input_data_config_list;
+
 pub(crate) mod shape_alarm_details;
 
 pub(crate) mod shape_algorithm_status_item_list;
@@ -3069,11 +3183,29 @@ pub(crate) mod shape_vpc_security_group_ids;
 
 pub(crate) mod shape_workforce_vpc_config_response;
 
+pub(crate) mod shape_workload_spec;
+
 pub(crate) mod shape_absolute_borrow_limit_resource_list;
 
 pub(crate) mod shape_accelerator_partition_config;
 
 pub(crate) mod shape_active_operations;
+
+pub(crate) mod shape_ai_benchmark_inference_component;
+
+pub(crate) mod shape_ai_benchmark_inference_component_list;
+
+pub(crate) mod shape_ai_cloud_watch_logs;
+
+pub(crate) mod shape_ai_ml_reservation_arn_list;
+
+pub(crate) mod shape_ai_recommendation_deployment_configuration;
+
+pub(crate) mod shape_ai_recommendation_model_details;
+
+pub(crate) mod shape_ai_recommendation_optimization_detail_list;
+
+pub(crate) mod shape_ai_workload_data_source;
 
 pub(crate) mod shape_alarm;
 
@@ -3218,6 +3350,8 @@ pub(crate) mod shape_environment_config_details;
 pub(crate) mod shape_environment_parameter_ranges;
 
 pub(crate) mod shape_event_metadata;
+
+pub(crate) mod shape_expected_performance_list;
 
 pub(crate) mod shape_experiment;
 
@@ -3457,6 +3591,16 @@ pub(crate) mod shape_workspace_settings;
 
 pub(crate) mod shape_aggregation_transformations;
 
+pub(crate) mod shape_ai_recommendation_deployment_s3_channel_list;
+
+pub(crate) mod shape_ai_recommendation_instance_detail_list;
+
+pub(crate) mod shape_ai_recommendation_optimization_detail;
+
+pub(crate) mod shape_ai_recommendation_performance_metric;
+
+pub(crate) mod shape_ai_workload_s3_data_source;
+
 pub(crate) mod shape_assumable_role_arns;
 
 pub(crate) mod shape_async_notification_topic_type_list;
@@ -3608,6 +3752,12 @@ pub(crate) mod shape_trial_component_source_detail;
 pub(crate) mod shape_tuning_job_step_meta_data;
 
 pub(crate) mod shape_additional_enis;
+
+pub(crate) mod shape_ai_recommendation_deployment_s3_channel;
+
+pub(crate) mod shape_ai_recommendation_instance_detail;
+
+pub(crate) mod shape_ai_recommendation_optimization_config_map;
 
 pub(crate) mod shape_association_info_list;
 

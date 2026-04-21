@@ -31,6 +31,15 @@ pub mod batch_replace_cluster_nodes;
 /// Types for the `CreateAction` operation.
 pub mod create_action;
 
+/// Types for the `CreateAIBenchmarkJob` operation.
+pub mod create_ai_benchmark_job;
+
+/// Types for the `CreateAIRecommendationJob` operation.
+pub mod create_ai_recommendation_job;
+
+/// Types for the `CreateAIWorkloadConfig` operation.
+pub mod create_ai_workload_config;
+
 /// Types for the `CreateAlgorithm` operation.
 pub mod create_algorithm;
 
@@ -235,6 +244,15 @@ pub mod create_workteam;
 /// Types for the `DeleteAction` operation.
 pub mod delete_action;
 
+/// Types for the `DeleteAIBenchmarkJob` operation.
+pub mod delete_ai_benchmark_job;
+
+/// Types for the `DeleteAIRecommendationJob` operation.
+pub mod delete_ai_recommendation_job;
+
+/// Types for the `DeleteAIWorkloadConfig` operation.
+pub mod delete_ai_workload_config;
+
 /// Types for the `DeleteAlgorithm` operation.
 pub mod delete_algorithm;
 
@@ -411,6 +429,15 @@ pub mod deregister_devices;
 
 /// Types for the `DescribeAction` operation.
 pub mod describe_action;
+
+/// Types for the `DescribeAIBenchmarkJob` operation.
+pub mod describe_ai_benchmark_job;
+
+/// Types for the `DescribeAIRecommendationJob` operation.
+pub mod describe_ai_recommendation_job;
+
+/// Types for the `DescribeAIWorkloadConfig` operation.
+pub mod describe_ai_workload_config;
 
 /// Types for the `DescribeAlgorithm` operation.
 pub mod describe_algorithm;
@@ -660,6 +687,15 @@ pub mod import_hub_content;
 
 /// Types for the `ListActions` operation.
 pub mod list_actions;
+
+/// Types for the `ListAIBenchmarkJobs` operation.
+pub mod list_ai_benchmark_jobs;
+
+/// Types for the `ListAIRecommendationJobs` operation.
+pub mod list_ai_recommendation_jobs;
+
+/// Types for the `ListAIWorkloadConfigs` operation.
+pub mod list_ai_workload_configs;
 
 /// Types for the `ListAlgorithms` operation.
 pub mod list_algorithms;
@@ -963,6 +999,12 @@ pub mod start_pipeline_execution;
 
 /// Types for the `StartSession` operation.
 pub mod start_session;
+
+/// Types for the `StopAIBenchmarkJob` operation.
+pub mod stop_ai_benchmark_job;
+
+/// Types for the `StopAIRecommendationJob` operation.
+pub mod stop_ai_recommendation_job;
 
 /// Types for the `StopAutoMLJob` operation.
 pub mod stop_auto_ml_job;

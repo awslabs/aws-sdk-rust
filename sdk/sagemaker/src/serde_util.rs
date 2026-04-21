@@ -35,6 +35,33 @@ pub(crate) fn batch_add_cluster_nodes_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn create_ai_benchmark_job_output_output_correct_errors(
+    mut builder: crate::operation::create_ai_benchmark_job::builders::CreateAiBenchmarkJobOutputBuilder,
+) -> crate::operation::create_ai_benchmark_job::builders::CreateAiBenchmarkJobOutputBuilder {
+    if builder.ai_benchmark_job_arn.is_none() {
+        builder.ai_benchmark_job_arn = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn create_ai_recommendation_job_output_output_correct_errors(
+    mut builder: crate::operation::create_ai_recommendation_job::builders::CreateAiRecommendationJobOutputBuilder,
+) -> crate::operation::create_ai_recommendation_job::builders::CreateAiRecommendationJobOutputBuilder {
+    if builder.ai_recommendation_job_arn.is_none() {
+        builder.ai_recommendation_job_arn = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn create_ai_workload_config_output_output_correct_errors(
+    mut builder: crate::operation::create_ai_workload_config::builders::CreateAiWorkloadConfigOutputBuilder,
+) -> crate::operation::create_ai_workload_config::builders::CreateAiWorkloadConfigOutputBuilder {
+    if builder.ai_workload_config_arn.is_none() {
+        builder.ai_workload_config_arn = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn create_algorithm_output_output_correct_errors(
     mut builder: crate::operation::create_algorithm::builders::CreateAlgorithmOutputBuilder,
 ) -> crate::operation::create_algorithm::builders::CreateAlgorithmOutputBuilder {
@@ -421,6 +448,87 @@ pub(crate) fn delete_workteam_output_output_correct_errors(
 ) -> crate::operation::delete_workteam::builders::DeleteWorkteamOutputBuilder {
     if builder.success.is_none() {
         builder.success = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn describe_ai_benchmark_job_output_output_correct_errors(
+    mut builder: crate::operation::describe_ai_benchmark_job::builders::DescribeAiBenchmarkJobOutputBuilder,
+) -> crate::operation::describe_ai_benchmark_job::builders::DescribeAiBenchmarkJobOutputBuilder {
+    if builder.ai_benchmark_job_name.is_none() {
+        builder.ai_benchmark_job_name = Some(Default::default())
+    }
+    if builder.ai_benchmark_job_arn.is_none() {
+        builder.ai_benchmark_job_arn = Some(Default::default())
+    }
+    if builder.ai_benchmark_job_status.is_none() {
+        builder.ai_benchmark_job_status = "no value was set".parse::<crate::types::AiBenchmarkJobStatus>().ok()
+    }
+    if builder.benchmark_target.is_none() {
+        builder.benchmark_target = Some(crate::types::AiBenchmarkTarget::Unknown)
+    }
+    if builder.output_config.is_none() {
+        builder.output_config = {
+            let builder = crate::types::builders::AiBenchmarkOutputResultBuilder::default();
+            Some(crate::serde_util::ai_benchmark_output_result_correct_errors(builder).build())
+        }
+    }
+    if builder.ai_workload_config_identifier.is_none() {
+        builder.ai_workload_config_identifier = Some(Default::default())
+    }
+    if builder.role_arn.is_none() {
+        builder.role_arn = Some(Default::default())
+    }
+    if builder.creation_time.is_none() {
+        builder.creation_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
+pub(crate) fn describe_ai_recommendation_job_output_output_correct_errors(
+    mut builder: crate::operation::describe_ai_recommendation_job::builders::DescribeAiRecommendationJobOutputBuilder,
+) -> crate::operation::describe_ai_recommendation_job::builders::DescribeAiRecommendationJobOutputBuilder {
+    if builder.ai_recommendation_job_name.is_none() {
+        builder.ai_recommendation_job_name = Some(Default::default())
+    }
+    if builder.ai_recommendation_job_arn.is_none() {
+        builder.ai_recommendation_job_arn = Some(Default::default())
+    }
+    if builder.ai_recommendation_job_status.is_none() {
+        builder.ai_recommendation_job_status = "no value was set".parse::<crate::types::AiRecommendationJobStatus>().ok()
+    }
+    if builder.model_source.is_none() {
+        builder.model_source = Some(crate::types::AiModelSource::Unknown)
+    }
+    if builder.output_config.is_none() {
+        builder.output_config = {
+            let builder = crate::types::builders::AiRecommendationOutputResultBuilder::default();
+            Some(crate::serde_util::ai_recommendation_output_result_correct_errors(builder).build())
+        }
+    }
+    if builder.ai_workload_config_identifier.is_none() {
+        builder.ai_workload_config_identifier = Some(Default::default())
+    }
+    if builder.role_arn.is_none() {
+        builder.role_arn = Some(Default::default())
+    }
+    if builder.creation_time.is_none() {
+        builder.creation_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
+pub(crate) fn describe_ai_workload_config_output_output_correct_errors(
+    mut builder: crate::operation::describe_ai_workload_config::builders::DescribeAiWorkloadConfigOutputBuilder,
+) -> crate::operation::describe_ai_workload_config::builders::DescribeAiWorkloadConfigOutputBuilder {
+    if builder.ai_workload_config_name.is_none() {
+        builder.ai_workload_config_name = Some(Default::default())
+    }
+    if builder.ai_workload_config_arn.is_none() {
+        builder.ai_workload_config_arn = Some(Default::default())
+    }
+    if builder.creation_time.is_none() {
+        builder.creation_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
     }
     builder
 }
@@ -1745,6 +1853,33 @@ pub(crate) fn import_hub_content_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn list_ai_benchmark_jobs_output_output_correct_errors(
+    mut builder: crate::operation::list_ai_benchmark_jobs::builders::ListAiBenchmarkJobsOutputBuilder,
+) -> crate::operation::list_ai_benchmark_jobs::builders::ListAiBenchmarkJobsOutputBuilder {
+    if builder.ai_benchmark_jobs.is_none() {
+        builder.ai_benchmark_jobs = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn list_ai_recommendation_jobs_output_output_correct_errors(
+    mut builder: crate::operation::list_ai_recommendation_jobs::builders::ListAiRecommendationJobsOutputBuilder,
+) -> crate::operation::list_ai_recommendation_jobs::builders::ListAiRecommendationJobsOutputBuilder {
+    if builder.ai_recommendation_jobs.is_none() {
+        builder.ai_recommendation_jobs = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn list_ai_workload_configs_output_output_correct_errors(
+    mut builder: crate::operation::list_ai_workload_configs::builders::ListAiWorkloadConfigsOutputBuilder,
+) -> crate::operation::list_ai_workload_configs::builders::ListAiWorkloadConfigsOutputBuilder {
+    if builder.ai_workload_configs.is_none() {
+        builder.ai_workload_configs = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn list_algorithms_output_output_correct_errors(
     mut builder: crate::operation::list_algorithms::builders::ListAlgorithmsOutputBuilder,
 ) -> crate::operation::list_algorithms::builders::ListAlgorithmsOutputBuilder {
@@ -2225,6 +2360,24 @@ pub(crate) fn start_inference_experiment_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn stop_ai_benchmark_job_output_output_correct_errors(
+    mut builder: crate::operation::stop_ai_benchmark_job::builders::StopAiBenchmarkJobOutputBuilder,
+) -> crate::operation::stop_ai_benchmark_job::builders::StopAiBenchmarkJobOutputBuilder {
+    if builder.ai_benchmark_job_arn.is_none() {
+        builder.ai_benchmark_job_arn = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn stop_ai_recommendation_job_output_output_correct_errors(
+    mut builder: crate::operation::stop_ai_recommendation_job::builders::StopAiRecommendationJobOutputBuilder,
+) -> crate::operation::stop_ai_recommendation_job::builders::StopAiRecommendationJobOutputBuilder {
+    if builder.ai_recommendation_job_arn.is_none() {
+        builder.ai_recommendation_job_arn = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn stop_inference_experiment_output_output_correct_errors(
     mut builder: crate::operation::stop_inference_experiment::builders::StopInferenceExperimentOutputBuilder,
 ) -> crate::operation::stop_inference_experiment::builders::StopInferenceExperimentOutputBuilder {
@@ -2446,6 +2599,24 @@ pub(crate) fn update_workteam_output_output_correct_errors(
             let builder = crate::types::builders::WorkteamBuilder::default();
             Some(crate::serde_util::workteam_correct_errors(builder).build())
         }
+    }
+    builder
+}
+
+pub(crate) fn ai_benchmark_output_result_correct_errors(
+    mut builder: crate::types::builders::AiBenchmarkOutputResultBuilder,
+) -> crate::types::builders::AiBenchmarkOutputResultBuilder {
+    if builder.s3_output_location.is_none() {
+        builder.s3_output_location = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn ai_recommendation_output_result_correct_errors(
+    mut builder: crate::types::builders::AiRecommendationOutputResultBuilder,
+) -> crate::types::builders::AiRecommendationOutputResultBuilder {
+    if builder.s3_output_location.is_none() {
+        builder.s3_output_location = Some(Default::default())
     }
     builder
 }
@@ -2796,6 +2967,24 @@ pub(crate) fn workteam_correct_errors(mut builder: crate::types::builders::Workt
 pub(crate) fn action_source_correct_errors(mut builder: crate::types::builders::ActionSourceBuilder) -> crate::types::builders::ActionSourceBuilder {
     if builder.source_uri.is_none() {
         builder.source_uri = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn ai_recommendation_performance_target_correct_errors(
+    mut builder: crate::types::builders::AiRecommendationPerformanceTargetBuilder,
+) -> crate::types::builders::AiRecommendationPerformanceTargetBuilder {
+    if builder.constraints.is_none() {
+        builder.constraints = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn ai_workload_configs_correct_errors(
+    mut builder: crate::types::builders::AiWorkloadConfigsBuilder,
+) -> crate::types::builders::AiWorkloadConfigsBuilder {
+    if builder.workload_spec.is_none() {
+        builder.workload_spec = Some(crate::types::WorkloadSpec::Unknown)
     }
     builder
 }
@@ -3635,6 +3824,66 @@ pub(crate) fn agent_version_correct_errors(mut builder: crate::types::builders::
     }
     if builder.agent_count.is_none() {
         builder.agent_count = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn ai_benchmark_endpoint_correct_errors(
+    mut builder: crate::types::builders::AiBenchmarkEndpointBuilder,
+) -> crate::types::builders::AiBenchmarkEndpointBuilder {
+    if builder.identifier.is_none() {
+        builder.identifier = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn ai_benchmark_job_summary_correct_errors(
+    mut builder: crate::types::builders::AiBenchmarkJobSummaryBuilder,
+) -> crate::types::builders::AiBenchmarkJobSummaryBuilder {
+    if builder.ai_benchmark_job_name.is_none() {
+        builder.ai_benchmark_job_name = Some(Default::default())
+    }
+    if builder.ai_benchmark_job_arn.is_none() {
+        builder.ai_benchmark_job_arn = Some(Default::default())
+    }
+    if builder.ai_benchmark_job_status.is_none() {
+        builder.ai_benchmark_job_status = "no value was set".parse::<crate::types::AiBenchmarkJobStatus>().ok()
+    }
+    if builder.creation_time.is_none() {
+        builder.creation_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
+pub(crate) fn ai_recommendation_job_summary_correct_errors(
+    mut builder: crate::types::builders::AiRecommendationJobSummaryBuilder,
+) -> crate::types::builders::AiRecommendationJobSummaryBuilder {
+    if builder.ai_recommendation_job_name.is_none() {
+        builder.ai_recommendation_job_name = Some(Default::default())
+    }
+    if builder.ai_recommendation_job_arn.is_none() {
+        builder.ai_recommendation_job_arn = Some(Default::default())
+    }
+    if builder.ai_recommendation_job_status.is_none() {
+        builder.ai_recommendation_job_status = "no value was set".parse::<crate::types::AiRecommendationJobStatus>().ok()
+    }
+    if builder.creation_time.is_none() {
+        builder.creation_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
+pub(crate) fn ai_workload_config_summary_correct_errors(
+    mut builder: crate::types::builders::AiWorkloadConfigSummaryBuilder,
+) -> crate::types::builders::AiWorkloadConfigSummaryBuilder {
+    if builder.ai_workload_config_name.is_none() {
+        builder.ai_workload_config_name = Some(Default::default())
+    }
+    if builder.ai_workload_config_arn.is_none() {
+        builder.ai_workload_config_arn = Some(Default::default())
+    }
+    if builder.creation_time.is_none() {
+        builder.creation_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
     }
     builder
 }
@@ -5566,6 +5815,30 @@ pub(crate) fn additional_model_data_source_correct_errors(
     builder
 }
 
+pub(crate) fn ai_recommendation_constraint_correct_errors(
+    mut builder: crate::types::builders::AiRecommendationConstraintBuilder,
+) -> crate::types::builders::AiRecommendationConstraintBuilder {
+    if builder.metric.is_none() {
+        builder.metric = "no value was set".parse::<crate::types::AiRecommendationMetric>().ok()
+    }
+    builder
+}
+
+pub(crate) fn ai_workload_input_data_config_correct_errors(
+    mut builder: crate::types::builders::AiWorkloadInputDataConfigBuilder,
+) -> crate::types::builders::AiWorkloadInputDataConfigBuilder {
+    if builder.channel_name.is_none() {
+        builder.channel_name = Some(Default::default())
+    }
+    if builder.data_source.is_none() {
+        builder.data_source = {
+            let builder = crate::types::builders::AiWorkloadDataSourceBuilder::default();
+            Some(builder.build())
+        }
+    }
+    builder
+}
+
 pub(crate) fn algorithm_status_item_correct_errors(
     mut builder: crate::types::builders::AlgorithmStatusItemBuilder,
 ) -> crate::types::builders::AlgorithmStatusItemBuilder {
@@ -6252,6 +6525,36 @@ pub(crate) fn accelerator_partition_config_correct_errors(
     builder
 }
 
+pub(crate) fn ai_benchmark_inference_component_correct_errors(
+    mut builder: crate::types::builders::AiBenchmarkInferenceComponentBuilder,
+) -> crate::types::builders::AiBenchmarkInferenceComponentBuilder {
+    if builder.identifier.is_none() {
+        builder.identifier = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn ai_recommendation_optimization_detail_correct_errors(
+    mut builder: crate::types::builders::AiRecommendationOptimizationDetailBuilder,
+) -> crate::types::builders::AiRecommendationOptimizationDetailBuilder {
+    if builder.optimization_type.is_none() {
+        builder.optimization_type = "no value was set".parse::<crate::types::AiRecommendationOptimizationType>().ok()
+    }
+    builder
+}
+
+pub(crate) fn ai_recommendation_performance_metric_correct_errors(
+    mut builder: crate::types::builders::AiRecommendationPerformanceMetricBuilder,
+) -> crate::types::builders::AiRecommendationPerformanceMetricBuilder {
+    if builder.metric.is_none() {
+        builder.metric = Some(Default::default())
+    }
+    if builder.value.is_none() {
+        builder.value = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn athena_dataset_definition_correct_errors(
     mut builder: crate::types::builders::AthenaDatasetDefinitionBuilder,
 ) -> crate::types::builders::AthenaDatasetDefinitionBuilder {
@@ -6772,6 +7075,15 @@ pub(crate) fn transform_job_definition_correct_errors(
 pub(crate) fn vector_config_correct_errors(mut builder: crate::types::builders::VectorConfigBuilder) -> crate::types::builders::VectorConfigBuilder {
     if builder.dimension.is_none() {
         builder.dimension = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn ai_workload_s3_data_source_correct_errors(
+    mut builder: crate::types::builders::AiWorkloadS3DataSourceBuilder,
+) -> crate::types::builders::AiWorkloadS3DataSourceBuilder {
+    if builder.s3_uri.is_none() {
+        builder.s3_uri = Some(Default::default())
     }
     builder
 }

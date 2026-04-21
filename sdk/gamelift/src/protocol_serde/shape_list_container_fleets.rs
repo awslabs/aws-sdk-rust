@@ -9,7 +9,7 @@ pub fn de_list_container_fleets_http_error(
     crate::operation::list_container_fleets::ListContainerFleetsError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+    let mut generic_builder = crate::cbor_errors::parse_error_metadata(_response_status, _response_headers, _response_body)
         .map_err(crate::operation::list_container_fleets::ListContainerFleetsError::unhandled)?;
     generic_builder = ::aws_types::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
@@ -25,7 +25,7 @@ pub fn de_list_container_fleets_http_error(
             let mut tmp = {
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::InternalServiceExceptionBuilder::default();
-                output = crate::protocol_serde::shape_internal_service_exception::de_internal_service_exception_json_err(_response_body, output)
+                output = crate::protocol_serde::shape_internal_service_exception::de_internal_service_exception_cbor_err(_response_body, output)
                     .map_err(crate::operation::list_container_fleets::ListContainerFleetsError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
@@ -40,7 +40,7 @@ pub fn de_list_container_fleets_http_error(
             let mut tmp = {
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::InvalidRequestExceptionBuilder::default();
-                output = crate::protocol_serde::shape_invalid_request_exception::de_invalid_request_exception_json_err(_response_body, output)
+                output = crate::protocol_serde::shape_invalid_request_exception::de_invalid_request_exception_cbor_err(_response_body, output)
                     .map_err(crate::operation::list_container_fleets::ListContainerFleetsError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
@@ -55,7 +55,7 @@ pub fn de_list_container_fleets_http_error(
             let mut tmp = {
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::UnauthorizedExceptionBuilder::default();
-                output = crate::protocol_serde::shape_unauthorized_exception::de_unauthorized_exception_json_err(_response_body, output)
+                output = crate::protocol_serde::shape_unauthorized_exception::de_unauthorized_exception_cbor_err(_response_body, output)
                     .map_err(crate::operation::list_container_fleets::ListContainerFleetsError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
@@ -70,7 +70,7 @@ pub fn de_list_container_fleets_http_error(
             let mut tmp = {
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::UnsupportedRegionExceptionBuilder::default();
-                output = crate::protocol_serde::shape_unsupported_region_exception::de_unsupported_region_exception_json_err(_response_body, output)
+                output = crate::protocol_serde::shape_unsupported_region_exception::de_unsupported_region_exception_cbor_err(_response_body, output)
                     .map_err(crate::operation::list_container_fleets::ListContainerFleetsError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
@@ -106,52 +106,68 @@ pub fn de_list_container_fleets_http_response(
 pub fn ser_list_container_fleets_input(
     input: &crate::operation::list_container_fleets::ListContainerFleetsInput,
 ) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
-    let mut out = String::new();
-    let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
-    crate::protocol_serde::shape_list_container_fleets_input::ser_list_container_fleets_input_input(&mut object, input)?;
-    object.finish();
-    Ok(::aws_smithy_types::body::SdkBody::from(out))
+    let mut encoder = ::aws_smithy_cbor::Encoder::new(Vec::new());
+    {
+        let encoder = &mut encoder;
+        crate::protocol_serde::shape_list_container_fleets_input::ser_list_container_fleets_input_input(encoder, input)?;
+    }
+    Ok(::aws_smithy_types::body::SdkBody::from(encoder.into_writer()))
 }
 
 pub(crate) fn de_list_container_fleets(
-    _value: &[u8],
+    value: &[u8],
     mut builder: crate::operation::list_container_fleets::builders::ListContainerFleetsOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::list_container_fleets::builders::ListContainerFleetsOutputBuilder,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
+    ::aws_smithy_cbor::decode::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
-    let tokens = &mut tokens_owned;
-    ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
-    loop {
-        match tokens.next().transpose()? {
-            Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-            Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                "ContainerFleets" => {
-                    builder = builder.set_container_fleets(crate::protocol_serde::shape_container_fleet_list::de_container_fleet_list(
-                        tokens, _value,
-                    )?);
+    #[allow(clippy::match_single_binding)]
+    fn pair(
+        mut builder: crate::operation::list_container_fleets::builders::ListContainerFleetsOutputBuilder,
+        decoder: &mut ::aws_smithy_cbor::Decoder,
+    ) -> ::std::result::Result<
+        crate::operation::list_container_fleets::builders::ListContainerFleetsOutputBuilder,
+        ::aws_smithy_cbor::decode::DeserializeError,
+    > {
+        builder = match decoder.str()?.as_ref() {
+            "ContainerFleets" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
+                Ok(builder.set_container_fleets(Some(crate::protocol_serde::shape_container_fleet_list::de_container_fleet_list(decoder)?)))
+            })?,
+            "NextToken" => {
+                ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| Ok(builder.set_next_token(Some(decoder.string()?))))?
+            }
+            _ => {
+                decoder.skip()?;
+                builder
+            }
+        };
+        Ok(builder)
+    }
+
+    let decoder = &mut ::aws_smithy_cbor::Decoder::new(value);
+
+    match decoder.map()? {
+        None => loop {
+            match decoder.datatype()? {
+                ::aws_smithy_cbor::data::Type::Break => {
+                    decoder.skip()?;
+                    break;
                 }
-                "NextToken" => {
-                    builder = builder.set_next_token(
-                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                            .transpose()?,
-                    );
+                _ => {
+                    builder = pair(builder, decoder)?;
                 }
-                _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
-            },
-            other => {
-                return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
-                    "expected object key or end object, found: {other:?}"
-                )))
+            };
+        },
+        Some(n) => {
+            for _ in 0..n {
+                builder = pair(builder, decoder)?;
             }
         }
+    };
+
+    if decoder.position() != value.len() {
+        return Err(::aws_smithy_cbor::decode::DeserializeError::expected_end_of_stream(decoder.position()));
     }
-    if tokens.next().is_some() {
-        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
-            "found more JSON tokens after completing parsing",
-        ));
-    }
+
     Ok(builder)
 }

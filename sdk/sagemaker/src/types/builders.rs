@@ -3,6 +3,20 @@ pub use crate::types::_action_source::ActionSourceBuilder;
 
 pub use crate::types::_metadata_properties::MetadataPropertiesBuilder;
 
+pub use crate::types::_ai_benchmark_output_config::AiBenchmarkOutputConfigBuilder;
+
+pub use crate::types::_ai_benchmark_network_config::AiBenchmarkNetworkConfigBuilder;
+
+pub use crate::types::_ai_recommendation_output_config::AiRecommendationOutputConfigBuilder;
+
+pub use crate::types::_ai_recommendation_performance_target::AiRecommendationPerformanceTargetBuilder;
+
+pub use crate::types::_ai_recommendation_inference_specification::AiRecommendationInferenceSpecificationBuilder;
+
+pub use crate::types::_ai_recommendation_compute_spec::AiRecommendationComputeSpecBuilder;
+
+pub use crate::types::_ai_workload_configs::AiWorkloadConfigsBuilder;
+
 pub use crate::types::_training_specification::TrainingSpecificationBuilder;
 
 pub use crate::types::_inference_specification::InferenceSpecificationBuilder;
@@ -281,6 +295,10 @@ pub use crate::types::_retention_policy::RetentionPolicyBuilder;
 
 pub use crate::types::_user_context::UserContextBuilder;
 
+pub use crate::types::_ai_benchmark_output_result::AiBenchmarkOutputResultBuilder;
+
+pub use crate::types::_ai_recommendation_output_result::AiRecommendationOutputResultBuilder;
+
 pub use crate::types::_algorithm_status_details::AlgorithmStatusDetailsBuilder;
 
 pub use crate::types::_auto_ml_candidate::AutoMlCandidateBuilder;
@@ -444,6 +462,12 @@ pub use crate::types::_batch_reboot_cluster_node_logical_ids_error::BatchRebootC
 pub use crate::types::_batch_replace_cluster_nodes_error::BatchReplaceClusterNodesErrorBuilder;
 
 pub use crate::types::_batch_replace_cluster_node_logical_ids_error::BatchReplaceClusterNodeLogicalIdsErrorBuilder;
+
+pub use crate::types::_ai_benchmark_endpoint::AiBenchmarkEndpointBuilder;
+
+pub use crate::types::_ai_model_source_s3::AiModelSourceS3Builder;
+
+pub use crate::types::_ai_capacity_reservation_config::AiCapacityReservationConfigBuilder;
 
 pub use crate::types::_additional_s3_data_source::AdditionalS3DataSourceBuilder;
 
@@ -677,6 +701,8 @@ pub use crate::types::_s3_presign::S3PresignBuilder;
 
 pub use crate::types::_iam_identity::IamIdentityBuilder;
 
+pub use crate::types::_ai_recommendation::AiRecommendationBuilder;
+
 pub use crate::types::_auto_ml_partial_failure_reason::AutoMlPartialFailureReasonBuilder;
 
 pub use crate::types::_final_auto_ml_job_objective_metric::FinalAutoMlJobObjectiveMetricBuilder;
@@ -754,6 +780,12 @@ pub use crate::types::_property_name_query::PropertyNameQueryBuilder;
 pub use crate::types::_property_name_suggestion::PropertyNameSuggestionBuilder;
 
 pub use crate::types::_action_summary::ActionSummaryBuilder;
+
+pub use crate::types::_ai_benchmark_job_summary::AiBenchmarkJobSummaryBuilder;
+
+pub use crate::types::_ai_recommendation_job_summary::AiRecommendationJobSummaryBuilder;
+
+pub use crate::types::_ai_workload_config_summary::AiWorkloadConfigSummaryBuilder;
 
 pub use crate::types::_algorithm_summary::AlgorithmSummaryBuilder;
 
@@ -932,6 +964,10 @@ pub use crate::types::_variant_property::VariantPropertyBuilder;
 pub use crate::types::_desired_weight_and_capacity::DesiredWeightAndCapacityBuilder;
 
 pub use crate::types::_update_template_provider::UpdateTemplateProviderBuilder;
+
+pub use crate::types::_ai_recommendation_constraint::AiRecommendationConstraintBuilder;
+
+pub use crate::types::_ai_workload_input_data_config::AiWorkloadInputDataConfigBuilder;
 
 pub use crate::types::_hyper_parameter_specification::HyperParameterSpecificationBuilder;
 
@@ -1117,6 +1153,12 @@ pub use crate::types::_oidc_member_definition::OidcMemberDefinitionBuilder;
 
 pub use crate::types::_iam_policy_constraints::IamPolicyConstraintsBuilder;
 
+pub use crate::types::_ai_cloud_watch_logs::AiCloudWatchLogsBuilder;
+
+pub use crate::types::_ai_recommendation_model_details::AiRecommendationModelDetailsBuilder;
+
+pub use crate::types::_ai_recommendation_deployment_configuration::AiRecommendationDeploymentConfigurationBuilder;
+
 pub use crate::types::_algorithm_status_item::AlgorithmStatusItemBuilder;
 
 pub use crate::types::_auto_ml_candidate_step::AutoMlCandidateStepBuilder;
@@ -1227,6 +1269,10 @@ pub use crate::types::_production_variant_serverless_update_config::ProductionVa
 
 pub use crate::types::_cfn_update_template_provider::CfnUpdateTemplateProviderBuilder;
 
+pub use crate::types::_ai_benchmark_inference_component::AiBenchmarkInferenceComponentBuilder;
+
+pub use crate::types::_ai_workload_data_source::AiWorkloadDataSourceBuilder;
+
 pub use crate::types::_parameter_range::ParameterRangeBuilder;
 
 pub use crate::types::_model_input::ModelInputBuilder;
@@ -1331,6 +1377,10 @@ pub use crate::types::_dataset_source::DatasetSourceBuilder;
 
 pub use crate::types::_placement_specification::PlacementSpecificationBuilder;
 
+pub use crate::types::_ai_recommendation_optimization_detail::AiRecommendationOptimizationDetailBuilder;
+
+pub use crate::types::_ai_recommendation_performance_metric::AiRecommendationPerformanceMetricBuilder;
+
 pub use crate::types::_metric_datum::MetricDatumBuilder;
 
 pub use crate::types::_cluster_instance_type_detail::ClusterInstanceTypeDetailBuilder;
@@ -1415,6 +1465,8 @@ pub use crate::types::_model_dashboard_model_card::ModelDashboardModelCardBuilde
 
 pub use crate::types::_reserved_capacity_offering::ReservedCapacityOfferingBuilder;
 
+pub use crate::types::_ai_workload_s3_data_source::AiWorkloadS3DataSourceBuilder;
+
 pub use crate::types::_integer_parameter_range_specification::IntegerParameterRangeSpecificationBuilder;
 
 pub use crate::types::_continuous_parameter_range_specification::ContinuousParameterRangeSpecificationBuilder;
@@ -1424,6 +1476,10 @@ pub use crate::types::_categorical_parameter_range_specification::CategoricalPar
 pub use crate::types::_cfn_stack_create_parameter::CfnStackCreateParameterBuilder;
 
 pub use crate::types::_hub_access_config::HubAccessConfigBuilder;
+
+pub use crate::types::_ai_recommendation_instance_detail::AiRecommendationInstanceDetailBuilder;
+
+pub use crate::types::_ai_recommendation_deployment_s3_channel::AiRecommendationDeploymentS3ChannelBuilder;
 
 pub use crate::types::_capacity_reservation::CapacityReservationBuilder;
 

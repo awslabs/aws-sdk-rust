@@ -49,23 +49,35 @@ pub fn ser_model_package_container_definition(
     if let Some(var_16) = &input.nearest_model_name {
         object.key("NearestModelName").string(var_16.as_str());
     }
-    if let Some(var_17) = &input.additional_s3_data_source {
+    if let Some(var_17) = &input.additional_model_data_sources {
+        let mut array_18 = object.key("AdditionalModelDataSources").start_array();
+        for item_19 in var_17 {
+            {
+                #[allow(unused_mut)]
+                let mut object_20 = array_18.value().start_object();
+                crate::protocol_serde::shape_additional_model_data_source::ser_additional_model_data_source(&mut object_20, item_19)?;
+                object_20.finish();
+            }
+        }
+        array_18.finish();
+    }
+    if let Some(var_21) = &input.additional_s3_data_source {
         #[allow(unused_mut)]
-        let mut object_18 = object.key("AdditionalS3DataSource").start_object();
-        crate::protocol_serde::shape_additional_s3_data_source::ser_additional_s3_data_source(&mut object_18, var_17)?;
-        object_18.finish();
-    }
-    if let Some(var_19) = &input.model_data_e_tag {
-        object.key("ModelDataETag").string(var_19.as_str());
-    }
-    if let Some(var_20) = &input.is_checkpoint {
-        object.key("IsCheckpoint").boolean(*var_20);
-    }
-    if let Some(var_21) = &input.base_model {
-        #[allow(unused_mut)]
-        let mut object_22 = object.key("BaseModel").start_object();
-        crate::protocol_serde::shape_base_model::ser_base_model(&mut object_22, var_21)?;
+        let mut object_22 = object.key("AdditionalS3DataSource").start_object();
+        crate::protocol_serde::shape_additional_s3_data_source::ser_additional_s3_data_source(&mut object_22, var_21)?;
         object_22.finish();
+    }
+    if let Some(var_23) = &input.model_data_e_tag {
+        object.key("ModelDataETag").string(var_23.as_str());
+    }
+    if let Some(var_24) = &input.is_checkpoint {
+        object.key("IsCheckpoint").boolean(*var_24);
+    }
+    if let Some(var_25) = &input.base_model {
+        #[allow(unused_mut)]
+        let mut object_26 = object.key("BaseModel").start_object();
+        crate::protocol_serde::shape_base_model::ser_base_model(&mut object_26, var_25)?;
+        object_26.finish();
     }
     Ok(())
 }
@@ -150,6 +162,11 @@ where
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
+                            );
+                        }
+                        "AdditionalModelDataSources" => {
+                            builder = builder.set_additional_model_data_sources(
+                                crate::protocol_serde::shape_additional_model_data_sources::de_additional_model_data_sources(tokens, _value)?,
                             );
                         }
                         "AdditionalS3DataSource" => {

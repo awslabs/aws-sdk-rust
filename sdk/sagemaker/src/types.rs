@@ -9,6 +9,26 @@ pub use crate::types::_action_status::ActionStatus;
 
 pub use crate::types::_metadata_properties::MetadataProperties;
 
+pub use crate::types::_ai_benchmark_target::AiBenchmarkTarget;
+
+pub use crate::types::_ai_benchmark_output_config::AiBenchmarkOutputConfig;
+
+pub use crate::types::_ai_benchmark_network_config::AiBenchmarkNetworkConfig;
+
+pub use crate::types::_ai_model_source::AiModelSource;
+
+pub use crate::types::_ai_recommendation_output_config::AiRecommendationOutputConfig;
+
+pub use crate::types::_ai_recommendation_performance_target::AiRecommendationPerformanceTarget;
+
+pub use crate::types::_ai_recommendation_inference_specification::AiRecommendationInferenceSpecification;
+
+pub use crate::types::_ai_recommendation_compute_spec::AiRecommendationComputeSpec;
+
+pub use crate::types::_ai_dataset_config::AiDatasetConfig;
+
+pub use crate::types::_ai_workload_configs::AiWorkloadConfigs;
+
 pub use crate::types::_training_specification::TrainingSpecification;
 
 pub use crate::types::_inference_specification::InferenceSpecification;
@@ -353,6 +373,14 @@ pub use crate::types::_retention_policy::RetentionPolicy;
 
 pub use crate::types::_user_context::UserContext;
 
+pub use crate::types::_ai_benchmark_job_status::AiBenchmarkJobStatus;
+
+pub use crate::types::_ai_benchmark_output_result::AiBenchmarkOutputResult;
+
+pub use crate::types::_ai_recommendation_job_status::AiRecommendationJobStatus;
+
+pub use crate::types::_ai_recommendation_output_result::AiRecommendationOutputResult;
+
 pub use crate::types::_algorithm_status::AlgorithmStatus;
 
 pub use crate::types::_algorithm_status_details::AlgorithmStatusDetails;
@@ -581,6 +609,12 @@ pub use crate::types::_sort_actions_by::SortActionsBy;
 
 pub use crate::types::_sort_order::SortOrder;
 
+pub use crate::types::_list_ai_benchmark_jobs_sort_by::ListAiBenchmarkJobsSortBy;
+
+pub use crate::types::_list_ai_recommendation_jobs_sort_by::ListAiRecommendationJobsSortBy;
+
+pub use crate::types::_list_ai_workload_configs_sort_by::ListAiWorkloadConfigsSortBy;
+
 pub use crate::types::_algorithm_sort_by::AlgorithmSortBy;
 
 pub use crate::types::_app_image_config_sort_key::AppImageConfigSortKey;
@@ -802,6 +836,16 @@ pub use crate::types::_batch_reboot_cluster_node_logical_ids_error::BatchRebootC
 pub use crate::types::_batch_replace_cluster_nodes_error::BatchReplaceClusterNodesError;
 
 pub use crate::types::_batch_replace_cluster_node_logical_ids_error::BatchReplaceClusterNodeLogicalIdsError;
+
+pub use crate::types::_ai_benchmark_endpoint::AiBenchmarkEndpoint;
+
+pub use crate::types::_ai_model_source_s3::AiModelSourceS3;
+
+pub use crate::types::_ai_recommendation_inference_framework::AiRecommendationInferenceFramework;
+
+pub use crate::types::_ai_capacity_reservation_config::AiCapacityReservationConfig;
+
+pub use crate::types::_workload_spec::WorkloadSpec;
 
 pub use crate::types::_additional_s3_data_source::AdditionalS3DataSource;
 
@@ -1125,6 +1169,8 @@ pub use crate::types::_retention_type::RetentionType;
 
 pub use crate::types::_iam_identity::IamIdentity;
 
+pub use crate::types::_ai_recommendation::AiRecommendation;
+
 pub use crate::types::_auto_ml_partial_failure_reason::AutoMlPartialFailureReason;
 
 pub use crate::types::_final_auto_ml_job_objective_metric::FinalAutoMlJobObjectiveMetric;
@@ -1226,6 +1272,12 @@ pub use crate::types::_property_name_query::PropertyNameQuery;
 pub use crate::types::_property_name_suggestion::PropertyNameSuggestion;
 
 pub use crate::types::_action_summary::ActionSummary;
+
+pub use crate::types::_ai_benchmark_job_summary::AiBenchmarkJobSummary;
+
+pub use crate::types::_ai_recommendation_job_summary::AiRecommendationJobSummary;
+
+pub use crate::types::_ai_workload_config_summary::AiWorkloadConfigSummary;
 
 pub use crate::types::_algorithm_summary::AlgorithmSummary;
 
@@ -1420,6 +1472,14 @@ pub use crate::types::_batch_delete_cluster_nodes_error_code::BatchDeleteCluster
 pub use crate::types::_batch_reboot_cluster_nodes_error_code::BatchRebootClusterNodesErrorCode;
 
 pub use crate::types::_batch_replace_cluster_nodes_error_code::BatchReplaceClusterNodesErrorCode;
+
+pub use crate::types::_ai_recommendation_constraint::AiRecommendationConstraint;
+
+pub use crate::types::_ai_recommendation_instance_type::AiRecommendationInstanceType;
+
+pub use crate::types::_ai_capacity_reservation_preference::AiCapacityReservationPreference;
+
+pub use crate::types::_ai_workload_input_data_config::AiWorkloadInputDataConfig;
 
 pub use crate::types::_hyper_parameter_specification::HyperParameterSpecification;
 
@@ -1665,6 +1725,12 @@ pub use crate::types::_oidc_member_definition::OidcMemberDefinition;
 
 pub use crate::types::_iam_policy_constraints::IamPolicyConstraints;
 
+pub use crate::types::_ai_cloud_watch_logs::AiCloudWatchLogs;
+
+pub use crate::types::_ai_recommendation_model_details::AiRecommendationModelDetails;
+
+pub use crate::types::_ai_recommendation_deployment_configuration::AiRecommendationDeploymentConfiguration;
+
 pub use crate::types::_algorithm_status_item::AlgorithmStatusItem;
 
 pub use crate::types::_auto_ml_job_objective_type::AutoMlJobObjectiveType;
@@ -1806,6 +1872,12 @@ pub use crate::types::_variant_property_type::VariantPropertyType;
 pub use crate::types::_production_variant_serverless_update_config::ProductionVariantServerlessUpdateConfig;
 
 pub use crate::types::_cfn_update_template_provider::CfnUpdateTemplateProvider;
+
+pub use crate::types::_ai_benchmark_inference_component::AiBenchmarkInferenceComponent;
+
+pub use crate::types::_ai_recommendation_metric::AiRecommendationMetric;
+
+pub use crate::types::_ai_workload_data_source::AiWorkloadDataSource;
 
 pub use crate::types::_parameter_type::ParameterType;
 
@@ -1963,6 +2035,10 @@ pub use crate::types::_s3_data_type::S3DataType;
 
 pub use crate::types::_enabled_or_disabled::EnabledOrDisabled;
 
+pub use crate::types::_ai_recommendation_optimization_detail::AiRecommendationOptimizationDetail;
+
+pub use crate::types::_ai_recommendation_performance_metric::AiRecommendationPerformanceMetric;
+
 pub use crate::types::_detailed_algorithm_status::DetailedAlgorithmStatus;
 
 pub use crate::types::_candidate_step_type::CandidateStepType;
@@ -2065,6 +2141,8 @@ pub use crate::types::_reserved_capacity_offering::ReservedCapacityOffering;
 
 pub use crate::types::_node_unavailability_type::NodeUnavailabilityType;
 
+pub use crate::types::_ai_workload_s3_data_source::AiWorkloadS3DataSource;
+
 pub use crate::types::_integer_parameter_range_specification::IntegerParameterRangeSpecification;
 
 pub use crate::types::_continuous_parameter_range_specification::ContinuousParameterRangeSpecification;
@@ -2116,6 +2194,12 @@ pub use crate::types::_hub_access_config::HubAccessConfig;
 pub use crate::types::_file_system_access_mode::FileSystemAccessMode;
 
 pub use crate::types::_file_system_type::FileSystemType;
+
+pub use crate::types::_ai_recommendation_optimization_type::AiRecommendationOptimizationType;
+
+pub use crate::types::_ai_recommendation_instance_detail::AiRecommendationInstanceDetail;
+
+pub use crate::types::_ai_recommendation_deployment_s3_channel::AiRecommendationDeploymentS3Channel;
 
 pub use crate::types::_auto_ml_metric_extended_enum::AutoMlMetricExtendedEnum;
 
@@ -2198,6 +2282,82 @@ mod _additional_s3_data_source_data_type;
 mod _agent_version;
 
 mod _aggregation_transformation_value;
+
+mod _ai_benchmark_endpoint;
+
+mod _ai_benchmark_inference_component;
+
+mod _ai_benchmark_job_status;
+
+mod _ai_benchmark_job_summary;
+
+mod _ai_benchmark_network_config;
+
+mod _ai_benchmark_output_config;
+
+mod _ai_benchmark_output_result;
+
+mod _ai_benchmark_target;
+
+mod _ai_capacity_reservation_config;
+
+mod _ai_capacity_reservation_preference;
+
+mod _ai_cloud_watch_logs;
+
+mod _ai_dataset_config;
+
+mod _ai_model_source;
+
+mod _ai_model_source_s3;
+
+mod _ai_recommendation;
+
+mod _ai_recommendation_compute_spec;
+
+mod _ai_recommendation_constraint;
+
+mod _ai_recommendation_deployment_configuration;
+
+mod _ai_recommendation_deployment_s3_channel;
+
+mod _ai_recommendation_inference_framework;
+
+mod _ai_recommendation_inference_specification;
+
+mod _ai_recommendation_instance_detail;
+
+mod _ai_recommendation_instance_type;
+
+mod _ai_recommendation_job_status;
+
+mod _ai_recommendation_job_summary;
+
+mod _ai_recommendation_metric;
+
+mod _ai_recommendation_model_details;
+
+mod _ai_recommendation_optimization_detail;
+
+mod _ai_recommendation_optimization_type;
+
+mod _ai_recommendation_output_config;
+
+mod _ai_recommendation_output_result;
+
+mod _ai_recommendation_performance_metric;
+
+mod _ai_recommendation_performance_target;
+
+mod _ai_workload_config_summary;
+
+mod _ai_workload_configs;
+
+mod _ai_workload_data_source;
+
+mod _ai_workload_input_data_config;
+
+mod _ai_workload_s3_data_source;
 
 mod _alarm;
 
@@ -3238,6 +3398,12 @@ mod _lineage_group_summary;
 mod _lineage_metadata;
 
 mod _lineage_type;
+
+mod _list_ai_benchmark_jobs_sort_by;
+
+mod _list_ai_recommendation_jobs_sort_by;
+
+mod _list_ai_workload_configs_sort_by;
 
 mod _list_compilation_jobs_sort_by;
 
@@ -4334,6 +4500,8 @@ mod _workforce_status;
 mod _workforce_vpc_config_request;
 
 mod _workforce_vpc_config_response;
+
+mod _workload_spec;
 
 mod _workspace_settings;
 

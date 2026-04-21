@@ -9,7 +9,7 @@ pub fn de_create_return_shipping_label_http_error(
     crate::operation::create_return_shipping_label::CreateReturnShippingLabelError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+    let mut generic_builder = crate::cbor_errors::parse_error_metadata(_response_status, _response_headers, _response_body)
         .map_err(crate::operation::create_return_shipping_label::CreateReturnShippingLabelError::unhandled)?;
     generic_builder = ::aws_types::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
@@ -29,7 +29,7 @@ pub fn de_create_return_shipping_label_http_error(
             let mut tmp = {
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::ConflictExceptionBuilder::default();
-                output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(_response_body, output)
+                output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_cbor_err(_response_body, output)
                     .map_err(crate::operation::create_return_shipping_label::CreateReturnShippingLabelError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
@@ -45,7 +45,7 @@ pub fn de_create_return_shipping_label_http_error(
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidInputCombinationExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_invalid_input_combination_exception::de_invalid_input_combination_exception_json_err(
+                    output = crate::protocol_serde::shape_invalid_input_combination_exception::de_invalid_input_combination_exception_cbor_err(
                         _response_body,
                         output,
                     )
@@ -64,7 +64,7 @@ pub fn de_create_return_shipping_label_http_error(
             let mut tmp = {
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::InvalidJobStateExceptionBuilder::default();
-                output = crate::protocol_serde::shape_invalid_job_state_exception::de_invalid_job_state_exception_json_err(_response_body, output)
+                output = crate::protocol_serde::shape_invalid_job_state_exception::de_invalid_job_state_exception_cbor_err(_response_body, output)
                     .map_err(crate::operation::create_return_shipping_label::CreateReturnShippingLabelError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
@@ -79,7 +79,7 @@ pub fn de_create_return_shipping_label_http_error(
             let mut tmp = {
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::InvalidResourceExceptionBuilder::default();
-                output = crate::protocol_serde::shape_invalid_resource_exception::de_invalid_resource_exception_json_err(_response_body, output)
+                output = crate::protocol_serde::shape_invalid_resource_exception::de_invalid_resource_exception_cbor_err(_response_body, output)
                     .map_err(crate::operation::create_return_shipping_label::CreateReturnShippingLabelError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
@@ -95,7 +95,7 @@ pub fn de_create_return_shipping_label_http_error(
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ReturnShippingLabelAlreadyExistsExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_return_shipping_label_already_exists_exception::de_return_shipping_label_already_exists_exception_json_err(_response_body, output).map_err(crate::operation::create_return_shipping_label::CreateReturnShippingLabelError::unhandled)?;
+                    output = crate::protocol_serde::shape_return_shipping_label_already_exists_exception::de_return_shipping_label_already_exists_exception_cbor_err(_response_body, output).map_err(crate::operation::create_return_shipping_label::CreateReturnShippingLabelError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -131,47 +131,65 @@ pub fn de_create_return_shipping_label_http_response(
 pub fn ser_create_return_shipping_label_input(
     input: &crate::operation::create_return_shipping_label::CreateReturnShippingLabelInput,
 ) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
-    let mut out = String::new();
-    let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
-    crate::protocol_serde::shape_create_return_shipping_label_input::ser_create_return_shipping_label_input_input(&mut object, input)?;
-    object.finish();
-    Ok(::aws_smithy_types::body::SdkBody::from(out))
+    let mut encoder = ::aws_smithy_cbor::Encoder::new(Vec::new());
+    {
+        let encoder = &mut encoder;
+        crate::protocol_serde::shape_create_return_shipping_label_input::ser_create_return_shipping_label_input_input(encoder, input)?;
+    }
+    Ok(::aws_smithy_types::body::SdkBody::from(encoder.into_writer()))
 }
 
 pub(crate) fn de_create_return_shipping_label(
-    _value: &[u8],
+    value: &[u8],
     mut builder: crate::operation::create_return_shipping_label::builders::CreateReturnShippingLabelOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::create_return_shipping_label::builders::CreateReturnShippingLabelOutputBuilder,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
+    ::aws_smithy_cbor::decode::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
-    let tokens = &mut tokens_owned;
-    ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
-    loop {
-        match tokens.next().transpose()? {
-            Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-            Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                "Status" => {
-                    builder = builder.set_status(
-                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                            .map(|s| s.to_unescaped().map(|u| crate::types::ShippingLabelStatus::from(u.as_ref())))
-                            .transpose()?,
-                    );
+    #[allow(clippy::match_single_binding)]
+    fn pair(
+        mut builder: crate::operation::create_return_shipping_label::builders::CreateReturnShippingLabelOutputBuilder,
+        decoder: &mut ::aws_smithy_cbor::Decoder,
+    ) -> ::std::result::Result<
+        crate::operation::create_return_shipping_label::builders::CreateReturnShippingLabelOutputBuilder,
+        ::aws_smithy_cbor::decode::DeserializeError,
+    > {
+        builder = match decoder.str()?.as_ref() {
+            "Status" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
+                Ok(builder.set_status(Some(decoder.string().map(|s| crate::types::ShippingLabelStatus::from(s.as_ref()))?)))
+            })?,
+            _ => {
+                decoder.skip()?;
+                builder
+            }
+        };
+        Ok(builder)
+    }
+
+    let decoder = &mut ::aws_smithy_cbor::Decoder::new(value);
+
+    match decoder.map()? {
+        None => loop {
+            match decoder.datatype()? {
+                ::aws_smithy_cbor::data::Type::Break => {
+                    decoder.skip()?;
+                    break;
                 }
-                _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
-            },
-            other => {
-                return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
-                    "expected object key or end object, found: {other:?}"
-                )))
+                _ => {
+                    builder = pair(builder, decoder)?;
+                }
+            };
+        },
+        Some(n) => {
+            for _ in 0..n {
+                builder = pair(builder, decoder)?;
             }
         }
+    };
+
+    if decoder.position() != value.len() {
+        return Err(::aws_smithy_cbor::decode::DeserializeError::expected_end_of_stream(decoder.position()));
     }
-    if tokens.next().is_some() {
-        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
-            "found more JSON tokens after completing parsing",
-        ));
-    }
+
     Ok(builder)
 }

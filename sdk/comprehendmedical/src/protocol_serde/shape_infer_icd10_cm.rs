@@ -6,7 +6,7 @@ pub fn de_infer_icd10_cm_http_error(
     _response_body: &[u8],
 ) -> std::result::Result<crate::operation::infer_icd10_cm::InferIcd10CmOutput, crate::operation::infer_icd10_cm::InferICD10CMError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+    let mut generic_builder = crate::cbor_errors::parse_error_metadata(_response_status, _response_headers, _response_body)
         .map_err(crate::operation::infer_icd10_cm::InferICD10CMError::unhandled)?;
     generic_builder = ::aws_types::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
@@ -22,7 +22,7 @@ pub fn de_infer_icd10_cm_http_error(
             let mut tmp = {
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::InternalServerExceptionBuilder::default();
-                output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(_response_body, output)
+                output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_cbor_err(_response_body, output)
                     .map_err(crate::operation::infer_icd10_cm::InferICD10CMError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
@@ -37,7 +37,7 @@ pub fn de_infer_icd10_cm_http_error(
             let mut tmp = {
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::InvalidEncodingExceptionBuilder::default();
-                output = crate::protocol_serde::shape_invalid_encoding_exception::de_invalid_encoding_exception_json_err(_response_body, output)
+                output = crate::protocol_serde::shape_invalid_encoding_exception::de_invalid_encoding_exception_cbor_err(_response_body, output)
                     .map_err(crate::operation::infer_icd10_cm::InferICD10CMError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
@@ -52,7 +52,7 @@ pub fn de_infer_icd10_cm_http_error(
             let mut tmp = {
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::InvalidRequestExceptionBuilder::default();
-                output = crate::protocol_serde::shape_invalid_request_exception::de_invalid_request_exception_json_err(_response_body, output)
+                output = crate::protocol_serde::shape_invalid_request_exception::de_invalid_request_exception_cbor_err(_response_body, output)
                     .map_err(crate::operation::infer_icd10_cm::InferICD10CMError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
@@ -68,7 +68,7 @@ pub fn de_infer_icd10_cm_http_error(
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::ServiceUnavailableExceptionBuilder::default();
                 output =
-                    crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(_response_body, output)
+                    crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_cbor_err(_response_body, output)
                         .map_err(crate::operation::infer_icd10_cm::InferICD10CMError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
@@ -83,7 +83,7 @@ pub fn de_infer_icd10_cm_http_error(
             let mut tmp = {
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::TextSizeLimitExceededExceptionBuilder::default();
-                output = crate::protocol_serde::shape_text_size_limit_exceeded_exception::de_text_size_limit_exceeded_exception_json_err(
+                output = crate::protocol_serde::shape_text_size_limit_exceeded_exception::de_text_size_limit_exceeded_exception_cbor_err(
                     _response_body,
                     output,
                 )
@@ -101,7 +101,7 @@ pub fn de_infer_icd10_cm_http_error(
             let mut tmp = {
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::TooManyRequestsExceptionBuilder::default();
-                output = crate::protocol_serde::shape_too_many_requests_exception::de_too_many_requests_exception_json_err(_response_body, output)
+                output = crate::protocol_serde::shape_too_many_requests_exception::de_too_many_requests_exception_cbor_err(_response_body, output)
                     .map_err(crate::operation::infer_icd10_cm::InferICD10CMError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
@@ -136,59 +136,65 @@ pub fn de_infer_icd10_cm_http_response(
 pub fn ser_infer_icd10_cm_input(
     input: &crate::operation::infer_icd10_cm::InferIcd10CmInput,
 ) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
-    let mut out = String::new();
-    let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
-    crate::protocol_serde::shape_infer_icd10_cm_input::ser_infer_icd10_cm_input_input(&mut object, input)?;
-    object.finish();
-    Ok(::aws_smithy_types::body::SdkBody::from(out))
+    let mut encoder = ::aws_smithy_cbor::Encoder::new(Vec::new());
+    {
+        let encoder = &mut encoder;
+        crate::protocol_serde::shape_infer_icd10_cm_input::ser_infer_icd10_cm_input_input(encoder, input)?;
+    }
+    Ok(::aws_smithy_types::body::SdkBody::from(encoder.into_writer()))
 }
 
 pub(crate) fn de_infer_icd10_cm(
-    _value: &[u8],
+    value: &[u8],
     mut builder: crate::operation::infer_icd10_cm::builders::InferIcd10CmOutputBuilder,
-) -> ::std::result::Result<
-    crate::operation::infer_icd10_cm::builders::InferIcd10CmOutputBuilder,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
-> {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
-    let tokens = &mut tokens_owned;
-    ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
-    loop {
-        match tokens.next().transpose()? {
-            Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-            Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                "Entities" => {
-                    builder = builder.set_entities(crate::protocol_serde::shape_icd10_cm_entity_list::de_icd10_cm_entity_list(
-                        tokens, _value,
-                    )?);
+) -> ::std::result::Result<crate::operation::infer_icd10_cm::builders::InferIcd10CmOutputBuilder, ::aws_smithy_cbor::decode::DeserializeError> {
+    #[allow(clippy::match_single_binding)]
+    fn pair(
+        mut builder: crate::operation::infer_icd10_cm::builders::InferIcd10CmOutputBuilder,
+        decoder: &mut ::aws_smithy_cbor::Decoder,
+    ) -> ::std::result::Result<crate::operation::infer_icd10_cm::builders::InferIcd10CmOutputBuilder, ::aws_smithy_cbor::decode::DeserializeError>
+    {
+        builder =
+            match decoder.str()?.as_ref() {
+                "Entities" => builder.set_entities(Some(crate::protocol_serde::shape_icd10_cm_entity_list::de_icd10_cm_entity_list(decoder)?)),
+                "PaginationToken" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
+                    Ok(builder.set_pagination_token(Some(decoder.string()?)))
+                })?,
+                "ModelVersion" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
+                    Ok(builder.set_model_version(Some(decoder.string()?)))
+                })?,
+                _ => {
+                    decoder.skip()?;
+                    builder
                 }
-                "PaginationToken" => {
-                    builder = builder.set_pagination_token(
-                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                            .transpose()?,
-                    );
+            };
+        Ok(builder)
+    }
+
+    let decoder = &mut ::aws_smithy_cbor::Decoder::new(value);
+
+    match decoder.map()? {
+        None => loop {
+            match decoder.datatype()? {
+                ::aws_smithy_cbor::data::Type::Break => {
+                    decoder.skip()?;
+                    break;
                 }
-                "ModelVersion" => {
-                    builder = builder.set_model_version(
-                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                            .transpose()?,
-                    );
+                _ => {
+                    builder = pair(builder, decoder)?;
                 }
-                _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
-            },
-            other => {
-                return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
-                    "expected object key or end object, found: {other:?}"
-                )))
+            };
+        },
+        Some(n) => {
+            for _ in 0..n {
+                builder = pair(builder, decoder)?;
             }
         }
+    };
+
+    if decoder.position() != value.len() {
+        return Err(::aws_smithy_cbor::decode::DeserializeError::expected_end_of_stream(decoder.position()));
     }
-    if tokens.next().is_some() {
-        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
-            "found more JSON tokens after completing parsing",
-        ));
-    }
+
     Ok(builder)
 }

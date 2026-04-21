@@ -15,14 +15,6 @@ where
         .map_err(::std::convert::Into::into)
 }
 
-pub fn parse_http_error_metadata(
-    _response_status: u16,
-    response_headers: &::aws_smithy_runtime_api::http::Headers,
-    response_body: &[u8],
-) -> ::std::result::Result<::aws_smithy_types::error::metadata::Builder, ::aws_smithy_json::deserialize::error::DeserializeError> {
-    crate::json_errors::parse_error_metadata(response_body, response_headers)
-}
-
 pub(crate) mod shape_accept_match;
 
 pub(crate) mod shape_claim_game_server;
@@ -263,14 +255,6 @@ pub(crate) mod shape_validate_matchmaking_rule_set;
 
 pub(crate) mod shape_accept_match_input;
 
-pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
-    if data.is_empty() {
-        b"{}"
-    } else {
-        data
-    }
-}
-
 pub(crate) mod shape_claim_game_server_input;
 
 pub(crate) mod shape_conflict_exception;
@@ -402,6 +386,8 @@ pub(crate) mod shape_describe_runtime_configuration_input;
 pub(crate) mod shape_describe_scaling_policies_input;
 
 pub(crate) mod shape_describe_script_input;
+
+pub(crate) mod shape_describe_vpc_peering_authorizations_input;
 
 pub(crate) mod shape_describe_vpc_peering_connections_input;
 

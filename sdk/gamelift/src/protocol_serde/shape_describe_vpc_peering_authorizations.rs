@@ -9,7 +9,7 @@ pub fn de_describe_vpc_peering_authorizations_http_error(
     crate::operation::describe_vpc_peering_authorizations::DescribeVpcPeeringAuthorizationsError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+    let mut generic_builder = crate::cbor_errors::parse_error_metadata(_response_status, _response_headers, _response_body)
         .map_err(crate::operation::describe_vpc_peering_authorizations::DescribeVpcPeeringAuthorizationsError::unhandled)?;
     generic_builder = ::aws_types::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
@@ -26,7 +26,7 @@ pub fn de_describe_vpc_peering_authorizations_http_error(
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InternalServiceExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_internal_service_exception::de_internal_service_exception_json_err(_response_body, output)
+                    output = crate::protocol_serde::shape_internal_service_exception::de_internal_service_exception_cbor_err(_response_body, output)
                         .map_err(crate::operation::describe_vpc_peering_authorizations::DescribeVpcPeeringAuthorizationsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
@@ -43,7 +43,7 @@ pub fn de_describe_vpc_peering_authorizations_http_error(
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidRequestExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_invalid_request_exception::de_invalid_request_exception_json_err(_response_body, output)
+                    output = crate::protocol_serde::shape_invalid_request_exception::de_invalid_request_exception_cbor_err(_response_body, output)
                         .map_err(crate::operation::describe_vpc_peering_authorizations::DescribeVpcPeeringAuthorizationsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
@@ -60,7 +60,7 @@ pub fn de_describe_vpc_peering_authorizations_http_error(
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::UnauthorizedExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_unauthorized_exception::de_unauthorized_exception_json_err(_response_body, output)
+                    output = crate::protocol_serde::shape_unauthorized_exception::de_unauthorized_exception_cbor_err(_response_body, output)
                         .map_err(crate::operation::describe_vpc_peering_authorizations::DescribeVpcPeeringAuthorizationsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
@@ -95,43 +95,69 @@ pub fn de_describe_vpc_peering_authorizations_http_response(
 }
 
 pub fn ser_describe_vpc_peering_authorizations_input(
-    _input: &crate::operation::describe_vpc_peering_authorizations::DescribeVpcPeeringAuthorizationsInput,
+    input: &crate::operation::describe_vpc_peering_authorizations::DescribeVpcPeeringAuthorizationsInput,
 ) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
-    Ok(::aws_smithy_types::body::SdkBody::from("{}"))
+    let mut encoder = ::aws_smithy_cbor::Encoder::new(Vec::new());
+    {
+        let encoder = &mut encoder;
+        crate::protocol_serde::shape_describe_vpc_peering_authorizations_input::ser_describe_vpc_peering_authorizations_input_input(encoder, input)?;
+    }
+    Ok(::aws_smithy_types::body::SdkBody::from(encoder.into_writer()))
 }
 
 pub(crate) fn de_describe_vpc_peering_authorizations(
-    _value: &[u8],
+    value: &[u8],
     mut builder: crate::operation::describe_vpc_peering_authorizations::builders::DescribeVpcPeeringAuthorizationsOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_vpc_peering_authorizations::builders::DescribeVpcPeeringAuthorizationsOutputBuilder,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
+    ::aws_smithy_cbor::decode::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
-    let tokens = &mut tokens_owned;
-    ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
-    loop {
-        match tokens.next().transpose()? {
-            Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-            Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                "VpcPeeringAuthorizations" => {
-                    builder = builder.set_vpc_peering_authorizations(
-                        crate::protocol_serde::shape_vpc_peering_authorization_list::de_vpc_peering_authorization_list(tokens, _value)?,
-                    );
-                }
-                _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
-            },
-            other => {
-                return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
-                    "expected object key or end object, found: {other:?}"
+    #[allow(clippy::match_single_binding)]
+    fn pair(
+        mut builder: crate::operation::describe_vpc_peering_authorizations::builders::DescribeVpcPeeringAuthorizationsOutputBuilder,
+        decoder: &mut ::aws_smithy_cbor::Decoder,
+    ) -> ::std::result::Result<
+        crate::operation::describe_vpc_peering_authorizations::builders::DescribeVpcPeeringAuthorizationsOutputBuilder,
+        ::aws_smithy_cbor::decode::DeserializeError,
+    > {
+        builder = match decoder.str()?.as_ref() {
+            "VpcPeeringAuthorizations" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
+                Ok(builder.set_vpc_peering_authorizations(Some(
+                    crate::protocol_serde::shape_vpc_peering_authorization_list::de_vpc_peering_authorization_list(decoder)?,
                 )))
+            })?,
+            _ => {
+                decoder.skip()?;
+                builder
+            }
+        };
+        Ok(builder)
+    }
+
+    let decoder = &mut ::aws_smithy_cbor::Decoder::new(value);
+
+    match decoder.map()? {
+        None => loop {
+            match decoder.datatype()? {
+                ::aws_smithy_cbor::data::Type::Break => {
+                    decoder.skip()?;
+                    break;
+                }
+                _ => {
+                    builder = pair(builder, decoder)?;
+                }
+            };
+        },
+        Some(n) => {
+            for _ in 0..n {
+                builder = pair(builder, decoder)?;
             }
         }
+    };
+
+    if decoder.position() != value.len() {
+        return Err(::aws_smithy_cbor::decode::DeserializeError::expected_end_of_stream(decoder.position()));
     }
-    if tokens.next().is_some() {
-        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
-            "found more JSON tokens after completing parsing",
-        ));
-    }
+
     Ok(builder)
 }

@@ -9,7 +9,7 @@ pub fn de_update_automation_rule_http_error(
     crate::operation::update_automation_rule::UpdateAutomationRuleError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+    let mut generic_builder = crate::cbor_errors::parse_error_metadata(_response_status, _response_headers, _response_body)
         .map_err(crate::operation::update_automation_rule::UpdateAutomationRuleError::unhandled)?;
     generic_builder = ::aws_types::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
@@ -25,7 +25,7 @@ pub fn de_update_automation_rule_http_error(
             let mut tmp = {
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::AccessDeniedExceptionBuilder::default();
-                output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(_response_body, output)
+                output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_cbor_err(_response_body, output)
                     .map_err(crate::operation::update_automation_rule::UpdateAutomationRuleError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
@@ -40,7 +40,7 @@ pub fn de_update_automation_rule_http_error(
             let mut tmp = {
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::ForbiddenExceptionBuilder::default();
-                output = crate::protocol_serde::shape_forbidden_exception::de_forbidden_exception_json_err(_response_body, output)
+                output = crate::protocol_serde::shape_forbidden_exception::de_forbidden_exception_cbor_err(_response_body, output)
                     .map_err(crate::operation::update_automation_rule::UpdateAutomationRuleError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
@@ -55,7 +55,7 @@ pub fn de_update_automation_rule_http_error(
             let mut tmp = {
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::IdempotencyTokenInUseExceptionBuilder::default();
-                output = crate::protocol_serde::shape_idempotency_token_in_use_exception::de_idempotency_token_in_use_exception_json_err(
+                output = crate::protocol_serde::shape_idempotency_token_in_use_exception::de_idempotency_token_in_use_exception_cbor_err(
                     _response_body,
                     output,
                 )
@@ -75,7 +75,7 @@ pub fn de_update_automation_rule_http_error(
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::IdempotentParameterMismatchExceptionBuilder::default();
                     output =
-                        crate::protocol_serde::shape_idempotent_parameter_mismatch_exception::de_idempotent_parameter_mismatch_exception_json_err(
+                        crate::protocol_serde::shape_idempotent_parameter_mismatch_exception::de_idempotent_parameter_mismatch_exception_cbor_err(
                             _response_body,
                             output,
                         )
@@ -94,7 +94,7 @@ pub fn de_update_automation_rule_http_error(
             let mut tmp = {
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::InternalServerExceptionBuilder::default();
-                output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(_response_body, output)
+                output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_cbor_err(_response_body, output)
                     .map_err(crate::operation::update_automation_rule::UpdateAutomationRuleError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
@@ -109,7 +109,7 @@ pub fn de_update_automation_rule_http_error(
             let mut tmp = {
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::InvalidParameterValueExceptionBuilder::default();
-                output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_json_err(
+                output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_cbor_err(
                     _response_body,
                     output,
                 )
@@ -127,7 +127,7 @@ pub fn de_update_automation_rule_http_error(
             let mut tmp = {
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::OptInRequiredExceptionBuilder::default();
-                output = crate::protocol_serde::shape_opt_in_required_exception::de_opt_in_required_exception_json_err(_response_body, output)
+                output = crate::protocol_serde::shape_opt_in_required_exception::de_opt_in_required_exception_cbor_err(_response_body, output)
                     .map_err(crate::operation::update_automation_rule::UpdateAutomationRuleError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
@@ -142,7 +142,7 @@ pub fn de_update_automation_rule_http_error(
             let mut tmp = {
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
-                output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output)
+                output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_cbor_err(_response_body, output)
                     .map_err(crate::operation::update_automation_rule::UpdateAutomationRuleError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
@@ -158,7 +158,7 @@ pub fn de_update_automation_rule_http_error(
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::ServiceUnavailableExceptionBuilder::default();
                 output =
-                    crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(_response_body, output)
+                    crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_cbor_err(_response_body, output)
                         .map_err(crate::operation::update_automation_rule::UpdateAutomationRuleError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
@@ -173,7 +173,7 @@ pub fn de_update_automation_rule_http_error(
             let mut tmp = {
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::ThrottlingExceptionBuilder::default();
-                output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(_response_body, output)
+                output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_cbor_err(_response_body, output)
                     .map_err(crate::operation::update_automation_rule::UpdateAutomationRuleError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
@@ -209,117 +209,103 @@ pub fn de_update_automation_rule_http_response(
 pub fn ser_update_automation_rule_input(
     input: &crate::operation::update_automation_rule::UpdateAutomationRuleInput,
 ) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
-    let mut out = String::new();
-    let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
-    crate::protocol_serde::shape_update_automation_rule_input::ser_update_automation_rule_input_input(&mut object, input)?;
-    object.finish();
-    Ok(::aws_smithy_types::body::SdkBody::from(out))
+    let mut encoder = ::aws_smithy_cbor::Encoder::new(Vec::new());
+    {
+        let encoder = &mut encoder;
+        crate::protocol_serde::shape_update_automation_rule_input::ser_update_automation_rule_input_input(encoder, input)?;
+    }
+    Ok(::aws_smithy_types::body::SdkBody::from(encoder.into_writer()))
 }
 
 pub(crate) fn de_update_automation_rule(
-    _value: &[u8],
+    value: &[u8],
     mut builder: crate::operation::update_automation_rule::builders::UpdateAutomationRuleOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::update_automation_rule::builders::UpdateAutomationRuleOutputBuilder,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
+    ::aws_smithy_cbor::decode::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
-    let tokens = &mut tokens_owned;
-    ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
-    loop {
-        match tokens.next().transpose()? {
-            Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-            Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                "ruleArn" => {
-                    builder = builder.set_rule_arn(
-                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                            .transpose()?,
-                    );
-                }
-                "ruleRevision" => {
-                    builder = builder.set_rule_revision(
-                        ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
-                            .map(i64::try_from)
-                            .transpose()?,
-                    );
-                }
-                "name" => {
-                    builder = builder.set_name(
-                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                            .transpose()?,
-                    );
-                }
-                "description" => {
-                    builder = builder.set_description(
-                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                            .transpose()?,
-                    );
-                }
-                "ruleType" => {
-                    builder = builder.set_rule_type(
-                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                            .map(|s| s.to_unescaped().map(|u| crate::types::RuleType::from(u.as_ref())))
-                            .transpose()?,
-                    );
-                }
-                "organizationConfiguration" => {
-                    builder = builder.set_organization_configuration(
-                        crate::protocol_serde::shape_organization_configuration::de_organization_configuration(tokens, _value)?,
-                    );
-                }
-                "priority" => {
-                    builder = builder.set_priority(
-                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                            .transpose()?,
-                    );
-                }
-                "recommendedActionTypes" => {
-                    builder = builder.set_recommended_action_types(
-                        crate::protocol_serde::shape_recommended_action_type_list::de_recommended_action_type_list(tokens, _value)?,
-                    );
-                }
-                "criteria" => {
-                    builder = builder.set_criteria(crate::protocol_serde::shape_criteria::de_criteria(tokens, _value)?);
-                }
-                "schedule" => {
-                    builder = builder.set_schedule(crate::protocol_serde::shape_schedule::de_schedule(tokens, _value)?);
-                }
-                "status" => {
-                    builder = builder.set_status(
-                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                            .map(|s| s.to_unescaped().map(|u| crate::types::RuleStatus::from(u.as_ref())))
-                            .transpose()?,
-                    );
-                }
-                "createdTimestamp" => {
-                    builder = builder.set_created_timestamp(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
-                        tokens.next(),
-                        ::aws_smithy_types::date_time::Format::EpochSeconds,
-                    )?);
-                }
-                "lastUpdatedTimestamp" => {
-                    builder = builder.set_last_updated_timestamp(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
-                        tokens.next(),
-                        ::aws_smithy_types::date_time::Format::EpochSeconds,
-                    )?);
-                }
-                _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
-            },
-            other => {
-                return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
-                    "expected object key or end object, found: {other:?}"
+    #[allow(clippy::match_single_binding)]
+    fn pair(
+        mut builder: crate::operation::update_automation_rule::builders::UpdateAutomationRuleOutputBuilder,
+        decoder: &mut ::aws_smithy_cbor::Decoder,
+    ) -> ::std::result::Result<
+        crate::operation::update_automation_rule::builders::UpdateAutomationRuleOutputBuilder,
+        ::aws_smithy_cbor::decode::DeserializeError,
+    > {
+        builder = match decoder.str()?.as_ref() {
+            "ruleArn" => {
+                ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| Ok(builder.set_rule_arn(Some(decoder.string()?))))?
+            }
+            "ruleRevision" => {
+                ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| Ok(builder.set_rule_revision(Some(decoder.long()?))))?
+            }
+            "name" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| Ok(builder.set_name(Some(decoder.string()?))))?,
+            "description" => {
+                ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| Ok(builder.set_description(Some(decoder.string()?))))?
+            }
+            "ruleType" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
+                Ok(builder.set_rule_type(Some(decoder.string().map(|s| crate::types::RuleType::from(s.as_ref()))?)))
+            })?,
+            "organizationConfiguration" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
+                Ok(builder.set_organization_configuration(Some(
+                    crate::protocol_serde::shape_organization_configuration::de_organization_configuration(decoder)?,
                 )))
+            })?,
+            "priority" => {
+                ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| Ok(builder.set_priority(Some(decoder.string()?))))?
+            }
+            "recommendedActionTypes" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
+                Ok(builder.set_recommended_action_types(Some(
+                    crate::protocol_serde::shape_recommended_action_type_list::de_recommended_action_type_list(decoder)?,
+                )))
+            })?,
+            "criteria" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
+                Ok(builder.set_criteria(Some(crate::protocol_serde::shape_criteria::de_criteria(decoder)?)))
+            })?,
+            "schedule" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
+                Ok(builder.set_schedule(Some(crate::protocol_serde::shape_schedule::de_schedule(decoder)?)))
+            })?,
+            "status" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
+                Ok(builder.set_status(Some(decoder.string().map(|s| crate::types::RuleStatus::from(s.as_ref()))?)))
+            })?,
+            "createdTimestamp" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
+                Ok(builder.set_created_timestamp(Some(decoder.timestamp()?)))
+            })?,
+            "lastUpdatedTimestamp" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
+                Ok(builder.set_last_updated_timestamp(Some(decoder.timestamp()?)))
+            })?,
+            _ => {
+                decoder.skip()?;
+                builder
+            }
+        };
+        Ok(builder)
+    }
+
+    let decoder = &mut ::aws_smithy_cbor::Decoder::new(value);
+
+    match decoder.map()? {
+        None => loop {
+            match decoder.datatype()? {
+                ::aws_smithy_cbor::data::Type::Break => {
+                    decoder.skip()?;
+                    break;
+                }
+                _ => {
+                    builder = pair(builder, decoder)?;
+                }
+            };
+        },
+        Some(n) => {
+            for _ in 0..n {
+                builder = pair(builder, decoder)?;
             }
         }
+    };
+
+    if decoder.position() != value.len() {
+        return Err(::aws_smithy_cbor::decode::DeserializeError::expected_end_of_stream(decoder.position()));
     }
-    if tokens.next().is_some() {
-        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
-            "found more JSON tokens after completing parsing",
-        ));
-    }
+
     Ok(builder)
 }

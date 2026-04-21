@@ -35,7 +35,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-computeoptimizerautomation = "1.8.0"
+//! aws-sdk-computeoptimizerautomation = "1.9.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!
@@ -201,13 +201,13 @@ mod sdk_feature_tracker;
 
 mod serialization_settings;
 
+mod cbor_errors;
+
 mod endpoint_lib;
 
 mod lens;
 
 mod serde_util;
-
-mod json_errors;
 
 #[doc(inline)]
 pub use client::Client;

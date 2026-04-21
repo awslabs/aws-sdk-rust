@@ -257,6 +257,12 @@ mod batch_replace_cluster_nodes;
 
 mod create_action;
 
+mod create_ai_benchmark_job;
+
+mod create_ai_recommendation_job;
+
+mod create_ai_workload_config;
+
 mod create_algorithm;
 
 mod create_app;
@@ -420,6 +426,12 @@ pub mod customize;
 
 mod delete_action;
 
+mod delete_ai_benchmark_job;
+
+mod delete_ai_recommendation_job;
+
+mod delete_ai_workload_config;
+
 mod delete_algorithm;
 
 mod delete_app;
@@ -537,6 +549,12 @@ mod delete_workteam;
 mod deregister_devices;
 
 mod describe_action;
+
+mod describe_ai_benchmark_job;
+
+mod describe_ai_recommendation_job;
+
+mod describe_ai_workload_config;
 
 mod describe_algorithm;
 
@@ -703,6 +721,12 @@ mod get_search_suggestions;
 mod import_hub_content;
 
 mod list_actions;
+
+mod list_ai_benchmark_jobs;
+
+mod list_ai_recommendation_jobs;
+
+mod list_ai_workload_configs;
 
 mod list_algorithms;
 
@@ -905,6 +929,10 @@ mod start_notebook_instance;
 mod start_pipeline_execution;
 
 mod start_session;
+
+mod stop_ai_benchmark_job;
+
+mod stop_ai_recommendation_job;
 
 mod stop_auto_ml_job;
 

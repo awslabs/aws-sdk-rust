@@ -15,14 +15,6 @@ where
         .map_err(::std::convert::Into::into)
 }
 
-pub fn parse_http_error_metadata(
-    _response_status: u16,
-    response_headers: &::aws_smithy_runtime_api::http::Headers,
-    response_body: &[u8],
-) -> ::std::result::Result<::aws_smithy_types::error::metadata::Builder, ::aws_smithy_json::deserialize::error::DeserializeError> {
-    crate::json_errors::parse_error_metadata(response_body, response_headers)
-}
-
 pub(crate) mod shape_delete_recommendation_preferences;
 
 pub(crate) mod shape_describe_recommendation_export_jobs;
@@ -79,14 +71,6 @@ pub(crate) mod shape_put_recommendation_preferences;
 
 pub(crate) mod shape_update_enrollment_status;
 
-pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
-    if data.is_empty() {
-        b"{}"
-    } else {
-        data
-    }
-}
-
 pub(crate) mod shape_access_denied_exception;
 
 pub(crate) mod shape_delete_recommendation_preferences_input;
@@ -122,6 +106,8 @@ pub(crate) mod shape_get_ecs_service_recommendation_projected_metrics_input;
 pub(crate) mod shape_get_ecs_service_recommendations_input;
 
 pub(crate) mod shape_get_effective_recommendation_preferences_input;
+
+pub(crate) mod shape_get_enrollment_status_input;
 
 pub(crate) mod shape_get_enrollment_statuses_for_organization_input;
 

@@ -22,6 +22,8 @@ pub struct FirewallPolicyResponse {
     pub consumed_stateless_rule_capacity: ::std::option::Option<i32>,
     /// <p>The number of capacity units currently consumed by the policy's stateful rules.</p>
     pub consumed_stateful_rule_capacity: ::std::option::Option<i32>,
+    /// <p>The total number of domain name specifications across all domain list rule groups in the firewall policy that use the <code>stateful-domain-rulegroup</code> resource type.</p>
+    pub consumed_stateful_domain_capacity: ::std::option::Option<i32>,
     /// <p>The number of firewalls that are associated with this firewall policy.</p>
     pub number_of_associations: ::std::option::Option<i32>,
     /// <p>A complex type that contains the Amazon Web Services KMS encryption configuration settings for your firewall policy.</p>
@@ -69,6 +71,10 @@ impl FirewallPolicyResponse {
     pub fn consumed_stateful_rule_capacity(&self) -> ::std::option::Option<i32> {
         self.consumed_stateful_rule_capacity
     }
+    /// <p>The total number of domain name specifications across all domain list rule groups in the firewall policy that use the <code>stateful-domain-rulegroup</code> resource type.</p>
+    pub fn consumed_stateful_domain_capacity(&self) -> ::std::option::Option<i32> {
+        self.consumed_stateful_domain_capacity
+    }
     /// <p>The number of firewalls that are associated with this firewall policy.</p>
     pub fn number_of_associations(&self) -> ::std::option::Option<i32> {
         self.number_of_associations
@@ -101,6 +107,7 @@ pub struct FirewallPolicyResponseBuilder {
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) consumed_stateless_rule_capacity: ::std::option::Option<i32>,
     pub(crate) consumed_stateful_rule_capacity: ::std::option::Option<i32>,
+    pub(crate) consumed_stateful_domain_capacity: ::std::option::Option<i32>,
     pub(crate) number_of_associations: ::std::option::Option<i32>,
     pub(crate) encryption_configuration: ::std::option::Option<crate::types::EncryptionConfiguration>,
     pub(crate) last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -233,6 +240,20 @@ impl FirewallPolicyResponseBuilder {
     pub fn get_consumed_stateful_rule_capacity(&self) -> &::std::option::Option<i32> {
         &self.consumed_stateful_rule_capacity
     }
+    /// <p>The total number of domain name specifications across all domain list rule groups in the firewall policy that use the <code>stateful-domain-rulegroup</code> resource type.</p>
+    pub fn consumed_stateful_domain_capacity(mut self, input: i32) -> Self {
+        self.consumed_stateful_domain_capacity = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The total number of domain name specifications across all domain list rule groups in the firewall policy that use the <code>stateful-domain-rulegroup</code> resource type.</p>
+    pub fn set_consumed_stateful_domain_capacity(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.consumed_stateful_domain_capacity = input;
+        self
+    }
+    /// <p>The total number of domain name specifications across all domain list rule groups in the firewall policy that use the <code>stateful-domain-rulegroup</code> resource type.</p>
+    pub fn get_consumed_stateful_domain_capacity(&self) -> &::std::option::Option<i32> {
+        &self.consumed_stateful_domain_capacity
+    }
     /// <p>The number of firewalls that are associated with this firewall policy.</p>
     pub fn number_of_associations(mut self, input: i32) -> Self {
         self.number_of_associations = ::std::option::Option::Some(input);
@@ -305,6 +326,7 @@ impl FirewallPolicyResponseBuilder {
             tags: self.tags,
             consumed_stateless_rule_capacity: self.consumed_stateless_rule_capacity,
             consumed_stateful_rule_capacity: self.consumed_stateful_rule_capacity,
+            consumed_stateful_domain_capacity: self.consumed_stateful_domain_capacity,
             number_of_associations: self.number_of_associations,
             encryption_configuration: self.encryption_configuration,
             last_modified_time: self.last_modified_time,

@@ -29,6 +29,8 @@ pub struct ModelPackageContainerDefinition {
     pub framework_version: ::std::option::Option<::std::string::String>,
     /// <p>The name of a pre-trained machine learning benchmarked by Amazon SageMaker Inference Recommender model that matches your model. You can find a list of benchmarked models by calling <code>ListModelMetadata</code>.</p>
     pub nearest_model_name: ::std::option::Option<::std::string::String>,
+    /// <p>Data sources that are available to your model in addition to the one that you specify for <code>ModelDataSource</code> when you use the <code>CreateModelPackage</code> action.</p>
+    pub additional_model_data_sources: ::std::option::Option<::std::vec::Vec<crate::types::AdditionalModelDataSource>>,
     /// <p>The additional data source that is used during inference in the Docker container for your model package.</p>
     pub additional_s3_data_source: ::std::option::Option<crate::types::AdditionalS3DataSource>,
     /// <p>The ETag associated with Model Data URL.</p>
@@ -86,6 +88,12 @@ impl ModelPackageContainerDefinition {
     pub fn nearest_model_name(&self) -> ::std::option::Option<&str> {
         self.nearest_model_name.as_deref()
     }
+    /// <p>Data sources that are available to your model in addition to the one that you specify for <code>ModelDataSource</code> when you use the <code>CreateModelPackage</code> action.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.additional_model_data_sources.is_none()`.
+    pub fn additional_model_data_sources(&self) -> &[crate::types::AdditionalModelDataSource] {
+        self.additional_model_data_sources.as_deref().unwrap_or_default()
+    }
     /// <p>The additional data source that is used during inference in the Docker container for your model package.</p>
     pub fn additional_s3_data_source(&self) -> ::std::option::Option<&crate::types::AdditionalS3DataSource> {
         self.additional_s3_data_source.as_ref()
@@ -125,6 +133,7 @@ pub struct ModelPackageContainerDefinitionBuilder {
     pub(crate) framework: ::std::option::Option<::std::string::String>,
     pub(crate) framework_version: ::std::option::Option<::std::string::String>,
     pub(crate) nearest_model_name: ::std::option::Option<::std::string::String>,
+    pub(crate) additional_model_data_sources: ::std::option::Option<::std::vec::Vec<crate::types::AdditionalModelDataSource>>,
     pub(crate) additional_s3_data_source: ::std::option::Option<crate::types::AdditionalS3DataSource>,
     pub(crate) model_data_e_tag: ::std::option::Option<::std::string::String>,
     pub(crate) is_checkpoint: ::std::option::Option<bool>,
@@ -303,6 +312,29 @@ impl ModelPackageContainerDefinitionBuilder {
     pub fn get_nearest_model_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.nearest_model_name
     }
+    /// Appends an item to `additional_model_data_sources`.
+    ///
+    /// To override the contents of this collection use [`set_additional_model_data_sources`](Self::set_additional_model_data_sources).
+    ///
+    /// <p>Data sources that are available to your model in addition to the one that you specify for <code>ModelDataSource</code> when you use the <code>CreateModelPackage</code> action.</p>
+    pub fn additional_model_data_sources(mut self, input: crate::types::AdditionalModelDataSource) -> Self {
+        let mut v = self.additional_model_data_sources.unwrap_or_default();
+        v.push(input);
+        self.additional_model_data_sources = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Data sources that are available to your model in addition to the one that you specify for <code>ModelDataSource</code> when you use the <code>CreateModelPackage</code> action.</p>
+    pub fn set_additional_model_data_sources(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::AdditionalModelDataSource>>,
+    ) -> Self {
+        self.additional_model_data_sources = input;
+        self
+    }
+    /// <p>Data sources that are available to your model in addition to the one that you specify for <code>ModelDataSource</code> when you use the <code>CreateModelPackage</code> action.</p>
+    pub fn get_additional_model_data_sources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AdditionalModelDataSource>> {
+        &self.additional_model_data_sources
+    }
     /// <p>The additional data source that is used during inference in the Docker container for your model package.</p>
     pub fn additional_s3_data_source(mut self, input: crate::types::AdditionalS3DataSource) -> Self {
         self.additional_s3_data_source = ::std::option::Option::Some(input);
@@ -373,6 +405,7 @@ impl ModelPackageContainerDefinitionBuilder {
             framework: self.framework,
             framework_version: self.framework_version,
             nearest_model_name: self.nearest_model_name,
+            additional_model_data_sources: self.additional_model_data_sources,
             additional_s3_data_source: self.additional_s3_data_source,
             model_data_e_tag: self.model_data_e_tag,
             is_checkpoint: self.is_checkpoint,

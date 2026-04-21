@@ -6,7 +6,7 @@ pub fn de_update_cluster_http_error(
     _response_body: &[u8],
 ) -> std::result::Result<crate::operation::update_cluster::UpdateClusterOutput, crate::operation::update_cluster::UpdateClusterError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+    let mut generic_builder = crate::cbor_errors::parse_error_metadata(_response_status, _response_headers, _response_body)
         .map_err(crate::operation::update_cluster::UpdateClusterError::unhandled)?;
     generic_builder = ::aws_types::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
@@ -22,7 +22,7 @@ pub fn de_update_cluster_http_error(
             let mut tmp = {
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::Ec2RequestFailedExceptionBuilder::default();
-                output = crate::protocol_serde::shape_ec2_request_failed_exception::de_ec2_request_failed_exception_json_err(_response_body, output)
+                output = crate::protocol_serde::shape_ec2_request_failed_exception::de_ec2_request_failed_exception_cbor_err(_response_body, output)
                     .map_err(crate::operation::update_cluster::UpdateClusterError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
@@ -37,7 +37,7 @@ pub fn de_update_cluster_http_error(
             let mut tmp = {
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::InvalidInputCombinationExceptionBuilder::default();
-                output = crate::protocol_serde::shape_invalid_input_combination_exception::de_invalid_input_combination_exception_json_err(
+                output = crate::protocol_serde::shape_invalid_input_combination_exception::de_invalid_input_combination_exception_cbor_err(
                     _response_body,
                     output,
                 )
@@ -55,7 +55,7 @@ pub fn de_update_cluster_http_error(
             let mut tmp = {
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::InvalidJobStateExceptionBuilder::default();
-                output = crate::protocol_serde::shape_invalid_job_state_exception::de_invalid_job_state_exception_json_err(_response_body, output)
+                output = crate::protocol_serde::shape_invalid_job_state_exception::de_invalid_job_state_exception_cbor_err(_response_body, output)
                     .map_err(crate::operation::update_cluster::UpdateClusterError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
@@ -70,7 +70,7 @@ pub fn de_update_cluster_http_error(
             let mut tmp = {
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::InvalidResourceExceptionBuilder::default();
-                output = crate::protocol_serde::shape_invalid_resource_exception::de_invalid_resource_exception_json_err(_response_body, output)
+                output = crate::protocol_serde::shape_invalid_resource_exception::de_invalid_resource_exception_cbor_err(_response_body, output)
                     .map_err(crate::operation::update_cluster::UpdateClusterError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
@@ -85,7 +85,7 @@ pub fn de_update_cluster_http_error(
             let mut tmp = {
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::KmsRequestFailedExceptionBuilder::default();
-                output = crate::protocol_serde::shape_kms_request_failed_exception::de_kms_request_failed_exception_json_err(_response_body, output)
+                output = crate::protocol_serde::shape_kms_request_failed_exception::de_kms_request_failed_exception_cbor_err(_response_body, output)
                     .map_err(crate::operation::update_cluster::UpdateClusterError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
@@ -116,9 +116,10 @@ pub fn de_update_cluster_http_response(
 pub fn ser_update_cluster_input(
     input: &crate::operation::update_cluster::UpdateClusterInput,
 ) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
-    let mut out = String::new();
-    let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
-    crate::protocol_serde::shape_update_cluster_input::ser_update_cluster_input_input(&mut object, input)?;
-    object.finish();
-    Ok(::aws_smithy_types::body::SdkBody::from(out))
+    let mut encoder = ::aws_smithy_cbor::Encoder::new(Vec::new());
+    {
+        let encoder = &mut encoder;
+        crate::protocol_serde::shape_update_cluster_input::ser_update_cluster_input_input(encoder, input)?;
+    }
+    Ok(::aws_smithy_types::body::SdkBody::from(encoder.into_writer()))
 }

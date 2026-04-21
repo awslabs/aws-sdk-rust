@@ -67,6 +67,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "ConsumedStatefulDomainCapacity" => {
+                            builder = builder.set_consumed_stateful_domain_capacity(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
                         "NumberOfAssociations" => {
                             builder = builder.set_number_of_associations(
                                 ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?

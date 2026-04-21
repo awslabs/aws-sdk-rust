@@ -12,6 +12,12 @@
 /// ```text
 /// # let optimizationjobdeploymentinstancetype = unimplemented!();
 /// match optimizationjobdeploymentinstancetype {
+///     OptimizationJobDeploymentInstanceType::MlG4Dn12Xlarge => { /* ... */ },
+///     OptimizationJobDeploymentInstanceType::MlG4Dn16Xlarge => { /* ... */ },
+///     OptimizationJobDeploymentInstanceType::MlG4Dn2Xlarge => { /* ... */ },
+///     OptimizationJobDeploymentInstanceType::MlG4Dn4Xlarge => { /* ... */ },
+///     OptimizationJobDeploymentInstanceType::MlG4Dn8Xlarge => { /* ... */ },
+///     OptimizationJobDeploymentInstanceType::MlG4DnXlarge => { /* ... */ },
 ///     OptimizationJobDeploymentInstanceType::MlG512Xlarge => { /* ... */ },
 ///     OptimizationJobDeploymentInstanceType::MlG516Xlarge => { /* ... */ },
 ///     OptimizationJobDeploymentInstanceType::MlG524Xlarge => { /* ... */ },
@@ -76,6 +82,18 @@
     ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum OptimizationJobDeploymentInstanceType {
+    #[allow(missing_docs)] // documentation missing in model
+    MlG4Dn12Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlG4Dn16Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlG4Dn2Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlG4Dn4Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlG4Dn8Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlG4DnXlarge,
     #[allow(missing_docs)] // documentation missing in model
     MlG512Xlarge,
     #[allow(missing_docs)] // documentation missing in model
@@ -155,6 +173,12 @@ pub enum OptimizationJobDeploymentInstanceType {
 impl ::std::convert::From<&str> for OptimizationJobDeploymentInstanceType {
     fn from(s: &str) -> Self {
         match s {
+            "ml.g4dn.12xlarge" => OptimizationJobDeploymentInstanceType::MlG4Dn12Xlarge,
+            "ml.g4dn.16xlarge" => OptimizationJobDeploymentInstanceType::MlG4Dn16Xlarge,
+            "ml.g4dn.2xlarge" => OptimizationJobDeploymentInstanceType::MlG4Dn2Xlarge,
+            "ml.g4dn.4xlarge" => OptimizationJobDeploymentInstanceType::MlG4Dn4Xlarge,
+            "ml.g4dn.8xlarge" => OptimizationJobDeploymentInstanceType::MlG4Dn8Xlarge,
+            "ml.g4dn.xlarge" => OptimizationJobDeploymentInstanceType::MlG4DnXlarge,
             "ml.g5.12xlarge" => OptimizationJobDeploymentInstanceType::MlG512Xlarge,
             "ml.g5.16xlarge" => OptimizationJobDeploymentInstanceType::MlG516Xlarge,
             "ml.g5.24xlarge" => OptimizationJobDeploymentInstanceType::MlG524Xlarge,
@@ -206,6 +230,12 @@ impl OptimizationJobDeploymentInstanceType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            OptimizationJobDeploymentInstanceType::MlG4Dn12Xlarge => "ml.g4dn.12xlarge",
+            OptimizationJobDeploymentInstanceType::MlG4Dn16Xlarge => "ml.g4dn.16xlarge",
+            OptimizationJobDeploymentInstanceType::MlG4Dn2Xlarge => "ml.g4dn.2xlarge",
+            OptimizationJobDeploymentInstanceType::MlG4Dn4Xlarge => "ml.g4dn.4xlarge",
+            OptimizationJobDeploymentInstanceType::MlG4Dn8Xlarge => "ml.g4dn.8xlarge",
+            OptimizationJobDeploymentInstanceType::MlG4DnXlarge => "ml.g4dn.xlarge",
             OptimizationJobDeploymentInstanceType::MlG512Xlarge => "ml.g5.12xlarge",
             OptimizationJobDeploymentInstanceType::MlG516Xlarge => "ml.g5.16xlarge",
             OptimizationJobDeploymentInstanceType::MlG524Xlarge => "ml.g5.24xlarge",
@@ -248,6 +278,12 @@ impl OptimizationJobDeploymentInstanceType {
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
+            "ml.g4dn.12xlarge",
+            "ml.g4dn.16xlarge",
+            "ml.g4dn.2xlarge",
+            "ml.g4dn.4xlarge",
+            "ml.g4dn.8xlarge",
+            "ml.g4dn.xlarge",
             "ml.g5.12xlarge",
             "ml.g5.16xlarge",
             "ml.g5.24xlarge",
@@ -307,6 +343,12 @@ impl OptimizationJobDeploymentInstanceType {
 impl ::std::fmt::Display for OptimizationJobDeploymentInstanceType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            OptimizationJobDeploymentInstanceType::MlG4Dn12Xlarge => write!(f, "ml.g4dn.12xlarge"),
+            OptimizationJobDeploymentInstanceType::MlG4Dn16Xlarge => write!(f, "ml.g4dn.16xlarge"),
+            OptimizationJobDeploymentInstanceType::MlG4Dn2Xlarge => write!(f, "ml.g4dn.2xlarge"),
+            OptimizationJobDeploymentInstanceType::MlG4Dn4Xlarge => write!(f, "ml.g4dn.4xlarge"),
+            OptimizationJobDeploymentInstanceType::MlG4Dn8Xlarge => write!(f, "ml.g4dn.8xlarge"),
+            OptimizationJobDeploymentInstanceType::MlG4DnXlarge => write!(f, "ml.g4dn.xlarge"),
             OptimizationJobDeploymentInstanceType::MlG512Xlarge => write!(f, "ml.g5.12xlarge"),
             OptimizationJobDeploymentInstanceType::MlG516Xlarge => write!(f, "ml.g5.16xlarge"),
             OptimizationJobDeploymentInstanceType::MlG524Xlarge => write!(f, "ml.g5.24xlarge"),

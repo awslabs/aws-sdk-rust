@@ -29,6 +29,36 @@ pub(crate) fn reflens_list_actions_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_ai_benchmark_jobs_output_output_next_token(
+    input: &crate::operation::list_ai_benchmark_jobs::ListAiBenchmarkJobsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_ai_recommendation_jobs_output_output_next_token(
+    input: &crate::operation::list_ai_recommendation_jobs::ListAiRecommendationJobsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_ai_workload_configs_output_output_next_token(
+    input: &crate::operation::list_ai_workload_configs::ListAiWorkloadConfigsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_algorithms_output_output_next_token(
     input: &crate::operation::list_algorithms::ListAlgorithmsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -877,6 +907,27 @@ pub(crate) fn lens_list_actions_output_output_action_summaries(
     input: crate::operation::list_actions::ListActionsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ActionSummary>> {
     let input = input.action_summaries?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_ai_benchmark_jobs_output_output_ai_benchmark_jobs(
+    input: crate::operation::list_ai_benchmark_jobs::ListAiBenchmarkJobsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::AiBenchmarkJobSummary>> {
+    let input = input.ai_benchmark_jobs?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_ai_recommendation_jobs_output_output_ai_recommendation_jobs(
+    input: crate::operation::list_ai_recommendation_jobs::ListAiRecommendationJobsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::AiRecommendationJobSummary>> {
+    let input = input.ai_recommendation_jobs?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_ai_workload_configs_output_output_ai_workload_configs(
+    input: crate::operation::list_ai_workload_configs::ListAiWorkloadConfigsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::AiWorkloadConfigSummary>> {
+    let input = input.ai_workload_configs?;
     ::std::option::Option::Some(input)
 }
 

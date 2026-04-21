@@ -191,7 +191,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for StartMatchBa
                 output: &mut ::std::string::String,
             ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::BuildError> {
                 use ::std::fmt::Write as _;
-                ::std::write!(output, "/").expect("formatting should succeed");
+                ::std::write!(output, "/service/GameLift/operation/StartMatchBackfill").expect("formatting should succeed");
                 ::std::result::Result::Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -204,12 +204,14 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for StartMatchBa
                 ::std::result::Result::Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&input, ::http_1x::request::Builder::new())?;
-            builder = _header_serialization_settings.set_default_header(builder, ::http_1x::header::CONTENT_TYPE, "application/x-amz-json-1.1");
+            builder = _header_serialization_settings.set_default_header(builder, ::http_1x::header::CONTENT_TYPE, "application/cbor");
             builder = _header_serialization_settings.set_default_header(
                 builder,
-                ::http_1x::header::HeaderName::from_static("x-amz-target"),
-                "GameLift.StartMatchBackfill",
+                ::http_1x::header::HeaderName::from_static("smithy-protocol"),
+                "rpc-v2-cbor",
             );
+            builder =
+                _header_serialization_settings.set_default_header(builder, ::http_1x::header::HeaderName::from_static("accept"), "application/cbor");
             builder
         };
         let body =
