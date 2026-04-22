@@ -75,6 +75,8 @@ pub(crate) mod shape_invoke_browser;
 
 pub(crate) mod shape_invoke_code_interpreter;
 
+pub(crate) mod shape_invoke_harness;
+
 pub(crate) mod shape_list_actors;
 
 pub(crate) mod shape_list_browser_sessions;
@@ -162,6 +164,10 @@ pub(crate) mod shape_invoke_browser_output;
 pub(crate) mod shape_invoke_code_interpreter_input;
 
 pub(crate) mod shape_invoke_code_interpreter_output;
+
+pub(crate) mod shape_invoke_harness_input;
+
+pub(crate) mod shape_invoke_harness_output;
 
 pub(crate) mod shape_list_actors_input;
 
@@ -273,6 +279,16 @@ pub(crate) mod shape_extraction_job_metadata_list;
 
 pub(crate) mod shape_filter_input;
 
+pub(crate) mod shape_harness_message;
+
+pub(crate) mod shape_harness_model_configuration;
+
+pub(crate) mod shape_harness_skill;
+
+pub(crate) mod shape_harness_system_content_block;
+
+pub(crate) mod shape_harness_tool;
+
 pub(crate) mod shape_invoke_agent_runtime_command_request_body;
 
 pub(crate) mod shape_memory_record;
@@ -340,6 +356,28 @@ pub(crate) mod shape_evaluation_result_content;
 pub(crate) mod shape_event_metadata_filter_expression;
 
 pub(crate) mod shape_extraction_job_metadata;
+
+pub(crate) mod shape_harness_bedrock_model_config;
+
+pub(crate) mod shape_harness_content_block;
+
+pub(crate) mod shape_harness_content_block_delta_event;
+
+pub(crate) mod shape_harness_content_block_start_event;
+
+pub(crate) mod shape_harness_content_block_stop_event;
+
+pub(crate) mod shape_harness_gemini_model_config;
+
+pub(crate) mod shape_harness_message_start_event;
+
+pub(crate) mod shape_harness_message_stop_event;
+
+pub(crate) mod shape_harness_metadata_event;
+
+pub(crate) mod shape_harness_open_ai_model_config;
+
+pub(crate) mod shape_harness_tool_configuration;
 
 pub(crate) mod shape_input_content_block;
 
@@ -417,6 +455,22 @@ pub(crate) mod shape_external_proxy;
 
 pub(crate) mod shape_extraction_job_messages;
 
+pub(crate) mod shape_harness_agent_core_browser_config;
+
+pub(crate) mod shape_harness_agent_core_code_interpreter_config;
+
+pub(crate) mod shape_harness_agent_core_gateway_config;
+
+pub(crate) mod shape_harness_inline_function_config;
+
+pub(crate) mod shape_harness_reasoning_content_block;
+
+pub(crate) mod shape_harness_remote_mcp_config;
+
+pub(crate) mod shape_harness_tool_result_block;
+
+pub(crate) mod shape_harness_tool_use_block;
+
 pub(crate) mod shape_ignored_reference_input_fields;
 
 pub(crate) mod shape_left_expression;
@@ -445,6 +499,20 @@ pub(crate) mod shape_content_stop_event;
 
 pub(crate) mod shape_custom_descriptor;
 
+pub(crate) mod shape_harness_content_block_delta;
+
+pub(crate) mod shape_harness_content_block_start;
+
+pub(crate) mod shape_harness_gateway_outbound_auth;
+
+pub(crate) mod shape_harness_reasoning_text_block;
+
+pub(crate) mod shape_harness_stream_metrics;
+
+pub(crate) mod shape_harness_token_usage;
+
+pub(crate) mod shape_harness_tool_result_content_block;
+
 pub(crate) mod shape_mcp_descriptor;
 
 pub(crate) mod shape_messages_list;
@@ -459,7 +527,19 @@ pub(crate) mod shape_basic_auth;
 
 pub(crate) mod shape_content_block;
 
+pub(crate) mod shape_harness_reasoning_content_block_delta;
+
+pub(crate) mod shape_harness_tool_result_block_start;
+
+pub(crate) mod shape_harness_tool_result_blocks_delta;
+
+pub(crate) mod shape_harness_tool_use_block_delta;
+
+pub(crate) mod shape_harness_tool_use_block_start;
+
 pub(crate) mod shape_message_metadata;
+
+pub(crate) mod shape_o_auth_credential_provider;
 
 pub(crate) mod shape_server_definition;
 
@@ -468,5 +548,7 @@ pub(crate) mod shape_skill_definition;
 pub(crate) mod shape_skill_md_definition;
 
 pub(crate) mod shape_tools_definition;
+
+pub(crate) mod shape_harness_tool_result_block_delta;
 
 pub(crate) mod shape_resource_content;

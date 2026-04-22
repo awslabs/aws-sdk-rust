@@ -13,6 +13,10 @@ pub use crate::types::_tool_arguments::ToolArguments;
 
 pub use crate::types::_code_interpreter_stream_output::CodeInterpreterStreamOutput;
 
+pub use crate::types::_harness_model_configuration::HarnessModelConfiguration;
+
+pub use crate::types::_invoke_harness_stream_output::InvokeHarnessStreamOutput;
+
 pub use crate::types::_invoke_agent_runtime_command_request_body::InvokeAgentRuntimeCommandRequestBody;
 
 pub use crate::types::_invoke_agent_runtime_command_stream_output::InvokeAgentRuntimeCommandStreamOutput;
@@ -62,6 +66,32 @@ pub use crate::types::_programming_language::ProgrammingLanguage;
 pub use crate::types::_language_runtime::LanguageRuntime;
 
 pub use crate::types::_code_interpreter_result::CodeInterpreterResult;
+
+pub use crate::types::_harness_message::HarnessMessage;
+
+pub use crate::types::_harness_bedrock_model_config::HarnessBedrockModelConfig;
+
+pub use crate::types::_harness_open_ai_model_config::HarnessOpenAiModelConfig;
+
+pub use crate::types::_harness_gemini_model_config::HarnessGeminiModelConfig;
+
+pub use crate::types::_harness_system_content_block::HarnessSystemContentBlock;
+
+pub use crate::types::_harness_tool::HarnessTool;
+
+pub use crate::types::_harness_skill::HarnessSkill;
+
+pub use crate::types::_harness_message_start_event::HarnessMessageStartEvent;
+
+pub use crate::types::_harness_content_block_start_event::HarnessContentBlockStartEvent;
+
+pub use crate::types::_harness_content_block_delta_event::HarnessContentBlockDeltaEvent;
+
+pub use crate::types::_harness_content_block_stop_event::HarnessContentBlockStopEvent;
+
+pub use crate::types::_harness_message_stop_event::HarnessMessageStopEvent;
+
+pub use crate::types::_harness_metadata_event::HarnessMetadataEvent;
 
 pub use crate::types::_response_chunk::ResponseChunk;
 
@@ -153,6 +183,22 @@ pub use crate::types::_input_content_block::InputContentBlock;
 
 pub use crate::types::_tool_result_structured_content::ToolResultStructuredContent;
 
+pub use crate::types::_harness_conversation_role::HarnessConversationRole;
+
+pub use crate::types::_harness_tool_type::HarnessToolType;
+
+pub use crate::types::_harness_tool_configuration::HarnessToolConfiguration;
+
+pub use crate::types::_harness_content_block_start::HarnessContentBlockStart;
+
+pub use crate::types::_harness_content_block_delta::HarnessContentBlockDelta;
+
+pub use crate::types::_harness_stop_reason::HarnessStopReason;
+
+pub use crate::types::_harness_token_usage::HarnessTokenUsage;
+
+pub use crate::types::_harness_stream_metrics::HarnessStreamMetrics;
+
 pub use crate::types::_content_start_event::ContentStartEvent;
 
 pub use crate::types::_content_delta_event::ContentDeltaEvent;
@@ -203,6 +249,26 @@ pub use crate::types::_content_block::ContentBlock;
 
 pub use crate::types::_task_status::TaskStatus;
 
+pub use crate::types::_harness_content_block::HarnessContentBlock;
+
+pub use crate::types::_harness_remote_mcp_config::HarnessRemoteMcpConfig;
+
+pub use crate::types::_harness_agent_core_browser_config::HarnessAgentCoreBrowserConfig;
+
+pub use crate::types::_harness_agent_core_gateway_config::HarnessAgentCoreGatewayConfig;
+
+pub use crate::types::_harness_inline_function_config::HarnessInlineFunctionConfig;
+
+pub use crate::types::_harness_agent_core_code_interpreter_config::HarnessAgentCoreCodeInterpreterConfig;
+
+pub use crate::types::_harness_tool_use_block_start::HarnessToolUseBlockStart;
+
+pub use crate::types::_harness_tool_result_block_start::HarnessToolResultBlockStart;
+
+pub use crate::types::_harness_tool_use_block_delta::HarnessToolUseBlockDelta;
+
+pub use crate::types::_harness_reasoning_content_block_delta::HarnessReasoningContentBlockDelta;
+
 pub use crate::types::_command_execution_status::CommandExecutionStatus;
 
 pub use crate::types::_s3_location::S3Location;
@@ -235,6 +301,20 @@ pub use crate::types::_content_block_type::ContentBlockType;
 
 pub use crate::types::_resource_content::ResourceContent;
 
+pub use crate::types::_harness_tool_use_block::HarnessToolUseBlock;
+
+pub use crate::types::_harness_tool_result_block::HarnessToolResultBlock;
+
+pub use crate::types::_harness_reasoning_content_block::HarnessReasoningContentBlock;
+
+pub use crate::types::_harness_gateway_outbound_auth::HarnessGatewayOutboundAuth;
+
+pub use crate::types::_harness_tool_use_type::HarnessToolUseType;
+
+pub use crate::types::_harness_tool_use_status::HarnessToolUseStatus;
+
+pub use crate::types::_harness_tool_result_block_delta::HarnessToolResultBlockDelta;
+
 pub use crate::types::_proxy_credentials::ProxyCredentials;
 
 pub use crate::types::_message_metadata::MessageMetadata;
@@ -251,7 +331,17 @@ pub use crate::types::_skill_definition::SkillDefinition;
 
 pub use crate::types::_resource_content_type::ResourceContentType;
 
+pub use crate::types::_harness_reasoning_text_block::HarnessReasoningTextBlock;
+
+pub use crate::types::_unit::Unit;
+
+pub use crate::types::_o_auth_credential_provider::OAuthCredentialProvider;
+
 pub use crate::types::_basic_auth::BasicAuth;
+
+pub use crate::types::_harness_tool_result_content_block::HarnessToolResultContentBlock;
+
+pub use crate::types::_o_auth_grant_type::OAuthGrantType;
 
 mod _a2a_descriptor;
 
@@ -361,11 +451,95 @@ mod _extraction_job_status;
 
 mod _filter_input;
 
+mod _harness_agent_core_browser_config;
+
+mod _harness_agent_core_code_interpreter_config;
+
+mod _harness_agent_core_gateway_config;
+
+mod _harness_bedrock_model_config;
+
+mod _harness_content_block;
+
+mod _harness_content_block_delta;
+
+mod _harness_content_block_delta_event;
+
+mod _harness_content_block_start;
+
+mod _harness_content_block_start_event;
+
+mod _harness_content_block_stop_event;
+
+mod _harness_conversation_role;
+
+mod _harness_gateway_outbound_auth;
+
+mod _harness_gemini_model_config;
+
+mod _harness_inline_function_config;
+
+mod _harness_message;
+
+mod _harness_message_start_event;
+
+mod _harness_message_stop_event;
+
+mod _harness_metadata_event;
+
+mod _harness_model_configuration;
+
+mod _harness_open_ai_model_config;
+
+mod _harness_reasoning_content_block;
+
+mod _harness_reasoning_content_block_delta;
+
+mod _harness_reasoning_text_block;
+
+mod _harness_remote_mcp_config;
+
+mod _harness_skill;
+
+mod _harness_stop_reason;
+
+mod _harness_stream_metrics;
+
+mod _harness_system_content_block;
+
+mod _harness_token_usage;
+
+mod _harness_tool;
+
+mod _harness_tool_configuration;
+
+mod _harness_tool_result_block;
+
+mod _harness_tool_result_block_delta;
+
+mod _harness_tool_result_block_start;
+
+mod _harness_tool_result_content_block;
+
+mod _harness_tool_type;
+
+mod _harness_tool_use_block;
+
+mod _harness_tool_use_block_delta;
+
+mod _harness_tool_use_block_start;
+
+mod _harness_tool_use_status;
+
+mod _harness_tool_use_type;
+
 mod _input_content_block;
 
 mod _invoke_agent_runtime_command_request_body;
 
 mod _invoke_agent_runtime_command_stream_output;
+
+mod _invoke_harness_stream_output;
 
 mod _key_press_arguments;
 
@@ -426,6 +600,10 @@ mod _mouse_move_result;
 mod _mouse_scroll_arguments;
 
 mod _mouse_scroll_result;
+
+mod _o_auth_credential_provider;
+
+mod _o_auth_grant_type;
 
 mod _oauth2_flow_type;
 
@@ -498,6 +676,8 @@ mod _tool_name;
 mod _tool_result_structured_content;
 
 mod _tools_definition;
+
+mod _unit;
 
 mod _user_identifier;
 

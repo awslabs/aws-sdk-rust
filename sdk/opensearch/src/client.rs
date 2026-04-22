@@ -313,6 +313,8 @@ mod remove_tags;
 
 mod revoke_vpc_endpoint_access;
 
+mod rollback_service_software_update;
+
 mod start_domain_maintenance;
 
 mod start_service_software_update;

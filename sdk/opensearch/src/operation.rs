@@ -226,6 +226,9 @@ pub mod remove_tags;
 /// Types for the `RevokeVpcEndpointAccess` operation.
 pub mod revoke_vpc_endpoint_access;
 
+/// Types for the `RollbackServiceSoftwareUpdate` operation.
+pub mod rollback_service_software_update;
+
 /// Types for the `StartDomainMaintenance` operation.
 pub mod start_domain_maintenance;
 

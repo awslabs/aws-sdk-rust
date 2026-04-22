@@ -53,6 +53,8 @@ pub use crate::types::_ip::IpBuilder;
 
 pub use crate::types::_gnss::GnssBuilder;
 
+pub use crate::types::_advanced_configuration::AdvancedConfigurationBuilder;
+
 pub use crate::types::_device_registration_state_event_configuration::DeviceRegistrationStateEventConfigurationBuilder;
 
 pub use crate::types::_proximity_event_configuration::ProximityEventConfigurationBuilder;
@@ -136,6 +138,8 @@ pub use crate::types::_summary_metric_query_result::SummaryMetricQueryResultBuil
 pub use crate::types::_semtech_gnss_detail::SemtechGnssDetailBuilder;
 
 pub use crate::types::_wi_fi_access_point::WiFiAccessPointBuilder;
+
+pub use crate::types::_wi_fi_cellular::WiFiCellularBuilder;
 
 pub use crate::types::_sidewalk_event_notification_configurations::SidewalkEventNotificationConfigurationsBuilder;
 

@@ -125,6 +125,8 @@ pub use crate::types::_capability_base_request_config::CapabilityBaseRequestConf
 
 pub use crate::types::_capability_base_response_config::CapabilityBaseResponseConfig;
 
+pub use crate::types::_rollback_service_software_options::RollbackServiceSoftwareOptions;
+
 pub use crate::types::_schedule_at::ScheduleAt;
 
 pub use crate::types::_auto_tune_options::AutoTuneOptions;
@@ -776,6 +778,8 @@ mod _reserved_instance_payment_option;
 mod _roles_key_id_c_option;
 
 mod _rollback_on_disable;
+
+mod _rollback_service_software_options;
 
 mod _s3_glue_data_catalog;
 

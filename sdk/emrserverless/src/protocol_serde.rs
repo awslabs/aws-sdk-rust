@@ -35,11 +35,19 @@ pub(crate) mod shape_get_dashboard_for_job_run;
 
 pub(crate) mod shape_get_job_run;
 
+pub(crate) mod shape_get_resource_dashboard;
+
+pub(crate) mod shape_get_session;
+
+pub(crate) mod shape_get_session_endpoint;
+
 pub(crate) mod shape_list_applications;
 
 pub(crate) mod shape_list_job_run_attempts;
 
 pub(crate) mod shape_list_job_runs;
+
+pub(crate) mod shape_list_sessions;
 
 pub(crate) mod shape_list_tags_for_resource;
 
@@ -47,9 +55,13 @@ pub(crate) mod shape_start_application;
 
 pub(crate) mod shape_start_job_run;
 
+pub(crate) mod shape_start_session;
+
 pub(crate) mod shape_stop_application;
 
 pub(crate) mod shape_tag_resource;
+
+pub(crate) mod shape_terminate_session;
 
 pub(crate) mod shape_untag_resource;
 
@@ -74,6 +86,8 @@ pub(crate) mod shape_resource_not_found_exception;
 pub(crate) mod shape_service_quota_exceeded_exception;
 
 pub(crate) mod shape_start_job_run_input;
+
+pub(crate) mod shape_start_session_input;
 
 pub(crate) mod shape_tag_resource_input;
 
@@ -125,6 +139,12 @@ pub(crate) mod shape_retry_policy;
 
 pub(crate) mod shape_scheduler_configuration;
 
+pub(crate) mod shape_session;
+
+pub(crate) mod shape_session_configuration_overrides;
+
+pub(crate) mod shape_sessions;
+
 pub(crate) mod shape_tag_map;
 
 pub(crate) mod shape_worker_type_specification_input;
@@ -154,6 +174,8 @@ pub(crate) mod shape_prometheus_monitoring_configuration;
 pub(crate) mod shape_resource_utilization;
 
 pub(crate) mod shape_s3_monitoring_configuration;
+
+pub(crate) mod shape_session_summary;
 
 pub(crate) mod shape_spark_submit;
 

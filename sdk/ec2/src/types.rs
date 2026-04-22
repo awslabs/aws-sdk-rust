@@ -581,6 +581,8 @@ pub use crate::types::_request_ipam_resource_tag::RequestIpamResourceTag;
 
 pub use crate::types::_response_launch_template_data::ResponseLaunchTemplateData;
 
+pub use crate::types::_managed_resource_visibility_settings::ManagedResourceVisibilitySettings;
+
 pub use crate::types::_analysis_status::AnalysisStatus;
 
 pub use crate::types::_reservation_value::ReservationValue;
@@ -664,6 +666,8 @@ pub use crate::types::_affinity::Affinity;
 pub use crate::types::_ipam_policy_document::IpamPolicyDocument;
 
 pub use crate::types::_ipam_resource_cidr::IpamResourceCidr;
+
+pub use crate::types::_managed_resource_default_visibility::ManagedResourceDefaultVisibility;
 
 pub use crate::types::_network_interface_attachment_changes::NetworkInterfaceAttachmentChanges;
 
@@ -4216,6 +4220,10 @@ mod _maintenance_details;
 mod _managed_by;
 
 mod _managed_prefix_list;
+
+mod _managed_resource_default_visibility;
+
+mod _managed_resource_visibility_settings;
 
 mod _market_type;
 

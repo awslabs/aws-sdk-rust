@@ -31,6 +31,10 @@ pub use crate::types::_retry_policy::RetryPolicyBuilder;
 
 pub use crate::types::_job_run::JobRunBuilder;
 
+pub use crate::types::_session_configuration_overrides::SessionConfigurationOverridesBuilder;
+
+pub use crate::types::_session::SessionBuilder;
+
 pub use crate::types::_application_summary::ApplicationSummaryBuilder;
 
 pub use crate::types::_initial_capacity_config::InitialCapacityConfigBuilder;
@@ -62,6 +66,8 @@ pub use crate::types::_total_resource_utilization::TotalResourceUtilizationBuild
 pub use crate::types::_resource_utilization::ResourceUtilizationBuilder;
 
 pub use crate::types::_job_run_attempt_summary::JobRunAttemptSummaryBuilder;
+
+pub use crate::types::_session_summary::SessionSummaryBuilder;
 
 pub use crate::types::_worker_resource_config::WorkerResourceConfigBuilder;
 

@@ -31,6 +31,8 @@ pub struct DescribeLaunchTemplatesInput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value. This value can be between 1 and 200.</p>
     pub max_results: ::std::option::Option<i32>,
+    /// <p>Indicates whether to include managed resources in the output. If this parameter is set to <code>true</code>, the output includes resources that are managed by Amazon Web Services services, even if managed resource visibility is set to hidden.</p>
+    pub include_managed_resources: ::std::option::Option<bool>,
 }
 impl DescribeLaunchTemplatesInput {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -79,6 +81,10 @@ impl DescribeLaunchTemplatesInput {
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
+    /// <p>Indicates whether to include managed resources in the output. If this parameter is set to <code>true</code>, the output includes resources that are managed by Amazon Web Services services, even if managed resource visibility is set to hidden.</p>
+    pub fn include_managed_resources(&self) -> ::std::option::Option<bool> {
+        self.include_managed_resources
+    }
 }
 impl DescribeLaunchTemplatesInput {
     /// Creates a new builder-style object to manufacture [`DescribeLaunchTemplatesInput`](crate::operation::describe_launch_templates::DescribeLaunchTemplatesInput).
@@ -97,6 +103,7 @@ pub struct DescribeLaunchTemplatesInputBuilder {
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
+    pub(crate) include_managed_resources: ::std::option::Option<bool>,
 }
 impl DescribeLaunchTemplatesInputBuilder {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -249,6 +256,20 @@ impl DescribeLaunchTemplatesInputBuilder {
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
+    /// <p>Indicates whether to include managed resources in the output. If this parameter is set to <code>true</code>, the output includes resources that are managed by Amazon Web Services services, even if managed resource visibility is set to hidden.</p>
+    pub fn include_managed_resources(mut self, input: bool) -> Self {
+        self.include_managed_resources = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether to include managed resources in the output. If this parameter is set to <code>true</code>, the output includes resources that are managed by Amazon Web Services services, even if managed resource visibility is set to hidden.</p>
+    pub fn set_include_managed_resources(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.include_managed_resources = input;
+        self
+    }
+    /// <p>Indicates whether to include managed resources in the output. If this parameter is set to <code>true</code>, the output includes resources that are managed by Amazon Web Services services, even if managed resource visibility is set to hidden.</p>
+    pub fn get_include_managed_resources(&self) -> &::std::option::Option<bool> {
+        &self.include_managed_resources
+    }
     /// Consumes the builder and constructs a [`DescribeLaunchTemplatesInput`](crate::operation::describe_launch_templates::DescribeLaunchTemplatesInput).
     pub fn build(
         self,
@@ -263,6 +284,7 @@ impl DescribeLaunchTemplatesInputBuilder {
             filters: self.filters,
             next_token: self.next_token,
             max_results: self.max_results,
+            include_managed_resources: self.include_managed_resources,
         })
     }
 }

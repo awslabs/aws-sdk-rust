@@ -83,6 +83,39 @@ pub(crate) fn get_job_run_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn get_session_output_output_correct_errors(
+    mut builder: crate::operation::get_session::builders::GetSessionOutputBuilder,
+) -> crate::operation::get_session::builders::GetSessionOutputBuilder {
+    if builder.session.is_none() {
+        builder.session = {
+            let builder = crate::types::builders::SessionBuilder::default();
+            crate::serde_util::session_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
+pub(crate) fn get_session_endpoint_output_output_correct_errors(
+    mut builder: crate::operation::get_session_endpoint::builders::GetSessionEndpointOutputBuilder,
+) -> crate::operation::get_session_endpoint::builders::GetSessionEndpointOutputBuilder {
+    if builder.application_id.is_none() {
+        builder.application_id = Some(Default::default())
+    }
+    if builder.session_id.is_none() {
+        builder.session_id = Some(Default::default())
+    }
+    if builder.endpoint.is_none() {
+        builder.endpoint = Some(Default::default())
+    }
+    if builder.auth_token.is_none() {
+        builder.auth_token = Some(Default::default())
+    }
+    if builder.auth_token_expires_at.is_none() {
+        builder.auth_token_expires_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
 pub(crate) fn list_applications_output_output_correct_errors(
     mut builder: crate::operation::list_applications::builders::ListApplicationsOutputBuilder,
 ) -> crate::operation::list_applications::builders::ListApplicationsOutputBuilder {
@@ -110,6 +143,15 @@ pub(crate) fn list_job_runs_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn list_sessions_output_output_correct_errors(
+    mut builder: crate::operation::list_sessions::builders::ListSessionsOutputBuilder,
+) -> crate::operation::list_sessions::builders::ListSessionsOutputBuilder {
+    if builder.sessions.is_none() {
+        builder.sessions = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn service_quota_exceeded_exception_correct_errors(
     mut builder: crate::types::error::builders::ServiceQuotaExceededExceptionBuilder,
 ) -> crate::types::error::builders::ServiceQuotaExceededExceptionBuilder {
@@ -130,6 +172,33 @@ pub(crate) fn start_job_run_output_output_correct_errors(
     }
     if builder.arn.is_none() {
         builder.arn = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn start_session_output_output_correct_errors(
+    mut builder: crate::operation::start_session::builders::StartSessionOutputBuilder,
+) -> crate::operation::start_session::builders::StartSessionOutputBuilder {
+    if builder.application_id.is_none() {
+        builder.application_id = Some(Default::default())
+    }
+    if builder.session_id.is_none() {
+        builder.session_id = Some(Default::default())
+    }
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn terminate_session_output_output_correct_errors(
+    mut builder: crate::operation::terminate_session::builders::TerminateSessionOutputBuilder,
+) -> crate::operation::terminate_session::builders::TerminateSessionOutputBuilder {
+    if builder.application_id.is_none() {
+        builder.application_id = Some(Default::default())
+    }
+    if builder.session_id.is_none() {
+        builder.session_id = Some(Default::default())
     }
     builder
 }
@@ -204,6 +273,40 @@ pub(crate) fn job_run_correct_errors(mut builder: crate::types::builders::JobRun
     }
     if builder.job_driver.is_none() {
         builder.job_driver = Some(crate::types::JobDriver::Unknown)
+    }
+    builder
+}
+
+pub(crate) fn session_correct_errors(mut builder: crate::types::builders::SessionBuilder) -> crate::types::builders::SessionBuilder {
+    if builder.application_id.is_none() {
+        builder.application_id = Some(Default::default())
+    }
+    if builder.session_id.is_none() {
+        builder.session_id = Some(Default::default())
+    }
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.state.is_none() {
+        builder.state = "no value was set".parse::<crate::types::SessionState>().ok()
+    }
+    if builder.state_details.is_none() {
+        builder.state_details = Some(Default::default())
+    }
+    if builder.release_label.is_none() {
+        builder.release_label = Some(Default::default())
+    }
+    if builder.execution_role_arn.is_none() {
+        builder.execution_role_arn = Some(Default::default())
+    }
+    if builder.created_by.is_none() {
+        builder.created_by = Some(Default::default())
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.updated_at.is_none() {
+        builder.updated_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
     }
     builder
 }
@@ -327,6 +430,42 @@ pub(crate) fn maximum_allowed_resources_correct_errors(
     }
     if builder.memory.is_none() {
         builder.memory = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn session_summary_correct_errors(
+    mut builder: crate::types::builders::SessionSummaryBuilder,
+) -> crate::types::builders::SessionSummaryBuilder {
+    if builder.application_id.is_none() {
+        builder.application_id = Some(Default::default())
+    }
+    if builder.session_id.is_none() {
+        builder.session_id = Some(Default::default())
+    }
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.state.is_none() {
+        builder.state = "no value was set".parse::<crate::types::SessionState>().ok()
+    }
+    if builder.state_details.is_none() {
+        builder.state_details = Some(Default::default())
+    }
+    if builder.release_label.is_none() {
+        builder.release_label = Some(Default::default())
+    }
+    if builder.execution_role_arn.is_none() {
+        builder.execution_role_arn = Some(Default::default())
+    }
+    if builder.created_by.is_none() {
+        builder.created_by = Some(Default::default())
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.updated_at.is_none() {
+        builder.updated_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
     }
     builder
 }

@@ -1702,6 +1702,9 @@ pub mod get_managed_prefix_list_associations;
 /// Types for the `GetManagedPrefixListEntries` operation.
 pub mod get_managed_prefix_list_entries;
 
+/// Types for the `GetManagedResourceVisibility` operation.
+pub mod get_managed_resource_visibility;
+
 /// Types for the `GetNetworkInsightsAccessScopeAnalysisFindings` operation.
 pub mod get_network_insights_access_scope_analysis_findings;
 
@@ -1920,6 +1923,9 @@ pub mod modify_local_gateway_route;
 
 /// Types for the `ModifyManagedPrefixList` operation.
 pub mod modify_managed_prefix_list;
+
+/// Types for the `ModifyManagedResourceVisibility` operation.
+pub mod modify_managed_resource_visibility;
 
 /// Types for the `ModifyNetworkInterfaceAttribute` operation.
 pub mod modify_network_interface_attribute;

@@ -67,6 +67,9 @@ pub mod invoke_browser;
 /// Types for the `InvokeCodeInterpreter` operation.
 pub mod invoke_code_interpreter;
 
+/// Types for the `InvokeHarness` operation.
+pub mod invoke_harness;
+
 /// Types for the `ListActors` operation.
 pub mod list_actors;
 

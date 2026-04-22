@@ -40,6 +40,16 @@ pub struct GetObjectOutput {
     pub checksum_sha1: ::std::option::Option<::std::string::String>,
     /// <p>The Base64 encoded, 256-bit <code>SHA256</code> digest of the object. This checksum is only present if the checksum was uploaded with the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub checksum_sha256: ::std::option::Option<::std::string::String>,
+    /// <p>The Base64 encoded, 512-bit <code>SHA512</code> digest of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity in the Amazon S3 User Guide</a>.</p>
+    pub checksum_sha512: ::std::option::Option<::std::string::String>,
+    /// <p>The Base64 encoded, 128-bit <code>MD5</code> digest of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity in the Amazon S3 User Guide</a>.</p>
+    pub checksum_md5: ::std::option::Option<::std::string::String>,
+    /// <p>The Base64 encoded, 64-bit <code>XXHASH64</code> checksum of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity in the Amazon S3 User Guide</a>.</p>
+    pub checksum_xxhash64: ::std::option::Option<::std::string::String>,
+    /// <p>The Base64 encoded, 64-bit <code>XXHASH3</code> checksum of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity in the Amazon S3 User Guide</a>.</p>
+    pub checksum_xxhash3: ::std::option::Option<::std::string::String>,
+    /// <p>The Base64 encoded, 128-bit <code>XXHASH128</code> checksum of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity in the Amazon S3 User Guide</a>.</p>
+    pub checksum_xxhash128: ::std::option::Option<::std::string::String>,
     /// <p>The checksum type, which determines how part-level checksums are combined to create an object-level checksum for multipart objects. You can use this header response to verify that the checksum type that is received is the same checksum type that was specified in the <code>CreateMultipartUpload</code> request. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub checksum_type: ::std::option::Option<crate::types::ChecksumType>,
     /// <p>This is set to the number of metadata entries not returned in the headers that are prefixed with <code>x-amz-meta-</code>. This can happen if you create metadata using an API like SOAP that supports more flexible metadata than the REST API. For example, using SOAP, you can create metadata whose values are not legal HTTP headers.</p><note>
@@ -187,6 +197,26 @@ impl GetObjectOutput {
     /// <p>The Base64 encoded, 256-bit <code>SHA256</code> digest of the object. This checksum is only present if the checksum was uploaded with the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn checksum_sha256(&self) -> ::std::option::Option<&str> {
         self.checksum_sha256.as_deref()
+    }
+    /// <p>The Base64 encoded, 512-bit <code>SHA512</code> digest of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity in the Amazon S3 User Guide</a>.</p>
+    pub fn checksum_sha512(&self) -> ::std::option::Option<&str> {
+        self.checksum_sha512.as_deref()
+    }
+    /// <p>The Base64 encoded, 128-bit <code>MD5</code> digest of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity in the Amazon S3 User Guide</a>.</p>
+    pub fn checksum_md5(&self) -> ::std::option::Option<&str> {
+        self.checksum_md5.as_deref()
+    }
+    /// <p>The Base64 encoded, 64-bit <code>XXHASH64</code> checksum of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity in the Amazon S3 User Guide</a>.</p>
+    pub fn checksum_xxhash64(&self) -> ::std::option::Option<&str> {
+        self.checksum_xxhash64.as_deref()
+    }
+    /// <p>The Base64 encoded, 64-bit <code>XXHASH3</code> checksum of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity in the Amazon S3 User Guide</a>.</p>
+    pub fn checksum_xxhash3(&self) -> ::std::option::Option<&str> {
+        self.checksum_xxhash3.as_deref()
+    }
+    /// <p>The Base64 encoded, 128-bit <code>XXHASH128</code> checksum of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity in the Amazon S3 User Guide</a>.</p>
+    pub fn checksum_xxhash128(&self) -> ::std::option::Option<&str> {
+        self.checksum_xxhash128.as_deref()
     }
     /// <p>The checksum type, which determines how part-level checksums are combined to create an object-level checksum for multipart objects. You can use this header response to verify that the checksum type that is received is the same checksum type that was specified in the <code>CreateMultipartUpload</code> request. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn checksum_type(&self) -> ::std::option::Option<&crate::types::ChecksumType> {
@@ -337,6 +367,11 @@ impl ::std::fmt::Debug for GetObjectOutput {
         formatter.field("checksum_crc64_nvme", &self.checksum_crc64_nvme);
         formatter.field("checksum_sha1", &self.checksum_sha1);
         formatter.field("checksum_sha256", &self.checksum_sha256);
+        formatter.field("checksum_sha512", &self.checksum_sha512);
+        formatter.field("checksum_md5", &self.checksum_md5);
+        formatter.field("checksum_xxhash64", &self.checksum_xxhash64);
+        formatter.field("checksum_xxhash3", &self.checksum_xxhash3);
+        formatter.field("checksum_xxhash128", &self.checksum_xxhash128);
         formatter.field("checksum_type", &self.checksum_type);
         formatter.field("missing_meta", &self.missing_meta);
         formatter.field("version_id", &self.version_id);
@@ -402,6 +437,11 @@ pub struct GetObjectOutputBuilder {
     pub(crate) checksum_crc64_nvme: ::std::option::Option<::std::string::String>,
     pub(crate) checksum_sha1: ::std::option::Option<::std::string::String>,
     pub(crate) checksum_sha256: ::std::option::Option<::std::string::String>,
+    pub(crate) checksum_sha512: ::std::option::Option<::std::string::String>,
+    pub(crate) checksum_md5: ::std::option::Option<::std::string::String>,
+    pub(crate) checksum_xxhash64: ::std::option::Option<::std::string::String>,
+    pub(crate) checksum_xxhash3: ::std::option::Option<::std::string::String>,
+    pub(crate) checksum_xxhash128: ::std::option::Option<::std::string::String>,
     pub(crate) checksum_type: ::std::option::Option<crate::types::ChecksumType>,
     pub(crate) missing_meta: ::std::option::Option<i32>,
     pub(crate) version_id: ::std::option::Option<::std::string::String>,
@@ -649,6 +689,76 @@ impl GetObjectOutputBuilder {
     /// <p>The Base64 encoded, 256-bit <code>SHA256</code> digest of the object. This checksum is only present if the checksum was uploaded with the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn get_checksum_sha256(&self) -> &::std::option::Option<::std::string::String> {
         &self.checksum_sha256
+    }
+    /// <p>The Base64 encoded, 512-bit <code>SHA512</code> digest of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity in the Amazon S3 User Guide</a>.</p>
+    pub fn checksum_sha512(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.checksum_sha512 = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Base64 encoded, 512-bit <code>SHA512</code> digest of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity in the Amazon S3 User Guide</a>.</p>
+    pub fn set_checksum_sha512(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.checksum_sha512 = input;
+        self
+    }
+    /// <p>The Base64 encoded, 512-bit <code>SHA512</code> digest of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity in the Amazon S3 User Guide</a>.</p>
+    pub fn get_checksum_sha512(&self) -> &::std::option::Option<::std::string::String> {
+        &self.checksum_sha512
+    }
+    /// <p>The Base64 encoded, 128-bit <code>MD5</code> digest of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity in the Amazon S3 User Guide</a>.</p>
+    pub fn checksum_md5(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.checksum_md5 = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Base64 encoded, 128-bit <code>MD5</code> digest of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity in the Amazon S3 User Guide</a>.</p>
+    pub fn set_checksum_md5(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.checksum_md5 = input;
+        self
+    }
+    /// <p>The Base64 encoded, 128-bit <code>MD5</code> digest of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity in the Amazon S3 User Guide</a>.</p>
+    pub fn get_checksum_md5(&self) -> &::std::option::Option<::std::string::String> {
+        &self.checksum_md5
+    }
+    /// <p>The Base64 encoded, 64-bit <code>XXHASH64</code> checksum of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity in the Amazon S3 User Guide</a>.</p>
+    pub fn checksum_xxhash64(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.checksum_xxhash64 = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Base64 encoded, 64-bit <code>XXHASH64</code> checksum of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity in the Amazon S3 User Guide</a>.</p>
+    pub fn set_checksum_xxhash64(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.checksum_xxhash64 = input;
+        self
+    }
+    /// <p>The Base64 encoded, 64-bit <code>XXHASH64</code> checksum of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity in the Amazon S3 User Guide</a>.</p>
+    pub fn get_checksum_xxhash64(&self) -> &::std::option::Option<::std::string::String> {
+        &self.checksum_xxhash64
+    }
+    /// <p>The Base64 encoded, 64-bit <code>XXHASH3</code> checksum of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity in the Amazon S3 User Guide</a>.</p>
+    pub fn checksum_xxhash3(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.checksum_xxhash3 = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Base64 encoded, 64-bit <code>XXHASH3</code> checksum of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity in the Amazon S3 User Guide</a>.</p>
+    pub fn set_checksum_xxhash3(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.checksum_xxhash3 = input;
+        self
+    }
+    /// <p>The Base64 encoded, 64-bit <code>XXHASH3</code> checksum of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity in the Amazon S3 User Guide</a>.</p>
+    pub fn get_checksum_xxhash3(&self) -> &::std::option::Option<::std::string::String> {
+        &self.checksum_xxhash3
+    }
+    /// <p>The Base64 encoded, 128-bit <code>XXHASH128</code> checksum of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity in the Amazon S3 User Guide</a>.</p>
+    pub fn checksum_xxhash128(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.checksum_xxhash128 = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Base64 encoded, 128-bit <code>XXHASH128</code> checksum of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity in the Amazon S3 User Guide</a>.</p>
+    pub fn set_checksum_xxhash128(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.checksum_xxhash128 = input;
+        self
+    }
+    /// <p>The Base64 encoded, 128-bit <code>XXHASH128</code> checksum of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity in the Amazon S3 User Guide</a>.</p>
+    pub fn get_checksum_xxhash128(&self) -> &::std::option::Option<::std::string::String> {
+        &self.checksum_xxhash128
     }
     /// <p>The checksum type, which determines how part-level checksums are combined to create an object-level checksum for multipart objects. You can use this header response to verify that the checksum type that is received is the same checksum type that was specified in the <code>CreateMultipartUpload</code> request. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn checksum_type(mut self, input: crate::types::ChecksumType) -> Self {
@@ -1138,6 +1248,11 @@ impl GetObjectOutputBuilder {
             checksum_crc64_nvme: self.checksum_crc64_nvme,
             checksum_sha1: self.checksum_sha1,
             checksum_sha256: self.checksum_sha256,
+            checksum_sha512: self.checksum_sha512,
+            checksum_md5: self.checksum_md5,
+            checksum_xxhash64: self.checksum_xxhash64,
+            checksum_xxhash3: self.checksum_xxhash3,
+            checksum_xxhash128: self.checksum_xxhash128,
             checksum_type: self.checksum_type,
             missing_meta: self.missing_meta,
             version_id: self.version_id,
@@ -1185,6 +1300,11 @@ impl ::std::fmt::Debug for GetObjectOutputBuilder {
         formatter.field("checksum_crc64_nvme", &self.checksum_crc64_nvme);
         formatter.field("checksum_sha1", &self.checksum_sha1);
         formatter.field("checksum_sha256", &self.checksum_sha256);
+        formatter.field("checksum_sha512", &self.checksum_sha512);
+        formatter.field("checksum_md5", &self.checksum_md5);
+        formatter.field("checksum_xxhash64", &self.checksum_xxhash64);
+        formatter.field("checksum_xxhash3", &self.checksum_xxhash3);
+        formatter.field("checksum_xxhash128", &self.checksum_xxhash128);
         formatter.field("checksum_type", &self.checksum_type);
         formatter.field("missing_meta", &self.missing_meta);
         formatter.field("version_id", &self.version_id);

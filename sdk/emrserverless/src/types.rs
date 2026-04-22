@@ -25,6 +25,8 @@ pub use crate::types::_job_level_cost_allocation_configuration::JobLevelCostAllo
 
 pub use crate::types::_application::Application;
 
+pub use crate::types::_resource_type::ResourceType;
+
 pub use crate::types::_job_run_mode::JobRunMode;
 
 pub use crate::types::_job_run_execution_iam_policy::JobRunExecutionIamPolicy;
@@ -36,6 +38,10 @@ pub use crate::types::_configuration_overrides::ConfigurationOverrides;
 pub use crate::types::_retry_policy::RetryPolicy;
 
 pub use crate::types::_job_run::JobRun;
+
+pub use crate::types::_session_configuration_overrides::SessionConfigurationOverrides;
+
+pub use crate::types::_session::Session;
 
 pub use crate::types::_application_state::ApplicationState;
 
@@ -72,6 +78,10 @@ pub use crate::types::_total_resource_utilization::TotalResourceUtilization;
 pub use crate::types::_resource_utilization::ResourceUtilization;
 
 pub use crate::types::_job_run_attempt_summary::JobRunAttemptSummary;
+
+pub use crate::types::_session_state::SessionState;
+
+pub use crate::types::_session_summary::SessionSummary;
 
 pub use crate::types::_worker_resource_config::WorkerResourceConfig;
 
@@ -137,6 +147,8 @@ mod _network_configuration;
 
 mod _prometheus_monitoring_configuration;
 
+mod _resource_type;
+
 mod _resource_utilization;
 
 mod _retry_policy;
@@ -144,6 +156,14 @@ mod _retry_policy;
 mod _s3_monitoring_configuration;
 
 mod _scheduler_configuration;
+
+mod _session;
+
+mod _session_configuration_overrides;
+
+mod _session_state;
+
+mod _session_summary;
 
 mod _spark_submit;
 

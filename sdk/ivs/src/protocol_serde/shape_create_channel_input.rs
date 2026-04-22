@@ -3,48 +3,51 @@ pub fn ser_create_channel_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_channel::CreateChannelInput,
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    if let Some(var_1) = &input.authorized {
-        object.key("authorized").boolean(*var_1);
+    if let Some(var_1) = &input.ad_configuration_arn {
+        object.key("adConfigurationArn").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.container_format {
-        object.key("containerFormat").string(var_2.as_str());
+    if let Some(var_2) = &input.authorized {
+        object.key("authorized").boolean(*var_2);
     }
-    if let Some(var_3) = &input.insecure_ingest {
-        object.key("insecureIngest").boolean(*var_3);
+    if let Some(var_3) = &input.container_format {
+        object.key("containerFormat").string(var_3.as_str());
     }
-    if let Some(var_4) = &input.latency_mode {
-        object.key("latencyMode").string(var_4.as_str());
+    if let Some(var_4) = &input.insecure_ingest {
+        object.key("insecureIngest").boolean(*var_4);
     }
-    if let Some(var_5) = &input.multitrack_input_configuration {
+    if let Some(var_5) = &input.latency_mode {
+        object.key("latencyMode").string(var_5.as_str());
+    }
+    if let Some(var_6) = &input.multitrack_input_configuration {
         #[allow(unused_mut)]
-        let mut object_6 = object.key("multitrackInputConfiguration").start_object();
-        crate::protocol_serde::shape_multitrack_input_configuration::ser_multitrack_input_configuration(&mut object_6, var_5)?;
-        object_6.finish();
+        let mut object_7 = object.key("multitrackInputConfiguration").start_object();
+        crate::protocol_serde::shape_multitrack_input_configuration::ser_multitrack_input_configuration(&mut object_7, var_6)?;
+        object_7.finish();
     }
-    if let Some(var_7) = &input.name {
-        object.key("name").string(var_7.as_str());
+    if let Some(var_8) = &input.name {
+        object.key("name").string(var_8.as_str());
     }
-    if let Some(var_8) = &input.playback_restriction_policy_arn {
-        object.key("playbackRestrictionPolicyArn").string(var_8.as_str());
+    if let Some(var_9) = &input.playback_restriction_policy_arn {
+        object.key("playbackRestrictionPolicyArn").string(var_9.as_str());
     }
-    if let Some(var_9) = &input.preset {
-        object.key("preset").string(var_9.as_str());
+    if let Some(var_10) = &input.preset {
+        object.key("preset").string(var_10.as_str());
     }
-    if let Some(var_10) = &input.recording_configuration_arn {
-        object.key("recordingConfigurationArn").string(var_10.as_str());
+    if let Some(var_11) = &input.recording_configuration_arn {
+        object.key("recordingConfigurationArn").string(var_11.as_str());
     }
-    if let Some(var_11) = &input.tags {
+    if let Some(var_12) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_12 = object.key("tags").start_object();
-        for (key_13, value_14) in var_11 {
+        let mut object_13 = object.key("tags").start_object();
+        for (key_14, value_15) in var_12 {
             {
-                object_12.key(key_13.as_str()).string(value_14.as_str());
+                object_13.key(key_14.as_str()).string(value_15.as_str());
             }
         }
-        object_12.finish();
+        object_13.finish();
     }
-    if let Some(var_15) = &input.r#type {
-        object.key("type").string(var_15.as_str());
+    if let Some(var_16) = &input.r#type {
+        object.key("type").string(var_16.as_str());
     }
     Ok(())
 }

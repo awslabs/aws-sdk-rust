@@ -87,7 +87,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-ivs = "1.104.0"
+//! aws-sdk-ivs = "1.105.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!
@@ -204,13 +204,13 @@ pub use config::Config;
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`CreateChannel`](crate::operation::create_channel) operation has
-/// a [`Client::create_channel`], function which returns a builder for that operation.
+/// For example, the [`CreateAdConfiguration`](crate::operation::create_ad_configuration) operation has
+/// a [`Client::create_ad_configuration`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.create_channel()
+/// let result = client.create_ad_configuration()
 ///     .name("example")
 ///     .send()
 ///     .await;

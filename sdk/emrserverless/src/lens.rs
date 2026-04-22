@@ -29,6 +29,16 @@ pub(crate) fn reflens_list_job_runs_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_sessions_output_output_next_token(
+    input: &crate::operation::list_sessions::ListSessionsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn lens_list_applications_output_output_applications(
     input: crate::operation::list_applications::ListApplicationsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ApplicationSummary>> {
@@ -47,5 +57,12 @@ pub(crate) fn lens_list_job_runs_output_output_job_runs(
     input: crate::operation::list_job_runs::ListJobRunsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::JobRunSummary>> {
     let input = input.job_runs;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_sessions_output_output_sessions(
+    input: crate::operation::list_sessions::ListSessionsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::SessionSummary>> {
+    let input = input.sessions;
     ::std::option::Option::Some(input)
 }

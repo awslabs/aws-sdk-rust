@@ -365,6 +365,8 @@ pub use crate::types::_request_ipam_resource_tag::RequestIpamResourceTagBuilder;
 
 pub use crate::types::_response_launch_template_data::ResponseLaunchTemplateDataBuilder;
 
+pub use crate::types::_managed_resource_visibility_settings::ManagedResourceVisibilitySettingsBuilder;
+
 pub use crate::types::_reservation_value::ReservationValueBuilder;
 
 pub use crate::types::_instance_requirements_with_metadata_request::InstanceRequirementsWithMetadataRequestBuilder;

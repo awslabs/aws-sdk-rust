@@ -18,6 +18,8 @@ pub enum Error {
     /// <p></p>
     ServiceQuotaExceededException(crate::types::error::ServiceQuotaExceededException),
     /// <p></p>
+    ServiceUnavailable(crate::types::error::ServiceUnavailable),
+    /// <p></p>
     StreamUnavailable(crate::types::error::StreamUnavailable),
     /// <p></p>
     ThrottlingException(crate::types::error::ThrottlingException),
@@ -42,6 +44,7 @@ impl ::std::fmt::Display for Error {
             Error::PendingVerification(inner) => inner.fmt(f),
             Error::ResourceNotFoundException(inner) => inner.fmt(f),
             Error::ServiceQuotaExceededException(inner) => inner.fmt(f),
+            Error::ServiceUnavailable(inner) => inner.fmt(f),
             Error::StreamUnavailable(inner) => inner.fmt(f),
             Error::ThrottlingException(inner) => inner.fmt(f),
             Error::ValidationException(inner) => inner.fmt(f),
@@ -73,6 +76,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::PendingVerification(inner) => inner.meta(),
             Self::ResourceNotFoundException(inner) => inner.meta(),
             Self::ServiceQuotaExceededException(inner) => inner.meta(),
+            Self::ServiceUnavailable(inner) => inner.meta(),
             Self::StreamUnavailable(inner) => inner.meta(),
             Self::ThrottlingException(inner) => inner.meta(),
             Self::ValidationException(inner) => inner.meta(),
@@ -97,6 +101,9 @@ where
 impl From<crate::operation::batch_get_channel::BatchGetChannelError> for Error {
     fn from(err: crate::operation::batch_get_channel::BatchGetChannelError) -> Self {
         match err {
+            crate::operation::batch_get_channel::BatchGetChannelError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::batch_get_channel::BatchGetChannelError::ServiceUnavailable(inner) => Error::ServiceUnavailable(inner),
+            crate::operation::batch_get_channel::BatchGetChannelError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::batch_get_channel::BatchGetChannelError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -118,6 +125,9 @@ where
 impl From<crate::operation::batch_get_stream_key::BatchGetStreamKeyError> for Error {
     fn from(err: crate::operation::batch_get_stream_key::BatchGetStreamKeyError) -> Self {
         match err {
+            crate::operation::batch_get_stream_key::BatchGetStreamKeyError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::batch_get_stream_key::BatchGetStreamKeyError::ServiceUnavailable(inner) => Error::ServiceUnavailable(inner),
+            crate::operation::batch_get_stream_key::BatchGetStreamKeyError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::batch_get_stream_key::BatchGetStreamKeyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -165,6 +175,45 @@ impl From<crate::operation::batch_start_viewer_session_revocation::BatchStartVie
             crate::operation::batch_start_viewer_session_revocation::BatchStartViewerSessionRevocationError::Unhandled(inner) => {
                 Error::Unhandled(inner)
             }
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_ad_configuration::CreateAdConfigurationError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_ad_configuration::CreateAdConfigurationError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_ad_configuration::CreateAdConfigurationError> for Error {
+    fn from(err: crate::operation::create_ad_configuration::CreateAdConfigurationError) -> Self {
+        match err {
+            crate::operation::create_ad_configuration::CreateAdConfigurationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::create_ad_configuration::CreateAdConfigurationError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_ad_configuration::CreateAdConfigurationError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::create_ad_configuration::CreateAdConfigurationError::PendingVerification(inner) => Error::PendingVerification(inner),
+            crate::operation::create_ad_configuration::CreateAdConfigurationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::create_ad_configuration::CreateAdConfigurationError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::create_ad_configuration::CreateAdConfigurationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_ad_configuration::CreateAdConfigurationError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::create_ad_configuration::CreateAdConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -312,6 +361,40 @@ impl From<crate::operation::create_stream_key::CreateStreamKeyError> for Error {
             }
             crate::operation::create_stream_key::CreateStreamKeyError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::create_stream_key::CreateStreamKeyError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_ad_configuration::DeleteAdConfigurationError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_ad_configuration::DeleteAdConfigurationError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_ad_configuration::DeleteAdConfigurationError> for Error {
+    fn from(err: crate::operation::delete_ad_configuration::DeleteAdConfigurationError) -> Self {
+        match err {
+            crate::operation::delete_ad_configuration::DeleteAdConfigurationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::delete_ad_configuration::DeleteAdConfigurationError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::delete_ad_configuration::DeleteAdConfigurationError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::delete_ad_configuration::DeleteAdConfigurationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_ad_configuration::DeleteAdConfigurationError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_ad_configuration::DeleteAdConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -484,6 +567,33 @@ impl From<crate::operation::delete_stream_key::DeleteStreamKeyError> for Error {
             crate::operation::delete_stream_key::DeleteStreamKeyError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::delete_stream_key::DeleteStreamKeyError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::delete_stream_key::DeleteStreamKeyError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_ad_configuration::GetAdConfigurationError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_ad_configuration::GetAdConfigurationError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_ad_configuration::GetAdConfigurationError> for Error {
+    fn from(err: crate::operation::get_ad_configuration::GetAdConfigurationError) -> Self {
+        match err {
+            crate::operation::get_ad_configuration::GetAdConfigurationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_ad_configuration::GetAdConfigurationError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_ad_configuration::GetAdConfigurationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_ad_configuration::GetAdConfigurationError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_ad_configuration::GetAdConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -715,6 +825,60 @@ impl From<crate::operation::import_playback_key_pair::ImportPlaybackKeyPairError
             }
             crate::operation::import_playback_key_pair::ImportPlaybackKeyPairError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::import_playback_key_pair::ImportPlaybackKeyPairError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::insert_ad_break::InsertAdBreakError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::insert_ad_break::InsertAdBreakError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::insert_ad_break::InsertAdBreakError> for Error {
+    fn from(err: crate::operation::insert_ad_break::InsertAdBreakError) -> Self {
+        match err {
+            crate::operation::insert_ad_break::InsertAdBreakError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::insert_ad_break::InsertAdBreakError::ChannelNotBroadcasting(inner) => Error::ChannelNotBroadcasting(inner),
+            crate::operation::insert_ad_break::InsertAdBreakError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::insert_ad_break::InsertAdBreakError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::insert_ad_break::InsertAdBreakError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::insert_ad_break::InsertAdBreakError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::insert_ad_break::InsertAdBreakError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::insert_ad_break::InsertAdBreakError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_ad_configurations::ListAdConfigurationsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_ad_configurations::ListAdConfigurationsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_ad_configurations::ListAdConfigurationsError> for Error {
+    fn from(err: crate::operation::list_ad_configurations::ListAdConfigurationsError) -> Self {
+        match err {
+            crate::operation::list_ad_configurations::ListAdConfigurationsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_ad_configurations::ListAdConfigurationsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_ad_configurations::ListAdConfigurationsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_ad_configurations::ListAdConfigurationsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1174,6 +1338,7 @@ impl ::std::error::Error for Error {
             Error::PendingVerification(inner) => inner.source(),
             Error::ResourceNotFoundException(inner) => inner.source(),
             Error::ServiceQuotaExceededException(inner) => inner.source(),
+            Error::ServiceUnavailable(inner) => inner.source(),
             Error::StreamUnavailable(inner) => inner.source(),
             Error::ThrottlingException(inner) => inner.source(),
             Error::ValidationException(inner) => inner.source(),
@@ -1191,6 +1356,7 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::PendingVerification(e) => e.request_id(),
             Self::ResourceNotFoundException(e) => e.request_id(),
             Self::ServiceQuotaExceededException(e) => e.request_id(),
+            Self::ServiceUnavailable(e) => e.request_id(),
             Self::StreamUnavailable(e) => e.request_id(),
             Self::ThrottlingException(e) => e.request_id(),
             Self::ValidationException(e) => e.request_id(),

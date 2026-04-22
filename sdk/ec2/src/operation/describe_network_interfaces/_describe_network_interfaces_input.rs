@@ -8,6 +8,8 @@ pub struct DescribeNetworkInterfacesInput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. You cannot specify this parameter and the network interface IDs parameter in the same request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
     pub max_results: ::std::option::Option<i32>,
+    /// <p>Indicates whether to include managed resources in the output. If this parameter is set to <code>true</code>, the output includes resources that are managed by Amazon Web Services services, even if managed resource visibility is set to hidden.</p>
+    pub include_managed_resources: ::std::option::Option<bool>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
     /// <p>The network interface IDs.</p>
@@ -106,6 +108,10 @@ impl DescribeNetworkInterfacesInput {
     /// <p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. You cannot specify this parameter and the network interface IDs parameter in the same request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
+    }
+    /// <p>Indicates whether to include managed resources in the output. If this parameter is set to <code>true</code>, the output includes resources that are managed by Amazon Web Services services, even if managed resource visibility is set to hidden.</p>
+    pub fn include_managed_resources(&self) -> ::std::option::Option<bool> {
+        self.include_managed_resources
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
@@ -220,6 +226,7 @@ impl DescribeNetworkInterfacesInput {
 pub struct DescribeNetworkInterfacesInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
+    pub(crate) include_managed_resources: ::std::option::Option<bool>,
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) network_interface_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
@@ -252,6 +259,20 @@ impl DescribeNetworkInterfacesInputBuilder {
     /// <p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. You cannot specify this parameter and the network interface IDs parameter in the same request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
+    }
+    /// <p>Indicates whether to include managed resources in the output. If this parameter is set to <code>true</code>, the output includes resources that are managed by Amazon Web Services services, even if managed resource visibility is set to hidden.</p>
+    pub fn include_managed_resources(mut self, input: bool) -> Self {
+        self.include_managed_resources = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether to include managed resources in the output. If this parameter is set to <code>true</code>, the output includes resources that are managed by Amazon Web Services services, even if managed resource visibility is set to hidden.</p>
+    pub fn set_include_managed_resources(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.include_managed_resources = input;
+        self
+    }
+    /// <p>Indicates whether to include managed resources in the output. If this parameter is set to <code>true</code>, the output includes resources that are managed by Amazon Web Services services, even if managed resource visibility is set to hidden.</p>
+    pub fn get_include_managed_resources(&self) -> &::std::option::Option<bool> {
+        &self.include_managed_resources
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
@@ -566,6 +587,7 @@ impl DescribeNetworkInterfacesInputBuilder {
         ::std::result::Result::Ok(crate::operation::describe_network_interfaces::DescribeNetworkInterfacesInput {
             next_token: self.next_token,
             max_results: self.max_results,
+            include_managed_resources: self.include_managed_resources,
             dry_run: self.dry_run,
             network_interface_ids: self.network_interface_ids,
             filters: self.filters,

@@ -19,34 +19,39 @@ pub fn ser_describe_volumes_input_input_input(
         }
     }
     #[allow(unused_mut)]
-    let mut scope_6 = writer.prefix("DryRun");
-    if let Some(var_7) = &input.dry_run {
+    let mut scope_6 = writer.prefix("IncludeManagedResources");
+    if let Some(var_7) = &input.include_managed_resources {
         scope_6.boolean(*var_7);
     }
     #[allow(unused_mut)]
-    let mut scope_8 = writer.prefix("Filter");
-    if let Some(var_9) = &input.filters {
-        if !var_9.is_empty() {
-            let mut list_11 = scope_8.start_list(true, Some("Filter"));
-            for item_10 in var_9 {
+    let mut scope_8 = writer.prefix("DryRun");
+    if let Some(var_9) = &input.dry_run {
+        scope_8.boolean(*var_9);
+    }
+    #[allow(unused_mut)]
+    let mut scope_10 = writer.prefix("Filter");
+    if let Some(var_11) = &input.filters {
+        if !var_11.is_empty() {
+            let mut list_13 = scope_10.start_list(true, Some("Filter"));
+            for item_12 in var_11 {
                 #[allow(unused_mut)]
-                let mut entry_12 = list_11.entry();
-                crate::protocol_serde::shape_filter::ser_filter(entry_12, item_10)?;
+                let mut entry_14 = list_13.entry();
+                crate::protocol_serde::shape_filter::ser_filter(entry_14, item_12)?;
             }
-            list_11.finish();
+            list_13.finish();
         }
     }
     #[allow(unused_mut)]
-    let mut scope_13 = writer.prefix("NextToken");
-    if let Some(var_14) = &input.next_token {
-        scope_13.string(var_14);
+    let mut scope_15 = writer.prefix("NextToken");
+    if let Some(var_16) = &input.next_token {
+        scope_15.string(var_16);
     }
     #[allow(unused_mut)]
-    let mut scope_15 = writer.prefix("MaxResults");
-    if let Some(var_16) = &input.max_results {
-        scope_15.number(
+    let mut scope_17 = writer.prefix("MaxResults");
+    if let Some(var_18) = &input.max_results {
+        scope_17.number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_16).into()),
+            ::aws_smithy_types::Number::NegInt((*var_18).into()),
         );
     }
     writer.finish();

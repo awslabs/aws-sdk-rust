@@ -29,9 +29,29 @@ pub fn ser_completed_part(
         let mut inner_writer = scope.start_el("ChecksumSHA256").finish();
         inner_writer.data(var_6.as_str());
     }
-    if let Some(var_7) = &input.part_number {
+    if let Some(var_7) = &input.checksum_sha512 {
+        let mut inner_writer = scope.start_el("ChecksumSHA512").finish();
+        inner_writer.data(var_7.as_str());
+    }
+    if let Some(var_8) = &input.checksum_md5 {
+        let mut inner_writer = scope.start_el("ChecksumMD5").finish();
+        inner_writer.data(var_8.as_str());
+    }
+    if let Some(var_9) = &input.checksum_xxhash64 {
+        let mut inner_writer = scope.start_el("ChecksumXXHASH64").finish();
+        inner_writer.data(var_9.as_str());
+    }
+    if let Some(var_10) = &input.checksum_xxhash3 {
+        let mut inner_writer = scope.start_el("ChecksumXXHASH3").finish();
+        inner_writer.data(var_10.as_str());
+    }
+    if let Some(var_11) = &input.checksum_xxhash128 {
+        let mut inner_writer = scope.start_el("ChecksumXXHASH128").finish();
+        inner_writer.data(var_11.as_str());
+    }
+    if let Some(var_12) = &input.part_number {
         let mut inner_writer = scope.start_el("PartNumber").finish();
-        inner_writer.data(::aws_smithy_types::primitive::Encoder::from(*var_7).encode());
+        inner_writer.data(::aws_smithy_types::primitive::Encoder::from(*var_12).encode());
     }
     scope.finish();
     Ok(())

@@ -24,6 +24,8 @@ pub struct ChannelSummary {
     pub preset: ::std::option::Option<crate::types::TranscodePreset>,
     /// <p>Playback-restriction-policy ARN. A valid ARN value here both specifies the ARN and enables playback restriction. Default: "" (empty string, no playback restriction policy is applied).</p>
     pub playback_restriction_policy_arn: ::std::option::Option<::std::string::String>,
+    /// <p>ARN of the ad configuration associated with the channel.</p>
+    pub ad_configuration_arn: ::std::option::Option<::std::string::String>,
 }
 impl ChannelSummary {
     /// <p>Channel ARN.</p>
@@ -66,6 +68,10 @@ impl ChannelSummary {
     pub fn playback_restriction_policy_arn(&self) -> ::std::option::Option<&str> {
         self.playback_restriction_policy_arn.as_deref()
     }
+    /// <p>ARN of the ad configuration associated with the channel.</p>
+    pub fn ad_configuration_arn(&self) -> ::std::option::Option<&str> {
+        self.ad_configuration_arn.as_deref()
+    }
 }
 impl ChannelSummary {
     /// Creates a new builder-style object to manufacture [`ChannelSummary`](crate::types::ChannelSummary).
@@ -88,6 +94,7 @@ pub struct ChannelSummaryBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::ChannelType>,
     pub(crate) preset: ::std::option::Option<crate::types::TranscodePreset>,
     pub(crate) playback_restriction_policy_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) ad_configuration_arn: ::std::option::Option<::std::string::String>,
 }
 impl ChannelSummaryBuilder {
     /// <p>Channel ARN.</p>
@@ -236,6 +243,20 @@ impl ChannelSummaryBuilder {
     pub fn get_playback_restriction_policy_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.playback_restriction_policy_arn
     }
+    /// <p>ARN of the ad configuration associated with the channel.</p>
+    pub fn ad_configuration_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.ad_configuration_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>ARN of the ad configuration associated with the channel.</p>
+    pub fn set_ad_configuration_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.ad_configuration_arn = input;
+        self
+    }
+    /// <p>ARN of the ad configuration associated with the channel.</p>
+    pub fn get_ad_configuration_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ad_configuration_arn
+    }
     /// Consumes the builder and constructs a [`ChannelSummary`](crate::types::ChannelSummary).
     pub fn build(self) -> crate::types::ChannelSummary {
         crate::types::ChannelSummary {
@@ -249,6 +270,7 @@ impl ChannelSummaryBuilder {
             r#type: self.r#type,
             preset: self.preset,
             playback_restriction_policy_arn: self.playback_restriction_policy_arn,
+            ad_configuration_arn: self.ad_configuration_arn,
         }
     }
 }

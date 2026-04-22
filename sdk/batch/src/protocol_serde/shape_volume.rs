@@ -18,6 +18,12 @@ pub fn ser_volume(
         crate::protocol_serde::shape_efs_volume_configuration::ser_efs_volume_configuration(&mut object_5, var_4)?;
         object_5.finish();
     }
+    if let Some(var_6) = &input.s3files_volume_configuration {
+        #[allow(unused_mut)]
+        let mut object_7 = object.key("s3filesVolumeConfiguration").start_object();
+        crate::protocol_serde::shape_s3_files_volume_configuration::ser_s3_files_volume_configuration(&mut object_7, var_6)?;
+        object_7.finish();
+    }
     Ok(())
 }
 
@@ -50,6 +56,11 @@ where
                         "efsVolumeConfiguration" => {
                             builder = builder.set_efs_volume_configuration(
                                 crate::protocol_serde::shape_efs_volume_configuration::de_efs_volume_configuration(tokens, _value)?,
+                            );
+                        }
+                        "s3filesVolumeConfiguration" => {
+                            builder = builder.set_s3files_volume_configuration(
+                                crate::protocol_serde::shape_s3_files_volume_configuration::de_s3_files_volume_configuration(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

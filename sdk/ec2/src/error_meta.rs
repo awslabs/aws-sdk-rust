@@ -15288,6 +15288,34 @@ impl From<crate::operation::get_managed_prefix_list_entries::GetManagedPrefixLis
     }
 }
 impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_managed_resource_visibility::GetManagedResourceVisibilityError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_managed_resource_visibility::GetManagedResourceVisibilityError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_managed_resource_visibility::GetManagedResourceVisibilityError> for Error {
+    fn from(err: crate::operation::get_managed_resource_visibility::GetManagedResourceVisibilityError) -> Self {
+        match err {
+            crate::operation::get_managed_resource_visibility::GetManagedResourceVisibilityError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
     From<
         ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::get_network_insights_access_scope_analysis_findings::GetNetworkInsightsAccessScopeAnalysisFindingsError,
@@ -17292,6 +17320,38 @@ impl From<crate::operation::modify_managed_prefix_list::ModifyManagedPrefixListE
     fn from(err: crate::operation::modify_managed_prefix_list::ModifyManagedPrefixListError) -> Self {
         match err {
             crate::operation::modify_managed_prefix_list::ModifyManagedPrefixListError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::modify_managed_resource_visibility::ModifyManagedResourceVisibilityError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::modify_managed_resource_visibility::ModifyManagedResourceVisibilityError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::modify_managed_resource_visibility::ModifyManagedResourceVisibilityError> for Error {
+    fn from(err: crate::operation::modify_managed_resource_visibility::ModifyManagedResourceVisibilityError) -> Self {
+        match err {
+            crate::operation::modify_managed_resource_visibility::ModifyManagedResourceVisibilityError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

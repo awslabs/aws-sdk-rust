@@ -32,21 +32,26 @@ pub fn ser_describe_volume_status_input_input_input(
         }
     }
     #[allow(unused_mut)]
-    let mut scope_10 = writer.prefix("DryRun");
-    if let Some(var_11) = &input.dry_run {
+    let mut scope_10 = writer.prefix("IncludeManagedResources");
+    if let Some(var_11) = &input.include_managed_resources {
         scope_10.boolean(*var_11);
     }
     #[allow(unused_mut)]
-    let mut scope_12 = writer.prefix("Filter");
-    if let Some(var_13) = &input.filters {
-        if !var_13.is_empty() {
-            let mut list_15 = scope_12.start_list(true, Some("Filter"));
-            for item_14 in var_13 {
+    let mut scope_12 = writer.prefix("DryRun");
+    if let Some(var_13) = &input.dry_run {
+        scope_12.boolean(*var_13);
+    }
+    #[allow(unused_mut)]
+    let mut scope_14 = writer.prefix("Filter");
+    if let Some(var_15) = &input.filters {
+        if !var_15.is_empty() {
+            let mut list_17 = scope_14.start_list(true, Some("Filter"));
+            for item_16 in var_15 {
                 #[allow(unused_mut)]
-                let mut entry_16 = list_15.entry();
-                crate::protocol_serde::shape_filter::ser_filter(entry_16, item_14)?;
+                let mut entry_18 = list_17.entry();
+                crate::protocol_serde::shape_filter::ser_filter(entry_18, item_16)?;
             }
-            list_15.finish();
+            list_17.finish();
         }
     }
     writer.finish();

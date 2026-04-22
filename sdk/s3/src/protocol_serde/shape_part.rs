@@ -129,6 +129,71 @@ pub fn de_part(
                 builder = builder.set_checksum_sha256(var_9);
             }
             ,
+            s if s.matches("ChecksumSHA512") /* ChecksumSHA512 com.amazonaws.s3#Part$ChecksumSHA512 */ =>  {
+                let var_10 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_checksum_sha512(var_10);
+            }
+            ,
+            s if s.matches("ChecksumMD5") /* ChecksumMD5 com.amazonaws.s3#Part$ChecksumMD5 */ =>  {
+                let var_11 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_checksum_md5(var_11);
+            }
+            ,
+            s if s.matches("ChecksumXXHASH64") /* ChecksumXXHASH64 com.amazonaws.s3#Part$ChecksumXXHASH64 */ =>  {
+                let var_12 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_checksum_xxhash64(var_12);
+            }
+            ,
+            s if s.matches("ChecksumXXHASH3") /* ChecksumXXHASH3 com.amazonaws.s3#Part$ChecksumXXHASH3 */ =>  {
+                let var_13 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_checksum_xxhash3(var_13);
+            }
+            ,
+            s if s.matches("ChecksumXXHASH128") /* ChecksumXXHASH128 com.amazonaws.s3#Part$ChecksumXXHASH128 */ =>  {
+                let var_14 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_checksum_xxhash128(var_14);
+            }
+            ,
             _ => {}
         }
     }

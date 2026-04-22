@@ -201,6 +201,8 @@ pub use crate::types::_host::HostBuilder;
 
 pub use crate::types::_efs_volume_configuration::EfsVolumeConfigurationBuilder;
 
+pub use crate::types::_s3_files_volume_configuration::S3FilesVolumeConfigurationBuilder;
+
 pub use crate::types::_device::DeviceBuilder;
 
 pub use crate::types::_tmpfs::TmpfsBuilder;

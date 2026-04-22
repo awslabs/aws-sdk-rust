@@ -59,13 +59,13 @@ pub(crate) struct Handle {
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`CreateChannel`](crate::operation::create_channel) operation has
-/// a [`Client::create_channel`], function which returns a builder for that operation.
+/// For example, the [`CreateAdConfiguration`](crate::operation::create_ad_configuration) operation has
+/// a [`Client::create_ad_configuration`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.create_channel()
+/// let result = client.create_ad_configuration()
 ///     .name("example")
 ///     .send()
 ///     .await;
@@ -142,6 +142,8 @@ mod batch_get_stream_key;
 
 mod batch_start_viewer_session_revocation;
 
+mod create_ad_configuration;
+
 mod create_channel;
 
 mod create_playback_restriction_policy;
@@ -177,6 +179,8 @@ mod create_stream_key;
 /// ```
 pub mod customize;
 
+mod delete_ad_configuration;
+
 mod delete_channel;
 
 mod delete_playback_key_pair;
@@ -186,6 +190,8 @@ mod delete_playback_restriction_policy;
 mod delete_recording_configuration;
 
 mod delete_stream_key;
+
+mod get_ad_configuration;
 
 mod get_channel;
 
@@ -202,6 +208,10 @@ mod get_stream_key;
 mod get_stream_session;
 
 mod import_playback_key_pair;
+
+mod insert_ad_break;
+
+mod list_ad_configurations;
 
 mod list_channels;
 

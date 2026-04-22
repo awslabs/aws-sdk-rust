@@ -45,6 +45,16 @@ pub use crate::types::_gateway_policy_engine_configuration::GatewayPolicyEngineC
 
 pub use crate::types::_metadata_configuration::MetadataConfigurationBuilder;
 
+pub use crate::types::_harness_truncation_configuration::HarnessTruncationConfigurationBuilder;
+
+pub use crate::types::_harness::HarnessBuilder;
+
+pub use crate::types::_updated_harness_environment_artifact::UpdatedHarnessEnvironmentArtifactBuilder;
+
+pub use crate::types::_updated_authorizer_configuration::UpdatedAuthorizerConfigurationBuilder;
+
+pub use crate::types::_updated_harness_memory_configuration::UpdatedHarnessMemoryConfigurationBuilder;
+
 pub use crate::types::_stream_delivery_resources::StreamDeliveryResourcesBuilder;
 
 pub use crate::types::_memory::MemoryBuilder;
@@ -68,8 +78,6 @@ pub use crate::types::_updated_synchronization_type::UpdatedSynchronizationTypeB
 pub use crate::types::_updated_synchronization_configuration::UpdatedSynchronizationConfigurationBuilder;
 
 pub use crate::types::_approval_configuration::ApprovalConfigurationBuilder;
-
-pub use crate::types::_updated_authorizer_configuration::UpdatedAuthorizerConfigurationBuilder;
 
 pub use crate::types::_updated_approval_configuration::UpdatedApprovalConfigurationBuilder;
 
@@ -122,6 +130,20 @@ pub use crate::types::_o_auth2_authorization_data::OAuth2AuthorizationDataBuilde
 pub use crate::types::_target_summary::TargetSummaryBuilder;
 
 pub use crate::types::_gateway_target::GatewayTargetBuilder;
+
+pub use crate::types::_harness_agent_core_runtime_environment_request::HarnessAgentCoreRuntimeEnvironmentRequestBuilder;
+
+pub use crate::types::_harness_bedrock_model_config::HarnessBedrockModelConfigBuilder;
+
+pub use crate::types::_harness_open_ai_model_config::HarnessOpenAiModelConfigBuilder;
+
+pub use crate::types::_harness_gemini_model_config::HarnessGeminiModelConfigBuilder;
+
+pub use crate::types::_harness_tool::HarnessToolBuilder;
+
+pub use crate::types::_harness_agent_core_memory_configuration::HarnessAgentCoreMemoryConfigurationBuilder;
+
+pub use crate::types::_harness_summary::HarnessSummaryBuilder;
 
 pub use crate::types::_memory_summary::MemorySummaryBuilder;
 
@@ -199,6 +221,12 @@ pub use crate::types::_mcp_server_target_configuration::McpServerTargetConfigura
 
 pub use crate::types::_api_gateway_target_configuration::ApiGatewayTargetConfigurationBuilder;
 
+pub use crate::types::_harness_sliding_window_configuration::HarnessSlidingWindowConfigurationBuilder;
+
+pub use crate::types::_harness_summarization_configuration::HarnessSummarizationConfigurationBuilder;
+
+pub use crate::types::_harness_agent_core_runtime_environment::HarnessAgentCoreRuntimeEnvironmentBuilder;
+
 pub use crate::types::_semantic_memory_strategy_input::SemanticMemoryStrategyInputBuilder;
 
 pub use crate::types::_summary_memory_strategy_input::SummaryMemoryStrategyInputBuilder;
@@ -253,6 +281,18 @@ pub use crate::types::_gateway_api_key_credential_provider::GatewayApiKeyCredent
 
 pub use crate::types::_iam_credential_provider::IamCredentialProviderBuilder;
 
+pub use crate::types::_harness_remote_mcp_config::HarnessRemoteMcpConfigBuilder;
+
+pub use crate::types::_harness_agent_core_browser_config::HarnessAgentCoreBrowserConfigBuilder;
+
+pub use crate::types::_harness_agent_core_gateway_config::HarnessAgentCoreGatewayConfigBuilder;
+
+pub use crate::types::_harness_inline_function_config::HarnessInlineFunctionConfigBuilder;
+
+pub use crate::types::_harness_agent_core_code_interpreter_config::HarnessAgentCoreCodeInterpreterConfigBuilder;
+
+pub use crate::types::_harness_agent_core_memory_retrieval_config::HarnessAgentCoreMemoryRetrievalConfigBuilder;
+
 pub use crate::types::_episodic_reflection_configuration_input::EpisodicReflectionConfigurationInputBuilder;
 
 pub use crate::types::_kinesis_resource::KinesisResourceBuilder;
@@ -304,6 +344,8 @@ pub use crate::types::_tool_definition::ToolDefinitionBuilder;
 pub use crate::types::_api_gateway_tool_override::ApiGatewayToolOverrideBuilder;
 
 pub use crate::types::_api_gateway_tool_filter::ApiGatewayToolFilterBuilder;
+
+pub use crate::types::_unit::UnitBuilder;
 
 pub use crate::types::_semantic_override_extraction_configuration_input::SemanticOverrideExtractionConfigurationInputBuilder;
 

@@ -263,6 +263,8 @@ pub use crate::types::_host::Host;
 
 pub use crate::types::_efs_volume_configuration::EfsVolumeConfiguration;
 
+pub use crate::types::_s3_files_volume_configuration::S3FilesVolumeConfiguration;
+
 pub use crate::types::_resource_type::ResourceType;
 
 pub use crate::types::_device::Device;
@@ -598,6 +600,8 @@ mod _retry_action;
 mod _retry_strategy;
 
 mod _runtime_platform;
+
+mod _s3_files_volume_configuration;
 
 mod _scheduling_policy_detail;
 

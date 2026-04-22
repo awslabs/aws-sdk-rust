@@ -175,11 +175,19 @@ mod get_dashboard_for_job_run;
 
 mod get_job_run;
 
+mod get_resource_dashboard;
+
+mod get_session;
+
+mod get_session_endpoint;
+
 mod list_applications;
 
 mod list_job_run_attempts;
 
 mod list_job_runs;
+
+mod list_sessions;
 
 mod list_tags_for_resource;
 
@@ -187,9 +195,13 @@ mod start_application;
 
 mod start_job_run;
 
+mod start_session;
+
 mod stop_application;
 
 mod tag_resource;
+
+mod terminate_session;
 
 mod untag_resource;
 

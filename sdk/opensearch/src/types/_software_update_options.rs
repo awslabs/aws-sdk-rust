@@ -6,11 +6,17 @@
 pub struct SoftwareUpdateOptions {
     /// <p>Whether automatic service software updates are enabled for the domain.</p>
     pub auto_software_update_enabled: ::std::option::Option<bool>,
+    /// <p>Whether the domain should use the latest service software version during a blue/green deployment. If enabled, the domain will automatically use the latest available service software when a blue/green deployment is triggered.</p>
+    pub use_latest_service_software_for_blue_green: ::std::option::Option<bool>,
 }
 impl SoftwareUpdateOptions {
     /// <p>Whether automatic service software updates are enabled for the domain.</p>
     pub fn auto_software_update_enabled(&self) -> ::std::option::Option<bool> {
         self.auto_software_update_enabled
+    }
+    /// <p>Whether the domain should use the latest service software version during a blue/green deployment. If enabled, the domain will automatically use the latest available service software when a blue/green deployment is triggered.</p>
+    pub fn use_latest_service_software_for_blue_green(&self) -> ::std::option::Option<bool> {
+        self.use_latest_service_software_for_blue_green
     }
 }
 impl SoftwareUpdateOptions {
@@ -25,6 +31,7 @@ impl SoftwareUpdateOptions {
 #[non_exhaustive]
 pub struct SoftwareUpdateOptionsBuilder {
     pub(crate) auto_software_update_enabled: ::std::option::Option<bool>,
+    pub(crate) use_latest_service_software_for_blue_green: ::std::option::Option<bool>,
 }
 impl SoftwareUpdateOptionsBuilder {
     /// <p>Whether automatic service software updates are enabled for the domain.</p>
@@ -41,10 +48,25 @@ impl SoftwareUpdateOptionsBuilder {
     pub fn get_auto_software_update_enabled(&self) -> &::std::option::Option<bool> {
         &self.auto_software_update_enabled
     }
+    /// <p>Whether the domain should use the latest service software version during a blue/green deployment. If enabled, the domain will automatically use the latest available service software when a blue/green deployment is triggered.</p>
+    pub fn use_latest_service_software_for_blue_green(mut self, input: bool) -> Self {
+        self.use_latest_service_software_for_blue_green = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Whether the domain should use the latest service software version during a blue/green deployment. If enabled, the domain will automatically use the latest available service software when a blue/green deployment is triggered.</p>
+    pub fn set_use_latest_service_software_for_blue_green(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.use_latest_service_software_for_blue_green = input;
+        self
+    }
+    /// <p>Whether the domain should use the latest service software version during a blue/green deployment. If enabled, the domain will automatically use the latest available service software when a blue/green deployment is triggered.</p>
+    pub fn get_use_latest_service_software_for_blue_green(&self) -> &::std::option::Option<bool> {
+        &self.use_latest_service_software_for_blue_green
+    }
     /// Consumes the builder and constructs a [`SoftwareUpdateOptions`](crate::types::SoftwareUpdateOptions).
     pub fn build(self) -> crate::types::SoftwareUpdateOptions {
         crate::types::SoftwareUpdateOptions {
             auto_software_update_enabled: self.auto_software_update_enabled,
+            use_latest_service_software_for_blue_green: self.use_latest_service_software_for_blue_green,
         }
     }
 }

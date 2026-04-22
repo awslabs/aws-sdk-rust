@@ -4,9 +4,9 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VideoConfiguration {
-    /// <p>Indicates to the decoder the requirements for decoding the stream. For definitions of the valid values, see the H.264 specification.</p>
+    /// <p>(Deprecated) Indicates to the decoder the requirements for decoding the stream. For definitions of the valid values, see the H.264 specification. This is populated only when VideoConfiguration is part of the deprecated IngestConfiguration; otherwise, this is an empty string.</p>
     pub avc_profile: ::std::option::Option<::std::string::String>,
-    /// <p>Indicates the degree of required decoder performance for a profile. Normally this is set automatically by the encoder. For details, see the H.264 specification.</p>
+    /// <p>(Deprecated) Indicates the degree of required decoder performance for a profile. Normally this is set automatically by the encoder. For details, see the H.264 specification. This is populated only when VideoConfiguration is part of the deprecated IngestConfiguration; otherwise, this is an empty string.</p>
     pub avc_level: ::std::option::Option<::std::string::String>,
     /// <p>Codec used for the video encoding.</p>
     pub codec: ::std::option::Option<::std::string::String>,
@@ -22,17 +22,17 @@ pub struct VideoConfiguration {
     pub video_width: i64,
     /// <p>Indicates the degree of required decoder performance for a profile. Normally this is set automatically by the encoder. When an AVC codec is used, this field has the same value as <code>avcLevel</code>.</p>
     pub level: ::std::option::Option<::std::string::String>,
-    /// <p>Name of the video track. If multitrack is not enabled, this is track0 (the sole track).</p>
+    /// <p>Name of the video track. If multitrack is not enabled, this is Track0 (the sole track).</p>
     pub track: ::std::option::Option<::std::string::String>,
     /// <p>Indicates to the decoder the requirements for decoding the stream. When an AVC codec is used, this field has the same value as <code>avcProfile</code>.</p>
     pub profile: ::std::option::Option<::std::string::String>,
 }
 impl VideoConfiguration {
-    /// <p>Indicates to the decoder the requirements for decoding the stream. For definitions of the valid values, see the H.264 specification.</p>
+    /// <p>(Deprecated) Indicates to the decoder the requirements for decoding the stream. For definitions of the valid values, see the H.264 specification. This is populated only when VideoConfiguration is part of the deprecated IngestConfiguration; otherwise, this is an empty string.</p>
     pub fn avc_profile(&self) -> ::std::option::Option<&str> {
         self.avc_profile.as_deref()
     }
-    /// <p>Indicates the degree of required decoder performance for a profile. Normally this is set automatically by the encoder. For details, see the H.264 specification.</p>
+    /// <p>(Deprecated) Indicates the degree of required decoder performance for a profile. Normally this is set automatically by the encoder. For details, see the H.264 specification. This is populated only when VideoConfiguration is part of the deprecated IngestConfiguration; otherwise, this is an empty string.</p>
     pub fn avc_level(&self) -> ::std::option::Option<&str> {
         self.avc_level.as_deref()
     }
@@ -64,7 +64,7 @@ impl VideoConfiguration {
     pub fn level(&self) -> ::std::option::Option<&str> {
         self.level.as_deref()
     }
-    /// <p>Name of the video track. If multitrack is not enabled, this is track0 (the sole track).</p>
+    /// <p>Name of the video track. If multitrack is not enabled, this is Track0 (the sole track).</p>
     pub fn track(&self) -> ::std::option::Option<&str> {
         self.track.as_deref()
     }
@@ -97,31 +97,31 @@ pub struct VideoConfigurationBuilder {
     pub(crate) profile: ::std::option::Option<::std::string::String>,
 }
 impl VideoConfigurationBuilder {
-    /// <p>Indicates to the decoder the requirements for decoding the stream. For definitions of the valid values, see the H.264 specification.</p>
+    /// <p>(Deprecated) Indicates to the decoder the requirements for decoding the stream. For definitions of the valid values, see the H.264 specification. This is populated only when VideoConfiguration is part of the deprecated IngestConfiguration; otherwise, this is an empty string.</p>
     pub fn avc_profile(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.avc_profile = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Indicates to the decoder the requirements for decoding the stream. For definitions of the valid values, see the H.264 specification.</p>
+    /// <p>(Deprecated) Indicates to the decoder the requirements for decoding the stream. For definitions of the valid values, see the H.264 specification. This is populated only when VideoConfiguration is part of the deprecated IngestConfiguration; otherwise, this is an empty string.</p>
     pub fn set_avc_profile(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.avc_profile = input;
         self
     }
-    /// <p>Indicates to the decoder the requirements for decoding the stream. For definitions of the valid values, see the H.264 specification.</p>
+    /// <p>(Deprecated) Indicates to the decoder the requirements for decoding the stream. For definitions of the valid values, see the H.264 specification. This is populated only when VideoConfiguration is part of the deprecated IngestConfiguration; otherwise, this is an empty string.</p>
     pub fn get_avc_profile(&self) -> &::std::option::Option<::std::string::String> {
         &self.avc_profile
     }
-    /// <p>Indicates the degree of required decoder performance for a profile. Normally this is set automatically by the encoder. For details, see the H.264 specification.</p>
+    /// <p>(Deprecated) Indicates the degree of required decoder performance for a profile. Normally this is set automatically by the encoder. For details, see the H.264 specification. This is populated only when VideoConfiguration is part of the deprecated IngestConfiguration; otherwise, this is an empty string.</p>
     pub fn avc_level(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.avc_level = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Indicates the degree of required decoder performance for a profile. Normally this is set automatically by the encoder. For details, see the H.264 specification.</p>
+    /// <p>(Deprecated) Indicates the degree of required decoder performance for a profile. Normally this is set automatically by the encoder. For details, see the H.264 specification. This is populated only when VideoConfiguration is part of the deprecated IngestConfiguration; otherwise, this is an empty string.</p>
     pub fn set_avc_level(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.avc_level = input;
         self
     }
-    /// <p>Indicates the degree of required decoder performance for a profile. Normally this is set automatically by the encoder. For details, see the H.264 specification.</p>
+    /// <p>(Deprecated) Indicates the degree of required decoder performance for a profile. Normally this is set automatically by the encoder. For details, see the H.264 specification. This is populated only when VideoConfiguration is part of the deprecated IngestConfiguration; otherwise, this is an empty string.</p>
     pub fn get_avc_level(&self) -> &::std::option::Option<::std::string::String> {
         &self.avc_level
     }
@@ -223,17 +223,17 @@ impl VideoConfigurationBuilder {
     pub fn get_level(&self) -> &::std::option::Option<::std::string::String> {
         &self.level
     }
-    /// <p>Name of the video track. If multitrack is not enabled, this is track0 (the sole track).</p>
+    /// <p>Name of the video track. If multitrack is not enabled, this is Track0 (the sole track).</p>
     pub fn track(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.track = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Name of the video track. If multitrack is not enabled, this is track0 (the sole track).</p>
+    /// <p>Name of the video track. If multitrack is not enabled, this is Track0 (the sole track).</p>
     pub fn set_track(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.track = input;
         self
     }
-    /// <p>Name of the video track. If multitrack is not enabled, this is track0 (the sole track).</p>
+    /// <p>Name of the video track. If multitrack is not enabled, this is Track0 (the sole track).</p>
     pub fn get_track(&self) -> &::std::option::Option<::std::string::String> {
         &self.track
     }

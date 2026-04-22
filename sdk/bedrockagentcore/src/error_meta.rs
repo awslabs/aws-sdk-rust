@@ -876,6 +876,33 @@ impl From<crate::operation::invoke_code_interpreter::InvokeCodeInterpreterError>
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::invoke_harness::InvokeHarnessError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::invoke_harness::InvokeHarnessError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::invoke_harness::InvokeHarnessError> for Error {
+    fn from(err: crate::operation::invoke_harness::InvokeHarnessError) -> Self {
+        match err {
+            crate::operation::invoke_harness::InvokeHarnessError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::invoke_harness::InvokeHarnessError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::invoke_harness::InvokeHarnessError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::invoke_harness::InvokeHarnessError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::invoke_harness::InvokeHarnessError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::invoke_harness::InvokeHarnessError::RuntimeClientError(inner) => Error::RuntimeClientError(inner),
+            crate::operation::invoke_harness::InvokeHarnessError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_actors::ListActorsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1549,6 +1576,30 @@ impl From<crate::types::error::CodeInterpreterStreamOutputError> for Error {
             crate::types::error::CodeInterpreterStreamOutputError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::types::error::CodeInterpreterStreamOutputError::ValidationException(inner) => Error::ValidationException(inner),
             crate::types::error::CodeInterpreterStreamOutputError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::types::error::InvokeHarnessStreamOutputError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::types::error::InvokeHarnessStreamOutputError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::types::error::InvokeHarnessStreamOutputError> for Error {
+    fn from(err: crate::types::error::InvokeHarnessStreamOutputError) -> Self {
+        match err {
+            crate::types::error::InvokeHarnessStreamOutputError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::types::error::InvokeHarnessStreamOutputError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::types::error::InvokeHarnessStreamOutputError::RuntimeClientError(inner) => Error::RuntimeClientError(inner),
+            crate::types::error::InvokeHarnessStreamOutputError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

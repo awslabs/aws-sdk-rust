@@ -262,4 +262,18 @@ impl UpdateChannelFluentBuilder {
     pub fn get_container_format(&self) -> &::std::option::Option<crate::types::ContainerFormat> {
         self.inner.get_container_format()
     }
+    /// <p>ARN of the ad configuration associated with the channel.</p>
+    pub fn ad_configuration_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.ad_configuration_arn(input.into());
+        self
+    }
+    /// <p>ARN of the ad configuration associated with the channel.</p>
+    pub fn set_ad_configuration_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_ad_configuration_arn(input);
+        self
+    }
+    /// <p>ARN of the ad configuration associated with the channel.</p>
+    pub fn get_ad_configuration_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_ad_configuration_arn()
+    }
 }

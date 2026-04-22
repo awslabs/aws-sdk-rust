@@ -9,6 +9,9 @@ pub fn ser_interactive_configuration(
     if let Some(var_2) = &input.livy_endpoint_enabled {
         object.key("livyEndpointEnabled").boolean(*var_2);
     }
+    if let Some(var_3) = &input.session_enabled {
+        object.key("sessionEnabled").boolean(*var_3);
+    }
     Ok(())
 }
 
@@ -33,6 +36,9 @@ where
                         }
                         "livyEndpointEnabled" => {
                             builder = builder.set_livy_endpoint_enabled(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
+                        "sessionEnabled" => {
+                            builder = builder.set_session_enabled(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

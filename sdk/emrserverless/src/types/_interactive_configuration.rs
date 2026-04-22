@@ -8,6 +8,8 @@ pub struct InteractiveConfiguration {
     pub studio_enabled: ::std::option::Option<bool>,
     /// <p>Enables an Apache Livy endpoint that you can connect to and run interactive jobs.</p>
     pub livy_endpoint_enabled: ::std::option::Option<bool>,
+    /// <p>Enables interactive sessions on the application. When set to <code>true</code>, you can start interactive sessions using the <code>StartSession</code> operation.</p>
+    pub session_enabled: ::std::option::Option<bool>,
 }
 impl InteractiveConfiguration {
     /// <p>Enables you to connect an application to Amazon EMR Studio to run interactive workloads in a notebook.</p>
@@ -17,6 +19,10 @@ impl InteractiveConfiguration {
     /// <p>Enables an Apache Livy endpoint that you can connect to and run interactive jobs.</p>
     pub fn livy_endpoint_enabled(&self) -> ::std::option::Option<bool> {
         self.livy_endpoint_enabled
+    }
+    /// <p>Enables interactive sessions on the application. When set to <code>true</code>, you can start interactive sessions using the <code>StartSession</code> operation.</p>
+    pub fn session_enabled(&self) -> ::std::option::Option<bool> {
+        self.session_enabled
     }
 }
 impl InteractiveConfiguration {
@@ -32,6 +38,7 @@ impl InteractiveConfiguration {
 pub struct InteractiveConfigurationBuilder {
     pub(crate) studio_enabled: ::std::option::Option<bool>,
     pub(crate) livy_endpoint_enabled: ::std::option::Option<bool>,
+    pub(crate) session_enabled: ::std::option::Option<bool>,
 }
 impl InteractiveConfigurationBuilder {
     /// <p>Enables you to connect an application to Amazon EMR Studio to run interactive workloads in a notebook.</p>
@@ -62,11 +69,26 @@ impl InteractiveConfigurationBuilder {
     pub fn get_livy_endpoint_enabled(&self) -> &::std::option::Option<bool> {
         &self.livy_endpoint_enabled
     }
+    /// <p>Enables interactive sessions on the application. When set to <code>true</code>, you can start interactive sessions using the <code>StartSession</code> operation.</p>
+    pub fn session_enabled(mut self, input: bool) -> Self {
+        self.session_enabled = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Enables interactive sessions on the application. When set to <code>true</code>, you can start interactive sessions using the <code>StartSession</code> operation.</p>
+    pub fn set_session_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.session_enabled = input;
+        self
+    }
+    /// <p>Enables interactive sessions on the application. When set to <code>true</code>, you can start interactive sessions using the <code>StartSession</code> operation.</p>
+    pub fn get_session_enabled(&self) -> &::std::option::Option<bool> {
+        &self.session_enabled
+    }
     /// Consumes the builder and constructs a [`InteractiveConfiguration`](crate::types::InteractiveConfiguration).
     pub fn build(self) -> crate::types::InteractiveConfiguration {
         crate::types::InteractiveConfiguration {
             studio_enabled: self.studio_enabled,
             livy_endpoint_enabled: self.livy_endpoint_enabled,
+            session_enabled: self.session_enabled,
         }
     }
 }

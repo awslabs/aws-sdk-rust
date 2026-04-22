@@ -25,6 +25,8 @@ pub struct UpdateChannelInput {
     pub multitrack_input_configuration: ::std::option::Option<crate::types::MultitrackInputConfiguration>,
     /// <p>Indicates which content-packaging format is used (MPEG-TS or fMP4). If <code>multitrackInputConfiguration</code> is specified and <code>enabled</code> is <code>true</code>, then <code>containerFormat</code> is required and must be set to <code>FRAGMENTED_MP4</code>. Otherwise, <code>containerFormat</code> may be set to <code>TS</code> or <code>FRAGMENTED_MP4</code>. Default: <code>TS</code>.</p>
     pub container_format: ::std::option::Option<crate::types::ContainerFormat>,
+    /// <p>ARN of the ad configuration associated with the channel.</p>
+    pub ad_configuration_arn: ::std::option::Option<::std::string::String>,
 }
 impl UpdateChannelInput {
     /// <p>ARN of the channel to be updated.</p>
@@ -71,6 +73,10 @@ impl UpdateChannelInput {
     pub fn container_format(&self) -> ::std::option::Option<&crate::types::ContainerFormat> {
         self.container_format.as_ref()
     }
+    /// <p>ARN of the ad configuration associated with the channel.</p>
+    pub fn ad_configuration_arn(&self) -> ::std::option::Option<&str> {
+        self.ad_configuration_arn.as_deref()
+    }
 }
 impl UpdateChannelInput {
     /// Creates a new builder-style object to manufacture [`UpdateChannelInput`](crate::operation::update_channel::UpdateChannelInput).
@@ -94,6 +100,7 @@ pub struct UpdateChannelInputBuilder {
     pub(crate) playback_restriction_policy_arn: ::std::option::Option<::std::string::String>,
     pub(crate) multitrack_input_configuration: ::std::option::Option<crate::types::MultitrackInputConfiguration>,
     pub(crate) container_format: ::std::option::Option<crate::types::ContainerFormat>,
+    pub(crate) ad_configuration_arn: ::std::option::Option<::std::string::String>,
 }
 impl UpdateChannelInputBuilder {
     /// <p>ARN of the channel to be updated.</p>
@@ -251,6 +258,20 @@ impl UpdateChannelInputBuilder {
     pub fn get_container_format(&self) -> &::std::option::Option<crate::types::ContainerFormat> {
         &self.container_format
     }
+    /// <p>ARN of the ad configuration associated with the channel.</p>
+    pub fn ad_configuration_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.ad_configuration_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>ARN of the ad configuration associated with the channel.</p>
+    pub fn set_ad_configuration_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.ad_configuration_arn = input;
+        self
+    }
+    /// <p>ARN of the ad configuration associated with the channel.</p>
+    pub fn get_ad_configuration_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ad_configuration_arn
+    }
     /// Consumes the builder and constructs a [`UpdateChannelInput`](crate::operation::update_channel::UpdateChannelInput).
     pub fn build(
         self,
@@ -267,6 +288,7 @@ impl UpdateChannelInputBuilder {
             playback_restriction_policy_arn: self.playback_restriction_policy_arn,
             multitrack_input_configuration: self.multitrack_input_configuration,
             container_format: self.container_format,
+            ad_configuration_arn: self.ad_configuration_arn,
         })
     }
 }

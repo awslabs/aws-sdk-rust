@@ -79,6 +79,8 @@ pub use crate::types::_insight_entity::InsightEntityBuilder;
 
 pub use crate::types::_insight_time_range::InsightTimeRangeBuilder;
 
+pub use crate::types::_rollback_service_software_options::RollbackServiceSoftwareOptionsBuilder;
+
 pub use crate::types::_auto_tune_options::AutoTuneOptionsBuilder;
 
 pub use crate::types::_scheduled_action::ScheduledActionBuilder;

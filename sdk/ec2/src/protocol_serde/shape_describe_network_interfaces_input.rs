@@ -19,34 +19,39 @@ pub fn ser_describe_network_interfaces_input_input_input(
         );
     }
     #[allow(unused_mut)]
-    let mut scope_5 = writer.prefix("DryRun");
-    if let Some(var_6) = &input.dry_run {
+    let mut scope_5 = writer.prefix("IncludeManagedResources");
+    if let Some(var_6) = &input.include_managed_resources {
         scope_5.boolean(*var_6);
     }
     #[allow(unused_mut)]
-    let mut scope_7 = writer.prefix("NetworkInterfaceId");
-    if let Some(var_8) = &input.network_interface_ids {
-        if !var_8.is_empty() {
-            let mut list_10 = scope_7.start_list(true, Some("item"));
-            for item_9 in var_8 {
+    let mut scope_7 = writer.prefix("DryRun");
+    if let Some(var_8) = &input.dry_run {
+        scope_7.boolean(*var_8);
+    }
+    #[allow(unused_mut)]
+    let mut scope_9 = writer.prefix("NetworkInterfaceId");
+    if let Some(var_10) = &input.network_interface_ids {
+        if !var_10.is_empty() {
+            let mut list_12 = scope_9.start_list(true, Some("item"));
+            for item_11 in var_10 {
                 #[allow(unused_mut)]
-                let mut entry_11 = list_10.entry();
-                entry_11.string(item_9);
+                let mut entry_13 = list_12.entry();
+                entry_13.string(item_11);
             }
-            list_10.finish();
+            list_12.finish();
         }
     }
     #[allow(unused_mut)]
-    let mut scope_12 = writer.prefix("Filter");
-    if let Some(var_13) = &input.filters {
-        if !var_13.is_empty() {
-            let mut list_15 = scope_12.start_list(true, Some("Filter"));
-            for item_14 in var_13 {
+    let mut scope_14 = writer.prefix("Filter");
+    if let Some(var_15) = &input.filters {
+        if !var_15.is_empty() {
+            let mut list_17 = scope_14.start_list(true, Some("Filter"));
+            for item_16 in var_15 {
                 #[allow(unused_mut)]
-                let mut entry_16 = list_15.entry();
-                crate::protocol_serde::shape_filter::ser_filter(entry_16, item_14)?;
+                let mut entry_18 = list_17.entry();
+                crate::protocol_serde::shape_filter::ser_filter(entry_18, item_16)?;
             }
-            list_15.finish();
+            list_17.finish();
         }
     }
     writer.finish();

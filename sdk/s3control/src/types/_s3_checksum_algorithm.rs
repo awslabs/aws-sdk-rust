@@ -15,8 +15,13 @@
 ///     S3ChecksumAlgorithm::Crc32 => { /* ... */ },
 ///     S3ChecksumAlgorithm::Crc32C => { /* ... */ },
 ///     S3ChecksumAlgorithm::Crc64Nvme => { /* ... */ },
+///     S3ChecksumAlgorithm::Md5 => { /* ... */ },
 ///     S3ChecksumAlgorithm::Sha1 => { /* ... */ },
 ///     S3ChecksumAlgorithm::Sha256 => { /* ... */ },
+///     S3ChecksumAlgorithm::Sha512 => { /* ... */ },
+///     S3ChecksumAlgorithm::Xxhash128 => { /* ... */ },
+///     S3ChecksumAlgorithm::Xxhash3 => { /* ... */ },
+///     S3ChecksumAlgorithm::Xxhash64 => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -52,9 +57,19 @@ pub enum S3ChecksumAlgorithm {
     #[allow(missing_docs)] // documentation missing in model
     Crc64Nvme,
     #[allow(missing_docs)] // documentation missing in model
+    Md5,
+    #[allow(missing_docs)] // documentation missing in model
     Sha1,
     #[allow(missing_docs)] // documentation missing in model
     Sha256,
+    #[allow(missing_docs)] // documentation missing in model
+    Sha512,
+    #[allow(missing_docs)] // documentation missing in model
+    Xxhash128,
+    #[allow(missing_docs)] // documentation missing in model
+    Xxhash3,
+    #[allow(missing_docs)] // documentation missing in model
+    Xxhash64,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -65,8 +80,13 @@ impl ::std::convert::From<&str> for S3ChecksumAlgorithm {
             "CRC32" => S3ChecksumAlgorithm::Crc32,
             "CRC32C" => S3ChecksumAlgorithm::Crc32C,
             "CRC64NVME" => S3ChecksumAlgorithm::Crc64Nvme,
+            "MD5" => S3ChecksumAlgorithm::Md5,
             "SHA1" => S3ChecksumAlgorithm::Sha1,
             "SHA256" => S3ChecksumAlgorithm::Sha256,
+            "SHA512" => S3ChecksumAlgorithm::Sha512,
+            "XXHASH128" => S3ChecksumAlgorithm::Xxhash128,
+            "XXHASH3" => S3ChecksumAlgorithm::Xxhash3,
+            "XXHASH64" => S3ChecksumAlgorithm::Xxhash64,
             other => S3ChecksumAlgorithm::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -85,14 +105,30 @@ impl S3ChecksumAlgorithm {
             S3ChecksumAlgorithm::Crc32 => "CRC32",
             S3ChecksumAlgorithm::Crc32C => "CRC32C",
             S3ChecksumAlgorithm::Crc64Nvme => "CRC64NVME",
+            S3ChecksumAlgorithm::Md5 => "MD5",
             S3ChecksumAlgorithm::Sha1 => "SHA1",
             S3ChecksumAlgorithm::Sha256 => "SHA256",
+            S3ChecksumAlgorithm::Sha512 => "SHA512",
+            S3ChecksumAlgorithm::Xxhash128 => "XXHASH128",
+            S3ChecksumAlgorithm::Xxhash3 => "XXHASH3",
+            S3ChecksumAlgorithm::Xxhash64 => "XXHASH64",
             S3ChecksumAlgorithm::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CRC32", "CRC32C", "CRC64NVME", "SHA1", "SHA256"]
+        &[
+            "CRC32",
+            "CRC32C",
+            "CRC64NVME",
+            "MD5",
+            "SHA1",
+            "SHA256",
+            "SHA512",
+            "XXHASH128",
+            "XXHASH3",
+            "XXHASH64",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for S3ChecksumAlgorithm {
@@ -118,8 +154,13 @@ impl ::std::fmt::Display for S3ChecksumAlgorithm {
             S3ChecksumAlgorithm::Crc32 => write!(f, "CRC32"),
             S3ChecksumAlgorithm::Crc32C => write!(f, "CRC32C"),
             S3ChecksumAlgorithm::Crc64Nvme => write!(f, "CRC64NVME"),
+            S3ChecksumAlgorithm::Md5 => write!(f, "MD5"),
             S3ChecksumAlgorithm::Sha1 => write!(f, "SHA1"),
             S3ChecksumAlgorithm::Sha256 => write!(f, "SHA256"),
+            S3ChecksumAlgorithm::Sha512 => write!(f, "SHA512"),
+            S3ChecksumAlgorithm::Xxhash128 => write!(f, "XXHASH128"),
+            S3ChecksumAlgorithm::Xxhash3 => write!(f, "XXHASH3"),
+            S3ChecksumAlgorithm::Xxhash64 => write!(f, "XXHASH64"),
             S3ChecksumAlgorithm::Unknown(value) => write!(f, "{value}"),
         }
     }

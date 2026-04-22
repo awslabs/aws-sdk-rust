@@ -19,6 +19,15 @@ pub mod get_dashboard_for_job_run;
 /// Types for the `GetJobRun` operation.
 pub mod get_job_run;
 
+/// Types for the `GetResourceDashboard` operation.
+pub mod get_resource_dashboard;
+
+/// Types for the `GetSession` operation.
+pub mod get_session;
+
+/// Types for the `GetSessionEndpoint` operation.
+pub mod get_session_endpoint;
+
 /// Types for the `ListApplications` operation.
 pub mod list_applications;
 
@@ -27,6 +36,9 @@ pub mod list_job_run_attempts;
 
 /// Types for the `ListJobRuns` operation.
 pub mod list_job_runs;
+
+/// Types for the `ListSessions` operation.
+pub mod list_sessions;
 
 /// Types for the `ListTagsForResource` operation.
 pub mod list_tags_for_resource;
@@ -37,11 +49,17 @@ pub mod start_application;
 /// Types for the `StartJobRun` operation.
 pub mod start_job_run;
 
+/// Types for the `StartSession` operation.
+pub mod start_session;
+
 /// Types for the `StopApplication` operation.
 pub mod stop_application;
 
 /// Types for the `TagResource` operation.
 pub mod tag_resource;
+
+/// Types for the `TerminateSession` operation.
+pub mod terminate_session;
 
 /// Types for the `UntagResource` operation.
 pub mod untag_resource;

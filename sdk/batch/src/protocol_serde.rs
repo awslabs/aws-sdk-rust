@@ -471,6 +471,8 @@ pub(crate) mod shape_queue_snapshot_capacity_usage;
 
 pub(crate) mod shape_quota_share_capacity_utilization_list;
 
+pub(crate) mod shape_s3_files_volume_configuration;
+
 pub(crate) mod shape_service_environment_orders;
 
 pub(crate) mod shape_service_job_capacity_usage_summary_list;

@@ -62,6 +62,8 @@ pub struct DescribeLaunchTemplateVersionsInput {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/create-launch-template.html#use-an-ssm-parameter-instead-of-an-ami-id">Use a Systems Manager parameter instead of an AMI ID</a> in the <i>Amazon EC2 User Guide</i>.</p>
     /// <p>Default: <code>false</code></p>
     pub resolve_alias: ::std::option::Option<bool>,
+    /// <p>Indicates whether to include managed resources in the output. If this parameter is set to <code>true</code>, the output includes resources that are managed by Amazon Web Services services, even if managed resource visibility is set to hidden.</p>
+    pub include_managed_resources: ::std::option::Option<bool>,
 }
 impl DescribeLaunchTemplateVersionsInput {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -147,6 +149,10 @@ impl DescribeLaunchTemplateVersionsInput {
     pub fn resolve_alias(&self) -> ::std::option::Option<bool> {
         self.resolve_alias
     }
+    /// <p>Indicates whether to include managed resources in the output. If this parameter is set to <code>true</code>, the output includes resources that are managed by Amazon Web Services services, even if managed resource visibility is set to hidden.</p>
+    pub fn include_managed_resources(&self) -> ::std::option::Option<bool> {
+        self.include_managed_resources
+    }
 }
 impl DescribeLaunchTemplateVersionsInput {
     /// Creates a new builder-style object to manufacture [`DescribeLaunchTemplateVersionsInput`](crate::operation::describe_launch_template_versions::DescribeLaunchTemplateVersionsInput).
@@ -169,6 +175,7 @@ pub struct DescribeLaunchTemplateVersionsInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     pub(crate) resolve_alias: ::std::option::Option<bool>,
+    pub(crate) include_managed_resources: ::std::option::Option<bool>,
 }
 impl DescribeLaunchTemplateVersionsInputBuilder {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -440,6 +447,20 @@ impl DescribeLaunchTemplateVersionsInputBuilder {
     pub fn get_resolve_alias(&self) -> &::std::option::Option<bool> {
         &self.resolve_alias
     }
+    /// <p>Indicates whether to include managed resources in the output. If this parameter is set to <code>true</code>, the output includes resources that are managed by Amazon Web Services services, even if managed resource visibility is set to hidden.</p>
+    pub fn include_managed_resources(mut self, input: bool) -> Self {
+        self.include_managed_resources = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether to include managed resources in the output. If this parameter is set to <code>true</code>, the output includes resources that are managed by Amazon Web Services services, even if managed resource visibility is set to hidden.</p>
+    pub fn set_include_managed_resources(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.include_managed_resources = input;
+        self
+    }
+    /// <p>Indicates whether to include managed resources in the output. If this parameter is set to <code>true</code>, the output includes resources that are managed by Amazon Web Services services, even if managed resource visibility is set to hidden.</p>
+    pub fn get_include_managed_resources(&self) -> &::std::option::Option<bool> {
+        &self.include_managed_resources
+    }
     /// Consumes the builder and constructs a [`DescribeLaunchTemplateVersionsInput`](crate::operation::describe_launch_template_versions::DescribeLaunchTemplateVersionsInput).
     pub fn build(
         self,
@@ -458,6 +479,7 @@ impl DescribeLaunchTemplateVersionsInputBuilder {
             max_results: self.max_results,
             filters: self.filters,
             resolve_alias: self.resolve_alias,
+            include_managed_resources: self.include_managed_resources,
         })
     }
 }

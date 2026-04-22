@@ -557,6 +557,8 @@ pub(crate) mod shape_advanced_configuration;
 
 pub(crate) mod shape_attachments;
 
+pub(crate) mod shape_auto_repair_configuration;
+
 pub(crate) mod shape_aws_vpc_configuration;
 
 pub(crate) mod shape_canary_configuration;

@@ -74,6 +74,11 @@ pub fn ser_describe_launch_template_versions_input_input_input(
     if let Some(var_26) = &input.resolve_alias {
         scope_25.boolean(*var_26);
     }
+    #[allow(unused_mut)]
+    let mut scope_27 = writer.prefix("IncludeManagedResources");
+    if let Some(var_28) = &input.include_managed_resources {
+        scope_27.boolean(*var_28);
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

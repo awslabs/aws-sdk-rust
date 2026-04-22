@@ -3,40 +3,46 @@ pub fn ser_get_position_estimate_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::get_position_estimate::GetPositionEstimateInput,
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    if let Some(var_1) = &input.cell_towers {
+    if let Some(var_1) = &input.advanced_configuration {
         #[allow(unused_mut)]
-        let mut object_2 = object.key("CellTowers").start_object();
-        crate::protocol_serde::shape_cell_towers::ser_cell_towers(&mut object_2, var_1)?;
+        let mut object_2 = object.key("AdvancedConfiguration").start_object();
+        crate::protocol_serde::shape_advanced_configuration::ser_advanced_configuration(&mut object_2, var_1)?;
         object_2.finish();
     }
-    if let Some(var_3) = &input.gnss {
+    if let Some(var_3) = &input.cell_towers {
         #[allow(unused_mut)]
-        let mut object_4 = object.key("Gnss").start_object();
-        crate::protocol_serde::shape_gnss::ser_gnss(&mut object_4, var_3)?;
+        let mut object_4 = object.key("CellTowers").start_object();
+        crate::protocol_serde::shape_cell_towers::ser_cell_towers(&mut object_4, var_3)?;
         object_4.finish();
     }
-    if let Some(var_5) = &input.ip {
+    if let Some(var_5) = &input.gnss {
         #[allow(unused_mut)]
-        let mut object_6 = object.key("Ip").start_object();
-        crate::protocol_serde::shape_ip::ser_ip(&mut object_6, var_5)?;
+        let mut object_6 = object.key("Gnss").start_object();
+        crate::protocol_serde::shape_gnss::ser_gnss(&mut object_6, var_5)?;
         object_6.finish();
     }
-    if let Some(var_7) = &input.timestamp {
+    if let Some(var_7) = &input.ip {
+        #[allow(unused_mut)]
+        let mut object_8 = object.key("Ip").start_object();
+        crate::protocol_serde::shape_ip::ser_ip(&mut object_8, var_7)?;
+        object_8.finish();
+    }
+    if let Some(var_9) = &input.timestamp {
         object
             .key("Timestamp")
-            .date_time(var_7, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
+            .date_time(var_9, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
-    if let Some(var_8) = &input.wi_fi_access_points {
-        let mut array_9 = object.key("WiFiAccessPoints").start_array();
-        for item_10 in var_8 {
+    if let Some(var_10) = &input.wi_fi_access_points {
+        let mut array_11 = object.key("WiFiAccessPoints").start_array();
+        for item_12 in var_10 {
             {
                 #[allow(unused_mut)]
-                let mut object_11 = array_9.value().start_object();
-                crate::protocol_serde::shape_wi_fi_access_point::ser_wi_fi_access_point(&mut object_11, item_10)?;
-                object_11.finish();
+                let mut object_13 = array_11.value().start_object();
+                crate::protocol_serde::shape_wi_fi_access_point::ser_wi_fi_access_point(&mut object_13, item_12)?;
+                object_13.finish();
             }
         }
-        array_9.finish();
+        array_11.finish();
     }
     Ok(())
 }

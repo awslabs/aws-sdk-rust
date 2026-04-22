@@ -18,6 +18,10 @@
 ///     ComputeObjectChecksumAlgorithm::Md5 => { /* ... */ },
 ///     ComputeObjectChecksumAlgorithm::Sha1 => { /* ... */ },
 ///     ComputeObjectChecksumAlgorithm::Sha256 => { /* ... */ },
+///     ComputeObjectChecksumAlgorithm::Sha512 => { /* ... */ },
+///     ComputeObjectChecksumAlgorithm::Xxhash128 => { /* ... */ },
+///     ComputeObjectChecksumAlgorithm::Xxhash3 => { /* ... */ },
+///     ComputeObjectChecksumAlgorithm::Xxhash64 => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -58,6 +62,14 @@ pub enum ComputeObjectChecksumAlgorithm {
     Sha1,
     #[allow(missing_docs)] // documentation missing in model
     Sha256,
+    #[allow(missing_docs)] // documentation missing in model
+    Sha512,
+    #[allow(missing_docs)] // documentation missing in model
+    Xxhash128,
+    #[allow(missing_docs)] // documentation missing in model
+    Xxhash3,
+    #[allow(missing_docs)] // documentation missing in model
+    Xxhash64,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -71,6 +83,10 @@ impl ::std::convert::From<&str> for ComputeObjectChecksumAlgorithm {
             "MD5" => ComputeObjectChecksumAlgorithm::Md5,
             "SHA1" => ComputeObjectChecksumAlgorithm::Sha1,
             "SHA256" => ComputeObjectChecksumAlgorithm::Sha256,
+            "SHA512" => ComputeObjectChecksumAlgorithm::Sha512,
+            "XXHASH128" => ComputeObjectChecksumAlgorithm::Xxhash128,
+            "XXHASH3" => ComputeObjectChecksumAlgorithm::Xxhash3,
+            "XXHASH64" => ComputeObjectChecksumAlgorithm::Xxhash64,
             other => ComputeObjectChecksumAlgorithm::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -92,12 +108,27 @@ impl ComputeObjectChecksumAlgorithm {
             ComputeObjectChecksumAlgorithm::Md5 => "MD5",
             ComputeObjectChecksumAlgorithm::Sha1 => "SHA1",
             ComputeObjectChecksumAlgorithm::Sha256 => "SHA256",
+            ComputeObjectChecksumAlgorithm::Sha512 => "SHA512",
+            ComputeObjectChecksumAlgorithm::Xxhash128 => "XXHASH128",
+            ComputeObjectChecksumAlgorithm::Xxhash3 => "XXHASH3",
+            ComputeObjectChecksumAlgorithm::Xxhash64 => "XXHASH64",
             ComputeObjectChecksumAlgorithm::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CRC32", "CRC32C", "CRC64NVME", "MD5", "SHA1", "SHA256"]
+        &[
+            "CRC32",
+            "CRC32C",
+            "CRC64NVME",
+            "MD5",
+            "SHA1",
+            "SHA256",
+            "SHA512",
+            "XXHASH128",
+            "XXHASH3",
+            "XXHASH64",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for ComputeObjectChecksumAlgorithm {
@@ -126,6 +157,10 @@ impl ::std::fmt::Display for ComputeObjectChecksumAlgorithm {
             ComputeObjectChecksumAlgorithm::Md5 => write!(f, "MD5"),
             ComputeObjectChecksumAlgorithm::Sha1 => write!(f, "SHA1"),
             ComputeObjectChecksumAlgorithm::Sha256 => write!(f, "SHA256"),
+            ComputeObjectChecksumAlgorithm::Sha512 => write!(f, "SHA512"),
+            ComputeObjectChecksumAlgorithm::Xxhash128 => write!(f, "XXHASH128"),
+            ComputeObjectChecksumAlgorithm::Xxhash3 => write!(f, "XXHASH3"),
+            ComputeObjectChecksumAlgorithm::Xxhash64 => write!(f, "XXHASH64"),
             ComputeObjectChecksumAlgorithm::Unknown(value) => write!(f, "{value}"),
         }
     }

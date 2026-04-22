@@ -16,6 +16,8 @@ pub struct TargetSummary {
     pub created_at: ::aws_smithy_types::DateTime,
     /// <p>The timestamp when the target was last updated.</p>
     pub updated_at: ::aws_smithy_types::DateTime,
+    /// <p>Priority for resolving resource URI conflicts across targets. Lower values take precedence. Defaults to 1000 when not set.</p>
+    pub resource_priority: ::std::option::Option<i32>,
 }
 impl TargetSummary {
     /// <p>The unique identifier of the target.</p>
@@ -44,6 +46,10 @@ impl TargetSummary {
     pub fn updated_at(&self) -> &::aws_smithy_types::DateTime {
         &self.updated_at
     }
+    /// <p>Priority for resolving resource URI conflicts across targets. Lower values take precedence. Defaults to 1000 when not set.</p>
+    pub fn resource_priority(&self) -> ::std::option::Option<i32> {
+        self.resource_priority
+    }
 }
 impl ::std::fmt::Debug for TargetSummary {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -54,6 +60,7 @@ impl ::std::fmt::Debug for TargetSummary {
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("created_at", &self.created_at);
         formatter.field("updated_at", &self.updated_at);
+        formatter.field("resource_priority", &self.resource_priority);
         formatter.finish()
     }
 }
@@ -74,6 +81,7 @@ pub struct TargetSummaryBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) resource_priority: ::std::option::Option<i32>,
 }
 impl TargetSummaryBuilder {
     /// <p>The unique identifier of the target.</p>
@@ -165,6 +173,20 @@ impl TargetSummaryBuilder {
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.updated_at
     }
+    /// <p>Priority for resolving resource URI conflicts across targets. Lower values take precedence. Defaults to 1000 when not set.</p>
+    pub fn resource_priority(mut self, input: i32) -> Self {
+        self.resource_priority = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Priority for resolving resource URI conflicts across targets. Lower values take precedence. Defaults to 1000 when not set.</p>
+    pub fn set_resource_priority(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.resource_priority = input;
+        self
+    }
+    /// <p>Priority for resolving resource URI conflicts across targets. Lower values take precedence. Defaults to 1000 when not set.</p>
+    pub fn get_resource_priority(&self) -> &::std::option::Option<i32> {
+        &self.resource_priority
+    }
     /// Consumes the builder and constructs a [`TargetSummary`](crate::types::TargetSummary).
     /// This method will fail if any of the following fields are not set:
     /// - [`target_id`](crate::types::builders::TargetSummaryBuilder::target_id)
@@ -205,6 +227,7 @@ impl TargetSummaryBuilder {
                     "updated_at was not specified but it is required when building TargetSummary",
                 )
             })?,
+            resource_priority: self.resource_priority,
         })
     }
 }
@@ -217,6 +240,7 @@ impl ::std::fmt::Debug for TargetSummaryBuilder {
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("created_at", &self.created_at);
         formatter.field("updated_at", &self.updated_at);
+        formatter.field("resource_priority", &self.resource_priority);
         formatter.finish()
     }
 }

@@ -6,6 +6,9 @@ pub fn ser_software_update_options(
     if let Some(var_1) = &input.auto_software_update_enabled {
         object.key("AutoSoftwareUpdateEnabled").boolean(*var_1);
     }
+    if let Some(var_2) = &input.use_latest_service_software_for_blue_green {
+        object.key("UseLatestServiceSoftwareForBlueGreen").boolean(*var_2);
+    }
     Ok(())
 }
 
@@ -28,6 +31,11 @@ where
                         "AutoSoftwareUpdateEnabled" => {
                             builder =
                                 builder.set_auto_software_update_enabled(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
+                        "UseLatestServiceSoftwareForBlueGreen" => {
+                            builder = builder.set_use_latest_service_software_for_blue_green(
+                                ::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

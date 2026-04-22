@@ -10290,9 +10290,82 @@ mod test {
         );
     }
 
-    /// Data Plane with short AZ and dualstack
+    /// Data Plane with bucket containing delimiters
     #[test]
     fn test_349() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-east-1".to_string())
+            .bucket("my--s3--bucket--abcd-ab1--x-s3".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
+            .accelerate(false)
+            .use_s3_express_control_endpoint(false)
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://my--s3--bucket--abcd-ab1--x-s3.s3express-abcd-ab1.us-east-1.amazonaws.com");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://my--s3--bucket--abcd-ab1--x-s3.s3express-abcd-ab1.us-east-1.amazonaws.com")
+                .property(
+                    "authSchemes",
+                    vec![{
+                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                        out.insert("name".to_string(), "sigv4-s3express".to_string().into());
+                        out.insert("signingName".to_string(), "s3express".to_string().into());
+                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
+                        out.insert("disableDoubleEncoding".to_string(), true.into());
+                        out
+                    }
+                    .into()]
+                )
+                .property("backend", "S3Express".to_string())
+                .build()
+        );
+    }
+
+    /// Control plane with with bucket containing delimiters
+    #[test]
+    fn test_350() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-east-1".to_string())
+            .bucket("my--s3--bucket--abcd-ab1--x-s3".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
+            .accelerate(false)
+            .use_s3_express_control_endpoint(true)
+            .disable_s3_express_session_auth(false)
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://s3express-control.us-east-1.amazonaws.com/my--s3--bucket--abcd-ab1--x-s3");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://s3express-control.us-east-1.amazonaws.com/my--s3--bucket--abcd-ab1--x-s3")
+                .property(
+                    "authSchemes",
+                    vec![{
+                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                        out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingName".to_string(), "s3express".to_string().into());
+                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
+                        out.insert("disableDoubleEncoding".to_string(), true.into());
+                        out
+                    }
+                    .into()]
+                )
+                .property("backend", "S3Express".to_string())
+                .build()
+        );
+    }
+
+    /// Data Plane with short AZ and dualstack
+    #[test]
+    fn test_351() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-west-2".to_string())
             .bucket("mybucket--usw2-az1--x-s3".to_string())
@@ -10329,7 +10402,7 @@ mod test {
 
     /// Data Plane with short AZ and FIPS with dualstack
     #[test]
-    fn test_350() {
+    fn test_352() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-west-2".to_string())
             .bucket("mybucket--usw2-az1--x-s3".to_string())
@@ -10366,7 +10439,7 @@ mod test {
 
     /// Data Plane sigv4 auth with short AZ and dualstack
     #[test]
-    fn test_351() {
+    fn test_353() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-west-2".to_string())
             .bucket("mybucket--usw2-az1--x-s3".to_string())
@@ -10403,7 +10476,7 @@ mod test {
 
     /// Data Plane sigv4 auth with short AZ and FIPS with dualstack
     #[test]
-    fn test_352() {
+    fn test_354() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-west-2".to_string())
             .bucket("mybucket--usw2-az1--x-s3".to_string())
@@ -10440,7 +10513,7 @@ mod test {
 
     /// Data Plane with zone and dualstack
     #[test]
-    fn test_353() {
+    fn test_355() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-west-2".to_string())
             .bucket("mybucket--usw2-az12--x-s3".to_string())
@@ -10477,7 +10550,7 @@ mod test {
 
     /// Data Plane with zone and FIPS with dualstack
     #[test]
-    fn test_354() {
+    fn test_356() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-west-2".to_string())
             .bucket("mybucket--usw2-az12--x-s3".to_string())
@@ -10514,7 +10587,7 @@ mod test {
 
     /// Data Plane sigv4 auth with zone and dualstack
     #[test]
-    fn test_355() {
+    fn test_357() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-west-2".to_string())
             .bucket("mybucket--usw2-az12--x-s3".to_string())
@@ -10551,7 +10624,7 @@ mod test {
 
     /// Data Plane sigv4 auth with 9-char zone and FIPS with dualstack
     #[test]
-    fn test_356() {
+    fn test_358() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-west-2".to_string())
             .bucket("mybucket--usw2-az12--x-s3".to_string())
@@ -10588,7 +10661,7 @@ mod test {
 
     /// Data Plane with 13-char zone and dualstack
     #[test]
-    fn test_357() {
+    fn test_359() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-west-2".to_string())
             .bucket("mybucket--test-zone-ab1--x-s3".to_string())
@@ -10625,7 +10698,7 @@ mod test {
 
     /// Data Plane with 13-char zone and FIPS with dualstack
     #[test]
-    fn test_358() {
+    fn test_360() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-west-2".to_string())
             .bucket("mybucket--test-zone-ab1--x-s3".to_string())
@@ -10662,7 +10735,7 @@ mod test {
 
     /// Data Plane sigv4 auth with 13-char zone and dualstack
     #[test]
-    fn test_359() {
+    fn test_361() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-west-2".to_string())
             .bucket("mybucket--test-zone-ab1--x-s3".to_string())
@@ -10699,7 +10772,7 @@ mod test {
 
     /// Data Plane sigv4 auth with 13-char zone and FIPS with dualstack
     #[test]
-    fn test_360() {
+    fn test_362() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-west-2".to_string())
             .bucket("mybucket--test-zone-ab1--x-s3".to_string())
@@ -10736,7 +10809,7 @@ mod test {
 
     /// Data Plane with 14-char zone and dualstack
     #[test]
-    fn test_361() {
+    fn test_363() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-west-2".to_string())
             .bucket("mybucket--test1-zone-ab1--x-s3".to_string())
@@ -10773,7 +10846,7 @@ mod test {
 
     /// Data Plane with 14-char zone and FIPS with dualstack
     #[test]
-    fn test_362() {
+    fn test_364() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-west-2".to_string())
             .bucket("mybucket--test1-zone-ab1--x-s3".to_string())
@@ -10811,7 +10884,7 @@ mod test {
 
     /// Data Plane sigv4 auth with 14-char zone and dualstack
     #[test]
-    fn test_363() {
+    fn test_365() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-west-2".to_string())
             .bucket("mybucket--test1-zone-ab1--x-s3".to_string())
@@ -10848,7 +10921,7 @@ mod test {
 
     /// Data Plane sigv4 auth with 14-char zone and FIPS with dualstack
     #[test]
-    fn test_364() {
+    fn test_366() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-west-2".to_string())
             .bucket("mybucket--test1-zone-ab1--x-s3".to_string())
@@ -10886,7 +10959,7 @@ mod test {
 
     /// Data Plane with long zone (20 cha) and dualstack
     #[test]
-    fn test_365() {
+    fn test_367() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-west-2".to_string())
             .bucket("mybucket--test1-long1-zone-ab1--x-s3".to_string())
@@ -10924,7 +10997,7 @@ mod test {
 
     /// Data Plane with long zone (20 char) and FIPS with dualstack
     #[test]
-    fn test_366() {
+    fn test_368() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-west-2".to_string())
             .bucket("mybucket--test1-long1-zone-ab1--x-s3".to_string())
@@ -10960,7 +11033,7 @@ mod test {
 
     /// Data Plane sigv4 auth with long zone (20 char) and dualstack
     #[test]
-    fn test_367() {
+    fn test_369() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-west-2".to_string())
             .bucket("mybucket--test1-long1-zone-ab1--x-s3".to_string())
@@ -10998,7 +11071,7 @@ mod test {
 
     /// Data Plane sigv4 auth with long zone (20 char) and FIPS with dualstack
     #[test]
-    fn test_368() {
+    fn test_370() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-west-2".to_string())
             .bucket("mybucket--test1-long1-zone-ab1--x-s3".to_string())
@@ -11034,7 +11107,7 @@ mod test {
 
     /// Control plane and FIPS with dualstack
     #[test]
-    fn test_369() {
+    fn test_371() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-1".to_string())
             .bucket("mybucket--test-ab1--x-s3".to_string())
@@ -11071,7 +11144,7 @@ mod test {
 
     /// Data plane with zone and dualstack and AP
     #[test]
-    fn test_370() {
+    fn test_372() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-west-2".to_string())
             .bucket("myaccesspoint--usw2-az1--xa-s3".to_string())
@@ -11108,7 +11181,7 @@ mod test {
 
     /// Data plane with zone and FIPS with dualstack and AP
     #[test]
-    fn test_371() {
+    fn test_373() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-west-2".to_string())
             .bucket("myaccesspoint--usw2-az1--xa-s3".to_string())
@@ -11145,7 +11218,7 @@ mod test {
 
     /// Data Plane sigv4 auth with zone and dualstack and AP
     #[test]
-    fn test_372() {
+    fn test_374() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-west-2".to_string())
             .bucket("myaccesspoint--usw2-az1--xa-s3".to_string())
@@ -11182,7 +11255,7 @@ mod test {
 
     /// Data Plane AP sigv4 auth with zone and FIPS with dualstack
     #[test]
-    fn test_373() {
+    fn test_375() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-west-2".to_string())
             .bucket("myaccesspoint--usw2-az1--xa-s3".to_string())
@@ -11219,7 +11292,7 @@ mod test {
 
     /// Data Plane with zone (9 char) and AP with dualstack
     #[test]
-    fn test_374() {
+    fn test_376() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-west-2".to_string())
             .bucket("myaccesspoint--usw2-az12--xa-s3".to_string())
@@ -11256,7 +11329,7 @@ mod test {
 
     /// Data Plane with zone (9 char) and FIPS with AP and dualstack
     #[test]
-    fn test_375() {
+    fn test_377() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-west-2".to_string())
             .bucket("myaccesspoint--usw2-az12--xa-s3".to_string())
@@ -11293,7 +11366,7 @@ mod test {
 
     /// Data Plane sigv4 auth with (9 char) zone and dualstack with AP
     #[test]
-    fn test_376() {
+    fn test_378() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-west-2".to_string())
             .bucket("myaccesspoint--usw2-az12--xa-s3".to_string())
@@ -11330,7 +11403,7 @@ mod test {
 
     /// Access Point sigv4 auth with (9 char) zone and FIPS with dualstack
     #[test]
-    fn test_377() {
+    fn test_379() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-west-2".to_string())
             .bucket("myaccesspoint--usw2-az12--xa-s3".to_string())
@@ -11367,7 +11440,7 @@ mod test {
 
     /// Data Plane with zone (13 char) and AP with dualstack
     #[test]
-    fn test_378() {
+    fn test_380() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-west-2".to_string())
             .bucket("myaccesspoint--test-zone-ab1--xa-s3".to_string())
@@ -11404,7 +11477,7 @@ mod test {
 
     /// Data Plane with zone (13 char) and AP with FIPS and dualstack
     #[test]
-    fn test_379() {
+    fn test_381() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-west-2".to_string())
             .bucket("myaccesspoint--test-zone-ab1--xa-s3".to_string())
@@ -11442,7 +11515,7 @@ mod test {
 
     /// Data Plane sigv4 auth with (13 char) zone with AP and dualstack
     #[test]
-    fn test_380() {
+    fn test_382() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-west-2".to_string())
             .bucket("myaccesspoint--test-zone-ab1--xa-s3".to_string())
@@ -11479,7 +11552,7 @@ mod test {
 
     /// Data Plane sigv4 auth with (13 char) zone with AP and FIPS and dualstack
     #[test]
-    fn test_381() {
+    fn test_383() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-west-2".to_string())
             .bucket("myaccesspoint--test-zone-ab1--xa-s3".to_string())
@@ -11517,7 +11590,7 @@ mod test {
 
     /// Data Plane with (14 char) zone and AP with dualstack
     #[test]
-    fn test_382() {
+    fn test_384() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-west-2".to_string())
             .bucket("myaccesspoint--test1-zone-ab1--xa-s3".to_string())
@@ -11555,7 +11628,7 @@ mod test {
 
     /// Data Plane with (14 char) zone and AP with FIPS and dualstack
     #[test]
-    fn test_383() {
+    fn test_385() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-west-2".to_string())
             .bucket("myaccesspoint--test1-zone-ab1--xa-s3".to_string())
@@ -11593,7 +11666,7 @@ mod test {
 
     /// Data Plane sigv4 auth with (14 char) zone and AP with dualstack
     #[test]
-    fn test_384() {
+    fn test_386() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-west-2".to_string())
             .bucket("myaccesspoint--test1-zone-ab1--xa-s3".to_string())
@@ -11631,7 +11704,7 @@ mod test {
 
     /// Data Plane with (14 char) zone and AP with FIPS and dualstack
     #[test]
-    fn test_385() {
+    fn test_387() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-west-2".to_string())
             .bucket("myaccesspoint--test1-zone-ab1--xa-s3".to_string())
@@ -11669,7 +11742,7 @@ mod test {
 
     /// Data Plane with (20 char) zone and AP with dualstack
     #[test]
-    fn test_386() {
+    fn test_388() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-west-2".to_string())
             .bucket("myaccesspoint--test1-long1-zone-ab1--xa-s3".to_string())
@@ -11705,7 +11778,7 @@ mod test {
 
     /// Data Plane with (20 char) zone and AP with FIPS and dualstack
     #[test]
-    fn test_387() {
+    fn test_389() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-west-2".to_string())
             .bucket("myaccesspoint--test1-long1-zone-ab1--xa-s3".to_string())
@@ -11741,7 +11814,7 @@ mod test {
 
     /// Data plane AP with sigv4 and dualstack
     #[test]
-    fn test_388() {
+    fn test_390() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-west-2".to_string())
             .bucket("myaccesspoint--test1-long1-zone-ab1--xa-s3".to_string())
@@ -11777,7 +11850,7 @@ mod test {
 
     /// Data plane AP sigv4 with fips and dualstack
     #[test]
-    fn test_389() {
+    fn test_391() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-west-2".to_string())
             .bucket("myaccesspoint--test1-long1-zone-ab1--xa-s3".to_string())
@@ -11813,7 +11886,7 @@ mod test {
 
     /// Control plane with dualstack and bucket
     #[test]
-    fn test_390() {
+    fn test_392() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-1".to_string())
             .bucket("mybucket--test-ab1--x-s3".to_string())

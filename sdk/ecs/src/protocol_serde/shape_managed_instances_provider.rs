@@ -39,6 +39,11 @@ where
                                 crate::protocol_serde::shape_infrastructure_optimization::de_infrastructure_optimization(tokens, _value)?,
                             );
                         }
+                        "autoRepairConfiguration" => {
+                            builder = builder.set_auto_repair_configuration(
+                                crate::protocol_serde::shape_auto_repair_configuration::de_auto_repair_configuration(tokens, _value)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

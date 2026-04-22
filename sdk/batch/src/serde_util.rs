@@ -660,6 +660,15 @@ pub(crate) fn image_pull_secret_correct_errors(
     builder
 }
 
+pub(crate) fn s3_files_volume_configuration_correct_errors(
+    mut builder: crate::types::builders::S3FilesVolumeConfigurationBuilder,
+) -> crate::types::builders::S3FilesVolumeConfigurationBuilder {
+    if builder.file_system_arn.is_none() {
+        builder.file_system_arn = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn tmpfs_correct_errors(mut builder: crate::types::builders::TmpfsBuilder) -> crate::types::builders::TmpfsBuilder {
     if builder.container_path.is_none() {
         builder.container_path = Some(Default::default())

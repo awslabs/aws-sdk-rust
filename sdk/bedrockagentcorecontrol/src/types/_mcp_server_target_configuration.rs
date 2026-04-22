@@ -8,6 +8,8 @@ pub struct McpServerTargetConfiguration {
     pub endpoint: ::std::string::String,
     /// <p>The tool schema configuration for the MCP server target. Supported only when the credential provider is configured with an authorization code grant type. Dynamic tool discovery/synchronization will be disabled when target is configured with mcpToolSchema.</p>
     pub mcp_tool_schema: ::std::option::Option<crate::types::McpToolSchemaConfiguration>,
+    /// <p>Priority for resolving MCP server targets with shared resource URIs. Lower values take precedence. Defaults to 1000 when not set.</p>
+    pub resource_priority: ::std::option::Option<i32>,
     /// <p>The listing mode for the MCP server target configuration. MCP resources for default targets are cached at the control plane for faster access. MCP resources for dynamic targets will be dynamically retrieved when listing tools.</p>
     pub listing_mode: ::std::option::Option<crate::types::ListingMode>,
 }
@@ -20,6 +22,10 @@ impl McpServerTargetConfiguration {
     /// <p>The tool schema configuration for the MCP server target. Supported only when the credential provider is configured with an authorization code grant type. Dynamic tool discovery/synchronization will be disabled when target is configured with mcpToolSchema.</p>
     pub fn mcp_tool_schema(&self) -> ::std::option::Option<&crate::types::McpToolSchemaConfiguration> {
         self.mcp_tool_schema.as_ref()
+    }
+    /// <p>Priority for resolving MCP server targets with shared resource URIs. Lower values take precedence. Defaults to 1000 when not set.</p>
+    pub fn resource_priority(&self) -> ::std::option::Option<i32> {
+        self.resource_priority
     }
     /// <p>The listing mode for the MCP server target configuration. MCP resources for default targets are cached at the control plane for faster access. MCP resources for dynamic targets will be dynamically retrieved when listing tools.</p>
     pub fn listing_mode(&self) -> ::std::option::Option<&crate::types::ListingMode> {
@@ -39,6 +45,7 @@ impl McpServerTargetConfiguration {
 pub struct McpServerTargetConfigurationBuilder {
     pub(crate) endpoint: ::std::option::Option<::std::string::String>,
     pub(crate) mcp_tool_schema: ::std::option::Option<crate::types::McpToolSchemaConfiguration>,
+    pub(crate) resource_priority: ::std::option::Option<i32>,
     pub(crate) listing_mode: ::std::option::Option<crate::types::ListingMode>,
 }
 impl McpServerTargetConfigurationBuilder {
@@ -71,6 +78,20 @@ impl McpServerTargetConfigurationBuilder {
     pub fn get_mcp_tool_schema(&self) -> &::std::option::Option<crate::types::McpToolSchemaConfiguration> {
         &self.mcp_tool_schema
     }
+    /// <p>Priority for resolving MCP server targets with shared resource URIs. Lower values take precedence. Defaults to 1000 when not set.</p>
+    pub fn resource_priority(mut self, input: i32) -> Self {
+        self.resource_priority = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Priority for resolving MCP server targets with shared resource URIs. Lower values take precedence. Defaults to 1000 when not set.</p>
+    pub fn set_resource_priority(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.resource_priority = input;
+        self
+    }
+    /// <p>Priority for resolving MCP server targets with shared resource URIs. Lower values take precedence. Defaults to 1000 when not set.</p>
+    pub fn get_resource_priority(&self) -> &::std::option::Option<i32> {
+        &self.resource_priority
+    }
     /// <p>The listing mode for the MCP server target configuration. MCP resources for default targets are cached at the control plane for faster access. MCP resources for dynamic targets will be dynamically retrieved when listing tools.</p>
     pub fn listing_mode(mut self, input: crate::types::ListingMode) -> Self {
         self.listing_mode = ::std::option::Option::Some(input);
@@ -97,6 +118,7 @@ impl McpServerTargetConfigurationBuilder {
                 )
             })?,
             mcp_tool_schema: self.mcp_tool_schema,
+            resource_priority: self.resource_priority,
             listing_mode: self.listing_mode,
         })
     }

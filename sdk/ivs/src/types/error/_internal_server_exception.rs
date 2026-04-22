@@ -4,6 +4,22 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InternalServerException {
+    /// <p></p>
+    pub access_control_allow_origin: ::std::option::Option<::std::string::String>,
+    /// <p></p>
+    pub access_control_expose_headers: ::std::option::Option<::std::string::String>,
+    /// <p></p>
+    pub cache_control: ::std::option::Option<::std::string::String>,
+    /// <p></p>
+    pub content_security_policy: ::std::option::Option<::std::string::String>,
+    /// <p></p>
+    pub strict_transport_security: ::std::option::Option<::std::string::String>,
+    /// <p></p>
+    pub x_content_type_options: ::std::option::Option<::std::string::String>,
+    /// <p></p>
+    pub x_frame_options: ::std::option::Option<::std::string::String>,
+    /// <p></p>
+    pub x_amzn_error_type: ::std::option::Option<::std::string::String>,
     /// <p>Unexpected error during processing of request.</p>
     pub exception_message: ::std::option::Option<::std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
@@ -11,6 +27,38 @@ pub struct InternalServerException {
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }
 impl InternalServerException {
+    /// <p></p>
+    pub fn access_control_allow_origin(&self) -> ::std::option::Option<&str> {
+        self.access_control_allow_origin.as_deref()
+    }
+    /// <p></p>
+    pub fn access_control_expose_headers(&self) -> ::std::option::Option<&str> {
+        self.access_control_expose_headers.as_deref()
+    }
+    /// <p></p>
+    pub fn cache_control(&self) -> ::std::option::Option<&str> {
+        self.cache_control.as_deref()
+    }
+    /// <p></p>
+    pub fn content_security_policy(&self) -> ::std::option::Option<&str> {
+        self.content_security_policy.as_deref()
+    }
+    /// <p></p>
+    pub fn strict_transport_security(&self) -> ::std::option::Option<&str> {
+        self.strict_transport_security.as_deref()
+    }
+    /// <p></p>
+    pub fn x_content_type_options(&self) -> ::std::option::Option<&str> {
+        self.x_content_type_options.as_deref()
+    }
+    /// <p></p>
+    pub fn x_frame_options(&self) -> ::std::option::Option<&str> {
+        self.x_frame_options.as_deref()
+    }
+    /// <p></p>
+    pub fn x_amzn_error_type(&self) -> ::std::option::Option<&str> {
+        self.x_amzn_error_type.as_deref()
+    }
     /// <p>Unexpected error during processing of request.</p>
     pub fn exception_message(&self) -> ::std::option::Option<&str> {
         self.exception_message.as_deref()
@@ -56,11 +104,131 @@ impl InternalServerException {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct InternalServerExceptionBuilder {
+    pub(crate) access_control_allow_origin: ::std::option::Option<::std::string::String>,
+    pub(crate) access_control_expose_headers: ::std::option::Option<::std::string::String>,
+    pub(crate) cache_control: ::std::option::Option<::std::string::String>,
+    pub(crate) content_security_policy: ::std::option::Option<::std::string::String>,
+    pub(crate) strict_transport_security: ::std::option::Option<::std::string::String>,
+    pub(crate) x_content_type_options: ::std::option::Option<::std::string::String>,
+    pub(crate) x_frame_options: ::std::option::Option<::std::string::String>,
+    pub(crate) x_amzn_error_type: ::std::option::Option<::std::string::String>,
     pub(crate) exception_message: ::std::option::Option<::std::string::String>,
     pub(crate) message: ::std::option::Option<::std::string::String>,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
 }
 impl InternalServerExceptionBuilder {
+    /// <p></p>
+    pub fn access_control_allow_origin(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.access_control_allow_origin = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p></p>
+    pub fn set_access_control_allow_origin(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.access_control_allow_origin = input;
+        self
+    }
+    /// <p></p>
+    pub fn get_access_control_allow_origin(&self) -> &::std::option::Option<::std::string::String> {
+        &self.access_control_allow_origin
+    }
+    /// <p></p>
+    pub fn access_control_expose_headers(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.access_control_expose_headers = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p></p>
+    pub fn set_access_control_expose_headers(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.access_control_expose_headers = input;
+        self
+    }
+    /// <p></p>
+    pub fn get_access_control_expose_headers(&self) -> &::std::option::Option<::std::string::String> {
+        &self.access_control_expose_headers
+    }
+    /// <p></p>
+    pub fn cache_control(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.cache_control = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p></p>
+    pub fn set_cache_control(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.cache_control = input;
+        self
+    }
+    /// <p></p>
+    pub fn get_cache_control(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cache_control
+    }
+    /// <p></p>
+    pub fn content_security_policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.content_security_policy = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p></p>
+    pub fn set_content_security_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.content_security_policy = input;
+        self
+    }
+    /// <p></p>
+    pub fn get_content_security_policy(&self) -> &::std::option::Option<::std::string::String> {
+        &self.content_security_policy
+    }
+    /// <p></p>
+    pub fn strict_transport_security(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.strict_transport_security = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p></p>
+    pub fn set_strict_transport_security(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.strict_transport_security = input;
+        self
+    }
+    /// <p></p>
+    pub fn get_strict_transport_security(&self) -> &::std::option::Option<::std::string::String> {
+        &self.strict_transport_security
+    }
+    /// <p></p>
+    pub fn x_content_type_options(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.x_content_type_options = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p></p>
+    pub fn set_x_content_type_options(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.x_content_type_options = input;
+        self
+    }
+    /// <p></p>
+    pub fn get_x_content_type_options(&self) -> &::std::option::Option<::std::string::String> {
+        &self.x_content_type_options
+    }
+    /// <p></p>
+    pub fn x_frame_options(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.x_frame_options = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p></p>
+    pub fn set_x_frame_options(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.x_frame_options = input;
+        self
+    }
+    /// <p></p>
+    pub fn get_x_frame_options(&self) -> &::std::option::Option<::std::string::String> {
+        &self.x_frame_options
+    }
+    /// <p></p>
+    pub fn x_amzn_error_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.x_amzn_error_type = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p></p>
+    pub fn set_x_amzn_error_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.x_amzn_error_type = input;
+        self
+    }
+    /// <p></p>
+    pub fn get_x_amzn_error_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.x_amzn_error_type
+    }
     /// <p>Unexpected error during processing of request.</p>
     pub fn exception_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.exception_message = ::std::option::Option::Some(input.into());
@@ -103,6 +271,14 @@ impl InternalServerExceptionBuilder {
     /// Consumes the builder and constructs a [`InternalServerException`](crate::types::error::InternalServerException).
     pub fn build(self) -> crate::types::error::InternalServerException {
         crate::types::error::InternalServerException {
+            access_control_allow_origin: self.access_control_allow_origin,
+            access_control_expose_headers: self.access_control_expose_headers,
+            cache_control: self.cache_control,
+            content_security_policy: self.content_security_policy,
+            strict_transport_security: self.strict_transport_security,
+            x_content_type_options: self.x_content_type_options,
+            x_frame_options: self.x_frame_options,
+            x_amzn_error_type: self.x_amzn_error_type,
             exception_message: self.exception_message,
             message: self.message,
             meta: self.meta.unwrap_or_default(),

@@ -2291,6 +2291,10 @@ pub(crate) mod shape_get_managed_prefix_list_entries;
 
 pub(crate) mod shape_get_managed_prefix_list_entries_input;
 
+pub(crate) mod shape_get_managed_resource_visibility;
+
+pub(crate) mod shape_get_managed_resource_visibility_input;
+
 pub(crate) mod shape_get_network_insights_access_scope_analysis_findings;
 
 pub(crate) mod shape_get_network_insights_access_scope_analysis_findings_input;
@@ -2582,6 +2586,10 @@ pub(crate) mod shape_modify_local_gateway_route_input;
 pub(crate) mod shape_modify_managed_prefix_list;
 
 pub(crate) mod shape_modify_managed_prefix_list_input;
+
+pub(crate) mod shape_modify_managed_resource_visibility;
+
+pub(crate) mod shape_modify_managed_resource_visibility_input;
 
 pub(crate) mod shape_modify_network_interface_attribute;
 
@@ -3896,6 +3904,8 @@ pub(crate) mod shape_maintenance_details;
 pub(crate) mod shape_managed_prefix_list;
 
 pub(crate) mod shape_managed_prefix_list_set;
+
+pub(crate) mod shape_managed_resource_visibility_settings;
 
 pub(crate) mod shape_memory_gib_per_v_cpu_request;
 

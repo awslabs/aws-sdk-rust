@@ -75,6 +75,8 @@ pub use crate::types::_instance_launch_template::InstanceLaunchTemplateBuilder;
 
 pub use crate::types::_infrastructure_optimization::InfrastructureOptimizationBuilder;
 
+pub use crate::types::_auto_repair_configuration::AutoRepairConfigurationBuilder;
+
 pub use crate::types::_managed_instances_provider::ManagedInstancesProviderBuilder;
 
 pub use crate::types::_instance_launch_template_update::InstanceLaunchTemplateUpdateBuilder;

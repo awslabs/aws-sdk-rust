@@ -261,4 +261,18 @@ impl DescribeLaunchTemplatesFluentBuilder {
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }
+    /// <p>Indicates whether to include managed resources in the output. If this parameter is set to <code>true</code>, the output includes resources that are managed by Amazon Web Services services, even if managed resource visibility is set to hidden.</p>
+    pub fn include_managed_resources(mut self, input: bool) -> Self {
+        self.inner = self.inner.include_managed_resources(input);
+        self
+    }
+    /// <p>Indicates whether to include managed resources in the output. If this parameter is set to <code>true</code>, the output includes resources that are managed by Amazon Web Services services, even if managed resource visibility is set to hidden.</p>
+    pub fn set_include_managed_resources(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_include_managed_resources(input);
+        self
+    }
+    /// <p>Indicates whether to include managed resources in the output. If this parameter is set to <code>true</code>, the output includes resources that are managed by Amazon Web Services services, even if managed resource visibility is set to hidden.</p>
+    pub fn get_include_managed_resources(&self) -> &::std::option::Option<bool> {
+        self.inner.get_include_managed_resources()
+    }
 }

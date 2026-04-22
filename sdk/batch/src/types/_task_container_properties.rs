@@ -79,6 +79,10 @@ pub struct TaskContainerProperties {
     /// <p>This parameter is not supported for Windows containers.</p>
     /// </note>
     pub user: ::std::option::Option<::std::string::String>,
+    /// <p>Time duration (in seconds) to wait before giving up on resolving dependencies for a container. The minimum value is 2 seconds and the maximum value for Fargate is 120 seconds.</p>
+    pub start_timeout: ::std::option::Option<i32>,
+    /// <p>Time duration (in seconds) to wait before the container is forcefully killed if it doesn't exit normally on its own. The minimum value is 2 seconds and the maximum value for Fargate is 120 seconds. If the parameter is not specified, the default value of 30 seconds is used. For tasks that use the EC2 launch type, if the <code>stopTimeout</code> parameter isn't specified, the value set for the Amazon ECS container agent configuration variable <code>ECS_CONTAINER_STOP_TIMEOUT</code> is used. If neither the <code>stopTimeout</code> parameter nor the <code>ECS_CONTAINER_STOP_TIMEOUT</code> agent configuration variable are set, then the default value of 30 seconds is used.</p>
+    pub stop_timeout: ::std::option::Option<i32>,
 }
 impl TaskContainerProperties {
     /// <p>The command that's passed to the container. This parameter maps to <code>Cmd</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>COMMAND</code> parameter to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. For more information, see <a href="https://docs.docker.com/engine/reference/builder/#cmd">Dockerfile reference: CMD</a>.</p>
@@ -204,6 +208,14 @@ impl TaskContainerProperties {
     pub fn user(&self) -> ::std::option::Option<&str> {
         self.user.as_deref()
     }
+    /// <p>Time duration (in seconds) to wait before giving up on resolving dependencies for a container. The minimum value is 2 seconds and the maximum value for Fargate is 120 seconds.</p>
+    pub fn start_timeout(&self) -> ::std::option::Option<i32> {
+        self.start_timeout
+    }
+    /// <p>Time duration (in seconds) to wait before the container is forcefully killed if it doesn't exit normally on its own. The minimum value is 2 seconds and the maximum value for Fargate is 120 seconds. If the parameter is not specified, the default value of 30 seconds is used. For tasks that use the EC2 launch type, if the <code>stopTimeout</code> parameter isn't specified, the value set for the Amazon ECS container agent configuration variable <code>ECS_CONTAINER_STOP_TIMEOUT</code> is used. If neither the <code>stopTimeout</code> parameter nor the <code>ECS_CONTAINER_STOP_TIMEOUT</code> agent configuration variable are set, then the default value of 30 seconds is used.</p>
+    pub fn stop_timeout(&self) -> ::std::option::Option<i32> {
+        self.stop_timeout
+    }
 }
 impl TaskContainerProperties {
     /// Creates a new builder-style object to manufacture [`TaskContainerProperties`](crate::types::TaskContainerProperties).
@@ -233,6 +245,8 @@ pub struct TaskContainerPropertiesBuilder {
     pub(crate) secrets: ::std::option::Option<::std::vec::Vec<crate::types::Secret>>,
     pub(crate) ulimits: ::std::option::Option<::std::vec::Vec<crate::types::Ulimit>>,
     pub(crate) user: ::std::option::Option<::std::string::String>,
+    pub(crate) start_timeout: ::std::option::Option<i32>,
+    pub(crate) stop_timeout: ::std::option::Option<i32>,
 }
 impl TaskContainerPropertiesBuilder {
     /// Appends an item to `command`.
@@ -639,6 +653,34 @@ impl TaskContainerPropertiesBuilder {
     pub fn get_user(&self) -> &::std::option::Option<::std::string::String> {
         &self.user
     }
+    /// <p>Time duration (in seconds) to wait before giving up on resolving dependencies for a container. The minimum value is 2 seconds and the maximum value for Fargate is 120 seconds.</p>
+    pub fn start_timeout(mut self, input: i32) -> Self {
+        self.start_timeout = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Time duration (in seconds) to wait before giving up on resolving dependencies for a container. The minimum value is 2 seconds and the maximum value for Fargate is 120 seconds.</p>
+    pub fn set_start_timeout(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.start_timeout = input;
+        self
+    }
+    /// <p>Time duration (in seconds) to wait before giving up on resolving dependencies for a container. The minimum value is 2 seconds and the maximum value for Fargate is 120 seconds.</p>
+    pub fn get_start_timeout(&self) -> &::std::option::Option<i32> {
+        &self.start_timeout
+    }
+    /// <p>Time duration (in seconds) to wait before the container is forcefully killed if it doesn't exit normally on its own. The minimum value is 2 seconds and the maximum value for Fargate is 120 seconds. If the parameter is not specified, the default value of 30 seconds is used. For tasks that use the EC2 launch type, if the <code>stopTimeout</code> parameter isn't specified, the value set for the Amazon ECS container agent configuration variable <code>ECS_CONTAINER_STOP_TIMEOUT</code> is used. If neither the <code>stopTimeout</code> parameter nor the <code>ECS_CONTAINER_STOP_TIMEOUT</code> agent configuration variable are set, then the default value of 30 seconds is used.</p>
+    pub fn stop_timeout(mut self, input: i32) -> Self {
+        self.stop_timeout = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Time duration (in seconds) to wait before the container is forcefully killed if it doesn't exit normally on its own. The minimum value is 2 seconds and the maximum value for Fargate is 120 seconds. If the parameter is not specified, the default value of 30 seconds is used. For tasks that use the EC2 launch type, if the <code>stopTimeout</code> parameter isn't specified, the value set for the Amazon ECS container agent configuration variable <code>ECS_CONTAINER_STOP_TIMEOUT</code> is used. If neither the <code>stopTimeout</code> parameter nor the <code>ECS_CONTAINER_STOP_TIMEOUT</code> agent configuration variable are set, then the default value of 30 seconds is used.</p>
+    pub fn set_stop_timeout(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.stop_timeout = input;
+        self
+    }
+    /// <p>Time duration (in seconds) to wait before the container is forcefully killed if it doesn't exit normally on its own. The minimum value is 2 seconds and the maximum value for Fargate is 120 seconds. If the parameter is not specified, the default value of 30 seconds is used. For tasks that use the EC2 launch type, if the <code>stopTimeout</code> parameter isn't specified, the value set for the Amazon ECS container agent configuration variable <code>ECS_CONTAINER_STOP_TIMEOUT</code> is used. If neither the <code>stopTimeout</code> parameter nor the <code>ECS_CONTAINER_STOP_TIMEOUT</code> agent configuration variable are set, then the default value of 30 seconds is used.</p>
+    pub fn get_stop_timeout(&self) -> &::std::option::Option<i32> {
+        &self.stop_timeout
+    }
     /// Consumes the builder and constructs a [`TaskContainerProperties`](crate::types::TaskContainerProperties).
     pub fn build(self) -> crate::types::TaskContainerProperties {
         crate::types::TaskContainerProperties {
@@ -659,6 +701,8 @@ impl TaskContainerPropertiesBuilder {
             secrets: self.secrets,
             ulimits: self.ulimits,
             user: self.user,
+            start_timeout: self.start_timeout,
+            stop_timeout: self.stop_timeout,
         }
     }
 }

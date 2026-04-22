@@ -135,7 +135,19 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for GetObje
             ))
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
                 crate::http_response_checksum::ResponseChecksumInterceptor::new(
-                    ["crc64nvme", "crc32", "crc32c", "sha256", "sha1"].as_slice(),
+                    [
+                        "crc64nvme",
+                        "crc32",
+                        "crc32c",
+                        "sha256",
+                        "sha1",
+                        "sha512",
+                        "md5",
+                        "xxhash64",
+                        "xxhash3",
+                        "xxhash128",
+                    ]
+                    .as_slice(),
                     |input: &::aws_smithy_runtime_api::client::interceptors::context::Input| {
                         let input: &crate::operation::get_object::GetObjectInput = input.downcast_ref().expect("correct type");
                         matches!(input.checksum_mode(), ::std::option::Option::Some(crate::types::ChecksumMode::Enabled))

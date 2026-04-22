@@ -13,6 +13,8 @@ pub struct GetPositionEstimateInput {
     pub gnss: ::std::option::Option<crate::types::Gnss>,
     /// <p>Optional information that specifies the time when the position information will be resolved. It uses the Unix timestamp format. If not specified, the time at which the request was received will be used.</p>
     pub timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// Optional configuration to customize position estimates. If not provided, defaults are applied.
+    pub advanced_configuration: ::std::option::Option<crate::types::AdvancedConfiguration>,
 }
 impl GetPositionEstimateInput {
     /// <p>Retrieves an estimated device position by resolving WLAN measurement data. The position is resolved using HERE's Wi-Fi based solver.</p>
@@ -37,6 +39,10 @@ impl GetPositionEstimateInput {
     pub fn timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.timestamp.as_ref()
     }
+    /// Optional configuration to customize position estimates. If not provided, defaults are applied.
+    pub fn advanced_configuration(&self) -> ::std::option::Option<&crate::types::AdvancedConfiguration> {
+        self.advanced_configuration.as_ref()
+    }
 }
 impl GetPositionEstimateInput {
     /// Creates a new builder-style object to manufacture [`GetPositionEstimateInput`](crate::operation::get_position_estimate::GetPositionEstimateInput).
@@ -54,6 +60,7 @@ pub struct GetPositionEstimateInputBuilder {
     pub(crate) ip: ::std::option::Option<crate::types::Ip>,
     pub(crate) gnss: ::std::option::Option<crate::types::Gnss>,
     pub(crate) timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) advanced_configuration: ::std::option::Option<crate::types::AdvancedConfiguration>,
 }
 impl GetPositionEstimateInputBuilder {
     /// Appends an item to `wi_fi_access_points`.
@@ -132,6 +139,20 @@ impl GetPositionEstimateInputBuilder {
     pub fn get_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.timestamp
     }
+    /// Optional configuration to customize position estimates. If not provided, defaults are applied.
+    pub fn advanced_configuration(mut self, input: crate::types::AdvancedConfiguration) -> Self {
+        self.advanced_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// Optional configuration to customize position estimates. If not provided, defaults are applied.
+    pub fn set_advanced_configuration(mut self, input: ::std::option::Option<crate::types::AdvancedConfiguration>) -> Self {
+        self.advanced_configuration = input;
+        self
+    }
+    /// Optional configuration to customize position estimates. If not provided, defaults are applied.
+    pub fn get_advanced_configuration(&self) -> &::std::option::Option<crate::types::AdvancedConfiguration> {
+        &self.advanced_configuration
+    }
     /// Consumes the builder and constructs a [`GetPositionEstimateInput`](crate::operation::get_position_estimate::GetPositionEstimateInput).
     pub fn build(
         self,
@@ -143,6 +164,7 @@ impl GetPositionEstimateInputBuilder {
             ip: self.ip,
             gnss: self.gnss,
             timestamp: self.timestamp,
+            advanced_configuration: self.advanced_configuration,
         })
     }
 }

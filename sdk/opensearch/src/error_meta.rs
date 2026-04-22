@@ -2446,6 +2446,50 @@ impl From<crate::operation::revoke_vpc_endpoint_access::RevokeVpcEndpointAccessE
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::rollback_service_software_update::RollbackServiceSoftwareUpdateError, R>,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::rollback_service_software_update::RollbackServiceSoftwareUpdateError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::rollback_service_software_update::RollbackServiceSoftwareUpdateError> for Error {
+    fn from(err: crate::operation::rollback_service_software_update::RollbackServiceSoftwareUpdateError) -> Self {
+        match err {
+            crate::operation::rollback_service_software_update::RollbackServiceSoftwareUpdateError::BaseException(inner) => {
+                Error::BaseException(inner)
+            }
+            crate::operation::rollback_service_software_update::RollbackServiceSoftwareUpdateError::DisabledOperationException(inner) => {
+                Error::DisabledOperationException(inner)
+            }
+            crate::operation::rollback_service_software_update::RollbackServiceSoftwareUpdateError::InternalException(inner) => {
+                Error::InternalException(inner)
+            }
+            crate::operation::rollback_service_software_update::RollbackServiceSoftwareUpdateError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::rollback_service_software_update::RollbackServiceSoftwareUpdateError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::rollback_service_software_update::RollbackServiceSoftwareUpdateError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_domain_maintenance::StartDomainMaintenanceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

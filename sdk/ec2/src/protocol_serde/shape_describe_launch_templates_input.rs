@@ -62,6 +62,11 @@ pub fn ser_describe_launch_templates_input_input_input(
             ::aws_smithy_types::Number::NegInt((*var_21).into()),
         );
     }
+    #[allow(unused_mut)]
+    let mut scope_22 = writer.prefix("IncludeManagedResources");
+    if let Some(var_23) = &input.include_managed_resources {
+        scope_22.boolean(*var_23);
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

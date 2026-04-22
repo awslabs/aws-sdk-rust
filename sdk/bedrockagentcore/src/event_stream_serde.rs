@@ -305,3 +305,148 @@ impl ::aws_smithy_eventstream::frame::UnmarshallMessage for CodeInterpreterStrea
         }
     }
 }
+
+#[non_exhaustive]
+#[derive(Debug)]
+pub struct InvokeHarnessStreamOutputUnmarshaller;
+
+impl InvokeHarnessStreamOutputUnmarshaller {
+    pub fn new() -> Self {
+        InvokeHarnessStreamOutputUnmarshaller
+    }
+}
+impl ::aws_smithy_eventstream::frame::UnmarshallMessage for InvokeHarnessStreamOutputUnmarshaller {
+    type Output = crate::types::InvokeHarnessStreamOutput;
+    type Error = crate::types::error::InvokeHarnessStreamOutputError;
+    fn unmarshall(
+        &self,
+        message: &::aws_smithy_types::event_stream::Message,
+    ) -> std::result::Result<::aws_smithy_eventstream::frame::UnmarshalledMessage<Self::Output, Self::Error>, ::aws_smithy_eventstream::error::Error>
+    {
+        let response_headers = ::aws_smithy_eventstream::smithy::parse_response_headers(message)?;
+        match response_headers.message_type.as_str() {
+            "event" => match response_headers.smithy_type.as_str() {
+                "messageStart" => {
+                    let parsed =
+                        crate::protocol_serde::shape_harness_message_start_event::de_harness_message_start_event_payload(&message.payload()[..])
+                            .map_err(|err| {
+                                ::aws_smithy_eventstream::error::Error::unmarshalling(format!("failed to unmarshall MessageStart: {err}"))
+                            })?;
+                    Ok(::aws_smithy_eventstream::frame::UnmarshalledMessage::Event(
+                        crate::types::InvokeHarnessStreamOutput::MessageStart(parsed),
+                    ))
+                }
+                "contentBlockStart" => {
+                    let parsed = crate::protocol_serde::shape_harness_content_block_start_event::de_harness_content_block_start_event_payload(
+                        &message.payload()[..],
+                    )
+                    .map_err(|err| ::aws_smithy_eventstream::error::Error::unmarshalling(format!("failed to unmarshall ContentBlockStart: {err}")))?;
+                    Ok(::aws_smithy_eventstream::frame::UnmarshalledMessage::Event(
+                        crate::types::InvokeHarnessStreamOutput::ContentBlockStart(parsed),
+                    ))
+                }
+                "contentBlockDelta" => {
+                    let parsed = crate::protocol_serde::shape_harness_content_block_delta_event::de_harness_content_block_delta_event_payload(
+                        &message.payload()[..],
+                    )
+                    .map_err(|err| ::aws_smithy_eventstream::error::Error::unmarshalling(format!("failed to unmarshall ContentBlockDelta: {err}")))?;
+                    Ok(::aws_smithy_eventstream::frame::UnmarshalledMessage::Event(
+                        crate::types::InvokeHarnessStreamOutput::ContentBlockDelta(parsed),
+                    ))
+                }
+                "contentBlockStop" => {
+                    let parsed = crate::protocol_serde::shape_harness_content_block_stop_event::de_harness_content_block_stop_event_payload(
+                        &message.payload()[..],
+                    )
+                    .map_err(|err| ::aws_smithy_eventstream::error::Error::unmarshalling(format!("failed to unmarshall ContentBlockStop: {err}")))?;
+                    Ok(::aws_smithy_eventstream::frame::UnmarshalledMessage::Event(
+                        crate::types::InvokeHarnessStreamOutput::ContentBlockStop(parsed),
+                    ))
+                }
+                "messageStop" => {
+                    let parsed =
+                        crate::protocol_serde::shape_harness_message_stop_event::de_harness_message_stop_event_payload(&message.payload()[..])
+                            .map_err(|err| {
+                                ::aws_smithy_eventstream::error::Error::unmarshalling(format!("failed to unmarshall MessageStop: {err}"))
+                            })?;
+                    Ok(::aws_smithy_eventstream::frame::UnmarshalledMessage::Event(
+                        crate::types::InvokeHarnessStreamOutput::MessageStop(parsed),
+                    ))
+                }
+                "metadata" => {
+                    let parsed = crate::protocol_serde::shape_harness_metadata_event::de_harness_metadata_event_payload(&message.payload()[..])
+                        .map_err(|err| ::aws_smithy_eventstream::error::Error::unmarshalling(format!("failed to unmarshall Metadata: {err}")))?;
+                    Ok(::aws_smithy_eventstream::frame::UnmarshalledMessage::Event(
+                        crate::types::InvokeHarnessStreamOutput::Metadata(parsed),
+                    ))
+                }
+                _unknown_variant => Ok(::aws_smithy_eventstream::frame::UnmarshalledMessage::Event(
+                    crate::types::InvokeHarnessStreamOutput::Unknown,
+                )),
+            },
+            "exception" => {
+                let generic = match crate::protocol_serde::parse_event_stream_error_metadata(message.payload()) {
+                    Ok(builder) => builder.build(),
+                    Err(err) => {
+                        return Ok(::aws_smithy_eventstream::frame::UnmarshalledMessage::Error(
+                            crate::types::error::InvokeHarnessStreamOutputError::unhandled(err),
+                        ))
+                    }
+                };
+                match response_headers.smithy_type.as_str() {
+                    "internalServerException" => {
+                        let mut builder = crate::types::error::builders::InternalServerExceptionBuilder::default();
+                        builder = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(
+                            &message.payload()[..],
+                            builder,
+                        )
+                        .map_err(|err| {
+                            ::aws_smithy_eventstream::error::Error::unmarshalling(format!("failed to unmarshall internalServerException: {err}"))
+                        })?;
+                        builder.set_meta(Some(generic));
+                        return Ok(::aws_smithy_eventstream::frame::UnmarshalledMessage::Error(
+                            crate::types::error::InvokeHarnessStreamOutputError::InternalServerException(builder.build()),
+                        ));
+                    }
+                    "validationException" => {
+                        let mut builder = crate::types::error::builders::ValidationExceptionBuilder::default();
+                        builder =
+                            crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(&message.payload()[..], builder)
+                                .map_err(|err| {
+                                    ::aws_smithy_eventstream::error::Error::unmarshalling(format!("failed to unmarshall validationException: {err}"))
+                                })?;
+                        builder.set_meta(Some(generic));
+                        return Ok(::aws_smithy_eventstream::frame::UnmarshalledMessage::Error(
+                            crate::types::error::InvokeHarnessStreamOutputError::ValidationException(
+                                crate::serde_util::validation_exception_correct_errors(builder)
+                                    .build()
+                                    .map_err(|err| ::aws_smithy_eventstream::error::Error::unmarshalling(format!("{err}")))?,
+                            ),
+                        ));
+                    }
+                    "runtimeClientError" => {
+                        let mut builder = crate::types::error::builders::RuntimeClientErrorBuilder::default();
+                        builder =
+                            crate::protocol_serde::shape_runtime_client_error::de_runtime_client_error_json_err(&message.payload()[..], builder)
+                                .map_err(|err| {
+                                    ::aws_smithy_eventstream::error::Error::unmarshalling(format!("failed to unmarshall runtimeClientError: {err}"))
+                                })?;
+                        builder.set_meta(Some(generic));
+                        return Ok(::aws_smithy_eventstream::frame::UnmarshalledMessage::Error(
+                            crate::types::error::InvokeHarnessStreamOutputError::RuntimeClientError(builder.build()),
+                        ));
+                    }
+                    _ => {}
+                }
+                Ok(::aws_smithy_eventstream::frame::UnmarshalledMessage::Error(
+                    crate::types::error::InvokeHarnessStreamOutputError::generic(generic),
+                ))
+            }
+            value => {
+                return Err(::aws_smithy_eventstream::error::Error::unmarshalling(format!(
+                    "unrecognized :message-type: {value}"
+                )));
+            }
+        }
+    }
+}

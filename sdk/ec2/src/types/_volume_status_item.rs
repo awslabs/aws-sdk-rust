@@ -24,6 +24,8 @@ pub struct VolumeStatusItem {
     pub initialization_status_details: ::std::option::Option<crate::types::InitializationStatusDetails>,
     /// <p>The ID of the Availability Zone.</p>
     pub availability_zone_id: ::std::option::Option<::std::string::String>,
+    /// <p>The service provider that manages the resource.</p>
+    pub operator: ::std::option::Option<crate::types::OperatorResponse>,
 }
 impl VolumeStatusItem {
     /// <p>The details of the operation.</p>
@@ -70,6 +72,10 @@ impl VolumeStatusItem {
     pub fn availability_zone_id(&self) -> ::std::option::Option<&str> {
         self.availability_zone_id.as_deref()
     }
+    /// <p>The service provider that manages the resource.</p>
+    pub fn operator(&self) -> ::std::option::Option<&crate::types::OperatorResponse> {
+        self.operator.as_ref()
+    }
 }
 impl VolumeStatusItem {
     /// Creates a new builder-style object to manufacture [`VolumeStatusItem`](crate::types::VolumeStatusItem).
@@ -91,6 +97,7 @@ pub struct VolumeStatusItemBuilder {
     pub(crate) attachment_statuses: ::std::option::Option<::std::vec::Vec<crate::types::VolumeStatusAttachmentStatus>>,
     pub(crate) initialization_status_details: ::std::option::Option<crate::types::InitializationStatusDetails>,
     pub(crate) availability_zone_id: ::std::option::Option<::std::string::String>,
+    pub(crate) operator: ::std::option::Option<crate::types::OperatorResponse>,
 }
 impl VolumeStatusItemBuilder {
     /// Appends an item to `actions`.
@@ -243,6 +250,20 @@ impl VolumeStatusItemBuilder {
     pub fn get_availability_zone_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.availability_zone_id
     }
+    /// <p>The service provider that manages the resource.</p>
+    pub fn operator(mut self, input: crate::types::OperatorResponse) -> Self {
+        self.operator = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The service provider that manages the resource.</p>
+    pub fn set_operator(mut self, input: ::std::option::Option<crate::types::OperatorResponse>) -> Self {
+        self.operator = input;
+        self
+    }
+    /// <p>The service provider that manages the resource.</p>
+    pub fn get_operator(&self) -> &::std::option::Option<crate::types::OperatorResponse> {
+        &self.operator
+    }
     /// Consumes the builder and constructs a [`VolumeStatusItem`](crate::types::VolumeStatusItem).
     pub fn build(self) -> crate::types::VolumeStatusItem {
         crate::types::VolumeStatusItem {
@@ -255,6 +276,7 @@ impl VolumeStatusItemBuilder {
             attachment_statuses: self.attachment_statuses,
             initialization_status_details: self.initialization_status_details,
             availability_zone_id: self.availability_zone_id,
+            operator: self.operator,
         }
     }
 }

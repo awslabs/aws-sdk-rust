@@ -28,6 +28,9 @@ pub mod create_gateway;
 /// Types for the `CreateGatewayTarget` operation.
 pub mod create_gateway_target;
 
+/// Types for the `CreateHarness` operation.
+pub mod create_harness;
+
 /// Types for the `CreateMemory` operation.
 pub mod create_memory;
 
@@ -78,6 +81,9 @@ pub mod delete_gateway;
 
 /// Types for the `DeleteGatewayTarget` operation.
 pub mod delete_gateway_target;
+
+/// Types for the `DeleteHarness` operation.
+pub mod delete_harness;
 
 /// Types for the `DeleteMemory` operation.
 pub mod delete_memory;
@@ -132,6 +138,9 @@ pub mod get_gateway;
 
 /// Types for the `GetGatewayTarget` operation.
 pub mod get_gateway_target;
+
+/// Types for the `GetHarness` operation.
+pub mod get_harness;
 
 /// Types for the `GetMemory` operation.
 pub mod get_memory;
@@ -195,6 +204,9 @@ pub mod list_gateway_targets;
 
 /// Types for the `ListGateways` operation.
 pub mod list_gateways;
+
+/// Types for the `ListHarnesses` operation.
+pub mod list_harnesses;
 
 /// Types for the `ListMemories` operation.
 pub mod list_memories;
@@ -267,6 +279,9 @@ pub mod update_gateway;
 
 /// Types for the `UpdateGatewayTarget` operation.
 pub mod update_gateway_target;
+
+/// Types for the `UpdateHarness` operation.
+pub mod update_harness;
 
 /// Types for the `UpdateMemory` operation.
 pub mod update_memory;

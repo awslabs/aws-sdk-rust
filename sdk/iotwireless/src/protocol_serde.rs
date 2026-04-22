@@ -363,6 +363,8 @@ pub(crate) mod shape_validation_exception;
 
 pub(crate) mod shape_accuracy;
 
+pub(crate) mod shape_advanced_configuration;
+
 pub(crate) mod shape_cell_towers;
 
 pub(crate) mod shape_connection_status_event_configuration;
@@ -628,6 +630,8 @@ pub(crate) mod shape_update_f_ports;
 pub(crate) mod shape_update_wireless_gateway_task_entry;
 
 pub(crate) mod shape_wcdma_obj;
+
+pub(crate) mod shape_wi_fi_cellular;
 
 pub(crate) mod shape_wireless_device_event_log_option;
 

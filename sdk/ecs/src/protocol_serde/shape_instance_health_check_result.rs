@@ -29,6 +29,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "statusReason" => {
+                            builder = builder.set_status_reason(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         "lastUpdated" => {
                             builder = builder.set_last_updated(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                                 tokens.next(),

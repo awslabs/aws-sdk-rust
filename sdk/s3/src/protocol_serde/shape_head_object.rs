@@ -81,6 +81,11 @@ pub fn de_head_object_http_response(
                 crate::operation::head_object::HeadObjectError::unhandled("Failed to parse ChecksumCRC64NVME from header `x-amz-checksum-crc64nvme")
             })?,
         );
+        output = output.set_checksum_md5(
+            crate::protocol_serde::shape_head_object_output::de_checksum_md5_header(_response_headers).map_err(|_| {
+                crate::operation::head_object::HeadObjectError::unhandled("Failed to parse ChecksumMD5 from header `x-amz-checksum-md5")
+            })?,
+        );
         output = output.set_checksum_sha1(
             crate::protocol_serde::shape_head_object_output::de_checksum_sha1_header(_response_headers).map_err(|_| {
                 crate::operation::head_object::HeadObjectError::unhandled("Failed to parse ChecksumSHA1 from header `x-amz-checksum-sha1")
@@ -91,9 +96,29 @@ pub fn de_head_object_http_response(
                 crate::operation::head_object::HeadObjectError::unhandled("Failed to parse ChecksumSHA256 from header `x-amz-checksum-sha256")
             })?,
         );
+        output = output.set_checksum_sha512(
+            crate::protocol_serde::shape_head_object_output::de_checksum_sha512_header(_response_headers).map_err(|_| {
+                crate::operation::head_object::HeadObjectError::unhandled("Failed to parse ChecksumSHA512 from header `x-amz-checksum-sha512")
+            })?,
+        );
         output = output.set_checksum_type(
             crate::protocol_serde::shape_head_object_output::de_checksum_type_header(_response_headers).map_err(|_| {
                 crate::operation::head_object::HeadObjectError::unhandled("Failed to parse ChecksumType from header `x-amz-checksum-type")
+            })?,
+        );
+        output = output.set_checksum_xxhash128(
+            crate::protocol_serde::shape_head_object_output::de_checksum_xxhash128_header(_response_headers).map_err(|_| {
+                crate::operation::head_object::HeadObjectError::unhandled("Failed to parse ChecksumXXHASH128 from header `x-amz-checksum-xxhash128")
+            })?,
+        );
+        output = output.set_checksum_xxhash3(
+            crate::protocol_serde::shape_head_object_output::de_checksum_xxhash3_header(_response_headers).map_err(|_| {
+                crate::operation::head_object::HeadObjectError::unhandled("Failed to parse ChecksumXXHASH3 from header `x-amz-checksum-xxhash3")
+            })?,
+        );
+        output = output.set_checksum_xxhash64(
+            crate::protocol_serde::shape_head_object_output::de_checksum_xxhash64_header(_response_headers).map_err(|_| {
+                crate::operation::head_object::HeadObjectError::unhandled("Failed to parse ChecksumXXHASH64 from header `x-amz-checksum-xxhash64")
             })?,
         );
         output = output.set_content_disposition(

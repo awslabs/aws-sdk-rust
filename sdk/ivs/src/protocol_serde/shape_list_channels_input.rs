@@ -3,23 +3,26 @@ pub fn ser_list_channels_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::list_channels::ListChannelsInput,
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    if let Some(var_1) = &input.filter_by_name {
-        object.key("filterByName").string(var_1.as_str());
+    if let Some(var_1) = &input.filter_by_ad_configuration_arn {
+        object.key("filterByAdConfigurationArn").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.filter_by_playback_restriction_policy_arn {
-        object.key("filterByPlaybackRestrictionPolicyArn").string(var_2.as_str());
+    if let Some(var_2) = &input.filter_by_name {
+        object.key("filterByName").string(var_2.as_str());
     }
-    if let Some(var_3) = &input.filter_by_recording_configuration_arn {
-        object.key("filterByRecordingConfigurationArn").string(var_3.as_str());
+    if let Some(var_3) = &input.filter_by_playback_restriction_policy_arn {
+        object.key("filterByPlaybackRestrictionPolicyArn").string(var_3.as_str());
     }
-    if let Some(var_4) = &input.max_results {
+    if let Some(var_4) = &input.filter_by_recording_configuration_arn {
+        object.key("filterByRecordingConfigurationArn").string(var_4.as_str());
+    }
+    if let Some(var_5) = &input.max_results {
         object.key("maxResults").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_4).into()),
+            ::aws_smithy_types::Number::NegInt((*var_5).into()),
         );
     }
-    if let Some(var_5) = &input.next_token {
-        object.key("nextToken").string(var_5.as_str());
+    if let Some(var_6) = &input.next_token {
+        object.key("nextToken").string(var_6.as_str());
     }
     Ok(())
 }

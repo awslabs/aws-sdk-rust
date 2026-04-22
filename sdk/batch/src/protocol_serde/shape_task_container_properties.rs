@@ -126,6 +126,18 @@ pub fn ser_task_container_properties(
     if let Some(var_41) = &input.user {
         object.key("user").string(var_41.as_str());
     }
+    if let Some(var_42) = &input.start_timeout {
+        object.key("startTimeout").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_42).into()),
+        );
+    }
+    if let Some(var_43) = &input.stop_timeout {
+        object.key("stopTimeout").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_43).into()),
+        );
+    }
     Ok(())
 }
 
@@ -218,6 +230,20 @@ where
                             builder = builder.set_user(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "startTimeout" => {
+                            builder = builder.set_start_timeout(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "stopTimeout" => {
+                            builder = builder.set_stop_timeout(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
                                     .transpose()?,
                             );
                         }

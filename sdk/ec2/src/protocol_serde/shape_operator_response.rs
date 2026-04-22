@@ -35,6 +35,21 @@ pub fn de_operator_response(
                 builder = builder.set_principal(var_2);
             }
             ,
+            s if s.matches("hiddenByDefault") /* HiddenByDefault com.amazonaws.ec2#OperatorResponse$HiddenByDefault */ =>  {
+                let var_3 =
+                    Some(
+                         {
+                            <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_hidden_by_default(var_3);
+            }
+            ,
             _ => {}
         }
     }

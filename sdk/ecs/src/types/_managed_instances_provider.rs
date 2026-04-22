@@ -14,6 +14,8 @@ pub struct ManagedInstancesProvider {
     pub propagate_tags: ::std::option::Option<crate::types::PropagateMiTags>,
     /// <p>Defines how Amazon ECS Managed Instances optimizes the infrastastructure in your capacity provider. Configure it to turn on or off the infrastructure optimization in your capacity provider, and to control the idle or underutilized EC2 instances optimization delay.</p>
     pub infrastructure_optimization: ::std::option::Option<crate::types::InfrastructureOptimization>,
+    /// <p>The auto repair configuration for the Amazon ECS Managed Instances capacity provider. Indicates whether Amazon ECS automatically replaces container instances that are detected as unhealthy.</p>
+    pub auto_repair_configuration: ::std::option::Option<crate::types::AutoRepairConfiguration>,
 }
 impl ManagedInstancesProvider {
     /// <p>The Amazon Resource Name (ARN) of the infrastructure role that Amazon ECS assumes to manage instances. This role must include permissions for Amazon EC2 instance lifecycle management, networking, and any additional Amazon Web Services services required for your workloads.</p>
@@ -34,6 +36,10 @@ impl ManagedInstancesProvider {
     pub fn infrastructure_optimization(&self) -> ::std::option::Option<&crate::types::InfrastructureOptimization> {
         self.infrastructure_optimization.as_ref()
     }
+    /// <p>The auto repair configuration for the Amazon ECS Managed Instances capacity provider. Indicates whether Amazon ECS automatically replaces container instances that are detected as unhealthy.</p>
+    pub fn auto_repair_configuration(&self) -> ::std::option::Option<&crate::types::AutoRepairConfiguration> {
+        self.auto_repair_configuration.as_ref()
+    }
 }
 impl ManagedInstancesProvider {
     /// Creates a new builder-style object to manufacture [`ManagedInstancesProvider`](crate::types::ManagedInstancesProvider).
@@ -50,6 +56,7 @@ pub struct ManagedInstancesProviderBuilder {
     pub(crate) instance_launch_template: ::std::option::Option<crate::types::InstanceLaunchTemplate>,
     pub(crate) propagate_tags: ::std::option::Option<crate::types::PropagateMiTags>,
     pub(crate) infrastructure_optimization: ::std::option::Option<crate::types::InfrastructureOptimization>,
+    pub(crate) auto_repair_configuration: ::std::option::Option<crate::types::AutoRepairConfiguration>,
 }
 impl ManagedInstancesProviderBuilder {
     /// <p>The Amazon Resource Name (ARN) of the infrastructure role that Amazon ECS assumes to manage instances. This role must include permissions for Amazon EC2 instance lifecycle management, networking, and any additional Amazon Web Services services required for your workloads.</p>
@@ -114,6 +121,20 @@ impl ManagedInstancesProviderBuilder {
     pub fn get_infrastructure_optimization(&self) -> &::std::option::Option<crate::types::InfrastructureOptimization> {
         &self.infrastructure_optimization
     }
+    /// <p>The auto repair configuration for the Amazon ECS Managed Instances capacity provider. Indicates whether Amazon ECS automatically replaces container instances that are detected as unhealthy.</p>
+    pub fn auto_repair_configuration(mut self, input: crate::types::AutoRepairConfiguration) -> Self {
+        self.auto_repair_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The auto repair configuration for the Amazon ECS Managed Instances capacity provider. Indicates whether Amazon ECS automatically replaces container instances that are detected as unhealthy.</p>
+    pub fn set_auto_repair_configuration(mut self, input: ::std::option::Option<crate::types::AutoRepairConfiguration>) -> Self {
+        self.auto_repair_configuration = input;
+        self
+    }
+    /// <p>The auto repair configuration for the Amazon ECS Managed Instances capacity provider. Indicates whether Amazon ECS automatically replaces container instances that are detected as unhealthy.</p>
+    pub fn get_auto_repair_configuration(&self) -> &::std::option::Option<crate::types::AutoRepairConfiguration> {
+        &self.auto_repair_configuration
+    }
     /// Consumes the builder and constructs a [`ManagedInstancesProvider`](crate::types::ManagedInstancesProvider).
     pub fn build(self) -> crate::types::ManagedInstancesProvider {
         crate::types::ManagedInstancesProvider {
@@ -121,6 +142,7 @@ impl ManagedInstancesProviderBuilder {
             instance_launch_template: self.instance_launch_template,
             propagate_tags: self.propagate_tags,
             infrastructure_optimization: self.infrastructure_optimization,
+            auto_repair_configuration: self.auto_repair_configuration,
         }
     }
 }

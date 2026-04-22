@@ -125,6 +125,8 @@ pub use crate::types::_propagate_mi_tags::PropagateMiTags;
 
 pub use crate::types::_infrastructure_optimization::InfrastructureOptimization;
 
+pub use crate::types::_auto_repair_configuration::AutoRepairConfiguration;
+
 pub use crate::types::_capacity_provider_status::CapacityProviderStatus;
 
 pub use crate::types::_managed_instances_provider::ManagedInstancesProvider;
@@ -296,6 +298,8 @@ pub use crate::types::_capacity_option_type::CapacityOptionType;
 pub use crate::types::_instance_requirements_request::InstanceRequirementsRequest;
 
 pub use crate::types::_capacity_reservation_request::CapacityReservationRequest;
+
+pub use crate::types::_auto_repair_actions_status::AutoRepairActionsStatus;
 
 pub use crate::types::_cluster_setting_name::ClusterSettingName;
 
@@ -594,6 +598,10 @@ mod _attachment;
 mod _attachment_state_change;
 
 mod _attribute;
+
+mod _auto_repair_actions_status;
+
+mod _auto_repair_configuration;
 
 mod _auto_scaling_group_provider;
 

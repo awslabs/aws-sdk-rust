@@ -12,6 +12,8 @@ pub struct DescribeInstanceStatusInput {
     pub max_results: ::std::option::Option<i32>,
     /// <p>The token returned from a previous paginated request. Pagination continues from the end of the items returned by the previous request.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
+    /// <p>Indicates whether to include managed resources in the output. If this parameter is set to <code>true</code>, the output includes resources that are managed by Amazon Web Services services, even if managed resource visibility is set to hidden.</p>
+    pub include_managed_resources: ::std::option::Option<bool>,
     /// <p>Checks whether you have the required permissions for the operation, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
     /// <p>The filters.</p>
@@ -73,6 +75,10 @@ impl DescribeInstanceStatusInput {
     /// <p>The token returned from a previous paginated request. Pagination continues from the end of the items returned by the previous request.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
+    }
+    /// <p>Indicates whether to include managed resources in the output. If this parameter is set to <code>true</code>, the output includes resources that are managed by Amazon Web Services services, even if managed resource visibility is set to hidden.</p>
+    pub fn include_managed_resources(&self) -> ::std::option::Option<bool> {
+        self.include_managed_resources
     }
     /// <p>Checks whether you have the required permissions for the operation, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
@@ -140,6 +146,7 @@ pub struct DescribeInstanceStatusInputBuilder {
     pub(crate) instance_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
+    pub(crate) include_managed_resources: ::std::option::Option<bool>,
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     pub(crate) include_all_instances: ::std::option::Option<bool>,
@@ -201,6 +208,20 @@ impl DescribeInstanceStatusInputBuilder {
     /// <p>The token returned from a previous paginated request. Pagination continues from the end of the items returned by the previous request.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
+    }
+    /// <p>Indicates whether to include managed resources in the output. If this parameter is set to <code>true</code>, the output includes resources that are managed by Amazon Web Services services, even if managed resource visibility is set to hidden.</p>
+    pub fn include_managed_resources(mut self, input: bool) -> Self {
+        self.include_managed_resources = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether to include managed resources in the output. If this parameter is set to <code>true</code>, the output includes resources that are managed by Amazon Web Services services, even if managed resource visibility is set to hidden.</p>
+    pub fn set_include_managed_resources(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.include_managed_resources = input;
+        self
+    }
+    /// <p>Indicates whether to include managed resources in the output. If this parameter is set to <code>true</code>, the output includes resources that are managed by Amazon Web Services services, even if managed resource visibility is set to hidden.</p>
+    pub fn get_include_managed_resources(&self) -> &::std::option::Option<bool> {
+        &self.include_managed_resources
     }
     /// <p>Checks whether you have the required permissions for the operation, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
@@ -372,6 +393,7 @@ impl DescribeInstanceStatusInputBuilder {
             instance_ids: self.instance_ids,
             max_results: self.max_results,
             next_token: self.next_token,
+            include_managed_resources: self.include_managed_resources,
             dry_run: self.dry_run,
             filters: self.filters,
             include_all_instances: self.include_all_instances,

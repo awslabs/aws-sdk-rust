@@ -5,6 +5,8 @@
 pub struct DescribeVolumesInput {
     /// <p>The volume IDs. If not specified, then all volumes are included in the response.</p>
     pub volume_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>Indicates whether to include managed resources in the output. If this parameter is set to <code>true</code>, the output includes resources that are managed by Amazon Web Services services, even if managed resource visibility is set to hidden.</p>
+    pub include_managed_resources: ::std::option::Option<bool>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
     /// <p>The filters.</p>
@@ -68,6 +70,10 @@ impl DescribeVolumesInput {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.volume_ids.is_none()`.
     pub fn volume_ids(&self) -> &[::std::string::String] {
         self.volume_ids.as_deref().unwrap_or_default()
+    }
+    /// <p>Indicates whether to include managed resources in the output. If this parameter is set to <code>true</code>, the output includes resources that are managed by Amazon Web Services services, even if managed resource visibility is set to hidden.</p>
+    pub fn include_managed_resources(&self) -> ::std::option::Option<bool> {
+        self.include_managed_resources
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
@@ -148,6 +154,7 @@ impl DescribeVolumesInput {
 #[non_exhaustive]
 pub struct DescribeVolumesInputBuilder {
     pub(crate) volume_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) include_managed_resources: ::std::option::Option<bool>,
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -173,6 +180,20 @@ impl DescribeVolumesInputBuilder {
     /// <p>The volume IDs. If not specified, then all volumes are included in the response.</p>
     pub fn get_volume_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.volume_ids
+    }
+    /// <p>Indicates whether to include managed resources in the output. If this parameter is set to <code>true</code>, the output includes resources that are managed by Amazon Web Services services, even if managed resource visibility is set to hidden.</p>
+    pub fn include_managed_resources(mut self, input: bool) -> Self {
+        self.include_managed_resources = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether to include managed resources in the output. If this parameter is set to <code>true</code>, the output includes resources that are managed by Amazon Web Services services, even if managed resource visibility is set to hidden.</p>
+    pub fn set_include_managed_resources(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.include_managed_resources = input;
+        self
+    }
+    /// <p>Indicates whether to include managed resources in the output. If this parameter is set to <code>true</code>, the output includes resources that are managed by Amazon Web Services services, even if managed resource visibility is set to hidden.</p>
+    pub fn get_include_managed_resources(&self) -> &::std::option::Option<bool> {
+        &self.include_managed_resources
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
@@ -386,6 +407,7 @@ impl DescribeVolumesInputBuilder {
     ) -> ::std::result::Result<crate::operation::describe_volumes::DescribeVolumesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_volumes::DescribeVolumesInput {
             volume_ids: self.volume_ids,
+            include_managed_resources: self.include_managed_resources,
             dry_run: self.dry_run,
             filters: self.filters,
             next_token: self.next_token,

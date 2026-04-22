@@ -207,6 +207,8 @@ mod invoke_browser;
 
 mod invoke_code_interpreter;
 
+mod invoke_harness;
+
 mod list_actors;
 
 mod list_browser_sessions;

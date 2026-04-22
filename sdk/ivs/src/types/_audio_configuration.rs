@@ -12,7 +12,7 @@ pub struct AudioConfiguration {
     pub sample_rate: i64,
     /// <p>Number of audio channels.</p>
     pub channels: i64,
-    /// <p>Name of the audio track (if the stream has an audio track). If multitrack is not enabled, this is track0 (the sole track).</p>
+    /// <p>Name of the audio track (if the stream has an audio track). If multitrack is not enabled, this is Track0 (the sole track).</p>
     pub track: ::std::option::Option<::std::string::String>,
 }
 impl AudioConfiguration {
@@ -32,7 +32,7 @@ impl AudioConfiguration {
     pub fn channels(&self) -> i64 {
         self.channels
     }
-    /// <p>Name of the audio track (if the stream has an audio track). If multitrack is not enabled, this is track0 (the sole track).</p>
+    /// <p>Name of the audio track (if the stream has an audio track). If multitrack is not enabled, this is Track0 (the sole track).</p>
     pub fn track(&self) -> ::std::option::Option<&str> {
         self.track.as_deref()
     }
@@ -111,17 +111,17 @@ impl AudioConfigurationBuilder {
     pub fn get_channels(&self) -> &::std::option::Option<i64> {
         &self.channels
     }
-    /// <p>Name of the audio track (if the stream has an audio track). If multitrack is not enabled, this is track0 (the sole track).</p>
+    /// <p>Name of the audio track (if the stream has an audio track). If multitrack is not enabled, this is Track0 (the sole track).</p>
     pub fn track(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.track = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Name of the audio track (if the stream has an audio track). If multitrack is not enabled, this is track0 (the sole track).</p>
+    /// <p>Name of the audio track (if the stream has an audio track). If multitrack is not enabled, this is Track0 (the sole track).</p>
     pub fn set_track(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.track = input;
         self
     }
-    /// <p>Name of the audio track (if the stream has an audio track). If multitrack is not enabled, this is track0 (the sole track).</p>
+    /// <p>Name of the audio track (if the stream has an audio track). If multitrack is not enabled, this is Track0 (the sole track).</p>
     pub fn get_track(&self) -> &::std::option::Option<::std::string::String> {
         &self.track
     }

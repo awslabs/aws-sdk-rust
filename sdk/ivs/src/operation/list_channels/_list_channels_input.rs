@@ -9,6 +9,8 @@ pub struct ListChannelsInput {
     pub filter_by_recording_configuration_arn: ::std::option::Option<::std::string::String>,
     /// <p>Filters the channel list to match the specified policy.</p>
     pub filter_by_playback_restriction_policy_arn: ::std::option::Option<::std::string::String>,
+    /// <p>Filters the channel list to match the specified ad configuration ARN.</p>
+    pub filter_by_ad_configuration_arn: ::std::option::Option<::std::string::String>,
     /// <p>The first channel to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Maximum number of channels to return. Default: 100.</p>
@@ -26,6 +28,10 @@ impl ListChannelsInput {
     /// <p>Filters the channel list to match the specified policy.</p>
     pub fn filter_by_playback_restriction_policy_arn(&self) -> ::std::option::Option<&str> {
         self.filter_by_playback_restriction_policy_arn.as_deref()
+    }
+    /// <p>Filters the channel list to match the specified ad configuration ARN.</p>
+    pub fn filter_by_ad_configuration_arn(&self) -> ::std::option::Option<&str> {
+        self.filter_by_ad_configuration_arn.as_deref()
     }
     /// <p>The first channel to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -50,6 +56,7 @@ pub struct ListChannelsInputBuilder {
     pub(crate) filter_by_name: ::std::option::Option<::std::string::String>,
     pub(crate) filter_by_recording_configuration_arn: ::std::option::Option<::std::string::String>,
     pub(crate) filter_by_playback_restriction_policy_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) filter_by_ad_configuration_arn: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
 }
@@ -96,6 +103,20 @@ impl ListChannelsInputBuilder {
     pub fn get_filter_by_playback_restriction_policy_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.filter_by_playback_restriction_policy_arn
     }
+    /// <p>Filters the channel list to match the specified ad configuration ARN.</p>
+    pub fn filter_by_ad_configuration_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.filter_by_ad_configuration_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Filters the channel list to match the specified ad configuration ARN.</p>
+    pub fn set_filter_by_ad_configuration_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.filter_by_ad_configuration_arn = input;
+        self
+    }
+    /// <p>Filters the channel list to match the specified ad configuration ARN.</p>
+    pub fn get_filter_by_ad_configuration_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.filter_by_ad_configuration_arn
+    }
     /// <p>The first channel to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -132,6 +153,7 @@ impl ListChannelsInputBuilder {
             filter_by_name: self.filter_by_name,
             filter_by_recording_configuration_arn: self.filter_by_recording_configuration_arn,
             filter_by_playback_restriction_policy_arn: self.filter_by_playback_restriction_policy_arn,
+            filter_by_ad_configuration_arn: self.filter_by_ad_configuration_arn,
             next_token: self.next_token,
             max_results: self.max_results,
         })

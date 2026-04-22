@@ -10,7 +10,230 @@ pub fn de_batch_get_channel_http_error(
         .map_err(crate::operation::batch_get_channel::BatchGetChannelError::unhandled)?;
     generic_builder = ::aws_types::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
-    Err(crate::operation::batch_get_channel::BatchGetChannelError::generic(generic))
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::operation::batch_get_channel::BatchGetChannelError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "AccessDeniedException" => crate::operation::batch_get_channel::BatchGetChannelError::AccessDeniedException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::AccessDeniedExceptionBuilder::default();
+                output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::batch_get_channel::BatchGetChannelError::unhandled)?;
+                output = output.set_access_control_allow_origin(
+                    crate::protocol_serde::shape_access_denied_exception::de_access_control_allow_origin_header(_response_headers).map_err(|_| {
+                        crate::operation::batch_get_channel::BatchGetChannelError::unhandled(
+                            "Failed to parse accessControlAllowOrigin from header `Access-Control-Allow-Origin",
+                        )
+                    })?,
+                );
+                output = output.set_access_control_expose_headers(
+                    crate::protocol_serde::shape_access_denied_exception::de_access_control_expose_headers_header(_response_headers).map_err(
+                        |_| {
+                            crate::operation::batch_get_channel::BatchGetChannelError::unhandled(
+                                "Failed to parse accessControlExposeHeaders from header `Access-Control-Expose-Headers",
+                            )
+                        },
+                    )?,
+                );
+                output = output.set_cache_control(
+                    crate::protocol_serde::shape_access_denied_exception::de_cache_control_header(_response_headers).map_err(|_| {
+                        crate::operation::batch_get_channel::BatchGetChannelError::unhandled(
+                            "Failed to parse cacheControl from header `Cache-Control",
+                        )
+                    })?,
+                );
+                output = output.set_content_security_policy(
+                    crate::protocol_serde::shape_access_denied_exception::de_content_security_policy_header(_response_headers).map_err(|_| {
+                        crate::operation::batch_get_channel::BatchGetChannelError::unhandled(
+                            "Failed to parse contentSecurityPolicy from header `Content-Security-Policy",
+                        )
+                    })?,
+                );
+                output = output.set_strict_transport_security(
+                    crate::protocol_serde::shape_access_denied_exception::de_strict_transport_security_header(_response_headers).map_err(|_| {
+                        crate::operation::batch_get_channel::BatchGetChannelError::unhandled(
+                            "Failed to parse strictTransportSecurity from header `Strict-Transport-Security",
+                        )
+                    })?,
+                );
+                output = output.set_x_amzn_error_type(
+                    crate::protocol_serde::shape_access_denied_exception::de_x_amzn_error_type_header(_response_headers).map_err(|_| {
+                        crate::operation::batch_get_channel::BatchGetChannelError::unhandled(
+                            "Failed to parse xAmznErrorType from header `x-amzn-ErrorType",
+                        )
+                    })?,
+                );
+                output = output.set_x_content_type_options(
+                    crate::protocol_serde::shape_access_denied_exception::de_x_content_type_options_header(_response_headers).map_err(|_| {
+                        crate::operation::batch_get_channel::BatchGetChannelError::unhandled(
+                            "Failed to parse xContentTypeOptions from header `X-Content-Type-Options",
+                        )
+                    })?,
+                );
+                output = output.set_x_frame_options(
+                    crate::protocol_serde::shape_access_denied_exception::de_x_frame_options_header(_response_headers).map_err(|_| {
+                        crate::operation::batch_get_channel::BatchGetChannelError::unhandled(
+                            "Failed to parse xFrameOptions from header `X-Frame-Options",
+                        )
+                    })?,
+                );
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ServiceUnavailable" => crate::operation::batch_get_channel::BatchGetChannelError::ServiceUnavailable({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ServiceUnavailableBuilder::default();
+                output = crate::protocol_serde::shape_service_unavailable::de_service_unavailable_json_err(_response_body, output)
+                    .map_err(crate::operation::batch_get_channel::BatchGetChannelError::unhandled)?;
+                output = output.set_access_control_allow_origin(
+                    crate::protocol_serde::shape_service_unavailable::de_access_control_allow_origin_header(_response_headers).map_err(|_| {
+                        crate::operation::batch_get_channel::BatchGetChannelError::unhandled(
+                            "Failed to parse accessControlAllowOrigin from header `Access-Control-Allow-Origin",
+                        )
+                    })?,
+                );
+                output = output.set_access_control_expose_headers(
+                    crate::protocol_serde::shape_service_unavailable::de_access_control_expose_headers_header(_response_headers).map_err(|_| {
+                        crate::operation::batch_get_channel::BatchGetChannelError::unhandled(
+                            "Failed to parse accessControlExposeHeaders from header `Access-Control-Expose-Headers",
+                        )
+                    })?,
+                );
+                output = output.set_cache_control(
+                    crate::protocol_serde::shape_service_unavailable::de_cache_control_header(_response_headers).map_err(|_| {
+                        crate::operation::batch_get_channel::BatchGetChannelError::unhandled(
+                            "Failed to parse cacheControl from header `Cache-Control",
+                        )
+                    })?,
+                );
+                output = output.set_content_security_policy(
+                    crate::protocol_serde::shape_service_unavailable::de_content_security_policy_header(_response_headers).map_err(|_| {
+                        crate::operation::batch_get_channel::BatchGetChannelError::unhandled(
+                            "Failed to parse contentSecurityPolicy from header `Content-Security-Policy",
+                        )
+                    })?,
+                );
+                output = output.set_strict_transport_security(
+                    crate::protocol_serde::shape_service_unavailable::de_strict_transport_security_header(_response_headers).map_err(|_| {
+                        crate::operation::batch_get_channel::BatchGetChannelError::unhandled(
+                            "Failed to parse strictTransportSecurity from header `Strict-Transport-Security",
+                        )
+                    })?,
+                );
+                output = output.set_x_amzn_error_type(
+                    crate::protocol_serde::shape_service_unavailable::de_x_amzn_error_type_header(_response_headers).map_err(|_| {
+                        crate::operation::batch_get_channel::BatchGetChannelError::unhandled(
+                            "Failed to parse xAmznErrorType from header `x-amzn-ErrorType",
+                        )
+                    })?,
+                );
+                output = output.set_x_content_type_options(
+                    crate::protocol_serde::shape_service_unavailable::de_x_content_type_options_header(_response_headers).map_err(|_| {
+                        crate::operation::batch_get_channel::BatchGetChannelError::unhandled(
+                            "Failed to parse xContentTypeOptions from header `X-Content-Type-Options",
+                        )
+                    })?,
+                );
+                output = output.set_x_frame_options(
+                    crate::protocol_serde::shape_service_unavailable::de_x_frame_options_header(_response_headers).map_err(|_| {
+                        crate::operation::batch_get_channel::BatchGetChannelError::unhandled(
+                            "Failed to parse xFrameOptions from header `X-Frame-Options",
+                        )
+                    })?,
+                );
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ValidationException" => crate::operation::batch_get_channel::BatchGetChannelError::ValidationException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ValidationExceptionBuilder::default();
+                output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::batch_get_channel::BatchGetChannelError::unhandled)?;
+                output = output.set_access_control_allow_origin(
+                    crate::protocol_serde::shape_validation_exception::de_access_control_allow_origin_header(_response_headers).map_err(|_| {
+                        crate::operation::batch_get_channel::BatchGetChannelError::unhandled(
+                            "Failed to parse accessControlAllowOrigin from header `Access-Control-Allow-Origin",
+                        )
+                    })?,
+                );
+                output = output.set_access_control_expose_headers(
+                    crate::protocol_serde::shape_validation_exception::de_access_control_expose_headers_header(_response_headers).map_err(|_| {
+                        crate::operation::batch_get_channel::BatchGetChannelError::unhandled(
+                            "Failed to parse accessControlExposeHeaders from header `Access-Control-Expose-Headers",
+                        )
+                    })?,
+                );
+                output = output.set_cache_control(
+                    crate::protocol_serde::shape_validation_exception::de_cache_control_header(_response_headers).map_err(|_| {
+                        crate::operation::batch_get_channel::BatchGetChannelError::unhandled(
+                            "Failed to parse cacheControl from header `Cache-Control",
+                        )
+                    })?,
+                );
+                output = output.set_content_security_policy(
+                    crate::protocol_serde::shape_validation_exception::de_content_security_policy_header(_response_headers).map_err(|_| {
+                        crate::operation::batch_get_channel::BatchGetChannelError::unhandled(
+                            "Failed to parse contentSecurityPolicy from header `Content-Security-Policy",
+                        )
+                    })?,
+                );
+                output = output.set_strict_transport_security(
+                    crate::protocol_serde::shape_validation_exception::de_strict_transport_security_header(_response_headers).map_err(|_| {
+                        crate::operation::batch_get_channel::BatchGetChannelError::unhandled(
+                            "Failed to parse strictTransportSecurity from header `Strict-Transport-Security",
+                        )
+                    })?,
+                );
+                output = output.set_x_amzn_error_type(
+                    crate::protocol_serde::shape_validation_exception::de_x_amzn_error_type_header(_response_headers).map_err(|_| {
+                        crate::operation::batch_get_channel::BatchGetChannelError::unhandled(
+                            "Failed to parse xAmznErrorType from header `x-amzn-ErrorType",
+                        )
+                    })?,
+                );
+                output = output.set_x_content_type_options(
+                    crate::protocol_serde::shape_validation_exception::de_x_content_type_options_header(_response_headers).map_err(|_| {
+                        crate::operation::batch_get_channel::BatchGetChannelError::unhandled(
+                            "Failed to parse xContentTypeOptions from header `X-Content-Type-Options",
+                        )
+                    })?,
+                );
+                output = output.set_x_frame_options(
+                    crate::protocol_serde::shape_validation_exception::de_x_frame_options_header(_response_headers).map_err(|_| {
+                        crate::operation::batch_get_channel::BatchGetChannelError::unhandled(
+                            "Failed to parse xFrameOptions from header `X-Frame-Options",
+                        )
+                    })?,
+                );
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        _ => crate::operation::batch_get_channel::BatchGetChannelError::generic(generic),
+    })
 }
 
 #[allow(clippy::unnecessary_wraps)]
@@ -24,6 +247,51 @@ pub fn de_batch_get_channel_http_response(
         let mut output = crate::operation::batch_get_channel::builders::BatchGetChannelOutputBuilder::default();
         output = crate::protocol_serde::shape_batch_get_channel::de_batch_get_channel(_response_body, output)
             .map_err(crate::operation::batch_get_channel::BatchGetChannelError::unhandled)?;
+        output = output.set_access_control_allow_origin(
+            crate::protocol_serde::shape_batch_get_channel_output::de_access_control_allow_origin_header(_response_headers).map_err(|_| {
+                crate::operation::batch_get_channel::BatchGetChannelError::unhandled(
+                    "Failed to parse accessControlAllowOrigin from header `Access-Control-Allow-Origin",
+                )
+            })?,
+        );
+        output = output.set_access_control_expose_headers(
+            crate::protocol_serde::shape_batch_get_channel_output::de_access_control_expose_headers_header(_response_headers).map_err(|_| {
+                crate::operation::batch_get_channel::BatchGetChannelError::unhandled(
+                    "Failed to parse accessControlExposeHeaders from header `Access-Control-Expose-Headers",
+                )
+            })?,
+        );
+        output = output.set_cache_control(
+            crate::protocol_serde::shape_batch_get_channel_output::de_cache_control_header(_response_headers).map_err(|_| {
+                crate::operation::batch_get_channel::BatchGetChannelError::unhandled("Failed to parse cacheControl from header `Cache-Control")
+            })?,
+        );
+        output = output.set_content_security_policy(
+            crate::protocol_serde::shape_batch_get_channel_output::de_content_security_policy_header(_response_headers).map_err(|_| {
+                crate::operation::batch_get_channel::BatchGetChannelError::unhandled(
+                    "Failed to parse contentSecurityPolicy from header `Content-Security-Policy",
+                )
+            })?,
+        );
+        output = output.set_strict_transport_security(
+            crate::protocol_serde::shape_batch_get_channel_output::de_strict_transport_security_header(_response_headers).map_err(|_| {
+                crate::operation::batch_get_channel::BatchGetChannelError::unhandled(
+                    "Failed to parse strictTransportSecurity from header `Strict-Transport-Security",
+                )
+            })?,
+        );
+        output = output.set_x_content_type_options(
+            crate::protocol_serde::shape_batch_get_channel_output::de_x_content_type_options_header(_response_headers).map_err(|_| {
+                crate::operation::batch_get_channel::BatchGetChannelError::unhandled(
+                    "Failed to parse xContentTypeOptions from header `X-Content-Type-Options",
+                )
+            })?,
+        );
+        output = output.set_x_frame_options(
+            crate::protocol_serde::shape_batch_get_channel_output::de_x_frame_options_header(_response_headers).map_err(|_| {
+                crate::operation::batch_get_channel::BatchGetChannelError::unhandled("Failed to parse xFrameOptions from header `X-Frame-Options")
+            })?,
+        );
         output._set_request_id(::aws_types::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })

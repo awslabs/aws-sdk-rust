@@ -10,6 +10,9 @@ pub mod batch_get_stream_key;
 /// Types for the `BatchStartViewerSessionRevocation` operation.
 pub mod batch_start_viewer_session_revocation;
 
+/// Types for the `CreateAdConfiguration` operation.
+pub mod create_ad_configuration;
+
 /// Types for the `CreateChannel` operation.
 pub mod create_channel;
 
@@ -21,6 +24,9 @@ pub mod create_recording_configuration;
 
 /// Types for the `CreateStreamKey` operation.
 pub mod create_stream_key;
+
+/// Types for the `DeleteAdConfiguration` operation.
+pub mod delete_ad_configuration;
 
 /// Types for the `DeleteChannel` operation.
 pub mod delete_channel;
@@ -36,6 +42,9 @@ pub mod delete_recording_configuration;
 
 /// Types for the `DeleteStreamKey` operation.
 pub mod delete_stream_key;
+
+/// Types for the `GetAdConfiguration` operation.
+pub mod get_ad_configuration;
 
 /// Types for the `GetChannel` operation.
 pub mod get_channel;
@@ -60,6 +69,12 @@ pub mod get_stream_session;
 
 /// Types for the `ImportPlaybackKeyPair` operation.
 pub mod import_playback_key_pair;
+
+/// Types for the `InsertAdBreak` operation.
+pub mod insert_ad_break;
+
+/// Types for the `ListAdConfigurations` operation.
+pub mod list_ad_configurations;
 
 /// Types for the `ListChannels` operation.
 pub mod list_channels;

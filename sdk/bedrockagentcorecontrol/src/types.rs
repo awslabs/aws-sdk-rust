@@ -93,6 +93,24 @@ pub use crate::types::_target_status::TargetStatus;
 
 pub use crate::types::_authorization_data::AuthorizationData;
 
+pub use crate::types::_harness_environment_provider_request::HarnessEnvironmentProviderRequest;
+
+pub use crate::types::_harness_environment_artifact::HarnessEnvironmentArtifact;
+
+pub use crate::types::_harness_model_configuration::HarnessModelConfiguration;
+
+pub use crate::types::_harness_memory_configuration::HarnessMemoryConfiguration;
+
+pub use crate::types::_harness_truncation_configuration::HarnessTruncationConfiguration;
+
+pub use crate::types::_harness::Harness;
+
+pub use crate::types::_updated_harness_environment_artifact::UpdatedHarnessEnvironmentArtifact;
+
+pub use crate::types::_updated_authorizer_configuration::UpdatedAuthorizerConfiguration;
+
+pub use crate::types::_updated_harness_memory_configuration::UpdatedHarnessMemoryConfiguration;
+
 pub use crate::types::_stream_delivery_resources::StreamDeliveryResources;
 
 pub use crate::types::_memory::Memory;
@@ -152,8 +170,6 @@ pub use crate::types::_registry_status::RegistryStatus;
 pub use crate::types::_registry_authorizer_type::RegistryAuthorizerType;
 
 pub use crate::types::_approval_configuration::ApprovalConfiguration;
-
-pub use crate::types::_updated_authorizer_configuration::UpdatedAuthorizerConfiguration;
 
 pub use crate::types::_updated_approval_configuration::UpdatedApprovalConfiguration;
 
@@ -228,6 +244,32 @@ pub use crate::types::_o_auth2_authorization_data::OAuth2AuthorizationData;
 pub use crate::types::_target_summary::TargetSummary;
 
 pub use crate::types::_gateway_target::GatewayTarget;
+
+pub use crate::types::_harness_agent_core_runtime_environment_request::HarnessAgentCoreRuntimeEnvironmentRequest;
+
+pub use crate::types::_harness_bedrock_model_config::HarnessBedrockModelConfig;
+
+pub use crate::types::_harness_open_ai_model_config::HarnessOpenAiModelConfig;
+
+pub use crate::types::_harness_gemini_model_config::HarnessGeminiModelConfig;
+
+pub use crate::types::_harness_system_content_block::HarnessSystemContentBlock;
+
+pub use crate::types::_harness_tool::HarnessTool;
+
+pub use crate::types::_harness_skill::HarnessSkill;
+
+pub use crate::types::_harness_agent_core_memory_configuration::HarnessAgentCoreMemoryConfiguration;
+
+pub use crate::types::_harness_truncation_strategy::HarnessTruncationStrategy;
+
+pub use crate::types::_harness_truncation_strategy_configuration::HarnessTruncationStrategyConfiguration;
+
+pub use crate::types::_harness_status::HarnessStatus;
+
+pub use crate::types::_harness_environment_provider::HarnessEnvironmentProvider;
+
+pub use crate::types::_harness_summary::HarnessSummary;
 
 pub use crate::types::_memory_summary::MemorySummary;
 
@@ -337,6 +379,16 @@ pub use crate::types::_credential_provider::CredentialProvider;
 
 pub use crate::types::_endpoint_ip_address_type::EndpointIpAddressType;
 
+pub use crate::types::_harness_tool_type::HarnessToolType;
+
+pub use crate::types::_harness_tool_configuration::HarnessToolConfiguration;
+
+pub use crate::types::_harness_sliding_window_configuration::HarnessSlidingWindowConfiguration;
+
+pub use crate::types::_harness_summarization_configuration::HarnessSummarizationConfiguration;
+
+pub use crate::types::_harness_agent_core_runtime_environment::HarnessAgentCoreRuntimeEnvironment;
+
 pub use crate::types::_semantic_memory_strategy_input::SemanticMemoryStrategyInput;
 
 pub use crate::types::_summary_memory_strategy_input::SummaryMemoryStrategyInput;
@@ -401,6 +453,18 @@ pub use crate::types::_gateway_api_key_credential_provider::GatewayApiKeyCredent
 
 pub use crate::types::_iam_credential_provider::IamCredentialProvider;
 
+pub use crate::types::_harness_remote_mcp_config::HarnessRemoteMcpConfig;
+
+pub use crate::types::_harness_agent_core_browser_config::HarnessAgentCoreBrowserConfig;
+
+pub use crate::types::_harness_agent_core_gateway_config::HarnessAgentCoreGatewayConfig;
+
+pub use crate::types::_harness_inline_function_config::HarnessInlineFunctionConfig;
+
+pub use crate::types::_harness_agent_core_code_interpreter_config::HarnessAgentCoreCodeInterpreterConfig;
+
+pub use crate::types::_harness_agent_core_memory_retrieval_config::HarnessAgentCoreMemoryRetrievalConfig;
+
 pub use crate::types::_custom_configuration_input::CustomConfigurationInput;
 
 pub use crate::types::_episodic_reflection_configuration_input::EpisodicReflectionConfigurationInput;
@@ -440,6 +504,8 @@ pub use crate::types::_inference_configuration::InferenceConfiguration;
 pub use crate::types::_o_auth_grant_type::OAuthGrantType;
 
 pub use crate::types::_api_key_credential_location::ApiKeyCredentialLocation;
+
+pub use crate::types::_harness_gateway_outbound_auth::HarnessGatewayOutboundAuth;
 
 pub use crate::types::_semantic_override_configuration_input::SemanticOverrideConfigurationInput;
 
@@ -492,6 +558,8 @@ pub use crate::types::_tool_definition::ToolDefinition;
 pub use crate::types::_api_gateway_tool_override::ApiGatewayToolOverride;
 
 pub use crate::types::_api_gateway_tool_filter::ApiGatewayToolFilter;
+
+pub use crate::types::_unit::Unit;
 
 pub use crate::types::_semantic_override_extraction_configuration_input::SemanticOverrideExtractionConfigurationInput;
 
@@ -813,6 +881,68 @@ mod _google_oauth2_provider_config_input;
 
 mod _google_oauth2_provider_config_output;
 
+mod _harness;
+
+mod _harness_agent_core_browser_config;
+
+mod _harness_agent_core_code_interpreter_config;
+
+mod _harness_agent_core_gateway_config;
+
+mod _harness_agent_core_memory_configuration;
+
+mod _harness_agent_core_memory_retrieval_config;
+
+mod _harness_agent_core_runtime_environment;
+
+mod _harness_agent_core_runtime_environment_request;
+
+mod _harness_bedrock_model_config;
+
+mod _harness_environment_artifact;
+
+mod _harness_environment_provider;
+
+mod _harness_environment_provider_request;
+
+mod _harness_gateway_outbound_auth;
+
+mod _harness_gemini_model_config;
+
+mod _harness_inline_function_config;
+
+mod _harness_memory_configuration;
+
+mod _harness_model_configuration;
+
+mod _harness_open_ai_model_config;
+
+mod _harness_remote_mcp_config;
+
+mod _harness_skill;
+
+mod _harness_sliding_window_configuration;
+
+mod _harness_status;
+
+mod _harness_summarization_configuration;
+
+mod _harness_summary;
+
+mod _harness_system_content_block;
+
+mod _harness_tool;
+
+mod _harness_tool_configuration;
+
+mod _harness_tool_type;
+
+mod _harness_truncation_configuration;
+
+mod _harness_truncation_strategy;
+
+mod _harness_truncation_strategy_configuration;
+
 mod _iam_credential_provider;
 
 mod _inbound_token_claim_value_type;
@@ -1103,6 +1233,8 @@ mod _trigger_condition;
 
 mod _trigger_condition_input;
 
+mod _unit;
+
 mod _updated_a2a_descriptor;
 
 mod _updated_agent_skills_descriptor;
@@ -1120,6 +1252,10 @@ mod _updated_description;
 mod _updated_descriptors;
 
 mod _updated_descriptors_union;
+
+mod _updated_harness_environment_artifact;
+
+mod _updated_harness_memory_configuration;
 
 mod _updated_mcp_descriptor;
 

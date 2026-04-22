@@ -31,6 +31,28 @@ pub use crate::types::_validation_exception_field::ValidationExceptionFieldBuild
 
 pub use crate::types::_code_interpreter_result::CodeInterpreterResultBuilder;
 
+pub use crate::types::_harness_message::HarnessMessageBuilder;
+
+pub use crate::types::_harness_bedrock_model_config::HarnessBedrockModelConfigBuilder;
+
+pub use crate::types::_harness_open_ai_model_config::HarnessOpenAiModelConfigBuilder;
+
+pub use crate::types::_harness_gemini_model_config::HarnessGeminiModelConfigBuilder;
+
+pub use crate::types::_harness_tool::HarnessToolBuilder;
+
+pub use crate::types::_harness_message_start_event::HarnessMessageStartEventBuilder;
+
+pub use crate::types::_harness_content_block_start_event::HarnessContentBlockStartEventBuilder;
+
+pub use crate::types::_harness_content_block_delta_event::HarnessContentBlockDeltaEventBuilder;
+
+pub use crate::types::_harness_content_block_stop_event::HarnessContentBlockStopEventBuilder;
+
+pub use crate::types::_harness_message_stop_event::HarnessMessageStopEventBuilder;
+
+pub use crate::types::_harness_metadata_event::HarnessMetadataEventBuilder;
+
 pub use crate::types::_response_chunk::ResponseChunkBuilder;
 
 pub use crate::types::_browser_extension::BrowserExtensionBuilder;
@@ -111,6 +133,10 @@ pub use crate::types::_input_content_block::InputContentBlockBuilder;
 
 pub use crate::types::_tool_result_structured_content::ToolResultStructuredContentBuilder;
 
+pub use crate::types::_harness_token_usage::HarnessTokenUsageBuilder;
+
+pub use crate::types::_harness_stream_metrics::HarnessStreamMetricsBuilder;
+
 pub use crate::types::_content_start_event::ContentStartEventBuilder;
 
 pub use crate::types::_content_delta_event::ContentDeltaEventBuilder;
@@ -131,6 +157,22 @@ pub use crate::types::_descriptors::DescriptorsBuilder;
 
 pub use crate::types::_content_block::ContentBlockBuilder;
 
+pub use crate::types::_harness_remote_mcp_config::HarnessRemoteMcpConfigBuilder;
+
+pub use crate::types::_harness_agent_core_browser_config::HarnessAgentCoreBrowserConfigBuilder;
+
+pub use crate::types::_harness_agent_core_gateway_config::HarnessAgentCoreGatewayConfigBuilder;
+
+pub use crate::types::_harness_inline_function_config::HarnessInlineFunctionConfigBuilder;
+
+pub use crate::types::_harness_agent_core_code_interpreter_config::HarnessAgentCoreCodeInterpreterConfigBuilder;
+
+pub use crate::types::_harness_tool_use_block_start::HarnessToolUseBlockStartBuilder;
+
+pub use crate::types::_harness_tool_result_block_start::HarnessToolResultBlockStartBuilder;
+
+pub use crate::types::_harness_tool_use_block_delta::HarnessToolUseBlockDeltaBuilder;
+
 pub use crate::types::_s3_location::S3LocationBuilder;
 
 pub use crate::types::_external_proxy::ExternalProxyBuilder;
@@ -149,6 +191,10 @@ pub use crate::types::_agent_skills_descriptor::AgentSkillsDescriptorBuilder;
 
 pub use crate::types::_resource_content::ResourceContentBuilder;
 
+pub use crate::types::_harness_tool_use_block::HarnessToolUseBlockBuilder;
+
+pub use crate::types::_harness_tool_result_block::HarnessToolResultBlockBuilder;
+
 pub use crate::types::_message_metadata::MessageMetadataBuilder;
 
 pub use crate::types::_server_definition::ServerDefinitionBuilder;
@@ -160,5 +206,11 @@ pub use crate::types::_agent_card_definition::AgentCardDefinitionBuilder;
 pub use crate::types::_skill_md_definition::SkillMdDefinitionBuilder;
 
 pub use crate::types::_skill_definition::SkillDefinitionBuilder;
+
+pub use crate::types::_harness_reasoning_text_block::HarnessReasoningTextBlockBuilder;
+
+pub use crate::types::_unit::UnitBuilder;
+
+pub use crate::types::_o_auth_credential_provider::OAuthCredentialProviderBuilder;
 
 pub use crate::types::_basic_auth::BasicAuthBuilder;

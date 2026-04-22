@@ -16,6 +16,7 @@
 ///     OnlineEvaluationConfigStatus::CreateFailed => { /* ... */ },
 ///     OnlineEvaluationConfigStatus::Creating => { /* ... */ },
 ///     OnlineEvaluationConfigStatus::Deleting => { /* ... */ },
+///     OnlineEvaluationConfigStatus::Error => { /* ... */ },
 ///     OnlineEvaluationConfigStatus::UpdateFailed => { /* ... */ },
 ///     OnlineEvaluationConfigStatus::Updating => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -55,6 +56,8 @@ pub enum OnlineEvaluationConfigStatus {
     #[allow(missing_docs)] // documentation missing in model
     Deleting,
     #[allow(missing_docs)] // documentation missing in model
+    Error,
+    #[allow(missing_docs)] // documentation missing in model
     UpdateFailed,
     #[allow(missing_docs)] // documentation missing in model
     Updating,
@@ -69,6 +72,7 @@ impl ::std::convert::From<&str> for OnlineEvaluationConfigStatus {
             "CREATE_FAILED" => OnlineEvaluationConfigStatus::CreateFailed,
             "CREATING" => OnlineEvaluationConfigStatus::Creating,
             "DELETING" => OnlineEvaluationConfigStatus::Deleting,
+            "ERROR" => OnlineEvaluationConfigStatus::Error,
             "UPDATE_FAILED" => OnlineEvaluationConfigStatus::UpdateFailed,
             "UPDATING" => OnlineEvaluationConfigStatus::Updating,
             other => OnlineEvaluationConfigStatus::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -90,6 +94,7 @@ impl OnlineEvaluationConfigStatus {
             OnlineEvaluationConfigStatus::CreateFailed => "CREATE_FAILED",
             OnlineEvaluationConfigStatus::Creating => "CREATING",
             OnlineEvaluationConfigStatus::Deleting => "DELETING",
+            OnlineEvaluationConfigStatus::Error => "ERROR",
             OnlineEvaluationConfigStatus::UpdateFailed => "UPDATE_FAILED",
             OnlineEvaluationConfigStatus::Updating => "UPDATING",
             OnlineEvaluationConfigStatus::Unknown(value) => value.as_str(),
@@ -97,7 +102,7 @@ impl OnlineEvaluationConfigStatus {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ACTIVE", "CREATE_FAILED", "CREATING", "DELETING", "UPDATE_FAILED", "UPDATING"]
+        &["ACTIVE", "CREATE_FAILED", "CREATING", "DELETING", "ERROR", "UPDATE_FAILED", "UPDATING"]
     }
 }
 impl ::std::convert::AsRef<str> for OnlineEvaluationConfigStatus {
@@ -124,6 +129,7 @@ impl ::std::fmt::Display for OnlineEvaluationConfigStatus {
             OnlineEvaluationConfigStatus::CreateFailed => write!(f, "CREATE_FAILED"),
             OnlineEvaluationConfigStatus::Creating => write!(f, "CREATING"),
             OnlineEvaluationConfigStatus::Deleting => write!(f, "DELETING"),
+            OnlineEvaluationConfigStatus::Error => write!(f, "ERROR"),
             OnlineEvaluationConfigStatus::UpdateFailed => write!(f, "UPDATE_FAILED"),
             OnlineEvaluationConfigStatus::Updating => write!(f, "UPDATING"),
             OnlineEvaluationConfigStatus::Unknown(value) => write!(f, "{value}"),

@@ -8,6 +8,8 @@ pub struct InstanceHealthCheckResult {
     pub r#type: ::std::option::Option<crate::types::InstanceHealthCheckType>,
     /// <p>The container instance health status.</p>
     pub status: ::std::option::Option<crate::types::InstanceHealthCheckState>,
+    /// <p>The reason for the container instance health status.</p>
+    pub status_reason: ::std::option::Option<::std::string::String>,
     /// <p>The Unix timestamp for when the container instance health status was last updated.</p>
     pub last_updated: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The Unix timestamp for when the container instance health status last changed.</p>
@@ -21,6 +23,10 @@ impl InstanceHealthCheckResult {
     /// <p>The container instance health status.</p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::InstanceHealthCheckState> {
         self.status.as_ref()
+    }
+    /// <p>The reason for the container instance health status.</p>
+    pub fn status_reason(&self) -> ::std::option::Option<&str> {
+        self.status_reason.as_deref()
     }
     /// <p>The Unix timestamp for when the container instance health status was last updated.</p>
     pub fn last_updated(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -44,6 +50,7 @@ impl InstanceHealthCheckResult {
 pub struct InstanceHealthCheckResultBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::InstanceHealthCheckType>,
     pub(crate) status: ::std::option::Option<crate::types::InstanceHealthCheckState>,
+    pub(crate) status_reason: ::std::option::Option<::std::string::String>,
     pub(crate) last_updated: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_status_change: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
@@ -75,6 +82,20 @@ impl InstanceHealthCheckResultBuilder {
     /// <p>The container instance health status.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::InstanceHealthCheckState> {
         &self.status
+    }
+    /// <p>The reason for the container instance health status.</p>
+    pub fn status_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.status_reason = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The reason for the container instance health status.</p>
+    pub fn set_status_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.status_reason = input;
+        self
+    }
+    /// <p>The reason for the container instance health status.</p>
+    pub fn get_status_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_reason
     }
     /// <p>The Unix timestamp for when the container instance health status was last updated.</p>
     pub fn last_updated(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -109,6 +130,7 @@ impl InstanceHealthCheckResultBuilder {
         crate::types::InstanceHealthCheckResult {
             r#type: self.r#type,
             status: self.status,
+            status_reason: self.status_reason,
             last_updated: self.last_updated,
             last_status_change: self.last_status_change,
         }

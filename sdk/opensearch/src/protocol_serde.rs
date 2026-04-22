@@ -173,6 +173,8 @@ pub(crate) mod shape_remove_tags;
 
 pub(crate) mod shape_revoke_vpc_endpoint_access;
 
+pub(crate) mod shape_rollback_service_software_update;
+
 pub(crate) mod shape_start_domain_maintenance;
 
 pub(crate) mod shape_start_service_software_update;
@@ -280,6 +282,8 @@ pub(crate) mod shape_resource_already_exists_exception;
 pub(crate) mod shape_resource_not_found_exception;
 
 pub(crate) mod shape_revoke_vpc_endpoint_access_input;
+
+pub(crate) mod shape_rollback_service_software_update_input;
 
 pub(crate) mod shape_service_quota_exceeded_exception;
 
@@ -466,6 +470,8 @@ pub(crate) mod shape_package_version_history_list;
 pub(crate) mod shape_reserved_instance_list;
 
 pub(crate) mod shape_reserved_instance_offering_list;
+
+pub(crate) mod shape_rollback_service_software_options;
 
 pub(crate) mod shape_scheduled_action;
 

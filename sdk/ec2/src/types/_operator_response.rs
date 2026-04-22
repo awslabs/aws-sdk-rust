@@ -8,6 +8,8 @@ pub struct OperatorResponse {
     pub managed: ::std::option::Option<bool>,
     /// <p>If <code>managed</code> is <code>true</code>, then the principal is returned. The principal is the service provider that manages the resource.</p>
     pub principal: ::std::option::Option<::std::string::String>,
+    /// <p>If <code>true</code>, the resource is hidden by default based on the managed resource visibility settings for the account.</p>
+    pub hidden_by_default: ::std::option::Option<bool>,
 }
 impl OperatorResponse {
     /// <p>If <code>true</code>, the resource is managed by a service provider.</p>
@@ -17,6 +19,10 @@ impl OperatorResponse {
     /// <p>If <code>managed</code> is <code>true</code>, then the principal is returned. The principal is the service provider that manages the resource.</p>
     pub fn principal(&self) -> ::std::option::Option<&str> {
         self.principal.as_deref()
+    }
+    /// <p>If <code>true</code>, the resource is hidden by default based on the managed resource visibility settings for the account.</p>
+    pub fn hidden_by_default(&self) -> ::std::option::Option<bool> {
+        self.hidden_by_default
     }
 }
 impl OperatorResponse {
@@ -32,6 +38,7 @@ impl OperatorResponse {
 pub struct OperatorResponseBuilder {
     pub(crate) managed: ::std::option::Option<bool>,
     pub(crate) principal: ::std::option::Option<::std::string::String>,
+    pub(crate) hidden_by_default: ::std::option::Option<bool>,
 }
 impl OperatorResponseBuilder {
     /// <p>If <code>true</code>, the resource is managed by a service provider.</p>
@@ -62,11 +69,26 @@ impl OperatorResponseBuilder {
     pub fn get_principal(&self) -> &::std::option::Option<::std::string::String> {
         &self.principal
     }
+    /// <p>If <code>true</code>, the resource is hidden by default based on the managed resource visibility settings for the account.</p>
+    pub fn hidden_by_default(mut self, input: bool) -> Self {
+        self.hidden_by_default = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>If <code>true</code>, the resource is hidden by default based on the managed resource visibility settings for the account.</p>
+    pub fn set_hidden_by_default(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.hidden_by_default = input;
+        self
+    }
+    /// <p>If <code>true</code>, the resource is hidden by default based on the managed resource visibility settings for the account.</p>
+    pub fn get_hidden_by_default(&self) -> &::std::option::Option<bool> {
+        &self.hidden_by_default
+    }
     /// Consumes the builder and constructs a [`OperatorResponse`](crate::types::OperatorResponse).
     pub fn build(self) -> crate::types::OperatorResponse {
         crate::types::OperatorResponse {
             managed: self.managed,
             principal: self.principal,
+            hidden_by_default: self.hidden_by_default,
         }
     }
 }

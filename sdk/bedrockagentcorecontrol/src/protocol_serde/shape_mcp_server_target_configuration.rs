@@ -27,6 +27,13 @@ where
                                 crate::protocol_serde::shape_mcp_tool_schema_configuration::de_mcp_tool_schema_configuration(tokens, _value)?,
                             );
                         }
+                        "resourcePriority" => {
+                            builder = builder.set_resource_priority(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
                         "listingMode" => {
                             builder = builder.set_listing_mode(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
@@ -68,8 +75,14 @@ pub fn ser_mcp_server_target_configuration(
         crate::protocol_serde::shape_mcp_tool_schema_configuration::ser_mcp_tool_schema_configuration(&mut object_2, var_1)?;
         object_2.finish();
     }
-    if let Some(var_3) = &input.listing_mode {
-        object.key("listingMode").string(var_3.as_str());
+    if let Some(var_3) = &input.resource_priority {
+        object.key("resourcePriority").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_3).into()),
+        );
+    }
+    if let Some(var_4) = &input.listing_mode {
+        object.key("listingMode").string(var_4.as_str());
     }
     Ok(())
 }

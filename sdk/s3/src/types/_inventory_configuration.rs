@@ -14,7 +14,9 @@ pub struct InventoryConfiguration {
     pub id: ::std::string::String,
     /// <p>Object versions to include in the inventory list. If set to <code>All</code>, the list includes all the object versions, which adds the version-related fields <code>VersionId</code>, <code>IsLatest</code>, and <code>DeleteMarker</code> to the list. If set to <code>Current</code>, the list does not contain these version-related fields.</p>
     pub included_object_versions: crate::types::InventoryIncludedObjectVersions,
-    /// <p>Contains the optional fields that are included in the inventory results.</p>
+    /// <p>Contains the optional fields that are included in the inventory results.</p><note>
+    /// <p>The following optional fields are supported for directory buckets <code>Size | LastModifiedDate | StorageClass | ETag | IsMultipartUploaded | EncryptionStatus | BucketKeyStatus | ChecksumAlgorithm | LifecycleExpirationDate.</code> Throws MalformedXML error if unsupported optional field is provided.</p>
+    /// </note>
     pub optional_fields: ::std::option::Option<::std::vec::Vec<crate::types::InventoryOptionalField>>,
     /// <p>Specifies the schedule for generating inventory results.</p>
     pub schedule: ::std::option::Option<crate::types::InventorySchedule>,
@@ -41,7 +43,9 @@ impl InventoryConfiguration {
     pub fn included_object_versions(&self) -> &crate::types::InventoryIncludedObjectVersions {
         &self.included_object_versions
     }
-    /// <p>Contains the optional fields that are included in the inventory results.</p>
+    /// <p>Contains the optional fields that are included in the inventory results.</p><note>
+    /// <p>The following optional fields are supported for directory buckets <code>Size | LastModifiedDate | StorageClass | ETag | IsMultipartUploaded | EncryptionStatus | BucketKeyStatus | ChecksumAlgorithm | LifecycleExpirationDate.</code> Throws MalformedXML error if unsupported optional field is provided.</p>
+    /// </note>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.optional_fields.is_none()`.
     pub fn optional_fields(&self) -> &[crate::types::InventoryOptionalField] {
@@ -150,19 +154,25 @@ impl InventoryConfigurationBuilder {
     ///
     /// To override the contents of this collection use [`set_optional_fields`](Self::set_optional_fields).
     ///
-    /// <p>Contains the optional fields that are included in the inventory results.</p>
+    /// <p>Contains the optional fields that are included in the inventory results.</p><note>
+    /// <p>The following optional fields are supported for directory buckets <code>Size | LastModifiedDate | StorageClass | ETag | IsMultipartUploaded | EncryptionStatus | BucketKeyStatus | ChecksumAlgorithm | LifecycleExpirationDate.</code> Throws MalformedXML error if unsupported optional field is provided.</p>
+    /// </note>
     pub fn optional_fields(mut self, input: crate::types::InventoryOptionalField) -> Self {
         let mut v = self.optional_fields.unwrap_or_default();
         v.push(input);
         self.optional_fields = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Contains the optional fields that are included in the inventory results.</p>
+    /// <p>Contains the optional fields that are included in the inventory results.</p><note>
+    /// <p>The following optional fields are supported for directory buckets <code>Size | LastModifiedDate | StorageClass | ETag | IsMultipartUploaded | EncryptionStatus | BucketKeyStatus | ChecksumAlgorithm | LifecycleExpirationDate.</code> Throws MalformedXML error if unsupported optional field is provided.</p>
+    /// </note>
     pub fn set_optional_fields(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InventoryOptionalField>>) -> Self {
         self.optional_fields = input;
         self
     }
-    /// <p>Contains the optional fields that are included in the inventory results.</p>
+    /// <p>Contains the optional fields that are included in the inventory results.</p><note>
+    /// <p>The following optional fields are supported for directory buckets <code>Size | LastModifiedDate | StorageClass | ETag | IsMultipartUploaded | EncryptionStatus | BucketKeyStatus | ChecksumAlgorithm | LifecycleExpirationDate.</code> Throws MalformedXML error if unsupported optional field is provided.</p>
+    /// </note>
     pub fn get_optional_fields(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InventoryOptionalField>> {
         &self.optional_fields
     }

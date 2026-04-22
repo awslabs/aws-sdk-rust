@@ -6294,6 +6294,38 @@ async fn operation_input_test_list_directory_buckets_185() {
 
 #[::tokio::test]
 async fn operation_input_test_get_object_186() {
+    /* documentation: Data Plane with bucket containing delimiters */
+    /* builtIns: {
+        "AWS::Region": "us-east-1"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        builder.build()
+    };
+    let client = aws_sdk_s3::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .get_object()
+            .set_bucket(::std::option::Option::Some("my--s3--bucket--abcd-ab1--x-s3".to_owned()))
+            .set_key(::std::option::Option::Some("key".to_owned()))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://my--s3--bucket--abcd-ab1--x-s3.s3express-abcd-ab1.us-east-1.amazonaws.com"),
+        "expected URI to start with `https://my--s3--bucket--abcd-ab1--x-s3.s3express-abcd-ab1.us-east-1.amazonaws.com` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_get_object_187() {
     /* documentation: Data Plane with short AZ and dualstack */
     /* builtIns: {
         "AWS::Region": "us-west-2",
@@ -6327,7 +6359,7 @@ async fn operation_input_test_get_object_186() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_get_object_187() {
+async fn operation_input_test_get_object_188() {
     /* documentation: Data Plane with short AZ and FIPS with dualstack */
     /* builtIns: {
         "AWS::Region": "us-west-2",
@@ -6363,7 +6395,7 @@ async fn operation_input_test_get_object_187() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_create_bucket_188() {
+async fn operation_input_test_create_bucket_189() {
     /* documentation: Control plane and FIPS with dualstack */
     /* builtIns: {
         "AWS::Region": "us-east-1",
@@ -6398,7 +6430,7 @@ async fn operation_input_test_create_bucket_188() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_create_bucket_189() {
+async fn operation_input_test_create_bucket_190() {
     /* documentation: Control plane with dualstack and bucket */
     /* builtIns: {
         "AWS::Region": "us-east-1",

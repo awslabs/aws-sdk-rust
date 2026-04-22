@@ -183,4 +183,18 @@ impl GetPositionEstimateFluentBuilder {
     pub fn get_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         self.inner.get_timestamp()
     }
+    /// Optional configuration to customize position estimates. If not provided, defaults are applied.
+    pub fn advanced_configuration(mut self, input: crate::types::AdvancedConfiguration) -> Self {
+        self.inner = self.inner.advanced_configuration(input);
+        self
+    }
+    /// Optional configuration to customize position estimates. If not provided, defaults are applied.
+    pub fn set_advanced_configuration(mut self, input: ::std::option::Option<crate::types::AdvancedConfiguration>) -> Self {
+        self.inner = self.inner.set_advanced_configuration(input);
+        self
+    }
+    /// Optional configuration to customize position estimates. If not provided, defaults are applied.
+    pub fn get_advanced_configuration(&self) -> &::std::option::Option<crate::types::AdvancedConfiguration> {
+        self.inner.get_advanced_configuration()
+    }
 }

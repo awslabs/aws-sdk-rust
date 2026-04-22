@@ -3,6 +3,20 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetChannelOutput {
+    /// <p>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Access-Control-Allow-Origin">Access-Control-Allow-Origin</a> in the MDN Web Docs.</p>
+    pub access_control_allow_origin: ::std::option::Option<::std::string::String>,
+    /// <p>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Access-Control-Expose-Headers">Access-Control-Expose-Headers</a> in the MDN Web Docs.</p>
+    pub access_control_expose_headers: ::std::option::Option<::std::string::String>,
+    /// <p>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Cache-Control">Cache-Control</a> in the MDN Web Docs.</p>
+    pub cache_control: ::std::option::Option<::std::string::String>,
+    /// <p>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Content-Security-Policy">Content-Security-Policy</a> in the MDN Web Docs.</p>
+    pub content_security_policy: ::std::option::Option<::std::string::String>,
+    /// <p>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Strict-Transport-Security">Strict-Transport-Security</a> in the MDN Web Docs.</p>
+    pub strict_transport_security: ::std::option::Option<::std::string::String>,
+    /// <p>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/X-Content-Type-Options">X-Content-Type-Options</a> in the MDN Web Docs.</p>
+    pub x_content_type_options: ::std::option::Option<::std::string::String>,
+    /// <p>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/X-Frame-Options">X-Frame-Options</a> in the MDN Web Docs.</p>
+    pub x_frame_options: ::std::option::Option<::std::string::String>,
     /// <p></p>
     pub channels: ::std::option::Option<::std::vec::Vec<crate::types::Channel>>,
     /// <p>Each error object is related to a specific ARN in the request.</p>
@@ -10,6 +24,34 @@ pub struct BatchGetChannelOutput {
     _request_id: Option<String>,
 }
 impl BatchGetChannelOutput {
+    /// <p>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Access-Control-Allow-Origin">Access-Control-Allow-Origin</a> in the MDN Web Docs.</p>
+    pub fn access_control_allow_origin(&self) -> ::std::option::Option<&str> {
+        self.access_control_allow_origin.as_deref()
+    }
+    /// <p>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Access-Control-Expose-Headers">Access-Control-Expose-Headers</a> in the MDN Web Docs.</p>
+    pub fn access_control_expose_headers(&self) -> ::std::option::Option<&str> {
+        self.access_control_expose_headers.as_deref()
+    }
+    /// <p>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Cache-Control">Cache-Control</a> in the MDN Web Docs.</p>
+    pub fn cache_control(&self) -> ::std::option::Option<&str> {
+        self.cache_control.as_deref()
+    }
+    /// <p>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Content-Security-Policy">Content-Security-Policy</a> in the MDN Web Docs.</p>
+    pub fn content_security_policy(&self) -> ::std::option::Option<&str> {
+        self.content_security_policy.as_deref()
+    }
+    /// <p>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Strict-Transport-Security">Strict-Transport-Security</a> in the MDN Web Docs.</p>
+    pub fn strict_transport_security(&self) -> ::std::option::Option<&str> {
+        self.strict_transport_security.as_deref()
+    }
+    /// <p>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/X-Content-Type-Options">X-Content-Type-Options</a> in the MDN Web Docs.</p>
+    pub fn x_content_type_options(&self) -> ::std::option::Option<&str> {
+        self.x_content_type_options.as_deref()
+    }
+    /// <p>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/X-Frame-Options">X-Frame-Options</a> in the MDN Web Docs.</p>
+    pub fn x_frame_options(&self) -> ::std::option::Option<&str> {
+        self.x_frame_options.as_deref()
+    }
     /// <p></p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.channels.is_none()`.
@@ -39,11 +81,116 @@ impl BatchGetChannelOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct BatchGetChannelOutputBuilder {
+    pub(crate) access_control_allow_origin: ::std::option::Option<::std::string::String>,
+    pub(crate) access_control_expose_headers: ::std::option::Option<::std::string::String>,
+    pub(crate) cache_control: ::std::option::Option<::std::string::String>,
+    pub(crate) content_security_policy: ::std::option::Option<::std::string::String>,
+    pub(crate) strict_transport_security: ::std::option::Option<::std::string::String>,
+    pub(crate) x_content_type_options: ::std::option::Option<::std::string::String>,
+    pub(crate) x_frame_options: ::std::option::Option<::std::string::String>,
     pub(crate) channels: ::std::option::Option<::std::vec::Vec<crate::types::Channel>>,
     pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::BatchError>>,
     _request_id: Option<String>,
 }
 impl BatchGetChannelOutputBuilder {
+    /// <p>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Access-Control-Allow-Origin">Access-Control-Allow-Origin</a> in the MDN Web Docs.</p>
+    pub fn access_control_allow_origin(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.access_control_allow_origin = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Access-Control-Allow-Origin">Access-Control-Allow-Origin</a> in the MDN Web Docs.</p>
+    pub fn set_access_control_allow_origin(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.access_control_allow_origin = input;
+        self
+    }
+    /// <p>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Access-Control-Allow-Origin">Access-Control-Allow-Origin</a> in the MDN Web Docs.</p>
+    pub fn get_access_control_allow_origin(&self) -> &::std::option::Option<::std::string::String> {
+        &self.access_control_allow_origin
+    }
+    /// <p>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Access-Control-Expose-Headers">Access-Control-Expose-Headers</a> in the MDN Web Docs.</p>
+    pub fn access_control_expose_headers(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.access_control_expose_headers = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Access-Control-Expose-Headers">Access-Control-Expose-Headers</a> in the MDN Web Docs.</p>
+    pub fn set_access_control_expose_headers(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.access_control_expose_headers = input;
+        self
+    }
+    /// <p>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Access-Control-Expose-Headers">Access-Control-Expose-Headers</a> in the MDN Web Docs.</p>
+    pub fn get_access_control_expose_headers(&self) -> &::std::option::Option<::std::string::String> {
+        &self.access_control_expose_headers
+    }
+    /// <p>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Cache-Control">Cache-Control</a> in the MDN Web Docs.</p>
+    pub fn cache_control(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.cache_control = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Cache-Control">Cache-Control</a> in the MDN Web Docs.</p>
+    pub fn set_cache_control(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.cache_control = input;
+        self
+    }
+    /// <p>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Cache-Control">Cache-Control</a> in the MDN Web Docs.</p>
+    pub fn get_cache_control(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cache_control
+    }
+    /// <p>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Content-Security-Policy">Content-Security-Policy</a> in the MDN Web Docs.</p>
+    pub fn content_security_policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.content_security_policy = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Content-Security-Policy">Content-Security-Policy</a> in the MDN Web Docs.</p>
+    pub fn set_content_security_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.content_security_policy = input;
+        self
+    }
+    /// <p>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Content-Security-Policy">Content-Security-Policy</a> in the MDN Web Docs.</p>
+    pub fn get_content_security_policy(&self) -> &::std::option::Option<::std::string::String> {
+        &self.content_security_policy
+    }
+    /// <p>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Strict-Transport-Security">Strict-Transport-Security</a> in the MDN Web Docs.</p>
+    pub fn strict_transport_security(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.strict_transport_security = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Strict-Transport-Security">Strict-Transport-Security</a> in the MDN Web Docs.</p>
+    pub fn set_strict_transport_security(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.strict_transport_security = input;
+        self
+    }
+    /// <p>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Strict-Transport-Security">Strict-Transport-Security</a> in the MDN Web Docs.</p>
+    pub fn get_strict_transport_security(&self) -> &::std::option::Option<::std::string::String> {
+        &self.strict_transport_security
+    }
+    /// <p>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/X-Content-Type-Options">X-Content-Type-Options</a> in the MDN Web Docs.</p>
+    pub fn x_content_type_options(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.x_content_type_options = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/X-Content-Type-Options">X-Content-Type-Options</a> in the MDN Web Docs.</p>
+    pub fn set_x_content_type_options(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.x_content_type_options = input;
+        self
+    }
+    /// <p>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/X-Content-Type-Options">X-Content-Type-Options</a> in the MDN Web Docs.</p>
+    pub fn get_x_content_type_options(&self) -> &::std::option::Option<::std::string::String> {
+        &self.x_content_type_options
+    }
+    /// <p>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/X-Frame-Options">X-Frame-Options</a> in the MDN Web Docs.</p>
+    pub fn x_frame_options(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.x_frame_options = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/X-Frame-Options">X-Frame-Options</a> in the MDN Web Docs.</p>
+    pub fn set_x_frame_options(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.x_frame_options = input;
+        self
+    }
+    /// <p>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/X-Frame-Options">X-Frame-Options</a> in the MDN Web Docs.</p>
+    pub fn get_x_frame_options(&self) -> &::std::option::Option<::std::string::String> {
+        &self.x_frame_options
+    }
     /// Appends an item to `channels`.
     ///
     /// To override the contents of this collection use [`set_channels`](Self::set_channels).
@@ -96,6 +243,13 @@ impl BatchGetChannelOutputBuilder {
     /// Consumes the builder and constructs a [`BatchGetChannelOutput`](crate::operation::batch_get_channel::BatchGetChannelOutput).
     pub fn build(self) -> crate::operation::batch_get_channel::BatchGetChannelOutput {
         crate::operation::batch_get_channel::BatchGetChannelOutput {
+            access_control_allow_origin: self.access_control_allow_origin,
+            access_control_expose_headers: self.access_control_expose_headers,
+            cache_control: self.cache_control,
+            content_security_policy: self.content_security_policy,
+            strict_transport_security: self.strict_transport_security,
+            x_content_type_options: self.x_content_type_options,
+            x_frame_options: self.x_frame_options,
             channels: self.channels,
             errors: self.errors,
             _request_id: self._request_id,

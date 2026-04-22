@@ -73,6 +73,8 @@ pub use crate::types::_ip::Ip;
 
 pub use crate::types::_gnss::Gnss;
 
+pub use crate::types::_advanced_configuration::AdvancedConfiguration;
+
 pub use crate::types::_identifier_type::IdentifierType;
 
 pub use crate::types::_event_notification_partner_type::EventNotificationPartnerType;
@@ -188,6 +190,8 @@ pub use crate::types::_summary_metric_query_result::SummaryMetricQueryResult;
 pub use crate::types::_semtech_gnss_detail::SemtechGnssDetail;
 
 pub use crate::types::_wi_fi_access_point::WiFiAccessPoint;
+
+pub use crate::types::_wi_fi_cellular::WiFiCellular;
 
 pub use crate::types::_sidewalk_event_notification_configurations::SidewalkEventNotificationConfigurations;
 
@@ -360,6 +364,8 @@ mod _abp_v1_0_x;
 mod _abp_v1_1;
 
 mod _accuracy;
+
+mod _advanced_configuration;
 
 mod _aggregation_period;
 
@@ -672,6 +678,8 @@ mod _wcdma_nmr_obj;
 mod _wcdma_obj;
 
 mod _wi_fi_access_point;
+
+mod _wi_fi_cellular;
 
 mod _wireless_device_event;
 

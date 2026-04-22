@@ -1564,6 +1564,8 @@ mod get_managed_prefix_list_associations;
 
 mod get_managed_prefix_list_entries;
 
+mod get_managed_resource_visibility;
+
 mod get_network_insights_access_scope_analysis_findings;
 
 mod get_network_insights_access_scope_content;
@@ -1709,6 +1711,8 @@ mod modify_launch_template;
 mod modify_local_gateway_route;
 
 mod modify_managed_prefix_list;
+
+mod modify_managed_resource_visibility;
 
 mod modify_network_interface_attribute;
 

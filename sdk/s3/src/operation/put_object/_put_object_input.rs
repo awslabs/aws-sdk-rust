@@ -50,9 +50,19 @@ pub struct PutObjectInput {
     /// <li>
     /// <p><code>CRC64NVME</code></p></li>
     /// <li>
+    /// <p><code>MD5</code></p></li>
+    /// <li>
     /// <p><code>SHA1</code></p></li>
     /// <li>
     /// <p><code>SHA256</code></p></li>
+    /// <li>
+    /// <p><code>SHA512</code></p></li>
+    /// <li>
+    /// <p><code>XXHASH3</code></p></li>
+    /// <li>
+    /// <p><code>XXHASH64</code></p></li>
+    /// <li>
+    /// <p><code>XXHASH128</code></p></li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// <p>If the individual checksum value you provide through <code>x-amz-checksum-<i>algorithm</i> </code> doesn't match the checksum algorithm you set through <code>x-amz-sdk-checksum-algorithm</code>, Amazon S3 fails the request with a <code>BadDigest</code> error.</p><note>
@@ -70,6 +80,16 @@ pub struct PutObjectInput {
     pub checksum_sha1: ::std::option::Option<::std::string::String>,
     /// <p>This header can be used as a data integrity check to verify that the data received is the same data that was originally sent. This header specifies the Base64 encoded, 256-bit <code>SHA256</code> digest of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub checksum_sha256: ::std::option::Option<::std::string::String>,
+    /// <p>This header can be used as a data integrity check to verify that the data received is the same data that was originally sent. This header specifies the Base64 encoded, 512-bit <code>SHA512</code> digest of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity in the Amazon S3 User Guide</a>.</p>
+    pub checksum_sha512: ::std::option::Option<::std::string::String>,
+    /// <p>This header can be used as a data integrity check to verify that the data received is the same data that was originally sent. This header specifies the Base64 encoded, 128-bit <code>MD5</code> digest of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity in the Amazon S3 User Guide</a>.</p>
+    pub checksum_md5: ::std::option::Option<::std::string::String>,
+    /// <p>This header can be used as a data integrity check to verify that the data received is the same data that was originally sent. This header specifies the Base64 encoded, 64-bit <code>XXHASH64</code> checksum of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity in the Amazon S3 User Guide</a>.</p>
+    pub checksum_xxhash64: ::std::option::Option<::std::string::String>,
+    /// <p>This header can be used as a data integrity check to verify that the data received is the same data that was originally sent. This header specifies the Base64 encoded, 64-bit <code>XXHASH3</code> checksum of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity in the Amazon S3 User Guide</a>.</p>
+    pub checksum_xxhash3: ::std::option::Option<::std::string::String>,
+    /// <p>This header can be used as a data integrity check to verify that the data received is the same data that was originally sent. This header specifies the Base64 encoded, 128-bit <code>XXHASH128</code> checksum of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity in the Amazon S3 User Guide</a>.</p>
+    pub checksum_xxhash128: ::std::option::Option<::std::string::String>,
     /// <p>The date and time at which the object is no longer cacheable. For more information, see <a href="https://www.rfc-editor.org/rfc/rfc7234#section-5.3">https://www.rfc-editor.org/rfc/rfc7234#section-5.3</a>.</p>
     pub expires: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Uploads the object only if the ETag (entity tag) value provided during the WRITE operation matches the ETag of the object in S3. If the ETag values do not match, the operation returns a <code>412 Precondition Failed</code> error.</p>
@@ -273,9 +293,19 @@ impl PutObjectInput {
     /// <li>
     /// <p><code>CRC64NVME</code></p></li>
     /// <li>
+    /// <p><code>MD5</code></p></li>
+    /// <li>
     /// <p><code>SHA1</code></p></li>
     /// <li>
     /// <p><code>SHA256</code></p></li>
+    /// <li>
+    /// <p><code>SHA512</code></p></li>
+    /// <li>
+    /// <p><code>XXHASH3</code></p></li>
+    /// <li>
+    /// <p><code>XXHASH64</code></p></li>
+    /// <li>
+    /// <p><code>XXHASH128</code></p></li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// <p>If the individual checksum value you provide through <code>x-amz-checksum-<i>algorithm</i> </code> doesn't match the checksum algorithm you set through <code>x-amz-sdk-checksum-algorithm</code>, Amazon S3 fails the request with a <code>BadDigest</code> error.</p><note>
@@ -304,6 +334,26 @@ impl PutObjectInput {
     /// <p>This header can be used as a data integrity check to verify that the data received is the same data that was originally sent. This header specifies the Base64 encoded, 256-bit <code>SHA256</code> digest of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn checksum_sha256(&self) -> ::std::option::Option<&str> {
         self.checksum_sha256.as_deref()
+    }
+    /// <p>This header can be used as a data integrity check to verify that the data received is the same data that was originally sent. This header specifies the Base64 encoded, 512-bit <code>SHA512</code> digest of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity in the Amazon S3 User Guide</a>.</p>
+    pub fn checksum_sha512(&self) -> ::std::option::Option<&str> {
+        self.checksum_sha512.as_deref()
+    }
+    /// <p>This header can be used as a data integrity check to verify that the data received is the same data that was originally sent. This header specifies the Base64 encoded, 128-bit <code>MD5</code> digest of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity in the Amazon S3 User Guide</a>.</p>
+    pub fn checksum_md5(&self) -> ::std::option::Option<&str> {
+        self.checksum_md5.as_deref()
+    }
+    /// <p>This header can be used as a data integrity check to verify that the data received is the same data that was originally sent. This header specifies the Base64 encoded, 64-bit <code>XXHASH64</code> checksum of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity in the Amazon S3 User Guide</a>.</p>
+    pub fn checksum_xxhash64(&self) -> ::std::option::Option<&str> {
+        self.checksum_xxhash64.as_deref()
+    }
+    /// <p>This header can be used as a data integrity check to verify that the data received is the same data that was originally sent. This header specifies the Base64 encoded, 64-bit <code>XXHASH3</code> checksum of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity in the Amazon S3 User Guide</a>.</p>
+    pub fn checksum_xxhash3(&self) -> ::std::option::Option<&str> {
+        self.checksum_xxhash3.as_deref()
+    }
+    /// <p>This header can be used as a data integrity check to verify that the data received is the same data that was originally sent. This header specifies the Base64 encoded, 128-bit <code>XXHASH128</code> checksum of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity in the Amazon S3 User Guide</a>.</p>
+    pub fn checksum_xxhash128(&self) -> ::std::option::Option<&str> {
+        self.checksum_xxhash128.as_deref()
     }
     /// <p>The date and time at which the object is no longer cacheable. For more information, see <a href="https://www.rfc-editor.org/rfc/rfc7234#section-5.3">https://www.rfc-editor.org/rfc/rfc7234#section-5.3</a>.</p>
     pub fn expires(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -508,6 +558,11 @@ impl ::std::fmt::Debug for PutObjectInput {
         formatter.field("checksum_crc64_nvme", &self.checksum_crc64_nvme);
         formatter.field("checksum_sha1", &self.checksum_sha1);
         formatter.field("checksum_sha256", &self.checksum_sha256);
+        formatter.field("checksum_sha512", &self.checksum_sha512);
+        formatter.field("checksum_md5", &self.checksum_md5);
+        formatter.field("checksum_xxhash64", &self.checksum_xxhash64);
+        formatter.field("checksum_xxhash3", &self.checksum_xxhash3);
+        formatter.field("checksum_xxhash128", &self.checksum_xxhash128);
         formatter.field("expires", &self.expires);
         formatter.field("if_match", &self.if_match);
         formatter.field("if_none_match", &self.if_none_match);
@@ -563,6 +618,11 @@ pub struct PutObjectInputBuilder {
     pub(crate) checksum_crc64_nvme: ::std::option::Option<::std::string::String>,
     pub(crate) checksum_sha1: ::std::option::Option<::std::string::String>,
     pub(crate) checksum_sha256: ::std::option::Option<::std::string::String>,
+    pub(crate) checksum_sha512: ::std::option::Option<::std::string::String>,
+    pub(crate) checksum_md5: ::std::option::Option<::std::string::String>,
+    pub(crate) checksum_xxhash64: ::std::option::Option<::std::string::String>,
+    pub(crate) checksum_xxhash3: ::std::option::Option<::std::string::String>,
+    pub(crate) checksum_xxhash128: ::std::option::Option<::std::string::String>,
     pub(crate) expires: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) if_match: ::std::option::Option<::std::string::String>,
     pub(crate) if_none_match: ::std::option::Option<::std::string::String>,
@@ -795,9 +855,19 @@ impl PutObjectInputBuilder {
     /// <li>
     /// <p><code>CRC64NVME</code></p></li>
     /// <li>
+    /// <p><code>MD5</code></p></li>
+    /// <li>
     /// <p><code>SHA1</code></p></li>
     /// <li>
     /// <p><code>SHA256</code></p></li>
+    /// <li>
+    /// <p><code>SHA512</code></p></li>
+    /// <li>
+    /// <p><code>XXHASH3</code></p></li>
+    /// <li>
+    /// <p><code>XXHASH64</code></p></li>
+    /// <li>
+    /// <p><code>XXHASH128</code></p></li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// <p>If the individual checksum value you provide through <code>x-amz-checksum-<i>algorithm</i> </code> doesn't match the checksum algorithm you set through <code>x-amz-sdk-checksum-algorithm</code>, Amazon S3 fails the request with a <code>BadDigest</code> error.</p><note>
@@ -818,9 +888,19 @@ impl PutObjectInputBuilder {
     /// <li>
     /// <p><code>CRC64NVME</code></p></li>
     /// <li>
+    /// <p><code>MD5</code></p></li>
+    /// <li>
     /// <p><code>SHA1</code></p></li>
     /// <li>
     /// <p><code>SHA256</code></p></li>
+    /// <li>
+    /// <p><code>SHA512</code></p></li>
+    /// <li>
+    /// <p><code>XXHASH3</code></p></li>
+    /// <li>
+    /// <p><code>XXHASH64</code></p></li>
+    /// <li>
+    /// <p><code>XXHASH128</code></p></li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// <p>If the individual checksum value you provide through <code>x-amz-checksum-<i>algorithm</i> </code> doesn't match the checksum algorithm you set through <code>x-amz-sdk-checksum-algorithm</code>, Amazon S3 fails the request with a <code>BadDigest</code> error.</p><note>
@@ -841,9 +921,19 @@ impl PutObjectInputBuilder {
     /// <li>
     /// <p><code>CRC64NVME</code></p></li>
     /// <li>
+    /// <p><code>MD5</code></p></li>
+    /// <li>
     /// <p><code>SHA1</code></p></li>
     /// <li>
     /// <p><code>SHA256</code></p></li>
+    /// <li>
+    /// <p><code>SHA512</code></p></li>
+    /// <li>
+    /// <p><code>XXHASH3</code></p></li>
+    /// <li>
+    /// <p><code>XXHASH64</code></p></li>
+    /// <li>
+    /// <p><code>XXHASH128</code></p></li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// <p>If the individual checksum value you provide through <code>x-amz-checksum-<i>algorithm</i> </code> doesn't match the checksum algorithm you set through <code>x-amz-sdk-checksum-algorithm</code>, Amazon S3 fails the request with a <code>BadDigest</code> error.</p><note>
@@ -922,6 +1012,76 @@ impl PutObjectInputBuilder {
     /// <p>This header can be used as a data integrity check to verify that the data received is the same data that was originally sent. This header specifies the Base64 encoded, 256-bit <code>SHA256</code> digest of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn get_checksum_sha256(&self) -> &::std::option::Option<::std::string::String> {
         &self.checksum_sha256
+    }
+    /// <p>This header can be used as a data integrity check to verify that the data received is the same data that was originally sent. This header specifies the Base64 encoded, 512-bit <code>SHA512</code> digest of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity in the Amazon S3 User Guide</a>.</p>
+    pub fn checksum_sha512(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.checksum_sha512 = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>This header can be used as a data integrity check to verify that the data received is the same data that was originally sent. This header specifies the Base64 encoded, 512-bit <code>SHA512</code> digest of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity in the Amazon S3 User Guide</a>.</p>
+    pub fn set_checksum_sha512(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.checksum_sha512 = input;
+        self
+    }
+    /// <p>This header can be used as a data integrity check to verify that the data received is the same data that was originally sent. This header specifies the Base64 encoded, 512-bit <code>SHA512</code> digest of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity in the Amazon S3 User Guide</a>.</p>
+    pub fn get_checksum_sha512(&self) -> &::std::option::Option<::std::string::String> {
+        &self.checksum_sha512
+    }
+    /// <p>This header can be used as a data integrity check to verify that the data received is the same data that was originally sent. This header specifies the Base64 encoded, 128-bit <code>MD5</code> digest of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity in the Amazon S3 User Guide</a>.</p>
+    pub fn checksum_md5(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.checksum_md5 = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>This header can be used as a data integrity check to verify that the data received is the same data that was originally sent. This header specifies the Base64 encoded, 128-bit <code>MD5</code> digest of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity in the Amazon S3 User Guide</a>.</p>
+    pub fn set_checksum_md5(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.checksum_md5 = input;
+        self
+    }
+    /// <p>This header can be used as a data integrity check to verify that the data received is the same data that was originally sent. This header specifies the Base64 encoded, 128-bit <code>MD5</code> digest of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity in the Amazon S3 User Guide</a>.</p>
+    pub fn get_checksum_md5(&self) -> &::std::option::Option<::std::string::String> {
+        &self.checksum_md5
+    }
+    /// <p>This header can be used as a data integrity check to verify that the data received is the same data that was originally sent. This header specifies the Base64 encoded, 64-bit <code>XXHASH64</code> checksum of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity in the Amazon S3 User Guide</a>.</p>
+    pub fn checksum_xxhash64(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.checksum_xxhash64 = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>This header can be used as a data integrity check to verify that the data received is the same data that was originally sent. This header specifies the Base64 encoded, 64-bit <code>XXHASH64</code> checksum of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity in the Amazon S3 User Guide</a>.</p>
+    pub fn set_checksum_xxhash64(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.checksum_xxhash64 = input;
+        self
+    }
+    /// <p>This header can be used as a data integrity check to verify that the data received is the same data that was originally sent. This header specifies the Base64 encoded, 64-bit <code>XXHASH64</code> checksum of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity in the Amazon S3 User Guide</a>.</p>
+    pub fn get_checksum_xxhash64(&self) -> &::std::option::Option<::std::string::String> {
+        &self.checksum_xxhash64
+    }
+    /// <p>This header can be used as a data integrity check to verify that the data received is the same data that was originally sent. This header specifies the Base64 encoded, 64-bit <code>XXHASH3</code> checksum of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity in the Amazon S3 User Guide</a>.</p>
+    pub fn checksum_xxhash3(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.checksum_xxhash3 = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>This header can be used as a data integrity check to verify that the data received is the same data that was originally sent. This header specifies the Base64 encoded, 64-bit <code>XXHASH3</code> checksum of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity in the Amazon S3 User Guide</a>.</p>
+    pub fn set_checksum_xxhash3(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.checksum_xxhash3 = input;
+        self
+    }
+    /// <p>This header can be used as a data integrity check to verify that the data received is the same data that was originally sent. This header specifies the Base64 encoded, 64-bit <code>XXHASH3</code> checksum of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity in the Amazon S3 User Guide</a>.</p>
+    pub fn get_checksum_xxhash3(&self) -> &::std::option::Option<::std::string::String> {
+        &self.checksum_xxhash3
+    }
+    /// <p>This header can be used as a data integrity check to verify that the data received is the same data that was originally sent. This header specifies the Base64 encoded, 128-bit <code>XXHASH128</code> checksum of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity in the Amazon S3 User Guide</a>.</p>
+    pub fn checksum_xxhash128(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.checksum_xxhash128 = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>This header can be used as a data integrity check to verify that the data received is the same data that was originally sent. This header specifies the Base64 encoded, 128-bit <code>XXHASH128</code> checksum of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity in the Amazon S3 User Guide</a>.</p>
+    pub fn set_checksum_xxhash128(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.checksum_xxhash128 = input;
+        self
+    }
+    /// <p>This header can be used as a data integrity check to verify that the data received is the same data that was originally sent. This header specifies the Base64 encoded, 128-bit <code>XXHASH128</code> checksum of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity in the Amazon S3 User Guide</a>.</p>
+    pub fn get_checksum_xxhash128(&self) -> &::std::option::Option<::std::string::String> {
+        &self.checksum_xxhash128
     }
     /// <p>The date and time at which the object is no longer cacheable. For more information, see <a href="https://www.rfc-editor.org/rfc/rfc7234#section-5.3">https://www.rfc-editor.org/rfc/rfc7234#section-5.3</a>.</p>
     pub fn expires(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -1548,6 +1708,11 @@ impl PutObjectInputBuilder {
             checksum_crc64_nvme: self.checksum_crc64_nvme,
             checksum_sha1: self.checksum_sha1,
             checksum_sha256: self.checksum_sha256,
+            checksum_sha512: self.checksum_sha512,
+            checksum_md5: self.checksum_md5,
+            checksum_xxhash64: self.checksum_xxhash64,
+            checksum_xxhash3: self.checksum_xxhash3,
+            checksum_xxhash128: self.checksum_xxhash128,
             expires: self.expires,
             if_match: self.if_match,
             if_none_match: self.if_none_match,
@@ -1595,6 +1760,11 @@ impl ::std::fmt::Debug for PutObjectInputBuilder {
         formatter.field("checksum_crc64_nvme", &self.checksum_crc64_nvme);
         formatter.field("checksum_sha1", &self.checksum_sha1);
         formatter.field("checksum_sha256", &self.checksum_sha256);
+        formatter.field("checksum_sha512", &self.checksum_sha512);
+        formatter.field("checksum_md5", &self.checksum_md5);
+        formatter.field("checksum_xxhash64", &self.checksum_xxhash64);
+        formatter.field("checksum_xxhash3", &self.checksum_xxhash3);
+        formatter.field("checksum_xxhash128", &self.checksum_xxhash128);
         formatter.field("expires", &self.expires);
         formatter.field("if_match", &self.if_match);
         formatter.field("if_none_match", &self.if_none_match);

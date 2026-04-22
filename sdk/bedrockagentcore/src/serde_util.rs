@@ -818,6 +818,75 @@ pub(crate) fn code_interpreter_result_correct_errors(
     builder
 }
 
+pub(crate) fn harness_content_block_delta_event_correct_errors(
+    mut builder: crate::types::builders::HarnessContentBlockDeltaEventBuilder,
+) -> crate::types::builders::HarnessContentBlockDeltaEventBuilder {
+    if builder.content_block_index.is_none() {
+        builder.content_block_index = Some(Default::default())
+    }
+    if builder.delta.is_none() {
+        builder.delta = Some(crate::types::HarnessContentBlockDelta::Unknown)
+    }
+    builder
+}
+
+pub(crate) fn harness_content_block_start_event_correct_errors(
+    mut builder: crate::types::builders::HarnessContentBlockStartEventBuilder,
+) -> crate::types::builders::HarnessContentBlockStartEventBuilder {
+    if builder.content_block_index.is_none() {
+        builder.content_block_index = Some(Default::default())
+    }
+    if builder.start.is_none() {
+        builder.start = Some(crate::types::HarnessContentBlockStart::Unknown)
+    }
+    builder
+}
+
+pub(crate) fn harness_content_block_stop_event_correct_errors(
+    mut builder: crate::types::builders::HarnessContentBlockStopEventBuilder,
+) -> crate::types::builders::HarnessContentBlockStopEventBuilder {
+    if builder.content_block_index.is_none() {
+        builder.content_block_index = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn harness_message_start_event_correct_errors(
+    mut builder: crate::types::builders::HarnessMessageStartEventBuilder,
+) -> crate::types::builders::HarnessMessageStartEventBuilder {
+    if builder.role.is_none() {
+        builder.role = "no value was set".parse::<crate::types::HarnessConversationRole>().ok()
+    }
+    builder
+}
+
+pub(crate) fn harness_message_stop_event_correct_errors(
+    mut builder: crate::types::builders::HarnessMessageStopEventBuilder,
+) -> crate::types::builders::HarnessMessageStopEventBuilder {
+    if builder.stop_reason.is_none() {
+        builder.stop_reason = "no value was set".parse::<crate::types::HarnessStopReason>().ok()
+    }
+    builder
+}
+
+pub(crate) fn harness_metadata_event_correct_errors(
+    mut builder: crate::types::builders::HarnessMetadataEventBuilder,
+) -> crate::types::builders::HarnessMetadataEventBuilder {
+    if builder.usage.is_none() {
+        builder.usage = {
+            let builder = crate::types::builders::HarnessTokenUsageBuilder::default();
+            crate::serde_util::harness_token_usage_correct_errors(builder).build().ok()
+        }
+    }
+    if builder.metrics.is_none() {
+        builder.metrics = {
+            let builder = crate::types::builders::HarnessStreamMetricsBuilder::default();
+            crate::serde_util::harness_stream_metrics_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
 pub(crate) fn a2a_descriptor_correct_errors(
     mut builder: crate::types::builders::A2aDescriptorBuilder,
 ) -> crate::types::builders::A2aDescriptorBuilder {
@@ -878,6 +947,30 @@ pub(crate) fn external_proxy_correct_errors(
     builder
 }
 
+pub(crate) fn harness_stream_metrics_correct_errors(
+    mut builder: crate::types::builders::HarnessStreamMetricsBuilder,
+) -> crate::types::builders::HarnessStreamMetricsBuilder {
+    if builder.latency_ms.is_none() {
+        builder.latency_ms = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn harness_token_usage_correct_errors(
+    mut builder: crate::types::builders::HarnessTokenUsageBuilder,
+) -> crate::types::builders::HarnessTokenUsageBuilder {
+    if builder.input_tokens.is_none() {
+        builder.input_tokens = Some(Default::default())
+    }
+    if builder.output_tokens.is_none() {
+        builder.output_tokens = Some(Default::default())
+    }
+    if builder.total_tokens.is_none() {
+        builder.total_tokens = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn mcp_descriptor_correct_errors(
     mut builder: crate::types::builders::McpDescriptorBuilder,
 ) -> crate::types::builders::McpDescriptorBuilder {
@@ -925,6 +1018,36 @@ pub(crate) fn span_context_correct_errors(mut builder: crate::types::builders::S
 pub(crate) fn content_block_correct_errors(mut builder: crate::types::builders::ContentBlockBuilder) -> crate::types::builders::ContentBlockBuilder {
     if builder.r#type.is_none() {
         builder.r#type = "no value was set".parse::<crate::types::ContentBlockType>().ok()
+    }
+    builder
+}
+
+pub(crate) fn harness_tool_result_block_start_correct_errors(
+    mut builder: crate::types::builders::HarnessToolResultBlockStartBuilder,
+) -> crate::types::builders::HarnessToolResultBlockStartBuilder {
+    if builder.tool_use_id.is_none() {
+        builder.tool_use_id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn harness_tool_use_block_delta_correct_errors(
+    mut builder: crate::types::builders::HarnessToolUseBlockDeltaBuilder,
+) -> crate::types::builders::HarnessToolUseBlockDeltaBuilder {
+    if builder.input.is_none() {
+        builder.input = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn harness_tool_use_block_start_correct_errors(
+    mut builder: crate::types::builders::HarnessToolUseBlockStartBuilder,
+) -> crate::types::builders::HarnessToolUseBlockStartBuilder {
+    if builder.tool_use_id.is_none() {
+        builder.tool_use_id = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
     }
     builder
 }

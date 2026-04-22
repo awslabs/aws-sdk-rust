@@ -13,6 +13,8 @@ pub struct UpdateManagedInstancesProviderConfiguration {
     pub propagate_tags: ::std::option::Option<crate::types::PropagateMiTags>,
     /// <p>The updated infrastructure optimization configuration. Changes to this setting affect how Amazon ECS optimizes instances going forward.</p>
     pub infrastructure_optimization: ::std::option::Option<crate::types::InfrastructureOptimization>,
+    /// <p>The updated auto repair configuration for the Amazon ECS Managed Instances capacity provider.</p>
+    pub auto_repair_configuration: ::std::option::Option<crate::types::AutoRepairConfiguration>,
 }
 impl UpdateManagedInstancesProviderConfiguration {
     /// <p>The updated Amazon Resource Name (ARN) of the infrastructure role. The new role must have the necessary permissions to manage instances and access required Amazon Web Services services.</p>
@@ -33,6 +35,10 @@ impl UpdateManagedInstancesProviderConfiguration {
     pub fn infrastructure_optimization(&self) -> ::std::option::Option<&crate::types::InfrastructureOptimization> {
         self.infrastructure_optimization.as_ref()
     }
+    /// <p>The updated auto repair configuration for the Amazon ECS Managed Instances capacity provider.</p>
+    pub fn auto_repair_configuration(&self) -> ::std::option::Option<&crate::types::AutoRepairConfiguration> {
+        self.auto_repair_configuration.as_ref()
+    }
 }
 impl UpdateManagedInstancesProviderConfiguration {
     /// Creates a new builder-style object to manufacture [`UpdateManagedInstancesProviderConfiguration`](crate::types::UpdateManagedInstancesProviderConfiguration).
@@ -49,6 +55,7 @@ pub struct UpdateManagedInstancesProviderConfigurationBuilder {
     pub(crate) instance_launch_template: ::std::option::Option<crate::types::InstanceLaunchTemplateUpdate>,
     pub(crate) propagate_tags: ::std::option::Option<crate::types::PropagateMiTags>,
     pub(crate) infrastructure_optimization: ::std::option::Option<crate::types::InfrastructureOptimization>,
+    pub(crate) auto_repair_configuration: ::std::option::Option<crate::types::AutoRepairConfiguration>,
 }
 impl UpdateManagedInstancesProviderConfigurationBuilder {
     /// <p>The updated Amazon Resource Name (ARN) of the infrastructure role. The new role must have the necessary permissions to manage instances and access required Amazon Web Services services.</p>
@@ -112,6 +119,20 @@ impl UpdateManagedInstancesProviderConfigurationBuilder {
     pub fn get_infrastructure_optimization(&self) -> &::std::option::Option<crate::types::InfrastructureOptimization> {
         &self.infrastructure_optimization
     }
+    /// <p>The updated auto repair configuration for the Amazon ECS Managed Instances capacity provider.</p>
+    pub fn auto_repair_configuration(mut self, input: crate::types::AutoRepairConfiguration) -> Self {
+        self.auto_repair_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The updated auto repair configuration for the Amazon ECS Managed Instances capacity provider.</p>
+    pub fn set_auto_repair_configuration(mut self, input: ::std::option::Option<crate::types::AutoRepairConfiguration>) -> Self {
+        self.auto_repair_configuration = input;
+        self
+    }
+    /// <p>The updated auto repair configuration for the Amazon ECS Managed Instances capacity provider.</p>
+    pub fn get_auto_repair_configuration(&self) -> &::std::option::Option<crate::types::AutoRepairConfiguration> {
+        &self.auto_repair_configuration
+    }
     /// Consumes the builder and constructs a [`UpdateManagedInstancesProviderConfiguration`](crate::types::UpdateManagedInstancesProviderConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`infrastructure_role_arn`](crate::types::builders::UpdateManagedInstancesProviderConfigurationBuilder::infrastructure_role_arn)
@@ -128,6 +149,7 @@ impl UpdateManagedInstancesProviderConfigurationBuilder {
             instance_launch_template: self.instance_launch_template,
             propagate_tags: self.propagate_tags,
             infrastructure_optimization: self.infrastructure_optimization,
+            auto_repair_configuration: self.auto_repair_configuration,
         })
     }
 }

@@ -21,5 +21,11 @@ pub fn ser_create_managed_instances_provider_configuration(
         crate::protocol_serde::shape_infrastructure_optimization::ser_infrastructure_optimization(&mut object_5, var_4)?;
         object_5.finish();
     }
+    if let Some(var_6) = &input.auto_repair_configuration {
+        #[allow(unused_mut)]
+        let mut object_7 = object.key("autoRepairConfiguration").start_object();
+        crate::protocol_serde::shape_auto_repair_configuration::ser_auto_repair_configuration(&mut object_7, var_6)?;
+        object_7.finish();
+    }
     Ok(())
 }
