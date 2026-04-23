@@ -899,6 +899,9 @@ impl From<crate::operation::delete_provisioning_profile::DeleteProvisioningProfi
             crate::operation::delete_provisioning_profile::DeleteProvisioningProfileError::AccessDeniedException(inner) => {
                 Error::AccessDeniedException(inner)
             }
+            crate::operation::delete_provisioning_profile::DeleteProvisioningProfileError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
             crate::operation::delete_provisioning_profile::DeleteProvisioningProfileError::InternalServerException(inner) => {
                 Error::InternalServerException(inner)
             }

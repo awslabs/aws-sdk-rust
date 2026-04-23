@@ -12,6 +12,8 @@ pub enum ConnectionPropertiesPatch {
     GlueProperties(crate::types::GluePropertiesPatch),
     /// <p>The IAM properties of a connection properties patch.</p>
     IamProperties(crate::types::IamPropertiesPatch),
+    /// <p>The lakehouse properties of a connection properties patch.</p>
+    LakehouseProperties(crate::types::LakehousePropertiesPatch),
     /// <p>The MLflow properties of a connection.</p>
     MlflowProperties(crate::types::MlflowPropertiesPatch),
     /// <p>The Amazon Redshift properties of a connection properties patch.</p>
@@ -82,6 +84,19 @@ impl ConnectionPropertiesPatch {
     /// Returns true if this is a [`IamProperties`](crate::types::ConnectionPropertiesPatch::IamProperties).
     pub fn is_iam_properties(&self) -> bool {
         self.as_iam_properties().is_ok()
+    }
+    /// Tries to convert the enum instance into [`LakehouseProperties`](crate::types::ConnectionPropertiesPatch::LakehouseProperties), extracting the inner [`LakehousePropertiesPatch`](crate::types::LakehousePropertiesPatch).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_lakehouse_properties(&self) -> ::std::result::Result<&crate::types::LakehousePropertiesPatch, &Self> {
+        if let ConnectionPropertiesPatch::LakehouseProperties(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`LakehouseProperties`](crate::types::ConnectionPropertiesPatch::LakehouseProperties).
+    pub fn is_lakehouse_properties(&self) -> bool {
+        self.as_lakehouse_properties().is_ok()
     }
     /// Tries to convert the enum instance into [`MlflowProperties`](crate::types::ConnectionPropertiesPatch::MlflowProperties), extracting the inner [`MlflowPropertiesPatch`](crate::types::MlflowPropertiesPatch).
     /// Returns `Err(&Self)` if it can't be converted.

@@ -24,6 +24,7 @@ pub struct UpdateManagedThingInput {
     /// <p>The updated capability schemas that define the functionality and features supported by the managed thing.</p>
     pub capability_schemas: ::std::option::Option<::std::vec::Vec<crate::types::CapabilitySchemaItem>>,
     /// <p>The capabilities of the device such as light bulb.</p>
+    #[deprecated(note = "Capabilities has been deprecated, use CapabilityReport instead", since = "06-25-2025")]
     pub capabilities: ::std::option::Option<::std::string::String>,
     /// <p>The classification of the managed thing such as light bulb or thermostat.</p>
     pub classification: ::std::option::Option<::std::string::String>,
@@ -76,6 +77,7 @@ impl UpdateManagedThingInput {
         self.capability_schemas.as_deref().unwrap_or_default()
     }
     /// <p>The capabilities of the device such as light bulb.</p>
+    #[deprecated(note = "Capabilities has been deprecated, use CapabilityReport instead", since = "06-25-2025")]
     pub fn capabilities(&self) -> ::std::option::Option<&str> {
         self.capabilities.as_deref()
     }
@@ -287,16 +289,19 @@ impl UpdateManagedThingInputBuilder {
         &self.capability_schemas
     }
     /// <p>The capabilities of the device such as light bulb.</p>
+    #[deprecated(note = "Capabilities has been deprecated, use CapabilityReport instead", since = "06-25-2025")]
     pub fn capabilities(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.capabilities = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The capabilities of the device such as light bulb.</p>
+    #[deprecated(note = "Capabilities has been deprecated, use CapabilityReport instead", since = "06-25-2025")]
     pub fn set_capabilities(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.capabilities = input;
         self
     }
     /// <p>The capabilities of the device such as light bulb.</p>
+    #[deprecated(note = "Capabilities has been deprecated, use CapabilityReport instead", since = "06-25-2025")]
     pub fn get_capabilities(&self) -> &::std::option::Option<::std::string::String> {
         &self.capabilities
     }

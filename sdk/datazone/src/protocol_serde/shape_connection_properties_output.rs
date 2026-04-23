@@ -98,6 +98,11 @@ where
                                 )
                             })?,
                         )),
+                        "lakehouseProperties" => Some(crate::types::ConnectionPropertiesOutput::LakehouseProperties(
+                            crate::protocol_serde::shape_lakehouse_properties_output::de_lakehouse_properties_output(tokens, _value)?.ok_or_else(
+                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'lakehouseProperties' cannot be null"),
+                            )?,
+                        )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
                             Some(crate::types::ConnectionPropertiesOutput::Unknown)

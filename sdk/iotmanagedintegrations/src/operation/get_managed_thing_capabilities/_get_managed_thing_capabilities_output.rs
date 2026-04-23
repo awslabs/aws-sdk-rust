@@ -6,6 +6,7 @@ pub struct GetManagedThingCapabilitiesOutput {
     /// <p>The id of the device.</p>
     pub managed_thing_id: ::std::option::Option<::std::string::String>,
     /// <p>The capabilities of the device such as light bulb.</p>
+    #[deprecated(note = "Capabilities has been deprecated, use CapabilityReport instead", since = "06-25-2025")]
     pub capabilities: ::std::option::Option<::std::string::String>,
     /// <p>A report of the capabilities for the managed thing.</p>
     pub capability_report: ::std::option::Option<crate::types::CapabilityReport>,
@@ -17,6 +18,7 @@ impl GetManagedThingCapabilitiesOutput {
         self.managed_thing_id.as_deref()
     }
     /// <p>The capabilities of the device such as light bulb.</p>
+    #[deprecated(note = "Capabilities has been deprecated, use CapabilityReport instead", since = "06-25-2025")]
     pub fn capabilities(&self) -> ::std::option::Option<&str> {
         self.capabilities.as_deref()
     }
@@ -62,16 +64,19 @@ impl GetManagedThingCapabilitiesOutputBuilder {
         &self.managed_thing_id
     }
     /// <p>The capabilities of the device such as light bulb.</p>
+    #[deprecated(note = "Capabilities has been deprecated, use CapabilityReport instead", since = "06-25-2025")]
     pub fn capabilities(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.capabilities = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The capabilities of the device such as light bulb.</p>
+    #[deprecated(note = "Capabilities has been deprecated, use CapabilityReport instead", since = "06-25-2025")]
     pub fn set_capabilities(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.capabilities = input;
         self
     }
     /// <p>The capabilities of the device such as light bulb.</p>
+    #[deprecated(note = "Capabilities has been deprecated, use CapabilityReport instead", since = "06-25-2025")]
     pub fn get_capabilities(&self) -> &::std::option::Option<::std::string::String> {
         &self.capabilities
     }

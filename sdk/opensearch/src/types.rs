@@ -11,6 +11,8 @@ pub use crate::types::_domain_package_details::DomainPackageDetails;
 
 pub use crate::types::_aws_service_principal::AwsServicePrincipal;
 
+pub use crate::types::_service_options::ServiceOptions;
+
 pub use crate::types::_authorized_principal::AuthorizedPrincipal;
 
 pub use crate::types::_service_software_options::ServiceSoftwareOptions;
@@ -806,6 +808,8 @@ mod _scheduled_by;
 mod _security_lake_direct_query_data_source;
 
 mod _serverless_vector_acceleration;
+
+mod _service_options;
 
 mod _service_software_options;
 

@@ -254,16 +254,19 @@ impl UpdateManagedThingFluentBuilder {
         self.inner.get_capability_schemas()
     }
     /// <p>The capabilities of the device such as light bulb.</p>
+    #[deprecated(note = "Capabilities has been deprecated, use CapabilityReport instead", since = "06-25-2025")]
     pub fn capabilities(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.capabilities(input.into());
         self
     }
     /// <p>The capabilities of the device such as light bulb.</p>
+    #[deprecated(note = "Capabilities has been deprecated, use CapabilityReport instead", since = "06-25-2025")]
     pub fn set_capabilities(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_capabilities(input);
         self
     }
     /// <p>The capabilities of the device such as light bulb.</p>
+    #[deprecated(note = "Capabilities has been deprecated, use CapabilityReport instead", since = "06-25-2025")]
     pub fn get_capabilities(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_capabilities()
     }

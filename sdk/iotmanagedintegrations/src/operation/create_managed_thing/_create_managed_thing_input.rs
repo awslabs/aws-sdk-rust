@@ -28,6 +28,7 @@ pub struct CreateManagedThingInput {
     /// <p>The capability schemas that define the functionality and features supported by the managed thing, including device capabilities and their associated properties.</p>
     pub capability_schemas: ::std::option::Option<::std::vec::Vec<crate::types::CapabilitySchemaItem>>,
     /// <p>The capabilities of the device such as light bulb.</p>
+    #[deprecated(note = "Capabilities has been deprecated, use CapabilityReport instead", since = "06-25-2025")]
     pub capabilities: ::std::option::Option<::std::string::String>,
     /// <p>An idempotency token. If you retry a request that completed successfully initially using the same client token and parameters, then the retry attempt will succeed without performing any further actions.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
@@ -92,6 +93,7 @@ impl CreateManagedThingInput {
         self.capability_schemas.as_deref().unwrap_or_default()
     }
     /// <p>The capabilities of the device such as light bulb.</p>
+    #[deprecated(note = "Capabilities has been deprecated, use CapabilityReport instead", since = "06-25-2025")]
     pub fn capabilities(&self) -> ::std::option::Option<&str> {
         self.capabilities.as_deref()
     }
@@ -345,16 +347,19 @@ impl CreateManagedThingInputBuilder {
         &self.capability_schemas
     }
     /// <p>The capabilities of the device such as light bulb.</p>
+    #[deprecated(note = "Capabilities has been deprecated, use CapabilityReport instead", since = "06-25-2025")]
     pub fn capabilities(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.capabilities = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The capabilities of the device such as light bulb.</p>
+    #[deprecated(note = "Capabilities has been deprecated, use CapabilityReport instead", since = "06-25-2025")]
     pub fn set_capabilities(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.capabilities = input;
         self
     }
     /// <p>The capabilities of the device such as light bulb.</p>
+    #[deprecated(note = "Capabilities has been deprecated, use CapabilityReport instead", since = "06-25-2025")]
     pub fn get_capabilities(&self) -> &::std::option::Option<::std::string::String> {
         &self.capabilities
     }

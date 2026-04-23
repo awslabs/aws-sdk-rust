@@ -150,4 +150,18 @@ impl RevokeVpcEndpointAccessFluentBuilder {
     pub fn get_service(&self) -> &::std::option::Option<crate::types::AwsServicePrincipal> {
         self.inner.get_service()
     }
+    /// <p>The options for the service, including the supported Regions for the endpoint access.</p>
+    pub fn service_options(mut self, input: crate::types::ServiceOptions) -> Self {
+        self.inner = self.inner.service_options(input);
+        self
+    }
+    /// <p>The options for the service, including the supported Regions for the endpoint access.</p>
+    pub fn set_service_options(mut self, input: ::std::option::Option<crate::types::ServiceOptions>) -> Self {
+        self.inner = self.inner.set_service_options(input);
+        self
+    }
+    /// <p>The options for the service, including the supported Regions for the endpoint access.</p>
+    pub fn get_service_options(&self) -> &::std::option::Option<crate::types::ServiceOptions> {
+        self.inner.get_service_options()
+    }
 }

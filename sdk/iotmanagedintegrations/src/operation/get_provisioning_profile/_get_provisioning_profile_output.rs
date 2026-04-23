@@ -3,26 +3,28 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct GetProvisioningProfileOutput {
-    /// <p>The Amazon Resource Name (ARN) of the provisioning template used in the provisioning profile.</p>
+    /// <p>The Amazon Resource Name (ARN) of the provisioning profile.</p>
     pub arn: ::std::option::Option<::std::string::String>,
-    /// <p>The name of the provisioning template.</p>
+    /// <p>The name of the provisioning profile.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The type of provisioning workflow the device uses for onboarding to IoT managed integrations.</p>
     pub provisioning_type: ::std::option::Option<crate::types::ProvisioningType>,
     /// <p>The provisioning profile id.</p>
     pub id: ::std::option::Option<::std::string::String>,
-    /// <p>The id of the claim certificate.</p>
+    /// <p>The status of a provisioning profile.</p>
+    pub status: ::std::option::Option<crate::types::ProvisioningProfileStatus>,
+    /// <p>The body of the PEM-encoded claim certificate.</p>
     pub claim_certificate: ::std::option::Option<::std::string::String>,
     /// <p>A set of key/value pairs that are used to manage the provisioning profile.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl GetProvisioningProfileOutput {
-    /// <p>The Amazon Resource Name (ARN) of the provisioning template used in the provisioning profile.</p>
+    /// <p>The Amazon Resource Name (ARN) of the provisioning profile.</p>
     pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
-    /// <p>The name of the provisioning template.</p>
+    /// <p>The name of the provisioning profile.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -34,7 +36,11 @@ impl GetProvisioningProfileOutput {
     pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
-    /// <p>The id of the claim certificate.</p>
+    /// <p>The status of a provisioning profile.</p>
+    pub fn status(&self) -> ::std::option::Option<&crate::types::ProvisioningProfileStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The body of the PEM-encoded claim certificate.</p>
     pub fn claim_certificate(&self) -> ::std::option::Option<&str> {
         self.claim_certificate.as_deref()
     }
@@ -50,6 +56,7 @@ impl ::std::fmt::Debug for GetProvisioningProfileOutput {
         formatter.field("name", &self.name);
         formatter.field("provisioning_type", &self.provisioning_type);
         formatter.field("id", &self.id);
+        formatter.field("status", &self.status);
         formatter.field("claim_certificate", &"*** Sensitive Data Redacted ***");
         formatter.field("tags", &"*** Sensitive Data Redacted ***");
         formatter.field("_request_id", &self._request_id);
@@ -76,36 +83,37 @@ pub struct GetProvisioningProfileOutputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) provisioning_type: ::std::option::Option<crate::types::ProvisioningType>,
     pub(crate) id: ::std::option::Option<::std::string::String>,
+    pub(crate) status: ::std::option::Option<crate::types::ProvisioningProfileStatus>,
     pub(crate) claim_certificate: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl GetProvisioningProfileOutputBuilder {
-    /// <p>The Amazon Resource Name (ARN) of the provisioning template used in the provisioning profile.</p>
+    /// <p>The Amazon Resource Name (ARN) of the provisioning profile.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the provisioning template used in the provisioning profile.</p>
+    /// <p>The Amazon Resource Name (ARN) of the provisioning profile.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the provisioning template used in the provisioning profile.</p>
+    /// <p>The Amazon Resource Name (ARN) of the provisioning profile.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }
-    /// <p>The name of the provisioning template.</p>
+    /// <p>The name of the provisioning profile.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the provisioning template.</p>
+    /// <p>The name of the provisioning profile.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// <p>The name of the provisioning template.</p>
+    /// <p>The name of the provisioning profile.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
@@ -137,17 +145,31 @@ impl GetProvisioningProfileOutputBuilder {
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.id
     }
-    /// <p>The id of the claim certificate.</p>
+    /// <p>The status of a provisioning profile.</p>
+    pub fn status(mut self, input: crate::types::ProvisioningProfileStatus) -> Self {
+        self.status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The status of a provisioning profile.</p>
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ProvisioningProfileStatus>) -> Self {
+        self.status = input;
+        self
+    }
+    /// <p>The status of a provisioning profile.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ProvisioningProfileStatus> {
+        &self.status
+    }
+    /// <p>The body of the PEM-encoded claim certificate.</p>
     pub fn claim_certificate(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.claim_certificate = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The id of the claim certificate.</p>
+    /// <p>The body of the PEM-encoded claim certificate.</p>
     pub fn set_claim_certificate(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.claim_certificate = input;
         self
     }
-    /// <p>The id of the claim certificate.</p>
+    /// <p>The body of the PEM-encoded claim certificate.</p>
     pub fn get_claim_certificate(&self) -> &::std::option::Option<::std::string::String> {
         &self.claim_certificate
     }
@@ -187,6 +209,7 @@ impl GetProvisioningProfileOutputBuilder {
             name: self.name,
             provisioning_type: self.provisioning_type,
             id: self.id,
+            status: self.status,
             claim_certificate: self.claim_certificate,
             tags: self.tags,
             _request_id: self._request_id,
@@ -200,6 +223,7 @@ impl ::std::fmt::Debug for GetProvisioningProfileOutputBuilder {
         formatter.field("name", &self.name);
         formatter.field("provisioning_type", &self.provisioning_type);
         formatter.field("id", &self.id);
+        formatter.field("status", &self.status);
         formatter.field("claim_certificate", &"*** Sensitive Data Redacted ***");
         formatter.field("tags", &"*** Sensitive Data Redacted ***");
         formatter.field("_request_id", &self._request_id);

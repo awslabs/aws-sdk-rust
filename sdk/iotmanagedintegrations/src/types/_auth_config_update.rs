@@ -6,7 +6,7 @@
 pub struct AuthConfigUpdate {
     /// <p>The updated OAuth configuration settings for the authentication configuration.</p>
     pub o_auth_update: ::std::option::Option<crate::types::OAuthUpdate>,
-    /// <p>The General Authorization update information containing authorization materials to add or update in Kinesis Data Streams.</p>
+    /// <p>The General Authorization update information containing authorization materials to add or update.</p>
     pub general_authorization_update: ::std::option::Option<crate::types::GeneralAuthorizationUpdate>,
 }
 impl AuthConfigUpdate {
@@ -14,7 +14,7 @@ impl AuthConfigUpdate {
     pub fn o_auth_update(&self) -> ::std::option::Option<&crate::types::OAuthUpdate> {
         self.o_auth_update.as_ref()
     }
-    /// <p>The General Authorization update information containing authorization materials to add or update in Kinesis Data Streams.</p>
+    /// <p>The General Authorization update information containing authorization materials to add or update.</p>
     pub fn general_authorization_update(&self) -> ::std::option::Option<&crate::types::GeneralAuthorizationUpdate> {
         self.general_authorization_update.as_ref()
     }
@@ -48,17 +48,17 @@ impl AuthConfigUpdateBuilder {
     pub fn get_o_auth_update(&self) -> &::std::option::Option<crate::types::OAuthUpdate> {
         &self.o_auth_update
     }
-    /// <p>The General Authorization update information containing authorization materials to add or update in Kinesis Data Streams.</p>
+    /// <p>The General Authorization update information containing authorization materials to add or update.</p>
     pub fn general_authorization_update(mut self, input: crate::types::GeneralAuthorizationUpdate) -> Self {
         self.general_authorization_update = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The General Authorization update information containing authorization materials to add or update in Kinesis Data Streams.</p>
+    /// <p>The General Authorization update information containing authorization materials to add or update.</p>
     pub fn set_general_authorization_update(mut self, input: ::std::option::Option<crate::types::GeneralAuthorizationUpdate>) -> Self {
         self.general_authorization_update = input;
         self
     }
-    /// <p>The General Authorization update information containing authorization materials to add or update in Kinesis Data Streams.</p>
+    /// <p>The General Authorization update information containing authorization materials to add or update.</p>
     pub fn get_general_authorization_update(&self) -> &::std::option::Option<crate::types::GeneralAuthorizationUpdate> {
         &self.general_authorization_update
     }

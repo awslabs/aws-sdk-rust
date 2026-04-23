@@ -5,11 +5,11 @@
 pub struct CreateProvisioningProfileInput {
     /// <p>The type of provisioning workflow the device uses for onboarding to IoT managed integrations.</p>
     pub provisioning_type: ::std::option::Option<crate::types::ProvisioningType>,
-    /// <p>The id of the certificate authority (CA) certificate.</p>
+    /// <p>The body of the PEM-encoded certificate authority (CA) certificate.</p>
     pub ca_certificate: ::std::option::Option<::std::string::String>,
-    /// <p>The claim certificate.</p>
+    /// <p>The body of the PEM-encoded claim certificate. If a claim certificate is provided, it will be used for the provisioning profile. Otherwise, a claim certificate will be generated.</p>
     pub claim_certificate: ::std::option::Option<::std::string::String>,
-    /// <p>The name of the provisioning template.</p>
+    /// <p>The name of the provisioning profile.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>An idempotency token. If you retry a request that completed successfully initially using the same client token and parameters, then the retry attempt will succeed without performing any further actions.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
@@ -21,15 +21,15 @@ impl CreateProvisioningProfileInput {
     pub fn provisioning_type(&self) -> ::std::option::Option<&crate::types::ProvisioningType> {
         self.provisioning_type.as_ref()
     }
-    /// <p>The id of the certificate authority (CA) certificate.</p>
+    /// <p>The body of the PEM-encoded certificate authority (CA) certificate.</p>
     pub fn ca_certificate(&self) -> ::std::option::Option<&str> {
         self.ca_certificate.as_deref()
     }
-    /// <p>The claim certificate.</p>
+    /// <p>The body of the PEM-encoded claim certificate. If a claim certificate is provided, it will be used for the provisioning profile. Otherwise, a claim certificate will be generated.</p>
     pub fn claim_certificate(&self) -> ::std::option::Option<&str> {
         self.claim_certificate.as_deref()
     }
-    /// <p>The name of the provisioning template.</p>
+    /// <p>The name of the provisioning profile.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -88,45 +88,45 @@ impl CreateProvisioningProfileInputBuilder {
     pub fn get_provisioning_type(&self) -> &::std::option::Option<crate::types::ProvisioningType> {
         &self.provisioning_type
     }
-    /// <p>The id of the certificate authority (CA) certificate.</p>
+    /// <p>The body of the PEM-encoded certificate authority (CA) certificate.</p>
     pub fn ca_certificate(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ca_certificate = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The id of the certificate authority (CA) certificate.</p>
+    /// <p>The body of the PEM-encoded certificate authority (CA) certificate.</p>
     pub fn set_ca_certificate(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ca_certificate = input;
         self
     }
-    /// <p>The id of the certificate authority (CA) certificate.</p>
+    /// <p>The body of the PEM-encoded certificate authority (CA) certificate.</p>
     pub fn get_ca_certificate(&self) -> &::std::option::Option<::std::string::String> {
         &self.ca_certificate
     }
-    /// <p>The claim certificate.</p>
+    /// <p>The body of the PEM-encoded claim certificate. If a claim certificate is provided, it will be used for the provisioning profile. Otherwise, a claim certificate will be generated.</p>
     pub fn claim_certificate(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.claim_certificate = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The claim certificate.</p>
+    /// <p>The body of the PEM-encoded claim certificate. If a claim certificate is provided, it will be used for the provisioning profile. Otherwise, a claim certificate will be generated.</p>
     pub fn set_claim_certificate(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.claim_certificate = input;
         self
     }
-    /// <p>The claim certificate.</p>
+    /// <p>The body of the PEM-encoded claim certificate. If a claim certificate is provided, it will be used for the provisioning profile. Otherwise, a claim certificate will be generated.</p>
     pub fn get_claim_certificate(&self) -> &::std::option::Option<::std::string::String> {
         &self.claim_certificate
     }
-    /// <p>The name of the provisioning template.</p>
+    /// <p>The name of the provisioning profile.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the provisioning template.</p>
+    /// <p>The name of the provisioning profile.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// <p>The name of the provisioning template.</p>
+    /// <p>The name of the provisioning profile.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }

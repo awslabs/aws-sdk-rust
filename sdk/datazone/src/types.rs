@@ -351,6 +351,8 @@ pub use crate::types::_workflows_mwaa_properties_input::WorkflowsMwaaPropertiesI
 
 pub use crate::types::_workflows_serverless_properties_input::WorkflowsServerlessPropertiesInput;
 
+pub use crate::types::_lakehouse_properties_input::LakehousePropertiesInput;
+
 pub use crate::types::_physical_endpoint::PhysicalEndpoint;
 
 pub use crate::types::_athena_properties_output::AthenaPropertiesOutput;
@@ -376,6 +378,8 @@ pub use crate::types::_mlflow_properties_output::MlflowPropertiesOutput;
 pub use crate::types::_workflows_mwaa_properties_output::WorkflowsMwaaPropertiesOutput;
 
 pub use crate::types::_workflows_serverless_properties_output::WorkflowsServerlessPropertiesOutput;
+
+pub use crate::types::_lakehouse_properties_output::LakehousePropertiesOutput;
 
 pub use crate::types::_environment_parameter::EnvironmentParameter;
 
@@ -524,6 +528,8 @@ pub use crate::types::_s3_properties_patch::S3PropertiesPatch;
 pub use crate::types::_amazon_q_properties_patch::AmazonQPropertiesPatch;
 
 pub use crate::types::_mlflow_properties_patch::MlflowPropertiesPatch;
+
+pub use crate::types::_lakehouse_properties_patch::LakehousePropertiesPatch;
 
 pub use crate::types::_data_product_item_type::DataProductItemType;
 
@@ -1222,6 +1228,12 @@ mod _job_run_summary;
 mod _job_type;
 
 mod _lake_formation_configuration;
+
+mod _lakehouse_properties_input;
+
+mod _lakehouse_properties_output;
+
+mod _lakehouse_properties_patch;
 
 mod _less_than_expression;
 

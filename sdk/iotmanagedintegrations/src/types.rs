@@ -73,6 +73,8 @@ pub use crate::types::_ota_status::OtaStatus;
 
 pub use crate::types::_provisioning_type::ProvisioningType;
 
+pub use crate::types::_provisioning_profile_status::ProvisioningProfileStatus;
+
 pub use crate::types::_runtime_log_configurations::RuntimeLogConfigurations;
 
 pub use crate::types::_schema_version_visibility::SchemaVersionVisibility;
@@ -340,6 +342,8 @@ mod _ota_type;
 mod _proactive_refresh_token_renewal;
 
 mod _protocol_type;
+
+mod _provisioning_profile_status;
 
 mod _provisioning_profile_summary;
 

@@ -14,6 +14,8 @@ pub enum ConnectionPropertiesOutput {
     HyperPodProperties(crate::types::HyperPodPropertiesOutput),
     /// <p>The IAM properties of a connection.</p>
     IamProperties(crate::types::IamPropertiesOutput),
+    /// <p>The lakehouse properties of a connection.</p>
+    LakehouseProperties(crate::types::LakehousePropertiesOutput),
     /// <p>The MLflow properties of a connection.</p>
     MlflowProperties(crate::types::MlflowPropertiesOutput),
     /// <p>The Amazon Redshift properties of a connection.</p>
@@ -103,6 +105,19 @@ impl ConnectionPropertiesOutput {
     /// Returns true if this is a [`IamProperties`](crate::types::ConnectionPropertiesOutput::IamProperties).
     pub fn is_iam_properties(&self) -> bool {
         self.as_iam_properties().is_ok()
+    }
+    /// Tries to convert the enum instance into [`LakehouseProperties`](crate::types::ConnectionPropertiesOutput::LakehouseProperties), extracting the inner [`LakehousePropertiesOutput`](crate::types::LakehousePropertiesOutput).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_lakehouse_properties(&self) -> ::std::result::Result<&crate::types::LakehousePropertiesOutput, &Self> {
+        if let ConnectionPropertiesOutput::LakehouseProperties(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`LakehouseProperties`](crate::types::ConnectionPropertiesOutput::LakehouseProperties).
+    pub fn is_lakehouse_properties(&self) -> bool {
+        self.as_lakehouse_properties().is_ok()
     }
     /// Tries to convert the enum instance into [`MlflowProperties`](crate::types::ConnectionPropertiesOutput::MlflowProperties), extracting the inner [`MlflowPropertiesOutput`](crate::types::MlflowPropertiesOutput).
     /// Returns `Err(&Self)` if it can't be converted.

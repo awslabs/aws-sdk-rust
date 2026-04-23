@@ -3,13 +3,14 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetProvisioningProfile`](crate::operation::get_provisioning_profile::builders::GetProvisioningProfileFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`identifier(impl Into<String>)`](crate::operation::get_provisioning_profile::builders::GetProvisioningProfileFluentBuilder::identifier) / [`set_identifier(Option<String>)`](crate::operation::get_provisioning_profile::builders::GetProvisioningProfileFluentBuilder::set_identifier):<br>required: **true**<br><p>The provisioning template the device uses for the provisioning process.</p><br>
+    ///   - [`identifier(impl Into<String>)`](crate::operation::get_provisioning_profile::builders::GetProvisioningProfileFluentBuilder::identifier) / [`set_identifier(Option<String>)`](crate::operation::get_provisioning_profile::builders::GetProvisioningProfileFluentBuilder::set_identifier):<br>required: **true**<br><p>The id of a provisioning profile.</p><br>
     /// - On success, responds with [`GetProvisioningProfileOutput`](crate::operation::get_provisioning_profile::GetProvisioningProfileOutput) with field(s):
-    ///   - [`arn(Option<String>)`](crate::operation::get_provisioning_profile::GetProvisioningProfileOutput::arn): <p>The Amazon Resource Name (ARN) of the provisioning template used in the provisioning profile.</p>
-    ///   - [`name(Option<String>)`](crate::operation::get_provisioning_profile::GetProvisioningProfileOutput::name): <p>The name of the provisioning template.</p>
+    ///   - [`arn(Option<String>)`](crate::operation::get_provisioning_profile::GetProvisioningProfileOutput::arn): <p>The Amazon Resource Name (ARN) of the provisioning profile.</p>
+    ///   - [`name(Option<String>)`](crate::operation::get_provisioning_profile::GetProvisioningProfileOutput::name): <p>The name of the provisioning profile.</p>
     ///   - [`provisioning_type(Option<ProvisioningType>)`](crate::operation::get_provisioning_profile::GetProvisioningProfileOutput::provisioning_type): <p>The type of provisioning workflow the device uses for onboarding to IoT managed integrations.</p>
     ///   - [`id(Option<String>)`](crate::operation::get_provisioning_profile::GetProvisioningProfileOutput::id): <p>The provisioning profile id.</p>
-    ///   - [`claim_certificate(Option<String>)`](crate::operation::get_provisioning_profile::GetProvisioningProfileOutput::claim_certificate): <p>The id of the claim certificate.</p>
+    ///   - [`status(Option<ProvisioningProfileStatus>)`](crate::operation::get_provisioning_profile::GetProvisioningProfileOutput::status): <p>The status of a provisioning profile.</p>
+    ///   - [`claim_certificate(Option<String>)`](crate::operation::get_provisioning_profile::GetProvisioningProfileOutput::claim_certificate): <p>The body of the PEM-encoded claim certificate.</p>
     ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::get_provisioning_profile::GetProvisioningProfileOutput::tags): <p>A set of key/value pairs that are used to manage the provisioning profile.</p>
     /// - On failure, responds with [`SdkError<GetProvisioningProfileError>`](crate::operation::get_provisioning_profile::GetProvisioningProfileError)
     pub fn get_provisioning_profile(&self) -> crate::operation::get_provisioning_profile::builders::GetProvisioningProfileFluentBuilder {

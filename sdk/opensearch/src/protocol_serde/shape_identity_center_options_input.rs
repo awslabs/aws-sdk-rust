@@ -9,11 +9,14 @@ pub fn ser_identity_center_options_input(
     if let Some(var_2) = &input.identity_center_instance_arn {
         object.key("IdentityCenterInstanceARN").string(var_2.as_str());
     }
-    if let Some(var_3) = &input.subject_key {
-        object.key("SubjectKey").string(var_3.as_str());
+    if let Some(var_3) = &input.identity_center_instance_region {
+        object.key("IdentityCenterInstanceRegion").string(var_3.as_str());
     }
-    if let Some(var_4) = &input.roles_key {
-        object.key("RolesKey").string(var_4.as_str());
+    if let Some(var_4) = &input.subject_key {
+        object.key("SubjectKey").string(var_4.as_str());
+    }
+    if let Some(var_5) = &input.roles_key {
+        object.key("RolesKey").string(var_5.as_str());
     }
     Ok(())
 }

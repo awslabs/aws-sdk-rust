@@ -22,7 +22,7 @@ impl crate::operation::get_provisioning_profile::builders::GetProvisioningProfil
 }
 /// Fluent builder constructing a request to `GetProvisioningProfile`.
 ///
-/// <p>Get a provisioning profile by template name.</p>
+/// <p>Get details of a provisioning profile.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetProvisioningProfileFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl GetProvisioningProfileFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The provisioning template the device uses for the provisioning process.</p>
+    /// <p>The id of a provisioning profile.</p>
     pub fn identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.identifier(input.into());
         self
     }
-    /// <p>The provisioning template the device uses for the provisioning process.</p>
+    /// <p>The id of a provisioning profile.</p>
     pub fn set_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_identifier(input);
         self
     }
-    /// <p>The provisioning template the device uses for the provisioning process.</p>
+    /// <p>The id of a provisioning profile.</p>
     pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_identifier()
     }

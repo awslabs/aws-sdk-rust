@@ -999,6 +999,12 @@ pub(crate) mod shape_job_run_summary;
 
 pub(crate) mod shape_lake_formation_configuration;
 
+pub(crate) mod shape_lakehouse_properties_input;
+
+pub(crate) mod shape_lakehouse_properties_output;
+
+pub(crate) mod shape_lakehouse_properties_patch;
+
 pub(crate) mod shape_lineage_event_summary;
 
 pub(crate) mod shape_lineage_node_reference;

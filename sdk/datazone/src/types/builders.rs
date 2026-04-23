@@ -161,6 +161,8 @@ pub use crate::types::_workflows_mwaa_properties_input::WorkflowsMwaaPropertiesI
 
 pub use crate::types::_workflows_serverless_properties_input::WorkflowsServerlessPropertiesInputBuilder;
 
+pub use crate::types::_lakehouse_properties_input::LakehousePropertiesInputBuilder;
+
 pub use crate::types::_physical_endpoint::PhysicalEndpointBuilder;
 
 pub use crate::types::_athena_properties_output::AthenaPropertiesOutputBuilder;
@@ -186,6 +188,8 @@ pub use crate::types::_mlflow_properties_output::MlflowPropertiesOutputBuilder;
 pub use crate::types::_workflows_mwaa_properties_output::WorkflowsMwaaPropertiesOutputBuilder;
 
 pub use crate::types::_workflows_serverless_properties_output::WorkflowsServerlessPropertiesOutputBuilder;
+
+pub use crate::types::_lakehouse_properties_output::LakehousePropertiesOutputBuilder;
 
 pub use crate::types::_environment_parameter::EnvironmentParameterBuilder;
 
@@ -310,6 +314,8 @@ pub use crate::types::_s3_properties_patch::S3PropertiesPatchBuilder;
 pub use crate::types::_amazon_q_properties_patch::AmazonQPropertiesPatchBuilder;
 
 pub use crate::types::_mlflow_properties_patch::MlflowPropertiesPatchBuilder;
+
+pub use crate::types::_lakehouse_properties_patch::LakehousePropertiesPatchBuilder;
 
 pub use crate::types::_domain_unit_user_properties::DomainUnitUserPropertiesBuilder;
 

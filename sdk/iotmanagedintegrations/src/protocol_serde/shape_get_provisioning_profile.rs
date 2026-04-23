@@ -202,6 +202,13 @@ pub(crate) fn de_get_provisioning_profile(
                             .transpose()?,
                     );
                 }
+                "Status" => {
+                    builder = builder.set_status(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| crate::types::ProvisioningProfileStatus::from(u.as_ref())))
+                            .transpose()?,
+                    );
+                }
                 "Tags" => {
                     builder = builder.set_tags(crate::protocol_serde::shape_tags_map::de_tags_map(tokens, _value)?);
                 }

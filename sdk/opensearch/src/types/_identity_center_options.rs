@@ -8,6 +8,8 @@ pub struct IdentityCenterOptions {
     pub enabled_api_access: ::std::option::Option<bool>,
     /// <p>The Amazon Resource Name (ARN) of the IAM Identity Center instance.</p>
     pub identity_center_instance_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The Region of the IAM Identity Center instance.</p>
+    pub identity_center_instance_region: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the attribute that contains the subject identifier (such as username, user ID, or email) in IAM Identity Center.</p>
     pub subject_key: ::std::option::Option<crate::types::SubjectKeyIdCOption>,
     /// <p>Specifies the attribute that contains the backend role identifier (such as group name or group ID) in IAM Identity Center.</p>
@@ -25,6 +27,10 @@ impl IdentityCenterOptions {
     /// <p>The Amazon Resource Name (ARN) of the IAM Identity Center instance.</p>
     pub fn identity_center_instance_arn(&self) -> ::std::option::Option<&str> {
         self.identity_center_instance_arn.as_deref()
+    }
+    /// <p>The Region of the IAM Identity Center instance.</p>
+    pub fn identity_center_instance_region(&self) -> ::std::option::Option<&str> {
+        self.identity_center_instance_region.as_deref()
     }
     /// <p>Specifies the attribute that contains the subject identifier (such as username, user ID, or email) in IAM Identity Center.</p>
     pub fn subject_key(&self) -> ::std::option::Option<&crate::types::SubjectKeyIdCOption> {
@@ -56,6 +62,7 @@ impl IdentityCenterOptions {
 pub struct IdentityCenterOptionsBuilder {
     pub(crate) enabled_api_access: ::std::option::Option<bool>,
     pub(crate) identity_center_instance_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) identity_center_instance_region: ::std::option::Option<::std::string::String>,
     pub(crate) subject_key: ::std::option::Option<crate::types::SubjectKeyIdCOption>,
     pub(crate) roles_key: ::std::option::Option<crate::types::RolesKeyIdCOption>,
     pub(crate) identity_center_application_arn: ::std::option::Option<::std::string::String>,
@@ -89,6 +96,20 @@ impl IdentityCenterOptionsBuilder {
     /// <p>The Amazon Resource Name (ARN) of the IAM Identity Center instance.</p>
     pub fn get_identity_center_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.identity_center_instance_arn
+    }
+    /// <p>The Region of the IAM Identity Center instance.</p>
+    pub fn identity_center_instance_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.identity_center_instance_region = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Region of the IAM Identity Center instance.</p>
+    pub fn set_identity_center_instance_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.identity_center_instance_region = input;
+        self
+    }
+    /// <p>The Region of the IAM Identity Center instance.</p>
+    pub fn get_identity_center_instance_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.identity_center_instance_region
     }
     /// <p>Specifies the attribute that contains the subject identifier (such as username, user ID, or email) in IAM Identity Center.</p>
     pub fn subject_key(mut self, input: crate::types::SubjectKeyIdCOption) -> Self {
@@ -151,6 +172,7 @@ impl IdentityCenterOptionsBuilder {
         crate::types::IdentityCenterOptions {
             enabled_api_access: self.enabled_api_access,
             identity_center_instance_arn: self.identity_center_instance_arn,
+            identity_center_instance_region: self.identity_center_instance_region,
             subject_key: self.subject_key,
             roles_key: self.roles_key,
             identity_center_application_arn: self.identity_center_application_arn,

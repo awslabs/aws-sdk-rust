@@ -477,6 +477,8 @@ pub(crate) mod shape_scheduled_action;
 
 pub(crate) mod shape_scheduled_actions_list;
 
+pub(crate) mod shape_service_options;
+
 pub(crate) mod shape_service_software_options;
 
 pub(crate) mod shape_slot_list;
@@ -688,6 +690,8 @@ pub(crate) mod shape_node_options_list;
 pub(crate) mod shape_option_status;
 
 pub(crate) mod shape_recurring_charge_list;
+
+pub(crate) mod shape_regions_list;
 
 pub(crate) mod shape_saml_idp;
 

@@ -5,6 +5,8 @@ pub use crate::types::_package_association_configuration::PackageAssociationConf
 
 pub use crate::types::_domain_package_details::DomainPackageDetailsBuilder;
 
+pub use crate::types::_service_options::ServiceOptionsBuilder;
+
 pub use crate::types::_authorized_principal::AuthorizedPrincipalBuilder;
 
 pub use crate::types::_service_software_options::ServiceSoftwareOptionsBuilder;

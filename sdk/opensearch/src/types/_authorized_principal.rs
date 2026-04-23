@@ -8,6 +8,8 @@ pub struct AuthorizedPrincipal {
     pub principal_type: ::std::option::Option<crate::types::PrincipalType>,
     /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html">IAM principal</a> that is allowed access to the domain.</p>
     pub principal: ::std::option::Option<::std::string::String>,
+    /// <p>The options for the service, including the supported Regions for the endpoint access.</p>
+    pub service_options: ::std::option::Option<crate::types::ServiceOptions>,
 }
 impl AuthorizedPrincipal {
     /// <p>The type of principal.</p>
@@ -17,6 +19,10 @@ impl AuthorizedPrincipal {
     /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html">IAM principal</a> that is allowed access to the domain.</p>
     pub fn principal(&self) -> ::std::option::Option<&str> {
         self.principal.as_deref()
+    }
+    /// <p>The options for the service, including the supported Regions for the endpoint access.</p>
+    pub fn service_options(&self) -> ::std::option::Option<&crate::types::ServiceOptions> {
+        self.service_options.as_ref()
     }
 }
 impl AuthorizedPrincipal {
@@ -32,6 +38,7 @@ impl AuthorizedPrincipal {
 pub struct AuthorizedPrincipalBuilder {
     pub(crate) principal_type: ::std::option::Option<crate::types::PrincipalType>,
     pub(crate) principal: ::std::option::Option<::std::string::String>,
+    pub(crate) service_options: ::std::option::Option<crate::types::ServiceOptions>,
 }
 impl AuthorizedPrincipalBuilder {
     /// <p>The type of principal.</p>
@@ -62,11 +69,26 @@ impl AuthorizedPrincipalBuilder {
     pub fn get_principal(&self) -> &::std::option::Option<::std::string::String> {
         &self.principal
     }
+    /// <p>The options for the service, including the supported Regions for the endpoint access.</p>
+    pub fn service_options(mut self, input: crate::types::ServiceOptions) -> Self {
+        self.service_options = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The options for the service, including the supported Regions for the endpoint access.</p>
+    pub fn set_service_options(mut self, input: ::std::option::Option<crate::types::ServiceOptions>) -> Self {
+        self.service_options = input;
+        self
+    }
+    /// <p>The options for the service, including the supported Regions for the endpoint access.</p>
+    pub fn get_service_options(&self) -> &::std::option::Option<crate::types::ServiceOptions> {
+        &self.service_options
+    }
     /// Consumes the builder and constructs a [`AuthorizedPrincipal`](crate::types::AuthorizedPrincipal).
     pub fn build(self) -> crate::types::AuthorizedPrincipal {
         crate::types::AuthorizedPrincipal {
             principal_type: self.principal_type,
             principal: self.principal,
+            service_options: self.service_options,
         }
     }
 }

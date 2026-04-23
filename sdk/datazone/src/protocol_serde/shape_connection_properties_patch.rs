@@ -52,6 +52,12 @@ pub fn ser_connection_properties_patch(
             crate::protocol_serde::shape_mlflow_properties_patch::ser_mlflow_properties_patch(&mut object_8, inner)?;
             object_8.finish();
         }
+        crate::types::ConnectionPropertiesPatch::LakehouseProperties(inner) => {
+            #[allow(unused_mut)]
+            let mut object_9 = object_9.key("lakehouseProperties").start_object();
+            crate::protocol_serde::shape_lakehouse_properties_patch::ser_lakehouse_properties_patch(&mut object_9, inner)?;
+            object_9.finish();
+        }
         crate::types::ConnectionPropertiesPatch::Unknown => {
             return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
                 "ConnectionPropertiesPatch",

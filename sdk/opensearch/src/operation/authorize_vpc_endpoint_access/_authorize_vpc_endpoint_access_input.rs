@@ -9,6 +9,8 @@ pub struct AuthorizeVpcEndpointAccessInput {
     pub account: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services service SP to grant access to.</p>
     pub service: ::std::option::Option<crate::types::AwsServicePrincipal>,
+    /// <p>The options for the service, including the supported Regions for the endpoint access.</p>
+    pub service_options: ::std::option::Option<crate::types::ServiceOptions>,
 }
 impl AuthorizeVpcEndpointAccessInput {
     /// <p>The name of the OpenSearch Service domain to provide access to.</p>
@@ -22,6 +24,10 @@ impl AuthorizeVpcEndpointAccessInput {
     /// <p>The Amazon Web Services service SP to grant access to.</p>
     pub fn service(&self) -> ::std::option::Option<&crate::types::AwsServicePrincipal> {
         self.service.as_ref()
+    }
+    /// <p>The options for the service, including the supported Regions for the endpoint access.</p>
+    pub fn service_options(&self) -> ::std::option::Option<&crate::types::ServiceOptions> {
+        self.service_options.as_ref()
     }
 }
 impl AuthorizeVpcEndpointAccessInput {
@@ -38,6 +44,7 @@ pub struct AuthorizeVpcEndpointAccessInputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) account: ::std::option::Option<::std::string::String>,
     pub(crate) service: ::std::option::Option<crate::types::AwsServicePrincipal>,
+    pub(crate) service_options: ::std::option::Option<crate::types::ServiceOptions>,
 }
 impl AuthorizeVpcEndpointAccessInputBuilder {
     /// <p>The name of the OpenSearch Service domain to provide access to.</p>
@@ -83,6 +90,20 @@ impl AuthorizeVpcEndpointAccessInputBuilder {
     pub fn get_service(&self) -> &::std::option::Option<crate::types::AwsServicePrincipal> {
         &self.service
     }
+    /// <p>The options for the service, including the supported Regions for the endpoint access.</p>
+    pub fn service_options(mut self, input: crate::types::ServiceOptions) -> Self {
+        self.service_options = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The options for the service, including the supported Regions for the endpoint access.</p>
+    pub fn set_service_options(mut self, input: ::std::option::Option<crate::types::ServiceOptions>) -> Self {
+        self.service_options = input;
+        self
+    }
+    /// <p>The options for the service, including the supported Regions for the endpoint access.</p>
+    pub fn get_service_options(&self) -> &::std::option::Option<crate::types::ServiceOptions> {
+        &self.service_options
+    }
     /// Consumes the builder and constructs a [`AuthorizeVpcEndpointAccessInput`](crate::operation::authorize_vpc_endpoint_access::AuthorizeVpcEndpointAccessInput).
     pub fn build(
         self,
@@ -94,6 +115,7 @@ impl AuthorizeVpcEndpointAccessInputBuilder {
             domain_name: self.domain_name,
             account: self.account,
             service: self.service,
+            service_options: self.service_options,
         })
     }
 }

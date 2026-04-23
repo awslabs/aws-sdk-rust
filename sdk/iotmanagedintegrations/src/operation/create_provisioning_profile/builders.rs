@@ -22,7 +22,7 @@ impl crate::operation::create_provisioning_profile::builders::CreateProvisioning
 }
 /// Fluent builder constructing a request to `CreateProvisioningProfile`.
 ///
-/// <p>Create a provisioning profile for a device to execute the provisioning flows using a provisioning template. The provisioning template is a document that defines the set of resources and policies applied to a device during the provisioning process.</p>
+/// <p>Create a provisioning profile for executing device provisioning flows. The provisioning profile is a document that defines the set of resources and policies applied to a device during the provisioning process.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateProvisioningProfileFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -122,45 +122,45 @@ impl CreateProvisioningProfileFluentBuilder {
     pub fn get_provisioning_type(&self) -> &::std::option::Option<crate::types::ProvisioningType> {
         self.inner.get_provisioning_type()
     }
-    /// <p>The id of the certificate authority (CA) certificate.</p>
+    /// <p>The body of the PEM-encoded certificate authority (CA) certificate.</p>
     pub fn ca_certificate(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.ca_certificate(input.into());
         self
     }
-    /// <p>The id of the certificate authority (CA) certificate.</p>
+    /// <p>The body of the PEM-encoded certificate authority (CA) certificate.</p>
     pub fn set_ca_certificate(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_ca_certificate(input);
         self
     }
-    /// <p>The id of the certificate authority (CA) certificate.</p>
+    /// <p>The body of the PEM-encoded certificate authority (CA) certificate.</p>
     pub fn get_ca_certificate(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_ca_certificate()
     }
-    /// <p>The claim certificate.</p>
+    /// <p>The body of the PEM-encoded claim certificate. If a claim certificate is provided, it will be used for the provisioning profile. Otherwise, a claim certificate will be generated.</p>
     pub fn claim_certificate(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.claim_certificate(input.into());
         self
     }
-    /// <p>The claim certificate.</p>
+    /// <p>The body of the PEM-encoded claim certificate. If a claim certificate is provided, it will be used for the provisioning profile. Otherwise, a claim certificate will be generated.</p>
     pub fn set_claim_certificate(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_claim_certificate(input);
         self
     }
-    /// <p>The claim certificate.</p>
+    /// <p>The body of the PEM-encoded claim certificate. If a claim certificate is provided, it will be used for the provisioning profile. Otherwise, a claim certificate will be generated.</p>
     pub fn get_claim_certificate(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_claim_certificate()
     }
-    /// <p>The name of the provisioning template.</p>
+    /// <p>The name of the provisioning profile.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
-    /// <p>The name of the provisioning template.</p>
+    /// <p>The name of the provisioning profile.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
-    /// <p>The name of the provisioning template.</p>
+    /// <p>The name of the provisioning profile.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }
