@@ -45,6 +45,24 @@ pub fn ser_custom_jwt_authorizer_configuration(
         }
         array_11.finish();
     }
+    if let Some(var_14) = &input.private_endpoint {
+        #[allow(unused_mut)]
+        let mut object_15 = object.key("privateEndpoint").start_object();
+        crate::protocol_serde::shape_private_endpoint::ser_private_endpoint(&mut object_15, var_14)?;
+        object_15.finish();
+    }
+    if let Some(var_16) = &input.private_endpoint_overrides {
+        let mut array_17 = object.key("privateEndpointOverrides").start_array();
+        for item_18 in var_16 {
+            {
+                #[allow(unused_mut)]
+                let mut object_19 = array_17.value().start_object();
+                crate::protocol_serde::shape_private_endpoint_override::ser_private_endpoint_override(&mut object_19, item_18)?;
+                object_19.finish();
+            }
+        }
+        array_17.finish();
+    }
     Ok(())
 }
 
@@ -88,6 +106,15 @@ where
                         "customClaims" => {
                             builder = builder.set_custom_claims(
                                 crate::protocol_serde::shape_custom_claim_validations_type::de_custom_claim_validations_type(tokens, _value)?,
+                            );
+                        }
+                        "privateEndpoint" => {
+                            builder =
+                                builder.set_private_endpoint(crate::protocol_serde::shape_private_endpoint::de_private_endpoint(tokens, _value)?);
+                        }
+                        "privateEndpointOverrides" => {
+                            builder = builder.set_private_endpoint_overrides(
+                                crate::protocol_serde::shape_private_endpoint_overrides::de_private_endpoint_overrides(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

@@ -13,6 +13,7 @@ impl super::Client {
     ///   - [`credential_provider_arn(String)`](crate::operation::create_oauth2_credential_provider::CreateOauth2CredentialProviderOutput::credential_provider_arn): <p>The Amazon Resource Name (ARN) of the OAuth2 credential provider.</p>
     ///   - [`callback_url(Option<String>)`](crate::operation::create_oauth2_credential_provider::CreateOauth2CredentialProviderOutput::callback_url): <p>Callback URL to register on the OAuth2 credential provider as an allowed callback URL. This URL is where the OAuth2 authorization server redirects users after they complete the authorization flow.</p>
     ///   - [`oauth2_provider_config_output(Option<Oauth2ProviderConfigOutput>)`](crate::operation::create_oauth2_credential_provider::CreateOauth2CredentialProviderOutput::oauth2_provider_config_output): <p>Contains the output configuration for an OAuth2 provider.</p>
+    ///   - [`status(Option<Status>)`](crate::operation::create_oauth2_credential_provider::CreateOauth2CredentialProviderOutput::status): <p>The current status of the OAuth2 credential provider.</p>
     /// - On failure, responds with [`SdkError<CreateOauth2CredentialProviderError>`](crate::operation::create_oauth2_credential_provider::CreateOauth2CredentialProviderError)
     pub fn create_oauth2_credential_provider(
         &self,

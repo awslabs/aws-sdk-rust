@@ -129,6 +129,10 @@ pub use crate::types::_media_type::MediaType;
 
 pub use crate::types::_agent_status::AgentStatus;
 
+pub use crate::types::_attachment_scope::AttachmentScope;
+
+pub use crate::types::_attached_files_configuration::AttachedFilesConfiguration;
+
 pub use crate::types::_authentication_profile::AuthenticationProfile;
 
 pub use crate::types::_contact::Contact;
@@ -382,6 +386,8 @@ pub use crate::types::_connection_data::ConnectionData;
 pub use crate::types::_disconnect_reason::DisconnectReason;
 
 pub use crate::types::_evaluator_user_union::EvaluatorUserUnion;
+
+pub use crate::types::_extension_configuration::ExtensionConfiguration;
 
 pub use crate::types::_queue_info_input::QueueInfoInput;
 
@@ -648,6 +654,8 @@ pub use crate::types::_agent_status_summary::AgentStatusSummary;
 pub use crate::types::_analytics_data_sets_result::AnalyticsDataSetsResult;
 
 pub use crate::types::_associated_contact_summary::AssociatedContactSummary;
+
+pub use crate::types::_attached_files_configuration_summary::AttachedFilesConfigurationSummary;
 
 pub use crate::types::_authentication_profile_summary::AuthenticationProfileSummary;
 
@@ -1095,6 +1103,8 @@ pub use crate::types::_meeting_features_configuration::MeetingFeaturesConfigurat
 
 pub use crate::types::_evaluation_answer_data::EvaluationAnswerData;
 
+pub use crate::types::_allowed_extension::AllowedExtension;
+
 pub use crate::types::_routing_criteria_input_step::RoutingCriteriaInputStep;
 
 pub use crate::types::_encryption_type::EncryptionType;
@@ -1447,6 +1457,8 @@ mod _alias_configuration;
 
 mod _allowed_capabilities;
 
+mod _allowed_extension;
+
 mod _allowed_user_action;
 
 mod _analytics_data_association_result;
@@ -1477,7 +1489,13 @@ mod _attached_file_invalid_request_exception_reason;
 
 mod _attached_file_service_quota_exceeded_exception_reason;
 
+mod _attached_files_configuration;
+
+mod _attached_files_configuration_summary;
+
 mod _attachment_reference;
+
+mod _attachment_scope;
 
 mod _attendee;
 
@@ -1962,6 +1980,8 @@ mod _execution_record_status;
 mod _expiry;
 
 mod _expression;
+
+mod _extension_configuration;
 
 mod _external_invocation_configuration;
 

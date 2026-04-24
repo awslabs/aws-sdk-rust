@@ -230,6 +230,18 @@ pub(crate) fn delete_vocabulary_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn describe_attached_files_configuration_output_output_correct_errors(
+    mut builder: crate::operation::describe_attached_files_configuration::builders::DescribeAttachedFilesConfigurationOutputBuilder,
+) -> crate::operation::describe_attached_files_configuration::builders::DescribeAttachedFilesConfigurationOutputBuilder {
+    if builder.attached_files_configuration.is_none() {
+        builder.attached_files_configuration = {
+            let builder = crate::types::builders::AttachedFilesConfigurationBuilder::default();
+            crate::serde_util::attached_files_configuration_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
 pub(crate) fn describe_contact_evaluation_output_output_correct_errors(
     mut builder: crate::operation::describe_contact_evaluation::builders::DescribeContactEvaluationOutputBuilder,
 ) -> crate::operation::describe_contact_evaluation::builders::DescribeContactEvaluationOutputBuilder {
@@ -530,6 +542,18 @@ pub(crate) fn submit_contact_evaluation_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn update_attached_files_configuration_output_output_correct_errors(
+    mut builder: crate::operation::update_attached_files_configuration::builders::UpdateAttachedFilesConfigurationOutputBuilder,
+) -> crate::operation::update_attached_files_configuration::builders::UpdateAttachedFilesConfigurationOutputBuilder {
+    if builder.instance_id.is_none() {
+        builder.instance_id = Some(Default::default())
+    }
+    if builder.attachment_scope.is_none() {
+        builder.attachment_scope = "no value was set".parse::<crate::types::AttachmentScope>().ok()
+    }
+    builder
+}
+
 pub(crate) fn update_contact_evaluation_output_output_correct_errors(
     mut builder: crate::operation::update_contact_evaluation::builders::UpdateContactEvaluationOutputBuilder,
 ) -> crate::operation::update_contact_evaluation::builders::UpdateContactEvaluationOutputBuilder {
@@ -592,6 +616,18 @@ pub(crate) fn update_evaluation_form_output_output_correct_errors(
     }
     if builder.evaluation_form_version.is_none() {
         builder.evaluation_form_version = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn attached_files_configuration_correct_errors(
+    mut builder: crate::types::builders::AttachedFilesConfigurationBuilder,
+) -> crate::types::builders::AttachedFilesConfigurationBuilder {
+    if builder.instance_id.is_none() {
+        builder.instance_id = Some(Default::default())
+    }
+    if builder.attachment_scope.is_none() {
+        builder.attachment_scope = "no value was set".parse::<crate::types::AttachmentScope>().ok()
     }
     builder
 }
@@ -813,6 +849,15 @@ pub(crate) fn agent_config_correct_errors(mut builder: crate::types::builders::A
     builder
 }
 
+pub(crate) fn extension_configuration_correct_errors(
+    mut builder: crate::types::builders::ExtensionConfigurationBuilder,
+) -> crate::types::builders::ExtensionConfigurationBuilder {
+    if builder.allowed_extensions.is_none() {
+        builder.allowed_extensions = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn instance_storage_config_correct_errors(
     mut builder: crate::types::builders::InstanceStorageConfigBuilder,
 ) -> crate::types::builders::InstanceStorageConfigBuilder {
@@ -886,6 +931,18 @@ pub(crate) fn attached_file_correct_errors(mut builder: crate::types::builders::
     }
     if builder.file_status.is_none() {
         builder.file_status = "no value was set".parse::<crate::types::FileStatusType>().ok()
+    }
+    builder
+}
+
+pub(crate) fn attached_files_configuration_summary_correct_errors(
+    mut builder: crate::types::builders::AttachedFilesConfigurationSummaryBuilder,
+) -> crate::types::builders::AttachedFilesConfigurationSummaryBuilder {
+    if builder.instance_id.is_none() {
+        builder.instance_id = Some(Default::default())
+    }
+    if builder.attachment_scope.is_none() {
+        builder.attachment_scope = "no value was set".parse::<crate::types::AttachmentScope>().ok()
     }
     builder
 }
@@ -1546,6 +1603,15 @@ pub(crate) fn after_contact_work_config_per_channel_correct_errors(
             let builder = crate::types::builders::AfterContactWorkConfigBuilder::default();
             Some(builder.build())
         }
+    }
+    builder
+}
+
+pub(crate) fn allowed_extension_correct_errors(
+    mut builder: crate::types::builders::AllowedExtensionBuilder,
+) -> crate::types::builders::AllowedExtensionBuilder {
+    if builder.extension.is_none() {
+        builder.extension = Some(Default::default())
     }
     builder
 }

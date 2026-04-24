@@ -10,6 +10,10 @@ pub struct CustomOauth2ProviderConfigInput {
     pub client_id: ::std::string::String,
     /// <p>The client secret for the custom OAuth2 provider.</p>
     pub client_secret: ::std::string::String,
+    /// <p>The default private endpoint for the custom OAuth2 provider, enabling secure connectivity through a VPC Lattice resource configuration.</p>
+    pub private_endpoint: ::std::option::Option<crate::types::PrivateEndpoint>,
+    /// <p>The list of private endpoint overrides for the custom OAuth2 provider. Each override maps a specific domain to a private endpoint, enabling secure connectivity through VPC Lattice resource configurations.</p>
+    pub private_endpoint_overrides: ::std::option::Option<::std::vec::Vec<crate::types::PrivateEndpointOverride>>,
 }
 impl CustomOauth2ProviderConfigInput {
     /// <p>The OAuth2 discovery information for the custom provider.</p>
@@ -26,6 +30,16 @@ impl CustomOauth2ProviderConfigInput {
         use std::ops::Deref;
         self.client_secret.deref()
     }
+    /// <p>The default private endpoint for the custom OAuth2 provider, enabling secure connectivity through a VPC Lattice resource configuration.</p>
+    pub fn private_endpoint(&self) -> ::std::option::Option<&crate::types::PrivateEndpoint> {
+        self.private_endpoint.as_ref()
+    }
+    /// <p>The list of private endpoint overrides for the custom OAuth2 provider. Each override maps a specific domain to a private endpoint, enabling secure connectivity through VPC Lattice resource configurations.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.private_endpoint_overrides.is_none()`.
+    pub fn private_endpoint_overrides(&self) -> &[crate::types::PrivateEndpointOverride] {
+        self.private_endpoint_overrides.as_deref().unwrap_or_default()
+    }
 }
 impl ::std::fmt::Debug for CustomOauth2ProviderConfigInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -33,6 +47,8 @@ impl ::std::fmt::Debug for CustomOauth2ProviderConfigInput {
         formatter.field("oauth_discovery", &self.oauth_discovery);
         formatter.field("client_id", &self.client_id);
         formatter.field("client_secret", &"*** Sensitive Data Redacted ***");
+        formatter.field("private_endpoint", &self.private_endpoint);
+        formatter.field("private_endpoint_overrides", &self.private_endpoint_overrides);
         formatter.finish()
     }
 }
@@ -50,6 +66,8 @@ pub struct CustomOauth2ProviderConfigInputBuilder {
     pub(crate) oauth_discovery: ::std::option::Option<crate::types::Oauth2Discovery>,
     pub(crate) client_id: ::std::option::Option<::std::string::String>,
     pub(crate) client_secret: ::std::option::Option<::std::string::String>,
+    pub(crate) private_endpoint: ::std::option::Option<crate::types::PrivateEndpoint>,
+    pub(crate) private_endpoint_overrides: ::std::option::Option<::std::vec::Vec<crate::types::PrivateEndpointOverride>>,
 }
 impl CustomOauth2ProviderConfigInputBuilder {
     /// <p>The OAuth2 discovery information for the custom provider.</p>
@@ -97,6 +115,40 @@ impl CustomOauth2ProviderConfigInputBuilder {
     pub fn get_client_secret(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_secret
     }
+    /// <p>The default private endpoint for the custom OAuth2 provider, enabling secure connectivity through a VPC Lattice resource configuration.</p>
+    pub fn private_endpoint(mut self, input: crate::types::PrivateEndpoint) -> Self {
+        self.private_endpoint = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The default private endpoint for the custom OAuth2 provider, enabling secure connectivity through a VPC Lattice resource configuration.</p>
+    pub fn set_private_endpoint(mut self, input: ::std::option::Option<crate::types::PrivateEndpoint>) -> Self {
+        self.private_endpoint = input;
+        self
+    }
+    /// <p>The default private endpoint for the custom OAuth2 provider, enabling secure connectivity through a VPC Lattice resource configuration.</p>
+    pub fn get_private_endpoint(&self) -> &::std::option::Option<crate::types::PrivateEndpoint> {
+        &self.private_endpoint
+    }
+    /// Appends an item to `private_endpoint_overrides`.
+    ///
+    /// To override the contents of this collection use [`set_private_endpoint_overrides`](Self::set_private_endpoint_overrides).
+    ///
+    /// <p>The list of private endpoint overrides for the custom OAuth2 provider. Each override maps a specific domain to a private endpoint, enabling secure connectivity through VPC Lattice resource configurations.</p>
+    pub fn private_endpoint_overrides(mut self, input: crate::types::PrivateEndpointOverride) -> Self {
+        let mut v = self.private_endpoint_overrides.unwrap_or_default();
+        v.push(input);
+        self.private_endpoint_overrides = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The list of private endpoint overrides for the custom OAuth2 provider. Each override maps a specific domain to a private endpoint, enabling secure connectivity through VPC Lattice resource configurations.</p>
+    pub fn set_private_endpoint_overrides(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PrivateEndpointOverride>>) -> Self {
+        self.private_endpoint_overrides = input;
+        self
+    }
+    /// <p>The list of private endpoint overrides for the custom OAuth2 provider. Each override maps a specific domain to a private endpoint, enabling secure connectivity through VPC Lattice resource configurations.</p>
+    pub fn get_private_endpoint_overrides(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PrivateEndpointOverride>> {
+        &self.private_endpoint_overrides
+    }
     /// Consumes the builder and constructs a [`CustomOauth2ProviderConfigInput`](crate::types::CustomOauth2ProviderConfigInput).
     /// This method will fail if any of the following fields are not set:
     /// - [`client_id`](crate::types::builders::CustomOauth2ProviderConfigInputBuilder::client_id)
@@ -116,6 +168,8 @@ impl CustomOauth2ProviderConfigInputBuilder {
                     "client_secret was not specified but it is required when building CustomOauth2ProviderConfigInput",
                 )
             })?,
+            private_endpoint: self.private_endpoint,
+            private_endpoint_overrides: self.private_endpoint_overrides,
         })
     }
 }
@@ -125,6 +179,8 @@ impl ::std::fmt::Debug for CustomOauth2ProviderConfigInputBuilder {
         formatter.field("oauth_discovery", &self.oauth_discovery);
         formatter.field("client_id", &self.client_id);
         formatter.field("client_secret", &"*** Sensitive Data Redacted ***");
+        formatter.field("private_endpoint", &self.private_endpoint);
+        formatter.field("private_endpoint_overrides", &self.private_endpoint_overrides);
         formatter.finish()
     }
 }

@@ -203,6 +203,8 @@ pub use crate::types::_workflow_detail::WorkflowDetail;
 
 pub use crate::types::_ssh_public_key::SshPublicKey;
 
+pub use crate::types::_web_app_vpc_endpoint_ip_address_type::WebAppVpcEndpointIpAddressType;
+
 pub use crate::types::_described_identity_center_config::DescribedIdentityCenterConfig;
 
 pub use crate::types::_described_web_app_vpc_config::DescribedWebAppVpcConfig;
@@ -462,6 +464,8 @@ mod _web_app_identity_provider_details;
 mod _web_app_units;
 
 mod _web_app_vpc_config;
+
+mod _web_app_vpc_endpoint_ip_address_type;
 
 mod _workflow_detail;
 

@@ -121,7 +121,7 @@ pub use crate::types::_gateway_summary::GatewaySummaryBuilder;
 
 pub use crate::types::_credential_provider_configuration::CredentialProviderConfigurationBuilder;
 
-pub use crate::types::_managed_lattice_resource::ManagedLatticeResourceBuilder;
+pub use crate::types::_managed_vpc_resource::ManagedVpcResourceBuilder;
 
 pub use crate::types::_managed_resource_details::ManagedResourceDetailsBuilder;
 
@@ -208,6 +208,8 @@ pub use crate::types::_registry_summary::RegistrySummaryBuilder;
 pub use crate::types::_workload_identity_type::WorkloadIdentityTypeBuilder;
 
 pub use crate::types::_oauth2_authorization_server_metadata::Oauth2AuthorizationServerMetadataBuilder;
+
+pub use crate::types::_private_endpoint_override::PrivateEndpointOverrideBuilder;
 
 pub use crate::types::_session_storage_configuration::SessionStorageConfigurationBuilder;
 

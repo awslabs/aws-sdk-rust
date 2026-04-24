@@ -15,6 +15,7 @@ impl super::Client {
     ///   - [`oauth2_provider_config_output(Option<Oauth2ProviderConfigOutput>)`](crate::operation::update_oauth2_credential_provider::UpdateOauth2CredentialProviderOutput::oauth2_provider_config_output): <p>The configuration output for the OAuth2 provider.</p>
     ///   - [`created_time(DateTime)`](crate::operation::update_oauth2_credential_provider::UpdateOauth2CredentialProviderOutput::created_time): <p>The timestamp when the OAuth2 credential provider was created.</p>
     ///   - [`last_updated_time(DateTime)`](crate::operation::update_oauth2_credential_provider::UpdateOauth2CredentialProviderOutput::last_updated_time): <p>The timestamp when the OAuth2 credential provider was last updated.</p>
+    ///   - [`status(Option<Status>)`](crate::operation::update_oauth2_credential_provider::UpdateOauth2CredentialProviderOutput::status): <p>The current status of the OAuth2 credential provider.</p>
     /// - On failure, responds with [`SdkError<UpdateOauth2CredentialProviderError>`](crate::operation::update_oauth2_credential_provider::UpdateOauth2CredentialProviderError)
     pub fn update_oauth2_credential_provider(
         &self,

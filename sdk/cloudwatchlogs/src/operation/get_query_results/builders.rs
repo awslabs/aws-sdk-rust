@@ -127,4 +127,32 @@ impl GetQueryResultsFluentBuilder {
     pub fn get_query_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_query_id()
     }
+    /// <p>The token for the next set of items to return. The token expires after 1 hour.</p>
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.next_token(input.into());
+        self
+    }
+    /// <p>The token for the next set of items to return. The token expires after 1 hour.</p>
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_next_token(input);
+        self
+    }
+    /// <p>The token for the next set of items to return. The token expires after 1 hour.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
+    /// <p>The maximum number of log events to return in the response. The maximum is 10,000 log events.</p>
+    pub fn max_items(mut self, input: i32) -> Self {
+        self.inner = self.inner.max_items(input);
+        self
+    }
+    /// <p>The maximum number of log events to return in the response. The maximum is 10,000 log events.</p>
+    pub fn set_max_items(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.inner = self.inner.set_max_items(input);
+        self
+    }
+    /// <p>The maximum number of log events to return in the response. The maximum is 10,000 log events.</p>
+    pub fn get_max_items(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_items()
+    }
 }

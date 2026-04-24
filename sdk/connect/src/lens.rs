@@ -69,6 +69,16 @@ pub(crate) fn reflens_list_approved_origins_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_attached_files_configurations_output_output_next_token(
+    input: &crate::operation::list_attached_files_configurations::ListAttachedFilesConfigurationsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_authentication_profiles_output_output_next_token(
     input: &crate::operation::list_authentication_profiles::ListAuthenticationProfilesOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -860,6 +870,13 @@ pub(crate) fn lens_list_approved_origins_output_output_origins(
     input: crate::operation::list_approved_origins::ListApprovedOriginsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<::std::string::String>> {
     let input = input.origins?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_attached_files_configurations_output_output_attached_files_configurations(
+    input: crate::operation::list_attached_files_configurations::ListAttachedFilesConfigurationsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::AttachedFilesConfigurationSummary>> {
+    let input = input.attached_files_configurations?;
     ::std::option::Option::Some(input)
 }
 

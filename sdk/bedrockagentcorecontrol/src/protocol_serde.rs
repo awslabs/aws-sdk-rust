@@ -671,9 +671,9 @@ pub(crate) mod shape_linkedin_oauth2_provider_config_output;
 
 pub(crate) mod shape_llm_as_a_judge_evaluator_config;
 
-pub(crate) mod shape_managed_lattice_resource;
-
 pub(crate) mod shape_managed_resource_details;
+
+pub(crate) mod shape_managed_vpc_resource;
 
 pub(crate) mod shape_mcp_descriptor;
 
@@ -826,6 +826,10 @@ pub(crate) mod shape_modify_strategy_configuration;
 pub(crate) mod shape_o_auth_credential_provider;
 
 pub(crate) mod shape_oauth2_discovery;
+
+pub(crate) mod shape_private_endpoint_override;
+
+pub(crate) mod shape_private_endpoint_overrides;
 
 pub(crate) mod shape_rating_scale;
 

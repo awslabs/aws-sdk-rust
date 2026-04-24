@@ -13,6 +13,8 @@ pub struct CreateOauth2CredentialProviderOutput {
     pub callback_url: ::std::option::Option<::std::string::String>,
     /// <p>Contains the output configuration for an OAuth2 provider.</p>
     pub oauth2_provider_config_output: ::std::option::Option<crate::types::Oauth2ProviderConfigOutput>,
+    /// <p>The current status of the OAuth2 credential provider.</p>
+    pub status: ::std::option::Option<crate::types::Status>,
     _request_id: Option<String>,
 }
 impl CreateOauth2CredentialProviderOutput {
@@ -38,6 +40,10 @@ impl CreateOauth2CredentialProviderOutput {
     pub fn oauth2_provider_config_output(&self) -> ::std::option::Option<&crate::types::Oauth2ProviderConfigOutput> {
         self.oauth2_provider_config_output.as_ref()
     }
+    /// <p>The current status of the OAuth2 credential provider.</p>
+    pub fn status(&self) -> ::std::option::Option<&crate::types::Status> {
+        self.status.as_ref()
+    }
 }
 impl ::aws_types::request_id::RequestId for CreateOauth2CredentialProviderOutput {
     fn request_id(&self) -> Option<&str> {
@@ -60,6 +66,7 @@ pub struct CreateOauth2CredentialProviderOutputBuilder {
     pub(crate) credential_provider_arn: ::std::option::Option<::std::string::String>,
     pub(crate) callback_url: ::std::option::Option<::std::string::String>,
     pub(crate) oauth2_provider_config_output: ::std::option::Option<crate::types::Oauth2ProviderConfigOutput>,
+    pub(crate) status: ::std::option::Option<crate::types::Status>,
     _request_id: Option<String>,
 }
 impl CreateOauth2CredentialProviderOutputBuilder {
@@ -136,6 +143,20 @@ impl CreateOauth2CredentialProviderOutputBuilder {
     pub fn get_oauth2_provider_config_output(&self) -> &::std::option::Option<crate::types::Oauth2ProviderConfigOutput> {
         &self.oauth2_provider_config_output
     }
+    /// <p>The current status of the OAuth2 credential provider.</p>
+    pub fn status(mut self, input: crate::types::Status) -> Self {
+        self.status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The current status of the OAuth2 credential provider.</p>
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::Status>) -> Self {
+        self.status = input;
+        self
+    }
+    /// <p>The current status of the OAuth2 credential provider.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::Status> {
+        &self.status
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -172,6 +193,7 @@ impl CreateOauth2CredentialProviderOutputBuilder {
                 })?,
                 callback_url: self.callback_url,
                 oauth2_provider_config_output: self.oauth2_provider_config_output,
+                status: self.status,
                 _request_id: self._request_id,
             },
         )

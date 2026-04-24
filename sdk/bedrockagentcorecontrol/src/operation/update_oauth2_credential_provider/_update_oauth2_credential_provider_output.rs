@@ -19,6 +19,8 @@ pub struct UpdateOauth2CredentialProviderOutput {
     pub created_time: ::aws_smithy_types::DateTime,
     /// <p>The timestamp when the OAuth2 credential provider was last updated.</p>
     pub last_updated_time: ::aws_smithy_types::DateTime,
+    /// <p>The current status of the OAuth2 credential provider.</p>
+    pub status: ::std::option::Option<crate::types::Status>,
     _request_id: Option<String>,
 }
 impl UpdateOauth2CredentialProviderOutput {
@@ -56,6 +58,10 @@ impl UpdateOauth2CredentialProviderOutput {
     pub fn last_updated_time(&self) -> &::aws_smithy_types::DateTime {
         &self.last_updated_time
     }
+    /// <p>The current status of the OAuth2 credential provider.</p>
+    pub fn status(&self) -> ::std::option::Option<&crate::types::Status> {
+        self.status.as_ref()
+    }
 }
 impl ::aws_types::request_id::RequestId for UpdateOauth2CredentialProviderOutput {
     fn request_id(&self) -> Option<&str> {
@@ -81,6 +87,7 @@ pub struct UpdateOauth2CredentialProviderOutputBuilder {
     pub(crate) oauth2_provider_config_output: ::std::option::Option<crate::types::Oauth2ProviderConfigOutput>,
     pub(crate) created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) status: ::std::option::Option<crate::types::Status>,
     _request_id: Option<String>,
 }
 impl UpdateOauth2CredentialProviderOutputBuilder {
@@ -203,6 +210,20 @@ impl UpdateOauth2CredentialProviderOutputBuilder {
     pub fn get_last_updated_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_updated_time
     }
+    /// <p>The current status of the OAuth2 credential provider.</p>
+    pub fn status(mut self, input: crate::types::Status) -> Self {
+        self.status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The current status of the OAuth2 credential provider.</p>
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::Status>) -> Self {
+        self.status = input;
+        self
+    }
+    /// <p>The current status of the OAuth2 credential provider.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::Status> {
+        &self.status
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -260,6 +281,7 @@ impl UpdateOauth2CredentialProviderOutputBuilder {
                         "last_updated_time was not specified but it is required when building UpdateOauth2CredentialProviderOutput",
                     )
                 })?,
+                status: self.status,
                 _request_id: self._request_id,
             },
         )

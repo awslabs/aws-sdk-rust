@@ -3,7 +3,7 @@
 /// <p>Configuration for a managed VPC Lattice resource. The gateway creates and manages the VPC Lattice resource gateway and resource configuration on your behalf using a service-linked role.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ManagedLatticeResource {
+pub struct ManagedVpcResource {
     /// <p>The ID of the VPC that contains your private resource.</p>
     pub vpc_identifier: ::std::string::String,
     /// <p>The subnet IDs within the VPC where the VPC Lattice resource gateway is placed.</p>
@@ -17,7 +17,7 @@ pub struct ManagedLatticeResource {
     /// <p>An intermediate publicly resolvable domain used as the VPC Lattice resource configuration endpoint. Required when your private endpoint uses a domain that is not publicly resolvable.</p>
     pub routing_domain: ::std::option::Option<::std::string::String>,
 }
-impl ManagedLatticeResource {
+impl ManagedVpcResource {
     /// <p>The ID of the VPC that contains your private resource.</p>
     pub fn vpc_identifier(&self) -> &str {
         use std::ops::Deref;
@@ -47,17 +47,17 @@ impl ManagedLatticeResource {
         self.routing_domain.as_deref()
     }
 }
-impl ManagedLatticeResource {
-    /// Creates a new builder-style object to manufacture [`ManagedLatticeResource`](crate::types::ManagedLatticeResource).
-    pub fn builder() -> crate::types::builders::ManagedLatticeResourceBuilder {
-        crate::types::builders::ManagedLatticeResourceBuilder::default()
+impl ManagedVpcResource {
+    /// Creates a new builder-style object to manufacture [`ManagedVpcResource`](crate::types::ManagedVpcResource).
+    pub fn builder() -> crate::types::builders::ManagedVpcResourceBuilder {
+        crate::types::builders::ManagedVpcResourceBuilder::default()
     }
 }
 
-/// A builder for [`ManagedLatticeResource`](crate::types::ManagedLatticeResource).
+/// A builder for [`ManagedVpcResource`](crate::types::ManagedVpcResource).
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
-pub struct ManagedLatticeResourceBuilder {
+pub struct ManagedVpcResourceBuilder {
     pub(crate) vpc_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) endpoint_ip_address_type: ::std::option::Option<crate::types::EndpointIpAddressType>,
@@ -65,7 +65,7 @@ pub struct ManagedLatticeResourceBuilder {
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) routing_domain: ::std::option::Option<::std::string::String>,
 }
-impl ManagedLatticeResourceBuilder {
+impl ManagedVpcResourceBuilder {
     /// <p>The ID of the VPC that contains your private resource.</p>
     /// This field is required.
     pub fn vpc_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -170,29 +170,29 @@ impl ManagedLatticeResourceBuilder {
     pub fn get_routing_domain(&self) -> &::std::option::Option<::std::string::String> {
         &self.routing_domain
     }
-    /// Consumes the builder and constructs a [`ManagedLatticeResource`](crate::types::ManagedLatticeResource).
+    /// Consumes the builder and constructs a [`ManagedVpcResource`](crate::types::ManagedVpcResource).
     /// This method will fail if any of the following fields are not set:
-    /// - [`vpc_identifier`](crate::types::builders::ManagedLatticeResourceBuilder::vpc_identifier)
-    /// - [`subnet_ids`](crate::types::builders::ManagedLatticeResourceBuilder::subnet_ids)
-    /// - [`endpoint_ip_address_type`](crate::types::builders::ManagedLatticeResourceBuilder::endpoint_ip_address_type)
-    pub fn build(self) -> ::std::result::Result<crate::types::ManagedLatticeResource, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ManagedLatticeResource {
+    /// - [`vpc_identifier`](crate::types::builders::ManagedVpcResourceBuilder::vpc_identifier)
+    /// - [`subnet_ids`](crate::types::builders::ManagedVpcResourceBuilder::subnet_ids)
+    /// - [`endpoint_ip_address_type`](crate::types::builders::ManagedVpcResourceBuilder::endpoint_ip_address_type)
+    pub fn build(self) -> ::std::result::Result<crate::types::ManagedVpcResource, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ManagedVpcResource {
             vpc_identifier: self.vpc_identifier.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "vpc_identifier",
-                    "vpc_identifier was not specified but it is required when building ManagedLatticeResource",
+                    "vpc_identifier was not specified but it is required when building ManagedVpcResource",
                 )
             })?,
             subnet_ids: self.subnet_ids.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "subnet_ids",
-                    "subnet_ids was not specified but it is required when building ManagedLatticeResource",
+                    "subnet_ids was not specified but it is required when building ManagedVpcResource",
                 )
             })?,
             endpoint_ip_address_type: self.endpoint_ip_address_type.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "endpoint_ip_address_type",
-                    "endpoint_ip_address_type was not specified but it is required when building ManagedLatticeResource",
+                    "endpoint_ip_address_type was not specified but it is required when building ManagedVpcResource",
                 )
             })?,
             security_group_ids: self.security_group_ids,

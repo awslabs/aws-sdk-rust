@@ -1125,6 +1125,9 @@ impl From<crate::operation::delete_oauth2_credential_provider::DeleteOauth2Crede
             crate::operation::delete_oauth2_credential_provider::DeleteOauth2CredentialProviderError::AccessDeniedException(inner) => {
                 Error::AccessDeniedException(inner)
             }
+            crate::operation::delete_oauth2_credential_provider::DeleteOauth2CredentialProviderError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
             crate::operation::delete_oauth2_credential_provider::DeleteOauth2CredentialProviderError::InternalServerException(inner) => {
                 Error::InternalServerException(inner)
             }

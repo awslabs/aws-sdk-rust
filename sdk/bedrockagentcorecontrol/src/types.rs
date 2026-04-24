@@ -5,6 +5,8 @@ pub use crate::types::_credential_provider_vendor_type::CredentialProviderVendor
 
 pub use crate::types::_oauth2_provider_config_input::Oauth2ProviderConfigInput;
 
+pub use crate::types::_status::Status;
+
 pub use crate::types::_validation_exception_reason::ValidationExceptionReason;
 
 pub use crate::types::_kms_configuration::KmsConfiguration;
@@ -235,7 +237,7 @@ pub use crate::types::_credential_provider_configuration::CredentialProviderConf
 
 pub use crate::types::_self_managed_lattice_resource::SelfManagedLatticeResource;
 
-pub use crate::types::_managed_lattice_resource::ManagedLatticeResource;
+pub use crate::types::_managed_vpc_resource::ManagedVpcResource;
 
 pub use crate::types::_managed_resource_details::ManagedResourceDetails;
 
@@ -338,6 +340,8 @@ pub use crate::types::_registry_summary::RegistrySummary;
 pub use crate::types::_workload_identity_type::WorkloadIdentityType;
 
 pub use crate::types::_oauth2_authorization_server_metadata::Oauth2AuthorizationServerMetadata;
+
+pub use crate::types::_private_endpoint_override::PrivateEndpointOverride;
 
 pub use crate::types::_code::Code;
 
@@ -981,9 +985,9 @@ mod _listing_mode;
 
 mod _llm_as_a_judge_evaluator_config;
 
-mod _managed_lattice_resource;
-
 mod _managed_resource_details;
+
+mod _managed_vpc_resource;
 
 mod _mcp_descriptor;
 
@@ -1093,6 +1097,8 @@ mod _policy_validation_mode;
 
 mod _private_endpoint;
 
+mod _private_endpoint_override;
+
 mod _protocol_configuration;
 
 mod _rating_scale;
@@ -1190,6 +1196,8 @@ mod _skill_md_definition;
 mod _slack_oauth2_provider_config_input;
 
 mod _slack_oauth2_provider_config_output;
+
+mod _status;
 
 mod _strategy_configuration;
 

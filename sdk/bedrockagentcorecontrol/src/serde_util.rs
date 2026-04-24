@@ -2374,9 +2374,9 @@ pub(crate) fn llm_as_a_judge_evaluator_config_correct_errors(
     builder
 }
 
-pub(crate) fn managed_lattice_resource_correct_errors(
-    mut builder: crate::types::builders::ManagedLatticeResourceBuilder,
-) -> crate::types::builders::ManagedLatticeResourceBuilder {
+pub(crate) fn managed_vpc_resource_correct_errors(
+    mut builder: crate::types::builders::ManagedVpcResourceBuilder,
+) -> crate::types::builders::ManagedVpcResourceBuilder {
     if builder.vpc_identifier.is_none() {
         builder.vpc_identifier = Some(Default::default())
     }
@@ -3003,6 +3003,18 @@ pub(crate) fn oauth2_authorization_server_metadata_correct_errors(
     }
     if builder.token_endpoint.is_none() {
         builder.token_endpoint = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn private_endpoint_override_correct_errors(
+    mut builder: crate::types::builders::PrivateEndpointOverrideBuilder,
+) -> crate::types::builders::PrivateEndpointOverrideBuilder {
+    if builder.domain.is_none() {
+        builder.domain = Some(Default::default())
+    }
+    if builder.private_endpoint.is_none() {
+        builder.private_endpoint = Some(crate::types::PrivateEndpoint::Unknown)
     }
     builder
 }

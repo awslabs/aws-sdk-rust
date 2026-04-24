@@ -6,6 +6,8 @@
 pub struct UpdateWebAppVpcConfig {
     /// <p>The list of subnet IDs within the VPC where the web app endpoint should be deployed during the update operation.</p>
     pub subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>The IP address type for the web app's VPC endpoint. This determines whether the endpoint is accessible over IPv4 only, or over both IPv4 and IPv6.</p>
+    pub ip_address_type: ::std::option::Option<crate::types::WebAppVpcEndpointIpAddressType>,
 }
 impl UpdateWebAppVpcConfig {
     /// <p>The list of subnet IDs within the VPC where the web app endpoint should be deployed during the update operation.</p>
@@ -13,6 +15,10 @@ impl UpdateWebAppVpcConfig {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subnet_ids.is_none()`.
     pub fn subnet_ids(&self) -> &[::std::string::String] {
         self.subnet_ids.as_deref().unwrap_or_default()
+    }
+    /// <p>The IP address type for the web app's VPC endpoint. This determines whether the endpoint is accessible over IPv4 only, or over both IPv4 and IPv6.</p>
+    pub fn ip_address_type(&self) -> ::std::option::Option<&crate::types::WebAppVpcEndpointIpAddressType> {
+        self.ip_address_type.as_ref()
     }
 }
 impl UpdateWebAppVpcConfig {
@@ -27,6 +33,7 @@ impl UpdateWebAppVpcConfig {
 #[non_exhaustive]
 pub struct UpdateWebAppVpcConfigBuilder {
     pub(crate) subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) ip_address_type: ::std::option::Option<crate::types::WebAppVpcEndpointIpAddressType>,
 }
 impl UpdateWebAppVpcConfigBuilder {
     /// Appends an item to `subnet_ids`.
@@ -49,8 +56,25 @@ impl UpdateWebAppVpcConfigBuilder {
     pub fn get_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.subnet_ids
     }
+    /// <p>The IP address type for the web app's VPC endpoint. This determines whether the endpoint is accessible over IPv4 only, or over both IPv4 and IPv6.</p>
+    pub fn ip_address_type(mut self, input: crate::types::WebAppVpcEndpointIpAddressType) -> Self {
+        self.ip_address_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The IP address type for the web app's VPC endpoint. This determines whether the endpoint is accessible over IPv4 only, or over both IPv4 and IPv6.</p>
+    pub fn set_ip_address_type(mut self, input: ::std::option::Option<crate::types::WebAppVpcEndpointIpAddressType>) -> Self {
+        self.ip_address_type = input;
+        self
+    }
+    /// <p>The IP address type for the web app's VPC endpoint. This determines whether the endpoint is accessible over IPv4 only, or over both IPv4 and IPv6.</p>
+    pub fn get_ip_address_type(&self) -> &::std::option::Option<crate::types::WebAppVpcEndpointIpAddressType> {
+        &self.ip_address_type
+    }
     /// Consumes the builder and constructs a [`UpdateWebAppVpcConfig`](crate::types::UpdateWebAppVpcConfig).
     pub fn build(self) -> crate::types::UpdateWebAppVpcConfig {
-        crate::types::UpdateWebAppVpcConfig { subnet_ids: self.subnet_ids }
+        crate::types::UpdateWebAppVpcConfig {
+            subnet_ids: self.subnet_ids,
+            ip_address_type: self.ip_address_type,
+        }
     }
 }

@@ -6,5 +6,14 @@ pub fn ser_get_query_results_input_input(
     if let Some(var_1) = &input.query_id {
         object.key("queryId").string(var_1.as_str());
     }
+    if let Some(var_2) = &input.next_token {
+        object.key("nextToken").string(var_2.as_str());
+    }
+    if let Some(var_3) = &input.max_items {
+        object.key("maxItems").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_3).into()),
+        );
+    }
     Ok(())
 }

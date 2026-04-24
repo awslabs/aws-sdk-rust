@@ -12,6 +12,7 @@
 /// ```text
 /// # let agentmanagedruntimetype = unimplemented!();
 /// match agentmanagedruntimetype {
+///     AgentManagedRuntimeType::Node22 => { /* ... */ },
 ///     AgentManagedRuntimeType::Python310 => { /* ... */ },
 ///     AgentManagedRuntimeType::Python311 => { /* ... */ },
 ///     AgentManagedRuntimeType::Python312 => { /* ... */ },
@@ -46,6 +47,8 @@
 )]
 pub enum AgentManagedRuntimeType {
     #[allow(missing_docs)] // documentation missing in model
+    Node22,
+    #[allow(missing_docs)] // documentation missing in model
     Python310,
     #[allow(missing_docs)] // documentation missing in model
     Python311,
@@ -62,6 +65,7 @@ pub enum AgentManagedRuntimeType {
 impl ::std::convert::From<&str> for AgentManagedRuntimeType {
     fn from(s: &str) -> Self {
         match s {
+            "NODE_22" => AgentManagedRuntimeType::Node22,
             "PYTHON_3_10" => AgentManagedRuntimeType::Python310,
             "PYTHON_3_11" => AgentManagedRuntimeType::Python311,
             "PYTHON_3_12" => AgentManagedRuntimeType::Python312,
@@ -82,6 +86,7 @@ impl AgentManagedRuntimeType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            AgentManagedRuntimeType::Node22 => "NODE_22",
             AgentManagedRuntimeType::Python310 => "PYTHON_3_10",
             AgentManagedRuntimeType::Python311 => "PYTHON_3_11",
             AgentManagedRuntimeType::Python312 => "PYTHON_3_12",
@@ -92,7 +97,7 @@ impl AgentManagedRuntimeType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["PYTHON_3_10", "PYTHON_3_11", "PYTHON_3_12", "PYTHON_3_13", "PYTHON_3_14"]
+        &["NODE_22", "PYTHON_3_10", "PYTHON_3_11", "PYTHON_3_12", "PYTHON_3_13", "PYTHON_3_14"]
     }
 }
 impl ::std::convert::AsRef<str> for AgentManagedRuntimeType {
@@ -115,6 +120,7 @@ impl AgentManagedRuntimeType {
 impl ::std::fmt::Display for AgentManagedRuntimeType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            AgentManagedRuntimeType::Node22 => write!(f, "NODE_22"),
             AgentManagedRuntimeType::Python310 => write!(f, "PYTHON_3_10"),
             AgentManagedRuntimeType::Python311 => write!(f, "PYTHON_3_11"),
             AgentManagedRuntimeType::Python312 => write!(f, "PYTHON_3_12"),

@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum PrivateEndpoint {
     /// <p>Configuration for connecting to a private resource using a managed VPC Lattice resource. The gateway creates and manages the VPC Lattice resources on your behalf.</p>
-    ManagedLatticeResource(crate::types::ManagedLatticeResource),
+    ManagedVpcResource(crate::types::ManagedVpcResource),
     /// <p>Configuration for connecting to a private resource using a self-managed VPC Lattice resource configuration.</p>
     SelfManagedLatticeResource(crate::types::SelfManagedLatticeResource),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
@@ -19,18 +19,18 @@ pub enum PrivateEndpoint {
     Unknown,
 }
 impl PrivateEndpoint {
-    /// Tries to convert the enum instance into [`ManagedLatticeResource`](crate::types::PrivateEndpoint::ManagedLatticeResource), extracting the inner [`ManagedLatticeResource`](crate::types::ManagedLatticeResource).
+    /// Tries to convert the enum instance into [`ManagedVpcResource`](crate::types::PrivateEndpoint::ManagedVpcResource), extracting the inner [`ManagedVpcResource`](crate::types::ManagedVpcResource).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_managed_lattice_resource(&self) -> ::std::result::Result<&crate::types::ManagedLatticeResource, &Self> {
-        if let PrivateEndpoint::ManagedLatticeResource(val) = &self {
+    pub fn as_managed_vpc_resource(&self) -> ::std::result::Result<&crate::types::ManagedVpcResource, &Self> {
+        if let PrivateEndpoint::ManagedVpcResource(val) = &self {
             ::std::result::Result::Ok(val)
         } else {
             ::std::result::Result::Err(self)
         }
     }
-    /// Returns true if this is a [`ManagedLatticeResource`](crate::types::PrivateEndpoint::ManagedLatticeResource).
-    pub fn is_managed_lattice_resource(&self) -> bool {
-        self.as_managed_lattice_resource().is_ok()
+    /// Returns true if this is a [`ManagedVpcResource`](crate::types::PrivateEndpoint::ManagedVpcResource).
+    pub fn is_managed_vpc_resource(&self) -> bool {
+        self.as_managed_vpc_resource().is_ok()
     }
     /// Tries to convert the enum instance into [`SelfManagedLatticeResource`](crate::types::PrivateEndpoint::SelfManagedLatticeResource), extracting the inner [`SelfManagedLatticeResource`](crate::types::SelfManagedLatticeResource).
     /// Returns `Err(&Self)` if it can't be converted.

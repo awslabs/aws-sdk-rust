@@ -10,6 +10,8 @@ pub struct WebAppVpcConfig {
     pub vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>The list of security group IDs that control access to the web app endpoint. These security groups determine which sources can access the endpoint based on IP addresses and port configurations.</p>
     pub security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>The IP address type for the web app's VPC endpoint. This determines whether the endpoint is accessible over IPv4 only, or over both IPv4 and IPv6.</p>
+    pub ip_address_type: ::std::option::Option<crate::types::WebAppVpcEndpointIpAddressType>,
 }
 impl WebAppVpcConfig {
     /// <p>The list of subnet IDs within the VPC where the web app endpoint will be deployed. These subnets must be in the same VPC specified in the VpcId parameter.</p>
@@ -28,6 +30,10 @@ impl WebAppVpcConfig {
     pub fn security_group_ids(&self) -> &[::std::string::String] {
         self.security_group_ids.as_deref().unwrap_or_default()
     }
+    /// <p>The IP address type for the web app's VPC endpoint. This determines whether the endpoint is accessible over IPv4 only, or over both IPv4 and IPv6.</p>
+    pub fn ip_address_type(&self) -> ::std::option::Option<&crate::types::WebAppVpcEndpointIpAddressType> {
+        self.ip_address_type.as_ref()
+    }
 }
 impl WebAppVpcConfig {
     /// Creates a new builder-style object to manufacture [`WebAppVpcConfig`](crate::types::WebAppVpcConfig).
@@ -43,6 +49,7 @@ pub struct WebAppVpcConfigBuilder {
     pub(crate) subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) vpc_id: ::std::option::Option<::std::string::String>,
     pub(crate) security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) ip_address_type: ::std::option::Option<crate::types::WebAppVpcEndpointIpAddressType>,
 }
 impl WebAppVpcConfigBuilder {
     /// Appends an item to `subnet_ids`.
@@ -99,12 +106,27 @@ impl WebAppVpcConfigBuilder {
     pub fn get_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.security_group_ids
     }
+    /// <p>The IP address type for the web app's VPC endpoint. This determines whether the endpoint is accessible over IPv4 only, or over both IPv4 and IPv6.</p>
+    pub fn ip_address_type(mut self, input: crate::types::WebAppVpcEndpointIpAddressType) -> Self {
+        self.ip_address_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The IP address type for the web app's VPC endpoint. This determines whether the endpoint is accessible over IPv4 only, or over both IPv4 and IPv6.</p>
+    pub fn set_ip_address_type(mut self, input: ::std::option::Option<crate::types::WebAppVpcEndpointIpAddressType>) -> Self {
+        self.ip_address_type = input;
+        self
+    }
+    /// <p>The IP address type for the web app's VPC endpoint. This determines whether the endpoint is accessible over IPv4 only, or over both IPv4 and IPv6.</p>
+    pub fn get_ip_address_type(&self) -> &::std::option::Option<crate::types::WebAppVpcEndpointIpAddressType> {
+        &self.ip_address_type
+    }
     /// Consumes the builder and constructs a [`WebAppVpcConfig`](crate::types::WebAppVpcConfig).
     pub fn build(self) -> crate::types::WebAppVpcConfig {
         crate::types::WebAppVpcConfig {
             subnet_ids: self.subnet_ids,
             vpc_id: self.vpc_id,
             security_group_ids: self.security_group_ids,
+            ip_address_type: self.ip_address_type,
         }
     }
 }

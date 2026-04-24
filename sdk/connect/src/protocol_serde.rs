@@ -237,6 +237,8 @@ pub(crate) mod shape_delete_workspace_page;
 
 pub(crate) mod shape_describe_agent_status;
 
+pub(crate) mod shape_describe_attached_files_configuration;
+
 pub(crate) mod shape_describe_authentication_profile;
 
 pub(crate) mod shape_describe_contact;
@@ -382,6 +384,8 @@ pub(crate) mod shape_list_analytics_data_lake_data_sets;
 pub(crate) mod shape_list_approved_origins;
 
 pub(crate) mod shape_list_associated_contacts;
+
+pub(crate) mod shape_list_attached_files_configurations;
 
 pub(crate) mod shape_list_authentication_profiles;
 
@@ -632,6 +636,8 @@ pub(crate) mod shape_untag_contact;
 pub(crate) mod shape_untag_resource;
 
 pub(crate) mod shape_update_agent_status;
+
+pub(crate) mod shape_update_attached_files_configuration;
 
 pub(crate) mod shape_update_authentication_profile;
 
@@ -1127,6 +1133,8 @@ pub(crate) mod shape_transfer_contact_input;
 
 pub(crate) mod shape_update_agent_status_input;
 
+pub(crate) mod shape_update_attached_files_configuration_input;
+
 pub(crate) mod shape_update_authentication_profile_input;
 
 pub(crate) mod shape_update_contact_attributes_input;
@@ -1288,6 +1296,10 @@ pub(crate) mod shape_applications;
 pub(crate) mod shape_associated_contact_summary_list;
 
 pub(crate) mod shape_attached_file_errors_list;
+
+pub(crate) mod shape_attached_files_configuration;
+
+pub(crate) mod shape_attached_files_configuration_summary_list;
 
 pub(crate) mod shape_attached_files_list;
 
@@ -1486,6 +1498,8 @@ pub(crate) mod shape_evaluation_summary_list;
 pub(crate) mod shape_evaluator_user_union;
 
 pub(crate) mod shape_execution_record_list;
+
+pub(crate) mod shape_extension_configuration;
 
 pub(crate) mod shape_external_invocation_configuration;
 
@@ -1889,6 +1903,10 @@ pub(crate) mod shape_agent_status_summary;
 
 pub(crate) mod shape_allowed_access_control_tags;
 
+pub(crate) mod shape_allowed_extension;
+
+pub(crate) mod shape_allowed_extensions_list;
+
 pub(crate) mod shape_analytics_data_association_result;
 
 pub(crate) mod shape_analytics_data_sets_result;
@@ -1904,6 +1922,8 @@ pub(crate) mod shape_associated_queue_id_list;
 pub(crate) mod shape_attached_file;
 
 pub(crate) mod shape_attached_file_error;
+
+pub(crate) mod shape_attached_files_configuration_summary;
 
 pub(crate) mod shape_attendee;
 

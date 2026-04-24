@@ -377,6 +377,8 @@ mod delete_workspace_page;
 
 mod describe_agent_status;
 
+mod describe_attached_files_configuration;
+
 mod describe_authentication_profile;
 
 mod describe_contact;
@@ -522,6 +524,8 @@ mod list_analytics_data_lake_data_sets;
 mod list_approved_origins;
 
 mod list_associated_contacts;
+
+mod list_attached_files_configurations;
 
 mod list_authentication_profiles;
 
@@ -772,6 +776,8 @@ mod untag_contact;
 mod untag_resource;
 
 mod update_agent_status;
+
+mod update_attached_files_configuration;
 
 mod update_authentication_profile;
 

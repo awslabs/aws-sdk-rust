@@ -12,5 +12,8 @@ pub fn ser_update_web_app_vpc_config(
         }
         array_2.finish();
     }
+    if let Some(var_4) = &input.ip_address_type {
+        object.key("IpAddressType").string(var_4.as_str());
+    }
     Ok(())
 }

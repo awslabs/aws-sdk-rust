@@ -15,5 +15,23 @@ pub fn ser_custom_oauth2_provider_config_input(
     {
         object.key("clientSecret").string(input.client_secret.as_str());
     }
+    if let Some(var_3) = &input.private_endpoint {
+        #[allow(unused_mut)]
+        let mut object_4 = object.key("privateEndpoint").start_object();
+        crate::protocol_serde::shape_private_endpoint::ser_private_endpoint(&mut object_4, var_3)?;
+        object_4.finish();
+    }
+    if let Some(var_5) = &input.private_endpoint_overrides {
+        let mut array_6 = object.key("privateEndpointOverrides").start_array();
+        for item_7 in var_5 {
+            {
+                #[allow(unused_mut)]
+                let mut object_8 = array_6.value().start_object();
+                crate::protocol_serde::shape_private_endpoint_override::ser_private_endpoint_override(&mut object_8, item_7)?;
+                object_8.finish();
+            }
+        }
+        array_6.finish();
+    }
     Ok(())
 }

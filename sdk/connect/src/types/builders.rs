@@ -63,6 +63,8 @@ pub use crate::types::_workspace_theme::WorkspaceThemeBuilder;
 
 pub use crate::types::_agent_status::AgentStatusBuilder;
 
+pub use crate::types::_attached_files_configuration::AttachedFilesConfigurationBuilder;
+
 pub use crate::types::_authentication_profile::AuthenticationProfileBuilder;
 
 pub use crate::types::_contact::ContactBuilder;
@@ -281,6 +283,8 @@ pub use crate::types::_connection_data::ConnectionDataBuilder;
 
 pub use crate::types::_disconnect_reason::DisconnectReasonBuilder;
 
+pub use crate::types::_extension_configuration::ExtensionConfigurationBuilder;
+
 pub use crate::types::_queue_info_input::QueueInfoInputBuilder;
 
 pub use crate::types::_routing_criteria_input::RoutingCriteriaInputBuilder;
@@ -488,6 +492,8 @@ pub use crate::types::_agent_status_summary::AgentStatusSummaryBuilder;
 pub use crate::types::_analytics_data_sets_result::AnalyticsDataSetsResultBuilder;
 
 pub use crate::types::_associated_contact_summary::AssociatedContactSummaryBuilder;
+
+pub use crate::types::_attached_files_configuration_summary::AttachedFilesConfigurationSummaryBuilder;
 
 pub use crate::types::_authentication_profile_summary::AuthenticationProfileSummaryBuilder;
 
@@ -830,6 +836,8 @@ pub use crate::types::_agent_first::AgentFirstBuilder;
 pub use crate::types::_media_placement::MediaPlacementBuilder;
 
 pub use crate::types::_meeting_features_configuration::MeetingFeaturesConfigurationBuilder;
+
+pub use crate::types::_allowed_extension::AllowedExtensionBuilder;
 
 pub use crate::types::_routing_criteria_input_step::RoutingCriteriaInputStepBuilder;
 

@@ -15,6 +15,8 @@ pub struct GetQueryResultsOutput {
     pub status: ::std::option::Option<crate::types::QueryStatus>,
     /// <p>If you associated an KMS key with the CloudWatch Logs Insights query results in this account, this field displays the ARN of the key that's used to encrypt the query results when <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_StartQuery.html">StartQuery</a> stores them.</p>
     pub encryption_key: ::std::option::Option<::std::string::String>,
+    /// <p>If there are more log events remaining in the results, the response includes a <code>nextToken</code>. You can use this token in a subsequent <code>GetQueryResults</code> request to get the next set of results.</p>
+    pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetQueryResultsOutput {
@@ -42,6 +44,10 @@ impl GetQueryResultsOutput {
     pub fn encryption_key(&self) -> ::std::option::Option<&str> {
         self.encryption_key.as_deref()
     }
+    /// <p>If there are more log events remaining in the results, the response includes a <code>nextToken</code>. You can use this token in a subsequent <code>GetQueryResults</code> request to get the next set of results.</p>
+    pub fn next_token(&self) -> ::std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl ::aws_types::request_id::RequestId for GetQueryResultsOutput {
     fn request_id(&self) -> Option<&str> {
@@ -64,6 +70,7 @@ pub struct GetQueryResultsOutputBuilder {
     pub(crate) statistics: ::std::option::Option<crate::types::QueryStatistics>,
     pub(crate) status: ::std::option::Option<crate::types::QueryStatus>,
     pub(crate) encryption_key: ::std::option::Option<::std::string::String>,
+    pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetQueryResultsOutputBuilder {
@@ -149,6 +156,20 @@ impl GetQueryResultsOutputBuilder {
     pub fn get_encryption_key(&self) -> &::std::option::Option<::std::string::String> {
         &self.encryption_key
     }
+    /// <p>If there are more log events remaining in the results, the response includes a <code>nextToken</code>. You can use this token in a subsequent <code>GetQueryResults</code> request to get the next set of results.</p>
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.next_token = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>If there are more log events remaining in the results, the response includes a <code>nextToken</code>. You can use this token in a subsequent <code>GetQueryResults</code> request to get the next set of results.</p>
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.next_token = input;
+        self
+    }
+    /// <p>If there are more log events remaining in the results, the response includes a <code>nextToken</code>. You can use this token in a subsequent <code>GetQueryResults</code> request to get the next set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -166,6 +187,7 @@ impl GetQueryResultsOutputBuilder {
             statistics: self.statistics,
             status: self.status,
             encryption_key: self.encryption_key,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }

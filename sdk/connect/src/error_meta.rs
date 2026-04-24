@@ -4270,6 +4270,55 @@ impl From<crate::operation::describe_agent_status::DescribeAgentStatusError> for
     }
 }
 impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_attached_files_configuration::DescribeAttachedFilesConfigurationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_attached_files_configuration::DescribeAttachedFilesConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_attached_files_configuration::DescribeAttachedFilesConfigurationError> for Error {
+    fn from(err: crate::operation::describe_attached_files_configuration::DescribeAttachedFilesConfigurationError) -> Self {
+        match err {
+            crate::operation::describe_attached_files_configuration::DescribeAttachedFilesConfigurationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::describe_attached_files_configuration::DescribeAttachedFilesConfigurationError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::describe_attached_files_configuration::DescribeAttachedFilesConfigurationError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::describe_attached_files_configuration::DescribeAttachedFilesConfigurationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::describe_attached_files_configuration::DescribeAttachedFilesConfigurationError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::describe_attached_files_configuration::DescribeAttachedFilesConfigurationError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
     From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_authentication_profile::DescribeAuthenticationProfileError, R>>
     for Error
 where
@@ -6934,6 +6983,53 @@ impl From<crate::operation::list_associated_contacts::ListAssociatedContactsErro
             }
             crate::operation::list_associated_contacts::ListAssociatedContactsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::list_associated_contacts::ListAssociatedContactsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_attached_files_configurations::ListAttachedFilesConfigurationsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_attached_files_configurations::ListAttachedFilesConfigurationsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_attached_files_configurations::ListAttachedFilesConfigurationsError> for Error {
+    fn from(err: crate::operation::list_attached_files_configurations::ListAttachedFilesConfigurationsError) -> Self {
+        match err {
+            crate::operation::list_attached_files_configurations::ListAttachedFilesConfigurationsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_attached_files_configurations::ListAttachedFilesConfigurationsError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::list_attached_files_configurations::ListAttachedFilesConfigurationsError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::list_attached_files_configurations::ListAttachedFilesConfigurationsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_attached_files_configurations::ListAttachedFilesConfigurationsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::list_attached_files_configurations::ListAttachedFilesConfigurationsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -11272,6 +11368,53 @@ impl From<crate::operation::update_agent_status::UpdateAgentStatusError> for Err
             }
             crate::operation::update_agent_status::UpdateAgentStatusError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::update_agent_status::UpdateAgentStatusError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_attached_files_configuration::UpdateAttachedFilesConfigurationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_attached_files_configuration::UpdateAttachedFilesConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_attached_files_configuration::UpdateAttachedFilesConfigurationError> for Error {
+    fn from(err: crate::operation::update_attached_files_configuration::UpdateAttachedFilesConfigurationError) -> Self {
+        match err {
+            crate::operation::update_attached_files_configuration::UpdateAttachedFilesConfigurationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::update_attached_files_configuration::UpdateAttachedFilesConfigurationError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::update_attached_files_configuration::UpdateAttachedFilesConfigurationError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::update_attached_files_configuration::UpdateAttachedFilesConfigurationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_attached_files_configuration::UpdateAttachedFilesConfigurationError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::update_attached_files_configuration::UpdateAttachedFilesConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

@@ -14,6 +14,10 @@ pub struct CustomJwtAuthorizerConfiguration {
     pub allowed_scopes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>An array of objects that define a custom claim validation name, value, and operation</p>
     pub custom_claims: ::std::option::Option<::std::vec::Vec<crate::types::CustomClaimValidationType>>,
+    /// <p>The private endpoint configuration for a gateway target. Defines how the gateway connects to private resources in your VPC.</p>
+    pub private_endpoint: ::std::option::Option<crate::types::PrivateEndpoint>,
+    /// <p>A list of private endpoint overrides for the JWT authorizer. Each override maps a specific domain to a private endpoint, enabling secure connectivity through VPC Lattice resource configurations.</p>
+    pub private_endpoint_overrides: ::std::option::Option<::std::vec::Vec<crate::types::PrivateEndpointOverride>>,
 }
 impl CustomJwtAuthorizerConfiguration {
     /// <p>This URL is used to fetch OpenID Connect configuration or authorization server metadata for validating incoming tokens.</p>
@@ -45,6 +49,16 @@ impl CustomJwtAuthorizerConfiguration {
     pub fn custom_claims(&self) -> &[crate::types::CustomClaimValidationType] {
         self.custom_claims.as_deref().unwrap_or_default()
     }
+    /// <p>The private endpoint configuration for a gateway target. Defines how the gateway connects to private resources in your VPC.</p>
+    pub fn private_endpoint(&self) -> ::std::option::Option<&crate::types::PrivateEndpoint> {
+        self.private_endpoint.as_ref()
+    }
+    /// <p>A list of private endpoint overrides for the JWT authorizer. Each override maps a specific domain to a private endpoint, enabling secure connectivity through VPC Lattice resource configurations.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.private_endpoint_overrides.is_none()`.
+    pub fn private_endpoint_overrides(&self) -> &[crate::types::PrivateEndpointOverride] {
+        self.private_endpoint_overrides.as_deref().unwrap_or_default()
+    }
 }
 impl CustomJwtAuthorizerConfiguration {
     /// Creates a new builder-style object to manufacture [`CustomJwtAuthorizerConfiguration`](crate::types::CustomJwtAuthorizerConfiguration).
@@ -62,6 +76,8 @@ pub struct CustomJwtAuthorizerConfigurationBuilder {
     pub(crate) allowed_clients: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) allowed_scopes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) custom_claims: ::std::option::Option<::std::vec::Vec<crate::types::CustomClaimValidationType>>,
+    pub(crate) private_endpoint: ::std::option::Option<crate::types::PrivateEndpoint>,
+    pub(crate) private_endpoint_overrides: ::std::option::Option<::std::vec::Vec<crate::types::PrivateEndpointOverride>>,
 }
 impl CustomJwtAuthorizerConfigurationBuilder {
     /// <p>This URL is used to fetch OpenID Connect configuration or authorization server metadata for validating incoming tokens.</p>
@@ -159,6 +175,40 @@ impl CustomJwtAuthorizerConfigurationBuilder {
     pub fn get_custom_claims(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CustomClaimValidationType>> {
         &self.custom_claims
     }
+    /// <p>The private endpoint configuration for a gateway target. Defines how the gateway connects to private resources in your VPC.</p>
+    pub fn private_endpoint(mut self, input: crate::types::PrivateEndpoint) -> Self {
+        self.private_endpoint = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The private endpoint configuration for a gateway target. Defines how the gateway connects to private resources in your VPC.</p>
+    pub fn set_private_endpoint(mut self, input: ::std::option::Option<crate::types::PrivateEndpoint>) -> Self {
+        self.private_endpoint = input;
+        self
+    }
+    /// <p>The private endpoint configuration for a gateway target. Defines how the gateway connects to private resources in your VPC.</p>
+    pub fn get_private_endpoint(&self) -> &::std::option::Option<crate::types::PrivateEndpoint> {
+        &self.private_endpoint
+    }
+    /// Appends an item to `private_endpoint_overrides`.
+    ///
+    /// To override the contents of this collection use [`set_private_endpoint_overrides`](Self::set_private_endpoint_overrides).
+    ///
+    /// <p>A list of private endpoint overrides for the JWT authorizer. Each override maps a specific domain to a private endpoint, enabling secure connectivity through VPC Lattice resource configurations.</p>
+    pub fn private_endpoint_overrides(mut self, input: crate::types::PrivateEndpointOverride) -> Self {
+        let mut v = self.private_endpoint_overrides.unwrap_or_default();
+        v.push(input);
+        self.private_endpoint_overrides = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of private endpoint overrides for the JWT authorizer. Each override maps a specific domain to a private endpoint, enabling secure connectivity through VPC Lattice resource configurations.</p>
+    pub fn set_private_endpoint_overrides(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PrivateEndpointOverride>>) -> Self {
+        self.private_endpoint_overrides = input;
+        self
+    }
+    /// <p>A list of private endpoint overrides for the JWT authorizer. Each override maps a specific domain to a private endpoint, enabling secure connectivity through VPC Lattice resource configurations.</p>
+    pub fn get_private_endpoint_overrides(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PrivateEndpointOverride>> {
+        &self.private_endpoint_overrides
+    }
     /// Consumes the builder and constructs a [`CustomJwtAuthorizerConfiguration`](crate::types::CustomJwtAuthorizerConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`discovery_url`](crate::types::builders::CustomJwtAuthorizerConfigurationBuilder::discovery_url)
@@ -174,6 +224,8 @@ impl CustomJwtAuthorizerConfigurationBuilder {
             allowed_clients: self.allowed_clients,
             allowed_scopes: self.allowed_scopes,
             custom_claims: self.custom_claims,
+            private_endpoint: self.private_endpoint,
+            private_endpoint_overrides: self.private_endpoint_overrides,
         })
     }
 }

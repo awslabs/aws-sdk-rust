@@ -274,6 +274,13 @@ pub(crate) fn de_update_oauth2_credential_provider(
                         crate::protocol_serde::shape_oauth2_provider_config_output::de_oauth2_provider_config_output(tokens, _value)?,
                     );
                 }
+                "status" => {
+                    builder = builder.set_status(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| crate::types::Status::from(u.as_ref())))
+                            .transpose()?,
+                    );
+                }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },
             other => {

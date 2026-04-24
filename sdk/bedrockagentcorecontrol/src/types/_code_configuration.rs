@@ -6,7 +6,7 @@
 pub struct CodeConfiguration {
     /// <p>The source code location and configuration details.</p>
     pub code: ::std::option::Option<crate::types::Code>,
-    /// <p>The runtime environment for executing the code (for example, Python 3.9 or Node.js 18).</p>
+    /// <p>The runtime environment for executing the agent code. Specify the programming language and version to use for the agent runtime. For valid values, see the list of supported runtimes.</p>
     pub runtime: crate::types::AgentManagedRuntimeType,
     /// <p>The entry point for the code execution, specifying the function or method that should be invoked when the code runs.</p>
     pub entry_point: ::std::vec::Vec<::std::string::String>,
@@ -16,7 +16,7 @@ impl CodeConfiguration {
     pub fn code(&self) -> ::std::option::Option<&crate::types::Code> {
         self.code.as_ref()
     }
-    /// <p>The runtime environment for executing the code (for example, Python 3.9 or Node.js 18).</p>
+    /// <p>The runtime environment for executing the agent code. Specify the programming language and version to use for the agent runtime. For valid values, see the list of supported runtimes.</p>
     pub fn runtime(&self) -> &crate::types::AgentManagedRuntimeType {
         &self.runtime
     }
@@ -57,18 +57,18 @@ impl CodeConfigurationBuilder {
     pub fn get_code(&self) -> &::std::option::Option<crate::types::Code> {
         &self.code
     }
-    /// <p>The runtime environment for executing the code (for example, Python 3.9 or Node.js 18).</p>
+    /// <p>The runtime environment for executing the agent code. Specify the programming language and version to use for the agent runtime. For valid values, see the list of supported runtimes.</p>
     /// This field is required.
     pub fn runtime(mut self, input: crate::types::AgentManagedRuntimeType) -> Self {
         self.runtime = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The runtime environment for executing the code (for example, Python 3.9 or Node.js 18).</p>
+    /// <p>The runtime environment for executing the agent code. Specify the programming language and version to use for the agent runtime. For valid values, see the list of supported runtimes.</p>
     pub fn set_runtime(mut self, input: ::std::option::Option<crate::types::AgentManagedRuntimeType>) -> Self {
         self.runtime = input;
         self
     }
-    /// <p>The runtime environment for executing the code (for example, Python 3.9 or Node.js 18).</p>
+    /// <p>The runtime environment for executing the agent code. Specify the programming language and version to use for the agent runtime. For valid values, see the list of supported runtimes.</p>
     pub fn get_runtime(&self) -> &::std::option::Option<crate::types::AgentManagedRuntimeType> {
         &self.runtime
     }

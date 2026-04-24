@@ -10,9 +10,7 @@ pub struct HostInfoForCreate {
     pub host_name: ::std::string::String,
     /// <p>The name of the SSH key that is used to access the host.</p>
     pub key_name: ::std::string::String,
-    /// <p>The EC2 instance type that represents the host.</p><note>
-    /// <p>Currently, Amazon EVS supports only the <code>i4i.metal</code> instance type.</p>
-    /// </note>
+    /// <p>The EC2 instance type that represents the host.</p>
     pub instance_type: crate::types::InstanceType,
     /// <p>The unique ID of the placement group where the host is placed.</p>
     pub placement_group_id: ::std::option::Option<::std::string::String>,
@@ -30,9 +28,7 @@ impl HostInfoForCreate {
         use std::ops::Deref;
         self.key_name.deref()
     }
-    /// <p>The EC2 instance type that represents the host.</p><note>
-    /// <p>Currently, Amazon EVS supports only the <code>i4i.metal</code> instance type.</p>
-    /// </note>
+    /// <p>The EC2 instance type that represents the host.</p>
     pub fn instance_type(&self) -> &crate::types::InstanceType {
         &self.instance_type
     }
@@ -93,24 +89,18 @@ impl HostInfoForCreateBuilder {
     pub fn get_key_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.key_name
     }
-    /// <p>The EC2 instance type that represents the host.</p><note>
-    /// <p>Currently, Amazon EVS supports only the <code>i4i.metal</code> instance type.</p>
-    /// </note>
+    /// <p>The EC2 instance type that represents the host.</p>
     /// This field is required.
     pub fn instance_type(mut self, input: crate::types::InstanceType) -> Self {
         self.instance_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The EC2 instance type that represents the host.</p><note>
-    /// <p>Currently, Amazon EVS supports only the <code>i4i.metal</code> instance type.</p>
-    /// </note>
+    /// <p>The EC2 instance type that represents the host.</p>
     pub fn set_instance_type(mut self, input: ::std::option::Option<crate::types::InstanceType>) -> Self {
         self.instance_type = input;
         self
     }
-    /// <p>The EC2 instance type that represents the host.</p><note>
-    /// <p>Currently, Amazon EVS supports only the <code>i4i.metal</code> instance type.</p>
-    /// </note>
+    /// <p>The EC2 instance type that represents the host.</p>
     pub fn get_instance_type(&self) -> &::std::option::Option<crate::types::InstanceType> {
         &self.instance_type
     }

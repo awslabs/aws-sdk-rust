@@ -205,6 +205,13 @@ pub(crate) fn de_get_oauth2_credential_provider(
                             .transpose()?,
                     );
                 }
+                "failureReason" => {
+                    builder = builder.set_failure_reason(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
                 "lastUpdatedTime" => {
                     builder = builder.set_last_updated_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                         tokens.next(),
@@ -221,6 +228,13 @@ pub(crate) fn de_get_oauth2_credential_provider(
                 "oauth2ProviderConfigOutput" => {
                     builder = builder.set_oauth2_provider_config_output(
                         crate::protocol_serde::shape_oauth2_provider_config_output::de_oauth2_provider_config_output(tokens, _value)?,
+                    );
+                }
+                "status" => {
+                    builder = builder.set_status(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| crate::types::Status::from(u.as_ref())))
+                            .transpose()?,
                     );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

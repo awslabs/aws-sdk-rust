@@ -19,6 +19,10 @@ pub struct GetOauth2CredentialProviderOutput {
     pub created_time: ::aws_smithy_types::DateTime,
     /// <p>The timestamp when the OAuth2 credential provider was last updated.</p>
     pub last_updated_time: ::aws_smithy_types::DateTime,
+    /// <p>The current status of the OAuth2 credential provider.</p>
+    pub status: ::std::option::Option<crate::types::Status>,
+    /// <p>The reason for the failure if the OAuth2 credential provider is in a failed state.</p>
+    pub failure_reason: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetOauth2CredentialProviderOutput {
@@ -56,6 +60,14 @@ impl GetOauth2CredentialProviderOutput {
     pub fn last_updated_time(&self) -> &::aws_smithy_types::DateTime {
         &self.last_updated_time
     }
+    /// <p>The current status of the OAuth2 credential provider.</p>
+    pub fn status(&self) -> ::std::option::Option<&crate::types::Status> {
+        self.status.as_ref()
+    }
+    /// <p>The reason for the failure if the OAuth2 credential provider is in a failed state.</p>
+    pub fn failure_reason(&self) -> ::std::option::Option<&str> {
+        self.failure_reason.as_deref()
+    }
 }
 impl ::aws_types::request_id::RequestId for GetOauth2CredentialProviderOutput {
     fn request_id(&self) -> Option<&str> {
@@ -81,6 +93,8 @@ pub struct GetOauth2CredentialProviderOutputBuilder {
     pub(crate) oauth2_provider_config_output: ::std::option::Option<crate::types::Oauth2ProviderConfigOutput>,
     pub(crate) created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) status: ::std::option::Option<crate::types::Status>,
+    pub(crate) failure_reason: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetOauth2CredentialProviderOutputBuilder {
@@ -203,6 +217,34 @@ impl GetOauth2CredentialProviderOutputBuilder {
     pub fn get_last_updated_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_updated_time
     }
+    /// <p>The current status of the OAuth2 credential provider.</p>
+    pub fn status(mut self, input: crate::types::Status) -> Self {
+        self.status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The current status of the OAuth2 credential provider.</p>
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::Status>) -> Self {
+        self.status = input;
+        self
+    }
+    /// <p>The current status of the OAuth2 credential provider.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::Status> {
+        &self.status
+    }
+    /// <p>The reason for the failure if the OAuth2 credential provider is in a failed state.</p>
+    pub fn failure_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.failure_reason = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The reason for the failure if the OAuth2 credential provider is in a failed state.</p>
+    pub fn set_failure_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.failure_reason = input;
+        self
+    }
+    /// <p>The reason for the failure if the OAuth2 credential provider is in a failed state.</p>
+    pub fn get_failure_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.failure_reason
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -259,6 +301,8 @@ impl GetOauth2CredentialProviderOutputBuilder {
                     "last_updated_time was not specified but it is required when building GetOauth2CredentialProviderOutput",
                 )
             })?,
+            status: self.status,
+            failure_reason: self.failure_reason,
             _request_id: self._request_id,
         })
     }

@@ -26,6 +26,15 @@ where
                                     .transpose()?,
                             );
                         }
+                        "privateEndpoint" => {
+                            builder =
+                                builder.set_private_endpoint(crate::protocol_serde::shape_private_endpoint::de_private_endpoint(tokens, _value)?);
+                        }
+                        "privateEndpointOverrides" => {
+                            builder = builder.set_private_endpoint_overrides(
+                                crate::protocol_serde::shape_private_endpoint_overrides::de_private_endpoint_overrides(tokens, _value)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

@@ -4,18 +4,18 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LicenseInfo {
-    /// <p>The VCF solution key. This license unlocks VMware VCF product features, including vSphere, NSX, SDDC Manager, and vCenter Server. The VCF solution key must cover a minimum of 256 cores.</p>
+    /// <p>The VCF solution key. This license unlocks VMware VCF product features, including vSphere, NSX, SDDC Manager, and vCenter Server. The VCF solution key must meet the instance-type-specific minimum core requirements.</p>
     pub solution_key: ::std::string::String,
-    /// <p>The VSAN license key. This license unlocks vSAN features. The vSAN license key must provide at least 110 TiB of vSAN capacity.</p>
+    /// <p>The VSAN license key. This license unlocks vSAN features. The vSAN license key must meet the instance-type-specific minimum capacity requirements.</p>
     pub vsan_key: ::std::string::String,
 }
 impl LicenseInfo {
-    /// <p>The VCF solution key. This license unlocks VMware VCF product features, including vSphere, NSX, SDDC Manager, and vCenter Server. The VCF solution key must cover a minimum of 256 cores.</p>
+    /// <p>The VCF solution key. This license unlocks VMware VCF product features, including vSphere, NSX, SDDC Manager, and vCenter Server. The VCF solution key must meet the instance-type-specific minimum core requirements.</p>
     pub fn solution_key(&self) -> &str {
         use std::ops::Deref;
         self.solution_key.deref()
     }
-    /// <p>The VSAN license key. This license unlocks vSAN features. The vSAN license key must provide at least 110 TiB of vSAN capacity.</p>
+    /// <p>The VSAN license key. This license unlocks vSAN features. The vSAN license key must meet the instance-type-specific minimum capacity requirements.</p>
     pub fn vsan_key(&self) -> &str {
         use std::ops::Deref;
         self.vsan_key.deref()
@@ -36,33 +36,33 @@ pub struct LicenseInfoBuilder {
     pub(crate) vsan_key: ::std::option::Option<::std::string::String>,
 }
 impl LicenseInfoBuilder {
-    /// <p>The VCF solution key. This license unlocks VMware VCF product features, including vSphere, NSX, SDDC Manager, and vCenter Server. The VCF solution key must cover a minimum of 256 cores.</p>
+    /// <p>The VCF solution key. This license unlocks VMware VCF product features, including vSphere, NSX, SDDC Manager, and vCenter Server. The VCF solution key must meet the instance-type-specific minimum core requirements.</p>
     /// This field is required.
     pub fn solution_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.solution_key = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The VCF solution key. This license unlocks VMware VCF product features, including vSphere, NSX, SDDC Manager, and vCenter Server. The VCF solution key must cover a minimum of 256 cores.</p>
+    /// <p>The VCF solution key. This license unlocks VMware VCF product features, including vSphere, NSX, SDDC Manager, and vCenter Server. The VCF solution key must meet the instance-type-specific minimum core requirements.</p>
     pub fn set_solution_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.solution_key = input;
         self
     }
-    /// <p>The VCF solution key. This license unlocks VMware VCF product features, including vSphere, NSX, SDDC Manager, and vCenter Server. The VCF solution key must cover a minimum of 256 cores.</p>
+    /// <p>The VCF solution key. This license unlocks VMware VCF product features, including vSphere, NSX, SDDC Manager, and vCenter Server. The VCF solution key must meet the instance-type-specific minimum core requirements.</p>
     pub fn get_solution_key(&self) -> &::std::option::Option<::std::string::String> {
         &self.solution_key
     }
-    /// <p>The VSAN license key. This license unlocks vSAN features. The vSAN license key must provide at least 110 TiB of vSAN capacity.</p>
+    /// <p>The VSAN license key. This license unlocks vSAN features. The vSAN license key must meet the instance-type-specific minimum capacity requirements.</p>
     /// This field is required.
     pub fn vsan_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vsan_key = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The VSAN license key. This license unlocks vSAN features. The vSAN license key must provide at least 110 TiB of vSAN capacity.</p>
+    /// <p>The VSAN license key. This license unlocks vSAN features. The vSAN license key must meet the instance-type-specific minimum capacity requirements.</p>
     pub fn set_vsan_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vsan_key = input;
         self
     }
-    /// <p>The VSAN license key. This license unlocks vSAN features. The vSAN license key must provide at least 110 TiB of vSAN capacity.</p>
+    /// <p>The VSAN license key. This license unlocks vSAN features. The vSAN license key must meet the instance-type-specific minimum capacity requirements.</p>
     pub fn get_vsan_key(&self) -> &::std::option::Option<::std::string::String> {
         &self.vsan_key
     }

@@ -322,6 +322,9 @@ pub mod delete_workspace_page;
 /// Types for the `DescribeAgentStatus` operation.
 pub mod describe_agent_status;
 
+/// Types for the `DescribeAttachedFilesConfiguration` operation.
+pub mod describe_attached_files_configuration;
+
 /// Types for the `DescribeAuthenticationProfile` operation.
 pub mod describe_authentication_profile;
 
@@ -540,6 +543,9 @@ pub mod list_approved_origins;
 
 /// Types for the `ListAssociatedContacts` operation.
 pub mod list_associated_contacts;
+
+/// Types for the `ListAttachedFilesConfigurations` operation.
+pub mod list_attached_files_configurations;
 
 /// Types for the `ListAuthenticationProfiles` operation.
 pub mod list_authentication_profiles;
@@ -915,6 +921,9 @@ pub mod untag_resource;
 
 /// Types for the `UpdateAgentStatus` operation.
 pub mod update_agent_status;
+
+/// Types for the `UpdateAttachedFilesConfiguration` operation.
+pub mod update_attached_files_configuration;
 
 /// Types for the `UpdateAuthenticationProfile` operation.
 pub mod update_authentication_profile;

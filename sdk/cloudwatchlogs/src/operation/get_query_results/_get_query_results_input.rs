@@ -5,11 +5,23 @@
 pub struct GetQueryResultsInput {
     /// <p>The ID number of the query.</p>
     pub query_id: ::std::option::Option<::std::string::String>,
+    /// <p>The token for the next set of items to return. The token expires after 1 hour.</p>
+    pub next_token: ::std::option::Option<::std::string::String>,
+    /// <p>The maximum number of log events to return in the response. The maximum is 10,000 log events.</p>
+    pub max_items: ::std::option::Option<i32>,
 }
 impl GetQueryResultsInput {
     /// <p>The ID number of the query.</p>
     pub fn query_id(&self) -> ::std::option::Option<&str> {
         self.query_id.as_deref()
+    }
+    /// <p>The token for the next set of items to return. The token expires after 1 hour.</p>
+    pub fn next_token(&self) -> ::std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of log events to return in the response. The maximum is 10,000 log events.</p>
+    pub fn max_items(&self) -> ::std::option::Option<i32> {
+        self.max_items
     }
 }
 impl GetQueryResultsInput {
@@ -24,6 +36,8 @@ impl GetQueryResultsInput {
 #[non_exhaustive]
 pub struct GetQueryResultsInputBuilder {
     pub(crate) query_id: ::std::option::Option<::std::string::String>,
+    pub(crate) next_token: ::std::option::Option<::std::string::String>,
+    pub(crate) max_items: ::std::option::Option<i32>,
 }
 impl GetQueryResultsInputBuilder {
     /// <p>The ID number of the query.</p>
@@ -41,10 +55,42 @@ impl GetQueryResultsInputBuilder {
     pub fn get_query_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.query_id
     }
+    /// <p>The token for the next set of items to return. The token expires after 1 hour.</p>
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.next_token = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The token for the next set of items to return. The token expires after 1 hour.</p>
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.next_token = input;
+        self
+    }
+    /// <p>The token for the next set of items to return. The token expires after 1 hour.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
+    /// <p>The maximum number of log events to return in the response. The maximum is 10,000 log events.</p>
+    pub fn max_items(mut self, input: i32) -> Self {
+        self.max_items = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The maximum number of log events to return in the response. The maximum is 10,000 log events.</p>
+    pub fn set_max_items(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.max_items = input;
+        self
+    }
+    /// <p>The maximum number of log events to return in the response. The maximum is 10,000 log events.</p>
+    pub fn get_max_items(&self) -> &::std::option::Option<i32> {
+        &self.max_items
+    }
     /// Consumes the builder and constructs a [`GetQueryResultsInput`](crate::operation::get_query_results::GetQueryResultsInput).
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::get_query_results::GetQueryResultsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_query_results::GetQueryResultsInput { query_id: self.query_id })
+        ::std::result::Result::Ok(crate::operation::get_query_results::GetQueryResultsInput {
+            query_id: self.query_id,
+            next_token: self.next_token,
+            max_items: self.max_items,
+        })
     }
 }

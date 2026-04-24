@@ -38,9 +38,9 @@ where
                                     )
                                 })?,
                         )),
-                        "managedLatticeResource" => Some(crate::types::PrivateEndpoint::ManagedLatticeResource(
-                            crate::protocol_serde::shape_managed_lattice_resource::de_managed_lattice_resource(tokens, _value)?.ok_or_else(|| {
-                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'managedLatticeResource' cannot be null")
+                        "managedVpcResource" => Some(crate::types::PrivateEndpoint::ManagedVpcResource(
+                            crate::protocol_serde::shape_managed_vpc_resource::de_managed_vpc_resource(tokens, _value)?.ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'managedVpcResource' cannot be null")
                             })?,
                         )),
                         _ => {
@@ -81,10 +81,10 @@ pub fn ser_private_endpoint(
             crate::protocol_serde::shape_self_managed_lattice_resource::ser_self_managed_lattice_resource(&mut object_1, inner)?;
             object_1.finish();
         }
-        crate::types::PrivateEndpoint::ManagedLatticeResource(inner) => {
+        crate::types::PrivateEndpoint::ManagedVpcResource(inner) => {
             #[allow(unused_mut)]
-            let mut object_2 = object_11.key("managedLatticeResource").start_object();
-            crate::protocol_serde::shape_managed_lattice_resource::ser_managed_lattice_resource(&mut object_2, inner)?;
+            let mut object_2 = object_11.key("managedVpcResource").start_object();
+            crate::protocol_serde::shape_managed_vpc_resource::ser_managed_vpc_resource(&mut object_2, inner)?;
             object_2.finish();
         }
         crate::types::PrivateEndpoint::Unknown => {

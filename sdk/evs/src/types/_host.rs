@@ -11,8 +11,6 @@ pub struct Host {
     /// <p>The name of the SSH key that is used to access the host.</p>
     pub key_name: ::std::option::Option<::std::string::String>,
     /// <p>The EC2 instance type of the host.</p><note>
-    /// <p>Currently, Amazon EVS supports only the <code>i4i.metal</code> instance type.</p>
-    /// </note> <note>
     /// <p>EC2 instances created through Amazon EVS do not support associating an IAM instance profile.</p>
     /// </note>
     pub instance_type: ::std::option::Option<crate::types::InstanceType>,
@@ -47,8 +45,6 @@ impl Host {
         self.key_name.as_deref()
     }
     /// <p>The EC2 instance type of the host.</p><note>
-    /// <p>Currently, Amazon EVS supports only the <code>i4i.metal</code> instance type.</p>
-    /// </note> <note>
     /// <p>EC2 instances created through Amazon EVS do not support associating an IAM instance profile.</p>
     /// </note>
     pub fn instance_type(&self) -> ::std::option::Option<&crate::types::InstanceType> {
@@ -157,8 +153,6 @@ impl HostBuilder {
         &self.key_name
     }
     /// <p>The EC2 instance type of the host.</p><note>
-    /// <p>Currently, Amazon EVS supports only the <code>i4i.metal</code> instance type.</p>
-    /// </note> <note>
     /// <p>EC2 instances created through Amazon EVS do not support associating an IAM instance profile.</p>
     /// </note>
     pub fn instance_type(mut self, input: crate::types::InstanceType) -> Self {
@@ -166,8 +160,6 @@ impl HostBuilder {
         self
     }
     /// <p>The EC2 instance type of the host.</p><note>
-    /// <p>Currently, Amazon EVS supports only the <code>i4i.metal</code> instance type.</p>
-    /// </note> <note>
     /// <p>EC2 instances created through Amazon EVS do not support associating an IAM instance profile.</p>
     /// </note>
     pub fn set_instance_type(mut self, input: ::std::option::Option<crate::types::InstanceType>) -> Self {
@@ -175,8 +167,6 @@ impl HostBuilder {
         self
     }
     /// <p>The EC2 instance type of the host.</p><note>
-    /// <p>Currently, Amazon EVS supports only the <code>i4i.metal</code> instance type.</p>
-    /// </note> <note>
     /// <p>EC2 instances created through Amazon EVS do not support associating an IAM instance profile.</p>
     /// </note>
     pub fn get_instance_type(&self) -> &::std::option::Option<crate::types::InstanceType> {
