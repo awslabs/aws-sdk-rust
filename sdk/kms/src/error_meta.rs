@@ -42,7 +42,7 @@ pub enum Error {
     /// <li>
     /// <p>You requested the <code>DisconnectCustomKeyStore</code> operation on a custom key store with a <code>ConnectionState</code> of <code>DISCONNECTING</code> or <code>DISCONNECTED</code>. This operation is valid for all other <code>ConnectionState</code> values.</p></li>
     /// <li>
-    /// <p>You requested the <code>UpdateCustomKeyStore</code> or <code>DeleteCustomKeyStore</code> operation on a custom key store that is not disconnected. This operation is valid only when the custom key store <code>ConnectionState</code> is <code>DISCONNECTED</code>.</p></li>
+    /// <p>You requested the <code>UpdateCustomKeyStore</code> or <code>DeleteCustomKeyStore</code> operation on a custom key store that is not disconnected. <code>UpdateCustomKeyStore</code> can be called on a custom key store in the <code>CONNECTED</code> state only to update <code>NewCustomKeyStoreName</code>. For all other properties, the custom key store <code>ConnectionState</code> must be <code>DISCONNECTED</code>.</p></li>
     /// <li>
     /// <p>You requested the <code>GenerateRandom</code> operation in an CloudHSM key store that is not connected. This operation is valid only when the CloudHSM key store <code>ConnectionState</code> is <code>CONNECTED</code>.</p></li>
     /// </ul>
@@ -1182,6 +1182,31 @@ impl From<crate::operation::generate_random::GenerateRandomError> for Error {
                 Error::UnsupportedOperationException(inner)
             }
             crate::operation::generate_random::GenerateRandomError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_key_last_usage::GetKeyLastUsageError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_key_last_usage::GetKeyLastUsageError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_key_last_usage::GetKeyLastUsageError> for Error {
+    fn from(err: crate::operation::get_key_last_usage::GetKeyLastUsageError) -> Self {
+        match err {
+            crate::operation::get_key_last_usage::GetKeyLastUsageError::DependencyTimeoutException(inner) => Error::DependencyTimeoutException(inner),
+            crate::operation::get_key_last_usage::GetKeyLastUsageError::InvalidArnException(inner) => Error::InvalidArnException(inner),
+            crate::operation::get_key_last_usage::GetKeyLastUsageError::KmsInternalException(inner) => Error::KmsInternalException(inner),
+            crate::operation::get_key_last_usage::GetKeyLastUsageError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::get_key_last_usage::GetKeyLastUsageError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

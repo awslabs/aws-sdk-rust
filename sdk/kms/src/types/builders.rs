@@ -7,6 +7,8 @@ pub use crate::types::_key_metadata::KeyMetadataBuilder;
 
 pub use crate::types::_recipient_info::RecipientInfoBuilder;
 
+pub use crate::types::_key_last_usage_data::KeyLastUsageDataBuilder;
+
 pub use crate::types::_tag::TagBuilder;
 
 pub use crate::types::_multi_region_configuration::MultiRegionConfigurationBuilder;

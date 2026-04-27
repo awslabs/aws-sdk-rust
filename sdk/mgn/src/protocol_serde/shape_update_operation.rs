@@ -3,15 +3,21 @@ pub fn ser_update_operation(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::UpdateOperation,
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    if let Some(var_1) = &input.properties {
+    if let Some(var_1) = &input.name {
+        object.key("name").string(var_1.as_str());
+    }
+    if let Some(var_2) = &input.excluded {
+        object.key("excluded").boolean(*var_2);
+    }
+    if let Some(var_3) = &input.properties {
         #[allow(unused_mut)]
-        let mut object_2 = object.key("properties").start_object();
-        for (key_3, value_4) in var_1 {
+        let mut object_4 = object.key("properties").start_object();
+        for (key_5, value_6) in var_3 {
             {
-                object_2.key(key_3.as_str()).string(value_4.as_str());
+                object_4.key(key_5.as_str()).string(value_6.as_str());
             }
         }
-        object_2.finish();
+        object_4.finish();
     }
     Ok(())
 }

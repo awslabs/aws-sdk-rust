@@ -55,5 +55,11 @@ pub fn ser_request_based_service_level_indicator_metric_config(
     if let Some(var_17) = &input.metric_name {
         object.key("MetricName").string(var_17.as_str());
     }
+    if let Some(var_18) = &input.composite_sli_config {
+        #[allow(unused_mut)]
+        let mut object_19 = object.key("CompositeSliConfig").start_object();
+        crate::protocol_serde::shape_composite_sli_config::ser_composite_sli_config(&mut object_19, var_18)?;
+        object_19.finish();
+    }
     Ok(())
 }

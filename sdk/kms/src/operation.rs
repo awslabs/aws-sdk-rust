@@ -76,6 +76,9 @@ pub mod generate_mac;
 /// Types for the `GenerateRandom` operation.
 pub mod generate_random;
 
+/// Types for the `GetKeyLastUsage` operation.
+pub mod get_key_last_usage;
+
 /// Types for the `GetKeyPolicy` operation.
 pub mod get_key_policy;
 

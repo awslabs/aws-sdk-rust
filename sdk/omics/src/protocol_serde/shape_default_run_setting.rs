@@ -133,6 +133,20 @@ where
                                     .transpose()?,
                             );
                         }
+                        "networkingMode" => {
+                            builder = builder.set_networking_mode(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::NetworkingMode::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "configurationName" => {
+                            builder = builder.set_configuration_name(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {
@@ -222,6 +236,12 @@ pub fn ser_default_run_setting(
     }
     if let Some(var_19) = &input.workflow_version_name {
         object.key("workflowVersionName").string(var_19.as_str());
+    }
+    if let Some(var_20) = &input.networking_mode {
+        object.key("networkingMode").string(var_20.as_str());
+    }
+    if let Some(var_21) = &input.configuration_name {
+        object.key("configurationName").string(var_21.as_str());
     }
     Ok(())
 }

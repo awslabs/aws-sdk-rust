@@ -13,6 +13,7 @@
 /// # let batchstatus = unimplemented!();
 /// match batchstatus {
 ///     BatchStatus::Cancelled => { /* ... */ },
+///     BatchStatus::Creating => { /* ... */ },
 ///     BatchStatus::Failed => { /* ... */ },
 ///     BatchStatus::Inprogress => { /* ... */ },
 ///     BatchStatus::Pending => { /* ... */ },
@@ -52,6 +53,8 @@ pub enum BatchStatus {
     #[allow(missing_docs)] // documentation missing in model
     Cancelled,
     #[allow(missing_docs)] // documentation missing in model
+    Creating,
+    #[allow(missing_docs)] // documentation missing in model
     Failed,
     #[allow(missing_docs)] // documentation missing in model
     Inprogress,
@@ -75,6 +78,7 @@ impl ::std::convert::From<&str> for BatchStatus {
     fn from(s: &str) -> Self {
         match s {
             "CANCELLED" => BatchStatus::Cancelled,
+            "CREATING" => BatchStatus::Creating,
             "FAILED" => BatchStatus::Failed,
             "INPROGRESS" => BatchStatus::Inprogress,
             "PENDING" => BatchStatus::Pending,
@@ -99,6 +103,7 @@ impl BatchStatus {
     pub fn as_str(&self) -> &str {
         match self {
             BatchStatus::Cancelled => "CANCELLED",
+            BatchStatus::Creating => "CREATING",
             BatchStatus::Failed => "FAILED",
             BatchStatus::Inprogress => "INPROGRESS",
             BatchStatus::Pending => "PENDING",
@@ -114,6 +119,7 @@ impl BatchStatus {
     pub const fn values() -> &'static [&'static str] {
         &[
             "CANCELLED",
+            "CREATING",
             "FAILED",
             "INPROGRESS",
             "PENDING",
@@ -146,6 +152,7 @@ impl ::std::fmt::Display for BatchStatus {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             BatchStatus::Cancelled => write!(f, "CANCELLED"),
+            BatchStatus::Creating => write!(f, "CREATING"),
             BatchStatus::Failed => write!(f, "FAILED"),
             BatchStatus::Inprogress => write!(f, "INPROGRESS"),
             BatchStatus::Pending => write!(f, "PENDING"),

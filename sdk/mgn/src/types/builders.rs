@@ -219,10 +219,20 @@ pub use crate::types::_network_migration_code_generation_artifact::NetworkMigrat
 
 pub use crate::types::_network_migration_failed_resource_details::NetworkMigrationFailedResourceDetailsBuilder;
 
+pub use crate::types::_merge_operation::MergeOperationBuilder;
+
+pub use crate::types::_split_operation::SplitOperationBuilder;
+
+pub use crate::types::_delete_operation::DeleteOperationBuilder;
+
 pub use crate::types::_update_operation::UpdateOperationBuilder;
 
 pub use crate::types::_data_replication_initiation_step::DataReplicationInitiationStepBuilder;
 
 pub use crate::types::_post_launch_actions_status::PostLaunchActionsStatusBuilder;
+
+pub use crate::types::_merge_construct::MergeConstructBuilder;
+
+pub use crate::types::_split_construct::SplitConstructBuilder;
 
 pub use crate::types::_job_post_launch_actions_launch_status::JobPostLaunchActionsLaunchStatusBuilder;

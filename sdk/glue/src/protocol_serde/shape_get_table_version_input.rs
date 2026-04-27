@@ -15,5 +15,11 @@ pub fn ser_get_table_version_input_input(
     if let Some(var_4) = &input.version_id {
         object.key("VersionId").string(var_4.as_str());
     }
+    if let Some(var_5) = &input.audit_context {
+        #[allow(unused_mut)]
+        let mut object_6 = object.key("AuditContext").start_object();
+        crate::protocol_serde::shape_audit_context::ser_audit_context(&mut object_6, var_5)?;
+        object_6.finish();
+    }
     Ok(())
 }

@@ -69,6 +69,8 @@ pub use crate::types::_metric_graph::MetricGraphBuilder;
 
 pub use crate::types::_dependency_graph::DependencyGraphBuilder;
 
+pub use crate::types::_composite_sli_config::CompositeSliConfigBuilder;
+
 pub use crate::types::_rolling_interval::RollingIntervalBuilder;
 
 pub use crate::types::_calendar_interval::CalendarIntervalBuilder;
@@ -86,6 +88,8 @@ pub use crate::types::_service_operation_entity::ServiceOperationEntityBuilder;
 pub use crate::types::_canary_entity::CanaryEntityBuilder;
 
 pub use crate::types::_auditor_result::AuditorResultBuilder;
+
+pub use crate::types::_selection_config::SelectionConfigBuilder;
 
 pub use crate::types::_metric_data_query::MetricDataQueryBuilder;
 

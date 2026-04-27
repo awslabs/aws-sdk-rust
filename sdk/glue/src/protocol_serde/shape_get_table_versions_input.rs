@@ -21,5 +21,11 @@ pub fn ser_get_table_versions_input_input(
             ::aws_smithy_types::Number::NegInt((*var_5).into()),
         );
     }
+    if let Some(var_6) = &input.audit_context {
+        #[allow(unused_mut)]
+        let mut object_7 = object.key("AuditContext").start_object();
+        crate::protocol_serde::shape_audit_context::ser_audit_context(&mut object_7, var_6)?;
+        object_7.finish();
+    }
     Ok(())
 }

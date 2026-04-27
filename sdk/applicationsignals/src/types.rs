@@ -85,6 +85,8 @@ pub use crate::types::_dependency_graph::DependencyGraph;
 
 pub use crate::types::_change_event_type::ChangeEventType;
 
+pub use crate::types::_composite_sli_config::CompositeSliConfig;
+
 pub use crate::types::_service_level_indicator_metric_type::ServiceLevelIndicatorMetricType;
 
 pub use crate::types::_monitored_request_count_metric_data_queries::MonitoredRequestCountMetricDataQueries;
@@ -109,6 +111,8 @@ pub use crate::types::_canary_entity::CanaryEntity;
 
 pub use crate::types::_auditor_result::AuditorResult;
 
+pub use crate::types::_selection_config::SelectionConfig;
+
 pub use crate::types::_metric_data_query::MetricDataQuery;
 
 pub use crate::types::_dimension::Dimension;
@@ -118,6 +122,10 @@ pub use crate::types::_severity::Severity;
 pub use crate::types::_node::Node;
 
 pub use crate::types::_edge::Edge;
+
+pub use crate::types::_selection_type::SelectionType;
+
+pub use crate::types::_composite_sli_component::CompositeSliComponent;
 
 pub use crate::types::_metric_stat::MetricStat;
 
@@ -148,6 +156,10 @@ mod _canary_entity;
 mod _change_event;
 
 mod _change_event_type;
+
+mod _composite_sli_component;
+
+mod _composite_sli_config;
 
 mod _connection_type;
 
@@ -204,6 +216,10 @@ mod _request_based_service_level_indicator_metric;
 mod _request_based_service_level_indicator_metric_config;
 
 mod _rolling_interval;
+
+mod _selection_config;
+
+mod _selection_type;
 
 mod _service;
 

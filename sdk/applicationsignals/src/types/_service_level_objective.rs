@@ -40,6 +40,8 @@ pub struct ServiceLevelObjective {
     /// <p>Canary</p></li>
     /// </ul>
     pub metric_source_type: ::std::option::Option<crate::types::MetricSourceType>,
+    /// Indicates whether DevOps Agent will automatically investigate this SLO when it is breached
+    pub auto_investigation_enabled: ::std::option::Option<bool>,
 }
 impl ServiceLevelObjective {
     /// <p>The ARN of this SLO.</p>
@@ -104,6 +106,10 @@ impl ServiceLevelObjective {
     pub fn metric_source_type(&self) -> ::std::option::Option<&crate::types::MetricSourceType> {
         self.metric_source_type.as_ref()
     }
+    /// Indicates whether DevOps Agent will automatically investigate this SLO when it is breached
+    pub fn auto_investigation_enabled(&self) -> ::std::option::Option<bool> {
+        self.auto_investigation_enabled
+    }
 }
 impl ServiceLevelObjective {
     /// Creates a new builder-style object to manufacture [`ServiceLevelObjective`](crate::types::ServiceLevelObjective).
@@ -127,6 +133,7 @@ pub struct ServiceLevelObjectiveBuilder {
     pub(crate) goal: ::std::option::Option<crate::types::Goal>,
     pub(crate) burn_rate_configurations: ::std::option::Option<::std::vec::Vec<crate::types::BurnRateConfiguration>>,
     pub(crate) metric_source_type: ::std::option::Option<crate::types::MetricSourceType>,
+    pub(crate) auto_investigation_enabled: ::std::option::Option<bool>,
 }
 impl ServiceLevelObjectiveBuilder {
     /// <p>The ARN of this SLO.</p>
@@ -336,6 +343,20 @@ impl ServiceLevelObjectiveBuilder {
     pub fn get_metric_source_type(&self) -> &::std::option::Option<crate::types::MetricSourceType> {
         &self.metric_source_type
     }
+    /// Indicates whether DevOps Agent will automatically investigate this SLO when it is breached
+    pub fn auto_investigation_enabled(mut self, input: bool) -> Self {
+        self.auto_investigation_enabled = ::std::option::Option::Some(input);
+        self
+    }
+    /// Indicates whether DevOps Agent will automatically investigate this SLO when it is breached
+    pub fn set_auto_investigation_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.auto_investigation_enabled = input;
+        self
+    }
+    /// Indicates whether DevOps Agent will automatically investigate this SLO when it is breached
+    pub fn get_auto_investigation_enabled(&self) -> &::std::option::Option<bool> {
+        &self.auto_investigation_enabled
+    }
     /// Consumes the builder and constructs a [`ServiceLevelObjective`](crate::types::ServiceLevelObjective).
     /// This method will fail if any of the following fields are not set:
     /// - [`arn`](crate::types::builders::ServiceLevelObjectiveBuilder::arn)
@@ -375,6 +396,7 @@ impl ServiceLevelObjectiveBuilder {
             goal: self.goal,
             burn_rate_configurations: self.burn_rate_configurations,
             metric_source_type: self.metric_source_type,
+            auto_investigation_enabled: self.auto_investigation_enabled,
         })
     }
 }

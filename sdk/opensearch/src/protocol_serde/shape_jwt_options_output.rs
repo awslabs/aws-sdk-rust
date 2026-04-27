@@ -32,6 +32,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "JwksUrl" => {
+                            builder = builder.set_jwks_url(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         "PublicKey" => {
                             builder = builder.set_public_key(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

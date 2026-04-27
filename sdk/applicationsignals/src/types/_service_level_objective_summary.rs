@@ -48,6 +48,8 @@ pub struct ServiceLevelObjectiveSummary {
     pub metric_source_type: ::std::option::Option<crate::types::MetricSourceType>,
     /// <p>Identifies the metric source for SLOs on resources other than Application Signals services.</p>
     pub metric_source: ::std::option::Option<crate::types::MetricSource>,
+    /// <p>The composite SLI configuration for service-level SLOs that monitor multiple operations of a service.</p>
+    pub composite_sli_config: ::std::option::Option<crate::types::CompositeSliConfig>,
 }
 impl ServiceLevelObjectiveSummary {
     /// <p>The ARN of this service level objective.</p>
@@ -114,6 +116,10 @@ impl ServiceLevelObjectiveSummary {
     pub fn metric_source(&self) -> ::std::option::Option<&crate::types::MetricSource> {
         self.metric_source.as_ref()
     }
+    /// <p>The composite SLI configuration for service-level SLOs that monitor multiple operations of a service.</p>
+    pub fn composite_sli_config(&self) -> ::std::option::Option<&crate::types::CompositeSliConfig> {
+        self.composite_sli_config.as_ref()
+    }
 }
 impl ServiceLevelObjectiveSummary {
     /// Creates a new builder-style object to manufacture [`ServiceLevelObjectiveSummary`](crate::types::ServiceLevelObjectiveSummary).
@@ -135,6 +141,7 @@ pub struct ServiceLevelObjectiveSummaryBuilder {
     pub(crate) evaluation_type: ::std::option::Option<crate::types::EvaluationType>,
     pub(crate) metric_source_type: ::std::option::Option<crate::types::MetricSourceType>,
     pub(crate) metric_source: ::std::option::Option<crate::types::MetricSource>,
+    pub(crate) composite_sli_config: ::std::option::Option<crate::types::CompositeSliConfig>,
 }
 impl ServiceLevelObjectiveSummaryBuilder {
     /// <p>The ARN of this service level objective.</p>
@@ -356,6 +363,20 @@ impl ServiceLevelObjectiveSummaryBuilder {
     pub fn get_metric_source(&self) -> &::std::option::Option<crate::types::MetricSource> {
         &self.metric_source
     }
+    /// <p>The composite SLI configuration for service-level SLOs that monitor multiple operations of a service.</p>
+    pub fn composite_sli_config(mut self, input: crate::types::CompositeSliConfig) -> Self {
+        self.composite_sli_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The composite SLI configuration for service-level SLOs that monitor multiple operations of a service.</p>
+    pub fn set_composite_sli_config(mut self, input: ::std::option::Option<crate::types::CompositeSliConfig>) -> Self {
+        self.composite_sli_config = input;
+        self
+    }
+    /// <p>The composite SLI configuration for service-level SLOs that monitor multiple operations of a service.</p>
+    pub fn get_composite_sli_config(&self) -> &::std::option::Option<crate::types::CompositeSliConfig> {
+        &self.composite_sli_config
+    }
     /// Consumes the builder and constructs a [`ServiceLevelObjectiveSummary`](crate::types::ServiceLevelObjectiveSummary).
     /// This method will fail if any of the following fields are not set:
     /// - [`arn`](crate::types::builders::ServiceLevelObjectiveSummaryBuilder::arn)
@@ -381,6 +402,7 @@ impl ServiceLevelObjectiveSummaryBuilder {
             evaluation_type: self.evaluation_type,
             metric_source_type: self.metric_source_type,
             metric_source: self.metric_source,
+            composite_sli_config: self.composite_sli_config,
         })
     }
 }

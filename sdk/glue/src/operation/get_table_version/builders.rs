@@ -164,4 +164,18 @@ impl GetTableVersionFluentBuilder {
     pub fn get_version_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_version_id()
     }
+    /// <p>A structure containing the Lake Formation audit context.</p>
+    pub fn audit_context(mut self, input: crate::types::AuditContext) -> Self {
+        self.inner = self.inner.audit_context(input);
+        self
+    }
+    /// <p>A structure containing the Lake Formation audit context.</p>
+    pub fn set_audit_context(mut self, input: ::std::option::Option<crate::types::AuditContext>) -> Self {
+        self.inner = self.inner.set_audit_context(input);
+        self
+    }
+    /// <p>A structure containing the Lake Formation audit context.</p>
+    pub fn get_audit_context(&self) -> &::std::option::Option<crate::types::AuditContext> {
+        self.inner.get_audit_context()
+    }
 }

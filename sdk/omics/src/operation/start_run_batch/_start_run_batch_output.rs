@@ -7,7 +7,7 @@ pub struct StartRunBatchOutput {
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The unique ARN of the run batch.</p>
     pub arn: ::std::option::Option<::std::string::String>,
-    /// <p>The initial status of the run batch.</p>
+    /// <p>The initial status of the run batch. Returns <code>CREATING</code> while the batch is being initialized.</p>
     pub status: ::std::option::Option<crate::types::BatchStatus>,
     /// <p>The universally unique identifier (UUID) for the run batch.</p>
     pub uuid: ::std::option::Option<::std::string::String>,
@@ -24,7 +24,7 @@ impl StartRunBatchOutput {
     pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
-    /// <p>The initial status of the run batch.</p>
+    /// <p>The initial status of the run batch. Returns <code>CREATING</code> while the batch is being initialized.</p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::BatchStatus> {
         self.status.as_ref()
     }
@@ -89,17 +89,17 @@ impl StartRunBatchOutputBuilder {
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }
-    /// <p>The initial status of the run batch.</p>
+    /// <p>The initial status of the run batch. Returns <code>CREATING</code> while the batch is being initialized.</p>
     pub fn status(mut self, input: crate::types::BatchStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The initial status of the run batch.</p>
+    /// <p>The initial status of the run batch. Returns <code>CREATING</code> while the batch is being initialized.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::BatchStatus>) -> Self {
         self.status = input;
         self
     }
-    /// <p>The initial status of the run batch.</p>
+    /// <p>The initial status of the run batch. Returns <code>CREATING</code> while the batch is being initialized.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::BatchStatus> {
         &self.status
     }

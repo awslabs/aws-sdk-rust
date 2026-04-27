@@ -21,5 +21,11 @@ pub fn ser_get_partition_input_input(
         }
         array_5.finish();
     }
+    if let Some(var_7) = &input.audit_context {
+        #[allow(unused_mut)]
+        let mut object_8 = object.key("AuditContext").start_object();
+        crate::protocol_serde::shape_audit_context::ser_audit_context(&mut object_8, var_7)?;
+        object_8.finish();
+    }
     Ok(())
 }

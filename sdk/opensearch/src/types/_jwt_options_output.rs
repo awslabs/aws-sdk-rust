@@ -10,6 +10,8 @@ pub struct JwtOptionsOutput {
     pub subject_key: ::std::option::Option<::std::string::String>,
     /// <p>The key used for matching the JWT roles attribute.</p>
     pub roles_key: ::std::option::Option<::std::string::String>,
+    /// <p>The configured JWKS URL endpoint from which the cluster retrieves public keys to verify JWT requests.</p>
+    pub jwks_url: ::std::option::Option<::std::string::String>,
     /// <p>The key used to verify the signature of incoming JWT requests.</p>
     pub public_key: ::std::option::Option<::std::string::String>,
 }
@@ -25,6 +27,10 @@ impl JwtOptionsOutput {
     /// <p>The key used for matching the JWT roles attribute.</p>
     pub fn roles_key(&self) -> ::std::option::Option<&str> {
         self.roles_key.as_deref()
+    }
+    /// <p>The configured JWKS URL endpoint from which the cluster retrieves public keys to verify JWT requests.</p>
+    pub fn jwks_url(&self) -> ::std::option::Option<&str> {
+        self.jwks_url.as_deref()
     }
     /// <p>The key used to verify the signature of incoming JWT requests.</p>
     pub fn public_key(&self) -> ::std::option::Option<&str> {
@@ -45,6 +51,7 @@ pub struct JwtOptionsOutputBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
     pub(crate) subject_key: ::std::option::Option<::std::string::String>,
     pub(crate) roles_key: ::std::option::Option<::std::string::String>,
+    pub(crate) jwks_url: ::std::option::Option<::std::string::String>,
     pub(crate) public_key: ::std::option::Option<::std::string::String>,
 }
 impl JwtOptionsOutputBuilder {
@@ -90,6 +97,20 @@ impl JwtOptionsOutputBuilder {
     pub fn get_roles_key(&self) -> &::std::option::Option<::std::string::String> {
         &self.roles_key
     }
+    /// <p>The configured JWKS URL endpoint from which the cluster retrieves public keys to verify JWT requests.</p>
+    pub fn jwks_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.jwks_url = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The configured JWKS URL endpoint from which the cluster retrieves public keys to verify JWT requests.</p>
+    pub fn set_jwks_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.jwks_url = input;
+        self
+    }
+    /// <p>The configured JWKS URL endpoint from which the cluster retrieves public keys to verify JWT requests.</p>
+    pub fn get_jwks_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.jwks_url
+    }
     /// <p>The key used to verify the signature of incoming JWT requests.</p>
     pub fn public_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.public_key = ::std::option::Option::Some(input.into());
@@ -110,6 +131,7 @@ impl JwtOptionsOutputBuilder {
             enabled: self.enabled,
             subject_key: self.subject_key,
             roles_key: self.roles_key,
+            jwks_url: self.jwks_url,
             public_key: self.public_key,
         }
     }

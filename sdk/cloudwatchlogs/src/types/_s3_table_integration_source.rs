@@ -14,6 +14,8 @@ pub struct S3TableIntegrationSource {
     pub status_reason: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp when the data source association was created.</p>
     pub created_time_stamp: ::std::option::Option<i64>,
+    /// <p>The identifier of the parent data source for this association.</p>
+    pub parent_source_identifier: ::std::option::Option<::std::string::String>,
 }
 impl S3TableIntegrationSource {
     /// <p>The unique identifier for this data source association.</p>
@@ -36,6 +38,10 @@ impl S3TableIntegrationSource {
     pub fn created_time_stamp(&self) -> ::std::option::Option<i64> {
         self.created_time_stamp
     }
+    /// <p>The identifier of the parent data source for this association.</p>
+    pub fn parent_source_identifier(&self) -> ::std::option::Option<&str> {
+        self.parent_source_identifier.as_deref()
+    }
 }
 impl S3TableIntegrationSource {
     /// Creates a new builder-style object to manufacture [`S3TableIntegrationSource`](crate::types::S3TableIntegrationSource).
@@ -53,6 +59,7 @@ pub struct S3TableIntegrationSourceBuilder {
     pub(crate) status: ::std::option::Option<crate::types::S3TableIntegrationSourceStatus>,
     pub(crate) status_reason: ::std::option::Option<::std::string::String>,
     pub(crate) created_time_stamp: ::std::option::Option<i64>,
+    pub(crate) parent_source_identifier: ::std::option::Option<::std::string::String>,
 }
 impl S3TableIntegrationSourceBuilder {
     /// <p>The unique identifier for this data source association.</p>
@@ -125,6 +132,20 @@ impl S3TableIntegrationSourceBuilder {
     pub fn get_created_time_stamp(&self) -> &::std::option::Option<i64> {
         &self.created_time_stamp
     }
+    /// <p>The identifier of the parent data source for this association.</p>
+    pub fn parent_source_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.parent_source_identifier = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The identifier of the parent data source for this association.</p>
+    pub fn set_parent_source_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.parent_source_identifier = input;
+        self
+    }
+    /// <p>The identifier of the parent data source for this association.</p>
+    pub fn get_parent_source_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.parent_source_identifier
+    }
     /// Consumes the builder and constructs a [`S3TableIntegrationSource`](crate::types::S3TableIntegrationSource).
     pub fn build(self) -> crate::types::S3TableIntegrationSource {
         crate::types::S3TableIntegrationSource {
@@ -133,6 +154,7 @@ impl S3TableIntegrationSourceBuilder {
             status: self.status,
             status_reason: self.status_reason,
             created_time_stamp: self.created_time_stamp,
+            parent_source_identifier: self.parent_source_identifier,
         }
     }
 }

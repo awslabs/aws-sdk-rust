@@ -14,6 +14,8 @@ pub struct NetworkMigrationMapperSegmentConstruct {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The logical identifier for the construct in the infrastructure code.</p>
     pub logical_id: ::std::option::Option<::std::string::String>,
+    /// <p>Whether this construct is excluded from the migration.</p>
+    pub excluded: ::std::option::Option<bool>,
     /// <p>The timestamp when the construct was created.</p>
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The timestamp when the construct was last updated.</p>
@@ -41,6 +43,10 @@ impl NetworkMigrationMapperSegmentConstruct {
     /// <p>The logical identifier for the construct in the infrastructure code.</p>
     pub fn logical_id(&self) -> ::std::option::Option<&str> {
         self.logical_id.as_deref()
+    }
+    /// <p>Whether this construct is excluded from the migration.</p>
+    pub fn excluded(&self) -> ::std::option::Option<bool> {
+        self.excluded
     }
     /// <p>The timestamp when the construct was created.</p>
     pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -71,6 +77,7 @@ pub struct NetworkMigrationMapperSegmentConstructBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) logical_id: ::std::option::Option<::std::string::String>,
+    pub(crate) excluded: ::std::option::Option<bool>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -146,6 +153,20 @@ impl NetworkMigrationMapperSegmentConstructBuilder {
     pub fn get_logical_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.logical_id
     }
+    /// <p>Whether this construct is excluded from the migration.</p>
+    pub fn excluded(mut self, input: bool) -> Self {
+        self.excluded = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Whether this construct is excluded from the migration.</p>
+    pub fn set_excluded(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.excluded = input;
+        self
+    }
+    /// <p>Whether this construct is excluded from the migration.</p>
+    pub fn get_excluded(&self) -> &::std::option::Option<bool> {
+        &self.excluded
+    }
     /// <p>The timestamp when the construct was created.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
@@ -202,6 +223,7 @@ impl NetworkMigrationMapperSegmentConstructBuilder {
             name: self.name,
             description: self.description,
             logical_id: self.logical_id,
+            excluded: self.excluded,
             created_at: self.created_at,
             updated_at: self.updated_at,
             properties: self.properties,

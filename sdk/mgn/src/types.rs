@@ -317,6 +317,12 @@ pub use crate::types::_network_migration_code_generation_artifact::NetworkMigrat
 
 pub use crate::types::_network_migration_failed_resource_details::NetworkMigrationFailedResourceDetails;
 
+pub use crate::types::_merge_operation::MergeOperation;
+
+pub use crate::types::_split_operation::SplitOperation;
+
+pub use crate::types::_delete_operation::DeleteOperation;
+
 pub use crate::types::_update_operation::UpdateOperation;
 
 pub use crate::types::_data_replication_initiation_step::DataReplicationInitiationStep;
@@ -336,6 +342,10 @@ pub use crate::types::_network_migration_failed_resource_status::NetworkMigratio
 pub use crate::types::_data_replication_initiation_step_name::DataReplicationInitiationStepName;
 
 pub use crate::types::_data_replication_initiation_step_status::DataReplicationInitiationStepStatus;
+
+pub use crate::types::_merge_construct::MergeConstruct;
+
+pub use crate::types::_split_construct::SplitConstruct;
 
 pub use crate::types::_job_post_launch_actions_launch_status::JobPostLaunchActionsLaunchStatus;
 
@@ -392,6 +402,8 @@ mod _data_replication_initiation_step_name;
 mod _data_replication_initiation_step_status;
 
 mod _data_replication_state;
+
+mod _delete_operation;
 
 mod _describe_jobs_request_filters;
 
@@ -537,6 +549,10 @@ mod _list_waves_request_filters;
 
 mod _managed_account;
 
+mod _merge_construct;
+
+mod _merge_operation;
+
 mod _network_interface;
 
 mod _network_migration_analysis_job_details;
@@ -636,6 +652,10 @@ mod _source_server_action_document;
 mod _source_server_actions_request_filters;
 
 mod _source_server_connector_action;
+
+mod _split_construct;
+
+mod _split_operation;
 
 mod _ssm_document;
 

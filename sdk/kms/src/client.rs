@@ -213,6 +213,8 @@ mod generate_mac;
 
 mod generate_random;
 
+mod get_key_last_usage;
+
 mod get_key_policy;
 
 mod get_key_rotation_status;

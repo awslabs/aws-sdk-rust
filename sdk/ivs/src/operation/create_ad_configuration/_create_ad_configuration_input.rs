@@ -7,6 +7,8 @@ pub struct CreateAdConfigurationInput {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>List of integration configurations with media tailor resources.</p>
     pub media_tailor_playback_configurations: ::std::option::Option<::std::vec::Vec<crate::types::MediaTailorPlaybackConfiguration>>,
+    /// <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/tag-editor/latest/userguide/best-practices-and-strats.html">Best practices and strategies</a> in <i>Tagging Amazon Web Services Resources and Tag Editor</i> for details, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.</p>
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateAdConfigurationInput {
     /// <p>Ad configuration name. Defaults to “”.</p>
@@ -18,6 +20,10 @@ impl CreateAdConfigurationInput {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.media_tailor_playback_configurations.is_none()`.
     pub fn media_tailor_playback_configurations(&self) -> &[crate::types::MediaTailorPlaybackConfiguration] {
         self.media_tailor_playback_configurations.as_deref().unwrap_or_default()
+    }
+    /// <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/tag-editor/latest/userguide/best-practices-and-strats.html">Best practices and strategies</a> in <i>Tagging Amazon Web Services Resources and Tag Editor</i> for details, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.</p>
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        self.tags.as_ref()
     }
 }
 impl CreateAdConfigurationInput {
@@ -33,6 +39,7 @@ impl CreateAdConfigurationInput {
 pub struct CreateAdConfigurationInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) media_tailor_playback_configurations: ::std::option::Option<::std::vec::Vec<crate::types::MediaTailorPlaybackConfiguration>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateAdConfigurationInputBuilder {
     /// <p>Ad configuration name. Defaults to “”.</p>
@@ -74,6 +81,26 @@ impl CreateAdConfigurationInputBuilder {
     ) -> &::std::option::Option<::std::vec::Vec<crate::types::MediaTailorPlaybackConfiguration>> {
         &self.media_tailor_playback_configurations
     }
+    /// Adds a key-value pair to `tags`.
+    ///
+    /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+    ///
+    /// <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/tag-editor/latest/userguide/best-practices-and-strats.html">Best practices and strategies</a> in <i>Tagging Amazon Web Services Resources and Tag Editor</i> for details, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.</p>
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut hash_map = self.tags.unwrap_or_default();
+        hash_map.insert(k.into(), v.into());
+        self.tags = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/tag-editor/latest/userguide/best-practices-and-strats.html">Best practices and strategies</a> in <i>Tagging Amazon Web Services Resources and Tag Editor</i> for details, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.</p>
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input;
+        self
+    }
+    /// <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/tag-editor/latest/userguide/best-practices-and-strats.html">Best practices and strategies</a> in <i>Tagging Amazon Web Services Resources and Tag Editor</i> for details, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        &self.tags
+    }
     /// Consumes the builder and constructs a [`CreateAdConfigurationInput`](crate::operation::create_ad_configuration::CreateAdConfigurationInput).
     pub fn build(
         self,
@@ -82,6 +109,7 @@ impl CreateAdConfigurationInputBuilder {
         ::std::result::Result::Ok(crate::operation::create_ad_configuration::CreateAdConfigurationInput {
             name: self.name,
             media_tailor_playback_configurations: self.media_tailor_playback_configurations,
+            tags: self.tags,
         })
     }
 }

@@ -701,6 +701,8 @@ pub(crate) mod shape_data_replication_info_replicated_disk;
 
 pub(crate) mod shape_data_replication_initiation_steps;
 
+pub(crate) mod shape_delete_operation;
+
 pub(crate) mod shape_disk;
 
 pub(crate) mod shape_export_error_data;
@@ -727,6 +729,8 @@ pub(crate) mod shape_life_cycle_last_test_initiated;
 
 pub(crate) mod shape_life_cycle_last_test_reverted;
 
+pub(crate) mod shape_merge_operation;
+
 pub(crate) mod shape_network_interface;
 
 pub(crate) mod shape_network_migration_analysis_result_source;
@@ -739,6 +743,8 @@ pub(crate) mod shape_network_migration_failed_resources_list;
 
 pub(crate) mod shape_participating_server;
 
+pub(crate) mod shape_split_operation;
+
 pub(crate) mod shape_update_operation;
 
 pub(crate) mod shape_code_generation_output_format_status_details;
@@ -747,11 +753,15 @@ pub(crate) mod shape_data_replication_initiation_step;
 
 pub(crate) mod shape_ips_list;
 
+pub(crate) mod shape_merge_construct;
+
 pub(crate) mod shape_network_migration_code_generation_artifact;
 
 pub(crate) mod shape_network_migration_failed_resource_details;
 
 pub(crate) mod shape_post_launch_actions_status;
+
+pub(crate) mod shape_split_construct;
 
 pub(crate) mod shape_post_launch_actions_launch_status_list;
 

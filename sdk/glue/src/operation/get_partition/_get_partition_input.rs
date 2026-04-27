@@ -11,6 +11,8 @@ pub struct GetPartitionInput {
     pub table_name: ::std::option::Option<::std::string::String>,
     /// <p>The values that define the partition.</p>
     pub partition_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>A structure containing the Lake Formation audit context.</p>
+    pub audit_context: ::std::option::Option<crate::types::AuditContext>,
 }
 impl GetPartitionInput {
     /// <p>The ID of the Data Catalog where the partition in question resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
@@ -31,6 +33,10 @@ impl GetPartitionInput {
     pub fn partition_values(&self) -> &[::std::string::String] {
         self.partition_values.as_deref().unwrap_or_default()
     }
+    /// <p>A structure containing the Lake Formation audit context.</p>
+    pub fn audit_context(&self) -> ::std::option::Option<&crate::types::AuditContext> {
+        self.audit_context.as_ref()
+    }
 }
 impl GetPartitionInput {
     /// Creates a new builder-style object to manufacture [`GetPartitionInput`](crate::operation::get_partition::GetPartitionInput).
@@ -47,6 +53,7 @@ pub struct GetPartitionInputBuilder {
     pub(crate) database_name: ::std::option::Option<::std::string::String>,
     pub(crate) table_name: ::std::option::Option<::std::string::String>,
     pub(crate) partition_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) audit_context: ::std::option::Option<crate::types::AuditContext>,
 }
 impl GetPartitionInputBuilder {
     /// <p>The ID of the Data Catalog where the partition in question resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
@@ -113,6 +120,20 @@ impl GetPartitionInputBuilder {
     pub fn get_partition_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.partition_values
     }
+    /// <p>A structure containing the Lake Formation audit context.</p>
+    pub fn audit_context(mut self, input: crate::types::AuditContext) -> Self {
+        self.audit_context = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A structure containing the Lake Formation audit context.</p>
+    pub fn set_audit_context(mut self, input: ::std::option::Option<crate::types::AuditContext>) -> Self {
+        self.audit_context = input;
+        self
+    }
+    /// <p>A structure containing the Lake Formation audit context.</p>
+    pub fn get_audit_context(&self) -> &::std::option::Option<crate::types::AuditContext> {
+        &self.audit_context
+    }
     /// Consumes the builder and constructs a [`GetPartitionInput`](crate::operation::get_partition::GetPartitionInput).
     pub fn build(
         self,
@@ -122,6 +143,7 @@ impl GetPartitionInputBuilder {
             database_name: self.database_name,
             table_name: self.table_name,
             partition_values: self.partition_values,
+            audit_context: self.audit_context,
         })
     }
 }

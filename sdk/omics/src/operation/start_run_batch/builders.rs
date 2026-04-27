@@ -23,7 +23,7 @@ impl crate::operation::start_run_batch::builders::StartRunBatchInputBuilder {
 /// Fluent builder constructing a request to `StartRunBatch`.
 ///
 /// <p>Starts a batch of workflow runs. You can group up to 100,000 runs into a single batch that share a common configuration defined in <code>defaultRunSetting</code>. Per-run overrides can be provided either inline via <code>inlineSettings</code> (up to 100 runs) or via a JSON file stored in Amazon S3 via <code>s3UriSettings</code> (up to 100,000 runs).</p>
-/// <p><code>StartRunBatch</code> validates common fields synchronously and returns immediately with a batch ID and status <code>PENDING</code>. Runs are submitted gradually and asynchronously at a rate governed by your <code>StartRun</code> throughput quota.</p>
+/// <p><code>StartRunBatch</code> validates common fields synchronously and returns immediately with a batch ID and status <code>CREATING</code>. The batch transitions to <code>PENDING</code> once initial setup completes. Runs are then submitted gradually and asynchronously at a rate governed by your <code>StartRun</code> throughput quota.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartRunBatchFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

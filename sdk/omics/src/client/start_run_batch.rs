@@ -11,7 +11,7 @@ impl super::Client {
     /// - On success, responds with [`StartRunBatchOutput`](crate::operation::start_run_batch::StartRunBatchOutput) with field(s):
     ///   - [`id(Option<String>)`](crate::operation::start_run_batch::StartRunBatchOutput::id): <p>The identifier portion of the run batch ARN.</p>
     ///   - [`arn(Option<String>)`](crate::operation::start_run_batch::StartRunBatchOutput::arn): <p>The unique ARN of the run batch.</p>
-    ///   - [`status(Option<BatchStatus>)`](crate::operation::start_run_batch::StartRunBatchOutput::status): <p>The initial status of the run batch.</p>
+    ///   - [`status(Option<BatchStatus>)`](crate::operation::start_run_batch::StartRunBatchOutput::status): <p>The initial status of the run batch. Returns <code>CREATING</code> while the batch is being initialized.</p>
     ///   - [`uuid(Option<String>)`](crate::operation::start_run_batch::StartRunBatchOutput::uuid): <p>The universally unique identifier (UUID) for the run batch.</p>
     ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::start_run_batch::StartRunBatchOutput::tags): <p>AWS tags associated with the run batch.</p>
     /// - On failure, responds with [`SdkError<StartRunBatchError>`](crate::operation::start_run_batch::StartRunBatchError)

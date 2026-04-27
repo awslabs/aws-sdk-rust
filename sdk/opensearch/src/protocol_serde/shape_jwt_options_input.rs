@@ -12,8 +12,11 @@ pub fn ser_jwt_options_input(
     if let Some(var_3) = &input.roles_key {
         object.key("RolesKey").string(var_3.as_str());
     }
-    if let Some(var_4) = &input.public_key {
-        object.key("PublicKey").string(var_4.as_str());
+    if let Some(var_4) = &input.jwks_url {
+        object.key("JwksUrl").string(var_4.as_str());
+    }
+    if let Some(var_5) = &input.public_key {
+        object.key("PublicKey").string(var_5.as_str());
     }
     Ok(())
 }

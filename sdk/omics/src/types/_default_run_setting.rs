@@ -40,6 +40,10 @@ pub struct DefaultRunSetting {
     pub output_bucket_owner_id: ::std::option::Option<::std::string::String>,
     /// <p>The version name of the specified workflow.</p>
     pub workflow_version_name: ::std::option::Option<::std::string::String>,
+    /// <p>Optional configuration for run networking behavior. If not specified, this will default to RESTRICTED.</p>
+    pub networking_mode: ::std::option::Option<crate::types::NetworkingMode>,
+    /// <p>Optional configuration name to use for the workflow run.</p>
+    pub configuration_name: ::std::option::Option<::std::string::String>,
 }
 impl DefaultRunSetting {
     /// <p>The identifier of the workflow to run.</p>
@@ -116,6 +120,14 @@ impl DefaultRunSetting {
     pub fn workflow_version_name(&self) -> ::std::option::Option<&str> {
         self.workflow_version_name.as_deref()
     }
+    /// <p>Optional configuration for run networking behavior. If not specified, this will default to RESTRICTED.</p>
+    pub fn networking_mode(&self) -> ::std::option::Option<&crate::types::NetworkingMode> {
+        self.networking_mode.as_ref()
+    }
+    /// <p>Optional configuration name to use for the workflow run.</p>
+    pub fn configuration_name(&self) -> ::std::option::Option<&str> {
+        self.configuration_name.as_deref()
+    }
 }
 impl DefaultRunSetting {
     /// Creates a new builder-style object to manufacture [`DefaultRunSetting`](crate::types::DefaultRunSetting).
@@ -146,6 +158,8 @@ pub struct DefaultRunSettingBuilder {
     pub(crate) workflow_owner_id: ::std::option::Option<::std::string::String>,
     pub(crate) output_bucket_owner_id: ::std::option::Option<::std::string::String>,
     pub(crate) workflow_version_name: ::std::option::Option<::std::string::String>,
+    pub(crate) networking_mode: ::std::option::Option<crate::types::NetworkingMode>,
+    pub(crate) configuration_name: ::std::option::Option<::std::string::String>,
 }
 impl DefaultRunSettingBuilder {
     /// <p>The identifier of the workflow to run.</p>
@@ -408,6 +422,34 @@ impl DefaultRunSettingBuilder {
     pub fn get_workflow_version_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.workflow_version_name
     }
+    /// <p>Optional configuration for run networking behavior. If not specified, this will default to RESTRICTED.</p>
+    pub fn networking_mode(mut self, input: crate::types::NetworkingMode) -> Self {
+        self.networking_mode = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Optional configuration for run networking behavior. If not specified, this will default to RESTRICTED.</p>
+    pub fn set_networking_mode(mut self, input: ::std::option::Option<crate::types::NetworkingMode>) -> Self {
+        self.networking_mode = input;
+        self
+    }
+    /// <p>Optional configuration for run networking behavior. If not specified, this will default to RESTRICTED.</p>
+    pub fn get_networking_mode(&self) -> &::std::option::Option<crate::types::NetworkingMode> {
+        &self.networking_mode
+    }
+    /// <p>Optional configuration name to use for the workflow run.</p>
+    pub fn configuration_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.configuration_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Optional configuration name to use for the workflow run.</p>
+    pub fn set_configuration_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.configuration_name = input;
+        self
+    }
+    /// <p>Optional configuration name to use for the workflow run.</p>
+    pub fn get_configuration_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.configuration_name
+    }
     /// Consumes the builder and constructs a [`DefaultRunSetting`](crate::types::DefaultRunSetting).
     /// This method will fail if any of the following fields are not set:
     /// - [`workflow_id`](crate::types::builders::DefaultRunSettingBuilder::workflow_id)
@@ -442,6 +484,8 @@ impl DefaultRunSettingBuilder {
             workflow_owner_id: self.workflow_owner_id,
             output_bucket_owner_id: self.output_bucket_owner_id,
             workflow_version_name: self.workflow_version_name,
+            networking_mode: self.networking_mode,
+            configuration_name: self.configuration_name,
         })
     }
 }

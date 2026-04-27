@@ -83,8 +83,6 @@ impl crate::operation::start_stream_session::builders::StartStreamSessionInputBu
 /// <li>
 /// <p><b>Connection timeout</b>: The amount of time that Amazon GameLift Streams waits for a client to connect to a stream session in <code>ACTIVE</code> status, or reconnect to a stream session in <code>PENDING_CLIENT_RECONNECTION</code> status, the latter of which occurs when a client disconnects or loses connection from a stream session. If no client connects before the timeout, Amazon GameLift Streams terminates the stream session. This value is specified by <code>ConnectionTimeoutSeconds</code> in the <code>StartStreamSession</code> parameters.</p></li>
 /// <li>
-/// <p><b>Idle timeout</b>: A stream session will be terminated if no user input has been received for 60 minutes.</p></li>
-/// <li>
 /// <p><b>Maximum session length</b>: A stream session will be terminated after this amount of time has elapsed since it started, regardless of any existing client connections. This value is specified by <code>SessionLengthSeconds</code> in the <code>StartStreamSession</code> parameters.</p></li>
 /// </ul>
 /// <p>To start a new stream session, specify a stream group ID and application ID, along with the transport protocol and signal request to use with the stream session.</p>

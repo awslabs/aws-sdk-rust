@@ -73,6 +73,8 @@ pub(crate) mod shape_generate_mac;
 
 pub(crate) mod shape_generate_random;
 
+pub(crate) mod shape_get_key_last_usage;
+
 pub(crate) mod shape_get_key_policy;
 
 pub(crate) mod shape_get_key_rotation_status;
@@ -217,6 +219,8 @@ pub(crate) mod shape_generate_mac_input;
 
 pub(crate) mod shape_generate_random_input;
 
+pub(crate) mod shape_get_key_last_usage_input;
+
 pub(crate) mod shape_get_key_policy_input;
 
 pub(crate) mod shape_get_key_rotation_status_input;
@@ -350,6 +354,8 @@ pub(crate) mod shape_grant_constraints;
 pub(crate) mod shape_grant_list;
 
 pub(crate) mod shape_key_agreement_algorithm_spec_list;
+
+pub(crate) mod shape_key_last_usage_data;
 
 pub(crate) mod shape_key_list;
 

@@ -281,4 +281,18 @@ impl CreateServiceLevelObjectiveFluentBuilder {
     pub fn get_create_recommended_slo(&self) -> &::std::option::Option<bool> {
         self.inner.get_create_recommended_slo()
     }
+    /// Indicates whether DevOps Agent will automatically investigate this SLO when it is breached
+    pub fn auto_investigation_enabled(mut self, input: bool) -> Self {
+        self.inner = self.inner.auto_investigation_enabled(input);
+        self
+    }
+    /// Indicates whether DevOps Agent will automatically investigate this SLO when it is breached
+    pub fn set_auto_investigation_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_auto_investigation_enabled(input);
+        self
+    }
+    /// Indicates whether DevOps Agent will automatically investigate this SLO when it is breached
+    pub fn get_auto_investigation_enabled(&self) -> &::std::option::Option<bool> {
+        self.inner.get_auto_investigation_enabled()
+    }
 }

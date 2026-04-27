@@ -4,10 +4,22 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateOperation {
+    /// <p>The updated name for the construct.</p>
+    pub name: ::std::option::Option<::std::string::String>,
+    /// <p>Whether to exclude this construct from the migration.</p>
+    pub excluded: ::std::option::Option<bool>,
     /// <p>The properties to update on the construct.</p>
     pub properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl UpdateOperation {
+    /// <p>The updated name for the construct.</p>
+    pub fn name(&self) -> ::std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>Whether to exclude this construct from the migration.</p>
+    pub fn excluded(&self) -> ::std::option::Option<bool> {
+        self.excluded
+    }
     /// <p>The properties to update on the construct.</p>
     pub fn properties(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.properties.as_ref()
@@ -24,9 +36,39 @@ impl UpdateOperation {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct UpdateOperationBuilder {
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) excluded: ::std::option::Option<bool>,
     pub(crate) properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl UpdateOperationBuilder {
+    /// <p>The updated name for the construct.</p>
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The updated name for the construct.</p>
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.name = input;
+        self
+    }
+    /// <p>The updated name for the construct.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
+    /// <p>Whether to exclude this construct from the migration.</p>
+    pub fn excluded(mut self, input: bool) -> Self {
+        self.excluded = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Whether to exclude this construct from the migration.</p>
+    pub fn set_excluded(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.excluded = input;
+        self
+    }
+    /// <p>Whether to exclude this construct from the migration.</p>
+    pub fn get_excluded(&self) -> &::std::option::Option<bool> {
+        &self.excluded
+    }
     /// Adds a key-value pair to `properties`.
     ///
     /// To override the contents of this collection use [`set_properties`](Self::set_properties).
@@ -49,6 +91,10 @@ impl UpdateOperationBuilder {
     }
     /// Consumes the builder and constructs a [`UpdateOperation`](crate::types::UpdateOperation).
     pub fn build(self) -> crate::types::UpdateOperation {
-        crate::types::UpdateOperation { properties: self.properties }
+        crate::types::UpdateOperation {
+            name: self.name,
+            excluded: self.excluded,
+            properties: self.properties,
+        }
     }
 }

@@ -4,11 +4,29 @@ pub fn ser_operation_union(
     input: &crate::types::OperationUnion,
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
+        crate::types::OperationUnion::Merge(inner) => {
+            #[allow(unused_mut)]
+            let mut object_1 = object_2.key("merge").start_object();
+            crate::protocol_serde::shape_merge_operation::ser_merge_operation(&mut object_1, inner)?;
+            object_1.finish();
+        }
+        crate::types::OperationUnion::Split(inner) => {
+            #[allow(unused_mut)]
+            let mut object_2 = object_2.key("split").start_object();
+            crate::protocol_serde::shape_split_operation::ser_split_operation(&mut object_2, inner)?;
+            object_2.finish();
+        }
+        crate::types::OperationUnion::Delete(inner) => {
+            #[allow(unused_mut)]
+            let mut object_3 = object_2.key("delete").start_object();
+            crate::protocol_serde::shape_delete_operation::ser_delete_operation(&mut object_3, inner)?;
+            object_3.finish();
+        }
         crate::types::OperationUnion::Update(inner) => {
             #[allow(unused_mut)]
-            let mut object_1 = object_2.key("update").start_object();
-            crate::protocol_serde::shape_update_operation::ser_update_operation(&mut object_1, inner)?;
-            object_1.finish();
+            let mut object_4 = object_2.key("update").start_object();
+            crate::protocol_serde::shape_update_operation::ser_update_operation(&mut object_4, inner)?;
+            object_4.finish();
         }
         crate::types::OperationUnion::Unknown => {
             return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(

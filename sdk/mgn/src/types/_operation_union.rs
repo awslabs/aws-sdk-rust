@@ -4,6 +4,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum OperationUnion {
+    /// <p>A delete operation to remove a construct from the mapping.</p>
+    Delete(crate::types::DeleteOperation),
+    /// <p>A merge operation to combine constructs from different segments.</p>
+    Merge(crate::types::MergeOperation),
+    /// <p>A split operation to divide a construct into multiple constructs with specified CIDR blocks.</p>
+    Split(crate::types::SplitOperation),
     /// <p>An update operation to modify construct properties.</p>
     Update(crate::types::UpdateOperation),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
@@ -17,7 +23,45 @@ pub enum OperationUnion {
     Unknown,
 }
 impl OperationUnion {
-    #[allow(irrefutable_let_patterns)]
+    /// Tries to convert the enum instance into [`Delete`](crate::types::OperationUnion::Delete), extracting the inner [`DeleteOperation`](crate::types::DeleteOperation).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_delete(&self) -> ::std::result::Result<&crate::types::DeleteOperation, &Self> {
+        if let OperationUnion::Delete(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`Delete`](crate::types::OperationUnion::Delete).
+    pub fn is_delete(&self) -> bool {
+        self.as_delete().is_ok()
+    }
+    /// Tries to convert the enum instance into [`Merge`](crate::types::OperationUnion::Merge), extracting the inner [`MergeOperation`](crate::types::MergeOperation).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_merge(&self) -> ::std::result::Result<&crate::types::MergeOperation, &Self> {
+        if let OperationUnion::Merge(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`Merge`](crate::types::OperationUnion::Merge).
+    pub fn is_merge(&self) -> bool {
+        self.as_merge().is_ok()
+    }
+    /// Tries to convert the enum instance into [`Split`](crate::types::OperationUnion::Split), extracting the inner [`SplitOperation`](crate::types::SplitOperation).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_split(&self) -> ::std::result::Result<&crate::types::SplitOperation, &Self> {
+        if let OperationUnion::Split(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`Split`](crate::types::OperationUnion::Split).
+    pub fn is_split(&self) -> bool {
+        self.as_split().is_ok()
+    }
     /// Tries to convert the enum instance into [`Update`](crate::types::OperationUnion::Update), extracting the inner [`UpdateOperation`](crate::types::UpdateOperation).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_update(&self) -> ::std::result::Result<&crate::types::UpdateOperation, &Self> {

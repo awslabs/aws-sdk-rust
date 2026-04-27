@@ -29,6 +29,8 @@ pub use crate::types::_data_key_pair_spec::DataKeyPairSpec;
 
 pub use crate::types::_mac_algorithm_spec::MacAlgorithmSpec;
 
+pub use crate::types::_key_last_usage_data::KeyLastUsageData;
+
 pub use crate::types::_algorithm_spec::AlgorithmSpec;
 
 pub use crate::types::_wrapping_key_spec::WrappingKeySpec;
@@ -60,6 +62,8 @@ pub use crate::types::_key_encryption_mechanism::KeyEncryptionMechanism;
 pub use crate::types::_dry_run_modifier_type::DryRunModifierType;
 
 pub use crate::types::_custom_key_stores_list_entry::CustomKeyStoresListEntry;
+
+pub use crate::types::_key_last_usage_tracking_operation::KeyLastUsageTrackingOperation;
 
 pub use crate::types::_alias_list_entry::AliasListEntry;
 
@@ -124,6 +128,10 @@ mod _include_key_material;
 mod _key_agreement_algorithm_spec;
 
 mod _key_encryption_mechanism;
+
+mod _key_last_usage_data;
+
+mod _key_last_usage_tracking_operation;
 
 mod _key_list_entry;
 

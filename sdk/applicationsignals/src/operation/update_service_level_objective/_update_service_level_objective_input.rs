@@ -16,6 +16,8 @@ pub struct UpdateServiceLevelObjectiveInput {
     pub goal: ::std::option::Option<crate::types::Goal>,
     /// <p>Use this array to create <i>burn rates</i> for this SLO. Each burn rate is a metric that indicates how fast the service is consuming the error budget, relative to the attainment goal of the SLO.</p>
     pub burn_rate_configurations: ::std::option::Option<::std::vec::Vec<crate::types::BurnRateConfiguration>>,
+    /// Indicates whether DevOps Agent will automatically investigate this SLO when it is breached
+    pub auto_investigation_enabled: ::std::option::Option<bool>,
 }
 impl UpdateServiceLevelObjectiveInput {
     /// <p>The Amazon Resource Name (ARN) or name of the service level objective that you want to update.</p>
@@ -45,6 +47,10 @@ impl UpdateServiceLevelObjectiveInput {
     pub fn burn_rate_configurations(&self) -> &[crate::types::BurnRateConfiguration] {
         self.burn_rate_configurations.as_deref().unwrap_or_default()
     }
+    /// Indicates whether DevOps Agent will automatically investigate this SLO when it is breached
+    pub fn auto_investigation_enabled(&self) -> ::std::option::Option<bool> {
+        self.auto_investigation_enabled
+    }
 }
 impl UpdateServiceLevelObjectiveInput {
     /// Creates a new builder-style object to manufacture [`UpdateServiceLevelObjectiveInput`](crate::operation::update_service_level_objective::UpdateServiceLevelObjectiveInput).
@@ -63,6 +69,7 @@ pub struct UpdateServiceLevelObjectiveInputBuilder {
     pub(crate) request_based_sli_config: ::std::option::Option<crate::types::RequestBasedServiceLevelIndicatorConfig>,
     pub(crate) goal: ::std::option::Option<crate::types::Goal>,
     pub(crate) burn_rate_configurations: ::std::option::Option<::std::vec::Vec<crate::types::BurnRateConfiguration>>,
+    pub(crate) auto_investigation_enabled: ::std::option::Option<bool>,
 }
 impl UpdateServiceLevelObjectiveInputBuilder {
     /// <p>The Amazon Resource Name (ARN) or name of the service level objective that you want to update.</p>
@@ -159,6 +166,20 @@ impl UpdateServiceLevelObjectiveInputBuilder {
     pub fn get_burn_rate_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BurnRateConfiguration>> {
         &self.burn_rate_configurations
     }
+    /// Indicates whether DevOps Agent will automatically investigate this SLO when it is breached
+    pub fn auto_investigation_enabled(mut self, input: bool) -> Self {
+        self.auto_investigation_enabled = ::std::option::Option::Some(input);
+        self
+    }
+    /// Indicates whether DevOps Agent will automatically investigate this SLO when it is breached
+    pub fn set_auto_investigation_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.auto_investigation_enabled = input;
+        self
+    }
+    /// Indicates whether DevOps Agent will automatically investigate this SLO when it is breached
+    pub fn get_auto_investigation_enabled(&self) -> &::std::option::Option<bool> {
+        &self.auto_investigation_enabled
+    }
     /// Consumes the builder and constructs a [`UpdateServiceLevelObjectiveInput`](crate::operation::update_service_level_objective::UpdateServiceLevelObjectiveInput).
     pub fn build(
         self,
@@ -173,6 +194,7 @@ impl UpdateServiceLevelObjectiveInputBuilder {
             request_based_sli_config: self.request_based_sli_config,
             goal: self.goal,
             burn_rate_configurations: self.burn_rate_configurations,
+            auto_investigation_enabled: self.auto_investigation_enabled,
         })
     }
 }

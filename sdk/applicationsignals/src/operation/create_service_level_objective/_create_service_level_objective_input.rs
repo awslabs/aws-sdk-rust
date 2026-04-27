@@ -23,6 +23,8 @@ pub struct CreateServiceLevelObjectiveInput {
     /// <p>Set this to <code>true</code> to create a recommended SLO out of the box. When set to <code>true</code>, you don't need to specify the <code>MetricThreshold</code> or <code>ComparisonOperator</code> in the <code>SliConfig</code> or <code>RequestBasedSliConfig</code>. The default value is <code>false</code>.</p>
     /// <p>This is supported for SLOs on a service, service operation, or a dependency.</p>
     pub create_recommended_slo: ::std::option::Option<bool>,
+    /// Indicates whether DevOps Agent will automatically investigate this SLO when it is breached
+    pub auto_investigation_enabled: ::std::option::Option<bool>,
 }
 impl CreateServiceLevelObjectiveInput {
     /// <p>A name for this SLO.</p>
@@ -65,6 +67,10 @@ impl CreateServiceLevelObjectiveInput {
     pub fn create_recommended_slo(&self) -> ::std::option::Option<bool> {
         self.create_recommended_slo
     }
+    /// Indicates whether DevOps Agent will automatically investigate this SLO when it is breached
+    pub fn auto_investigation_enabled(&self) -> ::std::option::Option<bool> {
+        self.auto_investigation_enabled
+    }
 }
 impl CreateServiceLevelObjectiveInput {
     /// Creates a new builder-style object to manufacture [`CreateServiceLevelObjectiveInput`](crate::operation::create_service_level_objective::CreateServiceLevelObjectiveInput).
@@ -85,6 +91,7 @@ pub struct CreateServiceLevelObjectiveInputBuilder {
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) burn_rate_configurations: ::std::option::Option<::std::vec::Vec<crate::types::BurnRateConfiguration>>,
     pub(crate) create_recommended_slo: ::std::option::Option<bool>,
+    pub(crate) auto_investigation_enabled: ::std::option::Option<bool>,
 }
 impl CreateServiceLevelObjectiveInputBuilder {
     /// <p>A name for this SLO.</p>
@@ -224,6 +231,20 @@ impl CreateServiceLevelObjectiveInputBuilder {
     pub fn get_create_recommended_slo(&self) -> &::std::option::Option<bool> {
         &self.create_recommended_slo
     }
+    /// Indicates whether DevOps Agent will automatically investigate this SLO when it is breached
+    pub fn auto_investigation_enabled(mut self, input: bool) -> Self {
+        self.auto_investigation_enabled = ::std::option::Option::Some(input);
+        self
+    }
+    /// Indicates whether DevOps Agent will automatically investigate this SLO when it is breached
+    pub fn set_auto_investigation_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.auto_investigation_enabled = input;
+        self
+    }
+    /// Indicates whether DevOps Agent will automatically investigate this SLO when it is breached
+    pub fn get_auto_investigation_enabled(&self) -> &::std::option::Option<bool> {
+        &self.auto_investigation_enabled
+    }
     /// Consumes the builder and constructs a [`CreateServiceLevelObjectiveInput`](crate::operation::create_service_level_objective::CreateServiceLevelObjectiveInput).
     pub fn build(
         self,
@@ -240,6 +261,7 @@ impl CreateServiceLevelObjectiveInputBuilder {
             tags: self.tags,
             burn_rate_configurations: self.burn_rate_configurations,
             create_recommended_slo: self.create_recommended_slo,
+            auto_investigation_enabled: self.auto_investigation_enabled,
         })
     }
 }

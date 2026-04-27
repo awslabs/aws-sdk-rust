@@ -41,5 +41,11 @@ pub fn ser_get_partitions_input_input(
             .key("QueryAsOfTime")
             .date_time(var_11, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
+    if let Some(var_12) = &input.audit_context {
+        #[allow(unused_mut)]
+        let mut object_13 = object.key("AuditContext").start_object();
+        crate::protocol_serde::shape_audit_context::ser_audit_context(&mut object_13, var_12)?;
+        object_13.finish();
+    }
     Ok(())
 }

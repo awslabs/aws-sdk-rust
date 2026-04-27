@@ -13,6 +13,8 @@ pub struct GetTableVersionsInput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of table versions to return in one response.</p>
     pub max_results: ::std::option::Option<i32>,
+    /// <p>A structure containing the Lake Formation audit context.</p>
+    pub audit_context: ::std::option::Option<crate::types::AuditContext>,
 }
 impl GetTableVersionsInput {
     /// <p>The ID of the Data Catalog where the tables reside. If none is provided, the Amazon Web Services account ID is used by default.</p>
@@ -35,6 +37,10 @@ impl GetTableVersionsInput {
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
+    /// <p>A structure containing the Lake Formation audit context.</p>
+    pub fn audit_context(&self) -> ::std::option::Option<&crate::types::AuditContext> {
+        self.audit_context.as_ref()
+    }
 }
 impl GetTableVersionsInput {
     /// Creates a new builder-style object to manufacture [`GetTableVersionsInput`](crate::operation::get_table_versions::GetTableVersionsInput).
@@ -52,6 +58,7 @@ pub struct GetTableVersionsInputBuilder {
     pub(crate) table_name: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
+    pub(crate) audit_context: ::std::option::Option<crate::types::AuditContext>,
 }
 impl GetTableVersionsInputBuilder {
     /// <p>The ID of the Data Catalog where the tables reside. If none is provided, the Amazon Web Services account ID is used by default.</p>
@@ -126,6 +133,20 @@ impl GetTableVersionsInputBuilder {
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
+    /// <p>A structure containing the Lake Formation audit context.</p>
+    pub fn audit_context(mut self, input: crate::types::AuditContext) -> Self {
+        self.audit_context = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A structure containing the Lake Formation audit context.</p>
+    pub fn set_audit_context(mut self, input: ::std::option::Option<crate::types::AuditContext>) -> Self {
+        self.audit_context = input;
+        self
+    }
+    /// <p>A structure containing the Lake Formation audit context.</p>
+    pub fn get_audit_context(&self) -> &::std::option::Option<crate::types::AuditContext> {
+        &self.audit_context
+    }
     /// Consumes the builder and constructs a [`GetTableVersionsInput`](crate::operation::get_table_versions::GetTableVersionsInput).
     pub fn build(
         self,
@@ -136,6 +157,7 @@ impl GetTableVersionsInputBuilder {
             table_name: self.table_name,
             next_token: self.next_token,
             max_results: self.max_results,
+            audit_context: self.audit_context,
         })
     }
 }

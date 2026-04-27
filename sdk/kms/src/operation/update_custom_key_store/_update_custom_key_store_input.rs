@@ -8,7 +8,7 @@ pub struct UpdateCustomKeyStoreInput {
     /// <p>Changes the friendly name of the custom key store to the value that you specify. The custom key store name must be unique in the Amazon Web Services account.</p><important>
     /// <p>Do not include confidential or sensitive information in this field. This field may be displayed in plaintext in CloudTrail logs and other output.</p>
     /// </important>
-    /// <p>To change this value, an CloudHSM key store must be disconnected. An external key store can be connected or disconnected.</p>
+    /// <p>To change this value, the custom key store can be connected or disconnected.</p>
     pub new_custom_key_store_name: ::std::option::Option<::std::string::String>,
     /// <p>Enter the current password of the <code>kmsuser</code> crypto user (CU) in the CloudHSM cluster that is associated with the custom key store. This parameter is valid only for custom key stores with a <code>CustomKeyStoreType</code> of <code>AWS_CLOUDHSM</code>.</p>
     /// <p>This parameter tells KMS the current password of the <code>kmsuser</code> crypto user (CU). It does not set or change the password of any users in the CloudHSM cluster.</p>
@@ -54,7 +54,7 @@ impl UpdateCustomKeyStoreInput {
     /// <p>Changes the friendly name of the custom key store to the value that you specify. The custom key store name must be unique in the Amazon Web Services account.</p><important>
     /// <p>Do not include confidential or sensitive information in this field. This field may be displayed in plaintext in CloudTrail logs and other output.</p>
     /// </important>
-    /// <p>To change this value, an CloudHSM key store must be disconnected. An external key store can be connected or disconnected.</p>
+    /// <p>To change this value, the custom key store can be connected or disconnected.</p>
     pub fn new_custom_key_store_name(&self) -> ::std::option::Option<&str> {
         self.new_custom_key_store_name.as_deref()
     }
@@ -167,7 +167,7 @@ impl UpdateCustomKeyStoreInputBuilder {
     /// <p>Changes the friendly name of the custom key store to the value that you specify. The custom key store name must be unique in the Amazon Web Services account.</p><important>
     /// <p>Do not include confidential or sensitive information in this field. This field may be displayed in plaintext in CloudTrail logs and other output.</p>
     /// </important>
-    /// <p>To change this value, an CloudHSM key store must be disconnected. An external key store can be connected or disconnected.</p>
+    /// <p>To change this value, the custom key store can be connected or disconnected.</p>
     pub fn new_custom_key_store_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.new_custom_key_store_name = ::std::option::Option::Some(input.into());
         self
@@ -175,7 +175,7 @@ impl UpdateCustomKeyStoreInputBuilder {
     /// <p>Changes the friendly name of the custom key store to the value that you specify. The custom key store name must be unique in the Amazon Web Services account.</p><important>
     /// <p>Do not include confidential or sensitive information in this field. This field may be displayed in plaintext in CloudTrail logs and other output.</p>
     /// </important>
-    /// <p>To change this value, an CloudHSM key store must be disconnected. An external key store can be connected or disconnected.</p>
+    /// <p>To change this value, the custom key store can be connected or disconnected.</p>
     pub fn set_new_custom_key_store_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.new_custom_key_store_name = input;
         self
@@ -183,7 +183,7 @@ impl UpdateCustomKeyStoreInputBuilder {
     /// <p>Changes the friendly name of the custom key store to the value that you specify. The custom key store name must be unique in the Amazon Web Services account.</p><important>
     /// <p>Do not include confidential or sensitive information in this field. This field may be displayed in plaintext in CloudTrail logs and other output.</p>
     /// </important>
-    /// <p>To change this value, an CloudHSM key store must be disconnected. An external key store can be connected or disconnected.</p>
+    /// <p>To change this value, the custom key store can be connected or disconnected.</p>
     pub fn get_new_custom_key_store_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.new_custom_key_store_name
     }

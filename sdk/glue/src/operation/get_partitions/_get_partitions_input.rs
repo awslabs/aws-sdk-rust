@@ -100,6 +100,8 @@ pub struct GetPartitionsInput {
     pub transaction_id: ::std::option::Option<::std::string::String>,
     /// <p>The time as of when to read the partition contents. If not set, the most recent transaction commit time will be used. Cannot be specified along with <code>TransactionId</code>.</p>
     pub query_as_of_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>A structure containing the Lake Formation audit context.</p>
+    pub audit_context: ::std::option::Option<crate::types::AuditContext>,
 }
 impl GetPartitionsInput {
     /// <p>The ID of the Data Catalog where the partitions in question reside. If none is provided, the Amazon Web Services account ID is used by default.</p>
@@ -219,6 +221,10 @@ impl GetPartitionsInput {
     pub fn query_as_of_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.query_as_of_time.as_ref()
     }
+    /// <p>A structure containing the Lake Formation audit context.</p>
+    pub fn audit_context(&self) -> ::std::option::Option<&crate::types::AuditContext> {
+        self.audit_context.as_ref()
+    }
 }
 impl GetPartitionsInput {
     /// Creates a new builder-style object to manufacture [`GetPartitionsInput`](crate::operation::get_partitions::GetPartitionsInput).
@@ -241,6 +247,7 @@ pub struct GetPartitionsInputBuilder {
     pub(crate) exclude_column_schema: ::std::option::Option<bool>,
     pub(crate) transaction_id: ::std::option::Option<::std::string::String>,
     pub(crate) query_as_of_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) audit_context: ::std::option::Option<crate::types::AuditContext>,
 }
 impl GetPartitionsInputBuilder {
     /// <p>The ID of the Data Catalog where the partitions in question reside. If none is provided, the Amazon Web Services account ID is used by default.</p>
@@ -616,6 +623,20 @@ impl GetPartitionsInputBuilder {
     pub fn get_query_as_of_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.query_as_of_time
     }
+    /// <p>A structure containing the Lake Formation audit context.</p>
+    pub fn audit_context(mut self, input: crate::types::AuditContext) -> Self {
+        self.audit_context = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A structure containing the Lake Formation audit context.</p>
+    pub fn set_audit_context(mut self, input: ::std::option::Option<crate::types::AuditContext>) -> Self {
+        self.audit_context = input;
+        self
+    }
+    /// <p>A structure containing the Lake Formation audit context.</p>
+    pub fn get_audit_context(&self) -> &::std::option::Option<crate::types::AuditContext> {
+        &self.audit_context
+    }
     /// Consumes the builder and constructs a [`GetPartitionsInput`](crate::operation::get_partitions::GetPartitionsInput).
     pub fn build(
         self,
@@ -631,6 +652,7 @@ impl GetPartitionsInputBuilder {
             exclude_column_schema: self.exclude_column_schema,
             transaction_id: self.transaction_id,
             query_as_of_time: self.query_as_of_time,
+            audit_context: self.audit_context,
         })
     }
 }

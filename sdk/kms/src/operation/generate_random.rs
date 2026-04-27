@@ -273,7 +273,7 @@ pub enum GenerateRandomError {
     /// <li>
     /// <p>You requested the <code>DisconnectCustomKeyStore</code> operation on a custom key store with a <code>ConnectionState</code> of <code>DISCONNECTING</code> or <code>DISCONNECTED</code>. This operation is valid for all other <code>ConnectionState</code> values.</p></li>
     /// <li>
-    /// <p>You requested the <code>UpdateCustomKeyStore</code> or <code>DeleteCustomKeyStore</code> operation on a custom key store that is not disconnected. This operation is valid only when the custom key store <code>ConnectionState</code> is <code>DISCONNECTED</code>.</p></li>
+    /// <p>You requested the <code>UpdateCustomKeyStore</code> or <code>DeleteCustomKeyStore</code> operation on a custom key store that is not disconnected. <code>UpdateCustomKeyStore</code> can be called on a custom key store in the <code>CONNECTED</code> state only to update <code>NewCustomKeyStoreName</code>. For all other properties, the custom key store <code>ConnectionState</code> must be <code>DISCONNECTED</code>.</p></li>
     /// <li>
     /// <p>You requested the <code>GenerateRandom</code> operation in an CloudHSM key store that is not connected. This operation is valid only when the CloudHSM key store <code>ConnectionState</code> is <code>CONNECTED</code>.</p></li>
     /// </ul>

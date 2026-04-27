@@ -522,6 +522,18 @@ pub(crate) fn burn_rate_configuration_correct_errors(
     builder
 }
 
+pub(crate) fn composite_sli_config_correct_errors(
+    mut builder: crate::types::builders::CompositeSliConfigBuilder,
+) -> crate::types::builders::CompositeSliConfigBuilder {
+    if builder.selection_config.is_none() {
+        builder.selection_config = {
+            let builder = crate::types::builders::SelectionConfigBuilder::default();
+            crate::serde_util::selection_config_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
 pub(crate) fn dependency_config_correct_errors(
     mut builder: crate::types::builders::DependencyConfigBuilder,
 ) -> crate::types::builders::DependencyConfigBuilder {
@@ -647,6 +659,15 @@ pub(crate) fn rolling_interval_correct_errors(
     }
     if builder.duration.is_none() {
         builder.duration = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn selection_config_correct_errors(
+    mut builder: crate::types::builders::SelectionConfigBuilder,
+) -> crate::types::builders::SelectionConfigBuilder {
+    if builder.r#type.is_none() {
+        builder.r#type = "no value was set".parse::<crate::types::SelectionType>().ok()
     }
     builder
 }

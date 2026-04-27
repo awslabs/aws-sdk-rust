@@ -31,7 +31,7 @@ impl crate::operation::update_custom_key_store::builders::UpdateCustomKeyStoreIn
 /// <p>Some external key managers provide a simpler method for updating an external key store. For details, see your external key manager documentation.</p>
 /// <p>When updating an external key store in the KMS console, you can upload a JSON-based proxy configuration file with the desired values. You cannot upload the proxy configuration file to the <code>UpdateCustomKeyStore</code> operation. However, you can use the file to help you determine the correct values for the <code>UpdateCustomKeyStore</code> parameters.</p>
 /// </note>
-/// <p>For an CloudHSM key store, you can use this operation to change the custom key store friendly name (<code>NewCustomKeyStoreName</code>), to tell KMS about a change to the <code>kmsuser</code> crypto user password (<code>KeyStorePassword</code>), or to associate the custom key store with a different, but related, CloudHSM cluster (<code>CloudHsmClusterId</code>). To update any property of an CloudHSM key store, the <code>ConnectionState</code> of the CloudHSM key store must be <code>DISCONNECTED</code>.</p>
+/// <p>For an CloudHSM key store, you can use this operation to change the custom key store friendly name (<code>NewCustomKeyStoreName</code>), to tell KMS about a change to the <code>kmsuser</code> crypto user password (<code>KeyStorePassword</code>), or to associate the custom key store with a different, but related, CloudHSM cluster (<code>CloudHsmClusterId</code>). To update most properties of an CloudHSM key store, the <code>ConnectionState</code> of the CloudHSM key store must be <code>DISCONNECTED</code>. However, you can update the <code>CustomKeyStoreName</code> of an AWS CloudHSM key store when it is in the <code>CONNECTED</code> or <code>DISCONNECTED</code> state.</p>
 /// <p>For an external key store, you can use this operation to change the custom key store friendly name (<code>NewCustomKeyStoreName</code>), or to tell KMS about a change to the external key store proxy authentication credentials (<code>XksProxyAuthenticationCredential</code>), connection method (<code>XksProxyConnectivity</code>), external proxy endpoint (<code>XksProxyUriEndpoint</code>) and path (<code>XksProxyUriPath</code>). For external key stores with an <code>XksProxyConnectivity</code> of <code>VPC_ENDPOINT_SERVICE</code>, you can also update the Amazon VPC endpoint service name (<code>XksProxyVpcEndpointServiceName</code>). To update most properties of an external key store, the <code>ConnectionState</code> of the external key store must be <code>DISCONNECTED</code>. However, you can update the <code>CustomKeyStoreName</code>, <code>XksProxyAuthenticationCredential</code>, and <code>XksProxyUriPath</code> of an external key store when it is in the CONNECTED or DISCONNECTED state.</p>
 /// <p>If your update requires a <code>DISCONNECTED</code> state, before using <code>UpdateCustomKeyStore</code>, use the <code>DisconnectCustomKeyStore</code> operation to disconnect the custom key store. After the <code>UpdateCustomKeyStore</code> operation completes, use the <code>ConnectCustomKeyStore</code> to reconnect the custom key store. To find the <code>ConnectionState</code> of the custom key store, use the <code>DescribeCustomKeyStores</code> operation.</p>
 /// <p></p>
@@ -155,7 +155,7 @@ impl UpdateCustomKeyStoreFluentBuilder {
     /// <p>Changes the friendly name of the custom key store to the value that you specify. The custom key store name must be unique in the Amazon Web Services account.</p><important>
     /// <p>Do not include confidential or sensitive information in this field. This field may be displayed in plaintext in CloudTrail logs and other output.</p>
     /// </important>
-    /// <p>To change this value, an CloudHSM key store must be disconnected. An external key store can be connected or disconnected.</p>
+    /// <p>To change this value, the custom key store can be connected or disconnected.</p>
     pub fn new_custom_key_store_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.new_custom_key_store_name(input.into());
         self
@@ -163,7 +163,7 @@ impl UpdateCustomKeyStoreFluentBuilder {
     /// <p>Changes the friendly name of the custom key store to the value that you specify. The custom key store name must be unique in the Amazon Web Services account.</p><important>
     /// <p>Do not include confidential or sensitive information in this field. This field may be displayed in plaintext in CloudTrail logs and other output.</p>
     /// </important>
-    /// <p>To change this value, an CloudHSM key store must be disconnected. An external key store can be connected or disconnected.</p>
+    /// <p>To change this value, the custom key store can be connected or disconnected.</p>
     pub fn set_new_custom_key_store_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_new_custom_key_store_name(input);
         self
@@ -171,7 +171,7 @@ impl UpdateCustomKeyStoreFluentBuilder {
     /// <p>Changes the friendly name of the custom key store to the value that you specify. The custom key store name must be unique in the Amazon Web Services account.</p><important>
     /// <p>Do not include confidential or sensitive information in this field. This field may be displayed in plaintext in CloudTrail logs and other output.</p>
     /// </important>
-    /// <p>To change this value, an CloudHSM key store must be disconnected. An external key store can be connected or disconnected.</p>
+    /// <p>To change this value, the custom key store can be connected or disconnected.</p>
     pub fn get_new_custom_key_store_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_new_custom_key_store_name()
     }

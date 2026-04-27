@@ -33,6 +33,8 @@ pub struct RequestBasedServiceLevelIndicatorMetricConfig {
     pub metric_source: ::std::option::Option<crate::types::MetricSource>,
     /// <p>The name of the metric for SLOs on resources other than Application Signals services.</p>
     pub metric_name: ::std::option::Option<::std::string::String>,
+    /// <p>The composite SLI configuration for service-level SLOs that monitor multiple operations of a service.</p>
+    pub composite_sli_config: ::std::option::Option<crate::types::CompositeSliConfig>,
 }
 impl RequestBasedServiceLevelIndicatorMetricConfig {
     /// <p>If this SLO is related to a metric collected by Application Signals, you must use this field to specify which service the SLO metric is related to. To do so, you must specify at least the <code>Type</code>, <code>Name</code>, and <code>Environment</code> attributes.</p>
@@ -82,6 +84,10 @@ impl RequestBasedServiceLevelIndicatorMetricConfig {
     pub fn metric_name(&self) -> ::std::option::Option<&str> {
         self.metric_name.as_deref()
     }
+    /// <p>The composite SLI configuration for service-level SLOs that monitor multiple operations of a service.</p>
+    pub fn composite_sli_config(&self) -> ::std::option::Option<&crate::types::CompositeSliConfig> {
+        self.composite_sli_config.as_ref()
+    }
 }
 impl RequestBasedServiceLevelIndicatorMetricConfig {
     /// Creates a new builder-style object to manufacture [`RequestBasedServiceLevelIndicatorMetricConfig`](crate::types::RequestBasedServiceLevelIndicatorMetricConfig).
@@ -102,6 +108,7 @@ pub struct RequestBasedServiceLevelIndicatorMetricConfigBuilder {
     pub(crate) dependency_config: ::std::option::Option<crate::types::DependencyConfig>,
     pub(crate) metric_source: ::std::option::Option<crate::types::MetricSource>,
     pub(crate) metric_name: ::std::option::Option<::std::string::String>,
+    pub(crate) composite_sli_config: ::std::option::Option<crate::types::CompositeSliConfig>,
 }
 impl RequestBasedServiceLevelIndicatorMetricConfigBuilder {
     /// Adds a key-value pair to `key_attributes`.
@@ -274,6 +281,20 @@ impl RequestBasedServiceLevelIndicatorMetricConfigBuilder {
     pub fn get_metric_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.metric_name
     }
+    /// <p>The composite SLI configuration for service-level SLOs that monitor multiple operations of a service.</p>
+    pub fn composite_sli_config(mut self, input: crate::types::CompositeSliConfig) -> Self {
+        self.composite_sli_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The composite SLI configuration for service-level SLOs that monitor multiple operations of a service.</p>
+    pub fn set_composite_sli_config(mut self, input: ::std::option::Option<crate::types::CompositeSliConfig>) -> Self {
+        self.composite_sli_config = input;
+        self
+    }
+    /// <p>The composite SLI configuration for service-level SLOs that monitor multiple operations of a service.</p>
+    pub fn get_composite_sli_config(&self) -> &::std::option::Option<crate::types::CompositeSliConfig> {
+        &self.composite_sli_config
+    }
     /// Consumes the builder and constructs a [`RequestBasedServiceLevelIndicatorMetricConfig`](crate::types::RequestBasedServiceLevelIndicatorMetricConfig).
     pub fn build(self) -> crate::types::RequestBasedServiceLevelIndicatorMetricConfig {
         crate::types::RequestBasedServiceLevelIndicatorMetricConfig {
@@ -285,6 +306,7 @@ impl RequestBasedServiceLevelIndicatorMetricConfigBuilder {
             dependency_config: self.dependency_config,
             metric_source: self.metric_source,
             metric_name: self.metric_name,
+            composite_sli_config: self.composite_sli_config,
         }
     }
 }

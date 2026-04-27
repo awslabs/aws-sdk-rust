@@ -49,6 +49,11 @@ where
                         "MetricSource" => {
                             builder = builder.set_metric_source(crate::protocol_serde::shape_metric_source::de_metric_source(tokens, _value)?);
                         }
+                        "CompositeSliConfig" => {
+                            builder = builder.set_composite_sli_config(crate::protocol_serde::shape_composite_sli_config::de_composite_sli_config(
+                                tokens, _value,
+                            )?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

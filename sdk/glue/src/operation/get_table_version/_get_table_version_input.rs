@@ -11,6 +11,8 @@ pub struct GetTableVersionInput {
     pub table_name: ::std::option::Option<::std::string::String>,
     /// <p>The ID value of the table version to be retrieved. A <code>VersionID</code> is a string representation of an integer. Each version is incremented by 1.</p>
     pub version_id: ::std::option::Option<::std::string::String>,
+    /// <p>A structure containing the Lake Formation audit context.</p>
+    pub audit_context: ::std::option::Option<crate::types::AuditContext>,
 }
 impl GetTableVersionInput {
     /// <p>The ID of the Data Catalog where the tables reside. If none is provided, the Amazon Web Services account ID is used by default.</p>
@@ -29,6 +31,10 @@ impl GetTableVersionInput {
     pub fn version_id(&self) -> ::std::option::Option<&str> {
         self.version_id.as_deref()
     }
+    /// <p>A structure containing the Lake Formation audit context.</p>
+    pub fn audit_context(&self) -> ::std::option::Option<&crate::types::AuditContext> {
+        self.audit_context.as_ref()
+    }
 }
 impl GetTableVersionInput {
     /// Creates a new builder-style object to manufacture [`GetTableVersionInput`](crate::operation::get_table_version::GetTableVersionInput).
@@ -45,6 +51,7 @@ pub struct GetTableVersionInputBuilder {
     pub(crate) database_name: ::std::option::Option<::std::string::String>,
     pub(crate) table_name: ::std::option::Option<::std::string::String>,
     pub(crate) version_id: ::std::option::Option<::std::string::String>,
+    pub(crate) audit_context: ::std::option::Option<crate::types::AuditContext>,
 }
 impl GetTableVersionInputBuilder {
     /// <p>The ID of the Data Catalog where the tables reside. If none is provided, the Amazon Web Services account ID is used by default.</p>
@@ -105,6 +112,20 @@ impl GetTableVersionInputBuilder {
     pub fn get_version_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.version_id
     }
+    /// <p>A structure containing the Lake Formation audit context.</p>
+    pub fn audit_context(mut self, input: crate::types::AuditContext) -> Self {
+        self.audit_context = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A structure containing the Lake Formation audit context.</p>
+    pub fn set_audit_context(mut self, input: ::std::option::Option<crate::types::AuditContext>) -> Self {
+        self.audit_context = input;
+        self
+    }
+    /// <p>A structure containing the Lake Formation audit context.</p>
+    pub fn get_audit_context(&self) -> &::std::option::Option<crate::types::AuditContext> {
+        &self.audit_context
+    }
     /// Consumes the builder and constructs a [`GetTableVersionInput`](crate::operation::get_table_version::GetTableVersionInput).
     pub fn build(
         self,
@@ -114,6 +135,7 @@ impl GetTableVersionInputBuilder {
             database_name: self.database_name,
             table_name: self.table_name,
             version_id: self.version_id,
+            audit_context: self.audit_context,
         })
     }
 }

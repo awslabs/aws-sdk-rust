@@ -201,4 +201,18 @@ impl UpdateServiceLevelObjectiveFluentBuilder {
     pub fn get_burn_rate_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BurnRateConfiguration>> {
         self.inner.get_burn_rate_configurations()
     }
+    /// Indicates whether DevOps Agent will automatically investigate this SLO when it is breached
+    pub fn auto_investigation_enabled(mut self, input: bool) -> Self {
+        self.inner = self.inner.auto_investigation_enabled(input);
+        self
+    }
+    /// Indicates whether DevOps Agent will automatically investigate this SLO when it is breached
+    pub fn set_auto_investigation_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_auto_investigation_enabled(input);
+        self
+    }
+    /// Indicates whether DevOps Agent will automatically investigate this SLO when it is breached
+    pub fn get_auto_investigation_enabled(&self) -> &::std::option::Option<bool> {
+        self.inner.get_auto_investigation_enabled()
+    }
 }

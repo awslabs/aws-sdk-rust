@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`arn(Option<String>)`](crate::operation::get_batch::GetBatchOutput::arn): <p>The unique ARN of the run batch.</p>
     ///   - [`uuid(Option<String>)`](crate::operation::get_batch::GetBatchOutput::uuid): <p>The universally unique identifier (UUID) for the run batch.</p>
     ///   - [`name(Option<String>)`](crate::operation::get_batch::GetBatchOutput::name): <p>The optional user-friendly name of the batch.</p>
-    ///   - [`status(Option<BatchStatus>)`](crate::operation::get_batch::GetBatchOutput::status): <p>The current status of the run batch.</p>
+    ///   - [`status(Option<BatchStatus>)`](crate::operation::get_batch::GetBatchOutput::status): <p>The current status of the run batch. Possible values: <code>CREATING</code> (initial setup), <code>PENDING</code> (ready to submit runs), <code>SUBMITTING</code> (submitting runs), <code>INPROGRESS</code> (runs executing), <code>STOPPING</code> (cancellation in progress), <code>PROCESSED</code> (all runs completed), <code>CANCELLED</code> (batch cancelled), <code>FAILED</code> (batch failed), <code>RUNS_DELETING</code> (deleting runs), <code>RUNS_DELETED</code> (runs deleted).</p>
     ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::get_batch::GetBatchOutput::tags): <p>AWS tags associated with the run batch.</p>
     ///   - [`total_runs(Option<i32>)`](crate::operation::get_batch::GetBatchOutput::total_runs): <p>The total number of runs in the batch.</p>
     ///   - [`default_run_setting(Option<DefaultRunSetting>)`](crate::operation::get_batch::GetBatchOutput::default_run_setting): <p>The shared configuration applied to all runs in the batch. See <code>DefaultRunSetting</code>.</p>

@@ -237,6 +237,8 @@ pub(crate) mod shape_calendar_interval;
 
 pub(crate) mod shape_canary_entity;
 
+pub(crate) mod shape_composite_sli_config;
+
 pub(crate) mod shape_dependency_graph;
 
 pub(crate) mod shape_grouping_source_key_string_list;
@@ -267,6 +269,10 @@ pub(crate) mod shape_service_operation_entity;
 
 pub(crate) mod shape_auditor_result;
 
+pub(crate) mod shape_composite_sli_component;
+
+pub(crate) mod shape_composite_sli_components;
+
 pub(crate) mod shape_dimensions;
 
 pub(crate) mod shape_edges;
@@ -276,6 +282,8 @@ pub(crate) mod shape_metric_data_queries;
 pub(crate) mod shape_metric_stat;
 
 pub(crate) mod shape_nodes;
+
+pub(crate) mod shape_selection_config;
 
 pub(crate) mod shape_attribute_filter_values;
 

@@ -13,6 +13,7 @@
 /// # let modificationresourceenum = unimplemented!();
 /// match modificationresourceenum {
 ///     ModificationResourceEnum::ComputeType => { /* ... */ },
+///     ModificationResourceEnum::Protocol => { /* ... */ },
 ///     ModificationResourceEnum::RootVolume => { /* ... */ },
 ///     ModificationResourceEnum::UserVolume => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -46,6 +47,8 @@ pub enum ModificationResourceEnum {
     #[allow(missing_docs)] // documentation missing in model
     ComputeType,
     #[allow(missing_docs)] // documentation missing in model
+    Protocol,
+    #[allow(missing_docs)] // documentation missing in model
     RootVolume,
     #[allow(missing_docs)] // documentation missing in model
     UserVolume,
@@ -57,6 +60,7 @@ impl ::std::convert::From<&str> for ModificationResourceEnum {
     fn from(s: &str) -> Self {
         match s {
             "COMPUTE_TYPE" => ModificationResourceEnum::ComputeType,
+            "PROTOCOL" => ModificationResourceEnum::Protocol,
             "ROOT_VOLUME" => ModificationResourceEnum::RootVolume,
             "USER_VOLUME" => ModificationResourceEnum::UserVolume,
             other => ModificationResourceEnum::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -75,6 +79,7 @@ impl ModificationResourceEnum {
     pub fn as_str(&self) -> &str {
         match self {
             ModificationResourceEnum::ComputeType => "COMPUTE_TYPE",
+            ModificationResourceEnum::Protocol => "PROTOCOL",
             ModificationResourceEnum::RootVolume => "ROOT_VOLUME",
             ModificationResourceEnum::UserVolume => "USER_VOLUME",
             ModificationResourceEnum::Unknown(value) => value.as_str(),
@@ -82,7 +87,7 @@ impl ModificationResourceEnum {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["COMPUTE_TYPE", "ROOT_VOLUME", "USER_VOLUME"]
+        &["COMPUTE_TYPE", "PROTOCOL", "ROOT_VOLUME", "USER_VOLUME"]
     }
 }
 impl ::std::convert::AsRef<str> for ModificationResourceEnum {
@@ -106,6 +111,7 @@ impl ::std::fmt::Display for ModificationResourceEnum {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ModificationResourceEnum::ComputeType => write!(f, "COMPUTE_TYPE"),
+            ModificationResourceEnum::Protocol => write!(f, "PROTOCOL"),
             ModificationResourceEnum::RootVolume => write!(f, "ROOT_VOLUME"),
             ModificationResourceEnum::UserVolume => write!(f, "USER_VOLUME"),
             ModificationResourceEnum::Unknown(value) => write!(f, "{value}"),
