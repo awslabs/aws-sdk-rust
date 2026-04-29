@@ -25,6 +25,10 @@ where
                                     .transpose()?,
                             );
                         }
+                        "CustomAdTypes" => {
+                            builder = builder
+                                .set_custom_ad_types(crate::protocol_serde::shape_custom_ad_type_list::de_custom_ad_type_list(tokens, _value)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {
@@ -57,6 +61,15 @@ pub fn ser_scte(
     }
     if let Some(var_4) = &input.scte_in_segments {
         object.key("ScteInSegments").string(var_4.as_str());
+    }
+    if let Some(var_5) = &input.custom_ad_types {
+        let mut array_6 = object.key("CustomAdTypes").start_array();
+        for item_7 in var_5 {
+            {
+                array_6.value().string(item_7.as_str());
+            }
+        }
+        array_6.finish();
     }
     Ok(())
 }

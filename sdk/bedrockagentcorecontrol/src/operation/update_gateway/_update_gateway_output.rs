@@ -357,7 +357,6 @@ impl UpdateGatewayOutputBuilder {
         &self.role_arn
     }
     /// <p>The updated protocol type for the gateway.</p>
-    /// This field is required.
     pub fn protocol_type(mut self, input: crate::types::GatewayProtocolType) -> Self {
         self.protocol_type = ::std::option::Option::Some(input);
         self
@@ -528,7 +527,6 @@ impl UpdateGatewayOutputBuilder {
     /// - [`updated_at`](crate::operation::update_gateway::builders::UpdateGatewayOutputBuilder::updated_at)
     /// - [`status`](crate::operation::update_gateway::builders::UpdateGatewayOutputBuilder::status)
     /// - [`name`](crate::operation::update_gateway::builders::UpdateGatewayOutputBuilder::name)
-    /// - [`protocol_type`](crate::operation::update_gateway::builders::UpdateGatewayOutputBuilder::protocol_type)
     /// - [`authorizer_type`](crate::operation::update_gateway::builders::UpdateGatewayOutputBuilder::authorizer_type)
     pub fn build(
         self,
@@ -574,12 +572,11 @@ impl UpdateGatewayOutputBuilder {
             })?,
             description: self.description,
             role_arn: self.role_arn,
-            protocol_type: self.protocol_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "protocol_type",
-                    "protocol_type was not specified but it is required when building UpdateGatewayOutput",
-                )
-            })?,
+            protocol_type: self.protocol_type.unwrap_or(
+                "MCP"
+                    .parse::<crate::types::GatewayProtocolType>()
+                    .expect("static value validated to member"),
+            ),
             protocol_configuration: self.protocol_configuration,
             authorizer_type: self.authorizer_type.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(

@@ -69,8 +69,38 @@ pub(crate) fn reflens_list_code_interpreters_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_configuration_bundle_versions_output_output_next_token(
+    input: &crate::operation::list_configuration_bundle_versions::ListConfigurationBundleVersionsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_configuration_bundles_output_output_next_token(
+    input: &crate::operation::list_configuration_bundles::ListConfigurationBundlesOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_evaluators_output_output_next_token(
     input: &crate::operation::list_evaluators::ListEvaluatorsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_gateway_rules_output_output_next_token(
+    input: &crate::operation::list_gateway_rules::ListGatewayRulesOutput,
 ) -> ::std::option::Option<&::std::string::String> {
     let input = match &input.next_token {
         ::std::option::Option::None => return ::std::option::Option::None,
@@ -258,10 +288,31 @@ pub(crate) fn lens_list_code_interpreters_output_output_code_interpreter_summari
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn lens_list_configuration_bundle_versions_output_output_versions(
+    input: crate::operation::list_configuration_bundle_versions::ListConfigurationBundleVersionsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::ConfigurationBundleVersionSummary>> {
+    let input = input.versions;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_configuration_bundles_output_output_bundles(
+    input: crate::operation::list_configuration_bundles::ListConfigurationBundlesOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::ConfigurationBundleSummary>> {
+    let input = input.bundles;
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn lens_list_evaluators_output_output_evaluators(
     input: crate::operation::list_evaluators::ListEvaluatorsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::EvaluatorSummary>> {
     let input = input.evaluators;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_gateway_rules_output_output_gateway_rules(
+    input: crate::operation::list_gateway_rules::ListGatewayRulesOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::GatewayRuleDetail>> {
+    let input = input.gateway_rules;
     ::std::option::Option::Some(input)
 }
 

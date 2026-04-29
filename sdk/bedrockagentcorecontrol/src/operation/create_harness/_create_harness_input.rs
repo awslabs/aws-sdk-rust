@@ -33,7 +33,7 @@ pub struct CreateHarnessInput {
     pub truncation: ::std::option::Option<crate::types::HarnessTruncationConfiguration>,
     /// <p>The maximum number of iterations the agent loop can execute per invocation.</p>
     pub max_iterations: ::std::option::Option<i32>,
-    /// <p>The maximum number of tokens the agent can generate per iteration.</p>
+    /// <p>The maximum total number of output tokens the agent can generate across all model calls within a single invocation.</p>
     pub max_tokens: ::std::option::Option<i32>,
     /// <p>The maximum duration in seconds for the agent loop execution per invocation.</p>
     pub timeout_seconds: ::std::option::Option<i32>,
@@ -109,7 +109,7 @@ impl CreateHarnessInput {
     pub fn max_iterations(&self) -> ::std::option::Option<i32> {
         self.max_iterations
     }
-    /// <p>The maximum number of tokens the agent can generate per iteration.</p>
+    /// <p>The maximum total number of output tokens the agent can generate across all model calls within a single invocation.</p>
     pub fn max_tokens(&self) -> ::std::option::Option<i32> {
         self.max_tokens
     }
@@ -426,17 +426,17 @@ impl CreateHarnessInputBuilder {
     pub fn get_max_iterations(&self) -> &::std::option::Option<i32> {
         &self.max_iterations
     }
-    /// <p>The maximum number of tokens the agent can generate per iteration.</p>
+    /// <p>The maximum total number of output tokens the agent can generate across all model calls within a single invocation.</p>
     pub fn max_tokens(mut self, input: i32) -> Self {
         self.max_tokens = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The maximum number of tokens the agent can generate per iteration.</p>
+    /// <p>The maximum total number of output tokens the agent can generate across all model calls within a single invocation.</p>
     pub fn set_max_tokens(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_tokens = input;
         self
     }
-    /// <p>The maximum number of tokens the agent can generate per iteration.</p>
+    /// <p>The maximum total number of output tokens the agent can generate across all model calls within a single invocation.</p>
     pub fn get_max_tokens(&self) -> &::std::option::Option<i32> {
         &self.max_tokens
     }

@@ -29,6 +29,8 @@ pub struct CreateOriginEndpointInput {
     pub mss_manifests: ::std::option::Option<::std::vec::Vec<crate::types::CreateMssManifestConfiguration>>,
     /// <p>The failover settings for the endpoint.</p>
     pub force_endpoint_error_configuration: ::std::option::Option<crate::types::ForceEndpointErrorConfiguration>,
+    /// <p>The separator character to use in generated URIs for this origin endpoint. This setting applies to all manifest types on the endpoint. If you don't specify a value, the default is <code>UNDERSCORE</code>.</p>
+    pub uri_separator: ::std::option::Option<crate::types::UriSeparator>,
     /// <p>A comma-separated list of tag key:value pairs that you define. For example:</p>
     /// <p><code>"Key1": "Value1",</code></p>
     /// <p><code>"Key2": "Value2"</code></p>
@@ -95,6 +97,10 @@ impl CreateOriginEndpointInput {
     pub fn force_endpoint_error_configuration(&self) -> ::std::option::Option<&crate::types::ForceEndpointErrorConfiguration> {
         self.force_endpoint_error_configuration.as_ref()
     }
+    /// <p>The separator character to use in generated URIs for this origin endpoint. This setting applies to all manifest types on the endpoint. If you don't specify a value, the default is <code>UNDERSCORE</code>.</p>
+    pub fn uri_separator(&self) -> ::std::option::Option<&crate::types::UriSeparator> {
+        self.uri_separator.as_ref()
+    }
     /// <p>A comma-separated list of tag key:value pairs that you define. For example:</p>
     /// <p><code>"Key1": "Value1",</code></p>
     /// <p><code>"Key2": "Value2"</code></p>
@@ -126,6 +132,7 @@ pub struct CreateOriginEndpointInputBuilder {
     pub(crate) dash_manifests: ::std::option::Option<::std::vec::Vec<crate::types::CreateDashManifestConfiguration>>,
     pub(crate) mss_manifests: ::std::option::Option<::std::vec::Vec<crate::types::CreateMssManifestConfiguration>>,
     pub(crate) force_endpoint_error_configuration: ::std::option::Option<crate::types::ForceEndpointErrorConfiguration>,
+    pub(crate) uri_separator: ::std::option::Option<crate::types::UriSeparator>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateOriginEndpointInputBuilder {
@@ -342,6 +349,20 @@ impl CreateOriginEndpointInputBuilder {
     pub fn get_force_endpoint_error_configuration(&self) -> &::std::option::Option<crate::types::ForceEndpointErrorConfiguration> {
         &self.force_endpoint_error_configuration
     }
+    /// <p>The separator character to use in generated URIs for this origin endpoint. This setting applies to all manifest types on the endpoint. If you don't specify a value, the default is <code>UNDERSCORE</code>.</p>
+    pub fn uri_separator(mut self, input: crate::types::UriSeparator) -> Self {
+        self.uri_separator = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The separator character to use in generated URIs for this origin endpoint. This setting applies to all manifest types on the endpoint. If you don't specify a value, the default is <code>UNDERSCORE</code>.</p>
+    pub fn set_uri_separator(mut self, input: ::std::option::Option<crate::types::UriSeparator>) -> Self {
+        self.uri_separator = input;
+        self
+    }
+    /// <p>The separator character to use in generated URIs for this origin endpoint. This setting applies to all manifest types on the endpoint. If you don't specify a value, the default is <code>UNDERSCORE</code>.</p>
+    pub fn get_uri_separator(&self) -> &::std::option::Option<crate::types::UriSeparator> {
+        &self.uri_separator
+    }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -387,6 +408,7 @@ impl CreateOriginEndpointInputBuilder {
             dash_manifests: self.dash_manifests,
             mss_manifests: self.mss_manifests,
             force_endpoint_error_configuration: self.force_endpoint_error_configuration,
+            uri_separator: self.uri_separator,
             tags: self.tags,
         })
     }

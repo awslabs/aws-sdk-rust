@@ -128,17 +128,35 @@ impl DescribePlayerSessionsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::describe_player_sessions::paginator::DescribePlayerSessionsPaginator {
         crate::operation::describe_player_sessions::paginator::DescribePlayerSessionsPaginator::new(self.handle, self.inner)
     }
-    /// <p>A unique identifier for the game session to retrieve player sessions for.</p>
+    /// <p>An identifier for the game session that is unique across all regions to retrieve player sessions for. The value is always a full ARN in the following format: <code>arn:aws:gamelift:<location>
+    /// ::gamesession/
+    /// <fleet id>
+    /// /
+    /// <id string></id>
+    /// </fleet>
+    /// </location></code>.</p>
     pub fn game_session_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.game_session_id(input.into());
         self
     }
-    /// <p>A unique identifier for the game session to retrieve player sessions for.</p>
+    /// <p>An identifier for the game session that is unique across all regions to retrieve player sessions for. The value is always a full ARN in the following format: <code>arn:aws:gamelift:<location>
+    /// ::gamesession/
+    /// <fleet id>
+    /// /
+    /// <id string></id>
+    /// </fleet>
+    /// </location></code>.</p>
     pub fn set_game_session_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_game_session_id(input);
         self
     }
-    /// <p>A unique identifier for the game session to retrieve player sessions for.</p>
+    /// <p>An identifier for the game session that is unique across all regions to retrieve player sessions for. The value is always a full ARN in the following format: <code>arn:aws:gamelift:<location>
+    /// ::gamesession/
+    /// <fleet id>
+    /// /
+    /// <id string></id>
+    /// </fleet>
+    /// </location></code>.</p>
     pub fn get_game_session_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_game_session_id()
     }

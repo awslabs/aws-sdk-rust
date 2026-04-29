@@ -11,7 +11,7 @@ pub struct CreateMonitorInput {
     pub display_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name of the IAM Identity Center instance that authenticates monitor users.</p>
     pub identity_center_instance_arn: ::std::option::Option<::std::string::String>,
-    /// The AWS region where IAM Identity Center is enabled. Required when Identity Center is in a different region than the monitor.
+    /// <p>The AWS Region where IAM Identity Center is enabled. Required when IAM Identity Center is in a different Region than the monitor.</p>
     pub identity_center_region: ::std::option::Option<::std::string::String>,
     /// <p>The subdomain to use when creating the monitor URL. The full URL of the monitor is subdomain.Region.deadlinecloud.amazonaws.com.</p>
     pub subdomain: ::std::option::Option<::std::string::String>,
@@ -35,7 +35,7 @@ impl CreateMonitorInput {
     pub fn identity_center_instance_arn(&self) -> ::std::option::Option<&str> {
         self.identity_center_instance_arn.as_deref()
     }
-    /// The AWS region where IAM Identity Center is enabled. Required when Identity Center is in a different region than the monitor.
+    /// <p>The AWS Region where IAM Identity Center is enabled. Required when IAM Identity Center is in a different Region than the monitor.</p>
     pub fn identity_center_region(&self) -> ::std::option::Option<&str> {
         self.identity_center_region.as_deref()
     }
@@ -122,17 +122,17 @@ impl CreateMonitorInputBuilder {
     pub fn get_identity_center_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.identity_center_instance_arn
     }
-    /// The AWS region where IAM Identity Center is enabled. Required when Identity Center is in a different region than the monitor.
+    /// <p>The AWS Region where IAM Identity Center is enabled. Required when IAM Identity Center is in a different Region than the monitor.</p>
     pub fn identity_center_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identity_center_region = ::std::option::Option::Some(input.into());
         self
     }
-    /// The AWS region where IAM Identity Center is enabled. Required when Identity Center is in a different region than the monitor.
+    /// <p>The AWS Region where IAM Identity Center is enabled. Required when IAM Identity Center is in a different Region than the monitor.</p>
     pub fn set_identity_center_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.identity_center_region = input;
         self
     }
-    /// The AWS region where IAM Identity Center is enabled. Required when Identity Center is in a different region than the monitor.
+    /// <p>The AWS Region where IAM Identity Center is enabled. Required when IAM Identity Center is in a different Region than the monitor.</p>
     pub fn get_identity_center_region(&self) -> &::std::option::Option<::std::string::String> {
         &self.identity_center_region
     }

@@ -350,17 +350,17 @@ impl CreateHarnessFluentBuilder {
     pub fn get_max_iterations(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_iterations()
     }
-    /// <p>The maximum number of tokens the agent can generate per iteration.</p>
+    /// <p>The maximum total number of output tokens the agent can generate across all model calls within a single invocation.</p>
     pub fn max_tokens(mut self, input: i32) -> Self {
         self.inner = self.inner.max_tokens(input);
         self
     }
-    /// <p>The maximum number of tokens the agent can generate per iteration.</p>
+    /// <p>The maximum total number of output tokens the agent can generate across all model calls within a single invocation.</p>
     pub fn set_max_tokens(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_tokens(input);
         self
     }
-    /// <p>The maximum number of tokens the agent can generate per iteration.</p>
+    /// <p>The maximum total number of output tokens the agent can generate across all model calls within a single invocation.</p>
     pub fn get_max_tokens(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_tokens()
     }

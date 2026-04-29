@@ -258,6 +258,34 @@ impl From<crate::operation::complete_resource_token_auth::CompleteResourceTokenA
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_ab_test::CreateABTestError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_ab_test::CreateABTestError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_ab_test::CreateABTestError> for Error {
+    fn from(err: crate::operation::create_ab_test::CreateABTestError) -> Self {
+        match err {
+            crate::operation::create_ab_test::CreateABTestError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_ab_test::CreateABTestError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_ab_test::CreateABTestError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::create_ab_test::CreateABTestError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::create_ab_test::CreateABTestError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_ab_test::CreateABTestError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::create_ab_test::CreateABTestError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::create_ab_test::CreateABTestError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_event::CreateEventError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -284,6 +312,72 @@ impl From<crate::operation::create_event::CreateEventError> for Error {
             crate::operation::create_event::CreateEventError::ThrottledException(inner) => Error::ThrottledException(inner),
             crate::operation::create_event::CreateEventError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::create_event::CreateEventError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_ab_test::DeleteABTestError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_ab_test::DeleteABTestError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_ab_test::DeleteABTestError> for Error {
+    fn from(err: crate::operation::delete_ab_test::DeleteABTestError) -> Self {
+        match err {
+            crate::operation::delete_ab_test::DeleteABTestError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_ab_test::DeleteABTestError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::delete_ab_test::DeleteABTestError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::delete_ab_test::DeleteABTestError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_ab_test::DeleteABTestError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_ab_test::DeleteABTestError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::delete_ab_test::DeleteABTestError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_ab_test::DeleteABTestError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_batch_evaluation::DeleteBatchEvaluationError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_batch_evaluation::DeleteBatchEvaluationError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_batch_evaluation::DeleteBatchEvaluationError> for Error {
+    fn from(err: crate::operation::delete_batch_evaluation::DeleteBatchEvaluationError) -> Self {
+        match err {
+            crate::operation::delete_batch_evaluation::DeleteBatchEvaluationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::delete_batch_evaluation::DeleteBatchEvaluationError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::delete_batch_evaluation::DeleteBatchEvaluationError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::delete_batch_evaluation::DeleteBatchEvaluationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_batch_evaluation::DeleteBatchEvaluationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_batch_evaluation::DeleteBatchEvaluationError::UnauthorizedException(inner) => {
+                Error::UnauthorizedException(inner)
+            }
+            crate::operation::delete_batch_evaluation::DeleteBatchEvaluationError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_batch_evaluation::DeleteBatchEvaluationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -347,6 +441,37 @@ impl From<crate::operation::delete_memory_record::DeleteMemoryRecordError> for E
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_recommendation::DeleteRecommendationError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_recommendation::DeleteRecommendationError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_recommendation::DeleteRecommendationError> for Error {
+    fn from(err: crate::operation::delete_recommendation::DeleteRecommendationError) -> Self {
+        match err {
+            crate::operation::delete_recommendation::DeleteRecommendationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_recommendation::DeleteRecommendationError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::delete_recommendation::DeleteRecommendationError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::delete_recommendation::DeleteRecommendationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_recommendation::DeleteRecommendationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_recommendation::DeleteRecommendationError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_recommendation::DeleteRecommendationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::evaluate::EvaluateError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -377,6 +502,33 @@ impl From<crate::operation::evaluate::EvaluateError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_ab_test::GetABTestError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_ab_test::GetABTestError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_ab_test::GetABTestError> for Error {
+    fn from(err: crate::operation::get_ab_test::GetABTestError) -> Self {
+        match err {
+            crate::operation::get_ab_test::GetABTestError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_ab_test::GetABTestError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_ab_test::GetABTestError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_ab_test::GetABTestError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_ab_test::GetABTestError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::get_ab_test::GetABTestError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_ab_test::GetABTestError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_agent_card::GetAgentCardError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -402,6 +554,35 @@ impl From<crate::operation::get_agent_card::GetAgentCardError> for Error {
             crate::operation::get_agent_card::GetAgentCardError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::get_agent_card::GetAgentCardError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::get_agent_card::GetAgentCardError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_batch_evaluation::GetBatchEvaluationError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_batch_evaluation::GetBatchEvaluationError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_batch_evaluation::GetBatchEvaluationError> for Error {
+    fn from(err: crate::operation::get_batch_evaluation::GetBatchEvaluationError) -> Self {
+        match err {
+            crate::operation::get_batch_evaluation::GetBatchEvaluationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_batch_evaluation::GetBatchEvaluationError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_batch_evaluation::GetBatchEvaluationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_batch_evaluation::GetBatchEvaluationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_batch_evaluation::GetBatchEvaluationError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::get_batch_evaluation::GetBatchEvaluationError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_batch_evaluation::GetBatchEvaluationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -527,6 +708,32 @@ impl From<crate::operation::get_memory_record::GetMemoryRecordError> for Error {
             crate::operation::get_memory_record::GetMemoryRecordError::ThrottledException(inner) => Error::ThrottledException(inner),
             crate::operation::get_memory_record::GetMemoryRecordError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::get_memory_record::GetMemoryRecordError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_recommendation::GetRecommendationError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_recommendation::GetRecommendationError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_recommendation::GetRecommendationError> for Error {
+    fn from(err: crate::operation::get_recommendation::GetRecommendationError) -> Self {
+        match err {
+            crate::operation::get_recommendation::GetRecommendationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_recommendation::GetRecommendationError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_recommendation::GetRecommendationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_recommendation::GetRecommendationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_recommendation::GetRecommendationError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_recommendation::GetRecommendationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -903,6 +1110,32 @@ impl From<crate::operation::invoke_harness::InvokeHarnessError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_ab_tests::ListABTestsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_ab_tests::ListABTestsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_ab_tests::ListABTestsError> for Error {
+    fn from(err: crate::operation::list_ab_tests::ListABTestsError) -> Self {
+        match err {
+            crate::operation::list_ab_tests::ListABTestsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_ab_tests::ListABTestsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_ab_tests::ListABTestsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_ab_tests::ListABTestsError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::list_ab_tests::ListABTestsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_ab_tests::ListABTestsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_actors::ListActorsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -928,6 +1161,34 @@ impl From<crate::operation::list_actors::ListActorsError> for Error {
             crate::operation::list_actors::ListActorsError::ThrottledException(inner) => Error::ThrottledException(inner),
             crate::operation::list_actors::ListActorsError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_actors::ListActorsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_batch_evaluations::ListBatchEvaluationsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_batch_evaluations::ListBatchEvaluationsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_batch_evaluations::ListBatchEvaluationsError> for Error {
+    fn from(err: crate::operation::list_batch_evaluations::ListBatchEvaluationsError) -> Self {
+        match err {
+            crate::operation::list_batch_evaluations::ListBatchEvaluationsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_batch_evaluations::ListBatchEvaluationsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_batch_evaluations::ListBatchEvaluationsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_batch_evaluations::ListBatchEvaluationsError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::list_batch_evaluations::ListBatchEvaluationsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_batch_evaluations::ListBatchEvaluationsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1104,6 +1365,31 @@ impl From<crate::operation::list_memory_records::ListMemoryRecordsError> for Err
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_recommendations::ListRecommendationsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_recommendations::ListRecommendationsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_recommendations::ListRecommendationsError> for Error {
+    fn from(err: crate::operation::list_recommendations::ListRecommendationsError) -> Self {
+        match err {
+            crate::operation::list_recommendations::ListRecommendationsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_recommendations::ListRecommendationsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_recommendations::ListRecommendationsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_recommendations::ListRecommendationsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_recommendations::ListRecommendationsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_sessions::ListSessionsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1249,6 +1535,38 @@ impl From<crate::operation::search_registry_records::SearchRegistryRecordsError>
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_batch_evaluation::StartBatchEvaluationError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_batch_evaluation::StartBatchEvaluationError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::start_batch_evaluation::StartBatchEvaluationError> for Error {
+    fn from(err: crate::operation::start_batch_evaluation::StartBatchEvaluationError) -> Self {
+        match err {
+            crate::operation::start_batch_evaluation::StartBatchEvaluationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::start_batch_evaluation::StartBatchEvaluationError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::start_batch_evaluation::StartBatchEvaluationError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::start_batch_evaluation::StartBatchEvaluationError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::start_batch_evaluation::StartBatchEvaluationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::start_batch_evaluation::StartBatchEvaluationError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::start_batch_evaluation::StartBatchEvaluationError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::start_batch_evaluation::StartBatchEvaluationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_browser_session::StartBrowserSessionError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1372,6 +1690,67 @@ impl From<crate::operation::start_memory_extraction_job::StartMemoryExtractionJo
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_recommendation::StartRecommendationError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_recommendation::StartRecommendationError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::start_recommendation::StartRecommendationError> for Error {
+    fn from(err: crate::operation::start_recommendation::StartRecommendationError) -> Self {
+        match err {
+            crate::operation::start_recommendation::StartRecommendationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::start_recommendation::StartRecommendationError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::start_recommendation::StartRecommendationError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::start_recommendation::StartRecommendationError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::start_recommendation::StartRecommendationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::start_recommendation::StartRecommendationError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::start_recommendation::StartRecommendationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::stop_batch_evaluation::StopBatchEvaluationError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::stop_batch_evaluation::StopBatchEvaluationError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::stop_batch_evaluation::StopBatchEvaluationError> for Error {
+    fn from(err: crate::operation::stop_batch_evaluation::StopBatchEvaluationError) -> Self {
+        match err {
+            crate::operation::stop_batch_evaluation::StopBatchEvaluationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::stop_batch_evaluation::StopBatchEvaluationError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::stop_batch_evaluation::StopBatchEvaluationError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::stop_batch_evaluation::StopBatchEvaluationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::stop_batch_evaluation::StopBatchEvaluationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::stop_batch_evaluation::StopBatchEvaluationError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::stop_batch_evaluation::StopBatchEvaluationError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::stop_batch_evaluation::StopBatchEvaluationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::stop_browser_session::StopBrowserSessionError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1480,6 +1859,35 @@ impl From<crate::operation::stop_runtime_session::StopRuntimeSessionError> for E
             crate::operation::stop_runtime_session::StopRuntimeSessionError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
             crate::operation::stop_runtime_session::StopRuntimeSessionError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::stop_runtime_session::StopRuntimeSessionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_ab_test::UpdateABTestError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_ab_test::UpdateABTestError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_ab_test::UpdateABTestError> for Error {
+    fn from(err: crate::operation::update_ab_test::UpdateABTestError) -> Self {
+        match err {
+            crate::operation::update_ab_test::UpdateABTestError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_ab_test::UpdateABTestError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::update_ab_test::UpdateABTestError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::update_ab_test::UpdateABTestError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_ab_test::UpdateABTestError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::update_ab_test::UpdateABTestError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::update_ab_test::UpdateABTestError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::update_ab_test::UpdateABTestError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::update_ab_test::UpdateABTestError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

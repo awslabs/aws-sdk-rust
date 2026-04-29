@@ -3,6 +3,8 @@ pub use crate::types::_alternate_contact_type::AlternateContactType;
 
 pub use crate::types::_validation_exception_reason::ValidationExceptionReason;
 
+pub use crate::types::_account_state::AccountState;
+
 pub use crate::types::_alternate_contact::AlternateContact;
 
 pub use crate::types::_aws_account_state::AwsAccountState;
@@ -16,6 +18,8 @@ pub use crate::types::_region_opt_status::RegionOptStatus;
 pub use crate::types::_validation_exception_field::ValidationExceptionField;
 
 pub use crate::types::_region::Region;
+
+mod _account_state;
 
 mod _alternate_contact;
 

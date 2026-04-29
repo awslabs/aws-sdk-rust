@@ -202,9 +202,13 @@ mod create_browser_profile;
 
 mod create_code_interpreter;
 
+mod create_configuration_bundle;
+
 mod create_evaluator;
 
 mod create_gateway;
+
+mod create_gateway_rule;
 
 mod create_gateway_target;
 
@@ -265,9 +269,13 @@ mod delete_browser_profile;
 
 mod delete_code_interpreter;
 
+mod delete_configuration_bundle;
+
 mod delete_evaluator;
 
 mod delete_gateway;
+
+mod delete_gateway_rule;
 
 mod delete_gateway_target;
 
@@ -303,9 +311,15 @@ mod get_browser_profile;
 
 mod get_code_interpreter;
 
+mod get_configuration_bundle;
+
+mod get_configuration_bundle_version;
+
 mod get_evaluator;
 
 mod get_gateway;
+
+mod get_gateway_rule;
 
 mod get_gateway_target;
 
@@ -347,7 +361,13 @@ mod list_browsers;
 
 mod list_code_interpreters;
 
+mod list_configuration_bundle_versions;
+
+mod list_configuration_bundles;
+
 mod list_evaluators;
+
+mod list_gateway_rules;
 
 mod list_gateway_targets;
 
@@ -397,9 +417,13 @@ mod update_agent_runtime_endpoint;
 
 mod update_api_key_credential_provider;
 
+mod update_configuration_bundle;
+
 mod update_evaluator;
 
 mod update_gateway;
+
+mod update_gateway_rule;
 
 mod update_gateway_target;
 

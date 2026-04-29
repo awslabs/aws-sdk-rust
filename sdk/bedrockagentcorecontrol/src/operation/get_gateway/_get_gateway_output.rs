@@ -357,7 +357,6 @@ impl GetGatewayOutputBuilder {
         &self.role_arn
     }
     /// <p>Protocol applied to a gateway.</p>
-    /// This field is required.
     pub fn protocol_type(mut self, input: crate::types::GatewayProtocolType) -> Self {
         self.protocol_type = ::std::option::Option::Some(input);
         self
@@ -528,7 +527,6 @@ impl GetGatewayOutputBuilder {
     /// - [`updated_at`](crate::operation::get_gateway::builders::GetGatewayOutputBuilder::updated_at)
     /// - [`status`](crate::operation::get_gateway::builders::GetGatewayOutputBuilder::status)
     /// - [`name`](crate::operation::get_gateway::builders::GetGatewayOutputBuilder::name)
-    /// - [`protocol_type`](crate::operation::get_gateway::builders::GetGatewayOutputBuilder::protocol_type)
     /// - [`authorizer_type`](crate::operation::get_gateway::builders::GetGatewayOutputBuilder::authorizer_type)
     pub fn build(self) -> ::std::result::Result<crate::operation::get_gateway::GetGatewayOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_gateway::GetGatewayOutput {
@@ -572,12 +570,11 @@ impl GetGatewayOutputBuilder {
             })?,
             description: self.description,
             role_arn: self.role_arn,
-            protocol_type: self.protocol_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "protocol_type",
-                    "protocol_type was not specified but it is required when building GetGatewayOutput",
-                )
-            })?,
+            protocol_type: self.protocol_type.unwrap_or(
+                "MCP"
+                    .parse::<crate::types::GatewayProtocolType>()
+                    .expect("static value validated to member"),
+            ),
             protocol_configuration: self.protocol_configuration,
             authorizer_type: self.authorizer_type.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(

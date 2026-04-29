@@ -23,6 +23,7 @@ pub struct CreateContainerFleetInput {
     /// <p>You can also choose to manually set this parameter. When manually setting this parameter, you must use port numbers that match the fleet's inbound permissions port range.</p><note>
     /// <p>If you set values manually, Amazon GameLift Servers no longer calculates a port range for you, even if you later remove the manual settings.</p>
     /// </note>
+    /// <p>The port range must not overlap with the Amazon GameLift Servers reserved port range <code>4092-4191</code>. This range is reserved for internal Amazon GameLift Servers services.</p>
     pub instance_connection_port_range: ::std::option::Option<crate::types::ConnectionPortRange>,
     /// <p>The IP address ranges and port settings that allow inbound traffic to access game server processes and other processes on this fleet. As a best practice, when remotely accessing a fleet instance, we recommend opening ports only when you need them and closing them when you're finished.</p>
     /// <p>By default, Amazon GameLift Servers calculates an optimal port range based on your fleet configuration. To use the calculated range, don't set this parameter. The values are:</p>
@@ -35,6 +36,7 @@ pub struct CreateContainerFleetInput {
     /// <p>You can also choose to manually set this parameter. When manually setting this parameter, you must use port numbers that match the fleet's connection port range.</p><note>
     /// <p>If you set values manually, Amazon GameLift Servers no longer calculates a port range for you, even if you later remove the manual settings.</p>
     /// </note>
+    /// <p>The port range must not overlap with the Amazon GameLift Servers reserved port range <code>4092-4191</code>. This range is reserved for internal Amazon GameLift Servers services.</p>
     pub instance_inbound_permissions: ::std::option::Option<::std::vec::Vec<crate::types::IpPermission>>,
     /// <p>The number of times to replicate the game server container group on each fleet instance.</p>
     /// <p>By default, Amazon GameLift Servers calculates the maximum number of game server container groups that can fit on each instance. This calculation is based on the CPU and memory resources of the fleet's instance type). To use the calculated maximum, don't set this parameter. If you set this number manually, Amazon GameLift Servers uses your value as long as it's less than the calculated maximum.</p>
@@ -118,6 +120,7 @@ impl CreateContainerFleetInput {
     /// <p>You can also choose to manually set this parameter. When manually setting this parameter, you must use port numbers that match the fleet's inbound permissions port range.</p><note>
     /// <p>If you set values manually, Amazon GameLift Servers no longer calculates a port range for you, even if you later remove the manual settings.</p>
     /// </note>
+    /// <p>The port range must not overlap with the Amazon GameLift Servers reserved port range <code>4092-4191</code>. This range is reserved for internal Amazon GameLift Servers services.</p>
     pub fn instance_connection_port_range(&self) -> ::std::option::Option<&crate::types::ConnectionPortRange> {
         self.instance_connection_port_range.as_ref()
     }
@@ -132,6 +135,7 @@ impl CreateContainerFleetInput {
     /// <p>You can also choose to manually set this parameter. When manually setting this parameter, you must use port numbers that match the fleet's connection port range.</p><note>
     /// <p>If you set values manually, Amazon GameLift Servers no longer calculates a port range for you, even if you later remove the manual settings.</p>
     /// </note>
+    /// <p>The port range must not overlap with the Amazon GameLift Servers reserved port range <code>4092-4191</code>. This range is reserved for internal Amazon GameLift Servers services.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instance_inbound_permissions.is_none()`.
     pub fn instance_inbound_permissions(&self) -> &[crate::types::IpPermission] {
@@ -320,6 +324,7 @@ impl CreateContainerFleetInputBuilder {
     /// <p>You can also choose to manually set this parameter. When manually setting this parameter, you must use port numbers that match the fleet's inbound permissions port range.</p><note>
     /// <p>If you set values manually, Amazon GameLift Servers no longer calculates a port range for you, even if you later remove the manual settings.</p>
     /// </note>
+    /// <p>The port range must not overlap with the Amazon GameLift Servers reserved port range <code>4092-4191</code>. This range is reserved for internal Amazon GameLift Servers services.</p>
     pub fn instance_connection_port_range(mut self, input: crate::types::ConnectionPortRange) -> Self {
         self.instance_connection_port_range = ::std::option::Option::Some(input);
         self
@@ -333,6 +338,7 @@ impl CreateContainerFleetInputBuilder {
     /// <p>You can also choose to manually set this parameter. When manually setting this parameter, you must use port numbers that match the fleet's inbound permissions port range.</p><note>
     /// <p>If you set values manually, Amazon GameLift Servers no longer calculates a port range for you, even if you later remove the manual settings.</p>
     /// </note>
+    /// <p>The port range must not overlap with the Amazon GameLift Servers reserved port range <code>4092-4191</code>. This range is reserved for internal Amazon GameLift Servers services.</p>
     pub fn set_instance_connection_port_range(mut self, input: ::std::option::Option<crate::types::ConnectionPortRange>) -> Self {
         self.instance_connection_port_range = input;
         self
@@ -346,6 +352,7 @@ impl CreateContainerFleetInputBuilder {
     /// <p>You can also choose to manually set this parameter. When manually setting this parameter, you must use port numbers that match the fleet's inbound permissions port range.</p><note>
     /// <p>If you set values manually, Amazon GameLift Servers no longer calculates a port range for you, even if you later remove the manual settings.</p>
     /// </note>
+    /// <p>The port range must not overlap with the Amazon GameLift Servers reserved port range <code>4092-4191</code>. This range is reserved for internal Amazon GameLift Servers services.</p>
     pub fn get_instance_connection_port_range(&self) -> &::std::option::Option<crate::types::ConnectionPortRange> {
         &self.instance_connection_port_range
     }
@@ -364,6 +371,7 @@ impl CreateContainerFleetInputBuilder {
     /// <p>You can also choose to manually set this parameter. When manually setting this parameter, you must use port numbers that match the fleet's connection port range.</p><note>
     /// <p>If you set values manually, Amazon GameLift Servers no longer calculates a port range for you, even if you later remove the manual settings.</p>
     /// </note>
+    /// <p>The port range must not overlap with the Amazon GameLift Servers reserved port range <code>4092-4191</code>. This range is reserved for internal Amazon GameLift Servers services.</p>
     pub fn instance_inbound_permissions(mut self, input: crate::types::IpPermission) -> Self {
         let mut v = self.instance_inbound_permissions.unwrap_or_default();
         v.push(input);
@@ -381,6 +389,7 @@ impl CreateContainerFleetInputBuilder {
     /// <p>You can also choose to manually set this parameter. When manually setting this parameter, you must use port numbers that match the fleet's connection port range.</p><note>
     /// <p>If you set values manually, Amazon GameLift Servers no longer calculates a port range for you, even if you later remove the manual settings.</p>
     /// </note>
+    /// <p>The port range must not overlap with the Amazon GameLift Servers reserved port range <code>4092-4191</code>. This range is reserved for internal Amazon GameLift Servers services.</p>
     pub fn set_instance_inbound_permissions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IpPermission>>) -> Self {
         self.instance_inbound_permissions = input;
         self
@@ -396,6 +405,7 @@ impl CreateContainerFleetInputBuilder {
     /// <p>You can also choose to manually set this parameter. When manually setting this parameter, you must use port numbers that match the fleet's connection port range.</p><note>
     /// <p>If you set values manually, Amazon GameLift Servers no longer calculates a port range for you, even if you later remove the manual settings.</p>
     /// </note>
+    /// <p>The port range must not overlap with the Amazon GameLift Servers reserved port range <code>4092-4191</code>. This range is reserved for internal Amazon GameLift Servers services.</p>
     pub fn get_instance_inbound_permissions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IpPermission>> {
         &self.instance_inbound_permissions
     }

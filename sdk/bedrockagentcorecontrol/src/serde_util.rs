@@ -143,6 +143,24 @@ pub(crate) fn create_code_interpreter_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn create_configuration_bundle_output_output_correct_errors(
+    mut builder: crate::operation::create_configuration_bundle::builders::CreateConfigurationBundleOutputBuilder,
+) -> crate::operation::create_configuration_bundle::builders::CreateConfigurationBundleOutputBuilder {
+    if builder.bundle_arn.is_none() {
+        builder.bundle_arn = Some(Default::default())
+    }
+    if builder.bundle_id.is_none() {
+        builder.bundle_id = Some(Default::default())
+    }
+    if builder.version_id.is_none() {
+        builder.version_id = Some(Default::default())
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
 pub(crate) fn create_evaluator_output_output_correct_errors(
     mut builder: crate::operation::create_evaluator::builders::CreateEvaluatorOutputBuilder,
 ) -> crate::operation::create_evaluator::builders::CreateEvaluatorOutputBuilder {
@@ -182,11 +200,32 @@ pub(crate) fn create_gateway_output_output_correct_errors(
     if builder.name.is_none() {
         builder.name = Some(Default::default())
     }
-    if builder.protocol_type.is_none() {
-        builder.protocol_type = "no value was set".parse::<crate::types::GatewayProtocolType>().ok()
-    }
     if builder.authorizer_type.is_none() {
         builder.authorizer_type = "no value was set".parse::<crate::types::AuthorizerType>().ok()
+    }
+    builder
+}
+
+pub(crate) fn create_gateway_rule_output_output_correct_errors(
+    mut builder: crate::operation::create_gateway_rule::builders::CreateGatewayRuleOutputBuilder,
+) -> crate::operation::create_gateway_rule::builders::CreateGatewayRuleOutputBuilder {
+    if builder.rule_id.is_none() {
+        builder.rule_id = Some(Default::default())
+    }
+    if builder.gateway_arn.is_none() {
+        builder.gateway_arn = Some(Default::default())
+    }
+    if builder.priority.is_none() {
+        builder.priority = Some(Default::default())
+    }
+    if builder.actions.is_none() {
+        builder.actions = Some(Default::default())
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::GatewayRuleStatus>().ok()
     }
     builder
 }
@@ -431,6 +470,18 @@ pub(crate) fn delete_code_interpreter_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn delete_configuration_bundle_output_output_correct_errors(
+    mut builder: crate::operation::delete_configuration_bundle::builders::DeleteConfigurationBundleOutputBuilder,
+) -> crate::operation::delete_configuration_bundle::builders::DeleteConfigurationBundleOutputBuilder {
+    if builder.bundle_id.is_none() {
+        builder.bundle_id = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::ConfigurationBundleStatus>().ok()
+    }
+    builder
+}
+
 pub(crate) fn delete_evaluator_output_output_correct_errors(
     mut builder: crate::operation::delete_evaluator::builders::DeleteEvaluatorOutputBuilder,
 ) -> crate::operation::delete_evaluator::builders::DeleteEvaluatorOutputBuilder {
@@ -454,6 +505,18 @@ pub(crate) fn delete_gateway_output_output_correct_errors(
     }
     if builder.status.is_none() {
         builder.status = "no value was set".parse::<crate::types::GatewayStatus>().ok()
+    }
+    builder
+}
+
+pub(crate) fn delete_gateway_rule_output_output_correct_errors(
+    mut builder: crate::operation::delete_gateway_rule::builders::DeleteGatewayRuleOutputBuilder,
+) -> crate::operation::delete_gateway_rule::builders::DeleteGatewayRuleOutputBuilder {
+    if builder.rule_id.is_none() {
+        builder.rule_id = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::GatewayRuleStatus>().ok()
     }
     builder
 }
@@ -743,6 +806,60 @@ pub(crate) fn get_code_interpreter_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn get_configuration_bundle_output_output_correct_errors(
+    mut builder: crate::operation::get_configuration_bundle::builders::GetConfigurationBundleOutputBuilder,
+) -> crate::operation::get_configuration_bundle::builders::GetConfigurationBundleOutputBuilder {
+    if builder.bundle_arn.is_none() {
+        builder.bundle_arn = Some(Default::default())
+    }
+    if builder.bundle_id.is_none() {
+        builder.bundle_id = Some(Default::default())
+    }
+    if builder.bundle_name.is_none() {
+        builder.bundle_name = Some(Default::default())
+    }
+    if builder.version_id.is_none() {
+        builder.version_id = Some(Default::default())
+    }
+    if builder.components.is_none() {
+        builder.components = Some(Default::default())
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.updated_at.is_none() {
+        builder.updated_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
+pub(crate) fn get_configuration_bundle_version_output_output_correct_errors(
+    mut builder: crate::operation::get_configuration_bundle_version::builders::GetConfigurationBundleVersionOutputBuilder,
+) -> crate::operation::get_configuration_bundle_version::builders::GetConfigurationBundleVersionOutputBuilder {
+    if builder.bundle_arn.is_none() {
+        builder.bundle_arn = Some(Default::default())
+    }
+    if builder.bundle_id.is_none() {
+        builder.bundle_id = Some(Default::default())
+    }
+    if builder.bundle_name.is_none() {
+        builder.bundle_name = Some(Default::default())
+    }
+    if builder.version_id.is_none() {
+        builder.version_id = Some(Default::default())
+    }
+    if builder.components.is_none() {
+        builder.components = Some(Default::default())
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.version_created_at.is_none() {
+        builder.version_created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
 pub(crate) fn get_evaluator_output_output_correct_errors(
     mut builder: crate::operation::get_evaluator::builders::GetEvaluatorOutputBuilder,
 ) -> crate::operation::get_evaluator::builders::GetEvaluatorOutputBuilder {
@@ -794,11 +911,32 @@ pub(crate) fn get_gateway_output_output_correct_errors(
     if builder.name.is_none() {
         builder.name = Some(Default::default())
     }
-    if builder.protocol_type.is_none() {
-        builder.protocol_type = "no value was set".parse::<crate::types::GatewayProtocolType>().ok()
-    }
     if builder.authorizer_type.is_none() {
         builder.authorizer_type = "no value was set".parse::<crate::types::AuthorizerType>().ok()
+    }
+    builder
+}
+
+pub(crate) fn get_gateway_rule_output_output_correct_errors(
+    mut builder: crate::operation::get_gateway_rule::builders::GetGatewayRuleOutputBuilder,
+) -> crate::operation::get_gateway_rule::builders::GetGatewayRuleOutputBuilder {
+    if builder.rule_id.is_none() {
+        builder.rule_id = Some(Default::default())
+    }
+    if builder.gateway_arn.is_none() {
+        builder.gateway_arn = Some(Default::default())
+    }
+    if builder.priority.is_none() {
+        builder.priority = Some(Default::default())
+    }
+    if builder.actions.is_none() {
+        builder.actions = Some(Default::default())
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::GatewayRuleStatus>().ok()
     }
     builder
 }
@@ -1178,11 +1316,38 @@ pub(crate) fn list_code_interpreters_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn list_configuration_bundle_versions_output_output_correct_errors(
+    mut builder: crate::operation::list_configuration_bundle_versions::builders::ListConfigurationBundleVersionsOutputBuilder,
+) -> crate::operation::list_configuration_bundle_versions::builders::ListConfigurationBundleVersionsOutputBuilder {
+    if builder.versions.is_none() {
+        builder.versions = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn list_configuration_bundles_output_output_correct_errors(
+    mut builder: crate::operation::list_configuration_bundles::builders::ListConfigurationBundlesOutputBuilder,
+) -> crate::operation::list_configuration_bundles::builders::ListConfigurationBundlesOutputBuilder {
+    if builder.bundles.is_none() {
+        builder.bundles = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn list_evaluators_output_output_correct_errors(
     mut builder: crate::operation::list_evaluators::builders::ListEvaluatorsOutputBuilder,
 ) -> crate::operation::list_evaluators::builders::ListEvaluatorsOutputBuilder {
     if builder.evaluators.is_none() {
         builder.evaluators = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn list_gateway_rules_output_output_correct_errors(
+    mut builder: crate::operation::list_gateway_rules::builders::ListGatewayRulesOutputBuilder,
+) -> crate::operation::list_gateway_rules::builders::ListGatewayRulesOutputBuilder {
+    if builder.gateway_rules.is_none() {
+        builder.gateway_rules = Some(Default::default())
     }
     builder
 }
@@ -1454,6 +1619,24 @@ pub(crate) fn update_api_key_credential_provider_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn update_configuration_bundle_output_output_correct_errors(
+    mut builder: crate::operation::update_configuration_bundle::builders::UpdateConfigurationBundleOutputBuilder,
+) -> crate::operation::update_configuration_bundle::builders::UpdateConfigurationBundleOutputBuilder {
+    if builder.bundle_arn.is_none() {
+        builder.bundle_arn = Some(Default::default())
+    }
+    if builder.bundle_id.is_none() {
+        builder.bundle_id = Some(Default::default())
+    }
+    if builder.version_id.is_none() {
+        builder.version_id = Some(Default::default())
+    }
+    if builder.updated_at.is_none() {
+        builder.updated_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
 pub(crate) fn update_evaluator_output_output_correct_errors(
     mut builder: crate::operation::update_evaluator::builders::UpdateEvaluatorOutputBuilder,
 ) -> crate::operation::update_evaluator::builders::UpdateEvaluatorOutputBuilder {
@@ -1493,11 +1676,32 @@ pub(crate) fn update_gateway_output_output_correct_errors(
     if builder.name.is_none() {
         builder.name = Some(Default::default())
     }
-    if builder.protocol_type.is_none() {
-        builder.protocol_type = "no value was set".parse::<crate::types::GatewayProtocolType>().ok()
-    }
     if builder.authorizer_type.is_none() {
         builder.authorizer_type = "no value was set".parse::<crate::types::AuthorizerType>().ok()
+    }
+    builder
+}
+
+pub(crate) fn update_gateway_rule_output_output_correct_errors(
+    mut builder: crate::operation::update_gateway_rule::builders::UpdateGatewayRuleOutputBuilder,
+) -> crate::operation::update_gateway_rule::builders::UpdateGatewayRuleOutputBuilder {
+    if builder.rule_id.is_none() {
+        builder.rule_id = Some(Default::default())
+    }
+    if builder.gateway_arn.is_none() {
+        builder.gateway_arn = Some(Default::default())
+    }
+    if builder.priority.is_none() {
+        builder.priority = Some(Default::default())
+    }
+    if builder.actions.is_none() {
+        builder.actions = Some(Default::default())
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::GatewayRuleStatus>().ok()
     }
     builder
 }
@@ -1933,6 +2137,15 @@ pub(crate) fn runtime_metadata_configuration_correct_errors(
     builder
 }
 
+pub(crate) fn system_managed_block_correct_errors(
+    mut builder: crate::types::builders::SystemManagedBlockBuilder,
+) -> crate::types::builders::SystemManagedBlockBuilder {
+    if builder.managed_by.is_none() {
+        builder.managed_by = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn workload_identity_details_correct_errors(
     mut builder: crate::types::builders::WorkloadIdentityDetailsBuilder,
 ) -> crate::types::builders::WorkloadIdentityDetailsBuilder {
@@ -2158,6 +2371,48 @@ pub(crate) fn code_interpreter_summary_correct_errors(
     builder
 }
 
+pub(crate) fn component_configuration_correct_errors(
+    mut builder: crate::types::builders::ComponentConfigurationBuilder,
+) -> crate::types::builders::ComponentConfigurationBuilder {
+    if builder.configuration.is_none() {
+        builder.configuration = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn configuration_bundle_summary_correct_errors(
+    mut builder: crate::types::builders::ConfigurationBundleSummaryBuilder,
+) -> crate::types::builders::ConfigurationBundleSummaryBuilder {
+    if builder.bundle_arn.is_none() {
+        builder.bundle_arn = Some(Default::default())
+    }
+    if builder.bundle_id.is_none() {
+        builder.bundle_id = Some(Default::default())
+    }
+    if builder.bundle_name.is_none() {
+        builder.bundle_name = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn configuration_bundle_version_summary_correct_errors(
+    mut builder: crate::types::builders::ConfigurationBundleVersionSummaryBuilder,
+) -> crate::types::builders::ConfigurationBundleVersionSummaryBuilder {
+    if builder.bundle_arn.is_none() {
+        builder.bundle_arn = Some(Default::default())
+    }
+    if builder.bundle_id.is_none() {
+        builder.bundle_id = Some(Default::default())
+    }
+    if builder.version_id.is_none() {
+        builder.version_id = Some(Default::default())
+    }
+    if builder.version_created_at.is_none() {
+        builder.version_created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
 pub(crate) fn container_configuration_correct_errors(
     mut builder: crate::types::builders::ContainerConfigurationBuilder,
 ) -> crate::types::builders::ContainerConfigurationBuilder {
@@ -2242,6 +2497,30 @@ pub(crate) fn gateway_interceptor_configuration_correct_errors(
     builder
 }
 
+pub(crate) fn gateway_rule_detail_correct_errors(
+    mut builder: crate::types::builders::GatewayRuleDetailBuilder,
+) -> crate::types::builders::GatewayRuleDetailBuilder {
+    if builder.rule_id.is_none() {
+        builder.rule_id = Some(Default::default())
+    }
+    if builder.gateway_arn.is_none() {
+        builder.gateway_arn = Some(Default::default())
+    }
+    if builder.priority.is_none() {
+        builder.priority = Some(Default::default())
+    }
+    if builder.actions.is_none() {
+        builder.actions = Some(Default::default())
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::GatewayRuleStatus>().ok()
+    }
+    builder
+}
+
 pub(crate) fn gateway_summary_correct_errors(
     mut builder: crate::types::builders::GatewaySummaryBuilder,
 ) -> crate::types::builders::GatewaySummaryBuilder {
@@ -2262,9 +2541,6 @@ pub(crate) fn gateway_summary_correct_errors(
     }
     if builder.authorizer_type.is_none() {
         builder.authorizer_type = "no value was set".parse::<crate::types::AuthorizerType>().ok()
-    }
-    if builder.protocol_type.is_none() {
-        builder.protocol_type = "no value was set".parse::<crate::types::GatewayProtocolType>().ok()
     }
     builder
 }
@@ -2719,6 +2995,15 @@ pub(crate) fn validation_exception_field_correct_errors(
     builder
 }
 
+pub(crate) fn version_created_by_source_correct_errors(
+    mut builder: crate::types::builders::VersionCreatedBySourceBuilder,
+) -> crate::types::builders::VersionCreatedBySourceBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn vpc_config_correct_errors(mut builder: crate::types::builders::VpcConfigBuilder) -> crate::types::builders::VpcConfigBuilder {
     if builder.security_groups.is_none() {
         builder.security_groups = Some(Default::default())
@@ -2866,6 +3151,22 @@ pub(crate) fn lambda_evaluator_config_correct_errors(
     builder
 }
 
+pub(crate) fn match_paths_correct_errors(mut builder: crate::types::builders::MatchPathsBuilder) -> crate::types::builders::MatchPathsBuilder {
+    if builder.any_of.is_none() {
+        builder.any_of = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn match_principals_correct_errors(
+    mut builder: crate::types::builders::MatchPrincipalsBuilder,
+) -> crate::types::builders::MatchPrincipalsBuilder {
+    if builder.any_of.is_none() {
+        builder.any_of = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn mcp_lambda_target_configuration_correct_errors(
     mut builder: crate::types::builders::McpLambdaTargetConfigurationBuilder,
 ) -> crate::types::builders::McpLambdaTargetConfigurationBuilder {
@@ -2904,6 +3205,15 @@ pub(crate) fn memory_strategy_correct_errors(
     }
     if builder.namespace_templates.is_none() {
         builder.namespace_templates = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn runtime_target_configuration_correct_errors(
+    mut builder: crate::types::builders::RuntimeTargetConfigurationBuilder,
+) -> crate::types::builders::RuntimeTargetConfigurationBuilder {
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
     }
     builder
 }
@@ -3040,6 +3350,43 @@ pub(crate) fn secrets_manager_location_correct_errors(
     builder
 }
 
+pub(crate) fn static_override_correct_errors(
+    mut builder: crate::types::builders::StaticOverrideBuilder,
+) -> crate::types::builders::StaticOverrideBuilder {
+    if builder.bundle_arn.is_none() {
+        builder.bundle_arn = Some(Default::default())
+    }
+    if builder.bundle_version.is_none() {
+        builder.bundle_version = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn static_route_correct_errors(mut builder: crate::types::builders::StaticRouteBuilder) -> crate::types::builders::StaticRouteBuilder {
+    if builder.target_name.is_none() {
+        builder.target_name = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn weighted_override_correct_errors(
+    mut builder: crate::types::builders::WeightedOverrideBuilder,
+) -> crate::types::builders::WeightedOverrideBuilder {
+    if builder.traffic_split.is_none() {
+        builder.traffic_split = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn weighted_route_correct_errors(
+    mut builder: crate::types::builders::WeightedRouteBuilder,
+) -> crate::types::builders::WeightedRouteBuilder {
+    if builder.traffic_split.is_none() {
+        builder.traffic_split = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn authorizing_claim_match_value_type_correct_errors(
     mut builder: crate::types::builders::AuthorizingClaimMatchValueTypeBuilder,
 ) -> crate::types::builders::AuthorizingClaimMatchValueTypeBuilder {
@@ -3166,6 +3513,13 @@ pub(crate) fn api_gateway_tool_override_correct_errors(
     builder
 }
 
+pub(crate) fn iam_principal_correct_errors(mut builder: crate::types::builders::IamPrincipalBuilder) -> crate::types::builders::IamPrincipalBuilder {
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn invocation_configuration_correct_errors(
     mut builder: crate::types::builders::InvocationConfigurationBuilder,
 ) -> crate::types::builders::InvocationConfigurationBuilder {
@@ -3187,6 +3541,21 @@ pub(crate) fn registry_record_o_auth_credential_provider_correct_errors(
     builder
 }
 
+pub(crate) fn target_traffic_split_entry_correct_errors(
+    mut builder: crate::types::builders::TargetTrafficSplitEntryBuilder,
+) -> crate::types::builders::TargetTrafficSplitEntryBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.weight.is_none() {
+        builder.weight = Some(Default::default())
+    }
+    if builder.target_name.is_none() {
+        builder.target_name = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn tool_definition_correct_errors(
     mut builder: crate::types::builders::ToolDefinitionBuilder,
 ) -> crate::types::builders::ToolDefinitionBuilder {
@@ -3201,6 +3570,36 @@ pub(crate) fn tool_definition_correct_errors(
             let builder = crate::types::builders::SchemaDefinitionBuilder::default();
             crate::serde_util::schema_definition_correct_errors(builder).build().ok()
         }
+    }
+    builder
+}
+
+pub(crate) fn traffic_split_entry_correct_errors(
+    mut builder: crate::types::builders::TrafficSplitEntryBuilder,
+) -> crate::types::builders::TrafficSplitEntryBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.weight.is_none() {
+        builder.weight = Some(Default::default())
+    }
+    if builder.configuration_bundle.is_none() {
+        builder.configuration_bundle = {
+            let builder = crate::types::builders::ConfigurationBundleReferenceBuilder::default();
+            crate::serde_util::configuration_bundle_reference_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
+pub(crate) fn configuration_bundle_reference_correct_errors(
+    mut builder: crate::types::builders::ConfigurationBundleReferenceBuilder,
+) -> crate::types::builders::ConfigurationBundleReferenceBuilder {
+    if builder.bundle_arn.is_none() {
+        builder.bundle_arn = Some(Default::default())
+    }
+    if builder.bundle_version.is_none() {
+        builder.bundle_version = Some(Default::default())
     }
     builder
 }

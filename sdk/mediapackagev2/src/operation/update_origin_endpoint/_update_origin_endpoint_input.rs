@@ -27,6 +27,8 @@ pub struct UpdateOriginEndpointInput {
     pub mss_manifests: ::std::option::Option<::std::vec::Vec<crate::types::CreateMssManifestConfiguration>>,
     /// <p>The failover settings for the endpoint.</p>
     pub force_endpoint_error_configuration: ::std::option::Option<crate::types::ForceEndpointErrorConfiguration>,
+    /// <p>The separator character to use in generated URIs for this origin endpoint. This setting applies to all manifest types on the endpoint. If you don't specify a value in the update request, the current value is preserved.</p>
+    pub uri_separator: ::std::option::Option<crate::types::UriSeparator>,
     /// <p>The expected current Entity Tag (ETag) for the resource. If the specified ETag does not match the resource's current entity tag, the update request will be rejected.</p>
     pub e_tag: ::std::option::Option<::std::string::String>,
 }
@@ -87,6 +89,10 @@ impl UpdateOriginEndpointInput {
     pub fn force_endpoint_error_configuration(&self) -> ::std::option::Option<&crate::types::ForceEndpointErrorConfiguration> {
         self.force_endpoint_error_configuration.as_ref()
     }
+    /// <p>The separator character to use in generated URIs for this origin endpoint. This setting applies to all manifest types on the endpoint. If you don't specify a value in the update request, the current value is preserved.</p>
+    pub fn uri_separator(&self) -> ::std::option::Option<&crate::types::UriSeparator> {
+        self.uri_separator.as_ref()
+    }
     /// <p>The expected current Entity Tag (ETag) for the resource. If the specified ETag does not match the resource's current entity tag, the update request will be rejected.</p>
     pub fn e_tag(&self) -> ::std::option::Option<&str> {
         self.e_tag.as_deref()
@@ -115,6 +121,7 @@ pub struct UpdateOriginEndpointInputBuilder {
     pub(crate) dash_manifests: ::std::option::Option<::std::vec::Vec<crate::types::CreateDashManifestConfiguration>>,
     pub(crate) mss_manifests: ::std::option::Option<::std::vec::Vec<crate::types::CreateMssManifestConfiguration>>,
     pub(crate) force_endpoint_error_configuration: ::std::option::Option<crate::types::ForceEndpointErrorConfiguration>,
+    pub(crate) uri_separator: ::std::option::Option<crate::types::UriSeparator>,
     pub(crate) e_tag: ::std::option::Option<::std::string::String>,
 }
 impl UpdateOriginEndpointInputBuilder {
@@ -317,6 +324,20 @@ impl UpdateOriginEndpointInputBuilder {
     pub fn get_force_endpoint_error_configuration(&self) -> &::std::option::Option<crate::types::ForceEndpointErrorConfiguration> {
         &self.force_endpoint_error_configuration
     }
+    /// <p>The separator character to use in generated URIs for this origin endpoint. This setting applies to all manifest types on the endpoint. If you don't specify a value in the update request, the current value is preserved.</p>
+    pub fn uri_separator(mut self, input: crate::types::UriSeparator) -> Self {
+        self.uri_separator = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The separator character to use in generated URIs for this origin endpoint. This setting applies to all manifest types on the endpoint. If you don't specify a value in the update request, the current value is preserved.</p>
+    pub fn set_uri_separator(mut self, input: ::std::option::Option<crate::types::UriSeparator>) -> Self {
+        self.uri_separator = input;
+        self
+    }
+    /// <p>The separator character to use in generated URIs for this origin endpoint. This setting applies to all manifest types on the endpoint. If you don't specify a value in the update request, the current value is preserved.</p>
+    pub fn get_uri_separator(&self) -> &::std::option::Option<crate::types::UriSeparator> {
+        &self.uri_separator
+    }
     /// <p>The expected current Entity Tag (ETag) for the resource. If the specified ETag does not match the resource's current entity tag, the update request will be rejected.</p>
     pub fn e_tag(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.e_tag = ::std::option::Option::Some(input.into());
@@ -349,6 +370,7 @@ impl UpdateOriginEndpointInputBuilder {
             dash_manifests: self.dash_manifests,
             mss_manifests: self.mss_manifests,
             force_endpoint_error_configuration: self.force_endpoint_error_configuration,
+            uri_separator: self.uri_separator,
             e_tag: self.e_tag,
         })
     }

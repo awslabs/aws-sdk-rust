@@ -20,6 +20,7 @@
 ///     ValidationExceptionType::CmafContainerTypeWithMssManifest => { /* ... */ },
 ///     ValidationExceptionType::CmafExcludeSegmentDrmMetadataIncompatibleContainerType => { /* ... */ },
 ///     ValidationExceptionType::ContainerTypeImmutable => { /* ... */ },
+///     ValidationExceptionType::CustomAdTypesInvalidConfiguration => { /* ... */ },
 ///     ValidationExceptionType::DashDvbAttributesWithoutDvbDashProfile => { /* ... */ },
 ///     ValidationExceptionType::DecryptSecretFailed => { /* ... */ },
 ///     ValidationExceptionType::DescribeCertificateFailed => { /* ... */ },
@@ -89,6 +90,7 @@
 ///     ValidationExceptionType::RoleArnInvalidFormat => { /* ... */ },
 ///     ValidationExceptionType::RoleArnLengthOutOfRange => { /* ... */ },
 ///     ValidationExceptionType::RoleArnNotAssumable => { /* ... */ },
+///     ValidationExceptionType::ScteInManifestsInvalidConfiguration => { /* ... */ },
 ///     ValidationExceptionType::SecretArnResourceNotFound => { /* ... */ },
 ///     ValidationExceptionType::SecretFromDifferentAccount => { /* ... */ },
 ///     ValidationExceptionType::SecretFromDifferentRegion => { /* ... */ },
@@ -154,6 +156,8 @@ pub enum ValidationExceptionType {
     CmafExcludeSegmentDrmMetadataIncompatibleContainerType,
     #[allow(missing_docs)] // documentation missing in model
     ContainerTypeImmutable,
+    #[allow(missing_docs)] // documentation missing in model
+    CustomAdTypesInvalidConfiguration,
     #[allow(missing_docs)] // documentation missing in model
     DashDvbAttributesWithoutDvbDashProfile,
     #[allow(missing_docs)] // documentation missing in model
@@ -293,6 +297,8 @@ pub enum ValidationExceptionType {
     #[allow(missing_docs)] // documentation missing in model
     RoleArnNotAssumable,
     #[allow(missing_docs)] // documentation missing in model
+    ScteInManifestsInvalidConfiguration,
+    #[allow(missing_docs)] // documentation missing in model
     SecretArnResourceNotFound,
     #[allow(missing_docs)] // documentation missing in model
     SecretFromDifferentAccount,
@@ -351,6 +357,7 @@ impl ::std::convert::From<&str> for ValidationExceptionType {
                 ValidationExceptionType::CmafExcludeSegmentDrmMetadataIncompatibleContainerType
             }
             "CONTAINER_TYPE_IMMUTABLE" => ValidationExceptionType::ContainerTypeImmutable,
+            "CUSTOM_AD_TYPES_INVALID_CONFIGURATION" => ValidationExceptionType::CustomAdTypesInvalidConfiguration,
             "DASH_DVB_ATTRIBUTES_WITHOUT_DVB_DASH_PROFILE" => ValidationExceptionType::DashDvbAttributesWithoutDvbDashProfile,
             "DECRYPT_SECRET_FAILED" => ValidationExceptionType::DecryptSecretFailed,
             "DESCRIBE_CERTIFICATE_FAILED" => ValidationExceptionType::DescribeCertificateFailed,
@@ -424,6 +431,7 @@ impl ::std::convert::From<&str> for ValidationExceptionType {
             "ROLE_ARN_INVALID_FORMAT" => ValidationExceptionType::RoleArnInvalidFormat,
             "ROLE_ARN_LENGTH_OUT_OF_RANGE" => ValidationExceptionType::RoleArnLengthOutOfRange,
             "ROLE_ARN_NOT_ASSUMABLE" => ValidationExceptionType::RoleArnNotAssumable,
+            "SCTE_IN_MANIFESTS_INVALID_CONFIGURATION" => ValidationExceptionType::ScteInManifestsInvalidConfiguration,
             "SECRET_ARN_RESOURCE_NOT_FOUND" => ValidationExceptionType::SecretArnResourceNotFound,
             "SECRET_FROM_DIFFERENT_ACCOUNT" => ValidationExceptionType::SecretFromDifferentAccount,
             "SECRET_FROM_DIFFERENT_REGION" => ValidationExceptionType::SecretFromDifferentRegion,
@@ -470,6 +478,7 @@ impl ValidationExceptionType {
                 "CMAF_EXCLUDE_SEGMENT_DRM_METADATA_INCOMPATIBLE_CONTAINER_TYPE"
             }
             ValidationExceptionType::ContainerTypeImmutable => "CONTAINER_TYPE_IMMUTABLE",
+            ValidationExceptionType::CustomAdTypesInvalidConfiguration => "CUSTOM_AD_TYPES_INVALID_CONFIGURATION",
             ValidationExceptionType::DashDvbAttributesWithoutDvbDashProfile => "DASH_DVB_ATTRIBUTES_WITHOUT_DVB_DASH_PROFILE",
             ValidationExceptionType::DecryptSecretFailed => "DECRYPT_SECRET_FAILED",
             ValidationExceptionType::DescribeCertificateFailed => "DESCRIBE_CERTIFICATE_FAILED",
@@ -543,6 +552,7 @@ impl ValidationExceptionType {
             ValidationExceptionType::RoleArnInvalidFormat => "ROLE_ARN_INVALID_FORMAT",
             ValidationExceptionType::RoleArnLengthOutOfRange => "ROLE_ARN_LENGTH_OUT_OF_RANGE",
             ValidationExceptionType::RoleArnNotAssumable => "ROLE_ARN_NOT_ASSUMABLE",
+            ValidationExceptionType::ScteInManifestsInvalidConfiguration => "SCTE_IN_MANIFESTS_INVALID_CONFIGURATION",
             ValidationExceptionType::SecretArnResourceNotFound => "SECRET_ARN_RESOURCE_NOT_FOUND",
             ValidationExceptionType::SecretFromDifferentAccount => "SECRET_FROM_DIFFERENT_ACCOUNT",
             ValidationExceptionType::SecretFromDifferentRegion => "SECRET_FROM_DIFFERENT_REGION",
@@ -578,6 +588,7 @@ impl ValidationExceptionType {
             "CMAF_CONTAINER_TYPE_WITH_MSS_MANIFEST",
             "CMAF_EXCLUDE_SEGMENT_DRM_METADATA_INCOMPATIBLE_CONTAINER_TYPE",
             "CONTAINER_TYPE_IMMUTABLE",
+            "CUSTOM_AD_TYPES_INVALID_CONFIGURATION",
             "DASH_DVB_ATTRIBUTES_WITHOUT_DVB_DASH_PROFILE",
             "DECRYPT_SECRET_FAILED",
             "DESCRIBE_CERTIFICATE_FAILED",
@@ -647,6 +658,7 @@ impl ValidationExceptionType {
             "ROLE_ARN_INVALID_FORMAT",
             "ROLE_ARN_LENGTH_OUT_OF_RANGE",
             "ROLE_ARN_NOT_ASSUMABLE",
+            "SCTE_IN_MANIFESTS_INVALID_CONFIGURATION",
             "SECRET_ARN_RESOURCE_NOT_FOUND",
             "SECRET_FROM_DIFFERENT_ACCOUNT",
             "SECRET_FROM_DIFFERENT_REGION",
@@ -701,6 +713,7 @@ impl ::std::fmt::Display for ValidationExceptionType {
                 write!(f, "CMAF_EXCLUDE_SEGMENT_DRM_METADATA_INCOMPATIBLE_CONTAINER_TYPE")
             }
             ValidationExceptionType::ContainerTypeImmutable => write!(f, "CONTAINER_TYPE_IMMUTABLE"),
+            ValidationExceptionType::CustomAdTypesInvalidConfiguration => write!(f, "CUSTOM_AD_TYPES_INVALID_CONFIGURATION"),
             ValidationExceptionType::DashDvbAttributesWithoutDvbDashProfile => write!(f, "DASH_DVB_ATTRIBUTES_WITHOUT_DVB_DASH_PROFILE"),
             ValidationExceptionType::DecryptSecretFailed => write!(f, "DECRYPT_SECRET_FAILED"),
             ValidationExceptionType::DescribeCertificateFailed => write!(f, "DESCRIBE_CERTIFICATE_FAILED"),
@@ -784,6 +797,7 @@ impl ::std::fmt::Display for ValidationExceptionType {
             ValidationExceptionType::RoleArnInvalidFormat => write!(f, "ROLE_ARN_INVALID_FORMAT"),
             ValidationExceptionType::RoleArnLengthOutOfRange => write!(f, "ROLE_ARN_LENGTH_OUT_OF_RANGE"),
             ValidationExceptionType::RoleArnNotAssumable => write!(f, "ROLE_ARN_NOT_ASSUMABLE"),
+            ValidationExceptionType::ScteInManifestsInvalidConfiguration => write!(f, "SCTE_IN_MANIFESTS_INVALID_CONFIGURATION"),
             ValidationExceptionType::SecretArnResourceNotFound => write!(f, "SECRET_ARN_RESOURCE_NOT_FOUND"),
             ValidationExceptionType::SecretFromDifferentAccount => write!(f, "SECRET_FROM_DIFFERENT_ACCOUNT"),
             ValidationExceptionType::SecretFromDifferentRegion => write!(f, "SECRET_FROM_DIFFERENT_REGION"),

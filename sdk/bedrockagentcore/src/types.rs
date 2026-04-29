@@ -39,9 +39,37 @@ pub use crate::types::_stream_update::StreamUpdate;
 
 pub use crate::types::_code_interpreter_session_status::CodeInterpreterSessionStatus;
 
+pub use crate::types::_gateway_filter::GatewayFilter;
+
+pub use crate::types::_ab_test_evaluation_config::AbTestEvaluationConfig;
+
+pub use crate::types::_ab_test_status::AbTestStatus;
+
+pub use crate::types::_ab_test_execution_status::AbTestExecutionStatus;
+
+pub use crate::types::_batch_evaluation_status::BatchEvaluationStatus;
+
+pub use crate::types::_recommendation_status::RecommendationStatus;
+
 pub use crate::types::_evaluation_input::EvaluationInput;
 
 pub use crate::types::_evaluation_target::EvaluationTarget;
+
+pub use crate::types::_ab_test_results::AbTestResults;
+
+pub use crate::types::_data_source_config::DataSourceConfig;
+
+pub use crate::types::_output_config::OutputConfig;
+
+pub use crate::types::_evaluation_job_results::EvaluationJobResults;
+
+pub use crate::types::_recommendation_type::RecommendationType;
+
+pub use crate::types::_recommendation_config::RecommendationConfig;
+
+pub use crate::types::_recommendation_result::RecommendationResult;
+
+pub use crate::types::_evaluation_metadata::EvaluationMetadata;
 
 pub use crate::types::_branch::Branch;
 
@@ -145,9 +173,31 @@ pub use crate::types::_automation_stream_update::AutomationStreamUpdate;
 
 pub use crate::types::_code_interpreter_session_summary::CodeInterpreterSessionSummary;
 
+pub use crate::types::_variant::Variant;
+
 pub use crate::types::_evaluation_reference_input::EvaluationReferenceInput;
 
 pub use crate::types::_evaluation_result_content::EvaluationResultContent;
+
+pub use crate::types::_evaluator::Evaluator;
+
+pub use crate::types::_cloud_watch_logs_source::CloudWatchLogsSource;
+
+pub use crate::types::_cloud_watch_output_config::CloudWatchOutputConfig;
+
+pub use crate::types::_system_prompt_recommendation_config::SystemPromptRecommendationConfig;
+
+pub use crate::types::_tool_description_recommendation_config::ToolDescriptionRecommendationConfig;
+
+pub use crate::types::_system_prompt_recommendation_result::SystemPromptRecommendationResult;
+
+pub use crate::types::_tool_description_recommendation_result::ToolDescriptionRecommendationResult;
+
+pub use crate::types::_ab_test_summary::AbTestSummary;
+
+pub use crate::types::_batch_evaluation_summary::BatchEvaluationSummary;
+
+pub use crate::types::_recommendation_summary::RecommendationSummary;
 
 pub use crate::types::_memory_record_create_input::MemoryRecordCreateInput;
 
@@ -221,6 +271,10 @@ pub use crate::types::_screenshot_format::ScreenshotFormat;
 
 pub use crate::types::_browser_action_status::BrowserActionStatus;
 
+pub use crate::types::_variant_configuration::VariantConfiguration;
+
+pub use crate::types::_per_variant_online_evaluation_config::PerVariantOnlineEvaluationConfig;
+
 pub use crate::types::_context::Context;
 
 pub use crate::types::_evaluation_content::EvaluationContent;
@@ -228,6 +282,24 @@ pub use crate::types::_evaluation_content::EvaluationContent;
 pub use crate::types::_evaluation_expected_trajectory::EvaluationExpectedTrajectory;
 
 pub use crate::types::_token_usage::TokenUsage;
+
+pub use crate::types::_evaluator_metric::EvaluatorMetric;
+
+pub use crate::types::_cloud_watch_filter_config::CloudWatchFilterConfig;
+
+pub use crate::types::_evaluator_summary::EvaluatorSummary;
+
+pub use crate::types::_system_prompt_config::SystemPromptConfig;
+
+pub use crate::types::_agent_traces_config::AgentTracesConfig;
+
+pub use crate::types::_recommendation_evaluation_config::RecommendationEvaluationConfig;
+
+pub use crate::types::_tool_description_source::ToolDescriptionSource;
+
+pub use crate::types::_recommendation_result_configuration_bundle::RecommendationResultConfigurationBundle;
+
+pub use crate::types::_session_metadata_shape::SessionMetadataShape;
 
 pub use crate::types::_memory_record_status::MemoryRecordStatus;
 
@@ -277,7 +349,29 @@ pub use crate::types::_external_proxy::ExternalProxy;
 
 pub use crate::types::_secrets_manager_location::SecretsManagerLocation;
 
+pub use crate::types::_configuration_bundle_ref::ConfigurationBundleRef;
+
+pub use crate::types::_target_ref::TargetRef;
+
 pub use crate::types::_span_context::SpanContext;
+
+pub use crate::types::_control_stats::ControlStats;
+
+pub use crate::types::_session_filter_config::SessionFilterConfig;
+
+pub use crate::types::_evaluator_statistics::EvaluatorStatistics;
+
+pub use crate::types::_system_prompt_configuration_bundle::SystemPromptConfigurationBundle;
+
+pub use crate::types::_cloud_watch_logs_trace_config::CloudWatchLogsTraceConfig;
+
+pub use crate::types::_tool_description_text_input::ToolDescriptionTextInput;
+
+pub use crate::types::_tool_description_configuration_bundle::ToolDescriptionConfigurationBundle;
+
+pub use crate::types::_tool_description_output::ToolDescriptionOutput;
+
+pub use crate::types::_ground_truth_source::GroundTruthSource;
 
 pub use crate::types::_content::Content;
 
@@ -317,6 +411,14 @@ pub use crate::types::_harness_tool_result_block_delta::HarnessToolResultBlockDe
 
 pub use crate::types::_proxy_credentials::ProxyCredentials;
 
+pub use crate::types::_variant_result::VariantResult;
+
+pub use crate::types::_cloud_watch_logs_rule::CloudWatchLogsRule;
+
+pub use crate::types::_recommendation_evaluator_reference::RecommendationEvaluatorReference;
+
+pub use crate::types::_inline_ground_truth::InlineGroundTruth;
+
 pub use crate::types::_message_metadata::MessageMetadata;
 
 pub use crate::types::_server_definition::ServerDefinition;
@@ -339,17 +441,47 @@ pub use crate::types::_o_auth_credential_provider::OAuthCredentialProvider;
 
 pub use crate::types::_basic_auth::BasicAuth;
 
+pub use crate::types::_confidence_interval::ConfidenceInterval;
+
+pub use crate::types::_tool_description_input::ToolDescriptionInput;
+
+pub use crate::types::_configuration_bundle_tool_entry::ConfigurationBundleToolEntry;
+
 pub use crate::types::_harness_tool_result_content_block::HarnessToolResultContentBlock;
 
 pub use crate::types::_o_auth_grant_type::OAuthGrantType;
 
+pub use crate::types::_cloud_watch_logs_filter::CloudWatchLogsFilter;
+
+pub use crate::types::_tool_description_config::ToolDescriptionConfig;
+
+pub use crate::types::_ground_truth_turn::GroundTruthTurn;
+
+pub use crate::types::_cloud_watch_logs_filter_operator::CloudWatchLogsFilterOperator;
+
+pub use crate::types::_filter_value::FilterValue;
+
+pub use crate::types::_ground_truth_turn_input::GroundTruthTurnInput;
+
 mod _a2a_descriptor;
+
+mod _ab_test_evaluation_config;
+
+mod _ab_test_execution_status;
+
+mod _ab_test_results;
+
+mod _ab_test_status;
+
+mod _ab_test_summary;
 
 mod _actor_summary;
 
 mod _agent_card_definition;
 
 mod _agent_skills_descriptor;
+
+mod _agent_traces_config;
 
 mod _automation_stream;
 
@@ -358,6 +490,10 @@ mod _automation_stream_status;
 mod _automation_stream_update;
 
 mod _basic_auth;
+
+mod _batch_evaluation_status;
+
+mod _batch_evaluation_summary;
 
 mod _branch;
 
@@ -387,6 +523,20 @@ mod _certificate;
 
 mod _certificate_location;
 
+mod _cloud_watch_filter_config;
+
+mod _cloud_watch_logs_filter;
+
+mod _cloud_watch_logs_filter_operator;
+
+mod _cloud_watch_logs_rule;
+
+mod _cloud_watch_logs_source;
+
+mod _cloud_watch_logs_trace_config;
+
+mod _cloud_watch_output_config;
+
 mod _code_interpreter_result;
 
 mod _code_interpreter_session_status;
@@ -396,6 +546,12 @@ mod _code_interpreter_session_summary;
 mod _code_interpreter_stream_output;
 
 mod _command_execution_status;
+
+mod _confidence_interval;
+
+mod _configuration_bundle_ref;
+
+mod _configuration_bundle_tool_entry;
 
 mod _content;
 
@@ -411,9 +567,13 @@ mod _content_stop_event;
 
 mod _context;
 
+mod _control_stats;
+
 mod _conversational;
 
 mod _custom_descriptor;
+
+mod _data_source_config;
 
 mod _descriptor_type;
 
@@ -425,11 +585,23 @@ mod _evaluation_expected_trajectory;
 
 mod _evaluation_input;
 
+mod _evaluation_job_results;
+
+mod _evaluation_metadata;
+
 mod _evaluation_reference_input;
 
 mod _evaluation_result_content;
 
 mod _evaluation_target;
+
+mod _evaluator;
+
+mod _evaluator_metric;
+
+mod _evaluator_statistics;
+
+mod _evaluator_summary;
 
 mod _event;
 
@@ -450,6 +622,16 @@ mod _extraction_job_metadata;
 mod _extraction_job_status;
 
 mod _filter_input;
+
+mod _filter_value;
+
+mod _gateway_filter;
+
+mod _ground_truth_source;
+
+mod _ground_truth_turn;
+
+mod _ground_truth_turn_input;
 
 mod _harness_agent_core_browser_config;
 
@@ -533,6 +715,8 @@ mod _harness_tool_use_status;
 
 mod _harness_tool_use_type;
 
+mod _inline_ground_truth;
+
 mod _input_content_block;
 
 mod _invoke_agent_runtime_command_request_body;
@@ -609,7 +793,11 @@ mod _oauth2_flow_type;
 
 mod _operator_type;
 
+mod _output_config;
+
 mod _payload_type;
+
+mod _per_variant_online_evaluation_config;
 
 mod _programming_language;
 
@@ -620,6 +808,22 @@ mod _proxy_bypass;
 mod _proxy_configuration;
 
 mod _proxy_credentials;
+
+mod _recommendation_config;
+
+mod _recommendation_evaluation_config;
+
+mod _recommendation_evaluator_reference;
+
+mod _recommendation_result;
+
+mod _recommendation_result_configuration_bundle;
+
+mod _recommendation_status;
+
+mod _recommendation_summary;
+
+mod _recommendation_type;
 
 mod _registry_record_status;
 
@@ -653,6 +857,10 @@ mod _server_definition;
 
 mod _session_filter;
 
+mod _session_filter_config;
+
+mod _session_metadata_shape;
+
 mod _session_status;
 
 mod _session_summary;
@@ -665,11 +873,37 @@ mod _span_context;
 
 mod _stream_update;
 
+mod _system_prompt_config;
+
+mod _system_prompt_configuration_bundle;
+
+mod _system_prompt_recommendation_config;
+
+mod _system_prompt_recommendation_result;
+
+mod _target_ref;
+
 mod _task_status;
 
 mod _token_usage;
 
 mod _tool_arguments;
+
+mod _tool_description_config;
+
+mod _tool_description_configuration_bundle;
+
+mod _tool_description_input;
+
+mod _tool_description_output;
+
+mod _tool_description_recommendation_config;
+
+mod _tool_description_recommendation_result;
+
+mod _tool_description_source;
+
+mod _tool_description_text_input;
 
 mod _tool_name;
 
@@ -684,6 +918,12 @@ mod _user_identifier;
 mod _validation_exception_field;
 
 mod _validation_exception_reason;
+
+mod _variant;
+
+mod _variant_configuration;
+
+mod _variant_result;
 
 mod _view_port;
 

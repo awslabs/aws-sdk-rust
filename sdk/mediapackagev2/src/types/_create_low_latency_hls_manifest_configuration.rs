@@ -21,6 +21,8 @@ pub struct CreateLowLatencyHlsManifestConfiguration {
     pub filter_configuration: ::std::option::Option<crate::types::FilterConfiguration>,
     /// <p>When enabled, MediaPackage URL-encodes the query string for API requests for LL-HLS child manifests to comply with Amazon Web Services Signature Version 4 (SigV4) signature signing protocol. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html">Amazon Web Services Signature Version 4 for API requests</a> in <i>Identity and Access Management User Guide</i>.</p>
     pub url_encode_child_manifest: ::std::option::Option<bool>,
+    /// <p>The type of path to use in manifest URIs. <code>LEAF</code> uses leaf-relative paths (for example, <code>index_1.m3u8</code>). <code>ROOT</code> uses root-relative paths that include the full path from root (for example, <code>/out/v1/channel-group/channel/endpoint/index_1.m3u8</code>). If you don't specify a value, the default is <code>LEAF</code>.</p>
+    pub uri_path_type: ::std::option::Option<crate::types::UriPathType>,
 }
 impl CreateLowLatencyHlsManifestConfiguration {
     /// <p>A short short string that's appended to the endpoint URL. The manifest name creates a unique path to this endpoint. If you don't enter a value, MediaPackage uses the default manifest name, index. MediaPackage automatically inserts the format extension, such as .m3u8. You can't use the same manifest name if you use HLS manifest and low-latency HLS manifest. The manifestName on the HLSManifest object overrides the manifestName you provided on the originEndpoint object.</p>
@@ -57,6 +59,10 @@ impl CreateLowLatencyHlsManifestConfiguration {
     pub fn url_encode_child_manifest(&self) -> ::std::option::Option<bool> {
         self.url_encode_child_manifest
     }
+    /// <p>The type of path to use in manifest URIs. <code>LEAF</code> uses leaf-relative paths (for example, <code>index_1.m3u8</code>). <code>ROOT</code> uses root-relative paths that include the full path from root (for example, <code>/out/v1/channel-group/channel/endpoint/index_1.m3u8</code>). If you don't specify a value, the default is <code>LEAF</code>.</p>
+    pub fn uri_path_type(&self) -> ::std::option::Option<&crate::types::UriPathType> {
+        self.uri_path_type.as_ref()
+    }
 }
 impl CreateLowLatencyHlsManifestConfiguration {
     /// Creates a new builder-style object to manufacture [`CreateLowLatencyHlsManifestConfiguration`](crate::types::CreateLowLatencyHlsManifestConfiguration).
@@ -77,6 +83,7 @@ pub struct CreateLowLatencyHlsManifestConfigurationBuilder {
     pub(crate) program_date_time_interval_seconds: ::std::option::Option<i32>,
     pub(crate) filter_configuration: ::std::option::Option<crate::types::FilterConfiguration>,
     pub(crate) url_encode_child_manifest: ::std::option::Option<bool>,
+    pub(crate) uri_path_type: ::std::option::Option<crate::types::UriPathType>,
 }
 impl CreateLowLatencyHlsManifestConfigurationBuilder {
     /// <p>A short short string that's appended to the endpoint URL. The manifest name creates a unique path to this endpoint. If you don't enter a value, MediaPackage uses the default manifest name, index. MediaPackage automatically inserts the format extension, such as .m3u8. You can't use the same manifest name if you use HLS manifest and low-latency HLS manifest. The manifestName on the HLSManifest object overrides the manifestName you provided on the originEndpoint object.</p>
@@ -195,6 +202,20 @@ impl CreateLowLatencyHlsManifestConfigurationBuilder {
     pub fn get_url_encode_child_manifest(&self) -> &::std::option::Option<bool> {
         &self.url_encode_child_manifest
     }
+    /// <p>The type of path to use in manifest URIs. <code>LEAF</code> uses leaf-relative paths (for example, <code>index_1.m3u8</code>). <code>ROOT</code> uses root-relative paths that include the full path from root (for example, <code>/out/v1/channel-group/channel/endpoint/index_1.m3u8</code>). If you don't specify a value, the default is <code>LEAF</code>.</p>
+    pub fn uri_path_type(mut self, input: crate::types::UriPathType) -> Self {
+        self.uri_path_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The type of path to use in manifest URIs. <code>LEAF</code> uses leaf-relative paths (for example, <code>index_1.m3u8</code>). <code>ROOT</code> uses root-relative paths that include the full path from root (for example, <code>/out/v1/channel-group/channel/endpoint/index_1.m3u8</code>). If you don't specify a value, the default is <code>LEAF</code>.</p>
+    pub fn set_uri_path_type(mut self, input: ::std::option::Option<crate::types::UriPathType>) -> Self {
+        self.uri_path_type = input;
+        self
+    }
+    /// <p>The type of path to use in manifest URIs. <code>LEAF</code> uses leaf-relative paths (for example, <code>index_1.m3u8</code>). <code>ROOT</code> uses root-relative paths that include the full path from root (for example, <code>/out/v1/channel-group/channel/endpoint/index_1.m3u8</code>). If you don't specify a value, the default is <code>LEAF</code>.</p>
+    pub fn get_uri_path_type(&self) -> &::std::option::Option<crate::types::UriPathType> {
+        &self.uri_path_type
+    }
     /// Consumes the builder and constructs a [`CreateLowLatencyHlsManifestConfiguration`](crate::types::CreateLowLatencyHlsManifestConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`manifest_name`](crate::types::builders::CreateLowLatencyHlsManifestConfigurationBuilder::manifest_name)
@@ -215,6 +236,7 @@ impl CreateLowLatencyHlsManifestConfigurationBuilder {
             program_date_time_interval_seconds: self.program_date_time_interval_seconds,
             filter_configuration: self.filter_configuration,
             url_encode_child_manifest: self.url_encode_child_manifest,
+            uri_path_type: self.uri_path_type,
         })
     }
 }

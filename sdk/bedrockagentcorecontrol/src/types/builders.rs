@@ -41,7 +41,15 @@ pub use crate::types::_browser_signing_config_output::BrowserSigningConfigOutput
 
 pub use crate::types::_code_interpreter_network_configuration::CodeInterpreterNetworkConfigurationBuilder;
 
+pub use crate::types::_version_created_by_source::VersionCreatedBySourceBuilder;
+
+pub use crate::types::_version_lineage_metadata::VersionLineageMetadataBuilder;
+
+pub use crate::types::_version_filter::VersionFilterBuilder;
+
 pub use crate::types::_gateway_policy_engine_configuration::GatewayPolicyEngineConfigurationBuilder;
+
+pub use crate::types::_system_managed_block::SystemManagedBlockBuilder;
 
 pub use crate::types::_metadata_configuration::MetadataConfigurationBuilder;
 
@@ -109,6 +117,12 @@ pub use crate::types::_certificate::CertificateBuilder;
 
 pub use crate::types::_code_interpreter_summary::CodeInterpreterSummaryBuilder;
 
+pub use crate::types::_configuration_bundle_summary::ConfigurationBundleSummaryBuilder;
+
+pub use crate::types::_component_configuration::ComponentConfigurationBuilder;
+
+pub use crate::types::_configuration_bundle_version_summary::ConfigurationBundleVersionSummaryBuilder;
+
 pub use crate::types::_evaluator_summary::EvaluatorSummaryBuilder;
 
 pub use crate::types::_llm_as_a_judge_evaluator_config::LlmAsAJudgeEvaluatorConfigBuilder;
@@ -118,6 +132,8 @@ pub use crate::types::_mcp_gateway_configuration::McpGatewayConfigurationBuilder
 pub use crate::types::_gateway_interceptor_configuration::GatewayInterceptorConfigurationBuilder;
 
 pub use crate::types::_gateway_summary::GatewaySummaryBuilder;
+
+pub use crate::types::_gateway_rule_detail::GatewayRuleDetailBuilder;
 
 pub use crate::types::_credential_provider_configuration::CredentialProviderConfigurationBuilder;
 
@@ -217,11 +233,17 @@ pub use crate::types::_lambda_evaluator_config::LambdaEvaluatorConfigBuilder;
 
 pub use crate::types::_interceptor_input_configuration::InterceptorInputConfigurationBuilder;
 
+pub use crate::types::_match_principals::MatchPrincipalsBuilder;
+
+pub use crate::types::_match_paths::MatchPathsBuilder;
+
 pub use crate::types::_mcp_lambda_target_configuration::McpLambdaTargetConfigurationBuilder;
 
 pub use crate::types::_mcp_server_target_configuration::McpServerTargetConfigurationBuilder;
 
 pub use crate::types::_api_gateway_target_configuration::ApiGatewayTargetConfigurationBuilder;
+
+pub use crate::types::_runtime_target_configuration::RuntimeTargetConfigurationBuilder;
 
 pub use crate::types::_harness_sliding_window_configuration::HarnessSlidingWindowConfigurationBuilder;
 
@@ -272,6 +294,14 @@ pub use crate::types::_secrets_manager_location::SecretsManagerLocationBuilder;
 pub use crate::types::_bedrock_evaluator_model_config::BedrockEvaluatorModelConfigBuilder;
 
 pub use crate::types::_lambda_interceptor_configuration::LambdaInterceptorConfigurationBuilder;
+
+pub use crate::types::_static_override::StaticOverrideBuilder;
+
+pub use crate::types::_weighted_override::WeightedOverrideBuilder;
+
+pub use crate::types::_static_route::StaticRouteBuilder;
+
+pub use crate::types::_weighted_route::WeightedRouteBuilder;
 
 pub use crate::types::_s3_configuration::S3ConfigurationBuilder;
 
@@ -341,6 +371,12 @@ pub use crate::types::_updated_skill_md_definition::UpdatedSkillMdDefinitionBuil
 
 pub use crate::types::_updated_skill_definition::UpdatedSkillDefinitionBuilder;
 
+pub use crate::types::_iam_principal::IamPrincipalBuilder;
+
+pub use crate::types::_traffic_split_entry::TrafficSplitEntryBuilder;
+
+pub use crate::types::_target_traffic_split_entry::TargetTrafficSplitEntryBuilder;
+
 pub use crate::types::_tool_definition::ToolDefinitionBuilder;
 
 pub use crate::types::_api_gateway_tool_override::ApiGatewayToolOverrideBuilder;
@@ -378,6 +414,8 @@ pub use crate::types::_modify_invocation_configuration_input::ModifyInvocationCo
 pub use crate::types::_registry_record_o_auth_credential_provider::RegistryRecordOAuthCredentialProviderBuilder;
 
 pub use crate::types::_registry_record_iam_credential_provider::RegistryRecordIamCredentialProviderBuilder;
+
+pub use crate::types::_configuration_bundle_reference::ConfigurationBundleReferenceBuilder;
 
 pub use crate::types::_schema_definition::SchemaDefinitionBuilder;
 

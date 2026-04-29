@@ -13,6 +13,8 @@ pub struct CreateEvaluatorInput {
     pub evaluator_config: ::std::option::Option<crate::types::EvaluatorConfig>,
     /// <p>The evaluation level that determines the scope of evaluation. Valid values are <code>TOOL_CALL</code> for individual tool invocations, <code>TRACE</code> for single request-response interactions, or <code>SESSION</code> for entire conversation sessions.</p>
     pub level: ::std::option::Option<crate::types::EvaluatorLevel>,
+    /// <p>The Amazon Resource Name (ARN) of a customer managed KMS key to use for encrypting sensitive evaluator data, including instructions and rating scale. If you don't specify a KMS key, the evaluator data is encrypted with an Amazon Web Services owned key. Only symmetric encryption KMS keys are supported. For more information, see <a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/evaluations-encryption.html">Encryption at rest for AgentCore Evaluations</a>.</p>
+    pub kms_key_arn: ::std::option::Option<::std::string::String>,
     /// <p>A map of tag keys and values to assign to an AgentCore Evaluator. Tags enable you to categorize your resources in different ways, for example, by purpose, owner, or environment.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
@@ -37,6 +39,10 @@ impl CreateEvaluatorInput {
     pub fn level(&self) -> ::std::option::Option<&crate::types::EvaluatorLevel> {
         self.level.as_ref()
     }
+    /// <p>The Amazon Resource Name (ARN) of a customer managed KMS key to use for encrypting sensitive evaluator data, including instructions and rating scale. If you don't specify a KMS key, the evaluator data is encrypted with an Amazon Web Services owned key. Only symmetric encryption KMS keys are supported. For more information, see <a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/evaluations-encryption.html">Encryption at rest for AgentCore Evaluations</a>.</p>
+    pub fn kms_key_arn(&self) -> ::std::option::Option<&str> {
+        self.kms_key_arn.as_deref()
+    }
     /// <p>A map of tag keys and values to assign to an AgentCore Evaluator. Tags enable you to categorize your resources in different ways, for example, by purpose, owner, or environment.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
@@ -50,6 +56,7 @@ impl ::std::fmt::Debug for CreateEvaluatorInput {
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("evaluator_config", &self.evaluator_config);
         formatter.field("level", &self.level);
+        formatter.field("kms_key_arn", &self.kms_key_arn);
         formatter.field("tags", &self.tags);
         formatter.finish()
     }
@@ -70,6 +77,7 @@ pub struct CreateEvaluatorInputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) evaluator_config: ::std::option::Option<crate::types::EvaluatorConfig>,
     pub(crate) level: ::std::option::Option<crate::types::EvaluatorLevel>,
+    pub(crate) kms_key_arn: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateEvaluatorInputBuilder {
@@ -146,6 +154,20 @@ impl CreateEvaluatorInputBuilder {
     pub fn get_level(&self) -> &::std::option::Option<crate::types::EvaluatorLevel> {
         &self.level
     }
+    /// <p>The Amazon Resource Name (ARN) of a customer managed KMS key to use for encrypting sensitive evaluator data, including instructions and rating scale. If you don't specify a KMS key, the evaluator data is encrypted with an Amazon Web Services owned key. Only symmetric encryption KMS keys are supported. For more information, see <a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/evaluations-encryption.html">Encryption at rest for AgentCore Evaluations</a>.</p>
+    pub fn kms_key_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.kms_key_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of a customer managed KMS key to use for encrypting sensitive evaluator data, including instructions and rating scale. If you don't specify a KMS key, the evaluator data is encrypted with an Amazon Web Services owned key. Only symmetric encryption KMS keys are supported. For more information, see <a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/evaluations-encryption.html">Encryption at rest for AgentCore Evaluations</a>.</p>
+    pub fn set_kms_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.kms_key_arn = input;
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of a customer managed KMS key to use for encrypting sensitive evaluator data, including instructions and rating scale. If you don't specify a KMS key, the evaluator data is encrypted with an Amazon Web Services owned key. Only symmetric encryption KMS keys are supported. For more information, see <a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/evaluations-encryption.html">Encryption at rest for AgentCore Evaluations</a>.</p>
+    pub fn get_kms_key_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_arn
+    }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -176,6 +198,7 @@ impl CreateEvaluatorInputBuilder {
             description: self.description,
             evaluator_config: self.evaluator_config,
             level: self.level,
+            kms_key_arn: self.kms_key_arn,
             tags: self.tags,
         })
     }
@@ -188,6 +211,7 @@ impl ::std::fmt::Debug for CreateEvaluatorInputBuilder {
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("evaluator_config", &self.evaluator_config);
         formatter.field("level", &self.level);
+        formatter.field("kms_key_arn", &self.kms_key_arn);
         formatter.field("tags", &self.tags);
         formatter.finish()
     }

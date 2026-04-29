@@ -13,6 +13,8 @@ pub struct UpdateEvaluatorInput {
     pub evaluator_config: ::std::option::Option<crate::types::EvaluatorConfig>,
     /// <p>The updated evaluation level (<code>TOOL_CALL</code>, <code>TRACE</code>, or <code>SESSION</code>) that determines the scope of evaluation.</p>
     pub level: ::std::option::Option<crate::types::EvaluatorLevel>,
+    /// <p>The Amazon Resource Name (ARN) of a customer managed KMS key to use for encrypting sensitive evaluator data. Specify a new key ARN to rotate the encryption key, or specify a key ARN to add encryption to an evaluator that was previously created without one. When you rotate to a new key, the service decrypts the existing data with the old key and re-encrypts it with the new key. Only symmetric encryption KMS keys are supported. For more information, see <a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/evaluations-encryption.html">Encryption at rest for AgentCore Evaluations</a>.</p>
+    pub kms_key_arn: ::std::option::Option<::std::string::String>,
 }
 impl UpdateEvaluatorInput {
     /// <p>A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If you don't specify this field, a value is randomly generated for you. If this token matches a previous request, the service ignores the request, but doesn't return an error. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a>.</p>
@@ -35,6 +37,10 @@ impl UpdateEvaluatorInput {
     pub fn level(&self) -> ::std::option::Option<&crate::types::EvaluatorLevel> {
         self.level.as_ref()
     }
+    /// <p>The Amazon Resource Name (ARN) of a customer managed KMS key to use for encrypting sensitive evaluator data. Specify a new key ARN to rotate the encryption key, or specify a key ARN to add encryption to an evaluator that was previously created without one. When you rotate to a new key, the service decrypts the existing data with the old key and re-encrypts it with the new key. Only symmetric encryption KMS keys are supported. For more information, see <a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/evaluations-encryption.html">Encryption at rest for AgentCore Evaluations</a>.</p>
+    pub fn kms_key_arn(&self) -> ::std::option::Option<&str> {
+        self.kms_key_arn.as_deref()
+    }
 }
 impl ::std::fmt::Debug for UpdateEvaluatorInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -44,6 +50,7 @@ impl ::std::fmt::Debug for UpdateEvaluatorInput {
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("evaluator_config", &self.evaluator_config);
         formatter.field("level", &self.level);
+        formatter.field("kms_key_arn", &self.kms_key_arn);
         formatter.finish()
     }
 }
@@ -63,6 +70,7 @@ pub struct UpdateEvaluatorInputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) evaluator_config: ::std::option::Option<crate::types::EvaluatorConfig>,
     pub(crate) level: ::std::option::Option<crate::types::EvaluatorLevel>,
+    pub(crate) kms_key_arn: ::std::option::Option<::std::string::String>,
 }
 impl UpdateEvaluatorInputBuilder {
     /// <p>A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If you don't specify this field, a value is randomly generated for you. If this token matches a previous request, the service ignores the request, but doesn't return an error. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a>.</p>
@@ -136,6 +144,20 @@ impl UpdateEvaluatorInputBuilder {
     pub fn get_level(&self) -> &::std::option::Option<crate::types::EvaluatorLevel> {
         &self.level
     }
+    /// <p>The Amazon Resource Name (ARN) of a customer managed KMS key to use for encrypting sensitive evaluator data. Specify a new key ARN to rotate the encryption key, or specify a key ARN to add encryption to an evaluator that was previously created without one. When you rotate to a new key, the service decrypts the existing data with the old key and re-encrypts it with the new key. Only symmetric encryption KMS keys are supported. For more information, see <a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/evaluations-encryption.html">Encryption at rest for AgentCore Evaluations</a>.</p>
+    pub fn kms_key_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.kms_key_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of a customer managed KMS key to use for encrypting sensitive evaluator data. Specify a new key ARN to rotate the encryption key, or specify a key ARN to add encryption to an evaluator that was previously created without one. When you rotate to a new key, the service decrypts the existing data with the old key and re-encrypts it with the new key. Only symmetric encryption KMS keys are supported. For more information, see <a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/evaluations-encryption.html">Encryption at rest for AgentCore Evaluations</a>.</p>
+    pub fn set_kms_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.kms_key_arn = input;
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of a customer managed KMS key to use for encrypting sensitive evaluator data. Specify a new key ARN to rotate the encryption key, or specify a key ARN to add encryption to an evaluator that was previously created without one. When you rotate to a new key, the service decrypts the existing data with the old key and re-encrypts it with the new key. Only symmetric encryption KMS keys are supported. For more information, see <a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/evaluations-encryption.html">Encryption at rest for AgentCore Evaluations</a>.</p>
+    pub fn get_kms_key_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_arn
+    }
     /// Consumes the builder and constructs a [`UpdateEvaluatorInput`](crate::operation::update_evaluator::UpdateEvaluatorInput).
     pub fn build(
         self,
@@ -146,6 +168,7 @@ impl UpdateEvaluatorInputBuilder {
             description: self.description,
             evaluator_config: self.evaluator_config,
             level: self.level,
+            kms_key_arn: self.kms_key_arn,
         })
     }
 }
@@ -157,6 +180,7 @@ impl ::std::fmt::Debug for UpdateEvaluatorInputBuilder {
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("evaluator_config", &self.evaluator_config);
         formatter.field("level", &self.level);
+        formatter.field("kms_key_arn", &self.kms_key_arn);
         formatter.finish()
     }
 }

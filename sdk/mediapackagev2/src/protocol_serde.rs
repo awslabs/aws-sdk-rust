@@ -227,6 +227,8 @@ pub(crate) mod shape_scte_hls;
 
 pub(crate) mod shape_start_tag;
 
+pub(crate) mod shape_custom_ad_type_list;
+
 pub(crate) mod shape_dash_base_urls;
 
 pub(crate) mod shape_dash_dvb_font_download;

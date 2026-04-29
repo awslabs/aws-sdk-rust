@@ -183,6 +183,8 @@ pub use crate::types::_viewer_mtls_config::ViewerMtlsConfigBuilder;
 
 pub use crate::types::_connection_function_association::ConnectionFunctionAssociationBuilder;
 
+pub use crate::types::_cache_tag_config::CacheTagConfigBuilder;
+
 pub use crate::types::_domain_item::DomainItemBuilder;
 
 pub use crate::types::_web_acl_customization::WebAclCustomizationBuilder;

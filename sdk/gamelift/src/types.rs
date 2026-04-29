@@ -199,6 +199,8 @@ pub use crate::types::_player_session_status::PlayerSessionStatus;
 
 pub use crate::types::_compute_status::ComputeStatus;
 
+pub use crate::types::_container_group_port_mapping::ContainerGroupPortMapping;
+
 pub use crate::types::_ec2_instance_limit::Ec2InstanceLimit;
 
 pub use crate::types::_deployment_status::DeploymentStatus;
@@ -301,6 +303,8 @@ pub use crate::types::_container_mount_point_access_level::ContainerMountPointAc
 
 pub use crate::types::_container_port_range::ContainerPortRange;
 
+pub use crate::types::_container_port_mapping::ContainerPortMapping;
+
 pub use crate::types::_player_connection_endpoint::PlayerConnectionEndpoint;
 
 pub use crate::types::_attribute_value::AttributeValue;
@@ -365,6 +369,8 @@ mod _container_group_definition;
 
 mod _container_group_definition_status;
 
+mod _container_group_port_mapping;
+
 mod _container_group_type;
 
 mod _container_health_check;
@@ -378,6 +384,8 @@ mod _container_mount_point_access_level;
 mod _container_operating_system;
 
 mod _container_port_configuration;
+
+mod _container_port_mapping;
 
 mod _container_port_range;
 

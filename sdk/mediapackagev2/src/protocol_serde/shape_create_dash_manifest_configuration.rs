@@ -105,5 +105,8 @@ pub fn ser_create_dash_manifest_configuration(
         crate::protocol_serde::shape_dash_subtitle_configuration::ser_dash_subtitle_configuration(&mut object_29, var_28)?;
         object_29.finish();
     }
+    if let Some(var_30) = &input.uri_path_type {
+        object.key("UriPathType").string(var_30.as_str());
+    }
     Ok(())
 }

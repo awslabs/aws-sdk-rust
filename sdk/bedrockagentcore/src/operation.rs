@@ -13,8 +13,17 @@ pub mod batch_update_memory_records;
 /// Types for the `CompleteResourceTokenAuth` operation.
 pub mod complete_resource_token_auth;
 
+/// Types for the `CreateABTest` operation.
+pub mod create_ab_test;
+
 /// Types for the `CreateEvent` operation.
 pub mod create_event;
+
+/// Types for the `DeleteABTest` operation.
+pub mod delete_ab_test;
+
+/// Types for the `DeleteBatchEvaluation` operation.
+pub mod delete_batch_evaluation;
 
 /// Types for the `DeleteEvent` operation.
 pub mod delete_event;
@@ -22,11 +31,20 @@ pub mod delete_event;
 /// Types for the `DeleteMemoryRecord` operation.
 pub mod delete_memory_record;
 
+/// Types for the `DeleteRecommendation` operation.
+pub mod delete_recommendation;
+
 /// Types for the `Evaluate` operation.
 pub mod evaluate;
 
+/// Types for the `GetABTest` operation.
+pub mod get_ab_test;
+
 /// Types for the `GetAgentCard` operation.
 pub mod get_agent_card;
+
+/// Types for the `GetBatchEvaluation` operation.
+pub mod get_batch_evaluation;
 
 /// Types for the `GetBrowserSession` operation.
 pub mod get_browser_session;
@@ -39,6 +57,9 @@ pub mod get_event;
 
 /// Types for the `GetMemoryRecord` operation.
 pub mod get_memory_record;
+
+/// Types for the `GetRecommendation` operation.
+pub mod get_recommendation;
 
 /// Types for the `GetResourceApiKey` operation.
 pub mod get_resource_api_key;
@@ -70,8 +91,14 @@ pub mod invoke_code_interpreter;
 /// Types for the `InvokeHarness` operation.
 pub mod invoke_harness;
 
+/// Types for the `ListABTests` operation.
+pub mod list_ab_tests;
+
 /// Types for the `ListActors` operation.
 pub mod list_actors;
+
+/// Types for the `ListBatchEvaluations` operation.
+pub mod list_batch_evaluations;
 
 /// Types for the `ListBrowserSessions` operation.
 pub mod list_browser_sessions;
@@ -88,6 +115,9 @@ pub mod list_memory_extraction_jobs;
 /// Types for the `ListMemoryRecords` operation.
 pub mod list_memory_records;
 
+/// Types for the `ListRecommendations` operation.
+pub mod list_recommendations;
+
 /// Types for the `ListSessions` operation.
 pub mod list_sessions;
 
@@ -100,6 +130,9 @@ pub mod save_browser_session_profile;
 /// Types for the `SearchRegistryRecords` operation.
 pub mod search_registry_records;
 
+/// Types for the `StartBatchEvaluation` operation.
+pub mod start_batch_evaluation;
+
 /// Types for the `StartBrowserSession` operation.
 pub mod start_browser_session;
 
@@ -109,6 +142,12 @@ pub mod start_code_interpreter_session;
 /// Types for the `StartMemoryExtractionJob` operation.
 pub mod start_memory_extraction_job;
 
+/// Types for the `StartRecommendation` operation.
+pub mod start_recommendation;
+
+/// Types for the `StopBatchEvaluation` operation.
+pub mod stop_batch_evaluation;
+
 /// Types for the `StopBrowserSession` operation.
 pub mod stop_browser_session;
 
@@ -117,6 +156,9 @@ pub mod stop_code_interpreter_session;
 
 /// Types for the `StopRuntimeSession` operation.
 pub mod stop_runtime_session;
+
+/// Types for the `UpdateABTest` operation.
+pub mod update_ab_test;
 
 /// Types for the `UpdateBrowserStream` operation.
 pub mod update_browser_stream;

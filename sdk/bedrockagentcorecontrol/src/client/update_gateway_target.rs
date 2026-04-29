@@ -27,6 +27,7 @@ impl super::Client {
     ///   - [`private_endpoint(Option<PrivateEndpoint>)`](crate::operation::update_gateway_target::UpdateGatewayTargetOutput::private_endpoint): <p>The private endpoint configuration for the gateway target.</p>
     ///   - [`private_endpoint_managed_resources(Option<Vec::<ManagedResourceDetails>>)`](crate::operation::update_gateway_target::UpdateGatewayTargetOutput::private_endpoint_managed_resources): <p>The managed resources created by the gateway for private endpoint connectivity.</p>
     ///   - [`authorization_data(Option<AuthorizationData>)`](crate::operation::update_gateway_target::UpdateGatewayTargetOutput::authorization_data): <p>OAuth2 authorization data for the updated gateway target. This data is returned when a target is configured with a credential provider with authorization code grant type and requires user federation.</p>
+    ///   - [`protocol_type(Option<TargetProtocolType>)`](crate::operation::update_gateway_target::UpdateGatewayTargetOutput::protocol_type): <p>The protocol type of the updated gateway target.</p>
     /// - On failure, responds with [`SdkError<UpdateGatewayTargetError>`](crate::operation::update_gateway_target::UpdateGatewayTargetError)
     pub fn update_gateway_target(&self) -> crate::operation::update_gateway_target::builders::UpdateGatewayTargetFluentBuilder {
         crate::operation::update_gateway_target::builders::UpdateGatewayTargetFluentBuilder::new(self.handle.clone())

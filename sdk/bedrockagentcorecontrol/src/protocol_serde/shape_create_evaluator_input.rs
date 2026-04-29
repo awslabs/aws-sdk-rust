@@ -18,18 +18,21 @@ pub fn ser_create_evaluator_input_input(
     if let Some(var_5) = &input.evaluator_name {
         object.key("evaluatorName").string(var_5.as_str());
     }
-    if let Some(var_6) = &input.level {
-        object.key("level").string(var_6.as_str());
+    if let Some(var_6) = &input.kms_key_arn {
+        object.key("kmsKeyArn").string(var_6.as_str());
     }
-    if let Some(var_7) = &input.tags {
+    if let Some(var_7) = &input.level {
+        object.key("level").string(var_7.as_str());
+    }
+    if let Some(var_8) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_8 = object.key("tags").start_object();
-        for (key_9, value_10) in var_7 {
+        let mut object_9 = object.key("tags").start_object();
+        for (key_10, value_11) in var_8 {
             {
-                object_8.key(key_9.as_str()).string(value_10.as_str());
+                object_9.key(key_10.as_str()).string(value_11.as_str());
             }
         }
-        object_8.finish();
+        object_9.finish();
     }
     Ok(())
 }

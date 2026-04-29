@@ -19,11 +19,17 @@ pub mod create_browser_profile;
 /// Types for the `CreateCodeInterpreter` operation.
 pub mod create_code_interpreter;
 
+/// Types for the `CreateConfigurationBundle` operation.
+pub mod create_configuration_bundle;
+
 /// Types for the `CreateEvaluator` operation.
 pub mod create_evaluator;
 
 /// Types for the `CreateGateway` operation.
 pub mod create_gateway;
+
+/// Types for the `CreateGatewayRule` operation.
+pub mod create_gateway_rule;
 
 /// Types for the `CreateGatewayTarget` operation.
 pub mod create_gateway_target;
@@ -73,11 +79,17 @@ pub mod delete_browser_profile;
 /// Types for the `DeleteCodeInterpreter` operation.
 pub mod delete_code_interpreter;
 
+/// Types for the `DeleteConfigurationBundle` operation.
+pub mod delete_configuration_bundle;
+
 /// Types for the `DeleteEvaluator` operation.
 pub mod delete_evaluator;
 
 /// Types for the `DeleteGateway` operation.
 pub mod delete_gateway;
+
+/// Types for the `DeleteGatewayRule` operation.
+pub mod delete_gateway_rule;
 
 /// Types for the `DeleteGatewayTarget` operation.
 pub mod delete_gateway_target;
@@ -130,11 +142,20 @@ pub mod get_browser_profile;
 /// Types for the `GetCodeInterpreter` operation.
 pub mod get_code_interpreter;
 
+/// Types for the `GetConfigurationBundle` operation.
+pub mod get_configuration_bundle;
+
+/// Types for the `GetConfigurationBundleVersion` operation.
+pub mod get_configuration_bundle_version;
+
 /// Types for the `GetEvaluator` operation.
 pub mod get_evaluator;
 
 /// Types for the `GetGateway` operation.
 pub mod get_gateway;
+
+/// Types for the `GetGatewayRule` operation.
+pub mod get_gateway_rule;
 
 /// Types for the `GetGatewayTarget` operation.
 pub mod get_gateway_target;
@@ -196,8 +217,17 @@ pub mod list_browsers;
 /// Types for the `ListCodeInterpreters` operation.
 pub mod list_code_interpreters;
 
+/// Types for the `ListConfigurationBundleVersions` operation.
+pub mod list_configuration_bundle_versions;
+
+/// Types for the `ListConfigurationBundles` operation.
+pub mod list_configuration_bundles;
+
 /// Types for the `ListEvaluators` operation.
 pub mod list_evaluators;
+
+/// Types for the `ListGatewayRules` operation.
+pub mod list_gateway_rules;
 
 /// Types for the `ListGatewayTargets` operation.
 pub mod list_gateway_targets;
@@ -271,11 +301,17 @@ pub mod update_agent_runtime_endpoint;
 /// Types for the `UpdateApiKeyCredentialProvider` operation.
 pub mod update_api_key_credential_provider;
 
+/// Types for the `UpdateConfigurationBundle` operation.
+pub mod update_configuration_bundle;
+
 /// Types for the `UpdateEvaluator` operation.
 pub mod update_evaluator;
 
 /// Types for the `UpdateGateway` operation.
 pub mod update_gateway;
+
+/// Types for the `UpdateGatewayRule` operation.
+pub mod update_gateway_rule;
 
 /// Types for the `UpdateGatewayTarget` operation.
 pub mod update_gateway_target;

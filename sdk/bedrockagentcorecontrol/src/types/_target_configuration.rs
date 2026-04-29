@@ -4,6 +4,8 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum TargetConfiguration {
+    /// <p>The HTTP target configuration. Use this to route gateway requests to an HTTP-based endpoint such as an AgentCore Runtime.</p>
+    Http(crate::types::HttpTargetConfiguration),
     /// <p>The Model Context Protocol (MCP) configuration for the target. This configuration defines how the gateway uses MCP to communicate with the target.</p>
     Mcp(crate::types::McpTargetConfiguration),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
@@ -17,7 +19,19 @@ pub enum TargetConfiguration {
     Unknown,
 }
 impl TargetConfiguration {
-    #[allow(irrefutable_let_patterns)]
+    /// Tries to convert the enum instance into [`Http`](crate::types::TargetConfiguration::Http), extracting the inner [`HttpTargetConfiguration`](crate::types::HttpTargetConfiguration).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_http(&self) -> ::std::result::Result<&crate::types::HttpTargetConfiguration, &Self> {
+        if let TargetConfiguration::Http(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`Http`](crate::types::TargetConfiguration::Http).
+    pub fn is_http(&self) -> bool {
+        self.as_http().is_ok()
+    }
     /// Tries to convert the enum instance into [`Mcp`](crate::types::TargetConfiguration::Mcp), extracting the inner [`McpTargetConfiguration`](crate::types::McpTargetConfiguration).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_mcp(&self) -> ::std::result::Result<&crate::types::McpTargetConfiguration, &Self> {

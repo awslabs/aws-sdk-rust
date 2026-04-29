@@ -156,17 +156,17 @@ impl CreateMonitorFluentBuilder {
     pub fn get_identity_center_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_identity_center_instance_arn()
     }
-    /// The AWS region where IAM Identity Center is enabled. Required when Identity Center is in a different region than the monitor.
+    /// <p>The AWS Region where IAM Identity Center is enabled. Required when IAM Identity Center is in a different Region than the monitor.</p>
     pub fn identity_center_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.identity_center_region(input.into());
         self
     }
-    /// The AWS region where IAM Identity Center is enabled. Required when Identity Center is in a different region than the monitor.
+    /// <p>The AWS Region where IAM Identity Center is enabled. Required when IAM Identity Center is in a different Region than the monitor.</p>
     pub fn set_identity_center_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_identity_center_region(input);
         self
     }
-    /// The AWS region where IAM Identity Center is enabled. Required when Identity Center is in a different region than the monitor.
+    /// <p>The AWS Region where IAM Identity Center is enabled. Required when IAM Identity Center is in a different Region than the monitor.</p>
     pub fn get_identity_center_region(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_identity_center_region()
     }

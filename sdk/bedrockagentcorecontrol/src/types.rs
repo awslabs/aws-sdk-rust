@@ -67,11 +67,21 @@ pub use crate::types::_code_interpreter_network_configuration::CodeInterpreterNe
 
 pub use crate::types::_code_interpreter_status::CodeInterpreterStatus;
 
+pub use crate::types::_version_created_by_source::VersionCreatedBySource;
+
+pub use crate::types::_version_lineage_metadata::VersionLineageMetadata;
+
+pub use crate::types::_configuration_bundle_status::ConfigurationBundleStatus;
+
+pub use crate::types::_version_filter::VersionFilter;
+
 pub use crate::types::_evaluator_config::EvaluatorConfig;
 
 pub use crate::types::_evaluator_level::EvaluatorLevel;
 
 pub use crate::types::_evaluator_status::EvaluatorStatus;
+
+pub use crate::types::_included_data::IncludedData;
 
 pub use crate::types::_gateway_protocol_type::GatewayProtocolType;
 
@@ -85,6 +95,10 @@ pub use crate::types::_exception_level::ExceptionLevel;
 
 pub use crate::types::_gateway_status::GatewayStatus;
 
+pub use crate::types::_gateway_rule_status::GatewayRuleStatus;
+
+pub use crate::types::_system_managed_block::SystemManagedBlock;
+
 pub use crate::types::_target_configuration::TargetConfiguration;
 
 pub use crate::types::_metadata_configuration::MetadataConfiguration;
@@ -94,6 +108,8 @@ pub use crate::types::_private_endpoint::PrivateEndpoint;
 pub use crate::types::_target_status::TargetStatus;
 
 pub use crate::types::_authorization_data::AuthorizationData;
+
+pub use crate::types::_target_protocol_type::TargetProtocolType;
 
 pub use crate::types::_harness_environment_provider_request::HarnessEnvironmentProviderRequest;
 
@@ -217,6 +233,12 @@ pub use crate::types::_code_interpreter_summary::CodeInterpreterSummary;
 
 pub use crate::types::_code_interpreter_network_mode::CodeInterpreterNetworkMode;
 
+pub use crate::types::_configuration_bundle_summary::ConfigurationBundleSummary;
+
+pub use crate::types::_component_configuration::ComponentConfiguration;
+
+pub use crate::types::_configuration_bundle_version_summary::ConfigurationBundleVersionSummary;
+
 pub use crate::types::_evaluator_summary::EvaluatorSummary;
 
 pub use crate::types::_llm_as_a_judge_evaluator_config::LlmAsAJudgeEvaluatorConfig;
@@ -231,7 +253,15 @@ pub use crate::types::_gateway_policy_engine_mode::GatewayPolicyEngineMode;
 
 pub use crate::types::_gateway_summary::GatewaySummary;
 
+pub use crate::types::_condition::Condition;
+
+pub use crate::types::_action::Action;
+
+pub use crate::types::_gateway_rule_detail::GatewayRuleDetail;
+
 pub use crate::types::_mcp_target_configuration::McpTargetConfiguration;
+
+pub use crate::types::_http_target_configuration::HttpTargetConfiguration;
 
 pub use crate::types::_credential_provider_configuration::CredentialProviderConfiguration;
 
@@ -369,6 +399,14 @@ pub use crate::types::_interceptor_configuration::InterceptorConfiguration;
 
 pub use crate::types::_interceptor_input_configuration::InterceptorInputConfiguration;
 
+pub use crate::types::_match_principals::MatchPrincipals;
+
+pub use crate::types::_match_paths::MatchPaths;
+
+pub use crate::types::_configuration_bundle_action::ConfigurationBundleAction;
+
+pub use crate::types::_route_to_target_action::RouteToTargetAction;
+
 pub use crate::types::_api_schema_configuration::ApiSchemaConfiguration;
 
 pub use crate::types::_mcp_lambda_target_configuration::McpLambdaTargetConfiguration;
@@ -376,6 +414,8 @@ pub use crate::types::_mcp_lambda_target_configuration::McpLambdaTargetConfigura
 pub use crate::types::_mcp_server_target_configuration::McpServerTargetConfiguration;
 
 pub use crate::types::_api_gateway_target_configuration::ApiGatewayTargetConfiguration;
+
+pub use crate::types::_runtime_target_configuration::RuntimeTargetConfiguration;
 
 pub use crate::types::_credential_provider_type::CredentialProviderType;
 
@@ -441,6 +481,14 @@ pub use crate::types::_lambda_interceptor_configuration::LambdaInterceptorConfig
 
 pub use crate::types::_gateway_interception_point::GatewayInterceptionPoint;
 
+pub use crate::types::_static_override::StaticOverride;
+
+pub use crate::types::_weighted_override::WeightedOverride;
+
+pub use crate::types::_static_route::StaticRoute;
+
+pub use crate::types::_weighted_route::WeightedRoute;
+
 pub use crate::types::_s3_configuration::S3Configuration;
 
 pub use crate::types::_tool_schema::ToolSchema;
@@ -505,6 +553,8 @@ pub use crate::types::_categorical_scale_definition::CategoricalScaleDefinition;
 
 pub use crate::types::_inference_configuration::InferenceConfiguration;
 
+pub use crate::types::_match_principal_entry::MatchPrincipalEntry;
+
 pub use crate::types::_o_auth_grant_type::OAuthGrantType;
 
 pub use crate::types::_api_key_credential_location::ApiKeyCredentialLocation;
@@ -557,6 +607,12 @@ pub use crate::types::_claim_match_value_type::ClaimMatchValueType;
 
 pub use crate::types::_claim_match_operator_type::ClaimMatchOperatorType;
 
+pub use crate::types::_iam_principal::IamPrincipal;
+
+pub use crate::types::_traffic_split_entry::TrafficSplitEntry;
+
+pub use crate::types::_target_traffic_split_entry::TargetTrafficSplitEntry;
+
 pub use crate::types::_tool_definition::ToolDefinition;
 
 pub use crate::types::_api_gateway_tool_override::ApiGatewayToolOverride;
@@ -607,6 +663,10 @@ pub use crate::types::_registry_record_o_auth_credential_provider::RegistryRecor
 
 pub use crate::types::_registry_record_iam_credential_provider::RegistryRecordIamCredentialProvider;
 
+pub use crate::types::_principal_match_operator::PrincipalMatchOperator;
+
+pub use crate::types::_configuration_bundle_reference::ConfigurationBundleReference;
+
 pub use crate::types::_schema_definition::SchemaDefinition;
 
 pub use crate::types::_rest_api_method::RestApiMethod;
@@ -652,6 +712,8 @@ pub use crate::types::_token_based_trigger::TokenBasedTrigger;
 pub use crate::types::_time_based_trigger::TimeBasedTrigger;
 
 mod _a2a_descriptor;
+
+mod _action;
 
 mod _agent_card_definition;
 
@@ -748,6 +810,20 @@ mod _code_interpreter_network_mode;
 mod _code_interpreter_status;
 
 mod _code_interpreter_summary;
+
+mod _component_configuration;
+
+mod _condition;
+
+mod _configuration_bundle_action;
+
+mod _configuration_bundle_reference;
+
+mod _configuration_bundle_status;
+
+mod _configuration_bundle_summary;
+
+mod _configuration_bundle_version_summary;
 
 mod _consolidation_configuration;
 
@@ -871,6 +947,10 @@ mod _gateway_protocol_configuration;
 
 mod _gateway_protocol_type;
 
+mod _gateway_rule_detail;
+
+mod _gateway_rule_status;
+
 mod _gateway_status;
 
 mod _gateway_summary;
@@ -947,9 +1027,15 @@ mod _harness_truncation_strategy;
 
 mod _harness_truncation_strategy_configuration;
 
+mod _http_target_configuration;
+
 mod _iam_credential_provider;
 
+mod _iam_principal;
+
 mod _inbound_token_claim_value_type;
+
+mod _included_data;
 
 mod _included_oauth2_provider_config_input;
 
@@ -988,6 +1074,12 @@ mod _llm_as_a_judge_evaluator_config;
 mod _managed_resource_details;
 
 mod _managed_vpc_resource;
+
+mod _match_paths;
+
+mod _match_principal_entry;
+
+mod _match_principals;
 
 mod _mcp_descriptor;
 
@@ -1095,6 +1187,8 @@ mod _policy_status;
 
 mod _policy_validation_mode;
 
+mod _principal_match_operator;
+
 mod _private_endpoint;
 
 mod _private_endpoint_override;
@@ -1139,9 +1233,13 @@ mod _resource_type;
 
 mod _rest_api_method;
 
+mod _route_to_target_action;
+
 mod _rule;
 
 mod _runtime_metadata_configuration;
+
+mod _runtime_target_configuration;
 
 mod _s3_configuration;
 
@@ -1197,6 +1295,10 @@ mod _slack_oauth2_provider_config_input;
 
 mod _slack_oauth2_provider_config_output;
 
+mod _static_override;
+
+mod _static_route;
+
 mod _status;
 
 mod _strategy_configuration;
@@ -1217,11 +1319,17 @@ mod _synchronization_configuration;
 
 mod _synchronization_type;
 
+mod _system_managed_block;
+
 mod _target_configuration;
+
+mod _target_protocol_type;
 
 mod _target_status;
 
 mod _target_summary;
+
+mod _target_traffic_split_entry;
 
 mod _time_based_trigger;
 
@@ -1236,6 +1344,8 @@ mod _tool_definition;
 mod _tool_schema;
 
 mod _tools_definition;
+
+mod _traffic_split_entry;
 
 mod _trigger_condition;
 
@@ -1297,7 +1407,17 @@ mod _validation_exception_field;
 
 mod _validation_exception_reason;
 
+mod _version_created_by_source;
+
+mod _version_filter;
+
+mod _version_lineage_metadata;
+
 mod _vpc_config;
+
+mod _weighted_override;
+
+mod _weighted_route;
 
 mod _workload_identity_details;
 

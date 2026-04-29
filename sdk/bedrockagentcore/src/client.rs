@@ -144,6 +144,8 @@ mod batch_update_memory_records;
 
 mod complete_resource_token_auth;
 
+mod create_ab_test;
+
 mod create_event;
 
 /// Operation customization and supporting types.
@@ -173,13 +175,23 @@ mod create_event;
 /// ```
 pub mod customize;
 
+mod delete_ab_test;
+
+mod delete_batch_evaluation;
+
 mod delete_event;
 
 mod delete_memory_record;
 
+mod delete_recommendation;
+
 mod evaluate;
 
+mod get_ab_test;
+
 mod get_agent_card;
+
+mod get_batch_evaluation;
 
 mod get_browser_session;
 
@@ -188,6 +200,8 @@ mod get_code_interpreter_session;
 mod get_event;
 
 mod get_memory_record;
+
+mod get_recommendation;
 
 mod get_resource_api_key;
 
@@ -209,7 +223,11 @@ mod invoke_code_interpreter;
 
 mod invoke_harness;
 
+mod list_ab_tests;
+
 mod list_actors;
+
+mod list_batch_evaluations;
 
 mod list_browser_sessions;
 
@@ -221,6 +239,8 @@ mod list_memory_extraction_jobs;
 
 mod list_memory_records;
 
+mod list_recommendations;
+
 mod list_sessions;
 
 mod retrieve_memory_records;
@@ -229,16 +249,24 @@ mod save_browser_session_profile;
 
 mod search_registry_records;
 
+mod start_batch_evaluation;
+
 mod start_browser_session;
 
 mod start_code_interpreter_session;
 
 mod start_memory_extraction_job;
 
+mod start_recommendation;
+
+mod stop_batch_evaluation;
+
 mod stop_browser_session;
 
 mod stop_code_interpreter_session;
 
 mod stop_runtime_session;
+
+mod update_ab_test;
 
 mod update_browser_stream;

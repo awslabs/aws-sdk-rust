@@ -91,5 +91,8 @@ pub fn ser_create_origin_endpoint_input_input(
         }
         object_26.finish();
     }
+    if let Some(var_29) = &input.uri_separator {
+        object.key("UriSeparator").string(var_29.as_str());
+    }
     Ok(())
 }

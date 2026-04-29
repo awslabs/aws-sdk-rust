@@ -12,6 +12,9 @@ pub struct GetAccountInformationOutput {
     pub account_name: ::std::option::Option<::std::string::String>,
     /// <p>The date and time the account was created.</p>
     pub account_created_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The state of the account. Each account state represents a specific phase in the account lifecycle. Use this information to manage account access, automate workflows, or trigger actions based on account state changes.</p>
+    /// <p>Valid values: <code>PENDING_ACTIVATION | ACTIVE | SUSPENDED | CLOSED</code></p>
+    pub account_state: ::std::option::Option<crate::types::AccountState>,
     _request_id: Option<String>,
 }
 impl GetAccountInformationOutput {
@@ -30,6 +33,11 @@ impl GetAccountInformationOutput {
     pub fn account_created_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.account_created_date.as_ref()
     }
+    /// <p>The state of the account. Each account state represents a specific phase in the account lifecycle. Use this information to manage account access, automate workflows, or trigger actions based on account state changes.</p>
+    /// <p>Valid values: <code>PENDING_ACTIVATION | ACTIVE | SUSPENDED | CLOSED</code></p>
+    pub fn account_state(&self) -> ::std::option::Option<&crate::types::AccountState> {
+        self.account_state.as_ref()
+    }
 }
 impl ::std::fmt::Debug for GetAccountInformationOutput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -37,6 +45,7 @@ impl ::std::fmt::Debug for GetAccountInformationOutput {
         formatter.field("account_id", &self.account_id);
         formatter.field("account_name", &"*** Sensitive Data Redacted ***");
         formatter.field("account_created_date", &self.account_created_date);
+        formatter.field("account_state", &self.account_state);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
@@ -60,6 +69,7 @@ pub struct GetAccountInformationOutputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) account_name: ::std::option::Option<::std::string::String>,
     pub(crate) account_created_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) account_state: ::std::option::Option<crate::types::AccountState>,
     _request_id: Option<String>,
 }
 impl GetAccountInformationOutputBuilder {
@@ -114,6 +124,23 @@ impl GetAccountInformationOutputBuilder {
     pub fn get_account_created_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.account_created_date
     }
+    /// <p>The state of the account. Each account state represents a specific phase in the account lifecycle. Use this information to manage account access, automate workflows, or trigger actions based on account state changes.</p>
+    /// <p>Valid values: <code>PENDING_ACTIVATION | ACTIVE | SUSPENDED | CLOSED</code></p>
+    pub fn account_state(mut self, input: crate::types::AccountState) -> Self {
+        self.account_state = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The state of the account. Each account state represents a specific phase in the account lifecycle. Use this information to manage account access, automate workflows, or trigger actions based on account state changes.</p>
+    /// <p>Valid values: <code>PENDING_ACTIVATION | ACTIVE | SUSPENDED | CLOSED</code></p>
+    pub fn set_account_state(mut self, input: ::std::option::Option<crate::types::AccountState>) -> Self {
+        self.account_state = input;
+        self
+    }
+    /// <p>The state of the account. Each account state represents a specific phase in the account lifecycle. Use this information to manage account access, automate workflows, or trigger actions based on account state changes.</p>
+    /// <p>Valid values: <code>PENDING_ACTIVATION | ACTIVE | SUSPENDED | CLOSED</code></p>
+    pub fn get_account_state(&self) -> &::std::option::Option<crate::types::AccountState> {
+        &self.account_state
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -129,6 +156,7 @@ impl GetAccountInformationOutputBuilder {
             account_id: self.account_id,
             account_name: self.account_name,
             account_created_date: self.account_created_date,
+            account_state: self.account_state,
             _request_id: self._request_id,
         }
     }
@@ -139,6 +167,7 @@ impl ::std::fmt::Debug for GetAccountInformationOutputBuilder {
         formatter.field("account_id", &self.account_id);
         formatter.field("account_name", &"*** Sensitive Data Redacted ***");
         formatter.field("account_created_date", &self.account_created_date);
+        formatter.field("account_state", &self.account_state);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }

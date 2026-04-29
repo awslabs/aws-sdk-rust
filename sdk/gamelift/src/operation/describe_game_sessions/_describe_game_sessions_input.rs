@@ -5,7 +5,13 @@
 pub struct DescribeGameSessionsInput {
     /// <p>A unique identifier for the fleet to retrieve game sessions for. You can use either the fleet ID or ARN value.</p>
     pub fleet_id: ::std::option::Option<::std::string::String>,
-    /// <p>A unique identifier for the game session to retrieve.</p>
+    /// <p>An identifier for the game session that is unique across all regions to retrieve. The value is always a full ARN in the following format: <code>arn:aws:gamelift:<location>
+    /// ::gamesession/
+    /// <fleet id>
+    /// /
+    /// <id string></id>
+    /// </fleet>
+    /// </location></code>.</p>
     pub game_session_id: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for the alias associated with the fleet to retrieve game sessions for. You can use either the alias ID or ARN value.</p>
     pub alias_id: ::std::option::Option<::std::string::String>,
@@ -23,7 +29,13 @@ impl DescribeGameSessionsInput {
     pub fn fleet_id(&self) -> ::std::option::Option<&str> {
         self.fleet_id.as_deref()
     }
-    /// <p>A unique identifier for the game session to retrieve.</p>
+    /// <p>An identifier for the game session that is unique across all regions to retrieve. The value is always a full ARN in the following format: <code>arn:aws:gamelift:<location>
+    /// ::gamesession/
+    /// <fleet id>
+    /// /
+    /// <id string></id>
+    /// </fleet>
+    /// </location></code>.</p>
     pub fn game_session_id(&self) -> ::std::option::Option<&str> {
         self.game_session_id.as_deref()
     }
@@ -82,17 +94,35 @@ impl DescribeGameSessionsInputBuilder {
     pub fn get_fleet_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.fleet_id
     }
-    /// <p>A unique identifier for the game session to retrieve.</p>
+    /// <p>An identifier for the game session that is unique across all regions to retrieve. The value is always a full ARN in the following format: <code>arn:aws:gamelift:<location>
+    /// ::gamesession/
+    /// <fleet id>
+    /// /
+    /// <id string></id>
+    /// </fleet>
+    /// </location></code>.</p>
     pub fn game_session_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.game_session_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A unique identifier for the game session to retrieve.</p>
+    /// <p>An identifier for the game session that is unique across all regions to retrieve. The value is always a full ARN in the following format: <code>arn:aws:gamelift:<location>
+    /// ::gamesession/
+    /// <fleet id>
+    /// /
+    /// <id string></id>
+    /// </fleet>
+    /// </location></code>.</p>
     pub fn set_game_session_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.game_session_id = input;
         self
     }
-    /// <p>A unique identifier for the game session to retrieve.</p>
+    /// <p>An identifier for the game session that is unique across all regions to retrieve. The value is always a full ARN in the following format: <code>arn:aws:gamelift:<location>
+    /// ::gamesession/
+    /// <fleet id>
+    /// /
+    /// <id string></id>
+    /// </fleet>
+    /// </location></code>.</p>
     pub fn get_game_session_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.game_session_id
     }

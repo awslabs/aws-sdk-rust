@@ -103,6 +103,13 @@ where
                             builder = builder
                                 .set_authorization_data(crate::protocol_serde::shape_authorization_data::de_authorization_data(tokens, _value)?);
                         }
+                        "protocolType" => {
+                            builder = builder.set_protocol_type(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::TargetProtocolType::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

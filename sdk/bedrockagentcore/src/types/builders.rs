@@ -11,6 +11,12 @@ pub use crate::types::_browser_session_stream::BrowserSessionStreamBuilder;
 
 pub use crate::types::_proxy_configuration::ProxyConfigurationBuilder;
 
+pub use crate::types::_gateway_filter::GatewayFilterBuilder;
+
+pub use crate::types::_ab_test_results::AbTestResultsBuilder;
+
+pub use crate::types::_evaluation_job_results::EvaluationJobResultsBuilder;
+
 pub use crate::types::_branch::BranchBuilder;
 
 pub use crate::types::_event::EventBuilder;
@@ -105,9 +111,31 @@ pub use crate::types::_automation_stream_update::AutomationStreamUpdateBuilder;
 
 pub use crate::types::_code_interpreter_session_summary::CodeInterpreterSessionSummaryBuilder;
 
+pub use crate::types::_variant::VariantBuilder;
+
 pub use crate::types::_evaluation_reference_input::EvaluationReferenceInputBuilder;
 
 pub use crate::types::_evaluation_result_content::EvaluationResultContentBuilder;
+
+pub use crate::types::_evaluator::EvaluatorBuilder;
+
+pub use crate::types::_cloud_watch_logs_source::CloudWatchLogsSourceBuilder;
+
+pub use crate::types::_cloud_watch_output_config::CloudWatchOutputConfigBuilder;
+
+pub use crate::types::_system_prompt_recommendation_config::SystemPromptRecommendationConfigBuilder;
+
+pub use crate::types::_tool_description_recommendation_config::ToolDescriptionRecommendationConfigBuilder;
+
+pub use crate::types::_system_prompt_recommendation_result::SystemPromptRecommendationResultBuilder;
+
+pub use crate::types::_tool_description_recommendation_result::ToolDescriptionRecommendationResultBuilder;
+
+pub use crate::types::_ab_test_summary::AbTestSummaryBuilder;
+
+pub use crate::types::_batch_evaluation_summary::BatchEvaluationSummaryBuilder;
+
+pub use crate::types::_recommendation_summary::RecommendationSummaryBuilder;
 
 pub use crate::types::_memory_record_create_input::MemoryRecordCreateInputBuilder;
 
@@ -143,9 +171,25 @@ pub use crate::types::_content_delta_event::ContentDeltaEventBuilder;
 
 pub use crate::types::_content_stop_event::ContentStopEventBuilder;
 
+pub use crate::types::_variant_configuration::VariantConfigurationBuilder;
+
+pub use crate::types::_per_variant_online_evaluation_config::PerVariantOnlineEvaluationConfigBuilder;
+
 pub use crate::types::_evaluation_expected_trajectory::EvaluationExpectedTrajectoryBuilder;
 
 pub use crate::types::_token_usage::TokenUsageBuilder;
+
+pub use crate::types::_evaluator_metric::EvaluatorMetricBuilder;
+
+pub use crate::types::_cloud_watch_filter_config::CloudWatchFilterConfigBuilder;
+
+pub use crate::types::_evaluator_summary::EvaluatorSummaryBuilder;
+
+pub use crate::types::_recommendation_evaluation_config::RecommendationEvaluationConfigBuilder;
+
+pub use crate::types::_recommendation_result_configuration_bundle::RecommendationResultConfigurationBundleBuilder;
+
+pub use crate::types::_session_metadata_shape::SessionMetadataShapeBuilder;
 
 pub use crate::types::_conversational::ConversationalBuilder;
 
@@ -179,7 +223,27 @@ pub use crate::types::_external_proxy::ExternalProxyBuilder;
 
 pub use crate::types::_secrets_manager_location::SecretsManagerLocationBuilder;
 
+pub use crate::types::_configuration_bundle_ref::ConfigurationBundleRefBuilder;
+
+pub use crate::types::_target_ref::TargetRefBuilder;
+
 pub use crate::types::_span_context::SpanContextBuilder;
+
+pub use crate::types::_control_stats::ControlStatsBuilder;
+
+pub use crate::types::_session_filter_config::SessionFilterConfigBuilder;
+
+pub use crate::types::_evaluator_statistics::EvaluatorStatisticsBuilder;
+
+pub use crate::types::_system_prompt_configuration_bundle::SystemPromptConfigurationBundleBuilder;
+
+pub use crate::types::_cloud_watch_logs_trace_config::CloudWatchLogsTraceConfigBuilder;
+
+pub use crate::types::_tool_description_text_input::ToolDescriptionTextInputBuilder;
+
+pub use crate::types::_tool_description_configuration_bundle::ToolDescriptionConfigurationBundleBuilder;
+
+pub use crate::types::_tool_description_output::ToolDescriptionOutputBuilder;
 
 pub use crate::types::_mcp_descriptor::McpDescriptorBuilder;
 
@@ -194,6 +258,14 @@ pub use crate::types::_resource_content::ResourceContentBuilder;
 pub use crate::types::_harness_tool_use_block::HarnessToolUseBlockBuilder;
 
 pub use crate::types::_harness_tool_result_block::HarnessToolResultBlockBuilder;
+
+pub use crate::types::_variant_result::VariantResultBuilder;
+
+pub use crate::types::_cloud_watch_logs_rule::CloudWatchLogsRuleBuilder;
+
+pub use crate::types::_recommendation_evaluator_reference::RecommendationEvaluatorReferenceBuilder;
+
+pub use crate::types::_inline_ground_truth::InlineGroundTruthBuilder;
 
 pub use crate::types::_message_metadata::MessageMetadataBuilder;
 
@@ -214,3 +286,13 @@ pub use crate::types::_unit::UnitBuilder;
 pub use crate::types::_o_auth_credential_provider::OAuthCredentialProviderBuilder;
 
 pub use crate::types::_basic_auth::BasicAuthBuilder;
+
+pub use crate::types::_confidence_interval::ConfidenceIntervalBuilder;
+
+pub use crate::types::_tool_description_input::ToolDescriptionInputBuilder;
+
+pub use crate::types::_configuration_bundle_tool_entry::ConfigurationBundleToolEntryBuilder;
+
+pub use crate::types::_cloud_watch_logs_filter::CloudWatchLogsFilterBuilder;
+
+pub use crate::types::_ground_truth_turn::GroundTruthTurnBuilder;

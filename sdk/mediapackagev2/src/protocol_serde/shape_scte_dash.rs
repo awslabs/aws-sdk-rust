@@ -6,6 +6,9 @@ pub fn ser_scte_dash(
     if let Some(var_1) = &input.ad_marker_dash {
         object.key("AdMarkerDash").string(var_1.as_str());
     }
+    if let Some(var_2) = &input.scte_in_manifests {
+        object.key("ScteInManifests").string(var_2.as_str());
+    }
     Ok(())
 }
 
@@ -29,6 +32,13 @@ where
                             builder = builder.set_ad_marker_dash(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| crate::types::AdMarkerDash::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "ScteInManifests" => {
+                            builder = builder.set_scte_in_manifests(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::ScteInManifests::from(u.as_ref())))
                                     .transpose()?,
                             );
                         }

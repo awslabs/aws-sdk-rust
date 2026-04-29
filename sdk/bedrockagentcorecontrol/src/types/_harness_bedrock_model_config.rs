@@ -6,7 +6,7 @@
 pub struct HarnessBedrockModelConfig {
     /// <p>The Bedrock model ID.</p>
     pub model_id: ::std::string::String,
-    /// <p>The maximum number of tokens to allow in the generated response per iteration.</p>
+    /// <p>The maximum number of tokens to allow in the generated response per model call.</p>
     pub max_tokens: ::std::option::Option<i32>,
     /// <p>The temperature to set when calling the model.</p>
     pub temperature: ::std::option::Option<f32>,
@@ -19,7 +19,7 @@ impl HarnessBedrockModelConfig {
         use std::ops::Deref;
         self.model_id.deref()
     }
-    /// <p>The maximum number of tokens to allow in the generated response per iteration.</p>
+    /// <p>The maximum number of tokens to allow in the generated response per model call.</p>
     pub fn max_tokens(&self) -> ::std::option::Option<i32> {
         self.max_tokens
     }
@@ -64,17 +64,17 @@ impl HarnessBedrockModelConfigBuilder {
     pub fn get_model_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.model_id
     }
-    /// <p>The maximum number of tokens to allow in the generated response per iteration.</p>
+    /// <p>The maximum number of tokens to allow in the generated response per model call.</p>
     pub fn max_tokens(mut self, input: i32) -> Self {
         self.max_tokens = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The maximum number of tokens to allow in the generated response per iteration.</p>
+    /// <p>The maximum number of tokens to allow in the generated response per model call.</p>
     pub fn set_max_tokens(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_tokens = input;
         self
     }
-    /// <p>The maximum number of tokens to allow in the generated response per iteration.</p>
+    /// <p>The maximum number of tokens to allow in the generated response per model call.</p>
     pub fn get_max_tokens(&self) -> &::std::option::Option<i32> {
         &self.max_tokens
     }

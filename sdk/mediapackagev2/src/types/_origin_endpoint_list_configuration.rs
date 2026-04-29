@@ -30,6 +30,8 @@ pub struct OriginEndpointListConfiguration {
     pub mss_manifests: ::std::option::Option<::std::vec::Vec<crate::types::ListMssManifestConfiguration>>,
     /// <p>The failover settings for the endpoint.</p>
     pub force_endpoint_error_configuration: ::std::option::Option<crate::types::ForceEndpointErrorConfiguration>,
+    /// <p>The separator character used in generated URIs for this origin endpoint.</p>
+    pub uri_separator: ::std::option::Option<crate::types::UriSeparator>,
 }
 impl OriginEndpointListConfiguration {
     /// <p>The Amazon Resource Name (ARN) associated with the resource.</p>
@@ -96,6 +98,10 @@ impl OriginEndpointListConfiguration {
     pub fn force_endpoint_error_configuration(&self) -> ::std::option::Option<&crate::types::ForceEndpointErrorConfiguration> {
         self.force_endpoint_error_configuration.as_ref()
     }
+    /// <p>The separator character used in generated URIs for this origin endpoint.</p>
+    pub fn uri_separator(&self) -> ::std::option::Option<&crate::types::UriSeparator> {
+        self.uri_separator.as_ref()
+    }
 }
 impl OriginEndpointListConfiguration {
     /// Creates a new builder-style object to manufacture [`OriginEndpointListConfiguration`](crate::types::OriginEndpointListConfiguration).
@@ -121,6 +127,7 @@ pub struct OriginEndpointListConfigurationBuilder {
     pub(crate) dash_manifests: ::std::option::Option<::std::vec::Vec<crate::types::ListDashManifestConfiguration>>,
     pub(crate) mss_manifests: ::std::option::Option<::std::vec::Vec<crate::types::ListMssManifestConfiguration>>,
     pub(crate) force_endpoint_error_configuration: ::std::option::Option<crate::types::ForceEndpointErrorConfiguration>,
+    pub(crate) uri_separator: ::std::option::Option<crate::types::UriSeparator>,
 }
 impl OriginEndpointListConfigurationBuilder {
     /// <p>The Amazon Resource Name (ARN) associated with the resource.</p>
@@ -337,6 +344,20 @@ impl OriginEndpointListConfigurationBuilder {
     pub fn get_force_endpoint_error_configuration(&self) -> &::std::option::Option<crate::types::ForceEndpointErrorConfiguration> {
         &self.force_endpoint_error_configuration
     }
+    /// <p>The separator character used in generated URIs for this origin endpoint.</p>
+    pub fn uri_separator(mut self, input: crate::types::UriSeparator) -> Self {
+        self.uri_separator = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The separator character used in generated URIs for this origin endpoint.</p>
+    pub fn set_uri_separator(mut self, input: ::std::option::Option<crate::types::UriSeparator>) -> Self {
+        self.uri_separator = input;
+        self
+    }
+    /// <p>The separator character used in generated URIs for this origin endpoint.</p>
+    pub fn get_uri_separator(&self) -> &::std::option::Option<crate::types::UriSeparator> {
+        &self.uri_separator
+    }
     /// Consumes the builder and constructs a [`OriginEndpointListConfiguration`](crate::types::OriginEndpointListConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`arn`](crate::types::builders::OriginEndpointListConfigurationBuilder::arn)
@@ -384,6 +405,7 @@ impl OriginEndpointListConfigurationBuilder {
             dash_manifests: self.dash_manifests,
             mss_manifests: self.mss_manifests,
             force_endpoint_error_configuration: self.force_endpoint_error_configuration,
+            uri_separator: self.uri_separator,
         })
     }
 }

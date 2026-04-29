@@ -230,6 +230,13 @@ pub(crate) fn de_create_gateway_target(
                         crate::protocol_serde::shape_private_endpoint_managed_resources::de_private_endpoint_managed_resources(tokens, _value)?,
                     );
                 }
+                "protocolType" => {
+                    builder = builder.set_protocol_type(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| crate::types::TargetProtocolType::from(u.as_ref())))
+                            .transpose()?,
+                    );
+                }
                 "status" => {
                     builder = builder.set_status(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

@@ -8,7 +8,7 @@ pub struct HarnessOpenAiModelConfig {
     pub model_id: ::std::string::String,
     /// <p>The ARN of your OpenAI API key on AgentCore Identity.</p>
     pub api_key_arn: ::std::string::String,
-    /// <p>The maximum number of tokens to allow in the generated response per iteration.</p>
+    /// <p>The maximum number of tokens to allow in the generated response per model call.</p>
     pub max_tokens: ::std::option::Option<i32>,
     /// <p>The temperature to set when calling the model.</p>
     pub temperature: ::std::option::Option<f32>,
@@ -26,7 +26,7 @@ impl HarnessOpenAiModelConfig {
         use std::ops::Deref;
         self.api_key_arn.deref()
     }
-    /// <p>The maximum number of tokens to allow in the generated response per iteration.</p>
+    /// <p>The maximum number of tokens to allow in the generated response per model call.</p>
     pub fn max_tokens(&self) -> ::std::option::Option<i32> {
         self.max_tokens
     }
@@ -87,17 +87,17 @@ impl HarnessOpenAiModelConfigBuilder {
     pub fn get_api_key_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.api_key_arn
     }
-    /// <p>The maximum number of tokens to allow in the generated response per iteration.</p>
+    /// <p>The maximum number of tokens to allow in the generated response per model call.</p>
     pub fn max_tokens(mut self, input: i32) -> Self {
         self.max_tokens = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The maximum number of tokens to allow in the generated response per iteration.</p>
+    /// <p>The maximum number of tokens to allow in the generated response per model call.</p>
     pub fn set_max_tokens(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_tokens = input;
         self
     }
-    /// <p>The maximum number of tokens to allow in the generated response per iteration.</p>
+    /// <p>The maximum number of tokens to allow in the generated response per model call.</p>
     pub fn get_max_tokens(&self) -> &::std::option::Option<i32> {
         &self.max_tokens
     }

@@ -203,6 +203,8 @@ pub use crate::types::_viewer_mtls_config::ViewerMtlsConfig;
 
 pub use crate::types::_connection_function_association::ConnectionFunctionAssociation;
 
+pub use crate::types::_cache_tag_config::CacheTagConfig;
+
 pub use crate::types::_domain_item::DomainItem;
 
 pub use crate::types::_web_acl_customization::WebAclCustomization;
@@ -552,6 +554,8 @@ mod _cache_policy_query_strings_config;
 mod _cache_policy_summary;
 
 mod _cache_policy_type;
+
+mod _cache_tag_config;
 
 mod _cached_methods;
 

@@ -13,6 +13,9 @@ pub struct ScteDash {
     /// <p><code>XML</code> - The SCTE marker is expressed fully in XML.</p></li>
     /// </ul>
     pub ad_marker_dash: ::std::option::Option<crate::types::AdMarkerDash>,
+    /// <p>Controls which SCTE-35 events appear in DASH manifests. <code>ALL</code> includes all non-implicit SCTE-35 events. <code>MATCHES_FILTER</code> includes only events whose type matches the configured <code>ScteFilter</code>.</p>
+    /// <p>If you don't specify a value, the default is <code>ALL</code>.</p>
+    pub scte_in_manifests: ::std::option::Option<crate::types::ScteInManifests>,
 }
 impl ScteDash {
     /// <p>Choose how ad markers are included in the packaged content. If you include ad markers in the content stream in your upstream encoders, then you need to inform MediaPackage what to do with the ad markers in the output.</p>
@@ -25,6 +28,11 @@ impl ScteDash {
     /// </ul>
     pub fn ad_marker_dash(&self) -> ::std::option::Option<&crate::types::AdMarkerDash> {
         self.ad_marker_dash.as_ref()
+    }
+    /// <p>Controls which SCTE-35 events appear in DASH manifests. <code>ALL</code> includes all non-implicit SCTE-35 events. <code>MATCHES_FILTER</code> includes only events whose type matches the configured <code>ScteFilter</code>.</p>
+    /// <p>If you don't specify a value, the default is <code>ALL</code>.</p>
+    pub fn scte_in_manifests(&self) -> ::std::option::Option<&crate::types::ScteInManifests> {
+        self.scte_in_manifests.as_ref()
     }
 }
 impl ScteDash {
@@ -39,6 +47,7 @@ impl ScteDash {
 #[non_exhaustive]
 pub struct ScteDashBuilder {
     pub(crate) ad_marker_dash: ::std::option::Option<crate::types::AdMarkerDash>,
+    pub(crate) scte_in_manifests: ::std::option::Option<crate::types::ScteInManifests>,
 }
 impl ScteDashBuilder {
     /// <p>Choose how ad markers are included in the packaged content. If you include ad markers in the content stream in your upstream encoders, then you need to inform MediaPackage what to do with the ad markers in the output.</p>
@@ -76,10 +85,28 @@ impl ScteDashBuilder {
     pub fn get_ad_marker_dash(&self) -> &::std::option::Option<crate::types::AdMarkerDash> {
         &self.ad_marker_dash
     }
+    /// <p>Controls which SCTE-35 events appear in DASH manifests. <code>ALL</code> includes all non-implicit SCTE-35 events. <code>MATCHES_FILTER</code> includes only events whose type matches the configured <code>ScteFilter</code>.</p>
+    /// <p>If you don't specify a value, the default is <code>ALL</code>.</p>
+    pub fn scte_in_manifests(mut self, input: crate::types::ScteInManifests) -> Self {
+        self.scte_in_manifests = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Controls which SCTE-35 events appear in DASH manifests. <code>ALL</code> includes all non-implicit SCTE-35 events. <code>MATCHES_FILTER</code> includes only events whose type matches the configured <code>ScteFilter</code>.</p>
+    /// <p>If you don't specify a value, the default is <code>ALL</code>.</p>
+    pub fn set_scte_in_manifests(mut self, input: ::std::option::Option<crate::types::ScteInManifests>) -> Self {
+        self.scte_in_manifests = input;
+        self
+    }
+    /// <p>Controls which SCTE-35 events appear in DASH manifests. <code>ALL</code> includes all non-implicit SCTE-35 events. <code>MATCHES_FILTER</code> includes only events whose type matches the configured <code>ScteFilter</code>.</p>
+    /// <p>If you don't specify a value, the default is <code>ALL</code>.</p>
+    pub fn get_scte_in_manifests(&self) -> &::std::option::Option<crate::types::ScteInManifests> {
+        &self.scte_in_manifests
+    }
     /// Consumes the builder and constructs a [`ScteDash`](crate::types::ScteDash).
     pub fn build(self) -> crate::types::ScteDash {
         crate::types::ScteDash {
             ad_marker_dash: self.ad_marker_dash,
+            scte_in_manifests: self.scte_in_manifests,
         }
     }
 }

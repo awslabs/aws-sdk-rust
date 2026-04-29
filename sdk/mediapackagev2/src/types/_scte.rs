@@ -12,9 +12,15 @@ pub struct Scte {
     /// <p>None – SCTE-35 messages are not included in segments (default)</p></li>
     /// <li>
     /// <p>All – SCTE-35 messages are embedded in segment data</p></li>
+    /// <li>
+    /// <p>MatchesFilter – SCTE-35 messages which match the ScteFilter are embedded in segment data</p></li>
     /// </ul>
-    /// <p>For DASH manifests, when set to <code>All</code>, an <code>InbandEventStream</code> tag signals that SCTE messages are present in segments. This setting works independently of manifest ad markers.</p>
+    /// <p>For DASH manifests, when set to <code>All</code> or <code>MatchesFilter</code>, an <code>InbandEventStream</code> tag signals that SCTE messages are present in segments. This setting works independently of manifest ad markers.</p>
     pub scte_in_segments: ::std::option::Option<crate::types::ScteInSegments>,
+    /// <p>A list of additional non-Ad SCTE-35 event types to treat as advertisements. When configured, events matching these types produce ad markers (such as <code>SCTE35-OUT</code> and <code>SCTE35-IN</code> in HLS DATERANGE tags) in manifests.</p>
+    /// <p>Valid values: <code>PROGRAM</code> | <code>CHAPTER</code> | <code>UNSCHEDULED_EVENT</code> | <code>ALTERNATE_CONTENT_OPPORTUNITY</code> | <code>NETWORK</code></p>
+    /// <p>If you don't specify any values, the default is empty (only default ad types are used).</p>
+    pub custom_ad_types: ::std::option::Option<::std::vec::Vec<crate::types::CustomAdType>>,
 }
 impl Scte {
     /// <p>The SCTE-35 message types that you want to be treated as ad markers in the output.</p>
@@ -29,10 +35,20 @@ impl Scte {
     /// <p>None – SCTE-35 messages are not included in segments (default)</p></li>
     /// <li>
     /// <p>All – SCTE-35 messages are embedded in segment data</p></li>
+    /// <li>
+    /// <p>MatchesFilter – SCTE-35 messages which match the ScteFilter are embedded in segment data</p></li>
     /// </ul>
-    /// <p>For DASH manifests, when set to <code>All</code>, an <code>InbandEventStream</code> tag signals that SCTE messages are present in segments. This setting works independently of manifest ad markers.</p>
+    /// <p>For DASH manifests, when set to <code>All</code> or <code>MatchesFilter</code>, an <code>InbandEventStream</code> tag signals that SCTE messages are present in segments. This setting works independently of manifest ad markers.</p>
     pub fn scte_in_segments(&self) -> ::std::option::Option<&crate::types::ScteInSegments> {
         self.scte_in_segments.as_ref()
+    }
+    /// <p>A list of additional non-Ad SCTE-35 event types to treat as advertisements. When configured, events matching these types produce ad markers (such as <code>SCTE35-OUT</code> and <code>SCTE35-IN</code> in HLS DATERANGE tags) in manifests.</p>
+    /// <p>Valid values: <code>PROGRAM</code> | <code>CHAPTER</code> | <code>UNSCHEDULED_EVENT</code> | <code>ALTERNATE_CONTENT_OPPORTUNITY</code> | <code>NETWORK</code></p>
+    /// <p>If you don't specify any values, the default is empty (only default ad types are used).</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.custom_ad_types.is_none()`.
+    pub fn custom_ad_types(&self) -> &[crate::types::CustomAdType] {
+        self.custom_ad_types.as_deref().unwrap_or_default()
     }
 }
 impl Scte {
@@ -48,6 +64,7 @@ impl Scte {
 pub struct ScteBuilder {
     pub(crate) scte_filter: ::std::option::Option<::std::vec::Vec<crate::types::ScteFilter>>,
     pub(crate) scte_in_segments: ::std::option::Option<crate::types::ScteInSegments>,
+    pub(crate) custom_ad_types: ::std::option::Option<::std::vec::Vec<crate::types::CustomAdType>>,
 }
 impl ScteBuilder {
     /// Appends an item to `scte_filter`.
@@ -76,8 +93,10 @@ impl ScteBuilder {
     /// <p>None – SCTE-35 messages are not included in segments (default)</p></li>
     /// <li>
     /// <p>All – SCTE-35 messages are embedded in segment data</p></li>
+    /// <li>
+    /// <p>MatchesFilter – SCTE-35 messages which match the ScteFilter are embedded in segment data</p></li>
     /// </ul>
-    /// <p>For DASH manifests, when set to <code>All</code>, an <code>InbandEventStream</code> tag signals that SCTE messages are present in segments. This setting works independently of manifest ad markers.</p>
+    /// <p>For DASH manifests, when set to <code>All</code> or <code>MatchesFilter</code>, an <code>InbandEventStream</code> tag signals that SCTE messages are present in segments. This setting works independently of manifest ad markers.</p>
     pub fn scte_in_segments(mut self, input: crate::types::ScteInSegments) -> Self {
         self.scte_in_segments = ::std::option::Option::Some(input);
         self
@@ -88,8 +107,10 @@ impl ScteBuilder {
     /// <p>None – SCTE-35 messages are not included in segments (default)</p></li>
     /// <li>
     /// <p>All – SCTE-35 messages are embedded in segment data</p></li>
+    /// <li>
+    /// <p>MatchesFilter – SCTE-35 messages which match the ScteFilter are embedded in segment data</p></li>
     /// </ul>
-    /// <p>For DASH manifests, when set to <code>All</code>, an <code>InbandEventStream</code> tag signals that SCTE messages are present in segments. This setting works independently of manifest ad markers.</p>
+    /// <p>For DASH manifests, when set to <code>All</code> or <code>MatchesFilter</code>, an <code>InbandEventStream</code> tag signals that SCTE messages are present in segments. This setting works independently of manifest ad markers.</p>
     pub fn set_scte_in_segments(mut self, input: ::std::option::Option<crate::types::ScteInSegments>) -> Self {
         self.scte_in_segments = input;
         self
@@ -100,16 +121,45 @@ impl ScteBuilder {
     /// <p>None – SCTE-35 messages are not included in segments (default)</p></li>
     /// <li>
     /// <p>All – SCTE-35 messages are embedded in segment data</p></li>
+    /// <li>
+    /// <p>MatchesFilter – SCTE-35 messages which match the ScteFilter are embedded in segment data</p></li>
     /// </ul>
-    /// <p>For DASH manifests, when set to <code>All</code>, an <code>InbandEventStream</code> tag signals that SCTE messages are present in segments. This setting works independently of manifest ad markers.</p>
+    /// <p>For DASH manifests, when set to <code>All</code> or <code>MatchesFilter</code>, an <code>InbandEventStream</code> tag signals that SCTE messages are present in segments. This setting works independently of manifest ad markers.</p>
     pub fn get_scte_in_segments(&self) -> &::std::option::Option<crate::types::ScteInSegments> {
         &self.scte_in_segments
+    }
+    /// Appends an item to `custom_ad_types`.
+    ///
+    /// To override the contents of this collection use [`set_custom_ad_types`](Self::set_custom_ad_types).
+    ///
+    /// <p>A list of additional non-Ad SCTE-35 event types to treat as advertisements. When configured, events matching these types produce ad markers (such as <code>SCTE35-OUT</code> and <code>SCTE35-IN</code> in HLS DATERANGE tags) in manifests.</p>
+    /// <p>Valid values: <code>PROGRAM</code> | <code>CHAPTER</code> | <code>UNSCHEDULED_EVENT</code> | <code>ALTERNATE_CONTENT_OPPORTUNITY</code> | <code>NETWORK</code></p>
+    /// <p>If you don't specify any values, the default is empty (only default ad types are used).</p>
+    pub fn custom_ad_types(mut self, input: crate::types::CustomAdType) -> Self {
+        let mut v = self.custom_ad_types.unwrap_or_default();
+        v.push(input);
+        self.custom_ad_types = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of additional non-Ad SCTE-35 event types to treat as advertisements. When configured, events matching these types produce ad markers (such as <code>SCTE35-OUT</code> and <code>SCTE35-IN</code> in HLS DATERANGE tags) in manifests.</p>
+    /// <p>Valid values: <code>PROGRAM</code> | <code>CHAPTER</code> | <code>UNSCHEDULED_EVENT</code> | <code>ALTERNATE_CONTENT_OPPORTUNITY</code> | <code>NETWORK</code></p>
+    /// <p>If you don't specify any values, the default is empty (only default ad types are used).</p>
+    pub fn set_custom_ad_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CustomAdType>>) -> Self {
+        self.custom_ad_types = input;
+        self
+    }
+    /// <p>A list of additional non-Ad SCTE-35 event types to treat as advertisements. When configured, events matching these types produce ad markers (such as <code>SCTE35-OUT</code> and <code>SCTE35-IN</code> in HLS DATERANGE tags) in manifests.</p>
+    /// <p>Valid values: <code>PROGRAM</code> | <code>CHAPTER</code> | <code>UNSCHEDULED_EVENT</code> | <code>ALTERNATE_CONTENT_OPPORTUNITY</code> | <code>NETWORK</code></p>
+    /// <p>If you don't specify any values, the default is empty (only default ad types are used).</p>
+    pub fn get_custom_ad_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CustomAdType>> {
+        &self.custom_ad_types
     }
     /// Consumes the builder and constructs a [`Scte`](crate::types::Scte).
     pub fn build(self) -> crate::types::Scte {
         crate::types::Scte {
             scte_filter: self.scte_filter,
             scte_in_segments: self.scte_in_segments,
+            custom_ad_types: self.custom_ad_types,
         }
     }
 }

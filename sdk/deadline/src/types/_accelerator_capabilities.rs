@@ -13,6 +13,8 @@
 /// <p><code>l4</code>: Uses G6 and Gr6 instance families</p></li>
 /// <li>
 /// <p><code>l40s</code>: Uses G6e instance family</p></li>
+/// <li>
+/// <p><code>rtx-pro-server-6000</code>: Uses G7e instance family</p></li>
 /// </ul>
 /// </note>
 #[non_exhaustive]

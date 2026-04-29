@@ -24,6 +24,8 @@ pub struct EvaluatorSummary {
     pub updated_at: ::aws_smithy_types::DateTime,
     /// <p>Whether the evaluator is locked for modification due to being referenced by active online evaluation configurations.</p>
     pub locked_for_modification: ::std::option::Option<bool>,
+    /// <p>The Amazon Resource Name (ARN) of the customer managed KMS key used to encrypt the evaluator's sensitive data. This field is only present for evaluators encrypted with a customer managed key.</p>
+    pub kms_key_arn: ::std::option::Option<::std::string::String>,
 }
 impl EvaluatorSummary {
     /// <p>The Amazon Resource Name (ARN) of the evaluator.</p>
@@ -69,6 +71,10 @@ impl EvaluatorSummary {
     pub fn locked_for_modification(&self) -> ::std::option::Option<bool> {
         self.locked_for_modification
     }
+    /// <p>The Amazon Resource Name (ARN) of the customer managed KMS key used to encrypt the evaluator's sensitive data. This field is only present for evaluators encrypted with a customer managed key.</p>
+    pub fn kms_key_arn(&self) -> ::std::option::Option<&str> {
+        self.kms_key_arn.as_deref()
+    }
 }
 impl ::std::fmt::Debug for EvaluatorSummary {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -83,6 +89,7 @@ impl ::std::fmt::Debug for EvaluatorSummary {
         formatter.field("created_at", &self.created_at);
         formatter.field("updated_at", &self.updated_at);
         formatter.field("locked_for_modification", &self.locked_for_modification);
+        formatter.field("kms_key_arn", &self.kms_key_arn);
         formatter.finish()
     }
 }
@@ -107,6 +114,7 @@ pub struct EvaluatorSummaryBuilder {
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) locked_for_modification: ::std::option::Option<bool>,
+    pub(crate) kms_key_arn: ::std::option::Option<::std::string::String>,
 }
 impl EvaluatorSummaryBuilder {
     /// <p>The Amazon Resource Name (ARN) of the evaluator.</p>
@@ -256,6 +264,20 @@ impl EvaluatorSummaryBuilder {
     pub fn get_locked_for_modification(&self) -> &::std::option::Option<bool> {
         &self.locked_for_modification
     }
+    /// <p>The Amazon Resource Name (ARN) of the customer managed KMS key used to encrypt the evaluator's sensitive data. This field is only present for evaluators encrypted with a customer managed key.</p>
+    pub fn kms_key_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.kms_key_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the customer managed KMS key used to encrypt the evaluator's sensitive data. This field is only present for evaluators encrypted with a customer managed key.</p>
+    pub fn set_kms_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.kms_key_arn = input;
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the customer managed KMS key used to encrypt the evaluator's sensitive data. This field is only present for evaluators encrypted with a customer managed key.</p>
+    pub fn get_kms_key_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_arn
+    }
     /// Consumes the builder and constructs a [`EvaluatorSummary`](crate::types::EvaluatorSummary).
     /// This method will fail if any of the following fields are not set:
     /// - [`evaluator_arn`](crate::types::builders::EvaluatorSummaryBuilder::evaluator_arn)
@@ -312,6 +334,7 @@ impl EvaluatorSummaryBuilder {
                 )
             })?,
             locked_for_modification: self.locked_for_modification,
+            kms_key_arn: self.kms_key_arn,
         })
     }
 }
@@ -328,6 +351,7 @@ impl ::std::fmt::Debug for EvaluatorSummaryBuilder {
         formatter.field("created_at", &self.created_at);
         formatter.field("updated_at", &self.updated_at);
         formatter.field("locked_for_modification", &self.locked_for_modification);
+        formatter.field("kms_key_arn", &self.kms_key_arn);
         formatter.finish()
     }
 }

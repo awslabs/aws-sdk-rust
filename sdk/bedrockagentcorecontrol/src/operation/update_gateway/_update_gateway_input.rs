@@ -195,7 +195,6 @@ impl UpdateGatewayInputBuilder {
         &self.role_arn
     }
     /// <p>The updated protocol type for the gateway.</p>
-    /// This field is required.
     pub fn protocol_type(mut self, input: crate::types::GatewayProtocolType) -> Self {
         self.protocol_type = ::std::option::Option::Some(input);
         self

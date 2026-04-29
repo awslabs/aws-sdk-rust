@@ -11,7 +11,7 @@ impl super::Client {
     ///   - [`url(String)`](crate::operation::get_monitor::GetMonitorOutput::url): <p>The complete URL of the monitor. The full URL of the monitor is subdomain.Region.deadlinecloud.amazonaws.com.</p>
     ///   - [`role_arn(String)`](crate::operation::get_monitor::GetMonitorOutput::role_arn): <p>The Amazon Resource Name of the IAM role for the monitor. Users of the monitor use this role to access Deadline Cloud resources.</p>
     ///   - [`identity_center_instance_arn(String)`](crate::operation::get_monitor::GetMonitorOutput::identity_center_instance_arn): <p>The Amazon Resource Name of the IAM Identity Center instance responsible for authenticating monitor users.</p>
-    ///   - [`identity_center_region(Option<String>)`](crate::operation::get_monitor::GetMonitorOutput::identity_center_region): The AWS region where IAM Identity Center is enabled.
+    ///   - [`identity_center_region(Option<String>)`](crate::operation::get_monitor::GetMonitorOutput::identity_center_region): <p>The AWS Region where IAM Identity Center is enabled.</p>
     ///   - [`identity_center_application_arn(String)`](crate::operation::get_monitor::GetMonitorOutput::identity_center_application_arn): <p>The Amazon Resource Name that the IAM Identity Center assigned to the monitor when it was created.</p>
     ///   - [`created_at(DateTime)`](crate::operation::get_monitor::GetMonitorOutput::created_at): <p>The UNIX timestamp of the date and time that the monitor was created.</p>
     ///   - [`created_by(String)`](crate::operation::get_monitor::GetMonitorOutput::created_by): <p>The user name of the person that created the monitor.</p>

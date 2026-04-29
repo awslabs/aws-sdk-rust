@@ -15,7 +15,7 @@ pub struct CreateOnlineEvaluationConfigInput {
     pub data_source_config: ::std::option::Option<crate::types::DataSourceConfig>,
     /// <p>The list of evaluators to apply during online evaluation. Can include both built-in evaluators and custom evaluators created with <code>CreateEvaluator</code>.</p>
     pub evaluators: ::std::option::Option<::std::vec::Vec<crate::types::EvaluatorReference>>,
-    /// <p>The Amazon Resource Name (ARN) of the IAM role that grants permissions to read from CloudWatch logs, write evaluation results, and invoke Amazon Bedrock models for evaluation.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role that grants permissions to read from CloudWatch logs, write evaluation results, and invoke Amazon Bedrock models for evaluation. If the configuration references evaluators encrypted with a customer managed KMS key, this role must also have <code>kms:Decrypt</code> permission on the KMS key. The service validates this permission at configuration creation time. For more information, see <a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/evaluations-encryption.html">Encryption at rest for AgentCore Evaluations</a>.</p>
     pub evaluation_execution_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>Whether to enable the online evaluation configuration immediately upon creation. If true, evaluation begins automatically.</p>
     pub enable_on_create: ::std::option::Option<bool>,
@@ -49,7 +49,7 @@ impl CreateOnlineEvaluationConfigInput {
     pub fn evaluators(&self) -> &[crate::types::EvaluatorReference] {
         self.evaluators.as_deref().unwrap_or_default()
     }
-    /// <p>The Amazon Resource Name (ARN) of the IAM role that grants permissions to read from CloudWatch logs, write evaluation results, and invoke Amazon Bedrock models for evaluation.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role that grants permissions to read from CloudWatch logs, write evaluation results, and invoke Amazon Bedrock models for evaluation. If the configuration references evaluators encrypted with a customer managed KMS key, this role must also have <code>kms:Decrypt</code> permission on the KMS key. The service validates this permission at configuration creation time. For more information, see <a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/evaluations-encryption.html">Encryption at rest for AgentCore Evaluations</a>.</p>
     pub fn evaluation_execution_role_arn(&self) -> ::std::option::Option<&str> {
         self.evaluation_execution_role_arn.as_deref()
     }
@@ -192,18 +192,18 @@ impl CreateOnlineEvaluationConfigInputBuilder {
     pub fn get_evaluators(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EvaluatorReference>> {
         &self.evaluators
     }
-    /// <p>The Amazon Resource Name (ARN) of the IAM role that grants permissions to read from CloudWatch logs, write evaluation results, and invoke Amazon Bedrock models for evaluation.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role that grants permissions to read from CloudWatch logs, write evaluation results, and invoke Amazon Bedrock models for evaluation. If the configuration references evaluators encrypted with a customer managed KMS key, this role must also have <code>kms:Decrypt</code> permission on the KMS key. The service validates this permission at configuration creation time. For more information, see <a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/evaluations-encryption.html">Encryption at rest for AgentCore Evaluations</a>.</p>
     /// This field is required.
     pub fn evaluation_execution_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.evaluation_execution_role_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the IAM role that grants permissions to read from CloudWatch logs, write evaluation results, and invoke Amazon Bedrock models for evaluation.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role that grants permissions to read from CloudWatch logs, write evaluation results, and invoke Amazon Bedrock models for evaluation. If the configuration references evaluators encrypted with a customer managed KMS key, this role must also have <code>kms:Decrypt</code> permission on the KMS key. The service validates this permission at configuration creation time. For more information, see <a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/evaluations-encryption.html">Encryption at rest for AgentCore Evaluations</a>.</p>
     pub fn set_evaluation_execution_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.evaluation_execution_role_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the IAM role that grants permissions to read from CloudWatch logs, write evaluation results, and invoke Amazon Bedrock models for evaluation.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role that grants permissions to read from CloudWatch logs, write evaluation results, and invoke Amazon Bedrock models for evaluation. If the configuration references evaluators encrypted with a customer managed KMS key, this role must also have <code>kms:Decrypt</code> permission on the KMS key. The service validates this permission at configuration creation time. For more information, see <a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/evaluations-encryption.html">Encryption at rest for AgentCore Evaluations</a>.</p>
     pub fn get_evaluation_execution_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.evaluation_execution_role_arn
     }

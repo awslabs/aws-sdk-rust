@@ -23,6 +23,7 @@ impl super::Client {
     ///   - [`dash_manifests(Option<Vec::<GetDashManifestConfiguration>>)`](crate::operation::get_origin_endpoint::GetOriginEndpointOutput::dash_manifests): <p>A DASH manifest configuration.</p>
     ///   - [`mss_manifests(Option<Vec::<GetMssManifestConfiguration>>)`](crate::operation::get_origin_endpoint::GetOriginEndpointOutput::mss_manifests): <p>The Microsoft Smooth Streaming (MSS) manifest configurations associated with this origin endpoint.</p>
     ///   - [`force_endpoint_error_configuration(Option<ForceEndpointErrorConfiguration>)`](crate::operation::get_origin_endpoint::GetOriginEndpointOutput::force_endpoint_error_configuration): <p>The failover settings for the endpoint.</p>
+    ///   - [`uri_separator(Option<UriSeparator>)`](crate::operation::get_origin_endpoint::GetOriginEndpointOutput::uri_separator): <p>The separator character used in generated URIs for this origin endpoint.</p>
     ///   - [`e_tag(Option<String>)`](crate::operation::get_origin_endpoint::GetOriginEndpointOutput::e_tag): <p>The current Entity Tag (ETag) associated with this resource. The entity tag can be used to safely make concurrent updates to the resource.</p>
     ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::get_origin_endpoint::GetOriginEndpointOutput::tags): <p>The comma-separated list of tag key:value pairs assigned to the origin endpoint.</p>
     /// - On failure, responds with [`SdkError<GetOriginEndpointError>`](crate::operation::get_origin_endpoint::GetOriginEndpointError)

@@ -15,6 +15,8 @@ pub struct AcceleratorSelection {
     /// <p><code>l4</code> - NVIDIA L4 Tensor Core GPU (24 GiB memory)</p></li>
     /// <li>
     /// <p><code>l40s</code> - NVIDIA L40S Tensor Core GPU (48 GiB memory)</p></li>
+    /// <li>
+    /// <p><code>rtx-pro-server-6000</code> - NVIDIA RTX PRO Server 6000 GPU (96 GiB memory)</p></li>
     /// </ul>
     pub name: crate::types::AcceleratorName,
     /// <p>Specifies the runtime driver to use for the GPU accelerator. You must use the same runtime for all GPUs in a fleet.</p>
@@ -22,6 +24,8 @@ pub struct AcceleratorSelection {
     /// <ul>
     /// <li>
     /// <p><code>latest</code> - Use the latest runtime available for the chip. If you specify <code>latest</code> and a new version of the runtime is released, the new version of the runtime is used.</p></li>
+    /// <li>
+    /// <p><code>grid:r580</code> - <a href="https://docs.nvidia.com/vgpu/19.0/index.html">NVIDIA vGPU software 19</a></p></li>
     /// <li>
     /// <p><code>grid:r570</code> - <a href="https://docs.nvidia.com/vgpu/18.0/index.html">NVIDIA vGPU software 18</a></p></li>
     /// <li>
@@ -31,13 +35,15 @@ pub struct AcceleratorSelection {
     /// <p>Not all runtimes are compatible with all accelerator types:</p>
     /// <ul>
     /// <li>
-    /// <p><code>t4</code> and <code>a10g</code>: Support all runtimes (<code>grid:r570</code>, <code>grid:r535</code>)</p></li>
+    /// <p><code>t4</code> and <code>a10g</code>: Support all runtimes (<code>grid:r580</code>, <code>grid:r570</code>, <code>grid:r535</code>)</p></li>
     /// <li>
     /// <p><code>l4</code> and <code>l40s</code>: Only support <code>grid:r570</code> and newer</p></li>
+    /// <li>
+    /// <p><code>rtx-pro-server-6000</code>: Only supports <code>grid:r580</code></p></li>
     /// </ul>
     /// <p>All accelerators in a fleet must use the same runtime version. You cannot mix different runtime versions within a single fleet.</p>
     /// </important> <note>
-    /// <p>When you specify <code>latest</code>, it resolves to <code>grid:r570</code> for all currently supported accelerators.</p>
+    /// <p>When you specify <code>latest</code>, it resolves to <code>grid:r580</code> for all currently supported accelerators.</p>
     /// </note>
     pub runtime: ::std::string::String,
 }
@@ -53,6 +59,8 @@ impl AcceleratorSelection {
     /// <p><code>l4</code> - NVIDIA L4 Tensor Core GPU (24 GiB memory)</p></li>
     /// <li>
     /// <p><code>l40s</code> - NVIDIA L40S Tensor Core GPU (48 GiB memory)</p></li>
+    /// <li>
+    /// <p><code>rtx-pro-server-6000</code> - NVIDIA RTX PRO Server 6000 GPU (96 GiB memory)</p></li>
     /// </ul>
     pub fn name(&self) -> &crate::types::AcceleratorName {
         &self.name
@@ -63,6 +71,8 @@ impl AcceleratorSelection {
     /// <li>
     /// <p><code>latest</code> - Use the latest runtime available for the chip. If you specify <code>latest</code> and a new version of the runtime is released, the new version of the runtime is used.</p></li>
     /// <li>
+    /// <p><code>grid:r580</code> - <a href="https://docs.nvidia.com/vgpu/19.0/index.html">NVIDIA vGPU software 19</a></p></li>
+    /// <li>
     /// <p><code>grid:r570</code> - <a href="https://docs.nvidia.com/vgpu/18.0/index.html">NVIDIA vGPU software 18</a></p></li>
     /// <li>
     /// <p><code>grid:r535</code> - <a href="https://docs.nvidia.com/vgpu/16.0/index.html">NVIDIA vGPU software 16</a></p></li>
@@ -71,13 +81,15 @@ impl AcceleratorSelection {
     /// <p>Not all runtimes are compatible with all accelerator types:</p>
     /// <ul>
     /// <li>
-    /// <p><code>t4</code> and <code>a10g</code>: Support all runtimes (<code>grid:r570</code>, <code>grid:r535</code>)</p></li>
+    /// <p><code>t4</code> and <code>a10g</code>: Support all runtimes (<code>grid:r580</code>, <code>grid:r570</code>, <code>grid:r535</code>)</p></li>
     /// <li>
     /// <p><code>l4</code> and <code>l40s</code>: Only support <code>grid:r570</code> and newer</p></li>
+    /// <li>
+    /// <p><code>rtx-pro-server-6000</code>: Only supports <code>grid:r580</code></p></li>
     /// </ul>
     /// <p>All accelerators in a fleet must use the same runtime version. You cannot mix different runtime versions within a single fleet.</p>
     /// </important> <note>
-    /// <p>When you specify <code>latest</code>, it resolves to <code>grid:r570</code> for all currently supported accelerators.</p>
+    /// <p>When you specify <code>latest</code>, it resolves to <code>grid:r580</code> for all currently supported accelerators.</p>
     /// </note>
     pub fn runtime(&self) -> &str {
         use std::ops::Deref;
@@ -110,6 +122,8 @@ impl AcceleratorSelectionBuilder {
     /// <p><code>l4</code> - NVIDIA L4 Tensor Core GPU (24 GiB memory)</p></li>
     /// <li>
     /// <p><code>l40s</code> - NVIDIA L40S Tensor Core GPU (48 GiB memory)</p></li>
+    /// <li>
+    /// <p><code>rtx-pro-server-6000</code> - NVIDIA RTX PRO Server 6000 GPU (96 GiB memory)</p></li>
     /// </ul>
     /// This field is required.
     pub fn name(mut self, input: crate::types::AcceleratorName) -> Self {
@@ -127,6 +141,8 @@ impl AcceleratorSelectionBuilder {
     /// <p><code>l4</code> - NVIDIA L4 Tensor Core GPU (24 GiB memory)</p></li>
     /// <li>
     /// <p><code>l40s</code> - NVIDIA L40S Tensor Core GPU (48 GiB memory)</p></li>
+    /// <li>
+    /// <p><code>rtx-pro-server-6000</code> - NVIDIA RTX PRO Server 6000 GPU (96 GiB memory)</p></li>
     /// </ul>
     pub fn set_name(mut self, input: ::std::option::Option<crate::types::AcceleratorName>) -> Self {
         self.name = input;
@@ -143,6 +159,8 @@ impl AcceleratorSelectionBuilder {
     /// <p><code>l4</code> - NVIDIA L4 Tensor Core GPU (24 GiB memory)</p></li>
     /// <li>
     /// <p><code>l40s</code> - NVIDIA L40S Tensor Core GPU (48 GiB memory)</p></li>
+    /// <li>
+    /// <p><code>rtx-pro-server-6000</code> - NVIDIA RTX PRO Server 6000 GPU (96 GiB memory)</p></li>
     /// </ul>
     pub fn get_name(&self) -> &::std::option::Option<crate::types::AcceleratorName> {
         &self.name
@@ -153,6 +171,8 @@ impl AcceleratorSelectionBuilder {
     /// <li>
     /// <p><code>latest</code> - Use the latest runtime available for the chip. If you specify <code>latest</code> and a new version of the runtime is released, the new version of the runtime is used.</p></li>
     /// <li>
+    /// <p><code>grid:r580</code> - <a href="https://docs.nvidia.com/vgpu/19.0/index.html">NVIDIA vGPU software 19</a></p></li>
+    /// <li>
     /// <p><code>grid:r570</code> - <a href="https://docs.nvidia.com/vgpu/18.0/index.html">NVIDIA vGPU software 18</a></p></li>
     /// <li>
     /// <p><code>grid:r535</code> - <a href="https://docs.nvidia.com/vgpu/16.0/index.html">NVIDIA vGPU software 16</a></p></li>
@@ -161,13 +181,15 @@ impl AcceleratorSelectionBuilder {
     /// <p>Not all runtimes are compatible with all accelerator types:</p>
     /// <ul>
     /// <li>
-    /// <p><code>t4</code> and <code>a10g</code>: Support all runtimes (<code>grid:r570</code>, <code>grid:r535</code>)</p></li>
+    /// <p><code>t4</code> and <code>a10g</code>: Support all runtimes (<code>grid:r580</code>, <code>grid:r570</code>, <code>grid:r535</code>)</p></li>
     /// <li>
     /// <p><code>l4</code> and <code>l40s</code>: Only support <code>grid:r570</code> and newer</p></li>
+    /// <li>
+    /// <p><code>rtx-pro-server-6000</code>: Only supports <code>grid:r580</code></p></li>
     /// </ul>
     /// <p>All accelerators in a fleet must use the same runtime version. You cannot mix different runtime versions within a single fleet.</p>
     /// </important> <note>
-    /// <p>When you specify <code>latest</code>, it resolves to <code>grid:r570</code> for all currently supported accelerators.</p>
+    /// <p>When you specify <code>latest</code>, it resolves to <code>grid:r580</code> for all currently supported accelerators.</p>
     /// </note>
     pub fn runtime(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.runtime = ::std::option::Option::Some(input.into());
@@ -179,6 +201,8 @@ impl AcceleratorSelectionBuilder {
     /// <li>
     /// <p><code>latest</code> - Use the latest runtime available for the chip. If you specify <code>latest</code> and a new version of the runtime is released, the new version of the runtime is used.</p></li>
     /// <li>
+    /// <p><code>grid:r580</code> - <a href="https://docs.nvidia.com/vgpu/19.0/index.html">NVIDIA vGPU software 19</a></p></li>
+    /// <li>
     /// <p><code>grid:r570</code> - <a href="https://docs.nvidia.com/vgpu/18.0/index.html">NVIDIA vGPU software 18</a></p></li>
     /// <li>
     /// <p><code>grid:r535</code> - <a href="https://docs.nvidia.com/vgpu/16.0/index.html">NVIDIA vGPU software 16</a></p></li>
@@ -187,13 +211,15 @@ impl AcceleratorSelectionBuilder {
     /// <p>Not all runtimes are compatible with all accelerator types:</p>
     /// <ul>
     /// <li>
-    /// <p><code>t4</code> and <code>a10g</code>: Support all runtimes (<code>grid:r570</code>, <code>grid:r535</code>)</p></li>
+    /// <p><code>t4</code> and <code>a10g</code>: Support all runtimes (<code>grid:r580</code>, <code>grid:r570</code>, <code>grid:r535</code>)</p></li>
     /// <li>
     /// <p><code>l4</code> and <code>l40s</code>: Only support <code>grid:r570</code> and newer</p></li>
+    /// <li>
+    /// <p><code>rtx-pro-server-6000</code>: Only supports <code>grid:r580</code></p></li>
     /// </ul>
     /// <p>All accelerators in a fleet must use the same runtime version. You cannot mix different runtime versions within a single fleet.</p>
     /// </important> <note>
-    /// <p>When you specify <code>latest</code>, it resolves to <code>grid:r570</code> for all currently supported accelerators.</p>
+    /// <p>When you specify <code>latest</code>, it resolves to <code>grid:r580</code> for all currently supported accelerators.</p>
     /// </note>
     pub fn set_runtime(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.runtime = input;
@@ -205,6 +231,8 @@ impl AcceleratorSelectionBuilder {
     /// <li>
     /// <p><code>latest</code> - Use the latest runtime available for the chip. If you specify <code>latest</code> and a new version of the runtime is released, the new version of the runtime is used.</p></li>
     /// <li>
+    /// <p><code>grid:r580</code> - <a href="https://docs.nvidia.com/vgpu/19.0/index.html">NVIDIA vGPU software 19</a></p></li>
+    /// <li>
     /// <p><code>grid:r570</code> - <a href="https://docs.nvidia.com/vgpu/18.0/index.html">NVIDIA vGPU software 18</a></p></li>
     /// <li>
     /// <p><code>grid:r535</code> - <a href="https://docs.nvidia.com/vgpu/16.0/index.html">NVIDIA vGPU software 16</a></p></li>
@@ -213,13 +241,15 @@ impl AcceleratorSelectionBuilder {
     /// <p>Not all runtimes are compatible with all accelerator types:</p>
     /// <ul>
     /// <li>
-    /// <p><code>t4</code> and <code>a10g</code>: Support all runtimes (<code>grid:r570</code>, <code>grid:r535</code>)</p></li>
+    /// <p><code>t4</code> and <code>a10g</code>: Support all runtimes (<code>grid:r580</code>, <code>grid:r570</code>, <code>grid:r535</code>)</p></li>
     /// <li>
     /// <p><code>l4</code> and <code>l40s</code>: Only support <code>grid:r570</code> and newer</p></li>
+    /// <li>
+    /// <p><code>rtx-pro-server-6000</code>: Only supports <code>grid:r580</code></p></li>
     /// </ul>
     /// <p>All accelerators in a fleet must use the same runtime version. You cannot mix different runtime versions within a single fleet.</p>
     /// </important> <note>
-    /// <p>When you specify <code>latest</code>, it resolves to <code>grid:r570</code> for all currently supported accelerators.</p>
+    /// <p>When you specify <code>latest</code>, it resolves to <code>grid:r580</code> for all currently supported accelerators.</p>
     /// </note>
     pub fn get_runtime(&self) -> &::std::option::Option<::std::string::String> {
         &self.runtime

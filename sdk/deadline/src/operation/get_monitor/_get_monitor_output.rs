@@ -18,7 +18,7 @@ pub struct GetMonitorOutput {
     pub role_arn: ::std::string::String,
     /// <p>The Amazon Resource Name of the IAM Identity Center instance responsible for authenticating monitor users.</p>
     pub identity_center_instance_arn: ::std::string::String,
-    /// The AWS region where IAM Identity Center is enabled.
+    /// <p>The AWS Region where IAM Identity Center is enabled.</p>
     pub identity_center_region: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name that the IAM Identity Center assigned to the monitor when it was created.</p>
     pub identity_center_application_arn: ::std::string::String,
@@ -65,7 +65,7 @@ impl GetMonitorOutput {
         use std::ops::Deref;
         self.identity_center_instance_arn.deref()
     }
-    /// The AWS region where IAM Identity Center is enabled.
+    /// <p>The AWS Region where IAM Identity Center is enabled.</p>
     pub fn identity_center_region(&self) -> ::std::option::Option<&str> {
         self.identity_center_region.as_deref()
     }
@@ -219,17 +219,17 @@ impl GetMonitorOutputBuilder {
     pub fn get_identity_center_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.identity_center_instance_arn
     }
-    /// The AWS region where IAM Identity Center is enabled.
+    /// <p>The AWS Region where IAM Identity Center is enabled.</p>
     pub fn identity_center_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identity_center_region = ::std::option::Option::Some(input.into());
         self
     }
-    /// The AWS region where IAM Identity Center is enabled.
+    /// <p>The AWS Region where IAM Identity Center is enabled.</p>
     pub fn set_identity_center_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.identity_center_region = input;
         self
     }
-    /// The AWS region where IAM Identity Center is enabled.
+    /// <p>The AWS Region where IAM Identity Center is enabled.</p>
     pub fn get_identity_center_region(&self) -> &::std::option::Option<::std::string::String> {
         &self.identity_center_region
     }

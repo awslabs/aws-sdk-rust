@@ -106,6 +106,11 @@ pub struct DistributionConfig {
     pub viewer_mtls_config: ::std::option::Option<crate::types::ViewerMtlsConfig>,
     /// <p>The distribution's connection function association.</p>
     pub connection_function_association: ::std::option::Option<crate::types::ConnectionFunctionAssociation>,
+    /// <p>Configuration for cache tag extraction from origin responses. When specified, CloudFront reads the header named in <code>HeaderName</code> from origin responses and stores the comma-separated values as cache tags on the object.</p>
+    /// <p>Distributions without <code>CacheTagConfig</code> do not extract tags. When <code>CacheTagConfig</code> is removed from a distribution via <code>UpdateDistribution</code>, CloudFront stops extracting tags from origin responses.</p><note>
+    /// <p>Changing the <code>HeaderName</code> on an existing distribution does not retroactively affect previously cached objects. Tag-based invalidations will not apply to objects already cached using a previous header. To ensure tag invalidations function after updating the header name, use path-based invalidations to recache all objects that use cache tags.</p>
+    /// </note>
+    pub cache_tag_config: ::std::option::Option<crate::types::CacheTagConfig>,
 }
 impl DistributionConfig {
     /// <p>A unique value (for example, a date-time stamp) that ensures that the request can't be replayed.</p>
@@ -260,6 +265,13 @@ impl DistributionConfig {
     pub fn connection_function_association(&self) -> ::std::option::Option<&crate::types::ConnectionFunctionAssociation> {
         self.connection_function_association.as_ref()
     }
+    /// <p>Configuration for cache tag extraction from origin responses. When specified, CloudFront reads the header named in <code>HeaderName</code> from origin responses and stores the comma-separated values as cache tags on the object.</p>
+    /// <p>Distributions without <code>CacheTagConfig</code> do not extract tags. When <code>CacheTagConfig</code> is removed from a distribution via <code>UpdateDistribution</code>, CloudFront stops extracting tags from origin responses.</p><note>
+    /// <p>Changing the <code>HeaderName</code> on an existing distribution does not retroactively affect previously cached objects. Tag-based invalidations will not apply to objects already cached using a previous header. To ensure tag invalidations function after updating the header name, use path-based invalidations to recache all objects that use cache tags.</p>
+    /// </note>
+    pub fn cache_tag_config(&self) -> ::std::option::Option<&crate::types::CacheTagConfig> {
+        self.cache_tag_config.as_ref()
+    }
 }
 impl ::std::fmt::Debug for DistributionConfig {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -288,6 +300,7 @@ impl ::std::fmt::Debug for DistributionConfig {
         formatter.field("connection_mode", &self.connection_mode);
         formatter.field("viewer_mtls_config", &self.viewer_mtls_config);
         formatter.field("connection_function_association", &self.connection_function_association);
+        formatter.field("cache_tag_config", &self.cache_tag_config);
         formatter.finish()
     }
 }
@@ -326,6 +339,7 @@ pub struct DistributionConfigBuilder {
     pub(crate) connection_mode: ::std::option::Option<crate::types::ConnectionMode>,
     pub(crate) viewer_mtls_config: ::std::option::Option<crate::types::ViewerMtlsConfig>,
     pub(crate) connection_function_association: ::std::option::Option<crate::types::ConnectionFunctionAssociation>,
+    pub(crate) cache_tag_config: ::std::option::Option<crate::types::CacheTagConfig>,
 }
 impl DistributionConfigBuilder {
     /// <p>A unique value (for example, a date-time stamp) that ensures that the request can't be replayed.</p>
@@ -831,6 +845,29 @@ impl DistributionConfigBuilder {
     pub fn get_connection_function_association(&self) -> &::std::option::Option<crate::types::ConnectionFunctionAssociation> {
         &self.connection_function_association
     }
+    /// <p>Configuration for cache tag extraction from origin responses. When specified, CloudFront reads the header named in <code>HeaderName</code> from origin responses and stores the comma-separated values as cache tags on the object.</p>
+    /// <p>Distributions without <code>CacheTagConfig</code> do not extract tags. When <code>CacheTagConfig</code> is removed from a distribution via <code>UpdateDistribution</code>, CloudFront stops extracting tags from origin responses.</p><note>
+    /// <p>Changing the <code>HeaderName</code> on an existing distribution does not retroactively affect previously cached objects. Tag-based invalidations will not apply to objects already cached using a previous header. To ensure tag invalidations function after updating the header name, use path-based invalidations to recache all objects that use cache tags.</p>
+    /// </note>
+    pub fn cache_tag_config(mut self, input: crate::types::CacheTagConfig) -> Self {
+        self.cache_tag_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Configuration for cache tag extraction from origin responses. When specified, CloudFront reads the header named in <code>HeaderName</code> from origin responses and stores the comma-separated values as cache tags on the object.</p>
+    /// <p>Distributions without <code>CacheTagConfig</code> do not extract tags. When <code>CacheTagConfig</code> is removed from a distribution via <code>UpdateDistribution</code>, CloudFront stops extracting tags from origin responses.</p><note>
+    /// <p>Changing the <code>HeaderName</code> on an existing distribution does not retroactively affect previously cached objects. Tag-based invalidations will not apply to objects already cached using a previous header. To ensure tag invalidations function after updating the header name, use path-based invalidations to recache all objects that use cache tags.</p>
+    /// </note>
+    pub fn set_cache_tag_config(mut self, input: ::std::option::Option<crate::types::CacheTagConfig>) -> Self {
+        self.cache_tag_config = input;
+        self
+    }
+    /// <p>Configuration for cache tag extraction from origin responses. When specified, CloudFront reads the header named in <code>HeaderName</code> from origin responses and stores the comma-separated values as cache tags on the object.</p>
+    /// <p>Distributions without <code>CacheTagConfig</code> do not extract tags. When <code>CacheTagConfig</code> is removed from a distribution via <code>UpdateDistribution</code>, CloudFront stops extracting tags from origin responses.</p><note>
+    /// <p>Changing the <code>HeaderName</code> on an existing distribution does not retroactively affect previously cached objects. Tag-based invalidations will not apply to objects already cached using a previous header. To ensure tag invalidations function after updating the header name, use path-based invalidations to recache all objects that use cache tags.</p>
+    /// </note>
+    pub fn get_cache_tag_config(&self) -> &::std::option::Option<crate::types::CacheTagConfig> {
+        &self.cache_tag_config
+    }
     /// Consumes the builder and constructs a [`DistributionConfig`](crate::types::DistributionConfig).
     /// This method will fail if any of the following fields are not set:
     /// - [`caller_reference`](crate::types::builders::DistributionConfigBuilder::caller_reference)
@@ -877,6 +914,7 @@ impl DistributionConfigBuilder {
             connection_mode: self.connection_mode,
             viewer_mtls_config: self.viewer_mtls_config,
             connection_function_association: self.connection_function_association,
+            cache_tag_config: self.cache_tag_config,
         })
     }
 }
@@ -907,6 +945,7 @@ impl ::std::fmt::Debug for DistributionConfigBuilder {
         formatter.field("connection_mode", &self.connection_mode);
         formatter.field("viewer_mtls_config", &self.viewer_mtls_config);
         formatter.field("connection_function_association", &self.connection_function_association);
+        formatter.field("cache_tag_config", &self.cache_tag_config);
         formatter.finish()
     }
 }

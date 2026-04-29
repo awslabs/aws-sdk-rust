@@ -97,6 +97,8 @@ pub(crate) mod shape_describe_container_fleet;
 
 pub(crate) mod shape_describe_container_group_definition;
 
+pub(crate) mod shape_describe_container_group_port_mappings;
+
 pub(crate) mod shape_describe_ec2_instance_limits;
 
 pub(crate) mod shape_describe_fleet_attributes;
@@ -337,6 +339,8 @@ pub(crate) mod shape_describe_container_fleet_input;
 
 pub(crate) mod shape_describe_container_group_definition_input;
 
+pub(crate) mod shape_describe_container_group_port_mappings_input;
+
 pub(crate) mod shape_describe_ec2_instance_limits_input;
 
 pub(crate) mod shape_describe_fleet_attributes_input;
@@ -553,6 +557,8 @@ pub(crate) mod shape_container_group_definition;
 
 pub(crate) mod shape_container_group_definition_list;
 
+pub(crate) mod shape_container_group_port_mapping_list;
+
 pub(crate) mod shape_container_identifier_list;
 
 pub(crate) mod shape_deployment_configuration;
@@ -711,6 +717,8 @@ pub(crate) mod shape_container_environment;
 
 pub(crate) mod shape_container_fleet_location_attributes_list;
 
+pub(crate) mod shape_container_group_port_mapping;
+
 pub(crate) mod shape_container_health_check;
 
 pub(crate) mod shape_container_identifier;
@@ -797,6 +805,8 @@ pub(crate) mod shape_container_fleet_location_attributes;
 
 pub(crate) mod shape_container_mount_point_list;
 
+pub(crate) mod shape_container_port_mapping_list;
+
 pub(crate) mod shape_container_port_range;
 
 pub(crate) mod shape_location_list;
@@ -816,6 +826,8 @@ pub(crate) mod shape_support_container_definition;
 pub(crate) mod shape_udp_endpoint;
 
 pub(crate) mod shape_vpc_peering_connection_status;
+
+pub(crate) mod shape_container_port_mapping;
 
 pub(crate) mod shape_container_port_range_list;
 

@@ -113,6 +113,13 @@ where
                                 crate::protocol_serde::shape_dash_subtitle_configuration::de_dash_subtitle_configuration(tokens, _value)?,
                             );
                         }
+                        "UriPathType" => {
+                            builder = builder.set_uri_path_type(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::UriPathType::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

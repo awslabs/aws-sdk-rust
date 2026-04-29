@@ -1155,6 +1155,8 @@ pub(crate) mod shape_cache_policy;
 
 pub(crate) mod shape_cache_policy_list;
 
+pub(crate) mod shape_cache_tag_config;
+
 pub(crate) mod shape_certificate;
 
 pub(crate) mod shape_cloud_front_origin_access_identity;

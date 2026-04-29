@@ -12,15 +12,23 @@
 /// ```text
 /// # let sctefilter = unimplemented!();
 /// match sctefilter {
+///     ScteFilter::AlternateContentOpportunity => { /* ... */ },
 ///     ScteFilter::Break => { /* ... */ },
+///     ScteFilter::Chapter => { /* ... */ },
 ///     ScteFilter::DistributorAdvertisement => { /* ... */ },
+///     ScteFilter::DistributorAdBlock => { /* ... */ },
 ///     ScteFilter::DistributorOverlayPlacementOpportunity => { /* ... */ },
 ///     ScteFilter::DistributorPlacementOpportunity => { /* ... */ },
+///     ScteFilter::DistributorPromo => { /* ... */ },
+///     ScteFilter::Network => { /* ... */ },
 ///     ScteFilter::Program => { /* ... */ },
 ///     ScteFilter::ProviderAdvertisement => { /* ... */ },
+///     ScteFilter::ProviderAdBlock => { /* ... */ },
 ///     ScteFilter::ProviderOverlayPlacementOpportunity => { /* ... */ },
 ///     ScteFilter::ProviderPlacementOpportunity => { /* ... */ },
+///     ScteFilter::ProviderPromo => { /* ... */ },
 ///     ScteFilter::SpliceInsert => { /* ... */ },
+///     ScteFilter::UnscheduledEvent => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -50,23 +58,39 @@
 )]
 pub enum ScteFilter {
     #[allow(missing_docs)] // documentation missing in model
+    AlternateContentOpportunity,
+    #[allow(missing_docs)] // documentation missing in model
     Break,
     #[allow(missing_docs)] // documentation missing in model
+    Chapter,
+    #[allow(missing_docs)] // documentation missing in model
     DistributorAdvertisement,
+    #[allow(missing_docs)] // documentation missing in model
+    DistributorAdBlock,
     #[allow(missing_docs)] // documentation missing in model
     DistributorOverlayPlacementOpportunity,
     #[allow(missing_docs)] // documentation missing in model
     DistributorPlacementOpportunity,
     #[allow(missing_docs)] // documentation missing in model
+    DistributorPromo,
+    #[allow(missing_docs)] // documentation missing in model
+    Network,
+    #[allow(missing_docs)] // documentation missing in model
     Program,
     #[allow(missing_docs)] // documentation missing in model
     ProviderAdvertisement,
+    #[allow(missing_docs)] // documentation missing in model
+    ProviderAdBlock,
     #[allow(missing_docs)] // documentation missing in model
     ProviderOverlayPlacementOpportunity,
     #[allow(missing_docs)] // documentation missing in model
     ProviderPlacementOpportunity,
     #[allow(missing_docs)] // documentation missing in model
+    ProviderPromo,
+    #[allow(missing_docs)] // documentation missing in model
     SpliceInsert,
+    #[allow(missing_docs)] // documentation missing in model
+    UnscheduledEvent,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -74,15 +98,23 @@ pub enum ScteFilter {
 impl ::std::convert::From<&str> for ScteFilter {
     fn from(s: &str) -> Self {
         match s {
+            "ALTERNATE_CONTENT_OPPORTUNITY" => ScteFilter::AlternateContentOpportunity,
             "BREAK" => ScteFilter::Break,
+            "CHAPTER" => ScteFilter::Chapter,
             "DISTRIBUTOR_ADVERTISEMENT" => ScteFilter::DistributorAdvertisement,
+            "DISTRIBUTOR_AD_BLOCK" => ScteFilter::DistributorAdBlock,
             "DISTRIBUTOR_OVERLAY_PLACEMENT_OPPORTUNITY" => ScteFilter::DistributorOverlayPlacementOpportunity,
             "DISTRIBUTOR_PLACEMENT_OPPORTUNITY" => ScteFilter::DistributorPlacementOpportunity,
+            "DISTRIBUTOR_PROMO" => ScteFilter::DistributorPromo,
+            "NETWORK" => ScteFilter::Network,
             "PROGRAM" => ScteFilter::Program,
             "PROVIDER_ADVERTISEMENT" => ScteFilter::ProviderAdvertisement,
+            "PROVIDER_AD_BLOCK" => ScteFilter::ProviderAdBlock,
             "PROVIDER_OVERLAY_PLACEMENT_OPPORTUNITY" => ScteFilter::ProviderOverlayPlacementOpportunity,
             "PROVIDER_PLACEMENT_OPPORTUNITY" => ScteFilter::ProviderPlacementOpportunity,
+            "PROVIDER_PROMO" => ScteFilter::ProviderPromo,
             "SPLICE_INSERT" => ScteFilter::SpliceInsert,
+            "UNSCHEDULED_EVENT" => ScteFilter::UnscheduledEvent,
             other => ScteFilter::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -98,30 +130,46 @@ impl ScteFilter {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            ScteFilter::AlternateContentOpportunity => "ALTERNATE_CONTENT_OPPORTUNITY",
             ScteFilter::Break => "BREAK",
+            ScteFilter::Chapter => "CHAPTER",
             ScteFilter::DistributorAdvertisement => "DISTRIBUTOR_ADVERTISEMENT",
+            ScteFilter::DistributorAdBlock => "DISTRIBUTOR_AD_BLOCK",
             ScteFilter::DistributorOverlayPlacementOpportunity => "DISTRIBUTOR_OVERLAY_PLACEMENT_OPPORTUNITY",
             ScteFilter::DistributorPlacementOpportunity => "DISTRIBUTOR_PLACEMENT_OPPORTUNITY",
+            ScteFilter::DistributorPromo => "DISTRIBUTOR_PROMO",
+            ScteFilter::Network => "NETWORK",
             ScteFilter::Program => "PROGRAM",
             ScteFilter::ProviderAdvertisement => "PROVIDER_ADVERTISEMENT",
+            ScteFilter::ProviderAdBlock => "PROVIDER_AD_BLOCK",
             ScteFilter::ProviderOverlayPlacementOpportunity => "PROVIDER_OVERLAY_PLACEMENT_OPPORTUNITY",
             ScteFilter::ProviderPlacementOpportunity => "PROVIDER_PLACEMENT_OPPORTUNITY",
+            ScteFilter::ProviderPromo => "PROVIDER_PROMO",
             ScteFilter::SpliceInsert => "SPLICE_INSERT",
+            ScteFilter::UnscheduledEvent => "UNSCHEDULED_EVENT",
             ScteFilter::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
+            "ALTERNATE_CONTENT_OPPORTUNITY",
             "BREAK",
+            "CHAPTER",
             "DISTRIBUTOR_ADVERTISEMENT",
+            "DISTRIBUTOR_AD_BLOCK",
             "DISTRIBUTOR_OVERLAY_PLACEMENT_OPPORTUNITY",
             "DISTRIBUTOR_PLACEMENT_OPPORTUNITY",
+            "DISTRIBUTOR_PROMO",
+            "NETWORK",
             "PROGRAM",
             "PROVIDER_ADVERTISEMENT",
+            "PROVIDER_AD_BLOCK",
             "PROVIDER_OVERLAY_PLACEMENT_OPPORTUNITY",
             "PROVIDER_PLACEMENT_OPPORTUNITY",
+            "PROVIDER_PROMO",
             "SPLICE_INSERT",
+            "UNSCHEDULED_EVENT",
         ]
     }
 }
@@ -145,15 +193,23 @@ impl ScteFilter {
 impl ::std::fmt::Display for ScteFilter {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            ScteFilter::AlternateContentOpportunity => write!(f, "ALTERNATE_CONTENT_OPPORTUNITY"),
             ScteFilter::Break => write!(f, "BREAK"),
+            ScteFilter::Chapter => write!(f, "CHAPTER"),
             ScteFilter::DistributorAdvertisement => write!(f, "DISTRIBUTOR_ADVERTISEMENT"),
+            ScteFilter::DistributorAdBlock => write!(f, "DISTRIBUTOR_AD_BLOCK"),
             ScteFilter::DistributorOverlayPlacementOpportunity => write!(f, "DISTRIBUTOR_OVERLAY_PLACEMENT_OPPORTUNITY"),
             ScteFilter::DistributorPlacementOpportunity => write!(f, "DISTRIBUTOR_PLACEMENT_OPPORTUNITY"),
+            ScteFilter::DistributorPromo => write!(f, "DISTRIBUTOR_PROMO"),
+            ScteFilter::Network => write!(f, "NETWORK"),
             ScteFilter::Program => write!(f, "PROGRAM"),
             ScteFilter::ProviderAdvertisement => write!(f, "PROVIDER_ADVERTISEMENT"),
+            ScteFilter::ProviderAdBlock => write!(f, "PROVIDER_AD_BLOCK"),
             ScteFilter::ProviderOverlayPlacementOpportunity => write!(f, "PROVIDER_OVERLAY_PLACEMENT_OPPORTUNITY"),
             ScteFilter::ProviderPlacementOpportunity => write!(f, "PROVIDER_PLACEMENT_OPPORTUNITY"),
+            ScteFilter::ProviderPromo => write!(f, "PROVIDER_PROMO"),
             ScteFilter::SpliceInsert => write!(f, "SPLICE_INSERT"),
+            ScteFilter::UnscheduledEvent => write!(f, "UNSCHEDULED_EVENT"),
             ScteFilter::Unknown(value) => write!(f, "{value}"),
         }
     }

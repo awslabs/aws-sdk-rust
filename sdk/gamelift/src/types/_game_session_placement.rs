@@ -37,9 +37,21 @@ pub struct GameSessionPlacement {
     pub maximum_player_session_count: ::std::option::Option<i32>,
     /// <p>A descriptive label that is associated with a game session. Session names do not need to be unique.</p>
     pub game_session_name: ::std::option::Option<::std::string::String>,
-    /// <p>A unique identifier for the game session. This value isn't final until placement status is <code>FULFILLED</code>.</p>
+    /// <p>An identifier for the game session that is unique across all regions. The value is always a full ARN in the following format: <code>arn:aws:gamelift:<location>
+    /// ::gamesession/
+    /// <fleet id>
+    /// /
+    /// <id string></id>
+    /// </fleet>
+    /// </location></code>. This value is the same as <code>GameSessionArn</code>. This value isn't final until placement status is <code>FULFILLED</code>.</p>
     pub game_session_id: ::std::option::Option<::std::string::String>,
-    /// <p>Identifier for the game session created by this placement request. This identifier is unique across all Regions. This value isn't final until placement status is <code>FULFILLED</code>.</p>
+    /// <p>An identifier for the game session that is unique across all regions. The value is always a full ARN in the following format: <code>arn:aws:gamelift:<location>
+    /// ::gamesession/
+    /// <fleet id>
+    /// /
+    /// <id string></id>
+    /// </fleet>
+    /// </location></code>. This value is the same as <code>GameSessionId</code>. This value isn't final until placement status is <code>FULFILLED</code>.</p>
     pub game_session_arn: ::std::option::Option<::std::string::String>,
     /// <p>Name of the Region where the game session created by this placement request is running. This value isn't final until placement status is <code>FULFILLED</code>.</p>
     pub game_session_region: ::std::option::Option<::std::string::String>,
@@ -133,11 +145,23 @@ impl GameSessionPlacement {
     pub fn game_session_name(&self) -> ::std::option::Option<&str> {
         self.game_session_name.as_deref()
     }
-    /// <p>A unique identifier for the game session. This value isn't final until placement status is <code>FULFILLED</code>.</p>
+    /// <p>An identifier for the game session that is unique across all regions. The value is always a full ARN in the following format: <code>arn:aws:gamelift:<location>
+    /// ::gamesession/
+    /// <fleet id>
+    /// /
+    /// <id string></id>
+    /// </fleet>
+    /// </location></code>. This value is the same as <code>GameSessionArn</code>. This value isn't final until placement status is <code>FULFILLED</code>.</p>
     pub fn game_session_id(&self) -> ::std::option::Option<&str> {
         self.game_session_id.as_deref()
     }
-    /// <p>Identifier for the game session created by this placement request. This identifier is unique across all Regions. This value isn't final until placement status is <code>FULFILLED</code>.</p>
+    /// <p>An identifier for the game session that is unique across all regions. The value is always a full ARN in the following format: <code>arn:aws:gamelift:<location>
+    /// ::gamesession/
+    /// <fleet id>
+    /// /
+    /// <id string></id>
+    /// </fleet>
+    /// </location></code>. This value is the same as <code>GameSessionId</code>. This value isn't final until placement status is <code>FULFILLED</code>.</p>
     pub fn game_session_arn(&self) -> ::std::option::Option<&str> {
         self.game_session_arn.as_deref()
     }
@@ -421,31 +445,67 @@ impl GameSessionPlacementBuilder {
     pub fn get_game_session_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.game_session_name
     }
-    /// <p>A unique identifier for the game session. This value isn't final until placement status is <code>FULFILLED</code>.</p>
+    /// <p>An identifier for the game session that is unique across all regions. The value is always a full ARN in the following format: <code>arn:aws:gamelift:<location>
+    /// ::gamesession/
+    /// <fleet id>
+    /// /
+    /// <id string></id>
+    /// </fleet>
+    /// </location></code>. This value is the same as <code>GameSessionArn</code>. This value isn't final until placement status is <code>FULFILLED</code>.</p>
     pub fn game_session_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.game_session_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A unique identifier for the game session. This value isn't final until placement status is <code>FULFILLED</code>.</p>
+    /// <p>An identifier for the game session that is unique across all regions. The value is always a full ARN in the following format: <code>arn:aws:gamelift:<location>
+    /// ::gamesession/
+    /// <fleet id>
+    /// /
+    /// <id string></id>
+    /// </fleet>
+    /// </location></code>. This value is the same as <code>GameSessionArn</code>. This value isn't final until placement status is <code>FULFILLED</code>.</p>
     pub fn set_game_session_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.game_session_id = input;
         self
     }
-    /// <p>A unique identifier for the game session. This value isn't final until placement status is <code>FULFILLED</code>.</p>
+    /// <p>An identifier for the game session that is unique across all regions. The value is always a full ARN in the following format: <code>arn:aws:gamelift:<location>
+    /// ::gamesession/
+    /// <fleet id>
+    /// /
+    /// <id string></id>
+    /// </fleet>
+    /// </location></code>. This value is the same as <code>GameSessionArn</code>. This value isn't final until placement status is <code>FULFILLED</code>.</p>
     pub fn get_game_session_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.game_session_id
     }
-    /// <p>Identifier for the game session created by this placement request. This identifier is unique across all Regions. This value isn't final until placement status is <code>FULFILLED</code>.</p>
+    /// <p>An identifier for the game session that is unique across all regions. The value is always a full ARN in the following format: <code>arn:aws:gamelift:<location>
+    /// ::gamesession/
+    /// <fleet id>
+    /// /
+    /// <id string></id>
+    /// </fleet>
+    /// </location></code>. This value is the same as <code>GameSessionId</code>. This value isn't final until placement status is <code>FULFILLED</code>.</p>
     pub fn game_session_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.game_session_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Identifier for the game session created by this placement request. This identifier is unique across all Regions. This value isn't final until placement status is <code>FULFILLED</code>.</p>
+    /// <p>An identifier for the game session that is unique across all regions. The value is always a full ARN in the following format: <code>arn:aws:gamelift:<location>
+    /// ::gamesession/
+    /// <fleet id>
+    /// /
+    /// <id string></id>
+    /// </fleet>
+    /// </location></code>. This value is the same as <code>GameSessionId</code>. This value isn't final until placement status is <code>FULFILLED</code>.</p>
     pub fn set_game_session_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.game_session_arn = input;
         self
     }
-    /// <p>Identifier for the game session created by this placement request. This identifier is unique across all Regions. This value isn't final until placement status is <code>FULFILLED</code>.</p>
+    /// <p>An identifier for the game session that is unique across all regions. The value is always a full ARN in the following format: <code>arn:aws:gamelift:<location>
+    /// ::gamesession/
+    /// <fleet id>
+    /// /
+    /// <id string></id>
+    /// </fleet>
+    /// </location></code>. This value is the same as <code>GameSessionId</code>. This value isn't final until placement status is <code>FULFILLED</code>.</p>
     pub fn get_game_session_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.game_session_arn
     }
