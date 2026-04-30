@@ -95,6 +95,9 @@ where
                                 tokens, _value,
                             )?);
                         }
+                        "indexedKeys" => {
+                            builder = builder.set_indexed_keys(crate::protocol_serde::shape_indexed_keys_list::de_indexed_keys_list(tokens, _value)?);
+                        }
                         "streamDeliveryResources" => {
                             builder = builder.set_stream_delivery_resources(
                                 crate::protocol_serde::shape_stream_delivery_resources::de_stream_delivery_resources(tokens, _value)?,

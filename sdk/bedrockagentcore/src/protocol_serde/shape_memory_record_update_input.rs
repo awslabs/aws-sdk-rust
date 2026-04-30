@@ -29,5 +29,18 @@ pub fn ser_memory_record_update_input(
     if let Some(var_6) = &input.memory_strategy_id {
         object.key("memoryStrategyId").string(var_6.as_str());
     }
+    if let Some(var_7) = &input.metadata {
+        #[allow(unused_mut)]
+        let mut object_8 = object.key("metadata").start_object();
+        for (key_9, value_10) in var_7 {
+            {
+                #[allow(unused_mut)]
+                let mut object_11 = object_8.key(key_9.as_str()).start_object();
+                crate::protocol_serde::shape_memory_record_metadata_value::ser_memory_record_metadata_value(&mut object_11, value_10)?;
+                object_11.finish();
+            }
+        }
+        object_8.finish();
+    }
     Ok(())
 }

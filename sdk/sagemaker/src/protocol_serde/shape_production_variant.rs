@@ -18,74 +18,92 @@ pub fn ser_production_variant(
     if let Some(var_4) = &input.instance_type {
         object.key("InstanceType").string(var_4.as_str());
     }
-    if let Some(var_5) = &input.initial_variant_weight {
+    if let Some(var_5) = &input.instance_pools {
+        let mut array_6 = object.key("InstancePools").start_array();
+        for item_7 in var_5 {
+            {
+                #[allow(unused_mut)]
+                let mut object_8 = array_6.value().start_object();
+                crate::protocol_serde::shape_instance_pool::ser_instance_pool(&mut object_8, item_7)?;
+                object_8.finish();
+            }
+        }
+        array_6.finish();
+    }
+    if let Some(var_9) = &input.variant_instance_provision_timeout_in_seconds {
+        object.key("VariantInstanceProvisionTimeoutInSeconds").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_9).into()),
+        );
+    }
+    if let Some(var_10) = &input.initial_variant_weight {
         object.key("InitialVariantWeight").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::Float((*var_5).into()),
+            ::aws_smithy_types::Number::Float((*var_10).into()),
         );
     }
-    if let Some(var_6) = &input.accelerator_type {
-        object.key("AcceleratorType").string(var_6.as_str());
+    if let Some(var_11) = &input.accelerator_type {
+        object.key("AcceleratorType").string(var_11.as_str());
     }
-    if let Some(var_7) = &input.core_dump_config {
+    if let Some(var_12) = &input.core_dump_config {
         #[allow(unused_mut)]
-        let mut object_8 = object.key("CoreDumpConfig").start_object();
-        crate::protocol_serde::shape_production_variant_core_dump_config::ser_production_variant_core_dump_config(&mut object_8, var_7)?;
-        object_8.finish();
+        let mut object_13 = object.key("CoreDumpConfig").start_object();
+        crate::protocol_serde::shape_production_variant_core_dump_config::ser_production_variant_core_dump_config(&mut object_13, var_12)?;
+        object_13.finish();
     }
-    if let Some(var_9) = &input.serverless_config {
+    if let Some(var_14) = &input.serverless_config {
         #[allow(unused_mut)]
-        let mut object_10 = object.key("ServerlessConfig").start_object();
-        crate::protocol_serde::shape_production_variant_serverless_config::ser_production_variant_serverless_config(&mut object_10, var_9)?;
-        object_10.finish();
+        let mut object_15 = object.key("ServerlessConfig").start_object();
+        crate::protocol_serde::shape_production_variant_serverless_config::ser_production_variant_serverless_config(&mut object_15, var_14)?;
+        object_15.finish();
     }
-    if let Some(var_11) = &input.volume_size_in_gb {
+    if let Some(var_16) = &input.volume_size_in_gb {
         object.key("VolumeSizeInGB").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_11).into()),
+            ::aws_smithy_types::Number::NegInt((*var_16).into()),
         );
     }
-    if let Some(var_12) = &input.model_data_download_timeout_in_seconds {
+    if let Some(var_17) = &input.model_data_download_timeout_in_seconds {
         object.key("ModelDataDownloadTimeoutInSeconds").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_12).into()),
+            ::aws_smithy_types::Number::NegInt((*var_17).into()),
         );
     }
-    if let Some(var_13) = &input.container_startup_health_check_timeout_in_seconds {
+    if let Some(var_18) = &input.container_startup_health_check_timeout_in_seconds {
         object.key("ContainerStartupHealthCheckTimeoutInSeconds").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_13).into()),
+            ::aws_smithy_types::Number::NegInt((*var_18).into()),
         );
     }
-    if let Some(var_14) = &input.enable_ssm_access {
-        object.key("EnableSSMAccess").boolean(*var_14);
+    if let Some(var_19) = &input.enable_ssm_access {
+        object.key("EnableSSMAccess").boolean(*var_19);
     }
-    if let Some(var_15) = &input.managed_instance_scaling {
+    if let Some(var_20) = &input.managed_instance_scaling {
         #[allow(unused_mut)]
-        let mut object_16 = object.key("ManagedInstanceScaling").start_object();
+        let mut object_21 = object.key("ManagedInstanceScaling").start_object();
         crate::protocol_serde::shape_production_variant_managed_instance_scaling::ser_production_variant_managed_instance_scaling(
-            &mut object_16,
-            var_15,
-        )?;
-        object_16.finish();
-    }
-    if let Some(var_17) = &input.routing_config {
-        #[allow(unused_mut)]
-        let mut object_18 = object.key("RoutingConfig").start_object();
-        crate::protocol_serde::shape_production_variant_routing_config::ser_production_variant_routing_config(&mut object_18, var_17)?;
-        object_18.finish();
-    }
-    if let Some(var_19) = &input.inference_ami_version {
-        object.key("InferenceAmiVersion").string(var_19.as_str());
-    }
-    if let Some(var_20) = &input.capacity_reservation_config {
-        #[allow(unused_mut)]
-        let mut object_21 = object.key("CapacityReservationConfig").start_object();
-        crate::protocol_serde::shape_production_variant_capacity_reservation_config::ser_production_variant_capacity_reservation_config(
             &mut object_21,
             var_20,
         )?;
         object_21.finish();
+    }
+    if let Some(var_22) = &input.routing_config {
+        #[allow(unused_mut)]
+        let mut object_23 = object.key("RoutingConfig").start_object();
+        crate::protocol_serde::shape_production_variant_routing_config::ser_production_variant_routing_config(&mut object_23, var_22)?;
+        object_23.finish();
+    }
+    if let Some(var_24) = &input.inference_ami_version {
+        object.key("InferenceAmiVersion").string(var_24.as_str());
+    }
+    if let Some(var_25) = &input.capacity_reservation_config {
+        #[allow(unused_mut)]
+        let mut object_26 = object.key("CapacityReservationConfig").start_object();
+        crate::protocol_serde::shape_production_variant_capacity_reservation_config::ser_production_variant_capacity_reservation_config(
+            &mut object_26,
+            var_25,
+        )?;
+        object_26.finish();
     }
     Ok(())
 }
@@ -131,6 +149,17 @@ where
                             builder = builder.set_instance_type(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| crate::types::ProductionVariantInstanceType::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "InstancePools" => {
+                            builder =
+                                builder.set_instance_pools(crate::protocol_serde::shape_instance_pool_list::de_instance_pool_list(tokens, _value)?);
+                        }
+                        "VariantInstanceProvisionTimeoutInSeconds" => {
+                            builder = builder.set_variant_instance_provision_timeout_in_seconds(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
                                     .transpose()?,
                             );
                         }

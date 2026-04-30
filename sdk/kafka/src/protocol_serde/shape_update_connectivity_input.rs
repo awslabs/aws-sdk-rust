@@ -12,5 +12,11 @@ pub fn ser_update_connectivity_input_input(
     if let Some(var_3) = &input.current_version {
         object.key("currentVersion").string(var_3.as_str());
     }
+    if let Some(var_4) = &input.zookeeper_access {
+        #[allow(unused_mut)]
+        let mut object_5 = object.key("zookeeperAccess").start_object();
+        crate::protocol_serde::shape_zookeeper_access::ser_zookeeper_access(&mut object_5, var_4)?;
+        object_5.finish();
+    }
     Ok(())
 }

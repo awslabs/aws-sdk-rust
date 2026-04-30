@@ -199,4 +199,23 @@ impl ListMemoryRecordsFluentBuilder {
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }
+    ///
+    /// Appends an item to `metadataFilters`.
+    ///
+    /// To override the contents of this collection use [`set_metadata_filters`](Self::set_metadata_filters).
+    ///
+    /// <p>A list of metadata filter expressions to scope the returned memory records.</p>
+    pub fn metadata_filters(mut self, input: crate::types::MemoryMetadataFilterExpression) -> Self {
+        self.inner = self.inner.metadata_filters(input);
+        self
+    }
+    /// <p>A list of metadata filter expressions to scope the returned memory records.</p>
+    pub fn set_metadata_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MemoryMetadataFilterExpression>>) -> Self {
+        self.inner = self.inner.set_metadata_filters(input);
+        self
+    }
+    /// <p>A list of metadata filter expressions to scope the returned memory records.</p>
+    pub fn get_metadata_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MemoryMetadataFilterExpression>> {
+        self.inner.get_metadata_filters()
+    }
 }

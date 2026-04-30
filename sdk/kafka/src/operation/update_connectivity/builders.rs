@@ -150,4 +150,18 @@ impl UpdateConnectivityFluentBuilder {
     pub fn get_current_version(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_current_version()
     }
+    /// <p>Access control settings for zookeeper</p>
+    pub fn zookeeper_access(mut self, input: crate::types::ZookeeperAccess) -> Self {
+        self.inner = self.inner.zookeeper_access(input);
+        self
+    }
+    /// <p>Access control settings for zookeeper</p>
+    pub fn set_zookeeper_access(mut self, input: ::std::option::Option<crate::types::ZookeeperAccess>) -> Self {
+        self.inner = self.inner.set_zookeeper_access(input);
+        self
+    }
+    /// <p>Access control settings for zookeeper</p>
+    pub fn get_zookeeper_access(&self) -> &::std::option::Option<crate::types::ZookeeperAccess> {
+        self.inner.get_zookeeper_access()
+    }
 }

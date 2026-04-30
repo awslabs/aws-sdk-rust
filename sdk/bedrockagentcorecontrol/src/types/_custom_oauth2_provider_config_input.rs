@@ -14,6 +14,10 @@ pub struct CustomOauth2ProviderConfigInput {
     pub private_endpoint: ::std::option::Option<crate::types::PrivateEndpoint>,
     /// <p>The list of private endpoint overrides for the custom OAuth2 provider. Each override maps a specific domain to a private endpoint, enabling secure connectivity through VPC Lattice resource configurations.</p>
     pub private_endpoint_overrides: ::std::option::Option<::std::vec::Vec<crate::types::PrivateEndpointOverride>>,
+    /// <p>The configuration for on-behalf-of token exchange. This enables authentication flows that use RFC 8693 token exchange or RFC 7523 JWT authorization grants.</p>
+    pub on_behalf_of_token_exchange_config: ::std::option::Option<crate::types::OnBehalfOfTokenExchangeConfigType>,
+    /// <p>The client authentication method to use when authenticating with the token endpoint.</p>
+    pub client_authentication_method: ::std::option::Option<crate::types::ClientAuthenticationMethodType>,
 }
 impl CustomOauth2ProviderConfigInput {
     /// <p>The OAuth2 discovery information for the custom provider.</p>
@@ -40,6 +44,14 @@ impl CustomOauth2ProviderConfigInput {
     pub fn private_endpoint_overrides(&self) -> &[crate::types::PrivateEndpointOverride] {
         self.private_endpoint_overrides.as_deref().unwrap_or_default()
     }
+    /// <p>The configuration for on-behalf-of token exchange. This enables authentication flows that use RFC 8693 token exchange or RFC 7523 JWT authorization grants.</p>
+    pub fn on_behalf_of_token_exchange_config(&self) -> ::std::option::Option<&crate::types::OnBehalfOfTokenExchangeConfigType> {
+        self.on_behalf_of_token_exchange_config.as_ref()
+    }
+    /// <p>The client authentication method to use when authenticating with the token endpoint.</p>
+    pub fn client_authentication_method(&self) -> ::std::option::Option<&crate::types::ClientAuthenticationMethodType> {
+        self.client_authentication_method.as_ref()
+    }
 }
 impl ::std::fmt::Debug for CustomOauth2ProviderConfigInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -49,6 +61,8 @@ impl ::std::fmt::Debug for CustomOauth2ProviderConfigInput {
         formatter.field("client_secret", &"*** Sensitive Data Redacted ***");
         formatter.field("private_endpoint", &self.private_endpoint);
         formatter.field("private_endpoint_overrides", &self.private_endpoint_overrides);
+        formatter.field("on_behalf_of_token_exchange_config", &self.on_behalf_of_token_exchange_config);
+        formatter.field("client_authentication_method", &self.client_authentication_method);
         formatter.finish()
     }
 }
@@ -68,6 +82,8 @@ pub struct CustomOauth2ProviderConfigInputBuilder {
     pub(crate) client_secret: ::std::option::Option<::std::string::String>,
     pub(crate) private_endpoint: ::std::option::Option<crate::types::PrivateEndpoint>,
     pub(crate) private_endpoint_overrides: ::std::option::Option<::std::vec::Vec<crate::types::PrivateEndpointOverride>>,
+    pub(crate) on_behalf_of_token_exchange_config: ::std::option::Option<crate::types::OnBehalfOfTokenExchangeConfigType>,
+    pub(crate) client_authentication_method: ::std::option::Option<crate::types::ClientAuthenticationMethodType>,
 }
 impl CustomOauth2ProviderConfigInputBuilder {
     /// <p>The OAuth2 discovery information for the custom provider.</p>
@@ -86,7 +102,6 @@ impl CustomOauth2ProviderConfigInputBuilder {
         &self.oauth_discovery
     }
     /// <p>The client ID for the custom OAuth2 provider.</p>
-    /// This field is required.
     pub fn client_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_id = ::std::option::Option::Some(input.into());
         self
@@ -101,7 +116,6 @@ impl CustomOauth2ProviderConfigInputBuilder {
         &self.client_id
     }
     /// <p>The client secret for the custom OAuth2 provider.</p>
-    /// This field is required.
     pub fn client_secret(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_secret = ::std::option::Option::Some(input.into());
         self
@@ -149,28 +163,45 @@ impl CustomOauth2ProviderConfigInputBuilder {
     pub fn get_private_endpoint_overrides(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PrivateEndpointOverride>> {
         &self.private_endpoint_overrides
     }
+    /// <p>The configuration for on-behalf-of token exchange. This enables authentication flows that use RFC 8693 token exchange or RFC 7523 JWT authorization grants.</p>
+    pub fn on_behalf_of_token_exchange_config(mut self, input: crate::types::OnBehalfOfTokenExchangeConfigType) -> Self {
+        self.on_behalf_of_token_exchange_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The configuration for on-behalf-of token exchange. This enables authentication flows that use RFC 8693 token exchange or RFC 7523 JWT authorization grants.</p>
+    pub fn set_on_behalf_of_token_exchange_config(mut self, input: ::std::option::Option<crate::types::OnBehalfOfTokenExchangeConfigType>) -> Self {
+        self.on_behalf_of_token_exchange_config = input;
+        self
+    }
+    /// <p>The configuration for on-behalf-of token exchange. This enables authentication flows that use RFC 8693 token exchange or RFC 7523 JWT authorization grants.</p>
+    pub fn get_on_behalf_of_token_exchange_config(&self) -> &::std::option::Option<crate::types::OnBehalfOfTokenExchangeConfigType> {
+        &self.on_behalf_of_token_exchange_config
+    }
+    /// <p>The client authentication method to use when authenticating with the token endpoint.</p>
+    pub fn client_authentication_method(mut self, input: crate::types::ClientAuthenticationMethodType) -> Self {
+        self.client_authentication_method = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The client authentication method to use when authenticating with the token endpoint.</p>
+    pub fn set_client_authentication_method(mut self, input: ::std::option::Option<crate::types::ClientAuthenticationMethodType>) -> Self {
+        self.client_authentication_method = input;
+        self
+    }
+    /// <p>The client authentication method to use when authenticating with the token endpoint.</p>
+    pub fn get_client_authentication_method(&self) -> &::std::option::Option<crate::types::ClientAuthenticationMethodType> {
+        &self.client_authentication_method
+    }
     /// Consumes the builder and constructs a [`CustomOauth2ProviderConfigInput`](crate::types::CustomOauth2ProviderConfigInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`client_id`](crate::types::builders::CustomOauth2ProviderConfigInputBuilder::client_id)
-    /// - [`client_secret`](crate::types::builders::CustomOauth2ProviderConfigInputBuilder::client_secret)
-    pub fn build(self) -> ::std::result::Result<crate::types::CustomOauth2ProviderConfigInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::CustomOauth2ProviderConfigInput {
+    pub fn build(self) -> crate::types::CustomOauth2ProviderConfigInput {
+        crate::types::CustomOauth2ProviderConfigInput {
             oauth_discovery: self.oauth_discovery,
-            client_id: self.client_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "client_id",
-                    "client_id was not specified but it is required when building CustomOauth2ProviderConfigInput",
-                )
-            })?,
-            client_secret: self.client_secret.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "client_secret",
-                    "client_secret was not specified but it is required when building CustomOauth2ProviderConfigInput",
-                )
-            })?,
+            client_id: self.client_id.unwrap_or_default(),
+            client_secret: self.client_secret.unwrap_or_default(),
             private_endpoint: self.private_endpoint,
             private_endpoint_overrides: self.private_endpoint_overrides,
-        })
+            on_behalf_of_token_exchange_config: self.on_behalf_of_token_exchange_config,
+            client_authentication_method: self.client_authentication_method,
+        }
     }
 }
 impl ::std::fmt::Debug for CustomOauth2ProviderConfigInputBuilder {
@@ -181,6 +212,8 @@ impl ::std::fmt::Debug for CustomOauth2ProviderConfigInputBuilder {
         formatter.field("client_secret", &"*** Sensitive Data Redacted ***");
         formatter.field("private_endpoint", &self.private_endpoint);
         formatter.field("private_endpoint_overrides", &self.private_endpoint_overrides);
+        formatter.field("on_behalf_of_token_exchange_config", &self.on_behalf_of_token_exchange_config);
+        formatter.field("client_authentication_method", &self.client_authentication_method);
         formatter.finish()
     }
 }

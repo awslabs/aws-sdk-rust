@@ -49,6 +49,8 @@ pub use crate::types::_replication_state_info::ReplicationStateInfo;
 
 pub use crate::types::_connectivity_info::ConnectivityInfo;
 
+pub use crate::types::_zookeeper_access::ZookeeperAccess;
+
 pub use crate::types::_consumer_group_replication_update::ConsumerGroupReplicationUpdate;
 
 pub use crate::types::_topic_replication_update::TopicReplicationUpdate;
@@ -484,6 +486,8 @@ mod _vpc_connectivity_sasl;
 mod _vpc_connectivity_scram;
 
 mod _vpc_connectivity_tls;
+
+mod _zookeeper_access;
 
 mod _zookeeper_node_info;
 

@@ -4,24 +4,24 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MemoryMetadataFilterExpression {
-    /// <p>Left expression of the event metadata filter.</p>
-    pub left: ::std::option::Option<crate::types::LeftExpression>,
+    /// <p>The metadata key to evaluate.</p>
+    pub left: ::std::option::Option<crate::types::MemoryRecordLeftExpression>,
     /// <p>The relationship between the metadata key and value to match when applying the metadata filter.</p>
-    pub operator: crate::types::OperatorType,
-    /// <p>Right expression of the <code>eventMetadata</code>filter.</p>
-    pub right: ::std::option::Option<crate::types::RightExpression>,
+    pub operator: crate::types::MemoryRecordOperatorType,
+    /// <p>The value to compare against. Required for all operators except EXISTS and NOT_EXISTS.</p>
+    pub right: ::std::option::Option<crate::types::MemoryRecordRightExpression>,
 }
 impl MemoryMetadataFilterExpression {
-    /// <p>Left expression of the event metadata filter.</p>
-    pub fn left(&self) -> ::std::option::Option<&crate::types::LeftExpression> {
+    /// <p>The metadata key to evaluate.</p>
+    pub fn left(&self) -> ::std::option::Option<&crate::types::MemoryRecordLeftExpression> {
         self.left.as_ref()
     }
     /// <p>The relationship between the metadata key and value to match when applying the metadata filter.</p>
-    pub fn operator(&self) -> &crate::types::OperatorType {
+    pub fn operator(&self) -> &crate::types::MemoryRecordOperatorType {
         &self.operator
     }
-    /// <p>Right expression of the <code>eventMetadata</code>filter.</p>
-    pub fn right(&self) -> ::std::option::Option<&crate::types::RightExpression> {
+    /// <p>The value to compare against. Required for all operators except EXISTS and NOT_EXISTS.</p>
+    pub fn right(&self) -> ::std::option::Option<&crate::types::MemoryRecordRightExpression> {
         self.right.as_ref()
     }
 }
@@ -36,53 +36,53 @@ impl MemoryMetadataFilterExpression {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct MemoryMetadataFilterExpressionBuilder {
-    pub(crate) left: ::std::option::Option<crate::types::LeftExpression>,
-    pub(crate) operator: ::std::option::Option<crate::types::OperatorType>,
-    pub(crate) right: ::std::option::Option<crate::types::RightExpression>,
+    pub(crate) left: ::std::option::Option<crate::types::MemoryRecordLeftExpression>,
+    pub(crate) operator: ::std::option::Option<crate::types::MemoryRecordOperatorType>,
+    pub(crate) right: ::std::option::Option<crate::types::MemoryRecordRightExpression>,
 }
 impl MemoryMetadataFilterExpressionBuilder {
-    /// <p>Left expression of the event metadata filter.</p>
+    /// <p>The metadata key to evaluate.</p>
     /// This field is required.
-    pub fn left(mut self, input: crate::types::LeftExpression) -> Self {
+    pub fn left(mut self, input: crate::types::MemoryRecordLeftExpression) -> Self {
         self.left = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Left expression of the event metadata filter.</p>
-    pub fn set_left(mut self, input: ::std::option::Option<crate::types::LeftExpression>) -> Self {
+    /// <p>The metadata key to evaluate.</p>
+    pub fn set_left(mut self, input: ::std::option::Option<crate::types::MemoryRecordLeftExpression>) -> Self {
         self.left = input;
         self
     }
-    /// <p>Left expression of the event metadata filter.</p>
-    pub fn get_left(&self) -> &::std::option::Option<crate::types::LeftExpression> {
+    /// <p>The metadata key to evaluate.</p>
+    pub fn get_left(&self) -> &::std::option::Option<crate::types::MemoryRecordLeftExpression> {
         &self.left
     }
     /// <p>The relationship between the metadata key and value to match when applying the metadata filter.</p>
     /// This field is required.
-    pub fn operator(mut self, input: crate::types::OperatorType) -> Self {
+    pub fn operator(mut self, input: crate::types::MemoryRecordOperatorType) -> Self {
         self.operator = ::std::option::Option::Some(input);
         self
     }
     /// <p>The relationship between the metadata key and value to match when applying the metadata filter.</p>
-    pub fn set_operator(mut self, input: ::std::option::Option<crate::types::OperatorType>) -> Self {
+    pub fn set_operator(mut self, input: ::std::option::Option<crate::types::MemoryRecordOperatorType>) -> Self {
         self.operator = input;
         self
     }
     /// <p>The relationship between the metadata key and value to match when applying the metadata filter.</p>
-    pub fn get_operator(&self) -> &::std::option::Option<crate::types::OperatorType> {
+    pub fn get_operator(&self) -> &::std::option::Option<crate::types::MemoryRecordOperatorType> {
         &self.operator
     }
-    /// <p>Right expression of the <code>eventMetadata</code>filter.</p>
-    pub fn right(mut self, input: crate::types::RightExpression) -> Self {
+    /// <p>The value to compare against. Required for all operators except EXISTS and NOT_EXISTS.</p>
+    pub fn right(mut self, input: crate::types::MemoryRecordRightExpression) -> Self {
         self.right = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Right expression of the <code>eventMetadata</code>filter.</p>
-    pub fn set_right(mut self, input: ::std::option::Option<crate::types::RightExpression>) -> Self {
+    /// <p>The value to compare against. Required for all operators except EXISTS and NOT_EXISTS.</p>
+    pub fn set_right(mut self, input: ::std::option::Option<crate::types::MemoryRecordRightExpression>) -> Self {
         self.right = input;
         self
     }
-    /// <p>Right expression of the <code>eventMetadata</code>filter.</p>
-    pub fn get_right(&self) -> &::std::option::Option<crate::types::RightExpression> {
+    /// <p>The value to compare against. Required for all operators except EXISTS and NOT_EXISTS.</p>
+    pub fn get_right(&self) -> &::std::option::Option<crate::types::MemoryRecordRightExpression> {
         &self.right
     }
     /// Consumes the builder and constructs a [`MemoryMetadataFilterExpression`](crate::types::MemoryMetadataFilterExpression).

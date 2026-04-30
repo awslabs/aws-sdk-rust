@@ -36,5 +36,8 @@ pub fn ser_import_key_input_input(
         }
         array_10.finish();
     }
+    if let Some(var_12) = &input.requester_comment {
+        object.key("RequesterComment").string(var_12.as_str());
+    }
     Ok(())
 }

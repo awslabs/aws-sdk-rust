@@ -258,7 +258,6 @@ impl ClusterRestrictedInstanceGroupSpecificationBuilder {
         &self.scheduled_update_config
     }
     /// <p>The configuration for the restricted instance groups (RIG) environment.</p>
-    /// This field is required.
     pub fn environment_config(mut self, input: crate::types::EnvironmentConfig) -> Self {
         self.environment_config = ::std::option::Option::Some(input);
         self

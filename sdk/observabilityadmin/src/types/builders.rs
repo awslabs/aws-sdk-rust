@@ -49,6 +49,8 @@ pub use crate::types::_waf_logging_parameters::WafLoggingParametersBuilder;
 
 pub use crate::types::_log_delivery_parameters::LogDeliveryParametersBuilder;
 
+pub use crate::types::_msk_monitoring_parameters::MskMonitoringParametersBuilder;
+
 pub use crate::types::_pipeline_output_error::PipelineOutputErrorBuilder;
 
 pub use crate::types::_configuration_summary::ConfigurationSummaryBuilder;

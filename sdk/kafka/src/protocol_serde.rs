@@ -317,6 +317,8 @@ pub(crate) mod shape_serverless_request;
 
 pub(crate) mod shape_topic_replication_update;
 
+pub(crate) mod shape_zookeeper_access;
+
 pub(crate) mod shape_amazon_msk_cluster;
 
 pub(crate) mod shape_apache_kafka_cluster;

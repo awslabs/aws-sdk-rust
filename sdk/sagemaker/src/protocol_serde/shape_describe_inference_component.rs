@@ -110,6 +110,11 @@ pub(crate) fn de_describe_inference_component(
                         )?,
                     );
                 }
+                "Specifications" => {
+                    builder = builder.set_specifications(
+                            crate::protocol_serde::shape_inference_component_specification_summary_list::de_inference_component_specification_summary_list(tokens, _value)?
+                        );
+                }
                 "RuntimeConfig" => {
                     builder = builder.set_runtime_config(
                         crate::protocol_serde::shape_inference_component_runtime_config_summary::de_inference_component_runtime_config_summary(

@@ -41,6 +41,10 @@ where
                         "openMonitoring" => {
                             builder = builder.set_open_monitoring(crate::protocol_serde::shape_open_monitoring::de_open_monitoring(tokens, _value)?);
                         }
+                        "zookeeperAccess" => {
+                            builder =
+                                builder.set_zookeeper_access(crate::protocol_serde::shape_zookeeper_access::de_zookeeper_access(tokens, _value)?);
+                        }
                         "kafkaVersion" => {
                             builder = builder.set_kafka_version(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

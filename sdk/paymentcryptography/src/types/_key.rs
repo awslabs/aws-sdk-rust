@@ -45,6 +45,8 @@ pub struct Key {
     /// <p>Indicates whether this key is using the account's default replication regions configuration for <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/keys-multi-region-replication.html">Multi-Region key replication</a>.</p>
     /// <p>When set to <code>true</code>, the key automatically replicates to the regions specified in the account's default replication settings. When set to <code>false</code>, the key has a custom replication configuration that overrides the account defaults.</p>
     pub using_default_replication_regions: ::std::option::Option<bool>,
+    /// <p>The Multi-Party Approval (MPA) status for the key, if applicable.</p>
+    pub mpa_status: ::std::option::Option<crate::types::MpaStatus>,
 }
 impl Key {
     /// <p>The Amazon Resource Name (ARN) of the key.</p>
@@ -128,6 +130,10 @@ impl Key {
     pub fn using_default_replication_regions(&self) -> ::std::option::Option<bool> {
         self.using_default_replication_regions
     }
+    /// <p>The Multi-Party Approval (MPA) status for the key, if applicable.</p>
+    pub fn mpa_status(&self) -> ::std::option::Option<&crate::types::MpaStatus> {
+        self.mpa_status.as_ref()
+    }
 }
 impl Key {
     /// Creates a new builder-style object to manufacture [`Key`](crate::types::Key).
@@ -158,6 +164,7 @@ pub struct KeyBuilder {
     pub(crate) primary_region: ::std::option::Option<::std::string::String>,
     pub(crate) replication_status: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ReplicationStatusType>>,
     pub(crate) using_default_replication_regions: ::std::option::Option<bool>,
+    pub(crate) mpa_status: ::std::option::Option<crate::types::MpaStatus>,
 }
 impl KeyBuilder {
     /// <p>The Amazon Resource Name (ARN) of the key.</p>
@@ -447,6 +454,20 @@ impl KeyBuilder {
     pub fn get_using_default_replication_regions(&self) -> &::std::option::Option<bool> {
         &self.using_default_replication_regions
     }
+    /// <p>The Multi-Party Approval (MPA) status for the key, if applicable.</p>
+    pub fn mpa_status(mut self, input: crate::types::MpaStatus) -> Self {
+        self.mpa_status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The Multi-Party Approval (MPA) status for the key, if applicable.</p>
+    pub fn set_mpa_status(mut self, input: ::std::option::Option<crate::types::MpaStatus>) -> Self {
+        self.mpa_status = input;
+        self
+    }
+    /// <p>The Multi-Party Approval (MPA) status for the key, if applicable.</p>
+    pub fn get_mpa_status(&self) -> &::std::option::Option<crate::types::MpaStatus> {
+        &self.mpa_status
+    }
     /// Consumes the builder and constructs a [`Key`](crate::types::Key).
     /// This method will fail if any of the following fields are not set:
     /// - [`key_arn`](crate::types::builders::KeyBuilder::key_arn)
@@ -517,6 +538,7 @@ impl KeyBuilder {
             primary_region: self.primary_region,
             replication_status: self.replication_status,
             using_default_replication_regions: self.using_default_replication_regions,
+            mpa_status: self.mpa_status,
         })
     }
 }

@@ -221,6 +221,8 @@ pub use crate::types::_extraction_job_status::ExtractionJobStatus;
 
 pub use crate::types::_extraction_job_metadata::ExtractionJobMetadata;
 
+pub use crate::types::_memory_metadata_filter_expression::MemoryMetadataFilterExpression;
+
 pub use crate::types::_memory_record_summary::MemoryRecordSummary;
 
 pub use crate::types::_event_filter_condition::EventFilterCondition;
@@ -305,11 +307,17 @@ pub use crate::types::_memory_record_status::MemoryRecordStatus;
 
 pub use crate::types::_conversational::Conversational;
 
+pub use crate::types::_memory_record_metadata_value::MemoryRecordMetadataValue;
+
 pub use crate::types::_event_metadata_filter_expression::EventMetadataFilterExpression;
 
 pub use crate::types::_extraction_job_messages::ExtractionJobMessages;
 
-pub use crate::types::_memory_metadata_filter_expression::MemoryMetadataFilterExpression;
+pub use crate::types::_memory_record_left_expression::MemoryRecordLeftExpression;
+
+pub use crate::types::_memory_record_operator_type::MemoryRecordOperatorType;
+
+pub use crate::types::_memory_record_right_expression::MemoryRecordRightExpression;
 
 pub use crate::types::_descriptor_type::DescriptorType;
 
@@ -755,7 +763,15 @@ mod _memory_record_create_input;
 
 mod _memory_record_delete_input;
 
+mod _memory_record_left_expression;
+
+mod _memory_record_metadata_value;
+
+mod _memory_record_operator_type;
+
 mod _memory_record_output;
+
+mod _memory_record_right_expression;
 
 mod _memory_record_status;
 

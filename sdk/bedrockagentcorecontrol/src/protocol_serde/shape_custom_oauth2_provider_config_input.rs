@@ -33,5 +33,14 @@ pub fn ser_custom_oauth2_provider_config_input(
         }
         array_6.finish();
     }
+    if let Some(var_9) = &input.on_behalf_of_token_exchange_config {
+        #[allow(unused_mut)]
+        let mut object_10 = object.key("onBehalfOfTokenExchangeConfig").start_object();
+        crate::protocol_serde::shape_on_behalf_of_token_exchange_config_type::ser_on_behalf_of_token_exchange_config_type(&mut object_10, var_9)?;
+        object_10.finish();
+    }
+    if let Some(var_11) = &input.client_authentication_method {
+        object.key("clientAuthenticationMethod").string(var_11.as_str());
+    }
     Ok(())
 }

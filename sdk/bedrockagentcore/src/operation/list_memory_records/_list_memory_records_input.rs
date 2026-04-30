@@ -15,6 +15,8 @@ pub struct ListMemoryRecordsInput {
     pub max_results: ::std::option::Option<i32>,
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
+    /// <p>A list of metadata filter expressions to scope the returned memory records.</p>
+    pub metadata_filters: ::std::option::Option<::std::vec::Vec<crate::types::MemoryMetadataFilterExpression>>,
 }
 impl ListMemoryRecordsInput {
     /// <p>The identifier of the AgentCore Memory resource for which to list memory records.</p>
@@ -41,6 +43,12 @@ impl ListMemoryRecordsInput {
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
+    /// <p>A list of metadata filter expressions to scope the returned memory records.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.metadata_filters.is_none()`.
+    pub fn metadata_filters(&self) -> &[crate::types::MemoryMetadataFilterExpression] {
+        self.metadata_filters.as_deref().unwrap_or_default()
+    }
 }
 impl ListMemoryRecordsInput {
     /// Creates a new builder-style object to manufacture [`ListMemoryRecordsInput`](crate::operation::list_memory_records::ListMemoryRecordsInput).
@@ -59,6 +67,7 @@ pub struct ListMemoryRecordsInputBuilder {
     pub(crate) memory_strategy_id: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
+    pub(crate) metadata_filters: ::std::option::Option<::std::vec::Vec<crate::types::MemoryMetadataFilterExpression>>,
 }
 impl ListMemoryRecordsInputBuilder {
     /// <p>The identifier of the AgentCore Memory resource for which to list memory records.</p>
@@ -146,6 +155,26 @@ impl ListMemoryRecordsInputBuilder {
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
+    /// Appends an item to `metadata_filters`.
+    ///
+    /// To override the contents of this collection use [`set_metadata_filters`](Self::set_metadata_filters).
+    ///
+    /// <p>A list of metadata filter expressions to scope the returned memory records.</p>
+    pub fn metadata_filters(mut self, input: crate::types::MemoryMetadataFilterExpression) -> Self {
+        let mut v = self.metadata_filters.unwrap_or_default();
+        v.push(input);
+        self.metadata_filters = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of metadata filter expressions to scope the returned memory records.</p>
+    pub fn set_metadata_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MemoryMetadataFilterExpression>>) -> Self {
+        self.metadata_filters = input;
+        self
+    }
+    /// <p>A list of metadata filter expressions to scope the returned memory records.</p>
+    pub fn get_metadata_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MemoryMetadataFilterExpression>> {
+        &self.metadata_filters
+    }
     /// Consumes the builder and constructs a [`ListMemoryRecordsInput`](crate::operation::list_memory_records::ListMemoryRecordsInput).
     pub fn build(
         self,
@@ -157,6 +186,7 @@ impl ListMemoryRecordsInputBuilder {
             memory_strategy_id: self.memory_strategy_id,
             max_results: self.max_results,
             next_token: self.next_token,
+            metadata_filters: self.metadata_filters,
         })
     }
 }

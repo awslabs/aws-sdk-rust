@@ -4,6 +4,8 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InferenceComponentSpecification {
+    /// <p>The ML compute instance type for the inference component specification. Specifies which instance type this specification applies to. Required when using the <code>Specifications</code> parameter with multiple entries.</p>
+    pub instance_type: ::std::option::Option<crate::types::ProductionVariantInstanceType>,
     /// <p>The name of an existing SageMaker AI model object in your account that you want to deploy with the inference component.</p>
     pub model_name: ::std::option::Option<::std::string::String>,
     /// <p>Defines a container that provides the runtime environment for a model that you deploy with an inference component.</p>
@@ -24,6 +26,10 @@ pub struct InferenceComponentSpecification {
     pub scheduling_config: ::std::option::Option<crate::types::InferenceComponentSchedulingConfig>,
 }
 impl InferenceComponentSpecification {
+    /// <p>The ML compute instance type for the inference component specification. Specifies which instance type this specification applies to. Required when using the <code>Specifications</code> parameter with multiple entries.</p>
+    pub fn instance_type(&self) -> ::std::option::Option<&crate::types::ProductionVariantInstanceType> {
+        self.instance_type.as_ref()
+    }
     /// <p>The name of an existing SageMaker AI model object in your account that you want to deploy with the inference component.</p>
     pub fn model_name(&self) -> ::std::option::Option<&str> {
         self.model_name.as_deref()
@@ -68,6 +74,7 @@ impl InferenceComponentSpecification {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct InferenceComponentSpecificationBuilder {
+    pub(crate) instance_type: ::std::option::Option<crate::types::ProductionVariantInstanceType>,
     pub(crate) model_name: ::std::option::Option<::std::string::String>,
     pub(crate) container: ::std::option::Option<crate::types::InferenceComponentContainerSpecification>,
     pub(crate) startup_parameters: ::std::option::Option<crate::types::InferenceComponentStartupParameters>,
@@ -77,6 +84,20 @@ pub struct InferenceComponentSpecificationBuilder {
     pub(crate) scheduling_config: ::std::option::Option<crate::types::InferenceComponentSchedulingConfig>,
 }
 impl InferenceComponentSpecificationBuilder {
+    /// <p>The ML compute instance type for the inference component specification. Specifies which instance type this specification applies to. Required when using the <code>Specifications</code> parameter with multiple entries.</p>
+    pub fn instance_type(mut self, input: crate::types::ProductionVariantInstanceType) -> Self {
+        self.instance_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ML compute instance type for the inference component specification. Specifies which instance type this specification applies to. Required when using the <code>Specifications</code> parameter with multiple entries.</p>
+    pub fn set_instance_type(mut self, input: ::std::option::Option<crate::types::ProductionVariantInstanceType>) -> Self {
+        self.instance_type = input;
+        self
+    }
+    /// <p>The ML compute instance type for the inference component specification. Specifies which instance type this specification applies to. Required when using the <code>Specifications</code> parameter with multiple entries.</p>
+    pub fn get_instance_type(&self) -> &::std::option::Option<crate::types::ProductionVariantInstanceType> {
+        &self.instance_type
+    }
     /// <p>The name of an existing SageMaker AI model object in your account that you want to deploy with the inference component.</p>
     pub fn model_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_name = ::std::option::Option::Some(input.into());
@@ -193,6 +214,7 @@ impl InferenceComponentSpecificationBuilder {
     /// Consumes the builder and constructs a [`InferenceComponentSpecification`](crate::types::InferenceComponentSpecification).
     pub fn build(self) -> crate::types::InferenceComponentSpecification {
         crate::types::InferenceComponentSpecification {
+            instance_type: self.instance_type,
             model_name: self.model_name,
             container: self.container,
             startup_parameters: self.startup_parameters,

@@ -25,6 +25,8 @@ pub fn parse_http_error_metadata(
 
 pub(crate) mod shape_add_key_replication_regions;
 
+pub(crate) mod shape_associate_mpa_team;
+
 pub(crate) mod shape_create_alias;
 
 pub(crate) mod shape_create_key;
@@ -33,7 +35,11 @@ pub(crate) mod shape_delete_alias;
 
 pub(crate) mod shape_delete_key;
 
+pub(crate) mod shape_delete_resource_policy;
+
 pub(crate) mod shape_disable_default_key_replication_regions;
+
+pub(crate) mod shape_disassociate_mpa_team;
 
 pub(crate) mod shape_enable_default_key_replication_regions;
 
@@ -47,11 +53,15 @@ pub(crate) mod shape_get_default_key_replication_regions;
 
 pub(crate) mod shape_get_key;
 
+pub(crate) mod shape_get_mpa_team_association;
+
 pub(crate) mod shape_get_parameters_for_export;
 
 pub(crate) mod shape_get_parameters_for_import;
 
 pub(crate) mod shape_get_public_key_certificate;
+
+pub(crate) mod shape_get_resource_policy;
 
 pub(crate) mod shape_import_key;
 
@@ -60,6 +70,8 @@ pub(crate) mod shape_list_aliases;
 pub(crate) mod shape_list_keys;
 
 pub(crate) mod shape_list_tags_for_resource;
+
+pub(crate) mod shape_put_resource_policy;
 
 pub(crate) mod shape_remove_key_replication_regions;
 
@@ -87,6 +99,8 @@ pub(crate) mod shape_access_denied_exception;
 
 pub(crate) mod shape_add_key_replication_regions_input;
 
+pub(crate) mod shape_associate_mpa_team_input;
+
 pub(crate) mod shape_conflict_exception;
 
 pub(crate) mod shape_create_alias_input;
@@ -97,7 +111,11 @@ pub(crate) mod shape_delete_alias_input;
 
 pub(crate) mod shape_delete_key_input;
 
+pub(crate) mod shape_delete_resource_policy_input;
+
 pub(crate) mod shape_disable_default_key_replication_regions_input;
+
+pub(crate) mod shape_disassociate_mpa_team_input;
 
 pub(crate) mod shape_enable_default_key_replication_regions_input;
 
@@ -109,11 +127,15 @@ pub(crate) mod shape_get_certificate_signing_request_input;
 
 pub(crate) mod shape_get_key_input;
 
+pub(crate) mod shape_get_mpa_team_association_input;
+
 pub(crate) mod shape_get_parameters_for_export_input;
 
 pub(crate) mod shape_get_parameters_for_import_input;
 
 pub(crate) mod shape_get_public_key_certificate_input;
+
+pub(crate) mod shape_get_resource_policy_input;
 
 pub(crate) mod shape_import_key_input;
 
@@ -124,6 +146,10 @@ pub(crate) mod shape_list_aliases_input;
 pub(crate) mod shape_list_keys_input;
 
 pub(crate) mod shape_list_tags_for_resource_input;
+
+pub(crate) mod shape_public_policy_exception;
+
+pub(crate) mod shape_put_resource_policy_input;
 
 pub(crate) mod shape_remove_key_replication_regions_input;
 
@@ -167,6 +193,8 @@ pub(crate) mod shape_key_attributes;
 
 pub(crate) mod shape_key_summary_list;
 
+pub(crate) mod shape_mpa_team_association;
+
 pub(crate) mod shape_regions;
 
 pub(crate) mod shape_tag;
@@ -200,6 +228,8 @@ pub(crate) mod shape_import_tr34_key_block;
 pub(crate) mod shape_key_modes_of_use;
 
 pub(crate) mod shape_key_summary;
+
+pub(crate) mod shape_mpa_status;
 
 pub(crate) mod shape_replication_status;
 

@@ -56,6 +56,11 @@ where
                                     .transpose()?,
                             );
                         }
+                        "InstancePools" => {
+                            builder = builder.set_instance_pools(
+                                crate::protocol_serde::shape_instance_pool_summary_list::de_instance_pool_summary_list(tokens, _value)?,
+                            );
+                        }
                         "AcceleratorType" => {
                             builder = builder.set_accelerator_type(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

@@ -47,6 +47,22 @@ pub use crate::types::_metadata_generation_run_type::MetadataGenerationRunType;
 
 pub use crate::types::_metadata_generation_run_target::MetadataGenerationRunTarget;
 
+pub use crate::types::_notebook_run_status::NotebookRunStatus;
+
+pub use crate::types::_compute_config::ComputeConfig;
+
+pub use crate::types::_network_config::NetworkConfig;
+
+pub use crate::types::_timeout_config::TimeoutConfig;
+
+pub use crate::types::_environment_config::EnvironmentConfig;
+
+pub use crate::types::_storage_config::StorageConfig;
+
+pub use crate::types::_trigger_source::TriggerSource;
+
+pub use crate::types::_notebook_run_error::NotebookRunError;
+
 pub use crate::types::_rule_type::RuleType;
 
 pub use crate::types::_rule_target_type::RuleTargetType;
@@ -238,6 +254,14 @@ pub use crate::types::_asset_listing::AssetListing;
 pub use crate::types::_data_product_listing::DataProductListing;
 
 pub use crate::types::_metadata_generation_target_type::MetadataGenerationTargetType;
+
+pub use crate::types::_cell_information::CellInformation;
+
+pub use crate::types::_network_access_type::NetworkAccessType;
+
+pub use crate::types::_package_config::PackageConfig;
+
+pub use crate::types::_trigger_source_type::TriggerSourceType;
 
 pub use crate::types::_domain_unit_target::DomainUnitTarget;
 
@@ -537,6 +561,8 @@ pub use crate::types::_domain_unit_user_properties::DomainUnitUserProperties;
 
 pub use crate::types::_domain_unit_group_properties::DomainUnitGroupProperties;
 
+pub use crate::types::_package_manager::PackageManager;
+
 pub use crate::types::_rule_scope_selection_mode::RuleScopeSelectionMode;
 
 pub use crate::types::_business_name_generation_configuration::BusinessNameGenerationConfiguration;
@@ -574,6 +600,8 @@ pub use crate::types::_import::Import;
 pub use crate::types::_metadata_generation_run_item::MetadataGenerationRunItem;
 
 pub use crate::types::_metadata_generation_run_type_stat::MetadataGenerationRunTypeStat;
+
+pub use crate::types::_notebook_run_summary::NotebookRunSummary;
 
 pub use crate::types::_rule_summary::RuleSummary;
 
@@ -929,11 +957,15 @@ mod _batch_put_attribute_output;
 
 mod _business_name_generation_configuration;
 
+mod _cell_information;
+
 mod _change_action;
 
 mod _cloud_formation_properties;
 
 mod _column_filter_configuration;
+
+mod _compute_config;
 
 mod _compute_environments;
 
@@ -1076,6 +1108,8 @@ mod _environment_action_summary;
 mod _environment_blueprint_configuration_item;
 
 mod _environment_blueprint_summary;
+
+mod _environment_config;
 
 mod _environment_configuration;
 
@@ -1317,11 +1351,21 @@ mod _model;
 
 mod _name_identifier;
 
+mod _network_access_type;
+
+mod _network_config;
+
 mod _not_equal_to_expression;
 
 mod _not_in_expression;
 
 mod _not_like_expression;
+
+mod _notebook_run_error;
+
+mod _notebook_run_status;
+
+mod _notebook_run_summary;
 
 mod _notification_output;
 
@@ -1360,6 +1404,10 @@ mod _owner_properties_output;
 mod _owner_user_properties;
 
 mod _owner_user_properties_output;
+
+mod _package_config;
+
+mod _package_manager;
 
 mod _permissions;
 
@@ -1543,6 +1591,8 @@ mod _sso_user_profile_details;
 
 mod _status;
 
+mod _storage_config;
+
 mod _subscribed_asset;
 
 mod _subscribed_asset_listing;
@@ -1611,9 +1661,15 @@ mod _time_series_data_point_summary_form_output;
 
 mod _time_series_entity_type;
 
+mod _timeout_config;
+
 mod _timezone;
 
 mod _topic;
+
+mod _trigger_source;
+
+mod _trigger_source_type;
 
 mod _types_search_scope;
 

@@ -49,6 +49,11 @@ where
                                     .transpose()?,
                             );
                         }
+                        "InstancePools" => {
+                            builder = builder.set_instance_pools(
+                                crate::protocol_serde::shape_instance_pool_summary_list::de_instance_pool_summary_list(tokens, _value)?,
+                            );
+                        }
                         "VariantStatus" => {
                             builder = builder.set_variant_status(
                                 crate::protocol_serde::shape_production_variant_status_list::de_production_variant_status_list(tokens, _value)?,

@@ -13,6 +13,8 @@ pub struct DescribeApplicationOutput {
     pub application_account: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the IAM Identity Center application under which the operation will run. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub instance_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The ARN of the identity store that is connected to the instance of IAM Identity Center.</p>
+    pub identity_store_arn: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether the application is enabled or disabled.</p>
     pub status: ::std::option::Option<crate::types::ApplicationStatus>,
     /// <p>A structure that describes the options for the portal associated with an application.</p>
@@ -45,6 +47,10 @@ impl DescribeApplicationOutput {
     /// <p>The ARN of the IAM Identity Center application under which the operation will run. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub fn instance_arn(&self) -> ::std::option::Option<&str> {
         self.instance_arn.as_deref()
+    }
+    /// <p>The ARN of the identity store that is connected to the instance of IAM Identity Center.</p>
+    pub fn identity_store_arn(&self) -> ::std::option::Option<&str> {
+        self.identity_store_arn.as_deref()
     }
     /// <p>Specifies whether the application is enabled or disabled.</p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::ApplicationStatus> {
@@ -88,6 +94,7 @@ pub struct DescribeApplicationOutputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) application_account: ::std::option::Option<::std::string::String>,
     pub(crate) instance_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) identity_store_arn: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::ApplicationStatus>,
     pub(crate) portal_options: ::std::option::Option<crate::types::PortalOptions>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -165,6 +172,20 @@ impl DescribeApplicationOutputBuilder {
     /// <p>The ARN of the IAM Identity Center application under which the operation will run. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub fn get_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.instance_arn
+    }
+    /// <p>The ARN of the identity store that is connected to the instance of IAM Identity Center.</p>
+    pub fn identity_store_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.identity_store_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ARN of the identity store that is connected to the instance of IAM Identity Center.</p>
+    pub fn set_identity_store_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.identity_store_arn = input;
+        self
+    }
+    /// <p>The ARN of the identity store that is connected to the instance of IAM Identity Center.</p>
+    pub fn get_identity_store_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.identity_store_arn
     }
     /// <p>Specifies whether the application is enabled or disabled.</p>
     pub fn status(mut self, input: crate::types::ApplicationStatus) -> Self {
@@ -253,6 +274,7 @@ impl DescribeApplicationOutputBuilder {
             name: self.name,
             application_account: self.application_account,
             instance_arn: self.instance_arn,
+            identity_store_arn: self.identity_store_arn,
             status: self.status,
             portal_options: self.portal_options,
             description: self.description,

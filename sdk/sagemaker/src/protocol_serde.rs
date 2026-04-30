@@ -1975,6 +1975,8 @@ pub(crate) mod shape_inference_component_specification;
 
 pub(crate) mod shape_inference_component_specification_summary;
 
+pub(crate) mod shape_inference_component_specification_summary_list;
+
 pub(crate) mod shape_inference_component_summary_list;
 
 pub(crate) mod shape_inference_execution_config;
@@ -2801,6 +2803,8 @@ pub(crate) mod shape_inference_component_data_cache_config;
 
 pub(crate) mod shape_inference_component_data_cache_config_summary;
 
+pub(crate) mod shape_inference_component_placement_status_list;
+
 pub(crate) mod shape_inference_component_rolling_update_policy;
 
 pub(crate) mod shape_inference_component_scheduling_config;
@@ -2822,6 +2826,8 @@ pub(crate) mod shape_instance_group;
 pub(crate) mod shape_instance_groups;
 
 pub(crate) mod shape_instance_placement_config;
+
+pub(crate) mod shape_instance_pool;
 
 pub(crate) mod shape_jupyter_lab_app_settings;
 
@@ -3405,7 +3411,13 @@ pub(crate) mod shape_inference_component_availability_zone_balance;
 
 pub(crate) mod shape_inference_component_capacity_size;
 
+pub(crate) mod shape_inference_component_placement_status;
+
 pub(crate) mod shape_inference_metrics;
+
+pub(crate) mod shape_instance_pool_list;
+
+pub(crate) mod shape_instance_pool_summary_list;
 
 pub(crate) mod shape_integer_parameter_range;
 
@@ -3692,6 +3704,8 @@ pub(crate) mod shape_instance_group_metadata;
 pub(crate) mod shape_instance_group_scaling_metadata;
 
 pub(crate) mod shape_instance_metadata;
+
+pub(crate) mod shape_instance_pool_summary;
 
 pub(crate) mod shape_integer_parameter_range_specification;
 

@@ -211,6 +211,25 @@ impl CreateMemoryFluentBuilder {
     pub fn get_memory_strategies(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MemoryStrategyInput>> {
         self.inner.get_memory_strategies()
     }
+    ///
+    /// Appends an item to `indexedKeys`.
+    ///
+    /// To override the contents of this collection use [`set_indexed_keys`](Self::set_indexed_keys).
+    ///
+    /// <p>Metadata keys to index for filtering. Once declared, indexed keys cannot be removed.</p>
+    pub fn indexed_keys(mut self, input: crate::types::IndexedKey) -> Self {
+        self.inner = self.inner.indexed_keys(input);
+        self
+    }
+    /// <p>Metadata keys to index for filtering. Once declared, indexed keys cannot be removed.</p>
+    pub fn set_indexed_keys(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IndexedKey>>) -> Self {
+        self.inner = self.inner.set_indexed_keys(input);
+        self
+    }
+    /// <p>Metadata keys to index for filtering. Once declared, indexed keys cannot be removed.</p>
+    pub fn get_indexed_keys(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IndexedKey>> {
+        self.inner.get_indexed_keys()
+    }
     /// <p>Configuration for streaming memory record data to external resources.</p>
     pub fn stream_delivery_resources(mut self, input: crate::types::StreamDeliveryResources) -> Self {
         self.inner = self.inner.stream_delivery_resources(input);

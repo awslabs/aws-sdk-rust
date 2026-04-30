@@ -33,6 +33,8 @@ pub use crate::types::_replication_state_info::ReplicationStateInfoBuilder;
 
 pub use crate::types::_connectivity_info::ConnectivityInfoBuilder;
 
+pub use crate::types::_zookeeper_access::ZookeeperAccessBuilder;
+
 pub use crate::types::_consumer_group_replication_update::ConsumerGroupReplicationUpdateBuilder;
 
 pub use crate::types::_topic_replication_update::TopicReplicationUpdateBuilder;

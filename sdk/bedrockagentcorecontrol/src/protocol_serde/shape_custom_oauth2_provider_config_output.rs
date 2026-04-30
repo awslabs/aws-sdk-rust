@@ -35,6 +35,20 @@ where
                                 crate::protocol_serde::shape_private_endpoint_overrides::de_private_endpoint_overrides(tokens, _value)?,
                             );
                         }
+                        "onBehalfOfTokenExchangeConfig" => {
+                            builder = builder.set_on_behalf_of_token_exchange_config(
+                                crate::protocol_serde::shape_on_behalf_of_token_exchange_config_type::de_on_behalf_of_token_exchange_config_type(
+                                    tokens, _value,
+                                )?,
+                            );
+                        }
+                        "clientAuthenticationMethod" => {
+                            builder = builder.set_client_authentication_method(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::ClientAuthenticationMethodType::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

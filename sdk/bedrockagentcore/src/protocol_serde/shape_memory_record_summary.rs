@@ -46,7 +46,9 @@ where
                                 .set_score(::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?.map(|v| v.to_f64_lossy()));
                         }
                         "metadata" => {
-                            builder = builder.set_metadata(crate::protocol_serde::shape_metadata_map::de_metadata_map(tokens, _value)?);
+                            builder = builder.set_metadata(crate::protocol_serde::shape_memory_record_metadata_map::de_memory_record_metadata_map(
+                                tokens, _value,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

@@ -16,6 +16,8 @@ pub struct ProductionVariantSummary {
     pub current_instance_count: ::std::option::Option<i32>,
     /// <p>The number of instances requested in the <code>UpdateEndpointWeightsAndCapacities</code> request.</p>
     pub desired_instance_count: ::std::option::Option<i32>,
+    /// <p>A list of instance pools for the production variant. Each pool indicates the instance type and the current number of instances of that type.</p>
+    pub instance_pools: ::std::option::Option<::std::vec::Vec<crate::types::InstancePoolSummary>>,
     /// <p>The endpoint variant status which describes the current deployment stage status or operational status.</p>
     pub variant_status: ::std::option::Option<::std::vec::Vec<crate::types::ProductionVariantStatus>>,
     /// <p>The serverless configuration for the endpoint.</p>
@@ -55,6 +57,12 @@ impl ProductionVariantSummary {
     /// <p>The number of instances requested in the <code>UpdateEndpointWeightsAndCapacities</code> request.</p>
     pub fn desired_instance_count(&self) -> ::std::option::Option<i32> {
         self.desired_instance_count
+    }
+    /// <p>A list of instance pools for the production variant. Each pool indicates the instance type and the current number of instances of that type.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instance_pools.is_none()`.
+    pub fn instance_pools(&self) -> &[crate::types::InstancePoolSummary] {
+        self.instance_pools.as_deref().unwrap_or_default()
     }
     /// <p>The endpoint variant status which describes the current deployment stage status or operational status.</p>
     ///
@@ -100,6 +108,7 @@ pub struct ProductionVariantSummaryBuilder {
     pub(crate) desired_weight: ::std::option::Option<f32>,
     pub(crate) current_instance_count: ::std::option::Option<i32>,
     pub(crate) desired_instance_count: ::std::option::Option<i32>,
+    pub(crate) instance_pools: ::std::option::Option<::std::vec::Vec<crate::types::InstancePoolSummary>>,
     pub(crate) variant_status: ::std::option::Option<::std::vec::Vec<crate::types::ProductionVariantStatus>>,
     pub(crate) current_serverless_config: ::std::option::Option<crate::types::ProductionVariantServerlessConfig>,
     pub(crate) desired_serverless_config: ::std::option::Option<crate::types::ProductionVariantServerlessConfig>,
@@ -198,6 +207,26 @@ impl ProductionVariantSummaryBuilder {
     /// <p>The number of instances requested in the <code>UpdateEndpointWeightsAndCapacities</code> request.</p>
     pub fn get_desired_instance_count(&self) -> &::std::option::Option<i32> {
         &self.desired_instance_count
+    }
+    /// Appends an item to `instance_pools`.
+    ///
+    /// To override the contents of this collection use [`set_instance_pools`](Self::set_instance_pools).
+    ///
+    /// <p>A list of instance pools for the production variant. Each pool indicates the instance type and the current number of instances of that type.</p>
+    pub fn instance_pools(mut self, input: crate::types::InstancePoolSummary) -> Self {
+        let mut v = self.instance_pools.unwrap_or_default();
+        v.push(input);
+        self.instance_pools = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of instance pools for the production variant. Each pool indicates the instance type and the current number of instances of that type.</p>
+    pub fn set_instance_pools(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InstancePoolSummary>>) -> Self {
+        self.instance_pools = input;
+        self
+    }
+    /// <p>A list of instance pools for the production variant. Each pool indicates the instance type and the current number of instances of that type.</p>
+    pub fn get_instance_pools(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InstancePoolSummary>> {
+        &self.instance_pools
     }
     /// Appends an item to `variant_status`.
     ///
@@ -301,6 +330,7 @@ impl ProductionVariantSummaryBuilder {
             desired_weight: self.desired_weight,
             current_instance_count: self.current_instance_count,
             desired_instance_count: self.desired_instance_count,
+            instance_pools: self.instance_pools,
             variant_status: self.variant_status,
             current_serverless_config: self.current_serverless_config,
             desired_serverless_config: self.desired_serverless_config,

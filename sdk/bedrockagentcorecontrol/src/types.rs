@@ -197,6 +197,10 @@ pub use crate::types::_key_type::KeyType;
 
 pub use crate::types::_oauth2_discovery::Oauth2Discovery;
 
+pub use crate::types::_on_behalf_of_token_exchange_config_type::OnBehalfOfTokenExchangeConfigType;
+
+pub use crate::types::_client_authentication_method_type::ClientAuthenticationMethodType;
+
 pub use crate::types::_agent_runtime_endpoint::AgentRuntimeEndpoint;
 
 pub use crate::types::_agent_runtime::AgentRuntime;
@@ -307,6 +311,8 @@ pub use crate::types::_memory_summary::MemorySummary;
 
 pub use crate::types::_memory_strategy_input::MemoryStrategyInput;
 
+pub use crate::types::_indexed_key::IndexedKey;
+
 pub use crate::types::_custom_oauth2_provider_config_output::CustomOauth2ProviderConfigOutput;
 
 pub use crate::types::_google_oauth2_provider_config_output::GoogleOauth2ProviderConfigOutput;
@@ -372,6 +378,10 @@ pub use crate::types::_workload_identity_type::WorkloadIdentityType;
 pub use crate::types::_oauth2_authorization_server_metadata::Oauth2AuthorizationServerMetadata;
 
 pub use crate::types::_private_endpoint_override::PrivateEndpointOverride;
+
+pub use crate::types::_on_behalf_of_token_exchange_grant_type_type::OnBehalfOfTokenExchangeGrantTypeType;
+
+pub use crate::types::_token_exchange_grant_type_config_type::TokenExchangeGrantTypeConfigType;
 
 pub use crate::types::_code::Code;
 
@@ -443,6 +453,8 @@ pub use crate::types::_custom_memory_strategy_input::CustomMemoryStrategyInput;
 
 pub use crate::types::_episodic_memory_strategy_input::EpisodicMemoryStrategyInput;
 
+pub use crate::types::_metadata_value_type::MetadataValueType;
+
 pub use crate::types::_stream_delivery_resource::StreamDeliveryResource;
 
 pub use crate::types::_memory_strategy::MemoryStrategy;
@@ -470,6 +482,8 @@ pub use crate::types::_updated_a2a_descriptor::UpdatedA2aDescriptor;
 pub use crate::types::_updated_custom_descriptor::UpdatedCustomDescriptor;
 
 pub use crate::types::_updated_agent_skills_descriptor::UpdatedAgentSkillsDescriptor;
+
+pub use crate::types::_actor_token_content_type::ActorTokenContentType;
 
 pub use crate::types::_custom_claim_validation_type::CustomClaimValidationType;
 
@@ -516,6 +530,8 @@ pub use crate::types::_harness_inline_function_config::HarnessInlineFunctionConf
 pub use crate::types::_harness_agent_core_code_interpreter_config::HarnessAgentCoreCodeInterpreterConfig;
 
 pub use crate::types::_harness_agent_core_memory_retrieval_config::HarnessAgentCoreMemoryRetrievalConfig;
+
+pub use crate::types::_memory_record_schema::MemoryRecordSchema;
 
 pub use crate::types::_custom_configuration_input::CustomConfigurationInput;
 
@@ -621,6 +637,8 @@ pub use crate::types::_api_gateway_tool_filter::ApiGatewayToolFilter;
 
 pub use crate::types::_unit::Unit;
 
+pub use crate::types::_metadata_schema_entry::MetadataSchemaEntry;
+
 pub use crate::types::_semantic_override_extraction_configuration_input::SemanticOverrideExtractionConfigurationInput;
 
 pub use crate::types::_semantic_override_consolidation_configuration_input::SemanticOverrideConsolidationConfigurationInput;
@@ -671,6 +689,8 @@ pub use crate::types::_schema_definition::SchemaDefinition;
 
 pub use crate::types::_rest_api_method::RestApiMethod;
 
+pub use crate::types::_extraction_config::ExtractionConfig;
+
 pub use crate::types::_trigger_condition_input::TriggerConditionInput;
 
 pub use crate::types::_content_type::ContentType;
@@ -699,6 +719,8 @@ pub use crate::types::_registry_record_o_auth_grant_type::RegistryRecordOAuthGra
 
 pub use crate::types::_schema_type::SchemaType;
 
+pub use crate::types::_llm_extraction_config::LlmExtractionConfig;
+
 pub use crate::types::_message_based_trigger_input::MessageBasedTriggerInput;
 
 pub use crate::types::_token_based_trigger_input::TokenBasedTriggerInput;
@@ -711,9 +733,19 @@ pub use crate::types::_token_based_trigger::TokenBasedTrigger;
 
 pub use crate::types::_time_based_trigger::TimeBasedTrigger;
 
+pub use crate::types::_validation::Validation;
+
+pub use crate::types::_string_validation::StringValidation;
+
+pub use crate::types::_string_list_validation::StringListValidation;
+
+pub use crate::types::_number_validation::NumberValidation;
+
 mod _a2a_descriptor;
 
 mod _action;
+
+mod _actor_token_content_type;
 
 mod _agent_card_definition;
 
@@ -792,6 +824,8 @@ mod _certificate_location;
 mod _claim_match_operator_type;
 
 mod _claim_match_value_type;
+
+mod _client_authentication_method_type;
 
 mod _cloud_watch_logs_input_config;
 
@@ -917,6 +951,8 @@ mod _evaluator_type;
 
 mod _exception_level;
 
+mod _extraction_config;
+
 mod _extraction_configuration;
 
 mod _filesystem_configuration;
@@ -1041,6 +1077,8 @@ mod _included_oauth2_provider_config_input;
 
 mod _included_oauth2_provider_config_output;
 
+mod _indexed_key;
+
 mod _inference_configuration;
 
 mod _interceptor_configuration;
@@ -1071,6 +1109,8 @@ mod _listing_mode;
 
 mod _llm_as_a_judge_evaluator_config;
 
+mod _llm_extraction_config;
+
 mod _managed_resource_details;
 
 mod _managed_vpc_resource;
@@ -1095,6 +1135,8 @@ mod _mcp_tool_schema_configuration;
 
 mod _memory;
 
+mod _memory_record_schema;
+
 mod _memory_status;
 
 mod _memory_strategy;
@@ -1114,6 +1156,10 @@ mod _message_based_trigger;
 mod _message_based_trigger_input;
 
 mod _metadata_configuration;
+
+mod _metadata_schema_entry;
+
+mod _metadata_value_type;
 
 mod _microsoft_oauth2_provider_config_input;
 
@@ -1139,6 +1185,8 @@ mod _network_configuration;
 
 mod _network_mode;
 
+mod _number_validation;
+
 mod _numerical_scale_definition;
 
 mod _o_auth2_authorization_data;
@@ -1156,6 +1204,10 @@ mod _oauth2_discovery;
 mod _oauth2_provider_config_input;
 
 mod _oauth2_provider_config_output;
+
+mod _on_behalf_of_token_exchange_config_type;
+
+mod _on_behalf_of_token_exchange_grant_type_type;
 
 mod _online_evaluation_config_status;
 
@@ -1307,6 +1359,10 @@ mod _stream_delivery_resource;
 
 mod _stream_delivery_resources;
 
+mod _string_list_validation;
+
+mod _string_validation;
+
 mod _summary_consolidation_override;
 
 mod _summary_memory_strategy_input;
@@ -1338,6 +1394,8 @@ mod _time_based_trigger_input;
 mod _token_based_trigger;
 
 mod _token_based_trigger_input;
+
+mod _token_exchange_grant_type_config_type;
 
 mod _tool_definition;
 
@@ -1402,6 +1460,8 @@ mod _user_preference_override_configuration_input;
 mod _user_preference_override_consolidation_configuration_input;
 
 mod _user_preference_override_extraction_configuration_input;
+
+mod _validation;
 
 mod _validation_exception_field;
 

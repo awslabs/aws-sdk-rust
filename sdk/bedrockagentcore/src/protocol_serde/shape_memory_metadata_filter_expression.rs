@@ -6,7 +6,7 @@ pub fn ser_memory_metadata_filter_expression(
     if let Some(var_1) = &input.left {
         #[allow(unused_mut)]
         let mut object_2 = object.key("left").start_object();
-        crate::protocol_serde::shape_left_expression::ser_left_expression(&mut object_2, var_1)?;
+        crate::protocol_serde::shape_memory_record_left_expression::ser_memory_record_left_expression(&mut object_2, var_1)?;
         object_2.finish();
     }
     {
@@ -15,7 +15,7 @@ pub fn ser_memory_metadata_filter_expression(
     if let Some(var_3) = &input.right {
         #[allow(unused_mut)]
         let mut object_4 = object.key("right").start_object();
-        crate::protocol_serde::shape_right_expression::ser_right_expression(&mut object_4, var_3)?;
+        crate::protocol_serde::shape_memory_record_right_expression::ser_memory_record_right_expression(&mut object_4, var_3)?;
         object_4.finish();
     }
     Ok(())

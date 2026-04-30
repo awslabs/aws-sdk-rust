@@ -18,6 +18,8 @@ pub struct PendingProductionVariantSummary {
     pub desired_instance_count: ::std::option::Option<i32>,
     /// <p>The type of instances associated with the variant.</p>
     pub instance_type: ::std::option::Option<crate::types::ProductionVariantInstanceType>,
+    /// <p>A list of instance pools for the production variant. Each pool indicates the instance type and the current number of instances of that type.</p>
+    pub instance_pools: ::std::option::Option<::std::vec::Vec<crate::types::InstancePoolSummary>>,
     /// <p>This parameter is no longer supported. Elastic Inference (EI) is no longer available.</p>
     /// <p>This parameter was used to specify the size of the EI instance to use for the production variant.</p>
     pub accelerator_type: ::std::option::Option<crate::types::ProductionVariantAcceleratorType>,
@@ -62,6 +64,12 @@ impl PendingProductionVariantSummary {
     /// <p>The type of instances associated with the variant.</p>
     pub fn instance_type(&self) -> ::std::option::Option<&crate::types::ProductionVariantInstanceType> {
         self.instance_type.as_ref()
+    }
+    /// <p>A list of instance pools for the production variant. Each pool indicates the instance type and the current number of instances of that type.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instance_pools.is_none()`.
+    pub fn instance_pools(&self) -> &[crate::types::InstancePoolSummary] {
+        self.instance_pools.as_deref().unwrap_or_default()
     }
     /// <p>This parameter is no longer supported. Elastic Inference (EI) is no longer available.</p>
     /// <p>This parameter was used to specify the size of the EI instance to use for the production variant.</p>
@@ -109,6 +117,7 @@ pub struct PendingProductionVariantSummaryBuilder {
     pub(crate) current_instance_count: ::std::option::Option<i32>,
     pub(crate) desired_instance_count: ::std::option::Option<i32>,
     pub(crate) instance_type: ::std::option::Option<crate::types::ProductionVariantInstanceType>,
+    pub(crate) instance_pools: ::std::option::Option<::std::vec::Vec<crate::types::InstancePoolSummary>>,
     pub(crate) accelerator_type: ::std::option::Option<crate::types::ProductionVariantAcceleratorType>,
     pub(crate) variant_status: ::std::option::Option<::std::vec::Vec<crate::types::ProductionVariantStatus>>,
     pub(crate) current_serverless_config: ::std::option::Option<crate::types::ProductionVariantServerlessConfig>,
@@ -222,6 +231,26 @@ impl PendingProductionVariantSummaryBuilder {
     pub fn get_instance_type(&self) -> &::std::option::Option<crate::types::ProductionVariantInstanceType> {
         &self.instance_type
     }
+    /// Appends an item to `instance_pools`.
+    ///
+    /// To override the contents of this collection use [`set_instance_pools`](Self::set_instance_pools).
+    ///
+    /// <p>A list of instance pools for the production variant. Each pool indicates the instance type and the current number of instances of that type.</p>
+    pub fn instance_pools(mut self, input: crate::types::InstancePoolSummary) -> Self {
+        let mut v = self.instance_pools.unwrap_or_default();
+        v.push(input);
+        self.instance_pools = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of instance pools for the production variant. Each pool indicates the instance type and the current number of instances of that type.</p>
+    pub fn set_instance_pools(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InstancePoolSummary>>) -> Self {
+        self.instance_pools = input;
+        self
+    }
+    /// <p>A list of instance pools for the production variant. Each pool indicates the instance type and the current number of instances of that type.</p>
+    pub fn get_instance_pools(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InstancePoolSummary>> {
+        &self.instance_pools
+    }
     /// <p>This parameter is no longer supported. Elastic Inference (EI) is no longer available.</p>
     /// <p>This parameter was used to specify the size of the EI instance to use for the production variant.</p>
     pub fn accelerator_type(mut self, input: crate::types::ProductionVariantAcceleratorType) -> Self {
@@ -325,6 +354,7 @@ impl PendingProductionVariantSummaryBuilder {
             current_instance_count: self.current_instance_count,
             desired_instance_count: self.desired_instance_count,
             instance_type: self.instance_type,
+            instance_pools: self.instance_pools,
             accelerator_type: self.accelerator_type,
             variant_status: self.variant_status,
             current_serverless_config: self.current_serverless_config,

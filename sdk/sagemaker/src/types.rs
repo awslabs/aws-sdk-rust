@@ -1025,6 +1025,8 @@ pub use crate::types::_hyper_parameter_tuning_job_warm_start_type::HyperParamete
 
 pub use crate::types::_autotune_mode::AutotuneMode;
 
+pub use crate::types::_production_variant_instance_type::ProductionVariantInstanceType;
+
 pub use crate::types::_inference_component_container_specification::InferenceComponentContainerSpecification;
 
 pub use crate::types::_inference_component_startup_parameters::InferenceComponentStartupParameters;
@@ -1491,8 +1493,6 @@ pub use crate::types::_additional_s3_data_source_data_type::AdditionalS3DataSour
 
 pub use crate::types::_model_package_container_definition::ModelPackageContainerDefinition;
 
-pub use crate::types::_production_variant_instance_type::ProductionVariantInstanceType;
-
 pub use crate::types::_algorithm_validation_profile::AlgorithmValidationProfile;
 
 pub use crate::types::_kernel_spec::KernelSpec;
@@ -1773,6 +1773,8 @@ pub use crate::types::_pending_production_variant_summary::PendingProductionVari
 
 pub use crate::types::_deployed_image::DeployedImage;
 
+pub use crate::types::_inference_component_placement_status::InferenceComponentPlacementStatus;
+
 pub use crate::types::_inference_component_capacity_size::InferenceComponentCapacitySize;
 
 pub use crate::types::_model_variant_status::ModelVariantStatus;
@@ -1947,6 +1949,8 @@ pub use crate::types::_capacity_size_type::CapacitySizeType;
 
 pub use crate::types::_alarm::Alarm;
 
+pub use crate::types::_instance_pool::InstancePool;
+
 pub use crate::types::_managed_instance_scaling_status::ManagedInstanceScalingStatus;
 
 pub use crate::types::_production_variant_managed_instance_scaling_scale_in_policy::ProductionVariantManagedInstanceScalingScaleInPolicy;
@@ -2066,6 +2070,8 @@ pub use crate::types::_cluster_fsx_open_zfs_config::ClusterFsxOpenZfsConfig;
 pub use crate::types::_cluster_kubernetes_taint::ClusterKubernetesTaint;
 
 pub use crate::types::_stage_status::StageStatus;
+
+pub use crate::types::_instance_pool_summary::InstancePoolSummary;
 
 pub use crate::types::_production_variant_status::ProductionVariantStatus;
 
@@ -3255,6 +3261,8 @@ mod _inference_component_deployment_config;
 
 mod _inference_component_metadata;
 
+mod _inference_component_placement_status;
+
 mod _inference_component_placement_strategy;
 
 mod _inference_component_rolling_update_policy;
@@ -3326,6 +3334,10 @@ mod _instance_metadata;
 mod _instance_metadata_service_configuration;
 
 mod _instance_placement_config;
+
+mod _instance_pool;
+
+mod _instance_pool_summary;
 
 mod _instance_type;
 

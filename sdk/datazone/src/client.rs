@@ -351,6 +351,8 @@ mod get_listing;
 
 mod get_metadata_generation_run;
 
+mod get_notebook_run;
+
 mod get_project;
 
 mod get_project_profile;
@@ -411,6 +413,8 @@ mod list_lineage_node_history;
 
 mod list_metadata_generation_runs;
 
+mod list_notebook_runs;
+
 mod list_notifications;
 
 mod list_policy_grants;
@@ -468,6 +472,10 @@ mod search_user_profiles;
 mod start_data_source_run;
 
 mod start_metadata_generation_run;
+
+mod start_notebook_run;
+
+mod stop_notebook_run;
 
 mod tag_resource;
 

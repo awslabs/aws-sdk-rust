@@ -18,39 +18,51 @@ pub fn ser_create_memory_input_input(
             ::aws_smithy_types::Number::NegInt((*var_4).into()),
         );
     }
-    if let Some(var_5) = &input.memory_execution_role_arn {
-        object.key("memoryExecutionRoleArn").string(var_5.as_str());
-    }
-    if let Some(var_6) = &input.memory_strategies {
-        let mut array_7 = object.key("memoryStrategies").start_array();
-        for item_8 in var_6 {
+    if let Some(var_5) = &input.indexed_keys {
+        let mut array_6 = object.key("indexedKeys").start_array();
+        for item_7 in var_5 {
             {
                 #[allow(unused_mut)]
-                let mut object_9 = array_7.value().start_object();
-                crate::protocol_serde::shape_memory_strategy_input::ser_memory_strategy_input(&mut object_9, item_8)?;
-                object_9.finish();
+                let mut object_8 = array_6.value().start_object();
+                crate::protocol_serde::shape_indexed_key::ser_indexed_key(&mut object_8, item_7)?;
+                object_8.finish();
             }
         }
-        array_7.finish();
+        array_6.finish();
     }
-    if let Some(var_10) = &input.name {
-        object.key("name").string(var_10.as_str());
+    if let Some(var_9) = &input.memory_execution_role_arn {
+        object.key("memoryExecutionRoleArn").string(var_9.as_str());
     }
-    if let Some(var_11) = &input.stream_delivery_resources {
-        #[allow(unused_mut)]
-        let mut object_12 = object.key("streamDeliveryResources").start_object();
-        crate::protocol_serde::shape_stream_delivery_resources::ser_stream_delivery_resources(&mut object_12, var_11)?;
-        object_12.finish();
-    }
-    if let Some(var_13) = &input.tags {
-        #[allow(unused_mut)]
-        let mut object_14 = object.key("tags").start_object();
-        for (key_15, value_16) in var_13 {
+    if let Some(var_10) = &input.memory_strategies {
+        let mut array_11 = object.key("memoryStrategies").start_array();
+        for item_12 in var_10 {
             {
-                object_14.key(key_15.as_str()).string(value_16.as_str());
+                #[allow(unused_mut)]
+                let mut object_13 = array_11.value().start_object();
+                crate::protocol_serde::shape_memory_strategy_input::ser_memory_strategy_input(&mut object_13, item_12)?;
+                object_13.finish();
             }
         }
-        object_14.finish();
+        array_11.finish();
+    }
+    if let Some(var_14) = &input.name {
+        object.key("name").string(var_14.as_str());
+    }
+    if let Some(var_15) = &input.stream_delivery_resources {
+        #[allow(unused_mut)]
+        let mut object_16 = object.key("streamDeliveryResources").start_object();
+        crate::protocol_serde::shape_stream_delivery_resources::ser_stream_delivery_resources(&mut object_16, var_15)?;
+        object_16.finish();
+    }
+    if let Some(var_17) = &input.tags {
+        #[allow(unused_mut)]
+        let mut object_18 = object.key("tags").start_object();
+        for (key_19, value_20) in var_17 {
+            {
+                object_18.key(key_19.as_str()).string(value_20.as_str());
+            }
+        }
+        object_18.finish();
     }
     Ok(())
 }

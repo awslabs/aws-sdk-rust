@@ -50,6 +50,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "IdentityStoreArn" => {
+                            builder = builder.set_identity_store_arn(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         "Status" => {
                             builder = builder.set_status(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

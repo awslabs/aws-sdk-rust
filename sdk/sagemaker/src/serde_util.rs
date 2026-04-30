@@ -6133,6 +6133,18 @@ pub(crate) fn inference_component_capacity_size_correct_errors(
     builder
 }
 
+pub(crate) fn inference_component_placement_status_correct_errors(
+    mut builder: crate::types::builders::InferenceComponentPlacementStatusBuilder,
+) -> crate::types::builders::InferenceComponentPlacementStatusBuilder {
+    if builder.instance_type.is_none() {
+        builder.instance_type = "no value was set".parse::<crate::types::ProductionVariantInstanceType>().ok()
+    }
+    if builder.current_copy_count.is_none() {
+        builder.current_copy_count = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn inference_metrics_correct_errors(
     mut builder: crate::types::builders::InferenceMetricsBuilder,
 ) -> crate::types::builders::InferenceMetricsBuilder {
@@ -6831,6 +6843,28 @@ pub(crate) fn inference_hub_access_config_correct_errors(
 ) -> crate::types::builders::InferenceHubAccessConfigBuilder {
     if builder.hub_content_arn.is_none() {
         builder.hub_content_arn = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn instance_pool_correct_errors(mut builder: crate::types::builders::InstancePoolBuilder) -> crate::types::builders::InstancePoolBuilder {
+    if builder.instance_type.is_none() {
+        builder.instance_type = "no value was set".parse::<crate::types::ProductionVariantInstanceType>().ok()
+    }
+    if builder.priority.is_none() {
+        builder.priority = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn instance_pool_summary_correct_errors(
+    mut builder: crate::types::builders::InstancePoolSummaryBuilder,
+) -> crate::types::builders::InstancePoolSummaryBuilder {
+    if builder.instance_type.is_none() {
+        builder.instance_type = "no value was set".parse::<crate::types::ProductionVariantInstanceType>().ok()
+    }
+    if builder.current_instance_count.is_none() {
+        builder.current_instance_count = Some(Default::default())
     }
     builder
 }

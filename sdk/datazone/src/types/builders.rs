@@ -17,6 +17,20 @@ pub use crate::types::_term_relations::TermRelationsBuilder;
 
 pub use crate::types::_metadata_generation_run_target::MetadataGenerationRunTargetBuilder;
 
+pub use crate::types::_compute_config::ComputeConfigBuilder;
+
+pub use crate::types::_network_config::NetworkConfigBuilder;
+
+pub use crate::types::_timeout_config::TimeoutConfigBuilder;
+
+pub use crate::types::_environment_config::EnvironmentConfigBuilder;
+
+pub use crate::types::_storage_config::StorageConfigBuilder;
+
+pub use crate::types::_trigger_source::TriggerSourceBuilder;
+
+pub use crate::types::_notebook_run_error::NotebookRunErrorBuilder;
+
 pub use crate::types::_rule_scope::RuleScopeBuilder;
 
 pub use crate::types::_accept_rule::AcceptRuleBuilder;
@@ -62,6 +76,10 @@ pub use crate::types::_data_product_item::DataProductItemBuilder;
 pub use crate::types::_asset_listing::AssetListingBuilder;
 
 pub use crate::types::_data_product_listing::DataProductListingBuilder;
+
+pub use crate::types::_cell_information::CellInformationBuilder;
+
+pub use crate::types::_package_config::PackageConfigBuilder;
 
 pub use crate::types::_domain_unit_target::DomainUnitTargetBuilder;
 
@@ -354,6 +372,8 @@ pub use crate::types::_import::ImportBuilder;
 pub use crate::types::_metadata_generation_run_item::MetadataGenerationRunItemBuilder;
 
 pub use crate::types::_metadata_generation_run_type_stat::MetadataGenerationRunTypeStatBuilder;
+
+pub use crate::types::_notebook_run_summary::NotebookRunSummaryBuilder;
 
 pub use crate::types::_rule_summary::RuleSummaryBuilder;
 

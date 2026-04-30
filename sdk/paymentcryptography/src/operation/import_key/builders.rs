@@ -97,7 +97,7 @@ impl crate::operation::import_key::builders::ImportKeyInputBuilder {
 /// <li>
 /// <p><code>CertificateAuthorityPublicKeyIdentifier</code>: The <code>keyARN</code> of the CA that signed the public key certificate of the receiving ECC key pair.</p></li>
 /// </ul>
-/// <p><b>Cross-account use:</b> This operation can't be used across different Amazon Web Services accounts.</p>
+/// <p><b>Cross-account use:</b> This operation supports cross-account use when the key has a resource-based policy that grants access. For more information, see <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/security_iam_resource-based-policies.html">Resource-based policies</a>.</p>
 /// <p><b>Related operations:</b></p>
 /// <ul>
 /// <li>
@@ -284,5 +284,25 @@ impl ImportKeyFluentBuilder {
     /// <p>Each region in the list must be a valid Amazon Web Services Region identifier where Amazon Web Services Payment Cryptography is available. This list is used to specify which regions should be added to or removed from a key's replication configuration.</p>
     pub fn get_replication_regions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_replication_regions()
+    }
+    /// <p>The comment from the requester explaining the reason for the import.</p><important>
+    /// <p>Don't include personal, confidential or sensitive information in this field. This field may be displayed in plaintext in CloudTrail logs and other output.</p>
+    /// </important>
+    pub fn requester_comment(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.requester_comment(input.into());
+        self
+    }
+    /// <p>The comment from the requester explaining the reason for the import.</p><important>
+    /// <p>Don't include personal, confidential or sensitive information in this field. This field may be displayed in plaintext in CloudTrail logs and other output.</p>
+    /// </important>
+    pub fn set_requester_comment(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_requester_comment(input);
+        self
+    }
+    /// <p>The comment from the requester explaining the reason for the import.</p><important>
+    /// <p>Don't include personal, confidential or sensitive information in this field. This field may be displayed in plaintext in CloudTrail logs and other output.</p>
+    /// </important>
+    pub fn get_requester_comment(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_requester_comment()
     }
 }

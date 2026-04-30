@@ -138,6 +138,8 @@ impl Client {
 
 mod add_key_replication_regions;
 
+mod associate_mpa_team;
+
 mod create_alias;
 
 mod create_key;
@@ -173,7 +175,11 @@ mod delete_alias;
 
 mod delete_key;
 
+mod delete_resource_policy;
+
 mod disable_default_key_replication_regions;
+
+mod disassociate_mpa_team;
 
 mod enable_default_key_replication_regions;
 
@@ -187,11 +193,15 @@ mod get_default_key_replication_regions;
 
 mod get_key;
 
+mod get_mpa_team_association;
+
 mod get_parameters_for_export;
 
 mod get_parameters_for_import;
 
 mod get_public_key_certificate;
+
+mod get_resource_policy;
 
 mod import_key;
 
@@ -200,6 +210,8 @@ mod list_aliases;
 mod list_keys;
 
 mod list_tags_for_resource;
+
+mod put_resource_policy;
 
 mod remove_key_replication_regions;
 

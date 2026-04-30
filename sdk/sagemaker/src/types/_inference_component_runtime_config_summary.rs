@@ -8,6 +8,8 @@ pub struct InferenceComponentRuntimeConfigSummary {
     pub desired_copy_count: ::std::option::Option<i32>,
     /// <p>The number of runtime copies of the model container that are currently deployed.</p>
     pub current_copy_count: ::std::option::Option<i32>,
+    /// <p>The placement status of the inference component across instance types. Shows how the inference component copies are distributed across instance types.</p>
+    pub placement_status: ::std::option::Option<::std::vec::Vec<crate::types::InferenceComponentPlacementStatus>>,
 }
 impl InferenceComponentRuntimeConfigSummary {
     /// <p>The number of runtime copies of the model container that you requested to deploy with the inference component.</p>
@@ -17,6 +19,12 @@ impl InferenceComponentRuntimeConfigSummary {
     /// <p>The number of runtime copies of the model container that are currently deployed.</p>
     pub fn current_copy_count(&self) -> ::std::option::Option<i32> {
         self.current_copy_count
+    }
+    /// <p>The placement status of the inference component across instance types. Shows how the inference component copies are distributed across instance types.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.placement_status.is_none()`.
+    pub fn placement_status(&self) -> &[crate::types::InferenceComponentPlacementStatus] {
+        self.placement_status.as_deref().unwrap_or_default()
     }
 }
 impl InferenceComponentRuntimeConfigSummary {
@@ -32,6 +40,7 @@ impl InferenceComponentRuntimeConfigSummary {
 pub struct InferenceComponentRuntimeConfigSummaryBuilder {
     pub(crate) desired_copy_count: ::std::option::Option<i32>,
     pub(crate) current_copy_count: ::std::option::Option<i32>,
+    pub(crate) placement_status: ::std::option::Option<::std::vec::Vec<crate::types::InferenceComponentPlacementStatus>>,
 }
 impl InferenceComponentRuntimeConfigSummaryBuilder {
     /// <p>The number of runtime copies of the model container that you requested to deploy with the inference component.</p>
@@ -62,11 +71,32 @@ impl InferenceComponentRuntimeConfigSummaryBuilder {
     pub fn get_current_copy_count(&self) -> &::std::option::Option<i32> {
         &self.current_copy_count
     }
+    /// Appends an item to `placement_status`.
+    ///
+    /// To override the contents of this collection use [`set_placement_status`](Self::set_placement_status).
+    ///
+    /// <p>The placement status of the inference component across instance types. Shows how the inference component copies are distributed across instance types.</p>
+    pub fn placement_status(mut self, input: crate::types::InferenceComponentPlacementStatus) -> Self {
+        let mut v = self.placement_status.unwrap_or_default();
+        v.push(input);
+        self.placement_status = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The placement status of the inference component across instance types. Shows how the inference component copies are distributed across instance types.</p>
+    pub fn set_placement_status(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InferenceComponentPlacementStatus>>) -> Self {
+        self.placement_status = input;
+        self
+    }
+    /// <p>The placement status of the inference component across instance types. Shows how the inference component copies are distributed across instance types.</p>
+    pub fn get_placement_status(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InferenceComponentPlacementStatus>> {
+        &self.placement_status
+    }
     /// Consumes the builder and constructs a [`InferenceComponentRuntimeConfigSummary`](crate::types::InferenceComponentRuntimeConfigSummary).
     pub fn build(self) -> crate::types::InferenceComponentRuntimeConfigSummary {
         crate::types::InferenceComponentRuntimeConfigSummary {
             desired_copy_count: self.desired_copy_count,
             current_copy_count: self.current_copy_count,
+            placement_status: self.placement_status,
         }
     }
 }

@@ -263,6 +263,8 @@ pub(crate) mod shape_field_map;
 
 pub(crate) mod shape_log_delivery_parameters;
 
+pub(crate) mod shape_msk_monitoring_parameters;
+
 pub(crate) mod shape_pipeline_output_error;
 
 pub(crate) mod shape_source_logs_configuration;

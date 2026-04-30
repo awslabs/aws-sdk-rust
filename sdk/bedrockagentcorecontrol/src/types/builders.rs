@@ -91,6 +91,8 @@ pub use crate::types::_updated_approval_configuration::UpdatedApprovalConfigurat
 
 pub use crate::types::_validation_exception_field::ValidationExceptionFieldBuilder;
 
+pub use crate::types::_on_behalf_of_token_exchange_config_type::OnBehalfOfTokenExchangeConfigTypeBuilder;
+
 pub use crate::types::_agent_runtime_endpoint::AgentRuntimeEndpointBuilder;
 
 pub use crate::types::_agent_runtime::AgentRuntimeBuilder;
@@ -163,6 +165,8 @@ pub use crate::types::_harness_summary::HarnessSummaryBuilder;
 
 pub use crate::types::_memory_summary::MemorySummaryBuilder;
 
+pub use crate::types::_indexed_key::IndexedKeyBuilder;
+
 pub use crate::types::_custom_oauth2_provider_config_output::CustomOauth2ProviderConfigOutputBuilder;
 
 pub use crate::types::_google_oauth2_provider_config_output::GoogleOauth2ProviderConfigOutputBuilder;
@@ -226,6 +230,8 @@ pub use crate::types::_workload_identity_type::WorkloadIdentityTypeBuilder;
 pub use crate::types::_oauth2_authorization_server_metadata::Oauth2AuthorizationServerMetadataBuilder;
 
 pub use crate::types::_private_endpoint_override::PrivateEndpointOverrideBuilder;
+
+pub use crate::types::_token_exchange_grant_type_config_type::TokenExchangeGrantTypeConfigTypeBuilder;
 
 pub use crate::types::_session_storage_configuration::SessionStorageConfigurationBuilder;
 
@@ -325,6 +331,8 @@ pub use crate::types::_harness_agent_core_code_interpreter_config::HarnessAgentC
 
 pub use crate::types::_harness_agent_core_memory_retrieval_config::HarnessAgentCoreMemoryRetrievalConfigBuilder;
 
+pub use crate::types::_memory_record_schema::MemoryRecordSchemaBuilder;
+
 pub use crate::types::_episodic_reflection_configuration_input::EpisodicReflectionConfigurationInputBuilder;
 
 pub use crate::types::_kinesis_resource::KinesisResourceBuilder;
@@ -385,6 +393,8 @@ pub use crate::types::_api_gateway_tool_filter::ApiGatewayToolFilterBuilder;
 
 pub use crate::types::_unit::UnitBuilder;
 
+pub use crate::types::_metadata_schema_entry::MetadataSchemaEntryBuilder;
+
 pub use crate::types::_semantic_override_extraction_configuration_input::SemanticOverrideExtractionConfigurationInputBuilder;
 
 pub use crate::types::_semantic_override_consolidation_configuration_input::SemanticOverrideConsolidationConfigurationInputBuilder;
@@ -435,6 +445,8 @@ pub use crate::types::_episodic_consolidation_override::EpisodicConsolidationOve
 
 pub use crate::types::_episodic_reflection_override::EpisodicReflectionOverrideBuilder;
 
+pub use crate::types::_llm_extraction_config::LlmExtractionConfigBuilder;
+
 pub use crate::types::_message_based_trigger_input::MessageBasedTriggerInputBuilder;
 
 pub use crate::types::_token_based_trigger_input::TokenBasedTriggerInputBuilder;
@@ -446,3 +458,9 @@ pub use crate::types::_message_based_trigger::MessageBasedTriggerBuilder;
 pub use crate::types::_token_based_trigger::TokenBasedTriggerBuilder;
 
 pub use crate::types::_time_based_trigger::TimeBasedTriggerBuilder;
+
+pub use crate::types::_string_validation::StringValidationBuilder;
+
+pub use crate::types::_string_list_validation::StringListValidationBuilder;
+
+pub use crate::types::_number_validation::NumberValidationBuilder;

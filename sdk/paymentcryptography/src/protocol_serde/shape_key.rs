@@ -118,6 +118,9 @@ where
                             builder = builder
                                 .set_using_default_replication_regions(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
+                        "MpaStatus" => {
+                            builder = builder.set_mpa_status(crate::protocol_serde::shape_mpa_status::de_mpa_status(tokens, _value)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

@@ -283,6 +283,9 @@ pub mod get_listing;
 /// Types for the `GetMetadataGenerationRun` operation.
 pub mod get_metadata_generation_run;
 
+/// Types for the `GetNotebookRun` operation.
+pub mod get_notebook_run;
+
 /// Types for the `GetProject` operation.
 pub mod get_project;
 
@@ -373,6 +376,9 @@ pub mod list_lineage_node_history;
 /// Types for the `ListMetadataGenerationRuns` operation.
 pub mod list_metadata_generation_runs;
 
+/// Types for the `ListNotebookRuns` operation.
+pub mod list_notebook_runs;
+
 /// Types for the `ListNotifications` operation.
 pub mod list_notifications;
 
@@ -459,6 +465,12 @@ pub mod start_data_source_run;
 
 /// Types for the `StartMetadataGenerationRun` operation.
 pub mod start_metadata_generation_run;
+
+/// Types for the `StartNotebookRun` operation.
+pub mod start_notebook_run;
+
+/// Types for the `StopNotebookRun` operation.
+pub mod stop_notebook_run;
 
 /// Types for the `TagResource` operation.
 pub mod tag_resource;

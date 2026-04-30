@@ -73,6 +73,8 @@ pub use crate::types::_waf_logging_parameters::WafLoggingParameters;
 
 pub use crate::types::_log_delivery_parameters::LogDeliveryParameters;
 
+pub use crate::types::_msk_monitoring_parameters::MskMonitoringParameters;
+
 pub use crate::types::_record_format::RecordFormat;
 
 pub use crate::types::_pipeline_output_error::PipelineOutputError;
@@ -92,6 +94,8 @@ pub use crate::types::_output_format::OutputFormat;
 pub use crate::types::_logging_filter::LoggingFilter;
 
 pub use crate::types::_waf_log_type::WafLogType;
+
+pub use crate::types::_msk_enhanced_monitoring_level::MskEnhancedMonitoringLevel;
 
 pub use crate::types::_encryption_strategy::EncryptionStrategy;
 
@@ -190,6 +194,10 @@ mod _logging_filter;
 mod _logs_backup_configuration;
 
 mod _logs_encryption_configuration;
+
+mod _msk_enhanced_monitoring_level;
+
+mod _msk_monitoring_parameters;
 
 mod _output_format;
 

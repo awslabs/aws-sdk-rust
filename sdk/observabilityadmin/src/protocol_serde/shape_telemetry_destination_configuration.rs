@@ -45,6 +45,12 @@ pub fn ser_telemetry_destination_configuration(
         crate::protocol_serde::shape_log_delivery_parameters::ser_log_delivery_parameters(&mut object_13, var_12)?;
         object_13.finish();
     }
+    if let Some(var_14) = &input.msk_monitoring_parameters {
+        #[allow(unused_mut)]
+        let mut object_15 = object.key("MskMonitoringParameters").start_object();
+        crate::protocol_serde::shape_msk_monitoring_parameters::ser_msk_monitoring_parameters(&mut object_15, var_14)?;
+        object_15.finish();
+    }
     Ok(())
 }
 
@@ -110,6 +116,11 @@ where
                         "LogDeliveryParameters" => {
                             builder = builder.set_log_delivery_parameters(
                                 crate::protocol_serde::shape_log_delivery_parameters::de_log_delivery_parameters(tokens, _value)?,
+                            );
+                        }
+                        "MskMonitoringParameters" => {
+                            builder = builder.set_msk_monitoring_parameters(
+                                crate::protocol_serde::shape_msk_monitoring_parameters::de_msk_monitoring_parameters(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

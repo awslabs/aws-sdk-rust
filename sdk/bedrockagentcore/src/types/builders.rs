@@ -151,6 +151,8 @@ pub use crate::types::_branch_filter::BranchFilterBuilder;
 
 pub use crate::types::_extraction_job_metadata::ExtractionJobMetadataBuilder;
 
+pub use crate::types::_memory_metadata_filter_expression::MemoryMetadataFilterExpressionBuilder;
+
 pub use crate::types::_memory_record_summary::MemoryRecordSummaryBuilder;
 
 pub use crate::types::_session_summary::SessionSummaryBuilder;
@@ -194,8 +196,6 @@ pub use crate::types::_session_metadata_shape::SessionMetadataShapeBuilder;
 pub use crate::types::_conversational::ConversationalBuilder;
 
 pub use crate::types::_event_metadata_filter_expression::EventMetadataFilterExpressionBuilder;
-
-pub use crate::types::_memory_metadata_filter_expression::MemoryMetadataFilterExpressionBuilder;
 
 pub use crate::types::_descriptors::DescriptorsBuilder;
 

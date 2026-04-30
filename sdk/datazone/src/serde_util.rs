@@ -1196,6 +1196,27 @@ pub(crate) fn get_metadata_generation_run_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn get_notebook_run_output_output_correct_errors(
+    mut builder: crate::operation::get_notebook_run::builders::GetNotebookRunOutputBuilder,
+) -> crate::operation::get_notebook_run::builders::GetNotebookRunOutputBuilder {
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.domain_id.is_none() {
+        builder.domain_id = Some(Default::default())
+    }
+    if builder.owning_project_id.is_none() {
+        builder.owning_project_id = Some(Default::default())
+    }
+    if builder.notebook_id.is_none() {
+        builder.notebook_id = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::NotebookRunStatus>().ok()
+    }
+    builder
+}
+
 pub(crate) fn get_project_output_output_correct_errors(
     mut builder: crate::operation::get_project::builders::GetProjectOutputBuilder,
 ) -> crate::operation::get_project::builders::GetProjectOutputBuilder {
@@ -1721,6 +1742,45 @@ pub(crate) fn start_metadata_generation_run_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn start_notebook_run_output_output_correct_errors(
+    mut builder: crate::operation::start_notebook_run::builders::StartNotebookRunOutputBuilder,
+) -> crate::operation::start_notebook_run::builders::StartNotebookRunOutputBuilder {
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.domain_id.is_none() {
+        builder.domain_id = Some(Default::default())
+    }
+    if builder.owning_project_id.is_none() {
+        builder.owning_project_id = Some(Default::default())
+    }
+    if builder.notebook_id.is_none() {
+        builder.notebook_id = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::NotebookRunStatus>().ok()
+    }
+    builder
+}
+
+pub(crate) fn stop_notebook_run_output_output_correct_errors(
+    mut builder: crate::operation::stop_notebook_run::builders::StopNotebookRunOutputBuilder,
+) -> crate::operation::stop_notebook_run::builders::StopNotebookRunOutputBuilder {
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.domain_id.is_none() {
+        builder.domain_id = Some(Default::default())
+    }
+    if builder.owning_project_id.is_none() {
+        builder.owning_project_id = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::NotebookRunStatus>().ok()
+    }
+    builder
+}
+
 pub(crate) fn update_account_pool_output_output_correct_errors(
     mut builder: crate::operation::update_account_pool::builders::UpdateAccountPoolOutputBuilder,
 ) -> crate::operation::update_account_pool::builders::UpdateAccountPoolOutputBuilder {
@@ -2186,6 +2246,24 @@ pub(crate) fn metadata_generation_run_target_correct_errors(
     }
     if builder.identifier.is_none() {
         builder.identifier = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn network_config_correct_errors(
+    mut builder: crate::types::builders::NetworkConfigBuilder,
+) -> crate::types::builders::NetworkConfigBuilder {
+    if builder.network_access_type.is_none() {
+        builder.network_access_type = "no value was set".parse::<crate::types::NetworkAccessType>().ok()
+    }
+    builder
+}
+
+pub(crate) fn notebook_run_error_correct_errors(
+    mut builder: crate::types::builders::NotebookRunErrorBuilder,
+) -> crate::types::builders::NotebookRunErrorBuilder {
+    if builder.message.is_none() {
+        builder.message = Some(Default::default())
     }
     builder
 }
@@ -2706,6 +2784,27 @@ pub(crate) fn metadata_generation_run_type_stat_correct_errors(
     builder
 }
 
+pub(crate) fn notebook_run_summary_correct_errors(
+    mut builder: crate::types::builders::NotebookRunSummaryBuilder,
+) -> crate::types::builders::NotebookRunSummaryBuilder {
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.domain_id.is_none() {
+        builder.domain_id = Some(Default::default())
+    }
+    if builder.owning_project_id.is_none() {
+        builder.owning_project_id = Some(Default::default())
+    }
+    if builder.notebook_id.is_none() {
+        builder.notebook_id = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::NotebookRunStatus>().ok()
+    }
+    builder
+}
+
 pub(crate) fn notification_output_correct_errors(
     mut builder: crate::types::builders::NotificationOutputBuilder,
 ) -> crate::types::builders::NotificationOutputBuilder {
@@ -2738,6 +2837,15 @@ pub(crate) fn notification_output_correct_errors(
     }
     if builder.last_updated_timestamp.is_none() {
         builder.last_updated_timestamp = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
+pub(crate) fn package_config_correct_errors(
+    mut builder: crate::types::builders::PackageConfigBuilder,
+) -> crate::types::builders::PackageConfigBuilder {
+    if builder.package_manager.is_none() {
+        builder.package_manager = "no value was set".parse::<crate::types::PackageManager>().ok()
     }
     builder
 }

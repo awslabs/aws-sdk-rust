@@ -50,6 +50,7 @@
 ///     UpdateParamType::UpdateStrategy => { /* ... */ },
 ///     UpdateParamType::UpdatedTier => { /* ... */ },
 ///     UpdateParamType::UpgradePolicy => { /* ... */ },
+///     UpdateParamType::VendedLogs => { /* ... */ },
 ///     UpdateParamType::Version => { /* ... */ },
 ///     UpdateParamType::WarmPoolEnabled => { /* ... */ },
 ///     UpdateParamType::WarmPoolMaxGroupPreparedCapacity => { /* ... */ },
@@ -162,6 +163,8 @@ pub enum UpdateParamType {
     #[allow(missing_docs)] // documentation missing in model
     UpgradePolicy,
     #[allow(missing_docs)] // documentation missing in model
+    VendedLogs,
+    #[allow(missing_docs)] // documentation missing in model
     Version,
     #[allow(missing_docs)] // documentation missing in model
     WarmPoolEnabled,
@@ -220,6 +223,7 @@ impl ::std::convert::From<&str> for UpdateParamType {
             "UpdateStrategy" => UpdateParamType::UpdateStrategy,
             "UpdatedTier" => UpdateParamType::UpdatedTier,
             "UpgradePolicy" => UpdateParamType::UpgradePolicy,
+            "VendedLogs" => UpdateParamType::VendedLogs,
             "Version" => UpdateParamType::Version,
             "WarmPoolEnabled" => UpdateParamType::WarmPoolEnabled,
             "WarmPoolMaxGroupPreparedCapacity" => UpdateParamType::WarmPoolMaxGroupPreparedCapacity,
@@ -280,6 +284,7 @@ impl UpdateParamType {
             UpdateParamType::UpdateStrategy => "UpdateStrategy",
             UpdateParamType::UpdatedTier => "UpdatedTier",
             UpdateParamType::UpgradePolicy => "UpgradePolicy",
+            UpdateParamType::VendedLogs => "VendedLogs",
             UpdateParamType::Version => "Version",
             UpdateParamType::WarmPoolEnabled => "WarmPoolEnabled",
             UpdateParamType::WarmPoolMaxGroupPreparedCapacity => "WarmPoolMaxGroupPreparedCapacity",
@@ -331,6 +336,7 @@ impl UpdateParamType {
             "UpdateStrategy",
             "UpdatedTier",
             "UpgradePolicy",
+            "VendedLogs",
             "Version",
             "WarmPoolEnabled",
             "WarmPoolMaxGroupPreparedCapacity",
@@ -399,6 +405,7 @@ impl ::std::fmt::Display for UpdateParamType {
             UpdateParamType::UpdateStrategy => write!(f, "UpdateStrategy"),
             UpdateParamType::UpdatedTier => write!(f, "UpdatedTier"),
             UpdateParamType::UpgradePolicy => write!(f, "UpgradePolicy"),
+            UpdateParamType::VendedLogs => write!(f, "VendedLogs"),
             UpdateParamType::Version => write!(f, "Version"),
             UpdateParamType::WarmPoolEnabled => write!(f, "WarmPoolEnabled"),
             UpdateParamType::WarmPoolMaxGroupPreparedCapacity => write!(f, "WarmPoolMaxGroupPreparedCapacity"),

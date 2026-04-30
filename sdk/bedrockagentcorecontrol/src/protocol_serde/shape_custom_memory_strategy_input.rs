@@ -33,5 +33,11 @@ pub fn ser_custom_memory_strategy_input(
         crate::protocol_serde::shape_custom_configuration_input::ser_custom_configuration_input(&mut object_9, var_8)?;
         object_9.finish();
     }
+    if let Some(var_10) = &input.memory_record_schema {
+        #[allow(unused_mut)]
+        let mut object_11 = object.key("memoryRecordSchema").start_object();
+        crate::protocol_serde::shape_memory_record_schema::ser_memory_record_schema(&mut object_11, var_10)?;
+        object_11.finish();
+    }
     Ok(())
 }

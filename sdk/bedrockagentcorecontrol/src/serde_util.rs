@@ -3133,6 +3133,16 @@ pub(crate) fn harness_tool_correct_errors(mut builder: crate::types::builders::H
     builder
 }
 
+pub(crate) fn indexed_key_correct_errors(mut builder: crate::types::builders::IndexedKeyBuilder) -> crate::types::builders::IndexedKeyBuilder {
+    if builder.key.is_none() {
+        builder.key = Some(Default::default())
+    }
+    if builder.r#type.is_none() {
+        builder.r#type = "no value was set".parse::<crate::types::MetadataValueType>().ok()
+    }
+    builder
+}
+
 pub(crate) fn interceptor_input_configuration_correct_errors(
     mut builder: crate::types::builders::InterceptorInputConfigurationBuilder,
 ) -> crate::types::builders::InterceptorInputConfigurationBuilder {
@@ -3205,6 +3215,15 @@ pub(crate) fn memory_strategy_correct_errors(
     }
     if builder.namespace_templates.is_none() {
         builder.namespace_templates = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn on_behalf_of_token_exchange_config_type_correct_errors(
+    mut builder: crate::types::builders::OnBehalfOfTokenExchangeConfigTypeBuilder,
+) -> crate::types::builders::OnBehalfOfTokenExchangeConfigTypeBuilder {
+    if builder.grant_type.is_none() {
+        builder.grant_type = "no value was set".parse::<crate::types::OnBehalfOfTokenExchangeGrantTypeType>().ok()
     }
     builder
 }
@@ -3369,6 +3388,15 @@ pub(crate) fn static_route_correct_errors(mut builder: crate::types::builders::S
     builder
 }
 
+pub(crate) fn token_exchange_grant_type_config_type_correct_errors(
+    mut builder: crate::types::builders::TokenExchangeGrantTypeConfigTypeBuilder,
+) -> crate::types::builders::TokenExchangeGrantTypeConfigTypeBuilder {
+    if builder.actor_token_content.is_none() {
+        builder.actor_token_content = "no value was set".parse::<crate::types::ActorTokenContentType>().ok()
+    }
+    builder
+}
+
 pub(crate) fn weighted_override_correct_errors(
     mut builder: crate::types::builders::WeightedOverrideBuilder,
 ) -> crate::types::builders::WeightedOverrideBuilder {
@@ -3528,6 +3556,15 @@ pub(crate) fn invocation_configuration_correct_errors(
     }
     if builder.payload_delivery_bucket_name.is_none() {
         builder.payload_delivery_bucket_name = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn metadata_schema_entry_correct_errors(
+    mut builder: crate::types::builders::MetadataSchemaEntryBuilder,
+) -> crate::types::builders::MetadataSchemaEntryBuilder {
+    if builder.key.is_none() {
+        builder.key = Some(Default::default())
     }
     builder
 }
@@ -3714,6 +3751,24 @@ pub(crate) fn user_preference_extraction_override_correct_errors(
     }
     if builder.model_id.is_none() {
         builder.model_id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn llm_extraction_config_correct_errors(
+    mut builder: crate::types::builders::LlmExtractionConfigBuilder,
+) -> crate::types::builders::LlmExtractionConfigBuilder {
+    if builder.definition.is_none() {
+        builder.definition = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn string_validation_correct_errors(
+    mut builder: crate::types::builders::StringValidationBuilder,
+) -> crate::types::builders::StringValidationBuilder {
+    if builder.allowed_values.is_none() {
+        builder.allowed_values = Some(Default::default())
     }
     builder
 }

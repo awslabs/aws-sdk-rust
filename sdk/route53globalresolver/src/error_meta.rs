@@ -457,6 +457,7 @@ impl From<crate::operation::delete_access_token::DeleteAccessTokenError> for Err
     fn from(err: crate::operation::delete_access_token::DeleteAccessTokenError) -> Self {
         match err {
             crate::operation::delete_access_token::DeleteAccessTokenError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_access_token::DeleteAccessTokenError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::delete_access_token::DeleteAccessTokenError::InternalServerException(inner) => Error::InternalServerException(inner),
             crate::operation::delete_access_token::DeleteAccessTokenError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)

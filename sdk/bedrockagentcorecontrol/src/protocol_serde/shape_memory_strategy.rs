@@ -74,6 +74,11 @@ where
                                     .transpose()?,
                             );
                         }
+                        "memoryRecordSchema" => {
+                            builder = builder.set_memory_record_schema(crate::protocol_serde::shape_memory_record_schema::de_memory_record_schema(
+                                tokens, _value,
+                            )?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

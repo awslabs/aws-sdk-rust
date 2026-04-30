@@ -1187,6 +1187,8 @@ pub use crate::types::_pending_production_variant_summary::PendingProductionVari
 
 pub use crate::types::_deployed_image::DeployedImageBuilder;
 
+pub use crate::types::_inference_component_placement_status::InferenceComponentPlacementStatusBuilder;
+
 pub use crate::types::_inference_component_capacity_size::InferenceComponentCapacitySizeBuilder;
 
 pub use crate::types::_recommendation_metrics::RecommendationMetricsBuilder;
@@ -1323,6 +1325,8 @@ pub use crate::types::_hidden_sage_maker_image::HiddenSageMakerImageBuilder;
 
 pub use crate::types::_alarm::AlarmBuilder;
 
+pub use crate::types::_instance_pool::InstancePoolBuilder;
+
 pub use crate::types::_production_variant_managed_instance_scaling_scale_in_policy::ProductionVariantManagedInstanceScalingScaleInPolicyBuilder;
 
 pub use crate::types::_clarify_shap_baseline_config::ClarifyShapBaselineConfigBuilder;
@@ -1400,6 +1404,8 @@ pub use crate::types::_cluster_fsx_lustre_config::ClusterFsxLustreConfigBuilder;
 pub use crate::types::_cluster_fsx_open_zfs_config::ClusterFsxOpenZfsConfigBuilder;
 
 pub use crate::types::_cluster_kubernetes_taint::ClusterKubernetesTaintBuilder;
+
+pub use crate::types::_instance_pool_summary::InstancePoolSummaryBuilder;
 
 pub use crate::types::_production_variant_status::ProductionVariantStatusBuilder;
 

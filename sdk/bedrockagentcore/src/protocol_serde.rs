@@ -349,6 +349,8 @@ pub(crate) mod shape_harness_tool;
 
 pub(crate) mod shape_invoke_agent_runtime_command_request_body;
 
+pub(crate) mod shape_memory_metadata_filter_expression;
+
 pub(crate) mod shape_memory_record;
 
 pub(crate) mod shape_memory_record_create_input;
@@ -479,9 +481,15 @@ pub(crate) mod shape_live_view_stream;
 
 pub(crate) mod shape_memory_content;
 
-pub(crate) mod shape_memory_metadata_filter_expression;
+pub(crate) mod shape_memory_record_left_expression;
+
+pub(crate) mod shape_memory_record_metadata_map;
+
+pub(crate) mod shape_memory_record_metadata_value;
 
 pub(crate) mod shape_memory_record_output;
+
+pub(crate) mod shape_memory_record_right_expression;
 
 pub(crate) mod shape_memory_record_summary;
 
@@ -662,6 +670,8 @@ pub(crate) mod shape_recommendation_evaluator_reference;
 pub(crate) mod shape_session_filter_config;
 
 pub(crate) mod shape_spans;
+
+pub(crate) mod shape_string_value_list;
 
 pub(crate) mod shape_system_prompt_configuration_bundle;
 

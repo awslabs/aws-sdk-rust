@@ -3310,6 +3310,33 @@ impl From<crate::operation::get_metadata_generation_run::GetMetadataGenerationRu
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_notebook_run::GetNotebookRunError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_notebook_run::GetNotebookRunError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_notebook_run::GetNotebookRunError> for Error {
+    fn from(err: crate::operation::get_notebook_run::GetNotebookRunError) -> Self {
+        match err {
+            crate::operation::get_notebook_run::GetNotebookRunError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_notebook_run::GetNotebookRunError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_notebook_run::GetNotebookRunError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_notebook_run::GetNotebookRunError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_notebook_run::GetNotebookRunError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_notebook_run::GetNotebookRunError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::get_notebook_run::GetNotebookRunError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_project::GetProjectError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -4332,6 +4359,32 @@ impl From<crate::operation::list_metadata_generation_runs::ListMetadataGeneratio
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_notebook_runs::ListNotebookRunsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_notebook_runs::ListNotebookRunsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_notebook_runs::ListNotebookRunsError> for Error {
+    fn from(err: crate::operation::list_notebook_runs::ListNotebookRunsError) -> Self {
+        match err {
+            crate::operation::list_notebook_runs::ListNotebookRunsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_notebook_runs::ListNotebookRunsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_notebook_runs::ListNotebookRunsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_notebook_runs::ListNotebookRunsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_notebook_runs::ListNotebookRunsError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::list_notebook_runs::ListNotebookRunsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_notifications::ListNotificationsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -5306,6 +5359,65 @@ impl From<crate::operation::start_metadata_generation_run::StartMetadataGenerati
                 Error::UnauthorizedException(inner)
             }
             crate::operation::start_metadata_generation_run::StartMetadataGenerationRunError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_notebook_run::StartNotebookRunError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_notebook_run::StartNotebookRunError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::start_notebook_run::StartNotebookRunError> for Error {
+    fn from(err: crate::operation::start_notebook_run::StartNotebookRunError) -> Self {
+        match err {
+            crate::operation::start_notebook_run::StartNotebookRunError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::start_notebook_run::StartNotebookRunError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::start_notebook_run::StartNotebookRunError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::start_notebook_run::StartNotebookRunError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::start_notebook_run::StartNotebookRunError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::start_notebook_run::StartNotebookRunError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::start_notebook_run::StartNotebookRunError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::start_notebook_run::StartNotebookRunError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::start_notebook_run::StartNotebookRunError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::stop_notebook_run::StopNotebookRunError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::stop_notebook_run::StopNotebookRunError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::stop_notebook_run::StopNotebookRunError> for Error {
+    fn from(err: crate::operation::stop_notebook_run::StopNotebookRunError) -> Self {
+        match err {
+            crate::operation::stop_notebook_run::StopNotebookRunError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::stop_notebook_run::StopNotebookRunError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::stop_notebook_run::StopNotebookRunError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::stop_notebook_run::StopNotebookRunError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::stop_notebook_run::StopNotebookRunError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::stop_notebook_run::StopNotebookRunError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::stop_notebook_run::StopNotebookRunError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::stop_notebook_run::StopNotebookRunError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
