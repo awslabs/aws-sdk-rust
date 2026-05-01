@@ -31,7 +31,7 @@ impl crate::operation::start_query::builders::StartQueryInputBuilder {
 /// <li>
 /// <p>Either exactly one of the following parameters: <code>logGroupName</code>, <code>logGroupNames</code>, or <code>logGroupIdentifiers</code></p></li>
 /// <li>
-/// <p>Or the <code>queryString</code> must include a <code>SOURCE</code> command to select log groups for the query. The <code>SOURCE</code> command can select log groups based on log group name prefix, account ID, and log class, or select data sources using dataSource syntax in LogsQL, PPL, and SQL.</p>
+/// <p>Or the <code>queryString</code> must include a <code>SOURCE</code> command to select log groups for the query. The <code>SOURCE</code> command can select log groups based on log group name prefix, account ID, and log class, or select data sources using dataSource syntax in LogsQL, PPL, and SQL. In LogsQL, the <code>SOURCE</code> command also supports filtering by log group tags.</p>
 /// <p>For more information about the <code>SOURCE</code> command, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_QuerySyntax-Source.html">SOURCE</a>.</p></li>
 /// </ul>
 /// </note>

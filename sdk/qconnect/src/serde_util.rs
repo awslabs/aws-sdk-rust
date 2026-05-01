@@ -1813,6 +1813,15 @@ pub(crate) fn hierarchical_chunking_level_configuration_correct_errors(
     builder
 }
 
+pub(crate) fn span_reasoning_value_correct_errors(
+    mut builder: crate::types::builders::SpanReasoningValueBuilder,
+) -> crate::types::builders::SpanReasoningValueBuilder {
+    if builder.value.is_none() {
+        builder.value = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn span_text_value_correct_errors(
     mut builder: crate::types::builders::SpanTextValueBuilder,
 ) -> crate::types::builders::SpanTextValueBuilder {

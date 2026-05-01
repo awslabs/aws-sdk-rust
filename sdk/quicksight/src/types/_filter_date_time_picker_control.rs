@@ -22,6 +22,8 @@ pub struct FilterDateTimePickerControl {
     pub r#type: ::std::option::Option<crate::types::SheetControlDateTimePickerType>,
     /// <p>The visibility configurationof the Apply button on a <code>DateTimePickerControl</code>.</p>
     pub commit_mode: ::std::option::Option<crate::types::CommitMode>,
+    /// <p>The title text format configuration for the control.</p>
+    pub control_title_format_text: ::std::option::Option<crate::types::ControlTitleFormatText>,
 }
 impl FilterDateTimePickerControl {
     /// <p>The ID of the <code>FilterDateTimePickerControl</code>.</p>
@@ -57,6 +59,10 @@ impl FilterDateTimePickerControl {
     pub fn commit_mode(&self) -> ::std::option::Option<&crate::types::CommitMode> {
         self.commit_mode.as_ref()
     }
+    /// <p>The title text format configuration for the control.</p>
+    pub fn control_title_format_text(&self) -> ::std::option::Option<&crate::types::ControlTitleFormatText> {
+        self.control_title_format_text.as_ref()
+    }
 }
 impl FilterDateTimePickerControl {
     /// Creates a new builder-style object to manufacture [`FilterDateTimePickerControl`](crate::types::FilterDateTimePickerControl).
@@ -75,6 +81,7 @@ pub struct FilterDateTimePickerControlBuilder {
     pub(crate) display_options: ::std::option::Option<crate::types::DateTimePickerControlDisplayOptions>,
     pub(crate) r#type: ::std::option::Option<crate::types::SheetControlDateTimePickerType>,
     pub(crate) commit_mode: ::std::option::Option<crate::types::CommitMode>,
+    pub(crate) control_title_format_text: ::std::option::Option<crate::types::ControlTitleFormatText>,
 }
 impl FilterDateTimePickerControlBuilder {
     /// <p>The ID of the <code>FilterDateTimePickerControl</code>.</p>
@@ -93,7 +100,6 @@ impl FilterDateTimePickerControlBuilder {
         &self.filter_control_id
     }
     /// <p>The title of the <code>FilterDateTimePickerControl</code>.</p>
-    /// This field is required.
     pub fn title(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.title = ::std::option::Option::Some(input.into());
         self
@@ -182,10 +188,23 @@ impl FilterDateTimePickerControlBuilder {
     pub fn get_commit_mode(&self) -> &::std::option::Option<crate::types::CommitMode> {
         &self.commit_mode
     }
+    /// <p>The title text format configuration for the control.</p>
+    pub fn control_title_format_text(mut self, input: crate::types::ControlTitleFormatText) -> Self {
+        self.control_title_format_text = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The title text format configuration for the control.</p>
+    pub fn set_control_title_format_text(mut self, input: ::std::option::Option<crate::types::ControlTitleFormatText>) -> Self {
+        self.control_title_format_text = input;
+        self
+    }
+    /// <p>The title text format configuration for the control.</p>
+    pub fn get_control_title_format_text(&self) -> &::std::option::Option<crate::types::ControlTitleFormatText> {
+        &self.control_title_format_text
+    }
     /// Consumes the builder and constructs a [`FilterDateTimePickerControl`](crate::types::FilterDateTimePickerControl).
     /// This method will fail if any of the following fields are not set:
     /// - [`filter_control_id`](crate::types::builders::FilterDateTimePickerControlBuilder::filter_control_id)
-    /// - [`title`](crate::types::builders::FilterDateTimePickerControlBuilder::title)
     /// - [`source_filter_id`](crate::types::builders::FilterDateTimePickerControlBuilder::source_filter_id)
     pub fn build(self) -> ::std::result::Result<crate::types::FilterDateTimePickerControl, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::FilterDateTimePickerControl {
@@ -195,12 +214,7 @@ impl FilterDateTimePickerControlBuilder {
                     "filter_control_id was not specified but it is required when building FilterDateTimePickerControl",
                 )
             })?,
-            title: self.title.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "title",
-                    "title was not specified but it is required when building FilterDateTimePickerControl",
-                )
-            })?,
+            title: self.title.unwrap_or_default(),
             source_filter_id: self.source_filter_id.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "source_filter_id",
@@ -210,6 +224,7 @@ impl FilterDateTimePickerControlBuilder {
             display_options: self.display_options,
             r#type: self.r#type,
             commit_mode: self.commit_mode,
+            control_title_format_text: self.control_title_format_text,
         })
     }
 }

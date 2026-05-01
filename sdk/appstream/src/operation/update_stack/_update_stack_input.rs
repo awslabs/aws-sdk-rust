@@ -32,6 +32,8 @@ pub struct UpdateStackInput {
     pub streaming_experience_settings: ::std::option::Option<crate::types::StreamingExperienceSettings>,
     /// <p>Configuration for bidirectional URL redirection between the streaming session and the local client. Use HostToClient to redirect URLs from the remote desktop to the local browser.</p>
     pub content_redirection: ::std::option::Option<crate::types::ContentRedirection>,
+    /// <p>The configuration for agent access on the stack. Specify this to update agent access settings. To remove agent access, use AttributesToDelete with the AGENT_ACCESS_CONFIG value.</p>
+    pub agent_access_config: ::std::option::Option<crate::types::AgentAccessConfigForUpdate>,
 }
 impl UpdateStackInput {
     /// <p>The stack name to display.</p>
@@ -101,6 +103,10 @@ impl UpdateStackInput {
     pub fn content_redirection(&self) -> ::std::option::Option<&crate::types::ContentRedirection> {
         self.content_redirection.as_ref()
     }
+    /// <p>The configuration for agent access on the stack. Specify this to update agent access settings. To remove agent access, use AttributesToDelete with the AGENT_ACCESS_CONFIG value.</p>
+    pub fn agent_access_config(&self) -> ::std::option::Option<&crate::types::AgentAccessConfigForUpdate> {
+        self.agent_access_config.as_ref()
+    }
 }
 impl UpdateStackInput {
     /// Creates a new builder-style object to manufacture [`UpdateStackInput`](crate::operation::update_stack::UpdateStackInput).
@@ -127,6 +133,7 @@ pub struct UpdateStackInputBuilder {
     pub(crate) embed_host_domains: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) streaming_experience_settings: ::std::option::Option<crate::types::StreamingExperienceSettings>,
     pub(crate) content_redirection: ::std::option::Option<crate::types::ContentRedirection>,
+    pub(crate) agent_access_config: ::std::option::Option<crate::types::AgentAccessConfigForUpdate>,
 }
 impl UpdateStackInputBuilder {
     /// <p>The stack name to display.</p>
@@ -359,6 +366,20 @@ impl UpdateStackInputBuilder {
     pub fn get_content_redirection(&self) -> &::std::option::Option<crate::types::ContentRedirection> {
         &self.content_redirection
     }
+    /// <p>The configuration for agent access on the stack. Specify this to update agent access settings. To remove agent access, use AttributesToDelete with the AGENT_ACCESS_CONFIG value.</p>
+    pub fn agent_access_config(mut self, input: crate::types::AgentAccessConfigForUpdate) -> Self {
+        self.agent_access_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The configuration for agent access on the stack. Specify this to update agent access settings. To remove agent access, use AttributesToDelete with the AGENT_ACCESS_CONFIG value.</p>
+    pub fn set_agent_access_config(mut self, input: ::std::option::Option<crate::types::AgentAccessConfigForUpdate>) -> Self {
+        self.agent_access_config = input;
+        self
+    }
+    /// <p>The configuration for agent access on the stack. Specify this to update agent access settings. To remove agent access, use AttributesToDelete with the AGENT_ACCESS_CONFIG value.</p>
+    pub fn get_agent_access_config(&self) -> &::std::option::Option<crate::types::AgentAccessConfigForUpdate> {
+        &self.agent_access_config
+    }
     /// Consumes the builder and constructs a [`UpdateStackInput`](crate::operation::update_stack::UpdateStackInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::update_stack::UpdateStackInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_stack::UpdateStackInput {
@@ -376,6 +397,7 @@ impl UpdateStackInputBuilder {
             embed_host_domains: self.embed_host_domains,
             streaming_experience_settings: self.streaming_experience_settings,
             content_redirection: self.content_redirection,
+            agent_access_config: self.agent_access_config,
         })
     }
 }

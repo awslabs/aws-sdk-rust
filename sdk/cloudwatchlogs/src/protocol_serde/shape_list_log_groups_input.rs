@@ -51,5 +51,17 @@ pub fn ser_list_log_groups_input_input(
         }
         array_14.finish();
     }
+    if let Some(var_16) = &input.log_group_tags {
+        let mut array_17 = object.key("logGroupTags").start_array();
+        for item_18 in var_16 {
+            {
+                #[allow(unused_mut)]
+                let mut object_19 = array_17.value().start_object();
+                crate::protocol_serde::shape_tag_filter::ser_tag_filter(&mut object_19, item_18)?;
+                object_19.finish();
+            }
+        }
+        array_17.finish();
+    }
     Ok(())
 }

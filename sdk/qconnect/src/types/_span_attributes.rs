@@ -72,6 +72,8 @@ pub struct SpanAttributes {
     pub prompt_name: ::std::option::Option<::std::string::String>,
     /// <p>AI prompt version number</p>
     pub prompt_version: ::std::option::Option<i32>,
+    /// Time to first token in milliseconds, measured from when Amazon Bedrock was invoked to when the first token was returned
+    pub time_to_first_token_ms: ::std::option::Option<i32>,
 }
 impl SpanAttributes {
     /// <p>Action being performed</p>
@@ -218,6 +220,10 @@ impl SpanAttributes {
     pub fn prompt_version(&self) -> ::std::option::Option<i32> {
         self.prompt_version
     }
+    /// Time to first token in milliseconds, measured from when Amazon Bedrock was invoked to when the first token was returned
+    pub fn time_to_first_token_ms(&self) -> ::std::option::Option<i32> {
+        self.time_to_first_token_ms
+    }
 }
 impl SpanAttributes {
     /// Creates a new builder-style object to manufacture [`SpanAttributes`](crate::types::SpanAttributes).
@@ -264,6 +270,7 @@ pub struct SpanAttributesBuilder {
     pub(crate) prompt_type: ::std::option::Option<crate::types::AiPromptType>,
     pub(crate) prompt_name: ::std::option::Option<::std::string::String>,
     pub(crate) prompt_version: ::std::option::Option<i32>,
+    pub(crate) time_to_first_token_ms: ::std::option::Option<i32>,
 }
 impl SpanAttributesBuilder {
     /// <p>Action being performed</p>
@@ -766,6 +773,20 @@ impl SpanAttributesBuilder {
     pub fn get_prompt_version(&self) -> &::std::option::Option<i32> {
         &self.prompt_version
     }
+    /// Time to first token in milliseconds, measured from when Amazon Bedrock was invoked to when the first token was returned
+    pub fn time_to_first_token_ms(mut self, input: i32) -> Self {
+        self.time_to_first_token_ms = ::std::option::Option::Some(input);
+        self
+    }
+    /// Time to first token in milliseconds, measured from when Amazon Bedrock was invoked to when the first token was returned
+    pub fn set_time_to_first_token_ms(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.time_to_first_token_ms = input;
+        self
+    }
+    /// Time to first token in milliseconds, measured from when Amazon Bedrock was invoked to when the first token was returned
+    pub fn get_time_to_first_token_ms(&self) -> &::std::option::Option<i32> {
+        &self.time_to_first_token_ms
+    }
     /// Consumes the builder and constructs a [`SpanAttributes`](crate::types::SpanAttributes).
     pub fn build(self) -> crate::types::SpanAttributes {
         crate::types::SpanAttributes {
@@ -803,6 +824,7 @@ impl SpanAttributesBuilder {
             prompt_type: self.prompt_type,
             prompt_name: self.prompt_name,
             prompt_version: self.prompt_version,
+            time_to_first_token_ms: self.time_to_first_token_ms,
         }
     }
 }

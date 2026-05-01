@@ -26,6 +26,8 @@ pub struct FilterListControl {
     pub cascading_control_configuration: ::std::option::Option<crate::types::CascadingControlConfiguration>,
     /// <p>The sort configuration for the values displayed in the control. Only one sort configuration can be applied per control.</p>
     pub control_sort_configurations: ::std::option::Option<::std::vec::Vec<crate::types::ControlSortConfiguration>>,
+    /// <p>The title text format configuration for the control.</p>
+    pub control_title_format_text: ::std::option::Option<crate::types::ControlTitleFormatText>,
 }
 impl FilterListControl {
     /// <p>The ID of the <code>FilterListControl</code>.</p>
@@ -71,6 +73,10 @@ impl FilterListControl {
     pub fn control_sort_configurations(&self) -> &[crate::types::ControlSortConfiguration] {
         self.control_sort_configurations.as_deref().unwrap_or_default()
     }
+    /// <p>The title text format configuration for the control.</p>
+    pub fn control_title_format_text(&self) -> ::std::option::Option<&crate::types::ControlTitleFormatText> {
+        self.control_title_format_text.as_ref()
+    }
 }
 impl FilterListControl {
     /// Creates a new builder-style object to manufacture [`FilterListControl`](crate::types::FilterListControl).
@@ -91,6 +97,7 @@ pub struct FilterListControlBuilder {
     pub(crate) selectable_values: ::std::option::Option<crate::types::FilterSelectableValues>,
     pub(crate) cascading_control_configuration: ::std::option::Option<crate::types::CascadingControlConfiguration>,
     pub(crate) control_sort_configurations: ::std::option::Option<::std::vec::Vec<crate::types::ControlSortConfiguration>>,
+    pub(crate) control_title_format_text: ::std::option::Option<crate::types::ControlTitleFormatText>,
 }
 impl FilterListControlBuilder {
     /// <p>The ID of the <code>FilterListControl</code>.</p>
@@ -109,7 +116,6 @@ impl FilterListControlBuilder {
         &self.filter_control_id
     }
     /// <p>The title of the <code>FilterListControl</code>.</p>
-    /// This field is required.
     pub fn title(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.title = ::std::option::Option::Some(input.into());
         self
@@ -232,10 +238,23 @@ impl FilterListControlBuilder {
     pub fn get_control_sort_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ControlSortConfiguration>> {
         &self.control_sort_configurations
     }
+    /// <p>The title text format configuration for the control.</p>
+    pub fn control_title_format_text(mut self, input: crate::types::ControlTitleFormatText) -> Self {
+        self.control_title_format_text = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The title text format configuration for the control.</p>
+    pub fn set_control_title_format_text(mut self, input: ::std::option::Option<crate::types::ControlTitleFormatText>) -> Self {
+        self.control_title_format_text = input;
+        self
+    }
+    /// <p>The title text format configuration for the control.</p>
+    pub fn get_control_title_format_text(&self) -> &::std::option::Option<crate::types::ControlTitleFormatText> {
+        &self.control_title_format_text
+    }
     /// Consumes the builder and constructs a [`FilterListControl`](crate::types::FilterListControl).
     /// This method will fail if any of the following fields are not set:
     /// - [`filter_control_id`](crate::types::builders::FilterListControlBuilder::filter_control_id)
-    /// - [`title`](crate::types::builders::FilterListControlBuilder::title)
     /// - [`source_filter_id`](crate::types::builders::FilterListControlBuilder::source_filter_id)
     pub fn build(self) -> ::std::result::Result<crate::types::FilterListControl, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::FilterListControl {
@@ -245,12 +264,7 @@ impl FilterListControlBuilder {
                     "filter_control_id was not specified but it is required when building FilterListControl",
                 )
             })?,
-            title: self.title.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "title",
-                    "title was not specified but it is required when building FilterListControl",
-                )
-            })?,
+            title: self.title.unwrap_or_default(),
             source_filter_id: self.source_filter_id.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "source_filter_id",
@@ -262,6 +276,7 @@ impl FilterListControlBuilder {
             selectable_values: self.selectable_values,
             cascading_control_configuration: self.cascading_control_configuration,
             control_sort_configurations: self.control_sort_configurations,
+            control_title_format_text: self.control_title_format_text,
         })
     }
 }

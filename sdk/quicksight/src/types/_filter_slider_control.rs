@@ -26,6 +26,8 @@ pub struct FilterSliderControl {
     pub minimum_value: f64,
     /// <p>The number of increments that the slider bar is divided into.</p>
     pub step_size: f64,
+    /// <p>The title text format configuration for the control.</p>
+    pub control_title_format_text: ::std::option::Option<crate::types::ControlTitleFormatText>,
 }
 impl FilterSliderControl {
     /// <p>The ID of the <code>FilterSliderControl</code>.</p>
@@ -69,6 +71,10 @@ impl FilterSliderControl {
     pub fn step_size(&self) -> f64 {
         self.step_size
     }
+    /// <p>The title text format configuration for the control.</p>
+    pub fn control_title_format_text(&self) -> ::std::option::Option<&crate::types::ControlTitleFormatText> {
+        self.control_title_format_text.as_ref()
+    }
 }
 impl FilterSliderControl {
     /// Creates a new builder-style object to manufacture [`FilterSliderControl`](crate::types::FilterSliderControl).
@@ -89,6 +95,7 @@ pub struct FilterSliderControlBuilder {
     pub(crate) maximum_value: ::std::option::Option<f64>,
     pub(crate) minimum_value: ::std::option::Option<f64>,
     pub(crate) step_size: ::std::option::Option<f64>,
+    pub(crate) control_title_format_text: ::std::option::Option<crate::types::ControlTitleFormatText>,
 }
 impl FilterSliderControlBuilder {
     /// <p>The ID of the <code>FilterSliderControl</code>.</p>
@@ -107,7 +114,6 @@ impl FilterSliderControlBuilder {
         &self.filter_control_id
     }
     /// <p>The title of the <code>FilterSliderControl</code>.</p>
-    /// This field is required.
     pub fn title(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.title = ::std::option::Option::Some(input.into());
         self
@@ -227,10 +233,23 @@ impl FilterSliderControlBuilder {
     pub fn get_step_size(&self) -> &::std::option::Option<f64> {
         &self.step_size
     }
+    /// <p>The title text format configuration for the control.</p>
+    pub fn control_title_format_text(mut self, input: crate::types::ControlTitleFormatText) -> Self {
+        self.control_title_format_text = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The title text format configuration for the control.</p>
+    pub fn set_control_title_format_text(mut self, input: ::std::option::Option<crate::types::ControlTitleFormatText>) -> Self {
+        self.control_title_format_text = input;
+        self
+    }
+    /// <p>The title text format configuration for the control.</p>
+    pub fn get_control_title_format_text(&self) -> &::std::option::Option<crate::types::ControlTitleFormatText> {
+        &self.control_title_format_text
+    }
     /// Consumes the builder and constructs a [`FilterSliderControl`](crate::types::FilterSliderControl).
     /// This method will fail if any of the following fields are not set:
     /// - [`filter_control_id`](crate::types::builders::FilterSliderControlBuilder::filter_control_id)
-    /// - [`title`](crate::types::builders::FilterSliderControlBuilder::title)
     /// - [`source_filter_id`](crate::types::builders::FilterSliderControlBuilder::source_filter_id)
     pub fn build(self) -> ::std::result::Result<crate::types::FilterSliderControl, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::FilterSliderControl {
@@ -240,12 +259,7 @@ impl FilterSliderControlBuilder {
                     "filter_control_id was not specified but it is required when building FilterSliderControl",
                 )
             })?,
-            title: self.title.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "title",
-                    "title was not specified but it is required when building FilterSliderControl",
-                )
-            })?,
+            title: self.title.unwrap_or_default(),
             source_filter_id: self.source_filter_id.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "source_filter_id",
@@ -257,6 +271,7 @@ impl FilterSliderControlBuilder {
             maximum_value: self.maximum_value.unwrap_or_default(),
             minimum_value: self.minimum_value.unwrap_or_default(),
             step_size: self.step_size.unwrap_or_default(),
+            control_title_format_text: self.control_title_format_text,
         })
     }
 }

@@ -555,6 +555,8 @@ pub use crate::types::_visual_title_font_configuration::VisualTitleFontConfigura
 
 pub use crate::types::_visual_subtitle_font_configuration::VisualSubtitleFontConfigurationBuilder;
 
+pub use crate::types::_control_title_font_configuration::ControlTitleFontConfigurationBuilder;
+
 pub use crate::types::_dataset_metadata::DatasetMetadataBuilder;
 
 pub use crate::types::_sheet::SheetBuilder;
@@ -1104,6 +1106,8 @@ pub use crate::types::_topic_constant_value::TopicConstantValueBuilder;
 pub use crate::types::_anchor::AnchorBuilder;
 
 pub use crate::types::_date_time_picker_control_display_options::DateTimePickerControlDisplayOptionsBuilder;
+
+pub use crate::types::_control_title_format_text::ControlTitleFormatTextBuilder;
 
 pub use crate::types::_list_control_display_options::ListControlDisplayOptionsBuilder;
 

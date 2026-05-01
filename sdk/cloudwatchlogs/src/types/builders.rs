@@ -93,6 +93,8 @@ pub use crate::types::_integration_summary::IntegrationSummaryBuilder;
 
 pub use crate::types::_anomaly_detector::AnomalyDetectorBuilder;
 
+pub use crate::types::_tag_filter::TagFilterBuilder;
+
 pub use crate::types::_log_group_summary::LogGroupSummaryBuilder;
 
 pub use crate::types::_scheduled_query_summary::ScheduledQuerySummaryBuilder;

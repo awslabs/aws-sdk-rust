@@ -8,6 +8,8 @@ pub struct DefaultFilterControlConfiguration {
     pub title: ::std::string::String,
     /// <p>The control option for the <code>DefaultFilterControlConfiguration</code>.</p>
     pub control_options: ::std::option::Option<crate::types::DefaultFilterControlOptions>,
+    /// <p>The title text format configuration for the default filter control.</p>
+    pub control_title_format_text: ::std::option::Option<crate::types::ControlTitleFormatText>,
 }
 impl DefaultFilterControlConfiguration {
     /// <p>The title of the <code>DefaultFilterControlConfiguration</code>. This title is shared by all controls that are tied to this filter.</p>
@@ -18,6 +20,10 @@ impl DefaultFilterControlConfiguration {
     /// <p>The control option for the <code>DefaultFilterControlConfiguration</code>.</p>
     pub fn control_options(&self) -> ::std::option::Option<&crate::types::DefaultFilterControlOptions> {
         self.control_options.as_ref()
+    }
+    /// <p>The title text format configuration for the default filter control.</p>
+    pub fn control_title_format_text(&self) -> ::std::option::Option<&crate::types::ControlTitleFormatText> {
+        self.control_title_format_text.as_ref()
     }
 }
 impl DefaultFilterControlConfiguration {
@@ -33,10 +39,10 @@ impl DefaultFilterControlConfiguration {
 pub struct DefaultFilterControlConfigurationBuilder {
     pub(crate) title: ::std::option::Option<::std::string::String>,
     pub(crate) control_options: ::std::option::Option<crate::types::DefaultFilterControlOptions>,
+    pub(crate) control_title_format_text: ::std::option::Option<crate::types::ControlTitleFormatText>,
 }
 impl DefaultFilterControlConfigurationBuilder {
     /// <p>The title of the <code>DefaultFilterControlConfiguration</code>. This title is shared by all controls that are tied to this filter.</p>
-    /// This field is required.
     pub fn title(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.title = ::std::option::Option::Some(input.into());
         self
@@ -65,18 +71,26 @@ impl DefaultFilterControlConfigurationBuilder {
     pub fn get_control_options(&self) -> &::std::option::Option<crate::types::DefaultFilterControlOptions> {
         &self.control_options
     }
+    /// <p>The title text format configuration for the default filter control.</p>
+    pub fn control_title_format_text(mut self, input: crate::types::ControlTitleFormatText) -> Self {
+        self.control_title_format_text = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The title text format configuration for the default filter control.</p>
+    pub fn set_control_title_format_text(mut self, input: ::std::option::Option<crate::types::ControlTitleFormatText>) -> Self {
+        self.control_title_format_text = input;
+        self
+    }
+    /// <p>The title text format configuration for the default filter control.</p>
+    pub fn get_control_title_format_text(&self) -> &::std::option::Option<crate::types::ControlTitleFormatText> {
+        &self.control_title_format_text
+    }
     /// Consumes the builder and constructs a [`DefaultFilterControlConfiguration`](crate::types::DefaultFilterControlConfiguration).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`title`](crate::types::builders::DefaultFilterControlConfigurationBuilder::title)
-    pub fn build(self) -> ::std::result::Result<crate::types::DefaultFilterControlConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::DefaultFilterControlConfiguration {
-            title: self.title.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "title",
-                    "title was not specified but it is required when building DefaultFilterControlConfiguration",
-                )
-            })?,
+    pub fn build(self) -> crate::types::DefaultFilterControlConfiguration {
+        crate::types::DefaultFilterControlConfiguration {
+            title: self.title.unwrap_or_default(),
             control_options: self.control_options,
-        })
+            control_title_format_text: self.control_title_format_text,
+        }
     }
 }

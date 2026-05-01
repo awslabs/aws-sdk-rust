@@ -14,6 +14,8 @@ pub struct FilterTextAreaControl {
     pub delimiter: ::std::option::Option<::std::string::String>,
     /// <p>The display options of a control.</p>
     pub display_options: ::std::option::Option<crate::types::TextAreaControlDisplayOptions>,
+    /// <p>The title text format configuration for the control.</p>
+    pub control_title_format_text: ::std::option::Option<crate::types::ControlTitleFormatText>,
 }
 impl FilterTextAreaControl {
     /// <p>The ID of the <code>FilterTextAreaControl</code>.</p>
@@ -39,6 +41,10 @@ impl FilterTextAreaControl {
     pub fn display_options(&self) -> ::std::option::Option<&crate::types::TextAreaControlDisplayOptions> {
         self.display_options.as_ref()
     }
+    /// <p>The title text format configuration for the control.</p>
+    pub fn control_title_format_text(&self) -> ::std::option::Option<&crate::types::ControlTitleFormatText> {
+        self.control_title_format_text.as_ref()
+    }
 }
 impl FilterTextAreaControl {
     /// Creates a new builder-style object to manufacture [`FilterTextAreaControl`](crate::types::FilterTextAreaControl).
@@ -56,6 +62,7 @@ pub struct FilterTextAreaControlBuilder {
     pub(crate) source_filter_id: ::std::option::Option<::std::string::String>,
     pub(crate) delimiter: ::std::option::Option<::std::string::String>,
     pub(crate) display_options: ::std::option::Option<crate::types::TextAreaControlDisplayOptions>,
+    pub(crate) control_title_format_text: ::std::option::Option<crate::types::ControlTitleFormatText>,
 }
 impl FilterTextAreaControlBuilder {
     /// <p>The ID of the <code>FilterTextAreaControl</code>.</p>
@@ -74,7 +81,6 @@ impl FilterTextAreaControlBuilder {
         &self.filter_control_id
     }
     /// <p>The title of the <code>FilterTextAreaControl</code>.</p>
-    /// This field is required.
     pub fn title(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.title = ::std::option::Option::Some(input.into());
         self
@@ -131,10 +137,23 @@ impl FilterTextAreaControlBuilder {
     pub fn get_display_options(&self) -> &::std::option::Option<crate::types::TextAreaControlDisplayOptions> {
         &self.display_options
     }
+    /// <p>The title text format configuration for the control.</p>
+    pub fn control_title_format_text(mut self, input: crate::types::ControlTitleFormatText) -> Self {
+        self.control_title_format_text = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The title text format configuration for the control.</p>
+    pub fn set_control_title_format_text(mut self, input: ::std::option::Option<crate::types::ControlTitleFormatText>) -> Self {
+        self.control_title_format_text = input;
+        self
+    }
+    /// <p>The title text format configuration for the control.</p>
+    pub fn get_control_title_format_text(&self) -> &::std::option::Option<crate::types::ControlTitleFormatText> {
+        &self.control_title_format_text
+    }
     /// Consumes the builder and constructs a [`FilterTextAreaControl`](crate::types::FilterTextAreaControl).
     /// This method will fail if any of the following fields are not set:
     /// - [`filter_control_id`](crate::types::builders::FilterTextAreaControlBuilder::filter_control_id)
-    /// - [`title`](crate::types::builders::FilterTextAreaControlBuilder::title)
     /// - [`source_filter_id`](crate::types::builders::FilterTextAreaControlBuilder::source_filter_id)
     pub fn build(self) -> ::std::result::Result<crate::types::FilterTextAreaControl, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::FilterTextAreaControl {
@@ -144,12 +163,7 @@ impl FilterTextAreaControlBuilder {
                     "filter_control_id was not specified but it is required when building FilterTextAreaControl",
                 )
             })?,
-            title: self.title.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "title",
-                    "title was not specified but it is required when building FilterTextAreaControl",
-                )
-            })?,
+            title: self.title.unwrap_or_default(),
             source_filter_id: self.source_filter_id.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "source_filter_id",
@@ -158,6 +172,7 @@ impl FilterTextAreaControlBuilder {
             })?,
             delimiter: self.delimiter,
             display_options: self.display_options,
+            control_title_format_text: self.control_title_format_text,
         })
     }
 }

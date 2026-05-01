@@ -665,6 +665,8 @@ pub(crate) mod shape_subscription_filters;
 
 pub(crate) mod shape_suppression_period;
 
+pub(crate) mod shape_tag_filter;
+
 pub(crate) mod shape_tags;
 
 pub(crate) mod shape_transformed_logs;

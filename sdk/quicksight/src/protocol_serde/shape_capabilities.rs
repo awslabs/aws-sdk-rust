@@ -666,6 +666,12 @@ pub fn ser_capabilities(
     if let Some(var_221) = &input.generate_analyses {
         object.key("GenerateAnalyses").string(var_221.as_str());
     }
+    if let Some(var_222) = &input.story {
+        object.key("Story").string(var_222.as_str());
+    }
+    if let Some(var_223) = &input.scenario {
+        object.key("Scenario").string(var_223.as_str());
+    }
     Ok(())
 }
 
@@ -2227,6 +2233,20 @@ where
                         }
                         "GenerateAnalyses" => {
                             builder = builder.set_generate_analyses(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "Story" => {
+                            builder = builder.set_story(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "Scenario" => {
+                            builder = builder.set_scenario(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
                                     .transpose()?,

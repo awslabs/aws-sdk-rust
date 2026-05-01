@@ -18,6 +18,9 @@ where
                         "rules" => {
                             builder = builder.set_rules(crate::protocol_serde::shape_rule_condition_list::de_rule_condition_list(tokens, _value)?);
                         }
+                        "matchingConfig" => {
+                            builder = builder.set_matching_config(crate::protocol_serde::shape_matching_config::de_matching_config(tokens, _value)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {
@@ -54,6 +57,12 @@ pub fn ser_rule_condition_properties(
             }
         }
         array_1.finish();
+    }
+    if let Some(var_4) = &input.matching_config {
+        #[allow(unused_mut)]
+        let mut object_5 = object.key("matchingConfig").start_object();
+        crate::protocol_serde::shape_matching_config::ser_matching_config(&mut object_5, var_4)?;
+        object_5.finish();
     }
     Ok(())
 }

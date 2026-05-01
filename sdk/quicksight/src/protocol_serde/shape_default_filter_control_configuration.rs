@@ -12,6 +12,12 @@ pub fn ser_default_filter_control_configuration(
         crate::protocol_serde::shape_default_filter_control_options::ser_default_filter_control_options(&mut object_2, var_1)?;
         object_2.finish();
     }
+    if let Some(var_3) = &input.control_title_format_text {
+        #[allow(unused_mut)]
+        let mut object_4 = object.key("ControlTitleFormatText").start_object();
+        crate::protocol_serde::shape_control_title_format_text::ser_control_title_format_text(&mut object_4, var_3)?;
+        object_4.finish();
+    }
     Ok(())
 }
 
@@ -43,6 +49,11 @@ where
                                 crate::protocol_serde::shape_default_filter_control_options::de_default_filter_control_options(tokens, _value)?,
                             );
                         }
+                        "ControlTitleFormatText" => {
+                            builder = builder.set_control_title_format_text(
+                                crate::protocol_serde::shape_control_title_format_text::de_control_title_format_text(tokens, _value)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {
@@ -53,9 +64,7 @@ where
                 }
             }
             Ok(Some(
-                crate::serde_util::default_filter_control_configuration_correct_errors(builder)
-                    .build()
-                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+                crate::serde_util::default_filter_control_configuration_correct_errors(builder).build(),
             ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(

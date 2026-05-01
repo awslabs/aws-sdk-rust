@@ -22,7 +22,7 @@ impl crate::operation::get_o_tel_enrichment::builders::GetOTelEnrichmentInputBui
 }
 /// Fluent builder constructing a request to `GetOTelEnrichment`.
 ///
-/// <p>Returns the current status of vended metric enrichment for the account, including whether CloudWatch vended metrics are enriched with resource ARN and resource tag labels and queryable using PromQL. For the list of supported resources, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/UsingResourceTagsForTelemetry.html">Supported AWS infrastructure metrics</a>.</p>
+/// <p>Returns the current status of vended metric enrichment for the account, including whether CloudWatch vended metrics are enriched with resource ARN and resource tag labels and queryable using PromQL. For the list of supported resources, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/UsingResourceTagsForTelemetry.html">Supported Amazon Web Services infrastructure metrics</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetOTelEnrichmentFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

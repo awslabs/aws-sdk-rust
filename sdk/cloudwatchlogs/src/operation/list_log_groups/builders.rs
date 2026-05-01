@@ -23,7 +23,7 @@ impl crate::operation::list_log_groups::builders::ListLogGroupsInputBuilder {
 /// Fluent builder constructing a request to `ListLogGroups`.
 ///
 /// <p>Returns a list of log groups in the Region in your account. If you are performing this action in a monitoring account, you can choose to also return log groups from source accounts that are linked to the monitoring account. For more information about using cross-account observability to set up monitoring accounts and source accounts, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Unified-Cross-Account.html"> CloudWatch cross-account observability</a>.</p>
-/// <p>You can optionally filter the list by log group class, by using regular expressions in your request to match strings in the log group names, by using the fieldIndexes parameter to filter log groups based on which field indexes are configured, by using the dataSources parameter to filter log groups by data source types, and by using the fieldIndexNames parameter to filter by specific field index names.</p>
+/// <p>You can optionally filter the results by log group class, log group name pattern, field indexes, data sources, field index names, or log group tags. If you specify more than one filter type, the results include log groups that satisfy all filters.</p>
 /// <p>This operation is paginated. By default, your first use of this operation returns 50 results, and includes a token to use in a subsequent operation to return more results.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListLogGroupsFluentBuilder {
@@ -269,5 +269,24 @@ impl ListLogGroupsFluentBuilder {
     /// <p>An array of field index names to filter log groups that have specific field indexes. Only log groups containing all specified field indexes are returned. You can specify 1 to 20 field index names, each with 1 to 512 characters.</p>
     pub fn get_field_index_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_field_index_names()
+    }
+    ///
+    /// Appends an item to `logGroupTags`.
+    ///
+    /// To override the contents of this collection use [`set_log_group_tags`](Self::set_log_group_tags).
+    ///
+    /// <p>An array of tag filters to return only log groups that have specific tags. Multiple filters are combined with AND logic.</p>
+    pub fn log_group_tags(mut self, input: crate::types::TagFilter) -> Self {
+        self.inner = self.inner.log_group_tags(input);
+        self
+    }
+    /// <p>An array of tag filters to return only log groups that have specific tags. Multiple filters are combined with AND logic.</p>
+    pub fn set_log_group_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagFilter>>) -> Self {
+        self.inner = self.inner.set_log_group_tags(input);
+        self
+    }
+    /// <p>An array of tag filters to return only log groups that have specific tags. Multiple filters are combined with AND logic.</p>
+    pub fn get_log_group_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagFilter>> {
+        self.inner.get_log_group_tags()
     }
 }

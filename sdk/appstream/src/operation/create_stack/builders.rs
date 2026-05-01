@@ -327,4 +327,18 @@ impl CreateStackFluentBuilder {
     pub fn get_content_redirection(&self) -> &::std::option::Option<crate::types::ContentRedirection> {
         self.inner.get_content_redirection()
     }
+    /// <p>The configuration for agent access on the stack. If specified, agent access is enabled for the stack.</p>
+    pub fn agent_access_config(mut self, input: crate::types::AgentAccessConfig) -> Self {
+        self.inner = self.inner.agent_access_config(input);
+        self
+    }
+    /// <p>The configuration for agent access on the stack. If specified, agent access is enabled for the stack.</p>
+    pub fn set_agent_access_config(mut self, input: ::std::option::Option<crate::types::AgentAccessConfig>) -> Self {
+        self.inner = self.inner.set_agent_access_config(input);
+        self
+    }
+    /// <p>The configuration for agent access on the stack. If specified, agent access is enabled for the stack.</p>
+    pub fn get_agent_access_config(&self) -> &::std::option::Option<crate::types::AgentAccessConfig> {
+        self.inner.get_agent_access_config()
+    }
 }

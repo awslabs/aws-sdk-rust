@@ -36,6 +36,9 @@ where
                                     .transpose()?,
                             );
                         }
+                        "batchAcrossTopics" => {
+                            builder = builder.set_batch_across_topics(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {
@@ -74,6 +77,9 @@ pub fn ser_batch_config(
             #[allow(clippy::useless_conversion)]
             ::aws_smithy_types::Number::NegInt((*var_3).into()),
         );
+    }
+    if input.batch_across_topics {
+        object.key("batchAcrossTopics").boolean(input.batch_across_topics);
     }
     Ok(())
 }

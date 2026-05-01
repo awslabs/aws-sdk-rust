@@ -343,6 +343,8 @@ pub use crate::types::_span_tool_use_value::SpanToolUseValueBuilder;
 
 pub use crate::types::_span_tool_result_value::SpanToolResultValueBuilder;
 
+pub use crate::types::_span_reasoning_value::SpanReasoningValueBuilder;
+
 pub use crate::types::_tool_output_configuration::ToolOutputConfigurationBuilder;
 
 pub use crate::types::_tool_override_constant_input_value::ToolOverrideConstantInputValueBuilder;

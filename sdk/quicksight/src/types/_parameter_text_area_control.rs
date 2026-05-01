@@ -14,6 +14,8 @@ pub struct ParameterTextAreaControl {
     pub delimiter: ::std::option::Option<::std::string::String>,
     /// <p>The display options of a control.</p>
     pub display_options: ::std::option::Option<crate::types::TextAreaControlDisplayOptions>,
+    /// <p>The title text format configuration for the control.</p>
+    pub control_title_format_text: ::std::option::Option<crate::types::ControlTitleFormatText>,
 }
 impl ParameterTextAreaControl {
     /// <p>The ID of the <code>ParameterTextAreaControl</code>.</p>
@@ -39,6 +41,10 @@ impl ParameterTextAreaControl {
     pub fn display_options(&self) -> ::std::option::Option<&crate::types::TextAreaControlDisplayOptions> {
         self.display_options.as_ref()
     }
+    /// <p>The title text format configuration for the control.</p>
+    pub fn control_title_format_text(&self) -> ::std::option::Option<&crate::types::ControlTitleFormatText> {
+        self.control_title_format_text.as_ref()
+    }
 }
 impl ParameterTextAreaControl {
     /// Creates a new builder-style object to manufacture [`ParameterTextAreaControl`](crate::types::ParameterTextAreaControl).
@@ -56,6 +62,7 @@ pub struct ParameterTextAreaControlBuilder {
     pub(crate) source_parameter_name: ::std::option::Option<::std::string::String>,
     pub(crate) delimiter: ::std::option::Option<::std::string::String>,
     pub(crate) display_options: ::std::option::Option<crate::types::TextAreaControlDisplayOptions>,
+    pub(crate) control_title_format_text: ::std::option::Option<crate::types::ControlTitleFormatText>,
 }
 impl ParameterTextAreaControlBuilder {
     /// <p>The ID of the <code>ParameterTextAreaControl</code>.</p>
@@ -74,7 +81,6 @@ impl ParameterTextAreaControlBuilder {
         &self.parameter_control_id
     }
     /// <p>The title of the <code>ParameterTextAreaControl</code>.</p>
-    /// This field is required.
     pub fn title(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.title = ::std::option::Option::Some(input.into());
         self
@@ -131,10 +137,23 @@ impl ParameterTextAreaControlBuilder {
     pub fn get_display_options(&self) -> &::std::option::Option<crate::types::TextAreaControlDisplayOptions> {
         &self.display_options
     }
+    /// <p>The title text format configuration for the control.</p>
+    pub fn control_title_format_text(mut self, input: crate::types::ControlTitleFormatText) -> Self {
+        self.control_title_format_text = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The title text format configuration for the control.</p>
+    pub fn set_control_title_format_text(mut self, input: ::std::option::Option<crate::types::ControlTitleFormatText>) -> Self {
+        self.control_title_format_text = input;
+        self
+    }
+    /// <p>The title text format configuration for the control.</p>
+    pub fn get_control_title_format_text(&self) -> &::std::option::Option<crate::types::ControlTitleFormatText> {
+        &self.control_title_format_text
+    }
     /// Consumes the builder and constructs a [`ParameterTextAreaControl`](crate::types::ParameterTextAreaControl).
     /// This method will fail if any of the following fields are not set:
     /// - [`parameter_control_id`](crate::types::builders::ParameterTextAreaControlBuilder::parameter_control_id)
-    /// - [`title`](crate::types::builders::ParameterTextAreaControlBuilder::title)
     /// - [`source_parameter_name`](crate::types::builders::ParameterTextAreaControlBuilder::source_parameter_name)
     pub fn build(self) -> ::std::result::Result<crate::types::ParameterTextAreaControl, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ParameterTextAreaControl {
@@ -144,12 +163,7 @@ impl ParameterTextAreaControlBuilder {
                     "parameter_control_id was not specified but it is required when building ParameterTextAreaControl",
                 )
             })?,
-            title: self.title.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "title",
-                    "title was not specified but it is required when building ParameterTextAreaControl",
-                )
-            })?,
+            title: self.title.unwrap_or_default(),
             source_parameter_name: self.source_parameter_name.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "source_parameter_name",
@@ -158,6 +172,7 @@ impl ParameterTextAreaControlBuilder {
             })?,
             delimiter: self.delimiter,
             display_options: self.display_options,
+            control_title_format_text: self.control_title_format_text,
         })
     }
 }

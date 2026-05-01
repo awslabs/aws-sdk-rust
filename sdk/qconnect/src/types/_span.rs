@@ -22,6 +22,8 @@ pub struct Span {
     pub end_timestamp: ::aws_smithy_types::DateTime,
     /// <p>Span completion status</p>
     pub status: crate::types::SpanStatus,
+    /// Human-readable error description when status is ERROR or TIMEOUT
+    pub status_description: ::std::option::Option<::std::string::String>,
     /// <p>The service request ID that initiated the operation</p>
     pub request_id: ::std::string::String,
     /// The origin request identifier for end-to-end tracing.
@@ -70,6 +72,10 @@ impl Span {
     pub fn status(&self) -> &crate::types::SpanStatus {
         &self.status
     }
+    /// Human-readable error description when status is ERROR or TIMEOUT
+    pub fn status_description(&self) -> ::std::option::Option<&str> {
+        self.status_description.as_deref()
+    }
     /// <p>The service request ID that initiated the operation</p>
     pub fn request_id(&self) -> &str {
         use std::ops::Deref;
@@ -104,6 +110,7 @@ pub struct SpanBuilder {
     pub(crate) start_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) end_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) status: ::std::option::Option<crate::types::SpanStatus>,
+    pub(crate) status_description: ::std::option::Option<::std::string::String>,
     pub(crate) request_id: ::std::option::Option<::std::string::String>,
     pub(crate) origin_request_id: ::std::option::Option<::std::string::String>,
     pub(crate) attributes: ::std::option::Option<crate::types::SpanAttributes>,
@@ -243,6 +250,20 @@ impl SpanBuilder {
     pub fn get_status(&self) -> &::std::option::Option<crate::types::SpanStatus> {
         &self.status
     }
+    /// Human-readable error description when status is ERROR or TIMEOUT
+    pub fn status_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.status_description = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// Human-readable error description when status is ERROR or TIMEOUT
+    pub fn set_status_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.status_description = input;
+        self
+    }
+    /// Human-readable error description when status is ERROR or TIMEOUT
+    pub fn get_status_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_description
+    }
     /// <p>The service request ID that initiated the operation</p>
     /// This field is required.
     pub fn request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -349,6 +370,7 @@ impl SpanBuilder {
                     "status was not specified but it is required when building Span",
                 )
             })?,
+            status_description: self.status_description,
             request_id: self.request_id.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "request_id",

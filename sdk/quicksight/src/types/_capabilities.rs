@@ -447,6 +447,10 @@ pub struct Capabilities {
     pub manage_shared_folders: ::std::option::Option<crate::types::CapabilityState>,
     /// <p>The ability to generate analysis using AI</p>
     pub generate_analyses: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to perform Story-related actions.</p>
+    pub story: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to perform Scenario-related actions.</p>
+    pub scenario: ::std::option::Option<crate::types::CapabilityState>,
 }
 impl Capabilities {
     /// <p>The ability to export to CSV files from the UI.</p>
@@ -1334,6 +1338,14 @@ impl Capabilities {
     pub fn generate_analyses(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
         self.generate_analyses.as_ref()
     }
+    /// <p>The ability to perform Story-related actions.</p>
+    pub fn story(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.story.as_ref()
+    }
+    /// <p>The ability to perform Scenario-related actions.</p>
+    pub fn scenario(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.scenario.as_ref()
+    }
 }
 impl Capabilities {
     /// Creates a new builder-style object to manufacture [`Capabilities`](crate::types::Capabilities).
@@ -1567,6 +1579,8 @@ pub struct CapabilitiesBuilder {
     pub(crate) extension: ::std::option::Option<crate::types::CapabilityState>,
     pub(crate) manage_shared_folders: ::std::option::Option<crate::types::CapabilityState>,
     pub(crate) generate_analyses: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) story: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) scenario: ::std::option::Option<crate::types::CapabilityState>,
 }
 impl CapabilitiesBuilder {
     /// <p>The ability to export to CSV files from the UI.</p>
@@ -4666,6 +4680,34 @@ impl CapabilitiesBuilder {
     pub fn get_generate_analyses(&self) -> &::std::option::Option<crate::types::CapabilityState> {
         &self.generate_analyses
     }
+    /// <p>The ability to perform Story-related actions.</p>
+    pub fn story(mut self, input: crate::types::CapabilityState) -> Self {
+        self.story = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to perform Story-related actions.</p>
+    pub fn set_story(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.story = input;
+        self
+    }
+    /// <p>The ability to perform Story-related actions.</p>
+    pub fn get_story(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.story
+    }
+    /// <p>The ability to perform Scenario-related actions.</p>
+    pub fn scenario(mut self, input: crate::types::CapabilityState) -> Self {
+        self.scenario = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to perform Scenario-related actions.</p>
+    pub fn set_scenario(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.scenario = input;
+        self
+    }
+    /// <p>The ability to perform Scenario-related actions.</p>
+    pub fn get_scenario(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.scenario
+    }
     /// Consumes the builder and constructs a [`Capabilities`](crate::types::Capabilities).
     pub fn build(self) -> crate::types::Capabilities {
         crate::types::Capabilities {
@@ -4890,6 +4932,8 @@ impl CapabilitiesBuilder {
             extension: self.extension,
             manage_shared_folders: self.manage_shared_folders,
             generate_analyses: self.generate_analyses,
+            story: self.story,
+            scenario: self.scenario,
         }
     }
 }

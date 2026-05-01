@@ -20,6 +20,8 @@ pub struct Typography {
     pub visual_title_font_configuration: ::std::option::Option<crate::types::VisualTitleFontConfiguration>,
     /// <p>Configures the display properties of the visual sub-title.</p>
     pub visual_subtitle_font_configuration: ::std::option::Option<crate::types::VisualSubtitleFontConfiguration>,
+    /// <p>Configures the display properties of the control title.</p>
+    pub control_title_font_configuration: ::std::option::Option<crate::types::ControlTitleFontConfiguration>,
 }
 impl Typography {
     /// <p>Determines the list of font families.</p>
@@ -56,6 +58,10 @@ impl Typography {
     pub fn visual_subtitle_font_configuration(&self) -> ::std::option::Option<&crate::types::VisualSubtitleFontConfiguration> {
         self.visual_subtitle_font_configuration.as_ref()
     }
+    /// <p>Configures the display properties of the control title.</p>
+    pub fn control_title_font_configuration(&self) -> ::std::option::Option<&crate::types::ControlTitleFontConfiguration> {
+        self.control_title_font_configuration.as_ref()
+    }
 }
 impl Typography {
     /// Creates a new builder-style object to manufacture [`Typography`](crate::types::Typography).
@@ -76,6 +82,7 @@ pub struct TypographyBuilder {
     pub(crate) data_label_font_configuration: ::std::option::Option<crate::types::FontConfiguration>,
     pub(crate) visual_title_font_configuration: ::std::option::Option<crate::types::VisualTitleFontConfiguration>,
     pub(crate) visual_subtitle_font_configuration: ::std::option::Option<crate::types::VisualSubtitleFontConfiguration>,
+    pub(crate) control_title_font_configuration: ::std::option::Option<crate::types::ControlTitleFontConfiguration>,
 }
 impl TypographyBuilder {
     /// Appends an item to `font_families`.
@@ -196,6 +203,20 @@ impl TypographyBuilder {
     pub fn get_visual_subtitle_font_configuration(&self) -> &::std::option::Option<crate::types::VisualSubtitleFontConfiguration> {
         &self.visual_subtitle_font_configuration
     }
+    /// <p>Configures the display properties of the control title.</p>
+    pub fn control_title_font_configuration(mut self, input: crate::types::ControlTitleFontConfiguration) -> Self {
+        self.control_title_font_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Configures the display properties of the control title.</p>
+    pub fn set_control_title_font_configuration(mut self, input: ::std::option::Option<crate::types::ControlTitleFontConfiguration>) -> Self {
+        self.control_title_font_configuration = input;
+        self
+    }
+    /// <p>Configures the display properties of the control title.</p>
+    pub fn get_control_title_font_configuration(&self) -> &::std::option::Option<crate::types::ControlTitleFontConfiguration> {
+        &self.control_title_font_configuration
+    }
     /// Consumes the builder and constructs a [`Typography`](crate::types::Typography).
     pub fn build(self) -> crate::types::Typography {
         crate::types::Typography {
@@ -207,6 +228,7 @@ impl TypographyBuilder {
             data_label_font_configuration: self.data_label_font_configuration,
             visual_title_font_configuration: self.visual_title_font_configuration,
             visual_subtitle_font_configuration: self.visual_subtitle_font_configuration,
+            control_title_font_configuration: self.control_title_font_configuration,
         }
     }
 }

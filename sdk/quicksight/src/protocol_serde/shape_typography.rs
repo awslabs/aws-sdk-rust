@@ -57,6 +57,12 @@ pub fn ser_typography(
         crate::protocol_serde::shape_visual_subtitle_font_configuration::ser_visual_subtitle_font_configuration(&mut object_18, var_17)?;
         object_18.finish();
     }
+    if let Some(var_19) = &input.control_title_font_configuration {
+        #[allow(unused_mut)]
+        let mut object_20 = object.key("ControlTitleFontConfiguration").start_object();
+        crate::protocol_serde::shape_control_title_font_configuration::ser_control_title_font_configuration(&mut object_20, var_19)?;
+        object_20.finish();
+    }
     Ok(())
 }
 
@@ -114,6 +120,11 @@ where
                                 crate::protocol_serde::shape_visual_subtitle_font_configuration::de_visual_subtitle_font_configuration(
                                     tokens, _value,
                                 )?,
+                            );
+                        }
+                        "ControlTitleFontConfiguration" => {
+                            builder = builder.set_control_title_font_configuration(
+                                crate::protocol_serde::shape_control_title_font_configuration::de_control_title_font_configuration(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

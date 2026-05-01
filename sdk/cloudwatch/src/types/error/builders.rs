@@ -13,11 +13,11 @@ pub use crate::types::error::_resource_not_found_exception::ResourceNotFoundExce
 
 pub use crate::types::error::_conflict_exception::ConflictExceptionBuilder;
 
-pub use crate::types::error::_dashboard_not_found_error::DashboardNotFoundErrorBuilder;
-
 pub use crate::types::error::_invalid_next_token::InvalidNextTokenBuilder;
 
 pub use crate::types::error::_limit_exceeded_exception::LimitExceededExceptionBuilder;
+
+pub use crate::types::error::_dashboard_not_found_error::DashboardNotFoundErrorBuilder;
 
 pub use crate::types::error::_limit_exceeded_fault::LimitExceededFaultBuilder;
 

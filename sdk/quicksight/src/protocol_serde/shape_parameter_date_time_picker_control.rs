@@ -18,6 +18,12 @@ pub fn ser_parameter_date_time_picker_control(
         crate::protocol_serde::shape_date_time_picker_control_display_options::ser_date_time_picker_control_display_options(&mut object_2, var_1)?;
         object_2.finish();
     }
+    if let Some(var_3) = &input.control_title_format_text {
+        #[allow(unused_mut)]
+        let mut object_4 = object.key("ControlTitleFormatText").start_object();
+        crate::protocol_serde::shape_control_title_format_text::ser_control_title_format_text(&mut object_4, var_3)?;
+        object_4.finish();
+    }
     Ok(())
 }
 
@@ -62,6 +68,11 @@ where
                             "DisplayOptions" => {
                                 builder = builder.set_display_options(
                                     crate::protocol_serde::shape_date_time_picker_control_display_options::de_date_time_picker_control_display_options(tokens, _value)?
+                                );
+                            }
+                            "ControlTitleFormatText" => {
+                                builder = builder.set_control_title_format_text(
+                                    crate::protocol_serde::shape_control_title_format_text::de_control_title_format_text(tokens, _value)?,
                                 );
                             }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

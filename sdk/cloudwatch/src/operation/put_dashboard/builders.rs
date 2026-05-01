@@ -142,4 +142,29 @@ impl PutDashboardFluentBuilder {
     pub fn get_dashboard_body(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_dashboard_body()
     }
+    ///
+    /// Appends an item to `Tags`.
+    ///
+    /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+    ///
+    /// <p>A list of key-value pairs to associate with the dashboard. You can associate as many as 50 tags with a dashboard.</p>
+    /// <p>Tags can help you organize and categorize your dashboards. You can also use them to scope user permissions by granting a user permission to access or change only dashboards with certain tag values.</p>
+    /// <p>You can use this parameter only when creating a new dashboard. If you specify <code>Tags</code> when updating an existing dashboard, the tag updates are ignored. To add or update tags on an existing dashboard, use <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_TagResource.html">TagResource</a>. To remove tags, use <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_UntagResource.html">UntagResource</a>.</p>
+    pub fn tags(mut self, input: crate::types::Tag) -> Self {
+        self.inner = self.inner.tags(input);
+        self
+    }
+    /// <p>A list of key-value pairs to associate with the dashboard. You can associate as many as 50 tags with a dashboard.</p>
+    /// <p>Tags can help you organize and categorize your dashboards. You can also use them to scope user permissions by granting a user permission to access or change only dashboards with certain tag values.</p>
+    /// <p>You can use this parameter only when creating a new dashboard. If you specify <code>Tags</code> when updating an existing dashboard, the tag updates are ignored. To add or update tags on an existing dashboard, use <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_TagResource.html">TagResource</a>. To remove tags, use <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_UntagResource.html">UntagResource</a>.</p>
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.inner = self.inner.set_tags(input);
+        self
+    }
+    /// <p>A list of key-value pairs to associate with the dashboard. You can associate as many as 50 tags with a dashboard.</p>
+    /// <p>Tags can help you organize and categorize your dashboards. You can also use them to scope user permissions by granting a user permission to access or change only dashboards with certain tag values.</p>
+    /// <p>You can use this parameter only when creating a new dashboard. If you specify <code>Tags</code> when updating an existing dashboard, the tag updates are ignored. To add or update tags on an existing dashboard, use <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_TagResource.html">TagResource</a>. To remove tags, use <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_UntagResource.html">UntagResource</a>.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
+    }
 }

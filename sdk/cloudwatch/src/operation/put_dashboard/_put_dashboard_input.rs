@@ -8,6 +8,10 @@ pub struct PutDashboardInput {
     /// <p>The detailed information about the dashboard in JSON format, including the widgets to include and their location on the dashboard. This parameter is required.</p>
     /// <p>For more information about the syntax, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/CloudWatch-Dashboard-Body-Structure.html">Dashboard Body Structure and Syntax</a>.</p>
     pub dashboard_body: ::std::option::Option<::std::string::String>,
+    /// <p>A list of key-value pairs to associate with the dashboard. You can associate as many as 50 tags with a dashboard.</p>
+    /// <p>Tags can help you organize and categorize your dashboards. You can also use them to scope user permissions by granting a user permission to access or change only dashboards with certain tag values.</p>
+    /// <p>You can use this parameter only when creating a new dashboard. If you specify <code>Tags</code> when updating an existing dashboard, the tag updates are ignored. To add or update tags on an existing dashboard, use <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_TagResource.html">TagResource</a>. To remove tags, use <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_UntagResource.html">UntagResource</a>.</p>
+    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl PutDashboardInput {
     /// <p>The name of the dashboard. If a dashboard with this name already exists, this call modifies that dashboard, replacing its current contents. Otherwise, a new dashboard is created. The maximum length is 255, and valid characters are A-Z, a-z, 0-9, "-", and "_". This parameter is required.</p>
@@ -18,6 +22,14 @@ impl PutDashboardInput {
     /// <p>For more information about the syntax, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/CloudWatch-Dashboard-Body-Structure.html">Dashboard Body Structure and Syntax</a>.</p>
     pub fn dashboard_body(&self) -> ::std::option::Option<&str> {
         self.dashboard_body.as_deref()
+    }
+    /// <p>A list of key-value pairs to associate with the dashboard. You can associate as many as 50 tags with a dashboard.</p>
+    /// <p>Tags can help you organize and categorize your dashboards. You can also use them to scope user permissions by granting a user permission to access or change only dashboards with certain tag values.</p>
+    /// <p>You can use this parameter only when creating a new dashboard. If you specify <code>Tags</code> when updating an existing dashboard, the tag updates are ignored. To add or update tags on an existing dashboard, use <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_TagResource.html">TagResource</a>. To remove tags, use <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_UntagResource.html">UntagResource</a>.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl PutDashboardInput {
@@ -33,6 +45,7 @@ impl PutDashboardInput {
 pub struct PutDashboardInputBuilder {
     pub(crate) dashboard_name: ::std::option::Option<::std::string::String>,
     pub(crate) dashboard_body: ::std::option::Option<::std::string::String>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl PutDashboardInputBuilder {
     /// <p>The name of the dashboard. If a dashboard with this name already exists, this call modifies that dashboard, replacing its current contents. Otherwise, a new dashboard is created. The maximum length is 255, and valid characters are A-Z, a-z, 0-9, "-", and "_". This parameter is required.</p>
@@ -68,6 +81,32 @@ impl PutDashboardInputBuilder {
     pub fn get_dashboard_body(&self) -> &::std::option::Option<::std::string::String> {
         &self.dashboard_body
     }
+    /// Appends an item to `tags`.
+    ///
+    /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+    ///
+    /// <p>A list of key-value pairs to associate with the dashboard. You can associate as many as 50 tags with a dashboard.</p>
+    /// <p>Tags can help you organize and categorize your dashboards. You can also use them to scope user permissions by granting a user permission to access or change only dashboards with certain tag values.</p>
+    /// <p>You can use this parameter only when creating a new dashboard. If you specify <code>Tags</code> when updating an existing dashboard, the tag updates are ignored. To add or update tags on an existing dashboard, use <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_TagResource.html">TagResource</a>. To remove tags, use <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_UntagResource.html">UntagResource</a>.</p>
+    pub fn tags(mut self, input: crate::types::Tag) -> Self {
+        let mut v = self.tags.unwrap_or_default();
+        v.push(input);
+        self.tags = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of key-value pairs to associate with the dashboard. You can associate as many as 50 tags with a dashboard.</p>
+    /// <p>Tags can help you organize and categorize your dashboards. You can also use them to scope user permissions by granting a user permission to access or change only dashboards with certain tag values.</p>
+    /// <p>You can use this parameter only when creating a new dashboard. If you specify <code>Tags</code> when updating an existing dashboard, the tag updates are ignored. To add or update tags on an existing dashboard, use <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_TagResource.html">TagResource</a>. To remove tags, use <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_UntagResource.html">UntagResource</a>.</p>
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tags = input;
+        self
+    }
+    /// <p>A list of key-value pairs to associate with the dashboard. You can associate as many as 50 tags with a dashboard.</p>
+    /// <p>Tags can help you organize and categorize your dashboards. You can also use them to scope user permissions by granting a user permission to access or change only dashboards with certain tag values.</p>
+    /// <p>You can use this parameter only when creating a new dashboard. If you specify <code>Tags</code> when updating an existing dashboard, the tag updates are ignored. To add or update tags on an existing dashboard, use <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_TagResource.html">TagResource</a>. To remove tags, use <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_UntagResource.html">UntagResource</a>.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
+    }
     /// Consumes the builder and constructs a [`PutDashboardInput`](crate::operation::put_dashboard::PutDashboardInput).
     pub fn build(
         self,
@@ -75,6 +114,7 @@ impl PutDashboardInputBuilder {
         ::std::result::Result::Ok(crate::operation::put_dashboard::PutDashboardInput {
             dashboard_name: self.dashboard_name,
             dashboard_body: self.dashboard_body,
+            tags: self.tags,
         })
     }
 }

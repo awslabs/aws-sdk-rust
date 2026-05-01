@@ -48,6 +48,12 @@ pub fn ser_filter_drop_down_control(
         }
         array_10.finish();
     }
+    if let Some(var_13) = &input.control_title_format_text {
+        #[allow(unused_mut)]
+        let mut object_14 = object.key("ControlTitleFormatText").start_object();
+        crate::protocol_serde::shape_control_title_format_text::ser_control_title_format_text(&mut object_14, var_13)?;
+        object_14.finish();
+    }
     Ok(())
 }
 
@@ -120,6 +126,11 @@ where
                         "ControlSortConfigurations" => {
                             builder = builder.set_control_sort_configurations(
                                 crate::protocol_serde::shape_control_sort_configuration_list::de_control_sort_configuration_list(tokens, _value)?,
+                            );
+                        }
+                        "ControlTitleFormatText" => {
+                            builder = builder.set_control_title_format_text(
+                                crate::protocol_serde::shape_control_title_format_text::de_control_title_format_text(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

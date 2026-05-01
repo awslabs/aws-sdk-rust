@@ -33,6 +33,8 @@ pub struct CreateStackInput {
     pub streaming_experience_settings: ::std::option::Option<crate::types::StreamingExperienceSettings>,
     /// <p>Configuration for bidirectional URL redirection between the streaming session and the local client. Use HostToClient to redirect URLs from the remote desktop to the local browser.</p>
     pub content_redirection: ::std::option::Option<crate::types::ContentRedirection>,
+    /// <p>The configuration for agent access on the stack. If specified, agent access is enabled for the stack.</p>
+    pub agent_access_config: ::std::option::Option<crate::types::AgentAccessConfig>,
 }
 impl CreateStackInput {
     /// <p>The name of the stack.</p>
@@ -99,6 +101,10 @@ impl CreateStackInput {
     pub fn content_redirection(&self) -> ::std::option::Option<&crate::types::ContentRedirection> {
         self.content_redirection.as_ref()
     }
+    /// <p>The configuration for agent access on the stack. If specified, agent access is enabled for the stack.</p>
+    pub fn agent_access_config(&self) -> ::std::option::Option<&crate::types::AgentAccessConfig> {
+        self.agent_access_config.as_ref()
+    }
 }
 impl CreateStackInput {
     /// Creates a new builder-style object to manufacture [`CreateStackInput`](crate::operation::create_stack::CreateStackInput).
@@ -124,6 +130,7 @@ pub struct CreateStackInputBuilder {
     pub(crate) embed_host_domains: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) streaming_experience_settings: ::std::option::Option<crate::types::StreamingExperienceSettings>,
     pub(crate) content_redirection: ::std::option::Option<crate::types::ContentRedirection>,
+    pub(crate) agent_access_config: ::std::option::Option<crate::types::AgentAccessConfig>,
 }
 impl CreateStackInputBuilder {
     /// <p>The name of the stack.</p>
@@ -351,6 +358,20 @@ impl CreateStackInputBuilder {
     pub fn get_content_redirection(&self) -> &::std::option::Option<crate::types::ContentRedirection> {
         &self.content_redirection
     }
+    /// <p>The configuration for agent access on the stack. If specified, agent access is enabled for the stack.</p>
+    pub fn agent_access_config(mut self, input: crate::types::AgentAccessConfig) -> Self {
+        self.agent_access_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The configuration for agent access on the stack. If specified, agent access is enabled for the stack.</p>
+    pub fn set_agent_access_config(mut self, input: ::std::option::Option<crate::types::AgentAccessConfig>) -> Self {
+        self.agent_access_config = input;
+        self
+    }
+    /// <p>The configuration for agent access on the stack. If specified, agent access is enabled for the stack.</p>
+    pub fn get_agent_access_config(&self) -> &::std::option::Option<crate::types::AgentAccessConfig> {
+        &self.agent_access_config
+    }
     /// Consumes the builder and constructs a [`CreateStackInput`](crate::operation::create_stack::CreateStackInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::create_stack::CreateStackInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_stack::CreateStackInput {
@@ -367,6 +388,7 @@ impl CreateStackInputBuilder {
             embed_host_domains: self.embed_host_domains,
             streaming_experience_settings: self.streaming_experience_settings,
             content_redirection: self.content_redirection,
+            agent_access_config: self.agent_access_config,
         })
     }
 }

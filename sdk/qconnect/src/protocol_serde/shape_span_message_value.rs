@@ -44,6 +44,11 @@ where
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'toolResult' cannot be null")
                             })?,
                         )),
+                        "reasoning" => Some(crate::types::SpanMessageValue::Reasoning(
+                            crate::protocol_serde::shape_span_reasoning_value::de_span_reasoning_value(tokens, _value)?.ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'reasoning' cannot be null")
+                            })?,
+                        )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
                             Some(crate::types::SpanMessageValue::Unknown)

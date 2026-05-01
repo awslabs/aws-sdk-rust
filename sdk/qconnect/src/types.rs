@@ -529,6 +529,8 @@ pub use crate::types::_span_tool_use_value::SpanToolUseValue;
 
 pub use crate::types::_span_tool_result_value::SpanToolResultValue;
 
+pub use crate::types::_span_reasoning_value::SpanReasoningValue;
+
 pub use crate::types::_tool_override_input_value_configuration::ToolOverrideInputValueConfiguration;
 
 pub use crate::types::_tool_output_configuration::ToolOutputConfiguration;
@@ -1002,6 +1004,8 @@ mod _span_citation;
 mod _span_message;
 
 mod _span_message_value;
+
+mod _span_reasoning_value;
 
 mod _span_status;
 

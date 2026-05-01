@@ -1591,6 +1591,8 @@ pub(crate) mod shape_column_identifier;
 
 pub(crate) mod shape_contextual_accent_palette;
 
+pub(crate) mod shape_control_title_font_configuration;
+
 pub(crate) mod shape_create_columns_operation;
 
 pub(crate) mod shape_dashboard_visual_id;
@@ -2206,6 +2208,8 @@ pub(crate) mod shape_combo_chart_configuration;
 pub(crate) mod shape_contribution_analysis_factors_list;
 
 pub(crate) mod shape_control_sort_configuration;
+
+pub(crate) mod shape_control_title_format_text;
 
 pub(crate) mod shape_custom_colors_list;
 

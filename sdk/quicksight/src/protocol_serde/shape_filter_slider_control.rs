@@ -39,6 +39,12 @@ pub fn ser_filter_slider_control(
             ::aws_smithy_types::Number::Float((input.step_size).into()),
         );
     }
+    if let Some(var_4) = &input.control_title_format_text {
+        #[allow(unused_mut)]
+        let mut object_5 = object.key("ControlTitleFormatText").start_object();
+        crate::protocol_serde::shape_control_title_format_text::ser_control_title_format_text(&mut object_5, var_4)?;
+        object_5.finish();
+    }
     Ok(())
 }
 
@@ -104,6 +110,11 @@ where
                         "StepSize" => {
                             builder = builder.set_step_size(
                                 ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?.map(|v| v.to_f64_lossy()),
+                            );
+                        }
+                        "ControlTitleFormatText" => {
+                            builder = builder.set_control_title_format_text(
+                                crate::protocol_serde::shape_control_title_format_text::de_control_title_format_text(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

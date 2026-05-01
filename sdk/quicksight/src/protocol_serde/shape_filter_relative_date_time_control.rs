@@ -24,6 +24,12 @@ pub fn ser_filter_relative_date_time_control(
     if let Some(var_3) = &input.commit_mode {
         object.key("CommitMode").string(var_3.as_str());
     }
+    if let Some(var_4) = &input.control_title_format_text {
+        #[allow(unused_mut)]
+        let mut object_5 = object.key("ControlTitleFormatText").start_object();
+        crate::protocol_serde::shape_control_title_format_text::ser_control_title_format_text(&mut object_5, var_4)?;
+        object_5.finish();
+    }
     Ok(())
 }
 
@@ -74,6 +80,11 @@ where
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| crate::types::CommitMode::from(u.as_ref())))
                                     .transpose()?,
+                            );
+                        }
+                        "ControlTitleFormatText" => {
+                            builder = builder.set_control_title_format_text(
+                                crate::protocol_serde::shape_control_title_format_text::de_control_title_format_text(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

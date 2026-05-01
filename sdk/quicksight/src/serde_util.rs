@@ -2340,9 +2340,6 @@ pub(crate) fn filter_date_time_picker_control_correct_errors(
     if builder.filter_control_id.is_none() {
         builder.filter_control_id = Some(Default::default())
     }
-    if builder.title.is_none() {
-        builder.title = Some(Default::default())
-    }
     if builder.source_filter_id.is_none() {
         builder.source_filter_id = Some(Default::default())
     }
@@ -2354,9 +2351,6 @@ pub(crate) fn filter_drop_down_control_correct_errors(
 ) -> crate::types::builders::FilterDropDownControlBuilder {
     if builder.filter_control_id.is_none() {
         builder.filter_control_id = Some(Default::default())
-    }
-    if builder.title.is_none() {
-        builder.title = Some(Default::default())
     }
     if builder.source_filter_id.is_none() {
         builder.source_filter_id = Some(Default::default())
@@ -2370,9 +2364,6 @@ pub(crate) fn filter_list_control_correct_errors(
     if builder.filter_control_id.is_none() {
         builder.filter_control_id = Some(Default::default())
     }
-    if builder.title.is_none() {
-        builder.title = Some(Default::default())
-    }
     if builder.source_filter_id.is_none() {
         builder.source_filter_id = Some(Default::default())
     }
@@ -2385,9 +2376,6 @@ pub(crate) fn filter_relative_date_time_control_correct_errors(
     if builder.filter_control_id.is_none() {
         builder.filter_control_id = Some(Default::default())
     }
-    if builder.title.is_none() {
-        builder.title = Some(Default::default())
-    }
     if builder.source_filter_id.is_none() {
         builder.source_filter_id = Some(Default::default())
     }
@@ -2399,9 +2387,6 @@ pub(crate) fn filter_slider_control_correct_errors(
 ) -> crate::types::builders::FilterSliderControlBuilder {
     if builder.filter_control_id.is_none() {
         builder.filter_control_id = Some(Default::default())
-    }
-    if builder.title.is_none() {
-        builder.title = Some(Default::default())
     }
     if builder.source_filter_id.is_none() {
         builder.source_filter_id = Some(Default::default())
@@ -2424,9 +2409,6 @@ pub(crate) fn filter_text_area_control_correct_errors(
     if builder.filter_control_id.is_none() {
         builder.filter_control_id = Some(Default::default())
     }
-    if builder.title.is_none() {
-        builder.title = Some(Default::default())
-    }
     if builder.source_filter_id.is_none() {
         builder.source_filter_id = Some(Default::default())
     }
@@ -2438,9 +2420,6 @@ pub(crate) fn filter_text_field_control_correct_errors(
 ) -> crate::types::builders::FilterTextFieldControlBuilder {
     if builder.filter_control_id.is_none() {
         builder.filter_control_id = Some(Default::default())
-    }
-    if builder.title.is_none() {
-        builder.title = Some(Default::default())
     }
     if builder.source_filter_id.is_none() {
         builder.source_filter_id = Some(Default::default())
@@ -2658,9 +2637,6 @@ pub(crate) fn parameter_date_time_picker_control_correct_errors(
     if builder.parameter_control_id.is_none() {
         builder.parameter_control_id = Some(Default::default())
     }
-    if builder.title.is_none() {
-        builder.title = Some(Default::default())
-    }
     if builder.source_parameter_name.is_none() {
         builder.source_parameter_name = Some(Default::default())
     }
@@ -2672,9 +2648,6 @@ pub(crate) fn parameter_drop_down_control_correct_errors(
 ) -> crate::types::builders::ParameterDropDownControlBuilder {
     if builder.parameter_control_id.is_none() {
         builder.parameter_control_id = Some(Default::default())
-    }
-    if builder.title.is_none() {
-        builder.title = Some(Default::default())
     }
     if builder.source_parameter_name.is_none() {
         builder.source_parameter_name = Some(Default::default())
@@ -2688,9 +2661,6 @@ pub(crate) fn parameter_list_control_correct_errors(
     if builder.parameter_control_id.is_none() {
         builder.parameter_control_id = Some(Default::default())
     }
-    if builder.title.is_none() {
-        builder.title = Some(Default::default())
-    }
     if builder.source_parameter_name.is_none() {
         builder.source_parameter_name = Some(Default::default())
     }
@@ -2702,9 +2672,6 @@ pub(crate) fn parameter_slider_control_correct_errors(
 ) -> crate::types::builders::ParameterSliderControlBuilder {
     if builder.parameter_control_id.is_none() {
         builder.parameter_control_id = Some(Default::default())
-    }
-    if builder.title.is_none() {
-        builder.title = Some(Default::default())
     }
     if builder.source_parameter_name.is_none() {
         builder.source_parameter_name = Some(Default::default())
@@ -2727,9 +2694,6 @@ pub(crate) fn parameter_text_area_control_correct_errors(
     if builder.parameter_control_id.is_none() {
         builder.parameter_control_id = Some(Default::default())
     }
-    if builder.title.is_none() {
-        builder.title = Some(Default::default())
-    }
     if builder.source_parameter_name.is_none() {
         builder.source_parameter_name = Some(Default::default())
     }
@@ -2741,9 +2705,6 @@ pub(crate) fn parameter_text_field_control_correct_errors(
 ) -> crate::types::builders::ParameterTextFieldControlBuilder {
     if builder.parameter_control_id.is_none() {
         builder.parameter_control_id = Some(Default::default())
-    }
-    if builder.title.is_none() {
-        builder.title = Some(Default::default())
     }
     if builder.source_parameter_name.is_none() {
         builder.source_parameter_name = Some(Default::default())
@@ -3081,9 +3042,6 @@ pub(crate) fn calculated_column_correct_errors(
 pub(crate) fn default_filter_control_configuration_correct_errors(
     mut builder: crate::types::builders::DefaultFilterControlConfigurationBuilder,
 ) -> crate::types::builders::DefaultFilterControlConfigurationBuilder {
-    if builder.title.is_none() {
-        builder.title = Some(Default::default())
-    }
     if builder.control_options.is_none() {
         builder.control_options = {
             let builder = crate::types::builders::DefaultFilterControlOptionsBuilder::default();

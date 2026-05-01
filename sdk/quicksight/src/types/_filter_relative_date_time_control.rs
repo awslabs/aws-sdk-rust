@@ -14,6 +14,8 @@ pub struct FilterRelativeDateTimeControl {
     pub display_options: ::std::option::Option<crate::types::RelativeDateTimeControlDisplayOptions>,
     /// <p>The visibility configuration of the Apply button on a <code>FilterRelativeDateTimeControl</code>.</p>
     pub commit_mode: ::std::option::Option<crate::types::CommitMode>,
+    /// <p>The title text format configuration for the control.</p>
+    pub control_title_format_text: ::std::option::Option<crate::types::ControlTitleFormatText>,
 }
 impl FilterRelativeDateTimeControl {
     /// <p>The ID of the <code>FilterTextAreaControl</code>.</p>
@@ -39,6 +41,10 @@ impl FilterRelativeDateTimeControl {
     pub fn commit_mode(&self) -> ::std::option::Option<&crate::types::CommitMode> {
         self.commit_mode.as_ref()
     }
+    /// <p>The title text format configuration for the control.</p>
+    pub fn control_title_format_text(&self) -> ::std::option::Option<&crate::types::ControlTitleFormatText> {
+        self.control_title_format_text.as_ref()
+    }
 }
 impl FilterRelativeDateTimeControl {
     /// Creates a new builder-style object to manufacture [`FilterRelativeDateTimeControl`](crate::types::FilterRelativeDateTimeControl).
@@ -56,6 +62,7 @@ pub struct FilterRelativeDateTimeControlBuilder {
     pub(crate) source_filter_id: ::std::option::Option<::std::string::String>,
     pub(crate) display_options: ::std::option::Option<crate::types::RelativeDateTimeControlDisplayOptions>,
     pub(crate) commit_mode: ::std::option::Option<crate::types::CommitMode>,
+    pub(crate) control_title_format_text: ::std::option::Option<crate::types::ControlTitleFormatText>,
 }
 impl FilterRelativeDateTimeControlBuilder {
     /// <p>The ID of the <code>FilterTextAreaControl</code>.</p>
@@ -74,7 +81,6 @@ impl FilterRelativeDateTimeControlBuilder {
         &self.filter_control_id
     }
     /// <p>The title of the <code>FilterTextAreaControl</code>.</p>
-    /// This field is required.
     pub fn title(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.title = ::std::option::Option::Some(input.into());
         self
@@ -131,10 +137,23 @@ impl FilterRelativeDateTimeControlBuilder {
     pub fn get_commit_mode(&self) -> &::std::option::Option<crate::types::CommitMode> {
         &self.commit_mode
     }
+    /// <p>The title text format configuration for the control.</p>
+    pub fn control_title_format_text(mut self, input: crate::types::ControlTitleFormatText) -> Self {
+        self.control_title_format_text = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The title text format configuration for the control.</p>
+    pub fn set_control_title_format_text(mut self, input: ::std::option::Option<crate::types::ControlTitleFormatText>) -> Self {
+        self.control_title_format_text = input;
+        self
+    }
+    /// <p>The title text format configuration for the control.</p>
+    pub fn get_control_title_format_text(&self) -> &::std::option::Option<crate::types::ControlTitleFormatText> {
+        &self.control_title_format_text
+    }
     /// Consumes the builder and constructs a [`FilterRelativeDateTimeControl`](crate::types::FilterRelativeDateTimeControl).
     /// This method will fail if any of the following fields are not set:
     /// - [`filter_control_id`](crate::types::builders::FilterRelativeDateTimeControlBuilder::filter_control_id)
-    /// - [`title`](crate::types::builders::FilterRelativeDateTimeControlBuilder::title)
     /// - [`source_filter_id`](crate::types::builders::FilterRelativeDateTimeControlBuilder::source_filter_id)
     pub fn build(self) -> ::std::result::Result<crate::types::FilterRelativeDateTimeControl, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::FilterRelativeDateTimeControl {
@@ -144,12 +163,7 @@ impl FilterRelativeDateTimeControlBuilder {
                     "filter_control_id was not specified but it is required when building FilterRelativeDateTimeControl",
                 )
             })?,
-            title: self.title.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "title",
-                    "title was not specified but it is required when building FilterRelativeDateTimeControl",
-                )
-            })?,
+            title: self.title.unwrap_or_default(),
             source_filter_id: self.source_filter_id.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "source_filter_id",
@@ -158,6 +172,7 @@ impl FilterRelativeDateTimeControlBuilder {
             })?,
             display_options: self.display_options,
             commit_mode: self.commit_mode,
+            control_title_format_text: self.control_title_format_text,
         })
     }
 }

@@ -851,6 +851,8 @@ pub(crate) mod shape_ranking_data;
 
 pub(crate) mod shape_seed_urls;
 
+pub(crate) mod shape_span_reasoning_value;
+
 pub(crate) mod shape_span_text_value;
 
 pub(crate) mod shape_span_tool_result_value;

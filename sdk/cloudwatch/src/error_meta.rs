@@ -193,7 +193,6 @@ impl From<crate::operation::delete_dashboards::DeleteDashboardsError> for Error 
     fn from(err: crate::operation::delete_dashboards::DeleteDashboardsError) -> Self {
         match err {
             crate::operation::delete_dashboards::DeleteDashboardsError::ConflictException(inner) => Error::ConflictException(inner),
-            crate::operation::delete_dashboards::DeleteDashboardsError::DashboardNotFoundError(inner) => Error::DashboardNotFoundError(inner),
             crate::operation::delete_dashboards::DeleteDashboardsError::InternalServiceFault(inner) => Error::InternalServiceFault(inner),
             crate::operation::delete_dashboards::DeleteDashboardsError::InvalidParameterValueException(inner) => {
                 Error::InvalidParameterValueException(inner)

@@ -98,6 +98,10 @@ where
                             builder = builder
                                 .set_content_redirection(crate::protocol_serde::shape_content_redirection::de_content_redirection(tokens, _value)?);
                         }
+                        "AgentAccessConfig" => {
+                            builder = builder
+                                .set_agent_access_config(crate::protocol_serde::shape_agent_access_config::de_agent_access_config(tokens, _value)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

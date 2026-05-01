@@ -12,6 +12,8 @@ pub struct OAuthParameters {
     pub identity_provider_vpc_connection_properties: ::std::option::Option<crate::types::VpcConnectionProperties>,
     /// <p>The resource uri of the identity provider.</p>
     pub identity_provider_resource_uri: ::std::option::Option<::std::string::String>,
+    /// <p>The S3 URI of the identity provider's CA certificates bundle in PEM format. Use this parameter to provide a custom CA certificate bundle for the identity provider when the default trust store does not include the required certificates.</p>
+    pub identity_provider_ca_certificates_bundle_s3_uri: ::std::option::Option<::std::string::String>,
 }
 impl OAuthParameters {
     /// <p>The token endpoint URL of the identity provider.</p>
@@ -31,6 +33,10 @@ impl OAuthParameters {
     pub fn identity_provider_resource_uri(&self) -> ::std::option::Option<&str> {
         self.identity_provider_resource_uri.as_deref()
     }
+    /// <p>The S3 URI of the identity provider's CA certificates bundle in PEM format. Use this parameter to provide a custom CA certificate bundle for the identity provider when the default trust store does not include the required certificates.</p>
+    pub fn identity_provider_ca_certificates_bundle_s3_uri(&self) -> ::std::option::Option<&str> {
+        self.identity_provider_ca_certificates_bundle_s3_uri.as_deref()
+    }
 }
 impl OAuthParameters {
     /// Creates a new builder-style object to manufacture [`OAuthParameters`](crate::types::OAuthParameters).
@@ -47,6 +53,7 @@ pub struct OAuthParametersBuilder {
     pub(crate) o_auth_scope: ::std::option::Option<::std::string::String>,
     pub(crate) identity_provider_vpc_connection_properties: ::std::option::Option<crate::types::VpcConnectionProperties>,
     pub(crate) identity_provider_resource_uri: ::std::option::Option<::std::string::String>,
+    pub(crate) identity_provider_ca_certificates_bundle_s3_uri: ::std::option::Option<::std::string::String>,
 }
 impl OAuthParametersBuilder {
     /// <p>The token endpoint URL of the identity provider.</p>
@@ -106,6 +113,20 @@ impl OAuthParametersBuilder {
     pub fn get_identity_provider_resource_uri(&self) -> &::std::option::Option<::std::string::String> {
         &self.identity_provider_resource_uri
     }
+    /// <p>The S3 URI of the identity provider's CA certificates bundle in PEM format. Use this parameter to provide a custom CA certificate bundle for the identity provider when the default trust store does not include the required certificates.</p>
+    pub fn identity_provider_ca_certificates_bundle_s3_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.identity_provider_ca_certificates_bundle_s3_uri = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The S3 URI of the identity provider's CA certificates bundle in PEM format. Use this parameter to provide a custom CA certificate bundle for the identity provider when the default trust store does not include the required certificates.</p>
+    pub fn set_identity_provider_ca_certificates_bundle_s3_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.identity_provider_ca_certificates_bundle_s3_uri = input;
+        self
+    }
+    /// <p>The S3 URI of the identity provider's CA certificates bundle in PEM format. Use this parameter to provide a custom CA certificate bundle for the identity provider when the default trust store does not include the required certificates.</p>
+    pub fn get_identity_provider_ca_certificates_bundle_s3_uri(&self) -> &::std::option::Option<::std::string::String> {
+        &self.identity_provider_ca_certificates_bundle_s3_uri
+    }
     /// Consumes the builder and constructs a [`OAuthParameters`](crate::types::OAuthParameters).
     /// This method will fail if any of the following fields are not set:
     /// - [`token_provider_url`](crate::types::builders::OAuthParametersBuilder::token_provider_url)
@@ -120,6 +141,7 @@ impl OAuthParametersBuilder {
             o_auth_scope: self.o_auth_scope,
             identity_provider_vpc_connection_properties: self.identity_provider_vpc_connection_properties,
             identity_provider_resource_uri: self.identity_provider_resource_uri,
+            identity_provider_ca_certificates_bundle_s3_uri: self.identity_provider_ca_certificates_bundle_s3_uri,
         })
     }
 }

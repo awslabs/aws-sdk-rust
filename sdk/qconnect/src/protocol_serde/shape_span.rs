@@ -76,6 +76,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "statusDescription" => {
+                            builder = builder.set_status_description(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         "requestId" => {
                             builder = builder.set_request_id(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

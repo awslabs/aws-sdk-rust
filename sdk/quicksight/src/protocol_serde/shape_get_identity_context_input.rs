@@ -3,19 +3,22 @@ pub fn ser_get_identity_context_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::get_identity_context::GetIdentityContextInput,
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    if let Some(var_1) = &input.namespace {
-        object.key("Namespace").string(var_1.as_str());
+    if let Some(var_1) = &input.context_region {
+        object.key("ContextRegion").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.session_expires_at {
+    if let Some(var_2) = &input.namespace {
+        object.key("Namespace").string(var_2.as_str());
+    }
+    if let Some(var_3) = &input.session_expires_at {
         object
             .key("SessionExpiresAt")
-            .date_time(var_2, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
+            .date_time(var_3, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
-    if let Some(var_3) = &input.user_identifier {
+    if let Some(var_4) = &input.user_identifier {
         #[allow(unused_mut)]
-        let mut object_4 = object.key("UserIdentifier").start_object();
-        crate::protocol_serde::shape_user_identifier::ser_user_identifier(&mut object_4, var_3)?;
-        object_4.finish();
+        let mut object_5 = object.key("UserIdentifier").start_object();
+        crate::protocol_serde::shape_user_identifier::ser_user_identifier(&mut object_5, var_4)?;
+        object_5.finish();
     }
     Ok(())
 }

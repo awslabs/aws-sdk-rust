@@ -10,6 +10,15 @@ pub fn ser_put_dashboard_input_input(
     if let Some(var_2) = &input.dashboard_body {
         encoder.str("DashboardBody").str(var_2.as_str());
     }
+    if let Some(var_3) = &input.tags {
+        encoder.str("Tags");
+        encoder.array((*var_3).len());
+        for item_4 in var_3 {
+            {
+                crate::protocol_serde::shape_tag::ser_tag(encoder, item_4)?;
+            }
+        }
+    }
     encoder.end();
     Ok(())
 }

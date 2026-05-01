@@ -6,12 +6,18 @@
 pub struct RuleConditionProperties {
     /// <p>A list of rule objects, each of which have fields <code>ruleName</code> and <code>condition</code>.</p>
     pub rules: ::std::vec::Vec<crate::types::RuleCondition>,
+    /// <p>An object that contains configuration settings for the matching process.</p>
+    pub matching_config: ::std::option::Option<crate::types::MatchingConfig>,
 }
 impl RuleConditionProperties {
     /// <p>A list of rule objects, each of which have fields <code>ruleName</code> and <code>condition</code>.</p>
     pub fn rules(&self) -> &[crate::types::RuleCondition] {
         use std::ops::Deref;
         self.rules.deref()
+    }
+    /// <p>An object that contains configuration settings for the matching process.</p>
+    pub fn matching_config(&self) -> ::std::option::Option<&crate::types::MatchingConfig> {
+        self.matching_config.as_ref()
     }
 }
 impl RuleConditionProperties {
@@ -26,6 +32,7 @@ impl RuleConditionProperties {
 #[non_exhaustive]
 pub struct RuleConditionPropertiesBuilder {
     pub(crate) rules: ::std::option::Option<::std::vec::Vec<crate::types::RuleCondition>>,
+    pub(crate) matching_config: ::std::option::Option<crate::types::MatchingConfig>,
 }
 impl RuleConditionPropertiesBuilder {
     /// Appends an item to `rules`.
@@ -48,6 +55,20 @@ impl RuleConditionPropertiesBuilder {
     pub fn get_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RuleCondition>> {
         &self.rules
     }
+    /// <p>An object that contains configuration settings for the matching process.</p>
+    pub fn matching_config(mut self, input: crate::types::MatchingConfig) -> Self {
+        self.matching_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>An object that contains configuration settings for the matching process.</p>
+    pub fn set_matching_config(mut self, input: ::std::option::Option<crate::types::MatchingConfig>) -> Self {
+        self.matching_config = input;
+        self
+    }
+    /// <p>An object that contains configuration settings for the matching process.</p>
+    pub fn get_matching_config(&self) -> &::std::option::Option<crate::types::MatchingConfig> {
+        &self.matching_config
+    }
     /// Consumes the builder and constructs a [`RuleConditionProperties`](crate::types::RuleConditionProperties).
     /// This method will fail if any of the following fields are not set:
     /// - [`rules`](crate::types::builders::RuleConditionPropertiesBuilder::rules)
@@ -59,6 +80,7 @@ impl RuleConditionPropertiesBuilder {
                     "rules was not specified but it is required when building RuleConditionProperties",
                 )
             })?,
+            matching_config: self.matching_config,
         })
     }
 }

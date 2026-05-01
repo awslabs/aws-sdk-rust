@@ -143,6 +143,8 @@ pub use crate::types::_integration_summary::IntegrationSummary;
 
 pub use crate::types::_anomaly_detector::AnomalyDetector;
 
+pub use crate::types::_tag_filter::TagFilter;
+
 pub use crate::types::_log_group_summary::LogGroupSummary;
 
 pub use crate::types::_scheduled_query_summary::ScheduledQuerySummary;
@@ -588,6 +590,8 @@ mod _suppression_state;
 mod _suppression_type;
 
 mod _suppression_unit;
+
+mod _tag_filter;
 
 mod _transformed_log_record;
 

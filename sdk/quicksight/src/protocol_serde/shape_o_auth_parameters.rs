@@ -18,6 +18,9 @@ pub fn ser_o_auth_parameters(
     if let Some(var_4) = &input.identity_provider_resource_uri {
         object.key("IdentityProviderResourceUri").string(var_4.as_str());
     }
+    if let Some(var_5) = &input.identity_provider_ca_certificates_bundle_s3_uri {
+        object.key("IdentityProviderCACertificatesBundleS3Uri").string(var_5.as_str());
+    }
     Ok(())
 }
 
@@ -58,6 +61,13 @@ where
                         }
                         "IdentityProviderResourceUri" => {
                             builder = builder.set_identity_provider_resource_uri(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "IdentityProviderCACertificatesBundleS3Uri" => {
+                            builder = builder.set_identity_provider_ca_certificates_bundle_s3_uri(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,

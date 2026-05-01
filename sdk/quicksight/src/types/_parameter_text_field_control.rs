@@ -12,6 +12,8 @@ pub struct ParameterTextFieldControl {
     pub source_parameter_name: ::std::string::String,
     /// <p>The display options of a control.</p>
     pub display_options: ::std::option::Option<crate::types::TextFieldControlDisplayOptions>,
+    /// <p>The title text format configuration for the control.</p>
+    pub control_title_format_text: ::std::option::Option<crate::types::ControlTitleFormatText>,
 }
 impl ParameterTextFieldControl {
     /// <p>The ID of the <code>ParameterTextFieldControl</code>.</p>
@@ -33,6 +35,10 @@ impl ParameterTextFieldControl {
     pub fn display_options(&self) -> ::std::option::Option<&crate::types::TextFieldControlDisplayOptions> {
         self.display_options.as_ref()
     }
+    /// <p>The title text format configuration for the control.</p>
+    pub fn control_title_format_text(&self) -> ::std::option::Option<&crate::types::ControlTitleFormatText> {
+        self.control_title_format_text.as_ref()
+    }
 }
 impl ParameterTextFieldControl {
     /// Creates a new builder-style object to manufacture [`ParameterTextFieldControl`](crate::types::ParameterTextFieldControl).
@@ -49,6 +55,7 @@ pub struct ParameterTextFieldControlBuilder {
     pub(crate) title: ::std::option::Option<::std::string::String>,
     pub(crate) source_parameter_name: ::std::option::Option<::std::string::String>,
     pub(crate) display_options: ::std::option::Option<crate::types::TextFieldControlDisplayOptions>,
+    pub(crate) control_title_format_text: ::std::option::Option<crate::types::ControlTitleFormatText>,
 }
 impl ParameterTextFieldControlBuilder {
     /// <p>The ID of the <code>ParameterTextFieldControl</code>.</p>
@@ -67,7 +74,6 @@ impl ParameterTextFieldControlBuilder {
         &self.parameter_control_id
     }
     /// <p>The title of the <code>ParameterTextFieldControl</code>.</p>
-    /// This field is required.
     pub fn title(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.title = ::std::option::Option::Some(input.into());
         self
@@ -110,10 +116,23 @@ impl ParameterTextFieldControlBuilder {
     pub fn get_display_options(&self) -> &::std::option::Option<crate::types::TextFieldControlDisplayOptions> {
         &self.display_options
     }
+    /// <p>The title text format configuration for the control.</p>
+    pub fn control_title_format_text(mut self, input: crate::types::ControlTitleFormatText) -> Self {
+        self.control_title_format_text = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The title text format configuration for the control.</p>
+    pub fn set_control_title_format_text(mut self, input: ::std::option::Option<crate::types::ControlTitleFormatText>) -> Self {
+        self.control_title_format_text = input;
+        self
+    }
+    /// <p>The title text format configuration for the control.</p>
+    pub fn get_control_title_format_text(&self) -> &::std::option::Option<crate::types::ControlTitleFormatText> {
+        &self.control_title_format_text
+    }
     /// Consumes the builder and constructs a [`ParameterTextFieldControl`](crate::types::ParameterTextFieldControl).
     /// This method will fail if any of the following fields are not set:
     /// - [`parameter_control_id`](crate::types::builders::ParameterTextFieldControlBuilder::parameter_control_id)
-    /// - [`title`](crate::types::builders::ParameterTextFieldControlBuilder::title)
     /// - [`source_parameter_name`](crate::types::builders::ParameterTextFieldControlBuilder::source_parameter_name)
     pub fn build(self) -> ::std::result::Result<crate::types::ParameterTextFieldControl, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ParameterTextFieldControl {
@@ -123,12 +142,7 @@ impl ParameterTextFieldControlBuilder {
                     "parameter_control_id was not specified but it is required when building ParameterTextFieldControl",
                 )
             })?,
-            title: self.title.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "title",
-                    "title was not specified but it is required when building ParameterTextFieldControl",
-                )
-            })?,
+            title: self.title.unwrap_or_default(),
             source_parameter_name: self.source_parameter_name.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "source_parameter_name",
@@ -136,6 +150,7 @@ impl ParameterTextFieldControlBuilder {
                 )
             })?,
             display_options: self.display_options,
+            control_title_format_text: self.control_title_format_text,
         })
     }
 }

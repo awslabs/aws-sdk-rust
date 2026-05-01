@@ -695,6 +695,8 @@ pub use crate::types::_visual_title_font_configuration::VisualTitleFontConfigura
 
 pub use crate::types::_visual_subtitle_font_configuration::VisualSubtitleFontConfiguration;
 
+pub use crate::types::_control_title_font_configuration::ControlTitleFontConfiguration;
+
 pub use crate::types::_dataset_metadata::DatasetMetadata;
 
 pub use crate::types::_action_connector_error_type::ActionConnectorErrorType;
@@ -1416,6 +1418,8 @@ pub use crate::types::_null_filter_option::NullFilterOption;
 pub use crate::types::_anchor::Anchor;
 
 pub use crate::types::_date_time_picker_control_display_options::DateTimePickerControlDisplayOptions;
+
+pub use crate::types::_control_title_format_text::ControlTitleFormatText;
 
 pub use crate::types::_list_control_display_options::ListControlDisplayOptions;
 
@@ -3214,6 +3218,10 @@ mod _contribution_analysis_time_ranges;
 mod _control_sort_configuration;
 
 mod _control_sort_direction;
+
+mod _control_title_font_configuration;
+
+mod _control_title_format_text;
 
 mod _coordinate;
 

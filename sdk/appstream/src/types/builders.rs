@@ -45,11 +45,15 @@ pub use crate::types::_streaming_experience_settings::StreamingExperienceSetting
 
 pub use crate::types::_content_redirection::ContentRedirectionBuilder;
 
+pub use crate::types::_agent_access_config::AgentAccessConfigBuilder;
+
 pub use crate::types::_stack::StackBuilder;
 
 pub use crate::types::_theme::ThemeBuilder;
 
 pub use crate::types::_image_permissions::ImagePermissionsBuilder;
+
+pub use crate::types::_agent_access_config_for_update::AgentAccessConfigForUpdateBuilder;
 
 pub use crate::types::_user_stack_association::UserStackAssociationBuilder;
 
@@ -102,6 +106,8 @@ pub use crate::types::_error_details::ErrorDetailsBuilder;
 pub use crate::types::_resource_error::ResourceErrorBuilder;
 
 pub use crate::types::_fleet_error::FleetErrorBuilder;
+
+pub use crate::types::_agent_access_setting::AgentAccessSettingBuilder;
 
 pub use crate::types::_stack_error::StackErrorBuilder;
 
