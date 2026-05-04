@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteArtifact`](crate::operation::delete_artifact::builders::DeleteArtifactFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`agent_space_id(impl Into<String>)`](crate::operation::delete_artifact::builders::DeleteArtifactFluentBuilder::agent_space_id) / [`set_agent_space_id(Option<String>)`](crate::operation::delete_artifact::builders::DeleteArtifactFluentBuilder::set_agent_space_id):<br>required: **true**<br>Unique identifier of the agent space<br>
-    ///   - [`artifact_id(impl Into<String>)`](crate::operation::delete_artifact::builders::DeleteArtifactFluentBuilder::artifact_id) / [`set_artifact_id(Option<String>)`](crate::operation::delete_artifact::builders::DeleteArtifactFluentBuilder::set_artifact_id):<br>required: **true**<br>Unique identifier of the artifact<br>
+    ///   - [`agent_space_id(impl Into<String>)`](crate::operation::delete_artifact::builders::DeleteArtifactFluentBuilder::agent_space_id) / [`set_agent_space_id(Option<String>)`](crate::operation::delete_artifact::builders::DeleteArtifactFluentBuilder::set_agent_space_id):<br>required: **true**<br><p>The unique identifier of the agent space that contains the artifact.</p><br>
+    ///   - [`artifact_id(impl Into<String>)`](crate::operation::delete_artifact::builders::DeleteArtifactFluentBuilder::artifact_id) / [`set_artifact_id(Option<String>)`](crate::operation::delete_artifact::builders::DeleteArtifactFluentBuilder::set_artifact_id):<br>required: **true**<br><p>The unique identifier of the artifact to delete.</p><br>
     /// - On success, responds with [`DeleteArtifactOutput`](crate::operation::delete_artifact::DeleteArtifactOutput)
     /// - On failure, responds with [`SdkError<DeleteArtifactError>`](crate::operation::delete_artifact::DeleteArtifactError)
     pub fn delete_artifact(&self) -> crate::operation::delete_artifact::builders::DeleteArtifactFluentBuilder {

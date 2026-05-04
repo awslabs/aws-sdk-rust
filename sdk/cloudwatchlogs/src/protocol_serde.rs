@@ -691,6 +691,8 @@ pub(crate) mod shape_date_time_converter;
 
 pub(crate) mod shape_delete_keys;
 
+pub(crate) mod shape_delivery_source_configuration;
+
 pub(crate) mod shape_export_task;
 
 pub(crate) mod shape_field_index;
@@ -803,6 +805,8 @@ pub(crate) mod shape_configuration_template_delivery_config_values;
 
 pub(crate) mod shape_copy_value_entry;
 
+pub(crate) mod shape_delivery_source_configuration_schemas;
+
 pub(crate) mod shape_emit_system_fields;
 
 pub(crate) mod shape_export_task_execution_info;
@@ -853,6 +857,8 @@ pub(crate) mod shape_rename_key_entry;
 
 pub(crate) mod shape_result_field;
 
+pub(crate) mod shape_s3_tables_integration;
+
 pub(crate) mod shape_scheduled_query_destination_list;
 
 pub(crate) mod shape_split_string_entry;
@@ -870,6 +876,8 @@ pub(crate) mod shape_columns;
 pub(crate) mod shape_copy_value_entries;
 
 pub(crate) mod shape_delete_with_keys;
+
+pub(crate) mod shape_delivery_source_configuration_schema;
 
 pub(crate) mod shape_grouping_identifier;
 
@@ -908,6 +916,8 @@ pub(crate) mod shape_trim_string_with_keys;
 pub(crate) mod shape_type_converter_entries;
 
 pub(crate) mod shape_upper_case_string_with_keys;
+
+pub(crate) mod shape_delivery_source_configuration_supported_values;
 
 pub(crate) mod shape_dimensions;
 

@@ -55,6 +55,13 @@ where
                                 crate::protocol_serde::shape_channel_engine_version_response::de_channel_engine_version_response(tokens, _value)?,
                             );
                         }
+                        "mediaConnectRouterOutputConnectionMap" => {
+                            builder = builder.set_media_connect_router_output_connection_map(
+                                crate::protocol_serde::shape_media_connect_router_output_connections::de_media_connect_router_output_connections(
+                                    tokens, _value,
+                                )?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

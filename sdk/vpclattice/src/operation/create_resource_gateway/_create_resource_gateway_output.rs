@@ -21,6 +21,8 @@ pub struct CreateResourceGatewayOutput {
     pub ip_address_type: ::std::option::Option<crate::types::ResourceGatewayIpAddressType>,
     /// <p>The number of IPv4 addresses in each ENI for the resource gateway.</p>
     pub ipv4_addresses_per_eni: ::std::option::Option<i32>,
+    /// <p>The DNS resolution type for resource configurations that are associated with this resource gateway.</p>
+    pub resource_config_dns_resolution: ::std::option::Option<crate::types::ResourceConfigDnsResolution>,
     _request_id: Option<String>,
 }
 impl CreateResourceGatewayOutput {
@@ -64,6 +66,10 @@ impl CreateResourceGatewayOutput {
     pub fn ipv4_addresses_per_eni(&self) -> ::std::option::Option<i32> {
         self.ipv4_addresses_per_eni
     }
+    /// <p>The DNS resolution type for resource configurations that are associated with this resource gateway.</p>
+    pub fn resource_config_dns_resolution(&self) -> ::std::option::Option<&crate::types::ResourceConfigDnsResolution> {
+        self.resource_config_dns_resolution.as_ref()
+    }
 }
 impl ::aws_types::request_id::RequestId for CreateResourceGatewayOutput {
     fn request_id(&self) -> Option<&str> {
@@ -90,6 +96,7 @@ pub struct CreateResourceGatewayOutputBuilder {
     pub(crate) security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) ip_address_type: ::std::option::Option<crate::types::ResourceGatewayIpAddressType>,
     pub(crate) ipv4_addresses_per_eni: ::std::option::Option<i32>,
+    pub(crate) resource_config_dns_resolution: ::std::option::Option<crate::types::ResourceConfigDnsResolution>,
     _request_id: Option<String>,
 }
 impl CreateResourceGatewayOutputBuilder {
@@ -231,6 +238,20 @@ impl CreateResourceGatewayOutputBuilder {
     pub fn get_ipv4_addresses_per_eni(&self) -> &::std::option::Option<i32> {
         &self.ipv4_addresses_per_eni
     }
+    /// <p>The DNS resolution type for resource configurations that are associated with this resource gateway.</p>
+    pub fn resource_config_dns_resolution(mut self, input: crate::types::ResourceConfigDnsResolution) -> Self {
+        self.resource_config_dns_resolution = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The DNS resolution type for resource configurations that are associated with this resource gateway.</p>
+    pub fn set_resource_config_dns_resolution(mut self, input: ::std::option::Option<crate::types::ResourceConfigDnsResolution>) -> Self {
+        self.resource_config_dns_resolution = input;
+        self
+    }
+    /// <p>The DNS resolution type for resource configurations that are associated with this resource gateway.</p>
+    pub fn get_resource_config_dns_resolution(&self) -> &::std::option::Option<crate::types::ResourceConfigDnsResolution> {
+        &self.resource_config_dns_resolution
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -252,6 +273,7 @@ impl CreateResourceGatewayOutputBuilder {
             security_group_ids: self.security_group_ids,
             ip_address_type: self.ip_address_type,
             ipv4_addresses_per_eni: self.ipv4_addresses_per_eni,
+            resource_config_dns_resolution: self.resource_config_dns_resolution,
             _request_id: self._request_id,
         }
     }

@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AddArtifactOutput {
-    /// Unique identifier of the created artifact
+    /// <p>The unique identifier assigned to the uploaded artifact.</p>
     pub artifact_id: ::std::string::String,
     _request_id: Option<String>,
 }
 impl AddArtifactOutput {
-    /// Unique identifier of the created artifact
+    /// <p>The unique identifier assigned to the uploaded artifact.</p>
     pub fn artifact_id(&self) -> &str {
         use std::ops::Deref;
         self.artifact_id.deref()
@@ -34,18 +34,18 @@ pub struct AddArtifactOutputBuilder {
     _request_id: Option<String>,
 }
 impl AddArtifactOutputBuilder {
-    /// Unique identifier of the created artifact
+    /// <p>The unique identifier assigned to the uploaded artifact.</p>
     /// This field is required.
     pub fn artifact_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.artifact_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// Unique identifier of the created artifact
+    /// <p>The unique identifier assigned to the uploaded artifact.</p>
     pub fn set_artifact_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.artifact_id = input;
         self
     }
-    /// Unique identifier of the created artifact
+    /// <p>The unique identifier assigned to the uploaded artifact.</p>
     pub fn get_artifact_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.artifact_id
     }

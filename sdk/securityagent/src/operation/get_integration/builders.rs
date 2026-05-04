@@ -22,7 +22,7 @@ impl crate::operation::get_integration::builders::GetIntegrationInputBuilder {
 }
 /// Fluent builder constructing a request to `GetIntegration`.
 ///
-/// Gets Integration metadata from the provided id
+/// <p>Retrieves information about an integration.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetIntegrationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl GetIntegrationFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// Unique identifier of the integration
+    /// <p>The unique identifier of the integration to retrieve.</p>
     pub fn integration_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.integration_id(input.into());
         self
     }
-    /// Unique identifier of the integration
+    /// <p>The unique identifier of the integration to retrieve.</p>
     pub fn set_integration_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_integration_id(input);
         self
     }
-    /// Unique identifier of the integration
+    /// <p>The unique identifier of the integration to retrieve.</p>
     pub fn get_integration_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_integration_id()
     }

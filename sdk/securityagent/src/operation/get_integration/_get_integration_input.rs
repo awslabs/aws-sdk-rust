@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetIntegrationInput {
-    /// Unique identifier of the integration
+    /// <p>The unique identifier of the integration to retrieve.</p>
     pub integration_id: ::std::option::Option<::std::string::String>,
 }
 impl GetIntegrationInput {
-    /// Unique identifier of the integration
+    /// <p>The unique identifier of the integration to retrieve.</p>
     pub fn integration_id(&self) -> ::std::option::Option<&str> {
         self.integration_id.as_deref()
     }
@@ -26,18 +26,18 @@ pub struct GetIntegrationInputBuilder {
     pub(crate) integration_id: ::std::option::Option<::std::string::String>,
 }
 impl GetIntegrationInputBuilder {
-    /// Unique identifier of the integration
+    /// <p>The unique identifier of the integration to retrieve.</p>
     /// This field is required.
     pub fn integration_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.integration_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// Unique identifier of the integration
+    /// <p>The unique identifier of the integration to retrieve.</p>
     pub fn set_integration_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.integration_id = input;
         self
     }
-    /// Unique identifier of the integration
+    /// <p>The unique identifier of the integration to retrieve.</p>
     pub fn get_integration_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.integration_id
     }

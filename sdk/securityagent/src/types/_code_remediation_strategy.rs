@@ -36,15 +36,15 @@
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 ///
-/// Strategy for automated code remediation
+/// <p>Strategy for automated code remediation.</p>
 #[non_exhaustive]
 #[derive(
     ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum CodeRemediationStrategy {
-    /// Automatically generate code remediation for findings
+    /// <p>Automatically generate code remediation for findings.</p>
     Automatic,
-    /// Code remediation is disabled
+    /// <p>Code remediation is disabled.</p>
     Disabled,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]

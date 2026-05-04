@@ -38,19 +38,19 @@
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 ///
-/// Pentest job step names
+/// <p>Pentest job step names.</p>
 #[non_exhaustive]
 #[derive(
     ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum StepName {
-    /// Cleanup of infrastructure and resources created by the agent
+    /// <p>Cleanup of infrastructure and resources created by the agent.</p>
     Finalizing,
-    /// Active pentest step
+    /// <p>Active pentest step.</p>
     Pentest,
-    /// Pre-flight validation and setup step
+    /// <p>Pre-flight validation and setup step.</p>
     Preflight,
-    /// Static code and network scan analysis step
+    /// <p>Static code and network scan analysis step.</p>
     StaticAnalysis,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]

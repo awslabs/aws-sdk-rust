@@ -6,6 +6,7 @@ impl super::Client {
     ///   - [`name(impl Into<String>)`](crate::operation::delete_bot::builders::DeleteBotFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::delete_bot::builders::DeleteBotFluentBuilder::set_name):<br>required: **true**<br><p>The name of the bot. The name is case sensitive.</p><br>
     /// - On success, responds with [`DeleteBotOutput`](crate::operation::delete_bot::DeleteBotOutput)
     /// - On failure, responds with [`SdkError<DeleteBotError>`](crate::operation::delete_bot::DeleteBotError)
+    #[deprecated(note = "Amazon Lex V1 is deprecated. Use Amazon Lex V2 instead.", since = "2025-09-08")]
     pub fn delete_bot(&self) -> crate::operation::delete_bot::builders::DeleteBotFluentBuilder {
         crate::operation::delete_bot::builders::DeleteBotFluentBuilder::new(self.handle.clone())
     }

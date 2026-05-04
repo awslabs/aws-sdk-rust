@@ -15,12 +15,18 @@ pub struct GetResourceGatewayOutput {
     pub vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>The IDs of the VPC subnets for resource gateway.</p>
     pub subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>Indicates whether the resource gateway is managed by an AWS service.</p>
+    pub service_managed: ::std::option::Option<bool>,
+    /// <p>The AWS service that manages the resource gateway.</p>
+    pub managed_by: ::std::option::Option<::std::string::String>,
     /// <p>The security group IDs associated with the resource gateway.</p>
     pub security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The type of IP address for the resource gateway.</p>
     pub ip_address_type: ::std::option::Option<crate::types::ResourceGatewayIpAddressType>,
     /// <p>The number of IPv4 addresses in each ENI for the resource gateway.</p>
     pub ipv4_addresses_per_eni: ::std::option::Option<i32>,
+    /// <p>The DNS resolution type for resource configurations that are associated with this resource gateway.</p>
+    pub resource_config_dns_resolution: ::std::option::Option<crate::types::ResourceConfigDnsResolution>,
     /// <p>The date and time that the resource gateway was created, in ISO-8601 format.</p>
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time that the resource gateway was last updated, in ISO-8601 format.</p>
@@ -54,6 +60,14 @@ impl GetResourceGatewayOutput {
     pub fn subnet_ids(&self) -> &[::std::string::String] {
         self.subnet_ids.as_deref().unwrap_or_default()
     }
+    /// <p>Indicates whether the resource gateway is managed by an AWS service.</p>
+    pub fn service_managed(&self) -> ::std::option::Option<bool> {
+        self.service_managed
+    }
+    /// <p>The AWS service that manages the resource gateway.</p>
+    pub fn managed_by(&self) -> ::std::option::Option<&str> {
+        self.managed_by.as_deref()
+    }
     /// <p>The security group IDs associated with the resource gateway.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_group_ids.is_none()`.
@@ -67,6 +81,10 @@ impl GetResourceGatewayOutput {
     /// <p>The number of IPv4 addresses in each ENI for the resource gateway.</p>
     pub fn ipv4_addresses_per_eni(&self) -> ::std::option::Option<i32> {
         self.ipv4_addresses_per_eni
+    }
+    /// <p>The DNS resolution type for resource configurations that are associated with this resource gateway.</p>
+    pub fn resource_config_dns_resolution(&self) -> ::std::option::Option<&crate::types::ResourceConfigDnsResolution> {
+        self.resource_config_dns_resolution.as_ref()
     }
     /// <p>The date and time that the resource gateway was created, in ISO-8601 format.</p>
     pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -99,9 +117,12 @@ pub struct GetResourceGatewayOutputBuilder {
     pub(crate) status: ::std::option::Option<crate::types::ResourceGatewayStatus>,
     pub(crate) vpc_id: ::std::option::Option<::std::string::String>,
     pub(crate) subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) service_managed: ::std::option::Option<bool>,
+    pub(crate) managed_by: ::std::option::Option<::std::string::String>,
     pub(crate) security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) ip_address_type: ::std::option::Option<crate::types::ResourceGatewayIpAddressType>,
     pub(crate) ipv4_addresses_per_eni: ::std::option::Option<i32>,
+    pub(crate) resource_config_dns_resolution: ::std::option::Option<crate::types::ResourceConfigDnsResolution>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
@@ -197,6 +218,34 @@ impl GetResourceGatewayOutputBuilder {
     pub fn get_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.subnet_ids
     }
+    /// <p>Indicates whether the resource gateway is managed by an AWS service.</p>
+    pub fn service_managed(mut self, input: bool) -> Self {
+        self.service_managed = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether the resource gateway is managed by an AWS service.</p>
+    pub fn set_service_managed(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.service_managed = input;
+        self
+    }
+    /// <p>Indicates whether the resource gateway is managed by an AWS service.</p>
+    pub fn get_service_managed(&self) -> &::std::option::Option<bool> {
+        &self.service_managed
+    }
+    /// <p>The AWS service that manages the resource gateway.</p>
+    pub fn managed_by(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.managed_by = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The AWS service that manages the resource gateway.</p>
+    pub fn set_managed_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.managed_by = input;
+        self
+    }
+    /// <p>The AWS service that manages the resource gateway.</p>
+    pub fn get_managed_by(&self) -> &::std::option::Option<::std::string::String> {
+        &self.managed_by
+    }
     /// Appends an item to `security_group_ids`.
     ///
     /// To override the contents of this collection use [`set_security_group_ids`](Self::set_security_group_ids).
@@ -245,6 +294,20 @@ impl GetResourceGatewayOutputBuilder {
     pub fn get_ipv4_addresses_per_eni(&self) -> &::std::option::Option<i32> {
         &self.ipv4_addresses_per_eni
     }
+    /// <p>The DNS resolution type for resource configurations that are associated with this resource gateway.</p>
+    pub fn resource_config_dns_resolution(mut self, input: crate::types::ResourceConfigDnsResolution) -> Self {
+        self.resource_config_dns_resolution = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The DNS resolution type for resource configurations that are associated with this resource gateway.</p>
+    pub fn set_resource_config_dns_resolution(mut self, input: ::std::option::Option<crate::types::ResourceConfigDnsResolution>) -> Self {
+        self.resource_config_dns_resolution = input;
+        self
+    }
+    /// <p>The DNS resolution type for resource configurations that are associated with this resource gateway.</p>
+    pub fn get_resource_config_dns_resolution(&self) -> &::std::option::Option<crate::types::ResourceConfigDnsResolution> {
+        &self.resource_config_dns_resolution
+    }
     /// <p>The date and time that the resource gateway was created, in ISO-8601 format.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
@@ -291,9 +354,12 @@ impl GetResourceGatewayOutputBuilder {
             status: self.status,
             vpc_id: self.vpc_id,
             subnet_ids: self.subnet_ids,
+            service_managed: self.service_managed,
+            managed_by: self.managed_by,
             security_group_ids: self.security_group_ids,
             ip_address_type: self.ip_address_type,
             ipv4_addresses_per_eni: self.ipv4_addresses_per_eni,
+            resource_config_dns_resolution: self.resource_config_dns_resolution,
             created_at: self.created_at,
             last_updated_at: self.last_updated_at,
             _request_id: self._request_id,

@@ -23,6 +23,7 @@ impl crate::operation::get_export::builders::GetExportInputBuilder {
 /// Fluent builder constructing a request to `GetExport`.
 ///
 /// <p>Exports the contents of a Amazon Lex resource in a specified format.</p>
+#[deprecated(note = "Amazon Lex V1 is deprecated. Use Amazon Lex V2 instead.", since = "2025-09-08")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetExportFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

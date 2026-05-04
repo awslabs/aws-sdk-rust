@@ -31,9 +31,14 @@ pub fn ser_modify_vpn_connection_options_input_input_input(
         scope_9.string(var_10);
     }
     #[allow(unused_mut)]
-    let mut scope_11 = writer.prefix("DryRun");
-    if let Some(var_12) = &input.dry_run {
-        scope_11.boolean(*var_12);
+    let mut scope_11 = writer.prefix("TunnelBandwidth");
+    if let Some(var_12) = &input.tunnel_bandwidth {
+        scope_11.string(var_12.as_str());
+    }
+    #[allow(unused_mut)]
+    let mut scope_13 = writer.prefix("DryRun");
+    if let Some(var_14) = &input.dry_run {
+        scope_13.boolean(*var_14);
     }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))

@@ -42,11 +42,9 @@
     ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum OnBehalfOfTokenExchangeGrantTypeType {
-    /// RFC 7523 - Adopted by Microsoft Entra ID
-    /// grant type = urn:ietf:params:oauth:grant-type:jwt-bearer
+    /// <p>RFC 7523 JWT authorization grant, adopted by Microsoft Entra ID.</p>
     JwtAuthorizationGrant,
-    /// RFC 8693 - Adopted by majority of IDPs supporting OBO
-    /// grant type = urn:ietf:params:oauth:grant-type:token-exchange
+    /// <p>RFC 8693 token exchange, adopted by the majority of identity providers supporting on-behalf-of flows.</p>
     TokenExchange,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]

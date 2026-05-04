@@ -23,6 +23,8 @@ pub use crate::types::_resource_configuration_status::ResourceConfigurationStatu
 
 pub use crate::types::_resource_gateway_ip_address_type::ResourceGatewayIpAddressType;
 
+pub use crate::types::_resource_config_dns_resolution::ResourceConfigDnsResolution;
+
 pub use crate::types::_resource_gateway_status::ResourceGatewayStatus;
 
 pub use crate::types::_ip_address_type::IpAddressType;
@@ -182,6 +184,8 @@ mod _path_match_type;
 mod _private_dns_preference;
 
 mod _protocol_type;
+
+mod _resource_config_dns_resolution;
 
 mod _resource_configuration_definition;
 

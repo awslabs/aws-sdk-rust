@@ -217,6 +217,13 @@ pub(crate) fn de_create_resource_gateway(
                             .transpose()?,
                     );
                 }
+                "resourceConfigDnsResolution" => {
+                    builder = builder.set_resource_config_dns_resolution(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| crate::types::ResourceConfigDnsResolution::from(u.as_ref())))
+                            .transpose()?,
+                    );
+                }
                 "securityGroupIds" => {
                     builder =
                         builder.set_security_group_ids(crate::protocol_serde::shape_security_group_list::de_security_group_list(tokens, _value)?);

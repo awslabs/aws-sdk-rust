@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteIntegration`](crate::operation::delete_integration::builders::DeleteIntegrationFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`integration_id(impl Into<String>)`](crate::operation::delete_integration::builders::DeleteIntegrationFluentBuilder::integration_id) / [`set_integration_id(Option<String>)`](crate::operation::delete_integration::builders::DeleteIntegrationFluentBuilder::set_integration_id):<br>required: **true**<br>Unique identifier of the integration<br>
+    ///   - [`integration_id(impl Into<String>)`](crate::operation::delete_integration::builders::DeleteIntegrationFluentBuilder::integration_id) / [`set_integration_id(Option<String>)`](crate::operation::delete_integration::builders::DeleteIntegrationFluentBuilder::set_integration_id):<br>required: **true**<br><p>The unique identifier of the integration to delete.</p><br>
     /// - On success, responds with [`DeleteIntegrationOutput`](crate::operation::delete_integration::DeleteIntegrationOutput)
     /// - On failure, responds with [`SdkError<DeleteIntegrationError>`](crate::operation::delete_integration::DeleteIntegrationError)
     pub fn delete_integration(&self) -> crate::operation::delete_integration::builders::DeleteIntegrationFluentBuilder {

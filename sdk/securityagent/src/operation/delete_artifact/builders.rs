@@ -22,7 +22,7 @@ impl crate::operation::delete_artifact::builders::DeleteArtifactInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteArtifact`.
 ///
-/// Delete an Artifact from the given agent space
+/// <p>Deletes an artifact from an agent space.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteArtifactFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,31 +108,31 @@ impl DeleteArtifactFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// Unique identifier of the agent space
+    /// <p>The unique identifier of the agent space that contains the artifact.</p>
     pub fn agent_space_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.agent_space_id(input.into());
         self
     }
-    /// Unique identifier of the agent space
+    /// <p>The unique identifier of the agent space that contains the artifact.</p>
     pub fn set_agent_space_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_agent_space_id(input);
         self
     }
-    /// Unique identifier of the agent space
+    /// <p>The unique identifier of the agent space that contains the artifact.</p>
     pub fn get_agent_space_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_agent_space_id()
     }
-    /// Unique identifier of the artifact
+    /// <p>The unique identifier of the artifact to delete.</p>
     pub fn artifact_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.artifact_id(input.into());
         self
     }
-    /// Unique identifier of the artifact
+    /// <p>The unique identifier of the artifact to delete.</p>
     pub fn set_artifact_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_artifact_id(input);
         self
     }
-    /// Unique identifier of the artifact
+    /// <p>The unique identifier of the artifact to delete.</p>
     pub fn get_artifact_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_artifact_id()
     }

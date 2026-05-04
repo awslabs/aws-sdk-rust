@@ -849,6 +849,8 @@ pub(crate) mod shape_list_of_srt_output_destination_settings;
 
 pub(crate) mod shape_list_of_thumbnail;
 
+pub(crate) mod shape_media_connect_router_output_connections;
+
 pub(crate) mod shape_motion_graphics_settings;
 
 pub(crate) mod shape_multicast_source;
@@ -976,6 +978,8 @@ pub(crate) mod shape_list_of_failover_condition;
 pub(crate) mod shape_list_of_output;
 
 pub(crate) mod shape_media_connect_router_group_settings;
+
+pub(crate) mod shape_media_connect_router_output_connection;
 
 pub(crate) mod shape_media_package_group_settings;
 

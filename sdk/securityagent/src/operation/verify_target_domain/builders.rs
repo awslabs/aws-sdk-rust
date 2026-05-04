@@ -22,7 +22,7 @@ impl crate::operation::verify_target_domain::builders::VerifyTargetDomainInputBu
 }
 /// Fluent builder constructing a request to `VerifyTargetDomain`.
 ///
-/// Verifies ownership for a registered target domain
+/// <p>Initiates verification of a target domain. This checks whether the domain ownership verification token has been properly configured.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct VerifyTargetDomainFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl VerifyTargetDomainFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// Unique identifier of the target domain
+    /// <p>The unique identifier of the target domain to verify.</p>
     pub fn target_domain_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.target_domain_id(input.into());
         self
     }
-    /// Unique identifier of the target domain
+    /// <p>The unique identifier of the target domain to verify.</p>
     pub fn set_target_domain_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_target_domain_id(input);
         self
     }
-    /// Unique identifier of the target domain
+    /// <p>The unique identifier of the target domain to verify.</p>
     pub fn get_target_domain_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_target_domain_id()
     }

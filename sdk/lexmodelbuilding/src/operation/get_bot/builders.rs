@@ -24,6 +24,7 @@ impl crate::operation::get_bot::builders::GetBotInputBuilder {
 ///
 /// <p>Returns metadata information for a specific bot. You must provide the bot name and the bot version or alias.</p>
 /// <p>This operation requires permissions for the <code>lex:GetBot</code> action.</p>
+#[deprecated(note = "Amazon Lex V1 is deprecated. Use Amazon Lex V2 instead.", since = "2025-09-08")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetBotFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

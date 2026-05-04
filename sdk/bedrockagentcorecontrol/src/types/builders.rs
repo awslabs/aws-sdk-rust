@@ -237,6 +237,10 @@ pub use crate::types::_session_storage_configuration::SessionStorageConfiguratio
 
 pub use crate::types::_lambda_evaluator_config::LambdaEvaluatorConfigBuilder;
 
+pub use crate::types::_session_configuration::SessionConfigurationBuilder;
+
+pub use crate::types::_streaming_configuration::StreamingConfigurationBuilder;
+
 pub use crate::types::_interceptor_input_configuration::InterceptorInputConfigurationBuilder;
 
 pub use crate::types::_match_principals::MatchPrincipalsBuilder;

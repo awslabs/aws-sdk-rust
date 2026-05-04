@@ -62,7 +62,7 @@
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 ///
-/// Type of security risk
+/// <p>Type of security risk.</p>
 ///
 /// _Note: `RiskType::Unknown` has been renamed to `::UnknownValue`._
 #[non_exhaustive]
@@ -70,63 +70,63 @@
     ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum RiskType {
-    /// Arbitrary file upload vulnerability
+    /// <p>Arbitrary file upload vulnerability.</p>
     ArbitraryFileUpload,
-    /// Business logic vulnerability
+    /// <p>Business logic vulnerability.</p>
     BusinessLogicVulnerabilities,
-    /// Code injection vulnerability
+    /// <p>Code injection vulnerability.</p>
     CodeInjection,
-    /// Command injection vulnerability
+    /// <p>Command injection vulnerability.</p>
     CommandInjection,
-    /// Cross-site scripting vulnerability
+    /// <p>Cross-site scripting vulnerability.</p>
     CrossSiteScripting,
-    /// Cryptographic vulnerability
+    /// <p>Cryptographic vulnerability.</p>
     CryptographicVulnerabilities,
-    /// Unauthorized database access
+    /// <p>Unauthorized database access.</p>
     DatabaseAccess,
-    /// Unauthorized database modification
+    /// <p>Unauthorized database modification.</p>
     DatabaseModification,
-    /// Default or weak credentials detected
+    /// <p>Default or weak credentials detected.</p>
     DefaultCredentials,
-    /// Denial of service vulnerability
+    /// <p>Denial of service vulnerability.</p>
     DenialOfService,
-    /// Unauthorized file access vulnerability
+    /// <p>Unauthorized file access vulnerability.</p>
     FileAccess,
-    /// Unauthorized file creation vulnerability
+    /// <p>Unauthorized file creation vulnerability.</p>
     FileCreation,
-    /// File deletion vulnerability
+    /// <p>File deletion vulnerability.</p>
     FileDeletion,
-    /// GraphQL-specific vulnerability
+    /// <p>GraphQL-specific vulnerability.</p>
     GraphqlVulnerabilities,
-    /// Information disclosure vulnerability
+    /// <p>Information disclosure vulnerability.</p>
     InformationDisclosure,
-    /// Insecure deserialization vulnerability
+    /// <p>Insecure deserialization vulnerability.</p>
     InsecureDeserialization,
-    /// Insecure direct object reference vulnerability
+    /// <p>Insecure direct object reference vulnerability.</p>
     InsecureDirectObjectReference,
-    /// JSON Web Token vulnerability
+    /// <p>JSON Web Token vulnerability.</p>
     JsonWebTokenVulnerabilities,
-    /// Local file inclusion vulnerability
+    /// <p>Local file inclusion vulnerability.</p>
     LocalFileInclusion,
-    /// Other risk type not covered by specific categories
+    /// <p>Other risk type not covered by specific categories.</p>
     Other,
-    /// Outbound service request vulnerability
+    /// <p>Outbound service request vulnerability.</p>
     OutboundServiceRequest,
-    /// Path traversal vulnerability
+    /// <p>Path traversal vulnerability.</p>
     PathTraversal,
-    /// Privilege escalation vulnerability
+    /// <p>Privilege escalation vulnerability.</p>
     PrivilegeEscalation,
-    /// Server-side request forgery vulnerability
+    /// <p>Server-side request forgery vulnerability.</p>
     ServerSideRequestForgery,
-    /// Server-side template injection vulnerability
+    /// <p>Server-side template injection vulnerability.</p>
     ServerSideTemplateInjection,
-    /// SQL injection vulnerability
+    /// <p>SQL injection vulnerability.</p>
     SqlInjection,
-    /// Unknown risk type
+    /// <p>Unknown risk type.</p>
     ///
     /// _Note: `::Unknown` has been renamed to `::UnknownValue`._
     UnknownValue,
-    /// XML external entity vulnerability
+    /// <p>XML external entity vulnerability.</p>
     XmlExternalEntity,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]

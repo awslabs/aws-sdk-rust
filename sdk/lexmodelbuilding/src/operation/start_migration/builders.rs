@@ -24,6 +24,7 @@ impl crate::operation::start_migration::builders::StartMigrationInputBuilder {
 ///
 /// <p>Starts migrating a bot from Amazon Lex V1 to Amazon Lex V2. Migrate your bot when you want to take advantage of the new features of Amazon Lex V2.</p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/migrate.html">Migrating a bot</a> in the <i>Amazon Lex developer guide</i>.</p>
+#[deprecated(note = "Amazon Lex V1 is deprecated. Use Amazon Lex V2 instead.", since = "2025-09-08")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartMigrationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

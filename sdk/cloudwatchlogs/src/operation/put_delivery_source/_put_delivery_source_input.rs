@@ -67,6 +67,8 @@ pub struct PutDeliverySourceInput {
     /// <p>An optional list of key-value pairs to associate with the resource.</p>
     /// <p>For more information about tagging, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a></p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p>A map of key-value pairs to configure the delivery source. Both keys and values must be between 1 and 255 characters in length. For example, <code>{"samplingRate": "50"}</code>.</p>
+    pub delivery_source_configuration: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl PutDeliverySourceInput {
     /// <p>A name for this delivery source. This name must be unique for all delivery sources in your account.</p>
@@ -141,6 +143,10 @@ impl PutDeliverySourceInput {
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
+    /// <p>A map of key-value pairs to configure the delivery source. Both keys and values must be between 1 and 255 characters in length. For example, <code>{"samplingRate": "50"}</code>.</p>
+    pub fn delivery_source_configuration(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        self.delivery_source_configuration.as_ref()
+    }
 }
 impl PutDeliverySourceInput {
     /// Creates a new builder-style object to manufacture [`PutDeliverySourceInput`](crate::operation::put_delivery_source::PutDeliverySourceInput).
@@ -157,6 +163,7 @@ pub struct PutDeliverySourceInputBuilder {
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
     pub(crate) log_type: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) delivery_source_configuration: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl PutDeliverySourceInputBuilder {
     /// <p>A name for this delivery source. This name must be unique for all delivery sources in your account.</p>
@@ -392,6 +399,35 @@ impl PutDeliverySourceInputBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
+    /// Adds a key-value pair to `delivery_source_configuration`.
+    ///
+    /// To override the contents of this collection use [`set_delivery_source_configuration`](Self::set_delivery_source_configuration).
+    ///
+    /// <p>A map of key-value pairs to configure the delivery source. Both keys and values must be between 1 and 255 characters in length. For example, <code>{"samplingRate": "50"}</code>.</p>
+    pub fn delivery_source_configuration(
+        mut self,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        let mut hash_map = self.delivery_source_configuration.unwrap_or_default();
+        hash_map.insert(k.into(), v.into());
+        self.delivery_source_configuration = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>A map of key-value pairs to configure the delivery source. Both keys and values must be between 1 and 255 characters in length. For example, <code>{"samplingRate": "50"}</code>.</p>
+    pub fn set_delivery_source_configuration(
+        mut self,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    ) -> Self {
+        self.delivery_source_configuration = input;
+        self
+    }
+    /// <p>A map of key-value pairs to configure the delivery source. Both keys and values must be between 1 and 255 characters in length. For example, <code>{"samplingRate": "50"}</code>.</p>
+    pub fn get_delivery_source_configuration(
+        &self,
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        &self.delivery_source_configuration
+    }
     /// Consumes the builder and constructs a [`PutDeliverySourceInput`](crate::operation::put_delivery_source::PutDeliverySourceInput).
     pub fn build(
         self,
@@ -401,6 +437,7 @@ impl PutDeliverySourceInputBuilder {
             resource_arn: self.resource_arn,
             log_type: self.log_type,
             tags: self.tags,
+            delivery_source_configuration: self.delivery_source_configuration,
         })
     }
 }

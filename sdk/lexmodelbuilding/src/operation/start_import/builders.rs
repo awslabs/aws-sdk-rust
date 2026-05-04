@@ -23,6 +23,7 @@ impl crate::operation::start_import::builders::StartImportInputBuilder {
 /// Fluent builder constructing a request to `StartImport`.
 ///
 /// <p>Starts a job to import a resource to Amazon Lex.</p>
+#[deprecated(note = "Amazon Lex V1 is deprecated. Use Amazon Lex V2 instead.", since = "2025-09-08")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartImportFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -24,6 +24,7 @@ impl crate::operation::get_bot_channel_associations::builders::GetBotChannelAsso
 ///
 /// <p>Returns a list of all of the channels associated with the specified bot.</p>
 /// <p>The <code>GetBotChannelAssociations</code> operation requires permissions for the <code>lex:GetBotChannelAssociations</code> action.</p>
+#[deprecated(note = "Amazon Lex V1 is deprecated. Use Amazon Lex V2 instead.", since = "2025-09-08")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetBotChannelAssociationsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

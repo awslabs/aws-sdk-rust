@@ -17,6 +17,8 @@ pub struct ModifyVpnConnectionOptionsInput {
     /// <p>The IPv6 CIDR on the Amazon Web Services side of the VPN connection.</p>
     /// <p>Default: <code>::/0</code></p>
     pub remote_ipv6_network_cidr: ::std::option::Option<::std::string::String>,
+    /// <p>The desired bandwidth specification for the VPN connection. <code>standard</code> supports up to 1.25 Gbps per tunnel, while <code>large</code> supports up to 5 Gbps per tunnel. Large bandwidth is only available for VPN connections attached to a transit gateway or to Cloud WAN. The default value is <code>standard</code>.</p>
+    pub tunnel_bandwidth: ::std::option::Option<crate::types::VpnTunnelBandwidth>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
 }
@@ -45,6 +47,10 @@ impl ModifyVpnConnectionOptionsInput {
     pub fn remote_ipv6_network_cidr(&self) -> ::std::option::Option<&str> {
         self.remote_ipv6_network_cidr.as_deref()
     }
+    /// <p>The desired bandwidth specification for the VPN connection. <code>standard</code> supports up to 1.25 Gbps per tunnel, while <code>large</code> supports up to 5 Gbps per tunnel. Large bandwidth is only available for VPN connections attached to a transit gateway or to Cloud WAN. The default value is <code>standard</code>.</p>
+    pub fn tunnel_bandwidth(&self) -> ::std::option::Option<&crate::types::VpnTunnelBandwidth> {
+        self.tunnel_bandwidth.as_ref()
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
         self.dry_run
@@ -66,6 +72,7 @@ pub struct ModifyVpnConnectionOptionsInputBuilder {
     pub(crate) remote_ipv4_network_cidr: ::std::option::Option<::std::string::String>,
     pub(crate) local_ipv6_network_cidr: ::std::option::Option<::std::string::String>,
     pub(crate) remote_ipv6_network_cidr: ::std::option::Option<::std::string::String>,
+    pub(crate) tunnel_bandwidth: ::std::option::Option<crate::types::VpnTunnelBandwidth>,
     pub(crate) dry_run: ::std::option::Option<bool>,
 }
 impl ModifyVpnConnectionOptionsInputBuilder {
@@ -152,6 +159,20 @@ impl ModifyVpnConnectionOptionsInputBuilder {
     pub fn get_remote_ipv6_network_cidr(&self) -> &::std::option::Option<::std::string::String> {
         &self.remote_ipv6_network_cidr
     }
+    /// <p>The desired bandwidth specification for the VPN connection. <code>standard</code> supports up to 1.25 Gbps per tunnel, while <code>large</code> supports up to 5 Gbps per tunnel. Large bandwidth is only available for VPN connections attached to a transit gateway or to Cloud WAN. The default value is <code>standard</code>.</p>
+    pub fn tunnel_bandwidth(mut self, input: crate::types::VpnTunnelBandwidth) -> Self {
+        self.tunnel_bandwidth = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The desired bandwidth specification for the VPN connection. <code>standard</code> supports up to 1.25 Gbps per tunnel, while <code>large</code> supports up to 5 Gbps per tunnel. Large bandwidth is only available for VPN connections attached to a transit gateway or to Cloud WAN. The default value is <code>standard</code>.</p>
+    pub fn set_tunnel_bandwidth(mut self, input: ::std::option::Option<crate::types::VpnTunnelBandwidth>) -> Self {
+        self.tunnel_bandwidth = input;
+        self
+    }
+    /// <p>The desired bandwidth specification for the VPN connection. <code>standard</code> supports up to 1.25 Gbps per tunnel, while <code>large</code> supports up to 5 Gbps per tunnel. Large bandwidth is only available for VPN connections attached to a transit gateway or to Cloud WAN. The default value is <code>standard</code>.</p>
+    pub fn get_tunnel_bandwidth(&self) -> &::std::option::Option<crate::types::VpnTunnelBandwidth> {
+        &self.tunnel_bandwidth
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.dry_run = ::std::option::Option::Some(input);
@@ -179,6 +200,7 @@ impl ModifyVpnConnectionOptionsInputBuilder {
             remote_ipv4_network_cidr: self.remote_ipv4_network_cidr,
             local_ipv6_network_cidr: self.local_ipv6_network_cidr,
             remote_ipv6_network_cidr: self.remote_ipv6_network_cidr,
+            tunnel_bandwidth: self.tunnel_bandwidth,
             dry_run: self.dry_run,
         })
     }

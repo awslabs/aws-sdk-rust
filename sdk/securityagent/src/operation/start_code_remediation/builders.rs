@@ -22,7 +22,7 @@ impl crate::operation::start_code_remediation::builders::StartCodeRemediationInp
 }
 /// Fluent builder constructing a request to `StartCodeRemediation`.
 ///
-/// Starts code remediation for the specified findings
+/// <p>Initiates code remediation for one or more security findings. This creates pull requests in integrated repositories to fix the identified vulnerabilities.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartCodeRemediationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,31 +108,31 @@ impl StartCodeRemediationFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// ID of the agent space where the pentest job exists
+    /// <p>The unique identifier of the agent space.</p>
     pub fn agent_space_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.agent_space_id(input.into());
         self
     }
-    /// ID of the agent space where the pentest job exists
+    /// <p>The unique identifier of the agent space.</p>
     pub fn set_agent_space_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_agent_space_id(input);
         self
     }
-    /// ID of the agent space where the pentest job exists
+    /// <p>The unique identifier of the agent space.</p>
     pub fn get_agent_space_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_agent_space_id()
     }
-    /// Identifier of the pentest job to start code remediation for
+    /// <p>The unique identifier of the pentest job that produced the findings.</p>
     pub fn pentest_job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.pentest_job_id(input.into());
         self
     }
-    /// Identifier of the pentest job to start code remediation for
+    /// <p>The unique identifier of the pentest job that produced the findings.</p>
     pub fn set_pentest_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_pentest_job_id(input);
         self
     }
-    /// Identifier of the pentest job to start code remediation for
+    /// <p>The unique identifier of the pentest job that produced the findings.</p>
     pub fn get_pentest_job_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_pentest_job_id()
     }
@@ -141,17 +141,17 @@ impl StartCodeRemediationFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_finding_ids`](Self::set_finding_ids).
     ///
-    /// Identifiers of the findings to start code remediation for
+    /// <p>The list of finding identifiers to initiate code remediation for.</p>
     pub fn finding_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.finding_ids(input.into());
         self
     }
-    /// Identifiers of the findings to start code remediation for
+    /// <p>The list of finding identifiers to initiate code remediation for.</p>
     pub fn set_finding_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_finding_ids(input);
         self
     }
-    /// Identifiers of the findings to start code remediation for
+    /// <p>The list of finding identifiers to initiate code remediation for.</p>
     pub fn get_finding_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_finding_ids()
     }

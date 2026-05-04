@@ -22,7 +22,7 @@ impl crate::operation::update_target_domain::builders::UpdateTargetDomainInputBu
 }
 /// Fluent builder constructing a request to `UpdateTargetDomain`.
 ///
-/// Updates a target domain record
+/// <p>Updates the verification method for a target domain.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateTargetDomainFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,31 +108,31 @@ impl UpdateTargetDomainFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// Unique identifier of the target domain to update
+    /// <p>The unique identifier of the target domain to update.</p>
     pub fn target_domain_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.target_domain_id(input.into());
         self
     }
-    /// Unique identifier of the target domain to update
+    /// <p>The unique identifier of the target domain to update.</p>
     pub fn set_target_domain_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_target_domain_id(input);
         self
     }
-    /// Unique identifier of the target domain to update
+    /// <p>The unique identifier of the target domain to update.</p>
     pub fn get_target_domain_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_target_domain_id()
     }
-    /// Verification method for the target domain
+    /// <p>The updated verification method for the target domain.</p>
     pub fn verification_method(mut self, input: crate::types::DomainVerificationMethod) -> Self {
         self.inner = self.inner.verification_method(input);
         self
     }
-    /// Verification method for the target domain
+    /// <p>The updated verification method for the target domain.</p>
     pub fn set_verification_method(mut self, input: ::std::option::Option<crate::types::DomainVerificationMethod>) -> Self {
         self.inner = self.inner.set_verification_method(input);
         self
     }
-    /// Verification method for the target domain
+    /// <p>The updated verification method for the target domain.</p>
     pub fn get_verification_method(&self) -> &::std::option::Option<crate::types::DomainVerificationMethod> {
         self.inner.get_verification_method()
     }

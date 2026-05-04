@@ -4,11 +4,11 @@ impl super::Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_applications::builders::ListApplicationsFluentBuilder::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`next_token(impl Into<String>)`](crate::operation::list_applications::builders::ListApplicationsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_applications::builders::ListApplicationsFluentBuilder::set_next_token):<br>required: **false**<br>Token for pagination<br>
-    ///   - [`max_results(i32)`](crate::operation::list_applications::builders::ListApplicationsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_applications::builders::ListApplicationsFluentBuilder::set_max_results):<br>required: **false**<br>Maximum number of results to return<br>
+    ///   - [`next_token(impl Into<String>)`](crate::operation::list_applications::builders::ListApplicationsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_applications::builders::ListApplicationsFluentBuilder::set_next_token):<br>required: **false**<br><p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request. For subsequent calls, use the nextToken value returned from the previous request.</p><br>
+    ///   - [`max_results(i32)`](crate::operation::list_applications::builders::ListApplicationsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_applications::builders::ListApplicationsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return in a single call.</p><br>
     /// - On success, responds with [`ListApplicationsOutput`](crate::operation::list_applications::ListApplicationsOutput) with field(s):
-    ///   - [`application_summaries(Vec::<ApplicationSummary>)`](crate::operation::list_applications::ListApplicationsOutput::application_summaries): List of application summaries
-    ///   - [`next_token(Option<String>)`](crate::operation::list_applications::ListApplicationsOutput::next_token): Token for next page of results
+    ///   - [`application_summaries(Vec::<ApplicationSummary>)`](crate::operation::list_applications::ListApplicationsOutput::application_summaries): <p>The list of application summaries.</p>
+    ///   - [`next_token(Option<String>)`](crate::operation::list_applications::ListApplicationsOutput::next_token): <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request. For subsequent calls, use the nextToken value returned from the previous request.</p>
     /// - On failure, responds with [`SdkError<ListApplicationsError>`](crate::operation::list_applications::ListApplicationsError)
     pub fn list_applications(&self) -> crate::operation::list_applications::builders::ListApplicationsFluentBuilder {
         crate::operation::list_applications::builders::ListApplicationsFluentBuilder::new(self.handle.clone())

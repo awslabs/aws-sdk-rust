@@ -36,15 +36,15 @@
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 ///
-/// Effect of a network traffic rule
+/// <p>Effect of a network traffic rule.</p>
 #[non_exhaustive]
 #[derive(
     ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum NetworkTrafficRuleEffect {
-    /// Allow matching traffic
+    /// <p>Allow matching traffic.</p>
     Allow,
-    /// Deny matching traffic
+    /// <p>Deny matching traffic.</p>
     Deny,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]

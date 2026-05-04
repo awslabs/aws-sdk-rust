@@ -24,6 +24,7 @@ impl crate::operation::put_bot_alias::builders::PutBotAliasInputBuilder {
 ///
 /// <p>Creates an alias for the specified version of the bot or replaces an alias for the specified bot. To change the version of the bot that the alias points to, replace the alias. For more information about aliases, see <code>versioning-aliases</code>.</p>
 /// <p>This operation requires permissions for the <code>lex:PutBotAlias</code> action.</p>
+#[deprecated(note = "Amazon Lex V1 is deprecated. Use Amazon Lex V2 instead.", since = "2025-09-08")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutBotAliasFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

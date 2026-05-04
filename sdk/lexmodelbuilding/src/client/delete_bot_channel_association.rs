@@ -8,6 +8,7 @@ impl super::Client {
     ///   - [`bot_alias(impl Into<String>)`](crate::operation::delete_bot_channel_association::builders::DeleteBotChannelAssociationFluentBuilder::bot_alias) / [`set_bot_alias(Option<String>)`](crate::operation::delete_bot_channel_association::builders::DeleteBotChannelAssociationFluentBuilder::set_bot_alias):<br>required: **true**<br><p>An alias that points to the specific version of the Amazon Lex bot to which this association is being made.</p><br>
     /// - On success, responds with [`DeleteBotChannelAssociationOutput`](crate::operation::delete_bot_channel_association::DeleteBotChannelAssociationOutput)
     /// - On failure, responds with [`SdkError<DeleteBotChannelAssociationError>`](crate::operation::delete_bot_channel_association::DeleteBotChannelAssociationError)
+    #[deprecated(note = "Amazon Lex V1 is deprecated. Use Amazon Lex V2 instead.", since = "2025-09-08")]
     pub fn delete_bot_channel_association(
         &self,
     ) -> crate::operation::delete_bot_channel_association::builders::DeleteBotChannelAssociationFluentBuilder {

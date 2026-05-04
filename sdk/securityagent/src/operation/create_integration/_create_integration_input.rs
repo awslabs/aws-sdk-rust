@@ -3,35 +3,35 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateIntegrationInput {
-    /// Provider to integrate with
+    /// <p>The integration provider. Currently, only GITHUB is supported.</p>
     pub provider: ::std::option::Option<crate::types::Provider>,
-    /// Provider-specific input parameters
+    /// <p>The provider-specific input required to create the integration.</p>
     pub input: ::std::option::Option<crate::types::ProviderInput>,
-    /// Display name for the integration
+    /// <p>The display name for the integration.</p>
     pub integration_display_name: ::std::option::Option<::std::string::String>,
-    /// KMS key ID for encrypting integration details
+    /// <p>The identifier of the AWS KMS key to use for encrypting data associated with the integration.</p>
     pub kms_key_id: ::std::option::Option<::std::string::String>,
-    /// Tags to associate with the integration
+    /// <p>The tags to associate with the integration.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateIntegrationInput {
-    /// Provider to integrate with
+    /// <p>The integration provider. Currently, only GITHUB is supported.</p>
     pub fn provider(&self) -> ::std::option::Option<&crate::types::Provider> {
         self.provider.as_ref()
     }
-    /// Provider-specific input parameters
+    /// <p>The provider-specific input required to create the integration.</p>
     pub fn input(&self) -> ::std::option::Option<&crate::types::ProviderInput> {
         self.input.as_ref()
     }
-    /// Display name for the integration
+    /// <p>The display name for the integration.</p>
     pub fn integration_display_name(&self) -> ::std::option::Option<&str> {
         self.integration_display_name.as_deref()
     }
-    /// KMS key ID for encrypting integration details
+    /// <p>The identifier of the AWS KMS key to use for encrypting data associated with the integration.</p>
     pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
         self.kms_key_id.as_deref()
     }
-    /// Tags to associate with the integration
+    /// <p>The tags to associate with the integration.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
@@ -54,62 +54,62 @@ pub struct CreateIntegrationInputBuilder {
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateIntegrationInputBuilder {
-    /// Provider to integrate with
+    /// <p>The integration provider. Currently, only GITHUB is supported.</p>
     /// This field is required.
     pub fn provider(mut self, input: crate::types::Provider) -> Self {
         self.provider = ::std::option::Option::Some(input);
         self
     }
-    /// Provider to integrate with
+    /// <p>The integration provider. Currently, only GITHUB is supported.</p>
     pub fn set_provider(mut self, input: ::std::option::Option<crate::types::Provider>) -> Self {
         self.provider = input;
         self
     }
-    /// Provider to integrate with
+    /// <p>The integration provider. Currently, only GITHUB is supported.</p>
     pub fn get_provider(&self) -> &::std::option::Option<crate::types::Provider> {
         &self.provider
     }
-    /// Provider-specific input parameters
+    /// <p>The provider-specific input required to create the integration.</p>
     /// This field is required.
     pub fn input(mut self, input: crate::types::ProviderInput) -> Self {
         self.input = ::std::option::Option::Some(input);
         self
     }
-    /// Provider-specific input parameters
+    /// <p>The provider-specific input required to create the integration.</p>
     pub fn set_input(mut self, input: ::std::option::Option<crate::types::ProviderInput>) -> Self {
         self.input = input;
         self
     }
-    /// Provider-specific input parameters
+    /// <p>The provider-specific input required to create the integration.</p>
     pub fn get_input(&self) -> &::std::option::Option<crate::types::ProviderInput> {
         &self.input
     }
-    /// Display name for the integration
+    /// <p>The display name for the integration.</p>
     /// This field is required.
     pub fn integration_display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.integration_display_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// Display name for the integration
+    /// <p>The display name for the integration.</p>
     pub fn set_integration_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.integration_display_name = input;
         self
     }
-    /// Display name for the integration
+    /// <p>The display name for the integration.</p>
     pub fn get_integration_display_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.integration_display_name
     }
-    /// KMS key ID for encrypting integration details
+    /// <p>The identifier of the AWS KMS key to use for encrypting data associated with the integration.</p>
     pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kms_key_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// KMS key ID for encrypting integration details
+    /// <p>The identifier of the AWS KMS key to use for encrypting data associated with the integration.</p>
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_key_id = input;
         self
     }
-    /// KMS key ID for encrypting integration details
+    /// <p>The identifier of the AWS KMS key to use for encrypting data associated with the integration.</p>
     pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.kms_key_id
     }
@@ -117,19 +117,19 @@ impl CreateIntegrationInputBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// Tags to associate with the integration
+    /// <p>The tags to associate with the integration.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
-    /// Tags to associate with the integration
+    /// <p>The tags to associate with the integration.</p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
-    /// Tags to associate with the integration
+    /// <p>The tags to associate with the integration.</p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }

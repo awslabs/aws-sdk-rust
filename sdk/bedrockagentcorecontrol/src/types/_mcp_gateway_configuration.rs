@@ -10,6 +10,10 @@ pub struct McpGatewayConfiguration {
     pub instructions: ::std::option::Option<::std::string::String>,
     /// <p>The search type for the Model Context Protocol gateway. This field specifies how the gateway handles search operations.</p>
     pub search_type: ::std::option::Option<crate::types::SearchType>,
+    /// <p>The session configuration for the MCP gateway. This configuration controls session behavior, including session timeout settings.</p>
+    pub session_configuration: ::std::option::Option<crate::types::SessionConfiguration>,
+    /// <p>The streaming configuration for the MCP gateway. This configuration controls whether response streaming is enabled for the gateway.</p>
+    pub streaming_configuration: ::std::option::Option<crate::types::StreamingConfiguration>,
 }
 impl McpGatewayConfiguration {
     /// <p>The supported versions of the Model Context Protocol. This field specifies which versions of the protocol the gateway can use.</p>
@@ -26,6 +30,14 @@ impl McpGatewayConfiguration {
     pub fn search_type(&self) -> ::std::option::Option<&crate::types::SearchType> {
         self.search_type.as_ref()
     }
+    /// <p>The session configuration for the MCP gateway. This configuration controls session behavior, including session timeout settings.</p>
+    pub fn session_configuration(&self) -> ::std::option::Option<&crate::types::SessionConfiguration> {
+        self.session_configuration.as_ref()
+    }
+    /// <p>The streaming configuration for the MCP gateway. This configuration controls whether response streaming is enabled for the gateway.</p>
+    pub fn streaming_configuration(&self) -> ::std::option::Option<&crate::types::StreamingConfiguration> {
+        self.streaming_configuration.as_ref()
+    }
 }
 impl McpGatewayConfiguration {
     /// Creates a new builder-style object to manufacture [`McpGatewayConfiguration`](crate::types::McpGatewayConfiguration).
@@ -41,6 +53,8 @@ pub struct McpGatewayConfigurationBuilder {
     pub(crate) supported_versions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) instructions: ::std::option::Option<::std::string::String>,
     pub(crate) search_type: ::std::option::Option<crate::types::SearchType>,
+    pub(crate) session_configuration: ::std::option::Option<crate::types::SessionConfiguration>,
+    pub(crate) streaming_configuration: ::std::option::Option<crate::types::StreamingConfiguration>,
 }
 impl McpGatewayConfigurationBuilder {
     /// Appends an item to `supported_versions`.
@@ -91,12 +105,42 @@ impl McpGatewayConfigurationBuilder {
     pub fn get_search_type(&self) -> &::std::option::Option<crate::types::SearchType> {
         &self.search_type
     }
+    /// <p>The session configuration for the MCP gateway. This configuration controls session behavior, including session timeout settings.</p>
+    pub fn session_configuration(mut self, input: crate::types::SessionConfiguration) -> Self {
+        self.session_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The session configuration for the MCP gateway. This configuration controls session behavior, including session timeout settings.</p>
+    pub fn set_session_configuration(mut self, input: ::std::option::Option<crate::types::SessionConfiguration>) -> Self {
+        self.session_configuration = input;
+        self
+    }
+    /// <p>The session configuration for the MCP gateway. This configuration controls session behavior, including session timeout settings.</p>
+    pub fn get_session_configuration(&self) -> &::std::option::Option<crate::types::SessionConfiguration> {
+        &self.session_configuration
+    }
+    /// <p>The streaming configuration for the MCP gateway. This configuration controls whether response streaming is enabled for the gateway.</p>
+    pub fn streaming_configuration(mut self, input: crate::types::StreamingConfiguration) -> Self {
+        self.streaming_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The streaming configuration for the MCP gateway. This configuration controls whether response streaming is enabled for the gateway.</p>
+    pub fn set_streaming_configuration(mut self, input: ::std::option::Option<crate::types::StreamingConfiguration>) -> Self {
+        self.streaming_configuration = input;
+        self
+    }
+    /// <p>The streaming configuration for the MCP gateway. This configuration controls whether response streaming is enabled for the gateway.</p>
+    pub fn get_streaming_configuration(&self) -> &::std::option::Option<crate::types::StreamingConfiguration> {
+        &self.streaming_configuration
+    }
     /// Consumes the builder and constructs a [`McpGatewayConfiguration`](crate::types::McpGatewayConfiguration).
     pub fn build(self) -> crate::types::McpGatewayConfiguration {
         crate::types::McpGatewayConfiguration {
             supported_versions: self.supported_versions,
             instructions: self.instructions,
             search_type: self.search_type,
+            session_configuration: self.session_configuration,
+            streaming_configuration: self.streaming_configuration,
         }
     }
 }

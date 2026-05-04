@@ -71,6 +71,18 @@ where
                             builder =
                                 builder.set_allowed_suffix_path_fields(crate::protocol_serde::shape_record_fields::de_record_fields(tokens, _value)?);
                         }
+                        "deliverySourceConfiguration" => {
+                            builder = builder.set_delivery_source_configuration(
+                                crate::protocol_serde::shape_delivery_source_configuration_schemas::de_delivery_source_configuration_schemas(
+                                    tokens, _value,
+                                )?,
+                            );
+                        }
+                        "s3TablesIntegration" => {
+                            builder = builder.set_s3_tables_integration(
+                                crate::protocol_serde::shape_s3_tables_integration::de_s3_tables_integration(tokens, _value)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

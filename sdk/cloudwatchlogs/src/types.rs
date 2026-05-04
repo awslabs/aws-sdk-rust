@@ -119,6 +119,10 @@ pub use crate::types::_filtered_log_event::FilteredLogEvent;
 
 pub use crate::types::_searched_log_stream::SearchedLogStream;
 
+pub use crate::types::_delivery_source_status::DeliverySourceStatus;
+
+pub use crate::types::_delivery_source_status_reason::DeliverySourceStatusReason;
+
 pub use crate::types::_open_search_integration_details::OpenSearchIntegrationDetails;
 
 pub use crate::types::_output_log_event::OutputLogEvent;
@@ -176,6 +180,8 @@ pub use crate::types::_transformed_log_record::TransformedLogRecord;
 pub use crate::types::_suppression_unit::SuppressionUnit;
 
 pub use crate::types::_configuration_template_delivery_config_values::ConfigurationTemplateDeliveryConfigValues;
+
+pub use crate::types::_s3_tables_integration::S3TablesIntegration;
 
 pub use crate::types::_export_task_status::ExportTaskStatus;
 
@@ -261,6 +267,8 @@ pub use crate::types::_live_tail_session_metadata::LiveTailSessionMetadata;
 
 pub use crate::types::_record_field::RecordField;
 
+pub use crate::types::_delivery_source_configuration_schema::DeliverySourceConfigurationSchema;
+
 pub use crate::types::_inherited_property::InheritedProperty;
 
 pub use crate::types::_open_search_resource_status::OpenSearchResourceStatus;
@@ -280,6 +288,8 @@ pub use crate::types::_log_event::LogEvent;
 pub use crate::types::_pattern_token::PatternToken;
 
 pub use crate::types::_live_tail_session_log_event::LiveTailSessionLogEvent;
+
+pub use crate::types::_delivery_source_configuration_schema_value_type::DeliverySourceConfigurationSchemaValueType;
 
 pub use crate::types::_open_search_resource_status_type::OpenSearchResourceStatusType;
 
@@ -348,6 +358,14 @@ mod _delivery_destination_configuration;
 mod _delivery_destination_type;
 
 mod _delivery_source;
+
+mod _delivery_source_configuration_schema;
+
+mod _delivery_source_configuration_schema_value_type;
+
+mod _delivery_source_status;
+
+mod _delivery_source_status_reason;
 
 mod _destination;
 
@@ -554,6 +572,8 @@ mod _s3_delivery_configuration;
 mod _s3_table_integration_source;
 
 mod _s3_table_integration_source_status;
+
+mod _s3_tables_integration;
 
 mod _scheduled_query_destination;
 

@@ -3,19 +3,19 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InitiateProviderRegistrationOutput {
-    /// OAuth redirect URL
+    /// <p>The URL to redirect the user to for completing the OAuth authorization.</p>
     pub redirect_to: ::std::string::String,
-    /// CSRF state token for OAuth security
+    /// <p>The CSRF state token to use when completing the OAuth flow.</p>
     pub csrf_state: ::std::string::String,
     _request_id: Option<String>,
 }
 impl InitiateProviderRegistrationOutput {
-    /// OAuth redirect URL
+    /// <p>The URL to redirect the user to for completing the OAuth authorization.</p>
     pub fn redirect_to(&self) -> &str {
         use std::ops::Deref;
         self.redirect_to.deref()
     }
-    /// CSRF state token for OAuth security
+    /// <p>The CSRF state token to use when completing the OAuth flow.</p>
     pub fn csrf_state(&self) -> &str {
         use std::ops::Deref;
         self.csrf_state.deref()
@@ -42,33 +42,33 @@ pub struct InitiateProviderRegistrationOutputBuilder {
     _request_id: Option<String>,
 }
 impl InitiateProviderRegistrationOutputBuilder {
-    /// OAuth redirect URL
+    /// <p>The URL to redirect the user to for completing the OAuth authorization.</p>
     /// This field is required.
     pub fn redirect_to(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.redirect_to = ::std::option::Option::Some(input.into());
         self
     }
-    /// OAuth redirect URL
+    /// <p>The URL to redirect the user to for completing the OAuth authorization.</p>
     pub fn set_redirect_to(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.redirect_to = input;
         self
     }
-    /// OAuth redirect URL
+    /// <p>The URL to redirect the user to for completing the OAuth authorization.</p>
     pub fn get_redirect_to(&self) -> &::std::option::Option<::std::string::String> {
         &self.redirect_to
     }
-    /// CSRF state token for OAuth security
+    /// <p>The CSRF state token to use when completing the OAuth flow.</p>
     /// This field is required.
     pub fn csrf_state(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.csrf_state = ::std::option::Option::Some(input.into());
         self
     }
-    /// CSRF state token for OAuth security
+    /// <p>The CSRF state token to use when completing the OAuth flow.</p>
     pub fn set_csrf_state(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.csrf_state = input;
         self
     }
-    /// CSRF state token for OAuth security
+    /// <p>The CSRF state token to use when completing the OAuth flow.</p>
     pub fn get_csrf_state(&self) -> &::std::option::Option<::std::string::String> {
         &self.csrf_state
     }

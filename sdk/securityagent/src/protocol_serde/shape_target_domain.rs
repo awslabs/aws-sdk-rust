@@ -36,6 +36,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "verificationStatusReason" => {
+                            builder = builder.set_verification_status_reason(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         "verificationDetails" => {
                             builder = builder.set_verification_details(crate::protocol_serde::shape_verification_details::de_verification_details(
                                 tokens, _value,

@@ -3,14 +3,14 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetApplication`](crate::operation::get_application::builders::GetApplicationFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`application_id(impl Into<String>)`](crate::operation::get_application::builders::GetApplicationFluentBuilder::application_id) / [`set_application_id(Option<String>)`](crate::operation::get_application::builders::GetApplicationFluentBuilder::set_application_id):<br>required: **true**<br>Application ID<br>
+    ///   - [`application_id(impl Into<String>)`](crate::operation::get_application::builders::GetApplicationFluentBuilder::application_id) / [`set_application_id(Option<String>)`](crate::operation::get_application::builders::GetApplicationFluentBuilder::set_application_id):<br>required: **true**<br><p>The unique identifier of the application to retrieve.</p><br>
     /// - On success, responds with [`GetApplicationOutput`](crate::operation::get_application::GetApplicationOutput) with field(s):
-    ///   - [`application_id(String)`](crate::operation::get_application::GetApplicationOutput::application_id): Application ID
-    ///   - [`domain(String)`](crate::operation::get_application::GetApplicationOutput::domain): Domain where the application is available
-    ///   - [`application_name(Option<String>)`](crate::operation::get_application::GetApplicationOutput::application_name): Name of the application, automatically assigned by the service
-    ///   - [`idc_configuration(Option<IdCConfiguration>)`](crate::operation::get_application::GetApplicationOutput::idc_configuration): IAM Identity Center configuration for the application
-    ///   - [`role_arn(Option<String>)`](crate::operation::get_application::GetApplicationOutput::role_arn): ARN of the IAM role that the application uses to access AWS resources on your behalf
-    ///   - [`default_kms_key_id(Option<String>)`](crate::operation::get_application::GetApplicationOutput::default_kms_key_id): Default KMS key identifier used to encrypt application data
+    ///   - [`application_id(String)`](crate::operation::get_application::GetApplicationOutput::application_id): <p>The unique identifier of the application.</p>
+    ///   - [`domain(String)`](crate::operation::get_application::GetApplicationOutput::domain): <p>The domain associated with the application.</p>
+    ///   - [`application_name(Option<String>)`](crate::operation::get_application::GetApplicationOutput::application_name): <p>The name of the application.</p>
+    ///   - [`idc_configuration(Option<IdCConfiguration>)`](crate::operation::get_application::GetApplicationOutput::idc_configuration): <p>The IAM Identity Center configuration for the application.</p>
+    ///   - [`role_arn(Option<String>)`](crate::operation::get_application::GetApplicationOutput::role_arn): <p>The Amazon Resource Name (ARN) of the IAM role associated with the application.</p>
+    ///   - [`default_kms_key_id(Option<String>)`](crate::operation::get_application::GetApplicationOutput::default_kms_key_id): <p>The identifier of the default AWS KMS key used to encrypt data for the application.</p>
     /// - On failure, responds with [`SdkError<GetApplicationError>`](crate::operation::get_application::GetApplicationError)
     pub fn get_application(&self) -> crate::operation::get_application::builders::GetApplicationFluentBuilder {
         crate::operation::get_application::builders::GetApplicationFluentBuilder::new(self.handle.clone())

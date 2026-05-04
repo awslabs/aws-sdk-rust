@@ -121,6 +121,8 @@ pub use crate::types::_transformed_log_record::TransformedLogRecordBuilder;
 
 pub use crate::types::_configuration_template_delivery_config_values::ConfigurationTemplateDeliveryConfigValuesBuilder;
 
+pub use crate::types::_s3_tables_integration::S3TablesIntegrationBuilder;
+
 pub use crate::types::_export_task_status::ExportTaskStatusBuilder;
 
 pub use crate::types::_export_task_execution_info::ExportTaskExecutionInfoBuilder;
@@ -194,6 +196,8 @@ pub use crate::types::_upper_case_string::UpperCaseStringBuilder;
 pub use crate::types::_live_tail_session_metadata::LiveTailSessionMetadataBuilder;
 
 pub use crate::types::_record_field::RecordFieldBuilder;
+
+pub use crate::types::_delivery_source_configuration_schema::DeliverySourceConfigurationSchemaBuilder;
 
 pub use crate::types::_open_search_resource_status::OpenSearchResourceStatusBuilder;
 

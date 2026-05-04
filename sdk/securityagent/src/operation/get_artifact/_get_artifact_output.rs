@@ -3,39 +3,39 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetArtifactOutput {
-    /// Unique identifier of the agent space
+    /// <p>The unique identifier of the agent space that contains the artifact.</p>
     pub agent_space_id: ::std::string::String,
-    /// Unique identifier of the artifact
+    /// <p>The unique identifier of the artifact.</p>
     pub artifact_id: ::std::string::String,
-    /// Artifact details
+    /// <p>The artifact content and type.</p>
     pub artifact: ::std::option::Option<crate::types::Artifact>,
-    /// Name of the artifact file
+    /// <p>The file name of the artifact.</p>
     pub file_name: ::std::string::String,
-    /// Timestamp when the artifact was last updated
+    /// <p>The date and time the artifact was last updated, in UTC format.</p>
     pub updated_at: ::aws_smithy_types::DateTime,
     _request_id: Option<String>,
 }
 impl GetArtifactOutput {
-    /// Unique identifier of the agent space
+    /// <p>The unique identifier of the agent space that contains the artifact.</p>
     pub fn agent_space_id(&self) -> &str {
         use std::ops::Deref;
         self.agent_space_id.deref()
     }
-    /// Unique identifier of the artifact
+    /// <p>The unique identifier of the artifact.</p>
     pub fn artifact_id(&self) -> &str {
         use std::ops::Deref;
         self.artifact_id.deref()
     }
-    /// Artifact details
+    /// <p>The artifact content and type.</p>
     pub fn artifact(&self) -> ::std::option::Option<&crate::types::Artifact> {
         self.artifact.as_ref()
     }
-    /// Name of the artifact file
+    /// <p>The file name of the artifact.</p>
     pub fn file_name(&self) -> &str {
         use std::ops::Deref;
         self.file_name.deref()
     }
-    /// Timestamp when the artifact was last updated
+    /// <p>The date and time the artifact was last updated, in UTC format.</p>
     pub fn updated_at(&self) -> &::aws_smithy_types::DateTime {
         &self.updated_at
     }
@@ -64,78 +64,78 @@ pub struct GetArtifactOutputBuilder {
     _request_id: Option<String>,
 }
 impl GetArtifactOutputBuilder {
-    /// Unique identifier of the agent space
+    /// <p>The unique identifier of the agent space that contains the artifact.</p>
     /// This field is required.
     pub fn agent_space_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.agent_space_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// Unique identifier of the agent space
+    /// <p>The unique identifier of the agent space that contains the artifact.</p>
     pub fn set_agent_space_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.agent_space_id = input;
         self
     }
-    /// Unique identifier of the agent space
+    /// <p>The unique identifier of the agent space that contains the artifact.</p>
     pub fn get_agent_space_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.agent_space_id
     }
-    /// Unique identifier of the artifact
+    /// <p>The unique identifier of the artifact.</p>
     /// This field is required.
     pub fn artifact_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.artifact_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// Unique identifier of the artifact
+    /// <p>The unique identifier of the artifact.</p>
     pub fn set_artifact_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.artifact_id = input;
         self
     }
-    /// Unique identifier of the artifact
+    /// <p>The unique identifier of the artifact.</p>
     pub fn get_artifact_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.artifact_id
     }
-    /// Artifact details
+    /// <p>The artifact content and type.</p>
     /// This field is required.
     pub fn artifact(mut self, input: crate::types::Artifact) -> Self {
         self.artifact = ::std::option::Option::Some(input);
         self
     }
-    /// Artifact details
+    /// <p>The artifact content and type.</p>
     pub fn set_artifact(mut self, input: ::std::option::Option<crate::types::Artifact>) -> Self {
         self.artifact = input;
         self
     }
-    /// Artifact details
+    /// <p>The artifact content and type.</p>
     pub fn get_artifact(&self) -> &::std::option::Option<crate::types::Artifact> {
         &self.artifact
     }
-    /// Name of the artifact file
+    /// <p>The file name of the artifact.</p>
     /// This field is required.
     pub fn file_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.file_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// Name of the artifact file
+    /// <p>The file name of the artifact.</p>
     pub fn set_file_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.file_name = input;
         self
     }
-    /// Name of the artifact file
+    /// <p>The file name of the artifact.</p>
     pub fn get_file_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.file_name
     }
-    /// Timestamp when the artifact was last updated
+    /// <p>The date and time the artifact was last updated, in UTC format.</p>
     /// This field is required.
     pub fn updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.updated_at = ::std::option::Option::Some(input);
         self
     }
-    /// Timestamp when the artifact was last updated
+    /// <p>The date and time the artifact was last updated, in UTC format.</p>
     pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.updated_at = input;
         self
     }
-    /// Timestamp when the artifact was last updated
+    /// <p>The date and time the artifact was last updated, in UTC format.</p>
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.updated_at
     }

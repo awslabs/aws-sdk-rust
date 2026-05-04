@@ -3,29 +3,29 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateApplicationInput {
-    /// ARN of the IAM Identity Center instance used for user authentication. Optional for non-IdC applications
+    /// <p>The Amazon Resource Name (ARN) of the IAM Identity Center instance to associate with the application.</p>
     pub idc_instance_arn: ::std::option::Option<::std::string::String>,
-    /// ARN of the IAM role that the application uses to access AWS resources on your behalf
+    /// <p>The Amazon Resource Name (ARN) of the IAM role to associate with the application.</p>
     pub role_arn: ::std::option::Option<::std::string::String>,
-    /// Default KMS key identifier used to encrypt application data
+    /// <p>The identifier of the default AWS KMS key to use for encrypting data in the application.</p>
     pub default_kms_key_id: ::std::option::Option<::std::string::String>,
-    /// Tags to associate with the application
+    /// <p>The tags to associate with the application.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateApplicationInput {
-    /// ARN of the IAM Identity Center instance used for user authentication. Optional for non-IdC applications
+    /// <p>The Amazon Resource Name (ARN) of the IAM Identity Center instance to associate with the application.</p>
     pub fn idc_instance_arn(&self) -> ::std::option::Option<&str> {
         self.idc_instance_arn.as_deref()
     }
-    /// ARN of the IAM role that the application uses to access AWS resources on your behalf
+    /// <p>The Amazon Resource Name (ARN) of the IAM role to associate with the application.</p>
     pub fn role_arn(&self) -> ::std::option::Option<&str> {
         self.role_arn.as_deref()
     }
-    /// Default KMS key identifier used to encrypt application data
+    /// <p>The identifier of the default AWS KMS key to use for encrypting data in the application.</p>
     pub fn default_kms_key_id(&self) -> ::std::option::Option<&str> {
         self.default_kms_key_id.as_deref()
     }
-    /// Tags to associate with the application
+    /// <p>The tags to associate with the application.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
@@ -47,45 +47,45 @@ pub struct CreateApplicationInputBuilder {
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateApplicationInputBuilder {
-    /// ARN of the IAM Identity Center instance used for user authentication. Optional for non-IdC applications
+    /// <p>The Amazon Resource Name (ARN) of the IAM Identity Center instance to associate with the application.</p>
     pub fn idc_instance_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.idc_instance_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// ARN of the IAM Identity Center instance used for user authentication. Optional for non-IdC applications
+    /// <p>The Amazon Resource Name (ARN) of the IAM Identity Center instance to associate with the application.</p>
     pub fn set_idc_instance_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.idc_instance_arn = input;
         self
     }
-    /// ARN of the IAM Identity Center instance used for user authentication. Optional for non-IdC applications
+    /// <p>The Amazon Resource Name (ARN) of the IAM Identity Center instance to associate with the application.</p>
     pub fn get_idc_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.idc_instance_arn
     }
-    /// ARN of the IAM role that the application uses to access AWS resources on your behalf
+    /// <p>The Amazon Resource Name (ARN) of the IAM role to associate with the application.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// ARN of the IAM role that the application uses to access AWS resources on your behalf
+    /// <p>The Amazon Resource Name (ARN) of the IAM role to associate with the application.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
     }
-    /// ARN of the IAM role that the application uses to access AWS resources on your behalf
+    /// <p>The Amazon Resource Name (ARN) of the IAM role to associate with the application.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.role_arn
     }
-    /// Default KMS key identifier used to encrypt application data
+    /// <p>The identifier of the default AWS KMS key to use for encrypting data in the application.</p>
     pub fn default_kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.default_kms_key_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// Default KMS key identifier used to encrypt application data
+    /// <p>The identifier of the default AWS KMS key to use for encrypting data in the application.</p>
     pub fn set_default_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.default_kms_key_id = input;
         self
     }
-    /// Default KMS key identifier used to encrypt application data
+    /// <p>The identifier of the default AWS KMS key to use for encrypting data in the application.</p>
     pub fn get_default_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.default_kms_key_id
     }
@@ -93,19 +93,19 @@ impl CreateApplicationInputBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// Tags to associate with the application
+    /// <p>The tags to associate with the application.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
-    /// Tags to associate with the application
+    /// <p>The tags to associate with the application.</p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
-    /// Tags to associate with the application
+    /// <p>The tags to associate with the application.</p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }

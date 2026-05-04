@@ -3,19 +3,19 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListArtifactsOutput {
-    /// List of artifact summaries
+    /// <p>The list of artifact summaries.</p>
     pub artifact_summaries: ::std::vec::Vec<crate::types::ArtifactSummary>,
-    /// Token for pagination to retrieve the next set of results
+    /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request. For subsequent calls, use the nextToken value returned from the previous request.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListArtifactsOutput {
-    /// List of artifact summaries
+    /// <p>The list of artifact summaries.</p>
     pub fn artifact_summaries(&self) -> &[crate::types::ArtifactSummary] {
         use std::ops::Deref;
         self.artifact_summaries.deref()
     }
-    /// Token for pagination to retrieve the next set of results
+    /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request. For subsequent calls, use the nextToken value returned from the previous request.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -45,33 +45,33 @@ impl ListArtifactsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_artifact_summaries`](Self::set_artifact_summaries).
     ///
-    /// List of artifact summaries
+    /// <p>The list of artifact summaries.</p>
     pub fn artifact_summaries(mut self, input: crate::types::ArtifactSummary) -> Self {
         let mut v = self.artifact_summaries.unwrap_or_default();
         v.push(input);
         self.artifact_summaries = ::std::option::Option::Some(v);
         self
     }
-    /// List of artifact summaries
+    /// <p>The list of artifact summaries.</p>
     pub fn set_artifact_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ArtifactSummary>>) -> Self {
         self.artifact_summaries = input;
         self
     }
-    /// List of artifact summaries
+    /// <p>The list of artifact summaries.</p>
     pub fn get_artifact_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ArtifactSummary>> {
         &self.artifact_summaries
     }
-    /// Token for pagination to retrieve the next set of results
+    /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request. For subsequent calls, use the nextToken value returned from the previous request.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// Token for pagination to retrieve the next set of results
+    /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request. For subsequent calls, use the nextToken value returned from the previous request.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// Token for pagination to retrieve the next set of results
+    /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request. For subsequent calls, use the nextToken value returned from the previous request.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

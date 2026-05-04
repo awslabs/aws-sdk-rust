@@ -22,7 +22,7 @@ impl crate::operation::list_tags_for_resource::builders::ListTagsForResourceInpu
 }
 /// Fluent builder constructing a request to `ListTagsForResource`.
 ///
-/// Lists tags for a Security Agent resource
+/// <p>Returns the tags associated with the specified resource.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListTagsForResourceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl ListTagsForResourceFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// ARN of the resource to list tags for
+    /// <p>The Amazon Resource Name (ARN) of the resource to list tags for.</p>
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_arn(input.into());
         self
     }
-    /// ARN of the resource to list tags for
+    /// <p>The Amazon Resource Name (ARN) of the resource to list tags for.</p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_arn(input);
         self
     }
-    /// ARN of the resource to list tags for
+    /// <p>The Amazon Resource Name (ARN) of the resource to list tags for.</p>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_resource_arn()
     }

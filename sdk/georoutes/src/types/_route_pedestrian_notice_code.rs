@@ -14,6 +14,7 @@
 /// match routepedestriannoticecode {
 ///     RoutePedestrianNoticeCode::AccuratePolylineUnavailable => { /* ... */ },
 ///     RoutePedestrianNoticeCode::Other => { /* ... */ },
+///     RoutePedestrianNoticeCode::ViolatedAvoidAreas => { /* ... */ },
 ///     RoutePedestrianNoticeCode::ViolatedAvoidDirtRoad => { /* ... */ },
 ///     RoutePedestrianNoticeCode::ViolatedAvoidTunnel => { /* ... */ },
 ///     RoutePedestrianNoticeCode::ViolatedPedestrianOption => { /* ... */ },
@@ -50,6 +51,8 @@ pub enum RoutePedestrianNoticeCode {
     #[allow(missing_docs)] // documentation missing in model
     Other,
     #[allow(missing_docs)] // documentation missing in model
+    ViolatedAvoidAreas,
+    #[allow(missing_docs)] // documentation missing in model
     ViolatedAvoidDirtRoad,
     #[allow(missing_docs)] // documentation missing in model
     ViolatedAvoidTunnel,
@@ -64,6 +67,7 @@ impl ::std::convert::From<&str> for RoutePedestrianNoticeCode {
         match s {
             "AccuratePolylineUnavailable" => RoutePedestrianNoticeCode::AccuratePolylineUnavailable,
             "Other" => RoutePedestrianNoticeCode::Other,
+            "ViolatedAvoidAreas" => RoutePedestrianNoticeCode::ViolatedAvoidAreas,
             "ViolatedAvoidDirtRoad" => RoutePedestrianNoticeCode::ViolatedAvoidDirtRoad,
             "ViolatedAvoidTunnel" => RoutePedestrianNoticeCode::ViolatedAvoidTunnel,
             "ViolatedPedestrianOption" => RoutePedestrianNoticeCode::ViolatedPedestrianOption,
@@ -84,6 +88,7 @@ impl RoutePedestrianNoticeCode {
         match self {
             RoutePedestrianNoticeCode::AccuratePolylineUnavailable => "AccuratePolylineUnavailable",
             RoutePedestrianNoticeCode::Other => "Other",
+            RoutePedestrianNoticeCode::ViolatedAvoidAreas => "ViolatedAvoidAreas",
             RoutePedestrianNoticeCode::ViolatedAvoidDirtRoad => "ViolatedAvoidDirtRoad",
             RoutePedestrianNoticeCode::ViolatedAvoidTunnel => "ViolatedAvoidTunnel",
             RoutePedestrianNoticeCode::ViolatedPedestrianOption => "ViolatedPedestrianOption",
@@ -95,6 +100,7 @@ impl RoutePedestrianNoticeCode {
         &[
             "AccuratePolylineUnavailable",
             "Other",
+            "ViolatedAvoidAreas",
             "ViolatedAvoidDirtRoad",
             "ViolatedAvoidTunnel",
             "ViolatedPedestrianOption",
@@ -123,6 +129,7 @@ impl ::std::fmt::Display for RoutePedestrianNoticeCode {
         match self {
             RoutePedestrianNoticeCode::AccuratePolylineUnavailable => write!(f, "AccuratePolylineUnavailable"),
             RoutePedestrianNoticeCode::Other => write!(f, "Other"),
+            RoutePedestrianNoticeCode::ViolatedAvoidAreas => write!(f, "ViolatedAvoidAreas"),
             RoutePedestrianNoticeCode::ViolatedAvoidDirtRoad => write!(f, "ViolatedAvoidDirtRoad"),
             RoutePedestrianNoticeCode::ViolatedAvoidTunnel => write!(f, "ViolatedAvoidTunnel"),
             RoutePedestrianNoticeCode::ViolatedPedestrianOption => write!(f, "ViolatedPedestrianOption"),

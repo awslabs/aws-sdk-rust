@@ -22,7 +22,7 @@ impl crate::operation::list_findings::builders::ListFindingsInputBuilder {
 }
 /// Fluent builder constructing a request to `ListFindings`.
 ///
-/// Lists findings with filtering and pagination support. When filters are applied, the actual number of results returned may be less than the specified limit
+/// <p>Lists the security findings for a pentest job.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListFindingsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -114,129 +114,129 @@ impl ListFindingsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_findings::paginator::ListFindingsPaginator {
         crate::operation::list_findings::paginator::ListFindingsPaginator::new(self.handle, self.inner)
     }
-    /// Maximum number of findings to return in a single request (default: 50)
+    /// <p>The maximum number of results to return in a single call.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
         self
     }
-    /// Maximum number of findings to return in a single request (default: 50)
+    /// <p>The maximum number of results to return in a single call.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
-    /// Maximum number of findings to return in a single request (default: 50)
+    /// <p>The maximum number of results to return in a single call.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }
-    /// Identifier of the pentest job for which to retrieve associated findings
+    /// <p>The unique identifier of the pentest job to list findings for.</p>
     pub fn pentest_job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.pentest_job_id(input.into());
         self
     }
-    /// Identifier of the pentest job for which to retrieve associated findings
+    /// <p>The unique identifier of the pentest job to list findings for.</p>
     pub fn set_pentest_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_pentest_job_id(input);
         self
     }
-    /// Identifier of the pentest job for which to retrieve associated findings
+    /// <p>The unique identifier of the pentest job to list findings for.</p>
     pub fn get_pentest_job_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_pentest_job_id()
     }
-    /// ID of the agent space where the pentest job exists
+    /// <p>The unique identifier of the agent space.</p>
     pub fn agent_space_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.agent_space_id(input.into());
         self
     }
-    /// ID of the agent space where the pentest job exists
+    /// <p>The unique identifier of the agent space.</p>
     pub fn set_agent_space_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_agent_space_id(input);
         self
     }
-    /// ID of the agent space where the pentest job exists
+    /// <p>The unique identifier of the agent space.</p>
     pub fn get_agent_space_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_agent_space_id()
     }
-    /// Token for pagination
+    /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request. For subsequent calls, use the nextToken value returned from the previous request.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
-    /// Token for pagination
+    /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request. For subsequent calls, use the nextToken value returned from the previous request.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
-    /// Token for pagination
+    /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request. For subsequent calls, use the nextToken value returned from the previous request.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }
-    /// Filter findings by risk type
+    /// <p>Filter findings by risk type.</p>
     pub fn risk_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.risk_type(input.into());
         self
     }
-    /// Filter findings by risk type
+    /// <p>Filter findings by risk type.</p>
     pub fn set_risk_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_risk_type(input);
         self
     }
-    /// Filter findings by risk type
+    /// <p>Filter findings by risk type.</p>
     pub fn get_risk_type(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_risk_type()
     }
-    /// Filter findings by risk level
+    /// <p>Filter findings by risk level.</p>
     pub fn risk_level(mut self, input: crate::types::RiskLevel) -> Self {
         self.inner = self.inner.risk_level(input);
         self
     }
-    /// Filter findings by risk level
+    /// <p>Filter findings by risk level.</p>
     pub fn set_risk_level(mut self, input: ::std::option::Option<crate::types::RiskLevel>) -> Self {
         self.inner = self.inner.set_risk_level(input);
         self
     }
-    /// Filter findings by risk level
+    /// <p>Filter findings by risk level.</p>
     pub fn get_risk_level(&self) -> &::std::option::Option<crate::types::RiskLevel> {
         self.inner.get_risk_level()
     }
-    /// Filter findings by status
+    /// <p>Filter findings by status.</p>
     pub fn status(mut self, input: crate::types::FindingStatus) -> Self {
         self.inner = self.inner.status(input);
         self
     }
-    /// Filter findings by status
+    /// <p>Filter findings by status.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::FindingStatus>) -> Self {
         self.inner = self.inner.set_status(input);
         self
     }
-    /// Filter findings by status
+    /// <p>Filter findings by status.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::FindingStatus> {
         self.inner.get_status()
     }
-    /// Filter findings by confidence level
+    /// <p>Filter findings by confidence level.</p>
     pub fn confidence(mut self, input: crate::types::ConfidenceLevel) -> Self {
         self.inner = self.inner.confidence(input);
         self
     }
-    /// Filter findings by confidence level
+    /// <p>Filter findings by confidence level.</p>
     pub fn set_confidence(mut self, input: ::std::option::Option<crate::types::ConfidenceLevel>) -> Self {
         self.inner = self.inner.set_confidence(input);
         self
     }
-    /// Filter findings by confidence level
+    /// <p>Filter findings by confidence level.</p>
     pub fn get_confidence(&self) -> &::std::option::Option<crate::types::ConfidenceLevel> {
         self.inner.get_confidence()
     }
-    /// Filter findings by name (case-insensitive substring search)
+    /// <p>Filter findings by name.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
-    /// Filter findings by name (case-insensitive substring search)
+    /// <p>Filter findings by name.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
-    /// Filter findings by name (case-insensitive substring search)
+    /// <p>Filter findings by name.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }

@@ -17,8 +17,10 @@
 ///     RouteFerryNoticeCode::Other => { /* ... */ },
 ///     RouteFerryNoticeCode::PotentialViolatedVehicleRestrictionUsage => { /* ... */ },
 ///     RouteFerryNoticeCode::SeasonalClosure => { /* ... */ },
+///     RouteFerryNoticeCode::ViolatedAvoidAreas => { /* ... */ },
 ///     RouteFerryNoticeCode::ViolatedAvoidFerry => { /* ... */ },
 ///     RouteFerryNoticeCode::ViolatedAvoidRailFerry => { /* ... */ },
+///     RouteFerryNoticeCode::ViolatedVehicleRestriction => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -58,9 +60,13 @@ pub enum RouteFerryNoticeCode {
     #[allow(missing_docs)] // documentation missing in model
     SeasonalClosure,
     #[allow(missing_docs)] // documentation missing in model
+    ViolatedAvoidAreas,
+    #[allow(missing_docs)] // documentation missing in model
     ViolatedAvoidFerry,
     #[allow(missing_docs)] // documentation missing in model
     ViolatedAvoidRailFerry,
+    #[allow(missing_docs)] // documentation missing in model
+    ViolatedVehicleRestriction,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -73,8 +79,10 @@ impl ::std::convert::From<&str> for RouteFerryNoticeCode {
             "Other" => RouteFerryNoticeCode::Other,
             "PotentialViolatedVehicleRestrictionUsage" => RouteFerryNoticeCode::PotentialViolatedVehicleRestrictionUsage,
             "SeasonalClosure" => RouteFerryNoticeCode::SeasonalClosure,
+            "ViolatedAvoidAreas" => RouteFerryNoticeCode::ViolatedAvoidAreas,
             "ViolatedAvoidFerry" => RouteFerryNoticeCode::ViolatedAvoidFerry,
             "ViolatedAvoidRailFerry" => RouteFerryNoticeCode::ViolatedAvoidRailFerry,
+            "ViolatedVehicleRestriction" => RouteFerryNoticeCode::ViolatedVehicleRestriction,
             other => RouteFerryNoticeCode::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -95,8 +103,10 @@ impl RouteFerryNoticeCode {
             RouteFerryNoticeCode::Other => "Other",
             RouteFerryNoticeCode::PotentialViolatedVehicleRestrictionUsage => "PotentialViolatedVehicleRestrictionUsage",
             RouteFerryNoticeCode::SeasonalClosure => "SeasonalClosure",
+            RouteFerryNoticeCode::ViolatedAvoidAreas => "ViolatedAvoidAreas",
             RouteFerryNoticeCode::ViolatedAvoidFerry => "ViolatedAvoidFerry",
             RouteFerryNoticeCode::ViolatedAvoidRailFerry => "ViolatedAvoidRailFerry",
+            RouteFerryNoticeCode::ViolatedVehicleRestriction => "ViolatedVehicleRestriction",
             RouteFerryNoticeCode::Unknown(value) => value.as_str(),
         }
     }
@@ -108,8 +118,10 @@ impl RouteFerryNoticeCode {
             "Other",
             "PotentialViolatedVehicleRestrictionUsage",
             "SeasonalClosure",
+            "ViolatedAvoidAreas",
             "ViolatedAvoidFerry",
             "ViolatedAvoidRailFerry",
+            "ViolatedVehicleRestriction",
         ]
     }
 }
@@ -138,8 +150,10 @@ impl ::std::fmt::Display for RouteFerryNoticeCode {
             RouteFerryNoticeCode::Other => write!(f, "Other"),
             RouteFerryNoticeCode::PotentialViolatedVehicleRestrictionUsage => write!(f, "PotentialViolatedVehicleRestrictionUsage"),
             RouteFerryNoticeCode::SeasonalClosure => write!(f, "SeasonalClosure"),
+            RouteFerryNoticeCode::ViolatedAvoidAreas => write!(f, "ViolatedAvoidAreas"),
             RouteFerryNoticeCode::ViolatedAvoidFerry => write!(f, "ViolatedAvoidFerry"),
             RouteFerryNoticeCode::ViolatedAvoidRailFerry => write!(f, "ViolatedAvoidRailFerry"),
+            RouteFerryNoticeCode::ViolatedVehicleRestriction => write!(f, "ViolatedVehicleRestriction"),
             RouteFerryNoticeCode::Unknown(value) => write!(f, "{value}"),
         }
     }

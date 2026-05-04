@@ -259,14 +259,16 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListIntegrati
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum ListIntegrationsError {
-    /// Request denied due to insufficient permissions
+    /// <p>You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
-    /// Unexpected server error occurred
+    /// <p>An unexpected error occurred during the processing of your request.</p>
     InternalServerException(crate::types::error::InternalServerException),
-    /// Specified resource was not found
+    /// <p>The specified resource was not found. Verify that the resource identifier is correct and that the resource exists in the specified agent space or account.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
-    /// Request denied due to throttling
+    /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::types::error::ThrottlingException),
+    /// <p>The input fails to satisfy the constraints specified by the service.</p>
+    ValidationException(crate::types::error::ValidationException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \
     variable wildcard pattern and check `.code()`:
@@ -304,6 +306,7 @@ impl ListIntegrationsError {
             Self::InternalServerException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ResourceNotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ThrottlingException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::ValidationException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
     }
@@ -323,6 +326,10 @@ impl ListIntegrationsError {
     pub fn is_throttling_exception(&self) -> bool {
         matches!(self, Self::ThrottlingException(_))
     }
+    /// Returns `true` if the error kind is `ListIntegrationsError::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(self, Self::ValidationException(_))
+    }
 }
 impl ::std::error::Error for ListIntegrationsError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
@@ -331,6 +338,7 @@ impl ::std::error::Error for ListIntegrationsError {
             Self::InternalServerException(_inner) => ::std::option::Option::Some(_inner),
             Self::ResourceNotFoundException(_inner) => ::std::option::Option::Some(_inner),
             Self::ThrottlingException(_inner) => ::std::option::Option::Some(_inner),
+            Self::ValidationException(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
         }
     }
@@ -342,6 +350,7 @@ impl ::std::fmt::Display for ListIntegrationsError {
             Self::InternalServerException(_inner) => _inner.fmt(f),
             Self::ResourceNotFoundException(_inner) => _inner.fmt(f),
             Self::ThrottlingException(_inner) => _inner.fmt(f),
+            Self::ValidationException(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => {
                 if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
                     write!(f, "unhandled error ({code})")
@@ -367,6 +376,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for ListIntegrati
             Self::InternalServerException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ResourceNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ThrottlingException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::ValidationException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => &_inner.meta,
         }
     }

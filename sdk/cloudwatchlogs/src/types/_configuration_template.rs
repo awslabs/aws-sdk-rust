@@ -24,6 +24,10 @@ pub struct ConfigurationTemplate {
     pub allowed_field_delimiters: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The list of variable fields that can be used in the suffix path of a delivery that delivers to an S3 bucket.</p>
     pub allowed_suffix_path_fields: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>The schema of the delivery source configuration that is available for this log type. Each element describes a configuration that can be set when calling <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDeliverySource.html">PutDeliverySource</a>, including the configuration name, type, and default value.</p>
+    pub delivery_source_configuration: ::std::option::Option<::std::vec::Vec<crate::types::DeliverySourceConfigurationSchema>>,
+    /// <p>The S3 Tables integration configuration for this configuration template, including the datasource name and type.</p>
+    pub s3_tables_integration: ::std::option::Option<crate::types::S3TablesIntegration>,
 }
 impl ConfigurationTemplate {
     /// <p>A string specifying which service this configuration template applies to. For more information about supported services see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AWS-logs-and-resource-policy.html">Enable logging from Amazon Web Services services.</a>.</p>
@@ -74,6 +78,16 @@ impl ConfigurationTemplate {
     pub fn allowed_suffix_path_fields(&self) -> &[::std::string::String] {
         self.allowed_suffix_path_fields.as_deref().unwrap_or_default()
     }
+    /// <p>The schema of the delivery source configuration that is available for this log type. Each element describes a configuration that can be set when calling <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDeliverySource.html">PutDeliverySource</a>, including the configuration name, type, and default value.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.delivery_source_configuration.is_none()`.
+    pub fn delivery_source_configuration(&self) -> &[crate::types::DeliverySourceConfigurationSchema] {
+        self.delivery_source_configuration.as_deref().unwrap_or_default()
+    }
+    /// <p>The S3 Tables integration configuration for this configuration template, including the datasource name and type.</p>
+    pub fn s3_tables_integration(&self) -> ::std::option::Option<&crate::types::S3TablesIntegration> {
+        self.s3_tables_integration.as_ref()
+    }
 }
 impl ConfigurationTemplate {
     /// Creates a new builder-style object to manufacture [`ConfigurationTemplate`](crate::types::ConfigurationTemplate).
@@ -96,6 +110,8 @@ pub struct ConfigurationTemplateBuilder {
     pub(crate) allowed_action_for_allow_vended_logs_delivery_for_resource: ::std::option::Option<::std::string::String>,
     pub(crate) allowed_field_delimiters: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) allowed_suffix_path_fields: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) delivery_source_configuration: ::std::option::Option<::std::vec::Vec<crate::types::DeliverySourceConfigurationSchema>>,
+    pub(crate) s3_tables_integration: ::std::option::Option<crate::types::S3TablesIntegration>,
 }
 impl ConfigurationTemplateBuilder {
     /// <p>A string specifying which service this configuration template applies to. For more information about supported services see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AWS-logs-and-resource-policy.html">Enable logging from Amazon Web Services services.</a>.</p>
@@ -265,6 +281,43 @@ impl ConfigurationTemplateBuilder {
     pub fn get_allowed_suffix_path_fields(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.allowed_suffix_path_fields
     }
+    /// Appends an item to `delivery_source_configuration`.
+    ///
+    /// To override the contents of this collection use [`set_delivery_source_configuration`](Self::set_delivery_source_configuration).
+    ///
+    /// <p>The schema of the delivery source configuration that is available for this log type. Each element describes a configuration that can be set when calling <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDeliverySource.html">PutDeliverySource</a>, including the configuration name, type, and default value.</p>
+    pub fn delivery_source_configuration(mut self, input: crate::types::DeliverySourceConfigurationSchema) -> Self {
+        let mut v = self.delivery_source_configuration.unwrap_or_default();
+        v.push(input);
+        self.delivery_source_configuration = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The schema of the delivery source configuration that is available for this log type. Each element describes a configuration that can be set when calling <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDeliverySource.html">PutDeliverySource</a>, including the configuration name, type, and default value.</p>
+    pub fn set_delivery_source_configuration(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::DeliverySourceConfigurationSchema>>,
+    ) -> Self {
+        self.delivery_source_configuration = input;
+        self
+    }
+    /// <p>The schema of the delivery source configuration that is available for this log type. Each element describes a configuration that can be set when calling <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDeliverySource.html">PutDeliverySource</a>, including the configuration name, type, and default value.</p>
+    pub fn get_delivery_source_configuration(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DeliverySourceConfigurationSchema>> {
+        &self.delivery_source_configuration
+    }
+    /// <p>The S3 Tables integration configuration for this configuration template, including the datasource name and type.</p>
+    pub fn s3_tables_integration(mut self, input: crate::types::S3TablesIntegration) -> Self {
+        self.s3_tables_integration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The S3 Tables integration configuration for this configuration template, including the datasource name and type.</p>
+    pub fn set_s3_tables_integration(mut self, input: ::std::option::Option<crate::types::S3TablesIntegration>) -> Self {
+        self.s3_tables_integration = input;
+        self
+    }
+    /// <p>The S3 Tables integration configuration for this configuration template, including the datasource name and type.</p>
+    pub fn get_s3_tables_integration(&self) -> &::std::option::Option<crate::types::S3TablesIntegration> {
+        &self.s3_tables_integration
+    }
     /// Consumes the builder and constructs a [`ConfigurationTemplate`](crate::types::ConfigurationTemplate).
     pub fn build(self) -> crate::types::ConfigurationTemplate {
         crate::types::ConfigurationTemplate {
@@ -278,6 +331,8 @@ impl ConfigurationTemplateBuilder {
             allowed_action_for_allow_vended_logs_delivery_for_resource: self.allowed_action_for_allow_vended_logs_delivery_for_resource,
             allowed_field_delimiters: self.allowed_field_delimiters,
             allowed_suffix_path_fields: self.allowed_suffix_path_fields,
+            delivery_source_configuration: self.delivery_source_configuration,
+            s3_tables_integration: self.s3_tables_integration,
         }
     }
 }

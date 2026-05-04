@@ -7,6 +7,7 @@ impl super::Client {
     ///   - [`version(impl Into<String>)`](crate::operation::delete_bot_version::builders::DeleteBotVersionFluentBuilder::version) / [`set_version(Option<String>)`](crate::operation::delete_bot_version::builders::DeleteBotVersionFluentBuilder::set_version):<br>required: **true**<br><p>The version of the bot to delete. You cannot delete the <code>$LATEST</code> version of the bot. To delete the <code>$LATEST</code> version, use the <code>DeleteBot</code> operation.</p><br>
     /// - On success, responds with [`DeleteBotVersionOutput`](crate::operation::delete_bot_version::DeleteBotVersionOutput)
     /// - On failure, responds with [`SdkError<DeleteBotVersionError>`](crate::operation::delete_bot_version::DeleteBotVersionError)
+    #[deprecated(note = "Amazon Lex V1 is deprecated. Use Amazon Lex V2 instead.", since = "2025-09-08")]
     pub fn delete_bot_version(&self) -> crate::operation::delete_bot_version::builders::DeleteBotVersionFluentBuilder {
         crate::operation::delete_bot_version::builders::DeleteBotVersionFluentBuilder::new(self.handle.clone())
     }

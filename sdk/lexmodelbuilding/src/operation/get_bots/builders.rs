@@ -30,6 +30,7 @@ impl crate::operation::get_bots::builders::GetBotsInputBuilder {
 /// <p>If you don't specify the <code>nameContains</code> field, the operation returns information about the <code>$LATEST</code> version of all of your bots.</p></li>
 /// </ul>
 /// <p>This operation requires permission for the <code>lex:GetBots</code> action.</p>
+#[deprecated(note = "Amazon Lex V1 is deprecated. Use Amazon Lex V2 instead.", since = "2025-09-08")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetBotsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

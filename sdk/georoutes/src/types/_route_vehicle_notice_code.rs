@@ -23,6 +23,7 @@
 ///     RouteVehicleNoticeCode::TollTransponder => { /* ... */ },
 ///     RouteVehicleNoticeCode::TollsDataTemporarilyUnavailable => { /* ... */ },
 ///     RouteVehicleNoticeCode::TollsDataUnavailable => { /* ... */ },
+///     RouteVehicleNoticeCode::TravelTimeExceedsDriverWorkHours => { /* ... */ },
 ///     RouteVehicleNoticeCode::ViolatedAvoidControlledAccessHighway => { /* ... */ },
 ///     RouteVehicleNoticeCode::ViolatedAvoidDifficultTurns => { /* ... */ },
 ///     RouteVehicleNoticeCode::ViolatedAvoidDirtRoad => { /* ... */ },
@@ -90,6 +91,8 @@ pub enum RouteVehicleNoticeCode {
     #[allow(missing_docs)] // documentation missing in model
     TollsDataUnavailable,
     #[allow(missing_docs)] // documentation missing in model
+    TravelTimeExceedsDriverWorkHours,
+    #[allow(missing_docs)] // documentation missing in model
     ViolatedAvoidControlledAccessHighway,
     #[allow(missing_docs)] // documentation missing in model
     ViolatedAvoidDifficultTurns,
@@ -139,6 +142,7 @@ impl ::std::convert::From<&str> for RouteVehicleNoticeCode {
             "TollTransponder" => RouteVehicleNoticeCode::TollTransponder,
             "TollsDataTemporarilyUnavailable" => RouteVehicleNoticeCode::TollsDataTemporarilyUnavailable,
             "TollsDataUnavailable" => RouteVehicleNoticeCode::TollsDataUnavailable,
+            "TravelTimeExceedsDriverWorkHours" => RouteVehicleNoticeCode::TravelTimeExceedsDriverWorkHours,
             "ViolatedAvoidControlledAccessHighway" => RouteVehicleNoticeCode::ViolatedAvoidControlledAccessHighway,
             "ViolatedAvoidDifficultTurns" => RouteVehicleNoticeCode::ViolatedAvoidDifficultTurns,
             "ViolatedAvoidDirtRoad" => RouteVehicleNoticeCode::ViolatedAvoidDirtRoad,
@@ -181,6 +185,7 @@ impl RouteVehicleNoticeCode {
             RouteVehicleNoticeCode::TollTransponder => "TollTransponder",
             RouteVehicleNoticeCode::TollsDataTemporarilyUnavailable => "TollsDataTemporarilyUnavailable",
             RouteVehicleNoticeCode::TollsDataUnavailable => "TollsDataUnavailable",
+            RouteVehicleNoticeCode::TravelTimeExceedsDriverWorkHours => "TravelTimeExceedsDriverWorkHours",
             RouteVehicleNoticeCode::ViolatedAvoidControlledAccessHighway => "ViolatedAvoidControlledAccessHighway",
             RouteVehicleNoticeCode::ViolatedAvoidDifficultTurns => "ViolatedAvoidDifficultTurns",
             RouteVehicleNoticeCode::ViolatedAvoidDirtRoad => "ViolatedAvoidDirtRoad",
@@ -214,6 +219,7 @@ impl RouteVehicleNoticeCode {
             "TollTransponder",
             "TollsDataTemporarilyUnavailable",
             "TollsDataUnavailable",
+            "TravelTimeExceedsDriverWorkHours",
             "ViolatedAvoidControlledAccessHighway",
             "ViolatedAvoidDifficultTurns",
             "ViolatedAvoidDirtRoad",
@@ -264,6 +270,7 @@ impl ::std::fmt::Display for RouteVehicleNoticeCode {
             RouteVehicleNoticeCode::TollTransponder => write!(f, "TollTransponder"),
             RouteVehicleNoticeCode::TollsDataTemporarilyUnavailable => write!(f, "TollsDataTemporarilyUnavailable"),
             RouteVehicleNoticeCode::TollsDataUnavailable => write!(f, "TollsDataUnavailable"),
+            RouteVehicleNoticeCode::TravelTimeExceedsDriverWorkHours => write!(f, "TravelTimeExceedsDriverWorkHours"),
             RouteVehicleNoticeCode::ViolatedAvoidControlledAccessHighway => write!(f, "ViolatedAvoidControlledAccessHighway"),
             RouteVehicleNoticeCode::ViolatedAvoidDifficultTurns => write!(f, "ViolatedAvoidDifficultTurns"),
             RouteVehicleNoticeCode::ViolatedAvoidDirtRoad => write!(f, "ViolatedAvoidDirtRoad"),

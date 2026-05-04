@@ -555,6 +555,8 @@ pub use crate::types::_smpte2110_receiver_group_sdp_settings::Smpte2110ReceiverG
 
 pub use crate::types::_media_resource_neighbor::MediaResourceNeighbor;
 
+pub use crate::types::_media_connect_router_output_connection::MediaConnectRouterOutputConnection;
+
 pub use crate::types::_input_destination_route::InputDestinationRoute;
 
 pub use crate::types::_srt_caller_decryption::SrtCallerDecryption;
@@ -2248,6 +2250,8 @@ mod _media_connect_flow_request;
 mod _media_connect_router_container_settings;
 
 mod _media_connect_router_group_settings;
+
+mod _media_connect_router_output_connection;
 
 mod _media_connect_router_output_connection_map;
 

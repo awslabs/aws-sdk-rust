@@ -22,7 +22,7 @@ impl crate::operation::get_application::builders::GetApplicationInputBuilder {
 }
 /// Fluent builder constructing a request to `GetApplication`.
 ///
-/// Retrieves application details by application ID
+/// <p>Retrieves information about an application.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetApplicationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl GetApplicationFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// Application ID
+    /// <p>The unique identifier of the application to retrieve.</p>
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.application_id(input.into());
         self
     }
-    /// Application ID
+    /// <p>The unique identifier of the application to retrieve.</p>
     pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_application_id(input);
         self
     }
-    /// Application ID
+    /// <p>The unique identifier of the application to retrieve.</p>
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_application_id()
     }

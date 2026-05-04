@@ -22,7 +22,7 @@ impl crate::operation::create_membership::builders::CreateMembershipInputBuilder
 }
 /// Fluent builder constructing a request to `CreateMembership`.
 ///
-/// Adds a single member to an agent space with specified role
+/// <p>Creates a new membership, granting a user access to an agent space within an application.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateMembershipFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,73 +108,73 @@ impl CreateMembershipFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// Application identifier
+    /// <p>The unique identifier of the application that contains the agent space.</p>
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.application_id(input.into());
         self
     }
-    /// Application identifier
+    /// <p>The unique identifier of the application that contains the agent space.</p>
     pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_application_id(input);
         self
     }
-    /// Application identifier
+    /// <p>The unique identifier of the application that contains the agent space.</p>
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_application_id()
     }
-    /// Agent space identifier
+    /// <p>The unique identifier of the agent space to grant access to.</p>
     pub fn agent_space_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.agent_space_id(input.into());
         self
     }
-    /// Agent space identifier
+    /// <p>The unique identifier of the agent space to grant access to.</p>
     pub fn set_agent_space_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_agent_space_id(input);
         self
     }
-    /// Agent space identifier
+    /// <p>The unique identifier of the agent space to grant access to.</p>
     pub fn get_agent_space_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_agent_space_id()
     }
-    /// Member identifier (userId or agentSpaceId)
+    /// <p>The unique identifier for the membership.</p>
     pub fn membership_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.membership_id(input.into());
         self
     }
-    /// Member identifier (userId or agentSpaceId)
+    /// <p>The unique identifier for the membership.</p>
     pub fn set_membership_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_membership_id(input);
         self
     }
-    /// Member identifier (userId or agentSpaceId)
+    /// <p>The unique identifier for the membership.</p>
     pub fn get_membership_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_membership_id()
     }
-    /// Type of member (USER or AGENT_SPACE)
+    /// <p>The type of member. Currently, only USER is supported.</p>
     pub fn member_type(mut self, input: crate::types::MembershipType) -> Self {
         self.inner = self.inner.member_type(input);
         self
     }
-    /// Type of member (USER or AGENT_SPACE)
+    /// <p>The type of member. Currently, only USER is supported.</p>
     pub fn set_member_type(mut self, input: ::std::option::Option<crate::types::MembershipType>) -> Self {
         self.inner = self.inner.set_member_type(input);
         self
     }
-    /// Type of member (USER or AGENT_SPACE)
+    /// <p>The type of member. Currently, only USER is supported.</p>
     pub fn get_member_type(&self) -> &::std::option::Option<crate::types::MembershipType> {
         self.inner.get_member_type()
     }
-    /// Membership details (user or agent specific)
+    /// <p>The configuration for the membership, such as the user role.</p>
     pub fn config(mut self, input: crate::types::MembershipConfig) -> Self {
         self.inner = self.inner.config(input);
         self
     }
-    /// Membership details (user or agent specific)
+    /// <p>The configuration for the membership, such as the user role.</p>
     pub fn set_config(mut self, input: ::std::option::Option<crate::types::MembershipConfig>) -> Self {
         self.inner = self.inner.set_config(input);
         self
     }
-    /// Membership details (user or agent specific)
+    /// <p>The configuration for the membership, such as the user role.</p>
     pub fn get_config(&self) -> &::std::option::Option<crate::types::MembershipConfig> {
         self.inner.get_config()
     }

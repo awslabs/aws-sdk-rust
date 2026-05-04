@@ -3,17 +3,17 @@
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum Error {
-    /// Request denied due to insufficient permissions
+    /// <p>You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
-    /// Request conflicts with current resource state
+    /// <p>The request could not be completed due to a conflict with the current state of the resource.</p>
     ConflictException(crate::types::error::ConflictException),
-    /// Unexpected server error occurred
+    /// <p>An unexpected error occurred during the processing of your request.</p>
     InternalServerException(crate::types::error::InternalServerException),
-    /// Specified resource was not found
+    /// <p>The specified resource was not found. Verify that the resource identifier is correct and that the resource exists in the specified agent space or account.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
-    /// Request denied due to throttling
+    /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::types::error::ThrottlingException),
-    /// A standard error for input validation failures. This should be thrown by services when a member of the input structure falls outside of the modeled or documented constraints.
+    /// <p>The input fails to satisfy the constraints specified by the service.</p>
     ValidationException(crate::types::error::ValidationException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \
@@ -842,6 +842,7 @@ impl From<crate::operation::list_integrations::ListIntegrationsError> for Error 
             crate::operation::list_integrations::ListIntegrationsError::InternalServerException(inner) => Error::InternalServerException(inner),
             crate::operation::list_integrations::ListIntegrationsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::list_integrations::ListIntegrationsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_integrations::ListIntegrationsError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_integrations::ListIntegrationsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }

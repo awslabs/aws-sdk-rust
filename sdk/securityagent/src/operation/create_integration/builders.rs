@@ -22,7 +22,7 @@ impl crate::operation::create_integration::builders::CreateIntegrationInputBuild
 }
 /// Fluent builder constructing a request to `CreateIntegration`.
 ///
-/// Creates the Integration of the Security Agent App with an external Provider
+/// <p>Creates a new integration with a third-party provider, such as GitHub, for code review and remediation.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateIntegrationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,59 +108,59 @@ impl CreateIntegrationFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// Provider to integrate with
+    /// <p>The integration provider. Currently, only GITHUB is supported.</p>
     pub fn provider(mut self, input: crate::types::Provider) -> Self {
         self.inner = self.inner.provider(input);
         self
     }
-    /// Provider to integrate with
+    /// <p>The integration provider. Currently, only GITHUB is supported.</p>
     pub fn set_provider(mut self, input: ::std::option::Option<crate::types::Provider>) -> Self {
         self.inner = self.inner.set_provider(input);
         self
     }
-    /// Provider to integrate with
+    /// <p>The integration provider. Currently, only GITHUB is supported.</p>
     pub fn get_provider(&self) -> &::std::option::Option<crate::types::Provider> {
         self.inner.get_provider()
     }
-    /// Provider-specific input parameters
+    /// <p>The provider-specific input required to create the integration.</p>
     pub fn input(mut self, input: crate::types::ProviderInput) -> Self {
         self.inner = self.inner.input(input);
         self
     }
-    /// Provider-specific input parameters
+    /// <p>The provider-specific input required to create the integration.</p>
     pub fn set_input(mut self, input: ::std::option::Option<crate::types::ProviderInput>) -> Self {
         self.inner = self.inner.set_input(input);
         self
     }
-    /// Provider-specific input parameters
+    /// <p>The provider-specific input required to create the integration.</p>
     pub fn get_input(&self) -> &::std::option::Option<crate::types::ProviderInput> {
         self.inner.get_input()
     }
-    /// Display name for the integration
+    /// <p>The display name for the integration.</p>
     pub fn integration_display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.integration_display_name(input.into());
         self
     }
-    /// Display name for the integration
+    /// <p>The display name for the integration.</p>
     pub fn set_integration_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_integration_display_name(input);
         self
     }
-    /// Display name for the integration
+    /// <p>The display name for the integration.</p>
     pub fn get_integration_display_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_integration_display_name()
     }
-    /// KMS key ID for encrypting integration details
+    /// <p>The identifier of the AWS KMS key to use for encrypting data associated with the integration.</p>
     pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.kms_key_id(input.into());
         self
     }
-    /// KMS key ID for encrypting integration details
+    /// <p>The identifier of the AWS KMS key to use for encrypting data associated with the integration.</p>
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_kms_key_id(input);
         self
     }
-    /// KMS key ID for encrypting integration details
+    /// <p>The identifier of the AWS KMS key to use for encrypting data associated with the integration.</p>
     pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_kms_key_id()
     }
@@ -169,17 +169,17 @@ impl CreateIntegrationFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// Tags to associate with the integration
+    /// <p>The tags to associate with the integration.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
-    /// Tags to associate with the integration
+    /// <p>The tags to associate with the integration.</p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
-    /// Tags to associate with the integration
+    /// <p>The tags to associate with the integration.</p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }

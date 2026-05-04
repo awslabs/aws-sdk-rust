@@ -34,6 +34,16 @@ where
                                     .transpose()?,
                             );
                         }
+                        "sessionConfiguration" => {
+                            builder = builder.set_session_configuration(
+                                crate::protocol_serde::shape_session_configuration::de_session_configuration(tokens, _value)?,
+                            );
+                        }
+                        "streamingConfiguration" => {
+                            builder = builder.set_streaming_configuration(
+                                crate::protocol_serde::shape_streaming_configuration::de_streaming_configuration(tokens, _value)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {
@@ -69,6 +79,18 @@ pub fn ser_mcp_gateway_configuration(
     }
     if let Some(var_5) = &input.search_type {
         object.key("searchType").string(var_5.as_str());
+    }
+    if let Some(var_6) = &input.session_configuration {
+        #[allow(unused_mut)]
+        let mut object_7 = object.key("sessionConfiguration").start_object();
+        crate::protocol_serde::shape_session_configuration::ser_session_configuration(&mut object_7, var_6)?;
+        object_7.finish();
+    }
+    if let Some(var_8) = &input.streaming_configuration {
+        #[allow(unused_mut)]
+        let mut object_9 = object.key("streamingConfiguration").start_object();
+        crate::protocol_serde::shape_streaming_configuration::ser_streaming_configuration(&mut object_9, var_8)?;
+        object_9.finish();
     }
     Ok(())
 }

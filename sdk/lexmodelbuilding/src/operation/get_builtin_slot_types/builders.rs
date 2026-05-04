@@ -25,6 +25,7 @@ impl crate::operation::get_builtin_slot_types::builders::GetBuiltinSlotTypesInpu
 /// <p>Gets a list of built-in slot types that meet the specified criteria.</p>
 /// <p>For a list of built-in slot types, see <a href="https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/built-in-intent-ref/slot-type-reference">Slot Type Reference</a> in the <i>Alexa Skills Kit</i>.</p>
 /// <p>This operation requires permission for the <code>lex:GetBuiltInSlotTypes</code> action.</p>
+#[deprecated(note = "Amazon Lex V1 is deprecated. Use Amazon Lex V2 instead.", since = "2025-09-08")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetBuiltinSlotTypesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

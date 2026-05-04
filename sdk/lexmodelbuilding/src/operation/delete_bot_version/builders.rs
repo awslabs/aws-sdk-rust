@@ -24,6 +24,7 @@ impl crate::operation::delete_bot_version::builders::DeleteBotVersionInputBuilde
 ///
 /// <p>Deletes a specific version of a bot. To delete all versions of a bot, use the <code>DeleteBot</code> operation.</p>
 /// <p>This operation requires permissions for the <code>lex:DeleteBotVersion</code> action.</p>
+#[deprecated(note = "Amazon Lex V1 is deprecated. Use Amazon Lex V2 instead.", since = "2025-09-08")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteBotVersionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

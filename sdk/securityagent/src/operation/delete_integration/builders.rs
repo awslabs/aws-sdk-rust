@@ -22,7 +22,7 @@ impl crate::operation::delete_integration::builders::DeleteIntegrationInputBuild
 }
 /// Fluent builder constructing a request to `DeleteIntegration`.
 ///
-/// Deletes the Integration of the Security Agent App with an external Provider
+/// <p>Deletes an integration with a third-party provider.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteIntegrationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl DeleteIntegrationFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// Unique identifier of the integration
+    /// <p>The unique identifier of the integration to delete.</p>
     pub fn integration_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.integration_id(input.into());
         self
     }
-    /// Unique identifier of the integration
+    /// <p>The unique identifier of the integration to delete.</p>
     pub fn set_integration_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_integration_id(input);
         self
     }
-    /// Unique identifier of the integration
+    /// <p>The unique identifier of the integration to delete.</p>
     pub fn get_integration_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_integration_id()
     }

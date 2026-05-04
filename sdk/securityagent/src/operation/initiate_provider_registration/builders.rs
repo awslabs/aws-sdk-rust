@@ -22,7 +22,7 @@ impl crate::operation::initiate_provider_registration::builders::InitiateProvide
 }
 /// Fluent builder constructing a request to `InitiateProviderRegistration`.
 ///
-/// Initiates the registration of Security Agent App for an external Provider
+/// <p>Initiates the OAuth registration flow with a third-party provider. Returns a redirect URL and CSRF state token for completing the authorization.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct InitiateProviderRegistrationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl InitiateProviderRegistrationFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// Provider to register with
+    /// <p>The provider to initiate registration with. Currently, only GITHUB is supported.</p>
     pub fn provider(mut self, input: crate::types::Provider) -> Self {
         self.inner = self.inner.provider(input);
         self
     }
-    /// Provider to register with
+    /// <p>The provider to initiate registration with. Currently, only GITHUB is supported.</p>
     pub fn set_provider(mut self, input: ::std::option::Option<crate::types::Provider>) -> Self {
         self.inner = self.inner.set_provider(input);
         self
     }
-    /// Provider to register with
+    /// <p>The provider to initiate registration with. Currently, only GITHUB is supported.</p>
     pub fn get_provider(&self) -> &::std::option::Option<crate::types::Provider> {
         self.inner.get_provider()
     }

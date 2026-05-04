@@ -181,6 +181,13 @@ pub(crate) fn de_get_resource_gateway(
                         ::aws_smithy_types::date_time::Format::DateTimeWithOffset,
                     )?);
                 }
+                "managedBy" => {
+                    builder = builder.set_managed_by(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
                 "name" => {
                     builder = builder.set_name(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
@@ -188,9 +195,19 @@ pub(crate) fn de_get_resource_gateway(
                             .transpose()?,
                     );
                 }
+                "resourceConfigDnsResolution" => {
+                    builder = builder.set_resource_config_dns_resolution(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| crate::types::ResourceConfigDnsResolution::from(u.as_ref())))
+                            .transpose()?,
+                    );
+                }
                 "securityGroupIds" => {
                     builder =
                         builder.set_security_group_ids(crate::protocol_serde::shape_security_group_list::de_security_group_list(tokens, _value)?);
+                }
+                "serviceManaged" => {
+                    builder = builder.set_service_managed(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                 }
                 "status" => {
                     builder = builder.set_status(

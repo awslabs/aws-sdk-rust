@@ -3,14 +3,14 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetIntegration`](crate::operation::get_integration::builders::GetIntegrationFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`integration_id(impl Into<String>)`](crate::operation::get_integration::builders::GetIntegrationFluentBuilder::integration_id) / [`set_integration_id(Option<String>)`](crate::operation::get_integration::builders::GetIntegrationFluentBuilder::set_integration_id):<br>required: **true**<br>Unique identifier of the integration<br>
+    ///   - [`integration_id(impl Into<String>)`](crate::operation::get_integration::builders::GetIntegrationFluentBuilder::integration_id) / [`set_integration_id(Option<String>)`](crate::operation::get_integration::builders::GetIntegrationFluentBuilder::set_integration_id):<br>required: **true**<br><p>The unique identifier of the integration to retrieve.</p><br>
     /// - On success, responds with [`GetIntegrationOutput`](crate::operation::get_integration::GetIntegrationOutput) with field(s):
-    ///   - [`integration_id(String)`](crate::operation::get_integration::GetIntegrationOutput::integration_id): Unique identifier of the integration
-    ///   - [`installation_id(String)`](crate::operation::get_integration::GetIntegrationOutput::installation_id): Installation identifier from the provider
-    ///   - [`provider(Provider)`](crate::operation::get_integration::GetIntegrationOutput::provider): Provider type
-    ///   - [`provider_type(ProviderType)`](crate::operation::get_integration::GetIntegrationOutput::provider_type): Type of provider integration
-    ///   - [`display_name(Option<String>)`](crate::operation::get_integration::GetIntegrationOutput::display_name): Display name for the integration
-    ///   - [`kms_key_id(Option<String>)`](crate::operation::get_integration::GetIntegrationOutput::kms_key_id): KMS key ID for encrypting integration details
+    ///   - [`integration_id(String)`](crate::operation::get_integration::GetIntegrationOutput::integration_id): <p>The unique identifier of the integration.</p>
+    ///   - [`installation_id(String)`](crate::operation::get_integration::GetIntegrationOutput::installation_id): <p>The installation identifier from the integration provider.</p>
+    ///   - [`provider(Provider)`](crate::operation::get_integration::GetIntegrationOutput::provider): <p>The integration provider.</p>
+    ///   - [`provider_type(ProviderType)`](crate::operation::get_integration::GetIntegrationOutput::provider_type): <p>The type of the integration provider.</p>
+    ///   - [`display_name(Option<String>)`](crate::operation::get_integration::GetIntegrationOutput::display_name): <p>The display name of the integration.</p>
+    ///   - [`kms_key_id(Option<String>)`](crate::operation::get_integration::GetIntegrationOutput::kms_key_id): <p>The identifier of the AWS KMS key used to encrypt data associated with the integration.</p>
     /// - On failure, responds with [`SdkError<GetIntegrationError>`](crate::operation::get_integration::GetIntegrationError)
     pub fn get_integration(&self) -> crate::operation::get_integration::builders::GetIntegrationFluentBuilder {
         crate::operation::get_integration::builders::GetIntegrationFluentBuilder::new(self.handle.clone())

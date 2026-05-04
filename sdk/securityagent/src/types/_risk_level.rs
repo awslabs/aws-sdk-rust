@@ -40,7 +40,7 @@
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 ///
-/// Risk severity level
+/// <p>Risk severity level.</p>
 ///
 /// _Note: `RiskLevel::Unknown` has been renamed to `::UnknownValue`._
 #[non_exhaustive]

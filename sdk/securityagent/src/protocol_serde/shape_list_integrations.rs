@@ -73,6 +73,20 @@ pub fn de_list_integrations_http_error(
             };
             tmp
         }),
+        "ValidationException" => crate::operation::list_integrations::ListIntegrationsError::ValidationException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ValidationExceptionBuilder::default();
+                output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::list_integrations::ListIntegrationsError::unhandled)?;
+                let output = output.meta(generic);
+                crate::serde_util::validation_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::list_integrations::ListIntegrationsError::unhandled)?
+            };
+            tmp
+        }),
         _ => crate::operation::list_integrations::ListIntegrationsError::generic(generic),
     })
 }

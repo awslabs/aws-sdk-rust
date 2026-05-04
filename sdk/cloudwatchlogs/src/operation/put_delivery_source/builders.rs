@@ -351,4 +351,32 @@ impl PutDeliverySourceFluentBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
+    ///
+    /// Adds a key-value pair to `deliverySourceConfiguration`.
+    ///
+    /// To override the contents of this collection use [`set_delivery_source_configuration`](Self::set_delivery_source_configuration).
+    ///
+    /// <p>A map of key-value pairs to configure the delivery source. Both keys and values must be between 1 and 255 characters in length. For example, <code>{"samplingRate": "50"}</code>.</p>
+    pub fn delivery_source_configuration(
+        mut self,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.inner = self.inner.delivery_source_configuration(k.into(), v.into());
+        self
+    }
+    /// <p>A map of key-value pairs to configure the delivery source. Both keys and values must be between 1 and 255 characters in length. For example, <code>{"samplingRate": "50"}</code>.</p>
+    pub fn set_delivery_source_configuration(
+        mut self,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    ) -> Self {
+        self.inner = self.inner.set_delivery_source_configuration(input);
+        self
+    }
+    /// <p>A map of key-value pairs to configure the delivery source. Both keys and values must be between 1 and 255 characters in length. For example, <code>{"samplingRate": "50"}</code>.</p>
+    pub fn get_delivery_source_configuration(
+        &self,
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        self.inner.get_delivery_source_configuration()
+    }
 }

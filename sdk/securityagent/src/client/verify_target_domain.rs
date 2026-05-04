@@ -3,14 +3,15 @@ impl super::Client {
     /// Constructs a fluent builder for the [`VerifyTargetDomain`](crate::operation::verify_target_domain::builders::VerifyTargetDomainFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`target_domain_id(impl Into<String>)`](crate::operation::verify_target_domain::builders::VerifyTargetDomainFluentBuilder::target_domain_id) / [`set_target_domain_id(Option<String>)`](crate::operation::verify_target_domain::builders::VerifyTargetDomainFluentBuilder::set_target_domain_id):<br>required: **true**<br>Unique identifier of the target domain<br>
+    ///   - [`target_domain_id(impl Into<String>)`](crate::operation::verify_target_domain::builders::VerifyTargetDomainFluentBuilder::target_domain_id) / [`set_target_domain_id(Option<String>)`](crate::operation::verify_target_domain::builders::VerifyTargetDomainFluentBuilder::set_target_domain_id):<br>required: **true**<br><p>The unique identifier of the target domain to verify.</p><br>
     /// - On success, responds with [`VerifyTargetDomainOutput`](crate::operation::verify_target_domain::VerifyTargetDomainOutput) with field(s):
-    ///   - [`target_domain_id(Option<String>)`](crate::operation::verify_target_domain::VerifyTargetDomainOutput::target_domain_id): Unique identifier of the target domain
-    ///   - [`domain_name(Option<String>)`](crate::operation::verify_target_domain::VerifyTargetDomainOutput::domain_name): Name of the registered target domain
-    ///   - [`created_at(Option<DateTime>)`](crate::operation::verify_target_domain::VerifyTargetDomainOutput::created_at): Timestamp when the target domain was registered
-    ///   - [`updated_at(Option<DateTime>)`](crate::operation::verify_target_domain::VerifyTargetDomainOutput::updated_at): Timestamp when the target domain was last updated
-    ///   - [`verified_at(Option<DateTime>)`](crate::operation::verify_target_domain::VerifyTargetDomainOutput::verified_at): Timestamp when the target domain was last successfully verified
-    ///   - [`status(Option<TargetDomainStatus>)`](crate::operation::verify_target_domain::VerifyTargetDomainOutput::status): Current verification status of the registered target domain
+    ///   - [`target_domain_id(Option<String>)`](crate::operation::verify_target_domain::VerifyTargetDomainOutput::target_domain_id): <p>The unique identifier of the target domain.</p>
+    ///   - [`domain_name(Option<String>)`](crate::operation::verify_target_domain::VerifyTargetDomainOutput::domain_name): <p>The domain name of the target domain.</p>
+    ///   - [`created_at(Option<DateTime>)`](crate::operation::verify_target_domain::VerifyTargetDomainOutput::created_at): <p>The date and time the target domain was created, in UTC format.</p>
+    ///   - [`updated_at(Option<DateTime>)`](crate::operation::verify_target_domain::VerifyTargetDomainOutput::updated_at): <p>The date and time the target domain was last updated, in UTC format.</p>
+    ///   - [`verified_at(Option<DateTime>)`](crate::operation::verify_target_domain::VerifyTargetDomainOutput::verified_at): <p>The date and time the target domain was verified, in UTC format.</p>
+    ///   - [`status(Option<TargetDomainStatus>)`](crate::operation::verify_target_domain::VerifyTargetDomainOutput::status): <p>The verification status of the target domain.</p>
+    ///   - [`verification_status_reason(Option<String>)`](crate::operation::verify_target_domain::VerifyTargetDomainOutput::verification_status_reason): <p>The reason for the current target domain verification status.</p>
     /// - On failure, responds with [`SdkError<VerifyTargetDomainError>`](crate::operation::verify_target_domain::VerifyTargetDomainError)
     pub fn verify_target_domain(&self) -> crate::operation::verify_target_domain::builders::VerifyTargetDomainFluentBuilder {
         crate::operation::verify_target_domain::builders::VerifyTargetDomainFluentBuilder::new(self.handle.clone())

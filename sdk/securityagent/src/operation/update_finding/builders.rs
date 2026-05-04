@@ -22,7 +22,7 @@ impl crate::operation::update_finding::builders::UpdateFindingInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateFinding`.
 ///
-/// Updates an existing security finding with new details or status
+/// <p>Updates the status or risk level of a security finding.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateFindingFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,59 +108,59 @@ impl UpdateFindingFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// Identifier of the finding to update
+    /// <p>The unique identifier of the finding to update.</p>
     pub fn finding_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.finding_id(input.into());
         self
     }
-    /// Identifier of the finding to update
+    /// <p>The unique identifier of the finding to update.</p>
     pub fn set_finding_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_finding_id(input);
         self
     }
-    /// Identifier of the finding to update
+    /// <p>The unique identifier of the finding to update.</p>
     pub fn get_finding_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_finding_id()
     }
-    /// ID of the agent space where the finding exists
+    /// <p>The unique identifier of the agent space that contains the finding.</p>
     pub fn agent_space_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.agent_space_id(input.into());
         self
     }
-    /// ID of the agent space where the finding exists
+    /// <p>The unique identifier of the agent space that contains the finding.</p>
     pub fn set_agent_space_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_agent_space_id(input);
         self
     }
-    /// ID of the agent space where the finding exists
+    /// <p>The unique identifier of the agent space that contains the finding.</p>
     pub fn get_agent_space_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_agent_space_id()
     }
-    /// Updated severity level of the identified risk
+    /// <p>The updated risk level for the finding.</p>
     pub fn risk_level(mut self, input: crate::types::RiskLevel) -> Self {
         self.inner = self.inner.risk_level(input);
         self
     }
-    /// Updated severity level of the identified risk
+    /// <p>The updated risk level for the finding.</p>
     pub fn set_risk_level(mut self, input: ::std::option::Option<crate::types::RiskLevel>) -> Self {
         self.inner = self.inner.set_risk_level(input);
         self
     }
-    /// Updated severity level of the identified risk
+    /// <p>The updated risk level for the finding.</p>
     pub fn get_risk_level(&self) -> &::std::option::Option<crate::types::RiskLevel> {
         self.inner.get_risk_level()
     }
-    /// Updated status of the finding
+    /// <p>The updated status for the finding.</p>
     pub fn status(mut self, input: crate::types::FindingStatus) -> Self {
         self.inner = self.inner.status(input);
         self
     }
-    /// Updated status of the finding
+    /// <p>The updated status for the finding.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::FindingStatus>) -> Self {
         self.inner = self.inner.set_status(input);
         self
     }
-    /// Updated status of the finding
+    /// <p>The updated status for the finding.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::FindingStatus> {
         self.inner.get_status()
     }

@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateIntegrationOutput {
-    /// Unique identifier of the created integration
+    /// <p>The unique identifier of the created integration.</p>
     pub integration_id: ::std::string::String,
     _request_id: Option<String>,
 }
 impl CreateIntegrationOutput {
-    /// Unique identifier of the created integration
+    /// <p>The unique identifier of the created integration.</p>
     pub fn integration_id(&self) -> &str {
         use std::ops::Deref;
         self.integration_id.deref()
@@ -34,18 +34,18 @@ pub struct CreateIntegrationOutputBuilder {
     _request_id: Option<String>,
 }
 impl CreateIntegrationOutputBuilder {
-    /// Unique identifier of the created integration
+    /// <p>The unique identifier of the created integration.</p>
     /// This field is required.
     pub fn integration_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.integration_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// Unique identifier of the created integration
+    /// <p>The unique identifier of the created integration.</p>
     pub fn set_integration_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.integration_id = input;
         self
     }
-    /// Unique identifier of the created integration
+    /// <p>The unique identifier of the created integration.</p>
     pub fn get_integration_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.integration_id
     }

@@ -26,6 +26,7 @@ impl crate::operation::delete_utterances::builders::DeleteUtterancesInputBuilder
 /// <p>Amazon Lex stores the utterances that users send to your bot. Utterances are stored for 15 days for use with the <code>GetUtterancesView</code> operation, and then stored indefinitely for use in improving the ability of your bot to respond to user input.</p>
 /// <p>Use the <code>DeleteUtterances</code> operation to manually delete stored utterances for a specific user. When you use the <code>DeleteUtterances</code> operation, utterances stored for improving your bot's ability to respond to user input are deleted immediately. Utterances stored for use with the <code>GetUtterancesView</code> operation are deleted after 15 days.</p>
 /// <p>This operation requires permissions for the <code>lex:DeleteUtterances</code> action.</p>
+#[deprecated(note = "Amazon Lex V1 is deprecated. Use Amazon Lex V2 instead.", since = "2025-09-08")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteUtterancesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

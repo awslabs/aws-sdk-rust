@@ -27,6 +27,7 @@ impl crate::operation::delete_intent::builders::DeleteIntentInputBuilder {
 /// <p>If you get the <code>ResourceInUseException</code> exception, it provides an example reference that shows where the intent is referenced. To remove the reference to the intent, either update the bot or delete it. If you get the same exception when you attempt to delete the intent again, repeat until the intent has no references and the call to <code>DeleteIntent</code> is successful.</p>
 /// </note>
 /// <p>This operation requires permission for the <code>lex:DeleteIntent</code> action.</p>
+#[deprecated(note = "Amazon Lex V1 is deprecated. Use Amazon Lex V2 instead.", since = "2025-09-08")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteIntentFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

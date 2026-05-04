@@ -3,11 +3,11 @@ impl super::Client {
     /// Constructs a fluent builder for the [`BatchGetFindings`](crate::operation::batch_get_findings::builders::BatchGetFindingsFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`finding_ids(impl Into<String>)`](crate::operation::batch_get_findings::builders::BatchGetFindingsFluentBuilder::finding_ids) / [`set_finding_ids(Option<Vec::<String>>)`](crate::operation::batch_get_findings::builders::BatchGetFindingsFluentBuilder::set_finding_ids):<br>required: **true**<br>List of finding IDs to retrieve<br>
-    ///   - [`agent_space_id(impl Into<String>)`](crate::operation::batch_get_findings::builders::BatchGetFindingsFluentBuilder::agent_space_id) / [`set_agent_space_id(Option<String>)`](crate::operation::batch_get_findings::builders::BatchGetFindingsFluentBuilder::set_agent_space_id):<br>required: **true**<br>ID of the agent space where the findings exist<br>
+    ///   - [`finding_ids(impl Into<String>)`](crate::operation::batch_get_findings::builders::BatchGetFindingsFluentBuilder::finding_ids) / [`set_finding_ids(Option<Vec::<String>>)`](crate::operation::batch_get_findings::builders::BatchGetFindingsFluentBuilder::set_finding_ids):<br>required: **true**<br><p>The list of finding identifiers to retrieve.</p><br>
+    ///   - [`agent_space_id(impl Into<String>)`](crate::operation::batch_get_findings::builders::BatchGetFindingsFluentBuilder::agent_space_id) / [`set_agent_space_id(Option<String>)`](crate::operation::batch_get_findings::builders::BatchGetFindingsFluentBuilder::set_agent_space_id):<br>required: **true**<br><p>The unique identifier of the agent space that contains the findings.</p><br>
     /// - On success, responds with [`BatchGetFindingsOutput`](crate::operation::batch_get_findings::BatchGetFindingsOutput) with field(s):
-    ///   - [`findings(Option<Vec::<Finding>>)`](crate::operation::batch_get_findings::BatchGetFindingsOutput::findings): List of successfully retrieved findings
-    ///   - [`not_found(Option<Vec::<String>>)`](crate::operation::batch_get_findings::BatchGetFindingsOutput::not_found): List of finding IDs that could not be found
+    ///   - [`findings(Option<Vec::<Finding>>)`](crate::operation::batch_get_findings::BatchGetFindingsOutput::findings): <p>The list of findings that were found.</p>
+    ///   - [`not_found(Option<Vec::<String>>)`](crate::operation::batch_get_findings::BatchGetFindingsOutput::not_found): <p>The list of finding identifiers that were not found.</p>
     /// - On failure, responds with [`SdkError<BatchGetFindingsError>`](crate::operation::batch_get_findings::BatchGetFindingsError)
     pub fn batch_get_findings(&self) -> crate::operation::batch_get_findings::builders::BatchGetFindingsFluentBuilder {
         crate::operation::batch_get_findings::builders::BatchGetFindingsFluentBuilder::new(self.handle.clone())

@@ -22,7 +22,7 @@ impl crate::operation::update_agent_space::builders::UpdateAgentSpaceInputBuilde
 }
 /// Fluent builder constructing a request to `UpdateAgentSpace`.
 ///
-/// Updates an agent space record
+/// <p>Updates the configuration of an existing agent space, including its name, description, AWS resources, target domains, and code review settings.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateAgentSpaceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,59 +108,59 @@ impl UpdateAgentSpaceFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// ID of the agent space to update
+    /// <p>The unique identifier of the agent space to update.</p>
     pub fn agent_space_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.agent_space_id(input.into());
         self
     }
-    /// ID of the agent space to update
+    /// <p>The unique identifier of the agent space to update.</p>
     pub fn set_agent_space_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_agent_space_id(input);
         self
     }
-    /// ID of the agent space to update
+    /// <p>The unique identifier of the agent space to update.</p>
     pub fn get_agent_space_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_agent_space_id()
     }
-    /// Name of the agent space
+    /// <p>The updated name of the agent space.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
-    /// Name of the agent space
+    /// <p>The updated name of the agent space.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
-    /// Name of the agent space
+    /// <p>The updated name of the agent space.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }
-    /// Description of the agent space
+    /// <p>The updated description of the agent space.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
-    /// Description of the agent space
+    /// <p>The updated description of the agent space.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
-    /// Description of the agent space
+    /// <p>The updated description of the agent space.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }
-    /// AWS resource configurations associated with the agent space
+    /// <p>The updated AWS resources to associate with the agent space.</p>
     pub fn aws_resources(mut self, input: crate::types::AwsResources) -> Self {
         self.inner = self.inner.aws_resources(input);
         self
     }
-    /// AWS resource configurations associated with the agent space
+    /// <p>The updated AWS resources to associate with the agent space.</p>
     pub fn set_aws_resources(mut self, input: ::std::option::Option<crate::types::AwsResources>) -> Self {
         self.inner = self.inner.set_aws_resources(input);
         self
     }
-    /// AWS resource configurations associated with the agent space
+    /// <p>The updated AWS resources to associate with the agent space.</p>
     pub fn get_aws_resources(&self) -> &::std::option::Option<crate::types::AwsResources> {
         self.inner.get_aws_resources()
     }
@@ -169,31 +169,31 @@ impl UpdateAgentSpaceFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_target_domain_ids`](Self::set_target_domain_ids).
     ///
-    /// Target domain IDs to associate with the agent space
+    /// <p>The updated list of target domain identifiers to associate with the agent space.</p>
     pub fn target_domain_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.target_domain_ids(input.into());
         self
     }
-    /// Target domain IDs to associate with the agent space
+    /// <p>The updated list of target domain identifiers to associate with the agent space.</p>
     pub fn set_target_domain_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_target_domain_ids(input);
         self
     }
-    /// Target domain IDs to associate with the agent space
+    /// <p>The updated list of target domain identifiers to associate with the agent space.</p>
     pub fn get_target_domain_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_target_domain_ids()
     }
-    /// Configuration for code review analysis, including controls scanning and general purpose scanning settings
+    /// <p>The updated code review settings for the agent space.</p>
     pub fn code_review_settings(mut self, input: crate::types::CodeReviewSettings) -> Self {
         self.inner = self.inner.code_review_settings(input);
         self
     }
-    /// Configuration for code review analysis, including controls scanning and general purpose scanning settings
+    /// <p>The updated code review settings for the agent space.</p>
     pub fn set_code_review_settings(mut self, input: ::std::option::Option<crate::types::CodeReviewSettings>) -> Self {
         self.inner = self.inner.set_code_review_settings(input);
         self
     }
-    /// Configuration for code review analysis, including controls scanning and general purpose scanning settings
+    /// <p>The updated code review settings for the agent space.</p>
     pub fn get_code_review_settings(&self) -> &::std::option::Option<crate::types::CodeReviewSettings> {
         self.inner.get_code_review_settings()
     }

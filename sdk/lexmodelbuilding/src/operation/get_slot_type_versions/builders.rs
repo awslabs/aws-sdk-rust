@@ -26,6 +26,7 @@ impl crate::operation::get_slot_type_versions::builders::GetSlotTypeVersionsInpu
 /// <p>The <code>GetSlotTypeVersions</code> operation returns a <code>SlotTypeMetadata</code> object for each version of a slot type. For example, if a slot type has three numbered versions, the <code>GetSlotTypeVersions</code> operation returns four <code>SlotTypeMetadata</code> objects in the response, one for each numbered version and one for the <code>$LATEST</code> version.</p>
 /// <p>The <code>GetSlotTypeVersions</code> operation always returns at least one version, the <code>$LATEST</code> version.</p>
 /// <p>This operation requires permissions for the <code>lex:GetSlotTypeVersions</code> action.</p>
+#[deprecated(note = "Amazon Lex V1 is deprecated. Use Amazon Lex V2 instead.", since = "2025-09-08")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetSlotTypeVersionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

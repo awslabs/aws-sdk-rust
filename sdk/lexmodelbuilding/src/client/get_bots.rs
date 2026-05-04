@@ -11,6 +11,7 @@ impl super::Client {
     ///   - [`bots(Option<Vec::<BotMetadata>>)`](crate::operation::get_bots::GetBotsOutput::bots): <p>An array of <code>botMetadata</code> objects, with one entry for each bot.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_bots::GetBotsOutput::next_token): <p>If the response is truncated, it includes a pagination token that you can specify in your next request to fetch the next page of bots.</p>
     /// - On failure, responds with [`SdkError<GetBotsError>`](crate::operation::get_bots::GetBotsError)
+    #[deprecated(note = "Amazon Lex V1 is deprecated. Use Amazon Lex V2 instead.", since = "2025-09-08")]
     pub fn get_bots(&self) -> crate::operation::get_bots::builders::GetBotsFluentBuilder {
         crate::operation::get_bots::builders::GetBotsFluentBuilder::new(self.handle.clone())
     }

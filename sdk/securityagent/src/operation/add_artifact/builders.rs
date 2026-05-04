@@ -22,7 +22,7 @@ impl crate::operation::add_artifact::builders::AddArtifactInputBuilder {
 }
 /// Fluent builder constructing a request to `AddArtifact`.
 ///
-/// Adds an Artifact for the given agent space
+/// <p>Uploads an artifact to an agent space. Artifacts provide additional context for security testing, such as architecture diagrams, API specifications, or configuration files.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AddArtifactFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,59 +108,59 @@ impl AddArtifactFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// Unique identifier of the agent space
+    /// <p>The unique identifier of the agent space to add the artifact to.</p>
     pub fn agent_space_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.agent_space_id(input.into());
         self
     }
-    /// Unique identifier of the agent space
+    /// <p>The unique identifier of the agent space to add the artifact to.</p>
     pub fn set_agent_space_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_agent_space_id(input);
         self
     }
-    /// Unique identifier of the agent space
+    /// <p>The unique identifier of the agent space to add the artifact to.</p>
     pub fn get_agent_space_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_agent_space_id()
     }
-    /// Binary content of the artifact
+    /// <p>The binary content of the artifact to upload.</p>
     pub fn artifact_content(mut self, input: ::aws_smithy_types::Blob) -> Self {
         self.inner = self.inner.artifact_content(input);
         self
     }
-    /// Binary content of the artifact
+    /// <p>The binary content of the artifact to upload.</p>
     pub fn set_artifact_content(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
         self.inner = self.inner.set_artifact_content(input);
         self
     }
-    /// Binary content of the artifact
+    /// <p>The binary content of the artifact to upload.</p>
     pub fn get_artifact_content(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
         self.inner.get_artifact_content()
     }
-    /// Type of the artifact file
+    /// <p>The file type of the artifact. Valid values include TXT, PNG, JPEG, MD, PDF, DOCX, DOC, JSON, and YAML.</p>
     pub fn artifact_type(mut self, input: crate::types::ArtifactType) -> Self {
         self.inner = self.inner.artifact_type(input);
         self
     }
-    /// Type of the artifact file
+    /// <p>The file type of the artifact. Valid values include TXT, PNG, JPEG, MD, PDF, DOCX, DOC, JSON, and YAML.</p>
     pub fn set_artifact_type(mut self, input: ::std::option::Option<crate::types::ArtifactType>) -> Self {
         self.inner = self.inner.set_artifact_type(input);
         self
     }
-    /// Type of the artifact file
+    /// <p>The file type of the artifact. Valid values include TXT, PNG, JPEG, MD, PDF, DOCX, DOC, JSON, and YAML.</p>
     pub fn get_artifact_type(&self) -> &::std::option::Option<crate::types::ArtifactType> {
         self.inner.get_artifact_type()
     }
-    /// Name of the artifact file
+    /// <p>The file name of the artifact.</p>
     pub fn file_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.file_name(input.into());
         self
     }
-    /// Name of the artifact file
+    /// <p>The file name of the artifact.</p>
     pub fn set_file_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_file_name(input);
         self
     }
-    /// Name of the artifact file
+    /// <p>The file name of the artifact.</p>
     pub fn get_file_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_file_name()
     }

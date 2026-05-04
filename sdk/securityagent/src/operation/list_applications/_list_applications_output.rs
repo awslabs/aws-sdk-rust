@@ -3,19 +3,19 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListApplicationsOutput {
-    /// List of application summaries
+    /// <p>The list of application summaries.</p>
     pub application_summaries: ::std::vec::Vec<crate::types::ApplicationSummary>,
-    /// Token for next page of results
+    /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request. For subsequent calls, use the nextToken value returned from the previous request.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListApplicationsOutput {
-    /// List of application summaries
+    /// <p>The list of application summaries.</p>
     pub fn application_summaries(&self) -> &[crate::types::ApplicationSummary] {
         use std::ops::Deref;
         self.application_summaries.deref()
     }
-    /// Token for next page of results
+    /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request. For subsequent calls, use the nextToken value returned from the previous request.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -45,33 +45,33 @@ impl ListApplicationsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_application_summaries`](Self::set_application_summaries).
     ///
-    /// List of application summaries
+    /// <p>The list of application summaries.</p>
     pub fn application_summaries(mut self, input: crate::types::ApplicationSummary) -> Self {
         let mut v = self.application_summaries.unwrap_or_default();
         v.push(input);
         self.application_summaries = ::std::option::Option::Some(v);
         self
     }
-    /// List of application summaries
+    /// <p>The list of application summaries.</p>
     pub fn set_application_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationSummary>>) -> Self {
         self.application_summaries = input;
         self
     }
-    /// List of application summaries
+    /// <p>The list of application summaries.</p>
     pub fn get_application_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ApplicationSummary>> {
         &self.application_summaries
     }
-    /// Token for next page of results
+    /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request. For subsequent calls, use the nextToken value returned from the previous request.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// Token for next page of results
+    /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request. For subsequent calls, use the nextToken value returned from the previous request.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// Token for next page of results
+    /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request. For subsequent calls, use the nextToken value returned from the previous request.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

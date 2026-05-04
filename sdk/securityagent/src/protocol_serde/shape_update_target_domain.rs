@@ -93,6 +93,13 @@ pub(crate) fn de_update_target_domain(
                             .transpose()?,
                     );
                 }
+                "verificationStatusReason" => {
+                    builder = builder.set_verification_status_reason(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
                 "verifiedAt" => {
                     builder = builder.set_verified_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                         tokens.next(),

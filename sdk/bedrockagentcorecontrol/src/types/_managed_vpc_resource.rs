@@ -14,7 +14,7 @@ pub struct ManagedVpcResource {
     pub security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Tags to apply to the managed VPC Lattice resource gateway.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    /// <p>An intermediate publicly resolvable domain used as the VPC Lattice resource configuration endpoint. Required when your private endpoint uses a domain that is not publicly resolvable.</p>
+    /// <p>An intermediate domain to use as the resource configuration endpoint instead of the actual target domain. Use this when you want to route traffic through an intermediate component such as a VPC endpoint or internal load balancer. For more information, see xref:lattice-vpc-egress-routing-domain\[Route traffic through an intermediate domain\].</p>
     pub routing_domain: ::std::option::Option<::std::string::String>,
 }
 impl ManagedVpcResource {
@@ -42,7 +42,7 @@ impl ManagedVpcResource {
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
-    /// <p>An intermediate publicly resolvable domain used as the VPC Lattice resource configuration endpoint. Required when your private endpoint uses a domain that is not publicly resolvable.</p>
+    /// <p>An intermediate domain to use as the resource configuration endpoint instead of the actual target domain. Use this when you want to route traffic through an intermediate component such as a VPC endpoint or internal load balancer. For more information, see xref:lattice-vpc-egress-routing-domain\[Route traffic through an intermediate domain\].</p>
     pub fn routing_domain(&self) -> ::std::option::Option<&str> {
         self.routing_domain.as_deref()
     }
@@ -156,17 +156,17 @@ impl ManagedVpcResourceBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
-    /// <p>An intermediate publicly resolvable domain used as the VPC Lattice resource configuration endpoint. Required when your private endpoint uses a domain that is not publicly resolvable.</p>
+    /// <p>An intermediate domain to use as the resource configuration endpoint instead of the actual target domain. Use this when you want to route traffic through an intermediate component such as a VPC endpoint or internal load balancer. For more information, see xref:lattice-vpc-egress-routing-domain\[Route traffic through an intermediate domain\].</p>
     pub fn routing_domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.routing_domain = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>An intermediate publicly resolvable domain used as the VPC Lattice resource configuration endpoint. Required when your private endpoint uses a domain that is not publicly resolvable.</p>
+    /// <p>An intermediate domain to use as the resource configuration endpoint instead of the actual target domain. Use this when you want to route traffic through an intermediate component such as a VPC endpoint or internal load balancer. For more information, see xref:lattice-vpc-egress-routing-domain\[Route traffic through an intermediate domain\].</p>
     pub fn set_routing_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.routing_domain = input;
         self
     }
-    /// <p>An intermediate publicly resolvable domain used as the VPC Lattice resource configuration endpoint. Required when your private endpoint uses a domain that is not publicly resolvable.</p>
+    /// <p>An intermediate domain to use as the resource configuration endpoint instead of the actual target domain. Use this when you want to route traffic through an intermediate component such as a VPC endpoint or internal load balancer. For more information, see xref:lattice-vpc-egress-routing-domain\[Route traffic through an intermediate domain\].</p>
     pub fn get_routing_domain(&self) -> &::std::option::Option<::std::string::String> {
         &self.routing_domain
     }

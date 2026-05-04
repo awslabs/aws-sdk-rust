@@ -13,6 +13,7 @@ impl super::Client {
     ///   - [`failure_reason(Option<Vec::<String>>)`](crate::operation::get_import::GetImportOutput::failure_reason): <p>A string that describes why an import job failed to complete.</p>
     ///   - [`created_date(Option<DateTime>)`](crate::operation::get_import::GetImportOutput::created_date): <p>A timestamp for the date and time that the import job was created.</p>
     /// - On failure, responds with [`SdkError<GetImportError>`](crate::operation::get_import::GetImportError)
+    #[deprecated(note = "Amazon Lex V1 is deprecated. Use Amazon Lex V2 instead.", since = "2025-09-08")]
     pub fn get_import(&self) -> crate::operation::get_import::builders::GetImportFluentBuilder {
         crate::operation::get_import::builders::GetImportFluentBuilder::new(self.handle.clone())
     }

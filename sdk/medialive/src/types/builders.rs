@@ -363,6 +363,8 @@ pub use crate::types::_smpte2110_receiver_group_sdp_settings::Smpte2110ReceiverG
 
 pub use crate::types::_media_resource_neighbor::MediaResourceNeighborBuilder;
 
+pub use crate::types::_media_connect_router_output_connection::MediaConnectRouterOutputConnectionBuilder;
+
 pub use crate::types::_input_destination_route::InputDestinationRouteBuilder;
 
 pub use crate::types::_srt_caller_decryption::SrtCallerDecryptionBuilder;

@@ -3,23 +3,23 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateApplicationInput {
-    /// Application ID
+    /// <p>The unique identifier of the application to update.</p>
     pub application_id: ::std::option::Option<::std::string::String>,
-    /// ARN of the IAM role that the application uses to access AWS resources on your behalf
+    /// <p>The updated Amazon Resource Name (ARN) of the IAM role for the application.</p>
     pub role_arn: ::std::option::Option<::std::string::String>,
-    /// Default KMS key identifier. Use an empty string to remove the default KMS key.
+    /// <p>The updated identifier of the default AWS KMS key for the application.</p>
     pub default_kms_key_id: ::std::option::Option<::std::string::String>,
 }
 impl UpdateApplicationInput {
-    /// Application ID
+    /// <p>The unique identifier of the application to update.</p>
     pub fn application_id(&self) -> ::std::option::Option<&str> {
         self.application_id.as_deref()
     }
-    /// ARN of the IAM role that the application uses to access AWS resources on your behalf
+    /// <p>The updated Amazon Resource Name (ARN) of the IAM role for the application.</p>
     pub fn role_arn(&self) -> ::std::option::Option<&str> {
         self.role_arn.as_deref()
     }
-    /// Default KMS key identifier. Use an empty string to remove the default KMS key.
+    /// <p>The updated identifier of the default AWS KMS key for the application.</p>
     pub fn default_kms_key_id(&self) -> ::std::option::Option<&str> {
         self.default_kms_key_id.as_deref()
     }
@@ -40,46 +40,46 @@ pub struct UpdateApplicationInputBuilder {
     pub(crate) default_kms_key_id: ::std::option::Option<::std::string::String>,
 }
 impl UpdateApplicationInputBuilder {
-    /// Application ID
+    /// <p>The unique identifier of the application to update.</p>
     /// This field is required.
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// Application ID
+    /// <p>The unique identifier of the application to update.</p>
     pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_id = input;
         self
     }
-    /// Application ID
+    /// <p>The unique identifier of the application to update.</p>
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.application_id
     }
-    /// ARN of the IAM role that the application uses to access AWS resources on your behalf
+    /// <p>The updated Amazon Resource Name (ARN) of the IAM role for the application.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// ARN of the IAM role that the application uses to access AWS resources on your behalf
+    /// <p>The updated Amazon Resource Name (ARN) of the IAM role for the application.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
     }
-    /// ARN of the IAM role that the application uses to access AWS resources on your behalf
+    /// <p>The updated Amazon Resource Name (ARN) of the IAM role for the application.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.role_arn
     }
-    /// Default KMS key identifier. Use an empty string to remove the default KMS key.
+    /// <p>The updated identifier of the default AWS KMS key for the application.</p>
     pub fn default_kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.default_kms_key_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// Default KMS key identifier. Use an empty string to remove the default KMS key.
+    /// <p>The updated identifier of the default AWS KMS key for the application.</p>
     pub fn set_default_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.default_kms_key_id = input;
         self
     }
-    /// Default KMS key identifier. Use an empty string to remove the default KMS key.
+    /// <p>The updated identifier of the default AWS KMS key for the application.</p>
     pub fn get_default_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.default_kms_key_id
     }

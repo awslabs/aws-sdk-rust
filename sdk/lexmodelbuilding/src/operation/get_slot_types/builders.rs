@@ -30,6 +30,7 @@ impl crate::operation::get_slot_types::builders::GetSlotTypesInputBuilder {
 /// <p>If you don't specify the <code>nameContains</code> field, returns information about the <code>$LATEST</code> version of all slot types.</p></li>
 /// </ul>
 /// <p>The operation requires permission for the <code>lex:GetSlotTypes</code> action.</p>
+#[deprecated(note = "Amazon Lex V1 is deprecated. Use Amazon Lex V2 instead.", since = "2025-09-08")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetSlotTypesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

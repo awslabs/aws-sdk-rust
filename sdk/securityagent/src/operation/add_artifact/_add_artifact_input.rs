@@ -3,29 +3,29 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AddArtifactInput {
-    /// Unique identifier of the agent space
+    /// <p>The unique identifier of the agent space to add the artifact to.</p>
     pub agent_space_id: ::std::option::Option<::std::string::String>,
-    /// Binary content of the artifact
+    /// <p>The binary content of the artifact to upload.</p>
     pub artifact_content: ::std::option::Option<::aws_smithy_types::Blob>,
-    /// Type of the artifact file
+    /// <p>The file type of the artifact. Valid values include TXT, PNG, JPEG, MD, PDF, DOCX, DOC, JSON, and YAML.</p>
     pub artifact_type: ::std::option::Option<crate::types::ArtifactType>,
-    /// Name of the artifact file
+    /// <p>The file name of the artifact.</p>
     pub file_name: ::std::option::Option<::std::string::String>,
 }
 impl AddArtifactInput {
-    /// Unique identifier of the agent space
+    /// <p>The unique identifier of the agent space to add the artifact to.</p>
     pub fn agent_space_id(&self) -> ::std::option::Option<&str> {
         self.agent_space_id.as_deref()
     }
-    /// Binary content of the artifact
+    /// <p>The binary content of the artifact to upload.</p>
     pub fn artifact_content(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
         self.artifact_content.as_ref()
     }
-    /// Type of the artifact file
+    /// <p>The file type of the artifact. Valid values include TXT, PNG, JPEG, MD, PDF, DOCX, DOC, JSON, and YAML.</p>
     pub fn artifact_type(&self) -> ::std::option::Option<&crate::types::ArtifactType> {
         self.artifact_type.as_ref()
     }
-    /// Name of the artifact file
+    /// <p>The file name of the artifact.</p>
     pub fn file_name(&self) -> ::std::option::Option<&str> {
         self.file_name.as_deref()
     }
@@ -47,63 +47,63 @@ pub struct AddArtifactInputBuilder {
     pub(crate) file_name: ::std::option::Option<::std::string::String>,
 }
 impl AddArtifactInputBuilder {
-    /// Unique identifier of the agent space
+    /// <p>The unique identifier of the agent space to add the artifact to.</p>
     /// This field is required.
     pub fn agent_space_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.agent_space_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// Unique identifier of the agent space
+    /// <p>The unique identifier of the agent space to add the artifact to.</p>
     pub fn set_agent_space_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.agent_space_id = input;
         self
     }
-    /// Unique identifier of the agent space
+    /// <p>The unique identifier of the agent space to add the artifact to.</p>
     pub fn get_agent_space_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.agent_space_id
     }
-    /// Binary content of the artifact
+    /// <p>The binary content of the artifact to upload.</p>
     /// This field is required.
     pub fn artifact_content(mut self, input: ::aws_smithy_types::Blob) -> Self {
         self.artifact_content = ::std::option::Option::Some(input);
         self
     }
-    /// Binary content of the artifact
+    /// <p>The binary content of the artifact to upload.</p>
     pub fn set_artifact_content(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
         self.artifact_content = input;
         self
     }
-    /// Binary content of the artifact
+    /// <p>The binary content of the artifact to upload.</p>
     pub fn get_artifact_content(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
         &self.artifact_content
     }
-    /// Type of the artifact file
+    /// <p>The file type of the artifact. Valid values include TXT, PNG, JPEG, MD, PDF, DOCX, DOC, JSON, and YAML.</p>
     /// This field is required.
     pub fn artifact_type(mut self, input: crate::types::ArtifactType) -> Self {
         self.artifact_type = ::std::option::Option::Some(input);
         self
     }
-    /// Type of the artifact file
+    /// <p>The file type of the artifact. Valid values include TXT, PNG, JPEG, MD, PDF, DOCX, DOC, JSON, and YAML.</p>
     pub fn set_artifact_type(mut self, input: ::std::option::Option<crate::types::ArtifactType>) -> Self {
         self.artifact_type = input;
         self
     }
-    /// Type of the artifact file
+    /// <p>The file type of the artifact. Valid values include TXT, PNG, JPEG, MD, PDF, DOCX, DOC, JSON, and YAML.</p>
     pub fn get_artifact_type(&self) -> &::std::option::Option<crate::types::ArtifactType> {
         &self.artifact_type
     }
-    /// Name of the artifact file
+    /// <p>The file name of the artifact.</p>
     /// This field is required.
     pub fn file_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.file_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// Name of the artifact file
+    /// <p>The file name of the artifact.</p>
     pub fn set_file_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.file_name = input;
         self
     }
-    /// Name of the artifact file
+    /// <p>The file name of the artifact.</p>
     pub fn get_file_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.file_name
     }

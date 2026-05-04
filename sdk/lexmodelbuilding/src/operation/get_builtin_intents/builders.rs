@@ -24,6 +24,7 @@ impl crate::operation::get_builtin_intents::builders::GetBuiltinIntentsInputBuil
 ///
 /// <p>Gets a list of built-in intents that meet the specified criteria.</p>
 /// <p>This operation requires permission for the <code>lex:GetBuiltinIntents</code> action.</p>
+#[deprecated(note = "Amazon Lex V1 is deprecated. Use Amazon Lex V2 instead.", since = "2025-09-08")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetBuiltinIntentsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

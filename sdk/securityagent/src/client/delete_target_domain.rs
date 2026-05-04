@@ -3,9 +3,9 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteTargetDomain`](crate::operation::delete_target_domain::builders::DeleteTargetDomainFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`target_domain_id(impl Into<String>)`](crate::operation::delete_target_domain::builders::DeleteTargetDomainFluentBuilder::target_domain_id) / [`set_target_domain_id(Option<String>)`](crate::operation::delete_target_domain::builders::DeleteTargetDomainFluentBuilder::set_target_domain_id):<br>required: **true**<br>Unique identifier of the target domain to delete<br>
+    ///   - [`target_domain_id(impl Into<String>)`](crate::operation::delete_target_domain::builders::DeleteTargetDomainFluentBuilder::target_domain_id) / [`set_target_domain_id(Option<String>)`](crate::operation::delete_target_domain::builders::DeleteTargetDomainFluentBuilder::set_target_domain_id):<br>required: **true**<br><p>The unique identifier of the target domain to delete.</p><br>
     /// - On success, responds with [`DeleteTargetDomainOutput`](crate::operation::delete_target_domain::DeleteTargetDomainOutput) with field(s):
-    ///   - [`target_domain_id(Option<String>)`](crate::operation::delete_target_domain::DeleteTargetDomainOutput::target_domain_id): Unique identifier of the deleted target domain
+    ///   - [`target_domain_id(Option<String>)`](crate::operation::delete_target_domain::DeleteTargetDomainOutput::target_domain_id): <p>The unique identifier of the deleted target domain.</p>
     /// - On failure, responds with [`SdkError<DeleteTargetDomainError>`](crate::operation::delete_target_domain::DeleteTargetDomainError)
     pub fn delete_target_domain(&self) -> crate::operation::delete_target_domain::builders::DeleteTargetDomainFluentBuilder {
         crate::operation::delete_target_domain::builders::DeleteTargetDomainFluentBuilder::new(self.handle.clone())

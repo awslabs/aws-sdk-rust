@@ -3,10 +3,10 @@ impl super::Client {
     /// Constructs a fluent builder for the [`BatchGetTargetDomains`](crate::operation::batch_get_target_domains::builders::BatchGetTargetDomainsFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`target_domain_ids(impl Into<String>)`](crate::operation::batch_get_target_domains::builders::BatchGetTargetDomainsFluentBuilder::target_domain_ids) / [`set_target_domain_ids(Option<Vec::<String>>)`](crate::operation::batch_get_target_domains::builders::BatchGetTargetDomainsFluentBuilder::set_target_domain_ids):<br>required: **true**<br>List of target domain IDs to retrieve<br>
+    ///   - [`target_domain_ids(impl Into<String>)`](crate::operation::batch_get_target_domains::builders::BatchGetTargetDomainsFluentBuilder::target_domain_ids) / [`set_target_domain_ids(Option<Vec::<String>>)`](crate::operation::batch_get_target_domains::builders::BatchGetTargetDomainsFluentBuilder::set_target_domain_ids):<br>required: **true**<br><p>The list of target domain identifiers to retrieve.</p><br>
     /// - On success, responds with [`BatchGetTargetDomainsOutput`](crate::operation::batch_get_target_domains::BatchGetTargetDomainsOutput) with field(s):
-    ///   - [`target_domains(Option<Vec::<TargetDomain>>)`](crate::operation::batch_get_target_domains::BatchGetTargetDomainsOutput::target_domains): List of target domains that were successfully retrieved
-    ///   - [`not_found(Option<Vec::<String>>)`](crate::operation::batch_get_target_domains::BatchGetTargetDomainsOutput::not_found): List of target domain IDs that could not be found
+    ///   - [`target_domains(Option<Vec::<TargetDomain>>)`](crate::operation::batch_get_target_domains::BatchGetTargetDomainsOutput::target_domains): <p>The list of target domains that were found.</p>
+    ///   - [`not_found(Option<Vec::<String>>)`](crate::operation::batch_get_target_domains::BatchGetTargetDomainsOutput::not_found): <p>The list of target domain identifiers that were not found.</p>
     /// - On failure, responds with [`SdkError<BatchGetTargetDomainsError>`](crate::operation::batch_get_target_domains::BatchGetTargetDomainsError)
     pub fn batch_get_target_domains(&self) -> crate::operation::batch_get_target_domains::builders::BatchGetTargetDomainsFluentBuilder {
         crate::operation::batch_get_target_domains::builders::BatchGetTargetDomainsFluentBuilder::new(self.handle.clone())

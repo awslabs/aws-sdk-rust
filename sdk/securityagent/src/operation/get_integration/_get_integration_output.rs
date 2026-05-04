@@ -3,44 +3,44 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetIntegrationOutput {
-    /// Unique identifier of the integration
+    /// <p>The unique identifier of the integration.</p>
     pub integration_id: ::std::string::String,
-    /// Installation identifier from the provider
+    /// <p>The installation identifier from the integration provider.</p>
     pub installation_id: ::std::string::String,
-    /// Provider type
+    /// <p>The integration provider.</p>
     pub provider: crate::types::Provider,
-    /// Type of provider integration
+    /// <p>The type of the integration provider.</p>
     pub provider_type: crate::types::ProviderType,
-    /// Display name for the integration
+    /// <p>The display name of the integration.</p>
     pub display_name: ::std::option::Option<::std::string::String>,
-    /// KMS key ID for encrypting integration details
+    /// <p>The identifier of the AWS KMS key used to encrypt data associated with the integration.</p>
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetIntegrationOutput {
-    /// Unique identifier of the integration
+    /// <p>The unique identifier of the integration.</p>
     pub fn integration_id(&self) -> &str {
         use std::ops::Deref;
         self.integration_id.deref()
     }
-    /// Installation identifier from the provider
+    /// <p>The installation identifier from the integration provider.</p>
     pub fn installation_id(&self) -> &str {
         use std::ops::Deref;
         self.installation_id.deref()
     }
-    /// Provider type
+    /// <p>The integration provider.</p>
     pub fn provider(&self) -> &crate::types::Provider {
         &self.provider
     }
-    /// Type of provider integration
+    /// <p>The type of the integration provider.</p>
     pub fn provider_type(&self) -> &crate::types::ProviderType {
         &self.provider_type
     }
-    /// Display name for the integration
+    /// <p>The display name of the integration.</p>
     pub fn display_name(&self) -> ::std::option::Option<&str> {
         self.display_name.as_deref()
     }
-    /// KMS key ID for encrypting integration details
+    /// <p>The identifier of the AWS KMS key used to encrypt data associated with the integration.</p>
     pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
         self.kms_key_id.as_deref()
     }
@@ -70,91 +70,91 @@ pub struct GetIntegrationOutputBuilder {
     _request_id: Option<String>,
 }
 impl GetIntegrationOutputBuilder {
-    /// Unique identifier of the integration
+    /// <p>The unique identifier of the integration.</p>
     /// This field is required.
     pub fn integration_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.integration_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// Unique identifier of the integration
+    /// <p>The unique identifier of the integration.</p>
     pub fn set_integration_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.integration_id = input;
         self
     }
-    /// Unique identifier of the integration
+    /// <p>The unique identifier of the integration.</p>
     pub fn get_integration_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.integration_id
     }
-    /// Installation identifier from the provider
+    /// <p>The installation identifier from the integration provider.</p>
     /// This field is required.
     pub fn installation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.installation_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// Installation identifier from the provider
+    /// <p>The installation identifier from the integration provider.</p>
     pub fn set_installation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.installation_id = input;
         self
     }
-    /// Installation identifier from the provider
+    /// <p>The installation identifier from the integration provider.</p>
     pub fn get_installation_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.installation_id
     }
-    /// Provider type
+    /// <p>The integration provider.</p>
     /// This field is required.
     pub fn provider(mut self, input: crate::types::Provider) -> Self {
         self.provider = ::std::option::Option::Some(input);
         self
     }
-    /// Provider type
+    /// <p>The integration provider.</p>
     pub fn set_provider(mut self, input: ::std::option::Option<crate::types::Provider>) -> Self {
         self.provider = input;
         self
     }
-    /// Provider type
+    /// <p>The integration provider.</p>
     pub fn get_provider(&self) -> &::std::option::Option<crate::types::Provider> {
         &self.provider
     }
-    /// Type of provider integration
+    /// <p>The type of the integration provider.</p>
     /// This field is required.
     pub fn provider_type(mut self, input: crate::types::ProviderType) -> Self {
         self.provider_type = ::std::option::Option::Some(input);
         self
     }
-    /// Type of provider integration
+    /// <p>The type of the integration provider.</p>
     pub fn set_provider_type(mut self, input: ::std::option::Option<crate::types::ProviderType>) -> Self {
         self.provider_type = input;
         self
     }
-    /// Type of provider integration
+    /// <p>The type of the integration provider.</p>
     pub fn get_provider_type(&self) -> &::std::option::Option<crate::types::ProviderType> {
         &self.provider_type
     }
-    /// Display name for the integration
+    /// <p>The display name of the integration.</p>
     pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.display_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// Display name for the integration
+    /// <p>The display name of the integration.</p>
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.display_name = input;
         self
     }
-    /// Display name for the integration
+    /// <p>The display name of the integration.</p>
     pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.display_name
     }
-    /// KMS key ID for encrypting integration details
+    /// <p>The identifier of the AWS KMS key used to encrypt data associated with the integration.</p>
     pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kms_key_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// KMS key ID for encrypting integration details
+    /// <p>The identifier of the AWS KMS key used to encrypt data associated with the integration.</p>
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_key_id = input;
         self
     }
-    /// KMS key ID for encrypting integration details
+    /// <p>The identifier of the AWS KMS key used to encrypt data associated with the integration.</p>
     pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.kms_key_id
     }

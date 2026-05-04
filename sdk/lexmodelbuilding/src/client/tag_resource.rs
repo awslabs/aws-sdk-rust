@@ -7,6 +7,7 @@ impl super::Client {
     ///   - [`tags(Tag)`](crate::operation::tag_resource::builders::TagResourceFluentBuilder::tags) / [`set_tags(Option<Vec::<Tag>>)`](crate::operation::tag_resource::builders::TagResourceFluentBuilder::set_tags):<br>required: **true**<br><p>A list of tag keys to add to the resource. If a tag key already exists, the existing value is replaced with the new value.</p><br>
     /// - On success, responds with [`TagResourceOutput`](crate::operation::tag_resource::TagResourceOutput)
     /// - On failure, responds with [`SdkError<TagResourceError>`](crate::operation::tag_resource::TagResourceError)
+    #[deprecated(note = "Amazon Lex V1 is deprecated. Use Amazon Lex V2 instead.", since = "2025-09-08")]
     pub fn tag_resource(&self) -> crate::operation::tag_resource::builders::TagResourceFluentBuilder {
         crate::operation::tag_resource::builders::TagResourceFluentBuilder::new(self.handle.clone())
     }

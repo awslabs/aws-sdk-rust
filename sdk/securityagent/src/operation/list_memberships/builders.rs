@@ -22,7 +22,7 @@ impl crate::operation::list_memberships::builders::ListMembershipsInputBuilder {
 }
 /// Fluent builder constructing a request to `ListMemberships`.
 ///
-/// Lists all members associated to an agent space with pagination support
+/// <p>Returns a paginated list of membership summaries for the specified agent space within an application.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListMembershipsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -114,73 +114,73 @@ impl ListMembershipsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_memberships::paginator::ListMembershipsPaginator {
         crate::operation::list_memberships::paginator::ListMembershipsPaginator::new(self.handle, self.inner)
     }
-    /// Application identifier
+    /// <p>The unique identifier of the application that contains the agent space.</p>
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.application_id(input.into());
         self
     }
-    /// Application identifier
+    /// <p>The unique identifier of the application that contains the agent space.</p>
     pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_application_id(input);
         self
     }
-    /// Application identifier
+    /// <p>The unique identifier of the application that contains the agent space.</p>
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_application_id()
     }
-    /// Agent space identifier
+    /// <p>The unique identifier of the agent space to list memberships for.</p>
     pub fn agent_space_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.agent_space_id(input.into());
         self
     }
-    /// Agent space identifier
+    /// <p>The unique identifier of the agent space to list memberships for.</p>
     pub fn set_agent_space_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_agent_space_id(input);
         self
     }
-    /// Agent space identifier
+    /// <p>The unique identifier of the agent space to list memberships for.</p>
     pub fn get_agent_space_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_agent_space_id()
     }
-    /// Filter by member type
+    /// <p>Filter memberships by member type.</p>
     pub fn member_type(mut self, input: crate::types::MembershipTypeFilter) -> Self {
         self.inner = self.inner.member_type(input);
         self
     }
-    /// Filter by member type
+    /// <p>Filter memberships by member type.</p>
     pub fn set_member_type(mut self, input: ::std::option::Option<crate::types::MembershipTypeFilter>) -> Self {
         self.inner = self.inner.set_member_type(input);
         self
     }
-    /// Filter by member type
+    /// <p>Filter memberships by member type.</p>
     pub fn get_member_type(&self) -> &::std::option::Option<crate::types::MembershipTypeFilter> {
         self.inner.get_member_type()
     }
-    /// Maximum number of results to return
+    /// <p>The maximum number of results to return in a single call.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
         self
     }
-    /// Maximum number of results to return
+    /// <p>The maximum number of results to return in a single call.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
-    /// Maximum number of results to return
+    /// <p>The maximum number of results to return in a single call.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }
-    /// Token for pagination
+    /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request. For subsequent calls, use the nextToken value returned from the previous request.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
-    /// Token for pagination
+    /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request. For subsequent calls, use the nextToken value returned from the previous request.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
-    /// Token for pagination
+    /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request. For subsequent calls, use the nextToken value returned from the previous request.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }

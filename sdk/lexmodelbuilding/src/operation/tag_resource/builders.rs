@@ -23,6 +23,7 @@ impl crate::operation::tag_resource::builders::TagResourceInputBuilder {
 /// Fluent builder constructing a request to `TagResource`.
 ///
 /// <p>Adds the specified tags to the specified resource. If a tag key already exists, the existing value is replaced with the new value.</p>
+#[deprecated(note = "Amazon Lex V1 is deprecated. Use Amazon Lex V2 instead.", since = "2025-09-08")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct TagResourceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

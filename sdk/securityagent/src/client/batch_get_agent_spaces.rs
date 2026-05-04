@@ -3,10 +3,10 @@ impl super::Client {
     /// Constructs a fluent builder for the [`BatchGetAgentSpaces`](crate::operation::batch_get_agent_spaces::builders::BatchGetAgentSpacesFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`agent_space_ids(impl Into<String>)`](crate::operation::batch_get_agent_spaces::builders::BatchGetAgentSpacesFluentBuilder::agent_space_ids) / [`set_agent_space_ids(Option<Vec::<String>>)`](crate::operation::batch_get_agent_spaces::builders::BatchGetAgentSpacesFluentBuilder::set_agent_space_ids):<br>required: **true**<br>List of agent space IDs to retrieve<br>
+    ///   - [`agent_space_ids(impl Into<String>)`](crate::operation::batch_get_agent_spaces::builders::BatchGetAgentSpacesFluentBuilder::agent_space_ids) / [`set_agent_space_ids(Option<Vec::<String>>)`](crate::operation::batch_get_agent_spaces::builders::BatchGetAgentSpacesFluentBuilder::set_agent_space_ids):<br>required: **true**<br><p>The list of agent space identifiers to retrieve.</p><br>
     /// - On success, responds with [`BatchGetAgentSpacesOutput`](crate::operation::batch_get_agent_spaces::BatchGetAgentSpacesOutput) with field(s):
-    ///   - [`agent_spaces(Option<Vec::<AgentSpace>>)`](crate::operation::batch_get_agent_spaces::BatchGetAgentSpacesOutput::agent_spaces): List of agent spaces that were successfully retrieved
-    ///   - [`not_found(Option<Vec::<String>>)`](crate::operation::batch_get_agent_spaces::BatchGetAgentSpacesOutput::not_found): List of agent space IDs that could not be found
+    ///   - [`agent_spaces(Option<Vec::<AgentSpace>>)`](crate::operation::batch_get_agent_spaces::BatchGetAgentSpacesOutput::agent_spaces): <p>The list of agent spaces that were found.</p>
+    ///   - [`not_found(Option<Vec::<String>>)`](crate::operation::batch_get_agent_spaces::BatchGetAgentSpacesOutput::not_found): <p>The list of agent space identifiers that were not found.</p>
     /// - On failure, responds with [`SdkError<BatchGetAgentSpacesError>`](crate::operation::batch_get_agent_spaces::BatchGetAgentSpacesError)
     pub fn batch_get_agent_spaces(&self) -> crate::operation::batch_get_agent_spaces::builders::BatchGetAgentSpacesFluentBuilder {
         crate::operation::batch_get_agent_spaces::builders::BatchGetAgentSpacesFluentBuilder::new(self.handle.clone())

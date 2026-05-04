@@ -24,6 +24,7 @@ impl crate::operation::delete_intent_version::builders::DeleteIntentVersionInput
 ///
 /// <p>Deletes a specific version of an intent. To delete all versions of a intent, use the <code>DeleteIntent</code> operation.</p>
 /// <p>This operation requires permissions for the <code>lex:DeleteIntentVersion</code> action.</p>
+#[deprecated(note = "Amazon Lex V1 is deprecated. Use Amazon Lex V2 instead.", since = "2025-09-08")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteIntentVersionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

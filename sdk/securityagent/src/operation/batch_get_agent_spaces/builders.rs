@@ -22,7 +22,7 @@ impl crate::operation::batch_get_agent_spaces::builders::BatchGetAgentSpacesInpu
 }
 /// Fluent builder constructing a request to `BatchGetAgentSpaces`.
 ///
-/// Retrieves multiple agent spaces in a single request
+/// <p>Retrieves information about one or more agent spaces.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct BatchGetAgentSpacesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -113,17 +113,17 @@ impl BatchGetAgentSpacesFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_agent_space_ids`](Self::set_agent_space_ids).
     ///
-    /// List of agent space IDs to retrieve
+    /// <p>The list of agent space identifiers to retrieve.</p>
     pub fn agent_space_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.agent_space_ids(input.into());
         self
     }
-    /// List of agent space IDs to retrieve
+    /// <p>The list of agent space identifiers to retrieve.</p>
     pub fn set_agent_space_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_agent_space_ids(input);
         self
     }
-    /// List of agent space IDs to retrieve
+    /// <p>The list of agent space identifiers to retrieve.</p>
     pub fn get_agent_space_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_agent_space_ids()
     }

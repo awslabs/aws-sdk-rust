@@ -721,6 +721,8 @@ pub use crate::types::_peering_connection_options::PeeringConnectionOptions;
 
 pub use crate::types::_vpc_tenancy::VpcTenancy;
 
+pub use crate::types::_vpn_tunnel_bandwidth::VpnTunnelBandwidth;
+
 pub use crate::types::_modify_vpn_tunnel_options_specification::ModifyVpnTunnelOptionsSpecification;
 
 pub use crate::types::_status::Status;
@@ -1220,8 +1222,6 @@ pub use crate::types::_service_state::ServiceState;
 pub use crate::types::_private_dns_name_configuration::PrivateDnsNameConfiguration;
 
 pub use crate::types::_tunnel_inside_ip_version::TunnelInsideIpVersion;
-
-pub use crate::types::_vpn_tunnel_bandwidth::VpnTunnelBandwidth;
 
 pub use crate::types::_gateway_association_state::GatewayAssociationState;
 

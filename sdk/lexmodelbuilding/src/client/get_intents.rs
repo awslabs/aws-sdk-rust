@@ -11,6 +11,7 @@ impl super::Client {
     ///   - [`intents(Option<Vec::<IntentMetadata>>)`](crate::operation::get_intents::GetIntentsOutput::intents): <p>An array of <code>Intent</code> objects. For more information, see <code>PutBot</code>.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_intents::GetIntentsOutput::next_token): <p>If the response is truncated, the response includes a pagination token that you can specify in your next request to fetch the next page of intents.</p>
     /// - On failure, responds with [`SdkError<GetIntentsError>`](crate::operation::get_intents::GetIntentsError)
+    #[deprecated(note = "Amazon Lex V1 is deprecated. Use Amazon Lex V2 instead.", since = "2025-09-08")]
     pub fn get_intents(&self) -> crate::operation::get_intents::builders::GetIntentsFluentBuilder {
         crate::operation::get_intents::builders::GetIntentsFluentBuilder::new(self.handle.clone())
     }

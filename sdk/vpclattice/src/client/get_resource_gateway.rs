@@ -11,9 +11,12 @@ impl super::Client {
     ///   - [`status(Option<ResourceGatewayStatus>)`](crate::operation::get_resource_gateway::GetResourceGatewayOutput::status): <p>The status for the resource gateway.</p>
     ///   - [`vpc_id(Option<String>)`](crate::operation::get_resource_gateway::GetResourceGatewayOutput::vpc_id): <p>The ID of the VPC for the resource gateway.</p>
     ///   - [`subnet_ids(Option<Vec::<String>>)`](crate::operation::get_resource_gateway::GetResourceGatewayOutput::subnet_ids): <p>The IDs of the VPC subnets for resource gateway.</p>
+    ///   - [`service_managed(Option<bool>)`](crate::operation::get_resource_gateway::GetResourceGatewayOutput::service_managed): <p>Indicates whether the resource gateway is managed by an AWS service.</p>
+    ///   - [`managed_by(Option<String>)`](crate::operation::get_resource_gateway::GetResourceGatewayOutput::managed_by): <p>The AWS service that manages the resource gateway.</p>
     ///   - [`security_group_ids(Option<Vec::<String>>)`](crate::operation::get_resource_gateway::GetResourceGatewayOutput::security_group_ids): <p>The security group IDs associated with the resource gateway.</p>
     ///   - [`ip_address_type(Option<ResourceGatewayIpAddressType>)`](crate::operation::get_resource_gateway::GetResourceGatewayOutput::ip_address_type): <p>The type of IP address for the resource gateway.</p>
     ///   - [`ipv4_addresses_per_eni(Option<i32>)`](crate::operation::get_resource_gateway::GetResourceGatewayOutput::ipv4_addresses_per_eni): <p>The number of IPv4 addresses in each ENI for the resource gateway.</p>
+    ///   - [`resource_config_dns_resolution(Option<ResourceConfigDnsResolution>)`](crate::operation::get_resource_gateway::GetResourceGatewayOutput::resource_config_dns_resolution): <p>The DNS resolution type for resource configurations that are associated with this resource gateway.</p>
     ///   - [`created_at(Option<DateTime>)`](crate::operation::get_resource_gateway::GetResourceGatewayOutput::created_at): <p>The date and time that the resource gateway was created, in ISO-8601 format.</p>
     ///   - [`last_updated_at(Option<DateTime>)`](crate::operation::get_resource_gateway::GetResourceGatewayOutput::last_updated_at): <p>The date and time that the resource gateway was last updated, in ISO-8601 format.</p>
     /// - On failure, responds with [`SdkError<GetResourceGatewayError>`](crate::operation::get_resource_gateway::GetResourceGatewayError)

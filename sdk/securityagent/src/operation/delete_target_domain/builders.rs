@@ -22,7 +22,7 @@ impl crate::operation::delete_target_domain::builders::DeleteTargetDomainInputBu
 }
 /// Fluent builder constructing a request to `DeleteTargetDomain`.
 ///
-/// Deletes a target domain record
+/// <p>Deletes a target domain registration. After deletion, the domain can no longer be used for penetration testing.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteTargetDomainFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl DeleteTargetDomainFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// Unique identifier of the target domain to delete
+    /// <p>The unique identifier of the target domain to delete.</p>
     pub fn target_domain_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.target_domain_id(input.into());
         self
     }
-    /// Unique identifier of the target domain to delete
+    /// <p>The unique identifier of the target domain to delete.</p>
     pub fn set_target_domain_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_target_domain_id(input);
         self
     }
-    /// Unique identifier of the target domain to delete
+    /// <p>The unique identifier of the target domain to delete.</p>
     pub fn get_target_domain_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_target_domain_id()
     }

@@ -16,6 +16,7 @@ impl super::Client {
     ///   - [`failure_reason(Option<String>)`](crate::operation::get_export::GetExportOutput::failure_reason): <p>If <code>status</code> is <code>FAILED</code>, Amazon Lex provides the reason that it failed to export the resource.</p>
     ///   - [`url(Option<String>)`](crate::operation::get_export::GetExportOutput::url): <p>An S3 pre-signed URL that provides the location of the exported resource. The exported resource is a ZIP archive that contains the exported resource in JSON format. The structure of the archive may change. Your code should not rely on the archive structure.</p>
     /// - On failure, responds with [`SdkError<GetExportError>`](crate::operation::get_export::GetExportError)
+    #[deprecated(note = "Amazon Lex V1 is deprecated. Use Amazon Lex V2 instead.", since = "2025-09-08")]
     pub fn get_export(&self) -> crate::operation::get_export::builders::GetExportFluentBuilder {
         crate::operation::get_export::builders::GetExportFluentBuilder::new(self.handle.clone())
     }

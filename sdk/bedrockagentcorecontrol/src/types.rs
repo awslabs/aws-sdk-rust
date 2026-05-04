@@ -405,6 +405,10 @@ pub use crate::types::_lambda_evaluator_config::LambdaEvaluatorConfig;
 
 pub use crate::types::_search_type::SearchType;
 
+pub use crate::types::_session_configuration::SessionConfiguration;
+
+pub use crate::types::_streaming_configuration::StreamingConfiguration;
+
 pub use crate::types::_interceptor_configuration::InterceptorConfiguration;
 
 pub use crate::types::_interceptor_input_configuration::InterceptorInputConfiguration;
@@ -1337,6 +1341,8 @@ mod _server_protocol;
 
 mod _session_config;
 
+mod _session_configuration;
+
 mod _session_storage_configuration;
 
 mod _skill_definition;
@@ -1358,6 +1364,8 @@ mod _strategy_configuration;
 mod _stream_delivery_resource;
 
 mod _stream_delivery_resources;
+
+mod _streaming_configuration;
 
 mod _string_list_validation;
 

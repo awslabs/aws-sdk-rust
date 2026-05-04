@@ -937,6 +937,8 @@ pub(crate) mod shape_server_definition;
 
 pub(crate) mod shape_service_names_list;
 
+pub(crate) mod shape_session_configuration;
+
 pub(crate) mod shape_skill_definition;
 
 pub(crate) mod shape_skill_md_definition;
@@ -946,6 +948,8 @@ pub(crate) mod shape_static_override;
 pub(crate) mod shape_static_route;
 
 pub(crate) mod shape_stream_delivery_resources_list;
+
+pub(crate) mod shape_streaming_configuration;
 
 pub(crate) mod shape_subnet_ids;
 

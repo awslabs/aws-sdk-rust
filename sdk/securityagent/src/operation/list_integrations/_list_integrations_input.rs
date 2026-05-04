@@ -3,23 +3,23 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListIntegrationsInput {
-    /// Filter criteria for integrations
+    /// <p>A filter to apply to the list of integrations.</p>
     pub filter: ::std::option::Option<crate::types::IntegrationFilter>,
-    /// Token for pagination
+    /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request. For subsequent calls, use the nextToken value returned from the previous request.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
-    /// Maximum number of results to return
+    /// <p>The maximum number of results to return in a single call.</p>
     pub max_results: ::std::option::Option<i32>,
 }
 impl ListIntegrationsInput {
-    /// Filter criteria for integrations
+    /// <p>A filter to apply to the list of integrations.</p>
     pub fn filter(&self) -> ::std::option::Option<&crate::types::IntegrationFilter> {
         self.filter.as_ref()
     }
-    /// Token for pagination
+    /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request. For subsequent calls, use the nextToken value returned from the previous request.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// Maximum number of results to return
+    /// <p>The maximum number of results to return in a single call.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
@@ -40,45 +40,45 @@ pub struct ListIntegrationsInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
 }
 impl ListIntegrationsInputBuilder {
-    /// Filter criteria for integrations
+    /// <p>A filter to apply to the list of integrations.</p>
     pub fn filter(mut self, input: crate::types::IntegrationFilter) -> Self {
         self.filter = ::std::option::Option::Some(input);
         self
     }
-    /// Filter criteria for integrations
+    /// <p>A filter to apply to the list of integrations.</p>
     pub fn set_filter(mut self, input: ::std::option::Option<crate::types::IntegrationFilter>) -> Self {
         self.filter = input;
         self
     }
-    /// Filter criteria for integrations
+    /// <p>A filter to apply to the list of integrations.</p>
     pub fn get_filter(&self) -> &::std::option::Option<crate::types::IntegrationFilter> {
         &self.filter
     }
-    /// Token for pagination
+    /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request. For subsequent calls, use the nextToken value returned from the previous request.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// Token for pagination
+    /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request. For subsequent calls, use the nextToken value returned from the previous request.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// Token for pagination
+    /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request. For subsequent calls, use the nextToken value returned from the previous request.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
-    /// Maximum number of results to return
+    /// <p>The maximum number of results to return in a single call.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
         self
     }
-    /// Maximum number of results to return
+    /// <p>The maximum number of results to return in a single call.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
     }
-    /// Maximum number of results to return
+    /// <p>The maximum number of results to return in a single call.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }

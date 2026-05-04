@@ -11,7 +11,7 @@ pub struct TargetSummary {
     /// <p>The status of the target.</p>
     /// <ul>
     /// <li>
-    /// <p><code>DRAINING</code>: The target is being deregistered. No new connections are sent to this target while current connections are being drained. The default draining time is 5 minutes.</p></li>
+    /// <p><code>DRAINING</code>: The target is being deregistered. No new connections are sent to this target while current connections are being drained. The default draining time is 1 minute.</p></li>
     /// <li>
     /// <p><code>UNAVAILABLE</code>: Health checks are unavailable for the target group.</p></li>
     /// <li>
@@ -39,7 +39,7 @@ impl TargetSummary {
     /// <p>The status of the target.</p>
     /// <ul>
     /// <li>
-    /// <p><code>DRAINING</code>: The target is being deregistered. No new connections are sent to this target while current connections are being drained. The default draining time is 5 minutes.</p></li>
+    /// <p><code>DRAINING</code>: The target is being deregistered. No new connections are sent to this target while current connections are being drained. The default draining time is 1 minute.</p></li>
     /// <li>
     /// <p><code>UNAVAILABLE</code>: Health checks are unavailable for the target group.</p></li>
     /// <li>
@@ -107,7 +107,7 @@ impl TargetSummaryBuilder {
     /// <p>The status of the target.</p>
     /// <ul>
     /// <li>
-    /// <p><code>DRAINING</code>: The target is being deregistered. No new connections are sent to this target while current connections are being drained. The default draining time is 5 minutes.</p></li>
+    /// <p><code>DRAINING</code>: The target is being deregistered. No new connections are sent to this target while current connections are being drained. The default draining time is 1 minute.</p></li>
     /// <li>
     /// <p><code>UNAVAILABLE</code>: Health checks are unavailable for the target group.</p></li>
     /// <li>
@@ -126,7 +126,7 @@ impl TargetSummaryBuilder {
     /// <p>The status of the target.</p>
     /// <ul>
     /// <li>
-    /// <p><code>DRAINING</code>: The target is being deregistered. No new connections are sent to this target while current connections are being drained. The default draining time is 5 minutes.</p></li>
+    /// <p><code>DRAINING</code>: The target is being deregistered. No new connections are sent to this target while current connections are being drained. The default draining time is 1 minute.</p></li>
     /// <li>
     /// <p><code>UNAVAILABLE</code>: Health checks are unavailable for the target group.</p></li>
     /// <li>
@@ -145,7 +145,7 @@ impl TargetSummaryBuilder {
     /// <p>The status of the target.</p>
     /// <ul>
     /// <li>
-    /// <p><code>DRAINING</code>: The target is being deregistered. No new connections are sent to this target while current connections are being drained. The default draining time is 5 minutes.</p></li>
+    /// <p><code>DRAINING</code>: The target is being deregistered. No new connections are sent to this target while current connections are being drained. The default draining time is 1 minute.</p></li>
     /// <li>
     /// <p><code>UNAVAILABLE</code>: Health checks are unavailable for the target group.</p></li>
     /// <li>

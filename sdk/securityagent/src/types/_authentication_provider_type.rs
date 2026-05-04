@@ -38,19 +38,19 @@
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 ///
-/// Type of authentication provider
+/// <p>Type of authentication provider.</p>
 #[non_exhaustive]
 #[derive(
     ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum AuthenticationProviderType {
-    /// Authentication using an AWS IAM role
+    /// <p>Authentication using an AWS IAM role.</p>
     AwsIamRole,
-    /// Internal AWS authentication
+    /// <p>Internal AWS authentication.</p>
     AwsInternal,
-    /// Credentials retrieved via AWS Lambda function
+    /// <p>Credentials retrieved via AWS Lambda function.</p>
     AwsLambda,
-    /// Credentials stored in AWS Secrets Manager
+    /// <p>Credentials stored in AWS Secrets Manager.</p>
     SecretsManager,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]

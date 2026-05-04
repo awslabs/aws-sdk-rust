@@ -24,6 +24,7 @@ impl crate::operation::get_bot_alias::builders::GetBotAliasInputBuilder {
 ///
 /// <p>Returns information about an Amazon Lex bot alias. For more information about aliases, see <code>versioning-aliases</code>.</p>
 /// <p>This operation requires permissions for the <code>lex:GetBotAlias</code> action.</p>
+#[deprecated(note = "Amazon Lex V1 is deprecated. Use Amazon Lex V2 instead.", since = "2025-09-08")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetBotAliasFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

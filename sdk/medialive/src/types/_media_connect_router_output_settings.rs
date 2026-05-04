@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MediaConnectRouterOutputSettings {
-    /// Shows the MediaConnect Router Inputs that are connected to this output. This parameter is purely informative, and editing it will have no effect. To connect or disconnect MediaConnect Router Inputs, go to MediaConnect.
+    /// This parameter is deprecated and unused.
     pub connected_router_inputs: ::std::option::Option<crate::types::MediaConnectRouterOutputConnectionMap>,
     /// Media Connect Router Container Settings
     pub container_settings: ::std::option::Option<crate::types::MediaConnectRouterContainerSettings>,
@@ -12,7 +12,7 @@ pub struct MediaConnectRouterOutputSettings {
     pub destination: ::std::option::Option<crate::types::OutputLocationRef>,
 }
 impl MediaConnectRouterOutputSettings {
-    /// Shows the MediaConnect Router Inputs that are connected to this output. This parameter is purely informative, and editing it will have no effect. To connect or disconnect MediaConnect Router Inputs, go to MediaConnect.
+    /// This parameter is deprecated and unused.
     pub fn connected_router_inputs(&self) -> ::std::option::Option<&crate::types::MediaConnectRouterOutputConnectionMap> {
         self.connected_router_inputs.as_ref()
     }
@@ -41,17 +41,17 @@ pub struct MediaConnectRouterOutputSettingsBuilder {
     pub(crate) destination: ::std::option::Option<crate::types::OutputLocationRef>,
 }
 impl MediaConnectRouterOutputSettingsBuilder {
-    /// Shows the MediaConnect Router Inputs that are connected to this output. This parameter is purely informative, and editing it will have no effect. To connect or disconnect MediaConnect Router Inputs, go to MediaConnect.
+    /// This parameter is deprecated and unused.
     pub fn connected_router_inputs(mut self, input: crate::types::MediaConnectRouterOutputConnectionMap) -> Self {
         self.connected_router_inputs = ::std::option::Option::Some(input);
         self
     }
-    /// Shows the MediaConnect Router Inputs that are connected to this output. This parameter is purely informative, and editing it will have no effect. To connect or disconnect MediaConnect Router Inputs, go to MediaConnect.
+    /// This parameter is deprecated and unused.
     pub fn set_connected_router_inputs(mut self, input: ::std::option::Option<crate::types::MediaConnectRouterOutputConnectionMap>) -> Self {
         self.connected_router_inputs = input;
         self
     }
-    /// Shows the MediaConnect Router Inputs that are connected to this output. This parameter is purely informative, and editing it will have no effect. To connect or disconnect MediaConnect Router Inputs, go to MediaConnect.
+    /// This parameter is deprecated and unused.
     pub fn get_connected_router_inputs(&self) -> &::std::option::Option<crate::types::MediaConnectRouterOutputConnectionMap> {
         &self.connected_router_inputs
     }

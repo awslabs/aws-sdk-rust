@@ -14,6 +14,7 @@
 /// match domainverificationmethod {
 ///     DomainVerificationMethod::DnsTxt => { /* ... */ },
 ///     DomainVerificationMethod::HttpRoute => { /* ... */ },
+///     DomainVerificationMethod::PrivateVpc => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -36,16 +37,18 @@
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 ///
-/// Method used to verify domain ownership
+/// <p>Method used to verify domain ownership.</p>
 #[non_exhaustive]
 #[derive(
     ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum DomainVerificationMethod {
-    /// Verify ownership via DNS TXT record
+    /// <p>Verify ownership via DNS TXT record.</p>
     DnsTxt,
-    /// Verify ownership via HTTP route
+    /// <p>Verify ownership via HTTP route.</p>
     HttpRoute,
+    /// <p>Verify ownership via IP for private VPC pentests.</p>
+    PrivateVpc,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -55,6 +58,7 @@ impl ::std::convert::From<&str> for DomainVerificationMethod {
         match s {
             "DNS_TXT" => DomainVerificationMethod::DnsTxt,
             "HTTP_ROUTE" => DomainVerificationMethod::HttpRoute,
+            "PRIVATE_VPC" => DomainVerificationMethod::PrivateVpc,
             other => DomainVerificationMethod::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -72,12 +76,13 @@ impl DomainVerificationMethod {
         match self {
             DomainVerificationMethod::DnsTxt => "DNS_TXT",
             DomainVerificationMethod::HttpRoute => "HTTP_ROUTE",
+            DomainVerificationMethod::PrivateVpc => "PRIVATE_VPC",
             DomainVerificationMethod::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["DNS_TXT", "HTTP_ROUTE"]
+        &["DNS_TXT", "HTTP_ROUTE", "PRIVATE_VPC"]
     }
 }
 impl ::std::convert::AsRef<str> for DomainVerificationMethod {
@@ -102,6 +107,7 @@ impl ::std::fmt::Display for DomainVerificationMethod {
         match self {
             DomainVerificationMethod::DnsTxt => write!(f, "DNS_TXT"),
             DomainVerificationMethod::HttpRoute => write!(f, "HTTP_ROUTE"),
+            DomainVerificationMethod::PrivateVpc => write!(f, "PRIVATE_VPC"),
             DomainVerificationMethod::Unknown(value) => write!(f, "{value}"),
         }
     }
