@@ -3,14 +3,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListAgreementPaymentRequestsOutput {
-    /// <p>A token to retrieve the next page of results. If <code>null</code>, there are no more results to retrieve.</p>
+    /// <p>The token used for pagination. The field is <code>null</code> if there are no more results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>An array of <code>PaymentRequestSummary</code> objects containing summary information about each payment request.</p>
     pub items: ::std::vec::Vec<crate::types::PaymentRequestSummary>,
     _request_id: Option<String>,
 }
 impl ListAgreementPaymentRequestsOutput {
-    /// <p>A token to retrieve the next page of results. If <code>null</code>, there are no more results to retrieve.</p>
+    /// <p>The token used for pagination. The field is <code>null</code> if there are no more results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -41,17 +41,17 @@ pub struct ListAgreementPaymentRequestsOutputBuilder {
     _request_id: Option<String>,
 }
 impl ListAgreementPaymentRequestsOutputBuilder {
-    /// <p>A token to retrieve the next page of results. If <code>null</code>, there are no more results to retrieve.</p>
+    /// <p>The token used for pagination. The field is <code>null</code> if there are no more results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A token to retrieve the next page of results. If <code>null</code>, there are no more results to retrieve.</p>
+    /// <p>The token used for pagination. The field is <code>null</code> if there are no more results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>A token to retrieve the next page of results. If <code>null</code>, there are no more results to retrieve.</p>
+    /// <p>The token used for pagination. The field is <code>null</code> if there are no more results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

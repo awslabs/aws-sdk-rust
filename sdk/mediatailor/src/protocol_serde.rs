@@ -43,6 +43,8 @@ pub(crate) mod shape_delete_channel;
 
 pub(crate) mod shape_delete_channel_policy;
 
+pub(crate) mod shape_delete_function;
+
 pub(crate) mod shape_delete_live_source;
 
 pub(crate) mod shape_delete_playback_configuration;
@@ -69,6 +71,8 @@ pub(crate) mod shape_get_channel_policy;
 
 pub(crate) mod shape_get_channel_schedule;
 
+pub(crate) mod shape_get_function;
+
 pub(crate) mod shape_get_playback_configuration;
 
 pub(crate) mod shape_get_prefetch_schedule;
@@ -76,6 +80,8 @@ pub(crate) mod shape_get_prefetch_schedule;
 pub(crate) mod shape_list_alerts;
 
 pub(crate) mod shape_list_channels;
+
+pub(crate) mod shape_list_functions;
 
 pub(crate) mod shape_list_live_sources;
 
@@ -90,6 +96,8 @@ pub(crate) mod shape_list_tags_for_resource;
 pub(crate) mod shape_list_vod_sources;
 
 pub(crate) mod shape_put_channel_policy;
+
+pub(crate) mod shape_put_function;
 
 pub(crate) mod shape_put_playback_configuration;
 
@@ -141,6 +149,8 @@ pub(crate) mod shape_list_prefetch_schedules_input;
 
 pub(crate) mod shape_put_channel_policy_input;
 
+pub(crate) mod shape_put_function_input;
+
 pub(crate) mod shape_put_playback_configuration_input;
 
 pub(crate) mod shape_tag_resource_input;
@@ -181,11 +191,15 @@ pub(crate) mod shape_clip_range;
 
 pub(crate) mod shape_configuration_aliases_response;
 
+pub(crate) mod shape_custom_output_configuration;
+
 pub(crate) mod shape_dash_configuration;
 
 pub(crate) mod shape_dash_configuration_for_put;
 
 pub(crate) mod shape_default_segment_delivery_configuration;
+
+pub(crate) mod shape_function_mapping;
 
 pub(crate) mod shape_hls_configuration;
 
@@ -195,6 +209,8 @@ pub(crate) mod shape_http_package_configuration;
 
 pub(crate) mod shape_http_package_configurations;
 
+pub(crate) mod shape_http_request_configuration;
+
 pub(crate) mod shape_list_of_ad_break;
 
 pub(crate) mod shape_list_of_alert;
@@ -202,6 +218,8 @@ pub(crate) mod shape_list_of_alert;
 pub(crate) mod shape_list_of_audience_media;
 
 pub(crate) mod shape_list_of_channel;
+
+pub(crate) mod shape_list_of_functions_response;
 
 pub(crate) mod shape_list_of_live_source;
 
@@ -247,6 +265,8 @@ pub(crate) mod shape_schedule_configuration;
 
 pub(crate) mod shape_segment_delivery_configuration;
 
+pub(crate) mod shape_sequential_executor_configuration;
+
 pub(crate) mod shape_slate_source;
 
 pub(crate) mod shape_time_shift_configuration;
@@ -271,6 +291,10 @@ pub(crate) mod shape_channel;
 
 pub(crate) mod shape_dash_playlist_settings;
 
+pub(crate) mod shape_function;
+
+pub(crate) mod shape_function_ref;
+
 pub(crate) mod shape_hls_playlist_settings;
 
 pub(crate) mod shape_http_request;
@@ -279,9 +303,13 @@ pub(crate) mod shape_key_value_pair;
 
 pub(crate) mod shape_list_of_avail_matching_criteria;
 
+pub(crate) mod shape_list_of_functions_ref;
+
 pub(crate) mod shape_live_source;
 
 pub(crate) mod shape_manifest_service_exclude_event_types_list;
+
+pub(crate) mod shape_manifest_service_publish_opt_in_event_types_list;
 
 pub(crate) mod shape_playback_configuration;
 

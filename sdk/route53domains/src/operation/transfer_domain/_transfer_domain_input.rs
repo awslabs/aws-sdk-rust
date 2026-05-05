@@ -19,7 +19,8 @@ pub struct TransferDomainInput {
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>Reserved for future use.</p>
     pub idn_lang_code: ::std::option::Option<::std::string::String>,
-    /// <p>The number of years that you want to register the domain for. Domains are registered for a minimum of one year. The maximum period depends on the top-level domain.</p>
+    /// <p>Reserved for future use.</p>
+    /// <p>Currently, the effect of a domain transfer on the registration period varies by TLD. For information about how transferring a domain affects the expiration date, see the Transfer Term column in the pricing information at <a href="http://aws.amazon.com/route53/pricing/">Amazon Route 53 Pricing</a>.</p>
     /// <p>Default: 1</p>
     pub duration_in_years: ::std::option::Option<i32>,
     /// <p>Contains details for the host and glue IP addresses.</p>
@@ -79,7 +80,8 @@ impl TransferDomainInput {
     pub fn idn_lang_code(&self) -> ::std::option::Option<&str> {
         self.idn_lang_code.as_deref()
     }
-    /// <p>The number of years that you want to register the domain for. Domains are registered for a minimum of one year. The maximum period depends on the top-level domain.</p>
+    /// <p>Reserved for future use.</p>
+    /// <p>Currently, the effect of a domain transfer on the registration period varies by TLD. For information about how transferring a domain affects the expiration date, see the Transfer Term column in the pricing information at <a href="http://aws.amazon.com/route53/pricing/">Amazon Route 53 Pricing</a>.</p>
     /// <p>Default: 1</p>
     pub fn duration_in_years(&self) -> ::std::option::Option<i32> {
         self.duration_in_years
@@ -254,20 +256,22 @@ impl TransferDomainInputBuilder {
     pub fn get_idn_lang_code(&self) -> &::std::option::Option<::std::string::String> {
         &self.idn_lang_code
     }
-    /// <p>The number of years that you want to register the domain for. Domains are registered for a minimum of one year. The maximum period depends on the top-level domain.</p>
+    /// <p>Reserved for future use.</p>
+    /// <p>Currently, the effect of a domain transfer on the registration period varies by TLD. For information about how transferring a domain affects the expiration date, see the Transfer Term column in the pricing information at <a href="http://aws.amazon.com/route53/pricing/">Amazon Route 53 Pricing</a>.</p>
     /// <p>Default: 1</p>
-    /// This field is required.
     pub fn duration_in_years(mut self, input: i32) -> Self {
         self.duration_in_years = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The number of years that you want to register the domain for. Domains are registered for a minimum of one year. The maximum period depends on the top-level domain.</p>
+    /// <p>Reserved for future use.</p>
+    /// <p>Currently, the effect of a domain transfer on the registration period varies by TLD. For information about how transferring a domain affects the expiration date, see the Transfer Term column in the pricing information at <a href="http://aws.amazon.com/route53/pricing/">Amazon Route 53 Pricing</a>.</p>
     /// <p>Default: 1</p>
     pub fn set_duration_in_years(mut self, input: ::std::option::Option<i32>) -> Self {
         self.duration_in_years = input;
         self
     }
-    /// <p>The number of years that you want to register the domain for. Domains are registered for a minimum of one year. The maximum period depends on the top-level domain.</p>
+    /// <p>Reserved for future use.</p>
+    /// <p>Currently, the effect of a domain transfer on the registration period varies by TLD. For information about how transferring a domain affects the expiration date, see the Transfer Term column in the pricing information at <a href="http://aws.amazon.com/route53/pricing/">Amazon Route 53 Pricing</a>.</p>
     /// <p>Default: 1</p>
     pub fn get_duration_in_years(&self) -> &::std::option::Option<i32> {
         &self.duration_in_years

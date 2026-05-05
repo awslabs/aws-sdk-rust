@@ -22,6 +22,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "id" => {
+                            builder = builder.set_id(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         "documents" => {
                             builder = builder.set_documents(crate::protocol_serde::shape_document_list::de_document_list(tokens, _value)?);
                         }

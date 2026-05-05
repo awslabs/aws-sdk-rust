@@ -391,3 +391,24 @@ pub(crate) fn image_sets_metadata_summary_correct_errors(
     }
     builder
 }
+
+pub(crate) fn dicom_json_metadata_import_configuration_correct_errors(
+    mut builder: crate::types::builders::DicomJsonMetadataImportConfigurationBuilder,
+) -> crate::types::builders::DicomJsonMetadataImportConfigurationBuilder {
+    if builder.dicom_metadata_mappings.is_none() {
+        builder.dicom_metadata_mappings = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn dicom_metadata_mapping_correct_errors(
+    mut builder: crate::types::builders::DicomMetadataMappingBuilder,
+) -> crate::types::builders::DicomMetadataMappingBuilder {
+    if builder.study_instance_uid.is_none() {
+        builder.study_instance_uid = Some(Default::default())
+    }
+    if builder.metadata_file_path.is_none() {
+        builder.metadata_file_path = Some(Default::default())
+    }
+    builder
+}

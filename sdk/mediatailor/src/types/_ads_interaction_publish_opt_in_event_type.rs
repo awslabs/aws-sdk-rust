@@ -12,6 +12,8 @@
 /// ```text
 /// # let adsinteractionpublishoptineventtype = unimplemented!();
 /// match adsinteractionpublishoptineventtype {
+///     AdsInteractionPublishOptInEventType::PreAdsRequestFunctionCompleted => { /* ... */ },
+///     AdsInteractionPublishOptInEventType::PreAdsRequestHookSummary => { /* ... */ },
 ///     AdsInteractionPublishOptInEventType::RawAdsRequest => { /* ... */ },
 ///     AdsInteractionPublishOptInEventType::RawAdsResponse => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -43,6 +45,10 @@
 )]
 pub enum AdsInteractionPublishOptInEventType {
     #[allow(missing_docs)] // documentation missing in model
+    PreAdsRequestFunctionCompleted,
+    #[allow(missing_docs)] // documentation missing in model
+    PreAdsRequestHookSummary,
+    #[allow(missing_docs)] // documentation missing in model
     RawAdsRequest,
     #[allow(missing_docs)] // documentation missing in model
     RawAdsResponse,
@@ -53,6 +59,8 @@ pub enum AdsInteractionPublishOptInEventType {
 impl ::std::convert::From<&str> for AdsInteractionPublishOptInEventType {
     fn from(s: &str) -> Self {
         match s {
+            "PRE_ADS_REQUEST_FUNCTION_COMPLETED" => AdsInteractionPublishOptInEventType::PreAdsRequestFunctionCompleted,
+            "PRE_ADS_REQUEST_HOOK_SUMMARY" => AdsInteractionPublishOptInEventType::PreAdsRequestHookSummary,
             "RAW_ADS_REQUEST" => AdsInteractionPublishOptInEventType::RawAdsRequest,
             "RAW_ADS_RESPONSE" => AdsInteractionPublishOptInEventType::RawAdsResponse,
             other => AdsInteractionPublishOptInEventType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -70,6 +78,8 @@ impl AdsInteractionPublishOptInEventType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            AdsInteractionPublishOptInEventType::PreAdsRequestFunctionCompleted => "PRE_ADS_REQUEST_FUNCTION_COMPLETED",
+            AdsInteractionPublishOptInEventType::PreAdsRequestHookSummary => "PRE_ADS_REQUEST_HOOK_SUMMARY",
             AdsInteractionPublishOptInEventType::RawAdsRequest => "RAW_ADS_REQUEST",
             AdsInteractionPublishOptInEventType::RawAdsResponse => "RAW_ADS_RESPONSE",
             AdsInteractionPublishOptInEventType::Unknown(value) => value.as_str(),
@@ -77,7 +87,12 @@ impl AdsInteractionPublishOptInEventType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["RAW_ADS_REQUEST", "RAW_ADS_RESPONSE"]
+        &[
+            "PRE_ADS_REQUEST_FUNCTION_COMPLETED",
+            "PRE_ADS_REQUEST_HOOK_SUMMARY",
+            "RAW_ADS_REQUEST",
+            "RAW_ADS_RESPONSE",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for AdsInteractionPublishOptInEventType {
@@ -100,6 +115,8 @@ impl AdsInteractionPublishOptInEventType {
 impl ::std::fmt::Display for AdsInteractionPublishOptInEventType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            AdsInteractionPublishOptInEventType::PreAdsRequestFunctionCompleted => write!(f, "PRE_ADS_REQUEST_FUNCTION_COMPLETED"),
+            AdsInteractionPublishOptInEventType::PreAdsRequestHookSummary => write!(f, "PRE_ADS_REQUEST_HOOK_SUMMARY"),
             AdsInteractionPublishOptInEventType::RawAdsRequest => write!(f, "RAW_ADS_REQUEST"),
             AdsInteractionPublishOptInEventType::RawAdsResponse => write!(f, "RAW_ADS_RESPONSE"),
             AdsInteractionPublishOptInEventType::Unknown(value) => write!(f, "{value}"),

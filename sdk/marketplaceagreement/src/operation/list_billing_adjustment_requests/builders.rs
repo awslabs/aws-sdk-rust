@@ -22,9 +22,7 @@ impl crate::operation::list_billing_adjustment_requests::builders::ListBillingAd
 }
 /// Fluent builder constructing a request to `ListBillingAdjustmentRequests`.
 ///
-/// <p>Lists billing adjustment requests for a specific agreement. Sellers (proposers) can use this operation to view all billing adjustment requests associated with an agreement.</p><note>
-/// <p>Pagination is supported through <code>maxResults</code> and <code>nextToken</code> parameters.</p>
-/// </note>
+/// <p>Lists billing adjustment requests for a specific agreement. Sellers (proposers) can use this operation to view all billing adjustment requests associated with an agreement.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListBillingAdjustmentRequestsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -144,31 +142,31 @@ impl ListBillingAdjustmentRequestsFluentBuilder {
     pub fn get_status(&self) -> &::std::option::Option<crate::types::BillingAdjustmentStatus> {
         self.inner.get_status()
     }
-    /// <p>An optional filter to return billing adjustment requests created after the specified POSIX timestamp (Unix epoch seconds).</p>
+    /// <p>An optional filter to return billing adjustment requests created after the specified timestamp.</p>
     pub fn created_after(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.created_after(input);
         self
     }
-    /// <p>An optional filter to return billing adjustment requests created after the specified POSIX timestamp (Unix epoch seconds).</p>
+    /// <p>An optional filter to return billing adjustment requests created after the specified timestamp.</p>
     pub fn set_created_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_created_after(input);
         self
     }
-    /// <p>An optional filter to return billing adjustment requests created after the specified POSIX timestamp (Unix epoch seconds).</p>
+    /// <p>An optional filter to return billing adjustment requests created after the specified timestamp.</p>
     pub fn get_created_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         self.inner.get_created_after()
     }
-    /// <p>An optional filter to return billing adjustment requests created before the specified POSIX timestamp (Unix epoch seconds).</p>
+    /// <p>An optional filter to return billing adjustment requests created before the specified timestamp.</p>
     pub fn created_before(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.created_before(input);
         self
     }
-    /// <p>An optional filter to return billing adjustment requests created before the specified POSIX timestamp (Unix epoch seconds).</p>
+    /// <p>An optional filter to return billing adjustment requests created before the specified timestamp.</p>
     pub fn set_created_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_created_before(input);
         self
     }
-    /// <p>An optional filter to return billing adjustment requests created before the specified POSIX timestamp (Unix epoch seconds).</p>
+    /// <p>An optional filter to return billing adjustment requests created before the specified timestamp.</p>
     pub fn get_created_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         self.inner.get_created_before()
     }
@@ -214,17 +212,17 @@ impl ListBillingAdjustmentRequestsFluentBuilder {
     pub fn get_agreement_type(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_agreement_type()
     }
-    /// <p>A token to specify where to start pagination. Use the <code>nextToken</code> value from a previous response to retrieve the next page of results.</p>
+    /// <p>A token to specify where to start pagination.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
-    /// <p>A token to specify where to start pagination. Use the <code>nextToken</code> value from a previous response to retrieve the next page of results.</p>
+    /// <p>A token to specify where to start pagination.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
-    /// <p>A token to specify where to start pagination. Use the <code>nextToken</code> value from a previous response to retrieve the next page of results.</p>
+    /// <p>A token to specify where to start pagination.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }

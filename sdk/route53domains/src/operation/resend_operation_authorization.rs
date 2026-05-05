@@ -275,6 +275,8 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ResendOperati
 pub enum ResendOperationAuthorizationError {
     /// <p>The requested item is not acceptable. For example, for APIs that accept a domain name, the request might specify a domain name that doesn't belong to the account that submitted the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>, the password might be invalid.</p>
     InvalidInput(crate::types::error::InvalidInput),
+    /// <p>The top-level domain is currently undergoing maintenance and the request cannot be processed. Try again later.</p>
+    TldInMaintenance(crate::types::error::TldInMaintenance),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \
     variable wildcard pattern and check `.code()`:
@@ -309,6 +311,7 @@ impl ResendOperationAuthorizationError {
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
             Self::InvalidInput(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::TldInMaintenance(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
     }
@@ -316,11 +319,16 @@ impl ResendOperationAuthorizationError {
     pub fn is_invalid_input(&self) -> bool {
         matches!(self, Self::InvalidInput(_))
     }
+    /// Returns `true` if the error kind is `ResendOperationAuthorizationError::TldInMaintenance`.
+    pub fn is_tld_in_maintenance(&self) -> bool {
+        matches!(self, Self::TldInMaintenance(_))
+    }
 }
 impl ::std::error::Error for ResendOperationAuthorizationError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
             Self::InvalidInput(_inner) => ::std::option::Option::Some(_inner),
+            Self::TldInMaintenance(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
         }
     }
@@ -329,6 +337,7 @@ impl ::std::fmt::Display for ResendOperationAuthorizationError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
             Self::InvalidInput(_inner) => _inner.fmt(f),
+            Self::TldInMaintenance(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => {
                 if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
                     write!(f, "unhandled error ({code})")
@@ -351,6 +360,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for ResendOperati
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
             Self::InvalidInput(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::TldInMaintenance(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => &_inner.meta,
         }
     }

@@ -7,9 +7,9 @@ pub struct ListBillingAdjustmentRequestsInput {
     pub agreement_id: ::std::option::Option<::std::string::String>,
     /// <p>An optional filter to return billing adjustment requests with the specified status.</p>
     pub status: ::std::option::Option<crate::types::BillingAdjustmentStatus>,
-    /// <p>An optional filter to return billing adjustment requests created after the specified POSIX timestamp (Unix epoch seconds).</p>
+    /// <p>An optional filter to return billing adjustment requests created after the specified timestamp.</p>
     pub created_after: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>An optional filter to return billing adjustment requests created before the specified POSIX timestamp (Unix epoch seconds).</p>
+    /// <p>An optional filter to return billing adjustment requests created before the specified timestamp.</p>
     pub created_before: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The maximum number of billing adjustment requests to return in the response.</p>
     pub max_results: ::std::option::Option<i32>,
@@ -17,7 +17,7 @@ pub struct ListBillingAdjustmentRequestsInput {
     pub catalog: ::std::option::Option<::std::string::String>,
     /// <p>An optional filter to return billing adjustment requests by agreement type (e.g., <code>PurchaseAgreement</code>).</p>
     pub agreement_type: ::std::option::Option<::std::string::String>,
-    /// <p>A token to specify where to start pagination. Use the <code>nextToken</code> value from a previous response to retrieve the next page of results.</p>
+    /// <p>A token to specify where to start pagination.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListBillingAdjustmentRequestsInput {
@@ -29,11 +29,11 @@ impl ListBillingAdjustmentRequestsInput {
     pub fn status(&self) -> ::std::option::Option<&crate::types::BillingAdjustmentStatus> {
         self.status.as_ref()
     }
-    /// <p>An optional filter to return billing adjustment requests created after the specified POSIX timestamp (Unix epoch seconds).</p>
+    /// <p>An optional filter to return billing adjustment requests created after the specified timestamp.</p>
     pub fn created_after(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_after.as_ref()
     }
-    /// <p>An optional filter to return billing adjustment requests created before the specified POSIX timestamp (Unix epoch seconds).</p>
+    /// <p>An optional filter to return billing adjustment requests created before the specified timestamp.</p>
     pub fn created_before(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_before.as_ref()
     }
@@ -49,7 +49,7 @@ impl ListBillingAdjustmentRequestsInput {
     pub fn agreement_type(&self) -> ::std::option::Option<&str> {
         self.agreement_type.as_deref()
     }
-    /// <p>A token to specify where to start pagination. Use the <code>nextToken</code> value from a previous response to retrieve the next page of results.</p>
+    /// <p>A token to specify where to start pagination.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -103,31 +103,31 @@ impl ListBillingAdjustmentRequestsInputBuilder {
     pub fn get_status(&self) -> &::std::option::Option<crate::types::BillingAdjustmentStatus> {
         &self.status
     }
-    /// <p>An optional filter to return billing adjustment requests created after the specified POSIX timestamp (Unix epoch seconds).</p>
+    /// <p>An optional filter to return billing adjustment requests created after the specified timestamp.</p>
     pub fn created_after(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_after = ::std::option::Option::Some(input);
         self
     }
-    /// <p>An optional filter to return billing adjustment requests created after the specified POSIX timestamp (Unix epoch seconds).</p>
+    /// <p>An optional filter to return billing adjustment requests created after the specified timestamp.</p>
     pub fn set_created_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_after = input;
         self
     }
-    /// <p>An optional filter to return billing adjustment requests created after the specified POSIX timestamp (Unix epoch seconds).</p>
+    /// <p>An optional filter to return billing adjustment requests created after the specified timestamp.</p>
     pub fn get_created_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.created_after
     }
-    /// <p>An optional filter to return billing adjustment requests created before the specified POSIX timestamp (Unix epoch seconds).</p>
+    /// <p>An optional filter to return billing adjustment requests created before the specified timestamp.</p>
     pub fn created_before(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_before = ::std::option::Option::Some(input);
         self
     }
-    /// <p>An optional filter to return billing adjustment requests created before the specified POSIX timestamp (Unix epoch seconds).</p>
+    /// <p>An optional filter to return billing adjustment requests created before the specified timestamp.</p>
     pub fn set_created_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_before = input;
         self
     }
-    /// <p>An optional filter to return billing adjustment requests created before the specified POSIX timestamp (Unix epoch seconds).</p>
+    /// <p>An optional filter to return billing adjustment requests created before the specified timestamp.</p>
     pub fn get_created_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.created_before
     }
@@ -173,17 +173,17 @@ impl ListBillingAdjustmentRequestsInputBuilder {
     pub fn get_agreement_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.agreement_type
     }
-    /// <p>A token to specify where to start pagination. Use the <code>nextToken</code> value from a previous response to retrieve the next page of results.</p>
+    /// <p>A token to specify where to start pagination.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A token to specify where to start pagination. Use the <code>nextToken</code> value from a previous response to retrieve the next page of results.</p>
+    /// <p>A token to specify where to start pagination.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>A token to specify where to start pagination. Use the <code>nextToken</code> value from a previous response to retrieve the next page of results.</p>
+    /// <p>A token to specify where to start pagination.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

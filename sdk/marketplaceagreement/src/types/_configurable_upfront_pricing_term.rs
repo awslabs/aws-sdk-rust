@@ -6,6 +6,8 @@
 pub struct ConfigurableUpfrontPricingTerm {
     /// <p>Category of selector.</p>
     pub r#type: ::std::option::Option<::std::string::String>,
+    /// <p>The unique identifier of the term.</p>
+    pub id: ::std::option::Option<::std::string::String>,
     /// <p>Defines the currency for the prices mentioned in the term.</p>
     pub currency_code: ::std::option::Option<::std::string::String>,
     /// <p>A rate card defines the per unit rates for product dimensions.</p>
@@ -17,6 +19,10 @@ impl ConfigurableUpfrontPricingTerm {
     /// <p>Category of selector.</p>
     pub fn r#type(&self) -> ::std::option::Option<&str> {
         self.r#type.as_deref()
+    }
+    /// <p>The unique identifier of the term.</p>
+    pub fn id(&self) -> ::std::option::Option<&str> {
+        self.id.as_deref()
     }
     /// <p>Defines the currency for the prices mentioned in the term.</p>
     pub fn currency_code(&self) -> ::std::option::Option<&str> {
@@ -45,6 +51,7 @@ impl ConfigurableUpfrontPricingTerm {
 #[non_exhaustive]
 pub struct ConfigurableUpfrontPricingTermBuilder {
     pub(crate) r#type: ::std::option::Option<::std::string::String>,
+    pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) currency_code: ::std::option::Option<::std::string::String>,
     pub(crate) rate_cards: ::std::option::Option<::std::vec::Vec<crate::types::ConfigurableUpfrontRateCardItem>>,
     pub(crate) configuration: ::std::option::Option<crate::types::ConfigurableUpfrontPricingTermConfiguration>,
@@ -63,6 +70,20 @@ impl ConfigurableUpfrontPricingTermBuilder {
     /// <p>Category of selector.</p>
     pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.r#type
+    }
+    /// <p>The unique identifier of the term.</p>
+    pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The unique identifier of the term.</p>
+    pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.id = input;
+        self
+    }
+    /// <p>The unique identifier of the term.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// <p>Defines the currency for the prices mentioned in the term.</p>
     pub fn currency_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -116,6 +137,7 @@ impl ConfigurableUpfrontPricingTermBuilder {
     pub fn build(self) -> crate::types::ConfigurableUpfrontPricingTerm {
         crate::types::ConfigurableUpfrontPricingTerm {
             r#type: self.r#type,
+            id: self.id,
             currency_code: self.currency_code,
             rate_cards: self.rate_cards,
             configuration: self.configuration,

@@ -9,6 +9,8 @@ pub struct CreateKeyValueStoreInput {
     pub comment: ::std::option::Option<::std::string::String>,
     /// <p>The S3 bucket that provides the source for the import. The source must be in a valid JSON format.</p>
     pub import_source: ::std::option::Option<crate::types::ImportSource>,
+    /// <p>A complex type that contains zero or more <code>Tag</code> elements.</p>
+    pub tags: ::std::option::Option<crate::types::Tags>,
 }
 impl CreateKeyValueStoreInput {
     /// <p>The name of the key value store. The minimum length is 1 character and the maximum length is 64 characters.</p>
@@ -22,6 +24,10 @@ impl CreateKeyValueStoreInput {
     /// <p>The S3 bucket that provides the source for the import. The source must be in a valid JSON format.</p>
     pub fn import_source(&self) -> ::std::option::Option<&crate::types::ImportSource> {
         self.import_source.as_ref()
+    }
+    /// <p>A complex type that contains zero or more <code>Tag</code> elements.</p>
+    pub fn tags(&self) -> ::std::option::Option<&crate::types::Tags> {
+        self.tags.as_ref()
     }
 }
 impl CreateKeyValueStoreInput {
@@ -38,6 +44,7 @@ pub struct CreateKeyValueStoreInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) comment: ::std::option::Option<::std::string::String>,
     pub(crate) import_source: ::std::option::Option<crate::types::ImportSource>,
+    pub(crate) tags: ::std::option::Option<crate::types::Tags>,
 }
 impl CreateKeyValueStoreInputBuilder {
     /// <p>The name of the key value store. The minimum length is 1 character and the maximum length is 64 characters.</p>
@@ -83,6 +90,20 @@ impl CreateKeyValueStoreInputBuilder {
     pub fn get_import_source(&self) -> &::std::option::Option<crate::types::ImportSource> {
         &self.import_source
     }
+    /// <p>A complex type that contains zero or more <code>Tag</code> elements.</p>
+    pub fn tags(mut self, input: crate::types::Tags) -> Self {
+        self.tags = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A complex type that contains zero or more <code>Tag</code> elements.</p>
+    pub fn set_tags(mut self, input: ::std::option::Option<crate::types::Tags>) -> Self {
+        self.tags = input;
+        self
+    }
+    /// <p>A complex type that contains zero or more <code>Tag</code> elements.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<crate::types::Tags> {
+        &self.tags
+    }
     /// Consumes the builder and constructs a [`CreateKeyValueStoreInput`](crate::operation::create_key_value_store::CreateKeyValueStoreInput).
     pub fn build(
         self,
@@ -92,6 +113,7 @@ impl CreateKeyValueStoreInputBuilder {
             name: self.name,
             comment: self.comment,
             import_source: self.import_source,
+            tags: self.tags,
         })
     }
 }

@@ -5,7 +5,7 @@
 pub struct ListAgreementInvoiceLineItemsOutput {
     /// <p>A list of grouped billing data objects.</p>
     pub agreement_invoice_line_item_group_summaries: ::std::option::Option<::std::vec::Vec<crate::types::AgreementInvoiceLineItemGroupSummary>>,
-    /// <p>A token to retrieve the next page of results. If not present, there are no more results available.</p>
+    /// <p>The token used for pagination. The field is <code>null</code> if there are no more results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -16,7 +16,7 @@ impl ListAgreementInvoiceLineItemsOutput {
     pub fn agreement_invoice_line_item_group_summaries(&self) -> &[crate::types::AgreementInvoiceLineItemGroupSummary] {
         self.agreement_invoice_line_item_group_summaries.as_deref().unwrap_or_default()
     }
-    /// <p>A token to retrieve the next page of results. If not present, there are no more results available.</p>
+    /// <p>The token used for pagination. The field is <code>null</code> if there are no more results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -68,17 +68,17 @@ impl ListAgreementInvoiceLineItemsOutputBuilder {
     ) -> &::std::option::Option<::std::vec::Vec<crate::types::AgreementInvoiceLineItemGroupSummary>> {
         &self.agreement_invoice_line_item_group_summaries
     }
-    /// <p>A token to retrieve the next page of results. If not present, there are no more results available.</p>
+    /// <p>The token used for pagination. The field is <code>null</code> if there are no more results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A token to retrieve the next page of results. If not present, there are no more results available.</p>
+    /// <p>The token used for pagination. The field is <code>null</code> if there are no more results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>A token to retrieve the next page of results. If not present, there are no more results available.</p>
+    /// <p>The token used for pagination. The field is <code>null</code> if there are no more results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

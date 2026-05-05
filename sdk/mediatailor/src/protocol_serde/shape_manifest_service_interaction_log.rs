@@ -16,6 +16,11 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                         match key.to_unescaped()?.as_ref() {
+                            "PublishOptInEventTypes" => {
+                                builder = builder.set_publish_opt_in_event_types(
+                                    crate::protocol_serde::shape_manifest_service_publish_opt_in_event_types_list::de_manifest_service_publish_opt_in_event_types_list(tokens, _value)?
+                                );
+                            }
                             "ExcludeEventTypes" => {
                                 builder = builder.set_exclude_event_types(
                                     crate::protocol_serde::shape_manifest_service_exclude_event_types_list::de_manifest_service_exclude_event_types_list(tokens, _value)?
@@ -43,14 +48,23 @@ pub fn ser_manifest_service_interaction_log(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ManifestServiceInteractionLog,
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    if let Some(var_1) = &input.exclude_event_types {
-        let mut array_2 = object.key("ExcludeEventTypes").start_array();
+    if let Some(var_1) = &input.publish_opt_in_event_types {
+        let mut array_2 = object.key("PublishOptInEventTypes").start_array();
         for item_3 in var_1 {
             {
                 array_2.value().string(item_3.as_str());
             }
         }
         array_2.finish();
+    }
+    if let Some(var_4) = &input.exclude_event_types {
+        let mut array_5 = object.key("ExcludeEventTypes").start_array();
+        for item_6 in var_4 {
+            {
+                array_5.value().string(item_6.as_str());
+            }
+        }
+        array_5.finish();
     }
     Ok(())
 }

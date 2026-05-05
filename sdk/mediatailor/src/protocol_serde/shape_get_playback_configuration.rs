@@ -85,6 +85,9 @@ pub(crate) fn de_get_playback_configuration(
                 "DashConfiguration" => {
                     builder = builder.set_dash_configuration(crate::protocol_serde::shape_dash_configuration::de_dash_configuration(tokens, _value)?);
                 }
+                "FunctionMapping" => {
+                    builder = builder.set_function_mapping(crate::protocol_serde::shape_function_mapping::de_function_mapping(tokens, _value)?);
+                }
                 "HlsConfiguration" => {
                     builder = builder.set_hls_configuration(crate::protocol_serde::shape_hls_configuration::de_hls_configuration(tokens, _value)?);
                 }

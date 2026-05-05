@@ -13,8 +13,8 @@ impl super::Client {
     ///   - [`description(Option<String>)`](crate::operation::cancel_agreement_cancellation_request::CancelAgreementCancellationRequestOutput::description): <p>The detailed description of the original cancellation reason, if provided.</p>
     ///   - [`status(Option<AgreementCancellationRequestStatus>)`](crate::operation::cancel_agreement_cancellation_request::CancelAgreementCancellationRequestOutput::status): <p>The updated status of the cancellation request, which is <code>CANCELLED</code>.</p>
     ///   - [`status_message(Option<String>)`](crate::operation::cancel_agreement_cancellation_request::CancelAgreementCancellationRequestOutput::status_message): <p>A message providing additional context about the cancellation request status.</p>
-    ///   - [`created_at(Option<DateTime>)`](crate::operation::cancel_agreement_cancellation_request::CancelAgreementCancellationRequestOutput::created_at): <p>The date and time when the cancellation request was originally created, as a POSIX timestamp (Unix epoch seconds).</p>
-    ///   - [`updated_at(Option<DateTime>)`](crate::operation::cancel_agreement_cancellation_request::CancelAgreementCancellationRequestOutput::updated_at): <p>The date and time when the cancellation request was cancelled, as a POSIX timestamp (Unix epoch seconds).</p>
+    ///   - [`created_at(Option<DateTime>)`](crate::operation::cancel_agreement_cancellation_request::CancelAgreementCancellationRequestOutput::created_at): <p>The date and time when the cancellation request was originally created.</p>
+    ///   - [`updated_at(Option<DateTime>)`](crate::operation::cancel_agreement_cancellation_request::CancelAgreementCancellationRequestOutput::updated_at): <p>The date and time when the cancellation request was cancelled.</p>
     /// - On failure, responds with [`SdkError<CancelAgreementCancellationRequestError>`](crate::operation::cancel_agreement_cancellation_request::CancelAgreementCancellationRequestError)
     pub fn cancel_agreement_cancellation_request(
         &self,

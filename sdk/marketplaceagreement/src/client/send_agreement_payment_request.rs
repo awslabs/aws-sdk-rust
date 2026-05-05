@@ -17,7 +17,7 @@ impl super::Client {
     ///   - [`description(Option<String>)`](crate::operation::send_agreement_payment_request::SendAgreementPaymentRequestOutput::description): <p>The detailed description of the payment request, if provided.</p>
     ///   - [`charge_amount(Option<String>)`](crate::operation::send_agreement_payment_request::SendAgreementPaymentRequestOutput::charge_amount): <p>The amount being charged to the buyer.</p>
     ///   - [`currency_code(Option<String>)`](crate::operation::send_agreement_payment_request::SendAgreementPaymentRequestOutput::currency_code): <p>The currency code for the charge amount (e.g., <code>USD</code>).</p>
-    ///   - [`created_at(Option<DateTime>)`](crate::operation::send_agreement_payment_request::SendAgreementPaymentRequestOutput::created_at): <p>The time when the payment request was created, in ISO 8601 format.</p>
+    ///   - [`created_at(Option<DateTime>)`](crate::operation::send_agreement_payment_request::SendAgreementPaymentRequestOutput::created_at): <p>The time when the payment request was created.</p>
     /// - On failure, responds with [`SdkError<SendAgreementPaymentRequestError>`](crate::operation::send_agreement_payment_request::SendAgreementPaymentRequestError)
     pub fn send_agreement_payment_request(
         &self,

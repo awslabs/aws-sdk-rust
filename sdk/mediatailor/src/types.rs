@@ -15,6 +15,14 @@ pub use crate::types::_channel_state::ChannelState;
 
 pub use crate::types::_log_configuration_for_channel::LogConfigurationForChannel;
 
+pub use crate::types::_function_type::FunctionType;
+
+pub use crate::types::_http_request_configuration::HttpRequestConfiguration;
+
+pub use crate::types::_custom_output_configuration::CustomOutputConfiguration;
+
+pub use crate::types::_sequential_executor_configuration::SequentialExecutorConfiguration;
+
 pub use crate::types::_avail_suppression::AvailSuppression;
 
 pub use crate::types::_bumper::Bumper;
@@ -75,6 +83,12 @@ pub use crate::types::_log_type::LogType;
 
 pub use crate::types::_schedule_entry::ScheduleEntry;
 
+pub use crate::types::_function::Function;
+
+pub use crate::types::_runtime_type::RuntimeType;
+
+pub use crate::types::_method_type::MethodType;
+
 pub use crate::types::_live_source::LiveSource;
 
 pub use crate::types::_http_package_configuration::HttpPackageConfiguration;
@@ -92,6 +106,8 @@ pub use crate::types::_ad_marker_passthrough::AdMarkerPassthrough;
 pub use crate::types::_streaming_media_file_conditioning::StreamingMediaFileConditioning;
 
 pub use crate::types::_http_request::HttpRequest;
+
+pub use crate::types::_event_name::EventName;
 
 pub use crate::types::_prefetch_schedule::PrefetchSchedule;
 
@@ -121,6 +137,8 @@ pub use crate::types::_ads_interaction_publish_opt_in_event_type::AdsInteraction
 
 pub use crate::types::_ads_interaction_exclude_event_type::AdsInteractionExcludeEventType;
 
+pub use crate::types::_manifest_service_publish_opt_in_event_type::ManifestServicePublishOptInEventType;
+
 pub use crate::types::_manifest_service_exclude_event_type::ManifestServiceExcludeEventType;
 
 pub use crate::types::_alert_category::AlertCategory;
@@ -138,6 +156,8 @@ pub use crate::types::_dash_playlist_settings::DashPlaylistSettings;
 pub use crate::types::_hls_playlist_settings::HlsPlaylistSettings;
 
 pub use crate::types::_schedule_entry_type::ScheduleEntryType;
+
+pub use crate::types::_function_ref::FunctionRef;
 
 pub use crate::types::_type_::Type;
 
@@ -213,6 +233,8 @@ mod _clip_range;
 
 mod _compression_method;
 
+mod _custom_output_configuration;
+
 mod _dash_configuration;
 
 mod _dash_configuration_for_put;
@@ -221,7 +243,15 @@ mod _dash_playlist_settings;
 
 mod _default_segment_delivery_configuration;
 
+mod _event_name;
+
 mod _fill_policy;
+
+mod _function;
+
+mod _function_ref;
+
+mod _function_type;
 
 mod _hls_configuration;
 
@@ -232,6 +262,8 @@ mod _http_configuration;
 mod _http_package_configuration;
 
 mod _http_request;
+
+mod _http_request_configuration;
 
 mod _insertion_mode;
 
@@ -257,9 +289,13 @@ mod _manifest_service_exclude_event_type;
 
 mod _manifest_service_interaction_log;
 
+mod _manifest_service_publish_opt_in_event_type;
+
 mod _message_type;
 
 mod _method;
+
+mod _method_type;
 
 mod _mode;
 
@@ -291,6 +327,8 @@ mod _request_output_item;
 
 mod _response_output_item;
 
+mod _runtime_type;
+
 mod _schedule_ad_break;
 
 mod _schedule_configuration;
@@ -304,6 +342,8 @@ mod _secrets_manager_access_token_configuration;
 mod _segment_delivery_configuration;
 
 mod _segmentation_descriptor;
+
+mod _sequential_executor_configuration;
 
 mod _slate_source;
 

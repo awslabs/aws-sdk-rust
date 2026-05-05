@@ -27,6 +27,14 @@ impl GetAgreementTermsPaginator {
         self
     }
 
+    /// Create a flattened paginator
+    ///
+    /// This paginator automatically flattens results using `accepted_terms`. Queries to the underlying service
+    /// are dispatched lazily.
+    pub fn items(self) -> crate::operation::get_agreement_terms::paginator::GetAgreementTermsPaginatorItems {
+        crate::operation::get_agreement_terms::paginator::GetAgreementTermsPaginatorItems(self)
+    }
+
     /// Stop paginating when the service returns the same pagination token twice in a row.
     ///
     /// Defaults to true.
@@ -105,5 +113,36 @@ impl GetAgreementTermsPaginator {
                 })
             },
         ))
+    }
+}
+
+/// Flattened paginator for `GetAgreementTermsPaginator`
+///
+/// This is created with [`.items()`](GetAgreementTermsPaginator::items)
+pub struct GetAgreementTermsPaginatorItems(GetAgreementTermsPaginator);
+
+impl GetAgreementTermsPaginatorItems {
+    /// Create the pagination stream
+    ///
+    /// _Note_: No requests will be dispatched until the stream is used
+    /// (e.g. with the [`.next().await`](aws_smithy_async::future::pagination_stream::PaginationStream::next) method).
+    ///
+    /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](aws_smithy_async::future::pagination_stream::PaginationStream::collect).
+    pub fn send(
+        self,
+    ) -> ::aws_smithy_async::future::pagination_stream::PaginationStream<
+        ::std::result::Result<
+            crate::types::AcceptedTerm,
+            ::aws_smithy_runtime_api::client::result::SdkError<
+                crate::operation::get_agreement_terms::GetAgreementTermsError,
+                ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
+            >,
+        >,
+    > {
+        ::aws_smithy_async::future::pagination_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_get_agreement_terms_output_output_accepted_terms(page)
+                .unwrap_or_default()
+                .into_iter()
+        })
     }
 }

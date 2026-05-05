@@ -17,6 +17,10 @@ pub fn ser_create_key_value_store_input_input_input(
         let mut inner_writer = scope.start_el("Name").finish();
         inner_writer.data(var_3.as_str());
     }
+    if let Some(var_4) = &input.tags {
+        let inner_writer = scope.start_el("Tags");
+        crate::protocol_serde::shape_tags::ser_tags(var_4, inner_writer)?
+    }
     scope.finish();
     Ok(())
 }

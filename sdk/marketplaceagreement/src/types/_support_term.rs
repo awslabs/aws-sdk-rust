@@ -6,6 +6,8 @@
 pub struct SupportTerm {
     /// <p>Category of the term being updated.</p>
     pub r#type: ::std::option::Option<::std::string::String>,
+    /// <p>The unique identifier for the term.</p>
+    pub id: ::std::option::Option<::std::string::String>,
     /// <p>Free-text field about the refund policy description that will be shown to customers as is on the website and console.</p>
     pub refund_policy: ::std::option::Option<::std::string::String>,
 }
@@ -13,6 +15,10 @@ impl SupportTerm {
     /// <p>Category of the term being updated.</p>
     pub fn r#type(&self) -> ::std::option::Option<&str> {
         self.r#type.as_deref()
+    }
+    /// <p>The unique identifier for the term.</p>
+    pub fn id(&self) -> ::std::option::Option<&str> {
+        self.id.as_deref()
     }
     /// <p>Free-text field about the refund policy description that will be shown to customers as is on the website and console.</p>
     pub fn refund_policy(&self) -> ::std::option::Option<&str> {
@@ -31,6 +37,7 @@ impl SupportTerm {
 #[non_exhaustive]
 pub struct SupportTermBuilder {
     pub(crate) r#type: ::std::option::Option<::std::string::String>,
+    pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) refund_policy: ::std::option::Option<::std::string::String>,
 }
 impl SupportTermBuilder {
@@ -47,6 +54,20 @@ impl SupportTermBuilder {
     /// <p>Category of the term being updated.</p>
     pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.r#type
+    }
+    /// <p>The unique identifier for the term.</p>
+    pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The unique identifier for the term.</p>
+    pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.id = input;
+        self
+    }
+    /// <p>The unique identifier for the term.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// <p>Free-text field about the refund policy description that will be shown to customers as is on the website and console.</p>
     pub fn refund_policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -66,6 +87,7 @@ impl SupportTermBuilder {
     pub fn build(self) -> crate::types::SupportTerm {
         crate::types::SupportTerm {
             r#type: self.r#type,
+            id: self.id,
             refund_policy: self.refund_policy,
         }
     }

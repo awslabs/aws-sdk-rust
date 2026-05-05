@@ -13,9 +13,9 @@ pub struct SendAgreementCancellationRequestOutput {
     pub reason_code: ::std::option::Option<crate::types::AgreementCancellationRequestReasonCode>,
     /// <p>The detailed description of the cancellation reason, if provided.</p>
     pub description: ::std::option::Option<::std::string::String>,
-    /// <p>The time when the cancellation request was created, as a POSIX timestamp (Unix epoch seconds).</p>
+    /// <p>The time when the cancellation request was created.</p>
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The time when the cancellation request was last updated, as a POSIX timestamp (Unix epoch seconds).</p>
+    /// <p>The time when the cancellation request was last updated.</p>
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }
@@ -40,11 +40,11 @@ impl SendAgreementCancellationRequestOutput {
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The time when the cancellation request was created, as a POSIX timestamp (Unix epoch seconds).</p>
+    /// <p>The time when the cancellation request was created.</p>
     pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
-    /// <p>The time when the cancellation request was last updated, as a POSIX timestamp (Unix epoch seconds).</p>
+    /// <p>The time when the cancellation request was last updated.</p>
     pub fn updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
@@ -159,31 +159,31 @@ impl SendAgreementCancellationRequestOutputBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
-    /// <p>The time when the cancellation request was created, as a POSIX timestamp (Unix epoch seconds).</p>
+    /// <p>The time when the cancellation request was created.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The time when the cancellation request was created, as a POSIX timestamp (Unix epoch seconds).</p>
+    /// <p>The time when the cancellation request was created.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
-    /// <p>The time when the cancellation request was created, as a POSIX timestamp (Unix epoch seconds).</p>
+    /// <p>The time when the cancellation request was created.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.created_at
     }
-    /// <p>The time when the cancellation request was last updated, as a POSIX timestamp (Unix epoch seconds).</p>
+    /// <p>The time when the cancellation request was last updated.</p>
     pub fn updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.updated_at = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The time when the cancellation request was last updated, as a POSIX timestamp (Unix epoch seconds).</p>
+    /// <p>The time when the cancellation request was last updated.</p>
     pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.updated_at = input;
         self
     }
-    /// <p>The time when the cancellation request was last updated, as a POSIX timestamp (Unix epoch seconds).</p>
+    /// <p>The time when the cancellation request was last updated.</p>
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.updated_at
     }

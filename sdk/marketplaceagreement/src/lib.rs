@@ -21,7 +21,7 @@
 #![forbid(unsafe_code)]
 #![warn(missing_docs)]
 #![cfg_attr(docsrs, feature(doc_cfg))]
-//! AWS Marketplace is a curated digital catalog that customers can use to find, buy, deploy, and manage third-party software, data, and services to build solutions and run their businesses. The AWS Marketplace Agreement Service provides an API interface that helps AWS Marketplace sellers manage their product-related agreements, including listing, searching, and filtering agreements.
+//! AWS Marketplace is a curated digital catalog that customers can use to find, buy, deploy, and manage third-party software, data, and services to build solutions and run their businesses. The AWS Marketplace Agreement Service provides an API interface that helps AWS Marketplace sellers and buyers manage their product-related agreements, including listing, searching, creating, and filtering agreements.
 //!
 //! To manage agreements in AWS Marketplace, you must ensure that your AWS Identity and Access Management (IAM) policies and roles are set up. The user must have the required policies/permissions that allow them to carry out the actions in AWS:
 //!   - DescribeAgreement – Grants permission to users to obtain detailed meta data about any of their agreements.
@@ -40,7 +40,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-marketplaceagreement = "1.98.0"
+//! aws-sdk-marketplaceagreement = "1.99.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!
@@ -157,13 +157,13 @@ pub use config::Config;
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`CancelAgreementCancellationRequest`](crate::operation::cancel_agreement_cancellation_request) operation has
-/// a [`Client::cancel_agreement_cancellation_request`], function which returns a builder for that operation.
+/// For example, the [`AcceptAgreementCancellationRequest`](crate::operation::accept_agreement_cancellation_request) operation has
+/// a [`Client::accept_agreement_cancellation_request`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.cancel_agreement_cancellation_request()
+/// let result = client.accept_agreement_cancellation_request()
 ///     .agreement_id("example")
 ///     .send()
 ///     .await;

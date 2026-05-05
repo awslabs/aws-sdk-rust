@@ -6,6 +6,8 @@
 pub struct ValidityTerm {
     /// <p>Category of the term being updated.</p>
     pub r#type: ::std::option::Option<::std::string::String>,
+    /// <p>The unique identifier for the term.</p>
+    pub id: ::std::option::Option<::std::string::String>,
     /// <p>Defines the duration that the agreement remains active. If <code>AgreementStartDate</code> isn’t provided, the agreement duration is relative to the agreement signature time. The duration is represented in the ISO_8601 format.</p>
     pub agreement_duration: ::std::option::Option<::std::string::String>,
     /// <p>Defines the date when agreement starts. The agreement starts at 00:00:00.000 UTC on the date provided. If <code>AgreementStartDate</code> isn’t provided, the agreement start date is determined based on agreement signature time.</p>
@@ -17,6 +19,10 @@ impl ValidityTerm {
     /// <p>Category of the term being updated.</p>
     pub fn r#type(&self) -> ::std::option::Option<&str> {
         self.r#type.as_deref()
+    }
+    /// <p>The unique identifier for the term.</p>
+    pub fn id(&self) -> ::std::option::Option<&str> {
+        self.id.as_deref()
     }
     /// <p>Defines the duration that the agreement remains active. If <code>AgreementStartDate</code> isn’t provided, the agreement duration is relative to the agreement signature time. The duration is represented in the ISO_8601 format.</p>
     pub fn agreement_duration(&self) -> ::std::option::Option<&str> {
@@ -43,6 +49,7 @@ impl ValidityTerm {
 #[non_exhaustive]
 pub struct ValidityTermBuilder {
     pub(crate) r#type: ::std::option::Option<::std::string::String>,
+    pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) agreement_duration: ::std::option::Option<::std::string::String>,
     pub(crate) agreement_start_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) agreement_end_date: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -61,6 +68,20 @@ impl ValidityTermBuilder {
     /// <p>Category of the term being updated.</p>
     pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.r#type
+    }
+    /// <p>The unique identifier for the term.</p>
+    pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The unique identifier for the term.</p>
+    pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.id = input;
+        self
+    }
+    /// <p>The unique identifier for the term.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// <p>Defines the duration that the agreement remains active. If <code>AgreementStartDate</code> isn’t provided, the agreement duration is relative to the agreement signature time. The duration is represented in the ISO_8601 format.</p>
     pub fn agreement_duration(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -108,6 +129,7 @@ impl ValidityTermBuilder {
     pub fn build(self) -> crate::types::ValidityTerm {
         crate::types::ValidityTerm {
             r#type: self.r#type,
+            id: self.id,
             agreement_duration: self.agreement_duration,
             agreement_start_date: self.agreement_start_date,
             agreement_end_date: self.agreement_end_date,

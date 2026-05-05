@@ -6,7 +6,7 @@
 pub struct ValidationException {
     /// <p>The unique identifier associated with the error.</p>
     pub request_id: ::std::option::Option<::std::string::String>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Description of the error.</p>
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>The reason associated with the error.</p>
     pub reason: ::std::option::Option<crate::types::ValidationExceptionReason>,
@@ -91,17 +91,17 @@ impl ValidationExceptionBuilder {
     pub fn get_request_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.request_id
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Description of the error.</p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Description of the error.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Description of the error.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
         &self.message
     }

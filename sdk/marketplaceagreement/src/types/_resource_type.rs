@@ -13,7 +13,12 @@
 /// # let resourcetype = unimplemented!();
 /// match resourcetype {
 ///     ResourceType::Agreement => { /* ... */ },
+///     ResourceType::AgreementCancellationRequest => { /* ... */ },
+///     ResourceType::AgreementProposal => { /* ... */ },
+///     ResourceType::AgreementRequest => { /* ... */ },
+///     ResourceType::BillingAdjustmentRequest => { /* ... */ },
 ///     ResourceType::Charge => { /* ... */ },
+///     ResourceType::Invoice => { /* ... */ },
 ///     ResourceType::PaymentRequest => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -46,7 +51,17 @@ pub enum ResourceType {
     #[allow(missing_docs)] // documentation missing in model
     Agreement,
     #[allow(missing_docs)] // documentation missing in model
+    AgreementCancellationRequest,
+    #[allow(missing_docs)] // documentation missing in model
+    AgreementProposal,
+    #[allow(missing_docs)] // documentation missing in model
+    AgreementRequest,
+    #[allow(missing_docs)] // documentation missing in model
+    BillingAdjustmentRequest,
+    #[allow(missing_docs)] // documentation missing in model
     Charge,
+    #[allow(missing_docs)] // documentation missing in model
+    Invoice,
     #[allow(missing_docs)] // documentation missing in model
     PaymentRequest,
     /// `Unknown` contains new variants that have been added since this code was generated.
@@ -57,7 +72,12 @@ impl ::std::convert::From<&str> for ResourceType {
     fn from(s: &str) -> Self {
         match s {
             "Agreement" => ResourceType::Agreement,
+            "AgreementCancellationRequest" => ResourceType::AgreementCancellationRequest,
+            "AgreementProposal" => ResourceType::AgreementProposal,
+            "AgreementRequest" => ResourceType::AgreementRequest,
+            "BillingAdjustmentRequest" => ResourceType::BillingAdjustmentRequest,
             "Charge" => ResourceType::Charge,
+            "Invoice" => ResourceType::Invoice,
             "PaymentRequest" => ResourceType::PaymentRequest,
             other => ResourceType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -75,14 +95,28 @@ impl ResourceType {
     pub fn as_str(&self) -> &str {
         match self {
             ResourceType::Agreement => "Agreement",
+            ResourceType::AgreementCancellationRequest => "AgreementCancellationRequest",
+            ResourceType::AgreementProposal => "AgreementProposal",
+            ResourceType::AgreementRequest => "AgreementRequest",
+            ResourceType::BillingAdjustmentRequest => "BillingAdjustmentRequest",
             ResourceType::Charge => "Charge",
+            ResourceType::Invoice => "Invoice",
             ResourceType::PaymentRequest => "PaymentRequest",
             ResourceType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Agreement", "Charge", "PaymentRequest"]
+        &[
+            "Agreement",
+            "AgreementCancellationRequest",
+            "AgreementProposal",
+            "AgreementRequest",
+            "BillingAdjustmentRequest",
+            "Charge",
+            "Invoice",
+            "PaymentRequest",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for ResourceType {
@@ -106,7 +140,12 @@ impl ::std::fmt::Display for ResourceType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ResourceType::Agreement => write!(f, "Agreement"),
+            ResourceType::AgreementCancellationRequest => write!(f, "AgreementCancellationRequest"),
+            ResourceType::AgreementProposal => write!(f, "AgreementProposal"),
+            ResourceType::AgreementRequest => write!(f, "AgreementRequest"),
+            ResourceType::BillingAdjustmentRequest => write!(f, "BillingAdjustmentRequest"),
             ResourceType::Charge => write!(f, "Charge"),
+            ResourceType::Invoice => write!(f, "Invoice"),
             ResourceType::PaymentRequest => write!(f, "PaymentRequest"),
             ResourceType::Unknown(value) => write!(f, "{value}"),
         }

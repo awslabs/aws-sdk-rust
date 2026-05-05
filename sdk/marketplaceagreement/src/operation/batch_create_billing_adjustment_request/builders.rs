@@ -22,8 +22,8 @@ impl crate::operation::batch_create_billing_adjustment_request::builders::BatchC
 }
 /// Fluent builder constructing a request to `BatchCreateBillingAdjustmentRequest`.
 ///
-/// <p>Allows sellers (proposers) to submit billing adjustment requests for one or more invoices within an agreement. Each entry in the batch specifies an invoice and the adjustment amount. The operation returns successfully created adjustment request IDs and any errors for entries that failed validation.</p><note>
-/// <p>Each entry requires a unique <code>clientToken</code> for idempotency. A <code>ValidationException</code> is returned if the adjustment amount exceeds the maximum refundable amount for the invoice.</p>
+/// <p>Allows sellers (proposers) to submit billing adjustment requests for one or more invoices within an agreement. Each entry in the batch specifies an invoice and the adjustment amount. The operation returns successfully created adjustment request IDs and any errors for entries that failed to process.</p><note>
+/// <p>Each entry requires a unique <code>clientToken</code> for idempotency.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct BatchCreateBillingAdjustmentRequestFluentBuilder {

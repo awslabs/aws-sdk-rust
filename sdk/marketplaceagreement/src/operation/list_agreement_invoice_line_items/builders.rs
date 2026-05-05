@@ -23,7 +23,7 @@ impl crate::operation::list_agreement_invoice_line_items::builders::ListAgreemen
 /// Fluent builder constructing a request to `ListAgreementInvoiceLineItems`.
 ///
 /// <p>Allows sellers (proposers) to retrieve aggregated billing data from AWS Marketplace agreements using flexible grouping. Supports invoice-level aggregation with filtering by billing period, invoice type, and issued date.</p><note>
-/// <p>The <code>groupBy</code> parameter is required and currently supports only <code>INVOICE_ID</code> as a value. The <code>agreementId</code> parameter is required.</p>
+/// <p>The <code>groupBy</code> parameter is required and supports only <code>INVOICE_ID</code> as a value. The <code>agreementId</code> parameter is required.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListAgreementInvoiceLineItemsFluentBuilder {

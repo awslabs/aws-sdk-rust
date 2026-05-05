@@ -22,6 +22,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "id" => {
+                            builder = builder.set_id(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         "configuration" => {
                             builder = builder.set_configuration(
                                 crate::protocol_serde::shape_renewal_term_configuration::de_renewal_term_configuration(tokens, _value)?,

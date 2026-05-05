@@ -23,6 +23,8 @@ pub use crate::types::_search_criteria::SearchCriteria;
 
 pub use crate::types::_sort::Sort;
 
+pub use crate::types::_import_configuration::ImportConfiguration;
+
 pub use crate::types::_metadata_updates::MetadataUpdates;
 
 pub use crate::types::_datastore_status::DatastoreStatus;
@@ -45,6 +47,8 @@ pub use crate::types::_sort_order::SortOrder;
 
 pub use crate::types::_sort_field::SortField;
 
+pub use crate::types::_dicom_json_metadata_import_configuration::DicomJsonMetadataImportConfiguration;
+
 pub use crate::types::_dicom_updates::DicomUpdates;
 
 pub use crate::types::_datastore_summary::DatastoreSummary;
@@ -56,6 +60,8 @@ pub use crate::types::_search_filter::SearchFilter;
 pub use crate::types::_dicom_tags::DicomTags;
 
 pub use crate::types::_operator::Operator;
+
+pub use crate::types::_dicom_metadata_mapping::DicomMetadataMapping;
 
 pub use crate::types::_search_by_attribute_value::SearchByAttributeValue;
 
@@ -81,6 +87,10 @@ mod _dicom_import_job_properties;
 
 mod _dicom_import_job_summary;
 
+mod _dicom_json_metadata_import_configuration;
+
+mod _dicom_metadata_mapping;
+
 mod _dicom_study_date_and_time;
 
 mod _dicom_tags;
@@ -96,6 +106,8 @@ mod _image_set_state;
 mod _image_set_workflow_status;
 
 mod _image_sets_metadata_summary;
+
+mod _import_configuration;
 
 mod _job_status;
 

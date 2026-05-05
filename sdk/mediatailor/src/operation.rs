@@ -31,6 +31,9 @@ pub mod delete_channel;
 /// Types for the `DeleteChannelPolicy` operation.
 pub mod delete_channel_policy;
 
+/// Types for the `DeleteFunction` operation.
+pub mod delete_function;
+
 /// Types for the `DeleteLiveSource` operation.
 pub mod delete_live_source;
 
@@ -70,6 +73,9 @@ pub mod get_channel_policy;
 /// Types for the `GetChannelSchedule` operation.
 pub mod get_channel_schedule;
 
+/// Types for the `GetFunction` operation.
+pub mod get_function;
+
 /// Types for the `GetPlaybackConfiguration` operation.
 pub mod get_playback_configuration;
 
@@ -81,6 +87,9 @@ pub mod list_alerts;
 
 /// Types for the `ListChannels` operation.
 pub mod list_channels;
+
+/// Types for the `ListFunctions` operation.
+pub mod list_functions;
 
 /// Types for the `ListLiveSources` operation.
 pub mod list_live_sources;
@@ -102,6 +111,9 @@ pub mod list_vod_sources;
 
 /// Types for the `PutChannelPolicy` operation.
 pub mod put_channel_policy;
+
+/// Types for the `PutFunction` operation.
+pub mod put_function;
 
 /// Types for the `PutPlaybackConfiguration` operation.
 pub mod put_playback_configuration;

@@ -163,6 +163,8 @@ pub(crate) mod shape_resend_operation_authorization_input;
 
 pub(crate) mod shape_retrieve_domain_auth_code_input;
 
+pub(crate) mod shape_tld_in_maintenance;
+
 pub(crate) mod shape_tld_rules_violation;
 
 pub(crate) mod shape_transfer_domain_input;

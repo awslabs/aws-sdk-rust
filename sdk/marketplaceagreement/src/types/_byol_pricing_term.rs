@@ -6,11 +6,17 @@
 pub struct ByolPricingTerm {
     /// <p>Type of the term being updated.</p>
     pub r#type: ::std::option::Option<::std::string::String>,
+    /// <p>The unique identifier for the term.</p>
+    pub id: ::std::option::Option<::std::string::String>,
 }
 impl ByolPricingTerm {
     /// <p>Type of the term being updated.</p>
     pub fn r#type(&self) -> ::std::option::Option<&str> {
         self.r#type.as_deref()
+    }
+    /// <p>The unique identifier for the term.</p>
+    pub fn id(&self) -> ::std::option::Option<&str> {
+        self.id.as_deref()
     }
 }
 impl ByolPricingTerm {
@@ -25,6 +31,7 @@ impl ByolPricingTerm {
 #[non_exhaustive]
 pub struct ByolPricingTermBuilder {
     pub(crate) r#type: ::std::option::Option<::std::string::String>,
+    pub(crate) id: ::std::option::Option<::std::string::String>,
 }
 impl ByolPricingTermBuilder {
     /// <p>Type of the term being updated.</p>
@@ -41,8 +48,25 @@ impl ByolPricingTermBuilder {
     pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.r#type
     }
+    /// <p>The unique identifier for the term.</p>
+    pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The unique identifier for the term.</p>
+    pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.id = input;
+        self
+    }
+    /// <p>The unique identifier for the term.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// Consumes the builder and constructs a [`ByolPricingTerm`](crate::types::ByolPricingTerm).
     pub fn build(self) -> crate::types::ByolPricingTerm {
-        crate::types::ByolPricingTerm { r#type: self.r#type }
+        crate::types::ByolPricingTerm {
+            r#type: self.r#type,
+            id: self.id,
+        }
     }
 }

@@ -131,6 +131,8 @@ pub(crate) mod shape_image_set_properties_list;
 
 pub(crate) mod shape_image_sets_metadata_summaries;
 
+pub(crate) mod shape_import_configuration;
+
 pub(crate) mod shape_metadata_updates;
 
 pub(crate) mod shape_overrides;
@@ -149,6 +151,8 @@ pub(crate) mod shape_datastore_summary;
 
 pub(crate) mod shape_dicom_import_job_summary;
 
+pub(crate) mod shape_dicom_json_metadata_import_configuration;
+
 pub(crate) mod shape_dicom_updates;
 
 pub(crate) mod shape_image_set_properties;
@@ -157,10 +161,14 @@ pub(crate) mod shape_image_sets_metadata_summary;
 
 pub(crate) mod shape_search_filter;
 
+pub(crate) mod shape_dicom_metadata_mapping;
+
 pub(crate) mod shape_dicom_tags;
 
 pub(crate) mod shape_metadata_copies;
 
 pub(crate) mod shape_search_by_attribute_value;
+
+pub(crate) mod shape_dicom_metadata_mappings;
 
 pub(crate) mod shape_dicom_study_date_and_time;

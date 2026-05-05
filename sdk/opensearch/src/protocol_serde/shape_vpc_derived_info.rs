@@ -31,6 +31,9 @@ where
                         "SecurityGroupIds" => {
                             builder = builder.set_security_group_ids(crate::protocol_serde::shape_string_list::de_string_list(tokens, _value)?);
                         }
+                        "EgressEnabled" => {
+                            builder = builder.set_egress_enabled(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

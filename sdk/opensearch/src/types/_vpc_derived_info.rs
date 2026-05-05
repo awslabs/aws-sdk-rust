@@ -12,6 +12,8 @@ pub struct VpcDerivedInfo {
     pub availability_zones: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The list of security group IDs associated with the VPC endpoints for the domain.</p>
     pub security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>Indicates whether egress traffic from the domain is routed through the customer VPC. When <code>true</code>, outbound traffic flows through the VPC. When <code>false</code>, outbound traffic goes through the public internet.</p>
+    pub egress_enabled: ::std::option::Option<bool>,
 }
 impl VpcDerivedInfo {
     /// <p>The ID for your VPC. Amazon VPC generates this value when you create a VPC.</p>
@@ -36,6 +38,10 @@ impl VpcDerivedInfo {
     pub fn security_group_ids(&self) -> &[::std::string::String] {
         self.security_group_ids.as_deref().unwrap_or_default()
     }
+    /// <p>Indicates whether egress traffic from the domain is routed through the customer VPC. When <code>true</code>, outbound traffic flows through the VPC. When <code>false</code>, outbound traffic goes through the public internet.</p>
+    pub fn egress_enabled(&self) -> ::std::option::Option<bool> {
+        self.egress_enabled
+    }
 }
 impl VpcDerivedInfo {
     /// Creates a new builder-style object to manufacture [`VpcDerivedInfo`](crate::types::VpcDerivedInfo).
@@ -52,6 +58,7 @@ pub struct VpcDerivedInfoBuilder {
     pub(crate) subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) availability_zones: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) egress_enabled: ::std::option::Option<bool>,
 }
 impl VpcDerivedInfoBuilder {
     /// <p>The ID for your VPC. Amazon VPC generates this value when you create a VPC.</p>
@@ -128,6 +135,20 @@ impl VpcDerivedInfoBuilder {
     pub fn get_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.security_group_ids
     }
+    /// <p>Indicates whether egress traffic from the domain is routed through the customer VPC. When <code>true</code>, outbound traffic flows through the VPC. When <code>false</code>, outbound traffic goes through the public internet.</p>
+    pub fn egress_enabled(mut self, input: bool) -> Self {
+        self.egress_enabled = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether egress traffic from the domain is routed through the customer VPC. When <code>true</code>, outbound traffic flows through the VPC. When <code>false</code>, outbound traffic goes through the public internet.</p>
+    pub fn set_egress_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.egress_enabled = input;
+        self
+    }
+    /// <p>Indicates whether egress traffic from the domain is routed through the customer VPC. When <code>true</code>, outbound traffic flows through the VPC. When <code>false</code>, outbound traffic goes through the public internet.</p>
+    pub fn get_egress_enabled(&self) -> &::std::option::Option<bool> {
+        &self.egress_enabled
+    }
     /// Consumes the builder and constructs a [`VpcDerivedInfo`](crate::types::VpcDerivedInfo).
     pub fn build(self) -> crate::types::VpcDerivedInfo {
         crate::types::VpcDerivedInfo {
@@ -135,6 +156,7 @@ impl VpcDerivedInfoBuilder {
             subnet_ids: self.subnet_ids,
             availability_zones: self.availability_zones,
             security_group_ids: self.security_group_ids,
+            egress_enabled: self.egress_enabled,
         }
     }
 }

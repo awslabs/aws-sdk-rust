@@ -50,6 +50,8 @@ pub struct PlaybackConfiguration {
     pub ad_conditioning_configuration: ::std::option::Option<crate::types::AdConditioningConfiguration>,
     /// <p>Configuration parameters for customizing HTTP requests sent to the ad decision server (ADS). This allows you to specify the HTTP method, headers, request body, and compression settings for ADS requests.</p>
     pub ad_decision_server_configuration: ::std::option::Option<crate::types::AdDecisionServerConfiguration>,
+    /// <p>A map of lifecycle hook event names to function identifiers. The function mapping specifies which function MediaTailor executes at each lifecycle hook during ad insertion. Valid keys are <code>PRE_SESSION_INITIALIZATION</code> and <code>PRE_ADS_REQUEST</code>. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/monetization-functions-hooks.html">Functions lifecycle hooks</a> in the <i>MediaTailor User Guide</i>.</p>
+    pub function_mapping: ::std::option::Option<::std::collections::HashMap<crate::types::EventName, ::std::string::String>>,
 }
 impl PlaybackConfiguration {
     /// <p>The URL for the ad decision server (ADS). This includes the specification of static parameters and placeholders for dynamic parameters. AWS Elemental MediaTailor substitutes player-specific and session-specific parameters as needed when calling the ADS. Alternately, for testing you can provide a static VAST URL. The maximum length is 25,000 characters.</p>
@@ -144,6 +146,10 @@ impl PlaybackConfiguration {
     pub fn ad_decision_server_configuration(&self) -> ::std::option::Option<&crate::types::AdDecisionServerConfiguration> {
         self.ad_decision_server_configuration.as_ref()
     }
+    /// <p>A map of lifecycle hook event names to function identifiers. The function mapping specifies which function MediaTailor executes at each lifecycle hook during ad insertion. Valid keys are <code>PRE_SESSION_INITIALIZATION</code> and <code>PRE_ADS_REQUEST</code>. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/monetization-functions-hooks.html">Functions lifecycle hooks</a> in the <i>MediaTailor User Guide</i>.</p>
+    pub fn function_mapping(&self) -> ::std::option::Option<&::std::collections::HashMap<crate::types::EventName, ::std::string::String>> {
+        self.function_mapping.as_ref()
+    }
 }
 impl PlaybackConfiguration {
     /// Creates a new builder-style object to manufacture [`PlaybackConfiguration`](crate::types::PlaybackConfiguration).
@@ -180,6 +186,7 @@ pub struct PlaybackConfigurationBuilder {
     pub(crate) video_content_source_url: ::std::option::Option<::std::string::String>,
     pub(crate) ad_conditioning_configuration: ::std::option::Option<crate::types::AdConditioningConfiguration>,
     pub(crate) ad_decision_server_configuration: ::std::option::Option<crate::types::AdDecisionServerConfiguration>,
+    pub(crate) function_mapping: ::std::option::Option<::std::collections::HashMap<crate::types::EventName, ::std::string::String>>,
 }
 impl PlaybackConfigurationBuilder {
     /// <p>The URL for the ad decision server (ADS). This includes the specification of static parameters and placeholders for dynamic parameters. AWS Elemental MediaTailor substitutes player-specific and session-specific parameters as needed when calling the ADS. Alternately, for testing you can provide a static VAST URL. The maximum length is 25,000 characters.</p>
@@ -515,6 +522,29 @@ impl PlaybackConfigurationBuilder {
     pub fn get_ad_decision_server_configuration(&self) -> &::std::option::Option<crate::types::AdDecisionServerConfiguration> {
         &self.ad_decision_server_configuration
     }
+    /// Adds a key-value pair to `function_mapping`.
+    ///
+    /// To override the contents of this collection use [`set_function_mapping`](Self::set_function_mapping).
+    ///
+    /// <p>A map of lifecycle hook event names to function identifiers. The function mapping specifies which function MediaTailor executes at each lifecycle hook during ad insertion. Valid keys are <code>PRE_SESSION_INITIALIZATION</code> and <code>PRE_ADS_REQUEST</code>. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/monetization-functions-hooks.html">Functions lifecycle hooks</a> in the <i>MediaTailor User Guide</i>.</p>
+    pub fn function_mapping(mut self, k: crate::types::EventName, v: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut hash_map = self.function_mapping.unwrap_or_default();
+        hash_map.insert(k, v.into());
+        self.function_mapping = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>A map of lifecycle hook event names to function identifiers. The function mapping specifies which function MediaTailor executes at each lifecycle hook during ad insertion. Valid keys are <code>PRE_SESSION_INITIALIZATION</code> and <code>PRE_ADS_REQUEST</code>. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/monetization-functions-hooks.html">Functions lifecycle hooks</a> in the <i>MediaTailor User Guide</i>.</p>
+    pub fn set_function_mapping(
+        mut self,
+        input: ::std::option::Option<::std::collections::HashMap<crate::types::EventName, ::std::string::String>>,
+    ) -> Self {
+        self.function_mapping = input;
+        self
+    }
+    /// <p>A map of lifecycle hook event names to function identifiers. The function mapping specifies which function MediaTailor executes at each lifecycle hook during ad insertion. Valid keys are <code>PRE_SESSION_INITIALIZATION</code> and <code>PRE_ADS_REQUEST</code>. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/monetization-functions-hooks.html">Functions lifecycle hooks</a> in the <i>MediaTailor User Guide</i>.</p>
+    pub fn get_function_mapping(&self) -> &::std::option::Option<::std::collections::HashMap<crate::types::EventName, ::std::string::String>> {
+        &self.function_mapping
+    }
     /// Consumes the builder and constructs a [`PlaybackConfiguration`](crate::types::PlaybackConfiguration).
     pub fn build(self) -> crate::types::PlaybackConfiguration {
         crate::types::PlaybackConfiguration {
@@ -544,6 +574,7 @@ impl PlaybackConfigurationBuilder {
             video_content_source_url: self.video_content_source_url,
             ad_conditioning_configuration: self.ad_conditioning_configuration,
             ad_decision_server_configuration: self.ad_decision_server_configuration,
+            function_mapping: self.function_mapping,
         }
     }
 }

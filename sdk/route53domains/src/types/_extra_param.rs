@@ -7,10 +7,12 @@ pub struct ExtraParam {
     /// <p>The name of an additional parameter that is required by a top-level domain. Here are the top-level domains that require additional parameters and the names of the parameters that they require:</p>
     /// <dl>
     /// <dt>
-    /// .com.au and .net.au
+    /// .au, .com.au, and .net.au
     /// </dt>
     /// <dd>
     /// <ul>
+    /// <li>
+    /// <p><code>AU_REGISTRANT_NAME</code></p></li>
     /// <li>
     /// <p><code>AU_ID_NUMBER</code></p></li>
     /// <li>
@@ -23,6 +25,105 @@ pub struct ExtraParam {
     /// <p><code>ACN</code> (Australian company number)</p></li>
     /// <li>
     /// <p><code>TM</code> (Trademark number)</p></li>
+    /// </ul></li>
+    /// <li>
+    /// <p><code>AU_ELIGIBILITY_TYPE</code></p>
+    /// <p>Valid values include the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>CHARITABLE_TRUST (Charitable trust)</p></li>
+    /// <li>
+    /// <p>CHARITY (Charity)</p></li>
+    /// <li>
+    /// <p>CHILD_CARE_CENTRE (Child care centre)</p></li>
+    /// <li>
+    /// <p>CLUB (Club)</p></li>
+    /// <li>
+    /// <p>COMMERCIAL_STATUTORY_BODY (Commercial statutory body)</p></li>
+    /// <li>
+    /// <p>COMMONWEALTH_ENTITY (Commonwealth entity)</p></li>
+    /// <li>
+    /// <p>COMPANY (Company)</p></li>
+    /// <li>
+    /// <p>COMPANY_LIMITED_BY_GUARANTEE (Company limited by guarantee)</p></li>
+    /// <li>
+    /// <p>EDUCATIONAL_INSTITUTION (Educational institution)</p></li>
+    /// <li>
+    /// <p>GOVERNMENT_SCHOOL (Government school)</p></li>
+    /// <li>
+    /// <p>HIGHER_EDUCATION_INSTITUTION (Higher education institution)</p></li>
+    /// <li>
+    /// <p>INCORPORATED_ASSOCIATION (Incorporated association)</p></li>
+    /// <li>
+    /// <p>INDIGENOUS_CORPORATION (Indigenous corporation)</p></li>
+    /// <li>
+    /// <p>INDUSTRY_BODY (Industry body)</p></li>
+    /// <li>
+    /// <p>INDUSTRY_ORGANISATION (Industry association)</p></li>
+    /// <li>
+    /// <p>NATIONAL_BODY (National body)</p></li>
+    /// <li>
+    /// <p>NON_DISTRIBUTING_COOPERATIVE (Non-distributing cooperative)</p></li>
+    /// <li>
+    /// <p>NON_GOVERNMENT_SCHOOL (Non-government school)</p></li>
+    /// <li>
+    /// <p>NON_PROFIT_ORGANISATION (Non-profit organisation)</p></li>
+    /// <li>
+    /// <p>NON_TRADING_COOPERATIVE (Non-trading cooperative)</p></li>
+    /// <li>
+    /// <p>NOT_FOR_PROFIT_COMMUNITY_GROUP (Not-for-profit community group)</p></li>
+    /// <li>
+    /// <p>PARTNERSHIP (Partnership)</p></li>
+    /// <li>
+    /// <p>PEAK_STATE_TERRITORY_BODY (Peak state/territory body)</p></li>
+    /// <li>
+    /// <p>PENDING_TM_OWNER (Pending TM owner)</p></li>
+    /// <li>
+    /// <p>POLITICAL_PARTY (Political party)</p></li>
+    /// <li>
+    /// <p>PRESCHOOL (Pre-school)</p></li>
+    /// <li>
+    /// <p>PUBLIC_PRIVATE_ANCILLARY_FUND (Public/private ancillary fund)</p></li>
+    /// <li>
+    /// <p>REGISTERED_BUSINESS (Registered business)</p></li>
+    /// <li>
+    /// <p>REGISTERED_ORGANISATION (Registered organisation)</p></li>
+    /// <li>
+    /// <p>REGISTRABLE_BODY (Registrable body)</p></li>
+    /// <li>
+    /// <p>RESEARCH_ORGANISATION (Research organisation)</p></li>
+    /// <li>
+    /// <p>STATUTORY_BODY (Statutory body)</p></li>
+    /// <li>
+    /// <p>TRADE_UNION (Trade union)</p></li>
+    /// <li>
+    /// <p>TRADEMARK_OWNER (Trademark owner)</p></li>
+    /// <li>
+    /// <p>TRADING_COOPERATIVE (Trading cooperative)</p></li>
+    /// <li>
+    /// <p>TRAINING_ORGANISATION (Training organisation)</p></li>
+    /// <li>
+    /// <p>TRUST (Trust)</p></li>
+    /// <li>
+    /// <p>UNINCORPORATED_ASSOCIATION (Unincorporated association)</p></li>
+    /// <li>
+    /// <p>EDUCATION_AND_CARE_SERVICES_CHILDCARE (Education and care services (child care))</p></li>
+    /// <li>
+    /// <p>GOVERNMENT_BODY (Government body)</p></li>
+    /// <li>
+    /// <p>PROVIDER_OF_NON_ACCREDITED_TRAINING (Provider of non-accredited training)</p></li>
+    /// <li>
+    /// <p>RELIGIOUS_CHURCH_GROUP (Religious/church group)</p></li>
+    /// <li>
+    /// <p>SOLE_TRADER (Sole trader)</p></li>
+    /// </ul></li>
+    /// <li>
+    /// <p><code>AU_POLICY_REASON</code></p>
+    /// <p>Valid values include the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>POLICY_REASON_1</code></p>
+    /// <p><code>POLICY_REASON_2</code></p></li>
     /// </ul></li>
     /// </ul>
     /// </dd>
@@ -437,10 +538,12 @@ impl ExtraParam {
     /// <p>The name of an additional parameter that is required by a top-level domain. Here are the top-level domains that require additional parameters and the names of the parameters that they require:</p>
     /// <dl>
     /// <dt>
-    /// .com.au and .net.au
+    /// .au, .com.au, and .net.au
     /// </dt>
     /// <dd>
     /// <ul>
+    /// <li>
+    /// <p><code>AU_REGISTRANT_NAME</code></p></li>
     /// <li>
     /// <p><code>AU_ID_NUMBER</code></p></li>
     /// <li>
@@ -453,6 +556,105 @@ impl ExtraParam {
     /// <p><code>ACN</code> (Australian company number)</p></li>
     /// <li>
     /// <p><code>TM</code> (Trademark number)</p></li>
+    /// </ul></li>
+    /// <li>
+    /// <p><code>AU_ELIGIBILITY_TYPE</code></p>
+    /// <p>Valid values include the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>CHARITABLE_TRUST (Charitable trust)</p></li>
+    /// <li>
+    /// <p>CHARITY (Charity)</p></li>
+    /// <li>
+    /// <p>CHILD_CARE_CENTRE (Child care centre)</p></li>
+    /// <li>
+    /// <p>CLUB (Club)</p></li>
+    /// <li>
+    /// <p>COMMERCIAL_STATUTORY_BODY (Commercial statutory body)</p></li>
+    /// <li>
+    /// <p>COMMONWEALTH_ENTITY (Commonwealth entity)</p></li>
+    /// <li>
+    /// <p>COMPANY (Company)</p></li>
+    /// <li>
+    /// <p>COMPANY_LIMITED_BY_GUARANTEE (Company limited by guarantee)</p></li>
+    /// <li>
+    /// <p>EDUCATIONAL_INSTITUTION (Educational institution)</p></li>
+    /// <li>
+    /// <p>GOVERNMENT_SCHOOL (Government school)</p></li>
+    /// <li>
+    /// <p>HIGHER_EDUCATION_INSTITUTION (Higher education institution)</p></li>
+    /// <li>
+    /// <p>INCORPORATED_ASSOCIATION (Incorporated association)</p></li>
+    /// <li>
+    /// <p>INDIGENOUS_CORPORATION (Indigenous corporation)</p></li>
+    /// <li>
+    /// <p>INDUSTRY_BODY (Industry body)</p></li>
+    /// <li>
+    /// <p>INDUSTRY_ORGANISATION (Industry association)</p></li>
+    /// <li>
+    /// <p>NATIONAL_BODY (National body)</p></li>
+    /// <li>
+    /// <p>NON_DISTRIBUTING_COOPERATIVE (Non-distributing cooperative)</p></li>
+    /// <li>
+    /// <p>NON_GOVERNMENT_SCHOOL (Non-government school)</p></li>
+    /// <li>
+    /// <p>NON_PROFIT_ORGANISATION (Non-profit organisation)</p></li>
+    /// <li>
+    /// <p>NON_TRADING_COOPERATIVE (Non-trading cooperative)</p></li>
+    /// <li>
+    /// <p>NOT_FOR_PROFIT_COMMUNITY_GROUP (Not-for-profit community group)</p></li>
+    /// <li>
+    /// <p>PARTNERSHIP (Partnership)</p></li>
+    /// <li>
+    /// <p>PEAK_STATE_TERRITORY_BODY (Peak state/territory body)</p></li>
+    /// <li>
+    /// <p>PENDING_TM_OWNER (Pending TM owner)</p></li>
+    /// <li>
+    /// <p>POLITICAL_PARTY (Political party)</p></li>
+    /// <li>
+    /// <p>PRESCHOOL (Pre-school)</p></li>
+    /// <li>
+    /// <p>PUBLIC_PRIVATE_ANCILLARY_FUND (Public/private ancillary fund)</p></li>
+    /// <li>
+    /// <p>REGISTERED_BUSINESS (Registered business)</p></li>
+    /// <li>
+    /// <p>REGISTERED_ORGANISATION (Registered organisation)</p></li>
+    /// <li>
+    /// <p>REGISTRABLE_BODY (Registrable body)</p></li>
+    /// <li>
+    /// <p>RESEARCH_ORGANISATION (Research organisation)</p></li>
+    /// <li>
+    /// <p>STATUTORY_BODY (Statutory body)</p></li>
+    /// <li>
+    /// <p>TRADE_UNION (Trade union)</p></li>
+    /// <li>
+    /// <p>TRADEMARK_OWNER (Trademark owner)</p></li>
+    /// <li>
+    /// <p>TRADING_COOPERATIVE (Trading cooperative)</p></li>
+    /// <li>
+    /// <p>TRAINING_ORGANISATION (Training organisation)</p></li>
+    /// <li>
+    /// <p>TRUST (Trust)</p></li>
+    /// <li>
+    /// <p>UNINCORPORATED_ASSOCIATION (Unincorporated association)</p></li>
+    /// <li>
+    /// <p>EDUCATION_AND_CARE_SERVICES_CHILDCARE (Education and care services (child care))</p></li>
+    /// <li>
+    /// <p>GOVERNMENT_BODY (Government body)</p></li>
+    /// <li>
+    /// <p>PROVIDER_OF_NON_ACCREDITED_TRAINING (Provider of non-accredited training)</p></li>
+    /// <li>
+    /// <p>RELIGIOUS_CHURCH_GROUP (Religious/church group)</p></li>
+    /// <li>
+    /// <p>SOLE_TRADER (Sole trader)</p></li>
+    /// </ul></li>
+    /// <li>
+    /// <p><code>AU_POLICY_REASON</code></p>
+    /// <p>Valid values include the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>POLICY_REASON_1</code></p>
+    /// <p><code>POLICY_REASON_2</code></p></li>
     /// </ul></li>
     /// </ul>
     /// </dd>
@@ -894,10 +1096,12 @@ impl ExtraParamBuilder {
     /// <p>The name of an additional parameter that is required by a top-level domain. Here are the top-level domains that require additional parameters and the names of the parameters that they require:</p>
     /// <dl>
     /// <dt>
-    /// .com.au and .net.au
+    /// .au, .com.au, and .net.au
     /// </dt>
     /// <dd>
     /// <ul>
+    /// <li>
+    /// <p><code>AU_REGISTRANT_NAME</code></p></li>
     /// <li>
     /// <p><code>AU_ID_NUMBER</code></p></li>
     /// <li>
@@ -910,6 +1114,105 @@ impl ExtraParamBuilder {
     /// <p><code>ACN</code> (Australian company number)</p></li>
     /// <li>
     /// <p><code>TM</code> (Trademark number)</p></li>
+    /// </ul></li>
+    /// <li>
+    /// <p><code>AU_ELIGIBILITY_TYPE</code></p>
+    /// <p>Valid values include the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>CHARITABLE_TRUST (Charitable trust)</p></li>
+    /// <li>
+    /// <p>CHARITY (Charity)</p></li>
+    /// <li>
+    /// <p>CHILD_CARE_CENTRE (Child care centre)</p></li>
+    /// <li>
+    /// <p>CLUB (Club)</p></li>
+    /// <li>
+    /// <p>COMMERCIAL_STATUTORY_BODY (Commercial statutory body)</p></li>
+    /// <li>
+    /// <p>COMMONWEALTH_ENTITY (Commonwealth entity)</p></li>
+    /// <li>
+    /// <p>COMPANY (Company)</p></li>
+    /// <li>
+    /// <p>COMPANY_LIMITED_BY_GUARANTEE (Company limited by guarantee)</p></li>
+    /// <li>
+    /// <p>EDUCATIONAL_INSTITUTION (Educational institution)</p></li>
+    /// <li>
+    /// <p>GOVERNMENT_SCHOOL (Government school)</p></li>
+    /// <li>
+    /// <p>HIGHER_EDUCATION_INSTITUTION (Higher education institution)</p></li>
+    /// <li>
+    /// <p>INCORPORATED_ASSOCIATION (Incorporated association)</p></li>
+    /// <li>
+    /// <p>INDIGENOUS_CORPORATION (Indigenous corporation)</p></li>
+    /// <li>
+    /// <p>INDUSTRY_BODY (Industry body)</p></li>
+    /// <li>
+    /// <p>INDUSTRY_ORGANISATION (Industry association)</p></li>
+    /// <li>
+    /// <p>NATIONAL_BODY (National body)</p></li>
+    /// <li>
+    /// <p>NON_DISTRIBUTING_COOPERATIVE (Non-distributing cooperative)</p></li>
+    /// <li>
+    /// <p>NON_GOVERNMENT_SCHOOL (Non-government school)</p></li>
+    /// <li>
+    /// <p>NON_PROFIT_ORGANISATION (Non-profit organisation)</p></li>
+    /// <li>
+    /// <p>NON_TRADING_COOPERATIVE (Non-trading cooperative)</p></li>
+    /// <li>
+    /// <p>NOT_FOR_PROFIT_COMMUNITY_GROUP (Not-for-profit community group)</p></li>
+    /// <li>
+    /// <p>PARTNERSHIP (Partnership)</p></li>
+    /// <li>
+    /// <p>PEAK_STATE_TERRITORY_BODY (Peak state/territory body)</p></li>
+    /// <li>
+    /// <p>PENDING_TM_OWNER (Pending TM owner)</p></li>
+    /// <li>
+    /// <p>POLITICAL_PARTY (Political party)</p></li>
+    /// <li>
+    /// <p>PRESCHOOL (Pre-school)</p></li>
+    /// <li>
+    /// <p>PUBLIC_PRIVATE_ANCILLARY_FUND (Public/private ancillary fund)</p></li>
+    /// <li>
+    /// <p>REGISTERED_BUSINESS (Registered business)</p></li>
+    /// <li>
+    /// <p>REGISTERED_ORGANISATION (Registered organisation)</p></li>
+    /// <li>
+    /// <p>REGISTRABLE_BODY (Registrable body)</p></li>
+    /// <li>
+    /// <p>RESEARCH_ORGANISATION (Research organisation)</p></li>
+    /// <li>
+    /// <p>STATUTORY_BODY (Statutory body)</p></li>
+    /// <li>
+    /// <p>TRADE_UNION (Trade union)</p></li>
+    /// <li>
+    /// <p>TRADEMARK_OWNER (Trademark owner)</p></li>
+    /// <li>
+    /// <p>TRADING_COOPERATIVE (Trading cooperative)</p></li>
+    /// <li>
+    /// <p>TRAINING_ORGANISATION (Training organisation)</p></li>
+    /// <li>
+    /// <p>TRUST (Trust)</p></li>
+    /// <li>
+    /// <p>UNINCORPORATED_ASSOCIATION (Unincorporated association)</p></li>
+    /// <li>
+    /// <p>EDUCATION_AND_CARE_SERVICES_CHILDCARE (Education and care services (child care))</p></li>
+    /// <li>
+    /// <p>GOVERNMENT_BODY (Government body)</p></li>
+    /// <li>
+    /// <p>PROVIDER_OF_NON_ACCREDITED_TRAINING (Provider of non-accredited training)</p></li>
+    /// <li>
+    /// <p>RELIGIOUS_CHURCH_GROUP (Religious/church group)</p></li>
+    /// <li>
+    /// <p>SOLE_TRADER (Sole trader)</p></li>
+    /// </ul></li>
+    /// <li>
+    /// <p><code>AU_POLICY_REASON</code></p>
+    /// <p>Valid values include the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>POLICY_REASON_1</code></p>
+    /// <p><code>POLICY_REASON_2</code></p></li>
     /// </ul></li>
     /// </ul>
     /// </dd>
@@ -1324,10 +1627,12 @@ impl ExtraParamBuilder {
     /// <p>The name of an additional parameter that is required by a top-level domain. Here are the top-level domains that require additional parameters and the names of the parameters that they require:</p>
     /// <dl>
     /// <dt>
-    /// .com.au and .net.au
+    /// .au, .com.au, and .net.au
     /// </dt>
     /// <dd>
     /// <ul>
+    /// <li>
+    /// <p><code>AU_REGISTRANT_NAME</code></p></li>
     /// <li>
     /// <p><code>AU_ID_NUMBER</code></p></li>
     /// <li>
@@ -1340,6 +1645,105 @@ impl ExtraParamBuilder {
     /// <p><code>ACN</code> (Australian company number)</p></li>
     /// <li>
     /// <p><code>TM</code> (Trademark number)</p></li>
+    /// </ul></li>
+    /// <li>
+    /// <p><code>AU_ELIGIBILITY_TYPE</code></p>
+    /// <p>Valid values include the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>CHARITABLE_TRUST (Charitable trust)</p></li>
+    /// <li>
+    /// <p>CHARITY (Charity)</p></li>
+    /// <li>
+    /// <p>CHILD_CARE_CENTRE (Child care centre)</p></li>
+    /// <li>
+    /// <p>CLUB (Club)</p></li>
+    /// <li>
+    /// <p>COMMERCIAL_STATUTORY_BODY (Commercial statutory body)</p></li>
+    /// <li>
+    /// <p>COMMONWEALTH_ENTITY (Commonwealth entity)</p></li>
+    /// <li>
+    /// <p>COMPANY (Company)</p></li>
+    /// <li>
+    /// <p>COMPANY_LIMITED_BY_GUARANTEE (Company limited by guarantee)</p></li>
+    /// <li>
+    /// <p>EDUCATIONAL_INSTITUTION (Educational institution)</p></li>
+    /// <li>
+    /// <p>GOVERNMENT_SCHOOL (Government school)</p></li>
+    /// <li>
+    /// <p>HIGHER_EDUCATION_INSTITUTION (Higher education institution)</p></li>
+    /// <li>
+    /// <p>INCORPORATED_ASSOCIATION (Incorporated association)</p></li>
+    /// <li>
+    /// <p>INDIGENOUS_CORPORATION (Indigenous corporation)</p></li>
+    /// <li>
+    /// <p>INDUSTRY_BODY (Industry body)</p></li>
+    /// <li>
+    /// <p>INDUSTRY_ORGANISATION (Industry association)</p></li>
+    /// <li>
+    /// <p>NATIONAL_BODY (National body)</p></li>
+    /// <li>
+    /// <p>NON_DISTRIBUTING_COOPERATIVE (Non-distributing cooperative)</p></li>
+    /// <li>
+    /// <p>NON_GOVERNMENT_SCHOOL (Non-government school)</p></li>
+    /// <li>
+    /// <p>NON_PROFIT_ORGANISATION (Non-profit organisation)</p></li>
+    /// <li>
+    /// <p>NON_TRADING_COOPERATIVE (Non-trading cooperative)</p></li>
+    /// <li>
+    /// <p>NOT_FOR_PROFIT_COMMUNITY_GROUP (Not-for-profit community group)</p></li>
+    /// <li>
+    /// <p>PARTNERSHIP (Partnership)</p></li>
+    /// <li>
+    /// <p>PEAK_STATE_TERRITORY_BODY (Peak state/territory body)</p></li>
+    /// <li>
+    /// <p>PENDING_TM_OWNER (Pending TM owner)</p></li>
+    /// <li>
+    /// <p>POLITICAL_PARTY (Political party)</p></li>
+    /// <li>
+    /// <p>PRESCHOOL (Pre-school)</p></li>
+    /// <li>
+    /// <p>PUBLIC_PRIVATE_ANCILLARY_FUND (Public/private ancillary fund)</p></li>
+    /// <li>
+    /// <p>REGISTERED_BUSINESS (Registered business)</p></li>
+    /// <li>
+    /// <p>REGISTERED_ORGANISATION (Registered organisation)</p></li>
+    /// <li>
+    /// <p>REGISTRABLE_BODY (Registrable body)</p></li>
+    /// <li>
+    /// <p>RESEARCH_ORGANISATION (Research organisation)</p></li>
+    /// <li>
+    /// <p>STATUTORY_BODY (Statutory body)</p></li>
+    /// <li>
+    /// <p>TRADE_UNION (Trade union)</p></li>
+    /// <li>
+    /// <p>TRADEMARK_OWNER (Trademark owner)</p></li>
+    /// <li>
+    /// <p>TRADING_COOPERATIVE (Trading cooperative)</p></li>
+    /// <li>
+    /// <p>TRAINING_ORGANISATION (Training organisation)</p></li>
+    /// <li>
+    /// <p>TRUST (Trust)</p></li>
+    /// <li>
+    /// <p>UNINCORPORATED_ASSOCIATION (Unincorporated association)</p></li>
+    /// <li>
+    /// <p>EDUCATION_AND_CARE_SERVICES_CHILDCARE (Education and care services (child care))</p></li>
+    /// <li>
+    /// <p>GOVERNMENT_BODY (Government body)</p></li>
+    /// <li>
+    /// <p>PROVIDER_OF_NON_ACCREDITED_TRAINING (Provider of non-accredited training)</p></li>
+    /// <li>
+    /// <p>RELIGIOUS_CHURCH_GROUP (Religious/church group)</p></li>
+    /// <li>
+    /// <p>SOLE_TRADER (Sole trader)</p></li>
+    /// </ul></li>
+    /// <li>
+    /// <p><code>AU_POLICY_REASON</code></p>
+    /// <p>Valid values include the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>POLICY_REASON_1</code></p>
+    /// <p><code>POLICY_REASON_2</code></p></li>
     /// </ul></li>
     /// </ul>
     /// </dd>
@@ -1753,10 +2157,12 @@ impl ExtraParamBuilder {
     /// <p>The name of an additional parameter that is required by a top-level domain. Here are the top-level domains that require additional parameters and the names of the parameters that they require:</p>
     /// <dl>
     /// <dt>
-    /// .com.au and .net.au
+    /// .au, .com.au, and .net.au
     /// </dt>
     /// <dd>
     /// <ul>
+    /// <li>
+    /// <p><code>AU_REGISTRANT_NAME</code></p></li>
     /// <li>
     /// <p><code>AU_ID_NUMBER</code></p></li>
     /// <li>
@@ -1769,6 +2175,105 @@ impl ExtraParamBuilder {
     /// <p><code>ACN</code> (Australian company number)</p></li>
     /// <li>
     /// <p><code>TM</code> (Trademark number)</p></li>
+    /// </ul></li>
+    /// <li>
+    /// <p><code>AU_ELIGIBILITY_TYPE</code></p>
+    /// <p>Valid values include the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>CHARITABLE_TRUST (Charitable trust)</p></li>
+    /// <li>
+    /// <p>CHARITY (Charity)</p></li>
+    /// <li>
+    /// <p>CHILD_CARE_CENTRE (Child care centre)</p></li>
+    /// <li>
+    /// <p>CLUB (Club)</p></li>
+    /// <li>
+    /// <p>COMMERCIAL_STATUTORY_BODY (Commercial statutory body)</p></li>
+    /// <li>
+    /// <p>COMMONWEALTH_ENTITY (Commonwealth entity)</p></li>
+    /// <li>
+    /// <p>COMPANY (Company)</p></li>
+    /// <li>
+    /// <p>COMPANY_LIMITED_BY_GUARANTEE (Company limited by guarantee)</p></li>
+    /// <li>
+    /// <p>EDUCATIONAL_INSTITUTION (Educational institution)</p></li>
+    /// <li>
+    /// <p>GOVERNMENT_SCHOOL (Government school)</p></li>
+    /// <li>
+    /// <p>HIGHER_EDUCATION_INSTITUTION (Higher education institution)</p></li>
+    /// <li>
+    /// <p>INCORPORATED_ASSOCIATION (Incorporated association)</p></li>
+    /// <li>
+    /// <p>INDIGENOUS_CORPORATION (Indigenous corporation)</p></li>
+    /// <li>
+    /// <p>INDUSTRY_BODY (Industry body)</p></li>
+    /// <li>
+    /// <p>INDUSTRY_ORGANISATION (Industry association)</p></li>
+    /// <li>
+    /// <p>NATIONAL_BODY (National body)</p></li>
+    /// <li>
+    /// <p>NON_DISTRIBUTING_COOPERATIVE (Non-distributing cooperative)</p></li>
+    /// <li>
+    /// <p>NON_GOVERNMENT_SCHOOL (Non-government school)</p></li>
+    /// <li>
+    /// <p>NON_PROFIT_ORGANISATION (Non-profit organisation)</p></li>
+    /// <li>
+    /// <p>NON_TRADING_COOPERATIVE (Non-trading cooperative)</p></li>
+    /// <li>
+    /// <p>NOT_FOR_PROFIT_COMMUNITY_GROUP (Not-for-profit community group)</p></li>
+    /// <li>
+    /// <p>PARTNERSHIP (Partnership)</p></li>
+    /// <li>
+    /// <p>PEAK_STATE_TERRITORY_BODY (Peak state/territory body)</p></li>
+    /// <li>
+    /// <p>PENDING_TM_OWNER (Pending TM owner)</p></li>
+    /// <li>
+    /// <p>POLITICAL_PARTY (Political party)</p></li>
+    /// <li>
+    /// <p>PRESCHOOL (Pre-school)</p></li>
+    /// <li>
+    /// <p>PUBLIC_PRIVATE_ANCILLARY_FUND (Public/private ancillary fund)</p></li>
+    /// <li>
+    /// <p>REGISTERED_BUSINESS (Registered business)</p></li>
+    /// <li>
+    /// <p>REGISTERED_ORGANISATION (Registered organisation)</p></li>
+    /// <li>
+    /// <p>REGISTRABLE_BODY (Registrable body)</p></li>
+    /// <li>
+    /// <p>RESEARCH_ORGANISATION (Research organisation)</p></li>
+    /// <li>
+    /// <p>STATUTORY_BODY (Statutory body)</p></li>
+    /// <li>
+    /// <p>TRADE_UNION (Trade union)</p></li>
+    /// <li>
+    /// <p>TRADEMARK_OWNER (Trademark owner)</p></li>
+    /// <li>
+    /// <p>TRADING_COOPERATIVE (Trading cooperative)</p></li>
+    /// <li>
+    /// <p>TRAINING_ORGANISATION (Training organisation)</p></li>
+    /// <li>
+    /// <p>TRUST (Trust)</p></li>
+    /// <li>
+    /// <p>UNINCORPORATED_ASSOCIATION (Unincorporated association)</p></li>
+    /// <li>
+    /// <p>EDUCATION_AND_CARE_SERVICES_CHILDCARE (Education and care services (child care))</p></li>
+    /// <li>
+    /// <p>GOVERNMENT_BODY (Government body)</p></li>
+    /// <li>
+    /// <p>PROVIDER_OF_NON_ACCREDITED_TRAINING (Provider of non-accredited training)</p></li>
+    /// <li>
+    /// <p>RELIGIOUS_CHURCH_GROUP (Religious/church group)</p></li>
+    /// <li>
+    /// <p>SOLE_TRADER (Sole trader)</p></li>
+    /// </ul></li>
+    /// <li>
+    /// <p><code>AU_POLICY_REASON</code></p>
+    /// <p>Valid values include the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>POLICY_REASON_1</code></p>
+    /// <p><code>POLICY_REASON_2</code></p></li>
     /// </ul></li>
     /// </ul>
     /// </dd>

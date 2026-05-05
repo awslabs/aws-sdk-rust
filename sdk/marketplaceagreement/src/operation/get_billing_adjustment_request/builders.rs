@@ -22,9 +22,7 @@ impl crate::operation::get_billing_adjustment_request::builders::GetBillingAdjus
 }
 /// Fluent builder constructing a request to `GetBillingAdjustmentRequest`.
 ///
-/// <p>Retrieves detailed information about a specific billing adjustment request. Sellers (proposers) can use this operation to view the status and details of a billing adjustment request they submitted.</p><note>
-/// <p>A <code>ResourceNotFoundException</code> is returned if the billing adjustment request does not exist or the caller does not have permission to access it.</p>
-/// </note>
+/// <p>Retrieves detailed information about a specific billing adjustment request. Sellers (proposers) can use this operation to view the status and details of a billing adjustment request they submitted.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetBillingAdjustmentRequestFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

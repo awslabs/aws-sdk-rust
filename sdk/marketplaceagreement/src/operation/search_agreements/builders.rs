@@ -22,7 +22,7 @@ impl crate::operation::search_agreements::builders::SearchAgreementsInputBuilder
 }
 /// Fluent builder constructing a request to `SearchAgreements`.
 ///
-/// <p>Searches across all agreements that a proposer has in AWS Marketplace. The search returns a list of agreements with basic agreement information.</p>
+/// <p>Searches across all agreements that a proposer or an acceptor has in AWS Marketplace. The search returns a list of agreements with basic agreement information.</p>
 /// <p>The following filter combinations are supported when the <code>PartyType</code> is <code>Proposer</code>:</p>
 /// <ul>
 /// <li>
@@ -38,13 +38,13 @@ impl crate::operation::search_agreements::builders::SearchAgreementsInputBuilder
 /// <li>
 /// <p><code>AgreementType</code> + <code>ResourceType</code> + <code>Status</code> + <code>EndTime</code></p></li>
 /// <li>
-/// <p><code>AgreementType</code> + <code>ResourceId</code></p></li>
+/// <p><code>AgreementType</code> + <code>ResourceIdentifier</code></p></li>
 /// <li>
-/// <p><code>AgreementType</code> + <code>ResourceId</code> + <code>EndTime</code></p></li>
+/// <p><code>AgreementType</code> + <code>ResourceIdentifier</code> + <code>EndTime</code></p></li>
 /// <li>
-/// <p><code>AgreementType</code> + <code>ResourceId</code> + <code>Status</code></p></li>
+/// <p><code>AgreementType</code> + <code>ResourceIdentifier</code> + <code>Status</code></p></li>
 /// <li>
-/// <p><code>AgreementType</code> + <code>ResourceId</code> + <code>Status</code> + <code>EndTime</code></p></li>
+/// <p><code>AgreementType</code> + <code>ResourceIdentifier</code> + <code>Status</code> + <code>EndTime</code></p></li>
 /// <li>
 /// <p><code>AgreementType</code> + <code>AcceptorAccountId</code></p></li>
 /// <li>
@@ -62,13 +62,13 @@ impl crate::operation::search_agreements::builders::SearchAgreementsInputBuilder
 /// <li>
 /// <p><code>AgreementType</code> + <code>AcceptorAccountId</code> + <code>OfferId</code> + <code>Status</code> + <code>EndTime</code></p></li>
 /// <li>
-/// <p><code>AgreementType</code> + <code>AcceptorAccountId</code> + <code>ResourceId</code></p></li>
+/// <p><code>AgreementType</code> + <code>AcceptorAccountId</code> + <code>ResourceIdentifier</code></p></li>
 /// <li>
-/// <p><code>AgreementType</code> + <code>AcceptorAccountId</code> + <code>ResourceId</code> + <code>Status</code></p></li>
+/// <p><code>AgreementType</code> + <code>AcceptorAccountId</code> + <code>ResourceIdentifier</code> + <code>Status</code></p></li>
 /// <li>
-/// <p><code>AgreementType</code> + <code>AcceptorAccountId</code> + <code>ResourceId</code> + <code>EndTime</code></p></li>
+/// <p><code>AgreementType</code> + <code>AcceptorAccountId</code> + <code>ResourceIdentifier</code> + <code>EndTime</code></p></li>
 /// <li>
-/// <p><code>AgreementType</code> + <code>AcceptorAccountId</code> + <code>ResourceId</code> + <code>Status</code> + <code>EndTime</code></p></li>
+/// <p><code>AgreementType</code> + <code>AcceptorAccountId</code> + <code>ResourceIdentifier</code> + <code>Status</code> + <code>EndTime</code></p></li>
 /// <li>
 /// <p><code>AgreementType</code> + <code>AcceptorAccountId</code> + <code>ResourceType</code></p></li>
 /// <li>
@@ -98,8 +98,47 @@ impl crate::operation::search_agreements::builders::SearchAgreementsInputBuilder
 /// <li>
 /// <p><code>AgreementType</code> + <code>OfferSetId</code> + <code>Status</code> + <code>EndTime</code></p></li>
 /// </ul><note>
-/// <p>To filter by <code>EndTime</code>, you can use either <code>BeforeEndTime</code> or <code>AfterEndTime</code>. Only <code>EndTime</code> is supported for sorting.</p>
+/// <p>To filter by <code>EndTime</code>, you can use <code>BeforeEndTime</code> and/or <code>AfterEndTime</code>. Only <code>EndTime</code> is supported for sorting.</p>
 /// </note>
+/// <p>The following filter combinations are supported when the <code>PartyType</code> is <code>Acceptor</code>:</p>
+/// <ul>
+/// <li>
+/// <p><code>AgreementType</code></p></li>
+/// <li>
+/// <p><code>AgreementType</code> + <code>Status</code></p></li>
+/// <li>
+/// <p><code>AgreementType</code> + <code>EndTime</code></p></li>
+/// <li>
+/// <p><code>AgreementType</code> + <code>Status</code> + <code>EndTime</code></p></li>
+/// <li>
+/// <p><code>AgreementType</code> + <code>ResourceIdentifier</code></p></li>
+/// <li>
+/// <p><code>AgreementType</code> + <code>ResourceIdentifier</code> + <code>EndTime</code></p></li>
+/// <li>
+/// <p><code>AgreementType</code> + <code>ResourceIdentifier</code> + <code>Status</code></p></li>
+/// <li>
+/// <p><code>AgreementType</code> + <code>ResourceIdentifier</code> + <code>Status</code> + <code>EndTime</code></p></li>
+/// <li>
+/// <p><code>AgreementType</code> + <code>ResourceType</code></p></li>
+/// <li>
+/// <p><code>AgreementType</code> + <code>ResourceType</code> + <code>EndTime</code></p></li>
+/// <li>
+/// <p><code>AgreementType</code> + <code>OfferId</code></p></li>
+/// <li>
+/// <p><code>AgreementType</code> + <code>OfferId</code> + <code>EndTime</code></p></li>
+/// <li>
+/// <p><code>AgreementType</code> + <code>OfferId</code> + <code>Status</code></p></li>
+/// <li>
+/// <p><code>AgreementType</code> + <code>OfferId</code> + <code>Status</code> + <code>EndTime</code></p></li>
+/// <li>
+/// <p><code>AgreementType</code> + <code>OfferSetId</code></p></li>
+/// <li>
+/// <p><code>AgreementType</code> + <code>OfferSetId</code> + <code>EndTime</code></p></li>
+/// <li>
+/// <p><code>AgreementType</code> + <code>OfferSetId</code> + <code>Status</code></p></li>
+/// <li>
+/// <p><code>AgreementType</code> + <code>OfferSetId</code> + <code>Status</code> + <code>EndTime</code></p></li>
+/// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct SearchAgreementsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -218,7 +257,7 @@ impl SearchAgreementsFluentBuilder {
     /// <li>
     /// <p><code>ResourceType</code> – Type of the resource, which is the product (<code>AmiProduct</code>, <code>ContainerProduct</code>, <code>SaaSProduct</code>, <code>ProfessionalServicesProduct</code>, or <code>MachineLearningProduct</code>).</p></li>
     /// <li>
-    /// <p><code>PartyType</code> – The party type of the caller. For agreements where the caller is the proposer, use the <code>Proposer</code> filter.</p></li>
+    /// <p><code>PartyType</code> – The party type of the caller. Use <code>Proposer</code> or <code>Acceptor</code>.</p></li>
     /// <li>
     /// <p><code>AcceptorAccountId</code> – The AWS account ID of the party accepting the agreement terms.</p></li>
     /// <li>
@@ -246,7 +285,7 @@ impl SearchAgreementsFluentBuilder {
     /// <li>
     /// <p><code>ResourceType</code> – Type of the resource, which is the product (<code>AmiProduct</code>, <code>ContainerProduct</code>, <code>SaaSProduct</code>, <code>ProfessionalServicesProduct</code>, or <code>MachineLearningProduct</code>).</p></li>
     /// <li>
-    /// <p><code>PartyType</code> – The party type of the caller. For agreements where the caller is the proposer, use the <code>Proposer</code> filter.</p></li>
+    /// <p><code>PartyType</code> – The party type of the caller. Use <code>Proposer</code> or <code>Acceptor</code>.</p></li>
     /// <li>
     /// <p><code>AcceptorAccountId</code> – The AWS account ID of the party accepting the agreement terms.</p></li>
     /// <li>
@@ -274,7 +313,7 @@ impl SearchAgreementsFluentBuilder {
     /// <li>
     /// <p><code>ResourceType</code> – Type of the resource, which is the product (<code>AmiProduct</code>, <code>ContainerProduct</code>, <code>SaaSProduct</code>, <code>ProfessionalServicesProduct</code>, or <code>MachineLearningProduct</code>).</p></li>
     /// <li>
-    /// <p><code>PartyType</code> – The party type of the caller. For agreements where the caller is the proposer, use the <code>Proposer</code> filter.</p></li>
+    /// <p><code>PartyType</code> – The party type of the caller. Use <code>Proposer</code> or <code>Acceptor</code>.</p></li>
     /// <li>
     /// <p><code>AcceptorAccountId</code> – The AWS account ID of the party accepting the agreement terms.</p></li>
     /// <li>

@@ -5,7 +5,7 @@
 pub struct SendAgreementCancellationRequestInput {
     /// <p>The unique identifier of the agreement for which the cancellation request is being submitted.</p>
     pub agreement_id: ::std::option::Option<::std::string::String>,
-    /// <p>The reason code for the cancellation request. Valid values include <code>INCORRECT_TERMS_ACCEPTED</code>, <code>REPLACING_AGREEMENT</code>, <code>TEST_AGREEMENT</code>, <code>ALTERNATIVE_PROCUREMENT_CHANNEL</code>, <code>PRODUCT_DISCONTINUED</code>, <code>UNINTENDED_RENEWAL</code>, <code>BUYER_DISSATISFACTION</code>, and <code>OTHER</code>.</p>
+    /// <p>The reason code for the cancellation request.</p>
     pub reason_code: ::std::option::Option<crate::types::AgreementCancellationRequestReasonCode>,
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
@@ -17,7 +17,7 @@ impl SendAgreementCancellationRequestInput {
     pub fn agreement_id(&self) -> ::std::option::Option<&str> {
         self.agreement_id.as_deref()
     }
-    /// <p>The reason code for the cancellation request. Valid values include <code>INCORRECT_TERMS_ACCEPTED</code>, <code>REPLACING_AGREEMENT</code>, <code>TEST_AGREEMENT</code>, <code>ALTERNATIVE_PROCUREMENT_CHANNEL</code>, <code>PRODUCT_DISCONTINUED</code>, <code>UNINTENDED_RENEWAL</code>, <code>BUYER_DISSATISFACTION</code>, and <code>OTHER</code>.</p>
+    /// <p>The reason code for the cancellation request.</p>
     pub fn reason_code(&self) -> ::std::option::Option<&crate::types::AgreementCancellationRequestReasonCode> {
         self.reason_code.as_ref()
     }
@@ -72,18 +72,18 @@ impl SendAgreementCancellationRequestInputBuilder {
     pub fn get_agreement_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.agreement_id
     }
-    /// <p>The reason code for the cancellation request. Valid values include <code>INCORRECT_TERMS_ACCEPTED</code>, <code>REPLACING_AGREEMENT</code>, <code>TEST_AGREEMENT</code>, <code>ALTERNATIVE_PROCUREMENT_CHANNEL</code>, <code>PRODUCT_DISCONTINUED</code>, <code>UNINTENDED_RENEWAL</code>, <code>BUYER_DISSATISFACTION</code>, and <code>OTHER</code>.</p>
+    /// <p>The reason code for the cancellation request.</p>
     /// This field is required.
     pub fn reason_code(mut self, input: crate::types::AgreementCancellationRequestReasonCode) -> Self {
         self.reason_code = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The reason code for the cancellation request. Valid values include <code>INCORRECT_TERMS_ACCEPTED</code>, <code>REPLACING_AGREEMENT</code>, <code>TEST_AGREEMENT</code>, <code>ALTERNATIVE_PROCUREMENT_CHANNEL</code>, <code>PRODUCT_DISCONTINUED</code>, <code>UNINTENDED_RENEWAL</code>, <code>BUYER_DISSATISFACTION</code>, and <code>OTHER</code>.</p>
+    /// <p>The reason code for the cancellation request.</p>
     pub fn set_reason_code(mut self, input: ::std::option::Option<crate::types::AgreementCancellationRequestReasonCode>) -> Self {
         self.reason_code = input;
         self
     }
-    /// <p>The reason code for the cancellation request. Valid values include <code>INCORRECT_TERMS_ACCEPTED</code>, <code>REPLACING_AGREEMENT</code>, <code>TEST_AGREEMENT</code>, <code>ALTERNATIVE_PROCUREMENT_CHANNEL</code>, <code>PRODUCT_DISCONTINUED</code>, <code>UNINTENDED_RENEWAL</code>, <code>BUYER_DISSATISFACTION</code>, and <code>OTHER</code>.</p>
+    /// <p>The reason code for the cancellation request.</p>
     pub fn get_reason_code(&self) -> &::std::option::Option<crate::types::AgreementCancellationRequestReasonCode> {
         &self.reason_code
     }

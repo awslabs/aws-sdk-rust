@@ -22,7 +22,7 @@ impl crate::operation::start_dicom_import_job::builders::StartDicomImportJobInpu
 }
 /// Fluent builder constructing a request to `StartDICOMImportJob`.
 ///
-/// <p>Start importing bulk data into an <code>ACTIVE</code> data store. The import job imports DICOM P10 files found in the S3 prefix specified by the <code>inputS3Uri</code> parameter. The import job stores processing results in the file specified by the <code>outputS3Uri</code> parameter.</p>
+/// <p>Start importing bulk data into an <code>ACTIVE</code> data store. The import job imports DICOM P10 files or enhances existing DICOM files with JSON metadata. The <code>importConfiguration</code> parameter specifies the import type. The data is found in the S3 prefix specified by the <code>inputS3Uri</code> parameter. The import job stores processing results in the file specified by the <code>outputS3Uri</code> parameter.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartDICOMImportJobFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -205,5 +205,19 @@ impl StartDICOMImportJobFluentBuilder {
     /// <p>The account ID of the source S3 bucket owner.</p>
     pub fn get_input_owner_account_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_input_owner_account_id()
+    }
+    /// <p>The import configuration for the import job.</p>
+    pub fn import_configuration(mut self, input: crate::types::ImportConfiguration) -> Self {
+        self.inner = self.inner.import_configuration(input);
+        self
+    }
+    /// <p>The import configuration for the import job.</p>
+    pub fn set_import_configuration(mut self, input: ::std::option::Option<crate::types::ImportConfiguration>) -> Self {
+        self.inner = self.inner.set_import_configuration(input);
+        self
+    }
+    /// <p>The import configuration for the import job.</p>
+    pub fn get_import_configuration(&self) -> &::std::option::Option<crate::types::ImportConfiguration> {
+        self.inner.get_import_configuration()
     }
 }

@@ -136,6 +136,10 @@ where
                                 crate::protocol_serde::shape_ad_decision_server_configuration::de_ad_decision_server_configuration(tokens, _value)?,
                             );
                         }
+                        "FunctionMapping" => {
+                            builder =
+                                builder.set_function_mapping(crate::protocol_serde::shape_function_mapping::de_function_mapping(tokens, _value)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

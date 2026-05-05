@@ -47,6 +47,21 @@ pub fn de_push_domain_http_error(
             }
             tmp
         }),
+        "TLDInMaintenance" => crate::operation::push_domain::PushDomainError::TldInMaintenance({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::TldInMaintenanceBuilder::default();
+                output = crate::protocol_serde::shape_tld_in_maintenance::de_tld_in_maintenance_json_err(_response_body, output)
+                    .map_err(crate::operation::push_domain::PushDomainError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "UnsupportedTLD" => crate::operation::push_domain::PushDomainError::UnsupportedTld({
             #[allow(unused_mut)]
             let mut tmp = {

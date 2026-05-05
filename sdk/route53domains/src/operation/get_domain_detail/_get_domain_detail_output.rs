@@ -40,7 +40,7 @@ pub struct GetDomainDetailOutput {
     pub updated_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date when the registration for the domain is set to expire. The date and time is in Unix time format and Coordinated Universal time (UTC).</p>
     pub expiration_date: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>Reseller of the domain. Domains registered or transferred using Route 53 domains will have <code>"Amazon"</code> as the reseller.</p>
+    /// <p>Reserved for future use.</p>
     pub reseller: ::std::option::Option<::std::string::String>,
     /// <p>Deprecated.</p>
     pub dns_sec: ::std::option::Option<::std::string::String>,
@@ -131,7 +131,7 @@ impl GetDomainDetailOutput {
     pub fn expiration_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.expiration_date.as_ref()
     }
-    /// <p>Reseller of the domain. Domains registered or transferred using Route 53 domains will have <code>"Amazon"</code> as the reseller.</p>
+    /// <p>Reserved for future use.</p>
     pub fn reseller(&self) -> ::std::option::Option<&str> {
         self.reseller.as_deref()
     }
@@ -494,17 +494,17 @@ impl GetDomainDetailOutputBuilder {
     pub fn get_expiration_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.expiration_date
     }
-    /// <p>Reseller of the domain. Domains registered or transferred using Route 53 domains will have <code>"Amazon"</code> as the reseller.</p>
+    /// <p>Reserved for future use.</p>
     pub fn reseller(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reseller = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Reseller of the domain. Domains registered or transferred using Route 53 domains will have <code>"Amazon"</code> as the reseller.</p>
+    /// <p>Reserved for future use.</p>
     pub fn set_reseller(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.reseller = input;
         self
     }
-    /// <p>Reseller of the domain. Domains registered or transferred using Route 53 domains will have <code>"Amazon"</code> as the reseller.</p>
+    /// <p>Reserved for future use.</p>
     pub fn get_reseller(&self) -> &::std::option::Option<::std::string::String> {
         &self.reseller
     }

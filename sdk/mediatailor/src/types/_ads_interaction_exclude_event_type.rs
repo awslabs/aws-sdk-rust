@@ -44,6 +44,8 @@
 ///     AdsInteractionExcludeEventType::MakingAdsRequest => { /* ... */ },
 ///     AdsInteractionExcludeEventType::ModifiedTargetUrl => { /* ... */ },
 ///     AdsInteractionExcludeEventType::NonAdMarkerFound => { /* ... */ },
+///     AdsInteractionExcludeEventType::PreAdsRequestFunctionError => { /* ... */ },
+///     AdsInteractionExcludeEventType::PreAdsRequestHookError => { /* ... */ },
 ///     AdsInteractionExcludeEventType::RedirectedVastResponse => { /* ... */ },
 ///     AdsInteractionExcludeEventType::VastRedirect => { /* ... */ },
 ///     AdsInteractionExcludeEventType::VastResponse => { /* ... */ },
@@ -146,6 +148,10 @@ pub enum AdsInteractionExcludeEventType {
     #[allow(missing_docs)] // documentation missing in model
     NonAdMarkerFound,
     #[allow(missing_docs)] // documentation missing in model
+    PreAdsRequestFunctionError,
+    #[allow(missing_docs)] // documentation missing in model
+    PreAdsRequestHookError,
+    #[allow(missing_docs)] // documentation missing in model
     RedirectedVastResponse,
     #[allow(missing_docs)] // documentation missing in model
     VastRedirect,
@@ -202,6 +208,8 @@ impl ::std::convert::From<&str> for AdsInteractionExcludeEventType {
             "MAKING_ADS_REQUEST" => AdsInteractionExcludeEventType::MakingAdsRequest,
             "MODIFIED_TARGET_URL" => AdsInteractionExcludeEventType::ModifiedTargetUrl,
             "NON_AD_MARKER_FOUND" => AdsInteractionExcludeEventType::NonAdMarkerFound,
+            "PRE_ADS_REQUEST_FUNCTION_ERROR" => AdsInteractionExcludeEventType::PreAdsRequestFunctionError,
+            "PRE_ADS_REQUEST_HOOK_ERROR" => AdsInteractionExcludeEventType::PreAdsRequestHookError,
             "REDIRECTED_VAST_RESPONSE" => AdsInteractionExcludeEventType::RedirectedVastResponse,
             "VAST_REDIRECT" => AdsInteractionExcludeEventType::VastRedirect,
             "VAST_RESPONSE" => AdsInteractionExcludeEventType::VastResponse,
@@ -258,6 +266,8 @@ impl AdsInteractionExcludeEventType {
             AdsInteractionExcludeEventType::MakingAdsRequest => "MAKING_ADS_REQUEST",
             AdsInteractionExcludeEventType::ModifiedTargetUrl => "MODIFIED_TARGET_URL",
             AdsInteractionExcludeEventType::NonAdMarkerFound => "NON_AD_MARKER_FOUND",
+            AdsInteractionExcludeEventType::PreAdsRequestFunctionError => "PRE_ADS_REQUEST_FUNCTION_ERROR",
+            AdsInteractionExcludeEventType::PreAdsRequestHookError => "PRE_ADS_REQUEST_HOOK_ERROR",
             AdsInteractionExcludeEventType::RedirectedVastResponse => "REDIRECTED_VAST_RESPONSE",
             AdsInteractionExcludeEventType::VastRedirect => "VAST_REDIRECT",
             AdsInteractionExcludeEventType::VastResponse => "VAST_RESPONSE",
@@ -305,6 +315,8 @@ impl AdsInteractionExcludeEventType {
             "MAKING_ADS_REQUEST",
             "MODIFIED_TARGET_URL",
             "NON_AD_MARKER_FOUND",
+            "PRE_ADS_REQUEST_FUNCTION_ERROR",
+            "PRE_ADS_REQUEST_HOOK_ERROR",
             "REDIRECTED_VAST_RESPONSE",
             "VAST_REDIRECT",
             "VAST_RESPONSE",
@@ -369,6 +381,8 @@ impl ::std::fmt::Display for AdsInteractionExcludeEventType {
             AdsInteractionExcludeEventType::MakingAdsRequest => write!(f, "MAKING_ADS_REQUEST"),
             AdsInteractionExcludeEventType::ModifiedTargetUrl => write!(f, "MODIFIED_TARGET_URL"),
             AdsInteractionExcludeEventType::NonAdMarkerFound => write!(f, "NON_AD_MARKER_FOUND"),
+            AdsInteractionExcludeEventType::PreAdsRequestFunctionError => write!(f, "PRE_ADS_REQUEST_FUNCTION_ERROR"),
+            AdsInteractionExcludeEventType::PreAdsRequestHookError => write!(f, "PRE_ADS_REQUEST_HOOK_ERROR"),
             AdsInteractionExcludeEventType::RedirectedVastResponse => write!(f, "REDIRECTED_VAST_RESPONSE"),
             AdsInteractionExcludeEventType::VastRedirect => write!(f, "VAST_REDIRECT"),
             AdsInteractionExcludeEventType::VastResponse => write!(f, "VAST_RESPONSE"),

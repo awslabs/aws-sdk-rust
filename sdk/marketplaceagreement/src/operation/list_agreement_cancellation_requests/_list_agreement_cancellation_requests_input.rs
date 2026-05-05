@@ -7,7 +7,7 @@ pub struct ListAgreementCancellationRequestsInput {
     pub party_type: ::std::option::Option<::std::string::String>,
     /// <p>An optional parameter to filter cancellation requests for a specific agreement.</p>
     pub agreement_id: ::std::option::Option<::std::string::String>,
-    /// <p>An optional parameter to filter cancellation requests by status. Valid values include <code>PENDING_APPROVAL</code>, <code>APPROVED</code>, <code>REJECTED</code>, <code>CANCELLED</code>, and <code>VALIDATION_FAILED</code>.</p>
+    /// <p>An optional parameter to filter cancellation requests by status.</p>
     pub status: ::std::option::Option<crate::types::AgreementCancellationRequestStatus>,
     /// <p>An optional parameter to filter cancellation requests by agreement type (e.g., <code>PurchaseAgreement</code>).</p>
     pub agreement_type: ::std::option::Option<::std::string::String>,
@@ -15,7 +15,7 @@ pub struct ListAgreementCancellationRequestsInput {
     pub catalog: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of cancellation requests to return in the response.</p>
     pub max_results: ::std::option::Option<i32>,
-    /// <p>A token to specify where to start pagination. Use the <code>nextToken</code> value from a previous response to retrieve the next page of results.</p>
+    /// <p>A token to specify where to start pagination.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListAgreementCancellationRequestsInput {
@@ -27,7 +27,7 @@ impl ListAgreementCancellationRequestsInput {
     pub fn agreement_id(&self) -> ::std::option::Option<&str> {
         self.agreement_id.as_deref()
     }
-    /// <p>An optional parameter to filter cancellation requests by status. Valid values include <code>PENDING_APPROVAL</code>, <code>APPROVED</code>, <code>REJECTED</code>, <code>CANCELLED</code>, and <code>VALIDATION_FAILED</code>.</p>
+    /// <p>An optional parameter to filter cancellation requests by status.</p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::AgreementCancellationRequestStatus> {
         self.status.as_ref()
     }
@@ -43,7 +43,7 @@ impl ListAgreementCancellationRequestsInput {
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
-    /// <p>A token to specify where to start pagination. Use the <code>nextToken</code> value from a previous response to retrieve the next page of results.</p>
+    /// <p>A token to specify where to start pagination.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -97,17 +97,17 @@ impl ListAgreementCancellationRequestsInputBuilder {
     pub fn get_agreement_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.agreement_id
     }
-    /// <p>An optional parameter to filter cancellation requests by status. Valid values include <code>PENDING_APPROVAL</code>, <code>APPROVED</code>, <code>REJECTED</code>, <code>CANCELLED</code>, and <code>VALIDATION_FAILED</code>.</p>
+    /// <p>An optional parameter to filter cancellation requests by status.</p>
     pub fn status(mut self, input: crate::types::AgreementCancellationRequestStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>An optional parameter to filter cancellation requests by status. Valid values include <code>PENDING_APPROVAL</code>, <code>APPROVED</code>, <code>REJECTED</code>, <code>CANCELLED</code>, and <code>VALIDATION_FAILED</code>.</p>
+    /// <p>An optional parameter to filter cancellation requests by status.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::AgreementCancellationRequestStatus>) -> Self {
         self.status = input;
         self
     }
-    /// <p>An optional parameter to filter cancellation requests by status. Valid values include <code>PENDING_APPROVAL</code>, <code>APPROVED</code>, <code>REJECTED</code>, <code>CANCELLED</code>, and <code>VALIDATION_FAILED</code>.</p>
+    /// <p>An optional parameter to filter cancellation requests by status.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::AgreementCancellationRequestStatus> {
         &self.status
     }
@@ -153,17 +153,17 @@ impl ListAgreementCancellationRequestsInputBuilder {
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
-    /// <p>A token to specify where to start pagination. Use the <code>nextToken</code> value from a previous response to retrieve the next page of results.</p>
+    /// <p>A token to specify where to start pagination.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A token to specify where to start pagination. Use the <code>nextToken</code> value from a previous response to retrieve the next page of results.</p>
+    /// <p>A token to specify where to start pagination.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>A token to specify where to start pagination. Use the <code>nextToken</code> value from a previous response to retrieve the next page of results.</p>
+    /// <p>A token to specify where to start pagination.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

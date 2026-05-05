@@ -15,7 +15,7 @@ impl super::Client {
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_agreement_invoice_line_items::builders::ListAgreementInvoiceLineItemsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_agreement_invoice_line_items::builders::ListAgreementInvoiceLineItemsFluentBuilder::set_next_token):<br>required: **false**<br><p>A token to specify where to start pagination.</p><br>
     /// - On success, responds with [`ListAgreementInvoiceLineItemsOutput`](crate::operation::list_agreement_invoice_line_items::ListAgreementInvoiceLineItemsOutput) with field(s):
     ///   - [`agreement_invoice_line_item_group_summaries(Option<Vec::<AgreementInvoiceLineItemGroupSummary>>)`](crate::operation::list_agreement_invoice_line_items::ListAgreementInvoiceLineItemsOutput::agreement_invoice_line_item_group_summaries): <p>A list of grouped billing data objects.</p>
-    ///   - [`next_token(Option<String>)`](crate::operation::list_agreement_invoice_line_items::ListAgreementInvoiceLineItemsOutput::next_token): <p>A token to retrieve the next page of results. If not present, there are no more results available.</p>
+    ///   - [`next_token(Option<String>)`](crate::operation::list_agreement_invoice_line_items::ListAgreementInvoiceLineItemsOutput::next_token): <p>The token used for pagination. The field is <code>null</code> if there are no more results.</p>
     /// - On failure, responds with [`SdkError<ListAgreementInvoiceLineItemsError>`](crate::operation::list_agreement_invoice_line_items::ListAgreementInvoiceLineItemsError)
     pub fn list_agreement_invoice_line_items(
         &self,

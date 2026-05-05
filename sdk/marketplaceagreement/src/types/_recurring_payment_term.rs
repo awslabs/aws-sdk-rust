@@ -6,6 +6,8 @@
 pub struct RecurringPaymentTerm {
     /// <p>Type of the term being updated.</p>
     pub r#type: ::std::option::Option<::std::string::String>,
+    /// <p>The unique identifier for the term.</p>
+    pub id: ::std::option::Option<::std::string::String>,
     /// <p>Defines the currency for the prices mentioned in this term.</p>
     pub currency_code: ::std::option::Option<::std::string::String>,
     /// <p>Defines the recurrence at which buyers are charged.</p>
@@ -17,6 +19,10 @@ impl RecurringPaymentTerm {
     /// <p>Type of the term being updated.</p>
     pub fn r#type(&self) -> ::std::option::Option<&str> {
         self.r#type.as_deref()
+    }
+    /// <p>The unique identifier for the term.</p>
+    pub fn id(&self) -> ::std::option::Option<&str> {
+        self.id.as_deref()
     }
     /// <p>Defines the currency for the prices mentioned in this term.</p>
     pub fn currency_code(&self) -> ::std::option::Option<&str> {
@@ -43,6 +49,7 @@ impl RecurringPaymentTerm {
 #[non_exhaustive]
 pub struct RecurringPaymentTermBuilder {
     pub(crate) r#type: ::std::option::Option<::std::string::String>,
+    pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) currency_code: ::std::option::Option<::std::string::String>,
     pub(crate) billing_period: ::std::option::Option<::std::string::String>,
     pub(crate) price: ::std::option::Option<::std::string::String>,
@@ -61,6 +68,20 @@ impl RecurringPaymentTermBuilder {
     /// <p>Type of the term being updated.</p>
     pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.r#type
+    }
+    /// <p>The unique identifier for the term.</p>
+    pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The unique identifier for the term.</p>
+    pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.id = input;
+        self
+    }
+    /// <p>The unique identifier for the term.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// <p>Defines the currency for the prices mentioned in this term.</p>
     pub fn currency_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -108,6 +129,7 @@ impl RecurringPaymentTermBuilder {
     pub fn build(self) -> crate::types::RecurringPaymentTerm {
         crate::types::RecurringPaymentTerm {
             r#type: self.r#type,
+            id: self.id,
             currency_code: self.currency_code,
             billing_period: self.billing_period,
             price: self.price,

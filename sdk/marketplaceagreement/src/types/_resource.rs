@@ -8,7 +8,7 @@ pub struct Resource {
     /// <p>We mention the term resource, which is most commonly a product, so a <code>resourceId</code> is also a <code>productId</code>.</p>
     /// </note>
     pub id: ::std::option::Option<::std::string::String>,
-    /// <p>Type of the resource, which is the product. Values include <code>SaaSProduct</code> or <code>AmiProduct</code>.</p>
+    /// <p>Type of the resource, which is the product (for example, <code>SaaSProduct</code>, <code>AmiProduct</code>, <code>ContainerProduct</code>).</p>
     pub r#type: ::std::option::Option<::std::string::String>,
 }
 impl Resource {
@@ -18,7 +18,7 @@ impl Resource {
     pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
-    /// <p>Type of the resource, which is the product. Values include <code>SaaSProduct</code> or <code>AmiProduct</code>.</p>
+    /// <p>Type of the resource, which is the product (for example, <code>SaaSProduct</code>, <code>AmiProduct</code>, <code>ContainerProduct</code>).</p>
     pub fn r#type(&self) -> ::std::option::Option<&str> {
         self.r#type.as_deref()
     }
@@ -58,17 +58,17 @@ impl ResourceBuilder {
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.id
     }
-    /// <p>Type of the resource, which is the product. Values include <code>SaaSProduct</code> or <code>AmiProduct</code>.</p>
+    /// <p>Type of the resource, which is the product (for example, <code>SaaSProduct</code>, <code>AmiProduct</code>, <code>ContainerProduct</code>).</p>
     pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.r#type = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Type of the resource, which is the product. Values include <code>SaaSProduct</code> or <code>AmiProduct</code>.</p>
+    /// <p>Type of the resource, which is the product (for example, <code>SaaSProduct</code>, <code>AmiProduct</code>, <code>ContainerProduct</code>).</p>
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.r#type = input;
         self
     }
-    /// <p>Type of the resource, which is the product. Values include <code>SaaSProduct</code> or <code>AmiProduct</code>.</p>
+    /// <p>Type of the resource, which is the product (for example, <code>SaaSProduct</code>, <code>AmiProduct</code>, <code>ContainerProduct</code>).</p>
     pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.r#type
     }

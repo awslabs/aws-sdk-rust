@@ -21,9 +21,9 @@ pub struct GetBillingAdjustmentRequestOutput {
     pub status: crate::types::BillingAdjustmentStatus,
     /// <p>A message providing additional context about the billing adjustment request status. This field is populated only when the status is <code>VALIDATION_FAILED</code>.</p>
     pub status_message: ::std::option::Option<::std::string::String>,
-    /// <p>The date and time when the billing adjustment request was created, as a POSIX timestamp (Unix epoch seconds).</p>
+    /// <p>The date and time when the billing adjustment request was created.</p>
     pub created_at: ::aws_smithy_types::DateTime,
-    /// <p>The date and time when the billing adjustment request was last updated, as a POSIX timestamp (Unix epoch seconds).</p>
+    /// <p>The date and time when the billing adjustment request was last updated.</p>
     pub updated_at: ::aws_smithy_types::DateTime,
     _request_id: Option<String>,
 }
@@ -69,11 +69,11 @@ impl GetBillingAdjustmentRequestOutput {
     pub fn status_message(&self) -> ::std::option::Option<&str> {
         self.status_message.as_deref()
     }
-    /// <p>The date and time when the billing adjustment request was created, as a POSIX timestamp (Unix epoch seconds).</p>
+    /// <p>The date and time when the billing adjustment request was created.</p>
     pub fn created_at(&self) -> &::aws_smithy_types::DateTime {
         &self.created_at
     }
-    /// <p>The date and time when the billing adjustment request was last updated, as a POSIX timestamp (Unix epoch seconds).</p>
+    /// <p>The date and time when the billing adjustment request was last updated.</p>
     pub fn updated_at(&self) -> &::aws_smithy_types::DateTime {
         &self.updated_at
     }
@@ -241,33 +241,33 @@ impl GetBillingAdjustmentRequestOutputBuilder {
     pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
         &self.status_message
     }
-    /// <p>The date and time when the billing adjustment request was created, as a POSIX timestamp (Unix epoch seconds).</p>
+    /// <p>The date and time when the billing adjustment request was created.</p>
     /// This field is required.
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The date and time when the billing adjustment request was created, as a POSIX timestamp (Unix epoch seconds).</p>
+    /// <p>The date and time when the billing adjustment request was created.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
-    /// <p>The date and time when the billing adjustment request was created, as a POSIX timestamp (Unix epoch seconds).</p>
+    /// <p>The date and time when the billing adjustment request was created.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.created_at
     }
-    /// <p>The date and time when the billing adjustment request was last updated, as a POSIX timestamp (Unix epoch seconds).</p>
+    /// <p>The date and time when the billing adjustment request was last updated.</p>
     /// This field is required.
     pub fn updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.updated_at = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The date and time when the billing adjustment request was last updated, as a POSIX timestamp (Unix epoch seconds).</p>
+    /// <p>The date and time when the billing adjustment request was last updated.</p>
     pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.updated_at = input;
         self
     }
-    /// <p>The date and time when the billing adjustment request was last updated, as a POSIX timestamp (Unix epoch seconds).</p>
+    /// <p>The date and time when the billing adjustment request was last updated.</p>
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.updated_at
     }

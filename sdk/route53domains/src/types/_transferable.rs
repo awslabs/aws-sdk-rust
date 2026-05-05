@@ -57,7 +57,7 @@
 /// </dd>
 /// <dt>DONT_KNOW</dt>
 /// <dd>
-/// <p>Reserved for future use.</p>
+/// <p>The TLD registry didn't respond in time or didn't provide a definitive answer about domain transferability, which can occur due to registry maintenance or temporary delays.</p>
 /// </dd>
 /// <dt>DOMAIN_IN_OWN_ACCOUNT</dt>
 /// <dd>

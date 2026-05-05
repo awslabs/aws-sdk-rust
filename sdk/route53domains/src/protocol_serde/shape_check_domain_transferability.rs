@@ -35,6 +35,21 @@ pub fn de_check_domain_transferability_http_error(
             }
             tmp
         }),
+        "TLDInMaintenance" => crate::operation::check_domain_transferability::CheckDomainTransferabilityError::TldInMaintenance({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::TldInMaintenanceBuilder::default();
+                output = crate::protocol_serde::shape_tld_in_maintenance::de_tld_in_maintenance_json_err(_response_body, output)
+                    .map_err(crate::operation::check_domain_transferability::CheckDomainTransferabilityError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "UnsupportedTLD" => crate::operation::check_domain_transferability::CheckDomainTransferabilityError::UnsupportedTld({
             #[allow(unused_mut)]
             let mut tmp = {

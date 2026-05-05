@@ -21,5 +21,8 @@ pub fn ser_vpc_options(
         }
         array_5.finish();
     }
+    if let Some(var_7) = &input.egress_enabled {
+        object.key("EgressEnabled").boolean(*var_7);
+    }
     Ok(())
 }

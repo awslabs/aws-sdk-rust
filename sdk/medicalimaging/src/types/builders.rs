@@ -27,6 +27,8 @@ pub use crate::types::_image_set_properties::ImageSetPropertiesBuilder;
 
 pub use crate::types::_image_sets_metadata_summary::ImageSetsMetadataSummaryBuilder;
 
+pub use crate::types::_dicom_json_metadata_import_configuration::DicomJsonMetadataImportConfigurationBuilder;
+
 pub use crate::types::_dicom_updates::DicomUpdatesBuilder;
 
 pub use crate::types::_datastore_summary::DatastoreSummaryBuilder;
@@ -36,5 +38,7 @@ pub use crate::types::_metadata_copies::MetadataCopiesBuilder;
 pub use crate::types::_search_filter::SearchFilterBuilder;
 
 pub use crate::types::_dicom_tags::DicomTagsBuilder;
+
+pub use crate::types::_dicom_metadata_mapping::DicomMetadataMappingBuilder;
 
 pub use crate::types::_dicom_study_date_and_time::DicomStudyDateAndTimeBuilder;

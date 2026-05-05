@@ -150,4 +150,18 @@ impl CreateKeyValueStoreFluentBuilder {
     pub fn get_import_source(&self) -> &::std::option::Option<crate::types::ImportSource> {
         self.inner.get_import_source()
     }
+    /// <p>A complex type that contains zero or more <code>Tag</code> elements.</p>
+    pub fn tags(mut self, input: crate::types::Tags) -> Self {
+        self.inner = self.inner.tags(input);
+        self
+    }
+    /// <p>A complex type that contains zero or more <code>Tag</code> elements.</p>
+    pub fn set_tags(mut self, input: ::std::option::Option<crate::types::Tags>) -> Self {
+        self.inner = self.inner.set_tags(input);
+        self
+    }
+    /// <p>A complex type that contains zero or more <code>Tag</code> elements.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<crate::types::Tags> {
+        self.inner.get_tags()
+    }
 }

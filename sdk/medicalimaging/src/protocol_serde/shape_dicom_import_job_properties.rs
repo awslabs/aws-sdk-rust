@@ -83,6 +83,11 @@ where
                                     .transpose()?,
                             );
                         }
+                        "importConfiguration" => {
+                            builder = builder.set_import_configuration(crate::protocol_serde::shape_import_configuration::de_import_configuration(
+                                tokens, _value,
+                            )?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {
