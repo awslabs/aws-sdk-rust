@@ -1899,6 +1899,52 @@ impl From<crate::operation::enable_security_hub_v2::EnableSecurityHubV2Error> fo
         }
     }
 }
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::generate_recommended_policy_v2::GenerateRecommendedPolicyV2Error, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::generate_recommended_policy_v2::GenerateRecommendedPolicyV2Error,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::generate_recommended_policy_v2::GenerateRecommendedPolicyV2Error> for Error {
+    fn from(err: crate::operation::generate_recommended_policy_v2::GenerateRecommendedPolicyV2Error) -> Self {
+        match err {
+            crate::operation::generate_recommended_policy_v2::GenerateRecommendedPolicyV2Error::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::generate_recommended_policy_v2::GenerateRecommendedPolicyV2Error::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::generate_recommended_policy_v2::GenerateRecommendedPolicyV2Error::InvalidInputException(inner) => {
+                Error::InvalidInputException(inner)
+            }
+            crate::operation::generate_recommended_policy_v2::GenerateRecommendedPolicyV2Error::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::generate_recommended_policy_v2::GenerateRecommendedPolicyV2Error::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::generate_recommended_policy_v2::GenerateRecommendedPolicyV2Error::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::generate_recommended_policy_v2::GenerateRecommendedPolicyV2Error::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_administrator_account::GetAdministratorAccountError, R>>
     for Error
 where
@@ -2446,6 +2492,44 @@ impl From<crate::operation::get_members::GetMembersError> for Error {
             crate::operation::get_members::GetMembersError::LimitExceededException(inner) => Error::LimitExceededException(inner),
             crate::operation::get_members::GetMembersError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::get_members::GetMembersError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_recommended_policy_v2::GetRecommendedPolicyV2Error, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_recommended_policy_v2::GetRecommendedPolicyV2Error, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_recommended_policy_v2::GetRecommendedPolicyV2Error> for Error {
+    fn from(err: crate::operation::get_recommended_policy_v2::GetRecommendedPolicyV2Error) -> Self {
+        match err {
+            crate::operation::get_recommended_policy_v2::GetRecommendedPolicyV2Error::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_recommended_policy_v2::GetRecommendedPolicyV2Error::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::get_recommended_policy_v2::GetRecommendedPolicyV2Error::InvalidInputException(inner) => {
+                Error::InvalidInputException(inner)
+            }
+            crate::operation::get_recommended_policy_v2::GetRecommendedPolicyV2Error::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_recommended_policy_v2::GetRecommendedPolicyV2Error::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_recommended_policy_v2::GetRecommendedPolicyV2Error::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_recommended_policy_v2::GetRecommendedPolicyV2Error::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

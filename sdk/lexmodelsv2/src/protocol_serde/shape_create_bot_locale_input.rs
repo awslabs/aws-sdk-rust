@@ -3,44 +3,50 @@ pub fn ser_create_bot_locale_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_bot_locale::CreateBotLocaleInput,
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    if let Some(var_1) = &input.description {
-        object.key("description").string(var_1.as_str());
-    }
-    if let Some(var_2) = &input.generative_ai_settings {
+    if let Some(var_1) = &input.audio_filler_settings {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("generativeAISettings").start_object();
-        crate::protocol_serde::shape_generative_ai_settings::ser_generative_ai_settings(&mut object_3, var_2)?;
-        object_3.finish();
+        let mut object_2 = object.key("audioFillerSettings").start_object();
+        crate::protocol_serde::shape_audio_filler_settings::ser_audio_filler_settings(&mut object_2, var_1)?;
+        object_2.finish();
     }
-    if let Some(var_4) = &input.locale_id {
-        object.key("localeId").string(var_4.as_str());
+    if let Some(var_3) = &input.description {
+        object.key("description").string(var_3.as_str());
     }
-    if let Some(var_5) = &input.nlu_intent_confidence_threshold {
+    if let Some(var_4) = &input.generative_ai_settings {
+        #[allow(unused_mut)]
+        let mut object_5 = object.key("generativeAISettings").start_object();
+        crate::protocol_serde::shape_generative_ai_settings::ser_generative_ai_settings(&mut object_5, var_4)?;
+        object_5.finish();
+    }
+    if let Some(var_6) = &input.locale_id {
+        object.key("localeId").string(var_6.as_str());
+    }
+    if let Some(var_7) = &input.nlu_intent_confidence_threshold {
         object.key("nluIntentConfidenceThreshold").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::Float((*var_5).into()),
+            ::aws_smithy_types::Number::Float((*var_7).into()),
         );
     }
-    if let Some(var_6) = &input.speech_detection_sensitivity {
-        object.key("speechDetectionSensitivity").string(var_6.as_str());
+    if let Some(var_8) = &input.speech_detection_sensitivity {
+        object.key("speechDetectionSensitivity").string(var_8.as_str());
     }
-    if let Some(var_7) = &input.speech_recognition_settings {
+    if let Some(var_9) = &input.speech_recognition_settings {
         #[allow(unused_mut)]
-        let mut object_8 = object.key("speechRecognitionSettings").start_object();
-        crate::protocol_serde::shape_speech_recognition_settings::ser_speech_recognition_settings(&mut object_8, var_7)?;
-        object_8.finish();
-    }
-    if let Some(var_9) = &input.unified_speech_settings {
-        #[allow(unused_mut)]
-        let mut object_10 = object.key("unifiedSpeechSettings").start_object();
-        crate::protocol_serde::shape_unified_speech_settings::ser_unified_speech_settings(&mut object_10, var_9)?;
+        let mut object_10 = object.key("speechRecognitionSettings").start_object();
+        crate::protocol_serde::shape_speech_recognition_settings::ser_speech_recognition_settings(&mut object_10, var_9)?;
         object_10.finish();
     }
-    if let Some(var_11) = &input.voice_settings {
+    if let Some(var_11) = &input.unified_speech_settings {
         #[allow(unused_mut)]
-        let mut object_12 = object.key("voiceSettings").start_object();
-        crate::protocol_serde::shape_voice_settings::ser_voice_settings(&mut object_12, var_11)?;
+        let mut object_12 = object.key("unifiedSpeechSettings").start_object();
+        crate::protocol_serde::shape_unified_speech_settings::ser_unified_speech_settings(&mut object_12, var_11)?;
         object_12.finish();
+    }
+    if let Some(var_13) = &input.voice_settings {
+        #[allow(unused_mut)]
+        let mut object_14 = object.key("voiceSettings").start_object();
+        crate::protocol_serde::shape_voice_settings::ser_voice_settings(&mut object_14, var_13)?;
+        object_14.finish();
     }
     Ok(())
 }

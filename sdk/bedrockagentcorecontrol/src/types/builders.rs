@@ -235,6 +235,10 @@ pub use crate::types::_token_exchange_grant_type_config_type::TokenExchangeGrant
 
 pub use crate::types::_session_storage_configuration::SessionStorageConfigurationBuilder;
 
+pub use crate::types::_s3_files_access_point_configuration::S3FilesAccessPointConfigurationBuilder;
+
+pub use crate::types::_efs_access_point_configuration::EfsAccessPointConfigurationBuilder;
+
 pub use crate::types::_lambda_evaluator_config::LambdaEvaluatorConfigBuilder;
 
 pub use crate::types::_session_configuration::SessionConfigurationBuilder;

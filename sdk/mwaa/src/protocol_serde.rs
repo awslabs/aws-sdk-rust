@@ -71,6 +71,8 @@ pub(crate) mod shape_rest_api_client_exception;
 
 pub(crate) mod shape_rest_api_server_exception;
 
+pub(crate) mod shape_service_unavailable_exception;
+
 pub(crate) mod shape_tag_resource_input;
 
 pub(crate) mod shape_update_environment_input;

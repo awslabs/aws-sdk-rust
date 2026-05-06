@@ -8,6 +8,8 @@ pub struct DateRange {
     pub value: ::std::option::Option<i32>,
     /// <p>A date range unit for the date filter.</p>
     pub unit: ::std::option::Option<crate::types::DateRangeUnit>,
+    /// <p>The condition to apply to a date range filter. If you specify <code>WITHIN</code>, Security Hub filters for dates within the specified date range. If you specify <code>OLDER_THAN</code>, Security Hub filters for dates before the specified date range. If you don't specify a value, the default is <code>WITHIN</code>.</p>
+    pub comparison: ::std::option::Option<crate::types::DateRangeComparison>,
 }
 impl DateRange {
     /// <p>A date range value for the date filter.</p>
@@ -17,6 +19,10 @@ impl DateRange {
     /// <p>A date range unit for the date filter.</p>
     pub fn unit(&self) -> ::std::option::Option<&crate::types::DateRangeUnit> {
         self.unit.as_ref()
+    }
+    /// <p>The condition to apply to a date range filter. If you specify <code>WITHIN</code>, Security Hub filters for dates within the specified date range. If you specify <code>OLDER_THAN</code>, Security Hub filters for dates before the specified date range. If you don't specify a value, the default is <code>WITHIN</code>.</p>
+    pub fn comparison(&self) -> ::std::option::Option<&crate::types::DateRangeComparison> {
+        self.comparison.as_ref()
     }
 }
 impl DateRange {
@@ -32,6 +38,7 @@ impl DateRange {
 pub struct DateRangeBuilder {
     pub(crate) value: ::std::option::Option<i32>,
     pub(crate) unit: ::std::option::Option<crate::types::DateRangeUnit>,
+    pub(crate) comparison: ::std::option::Option<crate::types::DateRangeComparison>,
 }
 impl DateRangeBuilder {
     /// <p>A date range value for the date filter.</p>
@@ -62,11 +69,26 @@ impl DateRangeBuilder {
     pub fn get_unit(&self) -> &::std::option::Option<crate::types::DateRangeUnit> {
         &self.unit
     }
+    /// <p>The condition to apply to a date range filter. If you specify <code>WITHIN</code>, Security Hub filters for dates within the specified date range. If you specify <code>OLDER_THAN</code>, Security Hub filters for dates before the specified date range. If you don't specify a value, the default is <code>WITHIN</code>.</p>
+    pub fn comparison(mut self, input: crate::types::DateRangeComparison) -> Self {
+        self.comparison = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The condition to apply to a date range filter. If you specify <code>WITHIN</code>, Security Hub filters for dates within the specified date range. If you specify <code>OLDER_THAN</code>, Security Hub filters for dates before the specified date range. If you don't specify a value, the default is <code>WITHIN</code>.</p>
+    pub fn set_comparison(mut self, input: ::std::option::Option<crate::types::DateRangeComparison>) -> Self {
+        self.comparison = input;
+        self
+    }
+    /// <p>The condition to apply to a date range filter. If you specify <code>WITHIN</code>, Security Hub filters for dates within the specified date range. If you specify <code>OLDER_THAN</code>, Security Hub filters for dates before the specified date range. If you don't specify a value, the default is <code>WITHIN</code>.</p>
+    pub fn get_comparison(&self) -> &::std::option::Option<crate::types::DateRangeComparison> {
+        &self.comparison
+    }
     /// Consumes the builder and constructs a [`DateRange`](crate::types::DateRange).
     pub fn build(self) -> crate::types::DateRange {
         crate::types::DateRange {
             value: self.value,
             unit: self.unit,
+            comparison: self.comparison,
         }
     }
 }

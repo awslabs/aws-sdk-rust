@@ -389,6 +389,10 @@ pub use crate::types::_agent_managed_runtime_type::AgentManagedRuntimeType;
 
 pub use crate::types::_session_storage_configuration::SessionStorageConfiguration;
 
+pub use crate::types::_s3_files_access_point_configuration::S3FilesAccessPointConfiguration;
+
+pub use crate::types::_efs_access_point_configuration::EfsAccessPointConfiguration;
+
 pub use crate::types::_resource_location::ResourceLocation;
 
 pub use crate::types::_browser_enterprise_policy_type::BrowserEnterprisePolicyType;
@@ -917,6 +921,8 @@ mod _descriptor_type;
 
 mod _descriptors;
 
+mod _efs_access_point_configuration;
+
 mod _endpoint_ip_address_type;
 
 mod _episodic_consolidation_override;
@@ -1298,6 +1304,8 @@ mod _runtime_metadata_configuration;
 mod _runtime_target_configuration;
 
 mod _s3_configuration;
+
+mod _s3_files_access_point_configuration;
 
 mod _s3_location;
 

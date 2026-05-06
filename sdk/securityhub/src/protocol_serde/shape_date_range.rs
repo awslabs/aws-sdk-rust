@@ -12,6 +12,9 @@ pub fn ser_date_range(
     if let Some(var_2) = &input.unit {
         object.key("Unit").string(var_2.as_str());
     }
+    if let Some(var_3) = &input.comparison {
+        object.key("Comparison").string(var_3.as_str());
+    }
     Ok(())
 }
 
@@ -42,6 +45,13 @@ where
                             builder = builder.set_unit(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| crate::types::DateRangeUnit::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "Comparison" => {
+                            builder = builder.set_comparison(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::DateRangeComparison::from(u.as_ref())))
                                     .transpose()?,
                             );
                         }

@@ -38,6 +38,8 @@ pub struct ClusterNodeDetails {
     pub current_image_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Amazon Machine Image (AMI) desired for the node.</p>
     pub desired_image_id: ::std::option::Option<::std::string::String>,
+    /// <p>The status of the image version for the cluster node.</p>
+    pub image_version_status: ::std::option::Option<crate::types::ClusterImageVersionStatus>,
     /// <p>Contains information about the UltraServer.</p>
     pub ultra_server_info: ::std::option::Option<crate::types::UltraServerInfo>,
     /// <p>The Kubernetes configuration applied to this node, showing both the current and desired state of labels and taints. The cluster works to reconcile the actual state with the declared state.</p>
@@ -118,6 +120,10 @@ impl ClusterNodeDetails {
     pub fn desired_image_id(&self) -> ::std::option::Option<&str> {
         self.desired_image_id.as_deref()
     }
+    /// <p>The status of the image version for the cluster node.</p>
+    pub fn image_version_status(&self) -> ::std::option::Option<&crate::types::ClusterImageVersionStatus> {
+        self.image_version_status.as_ref()
+    }
     /// <p>Contains information about the UltraServer.</p>
     pub fn ultra_server_info(&self) -> ::std::option::Option<&crate::types::UltraServerInfo> {
         self.ultra_server_info.as_ref()
@@ -163,6 +169,7 @@ pub struct ClusterNodeDetailsBuilder {
     pub(crate) placement: ::std::option::Option<crate::types::ClusterInstancePlacement>,
     pub(crate) current_image_id: ::std::option::Option<::std::string::String>,
     pub(crate) desired_image_id: ::std::option::Option<::std::string::String>,
+    pub(crate) image_version_status: ::std::option::Option<crate::types::ClusterImageVersionStatus>,
     pub(crate) ultra_server_info: ::std::option::Option<crate::types::UltraServerInfo>,
     pub(crate) kubernetes_config: ::std::option::Option<crate::types::ClusterKubernetesConfigNodeDetails>,
     pub(crate) capacity_type: ::std::option::Option<crate::types::ClusterCapacityType>,
@@ -413,6 +420,20 @@ impl ClusterNodeDetailsBuilder {
     pub fn get_desired_image_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.desired_image_id
     }
+    /// <p>The status of the image version for the cluster node.</p>
+    pub fn image_version_status(mut self, input: crate::types::ClusterImageVersionStatus) -> Self {
+        self.image_version_status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The status of the image version for the cluster node.</p>
+    pub fn set_image_version_status(mut self, input: ::std::option::Option<crate::types::ClusterImageVersionStatus>) -> Self {
+        self.image_version_status = input;
+        self
+    }
+    /// <p>The status of the image version for the cluster node.</p>
+    pub fn get_image_version_status(&self) -> &::std::option::Option<crate::types::ClusterImageVersionStatus> {
+        &self.image_version_status
+    }
     /// <p>Contains information about the UltraServer.</p>
     pub fn ultra_server_info(mut self, input: crate::types::UltraServerInfo) -> Self {
         self.ultra_server_info = ::std::option::Option::Some(input);
@@ -489,6 +510,7 @@ impl ClusterNodeDetailsBuilder {
             placement: self.placement,
             current_image_id: self.current_image_id,
             desired_image_id: self.desired_image_id,
+            image_version_status: self.image_version_status,
             ultra_server_info: self.ultra_server_info,
             kubernetes_config: self.kubernetes_config,
             capacity_type: self.capacity_type,

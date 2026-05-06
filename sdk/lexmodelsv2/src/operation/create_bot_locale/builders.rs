@@ -239,6 +239,20 @@ impl CreateBotLocaleFluentBuilder {
     pub fn get_unified_speech_settings(&self) -> &::std::option::Option<crate::types::UnifiedSpeechSettings> {
         self.inner.get_unified_speech_settings()
     }
+    /// <p>Audio filler settings to configure for the new bot locale. When enabled, Amazon Lex plays a brief background audio filler during speech-to-speech interactions to mask processing delays. Requires <code>unifiedSpeechSettings</code> (speech-to-speech) to be configured on the bot locale.</p>
+    pub fn audio_filler_settings(mut self, input: crate::types::AudioFillerSettings) -> Self {
+        self.inner = self.inner.audio_filler_settings(input);
+        self
+    }
+    /// <p>Audio filler settings to configure for the new bot locale. When enabled, Amazon Lex plays a brief background audio filler during speech-to-speech interactions to mask processing delays. Requires <code>unifiedSpeechSettings</code> (speech-to-speech) to be configured on the bot locale.</p>
+    pub fn set_audio_filler_settings(mut self, input: ::std::option::Option<crate::types::AudioFillerSettings>) -> Self {
+        self.inner = self.inner.set_audio_filler_settings(input);
+        self
+    }
+    /// <p>Audio filler settings to configure for the new bot locale. When enabled, Amazon Lex plays a brief background audio filler during speech-to-speech interactions to mask processing delays. Requires <code>unifiedSpeechSettings</code> (speech-to-speech) to be configured on the bot locale.</p>
+    pub fn get_audio_filler_settings(&self) -> &::std::option::Option<crate::types::AudioFillerSettings> {
+        self.inner.get_audio_filler_settings()
+    }
     /// <p>Speech-to-text settings to configure for the new bot locale.</p>
     pub fn speech_recognition_settings(mut self, input: crate::types::SpeechRecognitionSettings) -> Self {
         self.inner = self.inner.speech_recognition_settings(input);

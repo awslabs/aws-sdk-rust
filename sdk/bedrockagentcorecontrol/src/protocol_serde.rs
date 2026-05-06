@@ -679,6 +679,8 @@ pub(crate) mod shape_custom_oauth2_provider_config_output;
 
 pub(crate) mod shape_delete_memory_strategy_input;
 
+pub(crate) mod shape_efs_access_point_configuration;
+
 pub(crate) mod shape_episodic_memory_strategy_input;
 
 pub(crate) mod shape_evaluator_summary;
@@ -796,6 +798,8 @@ pub(crate) mod shape_request_header_allowlist;
 pub(crate) mod shape_resource_location;
 
 pub(crate) mod shape_route_to_target_action;
+
+pub(crate) mod shape_s3_files_access_point_configuration;
 
 pub(crate) mod shape_s3_location;
 

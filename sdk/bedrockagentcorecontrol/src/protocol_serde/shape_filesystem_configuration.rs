@@ -10,6 +10,18 @@ pub fn ser_filesystem_configuration(
             crate::protocol_serde::shape_session_storage_configuration::ser_session_storage_configuration(&mut object_1, inner)?;
             object_1.finish();
         }
+        crate::types::FilesystemConfiguration::S3FilesAccessPoint(inner) => {
+            #[allow(unused_mut)]
+            let mut object_2 = object_15.key("s3FilesAccessPoint").start_object();
+            crate::protocol_serde::shape_s3_files_access_point_configuration::ser_s3_files_access_point_configuration(&mut object_2, inner)?;
+            object_2.finish();
+        }
+        crate::types::FilesystemConfiguration::EfsAccessPoint(inner) => {
+            #[allow(unused_mut)]
+            let mut object_3 = object_15.key("efsAccessPoint").start_object();
+            crate::protocol_serde::shape_efs_access_point_configuration::ser_efs_access_point_configuration(&mut object_3, inner)?;
+            object_3.finish();
+        }
         crate::types::FilesystemConfiguration::Unknown => {
             return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
                 "FilesystemConfiguration",
@@ -54,6 +66,18 @@ where
                             crate::protocol_serde::shape_session_storage_configuration::de_session_storage_configuration(tokens, _value)?
                                 .ok_or_else(|| {
                                     ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'sessionStorage' cannot be null")
+                                })?,
+                        )),
+                        "s3FilesAccessPoint" => Some(crate::types::FilesystemConfiguration::S3FilesAccessPoint(
+                            crate::protocol_serde::shape_s3_files_access_point_configuration::de_s3_files_access_point_configuration(tokens, _value)?
+                                .ok_or_else(|| {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 's3FilesAccessPoint' cannot be null")
+                                })?,
+                        )),
+                        "efsAccessPoint" => Some(crate::types::FilesystemConfiguration::EfsAccessPoint(
+                            crate::protocol_serde::shape_efs_access_point_configuration::de_efs_access_point_configuration(tokens, _value)?
+                                .ok_or_else(|| {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'efsAccessPoint' cannot be null")
                                 })?,
                         )),
                         _ => {

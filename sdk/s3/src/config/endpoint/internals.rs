@@ -6012,152 +6012,180 @@ return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message(format!("N
                                                                 #[allow(unused_variables)]
                                                                 if let Some(access_point_name) = bucket_arn.resource_id().get(3).cloned() {
                                                                     if (outpost_type.as_ref() as &str) == ("accesspoint") {
-                                                                        #[allow(unused_variables)]
-                                                                        if let Some(endpoint) = endpoint {
+                                                                        if crate::endpoint_lib::host::is_valid_host_label(
+                                                                            access_point_name.as_ref() as &str,
+                                                                            false,
+                                                                            _diagnostic_collector,
+                                                                        ) {
                                                                             #[allow(unused_variables)]
-                                                                            if let Some(url) = crate::endpoint_lib::parse_url::parse_url(
-                                                                                endpoint.as_ref() as &str,
-                                                                                _diagnostic_collector,
-                                                                            ) {
-                                                                                return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
-                                                                                    .url({
-                                                                                        let mut out = String::new();
-                                                                                        out.push_str("https://");
-                                                                                        #[allow(clippy::needless_borrow)]
-                                                                                        out.push_str(&access_point_name.as_ref() as &str);
-                                                                                        out.push('-');
-                                                                                        #[allow(clippy::needless_borrow)]
-                                                                                        out.push_str(&bucket_arn.account_id());
-                                                                                        out.push('.');
-                                                                                        #[allow(clippy::needless_borrow)]
-                                                                                        out.push_str(&outpost_id.as_ref() as &str);
-                                                                                        out.push('.');
-                                                                                        #[allow(clippy::needless_borrow)]
-                                                                                        out.push_str(&url.authority());
-                                                                                        out
-                                                                                    })
-                                                                                    .property(
-                                                                                        "authSchemes",
-                                                                                        vec![
-                                                                                            ::aws_smithy_types::Document::from({
-                                                                                                let mut out = ::std::collections::HashMap::<
-                                                                                                    String,
-                                                                                                    ::aws_smithy_types::Document,
-                                                                                                >::new(
-                                                                                                );
-                                                                                                out.insert(
-                                                                                                    "disableDoubleEncoding".to_string(),
-                                                                                                    true.into(),
-                                                                                                );
-                                                                                                out.insert(
-                                                                                                    "name".to_string(),
-                                                                                                    "sigv4a".to_string().into(),
-                                                                                                );
-                                                                                                out.insert(
-                                                                                                    "signingName".to_string(),
-                                                                                                    "s3-outposts".to_string().into(),
-                                                                                                );
-                                                                                                out.insert(
-                                                                                                    "signingRegionSet".to_string(),
-                                                                                                    vec![::aws_smithy_types::Document::from(
-                                                                                                        "*".to_string(),
-                                                                                                    )]
-                                                                                                    .into(),
-                                                                                                );
-                                                                                                out
-                                                                                            }),
-                                                                                            ::aws_smithy_types::Document::from({
-                                                                                                let mut out = ::std::collections::HashMap::<
-                                                                                                    String,
-                                                                                                    ::aws_smithy_types::Document,
-                                                                                                >::new(
-                                                                                                );
-                                                                                                out.insert(
-                                                                                                    "disableDoubleEncoding".to_string(),
-                                                                                                    true.into(),
-                                                                                                );
-                                                                                                out.insert(
-                                                                                                    "name".to_string(),
-                                                                                                    "sigv4".to_string().into(),
-                                                                                                );
-                                                                                                out.insert(
-                                                                                                    "signingName".to_string(),
-                                                                                                    "s3-outposts".to_string().into(),
-                                                                                                );
-                                                                                                out.insert(
-                                                                                                    "signingRegion".to_string(),
-                                                                                                    bucket_arn.region().to_owned().into(),
-                                                                                                );
-                                                                                                out
-                                                                                            }),
-                                                                                        ],
-                                                                                    )
-                                                                                    .build());
+                                                                            if let Some(endpoint) = endpoint {
+                                                                                #[allow(unused_variables)]
+                                                                                if let Some(url) = crate::endpoint_lib::parse_url::parse_url(
+                                                                                    endpoint.as_ref() as &str,
+                                                                                    _diagnostic_collector,
+                                                                                ) {
+                                                                                    return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
+                                                                                        .url({
+                                                                                            let mut out = String::new();
+                                                                                            out.push_str("https://");
+                                                                                            #[allow(clippy::needless_borrow)]
+                                                                                            out.push_str(&access_point_name.as_ref() as &str);
+                                                                                            out.push('-');
+                                                                                            #[allow(clippy::needless_borrow)]
+                                                                                            out.push_str(&bucket_arn.account_id());
+                                                                                            out.push('.');
+                                                                                            #[allow(clippy::needless_borrow)]
+                                                                                            out.push_str(&outpost_id.as_ref() as &str);
+                                                                                            out.push('.');
+                                                                                            #[allow(clippy::needless_borrow)]
+                                                                                            out.push_str(&url.authority());
+                                                                                            out
+                                                                                        })
+                                                                                        .property(
+                                                                                            "authSchemes",
+                                                                                            vec![
+                                                                                                ::aws_smithy_types::Document::from({
+                                                                                                    let mut out = ::std::collections::HashMap::<
+                                                                                                        String,
+                                                                                                        ::aws_smithy_types::Document,
+                                                                                                    >::new(
+                                                                                                    );
+                                                                                                    out.insert(
+                                                                                                        "disableDoubleEncoding".to_string(),
+                                                                                                        true.into(),
+                                                                                                    );
+                                                                                                    out.insert(
+                                                                                                        "name".to_string(),
+                                                                                                        "sigv4a".to_string().into(),
+                                                                                                    );
+                                                                                                    out.insert(
+                                                                                                        "signingName".to_string(),
+                                                                                                        "s3-outposts".to_string().into(),
+                                                                                                    );
+                                                                                                    out.insert(
+                                                                                                        "signingRegionSet".to_string(),
+                                                                                                        vec![::aws_smithy_types::Document::from(
+                                                                                                            "*".to_string(),
+                                                                                                        )]
+                                                                                                        .into(),
+                                                                                                    );
+                                                                                                    out
+                                                                                                }),
+                                                                                                ::aws_smithy_types::Document::from({
+                                                                                                    let mut out = ::std::collections::HashMap::<
+                                                                                                        String,
+                                                                                                        ::aws_smithy_types::Document,
+                                                                                                    >::new(
+                                                                                                    );
+                                                                                                    out.insert(
+                                                                                                        "disableDoubleEncoding".to_string(),
+                                                                                                        true.into(),
+                                                                                                    );
+                                                                                                    out.insert(
+                                                                                                        "name".to_string(),
+                                                                                                        "sigv4".to_string().into(),
+                                                                                                    );
+                                                                                                    out.insert(
+                                                                                                        "signingName".to_string(),
+                                                                                                        "s3-outposts".to_string().into(),
+                                                                                                    );
+                                                                                                    out.insert(
+                                                                                                        "signingRegion".to_string(),
+                                                                                                        bucket_arn.region().to_owned().into(),
+                                                                                                    );
+                                                                                                    out
+                                                                                                }),
+                                                                                            ],
+                                                                                        )
+                                                                                        .build());
+                                                                                }
                                                                             }
-                                                                        }
-                                                                        return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
-                                                                            .url({
-                                                                                let mut out = String::new();
-                                                                                out.push_str("https://");
-                                                                                #[allow(clippy::needless_borrow)]
-                                                                                out.push_str(&access_point_name.as_ref() as &str);
-                                                                                out.push('-');
-                                                                                #[allow(clippy::needless_borrow)]
-                                                                                out.push_str(&bucket_arn.account_id());
-                                                                                out.push('.');
-                                                                                #[allow(clippy::needless_borrow)]
-                                                                                out.push_str(&outpost_id.as_ref() as &str);
-                                                                                out.push_str(".s3-outposts.");
-                                                                                #[allow(clippy::needless_borrow)]
-                                                                                out.push_str(&bucket_arn.region());
-                                                                                out.push('.');
-                                                                                #[allow(clippy::needless_borrow)]
-                                                                                out.push_str(&bucket_partition.dns_suffix());
-                                                                                out
-                                                                            })
-                                                                            .property(
-                                                                                "authSchemes",
-                                                                                vec![
-                                                                                    ::aws_smithy_types::Document::from({
-                                                                                        let mut out = ::std::collections::HashMap::<
-                                                                                            String,
-                                                                                            ::aws_smithy_types::Document,
-                                                                                        >::new(
-                                                                                        );
-                                                                                        out.insert("disableDoubleEncoding".to_string(), true.into());
-                                                                                        out.insert("name".to_string(), "sigv4a".to_string().into());
-                                                                                        out.insert(
-                                                                                            "signingName".to_string(),
-                                                                                            "s3-outposts".to_string().into(),
-                                                                                        );
-                                                                                        out.insert(
-                                                                                            "signingRegionSet".to_string(),
-                                                                                            vec![::aws_smithy_types::Document::from("*".to_string())]
+                                                                            return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
+                                                                                .url({
+                                                                                    let mut out = String::new();
+                                                                                    out.push_str("https://");
+                                                                                    #[allow(clippy::needless_borrow)]
+                                                                                    out.push_str(&access_point_name.as_ref() as &str);
+                                                                                    out.push('-');
+                                                                                    #[allow(clippy::needless_borrow)]
+                                                                                    out.push_str(&bucket_arn.account_id());
+                                                                                    out.push('.');
+                                                                                    #[allow(clippy::needless_borrow)]
+                                                                                    out.push_str(&outpost_id.as_ref() as &str);
+                                                                                    out.push_str(".s3-outposts.");
+                                                                                    #[allow(clippy::needless_borrow)]
+                                                                                    out.push_str(&bucket_arn.region());
+                                                                                    out.push('.');
+                                                                                    #[allow(clippy::needless_borrow)]
+                                                                                    out.push_str(&bucket_partition.dns_suffix());
+                                                                                    out
+                                                                                })
+                                                                                .property(
+                                                                                    "authSchemes",
+                                                                                    vec![
+                                                                                        ::aws_smithy_types::Document::from({
+                                                                                            let mut out = ::std::collections::HashMap::<
+                                                                                                String,
+                                                                                                ::aws_smithy_types::Document,
+                                                                                            >::new(
+                                                                                            );
+                                                                                            out.insert(
+                                                                                                "disableDoubleEncoding".to_string(),
+                                                                                                true.into(),
+                                                                                            );
+                                                                                            out.insert(
+                                                                                                "name".to_string(),
+                                                                                                "sigv4a".to_string().into(),
+                                                                                            );
+                                                                                            out.insert(
+                                                                                                "signingName".to_string(),
+                                                                                                "s3-outposts".to_string().into(),
+                                                                                            );
+                                                                                            out.insert(
+                                                                                                "signingRegionSet".to_string(),
+                                                                                                vec![::aws_smithy_types::Document::from(
+                                                                                                    "*".to_string(),
+                                                                                                )]
                                                                                                 .into(),
-                                                                                        );
-                                                                                        out
-                                                                                    }),
-                                                                                    ::aws_smithy_types::Document::from({
-                                                                                        let mut out = ::std::collections::HashMap::<
-                                                                                            String,
-                                                                                            ::aws_smithy_types::Document,
-                                                                                        >::new(
-                                                                                        );
-                                                                                        out.insert("disableDoubleEncoding".to_string(), true.into());
-                                                                                        out.insert("name".to_string(), "sigv4".to_string().into());
-                                                                                        out.insert(
-                                                                                            "signingName".to_string(),
-                                                                                            "s3-outposts".to_string().into(),
-                                                                                        );
-                                                                                        out.insert(
-                                                                                            "signingRegion".to_string(),
-                                                                                            bucket_arn.region().to_owned().into(),
-                                                                                        );
-                                                                                        out
-                                                                                    }),
-                                                                                ],
-                                                                            )
-                                                                            .build());
+                                                                                            );
+                                                                                            out
+                                                                                        }),
+                                                                                        ::aws_smithy_types::Document::from({
+                                                                                            let mut out = ::std::collections::HashMap::<
+                                                                                                String,
+                                                                                                ::aws_smithy_types::Document,
+                                                                                            >::new(
+                                                                                            );
+                                                                                            out.insert(
+                                                                                                "disableDoubleEncoding".to_string(),
+                                                                                                true.into(),
+                                                                                            );
+                                                                                            out.insert(
+                                                                                                "name".to_string(),
+                                                                                                "sigv4".to_string().into(),
+                                                                                            );
+                                                                                            out.insert(
+                                                                                                "signingName".to_string(),
+                                                                                                "s3-outposts".to_string().into(),
+                                                                                            );
+                                                                                            out.insert(
+                                                                                                "signingRegion".to_string(),
+                                                                                                bucket_arn.region().to_owned().into(),
+                                                                                            );
+                                                                                            out
+                                                                                        }),
+                                                                                    ],
+                                                                                )
+                                                                                .build());
+                                                                        }
+                                                                        return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message({
+                                                                            let mut out = String::new();
+                                                                            out.push_str("Invalid ARN: The access point name may only contain a-z, A-Z, 0-9 and `-`. Found: `");
+                                                                            #[allow(clippy::needless_borrow)]
+                                                                            out.push_str(&access_point_name.as_ref() as &str);
+                                                                            out.push('`');
+                                                                            out
+                                                                        }));
                                                                     }
                                                                     return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message({
                                                                         let mut out = String::new();

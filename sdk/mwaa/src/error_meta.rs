@@ -13,6 +13,8 @@ pub enum Error {
     RestApiClientException(crate::types::error::RestApiClientException),
     /// <p>An exception indicating that a server-side error occurred during the Apache Airflow REST API call.</p>
     RestApiServerException(crate::types::error::RestApiServerException),
+    /// <p>ServiceUnavailableException: The service is currently unavailable.</p>
+    ServiceUnavailableException(crate::types::error::ServiceUnavailableException),
     /// <p>ValidationException: The provided input is not valid.</p>
     ValidationException(crate::types::error::ValidationException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
@@ -32,6 +34,7 @@ impl ::std::fmt::Display for Error {
             Error::ResourceNotFoundException(inner) => inner.fmt(f),
             Error::RestApiClientException(inner) => inner.fmt(f),
             Error::RestApiServerException(inner) => inner.fmt(f),
+            Error::ServiceUnavailableException(inner) => inner.fmt(f),
             Error::ValidationException(inner) => inner.fmt(f),
             Error::Unhandled(_) => {
                 if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
@@ -59,6 +62,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::ResourceNotFoundException(inner) => inner.meta(),
             Self::RestApiClientException(inner) => inner.meta(),
             Self::RestApiServerException(inner) => inner.meta(),
+            Self::ServiceUnavailableException(inner) => inner.meta(),
             Self::ValidationException(inner) => inner.meta(),
             Self::Unhandled(inner) => &inner.meta,
         }
@@ -104,6 +108,9 @@ impl From<crate::operation::create_environment::CreateEnvironmentError> for Erro
     fn from(err: crate::operation::create_environment::CreateEnvironmentError) -> Self {
         match err {
             crate::operation::create_environment::CreateEnvironmentError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::create_environment::CreateEnvironmentError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
             crate::operation::create_environment::CreateEnvironmentError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::create_environment::CreateEnvironmentError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -157,6 +164,9 @@ impl From<crate::operation::delete_environment::DeleteEnvironmentError> for Erro
         match err {
             crate::operation::delete_environment::DeleteEnvironmentError::InternalServerException(inner) => Error::InternalServerException(inner),
             crate::operation::delete_environment::DeleteEnvironmentError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_environment::DeleteEnvironmentError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
             crate::operation::delete_environment::DeleteEnvironmentError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::delete_environment::DeleteEnvironmentError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -354,6 +364,9 @@ impl From<crate::operation::update_environment::UpdateEnvironmentError> for Erro
         match err {
             crate::operation::update_environment::UpdateEnvironmentError::InternalServerException(inner) => Error::InternalServerException(inner),
             crate::operation::update_environment::UpdateEnvironmentError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_environment::UpdateEnvironmentError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
             crate::operation::update_environment::UpdateEnvironmentError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::update_environment::UpdateEnvironmentError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -367,6 +380,7 @@ impl ::std::error::Error for Error {
             Error::ResourceNotFoundException(inner) => inner.source(),
             Error::RestApiClientException(inner) => inner.source(),
             Error::RestApiServerException(inner) => inner.source(),
+            Error::ServiceUnavailableException(inner) => inner.source(),
             Error::ValidationException(inner) => inner.source(),
             Error::Unhandled(inner) => ::std::option::Option::Some(&*inner.source),
         }
@@ -380,6 +394,7 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::ResourceNotFoundException(e) => e.request_id(),
             Self::RestApiClientException(e) => e.request_id(),
             Self::RestApiServerException(e) => e.request_id(),
+            Self::ServiceUnavailableException(e) => e.request_id(),
             Self::ValidationException(e) => e.request_id(),
             Self::Unhandled(e) => e.meta.request_id(),
         }

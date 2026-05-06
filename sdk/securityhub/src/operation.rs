@@ -160,6 +160,9 @@ pub mod enable_security_hub;
 /// Types for the `EnableSecurityHubV2` operation.
 pub mod enable_security_hub_v2;
 
+/// Types for the `GenerateRecommendedPolicyV2` operation.
+pub mod generate_recommended_policy_v2;
+
 /// Types for the `GetAdministratorAccount` operation.
 pub mod get_administrator_account;
 
@@ -213,6 +216,9 @@ pub mod get_master_account;
 
 /// Types for the `GetMembers` operation.
 pub mod get_members;
+
+/// Types for the `GetRecommendedPolicyV2` operation.
+pub mod get_recommended_policy_v2;
 
 /// Types for the `GetResourcesStatisticsV2` operation.
 pub mod get_resources_statistics_v2;

@@ -11,6 +11,8 @@ pub use crate::types::_voice_settings::VoiceSettingsBuilder;
 
 pub use crate::types::_unified_speech_settings::UnifiedSpeechSettingsBuilder;
 
+pub use crate::types::_audio_filler_settings::AudioFillerSettingsBuilder;
+
 pub use crate::types::_speech_recognition_settings::SpeechRecognitionSettingsBuilder;
 
 pub use crate::types::_generative_ai_settings::GenerativeAiSettingsBuilder;

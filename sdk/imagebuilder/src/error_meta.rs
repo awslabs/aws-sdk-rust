@@ -1648,11 +1648,13 @@ where
 impl From<crate::operation::import_disk_image::ImportDiskImageError> for Error {
     fn from(err: crate::operation::import_disk_image::ImportDiskImageError) -> Self {
         match err {
+            crate::operation::import_disk_image::ImportDiskImageError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::import_disk_image::ImportDiskImageError::ClientException(inner) => Error::ClientException(inner),
             crate::operation::import_disk_image::ImportDiskImageError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::import_disk_image::ImportDiskImageError::ServiceUnavailableException(inner) => {
                 Error::ServiceUnavailableException(inner)
             }
+            crate::operation::import_disk_image::ImportDiskImageError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::import_disk_image::ImportDiskImageError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }

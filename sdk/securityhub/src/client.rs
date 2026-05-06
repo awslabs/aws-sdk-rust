@@ -269,6 +269,8 @@ mod enable_security_hub;
 
 mod enable_security_hub_v2;
 
+mod generate_recommended_policy_v2;
+
 mod get_administrator_account;
 
 mod get_aggregator_v2;
@@ -304,6 +306,8 @@ mod get_invitations_count;
 mod get_master_account;
 
 mod get_members;
+
+mod get_recommended_policy_v2;
 
 mod get_resources_statistics_v2;
 

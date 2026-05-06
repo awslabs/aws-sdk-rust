@@ -10,6 +10,12 @@ pub struct DataQualityEvaluationRunAdditionalRunOptions {
     pub results_s3_prefix: ::std::option::Option<::std::string::String>,
     /// <p>Set the evaluation method for composite rules in the ruleset to ROW/COLUMN</p>
     pub composite_rule_evaluation_method: ::std::option::Option<crate::types::DqCompositeRuleEvaluationMethod>,
+    /// <p>A custom prefix for the CloudWatch log group names. When specified, evaluation run logs are written to <code><customloggroupprefix>
+    /// /error
+    /// </customloggroupprefix></code> and <code><customloggroupprefix>
+    /// /output
+    /// </customloggroupprefix></code> instead of the default <code>/aws-glue/data-quality/error</code> and <code>/aws-glue/data-quality/output</code> log groups.</p>
+    pub custom_log_group_prefix: ::std::option::Option<::std::string::String>,
 }
 impl DataQualityEvaluationRunAdditionalRunOptions {
     /// <p>Whether or not to enable CloudWatch metrics.</p>
@@ -23,6 +29,14 @@ impl DataQualityEvaluationRunAdditionalRunOptions {
     /// <p>Set the evaluation method for composite rules in the ruleset to ROW/COLUMN</p>
     pub fn composite_rule_evaluation_method(&self) -> ::std::option::Option<&crate::types::DqCompositeRuleEvaluationMethod> {
         self.composite_rule_evaluation_method.as_ref()
+    }
+    /// <p>A custom prefix for the CloudWatch log group names. When specified, evaluation run logs are written to <code><customloggroupprefix>
+    /// /error
+    /// </customloggroupprefix></code> and <code><customloggroupprefix>
+    /// /output
+    /// </customloggroupprefix></code> instead of the default <code>/aws-glue/data-quality/error</code> and <code>/aws-glue/data-quality/output</code> log groups.</p>
+    pub fn custom_log_group_prefix(&self) -> ::std::option::Option<&str> {
+        self.custom_log_group_prefix.as_deref()
     }
 }
 impl DataQualityEvaluationRunAdditionalRunOptions {
@@ -39,6 +53,7 @@ pub struct DataQualityEvaluationRunAdditionalRunOptionsBuilder {
     pub(crate) cloud_watch_metrics_enabled: ::std::option::Option<bool>,
     pub(crate) results_s3_prefix: ::std::option::Option<::std::string::String>,
     pub(crate) composite_rule_evaluation_method: ::std::option::Option<crate::types::DqCompositeRuleEvaluationMethod>,
+    pub(crate) custom_log_group_prefix: ::std::option::Option<::std::string::String>,
 }
 impl DataQualityEvaluationRunAdditionalRunOptionsBuilder {
     /// <p>Whether or not to enable CloudWatch metrics.</p>
@@ -83,12 +98,39 @@ impl DataQualityEvaluationRunAdditionalRunOptionsBuilder {
     pub fn get_composite_rule_evaluation_method(&self) -> &::std::option::Option<crate::types::DqCompositeRuleEvaluationMethod> {
         &self.composite_rule_evaluation_method
     }
+    /// <p>A custom prefix for the CloudWatch log group names. When specified, evaluation run logs are written to <code><customloggroupprefix>
+    /// /error
+    /// </customloggroupprefix></code> and <code><customloggroupprefix>
+    /// /output
+    /// </customloggroupprefix></code> instead of the default <code>/aws-glue/data-quality/error</code> and <code>/aws-glue/data-quality/output</code> log groups.</p>
+    pub fn custom_log_group_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.custom_log_group_prefix = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>A custom prefix for the CloudWatch log group names. When specified, evaluation run logs are written to <code><customloggroupprefix>
+    /// /error
+    /// </customloggroupprefix></code> and <code><customloggroupprefix>
+    /// /output
+    /// </customloggroupprefix></code> instead of the default <code>/aws-glue/data-quality/error</code> and <code>/aws-glue/data-quality/output</code> log groups.</p>
+    pub fn set_custom_log_group_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.custom_log_group_prefix = input;
+        self
+    }
+    /// <p>A custom prefix for the CloudWatch log group names. When specified, evaluation run logs are written to <code><customloggroupprefix>
+    /// /error
+    /// </customloggroupprefix></code> and <code><customloggroupprefix>
+    /// /output
+    /// </customloggroupprefix></code> instead of the default <code>/aws-glue/data-quality/error</code> and <code>/aws-glue/data-quality/output</code> log groups.</p>
+    pub fn get_custom_log_group_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.custom_log_group_prefix
+    }
     /// Consumes the builder and constructs a [`DataQualityEvaluationRunAdditionalRunOptions`](crate::types::DataQualityEvaluationRunAdditionalRunOptions).
     pub fn build(self) -> crate::types::DataQualityEvaluationRunAdditionalRunOptions {
         crate::types::DataQualityEvaluationRunAdditionalRunOptions {
             cloud_watch_metrics_enabled: self.cloud_watch_metrics_enabled,
             results_s3_prefix: self.results_s3_prefix,
             composite_rule_evaluation_method: self.composite_rule_evaluation_method,
+            custom_log_group_prefix: self.custom_log_group_prefix,
         }
     }
 }

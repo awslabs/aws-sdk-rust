@@ -25,6 +25,8 @@ pub use crate::types::_ocsf_finding_filters::OcsfFindingFiltersBuilder;
 
 pub use crate::types::_insight_results::InsightResultsBuilder;
 
+pub use crate::types::_recommendation_error::RecommendationErrorBuilder;
+
 pub use crate::types::_resource_scopes::ResourceScopesBuilder;
 
 pub use crate::types::_resources_trends_filters::ResourcesTrendsFiltersBuilder;
@@ -210,6 +212,8 @@ pub use crate::types::_trends_values::TrendsValuesBuilder;
 pub use crate::types::_composite_filter::CompositeFilterBuilder;
 
 pub use crate::types::_insight_result_value::InsightResultValueBuilder;
+
+pub use crate::types::_unused_permissions_recommendation_step::UnusedPermissionsRecommendationStepBuilder;
 
 pub use crate::types::_resources_trends_composite_filter::ResourcesTrendsCompositeFilterBuilder;
 

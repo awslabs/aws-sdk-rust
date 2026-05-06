@@ -22,6 +22,8 @@ pub struct ClusterNodeSummary {
     pub ultra_server_info: ::std::option::Option<crate::types::UltraServerInfo>,
     /// <p>The private DNS hostname of the SageMaker HyperPod cluster node.</p>
     pub private_dns_hostname: ::std::option::Option<::std::string::String>,
+    /// <p>The status of the image version for the cluster node.</p>
+    pub image_version_status: ::std::option::Option<crate::types::ClusterImageVersionStatus>,
 }
 impl ClusterNodeSummary {
     /// <p>The name of the instance group in which the instance is.</p>
@@ -60,6 +62,10 @@ impl ClusterNodeSummary {
     pub fn private_dns_hostname(&self) -> ::std::option::Option<&str> {
         self.private_dns_hostname.as_deref()
     }
+    /// <p>The status of the image version for the cluster node.</p>
+    pub fn image_version_status(&self) -> ::std::option::Option<&crate::types::ClusterImageVersionStatus> {
+        self.image_version_status.as_ref()
+    }
 }
 impl ClusterNodeSummary {
     /// Creates a new builder-style object to manufacture [`ClusterNodeSummary`](crate::types::ClusterNodeSummary).
@@ -81,6 +87,7 @@ pub struct ClusterNodeSummaryBuilder {
     pub(crate) instance_status: ::std::option::Option<crate::types::ClusterInstanceStatusDetails>,
     pub(crate) ultra_server_info: ::std::option::Option<crate::types::UltraServerInfo>,
     pub(crate) private_dns_hostname: ::std::option::Option<::std::string::String>,
+    pub(crate) image_version_status: ::std::option::Option<crate::types::ClusterImageVersionStatus>,
 }
 impl ClusterNodeSummaryBuilder {
     /// <p>The name of the instance group in which the instance is.</p>
@@ -214,6 +221,20 @@ impl ClusterNodeSummaryBuilder {
     pub fn get_private_dns_hostname(&self) -> &::std::option::Option<::std::string::String> {
         &self.private_dns_hostname
     }
+    /// <p>The status of the image version for the cluster node.</p>
+    pub fn image_version_status(mut self, input: crate::types::ClusterImageVersionStatus) -> Self {
+        self.image_version_status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The status of the image version for the cluster node.</p>
+    pub fn set_image_version_status(mut self, input: ::std::option::Option<crate::types::ClusterImageVersionStatus>) -> Self {
+        self.image_version_status = input;
+        self
+    }
+    /// <p>The status of the image version for the cluster node.</p>
+    pub fn get_image_version_status(&self) -> &::std::option::Option<crate::types::ClusterImageVersionStatus> {
+        &self.image_version_status
+    }
     /// Consumes the builder and constructs a [`ClusterNodeSummary`](crate::types::ClusterNodeSummary).
     pub fn build(self) -> crate::types::ClusterNodeSummary {
         crate::types::ClusterNodeSummary {
@@ -226,6 +247,7 @@ impl ClusterNodeSummaryBuilder {
             instance_status: self.instance_status,
             ultra_server_info: self.ultra_server_info,
             private_dns_hostname: self.private_dns_hostname,
+            image_version_status: self.image_version_status,
         }
     }
 }

@@ -24,7 +24,7 @@
 //! This section contains the Amazon Managed Workflows for Apache Airflow (MWAA) API reference documentation. For more information, see [What is Amazon MWAA?](https://docs.aws.amazon.com/mwaa/latest/userguide/what-is-mwaa.html).
 //!
 //! __Endpoints__
-//!   - api.airflow.{region}.amazonaws.com - This endpoint is used for environment management.
+//!   - api.airflow.{region}.amazonaws.com (use api.airflow.{region}.api.aws for IPv6) - This endpoint is used for environment management.
 //!     - [CreateEnvironment](https://docs.aws.amazon.com/mwaa/latest/API/API_CreateEnvironment.html)
 //!     - [DeleteEnvironment](https://docs.aws.amazon.com/mwaa/latest/API/API_DeleteEnvironment.html)
 //!     - [GetEnvironment](https://docs.aws.amazon.com/mwaa/latest/API/API_GetEnvironment.html)
@@ -34,7 +34,7 @@
 //!     - [UntagResource](https://docs.aws.amazon.com/mwaa/latest/API/API_UntagResource.html)
 //!     - [UpdateEnvironment](https://docs.aws.amazon.com/mwaa/latest/API/API_UpdateEnvironment.html)
 //!
-//!   - env.airflow.{region}.amazonaws.com - This endpoint is used to operate the Airflow environment.
+//!   - env.airflow.{region}.amazonaws.com (use env.airflow.{region}.api.aws for IPv6) - This endpoint is used to operate the Airflow environment.
 //!     - [CreateCliToken](https://docs.aws.amazon.com/mwaa/latest/API/API_CreateCliToken.html )
 //!     - [CreateWebLoginToken](https://docs.aws.amazon.com/mwaa/latest/API/API_CreateWebLoginToken.html)
 //!     - [InvokeRestApi](https://docs.aws.amazon.com/mwaa/latest/API/API_InvokeRestApi.html)
@@ -55,7 +55,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-mwaa = "1.104.0"
+//! aws-sdk-mwaa = "1.105.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

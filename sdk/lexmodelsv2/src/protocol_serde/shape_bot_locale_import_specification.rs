@@ -61,6 +61,11 @@ where
                                 crate::protocol_serde::shape_unified_speech_settings::de_unified_speech_settings(tokens, _value)?,
                             );
                         }
+                        "audioFillerSettings" => {
+                            builder = builder.set_audio_filler_settings(
+                                crate::protocol_serde::shape_audio_filler_settings::de_audio_filler_settings(tokens, _value)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {
@@ -121,6 +126,12 @@ pub fn ser_bot_locale_import_specification(
         let mut object_8 = object.key("unifiedSpeechSettings").start_object();
         crate::protocol_serde::shape_unified_speech_settings::ser_unified_speech_settings(&mut object_8, var_7)?;
         object_8.finish();
+    }
+    if let Some(var_9) = &input.audio_filler_settings {
+        #[allow(unused_mut)]
+        let mut object_10 = object.key("audioFillerSettings").start_object();
+        crate::protocol_serde::shape_audio_filler_settings::ser_audio_filler_settings(&mut object_10, var_9)?;
+        object_10.finish();
     }
     Ok(())
 }

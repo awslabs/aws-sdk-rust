@@ -33,6 +33,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "CustomLogGroupPrefix" => {
+                            builder = builder.set_custom_log_group_prefix(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {
@@ -62,6 +69,9 @@ pub fn ser_data_quality_evaluation_run_additional_run_options(
     }
     if let Some(var_3) = &input.composite_rule_evaluation_method {
         object.key("CompositeRuleEvaluationMethod").string(var_3.as_str());
+    }
+    if let Some(var_4) = &input.custom_log_group_prefix {
+        object.key("CustomLogGroupPrefix").string(var_4.as_str());
     }
     Ok(())
 }

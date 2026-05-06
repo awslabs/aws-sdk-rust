@@ -42,6 +42,8 @@ pub struct BotLocaleImportSpecification {
     pub speech_detection_sensitivity: ::std::option::Option<crate::types::SpeechDetectionSensitivity>,
     /// <p>Unified speech settings to apply when importing the bot locale configuration.</p>
     pub unified_speech_settings: ::std::option::Option<crate::types::UnifiedSpeechSettings>,
+    /// <p>Audio filler settings to apply when importing the bot locale configuration. Audio filler requires <code>unifiedSpeechSettings</code> (speech-to-speech) to be enabled when <code>enabled</code> is <code>true</code>.</p>
+    pub audio_filler_settings: ::std::option::Option<crate::types::AudioFillerSettings>,
 }
 impl BotLocaleImportSpecification {
     /// <p>The identifier of the bot to import the locale to.</p>
@@ -101,6 +103,10 @@ impl BotLocaleImportSpecification {
     pub fn unified_speech_settings(&self) -> ::std::option::Option<&crate::types::UnifiedSpeechSettings> {
         self.unified_speech_settings.as_ref()
     }
+    /// <p>Audio filler settings to apply when importing the bot locale configuration. Audio filler requires <code>unifiedSpeechSettings</code> (speech-to-speech) to be enabled when <code>enabled</code> is <code>true</code>.</p>
+    pub fn audio_filler_settings(&self) -> ::std::option::Option<&crate::types::AudioFillerSettings> {
+        self.audio_filler_settings.as_ref()
+    }
 }
 impl BotLocaleImportSpecification {
     /// Creates a new builder-style object to manufacture [`BotLocaleImportSpecification`](crate::types::BotLocaleImportSpecification).
@@ -121,6 +127,7 @@ pub struct BotLocaleImportSpecificationBuilder {
     pub(crate) speech_recognition_settings: ::std::option::Option<crate::types::SpeechRecognitionSettings>,
     pub(crate) speech_detection_sensitivity: ::std::option::Option<crate::types::SpeechDetectionSensitivity>,
     pub(crate) unified_speech_settings: ::std::option::Option<crate::types::UnifiedSpeechSettings>,
+    pub(crate) audio_filler_settings: ::std::option::Option<crate::types::AudioFillerSettings>,
 }
 impl BotLocaleImportSpecificationBuilder {
     /// <p>The identifier of the bot to import the locale to.</p>
@@ -304,6 +311,20 @@ impl BotLocaleImportSpecificationBuilder {
     pub fn get_unified_speech_settings(&self) -> &::std::option::Option<crate::types::UnifiedSpeechSettings> {
         &self.unified_speech_settings
     }
+    /// <p>Audio filler settings to apply when importing the bot locale configuration. Audio filler requires <code>unifiedSpeechSettings</code> (speech-to-speech) to be enabled when <code>enabled</code> is <code>true</code>.</p>
+    pub fn audio_filler_settings(mut self, input: crate::types::AudioFillerSettings) -> Self {
+        self.audio_filler_settings = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Audio filler settings to apply when importing the bot locale configuration. Audio filler requires <code>unifiedSpeechSettings</code> (speech-to-speech) to be enabled when <code>enabled</code> is <code>true</code>.</p>
+    pub fn set_audio_filler_settings(mut self, input: ::std::option::Option<crate::types::AudioFillerSettings>) -> Self {
+        self.audio_filler_settings = input;
+        self
+    }
+    /// <p>Audio filler settings to apply when importing the bot locale configuration. Audio filler requires <code>unifiedSpeechSettings</code> (speech-to-speech) to be enabled when <code>enabled</code> is <code>true</code>.</p>
+    pub fn get_audio_filler_settings(&self) -> &::std::option::Option<crate::types::AudioFillerSettings> {
+        &self.audio_filler_settings
+    }
     /// Consumes the builder and constructs a [`BotLocaleImportSpecification`](crate::types::BotLocaleImportSpecification).
     /// This method will fail if any of the following fields are not set:
     /// - [`bot_id`](crate::types::builders::BotLocaleImportSpecificationBuilder::bot_id)
@@ -334,6 +355,7 @@ impl BotLocaleImportSpecificationBuilder {
             speech_recognition_settings: self.speech_recognition_settings,
             speech_detection_sensitivity: self.speech_detection_sensitivity,
             unified_speech_settings: self.unified_speech_settings,
+            audio_filler_settings: self.audio_filler_settings,
         })
     }
 }

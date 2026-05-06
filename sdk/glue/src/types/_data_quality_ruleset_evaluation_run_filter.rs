@@ -10,6 +10,8 @@ pub struct DataQualityRulesetEvaluationRunFilter {
     pub started_before: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Filter results by runs that started after this time.</p>
     pub started_after: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>Filter results by the name of the ruleset.</p>
+    pub ruleset_name: ::std::option::Option<::std::string::String>,
 }
 impl DataQualityRulesetEvaluationRunFilter {
     /// <p>Filter based on a data source (an Glue table) associated with the run.</p>
@@ -23,6 +25,10 @@ impl DataQualityRulesetEvaluationRunFilter {
     /// <p>Filter results by runs that started after this time.</p>
     pub fn started_after(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.started_after.as_ref()
+    }
+    /// <p>Filter results by the name of the ruleset.</p>
+    pub fn ruleset_name(&self) -> ::std::option::Option<&str> {
+        self.ruleset_name.as_deref()
     }
 }
 impl DataQualityRulesetEvaluationRunFilter {
@@ -39,6 +45,7 @@ pub struct DataQualityRulesetEvaluationRunFilterBuilder {
     pub(crate) data_source: ::std::option::Option<crate::types::DataSource>,
     pub(crate) started_before: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) started_after: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) ruleset_name: ::std::option::Option<::std::string::String>,
 }
 impl DataQualityRulesetEvaluationRunFilterBuilder {
     /// <p>Filter based on a data source (an Glue table) associated with the run.</p>
@@ -84,12 +91,27 @@ impl DataQualityRulesetEvaluationRunFilterBuilder {
     pub fn get_started_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.started_after
     }
+    /// <p>Filter results by the name of the ruleset.</p>
+    pub fn ruleset_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.ruleset_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Filter results by the name of the ruleset.</p>
+    pub fn set_ruleset_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.ruleset_name = input;
+        self
+    }
+    /// <p>Filter results by the name of the ruleset.</p>
+    pub fn get_ruleset_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ruleset_name
+    }
     /// Consumes the builder and constructs a [`DataQualityRulesetEvaluationRunFilter`](crate::types::DataQualityRulesetEvaluationRunFilter).
     pub fn build(self) -> crate::types::DataQualityRulesetEvaluationRunFilter {
         crate::types::DataQualityRulesetEvaluationRunFilter {
             data_source: self.data_source,
             started_before: self.started_before,
             started_after: self.started_after,
+            ruleset_name: self.ruleset_name,
         }
     }
 }

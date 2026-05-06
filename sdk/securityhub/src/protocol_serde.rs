@@ -129,6 +129,8 @@ pub(crate) mod shape_enable_security_hub;
 
 pub(crate) mod shape_enable_security_hub_v2;
 
+pub(crate) mod shape_generate_recommended_policy_v2;
+
 pub(crate) mod shape_get_administrator_account;
 
 pub(crate) mod shape_get_aggregator_v2;
@@ -164,6 +166,8 @@ pub(crate) mod shape_get_invitations_count;
 pub(crate) mod shape_get_master_account;
 
 pub(crate) mod shape_get_members;
+
+pub(crate) mod shape_get_recommended_policy_v2;
 
 pub(crate) mod shape_get_resources_statistics_v2;
 
@@ -509,6 +513,10 @@ pub(crate) mod shape_provider_detail;
 
 pub(crate) mod shape_provider_update_configuration;
 
+pub(crate) mod shape_recommendation_error;
+
+pub(crate) mod shape_recommendation_steps;
+
 pub(crate) mod shape_related_finding;
 
 pub(crate) mod shape_resource_group_by_rule;
@@ -672,6 +680,8 @@ pub(crate) mod shape_process_details;
 pub(crate) mod shape_product;
 
 pub(crate) mod shape_product_v2;
+
+pub(crate) mod shape_recommendation_step;
 
 pub(crate) mod shape_remediation;
 
@@ -854,6 +864,8 @@ pub(crate) mod shape_threat_list;
 pub(crate) mod shape_trends_values;
 
 pub(crate) mod shape_type_list;
+
+pub(crate) mod shape_unused_permissions_recommendation_step;
 
 pub(crate) mod shape_vulnerability_code_vulnerabilities;
 

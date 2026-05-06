@@ -3044,6 +3044,18 @@ pub(crate) fn api_gateway_target_configuration_correct_errors(
     builder
 }
 
+pub(crate) fn efs_access_point_configuration_correct_errors(
+    mut builder: crate::types::builders::EfsAccessPointConfigurationBuilder,
+) -> crate::types::builders::EfsAccessPointConfigurationBuilder {
+    if builder.access_point_arn.is_none() {
+        builder.access_point_arn = Some(Default::default())
+    }
+    if builder.mount_path.is_none() {
+        builder.mount_path = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn filter_correct_errors(mut builder: crate::types::builders::FilterBuilder) -> crate::types::builders::FilterBuilder {
     if builder.key.is_none() {
         builder.key = Some(Default::default())
@@ -3233,6 +3245,18 @@ pub(crate) fn runtime_target_configuration_correct_errors(
 ) -> crate::types::builders::RuntimeTargetConfigurationBuilder {
     if builder.arn.is_none() {
         builder.arn = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn s3_files_access_point_configuration_correct_errors(
+    mut builder: crate::types::builders::S3FilesAccessPointConfigurationBuilder,
+) -> crate::types::builders::S3FilesAccessPointConfigurationBuilder {
+    if builder.access_point_arn.is_none() {
+        builder.access_point_arn = Some(Default::default())
+    }
+    if builder.mount_path.is_none() {
+        builder.mount_path = Some(Default::default())
     }
     builder
 }

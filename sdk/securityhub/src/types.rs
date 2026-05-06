@@ -61,6 +61,12 @@ pub use crate::types::_ocsf_finding_filters::OcsfFindingFilters;
 
 pub use crate::types::_insight_results::InsightResults;
 
+pub use crate::types::_recommendation_type::RecommendationType;
+
+pub use crate::types::_recommendation_error::RecommendationError;
+
+pub use crate::types::_recommendation_status::RecommendationStatus;
+
 pub use crate::types::_resource_scopes::ResourceScopes;
 
 pub use crate::types::_resources_trends_filters::ResourcesTrendsFilters;
@@ -174,6 +180,8 @@ pub use crate::types::_trends_metrics_result::TrendsMetricsResult;
 pub use crate::types::_insight::Insight;
 
 pub use crate::types::_member::Member;
+
+pub use crate::types::_recommendation_step::RecommendationStep;
 
 pub use crate::types::_resource_group_by_rule::ResourceGroupByRule;
 
@@ -290,6 +298,8 @@ pub use crate::types::_trends_values::TrendsValues;
 pub use crate::types::_composite_filter::CompositeFilter;
 
 pub use crate::types::_insight_result_value::InsightResultValue;
+
+pub use crate::types::_unused_permissions_recommendation_step::UnusedPermissionsRecommendationStep;
 
 pub use crate::types::_resource_group_by_field::ResourceGroupByField;
 
@@ -412,6 +422,8 @@ pub use crate::types::_action_local_port_details::ActionLocalPortDetails;
 pub use crate::types::_aws_api_call_action_domain_details::AwsApiCallActionDomainDetails;
 
 pub use crate::types::_date_range_unit::DateRangeUnit;
+
+pub use crate::types::_date_range_comparison::DateRangeComparison;
 
 pub use crate::types::_security_control_custom_parameter::SecurityControlCustomParameter;
 
@@ -2775,6 +2787,8 @@ mod _date_filter;
 
 mod _date_range;
 
+mod _date_range_comparison;
+
 mod _date_range_unit;
 
 mod _detection;
@@ -2994,6 +3008,14 @@ mod _provider_update_configuration;
 mod _range;
 
 mod _recommendation;
+
+mod _recommendation_error;
+
+mod _recommendation_status;
+
+mod _recommendation_step;
+
+mod _recommendation_type;
 
 mod _record;
 
@@ -3222,6 +3244,8 @@ mod _unprocessed_security_control;
 mod _unprocessed_standards_control_association;
 
 mod _unprocessed_standards_control_association_update;
+
+mod _unused_permissions_recommendation_step;
 
 mod _update_automation_rules_request_item;
 

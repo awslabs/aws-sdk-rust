@@ -1199,6 +1199,8 @@ pub use crate::types::_cluster_life_cycle_config::ClusterLifeCycleConfig;
 
 pub use crate::types::_cluster_instance_placement::ClusterInstancePlacement;
 
+pub use crate::types::_cluster_image_version_status::ClusterImageVersionStatus;
+
 pub use crate::types::_ultra_server_info::UltraServerInfo;
 
 pub use crate::types::_cluster_kubernetes_config_node_details::ClusterKubernetesConfigNodeDetails;
@@ -2694,6 +2696,8 @@ mod _cluster_event_summary;
 mod _cluster_fsx_lustre_config;
 
 mod _cluster_fsx_open_zfs_config;
+
+mod _cluster_image_version_status;
 
 mod _cluster_instance_group_details;
 

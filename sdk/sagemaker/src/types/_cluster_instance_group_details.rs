@@ -57,6 +57,8 @@ pub struct ClusterInstanceGroupDetails {
     pub current_image_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Amazon Machine Image (AMI) desired for the instance group.</p>
     pub desired_image_id: ::std::option::Option<::std::string::String>,
+    /// <p>The status of the image version for the instance group. Indicates whether the instance group is running the latest image version or if an update is available.</p>
+    pub image_version_status: ::std::option::Option<crate::types::ClusterImageVersionStatus>,
     /// <p>A map indicating active operations currently in progress for the instance group of a SageMaker HyperPod cluster. When there is a scaling operation in progress, this map contains a key <code>Scaling</code> with value 1.</p>
     pub active_operations: ::std::option::Option<::std::collections::HashMap<crate::types::ActiveClusterOperationName, i32>>,
     /// <p>The Kubernetes configuration for the instance group that contains labels and taints to be applied for the nodes in this instance group.</p>
@@ -187,6 +189,10 @@ impl ClusterInstanceGroupDetails {
     pub fn desired_image_id(&self) -> ::std::option::Option<&str> {
         self.desired_image_id.as_deref()
     }
+    /// <p>The status of the image version for the instance group. Indicates whether the instance group is running the latest image version or if an update is available.</p>
+    pub fn image_version_status(&self) -> ::std::option::Option<&crate::types::ClusterImageVersionStatus> {
+        self.image_version_status.as_ref()
+    }
     /// <p>A map indicating active operations currently in progress for the instance group of a SageMaker HyperPod cluster. When there is a scaling operation in progress, this map contains a key <code>Scaling</code> with value 1.</p>
     pub fn active_operations(&self) -> ::std::option::Option<&::std::collections::HashMap<crate::types::ActiveClusterOperationName, i32>> {
         self.active_operations.as_ref()
@@ -265,6 +271,7 @@ pub struct ClusterInstanceGroupDetailsBuilder {
     pub(crate) scheduled_update_config: ::std::option::Option<crate::types::ScheduledUpdateConfig>,
     pub(crate) current_image_id: ::std::option::Option<::std::string::String>,
     pub(crate) desired_image_id: ::std::option::Option<::std::string::String>,
+    pub(crate) image_version_status: ::std::option::Option<crate::types::ClusterImageVersionStatus>,
     pub(crate) active_operations: ::std::option::Option<::std::collections::HashMap<crate::types::ActiveClusterOperationName, i32>>,
     pub(crate) kubernetes_config: ::std::option::Option<crate::types::ClusterKubernetesConfigDetails>,
     pub(crate) capacity_requirements: ::std::option::Option<crate::types::ClusterCapacityRequirements>,
@@ -604,6 +611,20 @@ impl ClusterInstanceGroupDetailsBuilder {
     pub fn get_desired_image_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.desired_image_id
     }
+    /// <p>The status of the image version for the instance group. Indicates whether the instance group is running the latest image version or if an update is available.</p>
+    pub fn image_version_status(mut self, input: crate::types::ClusterImageVersionStatus) -> Self {
+        self.image_version_status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The status of the image version for the instance group. Indicates whether the instance group is running the latest image version or if an update is available.</p>
+    pub fn set_image_version_status(mut self, input: ::std::option::Option<crate::types::ClusterImageVersionStatus>) -> Self {
+        self.image_version_status = input;
+        self
+    }
+    /// <p>The status of the image version for the instance group. Indicates whether the instance group is running the latest image version or if an update is available.</p>
+    pub fn get_image_version_status(&self) -> &::std::option::Option<crate::types::ClusterImageVersionStatus> {
+        &self.image_version_status
+    }
     /// Adds a key-value pair to `active_operations`.
     ///
     /// To override the contents of this collection use [`set_active_operations`](Self::set_active_operations).
@@ -792,6 +813,7 @@ impl ClusterInstanceGroupDetailsBuilder {
             scheduled_update_config: self.scheduled_update_config,
             current_image_id: self.current_image_id,
             desired_image_id: self.desired_image_id,
+            image_version_status: self.image_version_status,
             active_operations: self.active_operations,
             kubernetes_config: self.kubernetes_config,
             capacity_requirements: self.capacity_requirements,

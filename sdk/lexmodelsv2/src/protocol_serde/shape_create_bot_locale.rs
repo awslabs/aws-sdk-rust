@@ -162,6 +162,11 @@ pub(crate) fn de_create_bot_locale(
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                "audioFillerSettings" => {
+                    builder = builder.set_audio_filler_settings(crate::protocol_serde::shape_audio_filler_settings::de_audio_filler_settings(
+                        tokens, _value,
+                    )?);
+                }
                 "botId" => {
                     builder = builder.set_bot_id(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

@@ -7,7 +7,7 @@
 pub struct MetricDatum {
     /// <p><b>Internal only</b>. The name of the metric.</p>
     pub metric_name: ::std::string::String,
-    /// <p><b>Internal only</b>. The time the metric data was received.</p>
+    /// <p><b>Internal only</b>. The time the metric data was received, expressed as an ISO 8601 datetime string.</p>
     pub timestamp: ::aws_smithy_types::DateTime,
     /// <p><b>Internal only</b>. The dimensions associated with the metric.</p>
     pub dimensions: ::std::option::Option<::std::vec::Vec<crate::types::Dimension>>,
@@ -24,7 +24,7 @@ impl MetricDatum {
         use std::ops::Deref;
         self.metric_name.deref()
     }
-    /// <p><b>Internal only</b>. The time the metric data was received.</p>
+    /// <p><b>Internal only</b>. The time the metric data was received, expressed as an ISO 8601 datetime string.</p>
     pub fn timestamp(&self) -> &::aws_smithy_types::DateTime {
         &self.timestamp
     }
@@ -81,18 +81,18 @@ impl MetricDatumBuilder {
     pub fn get_metric_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.metric_name
     }
-    /// <p><b>Internal only</b>. The time the metric data was received.</p>
+    /// <p><b>Internal only</b>. The time the metric data was received, expressed as an ISO 8601 datetime string.</p>
     /// This field is required.
     pub fn timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.timestamp = ::std::option::Option::Some(input);
         self
     }
-    /// <p><b>Internal only</b>. The time the metric data was received.</p>
+    /// <p><b>Internal only</b>. The time the metric data was received, expressed as an ISO 8601 datetime string.</p>
     pub fn set_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.timestamp = input;
         self
     }
-    /// <p><b>Internal only</b>. The time the metric data was received.</p>
+    /// <p><b>Internal only</b>. The time the metric data was received, expressed as an ISO 8601 datetime string.</p>
     pub fn get_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.timestamp
     }

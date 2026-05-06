@@ -13,6 +13,7 @@
 /// # let webserveraccessmode = unimplemented!();
 /// match webserveraccessmode {
 ///     WebserverAccessMode::PrivateOnly => { /* ... */ },
+///     WebserverAccessMode::PublicAndPrivate => { /* ... */ },
 ///     WebserverAccessMode::PublicOnly => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -45,6 +46,8 @@ pub enum WebserverAccessMode {
     #[allow(missing_docs)] // documentation missing in model
     PrivateOnly,
     #[allow(missing_docs)] // documentation missing in model
+    PublicAndPrivate,
+    #[allow(missing_docs)] // documentation missing in model
     PublicOnly,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -54,6 +57,7 @@ impl ::std::convert::From<&str> for WebserverAccessMode {
     fn from(s: &str) -> Self {
         match s {
             "PRIVATE_ONLY" => WebserverAccessMode::PrivateOnly,
+            "PUBLIC_AND_PRIVATE" => WebserverAccessMode::PublicAndPrivate,
             "PUBLIC_ONLY" => WebserverAccessMode::PublicOnly,
             other => WebserverAccessMode::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -71,13 +75,14 @@ impl WebserverAccessMode {
     pub fn as_str(&self) -> &str {
         match self {
             WebserverAccessMode::PrivateOnly => "PRIVATE_ONLY",
+            WebserverAccessMode::PublicAndPrivate => "PUBLIC_AND_PRIVATE",
             WebserverAccessMode::PublicOnly => "PUBLIC_ONLY",
             WebserverAccessMode::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["PRIVATE_ONLY", "PUBLIC_ONLY"]
+        &["PRIVATE_ONLY", "PUBLIC_AND_PRIVATE", "PUBLIC_ONLY"]
     }
 }
 impl ::std::convert::AsRef<str> for WebserverAccessMode {
@@ -101,6 +106,7 @@ impl ::std::fmt::Display for WebserverAccessMode {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             WebserverAccessMode::PrivateOnly => write!(f, "PRIVATE_ONLY"),
+            WebserverAccessMode::PublicAndPrivate => write!(f, "PUBLIC_AND_PRIVATE"),
             WebserverAccessMode::PublicOnly => write!(f, "PUBLIC_ONLY"),
             WebserverAccessMode::Unknown(value) => write!(f, "{value}"),
         }
