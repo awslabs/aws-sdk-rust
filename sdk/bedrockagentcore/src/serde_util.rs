@@ -116,6 +116,30 @@ pub(crate) fn create_event_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn create_payment_instrument_output_output_correct_errors(
+    mut builder: crate::operation::create_payment_instrument::builders::CreatePaymentInstrumentOutputBuilder,
+) -> crate::operation::create_payment_instrument::builders::CreatePaymentInstrumentOutputBuilder {
+    if builder.payment_instrument.is_none() {
+        builder.payment_instrument = {
+            let builder = crate::types::builders::PaymentInstrumentBuilder::default();
+            crate::serde_util::payment_instrument_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
+pub(crate) fn create_payment_session_output_output_correct_errors(
+    mut builder: crate::operation::create_payment_session::builders::CreatePaymentSessionOutputBuilder,
+) -> crate::operation::create_payment_session::builders::CreatePaymentSessionOutputBuilder {
+    if builder.payment_session.is_none() {
+        builder.payment_session = {
+            let builder = crate::types::builders::PaymentSessionBuilder::default();
+            crate::serde_util::payment_session_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
 pub(crate) fn delete_ab_test_output_output_correct_errors(
     mut builder: crate::operation::delete_ab_test::builders::DeleteAbTestOutputBuilder,
 ) -> crate::operation::delete_ab_test::builders::DeleteAbTestOutputBuilder {
@@ -160,6 +184,24 @@ pub(crate) fn delete_memory_record_output_output_correct_errors(
 ) -> crate::operation::delete_memory_record::builders::DeleteMemoryRecordOutputBuilder {
     if builder.memory_record_id.is_none() {
         builder.memory_record_id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn delete_payment_instrument_output_output_correct_errors(
+    mut builder: crate::operation::delete_payment_instrument::builders::DeletePaymentInstrumentOutputBuilder,
+) -> crate::operation::delete_payment_instrument::builders::DeletePaymentInstrumentOutputBuilder {
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::PaymentInstrumentStatus>().ok()
+    }
+    builder
+}
+
+pub(crate) fn delete_payment_session_output_output_correct_errors(
+    mut builder: crate::operation::delete_payment_session::builders::DeletePaymentSessionOutputBuilder,
+) -> crate::operation::delete_payment_session::builders::DeletePaymentSessionOutputBuilder {
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::PaymentSessionStatus>().ok()
     }
     builder
 }
@@ -305,6 +347,45 @@ pub(crate) fn get_memory_record_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn get_payment_instrument_output_output_correct_errors(
+    mut builder: crate::operation::get_payment_instrument::builders::GetPaymentInstrumentOutputBuilder,
+) -> crate::operation::get_payment_instrument::builders::GetPaymentInstrumentOutputBuilder {
+    if builder.payment_instrument.is_none() {
+        builder.payment_instrument = {
+            let builder = crate::types::builders::PaymentInstrumentBuilder::default();
+            crate::serde_util::payment_instrument_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
+pub(crate) fn get_payment_instrument_balance_output_output_correct_errors(
+    mut builder: crate::operation::get_payment_instrument_balance::builders::GetPaymentInstrumentBalanceOutputBuilder,
+) -> crate::operation::get_payment_instrument_balance::builders::GetPaymentInstrumentBalanceOutputBuilder {
+    if builder.payment_instrument_id.is_none() {
+        builder.payment_instrument_id = Some(Default::default())
+    }
+    if builder.token_balance.is_none() {
+        builder.token_balance = {
+            let builder = crate::types::builders::TokenBalanceBuilder::default();
+            crate::serde_util::token_balance_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
+pub(crate) fn get_payment_session_output_output_correct_errors(
+    mut builder: crate::operation::get_payment_session::builders::GetPaymentSessionOutputBuilder,
+) -> crate::operation::get_payment_session::builders::GetPaymentSessionOutputBuilder {
+    if builder.payment_session.is_none() {
+        builder.payment_session = {
+            let builder = crate::types::builders::PaymentSessionBuilder::default();
+            crate::serde_util::payment_session_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
 pub(crate) fn get_recommendation_output_output_correct_errors(
     mut builder: crate::operation::get_recommendation::builders::GetRecommendationOutputBuilder,
 ) -> crate::operation::get_recommendation::builders::GetRecommendationOutputBuilder {
@@ -340,6 +421,15 @@ pub(crate) fn get_resource_api_key_output_output_correct_errors(
 ) -> crate::operation::get_resource_api_key::builders::GetResourceApiKeyOutputBuilder {
     if builder.api_key.is_none() {
         builder.api_key = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn get_resource_payment_token_output_output_correct_errors(
+    mut builder: crate::operation::get_resource_payment_token::builders::GetResourcePaymentTokenOutputBuilder,
+) -> crate::operation::get_resource_payment_token::builders::GetResourcePaymentTokenOutputBuilder {
+    if builder.payment_token_response.is_none() {
+        builder.payment_token_response = Some(crate::types::PaymentTokenResponseOutput::Unknown)
     }
     builder
 }
@@ -473,6 +563,24 @@ pub(crate) fn list_memory_records_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn list_payment_instruments_output_output_correct_errors(
+    mut builder: crate::operation::list_payment_instruments::builders::ListPaymentInstrumentsOutputBuilder,
+) -> crate::operation::list_payment_instruments::builders::ListPaymentInstrumentsOutputBuilder {
+    if builder.payment_instruments.is_none() {
+        builder.payment_instruments = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn list_payment_sessions_output_output_correct_errors(
+    mut builder: crate::operation::list_payment_sessions::builders::ListPaymentSessionsOutputBuilder,
+) -> crate::operation::list_payment_sessions::builders::ListPaymentSessionsOutputBuilder {
+    if builder.payment_sessions.is_none() {
+        builder.payment_sessions = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn list_recommendations_output_output_correct_errors(
     mut builder: crate::operation::list_recommendations::builders::ListRecommendationsOutputBuilder,
 ) -> crate::operation::list_recommendations::builders::ListRecommendationsOutputBuilder {
@@ -487,6 +595,39 @@ pub(crate) fn list_sessions_output_output_correct_errors(
 ) -> crate::operation::list_sessions::builders::ListSessionsOutputBuilder {
     if builder.session_summaries.is_none() {
         builder.session_summaries = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn process_payment_output_output_correct_errors(
+    mut builder: crate::operation::process_payment::builders::ProcessPaymentOutputBuilder,
+) -> crate::operation::process_payment::builders::ProcessPaymentOutputBuilder {
+    if builder.process_payment_id.is_none() {
+        builder.process_payment_id = Some(Default::default())
+    }
+    if builder.payment_manager_arn.is_none() {
+        builder.payment_manager_arn = Some(Default::default())
+    }
+    if builder.payment_session_id.is_none() {
+        builder.payment_session_id = Some(Default::default())
+    }
+    if builder.payment_instrument_id.is_none() {
+        builder.payment_instrument_id = Some(Default::default())
+    }
+    if builder.payment_type.is_none() {
+        builder.payment_type = "no value was set".parse::<crate::types::PaymentType>().ok()
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::PaymentStatus>().ok()
+    }
+    if builder.payment_output.is_none() {
+        builder.payment_output = Some(crate::types::PaymentOutput::Unknown)
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.updated_at.is_none() {
+        builder.updated_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
     }
     builder
 }
@@ -726,6 +867,63 @@ pub(crate) fn event_correct_errors(mut builder: crate::types::builders::EventBui
     builder
 }
 
+pub(crate) fn payment_instrument_correct_errors(
+    mut builder: crate::types::builders::PaymentInstrumentBuilder,
+) -> crate::types::builders::PaymentInstrumentBuilder {
+    if builder.payment_instrument_id.is_none() {
+        builder.payment_instrument_id = Some(Default::default())
+    }
+    if builder.payment_manager_arn.is_none() {
+        builder.payment_manager_arn = Some(Default::default())
+    }
+    if builder.payment_connector_id.is_none() {
+        builder.payment_connector_id = Some(Default::default())
+    }
+    if builder.user_id.is_none() {
+        builder.user_id = Some(Default::default())
+    }
+    if builder.payment_instrument_type.is_none() {
+        builder.payment_instrument_type = "no value was set".parse::<crate::types::PaymentInstrumentType>().ok()
+    }
+    if builder.payment_instrument_details.is_none() {
+        builder.payment_instrument_details = Some(crate::types::PaymentInstrumentDetails::Unknown)
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::PaymentInstrumentStatus>().ok()
+    }
+    if builder.updated_at.is_none() {
+        builder.updated_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
+pub(crate) fn payment_session_correct_errors(
+    mut builder: crate::types::builders::PaymentSessionBuilder,
+) -> crate::types::builders::PaymentSessionBuilder {
+    if builder.payment_session_id.is_none() {
+        builder.payment_session_id = Some(Default::default())
+    }
+    if builder.payment_manager_arn.is_none() {
+        builder.payment_manager_arn = Some(Default::default())
+    }
+    if builder.user_id.is_none() {
+        builder.user_id = Some(Default::default())
+    }
+    if builder.expiry_time_in_minutes.is_none() {
+        builder.expiry_time_in_minutes = Some(Default::default())
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.updated_at.is_none() {
+        builder.updated_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
 pub(crate) fn memory_record_correct_errors(mut builder: crate::types::builders::MemoryRecordBuilder) -> crate::types::builders::MemoryRecordBuilder {
     if builder.memory_record_id.is_none() {
         builder.memory_record_id = Some(Default::default())
@@ -741,6 +939,25 @@ pub(crate) fn memory_record_correct_errors(mut builder: crate::types::builders::
     }
     if builder.created_at.is_none() {
         builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
+pub(crate) fn token_balance_correct_errors(mut builder: crate::types::builders::TokenBalanceBuilder) -> crate::types::builders::TokenBalanceBuilder {
+    if builder.amount.is_none() {
+        builder.amount = Some(Default::default())
+    }
+    if builder.decimals.is_none() {
+        builder.decimals = Some(Default::default())
+    }
+    if builder.token.is_none() {
+        builder.token = "no value was set".parse::<crate::types::InstrumentBalanceToken>().ok()
+    }
+    if builder.network.is_none() {
+        builder.network = "no value was set".parse::<crate::types::CryptoWalletNetwork>().ok()
+    }
+    if builder.chain.is_none() {
+        builder.chain = "no value was set".parse::<crate::types::BlockchainChainId>().ok()
     }
     builder
 }
@@ -953,6 +1170,27 @@ pub(crate) fn code_interpreter_session_summary_correct_errors(
     builder
 }
 
+pub(crate) fn coinbase_cdp_token_response_output_correct_errors(
+    mut builder: crate::types::builders::CoinbaseCdpTokenResponseOutputBuilder,
+) -> crate::types::builders::CoinbaseCdpTokenResponseOutputBuilder {
+    if builder.bearer_token.is_none() {
+        builder.bearer_token = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn crypto_x402_payment_output_correct_errors(
+    mut builder: crate::types::builders::CryptoX402PaymentOutputBuilder,
+) -> crate::types::builders::CryptoX402PaymentOutputBuilder {
+    if builder.version.is_none() {
+        builder.version = Some(Default::default())
+    }
+    if builder.payload.is_none() {
+        builder.payload = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn evaluation_result_content_correct_errors(
     mut builder: crate::types::builders::EvaluationResultContentBuilder,
 ) -> crate::types::builders::EvaluationResultContentBuilder {
@@ -1086,6 +1324,60 @@ pub(crate) fn mouse_scroll_result_correct_errors(
     builder
 }
 
+pub(crate) fn payment_instrument_summary_correct_errors(
+    mut builder: crate::types::builders::PaymentInstrumentSummaryBuilder,
+) -> crate::types::builders::PaymentInstrumentSummaryBuilder {
+    if builder.payment_instrument_id.is_none() {
+        builder.payment_instrument_id = Some(Default::default())
+    }
+    if builder.payment_manager_arn.is_none() {
+        builder.payment_manager_arn = Some(Default::default())
+    }
+    if builder.payment_connector_id.is_none() {
+        builder.payment_connector_id = Some(Default::default())
+    }
+    if builder.user_id.is_none() {
+        builder.user_id = Some(Default::default())
+    }
+    if builder.payment_instrument_type.is_none() {
+        builder.payment_instrument_type = "no value was set".parse::<crate::types::PaymentInstrumentType>().ok()
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::PaymentInstrumentStatus>().ok()
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.updated_at.is_none() {
+        builder.updated_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
+pub(crate) fn payment_session_summary_correct_errors(
+    mut builder: crate::types::builders::PaymentSessionSummaryBuilder,
+) -> crate::types::builders::PaymentSessionSummaryBuilder {
+    if builder.payment_session_id.is_none() {
+        builder.payment_session_id = Some(Default::default())
+    }
+    if builder.payment_manager_arn.is_none() {
+        builder.payment_manager_arn = Some(Default::default())
+    }
+    if builder.user_id.is_none() {
+        builder.user_id = Some(Default::default())
+    }
+    if builder.expiry_time_in_minutes.is_none() {
+        builder.expiry_time_in_minutes = Some(Default::default())
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.updated_at.is_none() {
+        builder.updated_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
 pub(crate) fn recommendation_summary_correct_errors(
     mut builder: crate::types::builders::RecommendationSummaryBuilder,
 ) -> crate::types::builders::RecommendationSummaryBuilder {
@@ -1161,6 +1453,18 @@ pub(crate) fn screenshot_result_correct_errors(
     builder
 }
 
+pub(crate) fn session_limits_correct_errors(
+    mut builder: crate::types::builders::SessionLimitsBuilder,
+) -> crate::types::builders::SessionLimitsBuilder {
+    if builder.max_spend_amount.is_none() {
+        builder.max_spend_amount = {
+            let builder = crate::types::builders::AmountBuilder::default();
+            crate::serde_util::amount_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
 pub(crate) fn session_summary_correct_errors(
     mut builder: crate::types::builders::SessionSummaryBuilder,
 ) -> crate::types::builders::SessionSummaryBuilder {
@@ -1172,6 +1476,18 @@ pub(crate) fn session_summary_correct_errors(
     }
     if builder.created_at.is_none() {
         builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
+pub(crate) fn stripe_privy_token_response_output_correct_errors(
+    mut builder: crate::types::builders::StripePrivyTokenResponseOutputBuilder,
+) -> crate::types::builders::StripePrivyTokenResponseOutputBuilder {
+    if builder.app_id.is_none() {
+        builder.app_id = Some(Default::default())
+    }
+    if builder.basic_auth_token.is_none() {
+        builder.basic_auth_token = Some(Default::default())
     }
     builder
 }
@@ -1234,11 +1550,33 @@ pub(crate) fn variant_correct_errors(mut builder: crate::types::builders::Varian
     builder
 }
 
+pub(crate) fn amount_correct_errors(mut builder: crate::types::builders::AmountBuilder) -> crate::types::builders::AmountBuilder {
+    if builder.value.is_none() {
+        builder.value = Some(Default::default())
+    }
+    if builder.currency.is_none() {
+        builder.currency = "no value was set".parse::<crate::types::Currency>().ok()
+    }
+    builder
+}
+
 pub(crate) fn code_interpreter_result_correct_errors(
     mut builder: crate::types::builders::CodeInterpreterResultBuilder,
 ) -> crate::types::builders::CodeInterpreterResultBuilder {
     if builder.content.is_none() {
         builder.content = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn embedded_crypto_wallet_correct_errors(
+    mut builder: crate::types::builders::EmbeddedCryptoWalletBuilder,
+) -> crate::types::builders::EmbeddedCryptoWalletBuilder {
+    if builder.network.is_none() {
+        builder.network = "no value was set".parse::<crate::types::CryptoWalletNetwork>().ok()
+    }
+    if builder.linked_accounts.is_none() {
+        builder.linked_accounts = Some(Default::default())
     }
     builder
 }
@@ -1684,6 +2022,36 @@ pub(crate) fn configuration_bundle_tool_entry_correct_errors(
     builder
 }
 
+pub(crate) fn linked_account_developer_jwt_correct_errors(
+    mut builder: crate::types::builders::LinkedAccountDeveloperJwtBuilder,
+) -> crate::types::builders::LinkedAccountDeveloperJwtBuilder {
+    if builder.kid.is_none() {
+        builder.kid = Some(Default::default())
+    }
+    if builder.sub.is_none() {
+        builder.sub = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn linked_account_email_correct_errors(
+    mut builder: crate::types::builders::LinkedAccountEmailBuilder,
+) -> crate::types::builders::LinkedAccountEmailBuilder {
+    if builder.email_address.is_none() {
+        builder.email_address = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn linked_account_sms_correct_errors(
+    mut builder: crate::types::builders::LinkedAccountSmsBuilder,
+) -> crate::types::builders::LinkedAccountSmsBuilder {
+    if builder.phone_number.is_none() {
+        builder.phone_number = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn resource_content_correct_errors(
     mut builder: crate::types::builders::ResourceContentBuilder,
 ) -> crate::types::builders::ResourceContentBuilder {
@@ -1716,6 +2084,15 @@ pub(crate) fn cloud_watch_logs_filter_correct_errors(
     }
     if builder.value.is_none() {
         builder.value = Some(crate::types::FilterValue::Unknown)
+    }
+    builder
+}
+
+pub(crate) fn o_auth2_authentication_correct_errors(
+    mut builder: crate::types::builders::OAuth2AuthenticationBuilder,
+) -> crate::types::builders::OAuth2AuthenticationBuilder {
+    if builder.sub.is_none() {
+        builder.sub = Some(Default::default())
     }
     builder
 }

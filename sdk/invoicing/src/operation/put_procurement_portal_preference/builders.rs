@@ -22,6 +22,7 @@ impl crate::operation::put_procurement_portal_preference::builders::PutProcureme
 }
 /// Fluent builder constructing a request to `PutProcurementPortalPreference`.
 ///
+/// <p><i> <b>This feature API is subject to changing at any time. For more information, see the <a href="https://aws.amazon.com/service-terms/">Amazon Web Services Service Terms</a> (Betas and Previews).</b> </i></p>
 /// <p>Updates an existing procurement portal preference configuration. This operation can modify settings for e-invoice delivery and purchase order retrieval.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutProcurementPortalPreferenceFluentBuilder {

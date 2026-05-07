@@ -171,6 +171,8 @@ pub(crate) mod shape_test_env_preference;
 
 pub(crate) mod shape_validation_exception_field;
 
+pub(crate) mod shape_bill_source_account_list;
+
 pub(crate) mod shape_einvoice_delivery_attachment_types;
 
 pub(crate) mod shape_einvoice_delivery_document_types;

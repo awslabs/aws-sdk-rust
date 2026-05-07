@@ -19,6 +19,12 @@ pub mod create_ab_test;
 /// Types for the `CreateEvent` operation.
 pub mod create_event;
 
+/// Types for the `CreatePaymentInstrument` operation.
+pub mod create_payment_instrument;
+
+/// Types for the `CreatePaymentSession` operation.
+pub mod create_payment_session;
+
 /// Types for the `DeleteABTest` operation.
 pub mod delete_ab_test;
 
@@ -30,6 +36,12 @@ pub mod delete_event;
 
 /// Types for the `DeleteMemoryRecord` operation.
 pub mod delete_memory_record;
+
+/// Types for the `DeletePaymentInstrument` operation.
+pub mod delete_payment_instrument;
+
+/// Types for the `DeletePaymentSession` operation.
+pub mod delete_payment_session;
 
 /// Types for the `DeleteRecommendation` operation.
 pub mod delete_recommendation;
@@ -58,6 +70,15 @@ pub mod get_event;
 /// Types for the `GetMemoryRecord` operation.
 pub mod get_memory_record;
 
+/// Types for the `GetPaymentInstrument` operation.
+pub mod get_payment_instrument;
+
+/// Types for the `GetPaymentInstrumentBalance` operation.
+pub mod get_payment_instrument_balance;
+
+/// Types for the `GetPaymentSession` operation.
+pub mod get_payment_session;
+
 /// Types for the `GetRecommendation` operation.
 pub mod get_recommendation;
 
@@ -66,6 +87,9 @@ pub mod get_resource_api_key;
 
 /// Types for the `GetResourceOauth2Token` operation.
 pub mod get_resource_oauth2_token;
+
+/// Types for the `GetResourcePaymentToken` operation.
+pub mod get_resource_payment_token;
 
 /// Types for the `GetWorkloadAccessToken` operation.
 pub mod get_workload_access_token;
@@ -115,11 +139,20 @@ pub mod list_memory_extraction_jobs;
 /// Types for the `ListMemoryRecords` operation.
 pub mod list_memory_records;
 
+/// Types for the `ListPaymentInstruments` operation.
+pub mod list_payment_instruments;
+
+/// Types for the `ListPaymentSessions` operation.
+pub mod list_payment_sessions;
+
 /// Types for the `ListRecommendations` operation.
 pub mod list_recommendations;
 
 /// Types for the `ListSessions` operation.
 pub mod list_sessions;
+
+/// Types for the `ProcessPayment` operation.
+pub mod process_payment;
 
 /// Types for the `RetrieveMemoryRecords` operation.
 pub mod retrieve_memory_records;

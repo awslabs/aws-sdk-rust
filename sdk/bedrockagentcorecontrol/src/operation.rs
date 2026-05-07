@@ -46,6 +46,15 @@ pub mod create_oauth2_credential_provider;
 /// Types for the `CreateOnlineEvaluationConfig` operation.
 pub mod create_online_evaluation_config;
 
+/// Types for the `CreatePaymentConnector` operation.
+pub mod create_payment_connector;
+
+/// Types for the `CreatePaymentCredentialProvider` operation.
+pub mod create_payment_credential_provider;
+
+/// Types for the `CreatePaymentManager` operation.
+pub mod create_payment_manager;
+
 /// Types for the `CreatePolicy` operation.
 pub mod create_policy;
 
@@ -105,6 +114,15 @@ pub mod delete_oauth2_credential_provider;
 
 /// Types for the `DeleteOnlineEvaluationConfig` operation.
 pub mod delete_online_evaluation_config;
+
+/// Types for the `DeletePaymentConnector` operation.
+pub mod delete_payment_connector;
+
+/// Types for the `DeletePaymentCredentialProvider` operation.
+pub mod delete_payment_credential_provider;
+
+/// Types for the `DeletePaymentManager` operation.
+pub mod delete_payment_manager;
 
 /// Types for the `DeletePolicy` operation.
 pub mod delete_policy;
@@ -171,6 +189,15 @@ pub mod get_oauth2_credential_provider;
 
 /// Types for the `GetOnlineEvaluationConfig` operation.
 pub mod get_online_evaluation_config;
+
+/// Types for the `GetPaymentConnector` operation.
+pub mod get_payment_connector;
+
+/// Types for the `GetPaymentCredentialProvider` operation.
+pub mod get_payment_credential_provider;
+
+/// Types for the `GetPaymentManager` operation.
+pub mod get_payment_manager;
 
 /// Types for the `GetPolicy` operation.
 pub mod get_policy;
@@ -246,6 +273,15 @@ pub mod list_oauth2_credential_providers;
 
 /// Types for the `ListOnlineEvaluationConfigs` operation.
 pub mod list_online_evaluation_configs;
+
+/// Types for the `ListPaymentConnectors` operation.
+pub mod list_payment_connectors;
+
+/// Types for the `ListPaymentCredentialProviders` operation.
+pub mod list_payment_credential_providers;
+
+/// Types for the `ListPaymentManagers` operation.
+pub mod list_payment_managers;
 
 /// Types for the `ListPolicies` operation.
 pub mod list_policies;
@@ -327,6 +363,15 @@ pub mod update_oauth2_credential_provider;
 
 /// Types for the `UpdateOnlineEvaluationConfig` operation.
 pub mod update_online_evaluation_config;
+
+/// Types for the `UpdatePaymentConnector` operation.
+pub mod update_payment_connector;
+
+/// Types for the `UpdatePaymentCredentialProvider` operation.
+pub mod update_payment_credential_provider;
+
+/// Types for the `UpdatePaymentManager` operation.
+pub mod update_payment_manager;
 
 /// Types for the `UpdatePolicy` operation.
 pub mod update_policy;

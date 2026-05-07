@@ -148,6 +148,10 @@ mod create_ab_test;
 
 mod create_event;
 
+mod create_payment_instrument;
+
+mod create_payment_session;
+
 /// Operation customization and supporting types.
 ///
 /// The underlying HTTP requests made during an operation can be customized
@@ -183,6 +187,10 @@ mod delete_event;
 
 mod delete_memory_record;
 
+mod delete_payment_instrument;
+
+mod delete_payment_session;
+
 mod delete_recommendation;
 
 mod evaluate;
@@ -201,11 +209,19 @@ mod get_event;
 
 mod get_memory_record;
 
+mod get_payment_instrument;
+
+mod get_payment_instrument_balance;
+
+mod get_payment_session;
+
 mod get_recommendation;
 
 mod get_resource_api_key;
 
 mod get_resource_oauth2_token;
+
+mod get_resource_payment_token;
 
 mod get_workload_access_token;
 
@@ -239,9 +255,15 @@ mod list_memory_extraction_jobs;
 
 mod list_memory_records;
 
+mod list_payment_instruments;
+
+mod list_payment_sessions;
+
 mod list_recommendations;
 
 mod list_sessions;
+
+mod process_payment;
 
 mod retrieve_memory_records;
 

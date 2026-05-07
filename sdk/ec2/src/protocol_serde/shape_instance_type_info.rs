@@ -381,6 +381,21 @@ pub fn de_instance_type_info(
                 builder = builder.set_reboot_migration_support(var_31);
             }
             ,
+            s if s.matches("supportedInRegion") /* SupportedInRegion com.amazonaws.ec2#InstanceTypeInfo$SupportedInRegion */ =>  {
+                let var_32 =
+                    Some(
+                         {
+                            <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (boolean: `com.amazonaws.ec2#SupportedInRegion`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_supported_in_region(var_32);
+            }
+            ,
             _ => {}
         }
     }

@@ -53,6 +53,12 @@ pub(crate) mod shape_create_oauth2_credential_provider;
 
 pub(crate) mod shape_create_online_evaluation_config;
 
+pub(crate) mod shape_create_payment_connector;
+
+pub(crate) mod shape_create_payment_credential_provider;
+
+pub(crate) mod shape_create_payment_manager;
+
 pub(crate) mod shape_create_policy;
 
 pub(crate) mod shape_create_policy_engine;
@@ -92,6 +98,12 @@ pub(crate) mod shape_delete_memory;
 pub(crate) mod shape_delete_oauth2_credential_provider;
 
 pub(crate) mod shape_delete_online_evaluation_config;
+
+pub(crate) mod shape_delete_payment_connector;
+
+pub(crate) mod shape_delete_payment_credential_provider;
+
+pub(crate) mod shape_delete_payment_manager;
 
 pub(crate) mod shape_delete_policy;
 
@@ -136,6 +148,12 @@ pub(crate) mod shape_get_memory;
 pub(crate) mod shape_get_oauth2_credential_provider;
 
 pub(crate) mod shape_get_online_evaluation_config;
+
+pub(crate) mod shape_get_payment_connector;
+
+pub(crate) mod shape_get_payment_credential_provider;
+
+pub(crate) mod shape_get_payment_manager;
 
 pub(crate) mod shape_get_policy;
 
@@ -186,6 +204,12 @@ pub(crate) mod shape_list_memories;
 pub(crate) mod shape_list_oauth2_credential_providers;
 
 pub(crate) mod shape_list_online_evaluation_configs;
+
+pub(crate) mod shape_list_payment_connectors;
+
+pub(crate) mod shape_list_payment_credential_providers;
+
+pub(crate) mod shape_list_payment_managers;
 
 pub(crate) mod shape_list_policies;
 
@@ -240,6 +264,12 @@ pub(crate) mod shape_update_memory;
 pub(crate) mod shape_update_oauth2_credential_provider;
 
 pub(crate) mod shape_update_online_evaluation_config;
+
+pub(crate) mod shape_update_payment_connector;
+
+pub(crate) mod shape_update_payment_credential_provider;
+
+pub(crate) mod shape_update_payment_manager;
 
 pub(crate) mod shape_update_policy;
 
@@ -297,6 +327,12 @@ pub(crate) mod shape_create_oauth2_credential_provider_input;
 
 pub(crate) mod shape_create_online_evaluation_config_input;
 
+pub(crate) mod shape_create_payment_connector_input;
+
+pub(crate) mod shape_create_payment_credential_provider_input;
+
+pub(crate) mod shape_create_payment_manager_input;
+
 pub(crate) mod shape_create_policy_engine_input;
 
 pub(crate) mod shape_create_policy_input;
@@ -313,6 +349,8 @@ pub(crate) mod shape_delete_api_key_credential_provider_input;
 
 pub(crate) mod shape_delete_oauth2_credential_provider_input;
 
+pub(crate) mod shape_delete_payment_credential_provider_input;
+
 pub(crate) mod shape_delete_workload_identity_input;
 
 pub(crate) mod shape_encryption_failure;
@@ -320,6 +358,8 @@ pub(crate) mod shape_encryption_failure;
 pub(crate) mod shape_get_api_key_credential_provider_input;
 
 pub(crate) mod shape_get_oauth2_credential_provider_input;
+
+pub(crate) mod shape_get_payment_credential_provider_input;
 
 pub(crate) mod shape_get_token_vault_input;
 
@@ -336,6 +376,8 @@ pub(crate) mod shape_list_configuration_bundle_versions_input;
 pub(crate) mod shape_list_memories_input;
 
 pub(crate) mod shape_list_oauth2_credential_providers_input;
+
+pub(crate) mod shape_list_payment_credential_providers_input;
 
 pub(crate) mod shape_list_workload_identities_input;
 
@@ -386,6 +428,12 @@ pub(crate) mod shape_update_memory_input;
 pub(crate) mod shape_update_oauth2_credential_provider_input;
 
 pub(crate) mod shape_update_online_evaluation_config_input;
+
+pub(crate) mod shape_update_payment_connector_input;
+
+pub(crate) mod shape_update_payment_credential_provider_input;
+
+pub(crate) mod shape_update_payment_manager_input;
 
 pub(crate) mod shape_update_policy_engine_input;
 
@@ -458,6 +506,10 @@ pub(crate) mod shape_content;
 pub(crate) mod shape_credential_provider_configuration;
 
 pub(crate) mod shape_credential_provider_configurations;
+
+pub(crate) mod shape_credentials_provider_configuration;
+
+pub(crate) mod shape_credentials_provider_configurations;
 
 pub(crate) mod shape_data_source_config;
 
@@ -538,6 +590,16 @@ pub(crate) mod shape_oauth2_provider_config_output;
 pub(crate) mod shape_online_evaluation_config_summary_list;
 
 pub(crate) mod shape_output_config;
+
+pub(crate) mod shape_payment_connector_summaries;
+
+pub(crate) mod shape_payment_credential_providers;
+
+pub(crate) mod shape_payment_manager_summaries;
+
+pub(crate) mod shape_payment_provider_configuration_input;
+
+pub(crate) mod shape_payment_provider_configuration_output;
 
 pub(crate) mod shape_policies;
 
@@ -654,6 +716,10 @@ pub(crate) mod shape_code_based_evaluator_config;
 pub(crate) mod shape_code_configuration;
 
 pub(crate) mod shape_code_interpreter_summary;
+
+pub(crate) mod shape_coinbase_cdp_configuration_input;
+
+pub(crate) mod shape_coinbase_cdp_configuration_output;
 
 pub(crate) mod shape_configuration_bundle_action;
 
@@ -779,6 +845,14 @@ pub(crate) mod shape_oauth2_credential_provider_item;
 
 pub(crate) mod shape_online_evaluation_config_summary;
 
+pub(crate) mod shape_payment_connector_summary;
+
+pub(crate) mod shape_payment_credential_provider_configuration;
+
+pub(crate) mod shape_payment_credential_provider_item;
+
+pub(crate) mod shape_payment_manager_summary;
+
 pub(crate) mod shape_policy;
 
 pub(crate) mod shape_policy_engine;
@@ -822,6 +896,10 @@ pub(crate) mod shape_slack_oauth2_provider_config_input;
 pub(crate) mod shape_slack_oauth2_provider_config_output;
 
 pub(crate) mod shape_stream_delivery_resource;
+
+pub(crate) mod shape_stripe_privy_configuration_input;
+
+pub(crate) mod shape_stripe_privy_configuration_output;
 
 pub(crate) mod shape_summary_memory_strategy_input;
 

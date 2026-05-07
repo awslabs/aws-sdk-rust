@@ -7,6 +7,10 @@ pub use crate::types::_oauth2_provider_config_input::Oauth2ProviderConfigInput;
 
 pub use crate::types::_status::Status;
 
+pub use crate::types::_payment_credential_provider_vendor_type::PaymentCredentialProviderVendorType;
+
+pub use crate::types::_payment_provider_configuration_output::PaymentProviderConfigurationOutput;
+
 pub use crate::types::_validation_exception_reason::ValidationExceptionReason;
 
 pub use crate::types::_kms_configuration::KmsConfiguration;
@@ -28,6 +32,10 @@ pub use crate::types::_atlassian_oauth2_provider_config_input::AtlassianOauth2Pr
 pub use crate::types::_linkedin_oauth2_provider_config_input::LinkedinOauth2ProviderConfigInput;
 
 pub use crate::types::_included_oauth2_provider_config_input::IncludedOauth2ProviderConfigInput;
+
+pub use crate::types::_coinbase_cdp_configuration_output::CoinbaseCdpConfigurationOutput;
+
+pub use crate::types::_stripe_privy_configuration_output::StripePrivyConfigurationOutput;
 
 pub use crate::types::_agent_runtime_endpoint_status::AgentRuntimeEndpointStatus;
 
@@ -151,6 +159,12 @@ pub use crate::types::_online_evaluation_config_status::OnlineEvaluationConfigSt
 
 pub use crate::types::_online_evaluation_execution_status::OnlineEvaluationExecutionStatus;
 
+pub use crate::types::_payment_provider_configuration_input::PaymentProviderConfigurationInput;
+
+pub use crate::types::_payments_authorizer_type::PaymentsAuthorizerType;
+
+pub use crate::types::_payment_manager_status::PaymentManagerStatus;
+
 pub use crate::types::_policy_engine_status::PolicyEngineStatus;
 
 pub use crate::types::_updated_description::UpdatedDescription;
@@ -200,6 +214,10 @@ pub use crate::types::_oauth2_discovery::Oauth2Discovery;
 pub use crate::types::_on_behalf_of_token_exchange_config_type::OnBehalfOfTokenExchangeConfigType;
 
 pub use crate::types::_client_authentication_method_type::ClientAuthenticationMethodType;
+
+pub use crate::types::_payment_connector_type::PaymentConnectorType;
+
+pub use crate::types::_payment_connector_status::PaymentConnectorStatus;
 
 pub use crate::types::_agent_runtime_endpoint::AgentRuntimeEndpoint;
 
@@ -345,6 +363,14 @@ pub use crate::types::_evaluator_reference::EvaluatorReference;
 
 pub use crate::types::_cloud_watch_output_config::CloudWatchOutputConfig;
 
+pub use crate::types::_coinbase_cdp_configuration_input::CoinbaseCdpConfigurationInput;
+
+pub use crate::types::_stripe_privy_configuration_input::StripePrivyConfigurationInput;
+
+pub use crate::types::_payment_credential_provider_item::PaymentCredentialProviderItem;
+
+pub use crate::types::_payment_manager_summary::PaymentManagerSummary;
+
 pub use crate::types::_policy_engine::PolicyEngine;
 
 pub use crate::types::_policy_generation::PolicyGeneration;
@@ -382,6 +408,10 @@ pub use crate::types::_private_endpoint_override::PrivateEndpointOverride;
 pub use crate::types::_on_behalf_of_token_exchange_grant_type_type::OnBehalfOfTokenExchangeGrantTypeType;
 
 pub use crate::types::_token_exchange_grant_type_config_type::TokenExchangeGrantTypeConfigType;
+
+pub use crate::types::_payment_connector_summary::PaymentConnectorSummary;
+
+pub use crate::types::_credentials_provider_configuration::CredentialsProviderConfiguration;
 
 pub use crate::types::_code::Code;
 
@@ -492,6 +522,8 @@ pub use crate::types::_updated_custom_descriptor::UpdatedCustomDescriptor;
 pub use crate::types::_updated_agent_skills_descriptor::UpdatedAgentSkillsDescriptor;
 
 pub use crate::types::_actor_token_content_type::ActorTokenContentType;
+
+pub use crate::types::_payment_credential_provider_configuration::PaymentCredentialProviderConfiguration;
 
 pub use crate::types::_custom_claim_validation_type::CustomClaimValidationType;
 
@@ -853,6 +885,10 @@ mod _code_interpreter_status;
 
 mod _code_interpreter_summary;
 
+mod _coinbase_cdp_configuration_input;
+
+mod _coinbase_cdp_configuration_output;
+
 mod _component_configuration;
 
 mod _condition;
@@ -886,6 +922,8 @@ mod _credential_provider_configuration;
 mod _credential_provider_type;
 
 mod _credential_provider_vendor_type;
+
+mod _credentials_provider_configuration;
 
 mod _custom_claim_validation_type;
 
@@ -1229,6 +1267,28 @@ mod _output_config;
 
 mod _override_type;
 
+mod _payment_connector_status;
+
+mod _payment_connector_summary;
+
+mod _payment_connector_type;
+
+mod _payment_credential_provider_configuration;
+
+mod _payment_credential_provider_item;
+
+mod _payment_credential_provider_vendor_type;
+
+mod _payment_manager_status;
+
+mod _payment_manager_summary;
+
+mod _payment_provider_configuration_input;
+
+mod _payment_provider_configuration_output;
+
+mod _payments_authorizer_type;
+
 mod _policy;
 
 mod _policy_definition;
@@ -1378,6 +1438,10 @@ mod _streaming_configuration;
 mod _string_list_validation;
 
 mod _string_validation;
+
+mod _stripe_privy_configuration_input;
+
+mod _stripe_privy_configuration_output;
 
 mod _summary_consolidation_override;
 

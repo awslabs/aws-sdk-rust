@@ -21,7 +21,7 @@ pub struct GetOauth2CredentialProviderOutput {
     pub last_updated_time: ::aws_smithy_types::DateTime,
     /// <p>The current status of the OAuth2 credential provider.</p>
     pub status: ::std::option::Option<crate::types::Status>,
-    /// <p>The reason for the failure if the OAuth2 credential provider is in a failed state.</p>
+    /// <p>The reason for failure if the OAuth2 credential provider is in a failed state.</p>
     pub failure_reason: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -64,7 +64,7 @@ impl GetOauth2CredentialProviderOutput {
     pub fn status(&self) -> ::std::option::Option<&crate::types::Status> {
         self.status.as_ref()
     }
-    /// <p>The reason for the failure if the OAuth2 credential provider is in a failed state.</p>
+    /// <p>The reason for failure if the OAuth2 credential provider is in a failed state.</p>
     pub fn failure_reason(&self) -> ::std::option::Option<&str> {
         self.failure_reason.as_deref()
     }
@@ -231,17 +231,17 @@ impl GetOauth2CredentialProviderOutputBuilder {
     pub fn get_status(&self) -> &::std::option::Option<crate::types::Status> {
         &self.status
     }
-    /// <p>The reason for the failure if the OAuth2 credential provider is in a failed state.</p>
+    /// <p>The reason for failure if the OAuth2 credential provider is in a failed state.</p>
     pub fn failure_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.failure_reason = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The reason for the failure if the OAuth2 credential provider is in a failed state.</p>
+    /// <p>The reason for failure if the OAuth2 credential provider is in a failed state.</p>
     pub fn set_failure_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.failure_reason = input;
         self
     }
-    /// <p>The reason for the failure if the OAuth2 credential provider is in a failed state.</p>
+    /// <p>The reason for failure if the OAuth2 credential provider is in a failed state.</p>
     pub fn get_failure_reason(&self) -> &::std::option::Option<::std::string::String> {
         &self.failure_reason
     }

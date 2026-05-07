@@ -95,6 +95,10 @@ pub struct ResolverEndpoint {
     pub rni_enhanced_metrics_enabled: ::std::option::Option<bool>,
     /// <p>Indicates whether target name server metrics are enabled for the outbound Resolver endpoint. When enabled, one-minute granular metrics are published in CloudWatch for each target name server associated with this endpoint. When disabled, these metrics are not published. This feature is not supported for inbound Resolver endpoint.</p>
     pub target_name_server_metrics_enabled: ::std::option::Option<bool>,
+    /// <p>Indicates whether DNS64 is enabled for the inbound Resolver endpoint. When <code>true</code>, Route 53 Resolver synthesizes AAAA (IPv6) records for IPv4-only services by prepending the <code>64:ff9b::/96</code> prefix to the IPv4 address.</p>
+    pub dns64_enabled: ::std::option::Option<bool>,
+    /// <p>Indicates whether IPv6 internet access is enabled for the outbound Resolver endpoint. When <code>true</code>, the endpoint elastic network interfaces (ENIs) can forward DNS queries to public IPv6 targets through an internet gateway.</p>
+    pub ipv6_internet_access_enabled: ::std::option::Option<bool>,
 }
 impl ResolverEndpoint {
     /// <p>The ID of the Resolver endpoint.</p>
@@ -228,6 +232,14 @@ impl ResolverEndpoint {
     pub fn target_name_server_metrics_enabled(&self) -> ::std::option::Option<bool> {
         self.target_name_server_metrics_enabled
     }
+    /// <p>Indicates whether DNS64 is enabled for the inbound Resolver endpoint. When <code>true</code>, Route 53 Resolver synthesizes AAAA (IPv6) records for IPv4-only services by prepending the <code>64:ff9b::/96</code> prefix to the IPv4 address.</p>
+    pub fn dns64_enabled(&self) -> ::std::option::Option<bool> {
+        self.dns64_enabled
+    }
+    /// <p>Indicates whether IPv6 internet access is enabled for the outbound Resolver endpoint. When <code>true</code>, the endpoint elastic network interfaces (ENIs) can forward DNS queries to public IPv6 targets through an internet gateway.</p>
+    pub fn ipv6_internet_access_enabled(&self) -> ::std::option::Option<bool> {
+        self.ipv6_internet_access_enabled
+    }
 }
 impl ResolverEndpoint {
     /// Creates a new builder-style object to manufacture [`ResolverEndpoint`](crate::types::ResolverEndpoint).
@@ -258,6 +270,8 @@ pub struct ResolverEndpointBuilder {
     pub(crate) protocols: ::std::option::Option<::std::vec::Vec<crate::types::Protocol>>,
     pub(crate) rni_enhanced_metrics_enabled: ::std::option::Option<bool>,
     pub(crate) target_name_server_metrics_enabled: ::std::option::Option<bool>,
+    pub(crate) dns64_enabled: ::std::option::Option<bool>,
+    pub(crate) ipv6_internet_access_enabled: ::std::option::Option<bool>,
 }
 impl ResolverEndpointBuilder {
     /// <p>The ID of the Resolver endpoint.</p>
@@ -689,6 +703,34 @@ impl ResolverEndpointBuilder {
     pub fn get_target_name_server_metrics_enabled(&self) -> &::std::option::Option<bool> {
         &self.target_name_server_metrics_enabled
     }
+    /// <p>Indicates whether DNS64 is enabled for the inbound Resolver endpoint. When <code>true</code>, Route 53 Resolver synthesizes AAAA (IPv6) records for IPv4-only services by prepending the <code>64:ff9b::/96</code> prefix to the IPv4 address.</p>
+    pub fn dns64_enabled(mut self, input: bool) -> Self {
+        self.dns64_enabled = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether DNS64 is enabled for the inbound Resolver endpoint. When <code>true</code>, Route 53 Resolver synthesizes AAAA (IPv6) records for IPv4-only services by prepending the <code>64:ff9b::/96</code> prefix to the IPv4 address.</p>
+    pub fn set_dns64_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.dns64_enabled = input;
+        self
+    }
+    /// <p>Indicates whether DNS64 is enabled for the inbound Resolver endpoint. When <code>true</code>, Route 53 Resolver synthesizes AAAA (IPv6) records for IPv4-only services by prepending the <code>64:ff9b::/96</code> prefix to the IPv4 address.</p>
+    pub fn get_dns64_enabled(&self) -> &::std::option::Option<bool> {
+        &self.dns64_enabled
+    }
+    /// <p>Indicates whether IPv6 internet access is enabled for the outbound Resolver endpoint. When <code>true</code>, the endpoint elastic network interfaces (ENIs) can forward DNS queries to public IPv6 targets through an internet gateway.</p>
+    pub fn ipv6_internet_access_enabled(mut self, input: bool) -> Self {
+        self.ipv6_internet_access_enabled = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether IPv6 internet access is enabled for the outbound Resolver endpoint. When <code>true</code>, the endpoint elastic network interfaces (ENIs) can forward DNS queries to public IPv6 targets through an internet gateway.</p>
+    pub fn set_ipv6_internet_access_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.ipv6_internet_access_enabled = input;
+        self
+    }
+    /// <p>Indicates whether IPv6 internet access is enabled for the outbound Resolver endpoint. When <code>true</code>, the endpoint elastic network interfaces (ENIs) can forward DNS queries to public IPv6 targets through an internet gateway.</p>
+    pub fn get_ipv6_internet_access_enabled(&self) -> &::std::option::Option<bool> {
+        &self.ipv6_internet_access_enabled
+    }
     /// Consumes the builder and constructs a [`ResolverEndpoint`](crate::types::ResolverEndpoint).
     pub fn build(self) -> crate::types::ResolverEndpoint {
         crate::types::ResolverEndpoint {
@@ -710,6 +752,8 @@ impl ResolverEndpointBuilder {
             protocols: self.protocols,
             rni_enhanced_metrics_enabled: self.rni_enhanced_metrics_enabled,
             target_name_server_metrics_enabled: self.target_name_server_metrics_enabled,
+            dns64_enabled: self.dns64_enabled,
+            ipv6_internet_access_enabled: self.ipv6_internet_access_enabled,
         }
     }
 }

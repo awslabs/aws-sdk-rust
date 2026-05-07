@@ -59,6 +59,26 @@ pub(crate) fn reflens_list_memory_records_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_payment_instruments_output_output_next_token(
+    input: &crate::operation::list_payment_instruments::ListPaymentInstrumentsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_payment_sessions_output_output_next_token(
+    input: &crate::operation::list_payment_sessions::ListPaymentSessionsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_recommendations_output_output_next_token(
     input: &crate::operation::list_recommendations::ListRecommendationsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -128,6 +148,20 @@ pub(crate) fn lens_list_memory_records_output_output_memory_record_summaries(
     input: crate::operation::list_memory_records::ListMemoryRecordsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::MemoryRecordSummary>> {
     let input = input.memory_record_summaries;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_payment_instruments_output_output_payment_instruments(
+    input: crate::operation::list_payment_instruments::ListPaymentInstrumentsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::PaymentInstrumentSummary>> {
+    let input = input.payment_instruments;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_payment_sessions_output_output_payment_sessions(
+    input: crate::operation::list_payment_sessions::ListPaymentSessionsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::PaymentSessionSummary>> {
+    let input = input.payment_sessions;
     ::std::option::Option::Some(input)
 }
 

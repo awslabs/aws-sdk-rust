@@ -169,6 +169,36 @@ pub(crate) fn reflens_list_online_evaluation_configs_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_payment_connectors_output_output_next_token(
+    input: &crate::operation::list_payment_connectors::ListPaymentConnectorsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_payment_credential_providers_output_output_next_token(
+    input: &crate::operation::list_payment_credential_providers::ListPaymentCredentialProvidersOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_payment_managers_output_output_next_token(
+    input: &crate::operation::list_payment_managers::ListPaymentManagersOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_policies_output_output_next_token(
     input: &crate::operation::list_policies::ListPoliciesOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -355,6 +385,27 @@ pub(crate) fn lens_list_online_evaluation_configs_output_output_online_evaluatio
     input: crate::operation::list_online_evaluation_configs::ListOnlineEvaluationConfigsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::OnlineEvaluationConfigSummary>> {
     let input = input.online_evaluation_configs;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_payment_connectors_output_output_payment_connectors(
+    input: crate::operation::list_payment_connectors::ListPaymentConnectorsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::PaymentConnectorSummary>> {
+    let input = input.payment_connectors;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_payment_credential_providers_output_output_credential_providers(
+    input: crate::operation::list_payment_credential_providers::ListPaymentCredentialProvidersOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::PaymentCredentialProviderItem>> {
+    let input = input.credential_providers;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_payment_managers_output_output_payment_managers(
+    input: crate::operation::list_payment_managers::ListPaymentManagersOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::PaymentManagerSummary>> {
+    let input = input.payment_managers;
     ::std::option::Option::Some(input)
 }
 

@@ -12,7 +12,9 @@
 /// ```text
 /// # let s3outputtype = unimplemented!();
 /// match s3outputtype {
+///     S3OutputType::Athena => { /* ... */ },
 ///     S3OutputType::Custom => { /* ... */ },
+///     S3OutputType::Redshift => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -42,7 +44,11 @@
 )]
 pub enum S3OutputType {
     #[allow(missing_docs)] // documentation missing in model
+    Athena,
+    #[allow(missing_docs)] // documentation missing in model
     Custom,
+    #[allow(missing_docs)] // documentation missing in model
+    Redshift,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -50,7 +56,9 @@ pub enum S3OutputType {
 impl ::std::convert::From<&str> for S3OutputType {
     fn from(s: &str) -> Self {
         match s {
+            "ATHENA" => S3OutputType::Athena,
             "CUSTOM" => S3OutputType::Custom,
+            "REDSHIFT" => S3OutputType::Redshift,
             other => S3OutputType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -66,13 +74,15 @@ impl S3OutputType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            S3OutputType::Athena => "ATHENA",
             S3OutputType::Custom => "CUSTOM",
+            S3OutputType::Redshift => "REDSHIFT",
             S3OutputType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CUSTOM"]
+        &["ATHENA", "CUSTOM", "REDSHIFT"]
     }
 }
 impl ::std::convert::AsRef<str> for S3OutputType {
@@ -95,7 +105,9 @@ impl S3OutputType {
 impl ::std::fmt::Display for S3OutputType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            S3OutputType::Athena => write!(f, "ATHENA"),
             S3OutputType::Custom => write!(f, "CUSTOM"),
+            S3OutputType::Redshift => write!(f, "REDSHIFT"),
             S3OutputType::Unknown(value) => write!(f, "{value}"),
         }
     }

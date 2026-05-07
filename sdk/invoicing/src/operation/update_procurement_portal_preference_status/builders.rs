@@ -22,6 +22,7 @@ impl crate::operation::update_procurement_portal_preference_status::builders::Up
 }
 /// Fluent builder constructing a request to `UpdateProcurementPortalPreferenceStatus`.
 ///
+/// <p><i> <b>This feature API is subject to changing at any time. For more information, see the <a href="https://aws.amazon.com/service-terms/">Amazon Web Services Service Terms</a> (Betas and Previews).</b> </i></p>
 /// <p>Updates the status of a procurement portal preference, including the activation state of e-invoice delivery and purchase order retrieval features.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateProcurementPortalPreferenceStatusFluentBuilder {

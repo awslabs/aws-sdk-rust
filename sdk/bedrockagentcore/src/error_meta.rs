@@ -315,6 +315,77 @@ impl From<crate::operation::create_event::CreateEventError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_payment_instrument::CreatePaymentInstrumentError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_payment_instrument::CreatePaymentInstrumentError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_payment_instrument::CreatePaymentInstrumentError> for Error {
+    fn from(err: crate::operation::create_payment_instrument::CreatePaymentInstrumentError) -> Self {
+        match err {
+            crate::operation::create_payment_instrument::CreatePaymentInstrumentError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::create_payment_instrument::CreatePaymentInstrumentError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_payment_instrument::CreatePaymentInstrumentError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::create_payment_instrument::CreatePaymentInstrumentError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::create_payment_instrument::CreatePaymentInstrumentError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::create_payment_instrument::CreatePaymentInstrumentError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::create_payment_instrument::CreatePaymentInstrumentError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_payment_session::CreatePaymentSessionError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_payment_session::CreatePaymentSessionError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_payment_session::CreatePaymentSessionError> for Error {
+    fn from(err: crate::operation::create_payment_session::CreatePaymentSessionError) -> Self {
+        match err {
+            crate::operation::create_payment_session::CreatePaymentSessionError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_payment_session::CreatePaymentSessionError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_payment_session::CreatePaymentSessionError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::create_payment_session::CreatePaymentSessionError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::create_payment_session::CreatePaymentSessionError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_payment_session::CreatePaymentSessionError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::create_payment_session::CreatePaymentSessionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_ab_test::DeleteABTestError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -438,6 +509,75 @@ impl From<crate::operation::delete_memory_record::DeleteMemoryRecordError> for E
             crate::operation::delete_memory_record::DeleteMemoryRecordError::ThrottledException(inner) => Error::ThrottledException(inner),
             crate::operation::delete_memory_record::DeleteMemoryRecordError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::delete_memory_record::DeleteMemoryRecordError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_payment_instrument::DeletePaymentInstrumentError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_payment_instrument::DeletePaymentInstrumentError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_payment_instrument::DeletePaymentInstrumentError> for Error {
+    fn from(err: crate::operation::delete_payment_instrument::DeletePaymentInstrumentError) -> Self {
+        match err {
+            crate::operation::delete_payment_instrument::DeletePaymentInstrumentError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::delete_payment_instrument::DeletePaymentInstrumentError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::delete_payment_instrument::DeletePaymentInstrumentError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_payment_instrument::DeletePaymentInstrumentError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::delete_payment_instrument::DeletePaymentInstrumentError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::delete_payment_instrument::DeletePaymentInstrumentError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_payment_session::DeletePaymentSessionError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_payment_session::DeletePaymentSessionError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_payment_session::DeletePaymentSessionError> for Error {
+    fn from(err: crate::operation::delete_payment_session::DeletePaymentSessionError) -> Self {
+        match err {
+            crate::operation::delete_payment_session::DeletePaymentSessionError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_payment_session::DeletePaymentSessionError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::delete_payment_session::DeletePaymentSessionError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_payment_session::DeletePaymentSessionError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_payment_session::DeletePaymentSessionError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_payment_session::DeletePaymentSessionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -711,6 +851,107 @@ impl From<crate::operation::get_memory_record::GetMemoryRecordError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_payment_instrument::GetPaymentInstrumentError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_payment_instrument::GetPaymentInstrumentError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_payment_instrument::GetPaymentInstrumentError> for Error {
+    fn from(err: crate::operation::get_payment_instrument::GetPaymentInstrumentError) -> Self {
+        match err {
+            crate::operation::get_payment_instrument::GetPaymentInstrumentError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_payment_instrument::GetPaymentInstrumentError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::get_payment_instrument::GetPaymentInstrumentError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_payment_instrument::GetPaymentInstrumentError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_payment_instrument::GetPaymentInstrumentError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_payment_instrument::GetPaymentInstrumentError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_payment_instrument_balance::GetPaymentInstrumentBalanceError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_payment_instrument_balance::GetPaymentInstrumentBalanceError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_payment_instrument_balance::GetPaymentInstrumentBalanceError> for Error {
+    fn from(err: crate::operation::get_payment_instrument_balance::GetPaymentInstrumentBalanceError) -> Self {
+        match err {
+            crate::operation::get_payment_instrument_balance::GetPaymentInstrumentBalanceError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_payment_instrument_balance::GetPaymentInstrumentBalanceError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::get_payment_instrument_balance::GetPaymentInstrumentBalanceError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_payment_instrument_balance::GetPaymentInstrumentBalanceError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::get_payment_instrument_balance::GetPaymentInstrumentBalanceError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::get_payment_instrument_balance::GetPaymentInstrumentBalanceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_payment_session::GetPaymentSessionError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_payment_session::GetPaymentSessionError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_payment_session::GetPaymentSessionError> for Error {
+    fn from(err: crate::operation::get_payment_session::GetPaymentSessionError) -> Self {
+        match err {
+            crate::operation::get_payment_session::GetPaymentSessionError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_payment_session::GetPaymentSessionError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_payment_session::GetPaymentSessionError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_payment_session::GetPaymentSessionError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_payment_session::GetPaymentSessionError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_payment_session::GetPaymentSessionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_recommendation::GetRecommendationError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -801,6 +1042,48 @@ impl From<crate::operation::get_resource_oauth2_token::GetResourceOauth2TokenErr
             }
             crate::operation::get_resource_oauth2_token::GetResourceOauth2TokenError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::get_resource_oauth2_token::GetResourceOauth2TokenError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_resource_payment_token::GetResourcePaymentTokenError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_resource_payment_token::GetResourcePaymentTokenError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_resource_payment_token::GetResourcePaymentTokenError> for Error {
+    fn from(err: crate::operation::get_resource_payment_token::GetResourcePaymentTokenError) -> Self {
+        match err {
+            crate::operation::get_resource_payment_token::GetResourcePaymentTokenError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_resource_payment_token::GetResourcePaymentTokenError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::get_resource_payment_token::GetResourcePaymentTokenError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_resource_payment_token::GetResourcePaymentTokenError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::get_resource_payment_token::GetResourcePaymentTokenError::UnauthorizedException(inner) => {
+                Error::UnauthorizedException(inner)
+            }
+            crate::operation::get_resource_payment_token::GetResourcePaymentTokenError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::get_resource_payment_token::GetResourcePaymentTokenError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1365,6 +1648,64 @@ impl From<crate::operation::list_memory_records::ListMemoryRecordsError> for Err
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_payment_instruments::ListPaymentInstrumentsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_payment_instruments::ListPaymentInstrumentsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_payment_instruments::ListPaymentInstrumentsError> for Error {
+    fn from(err: crate::operation::list_payment_instruments::ListPaymentInstrumentsError) -> Self {
+        match err {
+            crate::operation::list_payment_instruments::ListPaymentInstrumentsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_payment_instruments::ListPaymentInstrumentsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_payment_instruments::ListPaymentInstrumentsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_payment_instruments::ListPaymentInstrumentsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_payment_instruments::ListPaymentInstrumentsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_payment_sessions::ListPaymentSessionsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_payment_sessions::ListPaymentSessionsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_payment_sessions::ListPaymentSessionsError> for Error {
+    fn from(err: crate::operation::list_payment_sessions::ListPaymentSessionsError) -> Self {
+        match err {
+            crate::operation::list_payment_sessions::ListPaymentSessionsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_payment_sessions::ListPaymentSessionsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_payment_sessions::ListPaymentSessionsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_payment_sessions::ListPaymentSessionsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_payment_sessions::ListPaymentSessionsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_recommendations::ListRecommendationsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1415,6 +1756,35 @@ impl From<crate::operation::list_sessions::ListSessionsError> for Error {
             crate::operation::list_sessions::ListSessionsError::ThrottledException(inner) => Error::ThrottledException(inner),
             crate::operation::list_sessions::ListSessionsError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_sessions::ListSessionsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::process_payment::ProcessPaymentError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::process_payment::ProcessPaymentError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::process_payment::ProcessPaymentError> for Error {
+    fn from(err: crate::operation::process_payment::ProcessPaymentError) -> Self {
+        match err {
+            crate::operation::process_payment::ProcessPaymentError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::process_payment::ProcessPaymentError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::process_payment::ProcessPaymentError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::process_payment::ProcessPaymentError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::process_payment::ProcessPaymentError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::process_payment::ProcessPaymentError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::process_payment::ProcessPaymentError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

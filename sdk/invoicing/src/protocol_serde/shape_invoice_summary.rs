@@ -41,16 +41,56 @@ where
                                 ::aws_smithy_types::date_time::Format::EpochSeconds,
                             )?);
                         }
+                        "BillSourceAccounts" => {
+                            builder = builder.set_bill_source_accounts(
+                                crate::protocol_serde::shape_bill_source_account_list::de_bill_source_account_list(tokens, _value)?,
+                            );
+                        }
+                        "BillSourceAccountsTotalCount" => {
+                            builder = builder.set_bill_source_accounts_total_count(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "ReceiverRole" => {
+                            builder = builder.set_receiver_role(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::ReceiverRole::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
                         "Entity" => {
                             builder = builder.set_entity(crate::protocol_serde::shape_entity::de_entity(tokens, _value)?);
                         }
                         "BillingPeriod" => {
                             builder = builder.set_billing_period(crate::protocol_serde::shape_billing_period::de_billing_period(tokens, _value)?);
                         }
+                        "InvoiceFrequency" => {
+                            builder = builder.set_invoice_frequency(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::InvoiceFrequency::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "BillType" => {
+                            builder = builder.set_bill_type(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::BillType::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
                         "InvoiceType" => {
                             builder = builder.set_invoice_type(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| crate::types::InvoiceType::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "CommercialInvoiceId" => {
+                            builder = builder.set_commercial_invoice_id(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
                             );
                         }
@@ -65,6 +105,20 @@ where
                             builder = builder.set_purchase_order_number(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "EinvoiceDeliveryStatus" => {
+                            builder = builder.set_einvoice_delivery_status(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::EinvoiceDeliveryStatus::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "TaxAuthorityStatus" => {
+                            builder = builder.set_tax_authority_status(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::TaxAuthorityStatus::from(u.as_ref())))
                                     .transpose()?,
                             );
                         }

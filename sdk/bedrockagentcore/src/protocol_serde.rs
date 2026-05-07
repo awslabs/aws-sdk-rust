@@ -35,6 +35,10 @@ pub(crate) mod shape_create_ab_test;
 
 pub(crate) mod shape_create_event;
 
+pub(crate) mod shape_create_payment_instrument;
+
+pub(crate) mod shape_create_payment_session;
+
 pub(crate) mod shape_delete_ab_test;
 
 pub(crate) mod shape_delete_batch_evaluation;
@@ -42,6 +46,10 @@ pub(crate) mod shape_delete_batch_evaluation;
 pub(crate) mod shape_delete_event;
 
 pub(crate) mod shape_delete_memory_record;
+
+pub(crate) mod shape_delete_payment_instrument;
+
+pub(crate) mod shape_delete_payment_session;
 
 pub(crate) mod shape_delete_recommendation;
 
@@ -61,11 +69,19 @@ pub(crate) mod shape_get_event;
 
 pub(crate) mod shape_get_memory_record;
 
+pub(crate) mod shape_get_payment_instrument;
+
+pub(crate) mod shape_get_payment_instrument_balance;
+
+pub(crate) mod shape_get_payment_session;
+
 pub(crate) mod shape_get_recommendation;
 
 pub(crate) mod shape_get_resource_api_key;
 
 pub(crate) mod shape_get_resource_oauth2_token;
+
+pub(crate) mod shape_get_resource_payment_token;
 
 pub(crate) mod shape_get_workload_access_token;
 
@@ -107,9 +123,15 @@ pub(crate) mod shape_list_memory_extraction_jobs;
 
 pub(crate) mod shape_list_memory_records;
 
+pub(crate) mod shape_list_payment_instruments;
+
+pub(crate) mod shape_list_payment_sessions;
+
 pub(crate) mod shape_list_recommendations;
 
 pub(crate) mod shape_list_sessions;
+
+pub(crate) mod shape_process_payment;
 
 pub(crate) mod shape_retrieve_memory_records;
 
@@ -163,15 +185,31 @@ pub(crate) mod shape_create_ab_test_input;
 
 pub(crate) mod shape_create_event_input;
 
+pub(crate) mod shape_create_payment_instrument_input;
+
+pub(crate) mod shape_create_payment_session_input;
+
+pub(crate) mod shape_delete_payment_instrument_input;
+
+pub(crate) mod shape_delete_payment_session_input;
+
 pub(crate) mod shape_duplicate_id_exception;
 
 pub(crate) mod shape_evaluate_input;
 
 pub(crate) mod shape_get_agent_card_output;
 
+pub(crate) mod shape_get_payment_instrument_balance_input;
+
+pub(crate) mod shape_get_payment_instrument_input;
+
+pub(crate) mod shape_get_payment_session_input;
+
 pub(crate) mod shape_get_resource_api_key_input;
 
 pub(crate) mod shape_get_resource_oauth2_token_input;
+
+pub(crate) mod shape_get_resource_payment_token_input;
 
 pub(crate) mod shape_get_workload_access_token_for_jwt_input;
 
@@ -211,7 +249,13 @@ pub(crate) mod shape_list_memory_extraction_jobs_input;
 
 pub(crate) mod shape_list_memory_records_input;
 
+pub(crate) mod shape_list_payment_instruments_input;
+
+pub(crate) mod shape_list_payment_sessions_input;
+
 pub(crate) mod shape_list_sessions_input;
+
+pub(crate) mod shape_process_payment_input;
 
 pub(crate) mod shape_resource_not_found_exception;
 
@@ -369,6 +413,24 @@ pub(crate) mod shape_output_config;
 
 pub(crate) mod shape_payload_type;
 
+pub(crate) mod shape_payment_input;
+
+pub(crate) mod shape_payment_instrument;
+
+pub(crate) mod shape_payment_instrument_details;
+
+pub(crate) mod shape_payment_instrument_summary_list;
+
+pub(crate) mod shape_payment_output;
+
+pub(crate) mod shape_payment_session;
+
+pub(crate) mod shape_payment_session_summary_list;
+
+pub(crate) mod shape_payment_token_request_input;
+
+pub(crate) mod shape_payment_token_response_output;
+
 pub(crate) mod shape_proxy_configuration;
 
 pub(crate) mod shape_recommendation_config;
@@ -383,9 +445,13 @@ pub(crate) mod shape_search_criteria;
 
 pub(crate) mod shape_session_filter;
 
+pub(crate) mod shape_session_limits;
+
 pub(crate) mod shape_session_summary_list;
 
 pub(crate) mod shape_stream_update;
+
+pub(crate) mod shape_token_balance;
 
 pub(crate) mod shape_tool_arguments;
 
@@ -403,9 +469,13 @@ pub(crate) mod shape_ab_test_summary;
 
 pub(crate) mod shape_actor_summary;
 
+pub(crate) mod shape_amount;
+
 pub(crate) mod shape_automation_stream;
 
 pub(crate) mod shape_automation_stream_update;
+
+pub(crate) mod shape_available_limits;
 
 pub(crate) mod shape_batch_evaluation_summary;
 
@@ -423,9 +493,19 @@ pub(crate) mod shape_code_interpreter_result;
 
 pub(crate) mod shape_code_interpreter_session_summary;
 
+pub(crate) mod shape_coinbase_cdp_token_request_input;
+
+pub(crate) mod shape_coinbase_cdp_token_response_output;
+
 pub(crate) mod shape_context;
 
 pub(crate) mod shape_conversational;
+
+pub(crate) mod shape_crypto_x402_payment_input;
+
+pub(crate) mod shape_crypto_x402_payment_output;
+
+pub(crate) mod shape_embedded_crypto_wallet;
 
 pub(crate) mod shape_evaluation_content;
 
@@ -515,6 +595,10 @@ pub(crate) mod shape_namespaces_list;
 
 pub(crate) mod shape_payload_type_list;
 
+pub(crate) mod shape_payment_instrument_summary;
+
+pub(crate) mod shape_payment_session_summary;
+
 pub(crate) mod shape_per_variant_online_evaluation_config;
 
 pub(crate) mod shape_per_variant_online_evaluation_config_list;
@@ -540,6 +624,10 @@ pub(crate) mod shape_screenshot_result;
 pub(crate) mod shape_session_metadata_shape;
 
 pub(crate) mod shape_session_summary;
+
+pub(crate) mod shape_stripe_privy_token_request_input;
+
+pub(crate) mod shape_stripe_privy_token_response_output;
 
 pub(crate) mod shape_system_prompt_recommendation_config;
 
@@ -599,6 +687,8 @@ pub(crate) mod shape_ignored_reference_input_fields;
 
 pub(crate) mod shape_left_expression;
 
+pub(crate) mod shape_linked_account;
+
 pub(crate) mod shape_recommendation_evaluation_config;
 
 pub(crate) mod shape_recommendation_result_configuration_bundle;
@@ -657,6 +747,16 @@ pub(crate) mod shape_harness_tool_result_content_block;
 
 pub(crate) mod shape_inline_ground_truth;
 
+pub(crate) mod shape_linked_account_developer_jwt;
+
+pub(crate) mod shape_linked_account_email;
+
+pub(crate) mod shape_linked_account_list;
+
+pub(crate) mod shape_linked_account_o_auth2;
+
+pub(crate) mod shape_linked_account_sms;
+
 pub(crate) mod shape_mcp_descriptor;
 
 pub(crate) mod shape_messages_list;
@@ -712,6 +812,8 @@ pub(crate) mod shape_harness_tool_use_block_start;
 pub(crate) mod shape_log_group_arn_list;
 
 pub(crate) mod shape_message_metadata;
+
+pub(crate) mod shape_o_auth2_authentication;
 
 pub(crate) mod shape_o_auth_credential_provider;
 

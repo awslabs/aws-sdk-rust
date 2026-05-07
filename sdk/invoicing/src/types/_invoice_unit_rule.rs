@@ -6,7 +6,7 @@
 pub struct InvoiceUnitRule {
     /// <p>The list of <code>LINKED_ACCOUNT</code> IDs where charges are included within the invoice unit.</p>
     pub linked_accounts: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>A list of Amazon Web Services account account IDs that have delegated their billing responsibility to the receiver account through transfer billing. Unlike linked accounts, these bill source accounts can be payer accounts from other organizations that have authorized billing transfer to this account.</p>
+    /// <p>A list of Amazon Web Services account IDs that have delegated their billing responsibility to the receiver account through transfer billing. Unlike linked accounts, these bill source accounts can be payer accounts from other organizations that have authorized billing transfer to this account.</p>
     pub bill_source_accounts: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl InvoiceUnitRule {
@@ -16,7 +16,7 @@ impl InvoiceUnitRule {
     pub fn linked_accounts(&self) -> &[::std::string::String] {
         self.linked_accounts.as_deref().unwrap_or_default()
     }
-    /// <p>A list of Amazon Web Services account account IDs that have delegated their billing responsibility to the receiver account through transfer billing. Unlike linked accounts, these bill source accounts can be payer accounts from other organizations that have authorized billing transfer to this account.</p>
+    /// <p>A list of Amazon Web Services account IDs that have delegated their billing responsibility to the receiver account through transfer billing. Unlike linked accounts, these bill source accounts can be payer accounts from other organizations that have authorized billing transfer to this account.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.bill_source_accounts.is_none()`.
     pub fn bill_source_accounts(&self) -> &[::std::string::String] {
@@ -62,19 +62,19 @@ impl InvoiceUnitRuleBuilder {
     ///
     /// To override the contents of this collection use [`set_bill_source_accounts`](Self::set_bill_source_accounts).
     ///
-    /// <p>A list of Amazon Web Services account account IDs that have delegated their billing responsibility to the receiver account through transfer billing. Unlike linked accounts, these bill source accounts can be payer accounts from other organizations that have authorized billing transfer to this account.</p>
+    /// <p>A list of Amazon Web Services account IDs that have delegated their billing responsibility to the receiver account through transfer billing. Unlike linked accounts, these bill source accounts can be payer accounts from other organizations that have authorized billing transfer to this account.</p>
     pub fn bill_source_accounts(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.bill_source_accounts.unwrap_or_default();
         v.push(input.into());
         self.bill_source_accounts = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of Amazon Web Services account account IDs that have delegated their billing responsibility to the receiver account through transfer billing. Unlike linked accounts, these bill source accounts can be payer accounts from other organizations that have authorized billing transfer to this account.</p>
+    /// <p>A list of Amazon Web Services account IDs that have delegated their billing responsibility to the receiver account through transfer billing. Unlike linked accounts, these bill source accounts can be payer accounts from other organizations that have authorized billing transfer to this account.</p>
     pub fn set_bill_source_accounts(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.bill_source_accounts = input;
         self
     }
-    /// <p>A list of Amazon Web Services account account IDs that have delegated their billing responsibility to the receiver account through transfer billing. Unlike linked accounts, these bill source accounts can be payer accounts from other organizations that have authorized billing transfer to this account.</p>
+    /// <p>A list of Amazon Web Services account IDs that have delegated their billing responsibility to the receiver account through transfer billing. Unlike linked accounts, these bill source accounts can be payer accounts from other organizations that have authorized billing transfer to this account.</p>
     pub fn get_bill_source_accounts(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.bill_source_accounts
     }

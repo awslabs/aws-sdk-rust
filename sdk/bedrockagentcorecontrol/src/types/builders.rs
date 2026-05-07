@@ -21,6 +21,10 @@ pub use crate::types::_linkedin_oauth2_provider_config_input::LinkedinOauth2Prov
 
 pub use crate::types::_included_oauth2_provider_config_input::IncludedOauth2ProviderConfigInputBuilder;
 
+pub use crate::types::_coinbase_cdp_configuration_output::CoinbaseCdpConfigurationOutputBuilder;
+
+pub use crate::types::_stripe_privy_configuration_output::StripePrivyConfigurationOutputBuilder;
+
 pub use crate::types::_network_configuration::NetworkConfigurationBuilder;
 
 pub use crate::types::_protocol_configuration::ProtocolConfigurationBuilder;
@@ -197,6 +201,14 @@ pub use crate::types::_cloud_watch_logs_input_config::CloudWatchLogsInputConfigB
 
 pub use crate::types::_cloud_watch_output_config::CloudWatchOutputConfigBuilder;
 
+pub use crate::types::_coinbase_cdp_configuration_input::CoinbaseCdpConfigurationInputBuilder;
+
+pub use crate::types::_stripe_privy_configuration_input::StripePrivyConfigurationInputBuilder;
+
+pub use crate::types::_payment_credential_provider_item::PaymentCredentialProviderItemBuilder;
+
+pub use crate::types::_payment_manager_summary::PaymentManagerSummaryBuilder;
+
 pub use crate::types::_policy_engine::PolicyEngineBuilder;
 
 pub use crate::types::_policy_generation::PolicyGenerationBuilder;
@@ -232,6 +244,8 @@ pub use crate::types::_oauth2_authorization_server_metadata::Oauth2Authorization
 pub use crate::types::_private_endpoint_override::PrivateEndpointOverrideBuilder;
 
 pub use crate::types::_token_exchange_grant_type_config_type::TokenExchangeGrantTypeConfigTypeBuilder;
+
+pub use crate::types::_payment_connector_summary::PaymentConnectorSummaryBuilder;
 
 pub use crate::types::_session_storage_configuration::SessionStorageConfigurationBuilder;
 
@@ -300,6 +314,8 @@ pub use crate::types::_updated_a2a_descriptor::UpdatedA2aDescriptorBuilder;
 pub use crate::types::_updated_custom_descriptor::UpdatedCustomDescriptorBuilder;
 
 pub use crate::types::_updated_agent_skills_descriptor::UpdatedAgentSkillsDescriptorBuilder;
+
+pub use crate::types::_payment_credential_provider_configuration::PaymentCredentialProviderConfigurationBuilder;
 
 pub use crate::types::_custom_claim_validation_type::CustomClaimValidationTypeBuilder;
 

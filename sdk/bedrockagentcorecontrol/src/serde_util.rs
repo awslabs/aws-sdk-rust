@@ -311,6 +311,78 @@ pub(crate) fn create_online_evaluation_config_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn create_payment_connector_output_output_correct_errors(
+    mut builder: crate::operation::create_payment_connector::builders::CreatePaymentConnectorOutputBuilder,
+) -> crate::operation::create_payment_connector::builders::CreatePaymentConnectorOutputBuilder {
+    if builder.payment_connector_id.is_none() {
+        builder.payment_connector_id = Some(Default::default())
+    }
+    if builder.payment_manager_id.is_none() {
+        builder.payment_manager_id = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.r#type.is_none() {
+        builder.r#type = "no value was set".parse::<crate::types::PaymentConnectorType>().ok()
+    }
+    if builder.credential_provider_configurations.is_none() {
+        builder.credential_provider_configurations = Some(Default::default())
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::PaymentConnectorStatus>().ok()
+    }
+    builder
+}
+
+pub(crate) fn create_payment_credential_provider_output_output_correct_errors(
+    mut builder: crate::operation::create_payment_credential_provider::builders::CreatePaymentCredentialProviderOutputBuilder,
+) -> crate::operation::create_payment_credential_provider::builders::CreatePaymentCredentialProviderOutputBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.credential_provider_vendor.is_none() {
+        builder.credential_provider_vendor = "no value was set".parse::<crate::types::PaymentCredentialProviderVendorType>().ok()
+    }
+    if builder.credential_provider_arn.is_none() {
+        builder.credential_provider_arn = Some(Default::default())
+    }
+    if builder.provider_configuration_output.is_none() {
+        builder.provider_configuration_output = Some(crate::types::PaymentProviderConfigurationOutput::Unknown)
+    }
+    builder
+}
+
+pub(crate) fn create_payment_manager_output_output_correct_errors(
+    mut builder: crate::operation::create_payment_manager::builders::CreatePaymentManagerOutputBuilder,
+) -> crate::operation::create_payment_manager::builders::CreatePaymentManagerOutputBuilder {
+    if builder.payment_manager_arn.is_none() {
+        builder.payment_manager_arn = Some(Default::default())
+    }
+    if builder.payment_manager_id.is_none() {
+        builder.payment_manager_id = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.authorizer_type.is_none() {
+        builder.authorizer_type = "no value was set".parse::<crate::types::PaymentsAuthorizerType>().ok()
+    }
+    if builder.role_arn.is_none() {
+        builder.role_arn = Some(Default::default())
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::PaymentManagerStatus>().ok()
+    }
+    builder
+}
+
 pub(crate) fn create_policy_output_output_correct_errors(
     mut builder: crate::operation::create_policy::builders::CreatePolicyOutputBuilder,
 ) -> crate::operation::create_policy::builders::CreatePolicyOutputBuilder {
@@ -556,6 +628,24 @@ pub(crate) fn delete_online_evaluation_config_output_output_correct_errors(
     }
     if builder.status.is_none() {
         builder.status = "no value was set".parse::<crate::types::OnlineEvaluationConfigStatus>().ok()
+    }
+    builder
+}
+
+pub(crate) fn delete_payment_connector_output_output_correct_errors(
+    mut builder: crate::operation::delete_payment_connector::builders::DeletePaymentConnectorOutputBuilder,
+) -> crate::operation::delete_payment_connector::builders::DeletePaymentConnectorOutputBuilder {
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::PaymentConnectorStatus>().ok()
+    }
+    builder
+}
+
+pub(crate) fn delete_payment_manager_output_output_correct_errors(
+    mut builder: crate::operation::delete_payment_manager::builders::DeletePaymentManagerOutputBuilder,
+) -> crate::operation::delete_payment_manager::builders::DeletePaymentManagerOutputBuilder {
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::PaymentManagerStatus>().ok()
     }
     builder
 }
@@ -1064,6 +1154,87 @@ pub(crate) fn get_online_evaluation_config_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn get_payment_connector_output_output_correct_errors(
+    mut builder: crate::operation::get_payment_connector::builders::GetPaymentConnectorOutputBuilder,
+) -> crate::operation::get_payment_connector::builders::GetPaymentConnectorOutputBuilder {
+    if builder.payment_connector_id.is_none() {
+        builder.payment_connector_id = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.r#type.is_none() {
+        builder.r#type = "no value was set".parse::<crate::types::PaymentConnectorType>().ok()
+    }
+    if builder.credential_provider_configurations.is_none() {
+        builder.credential_provider_configurations = Some(Default::default())
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.last_updated_at.is_none() {
+        builder.last_updated_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::PaymentConnectorStatus>().ok()
+    }
+    builder
+}
+
+pub(crate) fn get_payment_credential_provider_output_output_correct_errors(
+    mut builder: crate::operation::get_payment_credential_provider::builders::GetPaymentCredentialProviderOutputBuilder,
+) -> crate::operation::get_payment_credential_provider::builders::GetPaymentCredentialProviderOutputBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.credential_provider_arn.is_none() {
+        builder.credential_provider_arn = Some(Default::default())
+    }
+    if builder.credential_provider_vendor.is_none() {
+        builder.credential_provider_vendor = "no value was set".parse::<crate::types::PaymentCredentialProviderVendorType>().ok()
+    }
+    if builder.provider_configuration_output.is_none() {
+        builder.provider_configuration_output = Some(crate::types::PaymentProviderConfigurationOutput::Unknown)
+    }
+    if builder.created_time.is_none() {
+        builder.created_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.last_updated_time.is_none() {
+        builder.last_updated_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
+pub(crate) fn get_payment_manager_output_output_correct_errors(
+    mut builder: crate::operation::get_payment_manager::builders::GetPaymentManagerOutputBuilder,
+) -> crate::operation::get_payment_manager::builders::GetPaymentManagerOutputBuilder {
+    if builder.payment_manager_arn.is_none() {
+        builder.payment_manager_arn = Some(Default::default())
+    }
+    if builder.payment_manager_id.is_none() {
+        builder.payment_manager_id = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.authorizer_type.is_none() {
+        builder.authorizer_type = "no value was set".parse::<crate::types::PaymentsAuthorizerType>().ok()
+    }
+    if builder.role_arn.is_none() {
+        builder.role_arn = Some(Default::default())
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.last_updated_at.is_none() {
+        builder.last_updated_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::PaymentManagerStatus>().ok()
+    }
+    builder
+}
+
 pub(crate) fn get_policy_output_output_correct_errors(
     mut builder: crate::operation::get_policy::builders::GetPolicyOutputBuilder,
 ) -> crate::operation::get_policy::builders::GetPolicyOutputBuilder {
@@ -1402,6 +1573,33 @@ pub(crate) fn list_online_evaluation_configs_output_output_correct_errors(
 ) -> crate::operation::list_online_evaluation_configs::builders::ListOnlineEvaluationConfigsOutputBuilder {
     if builder.online_evaluation_configs.is_none() {
         builder.online_evaluation_configs = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn list_payment_connectors_output_output_correct_errors(
+    mut builder: crate::operation::list_payment_connectors::builders::ListPaymentConnectorsOutputBuilder,
+) -> crate::operation::list_payment_connectors::builders::ListPaymentConnectorsOutputBuilder {
+    if builder.payment_connectors.is_none() {
+        builder.payment_connectors = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn list_payment_credential_providers_output_output_correct_errors(
+    mut builder: crate::operation::list_payment_credential_providers::builders::ListPaymentCredentialProvidersOutputBuilder,
+) -> crate::operation::list_payment_credential_providers::builders::ListPaymentCredentialProvidersOutputBuilder {
+    if builder.credential_providers.is_none() {
+        builder.credential_providers = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn list_payment_managers_output_output_correct_errors(
+    mut builder: crate::operation::list_payment_managers::builders::ListPaymentManagersOutputBuilder,
+) -> crate::operation::list_payment_managers::builders::ListPaymentManagersOutputBuilder {
+    if builder.payment_managers.is_none() {
+        builder.payment_managers = Some(Default::default())
     }
     builder
 }
@@ -1795,6 +1993,84 @@ pub(crate) fn update_online_evaluation_config_output_output_correct_errors(
     }
     if builder.execution_status.is_none() {
         builder.execution_status = "no value was set".parse::<crate::types::OnlineEvaluationExecutionStatus>().ok()
+    }
+    builder
+}
+
+pub(crate) fn update_payment_connector_output_output_correct_errors(
+    mut builder: crate::operation::update_payment_connector::builders::UpdatePaymentConnectorOutputBuilder,
+) -> crate::operation::update_payment_connector::builders::UpdatePaymentConnectorOutputBuilder {
+    if builder.payment_connector_id.is_none() {
+        builder.payment_connector_id = Some(Default::default())
+    }
+    if builder.payment_manager_id.is_none() {
+        builder.payment_manager_id = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.r#type.is_none() {
+        builder.r#type = "no value was set".parse::<crate::types::PaymentConnectorType>().ok()
+    }
+    if builder.credential_provider_configurations.is_none() {
+        builder.credential_provider_configurations = Some(Default::default())
+    }
+    if builder.last_updated_at.is_none() {
+        builder.last_updated_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::PaymentConnectorStatus>().ok()
+    }
+    builder
+}
+
+pub(crate) fn update_payment_credential_provider_output_output_correct_errors(
+    mut builder: crate::operation::update_payment_credential_provider::builders::UpdatePaymentCredentialProviderOutputBuilder,
+) -> crate::operation::update_payment_credential_provider::builders::UpdatePaymentCredentialProviderOutputBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.credential_provider_vendor.is_none() {
+        builder.credential_provider_vendor = "no value was set".parse::<crate::types::PaymentCredentialProviderVendorType>().ok()
+    }
+    if builder.credential_provider_arn.is_none() {
+        builder.credential_provider_arn = Some(Default::default())
+    }
+    if builder.provider_configuration_output.is_none() {
+        builder.provider_configuration_output = Some(crate::types::PaymentProviderConfigurationOutput::Unknown)
+    }
+    if builder.created_time.is_none() {
+        builder.created_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.last_updated_time.is_none() {
+        builder.last_updated_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
+pub(crate) fn update_payment_manager_output_output_correct_errors(
+    mut builder: crate::operation::update_payment_manager::builders::UpdatePaymentManagerOutputBuilder,
+) -> crate::operation::update_payment_manager::builders::UpdatePaymentManagerOutputBuilder {
+    if builder.payment_manager_arn.is_none() {
+        builder.payment_manager_arn = Some(Default::default())
+    }
+    if builder.payment_manager_id.is_none() {
+        builder.payment_manager_id = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.authorizer_type.is_none() {
+        builder.authorizer_type = "no value was set".parse::<crate::types::PaymentsAuthorizerType>().ok()
+    }
+    if builder.role_arn.is_none() {
+        builder.role_arn = Some(Default::default())
+    }
+    if builder.last_updated_at.is_none() {
+        builder.last_updated_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::PaymentManagerStatus>().ok()
     }
     builder
 }
@@ -2371,6 +2647,27 @@ pub(crate) fn code_interpreter_summary_correct_errors(
     builder
 }
 
+pub(crate) fn coinbase_cdp_configuration_output_correct_errors(
+    mut builder: crate::types::builders::CoinbaseCdpConfigurationOutputBuilder,
+) -> crate::types::builders::CoinbaseCdpConfigurationOutputBuilder {
+    if builder.api_key_id.is_none() {
+        builder.api_key_id = Some(Default::default())
+    }
+    if builder.api_key_secret_arn.is_none() {
+        builder.api_key_secret_arn = {
+            let builder = crate::types::builders::SecretBuilder::default();
+            crate::serde_util::secret_correct_errors(builder).build().ok()
+        }
+    }
+    if builder.wallet_secret_arn.is_none() {
+        builder.wallet_secret_arn = {
+            let builder = crate::types::builders::SecretBuilder::default();
+            crate::serde_util::secret_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
 pub(crate) fn component_configuration_correct_errors(
     mut builder: crate::types::builders::ComponentConfigurationBuilder,
 ) -> crate::types::builders::ComponentConfigurationBuilder {
@@ -2743,6 +3040,75 @@ pub(crate) fn online_evaluation_config_summary_correct_errors(
     builder
 }
 
+pub(crate) fn payment_connector_summary_correct_errors(
+    mut builder: crate::types::builders::PaymentConnectorSummaryBuilder,
+) -> crate::types::builders::PaymentConnectorSummaryBuilder {
+    if builder.payment_connector_id.is_none() {
+        builder.payment_connector_id = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.r#type.is_none() {
+        builder.r#type = "no value was set".parse::<crate::types::PaymentConnectorType>().ok()
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::PaymentConnectorStatus>().ok()
+    }
+    if builder.last_updated_at.is_none() {
+        builder.last_updated_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
+pub(crate) fn payment_credential_provider_item_correct_errors(
+    mut builder: crate::types::builders::PaymentCredentialProviderItemBuilder,
+) -> crate::types::builders::PaymentCredentialProviderItemBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.credential_provider_vendor.is_none() {
+        builder.credential_provider_vendor = "no value was set".parse::<crate::types::PaymentCredentialProviderVendorType>().ok()
+    }
+    if builder.credential_provider_arn.is_none() {
+        builder.credential_provider_arn = Some(Default::default())
+    }
+    if builder.created_time.is_none() {
+        builder.created_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.last_updated_time.is_none() {
+        builder.last_updated_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
+pub(crate) fn payment_manager_summary_correct_errors(
+    mut builder: crate::types::builders::PaymentManagerSummaryBuilder,
+) -> crate::types::builders::PaymentManagerSummaryBuilder {
+    if builder.payment_manager_arn.is_none() {
+        builder.payment_manager_arn = Some(Default::default())
+    }
+    if builder.payment_manager_id.is_none() {
+        builder.payment_manager_id = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.authorizer_type.is_none() {
+        builder.authorizer_type = "no value was set".parse::<crate::types::PaymentsAuthorizerType>().ok()
+    }
+    if builder.role_arn.is_none() {
+        builder.role_arn = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::PaymentManagerStatus>().ok()
+    }
+    if builder.last_updated_at.is_none() {
+        builder.last_updated_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
 pub(crate) fn policy_correct_errors(mut builder: crate::types::builders::PolicyBuilder) -> crate::types::builders::PolicyBuilder {
     if builder.policy_id.is_none() {
         builder.policy_id = Some(Default::default())
@@ -2958,6 +3324,30 @@ pub(crate) fn stream_delivery_resources_correct_errors(
 ) -> crate::types::builders::StreamDeliveryResourcesBuilder {
     if builder.resources.is_none() {
         builder.resources = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn stripe_privy_configuration_output_correct_errors(
+    mut builder: crate::types::builders::StripePrivyConfigurationOutputBuilder,
+) -> crate::types::builders::StripePrivyConfigurationOutputBuilder {
+    if builder.app_id.is_none() {
+        builder.app_id = Some(Default::default())
+    }
+    if builder.app_secret_arn.is_none() {
+        builder.app_secret_arn = {
+            let builder = crate::types::builders::SecretBuilder::default();
+            crate::serde_util::secret_correct_errors(builder).build().ok()
+        }
+    }
+    if builder.authorization_private_key_arn.is_none() {
+        builder.authorization_private_key_arn = {
+            let builder = crate::types::builders::SecretBuilder::default();
+            crate::serde_util::secret_correct_errors(builder).build().ok()
+        }
+    }
+    if builder.authorization_id.is_none() {
+        builder.authorization_id = Some(Default::default())
     }
     builder
 }
@@ -3236,6 +3626,15 @@ pub(crate) fn on_behalf_of_token_exchange_config_type_correct_errors(
 ) -> crate::types::builders::OnBehalfOfTokenExchangeConfigTypeBuilder {
     if builder.grant_type.is_none() {
         builder.grant_type = "no value was set".parse::<crate::types::OnBehalfOfTokenExchangeGrantTypeType>().ok()
+    }
+    builder
+}
+
+pub(crate) fn payment_credential_provider_configuration_correct_errors(
+    mut builder: crate::types::builders::PaymentCredentialProviderConfigurationBuilder,
+) -> crate::types::builders::PaymentCredentialProviderConfigurationBuilder {
+    if builder.credential_provider_arn.is_none() {
+        builder.credential_provider_arn = Some(Default::default())
     }
     builder
 }

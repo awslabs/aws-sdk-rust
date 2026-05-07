@@ -128,6 +128,13 @@ where
                             builder = builder
                                 .set_target_name_server_metrics_enabled(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
+                        "Dns64Enabled" => {
+                            builder = builder.set_dns64_enabled(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
+                        "Ipv6InternetAccessEnabled" => {
+                            builder =
+                                builder.set_ipv6_internet_access_enabled(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

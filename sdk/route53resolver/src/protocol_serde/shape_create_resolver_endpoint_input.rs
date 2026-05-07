@@ -69,5 +69,11 @@ pub fn ser_create_resolver_endpoint_input_input(
     if let Some(var_22) = &input.target_name_server_metrics_enabled {
         object.key("TargetNameServerMetricsEnabled").boolean(*var_22);
     }
+    if let Some(var_23) = &input.dns64_enabled {
+        object.key("Dns64Enabled").boolean(*var_23);
+    }
+    if let Some(var_24) = &input.ipv6_internet_access_enabled {
+        object.key("Ipv6InternetAccessEnabled").boolean(*var_24);
+    }
     Ok(())
 }

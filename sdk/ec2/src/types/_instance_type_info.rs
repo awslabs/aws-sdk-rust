@@ -66,6 +66,8 @@ pub struct InstanceTypeInfo {
     pub phc_support: ::std::option::Option<crate::types::PhcSupport>,
     /// <p>Indicates whether reboot migration during a user-initiated reboot is supported for instances that have a scheduled <code>system-reboot</code> event. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/schedevents_actions_reboot.html#reboot-migration">Enable or disable reboot migration</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub reboot_migration_support: ::std::option::Option<crate::types::RebootMigrationSupport>,
+    /// <p>Indicates whether the instance type is supported in the current Region.</p>
+    pub supported_in_region: ::std::option::Option<bool>,
 }
 impl InstanceTypeInfo {
     /// <p>The instance type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the <i>Amazon EC2 User Guide</i>.</p>
@@ -200,6 +202,10 @@ impl InstanceTypeInfo {
     pub fn reboot_migration_support(&self) -> ::std::option::Option<&crate::types::RebootMigrationSupport> {
         self.reboot_migration_support.as_ref()
     }
+    /// <p>Indicates whether the instance type is supported in the current Region.</p>
+    pub fn supported_in_region(&self) -> ::std::option::Option<bool> {
+        self.supported_in_region
+    }
 }
 impl InstanceTypeInfo {
     /// Creates a new builder-style object to manufacture [`InstanceTypeInfo`](crate::types::InstanceTypeInfo).
@@ -243,6 +249,7 @@ pub struct InstanceTypeInfoBuilder {
     pub(crate) neuron_info: ::std::option::Option<crate::types::NeuronInfo>,
     pub(crate) phc_support: ::std::option::Option<crate::types::PhcSupport>,
     pub(crate) reboot_migration_support: ::std::option::Option<crate::types::RebootMigrationSupport>,
+    pub(crate) supported_in_region: ::std::option::Option<bool>,
 }
 impl InstanceTypeInfoBuilder {
     /// <p>The instance type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the <i>Amazon EC2 User Guide</i>.</p>
@@ -703,6 +710,20 @@ impl InstanceTypeInfoBuilder {
     pub fn get_reboot_migration_support(&self) -> &::std::option::Option<crate::types::RebootMigrationSupport> {
         &self.reboot_migration_support
     }
+    /// <p>Indicates whether the instance type is supported in the current Region.</p>
+    pub fn supported_in_region(mut self, input: bool) -> Self {
+        self.supported_in_region = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether the instance type is supported in the current Region.</p>
+    pub fn set_supported_in_region(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.supported_in_region = input;
+        self
+    }
+    /// <p>Indicates whether the instance type is supported in the current Region.</p>
+    pub fn get_supported_in_region(&self) -> &::std::option::Option<bool> {
+        &self.supported_in_region
+    }
     /// Consumes the builder and constructs a [`InstanceTypeInfo`](crate::types::InstanceTypeInfo).
     pub fn build(self) -> crate::types::InstanceTypeInfo {
         crate::types::InstanceTypeInfo {
@@ -737,6 +758,7 @@ impl InstanceTypeInfoBuilder {
             neuron_info: self.neuron_info,
             phc_support: self.phc_support,
             reboot_migration_support: self.reboot_migration_support,
+            supported_in_region: self.supported_in_region,
         }
     }
 }

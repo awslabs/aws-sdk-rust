@@ -33,7 +33,23 @@ pub use crate::types::_search_criteria::SearchCriteriaBuilder;
 
 pub use crate::types::_extraction_job::ExtractionJobBuilder;
 
+pub use crate::types::_payment_instrument::PaymentInstrumentBuilder;
+
+pub use crate::types::_token_balance::TokenBalanceBuilder;
+
+pub use crate::types::_session_limits::SessionLimitsBuilder;
+
+pub use crate::types::_payment_session::PaymentSessionBuilder;
+
 pub use crate::types::_validation_exception_field::ValidationExceptionFieldBuilder;
+
+pub use crate::types::_coinbase_cdp_token_request_input::CoinbaseCdpTokenRequestInputBuilder;
+
+pub use crate::types::_stripe_privy_token_request_input::StripePrivyTokenRequestInputBuilder;
+
+pub use crate::types::_coinbase_cdp_token_response_output::CoinbaseCdpTokenResponseOutputBuilder;
+
+pub use crate::types::_stripe_privy_token_response_output::StripePrivyTokenResponseOutputBuilder;
 
 pub use crate::types::_code_interpreter_result::CodeInterpreterResultBuilder;
 
@@ -157,6 +173,20 @@ pub use crate::types::_memory_record_summary::MemoryRecordSummaryBuilder;
 
 pub use crate::types::_session_summary::SessionSummaryBuilder;
 
+pub use crate::types::_payment_instrument_summary::PaymentInstrumentSummaryBuilder;
+
+pub use crate::types::_embedded_crypto_wallet::EmbeddedCryptoWalletBuilder;
+
+pub use crate::types::_payment_session_summary::PaymentSessionSummaryBuilder;
+
+pub use crate::types::_amount::AmountBuilder;
+
+pub use crate::types::_available_limits::AvailableLimitsBuilder;
+
+pub use crate::types::_crypto_x402_payment_input::CryptoX402PaymentInputBuilder;
+
+pub use crate::types::_crypto_x402_payment_output::CryptoX402PaymentOutputBuilder;
+
 pub use crate::types::_registry_record_summary::RegistryRecordSummaryBuilder;
 
 pub use crate::types::_input_content_block::InputContentBlockBuilder;
@@ -269,6 +299,12 @@ pub use crate::types::_inline_ground_truth::InlineGroundTruthBuilder;
 
 pub use crate::types::_message_metadata::MessageMetadataBuilder;
 
+pub use crate::types::_linked_account_email::LinkedAccountEmailBuilder;
+
+pub use crate::types::_linked_account_sms::LinkedAccountSmsBuilder;
+
+pub use crate::types::_linked_account_developer_jwt::LinkedAccountDeveloperJwtBuilder;
+
 pub use crate::types::_server_definition::ServerDefinitionBuilder;
 
 pub use crate::types::_tools_definition::ToolsDefinitionBuilder;
@@ -292,6 +328,8 @@ pub use crate::types::_confidence_interval::ConfidenceIntervalBuilder;
 pub use crate::types::_tool_description_input::ToolDescriptionInputBuilder;
 
 pub use crate::types::_configuration_bundle_tool_entry::ConfigurationBundleToolEntryBuilder;
+
+pub use crate::types::_o_auth2_authentication::OAuth2AuthenticationBuilder;
 
 pub use crate::types::_cloud_watch_logs_filter::CloudWatchLogsFilterBuilder;
 

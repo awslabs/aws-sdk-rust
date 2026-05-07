@@ -838,6 +838,7 @@ impl From<crate::operation::delete_resolver_rule::DeleteResolverRuleError> for E
             crate::operation::delete_resolver_rule::DeleteResolverRuleError::InvalidParameterException(inner) => {
                 Error::InvalidParameterException(inner)
             }
+            crate::operation::delete_resolver_rule::DeleteResolverRuleError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
             crate::operation::delete_resolver_rule::DeleteResolverRuleError::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
             crate::operation::delete_resolver_rule::DeleteResolverRuleError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
@@ -1009,6 +1010,9 @@ impl From<crate::operation::disassociate_resolver_rule::DisassociateResolverRule
             }
             crate::operation::disassociate_resolver_rule::DisassociateResolverRuleError::InvalidParameterException(inner) => {
                 Error::InvalidParameterException(inner)
+            }
+            crate::operation::disassociate_resolver_rule::DisassociateResolverRuleError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
             }
             crate::operation::disassociate_resolver_rule::DisassociateResolverRuleError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)

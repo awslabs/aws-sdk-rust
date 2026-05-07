@@ -6,11 +6,17 @@
 pub struct Entity {
     /// <p>The name of the entity that issues the Amazon Web Services invoice.</p>
     pub invoicing_entity: ::std::option::Option<::std::string::String>,
+    /// <p>Helps you identify whether your invoices are for Amazon Web Services Marketplace or for purchases of other Amazon Web Services services.</p>
+    pub billing_entity: ::std::option::Option<crate::types::BillingEntity>,
 }
 impl Entity {
     /// <p>The name of the entity that issues the Amazon Web Services invoice.</p>
     pub fn invoicing_entity(&self) -> ::std::option::Option<&str> {
         self.invoicing_entity.as_deref()
+    }
+    /// <p>Helps you identify whether your invoices are for Amazon Web Services Marketplace or for purchases of other Amazon Web Services services.</p>
+    pub fn billing_entity(&self) -> ::std::option::Option<&crate::types::BillingEntity> {
+        self.billing_entity.as_ref()
     }
 }
 impl Entity {
@@ -25,6 +31,7 @@ impl Entity {
 #[non_exhaustive]
 pub struct EntityBuilder {
     pub(crate) invoicing_entity: ::std::option::Option<::std::string::String>,
+    pub(crate) billing_entity: ::std::option::Option<crate::types::BillingEntity>,
 }
 impl EntityBuilder {
     /// <p>The name of the entity that issues the Amazon Web Services invoice.</p>
@@ -41,10 +48,25 @@ impl EntityBuilder {
     pub fn get_invoicing_entity(&self) -> &::std::option::Option<::std::string::String> {
         &self.invoicing_entity
     }
+    /// <p>Helps you identify whether your invoices are for Amazon Web Services Marketplace or for purchases of other Amazon Web Services services.</p>
+    pub fn billing_entity(mut self, input: crate::types::BillingEntity) -> Self {
+        self.billing_entity = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Helps you identify whether your invoices are for Amazon Web Services Marketplace or for purchases of other Amazon Web Services services.</p>
+    pub fn set_billing_entity(mut self, input: ::std::option::Option<crate::types::BillingEntity>) -> Self {
+        self.billing_entity = input;
+        self
+    }
+    /// <p>Helps you identify whether your invoices are for Amazon Web Services Marketplace or for purchases of other Amazon Web Services services.</p>
+    pub fn get_billing_entity(&self) -> &::std::option::Option<crate::types::BillingEntity> {
+        &self.billing_entity
+    }
     /// Consumes the builder and constructs a [`Entity`](crate::types::Entity).
     pub fn build(self) -> crate::types::Entity {
         crate::types::Entity {
             invoicing_entity: self.invoicing_entity,
+            billing_entity: self.billing_entity,
         }
     }
 }

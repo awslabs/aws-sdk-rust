@@ -220,6 +220,12 @@ mod create_oauth2_credential_provider;
 
 mod create_online_evaluation_config;
 
+mod create_payment_connector;
+
+mod create_payment_credential_provider;
+
+mod create_payment_manager;
+
 mod create_policy;
 
 mod create_policy_engine;
@@ -287,6 +293,12 @@ mod delete_oauth2_credential_provider;
 
 mod delete_online_evaluation_config;
 
+mod delete_payment_connector;
+
+mod delete_payment_credential_provider;
+
+mod delete_payment_manager;
+
 mod delete_policy;
 
 mod delete_policy_engine;
@@ -330,6 +342,12 @@ mod get_memory;
 mod get_oauth2_credential_provider;
 
 mod get_online_evaluation_config;
+
+mod get_payment_connector;
+
+mod get_payment_credential_provider;
+
+mod get_payment_manager;
 
 mod get_policy;
 
@@ -380,6 +398,12 @@ mod list_memories;
 mod list_oauth2_credential_providers;
 
 mod list_online_evaluation_configs;
+
+mod list_payment_connectors;
+
+mod list_payment_credential_providers;
+
+mod list_payment_managers;
 
 mod list_policies;
 
@@ -434,6 +458,12 @@ mod update_memory;
 mod update_oauth2_credential_provider;
 
 mod update_online_evaluation_config;
+
+mod update_payment_connector;
+
+mod update_payment_credential_provider;
+
+mod update_payment_manager;
 
 mod update_policy;
 

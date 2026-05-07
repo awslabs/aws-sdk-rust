@@ -10,7 +10,7 @@ pub struct CustomOauth2ProviderConfigOutput {
     pub client_id: ::std::option::Option<::std::string::String>,
     /// <p>The default private endpoint for the custom OAuth2 provider, enabling secure connectivity through a VPC Lattice resource configuration.</p>
     pub private_endpoint: ::std::option::Option<crate::types::PrivateEndpoint>,
-    /// <p>The list of private endpoint overrides for the custom OAuth2 provider. Each override maps a specific domain to a private endpoint, enabling secure connectivity through VPC Lattice resource configurations.</p>
+    /// <p>The private endpoint overrides for the custom OAuth2 provider configuration.</p>
     pub private_endpoint_overrides: ::std::option::Option<::std::vec::Vec<crate::types::PrivateEndpointOverride>>,
     /// <p>The configuration for on-behalf-of token exchange.</p>
     pub on_behalf_of_token_exchange_config: ::std::option::Option<crate::types::OnBehalfOfTokenExchangeConfigType>,
@@ -30,7 +30,7 @@ impl CustomOauth2ProviderConfigOutput {
     pub fn private_endpoint(&self) -> ::std::option::Option<&crate::types::PrivateEndpoint> {
         self.private_endpoint.as_ref()
     }
-    /// <p>The list of private endpoint overrides for the custom OAuth2 provider. Each override maps a specific domain to a private endpoint, enabling secure connectivity through VPC Lattice resource configurations.</p>
+    /// <p>The private endpoint overrides for the custom OAuth2 provider configuration.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.private_endpoint_overrides.is_none()`.
     pub fn private_endpoint_overrides(&self) -> &[crate::types::PrivateEndpointOverride] {
@@ -111,19 +111,19 @@ impl CustomOauth2ProviderConfigOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_private_endpoint_overrides`](Self::set_private_endpoint_overrides).
     ///
-    /// <p>The list of private endpoint overrides for the custom OAuth2 provider. Each override maps a specific domain to a private endpoint, enabling secure connectivity through VPC Lattice resource configurations.</p>
+    /// <p>The private endpoint overrides for the custom OAuth2 provider configuration.</p>
     pub fn private_endpoint_overrides(mut self, input: crate::types::PrivateEndpointOverride) -> Self {
         let mut v = self.private_endpoint_overrides.unwrap_or_default();
         v.push(input);
         self.private_endpoint_overrides = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The list of private endpoint overrides for the custom OAuth2 provider. Each override maps a specific domain to a private endpoint, enabling secure connectivity through VPC Lattice resource configurations.</p>
+    /// <p>The private endpoint overrides for the custom OAuth2 provider configuration.</p>
     pub fn set_private_endpoint_overrides(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PrivateEndpointOverride>>) -> Self {
         self.private_endpoint_overrides = input;
         self
     }
-    /// <p>The list of private endpoint overrides for the custom OAuth2 provider. Each override maps a specific domain to a private endpoint, enabling secure connectivity through VPC Lattice resource configurations.</p>
+    /// <p>The private endpoint overrides for the custom OAuth2 provider configuration.</p>
     pub fn get_private_endpoint_overrides(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PrivateEndpointOverride>> {
         &self.private_endpoint_overrides
     }

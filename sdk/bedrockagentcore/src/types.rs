@@ -7,6 +7,10 @@ pub use crate::types::_oauth2_flow_type::Oauth2FlowType;
 
 pub use crate::types::_session_status::SessionStatus;
 
+pub use crate::types::_payment_token_request_input::PaymentTokenRequestInput;
+
+pub use crate::types::_payment_token_response_output::PaymentTokenResponseOutput;
+
 pub use crate::types::_tool_name::ToolName;
 
 pub use crate::types::_tool_arguments::ToolArguments;
@@ -87,7 +91,43 @@ pub use crate::types::_search_criteria::SearchCriteria;
 
 pub use crate::types::_extraction_job::ExtractionJob;
 
+pub use crate::types::_payment_instrument_type::PaymentInstrumentType;
+
+pub use crate::types::_payment_instrument_details::PaymentInstrumentDetails;
+
+pub use crate::types::_payment_instrument::PaymentInstrument;
+
+pub use crate::types::_payment_instrument_status::PaymentInstrumentStatus;
+
+pub use crate::types::_blockchain_chain_id::BlockchainChainId;
+
+pub use crate::types::_instrument_balance_token::InstrumentBalanceToken;
+
+pub use crate::types::_token_balance::TokenBalance;
+
+pub use crate::types::_session_limits::SessionLimits;
+
+pub use crate::types::_payment_session::PaymentSession;
+
+pub use crate::types::_payment_session_status::PaymentSessionStatus;
+
+pub use crate::types::_payment_type::PaymentType;
+
+pub use crate::types::_payment_input::PaymentInput;
+
+pub use crate::types::_payment_status::PaymentStatus;
+
+pub use crate::types::_payment_output::PaymentOutput;
+
 pub use crate::types::_validation_exception_field::ValidationExceptionField;
+
+pub use crate::types::_coinbase_cdp_token_request_input::CoinbaseCdpTokenRequestInput;
+
+pub use crate::types::_stripe_privy_token_request_input::StripePrivyTokenRequestInput;
+
+pub use crate::types::_coinbase_cdp_token_response_output::CoinbaseCdpTokenResponseOutput;
+
+pub use crate::types::_stripe_privy_token_response_output::StripePrivyTokenResponseOutput;
 
 pub use crate::types::_programming_language::ProgrammingLanguage;
 
@@ -229,7 +269,25 @@ pub use crate::types::_event_filter_condition::EventFilterCondition;
 
 pub use crate::types::_session_summary::SessionSummary;
 
+pub use crate::types::_payment_instrument_summary::PaymentInstrumentSummary;
+
+pub use crate::types::_embedded_crypto_wallet::EmbeddedCryptoWallet;
+
+pub use crate::types::_crypto_wallet_network::CryptoWalletNetwork;
+
+pub use crate::types::_payment_session_summary::PaymentSessionSummary;
+
+pub use crate::types::_amount::Amount;
+
+pub use crate::types::_available_limits::AvailableLimits;
+
+pub use crate::types::_crypto_x402_payment_input::CryptoX402PaymentInput;
+
+pub use crate::types::_crypto_x402_payment_output::CryptoX402PaymentOutput;
+
 pub use crate::types::_registry_record_summary::RegistryRecordSummary;
+
+pub use crate::types::_payment_http_method_type::PaymentHttpMethodType;
 
 pub use crate::types::_input_content_block::InputContentBlock;
 
@@ -319,6 +377,8 @@ pub use crate::types::_memory_record_operator_type::MemoryRecordOperatorType;
 
 pub use crate::types::_memory_record_right_expression::MemoryRecordRightExpression;
 
+pub use crate::types::_currency::Currency;
+
 pub use crate::types::_descriptor_type::DescriptorType;
 
 pub use crate::types::_descriptors::Descriptors;
@@ -391,6 +451,8 @@ pub use crate::types::_operator_type::OperatorType;
 
 pub use crate::types::_right_expression::RightExpression;
 
+pub use crate::types::_linked_account::LinkedAccount;
+
 pub use crate::types::_mcp_descriptor::McpDescriptor;
 
 pub use crate::types::_a2a_descriptor::A2aDescriptor;
@@ -429,6 +491,14 @@ pub use crate::types::_inline_ground_truth::InlineGroundTruth;
 
 pub use crate::types::_message_metadata::MessageMetadata;
 
+pub use crate::types::_linked_account_email::LinkedAccountEmail;
+
+pub use crate::types::_linked_account_sms::LinkedAccountSms;
+
+pub use crate::types::_linked_account_developer_jwt::LinkedAccountDeveloperJwt;
+
+pub use crate::types::_linked_account_o_auth2::LinkedAccountOAuth2;
+
 pub use crate::types::_server_definition::ServerDefinition;
 
 pub use crate::types::_tools_definition::ToolsDefinition;
@@ -454,6 +524,8 @@ pub use crate::types::_confidence_interval::ConfidenceInterval;
 pub use crate::types::_tool_description_input::ToolDescriptionInput;
 
 pub use crate::types::_configuration_bundle_tool_entry::ConfigurationBundleToolEntry;
+
+pub use crate::types::_o_auth2_authentication::OAuth2Authentication;
 
 pub use crate::types::_harness_tool_result_content_block::HarnessToolResultContentBlock;
 
@@ -491,17 +563,23 @@ mod _agent_skills_descriptor;
 
 mod _agent_traces_config;
 
+mod _amount;
+
 mod _automation_stream;
 
 mod _automation_stream_status;
 
 mod _automation_stream_update;
 
+mod _available_limits;
+
 mod _basic_auth;
 
 mod _batch_evaluation_status;
 
 mod _batch_evaluation_summary;
+
+mod _blockchain_chain_id;
 
 mod _branch;
 
@@ -553,6 +631,10 @@ mod _code_interpreter_session_summary;
 
 mod _code_interpreter_stream_output;
 
+mod _coinbase_cdp_token_request_input;
+
+mod _coinbase_cdp_token_response_output;
+
 mod _command_execution_status;
 
 mod _confidence_interval;
@@ -579,6 +661,14 @@ mod _control_stats;
 
 mod _conversational;
 
+mod _crypto_wallet_network;
+
+mod _crypto_x402_payment_input;
+
+mod _crypto_x402_payment_output;
+
+mod _currency;
+
 mod _custom_descriptor;
 
 mod _data_source_config;
@@ -586,6 +676,8 @@ mod _data_source_config;
 mod _descriptor_type;
 
 mod _descriptors;
+
+mod _embedded_crypto_wallet;
 
 mod _evaluation_content;
 
@@ -727,6 +819,8 @@ mod _inline_ground_truth;
 
 mod _input_content_block;
 
+mod _instrument_balance_token;
+
 mod _invoke_agent_runtime_command_request_body;
 
 mod _invoke_agent_runtime_command_stream_output;
@@ -748,6 +842,16 @@ mod _key_type_result;
 mod _language_runtime;
 
 mod _left_expression;
+
+mod _linked_account;
+
+mod _linked_account_developer_jwt;
+
+mod _linked_account_email;
+
+mod _linked_account_o_auth2;
+
+mod _linked_account_sms;
 
 mod _live_view_stream;
 
@@ -801,6 +905,8 @@ mod _mouse_scroll_arguments;
 
 mod _mouse_scroll_result;
 
+mod _o_auth2_authentication;
+
 mod _o_auth_credential_provider;
 
 mod _o_auth_grant_type;
@@ -812,6 +918,36 @@ mod _operator_type;
 mod _output_config;
 
 mod _payload_type;
+
+mod _payment_http_method_type;
+
+mod _payment_input;
+
+mod _payment_instrument;
+
+mod _payment_instrument_details;
+
+mod _payment_instrument_status;
+
+mod _payment_instrument_summary;
+
+mod _payment_instrument_type;
+
+mod _payment_output;
+
+mod _payment_session;
+
+mod _payment_session_status;
+
+mod _payment_session_summary;
+
+mod _payment_status;
+
+mod _payment_token_request_input;
+
+mod _payment_token_response_output;
+
+mod _payment_type;
 
 mod _per_variant_online_evaluation_config;
 
@@ -875,6 +1011,8 @@ mod _session_filter;
 
 mod _session_filter_config;
 
+mod _session_limits;
+
 mod _session_metadata_shape;
 
 mod _session_status;
@@ -889,6 +1027,10 @@ mod _span_context;
 
 mod _stream_update;
 
+mod _stripe_privy_token_request_input;
+
+mod _stripe_privy_token_response_output;
+
 mod _system_prompt_config;
 
 mod _system_prompt_configuration_bundle;
@@ -900,6 +1042,8 @@ mod _system_prompt_recommendation_result;
 mod _target_ref;
 
 mod _task_status;
+
+mod _token_balance;
 
 mod _token_usage;
 

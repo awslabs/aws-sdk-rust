@@ -277,6 +277,8 @@ pub enum DisassociateResolverRuleError {
     InternalServiceErrorException(crate::types::error::InternalServiceErrorException),
     /// <p>One or more parameters in this request are not valid.</p>
     InvalidParameterException(crate::types::error::InvalidParameterException),
+    /// <p>The request is invalid.</p>
+    InvalidRequestException(crate::types::error::InvalidRequestException),
     /// <p>The specified resource doesn't exist.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>The request was throttled. Try again in a few minutes.</p>
@@ -316,6 +318,7 @@ impl DisassociateResolverRuleError {
         match self {
             Self::InternalServiceErrorException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidParameterException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::InvalidRequestException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ResourceNotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ThrottlingException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
@@ -328,6 +331,10 @@ impl DisassociateResolverRuleError {
     /// Returns `true` if the error kind is `DisassociateResolverRuleError::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(self, Self::InvalidParameterException(_))
+    }
+    /// Returns `true` if the error kind is `DisassociateResolverRuleError::InvalidRequestException`.
+    pub fn is_invalid_request_exception(&self) -> bool {
+        matches!(self, Self::InvalidRequestException(_))
     }
     /// Returns `true` if the error kind is `DisassociateResolverRuleError::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
@@ -343,6 +350,7 @@ impl ::std::error::Error for DisassociateResolverRuleError {
         match self {
             Self::InternalServiceErrorException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidParameterException(_inner) => ::std::option::Option::Some(_inner),
+            Self::InvalidRequestException(_inner) => ::std::option::Option::Some(_inner),
             Self::ResourceNotFoundException(_inner) => ::std::option::Option::Some(_inner),
             Self::ThrottlingException(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
@@ -354,6 +362,7 @@ impl ::std::fmt::Display for DisassociateResolverRuleError {
         match self {
             Self::InternalServiceErrorException(_inner) => _inner.fmt(f),
             Self::InvalidParameterException(_inner) => _inner.fmt(f),
+            Self::InvalidRequestException(_inner) => _inner.fmt(f),
             Self::ResourceNotFoundException(_inner) => _inner.fmt(f),
             Self::ThrottlingException(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => {
@@ -379,6 +388,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for DisassociateR
         match self {
             Self::InternalServiceErrorException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidParameterException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InvalidRequestException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ResourceNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ThrottlingException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => &_inner.meta,
