@@ -95,6 +95,34 @@ impl From<crate::operation::create_cluster::CreateClusterError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_stream::CreateStreamError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_stream::CreateStreamError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_stream::CreateStreamError> for Error {
+    fn from(err: crate::operation::create_stream::CreateStreamError) -> Self {
+        match err {
+            crate::operation::create_stream::CreateStreamError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_stream::CreateStreamError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::create_stream::CreateStreamError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::create_stream::CreateStreamError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::create_stream::CreateStreamError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_stream::CreateStreamError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::create_stream::CreateStreamError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_stream::CreateStreamError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_cluster::DeleteClusterError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -153,6 +181,33 @@ impl From<crate::operation::delete_cluster_policy::DeleteClusterPolicyError> for
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_stream::DeleteStreamError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_stream::DeleteStreamError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_stream::DeleteStreamError> for Error {
+    fn from(err: crate::operation::delete_stream::DeleteStreamError) -> Self {
+        match err {
+            crate::operation::delete_stream::DeleteStreamError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::delete_stream::DeleteStreamError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_stream::DeleteStreamError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_stream::DeleteStreamError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::delete_stream::DeleteStreamError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_stream::DeleteStreamError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_stream::DeleteStreamError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_cluster::GetClusterError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -202,6 +257,32 @@ impl From<crate::operation::get_cluster_policy::GetClusterPolicyError> for Error
             crate::operation::get_cluster_policy::GetClusterPolicyError::InternalServerException(inner) => Error::InternalServerException(inner),
             crate::operation::get_cluster_policy::GetClusterPolicyError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::get_cluster_policy::GetClusterPolicyError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_stream::GetStreamError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_stream::GetStreamError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_stream::GetStreamError> for Error {
+    fn from(err: crate::operation::get_stream::GetStreamError) -> Self {
+        match err {
+            crate::operation::get_stream::GetStreamError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_stream::GetStreamError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_stream::GetStreamError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_stream::GetStreamError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_stream::GetStreamError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_stream::GetStreamError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -267,6 +348,32 @@ impl From<crate::operation::list_clusters::ListClustersError> for Error {
             crate::operation::list_clusters::ListClustersError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::list_clusters::ListClustersError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_clusters::ListClustersError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_streams::ListStreamsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_streams::ListStreamsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_streams::ListStreamsError> for Error {
+    fn from(err: crate::operation::list_streams::ListStreamsError) -> Self {
+        match err {
+            crate::operation::list_streams::ListStreamsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_streams::ListStreamsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_streams::ListStreamsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_streams::ListStreamsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_streams::ListStreamsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_streams::ListStreamsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

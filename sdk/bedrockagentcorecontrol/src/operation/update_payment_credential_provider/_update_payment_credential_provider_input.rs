@@ -5,9 +5,9 @@
 pub struct UpdatePaymentCredentialProviderInput {
     /// <p>The name of the payment credential provider to update.</p>
     pub name: ::std::option::Option<::std::string::String>,
-    /// Supported vendor types for payment providers using non-standard auth protocols
+    /// <p>The vendor type for the payment credential provider (e.g., CoinbaseCDP, StripePrivy).</p>
     pub credential_provider_vendor: ::std::option::Option<crate::types::PaymentCredentialProviderVendorType>,
-    /// Configuration specific to the vendor, including API credentials
+    /// <p>Configuration specific to the vendor, including API credentials.</p>
     pub provider_configuration_input: ::std::option::Option<crate::types::PaymentProviderConfigurationInput>,
 }
 impl UpdatePaymentCredentialProviderInput {
@@ -15,11 +15,11 @@ impl UpdatePaymentCredentialProviderInput {
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// Supported vendor types for payment providers using non-standard auth protocols
+    /// <p>The vendor type for the payment credential provider (e.g., CoinbaseCDP, StripePrivy).</p>
     pub fn credential_provider_vendor(&self) -> ::std::option::Option<&crate::types::PaymentCredentialProviderVendorType> {
         self.credential_provider_vendor.as_ref()
     }
-    /// Configuration specific to the vendor, including API credentials
+    /// <p>Configuration specific to the vendor, including API credentials.</p>
     pub fn provider_configuration_input(&self) -> ::std::option::Option<&crate::types::PaymentProviderConfigurationInput> {
         self.provider_configuration_input.as_ref()
     }
@@ -55,33 +55,33 @@ impl UpdatePaymentCredentialProviderInputBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// Supported vendor types for payment providers using non-standard auth protocols
+    /// <p>The vendor type for the payment credential provider (e.g., CoinbaseCDP, StripePrivy).</p>
     /// This field is required.
     pub fn credential_provider_vendor(mut self, input: crate::types::PaymentCredentialProviderVendorType) -> Self {
         self.credential_provider_vendor = ::std::option::Option::Some(input);
         self
     }
-    /// Supported vendor types for payment providers using non-standard auth protocols
+    /// <p>The vendor type for the payment credential provider (e.g., CoinbaseCDP, StripePrivy).</p>
     pub fn set_credential_provider_vendor(mut self, input: ::std::option::Option<crate::types::PaymentCredentialProviderVendorType>) -> Self {
         self.credential_provider_vendor = input;
         self
     }
-    /// Supported vendor types for payment providers using non-standard auth protocols
+    /// <p>The vendor type for the payment credential provider (e.g., CoinbaseCDP, StripePrivy).</p>
     pub fn get_credential_provider_vendor(&self) -> &::std::option::Option<crate::types::PaymentCredentialProviderVendorType> {
         &self.credential_provider_vendor
     }
-    /// Configuration specific to the vendor, including API credentials
+    /// <p>Configuration specific to the vendor, including API credentials.</p>
     /// This field is required.
     pub fn provider_configuration_input(mut self, input: crate::types::PaymentProviderConfigurationInput) -> Self {
         self.provider_configuration_input = ::std::option::Option::Some(input);
         self
     }
-    /// Configuration specific to the vendor, including API credentials
+    /// <p>Configuration specific to the vendor, including API credentials.</p>
     pub fn set_provider_configuration_input(mut self, input: ::std::option::Option<crate::types::PaymentProviderConfigurationInput>) -> Self {
         self.provider_configuration_input = input;
         self
     }
-    /// Configuration specific to the vendor, including API credentials
+    /// <p>Configuration specific to the vendor, including API credentials.</p>
     pub fn get_provider_configuration_input(&self) -> &::std::option::Option<crate::types::PaymentProviderConfigurationInput> {
         &self.provider_configuration_input
     }

@@ -18,5 +18,8 @@ pub fn ser_input_origin(
             ::aws_smithy_types::Number::NegInt((*var_4).into()),
         );
     }
+    if let Some(var_5) = &input.ip_address_type {
+        object.key("ipAddressType").string(var_5.as_str());
+    }
     Ok(())
 }

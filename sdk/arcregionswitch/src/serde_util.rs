@@ -348,6 +348,18 @@ pub(crate) fn global_aurora_configuration_correct_errors(
     builder
 }
 
+pub(crate) fn lambda_event_source_mapping_configuration_correct_errors(
+    mut builder: crate::types::builders::LambdaEventSourceMappingConfigurationBuilder,
+) -> crate::types::builders::LambdaEventSourceMappingConfigurationBuilder {
+    if builder.action.is_none() {
+        builder.action = "no value was set".parse::<crate::types::EventSourceMappingAction>().ok()
+    }
+    if builder.region_event_source_mappings.is_none() {
+        builder.region_event_source_mappings = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn parallel_execution_block_configuration_correct_errors(
     mut builder: crate::types::builders::ParallelExecutionBlockConfigurationBuilder,
 ) -> crate::types::builders::ParallelExecutionBlockConfigurationBuilder {
@@ -438,6 +450,15 @@ pub(crate) fn kubernetes_resource_type_correct_errors(
 pub(crate) fn eks_cluster_correct_errors(mut builder: crate::types::builders::EksClusterBuilder) -> crate::types::builders::EksClusterBuilder {
     if builder.cluster_arn.is_none() {
         builder.cluster_arn = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn event_source_mapping_correct_errors(
+    mut builder: crate::types::builders::EventSourceMappingBuilder,
+) -> crate::types::builders::EventSourceMappingBuilder {
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
     }
     builder
 }

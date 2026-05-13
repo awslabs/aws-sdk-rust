@@ -83,6 +83,15 @@ pub(crate) fn create_application_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn create_code_review_output_output_correct_errors(
+    mut builder: crate::operation::create_code_review::builders::CreateCodeReviewOutputBuilder,
+) -> crate::operation::create_code_review::builders::CreateCodeReviewOutputBuilder {
+    if builder.code_review_id.is_none() {
+        builder.code_review_id = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn conflict_exception_correct_errors(
     mut builder: crate::types::error::builders::ConflictExceptionBuilder,
 ) -> crate::types::error::builders::ConflictExceptionBuilder {
@@ -227,6 +236,18 @@ pub(crate) fn list_memberships_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn start_code_review_job_output_output_correct_errors(
+    mut builder: crate::operation::start_code_review_job::builders::StartCodeReviewJobOutputBuilder,
+) -> crate::operation::start_code_review_job::builders::StartCodeReviewJobOutputBuilder {
+    if builder.code_review_id.is_none() {
+        builder.code_review_id = Some(Default::default())
+    }
+    if builder.code_review_job_id.is_none() {
+        builder.code_review_job_id = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn update_agent_space_output_output_correct_errors(
     mut builder: crate::operation::update_agent_space::builders::UpdateAgentSpaceOutputBuilder,
 ) -> crate::operation::update_agent_space::builders::UpdateAgentSpaceOutputBuilder {
@@ -244,6 +265,15 @@ pub(crate) fn update_application_output_output_correct_errors(
 ) -> crate::operation::update_application::builders::UpdateApplicationOutputBuilder {
     if builder.application_id.is_none() {
         builder.application_id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn update_code_review_output_output_correct_errors(
+    mut builder: crate::operation::update_code_review::builders::UpdateCodeReviewOutputBuilder,
+) -> crate::operation::update_code_review::builders::UpdateCodeReviewOutputBuilder {
+    if builder.code_review_id.is_none() {
+        builder.code_review_id = Some(Default::default())
     }
     builder
 }
@@ -351,6 +381,70 @@ pub(crate) fn artifact_summary_correct_errors(
     }
     if builder.artifact_type.is_none() {
         builder.artifact_type = "no value was set".parse::<crate::types::ArtifactType>().ok()
+    }
+    builder
+}
+
+pub(crate) fn code_review_correct_errors(mut builder: crate::types::builders::CodeReviewBuilder) -> crate::types::builders::CodeReviewBuilder {
+    if builder.code_review_id.is_none() {
+        builder.code_review_id = Some(Default::default())
+    }
+    if builder.agent_space_id.is_none() {
+        builder.agent_space_id = Some(Default::default())
+    }
+    if builder.title.is_none() {
+        builder.title = Some(Default::default())
+    }
+    if builder.assets.is_none() {
+        builder.assets = {
+            let builder = crate::types::builders::AssetsBuilder::default();
+            Some(builder.build())
+        }
+    }
+    builder
+}
+
+pub(crate) fn code_review_job_summary_correct_errors(
+    mut builder: crate::types::builders::CodeReviewJobSummaryBuilder,
+) -> crate::types::builders::CodeReviewJobSummaryBuilder {
+    if builder.code_review_job_id.is_none() {
+        builder.code_review_job_id = Some(Default::default())
+    }
+    if builder.code_review_id.is_none() {
+        builder.code_review_id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn code_review_job_task_correct_errors(
+    mut builder: crate::types::builders::CodeReviewJobTaskBuilder,
+) -> crate::types::builders::CodeReviewJobTaskBuilder {
+    if builder.task_id.is_none() {
+        builder.task_id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn code_review_job_task_summary_correct_errors(
+    mut builder: crate::types::builders::CodeReviewJobTaskSummaryBuilder,
+) -> crate::types::builders::CodeReviewJobTaskSummaryBuilder {
+    if builder.task_id.is_none() {
+        builder.task_id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn code_review_summary_correct_errors(
+    mut builder: crate::types::builders::CodeReviewSummaryBuilder,
+) -> crate::types::builders::CodeReviewSummaryBuilder {
+    if builder.code_review_id.is_none() {
+        builder.code_review_id = Some(Default::default())
+    }
+    if builder.agent_space_id.is_none() {
+        builder.agent_space_id = Some(Default::default())
+    }
+    if builder.title.is_none() {
+        builder.title = Some(Default::default())
     }
     builder
 }
@@ -569,6 +663,13 @@ pub(crate) fn integrated_repository_correct_errors(
     }
     if builder.provider_resource_id.is_none() {
         builder.provider_resource_id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn code_location_correct_errors(mut builder: crate::types::builders::CodeLocationBuilder) -> crate::types::builders::CodeLocationBuilder {
+    if builder.file_path.is_none() {
+        builder.file_path = Some(Default::default())
     }
     builder
 }

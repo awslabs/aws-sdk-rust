@@ -8,6 +8,8 @@ pub struct ListFindingsInput {
     pub max_results: ::std::option::Option<i32>,
     /// <p>The unique identifier of the pentest job to list findings for.</p>
     pub pentest_job_id: ::std::option::Option<::std::string::String>,
+    /// <p>The unique identifier of the code review job to list findings for. Mutually exclusive with pentestJobId.</p>
+    pub code_review_job_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the agent space.</p>
     pub agent_space_id: ::std::option::Option<::std::string::String>,
     /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request. For subsequent calls, use the nextToken value returned from the previous request.</p>
@@ -31,6 +33,10 @@ impl ListFindingsInput {
     /// <p>The unique identifier of the pentest job to list findings for.</p>
     pub fn pentest_job_id(&self) -> ::std::option::Option<&str> {
         self.pentest_job_id.as_deref()
+    }
+    /// <p>The unique identifier of the code review job to list findings for. Mutually exclusive with pentestJobId.</p>
+    pub fn code_review_job_id(&self) -> ::std::option::Option<&str> {
+        self.code_review_job_id.as_deref()
     }
     /// <p>The unique identifier of the agent space.</p>
     pub fn agent_space_id(&self) -> ::std::option::Option<&str> {
@@ -74,6 +80,7 @@ impl ListFindingsInput {
 pub struct ListFindingsInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) pentest_job_id: ::std::option::Option<::std::string::String>,
+    pub(crate) code_review_job_id: ::std::option::Option<::std::string::String>,
     pub(crate) agent_space_id: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) risk_type: ::std::option::Option<::std::string::String>,
@@ -98,7 +105,6 @@ impl ListFindingsInputBuilder {
         &self.max_results
     }
     /// <p>The unique identifier of the pentest job to list findings for.</p>
-    /// This field is required.
     pub fn pentest_job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pentest_job_id = ::std::option::Option::Some(input.into());
         self
@@ -111,6 +117,20 @@ impl ListFindingsInputBuilder {
     /// <p>The unique identifier of the pentest job to list findings for.</p>
     pub fn get_pentest_job_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.pentest_job_id
+    }
+    /// <p>The unique identifier of the code review job to list findings for. Mutually exclusive with pentestJobId.</p>
+    pub fn code_review_job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.code_review_job_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The unique identifier of the code review job to list findings for. Mutually exclusive with pentestJobId.</p>
+    pub fn set_code_review_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.code_review_job_id = input;
+        self
+    }
+    /// <p>The unique identifier of the code review job to list findings for. Mutually exclusive with pentestJobId.</p>
+    pub fn get_code_review_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.code_review_job_id
     }
     /// <p>The unique identifier of the agent space.</p>
     /// This field is required.
@@ -218,6 +238,7 @@ impl ListFindingsInputBuilder {
         ::std::result::Result::Ok(crate::operation::list_findings::ListFindingsInput {
             max_results: self.max_results,
             pentest_job_id: self.pentest_job_id,
+            code_review_job_id: self.code_review_job_id,
             agent_space_id: self.agent_space_id,
             next_token: self.next_token,
             risk_type: self.risk_type,

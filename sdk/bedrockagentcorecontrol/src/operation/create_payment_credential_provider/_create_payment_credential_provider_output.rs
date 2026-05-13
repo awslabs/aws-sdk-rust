@@ -5,11 +5,11 @@
 pub struct CreatePaymentCredentialProviderOutput {
     /// <p>The name of the created payment credential provider.</p>
     pub name: ::std::string::String,
-    /// Supported vendor types for payment providers using non-standard auth protocols
+    /// <p>The vendor type for the created payment credential provider.</p>
     pub credential_provider_vendor: crate::types::PaymentCredentialProviderVendorType,
     /// <p>The Amazon Resource Name (ARN) of the created payment credential provider.</p>
     pub credential_provider_arn: ::std::string::String,
-    /// Output configuration (contains secret ARNs, excludes actual secret values)
+    /// <p>Output configuration (contains secret ARNs, excludes actual secret values).</p>
     pub provider_configuration_output: ::std::option::Option<crate::types::PaymentProviderConfigurationOutput>,
     _request_id: Option<String>,
 }
@@ -19,7 +19,7 @@ impl CreatePaymentCredentialProviderOutput {
         use std::ops::Deref;
         self.name.deref()
     }
-    /// Supported vendor types for payment providers using non-standard auth protocols
+    /// <p>The vendor type for the created payment credential provider.</p>
     pub fn credential_provider_vendor(&self) -> &crate::types::PaymentCredentialProviderVendorType {
         &self.credential_provider_vendor
     }
@@ -28,7 +28,7 @@ impl CreatePaymentCredentialProviderOutput {
         use std::ops::Deref;
         self.credential_provider_arn.deref()
     }
-    /// Output configuration (contains secret ARNs, excludes actual secret values)
+    /// <p>Output configuration (contains secret ARNs, excludes actual secret values).</p>
     pub fn provider_configuration_output(&self) -> ::std::option::Option<&crate::types::PaymentProviderConfigurationOutput> {
         self.provider_configuration_output.as_ref()
     }
@@ -71,18 +71,18 @@ impl CreatePaymentCredentialProviderOutputBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// Supported vendor types for payment providers using non-standard auth protocols
+    /// <p>The vendor type for the created payment credential provider.</p>
     /// This field is required.
     pub fn credential_provider_vendor(mut self, input: crate::types::PaymentCredentialProviderVendorType) -> Self {
         self.credential_provider_vendor = ::std::option::Option::Some(input);
         self
     }
-    /// Supported vendor types for payment providers using non-standard auth protocols
+    /// <p>The vendor type for the created payment credential provider.</p>
     pub fn set_credential_provider_vendor(mut self, input: ::std::option::Option<crate::types::PaymentCredentialProviderVendorType>) -> Self {
         self.credential_provider_vendor = input;
         self
     }
-    /// Supported vendor types for payment providers using non-standard auth protocols
+    /// <p>The vendor type for the created payment credential provider.</p>
     pub fn get_credential_provider_vendor(&self) -> &::std::option::Option<crate::types::PaymentCredentialProviderVendorType> {
         &self.credential_provider_vendor
     }
@@ -101,18 +101,18 @@ impl CreatePaymentCredentialProviderOutputBuilder {
     pub fn get_credential_provider_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.credential_provider_arn
     }
-    /// Output configuration (contains secret ARNs, excludes actual secret values)
+    /// <p>Output configuration (contains secret ARNs, excludes actual secret values).</p>
     /// This field is required.
     pub fn provider_configuration_output(mut self, input: crate::types::PaymentProviderConfigurationOutput) -> Self {
         self.provider_configuration_output = ::std::option::Option::Some(input);
         self
     }
-    /// Output configuration (contains secret ARNs, excludes actual secret values)
+    /// <p>Output configuration (contains secret ARNs, excludes actual secret values).</p>
     pub fn set_provider_configuration_output(mut self, input: ::std::option::Option<crate::types::PaymentProviderConfigurationOutput>) -> Self {
         self.provider_configuration_output = input;
         self
     }
-    /// Output configuration (contains secret ARNs, excludes actual secret values)
+    /// <p>Output configuration (contains secret ARNs, excludes actual secret values).</p>
     pub fn get_provider_configuration_output(&self) -> &::std::option::Option<crate::types::PaymentProviderConfigurationOutput> {
         &self.provider_configuration_output
     }

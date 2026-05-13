@@ -12,6 +12,8 @@ pub struct StudioWebPortalSettings {
     pub hidden_instance_types: ::std::option::Option<::std::vec::Vec<crate::types::AppInstanceType>>,
     /// <p>The version aliases you are hiding from the Studio user interface.</p>
     pub hidden_sage_maker_image_version_aliases: ::std::option::Option<::std::vec::Vec<crate::types::HiddenSageMakerImage>>,
+    /// <p>The execution role session name mode. If this value is set to <code>USER_IDENTITY</code>, the session name of the execution role corresponds to the user's identity. For IAM domains, the session name is the IAM session name used to generate the presigned URL. For IAM Identity Center domains, the session name is the username of the associated IAM Identity Center user. If this value is set to <code>STATIC</code> or is not set, the session name defaults to <code>SageMaker</code>.</p>
+    pub execution_role_session_name_mode: ::std::option::Option<crate::types::ExecutionRoleSessionNameMode>,
 }
 impl StudioWebPortalSettings {
     /// <p>The machine learning tools that are hidden from the Studio left navigation pane.</p>
@@ -38,6 +40,10 @@ impl StudioWebPortalSettings {
     pub fn hidden_sage_maker_image_version_aliases(&self) -> &[crate::types::HiddenSageMakerImage] {
         self.hidden_sage_maker_image_version_aliases.as_deref().unwrap_or_default()
     }
+    /// <p>The execution role session name mode. If this value is set to <code>USER_IDENTITY</code>, the session name of the execution role corresponds to the user's identity. For IAM domains, the session name is the IAM session name used to generate the presigned URL. For IAM Identity Center domains, the session name is the username of the associated IAM Identity Center user. If this value is set to <code>STATIC</code> or is not set, the session name defaults to <code>SageMaker</code>.</p>
+    pub fn execution_role_session_name_mode(&self) -> ::std::option::Option<&crate::types::ExecutionRoleSessionNameMode> {
+        self.execution_role_session_name_mode.as_ref()
+    }
 }
 impl StudioWebPortalSettings {
     /// Creates a new builder-style object to manufacture [`StudioWebPortalSettings`](crate::types::StudioWebPortalSettings).
@@ -54,6 +60,7 @@ pub struct StudioWebPortalSettingsBuilder {
     pub(crate) hidden_app_types: ::std::option::Option<::std::vec::Vec<crate::types::AppType>>,
     pub(crate) hidden_instance_types: ::std::option::Option<::std::vec::Vec<crate::types::AppInstanceType>>,
     pub(crate) hidden_sage_maker_image_version_aliases: ::std::option::Option<::std::vec::Vec<crate::types::HiddenSageMakerImage>>,
+    pub(crate) execution_role_session_name_mode: ::std::option::Option<crate::types::ExecutionRoleSessionNameMode>,
 }
 impl StudioWebPortalSettingsBuilder {
     /// Appends an item to `hidden_ml_tools`.
@@ -139,6 +146,20 @@ impl StudioWebPortalSettingsBuilder {
     pub fn get_hidden_sage_maker_image_version_aliases(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::HiddenSageMakerImage>> {
         &self.hidden_sage_maker_image_version_aliases
     }
+    /// <p>The execution role session name mode. If this value is set to <code>USER_IDENTITY</code>, the session name of the execution role corresponds to the user's identity. For IAM domains, the session name is the IAM session name used to generate the presigned URL. For IAM Identity Center domains, the session name is the username of the associated IAM Identity Center user. If this value is set to <code>STATIC</code> or is not set, the session name defaults to <code>SageMaker</code>.</p>
+    pub fn execution_role_session_name_mode(mut self, input: crate::types::ExecutionRoleSessionNameMode) -> Self {
+        self.execution_role_session_name_mode = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The execution role session name mode. If this value is set to <code>USER_IDENTITY</code>, the session name of the execution role corresponds to the user's identity. For IAM domains, the session name is the IAM session name used to generate the presigned URL. For IAM Identity Center domains, the session name is the username of the associated IAM Identity Center user. If this value is set to <code>STATIC</code> or is not set, the session name defaults to <code>SageMaker</code>.</p>
+    pub fn set_execution_role_session_name_mode(mut self, input: ::std::option::Option<crate::types::ExecutionRoleSessionNameMode>) -> Self {
+        self.execution_role_session_name_mode = input;
+        self
+    }
+    /// <p>The execution role session name mode. If this value is set to <code>USER_IDENTITY</code>, the session name of the execution role corresponds to the user's identity. For IAM domains, the session name is the IAM session name used to generate the presigned URL. For IAM Identity Center domains, the session name is the username of the associated IAM Identity Center user. If this value is set to <code>STATIC</code> or is not set, the session name defaults to <code>SageMaker</code>.</p>
+    pub fn get_execution_role_session_name_mode(&self) -> &::std::option::Option<crate::types::ExecutionRoleSessionNameMode> {
+        &self.execution_role_session_name_mode
+    }
     /// Consumes the builder and constructs a [`StudioWebPortalSettings`](crate::types::StudioWebPortalSettings).
     pub fn build(self) -> crate::types::StudioWebPortalSettings {
         crate::types::StudioWebPortalSettings {
@@ -146,6 +167,7 @@ impl StudioWebPortalSettingsBuilder {
             hidden_app_types: self.hidden_app_types,
             hidden_instance_types: self.hidden_instance_types,
             hidden_sage_maker_image_version_aliases: self.hidden_sage_maker_image_version_aliases,
+            execution_role_session_name_mode: self.execution_role_session_name_mode,
         }
     }
 }

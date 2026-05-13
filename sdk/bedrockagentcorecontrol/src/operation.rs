@@ -205,8 +205,17 @@ pub mod get_policy;
 /// Types for the `GetPolicyEngine` operation.
 pub mod get_policy_engine;
 
+/// Types for the `GetPolicyEngineSummary` operation.
+pub mod get_policy_engine_summary;
+
 /// Types for the `GetPolicyGeneration` operation.
 pub mod get_policy_generation;
+
+/// Types for the `GetPolicyGenerationSummary` operation.
+pub mod get_policy_generation_summary;
+
+/// Types for the `GetPolicySummary` operation.
+pub mod get_policy_summary;
 
 /// Types for the `GetRegistry` operation.
 pub mod get_registry;
@@ -286,14 +295,23 @@ pub mod list_payment_managers;
 /// Types for the `ListPolicies` operation.
 pub mod list_policies;
 
+/// Types for the `ListPolicyEngineSummaries` operation.
+pub mod list_policy_engine_summaries;
+
 /// Types for the `ListPolicyEngines` operation.
 pub mod list_policy_engines;
 
 /// Types for the `ListPolicyGenerationAssets` operation.
 pub mod list_policy_generation_assets;
 
+/// Types for the `ListPolicyGenerationSummaries` operation.
+pub mod list_policy_generation_summaries;
+
 /// Types for the `ListPolicyGenerations` operation.
 pub mod list_policy_generations;
+
+/// Types for the `ListPolicySummaries` operation.
+pub mod list_policy_summaries;
 
 /// Types for the `ListRegistries` operation.
 pub mod list_registries;

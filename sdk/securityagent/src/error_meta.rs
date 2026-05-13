@@ -90,6 +90,30 @@ impl From<crate::operation::add_artifact::AddArtifactError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::batch_delete_code_reviews::BatchDeleteCodeReviewsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::batch_delete_code_reviews::BatchDeleteCodeReviewsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::batch_delete_code_reviews::BatchDeleteCodeReviewsError> for Error {
+    fn from(err: crate::operation::batch_delete_code_reviews::BatchDeleteCodeReviewsError) -> Self {
+        match err {
+            crate::operation::batch_delete_code_reviews::BatchDeleteCodeReviewsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::batch_delete_pentests::BatchDeletePentestsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -168,6 +192,79 @@ impl From<crate::operation::batch_get_artifact_metadata::BatchGetArtifactMetadat
                 Error::ValidationException(inner)
             }
             crate::operation::batch_get_artifact_metadata::BatchGetArtifactMetadataError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::batch_get_code_review_jobs::BatchGetCodeReviewJobsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::batch_get_code_review_jobs::BatchGetCodeReviewJobsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::batch_get_code_review_jobs::BatchGetCodeReviewJobsError> for Error {
+    fn from(err: crate::operation::batch_get_code_review_jobs::BatchGetCodeReviewJobsError) -> Self {
+        match err {
+            crate::operation::batch_get_code_review_jobs::BatchGetCodeReviewJobsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::batch_get_code_review_job_tasks::BatchGetCodeReviewJobTasksError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::batch_get_code_review_job_tasks::BatchGetCodeReviewJobTasksError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::batch_get_code_review_job_tasks::BatchGetCodeReviewJobTasksError> for Error {
+    fn from(err: crate::operation::batch_get_code_review_job_tasks::BatchGetCodeReviewJobTasksError) -> Self {
+        match err {
+            crate::operation::batch_get_code_review_job_tasks::BatchGetCodeReviewJobTasksError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::batch_get_code_reviews::BatchGetCodeReviewsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::batch_get_code_reviews::BatchGetCodeReviewsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::batch_get_code_reviews::BatchGetCodeReviewsError> for Error {
+    fn from(err: crate::operation::batch_get_code_reviews::BatchGetCodeReviewsError) -> Self {
+        match err {
+            crate::operation::batch_get_code_reviews::BatchGetCodeReviewsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -320,6 +417,27 @@ impl From<crate::operation::create_application::CreateApplicationError> for Erro
     fn from(err: crate::operation::create_application::CreateApplicationError) -> Self {
         match err {
             crate::operation::create_application::CreateApplicationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_code_review::CreateCodeReviewError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_code_review::CreateCodeReviewError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_code_review::CreateCodeReviewError> for Error {
+    fn from(err: crate::operation::create_code_review::CreateCodeReviewError) -> Self {
+        match err {
+            crate::operation::create_code_review::CreateCodeReviewError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -737,6 +855,85 @@ impl From<crate::operation::list_artifacts::ListArtifactsError> for Error {
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_code_review_jobs_for_code_review::ListCodeReviewJobsForCodeReviewError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_code_review_jobs_for_code_review::ListCodeReviewJobsForCodeReviewError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_code_review_jobs_for_code_review::ListCodeReviewJobsForCodeReviewError> for Error {
+    fn from(err: crate::operation::list_code_review_jobs_for_code_review::ListCodeReviewJobsForCodeReviewError) -> Self {
+        match err {
+            crate::operation::list_code_review_jobs_for_code_review::ListCodeReviewJobsForCodeReviewError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_code_review_job_tasks::ListCodeReviewJobTasksError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_code_review_job_tasks::ListCodeReviewJobTasksError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_code_review_job_tasks::ListCodeReviewJobTasksError> for Error {
+    fn from(err: crate::operation::list_code_review_job_tasks::ListCodeReviewJobTasksError) -> Self {
+        match err {
+            crate::operation::list_code_review_job_tasks::ListCodeReviewJobTasksError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_code_reviews::ListCodeReviewsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_code_reviews::ListCodeReviewsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_code_reviews::ListCodeReviewsError> for Error {
+    fn from(err: crate::operation::list_code_reviews::ListCodeReviewsError) -> Self {
+        match err {
+            crate::operation::list_code_reviews::ListCodeReviewsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_discovered_endpoints::ListDiscoveredEndpointsError, R>>
     for Error
 where
@@ -997,6 +1194,27 @@ impl From<crate::operation::start_code_remediation::StartCodeRemediationError> f
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_code_review_job::StartCodeReviewJobError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_code_review_job::StartCodeReviewJobError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::start_code_review_job::StartCodeReviewJobError> for Error {
+    fn from(err: crate::operation::start_code_review_job::StartCodeReviewJobError) -> Self {
+        match err {
+            crate::operation::start_code_review_job::StartCodeReviewJobError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_pentest_job::StartPentestJobError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1015,6 +1233,27 @@ impl From<crate::operation::start_pentest_job::StartPentestJobError> for Error {
     fn from(err: crate::operation::start_pentest_job::StartPentestJobError) -> Self {
         match err {
             crate::operation::start_pentest_job::StartPentestJobError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::stop_code_review_job::StopCodeReviewJobError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::stop_code_review_job::StopCodeReviewJobError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::stop_code_review_job::StopCodeReviewJobError> for Error {
+    fn from(err: crate::operation::stop_code_review_job::StopCodeReviewJobError) -> Self {
+        match err {
+            crate::operation::stop_code_review_job::StopCodeReviewJobError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1120,6 +1359,27 @@ impl From<crate::operation::update_application::UpdateApplicationError> for Erro
     fn from(err: crate::operation::update_application::UpdateApplicationError) -> Self {
         match err {
             crate::operation::update_application::UpdateApplicationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_code_review::UpdateCodeReviewError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_code_review::UpdateCodeReviewError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_code_review::UpdateCodeReviewError> for Error {
+    fn from(err: crate::operation::update_code_review::UpdateCodeReviewError) -> Self {
+        match err {
+            crate::operation::update_code_review::UpdateCodeReviewError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

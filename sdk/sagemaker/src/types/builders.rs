@@ -193,6 +193,8 @@ pub use crate::types::_model_package_model_card::ModelPackageModelCardBuilder;
 
 pub use crate::types::_model_life_cycle::ModelLifeCycleBuilder;
 
+pub use crate::types::_managed_configuration::ManagedConfigurationBuilder;
+
 pub use crate::types::_model_quality_baseline_config::ModelQualityBaselineConfigBuilder;
 
 pub use crate::types::_model_quality_app_specification::ModelQualityAppSpecificationBuilder;
@@ -1512,6 +1514,8 @@ pub use crate::types::_model_dashboard_monitoring_schedule::ModelDashboardMonito
 pub use crate::types::_cfn_stack_update_parameter::CfnStackUpdateParameterBuilder;
 
 pub use crate::types::_categorical_parameter::CategoricalParameterBuilder;
+
+pub use crate::types::_instance_requirements_eni_configuration::InstanceRequirementsEniConfigurationBuilder;
 
 pub use crate::types::_predefined_metric_specification::PredefinedMetricSpecificationBuilder;
 

@@ -2033,6 +2033,8 @@ pub(crate) mod shape_lineage_group_summaries;
 
 pub(crate) mod shape_m_lflow_configuration;
 
+pub(crate) mod shape_managed_configuration;
+
 pub(crate) mod shape_member_definition;
 
 pub(crate) mod shape_metadata_properties;
@@ -3797,6 +3799,8 @@ pub(crate) mod shape_groups;
 
 pub(crate) mod shape_instance_group_names;
 
+pub(crate) mod shape_instance_requirements_eni_configurations;
+
 pub(crate) mod shape_map_string2048;
 
 pub(crate) mod shape_metric_specification;
@@ -3824,6 +3828,8 @@ pub(crate) mod shape_association_info;
 pub(crate) mod shape_customized_metric_specification;
 
 pub(crate) mod shape_efa_enis;
+
+pub(crate) mod shape_instance_requirements_eni_configuration;
 
 pub(crate) mod shape_predefined_metric_specification;
 

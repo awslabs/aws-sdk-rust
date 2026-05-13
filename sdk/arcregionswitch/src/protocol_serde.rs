@@ -193,6 +193,8 @@ pub(crate) mod shape_failed_report_output;
 
 pub(crate) mod shape_global_aurora_configuration;
 
+pub(crate) mod shape_lambda_event_source_mapping_configuration;
+
 pub(crate) mod shape_parallel_execution_block_configuration;
 
 pub(crate) mod shape_rds_create_cross_region_replica_configuration;
@@ -223,11 +225,15 @@ pub(crate) mod shape_eks_cluster;
 
 pub(crate) mod shape_eks_resource_scaling_ungraceful;
 
+pub(crate) mod shape_event_source_mapping;
+
 pub(crate) mod shape_global_aurora_ungraceful;
 
 pub(crate) mod shape_kubernetes_resource_type;
 
 pub(crate) mod shape_kubernetes_scaling_resource;
+
+pub(crate) mod shape_lambda_event_source_mapping_ungraceful;
 
 pub(crate) mod shape_lambda_ungraceful;
 
@@ -252,6 +258,8 @@ pub(crate) mod shape_lambda_list;
 pub(crate) mod shape_rds_db_instance_arn_map;
 
 pub(crate) mod shape_region_and_routing_controls;
+
+pub(crate) mod shape_region_event_source_mapping_map;
 
 pub(crate) mod shape_route53_resource_record_set_list;
 

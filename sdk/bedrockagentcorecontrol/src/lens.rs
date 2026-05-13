@@ -209,6 +209,16 @@ pub(crate) fn reflens_list_policies_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_policy_engine_summaries_output_output_next_token(
+    input: &crate::operation::list_policy_engine_summaries::ListPolicyEngineSummariesOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_policy_engines_output_output_next_token(
     input: &crate::operation::list_policy_engines::ListPolicyEnginesOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -229,8 +239,28 @@ pub(crate) fn reflens_list_policy_generation_assets_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_policy_generation_summaries_output_output_next_token(
+    input: &crate::operation::list_policy_generation_summaries::ListPolicyGenerationSummariesOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_policy_generations_output_output_next_token(
     input: &crate::operation::list_policy_generations::ListPolicyGenerationsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_policy_summaries_output_output_next_token(
+    input: &crate::operation::list_policy_summaries::ListPolicySummariesOutput,
 ) -> ::std::option::Option<&::std::string::String> {
     let input = match &input.next_token {
         ::std::option::Option::None => return ::std::option::Option::None,
@@ -416,6 +446,13 @@ pub(crate) fn lens_list_policies_output_output_policies(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn lens_list_policy_engine_summaries_output_output_policy_engines(
+    input: crate::operation::list_policy_engine_summaries::ListPolicyEngineSummariesOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::PolicyEngineSummary>> {
+    let input = input.policy_engines;
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn lens_list_policy_engines_output_output_policy_engines(
     input: crate::operation::list_policy_engines::ListPolicyEnginesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::PolicyEngine>> {
@@ -430,10 +467,24 @@ pub(crate) fn lens_list_policy_generation_assets_output_output_policy_generation
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn lens_list_policy_generation_summaries_output_output_policy_generations(
+    input: crate::operation::list_policy_generation_summaries::ListPolicyGenerationSummariesOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::PolicyGenerationSummary>> {
+    let input = input.policy_generations;
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn lens_list_policy_generations_output_output_policy_generations(
     input: crate::operation::list_policy_generations::ListPolicyGenerationsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::PolicyGeneration>> {
     let input = input.policy_generations;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_policy_summaries_output_output_policies(
+    input: crate::operation::list_policy_summaries::ListPolicySummariesOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::PolicySummary>> {
+    let input = input.policies;
     ::std::option::Option::Some(input)
 }
 

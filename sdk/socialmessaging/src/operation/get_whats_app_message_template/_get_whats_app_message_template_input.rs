@@ -7,6 +7,10 @@ pub struct GetWhatsAppMessageTemplateInput {
     pub meta_template_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the WhatsApp Business Account associated with this template.</p>
     pub id: ::std::option::Option<::std::string::String>,
+    /// <p>The name of the message template. Use together with <code>templateLanguageCode</code> as an alternative to <code>metaTemplateId</code> to identify a template.</p>
+    pub template_name: ::std::option::Option<::std::string::String>,
+    /// <p>The language code of the message template (for example, <code>en</code> or <code>en_US</code>). Use together with <code>templateName</code> as an alternative to <code>metaTemplateId</code> to identify a template.</p>
+    pub template_language_code: ::std::option::Option<::std::string::String>,
 }
 impl GetWhatsAppMessageTemplateInput {
     /// <p>The numeric ID of the template assigned by Meta.</p>
@@ -16,6 +20,14 @@ impl GetWhatsAppMessageTemplateInput {
     /// <p>The ID of the WhatsApp Business Account associated with this template.</p>
     pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
+    }
+    /// <p>The name of the message template. Use together with <code>templateLanguageCode</code> as an alternative to <code>metaTemplateId</code> to identify a template.</p>
+    pub fn template_name(&self) -> ::std::option::Option<&str> {
+        self.template_name.as_deref()
+    }
+    /// <p>The language code of the message template (for example, <code>en</code> or <code>en_US</code>). Use together with <code>templateName</code> as an alternative to <code>metaTemplateId</code> to identify a template.</p>
+    pub fn template_language_code(&self) -> ::std::option::Option<&str> {
+        self.template_language_code.as_deref()
     }
 }
 impl GetWhatsAppMessageTemplateInput {
@@ -31,10 +43,11 @@ impl GetWhatsAppMessageTemplateInput {
 pub struct GetWhatsAppMessageTemplateInputBuilder {
     pub(crate) meta_template_id: ::std::option::Option<::std::string::String>,
     pub(crate) id: ::std::option::Option<::std::string::String>,
+    pub(crate) template_name: ::std::option::Option<::std::string::String>,
+    pub(crate) template_language_code: ::std::option::Option<::std::string::String>,
 }
 impl GetWhatsAppMessageTemplateInputBuilder {
     /// <p>The numeric ID of the template assigned by Meta.</p>
-    /// This field is required.
     pub fn meta_template_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.meta_template_id = ::std::option::Option::Some(input.into());
         self
@@ -63,6 +76,34 @@ impl GetWhatsAppMessageTemplateInputBuilder {
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.id
     }
+    /// <p>The name of the message template. Use together with <code>templateLanguageCode</code> as an alternative to <code>metaTemplateId</code> to identify a template.</p>
+    pub fn template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.template_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The name of the message template. Use together with <code>templateLanguageCode</code> as an alternative to <code>metaTemplateId</code> to identify a template.</p>
+    pub fn set_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.template_name = input;
+        self
+    }
+    /// <p>The name of the message template. Use together with <code>templateLanguageCode</code> as an alternative to <code>metaTemplateId</code> to identify a template.</p>
+    pub fn get_template_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.template_name
+    }
+    /// <p>The language code of the message template (for example, <code>en</code> or <code>en_US</code>). Use together with <code>templateName</code> as an alternative to <code>metaTemplateId</code> to identify a template.</p>
+    pub fn template_language_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.template_language_code = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The language code of the message template (for example, <code>en</code> or <code>en_US</code>). Use together with <code>templateName</code> as an alternative to <code>metaTemplateId</code> to identify a template.</p>
+    pub fn set_template_language_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.template_language_code = input;
+        self
+    }
+    /// <p>The language code of the message template (for example, <code>en</code> or <code>en_US</code>). Use together with <code>templateName</code> as an alternative to <code>metaTemplateId</code> to identify a template.</p>
+    pub fn get_template_language_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.template_language_code
+    }
     /// Consumes the builder and constructs a [`GetWhatsAppMessageTemplateInput`](crate::operation::get_whats_app_message_template::GetWhatsAppMessageTemplateInput).
     pub fn build(
         self,
@@ -73,6 +114,8 @@ impl GetWhatsAppMessageTemplateInputBuilder {
         ::std::result::Result::Ok(crate::operation::get_whats_app_message_template::GetWhatsAppMessageTemplateInput {
             meta_template_id: self.meta_template_id,
             id: self.id,
+            template_name: self.template_name,
+            template_language_code: self.template_language_code,
         })
     }
 }

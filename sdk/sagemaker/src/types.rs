@@ -251,6 +251,10 @@ pub use crate::types::_model_package_model_card::ModelPackageModelCard;
 
 pub use crate::types::_model_life_cycle::ModelLifeCycle;
 
+pub use crate::types::_managed_storage_type::ManagedStorageType;
+
+pub use crate::types::_managed_configuration::ManagedConfiguration;
+
 pub use crate::types::_model_quality_baseline_config::ModelQualityBaselineConfig;
 
 pub use crate::types::_model_quality_app_specification::ModelQualityAppSpecification;
@@ -1191,6 +1195,8 @@ pub use crate::types::_cluster_auto_scaling_status::ClusterAutoScalingStatus;
 
 pub use crate::types::_event_details::EventDetails;
 
+pub use crate::types::_cluster_event_level::ClusterEventLevel;
+
 pub use crate::types::_cluster_instance_status_details::ClusterInstanceStatusDetails;
 
 pub use crate::types::_cluster_instance_type::ClusterInstanceType;
@@ -1578,6 +1584,8 @@ pub use crate::types::_emr_settings::EmrSettings;
 pub use crate::types::_default_ebs_storage_settings::DefaultEbsStorageSettings;
 
 pub use crate::types::_custom_file_system_config::CustomFileSystemConfig;
+
+pub use crate::types::_execution_role_session_name_mode::ExecutionRoleSessionNameMode;
 
 pub use crate::types::_device_selection_config::DeviceSelectionConfig;
 
@@ -2253,6 +2261,8 @@ pub use crate::types::_categorical_parameter::CategoricalParameter;
 
 pub use crate::types::_capacity_reservation_type::CapacityReservationType;
 
+pub use crate::types::_instance_requirements_eni_configuration::InstanceRequirementsEniConfiguration;
+
 pub use crate::types::_predefined_metric_specification::PredefinedMetricSpecification;
 
 pub use crate::types::_customized_metric_specification::CustomizedMetricSpecification;
@@ -2689,6 +2699,8 @@ mod _cluster_ebs_volume_config;
 
 mod _cluster_event_detail;
 
+mod _cluster_event_level;
+
 mod _cluster_event_resource_type;
 
 mod _cluster_event_summary;
@@ -3051,6 +3063,8 @@ mod _event_sort_by;
 
 mod _execution_role_identity_config;
 
+mod _execution_role_session_name_mode;
+
 mod _execution_status;
 
 mod _experiment;
@@ -3343,6 +3357,8 @@ mod _instance_pool;
 
 mod _instance_pool_summary;
 
+mod _instance_requirements_eni_configuration;
+
 mod _instance_type;
 
 mod _integer_parameter_range;
@@ -3443,9 +3459,13 @@ mod _m_lflow_configuration;
 
 mod _maintenance_status;
 
+mod _managed_configuration;
+
 mod _managed_instance_scaling_scale_in_strategy;
 
 mod _managed_instance_scaling_status;
+
+mod _managed_storage_type;
 
 mod _member_definition;
 

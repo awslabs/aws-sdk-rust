@@ -174,6 +174,13 @@ pub(crate) fn de_associate_whats_app_business_account(
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                "linkedWhatsAppBusinessAccountId" => {
+                    builder = builder.set_linked_whats_app_business_account_id(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
                 "signupCallbackResult" => {
                     builder = builder.set_signup_callback_result(
                         crate::protocol_serde::shape_whats_app_signup_callback_result::de_whats_app_signup_callback_result(tokens, _value)?,

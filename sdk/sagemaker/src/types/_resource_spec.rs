@@ -19,6 +19,9 @@ pub struct ResourceSpec {
     pub instance_type: ::std::option::Option<crate::types::AppInstanceType>,
     /// <p>The Amazon Resource Name (ARN) of the Lifecycle Configuration attached to the Resource.</p>
     pub lifecycle_config_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The ARN of the SageMaker AI Training Plan to use for this app. When you specify a training plan, the app launches on reserved GPU capacity. This field is supported for JupyterLab and CodeEditor app types.</p>
+    /// <p>For more information about how to reserve GPU capacity with SageMaker AI Training Plans, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/training-plan-utilization-for-studio-apps.html">Using training plans in Studio applications</a>.</p>
+    pub training_plan_arn: ::std::option::Option<::std::string::String>,
 }
 impl ResourceSpec {
     /// <p>The ARN of the SageMaker AI image that the image version belongs to.</p>
@@ -44,6 +47,11 @@ impl ResourceSpec {
     pub fn lifecycle_config_arn(&self) -> ::std::option::Option<&str> {
         self.lifecycle_config_arn.as_deref()
     }
+    /// <p>The ARN of the SageMaker AI Training Plan to use for this app. When you specify a training plan, the app launches on reserved GPU capacity. This field is supported for JupyterLab and CodeEditor app types.</p>
+    /// <p>For more information about how to reserve GPU capacity with SageMaker AI Training Plans, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/training-plan-utilization-for-studio-apps.html">Using training plans in Studio applications</a>.</p>
+    pub fn training_plan_arn(&self) -> ::std::option::Option<&str> {
+        self.training_plan_arn.as_deref()
+    }
 }
 impl ResourceSpec {
     /// Creates a new builder-style object to manufacture [`ResourceSpec`](crate::types::ResourceSpec).
@@ -61,6 +69,7 @@ pub struct ResourceSpecBuilder {
     pub(crate) sage_maker_image_version_alias: ::std::option::Option<::std::string::String>,
     pub(crate) instance_type: ::std::option::Option<crate::types::AppInstanceType>,
     pub(crate) lifecycle_config_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) training_plan_arn: ::std::option::Option<::std::string::String>,
 }
 impl ResourceSpecBuilder {
     /// <p>The ARN of the SageMaker AI image that the image version belongs to.</p>
@@ -142,6 +151,23 @@ impl ResourceSpecBuilder {
     pub fn get_lifecycle_config_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.lifecycle_config_arn
     }
+    /// <p>The ARN of the SageMaker AI Training Plan to use for this app. When you specify a training plan, the app launches on reserved GPU capacity. This field is supported for JupyterLab and CodeEditor app types.</p>
+    /// <p>For more information about how to reserve GPU capacity with SageMaker AI Training Plans, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/training-plan-utilization-for-studio-apps.html">Using training plans in Studio applications</a>.</p>
+    pub fn training_plan_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.training_plan_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ARN of the SageMaker AI Training Plan to use for this app. When you specify a training plan, the app launches on reserved GPU capacity. This field is supported for JupyterLab and CodeEditor app types.</p>
+    /// <p>For more information about how to reserve GPU capacity with SageMaker AI Training Plans, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/training-plan-utilization-for-studio-apps.html">Using training plans in Studio applications</a>.</p>
+    pub fn set_training_plan_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.training_plan_arn = input;
+        self
+    }
+    /// <p>The ARN of the SageMaker AI Training Plan to use for this app. When you specify a training plan, the app launches on reserved GPU capacity. This field is supported for JupyterLab and CodeEditor app types.</p>
+    /// <p>For more information about how to reserve GPU capacity with SageMaker AI Training Plans, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/training-plan-utilization-for-studio-apps.html">Using training plans in Studio applications</a>.</p>
+    pub fn get_training_plan_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.training_plan_arn
+    }
     /// Consumes the builder and constructs a [`ResourceSpec`](crate::types::ResourceSpec).
     pub fn build(self) -> crate::types::ResourceSpec {
         crate::types::ResourceSpec {
@@ -150,6 +176,7 @@ impl ResourceSpecBuilder {
             sage_maker_image_version_alias: self.sage_maker_image_version_alias,
             instance_type: self.instance_type,
             lifecycle_config_arn: self.lifecycle_config_arn,
+            training_plan_arn: self.training_plan_arn,
         }
     }
 }

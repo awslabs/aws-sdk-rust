@@ -29,6 +29,8 @@ pub use crate::types::_auto_tune_options_input::AutoTuneOptionsInputBuilder;
 
 pub use crate::types::_deployment_strategy_options::DeploymentStrategyOptionsBuilder;
 
+pub use crate::types::_automated_snapshot_pause_request_options::AutomatedSnapshotPauseRequestOptionsBuilder;
+
 pub use crate::types::_elasticsearch_domain_status::ElasticsearchDomainStatusBuilder;
 
 pub use crate::types::_domain_information::DomainInformationBuilder;
@@ -79,6 +81,8 @@ pub use crate::types::_advanced_security_options::AdvancedSecurityOptionsBuilder
 
 pub use crate::types::_auto_tune_options_output::AutoTuneOptionsOutputBuilder;
 
+pub use crate::types::_automated_snapshot_pause_options::AutomatedSnapshotPauseOptionsBuilder;
+
 pub use crate::types::_auto_tune::AutoTuneBuilder;
 
 pub use crate::types::_elasticsearch_version_status::ElasticsearchVersionStatusBuilder;
@@ -110,6 +114,8 @@ pub use crate::types::_advanced_security_options_status::AdvancedSecurityOptions
 pub use crate::types::_auto_tune_options_status::AutoTuneOptionsStatusBuilder;
 
 pub use crate::types::_deployment_strategy_options_status::DeploymentStrategyOptionsStatusBuilder;
+
+pub use crate::types::_automated_snapshot_pause_options_status::AutomatedSnapshotPauseOptionsStatusBuilder;
 
 pub use crate::types::_limits::LimitsBuilder;
 

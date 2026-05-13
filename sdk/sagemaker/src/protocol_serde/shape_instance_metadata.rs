@@ -25,6 +25,13 @@ where
                         "AdditionalEnis" => {
                             builder = builder.set_additional_enis(crate::protocol_serde::shape_additional_enis::de_additional_enis(tokens, _value)?);
                         }
+                        "InstanceRequirementsEniConfigurations" => {
+                            builder = builder.set_instance_requirements_eni_configurations(
+                                crate::protocol_serde::shape_instance_requirements_eni_configurations::de_instance_requirements_eni_configurations(
+                                    tokens, _value,
+                                )?,
+                            );
+                        }
                         "CapacityReservation" => {
                             builder = builder.set_capacity_reservation(crate::protocol_serde::shape_capacity_reservation::de_capacity_reservation(
                                 tokens, _value,

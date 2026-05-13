@@ -98,6 +98,11 @@ pub(crate) fn de_describe_model_package_group(
                             .transpose()?,
                     );
                 }
+                "ManagedConfiguration" => {
+                    builder = builder.set_managed_configuration(crate::protocol_serde::shape_managed_configuration::de_managed_configuration(
+                        tokens, _value,
+                    )?);
+                }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },
             other => {

@@ -8,7 +8,7 @@ pub struct EpisodicMemoryStrategyInput {
     pub name: ::std::string::String,
     /// <p>The description of the episodic memory strategy.</p>
     pub description: ::std::option::Option<::std::string::String>,
-    /// <p>The namespaces for which to create episodes.</p>
+    /// <p>This is a legacy parameter, use <code>namespaceTemplates</code>. The namespaces for which to create episodes.</p>
     #[deprecated(note = "Use namespaceTemplates instead", since = "2026-03-02")]
     pub namespaces: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The namespaceTemplates for which to create episodes.</p>
@@ -28,7 +28,7 @@ impl EpisodicMemoryStrategyInput {
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The namespaces for which to create episodes.</p>
+    /// <p>This is a legacy parameter, use <code>namespaceTemplates</code>. The namespaces for which to create episodes.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.namespaces.is_none()`.
     #[deprecated(note = "Use namespaceTemplates instead", since = "2026-03-02")]
@@ -114,7 +114,7 @@ impl EpisodicMemoryStrategyInputBuilder {
     ///
     /// To override the contents of this collection use [`set_namespaces`](Self::set_namespaces).
     ///
-    /// <p>The namespaces for which to create episodes.</p>
+    /// <p>This is a legacy parameter, use <code>namespaceTemplates</code>. The namespaces for which to create episodes.</p>
     #[deprecated(note = "Use namespaceTemplates instead", since = "2026-03-02")]
     pub fn namespaces(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.namespaces.unwrap_or_default();
@@ -122,13 +122,13 @@ impl EpisodicMemoryStrategyInputBuilder {
         self.namespaces = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The namespaces for which to create episodes.</p>
+    /// <p>This is a legacy parameter, use <code>namespaceTemplates</code>. The namespaces for which to create episodes.</p>
     #[deprecated(note = "Use namespaceTemplates instead", since = "2026-03-02")]
     pub fn set_namespaces(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.namespaces = input;
         self
     }
-    /// <p>The namespaces for which to create episodes.</p>
+    /// <p>This is a legacy parameter, use <code>namespaceTemplates</code>. The namespaces for which to create episodes.</p>
     #[deprecated(note = "Use namespaceTemplates instead", since = "2026-03-02")]
     pub fn get_namespaces(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.namespaces

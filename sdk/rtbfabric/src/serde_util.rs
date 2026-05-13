@@ -86,6 +86,21 @@ pub(crate) fn service_quota_exceeded_exception_correct_errors(
     builder
 }
 
+pub(crate) fn associate_certificate_output_output_correct_errors(
+    mut builder: crate::operation::associate_certificate::builders::AssociateCertificateOutputBuilder,
+) -> crate::operation::associate_certificate::builders::AssociateCertificateOutputBuilder {
+    if builder.gateway_id.is_none() {
+        builder.gateway_id = Some(Default::default())
+    }
+    if builder.acm_certificate_arn.is_none() {
+        builder.acm_certificate_arn = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::CertificateAssociationStatus>().ok()
+    }
+    builder
+}
+
 pub(crate) fn create_inbound_external_link_output_output_correct_errors(
     mut builder: crate::operation::create_inbound_external_link::builders::CreateInboundExternalLinkOutputBuilder,
 ) -> crate::operation::create_inbound_external_link::builders::CreateInboundExternalLinkOutputBuilder {
@@ -124,6 +139,21 @@ pub(crate) fn create_link_output_output_correct_errors(
     }
     if builder.link_id.is_none() {
         builder.link_id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn create_link_routing_rule_output_output_correct_errors(
+    mut builder: crate::operation::create_link_routing_rule::builders::CreateLinkRoutingRuleOutputBuilder,
+) -> crate::operation::create_link_routing_rule::builders::CreateLinkRoutingRuleOutputBuilder {
+    if builder.rule_id.is_none() {
+        builder.rule_id = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::RuleStatus>().ok()
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
     }
     builder
 }
@@ -194,6 +224,18 @@ pub(crate) fn delete_link_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn delete_link_routing_rule_output_output_correct_errors(
+    mut builder: crate::operation::delete_link_routing_rule::builders::DeleteLinkRoutingRuleOutputBuilder,
+) -> crate::operation::delete_link_routing_rule::builders::DeleteLinkRoutingRuleOutputBuilder {
+    if builder.rule_id.is_none() {
+        builder.rule_id = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::RuleStatus>().ok()
+    }
+    builder
+}
+
 pub(crate) fn delete_outbound_external_link_output_output_correct_errors(
     mut builder: crate::operation::delete_outbound_external_link::builders::DeleteOutboundExternalLinkOutputBuilder,
 ) -> crate::operation::delete_outbound_external_link::builders::DeleteOutboundExternalLinkOutputBuilder {
@@ -226,6 +268,36 @@ pub(crate) fn delete_responder_gateway_output_output_correct_errors(
     }
     if builder.status.is_none() {
         builder.status = "no value was set".parse::<crate::types::ResponderGatewayStatus>().ok()
+    }
+    builder
+}
+
+pub(crate) fn disassociate_certificate_output_output_correct_errors(
+    mut builder: crate::operation::disassociate_certificate::builders::DisassociateCertificateOutputBuilder,
+) -> crate::operation::disassociate_certificate::builders::DisassociateCertificateOutputBuilder {
+    if builder.gateway_id.is_none() {
+        builder.gateway_id = Some(Default::default())
+    }
+    if builder.acm_certificate_arn.is_none() {
+        builder.acm_certificate_arn = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::CertificateAssociationStatus>().ok()
+    }
+    builder
+}
+
+pub(crate) fn get_certificate_association_output_output_correct_errors(
+    mut builder: crate::operation::get_certificate_association::builders::GetCertificateAssociationOutputBuilder,
+) -> crate::operation::get_certificate_association::builders::GetCertificateAssociationOutputBuilder {
+    if builder.gateway_id.is_none() {
+        builder.gateway_id = Some(Default::default())
+    }
+    if builder.acm_certificate_arn.is_none() {
+        builder.acm_certificate_arn = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::CertificateAssociationStatus>().ok()
     }
     builder
 }
@@ -268,6 +340,39 @@ pub(crate) fn get_link_output_output_correct_errors(
     }
     if builder.link_id.is_none() {
         builder.link_id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn get_link_routing_rule_output_output_correct_errors(
+    mut builder: crate::operation::get_link_routing_rule::builders::GetLinkRoutingRuleOutputBuilder,
+) -> crate::operation::get_link_routing_rule::builders::GetLinkRoutingRuleOutputBuilder {
+    if builder.gateway_id.is_none() {
+        builder.gateway_id = Some(Default::default())
+    }
+    if builder.link_id.is_none() {
+        builder.link_id = Some(Default::default())
+    }
+    if builder.rule_id.is_none() {
+        builder.rule_id = Some(Default::default())
+    }
+    if builder.priority.is_none() {
+        builder.priority = Some(Default::default())
+    }
+    if builder.conditions.is_none() {
+        builder.conditions = {
+            let builder = crate::types::builders::RuleConditionBuilder::default();
+            Some(builder.build())
+        }
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::RuleStatus>().ok()
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.updated_at.is_none() {
+        builder.updated_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
     }
     builder
 }
@@ -341,6 +446,15 @@ pub(crate) fn get_responder_gateway_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn list_certificate_associations_output_output_correct_errors(
+    mut builder: crate::operation::list_certificate_associations::builders::ListCertificateAssociationsOutputBuilder,
+) -> crate::operation::list_certificate_associations::builders::ListCertificateAssociationsOutputBuilder {
+    if builder.certificate_associations.is_none() {
+        builder.certificate_associations = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn reject_link_output_output_correct_errors(
     mut builder: crate::operation::reject_link::builders::RejectLinkOutputBuilder,
 ) -> crate::operation::reject_link::builders::RejectLinkOutputBuilder {
@@ -388,6 +502,21 @@ pub(crate) fn update_link_module_flow_output_output_correct_errors(
     }
     if builder.status.is_none() {
         builder.status = "no value was set".parse::<crate::types::LinkStatus>().ok()
+    }
+    builder
+}
+
+pub(crate) fn update_link_routing_rule_output_output_correct_errors(
+    mut builder: crate::operation::update_link_routing_rule::builders::UpdateLinkRoutingRuleOutputBuilder,
+) -> crate::operation::update_link_routing_rule::builders::UpdateLinkRoutingRuleOutputBuilder {
+    if builder.rule_id.is_none() {
+        builder.rule_id = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::RuleStatus>().ok()
+    }
+    if builder.updated_at.is_none() {
+        builder.updated_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
     }
     builder
 }
@@ -458,6 +587,18 @@ pub(crate) fn auto_scaling_groups_configuration_correct_errors(
     builder
 }
 
+pub(crate) fn certificate_association_summary_correct_errors(
+    mut builder: crate::types::builders::CertificateAssociationSummaryBuilder,
+) -> crate::types::builders::CertificateAssociationSummaryBuilder {
+    if builder.acm_certificate_arn.is_none() {
+        builder.acm_certificate_arn = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::CertificateAssociationStatus>().ok()
+    }
+    builder
+}
+
 pub(crate) fn eks_endpoints_configuration_correct_errors(
     mut builder: crate::types::builders::EksEndpointsConfigurationBuilder,
 ) -> crate::types::builders::EksEndpointsConfigurationBuilder {
@@ -494,6 +635,33 @@ pub(crate) fn link_application_log_configuration_correct_errors(
     builder
 }
 
+pub(crate) fn link_routing_rule_summary_correct_errors(
+    mut builder: crate::types::builders::LinkRoutingRuleSummaryBuilder,
+) -> crate::types::builders::LinkRoutingRuleSummaryBuilder {
+    if builder.rule_id.is_none() {
+        builder.rule_id = Some(Default::default())
+    }
+    if builder.priority.is_none() {
+        builder.priority = Some(Default::default())
+    }
+    if builder.conditions.is_none() {
+        builder.conditions = {
+            let builder = crate::types::builders::RuleConditionBuilder::default();
+            Some(builder.build())
+        }
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::RuleStatus>().ok()
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.updated_at.is_none() {
+        builder.updated_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
 pub(crate) fn list_links_response_structure_correct_errors(
     mut builder: crate::types::builders::ListLinksResponseStructureBuilder,
 ) -> crate::types::builders::ListLinksResponseStructureBuilder {
@@ -523,6 +691,18 @@ pub(crate) fn module_configuration_correct_errors(
 ) -> crate::types::builders::ModuleConfigurationBuilder {
     if builder.name.is_none() {
         builder.name = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn query_string_key_value_pair_correct_errors(
+    mut builder: crate::types::builders::QueryStringKeyValuePairBuilder,
+) -> crate::types::builders::QueryStringKeyValuePairBuilder {
+    if builder.key.is_none() {
+        builder.key = Some(Default::default())
+    }
+    if builder.value.is_none() {
+        builder.value = Some(Default::default())
     }
     builder
 }

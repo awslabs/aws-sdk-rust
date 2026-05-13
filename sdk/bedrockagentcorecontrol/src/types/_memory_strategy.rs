@@ -14,7 +14,7 @@ pub struct MemoryStrategy {
     pub configuration: ::std::option::Option<crate::types::StrategyConfiguration>,
     /// <p>The type of the memory strategy.</p>
     pub r#type: crate::types::MemoryStrategyType,
-    /// <p>The namespaces associated with the memory strategy.</p>
+    /// <p>This is a legacy parameter. The namespaces associated with the memory strategy.</p>
     #[deprecated(note = "Use namespaceTemplates instead", since = "2026-03-02")]
     pub namespaces: ::std::vec::Vec<::std::string::String>,
     /// <p>The namespaceTemplates associated with the memory strategy.</p>
@@ -51,7 +51,7 @@ impl MemoryStrategy {
     pub fn r#type(&self) -> &crate::types::MemoryStrategyType {
         &self.r#type
     }
-    /// <p>The namespaces associated with the memory strategy.</p>
+    /// <p>This is a legacy parameter. The namespaces associated with the memory strategy.</p>
     #[deprecated(note = "Use namespaceTemplates instead", since = "2026-03-02")]
     pub fn namespaces(&self) -> &[::std::string::String] {
         use std::ops::Deref;
@@ -197,7 +197,7 @@ impl MemoryStrategyBuilder {
     ///
     /// To override the contents of this collection use [`set_namespaces`](Self::set_namespaces).
     ///
-    /// <p>The namespaces associated with the memory strategy.</p>
+    /// <p>This is a legacy parameter. The namespaces associated with the memory strategy.</p>
     #[deprecated(note = "Use namespaceTemplates instead", since = "2026-03-02")]
     pub fn namespaces(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.namespaces.unwrap_or_default();
@@ -205,13 +205,13 @@ impl MemoryStrategyBuilder {
         self.namespaces = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The namespaces associated with the memory strategy.</p>
+    /// <p>This is a legacy parameter. The namespaces associated with the memory strategy.</p>
     #[deprecated(note = "Use namespaceTemplates instead", since = "2026-03-02")]
     pub fn set_namespaces(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.namespaces = input;
         self
     }
-    /// <p>The namespaces associated with the memory strategy.</p>
+    /// <p>This is a legacy parameter. The namespaces associated with the memory strategy.</p>
     #[deprecated(note = "Use namespaceTemplates instead", since = "2026-03-02")]
     pub fn get_namespaces(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.namespaces

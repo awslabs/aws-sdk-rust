@@ -59,6 +59,10 @@ pub fn ser_execution_block_configuration(
                 encoder, inner,
             )?;
         }
+        crate::types::ExecutionBlockConfiguration::LambdaEventSourceMappingConfig(inner) => {
+            encoder.str("lambdaEventSourceMappingConfig");
+            crate::protocol_serde::shape_lambda_event_source_mapping_configuration::ser_lambda_event_source_mapping_configuration(encoder, inner)?;
+        }
         crate::types::ExecutionBlockConfiguration::Unknown => {
             return ::std::result::Result::Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
                 "ExecutionBlockConfiguration",
@@ -115,6 +119,9 @@ pub(crate) fn de_execution_block_configuration(
                 crate::protocol_serde::shape_rds_create_cross_region_replica_configuration::de_rds_create_cross_region_replica_configuration(
                     decoder,
                 )?,
+            ),
+            "lambdaEventSourceMappingConfig" => crate::types::ExecutionBlockConfiguration::LambdaEventSourceMappingConfig(
+                crate::protocol_serde::shape_lambda_event_source_mapping_configuration::de_lambda_event_source_mapping_configuration(decoder)?,
             ),
             _ => {
                 decoder.skip()?;

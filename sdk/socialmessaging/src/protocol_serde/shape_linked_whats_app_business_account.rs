@@ -61,6 +61,13 @@ where
                                     crate::protocol_serde::shape_whats_app_business_account_event_destinations::de_whats_app_business_account_event_destinations(tokens, _value)?
                                 );
                         }
+                        "marketingMessagesOnboardingStatus" => {
+                            builder = builder.set_marketing_messages_onboarding_status(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         "phoneNumbers" => {
                             builder = builder.set_phone_numbers(
                                 crate::protocol_serde::shape_whats_app_phone_number_summary_list::de_whats_app_phone_number_summary_list(

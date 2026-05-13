@@ -122,31 +122,31 @@ impl UpdatePaymentCredentialProviderFluentBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }
-    /// Supported vendor types for payment providers using non-standard auth protocols
+    /// <p>The vendor type for the payment credential provider (e.g., CoinbaseCDP, StripePrivy).</p>
     pub fn credential_provider_vendor(mut self, input: crate::types::PaymentCredentialProviderVendorType) -> Self {
         self.inner = self.inner.credential_provider_vendor(input);
         self
     }
-    /// Supported vendor types for payment providers using non-standard auth protocols
+    /// <p>The vendor type for the payment credential provider (e.g., CoinbaseCDP, StripePrivy).</p>
     pub fn set_credential_provider_vendor(mut self, input: ::std::option::Option<crate::types::PaymentCredentialProviderVendorType>) -> Self {
         self.inner = self.inner.set_credential_provider_vendor(input);
         self
     }
-    /// Supported vendor types for payment providers using non-standard auth protocols
+    /// <p>The vendor type for the payment credential provider (e.g., CoinbaseCDP, StripePrivy).</p>
     pub fn get_credential_provider_vendor(&self) -> &::std::option::Option<crate::types::PaymentCredentialProviderVendorType> {
         self.inner.get_credential_provider_vendor()
     }
-    /// Configuration specific to the vendor, including API credentials
+    /// <p>Configuration specific to the vendor, including API credentials.</p>
     pub fn provider_configuration_input(mut self, input: crate::types::PaymentProviderConfigurationInput) -> Self {
         self.inner = self.inner.provider_configuration_input(input);
         self
     }
-    /// Configuration specific to the vendor, including API credentials
+    /// <p>Configuration specific to the vendor, including API credentials.</p>
     pub fn set_provider_configuration_input(mut self, input: ::std::option::Option<crate::types::PaymentProviderConfigurationInput>) -> Self {
         self.inner = self.inner.set_provider_configuration_input(input);
         self
     }
-    /// Configuration specific to the vendor, including API credentials
+    /// <p>Configuration specific to the vendor, including API credentials.</p>
     pub fn get_provider_configuration_input(&self) -> &::std::option::Option<crate::types::PaymentProviderConfigurationInput> {
         self.inner.get_provider_configuration_input()
     }

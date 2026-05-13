@@ -12,12 +12,12 @@ impl super::Client {
     ///   - [`policy_id(String)`](crate::operation::update_policy::UpdatePolicyOutput::policy_id): <p>The unique identifier of the updated policy.</p>
     ///   - [`name(String)`](crate::operation::update_policy::UpdatePolicyOutput::name): <p>The name of the updated policy.</p>
     ///   - [`policy_engine_id(String)`](crate::operation::update_policy::UpdatePolicyOutput::policy_engine_id): <p>The identifier of the policy engine managing the updated policy.</p>
-    ///   - [`definition(Option<PolicyDefinition>)`](crate::operation::update_policy::UpdatePolicyOutput::definition): <p>The updated Cedar policy statement.</p>
-    ///   - [`description(Option<String>)`](crate::operation::update_policy::UpdatePolicyOutput::description): <p>The updated description of the policy.</p>
     ///   - [`created_at(DateTime)`](crate::operation::update_policy::UpdatePolicyOutput::created_at): <p>The original creation timestamp of the policy.</p>
     ///   - [`updated_at(DateTime)`](crate::operation::update_policy::UpdatePolicyOutput::updated_at): <p>The timestamp when the policy was last updated.</p>
     ///   - [`policy_arn(String)`](crate::operation::update_policy::UpdatePolicyOutput::policy_arn): <p>The ARN of the updated policy.</p>
     ///   - [`status(PolicyStatus)`](crate::operation::update_policy::UpdatePolicyOutput::status): <p>The current status of the updated policy.</p>
+    ///   - [`definition(Option<PolicyDefinition>)`](crate::operation::update_policy::UpdatePolicyOutput::definition): <p>The updated Cedar policy statement.</p>
+    ///   - [`description(Option<String>)`](crate::operation::update_policy::UpdatePolicyOutput::description): <p>The updated description of the policy.</p>
     ///   - [`status_reasons(Vec::<String>)`](crate::operation::update_policy::UpdatePolicyOutput::status_reasons): <p>Additional information about the update status.</p>
     /// - On failure, responds with [`SdkError<UpdatePolicyError>`](crate::operation::update_policy::UpdatePolicyError)
     pub fn update_policy(&self) -> crate::operation::update_policy::builders::UpdatePolicyFluentBuilder {

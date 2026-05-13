@@ -29,6 +29,36 @@ pub(crate) fn reflens_list_artifacts_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_code_review_job_tasks_output_output_next_token(
+    input: &crate::operation::list_code_review_job_tasks::ListCodeReviewJobTasksOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_code_review_jobs_for_code_review_output_output_next_token(
+    input: &crate::operation::list_code_review_jobs_for_code_review::ListCodeReviewJobsForCodeReviewOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_code_reviews_output_output_next_token(
+    input: &crate::operation::list_code_reviews::ListCodeReviewsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_discovered_endpoints_output_output_next_token(
     input: &crate::operation::list_discovered_endpoints::ListDiscoveredEndpointsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -137,6 +167,27 @@ pub(crate) fn lens_list_artifacts_output_output_artifact_summaries(
     input: crate::operation::list_artifacts::ListArtifactsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ArtifactSummary>> {
     let input = input.artifact_summaries;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_code_review_job_tasks_output_output_code_review_job_task_summaries(
+    input: crate::operation::list_code_review_job_tasks::ListCodeReviewJobTasksOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::CodeReviewJobTaskSummary>> {
+    let input = input.code_review_job_task_summaries?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_code_review_jobs_for_code_review_output_output_code_review_job_summaries(
+    input: crate::operation::list_code_review_jobs_for_code_review::ListCodeReviewJobsForCodeReviewOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::CodeReviewJobSummary>> {
+    let input = input.code_review_job_summaries?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_code_reviews_output_output_code_review_summaries(
+    input: crate::operation::list_code_reviews::ListCodeReviewsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::CodeReviewSummary>> {
+    let input = input.code_review_summaries?;
     ::std::option::Option::Some(input)
 }
 

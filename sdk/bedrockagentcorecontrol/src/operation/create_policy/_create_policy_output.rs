@@ -9,10 +9,6 @@ pub struct CreatePolicyOutput {
     pub name: ::std::string::String,
     /// <p>The identifier of the policy engine that manages this policy. This confirms the policy engine assignment and is used for policy evaluation routing.</p>
     pub policy_engine_id: ::std::string::String,
-    /// <p>The Cedar policy statement that was created. This is the validated policy definition that will be used for agent behavior control and access decisions.</p>
-    pub definition: ::std::option::Option<crate::types::PolicyDefinition>,
-    /// <p>The human-readable description of the policy's purpose and functionality. This helps administrators understand and manage the policy.</p>
-    pub description: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp when the policy was created. This is automatically set by the service and used for auditing and lifecycle management.</p>
     pub created_at: ::aws_smithy_types::DateTime,
     /// <p>The timestamp when the policy was last updated. For newly created policies, this matches the createdAt timestamp.</p>
@@ -21,6 +17,10 @@ pub struct CreatePolicyOutput {
     pub policy_arn: ::std::string::String,
     /// <p>The current status of the policy. A status of <code>ACTIVE</code> indicates the policy is ready for use.</p>
     pub status: crate::types::PolicyStatus,
+    /// <p>The Cedar policy statement that was created. This is the validated policy definition that will be used for agent behavior control and access decisions.</p>
+    pub definition: ::std::option::Option<crate::types::PolicyDefinition>,
+    /// <p>The human-readable description of the policy's purpose and functionality. This helps administrators understand and manage the policy.</p>
+    pub description: ::std::option::Option<::std::string::String>,
     /// <p>Additional information about the policy status. This provides details about any failures or the current state of the policy creation process.</p>
     pub status_reasons: ::std::vec::Vec<::std::string::String>,
     _request_id: Option<String>,
@@ -41,14 +41,6 @@ impl CreatePolicyOutput {
         use std::ops::Deref;
         self.policy_engine_id.deref()
     }
-    /// <p>The Cedar policy statement that was created. This is the validated policy definition that will be used for agent behavior control and access decisions.</p>
-    pub fn definition(&self) -> ::std::option::Option<&crate::types::PolicyDefinition> {
-        self.definition.as_ref()
-    }
-    /// <p>The human-readable description of the policy's purpose and functionality. This helps administrators understand and manage the policy.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
-        self.description.as_deref()
-    }
     /// <p>The timestamp when the policy was created. This is automatically set by the service and used for auditing and lifecycle management.</p>
     pub fn created_at(&self) -> &::aws_smithy_types::DateTime {
         &self.created_at
@@ -66,6 +58,14 @@ impl CreatePolicyOutput {
     pub fn status(&self) -> &crate::types::PolicyStatus {
         &self.status
     }
+    /// <p>The Cedar policy statement that was created. This is the validated policy definition that will be used for agent behavior control and access decisions.</p>
+    pub fn definition(&self) -> ::std::option::Option<&crate::types::PolicyDefinition> {
+        self.definition.as_ref()
+    }
+    /// <p>The human-readable description of the policy's purpose and functionality. This helps administrators understand and manage the policy.</p>
+    pub fn description(&self) -> ::std::option::Option<&str> {
+        self.description.as_deref()
+    }
     /// <p>Additional information about the policy status. This provides details about any failures or the current state of the policy creation process.</p>
     pub fn status_reasons(&self) -> &[::std::string::String] {
         use std::ops::Deref;
@@ -78,12 +78,12 @@ impl ::std::fmt::Debug for CreatePolicyOutput {
         formatter.field("policy_id", &self.policy_id);
         formatter.field("name", &self.name);
         formatter.field("policy_engine_id", &self.policy_engine_id);
-        formatter.field("definition", &self.definition);
-        formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("created_at", &self.created_at);
         formatter.field("updated_at", &self.updated_at);
         formatter.field("policy_arn", &self.policy_arn);
         formatter.field("status", &self.status);
+        formatter.field("definition", &self.definition);
+        formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("status_reasons", &self.status_reasons);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
@@ -108,12 +108,12 @@ pub struct CreatePolicyOutputBuilder {
     pub(crate) policy_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) policy_engine_id: ::std::option::Option<::std::string::String>,
-    pub(crate) definition: ::std::option::Option<crate::types::PolicyDefinition>,
-    pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) policy_arn: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::PolicyStatus>,
+    pub(crate) definition: ::std::option::Option<crate::types::PolicyDefinition>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) status_reasons: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }
@@ -162,35 +162,6 @@ impl CreatePolicyOutputBuilder {
     /// <p>The identifier of the policy engine that manages this policy. This confirms the policy engine assignment and is used for policy evaluation routing.</p>
     pub fn get_policy_engine_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.policy_engine_id
-    }
-    /// <p>The Cedar policy statement that was created. This is the validated policy definition that will be used for agent behavior control and access decisions.</p>
-    /// This field is required.
-    pub fn definition(mut self, input: crate::types::PolicyDefinition) -> Self {
-        self.definition = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>The Cedar policy statement that was created. This is the validated policy definition that will be used for agent behavior control and access decisions.</p>
-    pub fn set_definition(mut self, input: ::std::option::Option<crate::types::PolicyDefinition>) -> Self {
-        self.definition = input;
-        self
-    }
-    /// <p>The Cedar policy statement that was created. This is the validated policy definition that will be used for agent behavior control and access decisions.</p>
-    pub fn get_definition(&self) -> &::std::option::Option<crate::types::PolicyDefinition> {
-        &self.definition
-    }
-    /// <p>The human-readable description of the policy's purpose and functionality. This helps administrators understand and manage the policy.</p>
-    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.description = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// <p>The human-readable description of the policy's purpose and functionality. This helps administrators understand and manage the policy.</p>
-    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
-    }
-    /// <p>The human-readable description of the policy's purpose and functionality. This helps administrators understand and manage the policy.</p>
-    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
-        &self.description
     }
     /// <p>The timestamp when the policy was created. This is automatically set by the service and used for auditing and lifecycle management.</p>
     /// This field is required.
@@ -251,6 +222,35 @@ impl CreatePolicyOutputBuilder {
     /// <p>The current status of the policy. A status of <code>ACTIVE</code> indicates the policy is ready for use.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::PolicyStatus> {
         &self.status
+    }
+    /// <p>The Cedar policy statement that was created. This is the validated policy definition that will be used for agent behavior control and access decisions.</p>
+    /// This field is required.
+    pub fn definition(mut self, input: crate::types::PolicyDefinition) -> Self {
+        self.definition = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The Cedar policy statement that was created. This is the validated policy definition that will be used for agent behavior control and access decisions.</p>
+    pub fn set_definition(mut self, input: ::std::option::Option<crate::types::PolicyDefinition>) -> Self {
+        self.definition = input;
+        self
+    }
+    /// <p>The Cedar policy statement that was created. This is the validated policy definition that will be used for agent behavior control and access decisions.</p>
+    pub fn get_definition(&self) -> &::std::option::Option<crate::types::PolicyDefinition> {
+        &self.definition
+    }
+    /// <p>The human-readable description of the policy's purpose and functionality. This helps administrators understand and manage the policy.</p>
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The human-readable description of the policy's purpose and functionality. This helps administrators understand and manage the policy.</p>
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.description = input;
+        self
+    }
+    /// <p>The human-readable description of the policy's purpose and functionality. This helps administrators understand and manage the policy.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Appends an item to `status_reasons`.
     ///
@@ -313,8 +313,6 @@ impl CreatePolicyOutputBuilder {
                     "policy_engine_id was not specified but it is required when building CreatePolicyOutput",
                 )
             })?,
-            definition: self.definition,
-            description: self.description,
             created_at: self.created_at.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "created_at",
@@ -339,6 +337,8 @@ impl CreatePolicyOutputBuilder {
                     "status was not specified but it is required when building CreatePolicyOutput",
                 )
             })?,
+            definition: self.definition,
+            description: self.description,
             status_reasons: self.status_reasons.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status_reasons",
@@ -355,12 +355,12 @@ impl ::std::fmt::Debug for CreatePolicyOutputBuilder {
         formatter.field("policy_id", &self.policy_id);
         formatter.field("name", &self.name);
         formatter.field("policy_engine_id", &self.policy_engine_id);
-        formatter.field("definition", &self.definition);
-        formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("created_at", &self.created_at);
         formatter.field("updated_at", &self.updated_at);
         formatter.field("policy_arn", &self.policy_arn);
         formatter.field("status", &self.status);
+        formatter.field("definition", &self.definition);
+        formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("status_reasons", &self.status_reasons);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()

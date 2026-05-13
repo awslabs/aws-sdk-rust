@@ -4,11 +4,17 @@ pub use ::aws_types::request_id::RequestId;
 /// Types for the `AcceptLink` operation.
 pub mod accept_link;
 
+/// Types for the `AssociateCertificate` operation.
+pub mod associate_certificate;
+
 /// Types for the `CreateInboundExternalLink` operation.
 pub mod create_inbound_external_link;
 
 /// Types for the `CreateLink` operation.
 pub mod create_link;
+
+/// Types for the `CreateLinkRoutingRule` operation.
+pub mod create_link_routing_rule;
 
 /// Types for the `CreateOutboundExternalLink` operation.
 pub mod create_outbound_external_link;
@@ -25,6 +31,9 @@ pub mod delete_inbound_external_link;
 /// Types for the `DeleteLink` operation.
 pub mod delete_link;
 
+/// Types for the `DeleteLinkRoutingRule` operation.
+pub mod delete_link_routing_rule;
+
 /// Types for the `DeleteOutboundExternalLink` operation.
 pub mod delete_outbound_external_link;
 
@@ -34,11 +43,20 @@ pub mod delete_requester_gateway;
 /// Types for the `DeleteResponderGateway` operation.
 pub mod delete_responder_gateway;
 
+/// Types for the `DisassociateCertificate` operation.
+pub mod disassociate_certificate;
+
+/// Types for the `GetCertificateAssociation` operation.
+pub mod get_certificate_association;
+
 /// Types for the `GetInboundExternalLink` operation.
 pub mod get_inbound_external_link;
 
 /// Types for the `GetLink` operation.
 pub mod get_link;
+
+/// Types for the `GetLinkRoutingRule` operation.
+pub mod get_link_routing_rule;
 
 /// Types for the `GetOutboundExternalLink` operation.
 pub mod get_outbound_external_link;
@@ -48,6 +66,12 @@ pub mod get_requester_gateway;
 
 /// Types for the `GetResponderGateway` operation.
 pub mod get_responder_gateway;
+
+/// Types for the `ListCertificateAssociations` operation.
+pub mod list_certificate_associations;
+
+/// Types for the `ListLinkRoutingRules` operation.
+pub mod list_link_routing_rules;
 
 /// Types for the `ListLinks` operation.
 pub mod list_links;
@@ -75,6 +99,9 @@ pub mod update_link;
 
 /// Types for the `UpdateLinkModuleFlow` operation.
 pub mod update_link_module_flow;
+
+/// Types for the `UpdateLinkRoutingRule` operation.
+pub mod update_link_routing_rule;
 
 /// Types for the `UpdateRequesterGateway` operation.
 pub mod update_requester_gateway;

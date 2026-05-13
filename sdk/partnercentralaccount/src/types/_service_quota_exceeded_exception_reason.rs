@@ -17,6 +17,8 @@
 ///     ServiceQuotaExceededExceptionReason::LimitExceededNumberOfDomain => { /* ... */ },
 ///     ServiceQuotaExceededExceptionReason::LimitExceededNumberOfEmail => { /* ... */ },
 ///     ServiceQuotaExceededExceptionReason::LimitExceededNumberOfOpenConnectionInvitation => { /* ... */ },
+///     ServiceQuotaExceededExceptionReason::LimitExceededNumberOfProfileUpdatePerDay => { /* ... */ },
+///     ServiceQuotaExceededExceptionReason::LimitExceededNumberOfProfileVisibilityUpdatePerDay => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -55,6 +57,10 @@ pub enum ServiceQuotaExceededExceptionReason {
     LimitExceededNumberOfEmail,
     #[allow(missing_docs)] // documentation missing in model
     LimitExceededNumberOfOpenConnectionInvitation,
+    #[allow(missing_docs)] // documentation missing in model
+    LimitExceededNumberOfProfileUpdatePerDay,
+    #[allow(missing_docs)] // documentation missing in model
+    LimitExceededNumberOfProfileVisibilityUpdatePerDay,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -70,6 +76,10 @@ impl ::std::convert::From<&str> for ServiceQuotaExceededExceptionReason {
             "LIMIT_EXCEEDED_NUMBER_OF_EMAIL" => ServiceQuotaExceededExceptionReason::LimitExceededNumberOfEmail,
             "LIMIT_EXCEEDED_NUMBER_OF_OPEN_CONNECTION_INVITATION" => {
                 ServiceQuotaExceededExceptionReason::LimitExceededNumberOfOpenConnectionInvitation
+            }
+            "LIMIT_EXCEEDED_NUMBER_OF_PROFILE_UPDATE_PER_DAY" => ServiceQuotaExceededExceptionReason::LimitExceededNumberOfProfileUpdatePerDay,
+            "LIMIT_EXCEEDED_NUMBER_OF_PROFILE_VISIBILITY_UPDATE_PER_DAY" => {
+                ServiceQuotaExceededExceptionReason::LimitExceededNumberOfProfileVisibilityUpdatePerDay
             }
             other => ServiceQuotaExceededExceptionReason::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -95,6 +105,10 @@ impl ServiceQuotaExceededExceptionReason {
             ServiceQuotaExceededExceptionReason::LimitExceededNumberOfOpenConnectionInvitation => {
                 "LIMIT_EXCEEDED_NUMBER_OF_OPEN_CONNECTION_INVITATION"
             }
+            ServiceQuotaExceededExceptionReason::LimitExceededNumberOfProfileUpdatePerDay => "LIMIT_EXCEEDED_NUMBER_OF_PROFILE_UPDATE_PER_DAY",
+            ServiceQuotaExceededExceptionReason::LimitExceededNumberOfProfileVisibilityUpdatePerDay => {
+                "LIMIT_EXCEEDED_NUMBER_OF_PROFILE_VISIBILITY_UPDATE_PER_DAY"
+            }
             ServiceQuotaExceededExceptionReason::Unknown(value) => value.as_str(),
         }
     }
@@ -106,6 +120,8 @@ impl ServiceQuotaExceededExceptionReason {
             "LIMIT_EXCEEDED_NUMBER_OF_DOMAIN",
             "LIMIT_EXCEEDED_NUMBER_OF_EMAIL",
             "LIMIT_EXCEEDED_NUMBER_OF_OPEN_CONNECTION_INVITATION",
+            "LIMIT_EXCEEDED_NUMBER_OF_PROFILE_UPDATE_PER_DAY",
+            "LIMIT_EXCEEDED_NUMBER_OF_PROFILE_VISIBILITY_UPDATE_PER_DAY",
         ]
     }
 }
@@ -137,6 +153,12 @@ impl ::std::fmt::Display for ServiceQuotaExceededExceptionReason {
             ServiceQuotaExceededExceptionReason::LimitExceededNumberOfEmail => write!(f, "LIMIT_EXCEEDED_NUMBER_OF_EMAIL"),
             ServiceQuotaExceededExceptionReason::LimitExceededNumberOfOpenConnectionInvitation => {
                 write!(f, "LIMIT_EXCEEDED_NUMBER_OF_OPEN_CONNECTION_INVITATION")
+            }
+            ServiceQuotaExceededExceptionReason::LimitExceededNumberOfProfileUpdatePerDay => {
+                write!(f, "LIMIT_EXCEEDED_NUMBER_OF_PROFILE_UPDATE_PER_DAY")
+            }
+            ServiceQuotaExceededExceptionReason::LimitExceededNumberOfProfileVisibilityUpdatePerDay => {
+                write!(f, "LIMIT_EXCEEDED_NUMBER_OF_PROFILE_VISIBILITY_UPDATE_PER_DAY")
             }
             ServiceQuotaExceededExceptionReason::Unknown(value) => write!(f, "{value}"),
         }

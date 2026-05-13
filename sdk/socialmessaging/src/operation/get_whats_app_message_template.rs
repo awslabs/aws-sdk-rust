@@ -204,17 +204,11 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetWhatsAppM
                 mut output: &mut ::std::string::String,
             ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::BuildError> {
                 let mut query = ::aws_smithy_http::query::Writer::new(output);
-                let inner_1 = &_input.meta_template_id;
-                let inner_1 = inner_1
-                    .as_ref()
-                    .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("meta_template_id", "cannot be empty or unset"))?;
-                if inner_1.is_empty() {
-                    return ::std::result::Result::Err(::aws_smithy_types::error::operation::BuildError::missing_field(
-                        "meta_template_id",
-                        "cannot be empty or unset",
-                    ));
+                if let ::std::option::Option::Some(inner_1) = &_input.meta_template_id {
+                    {
+                        query.push_kv("metaTemplateId", &::aws_smithy_http::query::fmt_string(inner_1));
+                    }
                 }
-                query.push_kv("metaTemplateId", &::aws_smithy_http::query::fmt_string(inner_1));
                 let inner_2 = &_input.id;
                 let inner_2 = inner_2
                     .as_ref()
@@ -226,6 +220,16 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetWhatsAppM
                     ));
                 }
                 query.push_kv("id", &::aws_smithy_http::query::fmt_string(inner_2));
+                if let ::std::option::Option::Some(inner_3) = &_input.template_name {
+                    {
+                        query.push_kv("templateName", &::aws_smithy_http::query::fmt_string(inner_3));
+                    }
+                }
+                if let ::std::option::Option::Some(inner_4) = &_input.template_language_code {
+                    {
+                        query.push_kv("templateLanguageCode", &::aws_smithy_http::query::fmt_string(inner_4));
+                    }
+                }
                 ::std::result::Result::Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]

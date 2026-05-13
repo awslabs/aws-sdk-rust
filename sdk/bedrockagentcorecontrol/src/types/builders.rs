@@ -211,15 +211,21 @@ pub use crate::types::_payment_manager_summary::PaymentManagerSummaryBuilder;
 
 pub use crate::types::_policy_engine::PolicyEngineBuilder;
 
+pub use crate::types::_policy_engine_summary::PolicyEngineSummaryBuilder;
+
 pub use crate::types::_policy_generation::PolicyGenerationBuilder;
 
 pub use crate::types::_policy_generation_asset::PolicyGenerationAssetBuilder;
+
+pub use crate::types::_policy_generation_summary::PolicyGenerationSummaryBuilder;
 
 pub use crate::types::_policy::PolicyBuilder;
 
 pub use crate::types::_cedar_policy::CedarPolicyBuilder;
 
 pub use crate::types::_policy_generation_details::PolicyGenerationDetailsBuilder;
+
+pub use crate::types::_policy_summary::PolicySummaryBuilder;
 
 pub use crate::types::_registry_record_summary::RegistryRecordSummaryBuilder;
 

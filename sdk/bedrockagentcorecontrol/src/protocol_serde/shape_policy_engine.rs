@@ -29,13 +29,6 @@ where
                                     .transpose()?,
                             );
                         }
-                        "description" => {
-                            builder = builder.set_description(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
                         "createdAt" => {
                             builder = builder.set_created_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                                 tokens.next(),
@@ -62,17 +55,24 @@ where
                                     .transpose()?,
                             );
                         }
-                        "statusReasons" => {
-                            builder = builder.set_status_reasons(crate::protocol_serde::shape_policy_status_reasons::de_policy_status_reasons(
-                                tokens, _value,
-                            )?);
-                        }
                         "encryptionKeyArn" => {
                             builder = builder.set_encryption_key_arn(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
                             );
+                        }
+                        "description" => {
+                            builder = builder.set_description(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "statusReasons" => {
+                            builder = builder.set_status_reasons(crate::protocol_serde::shape_policy_status_reasons::de_policy_status_reasons(
+                                tokens, _value,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

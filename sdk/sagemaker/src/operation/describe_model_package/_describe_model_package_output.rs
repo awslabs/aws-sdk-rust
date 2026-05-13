@@ -65,6 +65,8 @@ pub struct DescribeModelPackageOutput {
     pub model_card: ::std::option::Option<crate::types::ModelPackageModelCard>,
     /// <p>A structure describing the current state of the model in its life cycle.</p>
     pub model_life_cycle: ::std::option::Option<crate::types::ModelLifeCycle>,
+    /// <p>The storage type of the model package.</p>
+    pub managed_storage_type: ::std::option::Option<crate::types::ManagedStorageType>,
     _request_id: Option<String>,
 }
 impl DescribeModelPackageOutput {
@@ -194,6 +196,10 @@ impl DescribeModelPackageOutput {
     pub fn model_life_cycle(&self) -> ::std::option::Option<&crate::types::ModelLifeCycle> {
         self.model_life_cycle.as_ref()
     }
+    /// <p>The storage type of the model package.</p>
+    pub fn managed_storage_type(&self) -> ::std::option::Option<&crate::types::ManagedStorageType> {
+        self.managed_storage_type.as_ref()
+    }
 }
 impl ::aws_types::request_id::RequestId for DescribeModelPackageOutput {
     fn request_id(&self) -> Option<&str> {
@@ -242,6 +248,7 @@ pub struct DescribeModelPackageOutputBuilder {
     pub(crate) security_config: ::std::option::Option<crate::types::ModelPackageSecurityConfig>,
     pub(crate) model_card: ::std::option::Option<crate::types::ModelPackageModelCard>,
     pub(crate) model_life_cycle: ::std::option::Option<crate::types::ModelLifeCycle>,
+    pub(crate) managed_storage_type: ::std::option::Option<crate::types::ManagedStorageType>,
     _request_id: Option<String>,
 }
 impl DescribeModelPackageOutputBuilder {
@@ -710,6 +717,20 @@ impl DescribeModelPackageOutputBuilder {
     pub fn get_model_life_cycle(&self) -> &::std::option::Option<crate::types::ModelLifeCycle> {
         &self.model_life_cycle
     }
+    /// <p>The storage type of the model package.</p>
+    pub fn managed_storage_type(mut self, input: crate::types::ManagedStorageType) -> Self {
+        self.managed_storage_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The storage type of the model package.</p>
+    pub fn set_managed_storage_type(mut self, input: ::std::option::Option<crate::types::ManagedStorageType>) -> Self {
+        self.managed_storage_type = input;
+        self
+    }
+    /// <p>The storage type of the model package.</p>
+    pub fn get_managed_storage_type(&self) -> &::std::option::Option<crate::types::ManagedStorageType> {
+        &self.managed_storage_type
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -753,6 +774,7 @@ impl DescribeModelPackageOutputBuilder {
             security_config: self.security_config,
             model_card: self.model_card,
             model_life_cycle: self.model_life_cycle,
+            managed_storage_type: self.managed_storage_type,
             _request_id: self._request_id,
         }
     }

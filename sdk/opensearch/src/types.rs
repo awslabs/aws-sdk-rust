@@ -53,6 +53,8 @@ pub use crate::types::_aiml_options_input::AimlOptionsInput;
 
 pub use crate::types::_deployment_strategy_options::DeploymentStrategyOptions;
 
+pub use crate::types::_automated_snapshot_pause_request_options::AutomatedSnapshotPauseRequestOptions;
+
 pub use crate::types::_domain_status::DomainStatus;
 
 pub use crate::types::_index_status::IndexStatus;
@@ -223,6 +225,8 @@ pub use crate::types::_domain_processing_status_type::DomainProcessingStatusType
 
 pub use crate::types::_aiml_options_output::AimlOptionsOutput;
 
+pub use crate::types::_automated_snapshot_pause_options::AutomatedSnapshotPauseOptions;
+
 pub use crate::types::_aws_domain_information::AwsDomainInformation;
 
 pub use crate::types::_cross_cluster_search_connection_properties::CrossClusterSearchConnectionProperties;
@@ -284,6 +288,8 @@ pub use crate::types::_software_update_options_status::SoftwareUpdateOptionsStat
 pub use crate::types::_aiml_options_status::AimlOptionsStatus;
 
 pub use crate::types::_deployment_strategy_options_status::DeploymentStrategyOptionsStatus;
+
+pub use crate::types::_automated_snapshot_pause_options_status::AutomatedSnapshotPauseOptionsStatus;
 
 pub use crate::types::_environment_info::EnvironmentInfo;
 
@@ -362,6 +368,8 @@ pub use crate::types::_auto_tune_state::AutoTuneState;
 pub use crate::types::_modifying_properties::ModifyingProperties;
 
 pub use crate::types::_natural_language_query_generation_options_output::NaturalLanguageQueryGenerationOptionsOutput;
+
+pub use crate::types::_pause_state::PauseState;
 
 pub use crate::types::_skip_unavailable_status::SkipUnavailableStatus;
 
@@ -492,6 +500,12 @@ mod _auto_tune_state;
 mod _auto_tune_status;
 
 mod _auto_tune_type;
+
+mod _automated_snapshot_pause_options;
+
+mod _automated_snapshot_pause_options_status;
+
+mod _automated_snapshot_pause_request_options;
 
 mod _availability_zone_info;
 
@@ -758,6 +772,8 @@ mod _package_type;
 mod _package_vending_options;
 
 mod _package_version_history;
+
+mod _pause_state;
 
 mod _plugin_properties;
 

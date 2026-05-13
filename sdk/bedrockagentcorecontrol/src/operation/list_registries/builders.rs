@@ -22,7 +22,7 @@ impl crate::operation::list_registries::builders::ListRegistriesInputBuilder {
 }
 /// Fluent builder constructing a request to `ListRegistries`.
 ///
-/// <p>Lists all registries in the account. You can optionally filter results by status using the <code>status</code> parameter.</p>
+/// <p>Lists all registries in the account. You can optionally filter results by status using the <code>status</code> parameter, or by authorizer type using the <code>authorizerType</code> parameter.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListRegistriesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -155,5 +155,19 @@ impl ListRegistriesFluentBuilder {
     /// <p>Filter registries by their current status. Possible values include <code>CREATING</code>, <code>READY</code>, <code>UPDATING</code>, <code>CREATE_FAILED</code>, <code>UPDATE_FAILED</code>, <code>DELETING</code>, and <code>DELETE_FAILED</code>.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::RegistryStatus> {
         self.inner.get_status()
+    }
+    /// <p>Filter registries by their authorizer type. Possible values are <code>CUSTOM_JWT</code> and <code>AWS_IAM</code>. For more information about authorizer types, see the <code>RegistryAuthorizerType</code> enum.</p>
+    pub fn authorizer_type(mut self, input: crate::types::RegistryAuthorizerType) -> Self {
+        self.inner = self.inner.authorizer_type(input);
+        self
+    }
+    /// <p>Filter registries by their authorizer type. Possible values are <code>CUSTOM_JWT</code> and <code>AWS_IAM</code>. For more information about authorizer types, see the <code>RegistryAuthorizerType</code> enum.</p>
+    pub fn set_authorizer_type(mut self, input: ::std::option::Option<crate::types::RegistryAuthorizerType>) -> Self {
+        self.inner = self.inner.set_authorizer_type(input);
+        self
+    }
+    /// <p>Filter registries by their authorizer type. Possible values are <code>CUSTOM_JWT</code> and <code>AWS_IAM</code>. For more information about authorizer types, see the <code>RegistryAuthorizerType</code> enum.</p>
+    pub fn get_authorizer_type(&self) -> &::std::option::Option<crate::types::RegistryAuthorizerType> {
+        self.inner.get_authorizer_type()
     }
 }

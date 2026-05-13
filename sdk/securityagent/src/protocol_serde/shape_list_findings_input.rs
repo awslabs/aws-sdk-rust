@@ -6,32 +6,35 @@ pub fn ser_list_findings_input_input(
     if let Some(var_1) = &input.agent_space_id {
         object.key("agentSpaceId").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.confidence {
-        object.key("confidence").string(var_2.as_str());
+    if let Some(var_2) = &input.code_review_job_id {
+        object.key("codeReviewJobId").string(var_2.as_str());
     }
-    if let Some(var_3) = &input.max_results {
+    if let Some(var_3) = &input.confidence {
+        object.key("confidence").string(var_3.as_str());
+    }
+    if let Some(var_4) = &input.max_results {
         object.key("maxResults").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_3).into()),
+            ::aws_smithy_types::Number::NegInt((*var_4).into()),
         );
     }
-    if let Some(var_4) = &input.name {
-        object.key("name").string(var_4.as_str());
+    if let Some(var_5) = &input.name {
+        object.key("name").string(var_5.as_str());
     }
-    if let Some(var_5) = &input.next_token {
-        object.key("nextToken").string(var_5.as_str());
+    if let Some(var_6) = &input.next_token {
+        object.key("nextToken").string(var_6.as_str());
     }
-    if let Some(var_6) = &input.pentest_job_id {
-        object.key("pentestJobId").string(var_6.as_str());
+    if let Some(var_7) = &input.pentest_job_id {
+        object.key("pentestJobId").string(var_7.as_str());
     }
-    if let Some(var_7) = &input.risk_level {
-        object.key("riskLevel").string(var_7.as_str());
+    if let Some(var_8) = &input.risk_level {
+        object.key("riskLevel").string(var_8.as_str());
     }
-    if let Some(var_8) = &input.risk_type {
-        object.key("riskType").string(var_8.as_str());
+    if let Some(var_9) = &input.risk_type {
+        object.key("riskType").string(var_9.as_str());
     }
-    if let Some(var_9) = &input.status {
-        object.key("status").string(var_9.as_str());
+    if let Some(var_10) = &input.status {
+        object.key("status").string(var_10.as_str());
     }
     Ok(())
 }

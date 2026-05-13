@@ -23,5 +23,11 @@ pub fn ser_update_whats_app_message_template_input_input(
             .key("templateComponents")
             .string_unchecked(&::aws_smithy_types::base64::encode(var_6));
     }
+    if let Some(var_7) = &input.template_language_code {
+        object.key("templateLanguageCode").string(var_7.as_str());
+    }
+    if let Some(var_8) = &input.template_name {
+        object.key("templateName").string(var_8.as_str());
+    }
     Ok(())
 }

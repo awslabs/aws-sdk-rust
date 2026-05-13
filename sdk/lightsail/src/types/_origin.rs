@@ -15,6 +15,9 @@ pub struct Origin {
     pub protocol_policy: ::std::option::Option<crate::types::OriginProtocolPolicyEnum>,
     /// <p>The amount of time, in seconds, that the distribution waits for a response after forwarding a request to the origin. The minimum timeout is 1 second, the maximum is 60 seconds, and the default (if you don't specify otherwise) is 30 seconds.</p>
     pub response_timeout: ::std::option::Option<i32>,
+    /// <p>The IP address type that the distribution uses when connecting to the origin.</p>
+    /// <p>The possible values are <code>ipv4</code> for IPv4 only, <code>ipv6</code> for IPv6 only, and <code>dualstack</code> for IPv4 and IPv6.</p>
+    pub ip_address_type: ::std::option::Option<crate::types::OriginIpAddressTypeEnum>,
 }
 impl Origin {
     /// <p>The name of the origin resource.</p>
@@ -37,6 +40,11 @@ impl Origin {
     pub fn response_timeout(&self) -> ::std::option::Option<i32> {
         self.response_timeout
     }
+    /// <p>The IP address type that the distribution uses when connecting to the origin.</p>
+    /// <p>The possible values are <code>ipv4</code> for IPv4 only, <code>ipv6</code> for IPv6 only, and <code>dualstack</code> for IPv4 and IPv6.</p>
+    pub fn ip_address_type(&self) -> ::std::option::Option<&crate::types::OriginIpAddressTypeEnum> {
+        self.ip_address_type.as_ref()
+    }
 }
 impl Origin {
     /// Creates a new builder-style object to manufacture [`Origin`](crate::types::Origin).
@@ -54,6 +62,7 @@ pub struct OriginBuilder {
     pub(crate) region_name: ::std::option::Option<crate::types::RegionName>,
     pub(crate) protocol_policy: ::std::option::Option<crate::types::OriginProtocolPolicyEnum>,
     pub(crate) response_timeout: ::std::option::Option<i32>,
+    pub(crate) ip_address_type: ::std::option::Option<crate::types::OriginIpAddressTypeEnum>,
 }
 impl OriginBuilder {
     /// <p>The name of the origin resource.</p>
@@ -126,6 +135,23 @@ impl OriginBuilder {
     pub fn get_response_timeout(&self) -> &::std::option::Option<i32> {
         &self.response_timeout
     }
+    /// <p>The IP address type that the distribution uses when connecting to the origin.</p>
+    /// <p>The possible values are <code>ipv4</code> for IPv4 only, <code>ipv6</code> for IPv6 only, and <code>dualstack</code> for IPv4 and IPv6.</p>
+    pub fn ip_address_type(mut self, input: crate::types::OriginIpAddressTypeEnum) -> Self {
+        self.ip_address_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The IP address type that the distribution uses when connecting to the origin.</p>
+    /// <p>The possible values are <code>ipv4</code> for IPv4 only, <code>ipv6</code> for IPv6 only, and <code>dualstack</code> for IPv4 and IPv6.</p>
+    pub fn set_ip_address_type(mut self, input: ::std::option::Option<crate::types::OriginIpAddressTypeEnum>) -> Self {
+        self.ip_address_type = input;
+        self
+    }
+    /// <p>The IP address type that the distribution uses when connecting to the origin.</p>
+    /// <p>The possible values are <code>ipv4</code> for IPv4 only, <code>ipv6</code> for IPv6 only, and <code>dualstack</code> for IPv4 and IPv6.</p>
+    pub fn get_ip_address_type(&self) -> &::std::option::Option<crate::types::OriginIpAddressTypeEnum> {
+        &self.ip_address_type
+    }
     /// Consumes the builder and constructs a [`Origin`](crate::types::Origin).
     pub fn build(self) -> crate::types::Origin {
         crate::types::Origin {
@@ -134,6 +160,7 @@ impl OriginBuilder {
             region_name: self.region_name,
             protocol_policy: self.protocol_policy,
             response_timeout: self.response_timeout,
+            ip_address_type: self.ip_address_type,
         }
     }
 }

@@ -45,6 +45,8 @@ pub use crate::types::_aiml_options_input::AimlOptionsInputBuilder;
 
 pub use crate::types::_deployment_strategy_options::DeploymentStrategyOptionsBuilder;
 
+pub use crate::types::_automated_snapshot_pause_request_options::AutomatedSnapshotPauseRequestOptionsBuilder;
+
 pub use crate::types::_domain_status::DomainStatusBuilder;
 
 pub use crate::types::_domain_information_container::DomainInformationContainerBuilder;
@@ -145,6 +147,8 @@ pub use crate::types::_auto_tune_options_output::AutoTuneOptionsOutputBuilder;
 
 pub use crate::types::_aiml_options_output::AimlOptionsOutputBuilder;
 
+pub use crate::types::_automated_snapshot_pause_options::AutomatedSnapshotPauseOptionsBuilder;
+
 pub use crate::types::_aws_domain_information::AwsDomainInformationBuilder;
 
 pub use crate::types::_cross_cluster_search_connection_properties::CrossClusterSearchConnectionPropertiesBuilder;
@@ -192,6 +196,8 @@ pub use crate::types::_software_update_options_status::SoftwareUpdateOptionsStat
 pub use crate::types::_aiml_options_status::AimlOptionsStatusBuilder;
 
 pub use crate::types::_deployment_strategy_options_status::DeploymentStrategyOptionsStatusBuilder;
+
+pub use crate::types::_automated_snapshot_pause_options_status::AutomatedSnapshotPauseOptionsStatusBuilder;
 
 pub use crate::types::_environment_info::EnvironmentInfoBuilder;
 

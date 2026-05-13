@@ -20,6 +20,7 @@
 ///     ExecutionBlockType::Ec2Asg => { /* ... */ },
 ///     ExecutionBlockType::Ecs => { /* ... */ },
 ///     ExecutionBlockType::EksResourceScaling => { /* ... */ },
+///     ExecutionBlockType::LambdaEventSourceMapping => { /* ... */ },
 ///     ExecutionBlockType::ExecutionApproval => { /* ... */ },
 ///     ExecutionBlockType::Parallel => { /* ... */ },
 ///     ExecutionBlockType::RdsCreateCrossRegionReplica => { /* ... */ },
@@ -70,6 +71,8 @@ pub enum ExecutionBlockType {
     #[allow(missing_docs)] // documentation missing in model
     EksResourceScaling,
     #[allow(missing_docs)] // documentation missing in model
+    LambdaEventSourceMapping,
+    #[allow(missing_docs)] // documentation missing in model
     ExecutionApproval,
     #[allow(missing_docs)] // documentation missing in model
     Parallel,
@@ -94,6 +97,7 @@ impl ::std::convert::From<&str> for ExecutionBlockType {
             "EC2AutoScaling" => ExecutionBlockType::Ec2Asg,
             "ECSServiceScaling" => ExecutionBlockType::Ecs,
             "EKSResourceScaling" => ExecutionBlockType::EksResourceScaling,
+            "LambdaEventSourceMapping" => ExecutionBlockType::LambdaEventSourceMapping,
             "ManualApproval" => ExecutionBlockType::ExecutionApproval,
             "Parallel" => ExecutionBlockType::Parallel,
             "RdsCreateCrossRegionReplica" => ExecutionBlockType::RdsCreateCrossRegionReplica,
@@ -122,6 +126,7 @@ impl ExecutionBlockType {
             ExecutionBlockType::Ec2Asg => "EC2AutoScaling",
             ExecutionBlockType::Ecs => "ECSServiceScaling",
             ExecutionBlockType::EksResourceScaling => "EKSResourceScaling",
+            ExecutionBlockType::LambdaEventSourceMapping => "LambdaEventSourceMapping",
             ExecutionBlockType::ExecutionApproval => "ManualApproval",
             ExecutionBlockType::Parallel => "Parallel",
             ExecutionBlockType::RdsCreateCrossRegionReplica => "RdsCreateCrossRegionReplica",
@@ -141,6 +146,7 @@ impl ExecutionBlockType {
             "EC2AutoScaling",
             "ECSServiceScaling",
             "EKSResourceScaling",
+            "LambdaEventSourceMapping",
             "ManualApproval",
             "Parallel",
             "RdsCreateCrossRegionReplica",
@@ -177,6 +183,7 @@ impl ::std::fmt::Display for ExecutionBlockType {
             ExecutionBlockType::Ec2Asg => write!(f, "EC2AutoScaling"),
             ExecutionBlockType::Ecs => write!(f, "ECSServiceScaling"),
             ExecutionBlockType::EksResourceScaling => write!(f, "EKSResourceScaling"),
+            ExecutionBlockType::LambdaEventSourceMapping => write!(f, "LambdaEventSourceMapping"),
             ExecutionBlockType::ExecutionApproval => write!(f, "ManualApproval"),
             ExecutionBlockType::Parallel => write!(f, "Parallel"),
             ExecutionBlockType::RdsCreateCrossRegionReplica => write!(f, "RdsCreateCrossRegionReplica"),

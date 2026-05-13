@@ -80,6 +80,23 @@ pub fn de_start_profile_update_task_http_error(
             };
             tmp
         }),
+        "ServiceQuotaExceededException" => crate::operation::start_profile_update_task::StartProfileUpdateTaskError::ServiceQuotaExceededException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ServiceQuotaExceededExceptionBuilder::default();
+                output = crate::protocol_serde::shape_service_quota_exceeded_exception::de_service_quota_exceeded_exception_json_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::start_profile_update_task::StartProfileUpdateTaskError::unhandled)?;
+                let output = output.meta(generic);
+                crate::serde_util::service_quota_exceeded_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::start_profile_update_task::StartProfileUpdateTaskError::unhandled)?
+            };
+            tmp
+        }),
         "ThrottlingException" => crate::operation::start_profile_update_task::StartProfileUpdateTaskError::ThrottlingException({
             #[allow(unused_mut)]
             let mut tmp = {

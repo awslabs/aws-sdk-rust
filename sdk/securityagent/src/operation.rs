@@ -4,6 +4,9 @@ pub use ::aws_types::request_id::RequestId;
 /// Types for the `AddArtifact` operation.
 pub mod add_artifact;
 
+/// Types for the `BatchDeleteCodeReviews` operation.
+pub mod batch_delete_code_reviews;
+
 /// Types for the `BatchDeletePentests` operation.
 pub mod batch_delete_pentests;
 
@@ -12,6 +15,15 @@ pub mod batch_get_agent_spaces;
 
 /// Types for the `BatchGetArtifactMetadata` operation.
 pub mod batch_get_artifact_metadata;
+
+/// Types for the `BatchGetCodeReviewJobTasks` operation.
+pub mod batch_get_code_review_job_tasks;
+
+/// Types for the `BatchGetCodeReviewJobs` operation.
+pub mod batch_get_code_review_jobs;
+
+/// Types for the `BatchGetCodeReviews` operation.
+pub mod batch_get_code_reviews;
 
 /// Types for the `BatchGetFindings` operation.
 pub mod batch_get_findings;
@@ -33,6 +45,9 @@ pub mod create_agent_space;
 
 /// Types for the `CreateApplication` operation.
 pub mod create_application;
+
+/// Types for the `CreateCodeReview` operation.
+pub mod create_code_review;
 
 /// Types for the `CreateIntegration` operation.
 pub mod create_integration;
@@ -85,6 +100,15 @@ pub mod list_applications;
 /// Types for the `ListArtifacts` operation.
 pub mod list_artifacts;
 
+/// Types for the `ListCodeReviewJobTasks` operation.
+pub mod list_code_review_job_tasks;
+
+/// Types for the `ListCodeReviewJobsForCodeReview` operation.
+pub mod list_code_review_jobs_for_code_review;
+
+/// Types for the `ListCodeReviews` operation.
+pub mod list_code_reviews;
+
 /// Types for the `ListDiscoveredEndpoints` operation.
 pub mod list_discovered_endpoints;
 
@@ -118,8 +142,14 @@ pub mod list_target_domains;
 /// Types for the `StartCodeRemediation` operation.
 pub mod start_code_remediation;
 
+/// Types for the `StartCodeReviewJob` operation.
+pub mod start_code_review_job;
+
 /// Types for the `StartPentestJob` operation.
 pub mod start_pentest_job;
+
+/// Types for the `StopCodeReviewJob` operation.
+pub mod stop_code_review_job;
 
 /// Types for the `StopPentestJob` operation.
 pub mod stop_pentest_job;
@@ -135,6 +165,9 @@ pub mod update_agent_space;
 
 /// Types for the `UpdateApplication` operation.
 pub mod update_application;
+
+/// Types for the `UpdateCodeReview` operation.
+pub mod update_code_review;
 
 /// Types for the `UpdateFinding` operation.
 pub mod update_finding;

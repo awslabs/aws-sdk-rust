@@ -58,6 +58,11 @@ pub struct CreateDomainInput {
     pub aiml_options: ::std::option::Option<crate::types::AimlOptionsInput>,
     /// <p>Specifies the deployment strategy options for the domain.</p>
     pub deployment_strategy_options: ::std::option::Option<crate::types::DeploymentStrategyOptions>,
+    /// <p>Specifies the automated snapshot pause options for the domain.</p><important>
+    /// <p>Suspending snapshots reduces data protection. You cannot restore your domain to points in time when snapshots are suspended. Use this feature only for short-term operational needs such as migrations or maintenance windows.</p>
+    /// </important>
+    /// <p>Maximum suspension duration: 3 days.</p>
+    pub automated_snapshot_pause_options: ::std::option::Option<crate::types::AutomatedSnapshotPauseRequestOptions>,
 }
 impl CreateDomainInput {
     /// <p>Name of the OpenSearch Service domain to create. Domain names are unique across the domains owned by an account within an Amazon Web Services Region.</p>
@@ -163,6 +168,13 @@ impl CreateDomainInput {
     pub fn deployment_strategy_options(&self) -> ::std::option::Option<&crate::types::DeploymentStrategyOptions> {
         self.deployment_strategy_options.as_ref()
     }
+    /// <p>Specifies the automated snapshot pause options for the domain.</p><important>
+    /// <p>Suspending snapshots reduces data protection. You cannot restore your domain to points in time when snapshots are suspended. Use this feature only for short-term operational needs such as migrations or maintenance windows.</p>
+    /// </important>
+    /// <p>Maximum suspension duration: 3 days.</p>
+    pub fn automated_snapshot_pause_options(&self) -> ::std::option::Option<&crate::types::AutomatedSnapshotPauseRequestOptions> {
+        self.automated_snapshot_pause_options.as_ref()
+    }
 }
 impl CreateDomainInput {
     /// Creates a new builder-style object to manufacture [`CreateDomainInput`](crate::operation::create_domain::CreateDomainInput).
@@ -197,6 +209,7 @@ pub struct CreateDomainInputBuilder {
     pub(crate) software_update_options: ::std::option::Option<crate::types::SoftwareUpdateOptions>,
     pub(crate) aiml_options: ::std::option::Option<crate::types::AimlOptionsInput>,
     pub(crate) deployment_strategy_options: ::std::option::Option<crate::types::DeploymentStrategyOptions>,
+    pub(crate) automated_snapshot_pause_options: ::std::option::Option<crate::types::AutomatedSnapshotPauseRequestOptions>,
 }
 impl CreateDomainInputBuilder {
     /// <p>Name of the OpenSearch Service domain to create. Domain names are unique across the domains owned by an account within an Amazon Web Services Region.</p>
@@ -571,6 +584,29 @@ impl CreateDomainInputBuilder {
     pub fn get_deployment_strategy_options(&self) -> &::std::option::Option<crate::types::DeploymentStrategyOptions> {
         &self.deployment_strategy_options
     }
+    /// <p>Specifies the automated snapshot pause options for the domain.</p><important>
+    /// <p>Suspending snapshots reduces data protection. You cannot restore your domain to points in time when snapshots are suspended. Use this feature only for short-term operational needs such as migrations or maintenance windows.</p>
+    /// </important>
+    /// <p>Maximum suspension duration: 3 days.</p>
+    pub fn automated_snapshot_pause_options(mut self, input: crate::types::AutomatedSnapshotPauseRequestOptions) -> Self {
+        self.automated_snapshot_pause_options = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies the automated snapshot pause options for the domain.</p><important>
+    /// <p>Suspending snapshots reduces data protection. You cannot restore your domain to points in time when snapshots are suspended. Use this feature only for short-term operational needs such as migrations or maintenance windows.</p>
+    /// </important>
+    /// <p>Maximum suspension duration: 3 days.</p>
+    pub fn set_automated_snapshot_pause_options(mut self, input: ::std::option::Option<crate::types::AutomatedSnapshotPauseRequestOptions>) -> Self {
+        self.automated_snapshot_pause_options = input;
+        self
+    }
+    /// <p>Specifies the automated snapshot pause options for the domain.</p><important>
+    /// <p>Suspending snapshots reduces data protection. You cannot restore your domain to points in time when snapshots are suspended. Use this feature only for short-term operational needs such as migrations or maintenance windows.</p>
+    /// </important>
+    /// <p>Maximum suspension duration: 3 days.</p>
+    pub fn get_automated_snapshot_pause_options(&self) -> &::std::option::Option<crate::types::AutomatedSnapshotPauseRequestOptions> {
+        &self.automated_snapshot_pause_options
+    }
     /// Consumes the builder and constructs a [`CreateDomainInput`](crate::operation::create_domain::CreateDomainInput).
     pub fn build(
         self,
@@ -598,6 +634,7 @@ impl CreateDomainInputBuilder {
             software_update_options: self.software_update_options,
             aiml_options: self.aiml_options,
             deployment_strategy_options: self.deployment_strategy_options,
+            automated_snapshot_pause_options: self.automated_snapshot_pause_options,
         })
     }
 }

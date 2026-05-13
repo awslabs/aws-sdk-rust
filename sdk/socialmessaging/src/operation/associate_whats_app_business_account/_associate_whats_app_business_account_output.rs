@@ -7,6 +7,8 @@ pub struct AssociateWhatsAppBusinessAccountOutput {
     pub signup_callback_result: ::std::option::Option<crate::types::WhatsAppSignupCallbackResult>,
     /// <p>The status code for the response.</p>
     pub status_code: ::std::option::Option<i32>,
+    /// <p>The ID of the WhatsApp Business Account that was linked to your Amazon Web Services account.</p>
+    pub linked_whats_app_business_account_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl AssociateWhatsAppBusinessAccountOutput {
@@ -17,6 +19,10 @@ impl AssociateWhatsAppBusinessAccountOutput {
     /// <p>The status code for the response.</p>
     pub fn status_code(&self) -> ::std::option::Option<i32> {
         self.status_code
+    }
+    /// <p>The ID of the WhatsApp Business Account that was linked to your Amazon Web Services account.</p>
+    pub fn linked_whats_app_business_account_id(&self) -> ::std::option::Option<&str> {
+        self.linked_whats_app_business_account_id.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for AssociateWhatsAppBusinessAccountOutput {
@@ -37,6 +43,7 @@ impl AssociateWhatsAppBusinessAccountOutput {
 pub struct AssociateWhatsAppBusinessAccountOutputBuilder {
     pub(crate) signup_callback_result: ::std::option::Option<crate::types::WhatsAppSignupCallbackResult>,
     pub(crate) status_code: ::std::option::Option<i32>,
+    pub(crate) linked_whats_app_business_account_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl AssociateWhatsAppBusinessAccountOutputBuilder {
@@ -68,6 +75,20 @@ impl AssociateWhatsAppBusinessAccountOutputBuilder {
     pub fn get_status_code(&self) -> &::std::option::Option<i32> {
         &self.status_code
     }
+    /// <p>The ID of the WhatsApp Business Account that was linked to your Amazon Web Services account.</p>
+    pub fn linked_whats_app_business_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.linked_whats_app_business_account_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the WhatsApp Business Account that was linked to your Amazon Web Services account.</p>
+    pub fn set_linked_whats_app_business_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.linked_whats_app_business_account_id = input;
+        self
+    }
+    /// <p>The ID of the WhatsApp Business Account that was linked to your Amazon Web Services account.</p>
+    pub fn get_linked_whats_app_business_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.linked_whats_app_business_account_id
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -82,6 +103,7 @@ impl AssociateWhatsAppBusinessAccountOutputBuilder {
         crate::operation::associate_whats_app_business_account::AssociateWhatsAppBusinessAccountOutput {
             signup_callback_result: self.signup_callback_result,
             status_code: self.status_code,
+            linked_whats_app_business_account_id: self.linked_whats_app_business_account_id,
             _request_id: self._request_id,
         }
     }

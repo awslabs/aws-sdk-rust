@@ -44,7 +44,7 @@ pub struct CreateClusterInput {
     /// <p>Default: <code>multi-node</code></p>
     pub cluster_type: ::std::option::Option<::std::string::String>,
     /// <p>The node type to be provisioned for the cluster. For information about node types, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#how-many-nodes"> Working with Clusters</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
-    /// <p>Valid Values: <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.large</code> | <code>ra3.xlplus</code> | <code>ra3.4xlarge</code> | <code>ra3.16xlarge</code></p>
+    /// <p>Valid Values: <code>dc2.large</code> | <code>dc2.8xlarge</code>| <code>rg.xlarge</code> | <code>rg.4xlarge</code> | <code>ra3.large</code> | <code>ra3.xlplus</code> | <code>ra3.4xlarge</code> | <code>ra3.16xlarge</code></p>
     pub node_type: ::std::option::Option<::std::string::String>,
     /// <p>The user name associated with the admin user account for the cluster that is being created.</p>
     /// <p>Constraints:</p>
@@ -110,7 +110,7 @@ pub struct CreateClusterInput {
     /// </ul>
     pub cluster_parameter_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The number of days that automated snapshots are retained. If the value is 0, automated snapshots are disabled. Even if automated snapshots are disabled, you can still create manual snapshots when you want with <code>CreateClusterSnapshot</code>.</p>
-    /// <p>You can't disable automated snapshots for RA3 node types. Set the automated retention period from 1-35 days.</p>
+    /// <p>You can't disable automated snapshots for RG or RA3 node types. Set the automated retention period from 1-35 days.</p>
     /// <p>Default: <code>1</code></p>
     /// <p>Constraints: Must be a value from 0 to 35.</p>
     pub automated_snapshot_retention_period: ::std::option::Option<i32>,
@@ -123,7 +123,7 @@ pub struct CreateClusterInput {
     /// <p>Valid Values:</p>
     /// <ul>
     /// <li>
-    /// <p>For clusters with ra3 nodes - Select a port within the ranges <code>5431-5455</code> or <code>8191-8215</code>. (If you have an existing cluster with ra3 nodes, it isn't required that you change the port to these ranges.)</p></li>
+    /// <p>For clusters with RG or RA3 nodes - Select a port within the ranges <code>5431-5455</code> or <code>8191-8215</code>. (If you have an existing cluster with RG or RA3 nodes, it isn't required that you change the port to these ranges.)</p></li>
     /// <li>
     /// <p>For clusters with dc2 nodes - Select a port within the range <code>1150-65535</code>.</p></li>
     /// </ul>
@@ -253,7 +253,7 @@ impl CreateClusterInput {
         self.cluster_type.as_deref()
     }
     /// <p>The node type to be provisioned for the cluster. For information about node types, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#how-many-nodes"> Working with Clusters</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
-    /// <p>Valid Values: <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.large</code> | <code>ra3.xlplus</code> | <code>ra3.4xlarge</code> | <code>ra3.16xlarge</code></p>
+    /// <p>Valid Values: <code>dc2.large</code> | <code>dc2.8xlarge</code>| <code>rg.xlarge</code> | <code>rg.4xlarge</code> | <code>ra3.large</code> | <code>ra3.xlplus</code> | <code>ra3.4xlarge</code> | <code>ra3.16xlarge</code></p>
     pub fn node_type(&self) -> ::std::option::Option<&str> {
         self.node_type.as_deref()
     }
@@ -341,7 +341,7 @@ impl CreateClusterInput {
         self.cluster_parameter_group_name.as_deref()
     }
     /// <p>The number of days that automated snapshots are retained. If the value is 0, automated snapshots are disabled. Even if automated snapshots are disabled, you can still create manual snapshots when you want with <code>CreateClusterSnapshot</code>.</p>
-    /// <p>You can't disable automated snapshots for RA3 node types. Set the automated retention period from 1-35 days.</p>
+    /// <p>You can't disable automated snapshots for RG or RA3 node types. Set the automated retention period from 1-35 days.</p>
     /// <p>Default: <code>1</code></p>
     /// <p>Constraints: Must be a value from 0 to 35.</p>
     pub fn automated_snapshot_retention_period(&self) -> ::std::option::Option<i32> {
@@ -358,7 +358,7 @@ impl CreateClusterInput {
     /// <p>Valid Values:</p>
     /// <ul>
     /// <li>
-    /// <p>For clusters with ra3 nodes - Select a port within the ranges <code>5431-5455</code> or <code>8191-8215</code>. (If you have an existing cluster with ra3 nodes, it isn't required that you change the port to these ranges.)</p></li>
+    /// <p>For clusters with RG or RA3 nodes - Select a port within the ranges <code>5431-5455</code> or <code>8191-8215</code>. (If you have an existing cluster with RG or RA3 nodes, it isn't required that you change the port to these ranges.)</p></li>
     /// <li>
     /// <p>For clusters with dc2 nodes - Select a port within the range <code>1150-65535</code>.</p></li>
     /// </ul>
@@ -743,20 +743,20 @@ impl CreateClusterInputBuilder {
         &self.cluster_type
     }
     /// <p>The node type to be provisioned for the cluster. For information about node types, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#how-many-nodes"> Working with Clusters</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
-    /// <p>Valid Values: <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.large</code> | <code>ra3.xlplus</code> | <code>ra3.4xlarge</code> | <code>ra3.16xlarge</code></p>
+    /// <p>Valid Values: <code>dc2.large</code> | <code>dc2.8xlarge</code>| <code>rg.xlarge</code> | <code>rg.4xlarge</code> | <code>ra3.large</code> | <code>ra3.xlplus</code> | <code>ra3.4xlarge</code> | <code>ra3.16xlarge</code></p>
     /// This field is required.
     pub fn node_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.node_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The node type to be provisioned for the cluster. For information about node types, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#how-many-nodes"> Working with Clusters</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
-    /// <p>Valid Values: <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.large</code> | <code>ra3.xlplus</code> | <code>ra3.4xlarge</code> | <code>ra3.16xlarge</code></p>
+    /// <p>Valid Values: <code>dc2.large</code> | <code>dc2.8xlarge</code>| <code>rg.xlarge</code> | <code>rg.4xlarge</code> | <code>ra3.large</code> | <code>ra3.xlplus</code> | <code>ra3.4xlarge</code> | <code>ra3.16xlarge</code></p>
     pub fn set_node_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.node_type = input;
         self
     }
     /// <p>The node type to be provisioned for the cluster. For information about node types, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#how-many-nodes"> Working with Clusters</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
-    /// <p>Valid Values: <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.large</code> | <code>ra3.xlplus</code> | <code>ra3.4xlarge</code> | <code>ra3.16xlarge</code></p>
+    /// <p>Valid Values: <code>dc2.large</code> | <code>dc2.8xlarge</code>| <code>rg.xlarge</code> | <code>rg.4xlarge</code> | <code>ra3.large</code> | <code>ra3.xlplus</code> | <code>ra3.4xlarge</code> | <code>ra3.16xlarge</code></p>
     pub fn get_node_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.node_type
     }
@@ -1027,7 +1027,7 @@ impl CreateClusterInputBuilder {
         &self.cluster_parameter_group_name
     }
     /// <p>The number of days that automated snapshots are retained. If the value is 0, automated snapshots are disabled. Even if automated snapshots are disabled, you can still create manual snapshots when you want with <code>CreateClusterSnapshot</code>.</p>
-    /// <p>You can't disable automated snapshots for RA3 node types. Set the automated retention period from 1-35 days.</p>
+    /// <p>You can't disable automated snapshots for RG or RA3 node types. Set the automated retention period from 1-35 days.</p>
     /// <p>Default: <code>1</code></p>
     /// <p>Constraints: Must be a value from 0 to 35.</p>
     pub fn automated_snapshot_retention_period(mut self, input: i32) -> Self {
@@ -1035,7 +1035,7 @@ impl CreateClusterInputBuilder {
         self
     }
     /// <p>The number of days that automated snapshots are retained. If the value is 0, automated snapshots are disabled. Even if automated snapshots are disabled, you can still create manual snapshots when you want with <code>CreateClusterSnapshot</code>.</p>
-    /// <p>You can't disable automated snapshots for RA3 node types. Set the automated retention period from 1-35 days.</p>
+    /// <p>You can't disable automated snapshots for RG or RA3 node types. Set the automated retention period from 1-35 days.</p>
     /// <p>Default: <code>1</code></p>
     /// <p>Constraints: Must be a value from 0 to 35.</p>
     pub fn set_automated_snapshot_retention_period(mut self, input: ::std::option::Option<i32>) -> Self {
@@ -1043,7 +1043,7 @@ impl CreateClusterInputBuilder {
         self
     }
     /// <p>The number of days that automated snapshots are retained. If the value is 0, automated snapshots are disabled. Even if automated snapshots are disabled, you can still create manual snapshots when you want with <code>CreateClusterSnapshot</code>.</p>
-    /// <p>You can't disable automated snapshots for RA3 node types. Set the automated retention period from 1-35 days.</p>
+    /// <p>You can't disable automated snapshots for RG or RA3 node types. Set the automated retention period from 1-35 days.</p>
     /// <p>Default: <code>1</code></p>
     /// <p>Constraints: Must be a value from 0 to 35.</p>
     pub fn get_automated_snapshot_retention_period(&self) -> &::std::option::Option<i32> {
@@ -1072,7 +1072,7 @@ impl CreateClusterInputBuilder {
     /// <p>Valid Values:</p>
     /// <ul>
     /// <li>
-    /// <p>For clusters with ra3 nodes - Select a port within the ranges <code>5431-5455</code> or <code>8191-8215</code>. (If you have an existing cluster with ra3 nodes, it isn't required that you change the port to these ranges.)</p></li>
+    /// <p>For clusters with RG or RA3 nodes - Select a port within the ranges <code>5431-5455</code> or <code>8191-8215</code>. (If you have an existing cluster with RG or RA3 nodes, it isn't required that you change the port to these ranges.)</p></li>
     /// <li>
     /// <p>For clusters with dc2 nodes - Select a port within the range <code>1150-65535</code>.</p></li>
     /// </ul>
@@ -1086,7 +1086,7 @@ impl CreateClusterInputBuilder {
     /// <p>Valid Values:</p>
     /// <ul>
     /// <li>
-    /// <p>For clusters with ra3 nodes - Select a port within the ranges <code>5431-5455</code> or <code>8191-8215</code>. (If you have an existing cluster with ra3 nodes, it isn't required that you change the port to these ranges.)</p></li>
+    /// <p>For clusters with RG or RA3 nodes - Select a port within the ranges <code>5431-5455</code> or <code>8191-8215</code>. (If you have an existing cluster with RG or RA3 nodes, it isn't required that you change the port to these ranges.)</p></li>
     /// <li>
     /// <p>For clusters with dc2 nodes - Select a port within the range <code>1150-65535</code>.</p></li>
     /// </ul>
@@ -1100,7 +1100,7 @@ impl CreateClusterInputBuilder {
     /// <p>Valid Values:</p>
     /// <ul>
     /// <li>
-    /// <p>For clusters with ra3 nodes - Select a port within the ranges <code>5431-5455</code> or <code>8191-8215</code>. (If you have an existing cluster with ra3 nodes, it isn't required that you change the port to these ranges.)</p></li>
+    /// <p>For clusters with RG or RA3 nodes - Select a port within the ranges <code>5431-5455</code> or <code>8191-8215</code>. (If you have an existing cluster with RG or RA3 nodes, it isn't required that you change the port to these ranges.)</p></li>
     /// <li>
     /// <p>For clusters with dc2 nodes - Select a port within the range <code>1150-65535</code>.</p></li>
     /// </ul>

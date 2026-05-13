@@ -4,11 +4,15 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CompoundCondition {
-    /// <p>The list of conditions to combine using the logical operator.</p>
+    /// <p>The list of conditions to combine using the logical operator.</p><note>
+    /// <p>For API users: A case rule can have a maximum of 5 conditions, spread across a maximum of 2 levels of nesting.</p>
+    /// </note>
     pub conditions: ::std::vec::Vec<crate::types::BooleanCondition>,
 }
 impl CompoundCondition {
-    /// <p>The list of conditions to combine using the logical operator.</p>
+    /// <p>The list of conditions to combine using the logical operator.</p><note>
+    /// <p>For API users: A case rule can have a maximum of 5 conditions, spread across a maximum of 2 levels of nesting.</p>
+    /// </note>
     pub fn conditions(&self) -> &[crate::types::BooleanCondition] {
         use std::ops::Deref;
         self.conditions.deref()
@@ -32,19 +36,25 @@ impl CompoundConditionBuilder {
     ///
     /// To override the contents of this collection use [`set_conditions`](Self::set_conditions).
     ///
-    /// <p>The list of conditions to combine using the logical operator.</p>
+    /// <p>The list of conditions to combine using the logical operator.</p><note>
+    /// <p>For API users: A case rule can have a maximum of 5 conditions, spread across a maximum of 2 levels of nesting.</p>
+    /// </note>
     pub fn conditions(mut self, input: crate::types::BooleanCondition) -> Self {
         let mut v = self.conditions.unwrap_or_default();
         v.push(input);
         self.conditions = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The list of conditions to combine using the logical operator.</p>
+    /// <p>The list of conditions to combine using the logical operator.</p><note>
+    /// <p>For API users: A case rule can have a maximum of 5 conditions, spread across a maximum of 2 levels of nesting.</p>
+    /// </note>
     pub fn set_conditions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BooleanCondition>>) -> Self {
         self.conditions = input;
         self
     }
-    /// <p>The list of conditions to combine using the logical operator.</p>
+    /// <p>The list of conditions to combine using the logical operator.</p><note>
+    /// <p>For API users: A case rule can have a maximum of 5 conditions, spread across a maximum of 2 levels of nesting.</p>
+    /// </note>
     pub fn get_conditions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BooleanCondition>> {
         &self.conditions
     }

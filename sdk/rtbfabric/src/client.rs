@@ -140,6 +140,10 @@ impl Client {
 /// Import this trait to get `wait_until` methods on the client.
 ///
 pub trait Waiters {
+    /// Wait for `certificate_associated`
+    fn wait_until_certificate_associated(&self) -> crate::waiters::certificate_associated::CertificateAssociatedFluentBuilder;
+    /// Wait for `certificate_disassociated`
+    fn wait_until_certificate_disassociated(&self) -> crate::waiters::certificate_disassociated::CertificateDisassociatedFluentBuilder;
     /// Wait for `inbound_external_link_active`
     fn wait_until_inbound_external_link_active(&self) -> crate::waiters::inbound_external_link_active::InboundExternalLinkActiveFluentBuilder;
     /// Wait for `inbound_external_link_deleted`
@@ -150,6 +154,10 @@ pub trait Waiters {
     fn wait_until_link_active(&self) -> crate::waiters::link_active::LinkActiveFluentBuilder;
     /// Wait for `link_deleted`
     fn wait_until_link_deleted(&self) -> crate::waiters::link_deleted::LinkDeletedFluentBuilder;
+    /// Wait for `link_routing_rule_active`
+    fn wait_until_link_routing_rule_active(&self) -> crate::waiters::link_routing_rule_active::LinkRoutingRuleActiveFluentBuilder;
+    /// Wait for `link_routing_rule_deleted`
+    fn wait_until_link_routing_rule_deleted(&self) -> crate::waiters::link_routing_rule_deleted::LinkRoutingRuleDeletedFluentBuilder;
     /// Wait for `outbound_external_link_active`
     fn wait_until_outbound_external_link_active(&self) -> crate::waiters::outbound_external_link_active::OutboundExternalLinkActiveFluentBuilder;
     /// Wait for `outbound_external_link_deleted`
@@ -164,6 +172,12 @@ pub trait Waiters {
     fn wait_until_responder_gateway_deleted(&self) -> crate::waiters::responder_gateway_deleted::ResponderGatewayDeletedFluentBuilder;
 }
 impl Waiters for Client {
+    fn wait_until_certificate_associated(&self) -> crate::waiters::certificate_associated::CertificateAssociatedFluentBuilder {
+        crate::waiters::certificate_associated::CertificateAssociatedFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_certificate_disassociated(&self) -> crate::waiters::certificate_disassociated::CertificateDisassociatedFluentBuilder {
+        crate::waiters::certificate_disassociated::CertificateDisassociatedFluentBuilder::new(self.handle.clone())
+    }
     fn wait_until_inbound_external_link_active(&self) -> crate::waiters::inbound_external_link_active::InboundExternalLinkActiveFluentBuilder {
         crate::waiters::inbound_external_link_active::InboundExternalLinkActiveFluentBuilder::new(self.handle.clone())
     }
@@ -178,6 +192,12 @@ impl Waiters for Client {
     }
     fn wait_until_link_deleted(&self) -> crate::waiters::link_deleted::LinkDeletedFluentBuilder {
         crate::waiters::link_deleted::LinkDeletedFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_link_routing_rule_active(&self) -> crate::waiters::link_routing_rule_active::LinkRoutingRuleActiveFluentBuilder {
+        crate::waiters::link_routing_rule_active::LinkRoutingRuleActiveFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_link_routing_rule_deleted(&self) -> crate::waiters::link_routing_rule_deleted::LinkRoutingRuleDeletedFluentBuilder {
+        crate::waiters::link_routing_rule_deleted::LinkRoutingRuleDeletedFluentBuilder::new(self.handle.clone())
     }
     fn wait_until_outbound_external_link_active(&self) -> crate::waiters::outbound_external_link_active::OutboundExternalLinkActiveFluentBuilder {
         crate::waiters::outbound_external_link_active::OutboundExternalLinkActiveFluentBuilder::new(self.handle.clone())
@@ -217,9 +237,13 @@ impl Client {
 
 mod accept_link;
 
+mod associate_certificate;
+
 mod create_inbound_external_link;
 
 mod create_link;
+
+mod create_link_routing_rule;
 
 mod create_outbound_external_link;
 
@@ -258,21 +282,33 @@ mod delete_inbound_external_link;
 
 mod delete_link;
 
+mod delete_link_routing_rule;
+
 mod delete_outbound_external_link;
 
 mod delete_requester_gateway;
 
 mod delete_responder_gateway;
 
+mod disassociate_certificate;
+
+mod get_certificate_association;
+
 mod get_inbound_external_link;
 
 mod get_link;
+
+mod get_link_routing_rule;
 
 mod get_outbound_external_link;
 
 mod get_requester_gateway;
 
 mod get_responder_gateway;
+
+mod list_certificate_associations;
+
+mod list_link_routing_rules;
 
 mod list_links;
 
@@ -291,6 +327,8 @@ mod untag_resource;
 mod update_link;
 
 mod update_link_module_flow;
+
+mod update_link_routing_rule;
 
 mod update_requester_gateway;
 

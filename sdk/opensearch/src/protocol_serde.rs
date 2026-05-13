@@ -339,6 +339,8 @@ pub(crate) mod shape_auto_tune_options;
 
 pub(crate) mod shape_auto_tune_options_input;
 
+pub(crate) mod shape_automated_snapshot_pause_request_options;
+
 pub(crate) mod shape_cancelled_change_property_list;
 
 pub(crate) mod shape_capability_base_request_config;
@@ -530,6 +532,10 @@ pub(crate) mod shape_auto_tune_maintenance_schedule;
 pub(crate) mod shape_auto_tune_options_output;
 
 pub(crate) mod shape_auto_tune_options_status;
+
+pub(crate) mod shape_automated_snapshot_pause_options;
+
+pub(crate) mod shape_automated_snapshot_pause_options_status;
 
 pub(crate) mod shape_aws_domain_information;
 

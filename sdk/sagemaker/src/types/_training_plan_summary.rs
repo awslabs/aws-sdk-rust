@@ -33,7 +33,7 @@ pub struct TrainingPlanSummary {
     pub in_use_instance_count: ::std::option::Option<i32>,
     /// <p>The total number of UltraServers allocated to this training plan.</p>
     pub total_ultra_server_count: ::std::option::Option<i32>,
-    /// <p>The target resources (e.g., training jobs, HyperPod clusters, Endpoints) that can use this training plan.</p>
+    /// <p>The target resources (e.g., training jobs, HyperPod clusters, Endpoints, Studio apps) that can use this training plan.</p>
     /// <p>Training plans are specific to their target resource.</p>
     /// <ul>
     /// <li>
@@ -42,6 +42,8 @@ pub struct TrainingPlanSummary {
     /// <p>A training plan for HyperPod clusters can be used exclusively to provide compute resources to a cluster's instance group.</p></li>
     /// <li>
     /// <p>A training plan for SageMaker endpoints can be used exclusively to provide compute resources to SageMaker endpoints for model deployment.</p></li>
+    /// <li>
+    /// <p>A training plan for Studio apps can be used to launch JupyterLab and Code Editor apps on reserved training plan capacity.</p></li>
     /// </ul>
     pub target_resources: ::std::option::Option<::std::vec::Vec<crate::types::SageMakerResourceName>>,
     /// <p>A list of reserved capacities associated with this training plan, including details such as instance types, counts, and availability zones.</p>
@@ -104,7 +106,7 @@ impl TrainingPlanSummary {
     pub fn total_ultra_server_count(&self) -> ::std::option::Option<i32> {
         self.total_ultra_server_count
     }
-    /// <p>The target resources (e.g., training jobs, HyperPod clusters, Endpoints) that can use this training plan.</p>
+    /// <p>The target resources (e.g., training jobs, HyperPod clusters, Endpoints, Studio apps) that can use this training plan.</p>
     /// <p>Training plans are specific to their target resource.</p>
     /// <ul>
     /// <li>
@@ -113,6 +115,8 @@ impl TrainingPlanSummary {
     /// <p>A training plan for HyperPod clusters can be used exclusively to provide compute resources to a cluster's instance group.</p></li>
     /// <li>
     /// <p>A training plan for SageMaker endpoints can be used exclusively to provide compute resources to SageMaker endpoints for model deployment.</p></li>
+    /// <li>
+    /// <p>A training plan for Studio apps can be used to launch JupyterLab and Code Editor apps on reserved training plan capacity.</p></li>
     /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.target_resources.is_none()`.
@@ -358,7 +362,7 @@ impl TrainingPlanSummaryBuilder {
     ///
     /// To override the contents of this collection use [`set_target_resources`](Self::set_target_resources).
     ///
-    /// <p>The target resources (e.g., training jobs, HyperPod clusters, Endpoints) that can use this training plan.</p>
+    /// <p>The target resources (e.g., training jobs, HyperPod clusters, Endpoints, Studio apps) that can use this training plan.</p>
     /// <p>Training plans are specific to their target resource.</p>
     /// <ul>
     /// <li>
@@ -367,6 +371,8 @@ impl TrainingPlanSummaryBuilder {
     /// <p>A training plan for HyperPod clusters can be used exclusively to provide compute resources to a cluster's instance group.</p></li>
     /// <li>
     /// <p>A training plan for SageMaker endpoints can be used exclusively to provide compute resources to SageMaker endpoints for model deployment.</p></li>
+    /// <li>
+    /// <p>A training plan for Studio apps can be used to launch JupyterLab and Code Editor apps on reserved training plan capacity.</p></li>
     /// </ul>
     pub fn target_resources(mut self, input: crate::types::SageMakerResourceName) -> Self {
         let mut v = self.target_resources.unwrap_or_default();
@@ -374,7 +380,7 @@ impl TrainingPlanSummaryBuilder {
         self.target_resources = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The target resources (e.g., training jobs, HyperPod clusters, Endpoints) that can use this training plan.</p>
+    /// <p>The target resources (e.g., training jobs, HyperPod clusters, Endpoints, Studio apps) that can use this training plan.</p>
     /// <p>Training plans are specific to their target resource.</p>
     /// <ul>
     /// <li>
@@ -383,12 +389,14 @@ impl TrainingPlanSummaryBuilder {
     /// <p>A training plan for HyperPod clusters can be used exclusively to provide compute resources to a cluster's instance group.</p></li>
     /// <li>
     /// <p>A training plan for SageMaker endpoints can be used exclusively to provide compute resources to SageMaker endpoints for model deployment.</p></li>
+    /// <li>
+    /// <p>A training plan for Studio apps can be used to launch JupyterLab and Code Editor apps on reserved training plan capacity.</p></li>
     /// </ul>
     pub fn set_target_resources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SageMakerResourceName>>) -> Self {
         self.target_resources = input;
         self
     }
-    /// <p>The target resources (e.g., training jobs, HyperPod clusters, Endpoints) that can use this training plan.</p>
+    /// <p>The target resources (e.g., training jobs, HyperPod clusters, Endpoints, Studio apps) that can use this training plan.</p>
     /// <p>Training plans are specific to their target resource.</p>
     /// <ul>
     /// <li>
@@ -397,6 +405,8 @@ impl TrainingPlanSummaryBuilder {
     /// <p>A training plan for HyperPod clusters can be used exclusively to provide compute resources to a cluster's instance group.</p></li>
     /// <li>
     /// <p>A training plan for SageMaker endpoints can be used exclusively to provide compute resources to SageMaker endpoints for model deployment.</p></li>
+    /// <li>
+    /// <p>A training plan for Studio apps can be used to launch JupyterLab and Code Editor apps on reserved training plan capacity.</p></li>
     /// </ul>
     pub fn get_target_resources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SageMakerResourceName>> {
         &self.target_resources

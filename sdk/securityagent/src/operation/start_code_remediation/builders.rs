@@ -122,19 +122,33 @@ impl StartCodeRemediationFluentBuilder {
     pub fn get_agent_space_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_agent_space_id()
     }
-    /// <p>The unique identifier of the pentest job that produced the findings.</p>
+    /// <p>The unique identifier of the pentest job that produced the findings. Mutually exclusive with <code>codeReviewJobId</code>.</p>
     pub fn pentest_job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.pentest_job_id(input.into());
         self
     }
-    /// <p>The unique identifier of the pentest job that produced the findings.</p>
+    /// <p>The unique identifier of the pentest job that produced the findings. Mutually exclusive with <code>codeReviewJobId</code>.</p>
     pub fn set_pentest_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_pentest_job_id(input);
         self
     }
-    /// <p>The unique identifier of the pentest job that produced the findings.</p>
+    /// <p>The unique identifier of the pentest job that produced the findings. Mutually exclusive with <code>codeReviewJobId</code>.</p>
     pub fn get_pentest_job_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_pentest_job_id()
+    }
+    /// <p>The unique identifier of the code review job that produced the findings. Mutually exclusive with <code>pentestJobId</code>.</p>
+    pub fn code_review_job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.code_review_job_id(input.into());
+        self
+    }
+    /// <p>The unique identifier of the code review job that produced the findings. Mutually exclusive with <code>pentestJobId</code>.</p>
+    pub fn set_code_review_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_code_review_job_id(input);
+        self
+    }
+    /// <p>The unique identifier of the code review job that produced the findings. Mutually exclusive with <code>pentestJobId</code>.</p>
+    pub fn get_code_review_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_code_review_job_id()
     }
     ///
     /// Appends an item to `findingIds`.

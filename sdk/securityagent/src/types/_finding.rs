@@ -12,6 +12,10 @@ pub struct Finding {
     pub pentest_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the pentest job that produced the finding.</p>
     pub pentest_job_id: ::std::option::Option<::std::string::String>,
+    /// <p>The unique identifier of the code review associated with the finding.</p>
+    pub code_review_id: ::std::option::Option<::std::string::String>,
+    /// <p>The unique identifier of the code review job that produced the finding.</p>
+    pub code_review_job_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the task that produced the finding.</p>
     pub task_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the finding.</p>
@@ -36,6 +40,8 @@ pub struct Finding {
     pub code_remediation_task: ::std::option::Option<crate::types::CodeRemediationTask>,
     /// <p>The identifier of the entity that last updated the finding.</p>
     pub last_updated_by: ::std::option::Option<::std::string::String>,
+    /// <p>The file locations involved in the vulnerability, as reported by the code scanner.</p>
+    pub code_locations: ::std::option::Option<::std::vec::Vec<crate::types::CodeLocation>>,
     /// <p>The date and time the finding was created, in UTC format.</p>
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time the finding was last updated, in UTC format.</p>
@@ -59,6 +65,14 @@ impl Finding {
     /// <p>The unique identifier of the pentest job that produced the finding.</p>
     pub fn pentest_job_id(&self) -> ::std::option::Option<&str> {
         self.pentest_job_id.as_deref()
+    }
+    /// <p>The unique identifier of the code review associated with the finding.</p>
+    pub fn code_review_id(&self) -> ::std::option::Option<&str> {
+        self.code_review_id.as_deref()
+    }
+    /// <p>The unique identifier of the code review job that produced the finding.</p>
+    pub fn code_review_job_id(&self) -> ::std::option::Option<&str> {
+        self.code_review_job_id.as_deref()
     }
     /// <p>The unique identifier of the task that produced the finding.</p>
     pub fn task_id(&self) -> ::std::option::Option<&str> {
@@ -108,6 +122,12 @@ impl Finding {
     pub fn last_updated_by(&self) -> ::std::option::Option<&str> {
         self.last_updated_by.as_deref()
     }
+    /// <p>The file locations involved in the vulnerability, as reported by the code scanner.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.code_locations.is_none()`.
+    pub fn code_locations(&self) -> &[crate::types::CodeLocation] {
+        self.code_locations.as_deref().unwrap_or_default()
+    }
     /// <p>The date and time the finding was created, in UTC format.</p>
     pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
@@ -132,6 +152,8 @@ pub struct FindingBuilder {
     pub(crate) agent_space_id: ::std::option::Option<::std::string::String>,
     pub(crate) pentest_id: ::std::option::Option<::std::string::String>,
     pub(crate) pentest_job_id: ::std::option::Option<::std::string::String>,
+    pub(crate) code_review_id: ::std::option::Option<::std::string::String>,
+    pub(crate) code_review_job_id: ::std::option::Option<::std::string::String>,
     pub(crate) task_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -144,6 +166,7 @@ pub struct FindingBuilder {
     pub(crate) attack_script: ::std::option::Option<::std::string::String>,
     pub(crate) code_remediation_task: ::std::option::Option<crate::types::CodeRemediationTask>,
     pub(crate) last_updated_by: ::std::option::Option<::std::string::String>,
+    pub(crate) code_locations: ::std::option::Option<::std::vec::Vec<crate::types::CodeLocation>>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
@@ -205,6 +228,34 @@ impl FindingBuilder {
     /// <p>The unique identifier of the pentest job that produced the finding.</p>
     pub fn get_pentest_job_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.pentest_job_id
+    }
+    /// <p>The unique identifier of the code review associated with the finding.</p>
+    pub fn code_review_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.code_review_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The unique identifier of the code review associated with the finding.</p>
+    pub fn set_code_review_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.code_review_id = input;
+        self
+    }
+    /// <p>The unique identifier of the code review associated with the finding.</p>
+    pub fn get_code_review_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.code_review_id
+    }
+    /// <p>The unique identifier of the code review job that produced the finding.</p>
+    pub fn code_review_job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.code_review_job_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The unique identifier of the code review job that produced the finding.</p>
+    pub fn set_code_review_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.code_review_job_id = input;
+        self
+    }
+    /// <p>The unique identifier of the code review job that produced the finding.</p>
+    pub fn get_code_review_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.code_review_job_id
     }
     /// <p>The unique identifier of the task that produced the finding.</p>
     pub fn task_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -374,6 +425,26 @@ impl FindingBuilder {
     pub fn get_last_updated_by(&self) -> &::std::option::Option<::std::string::String> {
         &self.last_updated_by
     }
+    /// Appends an item to `code_locations`.
+    ///
+    /// To override the contents of this collection use [`set_code_locations`](Self::set_code_locations).
+    ///
+    /// <p>The file locations involved in the vulnerability, as reported by the code scanner.</p>
+    pub fn code_locations(mut self, input: crate::types::CodeLocation) -> Self {
+        let mut v = self.code_locations.unwrap_or_default();
+        v.push(input);
+        self.code_locations = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The file locations involved in the vulnerability, as reported by the code scanner.</p>
+    pub fn set_code_locations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CodeLocation>>) -> Self {
+        self.code_locations = input;
+        self
+    }
+    /// <p>The file locations involved in the vulnerability, as reported by the code scanner.</p>
+    pub fn get_code_locations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CodeLocation>> {
+        &self.code_locations
+    }
     /// <p>The date and time the finding was created, in UTC format.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
@@ -422,6 +493,8 @@ impl FindingBuilder {
             })?,
             pentest_id: self.pentest_id,
             pentest_job_id: self.pentest_job_id,
+            code_review_id: self.code_review_id,
+            code_review_job_id: self.code_review_job_id,
             task_id: self.task_id,
             name: self.name,
             description: self.description,
@@ -434,6 +507,7 @@ impl FindingBuilder {
             attack_script: self.attack_script,
             code_remediation_task: self.code_remediation_task,
             last_updated_by: self.last_updated_by,
+            code_locations: self.code_locations,
             created_at: self.created_at,
             updated_at: self.updated_at,
         })

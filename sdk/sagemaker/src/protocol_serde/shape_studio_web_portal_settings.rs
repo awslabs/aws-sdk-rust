@@ -42,6 +42,9 @@ pub fn ser_studio_web_portal_settings(
         }
         array_11.finish();
     }
+    if let Some(var_14) = &input.execution_role_session_name_mode {
+        object.key("ExecutionRoleSessionNameMode").string(var_14.as_str());
+    }
     Ok(())
 }
 
@@ -80,6 +83,13 @@ where
                             builder = builder.set_hidden_sage_maker_image_version_aliases(
                                     crate::protocol_serde::shape_hidden_sage_maker_image_version_aliases_list::de_hidden_sage_maker_image_version_aliases_list(tokens, _value)?
                                 );
+                        }
+                        "ExecutionRoleSessionNameMode" => {
+                            builder = builder.set_execution_role_session_name_mode(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::ExecutionRoleSessionNameMode::from(u.as_ref())))
+                                    .transpose()?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

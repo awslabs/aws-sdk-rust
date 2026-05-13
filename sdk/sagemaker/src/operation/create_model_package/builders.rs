@@ -527,4 +527,18 @@ impl CreateModelPackageFluentBuilder {
     pub fn get_model_life_cycle(&self) -> &::std::option::Option<crate::types::ModelLifeCycle> {
         self.inner.get_model_life_cycle()
     }
+    /// <p>The storage type of the model package.</p>
+    pub fn managed_storage_type(mut self, input: crate::types::ManagedStorageType) -> Self {
+        self.inner = self.inner.managed_storage_type(input);
+        self
+    }
+    /// <p>The storage type of the model package.</p>
+    pub fn set_managed_storage_type(mut self, input: ::std::option::Option<crate::types::ManagedStorageType>) -> Self {
+        self.inner = self.inner.set_managed_storage_type(input);
+        self
+    }
+    /// <p>The storage type of the model package.</p>
+    pub fn get_managed_storage_type(&self) -> &::std::option::Option<crate::types::ManagedStorageType> {
+        self.inner.get_managed_storage_type()
+    }
 }

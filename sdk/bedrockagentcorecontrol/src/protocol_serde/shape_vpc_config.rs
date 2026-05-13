@@ -21,6 +21,9 @@ pub fn ser_vpc_config(
         }
         array_3.finish();
     }
+    if let Some(var_5) = &input.require_service_s3_endpoint {
+        object.key("requireServiceS3Endpoint").boolean(*var_5);
+    }
     Ok(())
 }
 
@@ -45,6 +48,10 @@ where
                         }
                         "subnets" => {
                             builder = builder.set_subnets(crate::protocol_serde::shape_subnets::de_subnets(tokens, _value)?);
+                        }
+                        "requireServiceS3Endpoint" => {
+                            builder =
+                                builder.set_require_service_s3_endpoint(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

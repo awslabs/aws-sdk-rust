@@ -8,7 +8,7 @@ pub struct EpisodicReflectionOverride {
     pub append_to_prompt: ::std::string::String,
     /// <p>The model ID used for the reflection step of the episodic memory strategy.</p>
     pub model_id: ::std::string::String,
-    /// <p>The namespaces over which reflections were created. Can be less nested than the episodic namespaces.</p>
+    /// <p>This is a legacy parameter. The namespaces over which reflections were created. Can be less nested than the episodic namespaces.</p>
     #[deprecated(note = "Use namespaceTemplates instead", since = "2026-03-02")]
     pub namespaces: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The namespaceTemplates over which reflections were created. Can be less nested than the episodic namespaces.</p>
@@ -27,7 +27,7 @@ impl EpisodicReflectionOverride {
         use std::ops::Deref;
         self.model_id.deref()
     }
-    /// <p>The namespaces over which reflections were created. Can be less nested than the episodic namespaces.</p>
+    /// <p>This is a legacy parameter. The namespaces over which reflections were created. Can be less nested than the episodic namespaces.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.namespaces.is_none()`.
     #[deprecated(note = "Use namespaceTemplates instead", since = "2026-03-02")]
@@ -108,7 +108,7 @@ impl EpisodicReflectionOverrideBuilder {
     ///
     /// To override the contents of this collection use [`set_namespaces`](Self::set_namespaces).
     ///
-    /// <p>The namespaces over which reflections were created. Can be less nested than the episodic namespaces.</p>
+    /// <p>This is a legacy parameter. The namespaces over which reflections were created. Can be less nested than the episodic namespaces.</p>
     #[deprecated(note = "Use namespaceTemplates instead", since = "2026-03-02")]
     pub fn namespaces(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.namespaces.unwrap_or_default();
@@ -116,13 +116,13 @@ impl EpisodicReflectionOverrideBuilder {
         self.namespaces = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The namespaces over which reflections were created. Can be less nested than the episodic namespaces.</p>
+    /// <p>This is a legacy parameter. The namespaces over which reflections were created. Can be less nested than the episodic namespaces.</p>
     #[deprecated(note = "Use namespaceTemplates instead", since = "2026-03-02")]
     pub fn set_namespaces(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.namespaces = input;
         self
     }
-    /// <p>The namespaces over which reflections were created. Can be less nested than the episodic namespaces.</p>
+    /// <p>This is a legacy parameter. The namespaces over which reflections were created. Can be less nested than the episodic namespaces.</p>
     #[deprecated(note = "Use namespaceTemplates instead", since = "2026-03-02")]
     pub fn get_namespaces(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.namespaces

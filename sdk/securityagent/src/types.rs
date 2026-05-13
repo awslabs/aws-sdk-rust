@@ -15,21 +15,23 @@ pub use crate::types::_verification_details::VerificationDetails;
 
 pub use crate::types::_artifact_type::ArtifactType;
 
-pub use crate::types::_membership_type::MembershipType;
-
-pub use crate::types::_membership_config::MembershipConfig;
-
 pub use crate::types::_assets::Assets;
 
 pub use crate::types::_cloud_watch_log::CloudWatchLog;
+
+pub use crate::types::_code_remediation_strategy::CodeRemediationStrategy;
+
+pub use crate::types::_membership_type::MembershipType;
+
+pub use crate::types::_membership_config::MembershipConfig;
 
 pub use crate::types::_vpc_config::VpcConfig;
 
 pub use crate::types::_network_traffic_config::NetworkTrafficConfig;
 
-pub use crate::types::_code_remediation_strategy::CodeRemediationStrategy;
-
 pub use crate::types::_artifact::Artifact;
+
+pub use crate::types::_step_name::StepName;
 
 pub use crate::types::_risk_level::RiskLevel;
 
@@ -40,8 +42,6 @@ pub use crate::types::_confidence_level::ConfidenceLevel;
 pub use crate::types::_resource_type::ResourceType;
 
 pub use crate::types::_membership_type_filter::MembershipTypeFilter;
-
-pub use crate::types::_step_name::StepName;
 
 pub use crate::types::_job_status::JobStatus;
 
@@ -57,11 +57,19 @@ pub use crate::types::_provider_input::ProviderInput;
 
 pub use crate::types::_validation_exception_field::ValidationExceptionField;
 
+pub use crate::types::_delete_code_review_failure::DeleteCodeReviewFailure;
+
 pub use crate::types::_pentest::Pentest;
 
 pub use crate::types::_delete_pentest_failure::DeletePentestFailure;
 
 pub use crate::types::_artifact_metadata_item::ArtifactMetadataItem;
+
+pub use crate::types::_code_review_job::CodeReviewJob;
+
+pub use crate::types::_code_review_job_task::CodeReviewJobTask;
+
+pub use crate::types::_code_review::CodeReview;
 
 pub use crate::types::_finding::Finding;
 
@@ -74,6 +82,12 @@ pub use crate::types::_user_config::UserConfig;
 pub use crate::types::_risk_type::RiskType;
 
 pub use crate::types::_artifact_summary::ArtifactSummary;
+
+pub use crate::types::_code_review_job_summary::CodeReviewJobSummary;
+
+pub use crate::types::_code_review_job_task_summary::CodeReviewJobTaskSummary;
+
+pub use crate::types::_code_review_summary::CodeReviewSummary;
 
 pub use crate::types::_discovered_endpoint::DiscoveredEndpoint;
 
@@ -107,17 +121,15 @@ pub use crate::types::_target_domain_summary::TargetDomainSummary;
 
 pub use crate::types::_target_domain::TargetDomain;
 
-pub use crate::types::_code_remediation_task::CodeRemediationTask;
-
 pub use crate::types::_error_information::ErrorInformation;
-
-pub use crate::types::_endpoint::Endpoint;
 
 pub use crate::types::_task_execution_status::TaskExecutionStatus;
 
 pub use crate::types::_log_location::LogLocation;
 
-pub use crate::types::_user_role::UserRole;
+pub use crate::types::_code_remediation_task::CodeRemediationTask;
+
+pub use crate::types::_endpoint::Endpoint;
 
 pub use crate::types::_actor::Actor;
 
@@ -126,6 +138,8 @@ pub use crate::types::_document_info::DocumentInfo;
 pub use crate::types::_source_code_repository::SourceCodeRepository;
 
 pub use crate::types::_integrated_repository::IntegratedRepository;
+
+pub use crate::types::_user_role::UserRole;
 
 pub use crate::types::_network_traffic_rule::NetworkTrafficRule;
 
@@ -139,8 +153,6 @@ pub use crate::types::_member_metadata::MemberMetadata;
 
 pub use crate::types::_integrated_resource::IntegratedResource;
 
-pub use crate::types::_code_remediation_task_status::CodeRemediationTaskStatus;
-
 pub use crate::types::_step::Step;
 
 pub use crate::types::_execution_context::ExecutionContext;
@@ -150,6 +162,10 @@ pub use crate::types::_error_code::ErrorCode;
 pub use crate::types::_category::Category;
 
 pub use crate::types::_log_type::LogType;
+
+pub use crate::types::_code_remediation_task_status::CodeRemediationTaskStatus;
+
+pub use crate::types::_code_location::CodeLocation;
 
 pub use crate::types::_authentication::Authentication;
 
@@ -165,11 +181,11 @@ pub use crate::types::_user_metadata::UserMetadata;
 
 pub use crate::types::_git_hub_repository_resource::GitHubRepositoryResource;
 
-pub use crate::types::_code_remediation_task_details::CodeRemediationTaskDetails;
-
 pub use crate::types::_step_status::StepStatus;
 
 pub use crate::types::_context_type::ContextType;
+
+pub use crate::types::_code_remediation_task_details::CodeRemediationTaskDetails;
 
 pub use crate::types::_authentication_provider_type::AuthenticationProviderType;
 
@@ -205,6 +221,8 @@ mod _category;
 
 mod _cloud_watch_log;
 
+mod _code_location;
+
 mod _code_remediation_strategy;
 
 mod _code_remediation_task;
@@ -213,13 +231,27 @@ mod _code_remediation_task_details;
 
 mod _code_remediation_task_status;
 
+mod _code_review;
+
+mod _code_review_job;
+
+mod _code_review_job_summary;
+
+mod _code_review_job_task;
+
+mod _code_review_job_task_summary;
+
 mod _code_review_settings;
+
+mod _code_review_summary;
 
 mod _confidence_level;
 
 mod _context_type;
 
 mod _custom_header;
+
+mod _delete_code_review_failure;
 
 mod _delete_pentest_failure;
 

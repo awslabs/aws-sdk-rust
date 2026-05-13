@@ -235,6 +235,13 @@ pub(crate) fn de_describe_model_package(
                 "ModelLifeCycle" => {
                     builder = builder.set_model_life_cycle(crate::protocol_serde::shape_model_life_cycle::de_model_life_cycle(tokens, _value)?);
                 }
+                "ManagedStorageType" => {
+                    builder = builder.set_managed_storage_type(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| crate::types::ManagedStorageType::from(u.as_ref())))
+                            .transpose()?,
+                    );
+                }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },
             other => {

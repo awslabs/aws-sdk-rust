@@ -3,29 +3,29 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreatePaymentCredentialProviderInput {
-    /// Unique name for the payment credential provider
+    /// <p>Unique name for the payment credential provider.</p>
     pub name: ::std::option::Option<::std::string::String>,
-    /// The vendor type (e.g., CoinbaseCDP)
+    /// <p>The vendor type for the payment credential provider (e.g., CoinbaseCDP, StripePrivy).</p>
     pub credential_provider_vendor: ::std::option::Option<crate::types::PaymentCredentialProviderVendorType>,
-    /// Configuration specific to the vendor, including API credentials
+    /// <p>Configuration specific to the vendor, including API credentials.</p>
     pub provider_configuration_input: ::std::option::Option<crate::types::PaymentProviderConfigurationInput>,
-    /// Optional tags for resource organization
+    /// <p>Optional tags for resource organization.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreatePaymentCredentialProviderInput {
-    /// Unique name for the payment credential provider
+    /// <p>Unique name for the payment credential provider.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// The vendor type (e.g., CoinbaseCDP)
+    /// <p>The vendor type for the payment credential provider (e.g., CoinbaseCDP, StripePrivy).</p>
     pub fn credential_provider_vendor(&self) -> ::std::option::Option<&crate::types::PaymentCredentialProviderVendorType> {
         self.credential_provider_vendor.as_ref()
     }
-    /// Configuration specific to the vendor, including API credentials
+    /// <p>Configuration specific to the vendor, including API credentials.</p>
     pub fn provider_configuration_input(&self) -> ::std::option::Option<&crate::types::PaymentProviderConfigurationInput> {
         self.provider_configuration_input.as_ref()
     }
-    /// Optional tags for resource organization
+    /// <p>Optional tags for resource organization.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
@@ -47,48 +47,48 @@ pub struct CreatePaymentCredentialProviderInputBuilder {
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreatePaymentCredentialProviderInputBuilder {
-    /// Unique name for the payment credential provider
+    /// <p>Unique name for the payment credential provider.</p>
     /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// Unique name for the payment credential provider
+    /// <p>Unique name for the payment credential provider.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// Unique name for the payment credential provider
+    /// <p>Unique name for the payment credential provider.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// The vendor type (e.g., CoinbaseCDP)
+    /// <p>The vendor type for the payment credential provider (e.g., CoinbaseCDP, StripePrivy).</p>
     /// This field is required.
     pub fn credential_provider_vendor(mut self, input: crate::types::PaymentCredentialProviderVendorType) -> Self {
         self.credential_provider_vendor = ::std::option::Option::Some(input);
         self
     }
-    /// The vendor type (e.g., CoinbaseCDP)
+    /// <p>The vendor type for the payment credential provider (e.g., CoinbaseCDP, StripePrivy).</p>
     pub fn set_credential_provider_vendor(mut self, input: ::std::option::Option<crate::types::PaymentCredentialProviderVendorType>) -> Self {
         self.credential_provider_vendor = input;
         self
     }
-    /// The vendor type (e.g., CoinbaseCDP)
+    /// <p>The vendor type for the payment credential provider (e.g., CoinbaseCDP, StripePrivy).</p>
     pub fn get_credential_provider_vendor(&self) -> &::std::option::Option<crate::types::PaymentCredentialProviderVendorType> {
         &self.credential_provider_vendor
     }
-    /// Configuration specific to the vendor, including API credentials
+    /// <p>Configuration specific to the vendor, including API credentials.</p>
     /// This field is required.
     pub fn provider_configuration_input(mut self, input: crate::types::PaymentProviderConfigurationInput) -> Self {
         self.provider_configuration_input = ::std::option::Option::Some(input);
         self
     }
-    /// Configuration specific to the vendor, including API credentials
+    /// <p>Configuration specific to the vendor, including API credentials.</p>
     pub fn set_provider_configuration_input(mut self, input: ::std::option::Option<crate::types::PaymentProviderConfigurationInput>) -> Self {
         self.provider_configuration_input = input;
         self
     }
-    /// Configuration specific to the vendor, including API credentials
+    /// <p>Configuration specific to the vendor, including API credentials.</p>
     pub fn get_provider_configuration_input(&self) -> &::std::option::Option<crate::types::PaymentProviderConfigurationInput> {
         &self.provider_configuration_input
     }
@@ -96,19 +96,19 @@ impl CreatePaymentCredentialProviderInputBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// Optional tags for resource organization
+    /// <p>Optional tags for resource organization.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
-    /// Optional tags for resource organization
+    /// <p>Optional tags for resource organization.</p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
-    /// Optional tags for resource organization
+    /// <p>Optional tags for resource organization.</p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }

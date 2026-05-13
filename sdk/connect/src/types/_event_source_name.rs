@@ -12,6 +12,7 @@
 /// ```text
 /// # let eventsourcename = unimplemented!();
 /// match eventsourcename {
+///     EventSourceName::OnAlertUpdate => { /* ... */ },
 ///     EventSourceName::OnCaseCreate => { /* ... */ },
 ///     EventSourceName::OnCaseUpdate => { /* ... */ },
 ///     EventSourceName::OnContactEvaluationSubmit => { /* ... */ },
@@ -22,6 +23,9 @@
 ///     EventSourceName::OnRealTimeCallAnalysisAvailable => { /* ... */ },
 ///     EventSourceName::OnRealTimeChatAnalysisAvailable => { /* ... */ },
 ///     EventSourceName::OnSalesforceCaseCreate => { /* ... */ },
+///     EventSourceName::OnSchedulePublish => { /* ... */ },
+///     EventSourceName::OnScheduleTimeOffRequestActivity => { /* ... */ },
+///     EventSourceName::OnScheduleUpdate => { /* ... */ },
 ///     EventSourceName::OnSlaBreach => { /* ... */ },
 ///     EventSourceName::OnZendeskTicketCreate => { /* ... */ },
 ///     EventSourceName::OnZendeskTicketStatusUpdate => { /* ... */ },
@@ -54,6 +58,8 @@
 )]
 pub enum EventSourceName {
     #[allow(missing_docs)] // documentation missing in model
+    OnAlertUpdate,
+    #[allow(missing_docs)] // documentation missing in model
     OnCaseCreate,
     #[allow(missing_docs)] // documentation missing in model
     OnCaseUpdate,
@@ -74,6 +80,12 @@ pub enum EventSourceName {
     #[allow(missing_docs)] // documentation missing in model
     OnSalesforceCaseCreate,
     #[allow(missing_docs)] // documentation missing in model
+    OnSchedulePublish,
+    #[allow(missing_docs)] // documentation missing in model
+    OnScheduleTimeOffRequestActivity,
+    #[allow(missing_docs)] // documentation missing in model
+    OnScheduleUpdate,
+    #[allow(missing_docs)] // documentation missing in model
     OnSlaBreach,
     #[allow(missing_docs)] // documentation missing in model
     OnZendeskTicketCreate,
@@ -86,6 +98,7 @@ pub enum EventSourceName {
 impl ::std::convert::From<&str> for EventSourceName {
     fn from(s: &str) -> Self {
         match s {
+            "OnAlertUpdate" => EventSourceName::OnAlertUpdate,
             "OnCaseCreate" => EventSourceName::OnCaseCreate,
             "OnCaseUpdate" => EventSourceName::OnCaseUpdate,
             "OnContactEvaluationSubmit" => EventSourceName::OnContactEvaluationSubmit,
@@ -96,6 +109,9 @@ impl ::std::convert::From<&str> for EventSourceName {
             "OnRealTimeCallAnalysisAvailable" => EventSourceName::OnRealTimeCallAnalysisAvailable,
             "OnRealTimeChatAnalysisAvailable" => EventSourceName::OnRealTimeChatAnalysisAvailable,
             "OnSalesforceCaseCreate" => EventSourceName::OnSalesforceCaseCreate,
+            "OnSchedulePublish" => EventSourceName::OnSchedulePublish,
+            "OnScheduleTimeOffRequestActivity" => EventSourceName::OnScheduleTimeOffRequestActivity,
+            "OnScheduleUpdate" => EventSourceName::OnScheduleUpdate,
             "OnSlaBreach" => EventSourceName::OnSlaBreach,
             "OnZendeskTicketCreate" => EventSourceName::OnZendeskTicketCreate,
             "OnZendeskTicketStatusUpdate" => EventSourceName::OnZendeskTicketStatusUpdate,
@@ -114,6 +130,7 @@ impl EventSourceName {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            EventSourceName::OnAlertUpdate => "OnAlertUpdate",
             EventSourceName::OnCaseCreate => "OnCaseCreate",
             EventSourceName::OnCaseUpdate => "OnCaseUpdate",
             EventSourceName::OnContactEvaluationSubmit => "OnContactEvaluationSubmit",
@@ -124,6 +141,9 @@ impl EventSourceName {
             EventSourceName::OnRealTimeCallAnalysisAvailable => "OnRealTimeCallAnalysisAvailable",
             EventSourceName::OnRealTimeChatAnalysisAvailable => "OnRealTimeChatAnalysisAvailable",
             EventSourceName::OnSalesforceCaseCreate => "OnSalesforceCaseCreate",
+            EventSourceName::OnSchedulePublish => "OnSchedulePublish",
+            EventSourceName::OnScheduleTimeOffRequestActivity => "OnScheduleTimeOffRequestActivity",
+            EventSourceName::OnScheduleUpdate => "OnScheduleUpdate",
             EventSourceName::OnSlaBreach => "OnSlaBreach",
             EventSourceName::OnZendeskTicketCreate => "OnZendeskTicketCreate",
             EventSourceName::OnZendeskTicketStatusUpdate => "OnZendeskTicketStatusUpdate",
@@ -133,6 +153,7 @@ impl EventSourceName {
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
+            "OnAlertUpdate",
             "OnCaseCreate",
             "OnCaseUpdate",
             "OnContactEvaluationSubmit",
@@ -143,6 +164,9 @@ impl EventSourceName {
             "OnRealTimeCallAnalysisAvailable",
             "OnRealTimeChatAnalysisAvailable",
             "OnSalesforceCaseCreate",
+            "OnSchedulePublish",
+            "OnScheduleTimeOffRequestActivity",
+            "OnScheduleUpdate",
             "OnSlaBreach",
             "OnZendeskTicketCreate",
             "OnZendeskTicketStatusUpdate",
@@ -169,6 +193,7 @@ impl EventSourceName {
 impl ::std::fmt::Display for EventSourceName {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            EventSourceName::OnAlertUpdate => write!(f, "OnAlertUpdate"),
             EventSourceName::OnCaseCreate => write!(f, "OnCaseCreate"),
             EventSourceName::OnCaseUpdate => write!(f, "OnCaseUpdate"),
             EventSourceName::OnContactEvaluationSubmit => write!(f, "OnContactEvaluationSubmit"),
@@ -179,6 +204,9 @@ impl ::std::fmt::Display for EventSourceName {
             EventSourceName::OnRealTimeCallAnalysisAvailable => write!(f, "OnRealTimeCallAnalysisAvailable"),
             EventSourceName::OnRealTimeChatAnalysisAvailable => write!(f, "OnRealTimeChatAnalysisAvailable"),
             EventSourceName::OnSalesforceCaseCreate => write!(f, "OnSalesforceCaseCreate"),
+            EventSourceName::OnSchedulePublish => write!(f, "OnSchedulePublish"),
+            EventSourceName::OnScheduleTimeOffRequestActivity => write!(f, "OnScheduleTimeOffRequestActivity"),
+            EventSourceName::OnScheduleUpdate => write!(f, "OnScheduleUpdate"),
             EventSourceName::OnSlaBreach => write!(f, "OnSlaBreach"),
             EventSourceName::OnZendeskTicketCreate => write!(f, "OnZendeskTicketCreate"),
             EventSourceName::OnZendeskTicketStatusUpdate => write!(f, "OnZendeskTicketStatusUpdate"),

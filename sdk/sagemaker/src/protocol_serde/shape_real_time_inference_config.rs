@@ -34,7 +34,7 @@ where
                         "InstanceType" => {
                             builder = builder.set_instance_type(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| crate::types::InstanceType::from(u.as_ref())))
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::ProductionVariantInstanceType::from(u.as_ref())))
                                     .transpose()?,
                             );
                         }

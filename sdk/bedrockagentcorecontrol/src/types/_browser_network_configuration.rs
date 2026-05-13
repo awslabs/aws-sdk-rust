@@ -6,7 +6,7 @@
 pub struct BrowserNetworkConfiguration {
     /// <p>The network mode for the browser. This field specifies how the browser connects to the network.</p>
     pub network_mode: crate::types::BrowserNetworkMode,
-    /// <p>VpcConfig for the Agent.</p>
+    /// <p>The VPC configuration for the browser. This configuration is required when the network mode is set to <code>VPC</code>.</p>
     pub vpc_config: ::std::option::Option<crate::types::VpcConfig>,
 }
 impl BrowserNetworkConfiguration {
@@ -14,7 +14,7 @@ impl BrowserNetworkConfiguration {
     pub fn network_mode(&self) -> &crate::types::BrowserNetworkMode {
         &self.network_mode
     }
-    /// <p>VpcConfig for the Agent.</p>
+    /// <p>The VPC configuration for the browser. This configuration is required when the network mode is set to <code>VPC</code>.</p>
     pub fn vpc_config(&self) -> ::std::option::Option<&crate::types::VpcConfig> {
         self.vpc_config.as_ref()
     }
@@ -49,17 +49,17 @@ impl BrowserNetworkConfigurationBuilder {
     pub fn get_network_mode(&self) -> &::std::option::Option<crate::types::BrowserNetworkMode> {
         &self.network_mode
     }
-    /// <p>VpcConfig for the Agent.</p>
+    /// <p>The VPC configuration for the browser. This configuration is required when the network mode is set to <code>VPC</code>.</p>
     pub fn vpc_config(mut self, input: crate::types::VpcConfig) -> Self {
         self.vpc_config = ::std::option::Option::Some(input);
         self
     }
-    /// <p>VpcConfig for the Agent.</p>
+    /// <p>The VPC configuration for the browser. This configuration is required when the network mode is set to <code>VPC</code>.</p>
     pub fn set_vpc_config(mut self, input: ::std::option::Option<crate::types::VpcConfig>) -> Self {
         self.vpc_config = input;
         self
     }
-    /// <p>VpcConfig for the Agent.</p>
+    /// <p>The VPC configuration for the browser. This configuration is required when the network mode is set to <code>VPC</code>.</p>
     pub fn get_vpc_config(&self) -> &::std::option::Option<crate::types::VpcConfig> {
         &self.vpc_config
     }

@@ -9,10 +9,6 @@ pub struct UpdatePolicyOutput {
     pub name: ::std::string::String,
     /// <p>The identifier of the policy engine managing the updated policy.</p>
     pub policy_engine_id: ::std::string::String,
-    /// <p>The updated Cedar policy statement.</p>
-    pub definition: ::std::option::Option<crate::types::PolicyDefinition>,
-    /// <p>The updated description of the policy.</p>
-    pub description: ::std::option::Option<::std::string::String>,
     /// <p>The original creation timestamp of the policy.</p>
     pub created_at: ::aws_smithy_types::DateTime,
     /// <p>The timestamp when the policy was last updated.</p>
@@ -21,6 +17,10 @@ pub struct UpdatePolicyOutput {
     pub policy_arn: ::std::string::String,
     /// <p>The current status of the updated policy.</p>
     pub status: crate::types::PolicyStatus,
+    /// <p>The updated Cedar policy statement.</p>
+    pub definition: ::std::option::Option<crate::types::PolicyDefinition>,
+    /// <p>The updated description of the policy.</p>
+    pub description: ::std::option::Option<::std::string::String>,
     /// <p>Additional information about the update status.</p>
     pub status_reasons: ::std::vec::Vec<::std::string::String>,
     _request_id: Option<String>,
@@ -41,14 +41,6 @@ impl UpdatePolicyOutput {
         use std::ops::Deref;
         self.policy_engine_id.deref()
     }
-    /// <p>The updated Cedar policy statement.</p>
-    pub fn definition(&self) -> ::std::option::Option<&crate::types::PolicyDefinition> {
-        self.definition.as_ref()
-    }
-    /// <p>The updated description of the policy.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
-        self.description.as_deref()
-    }
     /// <p>The original creation timestamp of the policy.</p>
     pub fn created_at(&self) -> &::aws_smithy_types::DateTime {
         &self.created_at
@@ -66,6 +58,14 @@ impl UpdatePolicyOutput {
     pub fn status(&self) -> &crate::types::PolicyStatus {
         &self.status
     }
+    /// <p>The updated Cedar policy statement.</p>
+    pub fn definition(&self) -> ::std::option::Option<&crate::types::PolicyDefinition> {
+        self.definition.as_ref()
+    }
+    /// <p>The updated description of the policy.</p>
+    pub fn description(&self) -> ::std::option::Option<&str> {
+        self.description.as_deref()
+    }
     /// <p>Additional information about the update status.</p>
     pub fn status_reasons(&self) -> &[::std::string::String] {
         use std::ops::Deref;
@@ -78,12 +78,12 @@ impl ::std::fmt::Debug for UpdatePolicyOutput {
         formatter.field("policy_id", &self.policy_id);
         formatter.field("name", &self.name);
         formatter.field("policy_engine_id", &self.policy_engine_id);
-        formatter.field("definition", &self.definition);
-        formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("created_at", &self.created_at);
         formatter.field("updated_at", &self.updated_at);
         formatter.field("policy_arn", &self.policy_arn);
         formatter.field("status", &self.status);
+        formatter.field("definition", &self.definition);
+        formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("status_reasons", &self.status_reasons);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
@@ -108,12 +108,12 @@ pub struct UpdatePolicyOutputBuilder {
     pub(crate) policy_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) policy_engine_id: ::std::option::Option<::std::string::String>,
-    pub(crate) definition: ::std::option::Option<crate::types::PolicyDefinition>,
-    pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) policy_arn: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::PolicyStatus>,
+    pub(crate) definition: ::std::option::Option<crate::types::PolicyDefinition>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) status_reasons: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }
@@ -162,35 +162,6 @@ impl UpdatePolicyOutputBuilder {
     /// <p>The identifier of the policy engine managing the updated policy.</p>
     pub fn get_policy_engine_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.policy_engine_id
-    }
-    /// <p>The updated Cedar policy statement.</p>
-    /// This field is required.
-    pub fn definition(mut self, input: crate::types::PolicyDefinition) -> Self {
-        self.definition = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>The updated Cedar policy statement.</p>
-    pub fn set_definition(mut self, input: ::std::option::Option<crate::types::PolicyDefinition>) -> Self {
-        self.definition = input;
-        self
-    }
-    /// <p>The updated Cedar policy statement.</p>
-    pub fn get_definition(&self) -> &::std::option::Option<crate::types::PolicyDefinition> {
-        &self.definition
-    }
-    /// <p>The updated description of the policy.</p>
-    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.description = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// <p>The updated description of the policy.</p>
-    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
-    }
-    /// <p>The updated description of the policy.</p>
-    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
-        &self.description
     }
     /// <p>The original creation timestamp of the policy.</p>
     /// This field is required.
@@ -251,6 +222,35 @@ impl UpdatePolicyOutputBuilder {
     /// <p>The current status of the updated policy.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::PolicyStatus> {
         &self.status
+    }
+    /// <p>The updated Cedar policy statement.</p>
+    /// This field is required.
+    pub fn definition(mut self, input: crate::types::PolicyDefinition) -> Self {
+        self.definition = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The updated Cedar policy statement.</p>
+    pub fn set_definition(mut self, input: ::std::option::Option<crate::types::PolicyDefinition>) -> Self {
+        self.definition = input;
+        self
+    }
+    /// <p>The updated Cedar policy statement.</p>
+    pub fn get_definition(&self) -> &::std::option::Option<crate::types::PolicyDefinition> {
+        &self.definition
+    }
+    /// <p>The updated description of the policy.</p>
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The updated description of the policy.</p>
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.description = input;
+        self
+    }
+    /// <p>The updated description of the policy.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Appends an item to `status_reasons`.
     ///
@@ -313,8 +313,6 @@ impl UpdatePolicyOutputBuilder {
                     "policy_engine_id was not specified but it is required when building UpdatePolicyOutput",
                 )
             })?,
-            definition: self.definition,
-            description: self.description,
             created_at: self.created_at.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "created_at",
@@ -339,6 +337,8 @@ impl UpdatePolicyOutputBuilder {
                     "status was not specified but it is required when building UpdatePolicyOutput",
                 )
             })?,
+            definition: self.definition,
+            description: self.description,
             status_reasons: self.status_reasons.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status_reasons",
@@ -355,12 +355,12 @@ impl ::std::fmt::Debug for UpdatePolicyOutputBuilder {
         formatter.field("policy_id", &self.policy_id);
         formatter.field("name", &self.name);
         formatter.field("policy_engine_id", &self.policy_engine_id);
-        formatter.field("definition", &self.definition);
-        formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("created_at", &self.created_at);
         formatter.field("updated_at", &self.updated_at);
         formatter.field("policy_arn", &self.policy_arn);
         formatter.field("status", &self.status);
+        formatter.field("definition", &self.definition);
+        formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("status_reasons", &self.status_reasons);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()

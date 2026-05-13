@@ -7,13 +7,13 @@ impl super::Client {
     /// - On success, responds with [`DeletePolicyEngineOutput`](crate::operation::delete_policy_engine::DeletePolicyEngineOutput) with field(s):
     ///   - [`policy_engine_id(String)`](crate::operation::delete_policy_engine::DeletePolicyEngineOutput::policy_engine_id): <p>The unique identifier of the policy engine being deleted. This confirms which policy engine the deletion operation targets.</p>
     ///   - [`name(String)`](crate::operation::delete_policy_engine::DeletePolicyEngineOutput::name): <p>The customer-assigned name of the deleted policy engine.</p>
-    ///   - [`description(Option<String>)`](crate::operation::delete_policy_engine::DeletePolicyEngineOutput::description): <p>The human-readable description of the deleted policy engine.</p>
     ///   - [`created_at(DateTime)`](crate::operation::delete_policy_engine::DeletePolicyEngineOutput::created_at): <p>The timestamp when the deleted policy engine was originally created.</p>
     ///   - [`updated_at(DateTime)`](crate::operation::delete_policy_engine::DeletePolicyEngineOutput::updated_at): <p>The timestamp when the deleted policy engine was last modified before deletion. This tracks the final state of the policy engine before it was removed from the system.</p>
     ///   - [`policy_engine_arn(String)`](crate::operation::delete_policy_engine::DeletePolicyEngineOutput::policy_engine_arn): <p>The Amazon Resource Name (ARN) of the deleted policy engine. This globally unique identifier confirms which policy engine resource was successfully removed.</p>
     ///   - [`status(PolicyEngineStatus)`](crate::operation::delete_policy_engine::DeletePolicyEngineOutput::status): <p>The status of the policy engine deletion operation. This provides status about any issues that occurred during the deletion process.</p>
-    ///   - [`status_reasons(Vec::<String>)`](crate::operation::delete_policy_engine::DeletePolicyEngineOutput::status_reasons): <p>Additional information about the deletion status. This provides details about the deletion process or any issues that may have occurred.</p>
     ///   - [`encryption_key_arn(Option<String>)`](crate::operation::delete_policy_engine::DeletePolicyEngineOutput::encryption_key_arn): <p>The Amazon Resource Name (ARN) of the KMS key used to encrypt the policy engine data.</p>
+    ///   - [`description(Option<String>)`](crate::operation::delete_policy_engine::DeletePolicyEngineOutput::description): <p>The human-readable description of the deleted policy engine.</p>
+    ///   - [`status_reasons(Vec::<String>)`](crate::operation::delete_policy_engine::DeletePolicyEngineOutput::status_reasons): <p>Additional information about the deletion status. This provides details about the deletion process or any issues that may have occurred.</p>
     /// - On failure, responds with [`SdkError<DeletePolicyEngineError>`](crate::operation::delete_policy_engine::DeletePolicyEngineError)
     pub fn delete_policy_engine(&self) -> crate::operation::delete_policy_engine::builders::DeletePolicyEngineFluentBuilder {
         crate::operation::delete_policy_engine::builders::DeletePolicyEngineFluentBuilder::new(self.handle.clone())

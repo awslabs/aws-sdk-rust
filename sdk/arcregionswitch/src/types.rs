@@ -101,6 +101,8 @@ pub use crate::types::_rds_promote_read_replica_configuration::RdsPromoteReadRep
 
 pub use crate::types::_rds_create_cross_region_replica_configuration::RdsCreateCrossRegionReplicaConfiguration;
 
+pub use crate::types::_lambda_event_source_mapping_configuration::LambdaEventSourceMappingConfiguration;
+
 pub use crate::types::_region_to_run_in::RegionToRunIn;
 
 pub use crate::types::_lambda_ungraceful::LambdaUngraceful;
@@ -127,6 +129,10 @@ pub use crate::types::_document_db_default_behavior::DocumentDbDefaultBehavior;
 
 pub use crate::types::_document_db_ungraceful::DocumentDbUngraceful;
 
+pub use crate::types::_event_source_mapping_action::EventSourceMappingAction;
+
+pub use crate::types::_lambda_event_source_mapping_ungraceful::LambdaEventSourceMappingUngraceful;
+
 pub use crate::types::_lambdas::Lambdas;
 
 pub use crate::types::_lambda_ungraceful_behavior::LambdaUngracefulBehavior;
@@ -142,6 +148,10 @@ pub use crate::types::_eks_cluster::EksCluster;
 pub use crate::types::_route53_resource_record_set::Route53ResourceRecordSet;
 
 pub use crate::types::_document_db_ungraceful_behavior::DocumentDbUngracefulBehavior;
+
+pub use crate::types::_event_source_mapping::EventSourceMapping;
+
+pub use crate::types::_lambda_event_source_mapping_ungraceful_behavior::LambdaEventSourceMappingUngracefulBehavior;
 
 pub use crate::types::_arc_routing_control_state::ArcRoutingControlState;
 
@@ -199,6 +209,10 @@ mod _eks_resource_scaling_ungraceful;
 
 mod _evaluation_status;
 
+mod _event_source_mapping;
+
+mod _event_source_mapping_action;
+
 mod _execution_action;
 
 mod _execution_approval_configuration;
@@ -232,6 +246,12 @@ mod _global_aurora_ungraceful_behavior;
 mod _kubernetes_resource_type;
 
 mod _kubernetes_scaling_resource;
+
+mod _lambda_event_source_mapping_configuration;
+
+mod _lambda_event_source_mapping_ungraceful;
+
+mod _lambda_event_source_mapping_ungraceful_behavior;
 
 mod _lambda_ungraceful;
 

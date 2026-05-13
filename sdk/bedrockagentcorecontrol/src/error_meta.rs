@@ -2446,6 +2446,41 @@ impl From<crate::operation::get_policy_engine::GetPolicyEngineError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_policy_engine_summary::GetPolicyEngineSummaryError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_policy_engine_summary::GetPolicyEngineSummaryError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_policy_engine_summary::GetPolicyEngineSummaryError> for Error {
+    fn from(err: crate::operation::get_policy_engine_summary::GetPolicyEngineSummaryError) -> Self {
+        match err {
+            crate::operation::get_policy_engine_summary::GetPolicyEngineSummaryError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_policy_engine_summary::GetPolicyEngineSummaryError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::get_policy_engine_summary::GetPolicyEngineSummaryError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_policy_engine_summary::GetPolicyEngineSummaryError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_policy_engine_summary::GetPolicyEngineSummaryError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_policy_engine_summary::GetPolicyEngineSummaryError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_policy_generation::GetPolicyGenerationError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -2473,6 +2508,71 @@ impl From<crate::operation::get_policy_generation::GetPolicyGenerationError> for
             crate::operation::get_policy_generation::GetPolicyGenerationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::get_policy_generation::GetPolicyGenerationError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::get_policy_generation::GetPolicyGenerationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_policy_generation_summary::GetPolicyGenerationSummaryError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_policy_generation_summary::GetPolicyGenerationSummaryError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_policy_generation_summary::GetPolicyGenerationSummaryError> for Error {
+    fn from(err: crate::operation::get_policy_generation_summary::GetPolicyGenerationSummaryError) -> Self {
+        match err {
+            crate::operation::get_policy_generation_summary::GetPolicyGenerationSummaryError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_policy_generation_summary::GetPolicyGenerationSummaryError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::get_policy_generation_summary::GetPolicyGenerationSummaryError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_policy_generation_summary::GetPolicyGenerationSummaryError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::get_policy_generation_summary::GetPolicyGenerationSummaryError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::get_policy_generation_summary::GetPolicyGenerationSummaryError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_policy_summary::GetPolicySummaryError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_policy_summary::GetPolicySummaryError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_policy_summary::GetPolicySummaryError> for Error {
+    fn from(err: crate::operation::get_policy_summary::GetPolicySummaryError) -> Self {
+        match err {
+            crate::operation::get_policy_summary::GetPolicySummaryError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_policy_summary::GetPolicySummaryError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_policy_summary::GetPolicySummaryError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_policy_summary::GetPolicySummaryError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_policy_summary::GetPolicySummaryError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_policy_summary::GetPolicySummaryError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -3327,6 +3427,42 @@ impl From<crate::operation::list_policy_engines::ListPolicyEnginesError> for Err
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_policy_engine_summaries::ListPolicyEngineSummariesError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_policy_engine_summaries::ListPolicyEngineSummariesError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_policy_engine_summaries::ListPolicyEngineSummariesError> for Error {
+    fn from(err: crate::operation::list_policy_engine_summaries::ListPolicyEngineSummariesError) -> Self {
+        match err {
+            crate::operation::list_policy_engine_summaries::ListPolicyEngineSummariesError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_policy_engine_summaries::ListPolicyEngineSummariesError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_policy_engine_summaries::ListPolicyEngineSummariesError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::list_policy_engine_summaries::ListPolicyEngineSummariesError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::list_policy_engine_summaries::ListPolicyEngineSummariesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_policy_generation_assets::ListPolicyGenerationAssetsError, R>>
     for Error
 where
@@ -3397,6 +3533,80 @@ impl From<crate::operation::list_policy_generations::ListPolicyGenerationsError>
             crate::operation::list_policy_generations::ListPolicyGenerationsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::list_policy_generations::ListPolicyGenerationsError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_policy_generations::ListPolicyGenerationsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_policy_generation_summaries::ListPolicyGenerationSummariesError, R>,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_policy_generation_summaries::ListPolicyGenerationSummariesError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_policy_generation_summaries::ListPolicyGenerationSummariesError> for Error {
+    fn from(err: crate::operation::list_policy_generation_summaries::ListPolicyGenerationSummariesError) -> Self {
+        match err {
+            crate::operation::list_policy_generation_summaries::ListPolicyGenerationSummariesError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_policy_generation_summaries::ListPolicyGenerationSummariesError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_policy_generation_summaries::ListPolicyGenerationSummariesError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_policy_generation_summaries::ListPolicyGenerationSummariesError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::list_policy_generation_summaries::ListPolicyGenerationSummariesError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::list_policy_generation_summaries::ListPolicyGenerationSummariesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_policy_summaries::ListPolicySummariesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_policy_summaries::ListPolicySummariesError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_policy_summaries::ListPolicySummariesError> for Error {
+    fn from(err: crate::operation::list_policy_summaries::ListPolicySummariesError) -> Self {
+        match err {
+            crate::operation::list_policy_summaries::ListPolicySummariesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_policy_summaries::ListPolicySummariesError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_policy_summaries::ListPolicySummariesError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_policy_summaries::ListPolicySummariesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_policy_summaries::ListPolicySummariesError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_policy_summaries::ListPolicySummariesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

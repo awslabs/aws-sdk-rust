@@ -10,7 +10,7 @@ pub struct Ec2AsgCapacityIncreaseConfiguration {
     pub asgs: ::std::vec::Vec<crate::types::Asg>,
     /// <p>The settings for ungraceful execution.</p>
     pub ungraceful: ::std::option::Option<crate::types::Ec2Ungraceful>,
-    /// <p>The target percentage that you specify for EC2 Auto Scaling groups.</p>
+    /// <p>The target percentage that you specify for EC2 Auto Scaling groups. The default is 100.</p>
     pub target_percent: i32,
     /// <p>The monitoring approach that you specify EC2 Auto Scaling groups for the configuration.</p>
     pub capacity_monitoring_approach: crate::types::Ec2AsgCapacityMonitoringApproach,
@@ -29,7 +29,7 @@ impl Ec2AsgCapacityIncreaseConfiguration {
     pub fn ungraceful(&self) -> ::std::option::Option<&crate::types::Ec2Ungraceful> {
         self.ungraceful.as_ref()
     }
-    /// <p>The target percentage that you specify for EC2 Auto Scaling groups.</p>
+    /// <p>The target percentage that you specify for EC2 Auto Scaling groups. The default is 100.</p>
     pub fn target_percent(&self) -> i32 {
         self.target_percent
     }
@@ -104,17 +104,17 @@ impl Ec2AsgCapacityIncreaseConfigurationBuilder {
     pub fn get_ungraceful(&self) -> &::std::option::Option<crate::types::Ec2Ungraceful> {
         &self.ungraceful
     }
-    /// <p>The target percentage that you specify for EC2 Auto Scaling groups.</p>
+    /// <p>The target percentage that you specify for EC2 Auto Scaling groups. The default is 100.</p>
     pub fn target_percent(mut self, input: i32) -> Self {
         self.target_percent = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The target percentage that you specify for EC2 Auto Scaling groups.</p>
+    /// <p>The target percentage that you specify for EC2 Auto Scaling groups. The default is 100.</p>
     pub fn set_target_percent(mut self, input: ::std::option::Option<i32>) -> Self {
         self.target_percent = input;
         self
     }
-    /// <p>The target percentage that you specify for EC2 Auto Scaling groups.</p>
+    /// <p>The target percentage that you specify for EC2 Auto Scaling groups. The default is 100.</p>
     pub fn get_target_percent(&self) -> &::std::option::Option<i32> {
         &self.target_percent
     }

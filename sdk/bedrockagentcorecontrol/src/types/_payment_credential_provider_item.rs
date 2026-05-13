@@ -6,7 +6,7 @@
 pub struct PaymentCredentialProviderItem {
     /// <p>The name of the payment credential provider.</p>
     pub name: ::std::string::String,
-    /// Supported vendor types for payment providers using non-standard auth protocols
+    /// <p>The vendor type for the payment credential provider.</p>
     pub credential_provider_vendor: crate::types::PaymentCredentialProviderVendorType,
     /// <p>The Amazon Resource Name (ARN) of the payment credential provider.</p>
     pub credential_provider_arn: ::std::string::String,
@@ -21,7 +21,7 @@ impl PaymentCredentialProviderItem {
         use std::ops::Deref;
         self.name.deref()
     }
-    /// Supported vendor types for payment providers using non-standard auth protocols
+    /// <p>The vendor type for the payment credential provider.</p>
     pub fn credential_provider_vendor(&self) -> &crate::types::PaymentCredentialProviderVendorType {
         &self.credential_provider_vendor
     }
@@ -72,18 +72,18 @@ impl PaymentCredentialProviderItemBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// Supported vendor types for payment providers using non-standard auth protocols
+    /// <p>The vendor type for the payment credential provider.</p>
     /// This field is required.
     pub fn credential_provider_vendor(mut self, input: crate::types::PaymentCredentialProviderVendorType) -> Self {
         self.credential_provider_vendor = ::std::option::Option::Some(input);
         self
     }
-    /// Supported vendor types for payment providers using non-standard auth protocols
+    /// <p>The vendor type for the payment credential provider.</p>
     pub fn set_credential_provider_vendor(mut self, input: ::std::option::Option<crate::types::PaymentCredentialProviderVendorType>) -> Self {
         self.credential_provider_vendor = input;
         self
     }
-    /// Supported vendor types for payment providers using non-standard auth protocols
+    /// <p>The vendor type for the payment credential provider.</p>
     pub fn get_credential_provider_vendor(&self) -> &::std::option::Option<crate::types::PaymentCredentialProviderVendorType> {
         &self.credential_provider_vendor
     }

@@ -4,11 +4,17 @@ pub use ::aws_types::request_id::RequestId;
 /// Types for the `CreateCluster` operation.
 pub mod create_cluster;
 
+/// Types for the `CreateStream` operation.
+pub mod create_stream;
+
 /// Types for the `DeleteCluster` operation.
 pub mod delete_cluster;
 
 /// Types for the `DeleteClusterPolicy` operation.
 pub mod delete_cluster_policy;
+
+/// Types for the `DeleteStream` operation.
+pub mod delete_stream;
 
 /// Types for the `GetCluster` operation.
 pub mod get_cluster;
@@ -16,11 +22,17 @@ pub mod get_cluster;
 /// Types for the `GetClusterPolicy` operation.
 pub mod get_cluster_policy;
 
+/// Types for the `GetStream` operation.
+pub mod get_stream;
+
 /// Types for the `GetVpcEndpointServiceName` operation.
 pub mod get_vpc_endpoint_service_name;
 
 /// Types for the `ListClusters` operation.
 pub mod list_clusters;
+
+/// Types for the `ListStreams` operation.
+pub mod list_streams;
 
 /// Types for the `ListTagsForResource` operation.
 pub mod list_tags_for_resource;

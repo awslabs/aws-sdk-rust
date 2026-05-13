@@ -159,7 +159,13 @@ pub(crate) mod shape_get_policy;
 
 pub(crate) mod shape_get_policy_engine;
 
+pub(crate) mod shape_get_policy_engine_summary;
+
 pub(crate) mod shape_get_policy_generation;
+
+pub(crate) mod shape_get_policy_generation_summary;
+
+pub(crate) mod shape_get_policy_summary;
 
 pub(crate) mod shape_get_registry;
 
@@ -213,11 +219,17 @@ pub(crate) mod shape_list_payment_managers;
 
 pub(crate) mod shape_list_policies;
 
+pub(crate) mod shape_list_policy_engine_summaries;
+
 pub(crate) mod shape_list_policy_engines;
 
 pub(crate) mod shape_list_policy_generation_assets;
 
+pub(crate) mod shape_list_policy_generation_summaries;
+
 pub(crate) mod shape_list_policy_generations;
+
+pub(crate) mod shape_list_policy_summaries;
 
 pub(crate) mod shape_list_registries;
 
@@ -605,13 +617,19 @@ pub(crate) mod shape_policies;
 
 pub(crate) mod shape_policy_definition;
 
+pub(crate) mod shape_policy_engine_summary_list;
+
 pub(crate) mod shape_policy_engines;
 
 pub(crate) mod shape_policy_generation_assets;
 
+pub(crate) mod shape_policy_generation_summary_list;
+
 pub(crate) mod shape_policy_generations;
 
 pub(crate) mod shape_policy_status_reasons;
+
+pub(crate) mod shape_policy_summary_list;
 
 pub(crate) mod shape_private_endpoint;
 
@@ -857,11 +875,17 @@ pub(crate) mod shape_policy;
 
 pub(crate) mod shape_policy_engine;
 
+pub(crate) mod shape_policy_engine_summary;
+
 pub(crate) mod shape_policy_generation;
 
 pub(crate) mod shape_policy_generation_asset;
 
 pub(crate) mod shape_policy_generation_details;
+
+pub(crate) mod shape_policy_generation_summary;
+
+pub(crate) mod shape_policy_summary;
 
 pub(crate) mod shape_registry_record_summary;
 

@@ -159,6 +159,8 @@ pub use crate::types::_container_service_health_check_config::ContainerServiceHe
 
 pub use crate::types::_origin_protocol_policy_enum::OriginProtocolPolicyEnum;
 
+pub use crate::types::_origin_ip_address_type_enum::OriginIpAddressTypeEnum;
+
 pub use crate::types::_behavior_enum::BehaviorEnum;
 
 pub use crate::types::_cookie_object::CookieObject;
@@ -704,6 +706,8 @@ mod _operation_status;
 mod _operation_type;
 
 mod _origin;
+
+mod _origin_ip_address_type_enum;
 
 mod _origin_protocol_policy_enum;
 

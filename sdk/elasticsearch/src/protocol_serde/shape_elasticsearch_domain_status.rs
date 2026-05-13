@@ -151,6 +151,11 @@ where
                                 crate::protocol_serde::shape_deployment_strategy_options::de_deployment_strategy_options(tokens, _value)?,
                             );
                         }
+                        "AutomatedSnapshotPauseOptions" => {
+                            builder = builder.set_automated_snapshot_pause_options(
+                                crate::protocol_serde::shape_automated_snapshot_pause_options::de_automated_snapshot_pause_options(tokens, _value)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

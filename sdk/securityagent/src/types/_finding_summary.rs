@@ -12,6 +12,10 @@ pub struct FindingSummary {
     pub pentest_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the pentest job that produced the finding.</p>
     pub pentest_job_id: ::std::option::Option<::std::string::String>,
+    /// <p>The unique identifier of the code review associated with the finding.</p>
+    pub code_review_id: ::std::option::Option<::std::string::String>,
+    /// <p>The unique identifier of the code review job that produced the finding.</p>
+    pub code_review_job_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the finding.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the finding.</p>
@@ -45,6 +49,14 @@ impl FindingSummary {
     /// <p>The unique identifier of the pentest job that produced the finding.</p>
     pub fn pentest_job_id(&self) -> ::std::option::Option<&str> {
         self.pentest_job_id.as_deref()
+    }
+    /// <p>The unique identifier of the code review associated with the finding.</p>
+    pub fn code_review_id(&self) -> ::std::option::Option<&str> {
+        self.code_review_id.as_deref()
+    }
+    /// <p>The unique identifier of the code review job that produced the finding.</p>
+    pub fn code_review_job_id(&self) -> ::std::option::Option<&str> {
+        self.code_review_job_id.as_deref()
     }
     /// <p>The name of the finding.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
@@ -90,6 +102,8 @@ pub struct FindingSummaryBuilder {
     pub(crate) agent_space_id: ::std::option::Option<::std::string::String>,
     pub(crate) pentest_id: ::std::option::Option<::std::string::String>,
     pub(crate) pentest_job_id: ::std::option::Option<::std::string::String>,
+    pub(crate) code_review_id: ::std::option::Option<::std::string::String>,
+    pub(crate) code_review_job_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::FindingStatus>,
     pub(crate) risk_type: ::std::option::Option<::std::string::String>,
@@ -156,6 +170,34 @@ impl FindingSummaryBuilder {
     /// <p>The unique identifier of the pentest job that produced the finding.</p>
     pub fn get_pentest_job_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.pentest_job_id
+    }
+    /// <p>The unique identifier of the code review associated with the finding.</p>
+    pub fn code_review_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.code_review_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The unique identifier of the code review associated with the finding.</p>
+    pub fn set_code_review_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.code_review_id = input;
+        self
+    }
+    /// <p>The unique identifier of the code review associated with the finding.</p>
+    pub fn get_code_review_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.code_review_id
+    }
+    /// <p>The unique identifier of the code review job that produced the finding.</p>
+    pub fn code_review_job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.code_review_job_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The unique identifier of the code review job that produced the finding.</p>
+    pub fn set_code_review_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.code_review_job_id = input;
+        self
+    }
+    /// <p>The unique identifier of the code review job that produced the finding.</p>
+    pub fn get_code_review_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.code_review_job_id
     }
     /// <p>The name of the finding.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -275,6 +317,8 @@ impl FindingSummaryBuilder {
             })?,
             pentest_id: self.pentest_id,
             pentest_job_id: self.pentest_job_id,
+            code_review_id: self.code_review_id,
+            code_review_job_id: self.code_review_job_id,
             name: self.name,
             status: self.status,
             risk_type: self.risk_type,

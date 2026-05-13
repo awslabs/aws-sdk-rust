@@ -6,8 +6,10 @@
 pub struct StartCodeRemediationInput {
     /// <p>The unique identifier of the agent space.</p>
     pub agent_space_id: ::std::option::Option<::std::string::String>,
-    /// <p>The unique identifier of the pentest job that produced the findings.</p>
+    /// <p>The unique identifier of the pentest job that produced the findings. Mutually exclusive with <code>codeReviewJobId</code>.</p>
     pub pentest_job_id: ::std::option::Option<::std::string::String>,
+    /// <p>The unique identifier of the code review job that produced the findings. Mutually exclusive with <code>pentestJobId</code>.</p>
+    pub code_review_job_id: ::std::option::Option<::std::string::String>,
     /// <p>The list of finding identifiers to initiate code remediation for.</p>
     pub finding_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
@@ -16,9 +18,13 @@ impl StartCodeRemediationInput {
     pub fn agent_space_id(&self) -> ::std::option::Option<&str> {
         self.agent_space_id.as_deref()
     }
-    /// <p>The unique identifier of the pentest job that produced the findings.</p>
+    /// <p>The unique identifier of the pentest job that produced the findings. Mutually exclusive with <code>codeReviewJobId</code>.</p>
     pub fn pentest_job_id(&self) -> ::std::option::Option<&str> {
         self.pentest_job_id.as_deref()
+    }
+    /// <p>The unique identifier of the code review job that produced the findings. Mutually exclusive with <code>pentestJobId</code>.</p>
+    pub fn code_review_job_id(&self) -> ::std::option::Option<&str> {
+        self.code_review_job_id.as_deref()
     }
     /// <p>The list of finding identifiers to initiate code remediation for.</p>
     ///
@@ -40,6 +46,7 @@ impl StartCodeRemediationInput {
 pub struct StartCodeRemediationInputBuilder {
     pub(crate) agent_space_id: ::std::option::Option<::std::string::String>,
     pub(crate) pentest_job_id: ::std::option::Option<::std::string::String>,
+    pub(crate) code_review_job_id: ::std::option::Option<::std::string::String>,
     pub(crate) finding_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl StartCodeRemediationInputBuilder {
@@ -58,20 +65,33 @@ impl StartCodeRemediationInputBuilder {
     pub fn get_agent_space_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.agent_space_id
     }
-    /// <p>The unique identifier of the pentest job that produced the findings.</p>
-    /// This field is required.
+    /// <p>The unique identifier of the pentest job that produced the findings. Mutually exclusive with <code>codeReviewJobId</code>.</p>
     pub fn pentest_job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pentest_job_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique identifier of the pentest job that produced the findings.</p>
+    /// <p>The unique identifier of the pentest job that produced the findings. Mutually exclusive with <code>codeReviewJobId</code>.</p>
     pub fn set_pentest_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pentest_job_id = input;
         self
     }
-    /// <p>The unique identifier of the pentest job that produced the findings.</p>
+    /// <p>The unique identifier of the pentest job that produced the findings. Mutually exclusive with <code>codeReviewJobId</code>.</p>
     pub fn get_pentest_job_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.pentest_job_id
+    }
+    /// <p>The unique identifier of the code review job that produced the findings. Mutually exclusive with <code>pentestJobId</code>.</p>
+    pub fn code_review_job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.code_review_job_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The unique identifier of the code review job that produced the findings. Mutually exclusive with <code>pentestJobId</code>.</p>
+    pub fn set_code_review_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.code_review_job_id = input;
+        self
+    }
+    /// <p>The unique identifier of the code review job that produced the findings. Mutually exclusive with <code>pentestJobId</code>.</p>
+    pub fn get_code_review_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.code_review_job_id
     }
     /// Appends an item to `finding_ids`.
     ///
@@ -101,6 +121,7 @@ impl StartCodeRemediationInputBuilder {
         ::std::result::Result::Ok(crate::operation::start_code_remediation::StartCodeRemediationInput {
             agent_space_id: self.agent_space_id,
             pentest_job_id: self.pentest_job_id,
+            code_review_job_id: self.code_review_job_id,
             finding_ids: self.finding_ids,
         })
     }

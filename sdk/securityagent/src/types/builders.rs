@@ -23,11 +23,19 @@ pub use crate::types::_http_verification::HttpVerificationBuilder;
 
 pub use crate::types::_validation_exception_field::ValidationExceptionFieldBuilder;
 
+pub use crate::types::_delete_code_review_failure::DeleteCodeReviewFailureBuilder;
+
 pub use crate::types::_pentest::PentestBuilder;
 
 pub use crate::types::_delete_pentest_failure::DeletePentestFailureBuilder;
 
 pub use crate::types::_artifact_metadata_item::ArtifactMetadataItemBuilder;
+
+pub use crate::types::_code_review_job::CodeReviewJobBuilder;
+
+pub use crate::types::_code_review_job_task::CodeReviewJobTaskBuilder;
+
+pub use crate::types::_code_review::CodeReviewBuilder;
 
 pub use crate::types::_finding::FindingBuilder;
 
@@ -38,6 +46,12 @@ pub use crate::types::_task::TaskBuilder;
 pub use crate::types::_user_config::UserConfigBuilder;
 
 pub use crate::types::_artifact_summary::ArtifactSummaryBuilder;
+
+pub use crate::types::_code_review_job_summary::CodeReviewJobSummaryBuilder;
+
+pub use crate::types::_code_review_job_task_summary::CodeReviewJobTaskSummaryBuilder;
+
+pub use crate::types::_code_review_summary::CodeReviewSummaryBuilder;
 
 pub use crate::types::_discovered_endpoint::DiscoveredEndpointBuilder;
 
@@ -69,13 +83,13 @@ pub use crate::types::_target_domain_summary::TargetDomainSummaryBuilder;
 
 pub use crate::types::_target_domain::TargetDomainBuilder;
 
-pub use crate::types::_code_remediation_task::CodeRemediationTaskBuilder;
-
 pub use crate::types::_error_information::ErrorInformationBuilder;
 
-pub use crate::types::_endpoint::EndpointBuilder;
-
 pub use crate::types::_log_location::LogLocationBuilder;
+
+pub use crate::types::_code_remediation_task::CodeRemediationTaskBuilder;
+
+pub use crate::types::_endpoint::EndpointBuilder;
 
 pub use crate::types::_actor::ActorBuilder;
 
@@ -94,6 +108,8 @@ pub use crate::types::_step::StepBuilder;
 pub use crate::types::_execution_context::ExecutionContextBuilder;
 
 pub use crate::types::_category::CategoryBuilder;
+
+pub use crate::types::_code_location::CodeLocationBuilder;
 
 pub use crate::types::_authentication::AuthenticationBuilder;
 

@@ -9,6 +9,8 @@ pub struct ListRegistriesInput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Filter registries by their current status. Possible values include <code>CREATING</code>, <code>READY</code>, <code>UPDATING</code>, <code>CREATE_FAILED</code>, <code>UPDATE_FAILED</code>, <code>DELETING</code>, and <code>DELETE_FAILED</code>.</p>
     pub status: ::std::option::Option<crate::types::RegistryStatus>,
+    /// <p>Filter registries by their authorizer type. Possible values are <code>CUSTOM_JWT</code> and <code>AWS_IAM</code>. For more information about authorizer types, see the <code>RegistryAuthorizerType</code> enum.</p>
+    pub authorizer_type: ::std::option::Option<crate::types::RegistryAuthorizerType>,
 }
 impl ListRegistriesInput {
     /// <p>The maximum number of results to return in the response. If the total number of results is greater than this value, use the token returned in the response in the <code>nextToken</code> field when making another request to return the next batch of results.</p>
@@ -22,6 +24,10 @@ impl ListRegistriesInput {
     /// <p>Filter registries by their current status. Possible values include <code>CREATING</code>, <code>READY</code>, <code>UPDATING</code>, <code>CREATE_FAILED</code>, <code>UPDATE_FAILED</code>, <code>DELETING</code>, and <code>DELETE_FAILED</code>.</p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::RegistryStatus> {
         self.status.as_ref()
+    }
+    /// <p>Filter registries by their authorizer type. Possible values are <code>CUSTOM_JWT</code> and <code>AWS_IAM</code>. For more information about authorizer types, see the <code>RegistryAuthorizerType</code> enum.</p>
+    pub fn authorizer_type(&self) -> ::std::option::Option<&crate::types::RegistryAuthorizerType> {
+        self.authorizer_type.as_ref()
     }
 }
 impl ListRegistriesInput {
@@ -38,6 +44,7 @@ pub struct ListRegistriesInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::RegistryStatus>,
+    pub(crate) authorizer_type: ::std::option::Option<crate::types::RegistryAuthorizerType>,
 }
 impl ListRegistriesInputBuilder {
     /// <p>The maximum number of results to return in the response. If the total number of results is greater than this value, use the token returned in the response in the <code>nextToken</code> field when making another request to return the next batch of results.</p>
@@ -82,6 +89,20 @@ impl ListRegistriesInputBuilder {
     pub fn get_status(&self) -> &::std::option::Option<crate::types::RegistryStatus> {
         &self.status
     }
+    /// <p>Filter registries by their authorizer type. Possible values are <code>CUSTOM_JWT</code> and <code>AWS_IAM</code>. For more information about authorizer types, see the <code>RegistryAuthorizerType</code> enum.</p>
+    pub fn authorizer_type(mut self, input: crate::types::RegistryAuthorizerType) -> Self {
+        self.authorizer_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Filter registries by their authorizer type. Possible values are <code>CUSTOM_JWT</code> and <code>AWS_IAM</code>. For more information about authorizer types, see the <code>RegistryAuthorizerType</code> enum.</p>
+    pub fn set_authorizer_type(mut self, input: ::std::option::Option<crate::types::RegistryAuthorizerType>) -> Self {
+        self.authorizer_type = input;
+        self
+    }
+    /// <p>Filter registries by their authorizer type. Possible values are <code>CUSTOM_JWT</code> and <code>AWS_IAM</code>. For more information about authorizer types, see the <code>RegistryAuthorizerType</code> enum.</p>
+    pub fn get_authorizer_type(&self) -> &::std::option::Option<crate::types::RegistryAuthorizerType> {
+        &self.authorizer_type
+    }
     /// Consumes the builder and constructs a [`ListRegistriesInput`](crate::operation::list_registries::ListRegistriesInput).
     pub fn build(
         self,
@@ -90,6 +111,7 @@ impl ListRegistriesInputBuilder {
             max_results: self.max_results,
             next_token: self.next_token,
             status: self.status,
+            authorizer_type: self.authorizer_type,
         })
     }
 }

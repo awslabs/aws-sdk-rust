@@ -22,6 +22,8 @@ pub struct ClusterEventDetail {
     pub event_details: ::std::option::Option<crate::types::EventDetails>,
     /// <p>A human-readable description of the event.</p>
     pub description: ::std::option::Option<::std::string::String>,
+    /// <p>The severity level of the event. Valid values are <code>Info</code>, <code>Warn</code>, and <code>Error</code>.</p>
+    pub event_level: ::std::option::Option<crate::types::ClusterEventLevel>,
 }
 impl ClusterEventDetail {
     /// <p>The unique identifier (UUID) of the event.</p>
@@ -60,6 +62,10 @@ impl ClusterEventDetail {
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
+    /// <p>The severity level of the event. Valid values are <code>Info</code>, <code>Warn</code>, and <code>Error</code>.</p>
+    pub fn event_level(&self) -> ::std::option::Option<&crate::types::ClusterEventLevel> {
+        self.event_level.as_ref()
+    }
 }
 impl ClusterEventDetail {
     /// Creates a new builder-style object to manufacture [`ClusterEventDetail`](crate::types::ClusterEventDetail).
@@ -81,6 +87,7 @@ pub struct ClusterEventDetailBuilder {
     pub(crate) event_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) event_details: ::std::option::Option<crate::types::EventDetails>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) event_level: ::std::option::Option<crate::types::ClusterEventLevel>,
 }
 impl ClusterEventDetailBuilder {
     /// <p>The unique identifier (UUID) of the event.</p>
@@ -214,6 +221,20 @@ impl ClusterEventDetailBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
+    /// <p>The severity level of the event. Valid values are <code>Info</code>, <code>Warn</code>, and <code>Error</code>.</p>
+    pub fn event_level(mut self, input: crate::types::ClusterEventLevel) -> Self {
+        self.event_level = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The severity level of the event. Valid values are <code>Info</code>, <code>Warn</code>, and <code>Error</code>.</p>
+    pub fn set_event_level(mut self, input: ::std::option::Option<crate::types::ClusterEventLevel>) -> Self {
+        self.event_level = input;
+        self
+    }
+    /// <p>The severity level of the event. Valid values are <code>Info</code>, <code>Warn</code>, and <code>Error</code>.</p>
+    pub fn get_event_level(&self) -> &::std::option::Option<crate::types::ClusterEventLevel> {
+        &self.event_level
+    }
     /// Consumes the builder and constructs a [`ClusterEventDetail`](crate::types::ClusterEventDetail).
     pub fn build(self) -> crate::types::ClusterEventDetail {
         crate::types::ClusterEventDetail {
@@ -226,6 +247,7 @@ impl ClusterEventDetailBuilder {
             event_time: self.event_time,
             event_details: self.event_details,
             description: self.description,
+            event_level: self.event_level,
         }
     }
 }

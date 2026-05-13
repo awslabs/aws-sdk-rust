@@ -17,6 +17,7 @@
 ///     BusinessValidationCode::IncompatibleIdentityVerificationStatus => { /* ... */ },
 ///     BusinessValidationCode::IncompatibleKnowYourBusinessStatus => { /* ... */ },
 ///     BusinessValidationCode::IncompatibleLegalName => { /* ... */ },
+///     BusinessValidationCode::IneligibleAccountTier => { /* ... */ },
 ///     BusinessValidationCode::InvalidAccountLinkingStatus => { /* ... */ },
 ///     BusinessValidationCode::InvalidAccountState => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -58,6 +59,8 @@ pub enum BusinessValidationCode {
     #[allow(missing_docs)] // documentation missing in model
     IncompatibleLegalName,
     #[allow(missing_docs)] // documentation missing in model
+    IneligibleAccountTier,
+    #[allow(missing_docs)] // documentation missing in model
     InvalidAccountLinkingStatus,
     #[allow(missing_docs)] // documentation missing in model
     InvalidAccountState,
@@ -73,6 +76,7 @@ impl ::std::convert::From<&str> for BusinessValidationCode {
             "INCOMPATIBLE_IDENTITY_VERIFICATION_STATUS" => BusinessValidationCode::IncompatibleIdentityVerificationStatus,
             "INCOMPATIBLE_KNOW_YOUR_BUSINESS_STATUS" => BusinessValidationCode::IncompatibleKnowYourBusinessStatus,
             "INCOMPATIBLE_LEGAL_NAME" => BusinessValidationCode::IncompatibleLegalName,
+            "INELIGIBLE_ACCOUNT_TIER" => BusinessValidationCode::IneligibleAccountTier,
             "INVALID_ACCOUNT_LINKING_STATUS" => BusinessValidationCode::InvalidAccountLinkingStatus,
             "INVALID_ACCOUNT_STATE" => BusinessValidationCode::InvalidAccountState,
             other => BusinessValidationCode::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -95,6 +99,7 @@ impl BusinessValidationCode {
             BusinessValidationCode::IncompatibleIdentityVerificationStatus => "INCOMPATIBLE_IDENTITY_VERIFICATION_STATUS",
             BusinessValidationCode::IncompatibleKnowYourBusinessStatus => "INCOMPATIBLE_KNOW_YOUR_BUSINESS_STATUS",
             BusinessValidationCode::IncompatibleLegalName => "INCOMPATIBLE_LEGAL_NAME",
+            BusinessValidationCode::IneligibleAccountTier => "INELIGIBLE_ACCOUNT_TIER",
             BusinessValidationCode::InvalidAccountLinkingStatus => "INVALID_ACCOUNT_LINKING_STATUS",
             BusinessValidationCode::InvalidAccountState => "INVALID_ACCOUNT_STATE",
             BusinessValidationCode::Unknown(value) => value.as_str(),
@@ -108,6 +113,7 @@ impl BusinessValidationCode {
             "INCOMPATIBLE_IDENTITY_VERIFICATION_STATUS",
             "INCOMPATIBLE_KNOW_YOUR_BUSINESS_STATUS",
             "INCOMPATIBLE_LEGAL_NAME",
+            "INELIGIBLE_ACCOUNT_TIER",
             "INVALID_ACCOUNT_LINKING_STATUS",
             "INVALID_ACCOUNT_STATE",
         ]
@@ -138,6 +144,7 @@ impl ::std::fmt::Display for BusinessValidationCode {
             BusinessValidationCode::IncompatibleIdentityVerificationStatus => write!(f, "INCOMPATIBLE_IDENTITY_VERIFICATION_STATUS"),
             BusinessValidationCode::IncompatibleKnowYourBusinessStatus => write!(f, "INCOMPATIBLE_KNOW_YOUR_BUSINESS_STATUS"),
             BusinessValidationCode::IncompatibleLegalName => write!(f, "INCOMPATIBLE_LEGAL_NAME"),
+            BusinessValidationCode::IneligibleAccountTier => write!(f, "INELIGIBLE_ACCOUNT_TIER"),
             BusinessValidationCode::InvalidAccountLinkingStatus => write!(f, "INVALID_ACCOUNT_LINKING_STATUS"),
             BusinessValidationCode::InvalidAccountState => write!(f, "INVALID_ACCOUNT_STATE"),
             BusinessValidationCode::Unknown(value) => write!(f, "{value}"),

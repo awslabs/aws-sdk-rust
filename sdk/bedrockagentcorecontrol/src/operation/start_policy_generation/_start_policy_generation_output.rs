@@ -19,10 +19,10 @@ pub struct StartPolicyGenerationOutput {
     pub updated_at: ::aws_smithy_types::DateTime,
     /// <p>The initial status of the policy generation request.</p>
     pub status: crate::types::PolicyGenerationStatus,
-    /// <p>Additional information about the generation status.</p>
-    pub status_reasons: ::std::vec::Vec<::std::string::String>,
     /// <p>Initial findings from the policy generation process.</p>
     pub findings: ::std::option::Option<::std::string::String>,
+    /// <p>Additional information about the generation status.</p>
+    pub status_reasons: ::std::vec::Vec<::std::string::String>,
     _request_id: Option<String>,
 }
 impl StartPolicyGenerationOutput {
@@ -62,14 +62,14 @@ impl StartPolicyGenerationOutput {
     pub fn status(&self) -> &crate::types::PolicyGenerationStatus {
         &self.status
     }
+    /// <p>Initial findings from the policy generation process.</p>
+    pub fn findings(&self) -> ::std::option::Option<&str> {
+        self.findings.as_deref()
+    }
     /// <p>Additional information about the generation status.</p>
     pub fn status_reasons(&self) -> &[::std::string::String] {
         use std::ops::Deref;
         self.status_reasons.deref()
-    }
-    /// <p>Initial findings from the policy generation process.</p>
-    pub fn findings(&self) -> ::std::option::Option<&str> {
-        self.findings.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for StartPolicyGenerationOutput {
@@ -96,8 +96,8 @@ pub struct StartPolicyGenerationOutputBuilder {
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) status: ::std::option::Option<crate::types::PolicyGenerationStatus>,
-    pub(crate) status_reasons: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) findings: ::std::option::Option<::std::string::String>,
+    pub(crate) status_reasons: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }
 impl StartPolicyGenerationOutputBuilder {
@@ -221,6 +221,20 @@ impl StartPolicyGenerationOutputBuilder {
     pub fn get_status(&self) -> &::std::option::Option<crate::types::PolicyGenerationStatus> {
         &self.status
     }
+    /// <p>Initial findings from the policy generation process.</p>
+    pub fn findings(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.findings = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Initial findings from the policy generation process.</p>
+    pub fn set_findings(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.findings = input;
+        self
+    }
+    /// <p>Initial findings from the policy generation process.</p>
+    pub fn get_findings(&self) -> &::std::option::Option<::std::string::String> {
+        &self.findings
+    }
     /// Appends an item to `status_reasons`.
     ///
     /// To override the contents of this collection use [`set_status_reasons`](Self::set_status_reasons).
@@ -240,20 +254,6 @@ impl StartPolicyGenerationOutputBuilder {
     /// <p>Additional information about the generation status.</p>
     pub fn get_status_reasons(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.status_reasons
-    }
-    /// <p>Initial findings from the policy generation process.</p>
-    pub fn findings(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.findings = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// <p>Initial findings from the policy generation process.</p>
-    pub fn set_findings(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.findings = input;
-        self
-    }
-    /// <p>Initial findings from the policy generation process.</p>
-    pub fn get_findings(&self) -> &::std::option::Option<::std::string::String> {
-        &self.findings
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
@@ -322,13 +322,13 @@ impl StartPolicyGenerationOutputBuilder {
                     "status was not specified but it is required when building StartPolicyGenerationOutput",
                 )
             })?,
+            findings: self.findings,
             status_reasons: self.status_reasons.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status_reasons",
                     "status_reasons was not specified but it is required when building StartPolicyGenerationOutput",
                 )
             })?,
-            findings: self.findings,
             _request_id: self._request_id,
         })
     }

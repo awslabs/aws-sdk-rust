@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EpisodicReflectionConfigurationInput {
-    /// <p>The namespaces over which to create reflections. Can be less nested than episode namespaces.</p>
+    /// <p>This is a legacy parameter, use <code>namespaceTemplates</code>. The namespaces over which to create reflections. Can be less nested than episode namespaces.</p>
     #[deprecated(note = "Use namespaceTemplates instead", since = "2026-03-02")]
     pub namespaces: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The namespaceTemplates over which to create reflections. Can be less nested than episode namespaces.</p>
@@ -13,7 +13,7 @@ pub struct EpisodicReflectionConfigurationInput {
     pub memory_record_schema: ::std::option::Option<crate::types::MemoryRecordSchema>,
 }
 impl EpisodicReflectionConfigurationInput {
-    /// <p>The namespaces over which to create reflections. Can be less nested than episode namespaces.</p>
+    /// <p>This is a legacy parameter, use <code>namespaceTemplates</code>. The namespaces over which to create reflections. Can be less nested than episode namespaces.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.namespaces.is_none()`.
     #[deprecated(note = "Use namespaceTemplates instead", since = "2026-03-02")]
@@ -51,7 +51,7 @@ impl EpisodicReflectionConfigurationInputBuilder {
     ///
     /// To override the contents of this collection use [`set_namespaces`](Self::set_namespaces).
     ///
-    /// <p>The namespaces over which to create reflections. Can be less nested than episode namespaces.</p>
+    /// <p>This is a legacy parameter, use <code>namespaceTemplates</code>. The namespaces over which to create reflections. Can be less nested than episode namespaces.</p>
     #[deprecated(note = "Use namespaceTemplates instead", since = "2026-03-02")]
     pub fn namespaces(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.namespaces.unwrap_or_default();
@@ -59,13 +59,13 @@ impl EpisodicReflectionConfigurationInputBuilder {
         self.namespaces = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The namespaces over which to create reflections. Can be less nested than episode namespaces.</p>
+    /// <p>This is a legacy parameter, use <code>namespaceTemplates</code>. The namespaces over which to create reflections. Can be less nested than episode namespaces.</p>
     #[deprecated(note = "Use namespaceTemplates instead", since = "2026-03-02")]
     pub fn set_namespaces(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.namespaces = input;
         self
     }
-    /// <p>The namespaces over which to create reflections. Can be less nested than episode namespaces.</p>
+    /// <p>This is a legacy parameter, use <code>namespaceTemplates</code>. The namespaces over which to create reflections. Can be less nested than episode namespaces.</p>
     #[deprecated(note = "Use namespaceTemplates instead", since = "2026-03-02")]
     pub fn get_namespaces(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.namespaces

@@ -15,6 +15,8 @@ pub struct DescribeModelPackageGroupOutput {
     pub created_by: ::std::option::Option<crate::types::UserContext>,
     /// <p>The status of the model group.</p>
     pub model_package_group_status: ::std::option::Option<crate::types::ModelPackageGroupStatus>,
+    /// <p>The managed configuration of the model package group.</p>
+    pub managed_configuration: ::std::option::Option<crate::types::ManagedConfiguration>,
     _request_id: Option<String>,
 }
 impl DescribeModelPackageGroupOutput {
@@ -42,6 +44,10 @@ impl DescribeModelPackageGroupOutput {
     pub fn model_package_group_status(&self) -> ::std::option::Option<&crate::types::ModelPackageGroupStatus> {
         self.model_package_group_status.as_ref()
     }
+    /// <p>The managed configuration of the model package group.</p>
+    pub fn managed_configuration(&self) -> ::std::option::Option<&crate::types::ManagedConfiguration> {
+        self.managed_configuration.as_ref()
+    }
 }
 impl ::aws_types::request_id::RequestId for DescribeModelPackageGroupOutput {
     fn request_id(&self) -> Option<&str> {
@@ -65,6 +71,7 @@ pub struct DescribeModelPackageGroupOutputBuilder {
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) created_by: ::std::option::Option<crate::types::UserContext>,
     pub(crate) model_package_group_status: ::std::option::Option<crate::types::ModelPackageGroupStatus>,
+    pub(crate) managed_configuration: ::std::option::Option<crate::types::ManagedConfiguration>,
     _request_id: Option<String>,
 }
 impl DescribeModelPackageGroupOutputBuilder {
@@ -157,6 +164,20 @@ impl DescribeModelPackageGroupOutputBuilder {
     pub fn get_model_package_group_status(&self) -> &::std::option::Option<crate::types::ModelPackageGroupStatus> {
         &self.model_package_group_status
     }
+    /// <p>The managed configuration of the model package group.</p>
+    pub fn managed_configuration(mut self, input: crate::types::ManagedConfiguration) -> Self {
+        self.managed_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The managed configuration of the model package group.</p>
+    pub fn set_managed_configuration(mut self, input: ::std::option::Option<crate::types::ManagedConfiguration>) -> Self {
+        self.managed_configuration = input;
+        self
+    }
+    /// <p>The managed configuration of the model package group.</p>
+    pub fn get_managed_configuration(&self) -> &::std::option::Option<crate::types::ManagedConfiguration> {
+        &self.managed_configuration
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -175,6 +196,7 @@ impl DescribeModelPackageGroupOutputBuilder {
             creation_time: self.creation_time,
             created_by: self.created_by,
             model_package_group_status: self.model_package_group_status,
+            managed_configuration: self.managed_configuration,
             _request_id: self._request_id,
         }
     }

@@ -105,6 +105,13 @@ where
                                 )?,
                             );
                         }
+                        "AutomatedSnapshotPauseOptions" => {
+                            builder = builder.set_automated_snapshot_pause_options(
+                                crate::protocol_serde::shape_automated_snapshot_pause_options_status::de_automated_snapshot_pause_options_status(
+                                    tokens, _value,
+                                )?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

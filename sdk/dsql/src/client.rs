@@ -144,6 +144,10 @@ pub trait Waiters {
     fn wait_until_cluster_active(&self) -> crate::waiters::cluster_active::ClusterActiveFluentBuilder;
     /// Wait until a Cluster is gone
     fn wait_until_cluster_not_exists(&self) -> crate::waiters::cluster_not_exists::ClusterNotExistsFluentBuilder;
+    /// Wait until a Stream is ACTIVE
+    fn wait_until_stream_active(&self) -> crate::waiters::stream_active::StreamActiveFluentBuilder;
+    /// Wait until a Stream is gone
+    fn wait_until_stream_not_exists(&self) -> crate::waiters::stream_not_exists::StreamNotExistsFluentBuilder;
 }
 impl Waiters for Client {
     fn wait_until_cluster_active(&self) -> crate::waiters::cluster_active::ClusterActiveFluentBuilder {
@@ -151,6 +155,12 @@ impl Waiters for Client {
     }
     fn wait_until_cluster_not_exists(&self) -> crate::waiters::cluster_not_exists::ClusterNotExistsFluentBuilder {
         crate::waiters::cluster_not_exists::ClusterNotExistsFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_stream_active(&self) -> crate::waiters::stream_active::StreamActiveFluentBuilder {
+        crate::waiters::stream_active::StreamActiveFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_stream_not_exists(&self) -> crate::waiters::stream_not_exists::StreamNotExistsFluentBuilder {
+        crate::waiters::stream_not_exists::StreamNotExistsFluentBuilder::new(self.handle.clone())
     }
 }
 
@@ -171,6 +181,8 @@ impl Client {
 }
 
 mod create_cluster;
+
+mod create_stream;
 
 /// Operation customization and supporting types.
 ///
@@ -203,13 +215,19 @@ mod delete_cluster;
 
 mod delete_cluster_policy;
 
+mod delete_stream;
+
 mod get_cluster;
 
 mod get_cluster_policy;
 
+mod get_stream;
+
 mod get_vpc_endpoint_service_name;
 
 mod list_clusters;
+
+mod list_streams;
 
 mod list_tags_for_resource;
 

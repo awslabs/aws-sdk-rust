@@ -18,6 +18,9 @@ pub fn ser_resource_spec(
     if let Some(var_5) = &input.lifecycle_config_arn {
         object.key("LifecycleConfigArn").string(var_5.as_str());
     }
+    if let Some(var_6) = &input.training_plan_arn {
+        object.key("TrainingPlanArn").string(var_6.as_str());
+    }
     Ok(())
 }
 
@@ -67,6 +70,13 @@ where
                         }
                         "LifecycleConfigArn" => {
                             builder = builder.set_lifecycle_config_arn(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "TrainingPlanArn" => {
+                            builder = builder.set_training_plan_arn(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,

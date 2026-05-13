@@ -25,17 +25,25 @@ pub fn parse_http_error_metadata(
 
 pub(crate) mod shape_create_cluster;
 
+pub(crate) mod shape_create_stream;
+
 pub(crate) mod shape_delete_cluster;
 
 pub(crate) mod shape_delete_cluster_policy;
+
+pub(crate) mod shape_delete_stream;
 
 pub(crate) mod shape_get_cluster;
 
 pub(crate) mod shape_get_cluster_policy;
 
+pub(crate) mod shape_get_stream;
+
 pub(crate) mod shape_get_vpc_endpoint_service_name;
 
 pub(crate) mod shape_list_clusters;
+
+pub(crate) mod shape_list_streams;
 
 pub(crate) mod shape_list_tags_for_resource;
 
@@ -61,6 +69,8 @@ pub(crate) mod shape_conflict_exception;
 
 pub(crate) mod shape_create_cluster_input;
 
+pub(crate) mod shape_create_stream_input;
+
 pub(crate) mod shape_internal_server_exception;
 
 pub(crate) mod shape_put_cluster_policy_input;
@@ -83,12 +93,22 @@ pub(crate) mod shape_encryption_details;
 
 pub(crate) mod shape_multi_region_properties;
 
+pub(crate) mod shape_status_reason;
+
+pub(crate) mod shape_stream_list;
+
 pub(crate) mod shape_tag_map;
+
+pub(crate) mod shape_target_definition;
 
 pub(crate) mod shape_validation_exception_field_list;
 
 pub(crate) mod shape_cluster_arn_list;
 
 pub(crate) mod shape_cluster_summary;
+
+pub(crate) mod shape_kinesis_target_definition;
+
+pub(crate) mod shape_stream_summary;
 
 pub(crate) mod shape_validation_exception_field;

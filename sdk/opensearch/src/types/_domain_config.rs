@@ -48,6 +48,8 @@ pub struct DomainConfig {
     pub aiml_options: ::std::option::Option<crate::types::AimlOptionsStatus>,
     /// <p>Specifies <code>DeploymentStrategyOptions</code> for the domain.</p>
     pub deployment_strategy_options: ::std::option::Option<crate::types::DeploymentStrategyOptionsStatus>,
+    /// <p>Specifies <code>AutomatedSnapshotPauseOptions</code> for the domain.</p>
+    pub automated_snapshot_pause_options: ::std::option::Option<crate::types::AutomatedSnapshotPauseOptionsStatus>,
 }
 impl DomainConfig {
     /// <p>The OpenSearch or Elasticsearch version that the domain is running.</p>
@@ -140,6 +142,10 @@ impl DomainConfig {
     pub fn deployment_strategy_options(&self) -> ::std::option::Option<&crate::types::DeploymentStrategyOptionsStatus> {
         self.deployment_strategy_options.as_ref()
     }
+    /// <p>Specifies <code>AutomatedSnapshotPauseOptions</code> for the domain.</p>
+    pub fn automated_snapshot_pause_options(&self) -> ::std::option::Option<&crate::types::AutomatedSnapshotPauseOptionsStatus> {
+        self.automated_snapshot_pause_options.as_ref()
+    }
 }
 impl DomainConfig {
     /// Creates a new builder-style object to manufacture [`DomainConfig`](crate::types::DomainConfig).
@@ -174,6 +180,7 @@ pub struct DomainConfigBuilder {
     pub(crate) modifying_properties: ::std::option::Option<::std::vec::Vec<crate::types::ModifyingProperties>>,
     pub(crate) aiml_options: ::std::option::Option<crate::types::AimlOptionsStatus>,
     pub(crate) deployment_strategy_options: ::std::option::Option<crate::types::DeploymentStrategyOptionsStatus>,
+    pub(crate) automated_snapshot_pause_options: ::std::option::Option<crate::types::AutomatedSnapshotPauseOptionsStatus>,
 }
 impl DomainConfigBuilder {
     /// <p>The OpenSearch or Elasticsearch version that the domain is running.</p>
@@ -490,6 +497,20 @@ impl DomainConfigBuilder {
     pub fn get_deployment_strategy_options(&self) -> &::std::option::Option<crate::types::DeploymentStrategyOptionsStatus> {
         &self.deployment_strategy_options
     }
+    /// <p>Specifies <code>AutomatedSnapshotPauseOptions</code> for the domain.</p>
+    pub fn automated_snapshot_pause_options(mut self, input: crate::types::AutomatedSnapshotPauseOptionsStatus) -> Self {
+        self.automated_snapshot_pause_options = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies <code>AutomatedSnapshotPauseOptions</code> for the domain.</p>
+    pub fn set_automated_snapshot_pause_options(mut self, input: ::std::option::Option<crate::types::AutomatedSnapshotPauseOptionsStatus>) -> Self {
+        self.automated_snapshot_pause_options = input;
+        self
+    }
+    /// <p>Specifies <code>AutomatedSnapshotPauseOptions</code> for the domain.</p>
+    pub fn get_automated_snapshot_pause_options(&self) -> &::std::option::Option<crate::types::AutomatedSnapshotPauseOptionsStatus> {
+        &self.automated_snapshot_pause_options
+    }
     /// Consumes the builder and constructs a [`DomainConfig`](crate::types::DomainConfig).
     pub fn build(self) -> crate::types::DomainConfig {
         crate::types::DomainConfig {
@@ -515,6 +536,7 @@ impl DomainConfigBuilder {
             modifying_properties: self.modifying_properties,
             aiml_options: self.aiml_options,
             deployment_strategy_options: self.deployment_strategy_options,
+            automated_snapshot_pause_options: self.automated_snapshot_pause_options,
         }
     }
 }

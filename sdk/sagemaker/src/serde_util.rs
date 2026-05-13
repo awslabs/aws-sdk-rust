@@ -6967,7 +6967,7 @@ pub(crate) fn real_time_inference_config_correct_errors(
     mut builder: crate::types::builders::RealTimeInferenceConfigBuilder,
 ) -> crate::types::builders::RealTimeInferenceConfigBuilder {
     if builder.instance_type.is_none() {
-        builder.instance_type = "no value was set".parse::<crate::types::InstanceType>().ok()
+        builder.instance_type = "no value was set".parse::<crate::types::ProductionVariantInstanceType>().ok()
     }
     if builder.instance_count.is_none() {
         builder.instance_count = Some(Default::default())

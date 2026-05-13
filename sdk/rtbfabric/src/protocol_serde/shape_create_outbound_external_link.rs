@@ -34,6 +34,20 @@ pub fn de_create_outbound_external_link_http_error(
             };
             tmp
         }),
+        "ConflictException" => crate::operation::create_outbound_external_link::CreateOutboundExternalLinkError::ConflictException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ConflictExceptionBuilder::default();
+                output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::create_outbound_external_link::CreateOutboundExternalLinkError::unhandled)?;
+                let output = output.meta(generic);
+                crate::serde_util::conflict_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::create_outbound_external_link::CreateOutboundExternalLinkError::unhandled)?
+            };
+            tmp
+        }),
         "InternalServerException" => crate::operation::create_outbound_external_link::CreateOutboundExternalLinkError::InternalServerException({
             #[allow(unused_mut)]
             let mut tmp = {

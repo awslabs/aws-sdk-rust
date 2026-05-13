@@ -25,11 +25,19 @@ pub fn parse_http_error_metadata(
 
 pub(crate) mod shape_add_artifact;
 
+pub(crate) mod shape_batch_delete_code_reviews;
+
 pub(crate) mod shape_batch_delete_pentests;
 
 pub(crate) mod shape_batch_get_agent_spaces;
 
 pub(crate) mod shape_batch_get_artifact_metadata;
+
+pub(crate) mod shape_batch_get_code_review_job_tasks;
+
+pub(crate) mod shape_batch_get_code_review_jobs;
+
+pub(crate) mod shape_batch_get_code_reviews;
 
 pub(crate) mod shape_batch_get_findings;
 
@@ -44,6 +52,8 @@ pub(crate) mod shape_batch_get_target_domains;
 pub(crate) mod shape_create_agent_space;
 
 pub(crate) mod shape_create_application;
+
+pub(crate) mod shape_create_code_review;
 
 pub(crate) mod shape_create_integration;
 
@@ -79,6 +89,12 @@ pub(crate) mod shape_list_applications;
 
 pub(crate) mod shape_list_artifacts;
 
+pub(crate) mod shape_list_code_review_job_tasks;
+
+pub(crate) mod shape_list_code_review_jobs_for_code_review;
+
+pub(crate) mod shape_list_code_reviews;
+
 pub(crate) mod shape_list_discovered_endpoints;
 
 pub(crate) mod shape_list_findings;
@@ -101,7 +117,11 @@ pub(crate) mod shape_list_target_domains;
 
 pub(crate) mod shape_start_code_remediation;
 
+pub(crate) mod shape_start_code_review_job;
+
 pub(crate) mod shape_start_pentest_job;
+
+pub(crate) mod shape_stop_code_review_job;
 
 pub(crate) mod shape_stop_pentest_job;
 
@@ -112,6 +132,8 @@ pub(crate) mod shape_untag_resource;
 pub(crate) mod shape_update_agent_space;
 
 pub(crate) mod shape_update_application;
+
+pub(crate) mod shape_update_code_review;
 
 pub(crate) mod shape_update_finding;
 
@@ -135,11 +157,19 @@ pub(crate) mod shape_access_denied_exception;
 
 pub(crate) mod shape_add_artifact_input;
 
+pub(crate) mod shape_batch_delete_code_reviews_input;
+
 pub(crate) mod shape_batch_delete_pentests_input;
 
 pub(crate) mod shape_batch_get_agent_spaces_input;
 
 pub(crate) mod shape_batch_get_artifact_metadata_input;
+
+pub(crate) mod shape_batch_get_code_review_job_tasks_input;
+
+pub(crate) mod shape_batch_get_code_review_jobs_input;
+
+pub(crate) mod shape_batch_get_code_reviews_input;
 
 pub(crate) mod shape_batch_get_findings_input;
 
@@ -156,6 +186,8 @@ pub(crate) mod shape_conflict_exception;
 pub(crate) mod shape_create_agent_space_input;
 
 pub(crate) mod shape_create_application_input;
+
+pub(crate) mod shape_create_code_review_input;
 
 pub(crate) mod shape_create_integration_input;
 
@@ -193,6 +225,12 @@ pub(crate) mod shape_list_applications_input;
 
 pub(crate) mod shape_list_artifacts_input;
 
+pub(crate) mod shape_list_code_review_job_tasks_input;
+
+pub(crate) mod shape_list_code_review_jobs_for_code_review_input;
+
+pub(crate) mod shape_list_code_reviews_input;
+
 pub(crate) mod shape_list_discovered_endpoints_input;
 
 pub(crate) mod shape_list_findings_input;
@@ -215,7 +253,11 @@ pub(crate) mod shape_resource_not_found_exception;
 
 pub(crate) mod shape_start_code_remediation_input;
 
+pub(crate) mod shape_start_code_review_job_input;
+
 pub(crate) mod shape_start_pentest_job_input;
+
+pub(crate) mod shape_stop_code_review_job_input;
 
 pub(crate) mod shape_stop_pentest_job_input;
 
@@ -226,6 +268,8 @@ pub(crate) mod shape_throttling_exception;
 pub(crate) mod shape_update_agent_space_input;
 
 pub(crate) mod shape_update_application_input;
+
+pub(crate) mod shape_update_code_review_input;
 
 pub(crate) mod shape_update_finding_input;
 
@@ -259,7 +303,25 @@ pub(crate) mod shape_aws_resources;
 
 pub(crate) mod shape_cloud_watch_log;
 
+pub(crate) mod shape_code_review_id_list;
+
+pub(crate) mod shape_code_review_job_id_list;
+
+pub(crate) mod shape_code_review_job_list;
+
+pub(crate) mod shape_code_review_job_summary_list;
+
+pub(crate) mod shape_code_review_job_task_list;
+
+pub(crate) mod shape_code_review_job_task_summary_list;
+
+pub(crate) mod shape_code_review_list;
+
 pub(crate) mod shape_code_review_settings;
+
+pub(crate) mod shape_code_review_summary_list;
+
+pub(crate) mod shape_delete_code_review_failure_list;
 
 pub(crate) mod shape_delete_pentest_failure_list;
 
@@ -337,7 +399,21 @@ pub(crate) mod shape_artifact_metadata_item;
 
 pub(crate) mod shape_artifact_summary;
 
+pub(crate) mod shape_code_review;
+
+pub(crate) mod shape_code_review_job;
+
+pub(crate) mod shape_code_review_job_summary;
+
+pub(crate) mod shape_code_review_job_task;
+
+pub(crate) mod shape_code_review_job_task_summary;
+
+pub(crate) mod shape_code_review_summary;
+
 pub(crate) mod shape_custom_header;
+
+pub(crate) mod shape_delete_code_review_failure;
 
 pub(crate) mod shape_delete_pentest_failure;
 
@@ -417,6 +493,8 @@ pub(crate) mod shape_authentication;
 
 pub(crate) mod shape_category_list;
 
+pub(crate) mod shape_code_location_list;
+
 pub(crate) mod shape_code_remediation_task;
 
 pub(crate) mod shape_error_information;
@@ -436,6 +514,8 @@ pub(crate) mod shape_member_metadata;
 pub(crate) mod shape_step_list;
 
 pub(crate) mod shape_category;
+
+pub(crate) mod shape_code_location;
 
 pub(crate) mod shape_code_remediation_task_details_list;
 

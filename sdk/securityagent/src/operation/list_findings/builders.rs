@@ -142,6 +142,20 @@ impl ListFindingsFluentBuilder {
     pub fn get_pentest_job_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_pentest_job_id()
     }
+    /// <p>The unique identifier of the code review job to list findings for. Mutually exclusive with pentestJobId.</p>
+    pub fn code_review_job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.code_review_job_id(input.into());
+        self
+    }
+    /// <p>The unique identifier of the code review job to list findings for. Mutually exclusive with pentestJobId.</p>
+    pub fn set_code_review_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_code_review_job_id(input);
+        self
+    }
+    /// <p>The unique identifier of the code review job to list findings for. Mutually exclusive with pentestJobId.</p>
+    pub fn get_code_review_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_code_review_job_id()
+    }
     /// <p>The unique identifier of the agent space.</p>
     pub fn agent_space_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.agent_space_id(input.into());

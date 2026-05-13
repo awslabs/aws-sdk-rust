@@ -8,6 +8,14 @@ pub struct VpcConfig {
     pub security_groups: ::std::vec::Vec<::std::string::String>,
     /// <p>The subnets associated with the VPC configuration.</p>
     pub subnets: ::std::vec::Vec<::std::string::String>,
+    /// <note>
+    /// <p>This field applies only to Agent Runtimes. It is not applicable to Browsers or Code Interpreters.</p>
+    /// </note>
+    /// <p>Controls whether a service-managed Amazon S3 gateway endpoint is provisioned in the VPC network topology for the agent runtime. This gateway is used by Amazon Bedrock AgentCore Runtime to download code and container images during agent startup.</p>
+    /// <p>Starting May 5, 2026, Amazon Bedrock AgentCore Runtime is gradually rolling out a change to how network isolation is configured for VPC mode agents. Agent runtimes created on or after this rollout will no longer include the service-managed Amazon S3 gateway. Instead, all network access, including to Amazon S3, is governed exclusively by your VPC configuration. This field cannot be set on agent runtimes created after the rollout. Passing this field in an <code>UpdateAgentRuntime</code> request for these agent runtimes returns a <code>ValidationException</code>.</p>
+    /// <p>Agent runtimes created before the rollout are not affected and continue to operate with the service-managed Amazon S3 gateway. To enforce full VPC network isolation on these existing agent runtimes, set this field to <code>false</code> via the <code>UpdateAgentRuntime</code> API. Before opting out, ensure your VPC provides the Amazon S3 access required for agent startup. If this field is not specified or is set to <code>true</code>, the service-managed Amazon S3 gateway remains provisioned.</p>
+    /// <p>This field is only supported in the <code>UpdateAgentRuntime</code> API for pre-rollout agent runtimes. Passing this field in a <code>CreateAgentRuntime</code> request returns a <code>ValidationException</code>.</p>
+    pub require_service_s3_endpoint: ::std::option::Option<bool>,
 }
 impl VpcConfig {
     /// <p>The security groups associated with the VPC configuration.</p>
@@ -19,6 +27,16 @@ impl VpcConfig {
     pub fn subnets(&self) -> &[::std::string::String] {
         use std::ops::Deref;
         self.subnets.deref()
+    }
+    /// <note>
+    /// <p>This field applies only to Agent Runtimes. It is not applicable to Browsers or Code Interpreters.</p>
+    /// </note>
+    /// <p>Controls whether a service-managed Amazon S3 gateway endpoint is provisioned in the VPC network topology for the agent runtime. This gateway is used by Amazon Bedrock AgentCore Runtime to download code and container images during agent startup.</p>
+    /// <p>Starting May 5, 2026, Amazon Bedrock AgentCore Runtime is gradually rolling out a change to how network isolation is configured for VPC mode agents. Agent runtimes created on or after this rollout will no longer include the service-managed Amazon S3 gateway. Instead, all network access, including to Amazon S3, is governed exclusively by your VPC configuration. This field cannot be set on agent runtimes created after the rollout. Passing this field in an <code>UpdateAgentRuntime</code> request for these agent runtimes returns a <code>ValidationException</code>.</p>
+    /// <p>Agent runtimes created before the rollout are not affected and continue to operate with the service-managed Amazon S3 gateway. To enforce full VPC network isolation on these existing agent runtimes, set this field to <code>false</code> via the <code>UpdateAgentRuntime</code> API. Before opting out, ensure your VPC provides the Amazon S3 access required for agent startup. If this field is not specified or is set to <code>true</code>, the service-managed Amazon S3 gateway remains provisioned.</p>
+    /// <p>This field is only supported in the <code>UpdateAgentRuntime</code> API for pre-rollout agent runtimes. Passing this field in a <code>CreateAgentRuntime</code> request returns a <code>ValidationException</code>.</p>
+    pub fn require_service_s3_endpoint(&self) -> ::std::option::Option<bool> {
+        self.require_service_s3_endpoint
     }
 }
 impl VpcConfig {
@@ -34,6 +52,7 @@ impl VpcConfig {
 pub struct VpcConfigBuilder {
     pub(crate) security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) subnets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) require_service_s3_endpoint: ::std::option::Option<bool>,
 }
 impl VpcConfigBuilder {
     /// Appends an item to `security_groups`.
@@ -76,6 +95,38 @@ impl VpcConfigBuilder {
     pub fn get_subnets(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.subnets
     }
+    /// <note>
+    /// <p>This field applies only to Agent Runtimes. It is not applicable to Browsers or Code Interpreters.</p>
+    /// </note>
+    /// <p>Controls whether a service-managed Amazon S3 gateway endpoint is provisioned in the VPC network topology for the agent runtime. This gateway is used by Amazon Bedrock AgentCore Runtime to download code and container images during agent startup.</p>
+    /// <p>Starting May 5, 2026, Amazon Bedrock AgentCore Runtime is gradually rolling out a change to how network isolation is configured for VPC mode agents. Agent runtimes created on or after this rollout will no longer include the service-managed Amazon S3 gateway. Instead, all network access, including to Amazon S3, is governed exclusively by your VPC configuration. This field cannot be set on agent runtimes created after the rollout. Passing this field in an <code>UpdateAgentRuntime</code> request for these agent runtimes returns a <code>ValidationException</code>.</p>
+    /// <p>Agent runtimes created before the rollout are not affected and continue to operate with the service-managed Amazon S3 gateway. To enforce full VPC network isolation on these existing agent runtimes, set this field to <code>false</code> via the <code>UpdateAgentRuntime</code> API. Before opting out, ensure your VPC provides the Amazon S3 access required for agent startup. If this field is not specified or is set to <code>true</code>, the service-managed Amazon S3 gateway remains provisioned.</p>
+    /// <p>This field is only supported in the <code>UpdateAgentRuntime</code> API for pre-rollout agent runtimes. Passing this field in a <code>CreateAgentRuntime</code> request returns a <code>ValidationException</code>.</p>
+    pub fn require_service_s3_endpoint(mut self, input: bool) -> Self {
+        self.require_service_s3_endpoint = ::std::option::Option::Some(input);
+        self
+    }
+    /// <note>
+    /// <p>This field applies only to Agent Runtimes. It is not applicable to Browsers or Code Interpreters.</p>
+    /// </note>
+    /// <p>Controls whether a service-managed Amazon S3 gateway endpoint is provisioned in the VPC network topology for the agent runtime. This gateway is used by Amazon Bedrock AgentCore Runtime to download code and container images during agent startup.</p>
+    /// <p>Starting May 5, 2026, Amazon Bedrock AgentCore Runtime is gradually rolling out a change to how network isolation is configured for VPC mode agents. Agent runtimes created on or after this rollout will no longer include the service-managed Amazon S3 gateway. Instead, all network access, including to Amazon S3, is governed exclusively by your VPC configuration. This field cannot be set on agent runtimes created after the rollout. Passing this field in an <code>UpdateAgentRuntime</code> request for these agent runtimes returns a <code>ValidationException</code>.</p>
+    /// <p>Agent runtimes created before the rollout are not affected and continue to operate with the service-managed Amazon S3 gateway. To enforce full VPC network isolation on these existing agent runtimes, set this field to <code>false</code> via the <code>UpdateAgentRuntime</code> API. Before opting out, ensure your VPC provides the Amazon S3 access required for agent startup. If this field is not specified or is set to <code>true</code>, the service-managed Amazon S3 gateway remains provisioned.</p>
+    /// <p>This field is only supported in the <code>UpdateAgentRuntime</code> API for pre-rollout agent runtimes. Passing this field in a <code>CreateAgentRuntime</code> request returns a <code>ValidationException</code>.</p>
+    pub fn set_require_service_s3_endpoint(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.require_service_s3_endpoint = input;
+        self
+    }
+    /// <note>
+    /// <p>This field applies only to Agent Runtimes. It is not applicable to Browsers or Code Interpreters.</p>
+    /// </note>
+    /// <p>Controls whether a service-managed Amazon S3 gateway endpoint is provisioned in the VPC network topology for the agent runtime. This gateway is used by Amazon Bedrock AgentCore Runtime to download code and container images during agent startup.</p>
+    /// <p>Starting May 5, 2026, Amazon Bedrock AgentCore Runtime is gradually rolling out a change to how network isolation is configured for VPC mode agents. Agent runtimes created on or after this rollout will no longer include the service-managed Amazon S3 gateway. Instead, all network access, including to Amazon S3, is governed exclusively by your VPC configuration. This field cannot be set on agent runtimes created after the rollout. Passing this field in an <code>UpdateAgentRuntime</code> request for these agent runtimes returns a <code>ValidationException</code>.</p>
+    /// <p>Agent runtimes created before the rollout are not affected and continue to operate with the service-managed Amazon S3 gateway. To enforce full VPC network isolation on these existing agent runtimes, set this field to <code>false</code> via the <code>UpdateAgentRuntime</code> API. Before opting out, ensure your VPC provides the Amazon S3 access required for agent startup. If this field is not specified or is set to <code>true</code>, the service-managed Amazon S3 gateway remains provisioned.</p>
+    /// <p>This field is only supported in the <code>UpdateAgentRuntime</code> API for pre-rollout agent runtimes. Passing this field in a <code>CreateAgentRuntime</code> request returns a <code>ValidationException</code>.</p>
+    pub fn get_require_service_s3_endpoint(&self) -> &::std::option::Option<bool> {
+        &self.require_service_s3_endpoint
+    }
     /// Consumes the builder and constructs a [`VpcConfig`](crate::types::VpcConfig).
     /// This method will fail if any of the following fields are not set:
     /// - [`security_groups`](crate::types::builders::VpcConfigBuilder::security_groups)
@@ -94,6 +145,7 @@ impl VpcConfigBuilder {
                     "subnets was not specified but it is required when building VpcConfig",
                 )
             })?,
+            require_service_s3_endpoint: self.require_service_s3_endpoint,
         })
     }
 }

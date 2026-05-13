@@ -373,15 +373,21 @@ pub use crate::types::_payment_manager_summary::PaymentManagerSummary;
 
 pub use crate::types::_policy_engine::PolicyEngine;
 
+pub use crate::types::_policy_engine_summary::PolicyEngineSummary;
+
 pub use crate::types::_policy_generation::PolicyGeneration;
 
 pub use crate::types::_policy_generation_asset::PolicyGenerationAsset;
+
+pub use crate::types::_policy_generation_summary::PolicyGenerationSummary;
 
 pub use crate::types::_policy::Policy;
 
 pub use crate::types::_cedar_policy::CedarPolicy;
 
 pub use crate::types::_policy_generation_details::PolicyGenerationDetails;
+
+pub use crate::types::_policy_summary::PolicySummary;
 
 pub use crate::types::_registry_record_summary::RegistryRecordSummary;
 
@@ -1297,6 +1303,8 @@ mod _policy_engine;
 
 mod _policy_engine_status;
 
+mod _policy_engine_summary;
+
 mod _policy_generation;
 
 mod _policy_generation_asset;
@@ -1305,7 +1313,11 @@ mod _policy_generation_details;
 
 mod _policy_generation_status;
 
+mod _policy_generation_summary;
+
 mod _policy_status;
+
+mod _policy_summary;
 
 mod _policy_validation_mode;
 

@@ -15,6 +15,9 @@ pub fn ser_local_time_zone_config(
         }
         array_3.finish();
     }
+    if let Some(var_5) = &input.local_time_zone_detection_scope {
+        object.key("localTimeZoneDetectionScope").string(var_5.as_str());
+    }
     Ok(())
 }
 
@@ -44,6 +47,13 @@ where
                         "localTimeZoneDetection" => {
                             builder = builder.set_local_time_zone_detection(
                                 crate::protocol_serde::shape_local_time_zone_detection::de_local_time_zone_detection(tokens, _value)?,
+                            );
+                        }
+                        "localTimeZoneDetectionScope" => {
+                            builder = builder.set_local_time_zone_detection_scope(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::LocalTimeZoneDetectionScope::from(u.as_ref())))
+                                    .transpose()?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

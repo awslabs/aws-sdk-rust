@@ -3,17 +3,33 @@ pub use crate::types::_cluster_status::ClusterStatus;
 
 pub use crate::types::_encryption_details::EncryptionDetails;
 
+pub use crate::types::_stream_status::StreamStatus;
+
+pub use crate::types::_target_definition::TargetDefinition;
+
+pub use crate::types::_stream_ordering::StreamOrdering;
+
+pub use crate::types::_stream_format::StreamFormat;
+
 pub use crate::types::_validation_exception_reason::ValidationExceptionReason;
 
 pub use crate::types::_encryption_type::EncryptionType;
 
 pub use crate::types::_encryption_status::EncryptionStatus;
 
+pub use crate::types::_kinesis_target_definition::KinesisTargetDefinition;
+
 pub use crate::types::_multi_region_properties::MultiRegionProperties;
+
+pub use crate::types::_status_reason::StatusReason;
 
 pub use crate::types::_validation_exception_field::ValidationExceptionField;
 
 pub use crate::types::_cluster_summary::ClusterSummary;
+
+pub use crate::types::_stream_summary::StreamSummary;
+
+pub use crate::types::_stream_failure_error_code::StreamFailureErrorCode;
 
 mod _cluster_status;
 
@@ -25,7 +41,23 @@ mod _encryption_status;
 
 mod _encryption_type;
 
+mod _kinesis_target_definition;
+
 mod _multi_region_properties;
+
+mod _status_reason;
+
+mod _stream_failure_error_code;
+
+mod _stream_format;
+
+mod _stream_ordering;
+
+mod _stream_status;
+
+mod _stream_summary;
+
+mod _target_definition;
 
 mod _validation_exception_field;
 

@@ -20,6 +20,8 @@ pub enum ExecutionBlockConfiguration {
     ExecutionApprovalConfig(crate::types::ExecutionApprovalConfiguration),
     /// <p>An Aurora Global Database execution block.</p>
     GlobalAuroraConfig(crate::types::GlobalAuroraConfiguration),
+    /// <p>A Lambda event source mapping execution block.</p>
+    LambdaEventSourceMappingConfig(crate::types::LambdaEventSourceMappingConfiguration),
     /// <p>A parallel configuration execution block.</p>
     ParallelConfig(crate::types::ParallelExecutionBlockConfiguration),
     /// <p>An Amazon RDS create cross-Region replica execution block.</p>
@@ -144,6 +146,19 @@ impl ExecutionBlockConfiguration {
     /// Returns true if this is a [`GlobalAuroraConfig`](crate::types::ExecutionBlockConfiguration::GlobalAuroraConfig).
     pub fn is_global_aurora_config(&self) -> bool {
         self.as_global_aurora_config().is_ok()
+    }
+    /// Tries to convert the enum instance into [`LambdaEventSourceMappingConfig`](crate::types::ExecutionBlockConfiguration::LambdaEventSourceMappingConfig), extracting the inner [`LambdaEventSourceMappingConfiguration`](crate::types::LambdaEventSourceMappingConfiguration).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_lambda_event_source_mapping_config(&self) -> ::std::result::Result<&crate::types::LambdaEventSourceMappingConfiguration, &Self> {
+        if let ExecutionBlockConfiguration::LambdaEventSourceMappingConfig(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`LambdaEventSourceMappingConfig`](crate::types::ExecutionBlockConfiguration::LambdaEventSourceMappingConfig).
+    pub fn is_lambda_event_source_mapping_config(&self) -> bool {
+        self.as_lambda_event_source_mapping_config().is_ok()
     }
     /// Tries to convert the enum instance into [`ParallelConfig`](crate::types::ExecutionBlockConfiguration::ParallelConfig), extracting the inner [`ParallelExecutionBlockConfiguration`](crate::types::ParallelExecutionBlockConfiguration).
     /// Returns `Err(&Self)` if it can't be converted.

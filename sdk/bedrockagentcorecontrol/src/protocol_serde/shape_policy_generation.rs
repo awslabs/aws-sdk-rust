@@ -65,17 +65,17 @@ where
                                     .transpose()?,
                             );
                         }
-                        "statusReasons" => {
-                            builder = builder.set_status_reasons(crate::protocol_serde::shape_policy_status_reasons::de_policy_status_reasons(
-                                tokens, _value,
-                            )?);
-                        }
                         "findings" => {
                             builder = builder.set_findings(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
                             );
+                        }
+                        "statusReasons" => {
+                            builder = builder.set_status_reasons(crate::protocol_serde::shape_policy_status_reasons::de_policy_status_reasons(
+                                tokens, _value,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

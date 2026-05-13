@@ -36,15 +36,15 @@
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 ///
-/// Supported vendor types for payment providers using non-standard auth protocols
+/// <p>Supported vendor types for payment providers using non-standard auth protocols.</p>
 #[non_exhaustive]
 #[derive(
     ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum PaymentCredentialProviderVendorType {
-    /// Coinbase Developer Platform - https://docs.cdp.coinbase.com/
+    /// <p>Coinbase Developer Platform.</p>
     CoinbaseCdp,
-    /// Stripe + Privy - https://docs.privy.io/
+    /// <p>Stripe and Privy.</p>
     StripePrivy,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]

@@ -113,6 +113,8 @@ pub use crate::types::_whats_app_outbound_mode::WhatsAppOutboundMode;
 
 pub use crate::types::_whats_app_outbound_config::WhatsAppOutboundConfig;
 
+pub use crate::types::_local_time_zone_detection_scope::LocalTimeZoneDetectionScope;
+
 pub use crate::types::_open_hours::OpenHours;
 
 pub use crate::types::_restricted_periods::RestrictedPeriods;
@@ -272,6 +274,8 @@ mod _lambda_integration_identifier;
 mod _lambda_integration_summary;
 
 mod _local_time_zone_config;
+
+mod _local_time_zone_detection_scope;
 
 mod _local_time_zone_detection_type;
 

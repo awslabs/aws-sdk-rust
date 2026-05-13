@@ -138,11 +138,19 @@ impl Client {
 
 mod add_artifact;
 
+mod batch_delete_code_reviews;
+
 mod batch_delete_pentests;
 
 mod batch_get_agent_spaces;
 
 mod batch_get_artifact_metadata;
+
+mod batch_get_code_review_job_tasks;
+
+mod batch_get_code_review_jobs;
+
+mod batch_get_code_reviews;
 
 mod batch_get_findings;
 
@@ -157,6 +165,8 @@ mod batch_get_target_domains;
 mod create_agent_space;
 
 mod create_application;
+
+mod create_code_review;
 
 mod create_integration;
 
@@ -219,6 +229,12 @@ mod list_applications;
 
 mod list_artifacts;
 
+mod list_code_review_job_tasks;
+
+mod list_code_review_jobs_for_code_review;
+
+mod list_code_reviews;
+
 mod list_discovered_endpoints;
 
 mod list_findings;
@@ -241,7 +257,11 @@ mod list_target_domains;
 
 mod start_code_remediation;
 
+mod start_code_review_job;
+
 mod start_pentest_job;
+
+mod stop_code_review_job;
 
 mod stop_pentest_job;
 
@@ -252,6 +272,8 @@ mod untag_resource;
 mod update_agent_space;
 
 mod update_application;
+
+mod update_code_review;
 
 mod update_finding;
 

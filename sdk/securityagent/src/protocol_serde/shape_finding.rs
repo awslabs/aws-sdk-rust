@@ -43,6 +43,20 @@ where
                                     .transpose()?,
                             );
                         }
+                        "codeReviewId" => {
+                            builder = builder.set_code_review_id(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "codeReviewJobId" => {
+                            builder = builder.set_code_review_job_id(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         "taskId" => {
                             builder = builder.set_task_id(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
@@ -124,6 +138,10 @@ where
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
                             );
+                        }
+                        "codeLocations" => {
+                            builder =
+                                builder.set_code_locations(crate::protocol_serde::shape_code_location_list::de_code_location_list(tokens, _value)?);
                         }
                         "createdAt" => {
                             builder = builder.set_created_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(

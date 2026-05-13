@@ -353,7 +353,13 @@ mod get_policy;
 
 mod get_policy_engine;
 
+mod get_policy_engine_summary;
+
 mod get_policy_generation;
+
+mod get_policy_generation_summary;
+
+mod get_policy_summary;
 
 mod get_registry;
 
@@ -407,11 +413,17 @@ mod list_payment_managers;
 
 mod list_policies;
 
+mod list_policy_engine_summaries;
+
 mod list_policy_engines;
 
 mod list_policy_generation_assets;
 
+mod list_policy_generation_summaries;
+
 mod list_policy_generations;
+
+mod list_policy_summaries;
 
 mod list_registries;
 

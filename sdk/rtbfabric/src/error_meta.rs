@@ -95,6 +95,40 @@ impl From<crate::operation::accept_link::AcceptLinkError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::associate_certificate::AssociateCertificateError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::associate_certificate::AssociateCertificateError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::associate_certificate::AssociateCertificateError> for Error {
+    fn from(err: crate::operation::associate_certificate::AssociateCertificateError) -> Self {
+        match err {
+            crate::operation::associate_certificate::AssociateCertificateError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::associate_certificate::AssociateCertificateError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::associate_certificate::AssociateCertificateError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::associate_certificate::AssociateCertificateError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::associate_certificate::AssociateCertificateError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::associate_certificate::AssociateCertificateError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::associate_certificate::AssociateCertificateError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::associate_certificate::AssociateCertificateError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_inbound_external_link::CreateInboundExternalLinkError, R>>
     for Error
 where
@@ -168,6 +202,44 @@ impl From<crate::operation::create_link::CreateLinkError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_link_routing_rule::CreateLinkRoutingRuleError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_link_routing_rule::CreateLinkRoutingRuleError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_link_routing_rule::CreateLinkRoutingRuleError> for Error {
+    fn from(err: crate::operation::create_link_routing_rule::CreateLinkRoutingRuleError) -> Self {
+        match err {
+            crate::operation::create_link_routing_rule::CreateLinkRoutingRuleError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::create_link_routing_rule::CreateLinkRoutingRuleError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_link_routing_rule::CreateLinkRoutingRuleError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::create_link_routing_rule::CreateLinkRoutingRuleError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::create_link_routing_rule::CreateLinkRoutingRuleError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::create_link_routing_rule::CreateLinkRoutingRuleError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_link_routing_rule::CreateLinkRoutingRuleError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::create_link_routing_rule::CreateLinkRoutingRuleError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_outbound_external_link::CreateOutboundExternalLinkError, R>>
     for Error
 where
@@ -190,6 +262,9 @@ impl From<crate::operation::create_outbound_external_link::CreateOutboundExterna
         match err {
             crate::operation::create_outbound_external_link::CreateOutboundExternalLinkError::AccessDeniedException(inner) => {
                 Error::AccessDeniedException(inner)
+            }
+            crate::operation::create_outbound_external_link::CreateOutboundExternalLinkError::ConflictException(inner) => {
+                Error::ConflictException(inner)
             }
             crate::operation::create_outbound_external_link::CreateOutboundExternalLinkError::InternalServerException(inner) => {
                 Error::InternalServerException(inner)
@@ -353,6 +428,41 @@ impl From<crate::operation::delete_link::DeleteLinkError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_link_routing_rule::DeleteLinkRoutingRuleError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_link_routing_rule::DeleteLinkRoutingRuleError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_link_routing_rule::DeleteLinkRoutingRuleError> for Error {
+    fn from(err: crate::operation::delete_link_routing_rule::DeleteLinkRoutingRuleError) -> Self {
+        match err {
+            crate::operation::delete_link_routing_rule::DeleteLinkRoutingRuleError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::delete_link_routing_rule::DeleteLinkRoutingRuleError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::delete_link_routing_rule::DeleteLinkRoutingRuleError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::delete_link_routing_rule::DeleteLinkRoutingRuleError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_link_routing_rule::DeleteLinkRoutingRuleError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_link_routing_rule::DeleteLinkRoutingRuleError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_link_routing_rule::DeleteLinkRoutingRuleError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_outbound_external_link::DeleteOutboundExternalLinkError, R>>
     for Error
 where
@@ -417,6 +527,7 @@ impl From<crate::operation::delete_requester_gateway::DeleteRequesterGatewayErro
             crate::operation::delete_requester_gateway::DeleteRequesterGatewayError::AccessDeniedException(inner) => {
                 Error::AccessDeniedException(inner)
             }
+            crate::operation::delete_requester_gateway::DeleteRequesterGatewayError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::delete_requester_gateway::DeleteRequesterGatewayError::InternalServerException(inner) => {
                 Error::InternalServerException(inner)
             }
@@ -451,6 +562,7 @@ impl From<crate::operation::delete_responder_gateway::DeleteResponderGatewayErro
             crate::operation::delete_responder_gateway::DeleteResponderGatewayError::AccessDeniedException(inner) => {
                 Error::AccessDeniedException(inner)
             }
+            crate::operation::delete_responder_gateway::DeleteResponderGatewayError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::delete_responder_gateway::DeleteResponderGatewayError::InternalServerException(inner) => {
                 Error::InternalServerException(inner)
             }
@@ -460,6 +572,84 @@ impl From<crate::operation::delete_responder_gateway::DeleteResponderGatewayErro
             crate::operation::delete_responder_gateway::DeleteResponderGatewayError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::delete_responder_gateway::DeleteResponderGatewayError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::delete_responder_gateway::DeleteResponderGatewayError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::disassociate_certificate::DisassociateCertificateError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::disassociate_certificate::DisassociateCertificateError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::disassociate_certificate::DisassociateCertificateError> for Error {
+    fn from(err: crate::operation::disassociate_certificate::DisassociateCertificateError) -> Self {
+        match err {
+            crate::operation::disassociate_certificate::DisassociateCertificateError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::disassociate_certificate::DisassociateCertificateError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::disassociate_certificate::DisassociateCertificateError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::disassociate_certificate::DisassociateCertificateError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::disassociate_certificate::DisassociateCertificateError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::disassociate_certificate::DisassociateCertificateError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::disassociate_certificate::DisassociateCertificateError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::disassociate_certificate::DisassociateCertificateError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_certificate_association::GetCertificateAssociationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_certificate_association::GetCertificateAssociationError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_certificate_association::GetCertificateAssociationError> for Error {
+    fn from(err: crate::operation::get_certificate_association::GetCertificateAssociationError) -> Self {
+        match err {
+            crate::operation::get_certificate_association::GetCertificateAssociationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_certificate_association::GetCertificateAssociationError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::get_certificate_association::GetCertificateAssociationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_certificate_association::GetCertificateAssociationError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::get_certificate_association::GetCertificateAssociationError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::get_certificate_association::GetCertificateAssociationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -522,6 +712,34 @@ impl From<crate::operation::get_link::GetLinkError> for Error {
             crate::operation::get_link::GetLinkError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::get_link::GetLinkError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::get_link::GetLinkError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_link_routing_rule::GetLinkRoutingRuleError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_link_routing_rule::GetLinkRoutingRuleError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_link_routing_rule::GetLinkRoutingRuleError> for Error {
+    fn from(err: crate::operation::get_link_routing_rule::GetLinkRoutingRuleError) -> Self {
+        match err {
+            crate::operation::get_link_routing_rule::GetLinkRoutingRuleError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_link_routing_rule::GetLinkRoutingRuleError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_link_routing_rule::GetLinkRoutingRuleError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_link_routing_rule::GetLinkRoutingRuleError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_link_routing_rule::GetLinkRoutingRuleError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_link_routing_rule::GetLinkRoutingRuleError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -621,6 +839,77 @@ impl From<crate::operation::get_responder_gateway::GetResponderGatewayError> for
             crate::operation::get_responder_gateway::GetResponderGatewayError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::get_responder_gateway::GetResponderGatewayError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::get_responder_gateway::GetResponderGatewayError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_certificate_associations::ListCertificateAssociationsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_certificate_associations::ListCertificateAssociationsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_certificate_associations::ListCertificateAssociationsError> for Error {
+    fn from(err: crate::operation::list_certificate_associations::ListCertificateAssociationsError) -> Self {
+        match err {
+            crate::operation::list_certificate_associations::ListCertificateAssociationsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_certificate_associations::ListCertificateAssociationsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_certificate_associations::ListCertificateAssociationsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_certificate_associations::ListCertificateAssociationsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::list_certificate_associations::ListCertificateAssociationsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::list_certificate_associations::ListCertificateAssociationsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_link_routing_rules::ListLinkRoutingRulesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_link_routing_rules::ListLinkRoutingRulesError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_link_routing_rules::ListLinkRoutingRulesError> for Error {
+    fn from(err: crate::operation::list_link_routing_rules::ListLinkRoutingRulesError) -> Self {
+        match err {
+            crate::operation::list_link_routing_rules::ListLinkRoutingRulesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_link_routing_rules::ListLinkRoutingRulesError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_link_routing_rules::ListLinkRoutingRulesError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_link_routing_rules::ListLinkRoutingRulesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_link_routing_rules::ListLinkRoutingRulesError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_link_routing_rules::ListLinkRoutingRulesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -873,6 +1162,41 @@ impl From<crate::operation::update_link_module_flow::UpdateLinkModuleFlowError> 
             crate::operation::update_link_module_flow::UpdateLinkModuleFlowError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::update_link_module_flow::UpdateLinkModuleFlowError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::update_link_module_flow::UpdateLinkModuleFlowError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_link_routing_rule::UpdateLinkRoutingRuleError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_link_routing_rule::UpdateLinkRoutingRuleError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_link_routing_rule::UpdateLinkRoutingRuleError> for Error {
+    fn from(err: crate::operation::update_link_routing_rule::UpdateLinkRoutingRuleError) -> Self {
+        match err {
+            crate::operation::update_link_routing_rule::UpdateLinkRoutingRuleError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::update_link_routing_rule::UpdateLinkRoutingRuleError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::update_link_routing_rule::UpdateLinkRoutingRuleError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::update_link_routing_rule::UpdateLinkRoutingRuleError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_link_routing_rule::UpdateLinkRoutingRuleError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::update_link_routing_rule::UpdateLinkRoutingRuleError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::update_link_routing_rule::UpdateLinkRoutingRuleError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

@@ -36,6 +36,11 @@ pub struct UpdateElasticsearchDomainConfigInput {
     pub dry_run: ::std::option::Option<bool>,
     /// <p>Specifies the deployment strategy options.</p>
     pub deployment_strategy_options: ::std::option::Option<crate::types::DeploymentStrategyOptions>,
+    /// <p>Specifies the automated snapshot pause options for the domain.</p><important>
+    /// <p>Suspending snapshots reduces data protection. You cannot restore your domain to points in time when snapshots are suspended. Use this feature only for short-term operational needs such as migrations or maintenance windows.</p>
+    /// </important>
+    /// <p>Maximum suspension duration: 3 days.</p>
+    pub automated_snapshot_pause_options: ::std::option::Option<crate::types::AutomatedSnapshotPauseRequestOptions>,
 }
 impl UpdateElasticsearchDomainConfigInput {
     /// <p>The name of the Elasticsearch domain that you are updating.</p>
@@ -104,6 +109,13 @@ impl UpdateElasticsearchDomainConfigInput {
     pub fn deployment_strategy_options(&self) -> ::std::option::Option<&crate::types::DeploymentStrategyOptions> {
         self.deployment_strategy_options.as_ref()
     }
+    /// <p>Specifies the automated snapshot pause options for the domain.</p><important>
+    /// <p>Suspending snapshots reduces data protection. You cannot restore your domain to points in time when snapshots are suspended. Use this feature only for short-term operational needs such as migrations or maintenance windows.</p>
+    /// </important>
+    /// <p>Maximum suspension duration: 3 days.</p>
+    pub fn automated_snapshot_pause_options(&self) -> ::std::option::Option<&crate::types::AutomatedSnapshotPauseRequestOptions> {
+        self.automated_snapshot_pause_options.as_ref()
+    }
 }
 impl UpdateElasticsearchDomainConfigInput {
     /// Creates a new builder-style object to manufacture [`UpdateElasticsearchDomainConfigInput`](crate::operation::update_elasticsearch_domain_config::UpdateElasticsearchDomainConfigInput).
@@ -132,6 +144,7 @@ pub struct UpdateElasticsearchDomainConfigInputBuilder {
     pub(crate) auto_tune_options: ::std::option::Option<crate::types::AutoTuneOptions>,
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) deployment_strategy_options: ::std::option::Option<crate::types::DeploymentStrategyOptions>,
+    pub(crate) automated_snapshot_pause_options: ::std::option::Option<crate::types::AutomatedSnapshotPauseRequestOptions>,
 }
 impl UpdateElasticsearchDomainConfigInputBuilder {
     /// <p>The name of the Elasticsearch domain that you are updating.</p>
@@ -383,6 +396,29 @@ impl UpdateElasticsearchDomainConfigInputBuilder {
     pub fn get_deployment_strategy_options(&self) -> &::std::option::Option<crate::types::DeploymentStrategyOptions> {
         &self.deployment_strategy_options
     }
+    /// <p>Specifies the automated snapshot pause options for the domain.</p><important>
+    /// <p>Suspending snapshots reduces data protection. You cannot restore your domain to points in time when snapshots are suspended. Use this feature only for short-term operational needs such as migrations or maintenance windows.</p>
+    /// </important>
+    /// <p>Maximum suspension duration: 3 days.</p>
+    pub fn automated_snapshot_pause_options(mut self, input: crate::types::AutomatedSnapshotPauseRequestOptions) -> Self {
+        self.automated_snapshot_pause_options = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies the automated snapshot pause options for the domain.</p><important>
+    /// <p>Suspending snapshots reduces data protection. You cannot restore your domain to points in time when snapshots are suspended. Use this feature only for short-term operational needs such as migrations or maintenance windows.</p>
+    /// </important>
+    /// <p>Maximum suspension duration: 3 days.</p>
+    pub fn set_automated_snapshot_pause_options(mut self, input: ::std::option::Option<crate::types::AutomatedSnapshotPauseRequestOptions>) -> Self {
+        self.automated_snapshot_pause_options = input;
+        self
+    }
+    /// <p>Specifies the automated snapshot pause options for the domain.</p><important>
+    /// <p>Suspending snapshots reduces data protection. You cannot restore your domain to points in time when snapshots are suspended. Use this feature only for short-term operational needs such as migrations or maintenance windows.</p>
+    /// </important>
+    /// <p>Maximum suspension duration: 3 days.</p>
+    pub fn get_automated_snapshot_pause_options(&self) -> &::std::option::Option<crate::types::AutomatedSnapshotPauseRequestOptions> {
+        &self.automated_snapshot_pause_options
+    }
     /// Consumes the builder and constructs a [`UpdateElasticsearchDomainConfigInput`](crate::operation::update_elasticsearch_domain_config::UpdateElasticsearchDomainConfigInput).
     pub fn build(
         self,
@@ -408,6 +444,7 @@ impl UpdateElasticsearchDomainConfigInputBuilder {
                 auto_tune_options: self.auto_tune_options,
                 dry_run: self.dry_run,
                 deployment_strategy_options: self.deployment_strategy_options,
+                automated_snapshot_pause_options: self.automated_snapshot_pause_options,
             },
         )
     }

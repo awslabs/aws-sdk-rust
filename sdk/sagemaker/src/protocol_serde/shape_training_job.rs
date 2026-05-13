@@ -101,6 +101,10 @@ where
                         "ResourceConfig" => {
                             builder = builder.set_resource_config(crate::protocol_serde::shape_resource_config::de_resource_config(tokens, _value)?);
                         }
+                        "WarmPoolStatus" => {
+                            builder =
+                                builder.set_warm_pool_status(crate::protocol_serde::shape_warm_pool_status::de_warm_pool_status(tokens, _value)?);
+                        }
                         "VpcConfig" => {
                             builder = builder.set_vpc_config(crate::protocol_serde::shape_vpc_config::de_vpc_config(tokens, _value)?);
                         }

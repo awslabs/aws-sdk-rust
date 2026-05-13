@@ -130,5 +130,8 @@ pub fn ser_create_model_package_input_input(
         crate::protocol_serde::shape_model_life_cycle::ser_model_life_cycle(&mut object_42, var_41)?;
         object_42.finish();
     }
+    if let Some(var_43) = &input.managed_storage_type {
+        object.key("ManagedStorageType").string(var_43.as_str());
+    }
     Ok(())
 }
