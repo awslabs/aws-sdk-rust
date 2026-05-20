@@ -103,7 +103,7 @@ pub(super) fn resolve_endpoint(
                                 .property(
                                     "authSchemes",
                                     vec![::aws_smithy_types::Document::from({
-                                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::with_capacity(4);
                                         out.insert("disableDoubleEncoding".to_string(), true.into());
                                         out.insert("name".to_string(), "sigv4".to_string().into());
                                         out.insert("signingName".to_string(), "s3-outposts".to_string().into());
@@ -130,7 +130,7 @@ pub(super) fn resolve_endpoint(
                                 .property(
                                     "authSchemes",
                                     vec![::aws_smithy_types::Document::from({
-                                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::with_capacity(4);
                                         out.insert("disableDoubleEncoding".to_string(), true.into());
                                         out.insert("name".to_string(), "sigv4".to_string().into());
                                         out.insert("signingName".to_string(), "s3-outposts".to_string().into());
@@ -156,7 +156,7 @@ pub(super) fn resolve_endpoint(
                             .property(
                                 "authSchemes",
                                 vec![::aws_smithy_types::Document::from({
-                                    let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                                    let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::with_capacity(4);
                                     out.insert("disableDoubleEncoding".to_string(), true.into());
                                     out.insert("name".to_string(), "sigv4".to_string().into());
                                     out.insert("signingName".to_string(), "s3-outposts".to_string().into());
@@ -181,7 +181,7 @@ pub(super) fn resolve_endpoint(
                             .property(
                                 "authSchemes",
                                 vec![::aws_smithy_types::Document::from({
-                                    let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                                    let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::with_capacity(4);
                                     out.insert("disableDoubleEncoding".to_string(), true.into());
                                     out.insert("name".to_string(), "sigv4".to_string().into());
                                     out.insert("signingName".to_string(), "s3-outposts".to_string().into());
@@ -205,7 +205,7 @@ pub(super) fn resolve_endpoint(
                         .property(
                             "authSchemes",
                             vec![::aws_smithy_types::Document::from({
-                                let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                                let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::with_capacity(4);
                                 out.insert("disableDoubleEncoding".to_string(), true.into());
                                 out.insert("name".to_string(), "sigv4".to_string().into());
                                 out.insert("signingName".to_string(), "s3-outposts".to_string().into());
@@ -282,7 +282,8 @@ pub(super) fn resolve_endpoint(
                                             .property(
                                                 "authSchemes",
                                                 vec![::aws_smithy_types::Document::from({
-                                                    let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                                                    let mut out =
+                                                        ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::with_capacity(4);
                                                     out.insert("disableDoubleEncoding".to_string(), true.into());
                                                     out.insert("name".to_string(), "sigv4".to_string().into());
                                                     out.insert("signingName".to_string(), "s3express".to_string().into());
@@ -308,7 +309,7 @@ pub(super) fn resolve_endpoint(
                                         .property(
                                             "authSchemes",
                                             vec![::aws_smithy_types::Document::from({
-                                                let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                                                let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::with_capacity(4);
                                                 out.insert("disableDoubleEncoding".to_string(), true.into());
                                                 out.insert("name".to_string(), "sigv4".to_string().into());
                                                 out.insert("signingName".to_string(), "s3express".to_string().into());
@@ -332,7 +333,7 @@ pub(super) fn resolve_endpoint(
                                     .property(
                                         "authSchemes",
                                         vec![::aws_smithy_types::Document::from({
-                                            let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                                            let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::with_capacity(4);
                                             out.insert("disableDoubleEncoding".to_string(), true.into());
                                             out.insert("name".to_string(), "sigv4".to_string().into());
                                             out.insert("signingName".to_string(), "s3express".to_string().into());
@@ -405,7 +406,7 @@ pub(super) fn resolve_endpoint(
                                     .property(
                                         "authSchemes",
                                         vec![::aws_smithy_types::Document::from({
-                                            let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                                            let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::with_capacity(4);
                                             out.insert("disableDoubleEncoding".to_string(), true.into());
                                             out.insert("name".to_string(), "sigv4".to_string().into());
                                             out.insert("signingName".to_string(), "s3express".to_string().into());
@@ -440,7 +441,8 @@ pub(super) fn resolve_endpoint(
                                             .property(
                                                 "authSchemes",
                                                 vec![::aws_smithy_types::Document::from({
-                                                    let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                                                    let mut out =
+                                                        ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::with_capacity(4);
                                                     out.insert("disableDoubleEncoding".to_string(), true.into());
                                                     out.insert("name".to_string(), "sigv4".to_string().into());
                                                     out.insert("signingName".to_string(), "s3express".to_string().into());
@@ -464,7 +466,7 @@ pub(super) fn resolve_endpoint(
                                         .property(
                                             "authSchemes",
                                             vec![::aws_smithy_types::Document::from({
-                                                let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                                                let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::with_capacity(4);
                                                 out.insert("disableDoubleEncoding".to_string(), true.into());
                                                 out.insert("name".to_string(), "sigv4".to_string().into());
                                                 out.insert("signingName".to_string(), "s3express".to_string().into());
@@ -500,7 +502,8 @@ pub(super) fn resolve_endpoint(
                                             .property(
                                                 "authSchemes",
                                                 vec![::aws_smithy_types::Document::from({
-                                                    let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                                                    let mut out =
+                                                        ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::with_capacity(4);
                                                     out.insert("disableDoubleEncoding".to_string(), true.into());
                                                     out.insert("name".to_string(), "sigv4".to_string().into());
                                                     out.insert("signingName".to_string(), "s3express".to_string().into());
@@ -524,7 +527,7 @@ pub(super) fn resolve_endpoint(
                                         .property(
                                             "authSchemes",
                                             vec![::aws_smithy_types::Document::from({
-                                                let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                                                let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::with_capacity(4);
                                                 out.insert("disableDoubleEncoding".to_string(), true.into());
                                                 out.insert("name".to_string(), "sigv4".to_string().into());
                                                 out.insert("signingName".to_string(), "s3express".to_string().into());
@@ -560,7 +563,8 @@ pub(super) fn resolve_endpoint(
                                             .property(
                                                 "authSchemes",
                                                 vec![::aws_smithy_types::Document::from({
-                                                    let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                                                    let mut out =
+                                                        ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::with_capacity(4);
                                                     out.insert("disableDoubleEncoding".to_string(), true.into());
                                                     out.insert("name".to_string(), "sigv4".to_string().into());
                                                     out.insert("signingName".to_string(), "s3express".to_string().into());
@@ -584,7 +588,7 @@ pub(super) fn resolve_endpoint(
                                         .property(
                                             "authSchemes",
                                             vec![::aws_smithy_types::Document::from({
-                                                let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                                                let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::with_capacity(4);
                                                 out.insert("disableDoubleEncoding".to_string(), true.into());
                                                 out.insert("name".to_string(), "sigv4".to_string().into());
                                                 out.insert("signingName".to_string(), "s3express".to_string().into());
@@ -620,7 +624,8 @@ pub(super) fn resolve_endpoint(
                                             .property(
                                                 "authSchemes",
                                                 vec![::aws_smithy_types::Document::from({
-                                                    let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                                                    let mut out =
+                                                        ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::with_capacity(4);
                                                     out.insert("disableDoubleEncoding".to_string(), true.into());
                                                     out.insert("name".to_string(), "sigv4".to_string().into());
                                                     out.insert("signingName".to_string(), "s3express".to_string().into());
@@ -644,7 +649,7 @@ pub(super) fn resolve_endpoint(
                                         .property(
                                             "authSchemes",
                                             vec![::aws_smithy_types::Document::from({
-                                                let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                                                let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::with_capacity(4);
                                                 out.insert("disableDoubleEncoding".to_string(), true.into());
                                                 out.insert("name".to_string(), "sigv4".to_string().into());
                                                 out.insert("signingName".to_string(), "s3express".to_string().into());
@@ -680,7 +685,8 @@ pub(super) fn resolve_endpoint(
                                             .property(
                                                 "authSchemes",
                                                 vec![::aws_smithy_types::Document::from({
-                                                    let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                                                    let mut out =
+                                                        ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::with_capacity(4);
                                                     out.insert("disableDoubleEncoding".to_string(), true.into());
                                                     out.insert("name".to_string(), "sigv4".to_string().into());
                                                     out.insert("signingName".to_string(), "s3express".to_string().into());
@@ -704,7 +710,7 @@ pub(super) fn resolve_endpoint(
                                         .property(
                                             "authSchemes",
                                             vec![::aws_smithy_types::Document::from({
-                                                let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                                                let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::with_capacity(4);
                                                 out.insert("disableDoubleEncoding".to_string(), true.into());
                                                 out.insert("name".to_string(), "sigv4".to_string().into());
                                                 out.insert("signingName".to_string(), "s3express".to_string().into());
@@ -762,7 +768,7 @@ pub(super) fn resolve_endpoint(
                                 .property(
                                     "authSchemes",
                                     vec![::aws_smithy_types::Document::from({
-                                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::with_capacity(4);
                                         out.insert("disableDoubleEncoding".to_string(), true.into());
                                         out.insert("name".to_string(), "sigv4".to_string().into());
                                         out.insert("signingName".to_string(), "s3express".to_string().into());
@@ -788,7 +794,7 @@ pub(super) fn resolve_endpoint(
                             .property(
                                 "authSchemes",
                                 vec![::aws_smithy_types::Document::from({
-                                    let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                                    let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::with_capacity(4);
                                     out.insert("disableDoubleEncoding".to_string(), true.into());
                                     out.insert("name".to_string(), "sigv4".to_string().into());
                                     out.insert("signingName".to_string(), "s3express".to_string().into());
@@ -812,7 +818,7 @@ pub(super) fn resolve_endpoint(
                         .property(
                             "authSchemes",
                             vec![::aws_smithy_types::Document::from({
-                                let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                                let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::with_capacity(4);
                                 out.insert("disableDoubleEncoding".to_string(), true.into());
                                 out.insert("name".to_string(), "sigv4".to_string().into());
                                 out.insert("signingName".to_string(), "s3express".to_string().into());
@@ -858,7 +864,7 @@ pub(super) fn resolve_endpoint(
                             .property(
                                 "authSchemes",
                                 vec![::aws_smithy_types::Document::from({
-                                    let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                                    let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::with_capacity(4);
                                     out.insert("disableDoubleEncoding".to_string(), true.into());
                                     out.insert("name".to_string(), "sigv4".to_string().into());
                                     out.insert("signingName".to_string(), "s3".to_string().into());
@@ -977,7 +983,8 @@ pub(super) fn resolve_endpoint(
                                                                                             let mut out = ::std::collections::HashMap::<
                                                                                                 String,
                                                                                                 ::aws_smithy_types::Document,
-                                                                                            >::new(
+                                                                                            >::with_capacity(
+                                                                                                4
                                                                                             );
                                                                                             out.insert(
                                                                                                 "disableDoubleEncoding".to_string(),
@@ -1021,7 +1028,8 @@ pub(super) fn resolve_endpoint(
                                                                                         let mut out = ::std::collections::HashMap::<
                                                                                             String,
                                                                                             ::aws_smithy_types::Document,
-                                                                                        >::new(
+                                                                                        >::with_capacity(
+                                                                                            4
                                                                                         );
                                                                                         out.insert("disableDoubleEncoding".to_string(), true.into());
                                                                                         out.insert("name".to_string(), "sigv4".to_string().into());
@@ -1058,7 +1066,8 @@ pub(super) fn resolve_endpoint(
                                                                                         let mut out = ::std::collections::HashMap::<
                                                                                             String,
                                                                                             ::aws_smithy_types::Document,
-                                                                                        >::new(
+                                                                                        >::with_capacity(
+                                                                                            4
                                                                                         );
                                                                                         out.insert("disableDoubleEncoding".to_string(), true.into());
                                                                                         out.insert("name".to_string(), "sigv4".to_string().into());
@@ -1105,7 +1114,8 @@ pub(super) fn resolve_endpoint(
                                                                                             let mut out = ::std::collections::HashMap::<
                                                                                                 String,
                                                                                                 ::aws_smithy_types::Document,
-                                                                                            >::new(
+                                                                                            >::with_capacity(
+                                                                                                4
                                                                                             );
                                                                                             out.insert(
                                                                                                 "disableDoubleEncoding".to_string(),
@@ -1148,7 +1158,8 @@ pub(super) fn resolve_endpoint(
                                                                                     let mut out = ::std::collections::HashMap::<
                                                                                         String,
                                                                                         ::aws_smithy_types::Document,
-                                                                                    >::new(
+                                                                                    >::with_capacity(
+                                                                                        4
                                                                                     );
                                                                                     out.insert("disableDoubleEncoding".to_string(), true.into());
                                                                                     out.insert("name".to_string(), "sigv4".to_string().into());
@@ -1345,7 +1356,8 @@ pub(super) fn resolve_endpoint(
                                                                                             let mut out = ::std::collections::HashMap::<
                                                                                                 String,
                                                                                                 ::aws_smithy_types::Document,
-                                                                                            >::new(
+                                                                                            >::with_capacity(
+                                                                                                4
                                                                                             );
                                                                                             out.insert(
                                                                                                 "disableDoubleEncoding".to_string(),
@@ -1389,7 +1401,8 @@ pub(super) fn resolve_endpoint(
                                                                                         let mut out = ::std::collections::HashMap::<
                                                                                             String,
                                                                                             ::aws_smithy_types::Document,
-                                                                                        >::new(
+                                                                                        >::with_capacity(
+                                                                                            4
                                                                                         );
                                                                                         out.insert("disableDoubleEncoding".to_string(), true.into());
                                                                                         out.insert("name".to_string(), "sigv4".to_string().into());
@@ -1426,7 +1439,8 @@ pub(super) fn resolve_endpoint(
                                                                                         let mut out = ::std::collections::HashMap::<
                                                                                             String,
                                                                                             ::aws_smithy_types::Document,
-                                                                                        >::new(
+                                                                                        >::with_capacity(
+                                                                                            4
                                                                                         );
                                                                                         out.insert("disableDoubleEncoding".to_string(), true.into());
                                                                                         out.insert("name".to_string(), "sigv4".to_string().into());
@@ -1470,7 +1484,8 @@ pub(super) fn resolve_endpoint(
                                                                                             let mut out = ::std::collections::HashMap::<
                                                                                                 String,
                                                                                                 ::aws_smithy_types::Document,
-                                                                                            >::new(
+                                                                                            >::with_capacity(
+                                                                                                4
                                                                                             );
                                                                                             out.insert(
                                                                                                 "disableDoubleEncoding".to_string(),
@@ -1513,7 +1528,8 @@ pub(super) fn resolve_endpoint(
                                                                                     let mut out = ::std::collections::HashMap::<
                                                                                         String,
                                                                                         ::aws_smithy_types::Document,
-                                                                                    >::new(
+                                                                                    >::with_capacity(
+                                                                                        4
                                                                                     );
                                                                                     out.insert("disableDoubleEncoding".to_string(), true.into());
                                                                                     out.insert("name".to_string(), "sigv4".to_string().into());
@@ -1670,7 +1686,7 @@ pub(super) fn resolve_endpoint(
                                         .property(
                                             "authSchemes",
                                             vec![::aws_smithy_types::Document::from({
-                                                let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                                                let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::with_capacity(4);
                                                 out.insert("disableDoubleEncoding".to_string(), true.into());
                                                 out.insert("name".to_string(), "sigv4".to_string().into());
                                                 out.insert("signingName".to_string(), "s3".to_string().into());
@@ -1697,7 +1713,7 @@ pub(super) fn resolve_endpoint(
                             .property(
                                 "authSchemes",
                                 vec![::aws_smithy_types::Document::from({
-                                    let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                                    let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::with_capacity(4);
                                     out.insert("disableDoubleEncoding".to_string(), true.into());
                                     out.insert("name".to_string(), "sigv4".to_string().into());
                                     out.insert("signingName".to_string(), "s3".to_string().into());
@@ -1732,7 +1748,7 @@ pub(super) fn resolve_endpoint(
                                         .property(
                                             "authSchemes",
                                             vec![::aws_smithy_types::Document::from({
-                                                let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                                                let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::with_capacity(4);
                                                 out.insert("disableDoubleEncoding".to_string(), true.into());
                                                 out.insert("name".to_string(), "sigv4".to_string().into());
                                                 out.insert("signingName".to_string(), "s3".to_string().into());
@@ -1762,7 +1778,7 @@ pub(super) fn resolve_endpoint(
                             .property(
                                 "authSchemes",
                                 vec![::aws_smithy_types::Document::from({
-                                    let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                                    let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::with_capacity(4);
                                     out.insert("disableDoubleEncoding".to_string(), true.into());
                                     out.insert("name".to_string(), "sigv4".to_string().into());
                                     out.insert("signingName".to_string(), "s3".to_string().into());
@@ -1797,7 +1813,7 @@ pub(super) fn resolve_endpoint(
                                         .property(
                                             "authSchemes",
                                             vec![::aws_smithy_types::Document::from({
-                                                let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                                                let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::with_capacity(4);
                                                 out.insert("disableDoubleEncoding".to_string(), true.into());
                                                 out.insert("name".to_string(), "sigv4".to_string().into());
                                                 out.insert("signingName".to_string(), "s3".to_string().into());
@@ -1827,7 +1843,7 @@ pub(super) fn resolve_endpoint(
                             .property(
                                 "authSchemes",
                                 vec![::aws_smithy_types::Document::from({
-                                    let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                                    let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::with_capacity(4);
                                     out.insert("disableDoubleEncoding".to_string(), true.into());
                                     out.insert("name".to_string(), "sigv4".to_string().into());
                                     out.insert("signingName".to_string(), "s3".to_string().into());
@@ -1862,7 +1878,7 @@ pub(super) fn resolve_endpoint(
                                         .property(
                                             "authSchemes",
                                             vec![::aws_smithy_types::Document::from({
-                                                let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                                                let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::with_capacity(4);
                                                 out.insert("disableDoubleEncoding".to_string(), true.into());
                                                 out.insert("name".to_string(), "sigv4".to_string().into());
                                                 out.insert("signingName".to_string(), "s3".to_string().into());
@@ -1892,7 +1908,7 @@ pub(super) fn resolve_endpoint(
                             .property(
                                 "authSchemes",
                                 vec![::aws_smithy_types::Document::from({
-                                    let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                                    let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::with_capacity(4);
                                     out.insert("disableDoubleEncoding".to_string(), true.into());
                                     out.insert("name".to_string(), "sigv4".to_string().into());
                                     out.insert("signingName".to_string(), "s3".to_string().into());
@@ -1927,7 +1943,7 @@ pub(super) fn resolve_endpoint(
                                         .property(
                                             "authSchemes",
                                             vec![::aws_smithy_types::Document::from({
-                                                let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                                                let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::with_capacity(4);
                                                 out.insert("disableDoubleEncoding".to_string(), true.into());
                                                 out.insert("name".to_string(), "sigv4".to_string().into());
                                                 out.insert("signingName".to_string(), "s3".to_string().into());
@@ -1957,7 +1973,7 @@ pub(super) fn resolve_endpoint(
                             .property(
                                 "authSchemes",
                                 vec![::aws_smithy_types::Document::from({
-                                    let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                                    let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::with_capacity(4);
                                     out.insert("disableDoubleEncoding".to_string(), true.into());
                                     out.insert("name".to_string(), "sigv4".to_string().into());
                                     out.insert("signingName".to_string(), "s3".to_string().into());

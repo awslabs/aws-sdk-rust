@@ -13,7 +13,7 @@ use std::sync::Arc;
 use std::time::{Duration, SystemTime};
 use tokio::sync::{OwnedSemaphorePermit, Semaphore};
 
-const DEFAULT_CAPACITY: usize = 500;
+pub(crate) const DEFAULT_CAPACITY: usize = 500;
 // On a 32 bit architecture, the value of Semaphore::MAX_PERMITS is 536,870,911.
 // Therefore, we will enforce a value lower than that to ensure behavior is
 // identical across platforms.
@@ -21,8 +21,16 @@ const DEFAULT_CAPACITY: usize = 500;
 // is at maximum capacity and another thread drops a permit it was holding.
 /// The maximum number of permits a token bucket can have.
 pub const MAXIMUM_CAPACITY: usize = 500_000_000;
-const DEFAULT_RETRY_COST: u32 = 5;
-const DEFAULT_RETRY_TIMEOUT_COST: u32 = DEFAULT_RETRY_COST * 2;
+#[allow(dead_code)]
+pub(crate) const DEFAULT_RETRY_COST: u32 = 14;
+#[allow(dead_code)]
+pub(crate) const DEFAULT_RETRY_TIMEOUT_COST: u32 = 14;
+#[allow(dead_code)]
+pub(crate) const THROTTLING_RETRY_COST: u32 = 5;
+
+// Legacy (Retry 2.0) costs
+const LEGACY_RETRY_COST: u32 = 5;
+const LEGACY_RETRY_TIMEOUT_COST: u32 = LEGACY_RETRY_COST * 2;
 const PERMIT_REGENERATION_AMOUNT: usize = 1;
 const DEFAULT_SUCCESS_REWARD: f32 = 0.0;
 
@@ -33,6 +41,7 @@ pub struct TokenBucket {
     max_permits: usize,
     timeout_retry_cost: u32,
     retry_cost: u32,
+    throttling_retry_cost: u32,
     success_reward: f32,
     fractional_tokens: Arc<AtomicF32>,
     refill_rate: f32,
@@ -90,8 +99,9 @@ impl Default for TokenBucket {
         Self {
             semaphore: Arc::new(Semaphore::new(DEFAULT_CAPACITY)),
             max_permits: DEFAULT_CAPACITY,
-            timeout_retry_cost: DEFAULT_RETRY_TIMEOUT_COST,
-            retry_cost: DEFAULT_RETRY_COST,
+            timeout_retry_cost: LEGACY_RETRY_TIMEOUT_COST,
+            retry_cost: LEGACY_RETRY_COST,
+            throttling_retry_cost: LEGACY_RETRY_COST,
             success_reward: DEFAULT_SUCCESS_REWARD,
             fractional_tokens: Arc::new(AtomicF32::new(0.0)),
             refill_rate: 0.0,
@@ -117,6 +127,7 @@ impl TokenBucket {
             max_permits: MAXIMUM_CAPACITY,
             timeout_retry_cost: 0,
             retry_cost: 0,
+            throttling_retry_cost: 0,
             success_reward: 0.0,
             fractional_tokens: Arc::new(AtomicF32::new(0.0)),
             refill_rate: 0.0,
@@ -139,10 +150,10 @@ impl TokenBucket {
         // Convert accumulated fractional tokens to whole tokens
         self.convert_fractional_tokens();
 
-        let retry_cost = if err == &ErrorKind::TransientError {
-            self.timeout_retry_cost
-        } else {
-            self.retry_cost
+        let retry_cost = match err {
+            ErrorKind::TransientError => self.timeout_retry_cost,
+            ErrorKind::ThrottlingError => self.throttling_retry_cost,
+            _ => self.retry_cost,
         };
 
         self.semaphore
@@ -294,6 +305,7 @@ impl TokenBucket {
 pub struct TokenBucketBuilder {
     capacity: Option<usize>,
     retry_cost: Option<u32>,
+    throttling_retry_cost: Option<u32>,
     timeout_retry_cost: Option<u32>,
     success_reward: Option<f32>,
     refill_rate: Option<f32>,
@@ -317,6 +329,12 @@ impl TokenBucketBuilder {
     /// Sets the specified retry cost for the builder.
     pub fn retry_cost(mut self, retry_cost: u32) -> Self {
         self.retry_cost = Some(retry_cost);
+        self
+    }
+
+    /// Sets the throttling retry cost for the builder.
+    pub fn throttling_retry_cost(mut self, throttling_retry_cost: u32) -> Self {
+        self.throttling_retry_cost = Some(throttling_retry_cost);
         self
     }
 
@@ -347,10 +365,9 @@ impl TokenBucketBuilder {
         TokenBucket {
             semaphore: Arc::new(Semaphore::new(self.capacity.unwrap_or(DEFAULT_CAPACITY))),
             max_permits: self.capacity.unwrap_or(DEFAULT_CAPACITY),
-            retry_cost: self.retry_cost.unwrap_or(DEFAULT_RETRY_COST),
-            timeout_retry_cost: self
-                .timeout_retry_cost
-                .unwrap_or(DEFAULT_RETRY_TIMEOUT_COST),
+            retry_cost: self.retry_cost.unwrap_or(LEGACY_RETRY_COST),
+            throttling_retry_cost: self.throttling_retry_cost.unwrap_or(LEGACY_RETRY_COST),
+            timeout_retry_cost: self.timeout_retry_cost.unwrap_or(LEGACY_RETRY_TIMEOUT_COST),
             success_reward: self.success_reward.unwrap_or(DEFAULT_SUCCESS_REWARD),
             fractional_tokens: Arc::new(AtomicF32::new(0.0)),
             refill_rate: self.refill_rate.unwrap_or(0.0),

@@ -418,29 +418,68 @@ pub trait Sign: Send + Sync + fmt::Debug {
 /// This struct gets added to the request state by the auth orchestrator.
 #[non_exhaustive]
 #[derive(Clone, Debug)]
-pub struct AuthSchemeEndpointConfig<'a>(Option<&'a Document>);
+pub struct AuthSchemeEndpointConfig<'a> {
+    inner: AuthSchemeEndpointConfigInner<'a>,
+}
+
+#[derive(Clone, Debug)]
+enum AuthSchemeEndpointConfigInner<'a> {
+    Empty,
+    Typed(&'a aws_smithy_types::endpoint::EndpointAuthScheme),
+    Document(&'a Document),
+}
 
 impl<'a> AuthSchemeEndpointConfig<'a> {
     /// Creates an empty [`AuthSchemeEndpointConfig`].
     pub fn empty() -> Self {
-        Self(None)
+        Self {
+            inner: AuthSchemeEndpointConfigInner::Empty,
+        }
+    }
+
+    /// Creates from a typed [`EndpointAuthScheme`](aws_smithy_types::endpoint::EndpointAuthScheme).
+    pub fn from_typed(auth_scheme: &'a aws_smithy_types::endpoint::EndpointAuthScheme) -> Self {
+        Self {
+            inner: AuthSchemeEndpointConfigInner::Typed(auth_scheme),
+        }
     }
 
     /// Returns the endpoint configuration as a [`Document`].
     pub fn as_document(&self) -> Option<&'a Document> {
-        self.0
+        match &self.inner {
+            AuthSchemeEndpointConfigInner::Document(doc) => Some(doc),
+            _ => None,
+        }
+    }
+
+    /// Gets a property value by name from the auth scheme config.
+    pub fn get(&self, key: &str) -> Option<&'a Document> {
+        match &self.inner {
+            AuthSchemeEndpointConfigInner::Typed(scheme) => scheme.get(key),
+            AuthSchemeEndpointConfigInner::Document(doc) => {
+                doc.as_object().and_then(|obj| obj.get(key))
+            }
+            AuthSchemeEndpointConfigInner::Empty => None,
+        }
     }
 }
 
 impl<'a> From<Option<&'a Document>> for AuthSchemeEndpointConfig<'a> {
     fn from(value: Option<&'a Document>) -> Self {
-        Self(value)
+        match value {
+            Some(doc) => Self {
+                inner: AuthSchemeEndpointConfigInner::Document(doc),
+            },
+            None => Self::empty(),
+        }
     }
 }
 
 impl<'a> From<&'a Document> for AuthSchemeEndpointConfig<'a> {
     fn from(value: &'a Document) -> Self {
-        Self(Some(value))
+        Self {
+            inner: AuthSchemeEndpointConfigInner::Document(value),
+        }
     }
 }
 

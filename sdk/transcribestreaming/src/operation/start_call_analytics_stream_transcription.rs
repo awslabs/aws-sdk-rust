@@ -171,9 +171,10 @@ impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for StartCall
         ))
     }
 
-    fn deserialize_nonstreaming(
+    fn deserialize_nonstreaming_with_config(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
+        _cfg: &::aws_smithy_types::config_bag::ConfigBag,
     ) -> ::aws_smithy_runtime_api::client::interceptors::context::OutputOrError {
         // For streaming operations, we only hit this case if its an error
         let body = response.body().bytes().expect("body loaded");
@@ -233,6 +234,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for StartCallAna
         let body = ::aws_smithy_types::body::SdkBody::from({
             let error_marshaller = crate::event_stream_serde::AudioStreamErrorMarshaller::new();
             let marshaller = crate::event_stream_serde::AudioStreamMarshaller::new();
+
             let (signer, signer_sender) = ::aws_smithy_eventstream::frame::DeferredSigner::new();
             _cfg.interceptor_state().store_put(signer_sender);
             ::aws_smithy_types::body::SdkBody::from_body_1_x(::http_body_util::StreamBody::new(input.audio_stream.into_body_stream(

@@ -916,6 +916,13 @@ pub(crate) mod utils {
             .load::<crate::config::endpoint::Endpoint>()
             .expect("endpoint added to config bag by endpoint orchestrator");
 
+        let typed_schemes = endpoint.auth_schemes();
+        if !typed_schemes.is_empty() {
+            return typed_schemes
+                .iter()
+                .any(|scheme| scheme.name() == crate::s3_express::auth::SCHEME_ID.as_str());
+        }
+
         let auth_schemes = match endpoint.properties().get("authSchemes") {
             Some(Document::Array(schemes)) => schemes,
             _ => return false,

@@ -310,7 +310,7 @@ pub(crate) mod v4a {
         sign, PayloadChecksumKind, SessionTokenMode, SignatureLocation, SigningSettings,
     };
     use crate::sign::v4a;
-    use p256::ecdsa::signature::{Signature, Verifier};
+    use p256::ecdsa::signature::Verifier;
     use p256::ecdsa::{DerSignature, SigningKey};
     use std::time::Duration;
     use time::format_description::well_known::Rfc3339;
@@ -369,12 +369,9 @@ pub(crate) mod v4a {
         let creds = params.credentials().unwrap();
         let signing_key =
             v4a::generate_signing_key(creds.access_key_id(), creds.secret_access_key());
-        let sig = DerSignature::from_bytes(&hex::decode(out.signature).unwrap()).unwrap();
-        let sig = sig
-            .try_into()
-            .expect("DER-style signatures are always convertible into fixed-size signatures");
+        let sig = DerSignature::try_from(hex::decode(out.signature).unwrap().as_slice()).unwrap();
 
-        let signing_key = SigningKey::from_bytes(signing_key.as_ref()).unwrap();
+        let signing_key = SigningKey::from_slice(signing_key.as_ref()).unwrap();
         let peer_public_key = signing_key.verifying_key();
         let sts = actual_string_to_sign.as_bytes();
         peer_public_key.verify(sts, &sig).unwrap();

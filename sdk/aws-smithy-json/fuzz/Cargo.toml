@@ -11,6 +11,24 @@ path = "fuzz_targets/json_deserialize_corpus_cov.rs"
 test = false
 doc = false
 
+[[bin]]
+name = "schema_json_deserialize"
+path = "fuzz_targets/schema_json_deserialize.rs"
+test = false
+doc = false
+
+[[bin]]
+name = "schema_json_roundtrip"
+path = "fuzz_targets/schema_json_roundtrip.rs"
+test = false
+doc = false
+
+[[bin]]
+name = "schema_json_serialize"
+path = "fuzz_targets/schema_json_serialize.rs"
+test = false
+doc = false
+
 [package]
 name = "aws-smithy-json-fuzz"
 version = "0.0.0"
@@ -26,11 +44,19 @@ libfuzzer-sys = "=0.4.7"
 
 [dependencies.aws-smithy-json]
 path = ".."
-version = "0.62.5"
+version = "0.62.6"
+
+[dependencies.aws-smithy-schema]
+path = "../../aws-smithy-schema"
+version = "0.1.0"
 
 [dependencies.aws-smithy-types]
 path = "../../aws-smithy-types"
-version = "1.4.7"
+version = "1.4.8"
+
+[dependencies.arbitrary]
+version = "1"
+features = ["derive"]
 
 [dependencies.serde_json]
 version = "1"

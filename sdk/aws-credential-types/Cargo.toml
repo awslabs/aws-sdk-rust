@@ -30,12 +30,12 @@ version = "1.2.14"
 
 [dependencies.aws-smithy-types]
 path = "../aws-smithy-types"
-version = "1.4.7"
+version = "1.4.8"
 
 [dependencies.aws-smithy-runtime-api]
 path = "../aws-smithy-runtime-api"
 features = ["client", "http-auth"]
-version = "1.12.0"
+version = "1.12.1"
 
 [dev-dependencies]
 async-trait = "0.1.74"
@@ -43,7 +43,7 @@ async-trait = "0.1.74"
 [dev-dependencies.aws-smithy-runtime-api]
 path = "../aws-smithy-runtime-api"
 features = ["test-util"]
-version = "1.12.0"
+version = "1.12.1"
 
 [dev-dependencies.tokio]
 version = "1.49.0"

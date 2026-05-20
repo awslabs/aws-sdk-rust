@@ -147,9 +147,10 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ListSna
 #[derive(Debug)]
 struct ListSnapshotBlocksResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for ListSnapshotBlocksResponseDeserializer {
-    fn deserialize_nonstreaming(
+    fn deserialize_nonstreaming_with_config(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
+        _cfg: &::aws_smithy_types::config_bag::ConfigBag,
     ) -> ::aws_smithy_runtime_api::client::interceptors::context::OutputOrError {
         let (success, status) = (response.status().is_success(), response.status().as_u16());
         let headers = response.headers();
@@ -322,6 +323,10 @@ mod list_snapshot_blocks_test {
             .load::<::aws_smithy_runtime_api::client::ser_de::SharedResponseDeserializer>()
             .expect("the config must have a deserializer");
 
+        // Build a config bag with the protocol for schema-based deserialization
+        #[allow(unused_mut)]
+        let mut test_cfg = ::aws_smithy_types::config_bag::ConfigBag::base();
+
         let parsed = de.deserialize_streaming(&mut http_response);
         let parsed = parsed.unwrap_or_else(|| {
             let http_response = http_response.map(|body| {
@@ -330,7 +335,7 @@ mod list_snapshot_blocks_test {
                     ::aws_smithy_protocol_test::MediaType::from("application/json"),
                 )))
             });
-            de.deserialize_nonstreaming(&http_response)
+            de.deserialize_nonstreaming_with_config(&http_response, &test_cfg)
         });
         let parsed = parsed.expect_err("should be error response");
         let parsed: &crate::operation::list_snapshot_blocks::ListSnapshotBlocksError =
@@ -382,6 +387,10 @@ mod list_snapshot_blocks_test {
             .load::<::aws_smithy_runtime_api::client::ser_de::SharedResponseDeserializer>()
             .expect("the config must have a deserializer");
 
+        // Build a config bag with the protocol for schema-based deserialization
+        #[allow(unused_mut)]
+        let mut test_cfg = ::aws_smithy_types::config_bag::ConfigBag::base();
+
         let parsed = de.deserialize_streaming(&mut http_response);
         let parsed = parsed.unwrap_or_else(|| {
             let http_response = http_response.map(|body| {
@@ -390,7 +399,7 @@ mod list_snapshot_blocks_test {
                     ::aws_smithy_protocol_test::MediaType::from("application/json"),
                 )))
             });
-            de.deserialize_nonstreaming(&http_response)
+            de.deserialize_nonstreaming_with_config(&http_response, &test_cfg)
         });
         let parsed = parsed.expect_err("should be error response");
         let parsed: &crate::operation::list_snapshot_blocks::ListSnapshotBlocksError =

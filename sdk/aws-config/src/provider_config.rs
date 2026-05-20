@@ -12,6 +12,7 @@ use crate::profile::profile_file::ProfileFiles;
 use crate::profile::{ProfileFileLoadError, ProfileSet};
 use aws_smithy_async::rt::sleep::{default_async_sleep, AsyncSleep, SharedAsyncSleep};
 use aws_smithy_async::time::{SharedTimeSource, TimeSource};
+use aws_smithy_runtime_api::client::behavior_version::BehaviorVersion;
 use aws_smithy_runtime_api::client::http::HttpClient;
 use aws_smithy_runtime_api::shared::IntoShared;
 use aws_smithy_types::error::display::DisplayErrorContext;
@@ -44,6 +45,7 @@ pub struct ProviderConfig {
     region: Option<Region>,
     use_fips: Option<bool>,
     use_dual_stack: Option<bool>,
+    behavior_version: Option<BehaviorVersion>,
     /// An AWS profile created from `ProfileFiles` and a `profile_name`
     parsed_profile: Arc<OnceCell<Result<ProfileSet, ProfileFileLoadError>>>,
     /// A list of [std::path::Path]s to profile files
@@ -82,6 +84,7 @@ impl Default for ProviderConfig {
             region: None,
             use_fips: None,
             use_dual_stack: None,
+            behavior_version: None,
             parsed_profile: Default::default(),
             #[allow(deprecated)]
             profile_files: ProfileFiles::default(),
@@ -115,6 +118,7 @@ impl ProviderConfig {
             region: None,
             use_fips: None,
             use_dual_stack: None,
+            behavior_version: None,
             profile_name_override: None,
         }
     }
@@ -158,6 +162,7 @@ impl ProviderConfig {
             region: None,
             use_fips: None,
             use_dual_stack: None,
+            behavior_version: None,
             parsed_profile: Default::default(),
             #[allow(deprecated)]
             profile_files: ProfileFiles::default(),
@@ -183,6 +188,7 @@ impl ProviderConfig {
             region: None,
             use_fips: None,
             use_dual_stack: None,
+            behavior_version: None,
             profile_name_override: None,
         }
     }
@@ -336,6 +342,16 @@ impl ProviderConfig {
     /// [`ConfigLoader::use_dual_stack`](crate::ConfigLoader::use_dual_stack).
     pub fn with_use_dual_stack(mut self, use_dual_stack: Option<bool>) -> Self {
         self.use_dual_stack = use_dual_stack;
+        self
+    }
+
+    pub(crate) fn behavior_version(&self) -> Option<BehaviorVersion> {
+        self.behavior_version
+    }
+
+    /// Sets the behavior version for this provider config.
+    pub fn with_behavior_version(mut self, behavior_version: Option<BehaviorVersion>) -> Self {
+        self.behavior_version = behavior_version;
         self
     }
 

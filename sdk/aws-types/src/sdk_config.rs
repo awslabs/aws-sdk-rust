@@ -27,6 +27,7 @@ pub use aws_smithy_runtime_api::client::http::SharedHttpClient;
 use aws_smithy_runtime_api::client::identity::{ResolveCachedIdentity, SharedIdentityCache};
 pub use aws_smithy_runtime_api::client::stalled_stream_protection::StalledStreamProtectionConfig;
 use aws_smithy_runtime_api::shared::IntoShared;
+use aws_smithy_schema::protocol::SharedClientProtocol;
 pub use aws_smithy_types::checksum_config::{
     RequestChecksumCalculation, ResponseChecksumValidation,
 };
@@ -130,6 +131,7 @@ pub struct SdkConfig {
     request_min_compression_size_bytes: Option<u32>,
     request_checksum_calculation: Option<RequestChecksumCalculation>,
     response_checksum_validation: Option<ResponseChecksumValidation>,
+    protocol: Option<SharedClientProtocol>,
 }
 
 /// Builder for AWS Shared Configuration
@@ -163,6 +165,7 @@ pub struct Builder {
     request_min_compression_size_bytes: Option<u32>,
     request_checksum_calculation: Option<RequestChecksumCalculation>,
     response_checksum_validation: Option<ResponseChecksumValidation>,
+    protocol: Option<SharedClientProtocol>,
 }
 
 impl Builder {
@@ -695,6 +698,43 @@ impl Builder {
         self
     }
 
+    /// Sets the client protocol to use for serialization and deserialization.
+    ///
+    /// This overrides the default protocol determined by the service model,
+    /// enabling runtime protocol selection.
+    ///
+    /// # Transport
+    ///
+    /// This setter is HTTP-specific. The whole pipeline — the `self.protocol`
+    /// field (typed `Option<SharedClientProtocol>`, which elides to the HTTP
+    /// specialization via [`SharedClientProtocol`]'s
+    /// default type parameters) and its `Storable` impl (keyed only to
+    /// `SharedClientProtocol<http::Request, http::Response>`) — commits to
+    /// HTTP. The `impl ClientProtocol + 'static` bound you see here is
+    /// consistent with that: it elides to
+    /// `impl ClientProtocol<http::Request, http::Response>`.
+    ///
+    /// `ClientProtocolInner` / `ClientProtocol<Req, Res>` /
+    /// `SharedClientProtocol<Req, Res>` are themselves transport-generic — a
+    /// user can write `impl ClientProtocol<MqttMessage, MqttMessage>` — but
+    /// such an impl cannot be passed here because it won't round-trip through
+    /// the HTTP-typed config-bag storage. A future non-HTTP transport would
+    /// ship its own dedicated setter (e.g., `mqtt_protocol(…)`) paired with
+    /// its own `Storable` newtype rather than generalizing this one.
+    pub fn protocol(
+        mut self,
+        protocol: impl aws_smithy_schema::protocol::ClientProtocol + 'static,
+    ) -> Self {
+        self.set_protocol(Some(SharedClientProtocol::new(protocol)));
+        self
+    }
+
+    /// Sets the client protocol to use for serialization and deserialization.
+    pub fn set_protocol(&mut self, protocol: Option<SharedClientProtocol>) -> &mut Self {
+        self.protocol = protocol;
+        self
+    }
+
     #[doc = docs_for!(use_fips)]
     pub fn use_fips(mut self, use_fips: bool) -> Self {
         self.set_use_fips(Some(use_fips));
@@ -870,6 +910,7 @@ impl Builder {
             request_min_compression_size_bytes: self.request_min_compression_size_bytes,
             request_checksum_calculation: self.request_checksum_calculation,
             response_checksum_validation: self.response_checksum_validation,
+            protocol: self.protocol,
         }
     }
 }
@@ -1016,6 +1057,11 @@ impl SdkConfig {
         self.http_client.clone()
     }
 
+    /// Configured client protocol for serialization and deserialization
+    pub fn protocol(&self) -> Option<SharedClientProtocol> {
+        self.protocol.clone()
+    }
+
     /// Use FIPS endpoints
     pub fn use_fips(&self) -> Option<bool> {
         self.use_fips
@@ -1113,6 +1159,7 @@ impl SdkConfig {
             request_min_compression_size_bytes: self.request_min_compression_size_bytes,
             request_checksum_calculation: self.request_checksum_calculation,
             response_checksum_validation: self.response_checksum_validation,
+            protocol: self.protocol,
         }
     }
 }

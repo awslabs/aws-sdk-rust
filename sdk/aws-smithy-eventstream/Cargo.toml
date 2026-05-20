@@ -35,7 +35,7 @@ optional = true
 [dependencies.aws-smithy-types]
 path = "../aws-smithy-types"
 features = ["http-body-1-x"]
-version = "1.4.7"
+version = "1.4.8"
 
 [dependencies.derive_arbitrary]
 version = "1.3"

@@ -63,7 +63,7 @@ pub(super) fn resolve_endpoint(
                                 .property(
                                     "authSchemes",
                                     vec![::aws_smithy_types::Document::from({
-                                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::with_capacity(3);
                                         out.insert("name".to_string(), "sigv4a".to_string().into());
                                         out.insert("signingName".to_string(), "events".to_string().into());
                                         out.insert(
@@ -91,7 +91,7 @@ pub(super) fn resolve_endpoint(
                                     .property(
                                         "authSchemes",
                                         vec![::aws_smithy_types::Document::from({
-                                            let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                                            let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::with_capacity(3);
                                             out.insert("name".to_string(), "sigv4a".to_string().into());
                                             out.insert("signingName".to_string(), "events".to_string().into());
                                             out.insert(
@@ -121,7 +121,7 @@ pub(super) fn resolve_endpoint(
                             .property(
                                 "authSchemes",
                                 vec![::aws_smithy_types::Document::from({
-                                    let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                                    let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::with_capacity(3);
                                     out.insert("name".to_string(), "sigv4a".to_string().into());
                                     out.insert("signingName".to_string(), "events".to_string().into());
                                     out.insert(

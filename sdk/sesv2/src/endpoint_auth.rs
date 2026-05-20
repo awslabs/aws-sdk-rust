@@ -33,7 +33,12 @@ pub(crate) async fn resolve_endpoint_based_auth_scheme_options<'a>(
     // auth scheme IDs but not properties. This is because, at this stage, we're only determining which auth schemes will be candidates.
     // Any `authSchemes` list properties that influence the signing context will be extracted later
     // in `AuthSchemeEndpointConfig`, and passed by the orchestrator to the signer's `sign_http_request` method.
-    if let Some(aws_smithy_types::Document::Array(endpoint_auth_schemes)) = endpoint.properties().get("authSchemes") {
+    let typed_schemes = endpoint.auth_schemes();
+    if !typed_schemes.is_empty() {
+        for scheme in typed_schemes {
+            endpoint_auth_scheme_ids.push(AuthSchemeId::from(Cow::Owned(scheme.name().to_owned())));
+        }
+    } else if let Some(aws_smithy_types::Document::Array(endpoint_auth_schemes)) = endpoint.properties().get("authSchemes") {
         for endpoint_auth_scheme in endpoint_auth_schemes {
             let scheme_id_str = endpoint_auth_scheme
                 .as_object()

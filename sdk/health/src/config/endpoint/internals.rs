@@ -155,7 +155,7 @@ pub(super) fn resolve_endpoint(
                     .property(
                         "authSchemes",
                         vec![::aws_smithy_types::Document::from({
-                            let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                            let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::with_capacity(3);
                             out.insert("name".to_string(), "sigv4".to_string().into());
                             out.insert("signingName".to_string(), "health".to_string().into());
                             out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
@@ -170,7 +170,7 @@ pub(super) fn resolve_endpoint(
                     .property(
                         "authSchemes",
                         vec![::aws_smithy_types::Document::from({
-                            let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                            let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::with_capacity(3);
                             out.insert("name".to_string(), "sigv4".to_string().into());
                             out.insert("signingName".to_string(), "health".to_string().into());
                             out.insert("signingRegion".to_string(), "cn-northwest-1".to_string().into());

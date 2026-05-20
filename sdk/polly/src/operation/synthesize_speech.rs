@@ -83,7 +83,129 @@ impl SynthesizeSpeech {
         }
         runtime_plugins
     }
+    /// The schema for this operation's presigned input shape.
+    pub const PRESIGNED_INPUT_SCHEMA: &'static ::aws_smithy_schema::Schema = &PRESIGNED_SCHEMA;
 }
+static PRESIGNED_SCHEMA_ID: ::aws_smithy_schema::ShapeId = ::aws_smithy_schema::ShapeId::from_static(
+    "com.amazonaws.polly.synthetic.synthetic.aws.presigned#SynthesizeSpeechInput",
+    "com.amazonaws.polly.synthetic.synthetic.aws.presigned",
+    "SynthesizeSpeechInput",
+);
+static PRESIGNED_MEMBER_ENGINE: ::aws_smithy_schema::Schema = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_static(
+        "com.amazonaws.polly.synthetic.synthetic.aws.presigned#SynthesizeSpeechInput$Engine",
+        "com.amazonaws.polly.synthetic.synthetic.aws.presigned",
+        "SynthesizeSpeechInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Engine",
+    0,
+)
+.with_http_query("Engine");
+static PRESIGNED_MEMBER_LANGUAGE_CODE: ::aws_smithy_schema::Schema = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_static(
+        "com.amazonaws.polly.synthetic.synthetic.aws.presigned#SynthesizeSpeechInput$LanguageCode",
+        "com.amazonaws.polly.synthetic.synthetic.aws.presigned",
+        "SynthesizeSpeechInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "LanguageCode",
+    1,
+)
+.with_http_query("LanguageCode");
+static PRESIGNED_MEMBER_LEXICON_NAMES: ::aws_smithy_schema::Schema = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_static(
+        "com.amazonaws.polly.synthetic.synthetic.aws.presigned#SynthesizeSpeechInput$LexiconNames",
+        "com.amazonaws.polly.synthetic.synthetic.aws.presigned",
+        "SynthesizeSpeechInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "LexiconNames",
+    2,
+)
+.with_http_query("LexiconNames");
+static PRESIGNED_MEMBER_OUTPUT_FORMAT: ::aws_smithy_schema::Schema = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_static(
+        "com.amazonaws.polly.synthetic.synthetic.aws.presigned#SynthesizeSpeechInput$OutputFormat",
+        "com.amazonaws.polly.synthetic.synthetic.aws.presigned",
+        "SynthesizeSpeechInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "OutputFormat",
+    3,
+)
+.with_http_query("OutputFormat");
+static PRESIGNED_MEMBER_SAMPLE_RATE: ::aws_smithy_schema::Schema = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_static(
+        "com.amazonaws.polly.synthetic.synthetic.aws.presigned#SynthesizeSpeechInput$SampleRate",
+        "com.amazonaws.polly.synthetic.synthetic.aws.presigned",
+        "SynthesizeSpeechInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SampleRate",
+    4,
+)
+.with_http_query("SampleRate");
+static PRESIGNED_MEMBER_SPEECH_MARK_TYPES: ::aws_smithy_schema::Schema = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_static(
+        "com.amazonaws.polly.synthetic.synthetic.aws.presigned#SynthesizeSpeechInput$SpeechMarkTypes",
+        "com.amazonaws.polly.synthetic.synthetic.aws.presigned",
+        "SynthesizeSpeechInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "SpeechMarkTypes",
+    5,
+)
+.with_http_query("SpeechMarkTypes");
+static PRESIGNED_MEMBER_TEXT: ::aws_smithy_schema::Schema = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_static(
+        "com.amazonaws.polly.synthetic.synthetic.aws.presigned#SynthesizeSpeechInput$Text",
+        "com.amazonaws.polly.synthetic.synthetic.aws.presigned",
+        "SynthesizeSpeechInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Text",
+    6,
+)
+.with_http_query("Text");
+static PRESIGNED_MEMBER_TEXT_TYPE: ::aws_smithy_schema::Schema = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_static(
+        "com.amazonaws.polly.synthetic.synthetic.aws.presigned#SynthesizeSpeechInput$TextType",
+        "com.amazonaws.polly.synthetic.synthetic.aws.presigned",
+        "SynthesizeSpeechInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "TextType",
+    7,
+)
+.with_http_query("TextType");
+static PRESIGNED_MEMBER_VOICE_ID: ::aws_smithy_schema::Schema = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_static(
+        "com.amazonaws.polly.synthetic.synthetic.aws.presigned#SynthesizeSpeechInput$VoiceId",
+        "com.amazonaws.polly.synthetic.synthetic.aws.presigned",
+        "SynthesizeSpeechInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "VoiceId",
+    8,
+)
+.with_http_query("VoiceId");
+static PRESIGNED_SCHEMA: ::aws_smithy_schema::Schema = ::aws_smithy_schema::Schema::new_struct(
+    PRESIGNED_SCHEMA_ID,
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &PRESIGNED_MEMBER_ENGINE,
+        &PRESIGNED_MEMBER_LANGUAGE_CODE,
+        &PRESIGNED_MEMBER_LEXICON_NAMES,
+        &PRESIGNED_MEMBER_OUTPUT_FORMAT,
+        &PRESIGNED_MEMBER_SAMPLE_RATE,
+        &PRESIGNED_MEMBER_SPEECH_MARK_TYPES,
+        &PRESIGNED_MEMBER_TEXT,
+        &PRESIGNED_MEMBER_TEXT_TYPE,
+        &PRESIGNED_MEMBER_VOICE_ID,
+    ],
+)
+.with_http(aws_smithy_schema::traits::HttpTrait::new("GET", "/v1/speech", None));
 impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for SynthesizeSpeech {
     fn config(&self) -> ::std::option::Option<::aws_smithy_types::config_bag::FrozenLayer> {
         let mut cfg = ::aws_smithy_types::config_bag::Layer::new("SynthesizeSpeech");
@@ -163,9 +285,10 @@ impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for Synthesiz
         ))
     }
 
-    fn deserialize_nonstreaming(
+    fn deserialize_nonstreaming_with_config(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
+        _cfg: &::aws_smithy_types::config_bag::ConfigBag,
     ) -> ::aws_smithy_runtime_api::client::interceptors::context::OutputOrError {
         // For streaming operations, we only hit this case if its an error
         let body = response.body().bytes().expect("body loaded");

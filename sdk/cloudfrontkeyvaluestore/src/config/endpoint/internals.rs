@@ -64,9 +64,12 @@ pub(super) fn resolve_endpoint(
                                                                 .property(
                                                                     "authSchemes",
                                                                     vec![::aws_smithy_types::Document::from({
-                                                                        let mut out =
-                                                                            ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new(
-                                                                            );
+                                                                        let mut out = ::std::collections::HashMap::<
+                                                                            String,
+                                                                            ::aws_smithy_types::Document,
+                                                                        >::with_capacity(
+                                                                            3
+                                                                        );
                                                                         out.insert("name".to_string(), "sigv4a".to_string().into());
                                                                         out.insert(
                                                                             "signingName".to_string(),
@@ -85,30 +88,23 @@ pub(super) fn resolve_endpoint(
                                                             "Provided endpoint is not a valid URL".to_string(),
                                                         ));
                                                     }
-                                                    return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
-                                                        .url({
-                                                            let mut out = String::new();
-                                                            out.push_str("https://");
-                                                            #[allow(clippy::needless_borrow)]
-                                                            out.push_str(&parsed_arn.account_id());
-                                                            out.push_str(".cloudfront-kvs.global.api.aws");
-                                                            out
-                                                        })
-                                                        .property(
-                                                            "authSchemes",
-                                                            vec![::aws_smithy_types::Document::from({
-                                                                let mut out =
-                                                                    ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                                                                out.insert("name".to_string(), "sigv4a".to_string().into());
-                                                                out.insert("signingName".to_string(), "cloudfront-keyvaluestore".to_string().into());
-                                                                out.insert(
-                                                                    "signingRegionSet".to_string(),
-                                                                    vec![::aws_smithy_types::Document::from("*".to_string())].into(),
-                                                                );
-                                                                out
-                                                            })],
-                                                        )
-                                                        .build());
+                                                    return Ok(::aws_smithy_types::endpoint::Endpoint::builder().url({ let mut out = String::new();
+out.push_str("https://");
+#[allow(clippy::needless_borrow)]
+out.push_str(&parsed_arn.account_id());
+out.push_str(".cloudfront-kvs.global.api.aws");
+out })
+.property("authSchemes", vec![::aws_smithy_types::Document::from( {
+    let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::with_capacity(3);
+    out.insert("name".to_string(), "sigv4a"
+    .to_string().into());
+    out.insert("signingName".to_string(), "cloudfront-keyvaluestore"
+    .to_string().into());
+    out.insert("signingRegionSet".to_string(), vec![::aws_smithy_types::Document::from("*"
+    .to_string()),].into());
+    out
+}),])
+.build());
                                                 }
                                                 return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message({
                                                     let mut out = String::new();
@@ -151,7 +147,8 @@ pub(super) fn resolve_endpoint(
                                                     .property(
                                                         "authSchemes",
                                                         vec![::aws_smithy_types::Document::from({
-                                                            let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                                                            let mut out =
+                                                                ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::with_capacity(3);
                                                             out.insert("name".to_string(), "sigv4a".to_string().into());
                                                             out.insert("signingName".to_string(), "cloudfront-keyvaluestore".to_string().into());
                                                             out.insert(
@@ -179,7 +176,8 @@ pub(super) fn resolve_endpoint(
                                             .property(
                                                 "authSchemes",
                                                 vec![::aws_smithy_types::Document::from({
-                                                    let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                                                    let mut out =
+                                                        ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::with_capacity(3);
                                                     out.insert("name".to_string(), "sigv4a".to_string().into());
                                                     out.insert("signingName".to_string(), "cloudfront-keyvaluestore".to_string().into());
                                                     out.insert(

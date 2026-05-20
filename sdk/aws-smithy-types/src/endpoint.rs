@@ -11,6 +11,57 @@ use std::collections::HashMap;
 
 type MaybeStatic = Cow<'static, str>;
 
+/// An authentication scheme configuration for an endpoint.
+///
+/// This is a lightweight alternative to storing auth schemes as
+/// `Document::Object(HashMap<String, Document>)` in endpoint properties.
+/// Properties are stored in a flat `Vec` and looked up via linear scan,
+/// which is faster than HashMap for the typical 3-4 entries.
+#[derive(Debug, Clone, PartialEq)]
+pub struct EndpointAuthScheme {
+    name: MaybeStatic,
+    properties: Vec<(MaybeStatic, Document)>,
+}
+
+impl EndpointAuthScheme {
+    /// Creates a new `EndpointAuthScheme` with pre-allocated capacity for properties.
+    pub fn with_capacity(name: impl Into<MaybeStatic>, capacity: usize) -> Self {
+        Self {
+            name: name.into(),
+            properties: Vec::with_capacity(capacity),
+        }
+    }
+
+    /// Returns the auth scheme name (e.g., "sigv4", "sigv4a").
+    pub fn name(&self) -> &str {
+        &self.name
+    }
+
+    /// Adds a property to this auth scheme. Chainable.
+    pub fn put(mut self, key: impl Into<MaybeStatic>, value: impl Into<Document>) -> Self {
+        self.properties.push((key.into(), value.into()));
+        self
+    }
+
+    /// Gets a property value by name (linear scan).
+    pub fn get(&self, key: &str) -> Option<&Document> {
+        self.properties
+            .iter()
+            .find(|(k, _)| k.as_ref() == key)
+            .map(|(_, v)| v)
+    }
+
+    /// Converts this auth scheme into a `Document` for backward compatibility.
+    pub fn as_document(&self) -> Document {
+        let mut map = HashMap::with_capacity(self.properties.len() + 1);
+        map.insert("name".to_string(), Document::String(self.name.to_string()));
+        for (k, v) in &self.properties {
+            map.insert(k.to_string(), v.clone());
+        }
+        Document::Object(map)
+    }
+}
+
 /* ANCHOR: endpoint */
 /// Smithy Endpoint Type
 ///
@@ -20,6 +71,7 @@ pub struct Endpoint {
     url: MaybeStatic,
     headers: HashMap<MaybeStatic, Vec<MaybeStatic>>,
     properties: HashMap<MaybeStatic, Document>,
+    auth_schemes: Vec<EndpointAuthScheme>,
 }
 
 /* ANCHOR_END: endpoint */
@@ -41,6 +93,11 @@ impl Endpoint {
     /// Returns the properties associated with this endpoint
     pub fn properties(&self) -> &HashMap<Cow<'static, str>, Document> {
         &self.properties
+    }
+
+    /// Returns the typed auth schemes associated with this endpoint
+    pub fn auth_schemes(&self) -> &[EndpointAuthScheme] {
+        &self.auth_schemes
     }
 
     /// Converts this endpoint back into a [`Builder`]
@@ -72,6 +129,7 @@ impl Builder {
                 url: Default::default(),
                 headers: HashMap::new(),
                 properties: HashMap::new(),
+                auth_schemes: Vec::new(),
             },
         }
     }
@@ -120,6 +178,12 @@ impl Builder {
     /// ```
     pub fn property(mut self, key: impl Into<MaybeStatic>, value: impl Into<Document>) -> Self {
         self.endpoint.properties.insert(key.into(), value.into());
+        self
+    }
+
+    /// Adds a typed auth scheme to the endpoint
+    pub fn auth_scheme(mut self, auth_scheme: EndpointAuthScheme) -> Self {
+        self.endpoint.auth_schemes.push(auth_scheme);
         self
     }
 

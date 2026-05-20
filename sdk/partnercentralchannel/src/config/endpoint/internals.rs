@@ -31,7 +31,7 @@ pub(super) fn resolve_endpoint(
                 "authSchemes",
                 vec![
                     ::aws_smithy_types::Document::from({
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::with_capacity(2);
                         out.insert("name".to_string(), "sigv4a".to_string().into());
                         out.insert(
                             "signingRegionSet".to_string(),
@@ -40,7 +40,7 @@ pub(super) fn resolve_endpoint(
                         out
                     }),
                     ::aws_smithy_types::Document::from({
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::with_capacity(1);
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out
                     }),
@@ -66,7 +66,7 @@ pub(super) fn resolve_endpoint(
                             "authSchemes",
                             vec![
                                 ::aws_smithy_types::Document::from({
-                                    let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                                    let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::with_capacity(2);
                                     out.insert("name".to_string(), "sigv4a".to_string().into());
                                     out.insert(
                                         "signingRegionSet".to_string(),
@@ -75,7 +75,7 @@ pub(super) fn resolve_endpoint(
                                     out
                                 }),
                                 ::aws_smithy_types::Document::from({
-                                    let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                                    let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::with_capacity(2);
                                     out.insert("name".to_string(), "sigv4".to_string().into());
                                     out.insert("signingRegion".to_string(), "us-gov-west-1".to_string().into());
                                     out
@@ -99,7 +99,7 @@ pub(super) fn resolve_endpoint(
                             "authSchemes",
                             vec![
                                 ::aws_smithy_types::Document::from({
-                                    let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                                    let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::with_capacity(2);
                                     out.insert("name".to_string(), "sigv4a".to_string().into());
                                     out.insert(
                                         "signingRegionSet".to_string(),
@@ -108,7 +108,7 @@ pub(super) fn resolve_endpoint(
                                     out
                                 }),
                                 ::aws_smithy_types::Document::from({
-                                    let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                                    let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::with_capacity(2);
                                     out.insert("name".to_string(), "sigv4".to_string().into());
                                     out.insert("signingRegion".to_string(), "us-gov-west-1".to_string().into());
                                     out
@@ -131,7 +131,7 @@ pub(super) fn resolve_endpoint(
                         "authSchemes",
                         vec![
                             ::aws_smithy_types::Document::from({
-                                let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                                let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::with_capacity(2);
                                 out.insert("name".to_string(), "sigv4a".to_string().into());
                                 out.insert(
                                     "signingRegionSet".to_string(),
@@ -140,7 +140,7 @@ pub(super) fn resolve_endpoint(
                                 out
                             }),
                             ::aws_smithy_types::Document::from({
-                                let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                                let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::with_capacity(2);
                                 out.insert("name".to_string(), "sigv4".to_string().into());
                                 out.insert("signingRegion".to_string(), partition_result.implicit_global_region().to_owned().into());
                                 out
@@ -161,7 +161,7 @@ pub(super) fn resolve_endpoint(
                     "authSchemes",
                     vec![
                         ::aws_smithy_types::Document::from({
-                            let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                            let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::with_capacity(2);
                             out.insert("name".to_string(), "sigv4a".to_string().into());
                             out.insert(
                                 "signingRegionSet".to_string(),
@@ -170,7 +170,7 @@ pub(super) fn resolve_endpoint(
                             out
                         }),
                         ::aws_smithy_types::Document::from({
-                            let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                            let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::with_capacity(2);
                             out.insert("name".to_string(), "sigv4".to_string().into());
                             out.insert("signingRegion".to_string(), partition_result.implicit_global_region().to_owned().into());
                             out

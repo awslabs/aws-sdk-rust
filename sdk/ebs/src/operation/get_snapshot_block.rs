@@ -164,9 +164,10 @@ impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for GetSnapsh
         ))
     }
 
-    fn deserialize_nonstreaming(
+    fn deserialize_nonstreaming_with_config(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
+        _cfg: &::aws_smithy_types::config_bag::ConfigBag,
     ) -> ::aws_smithy_runtime_api::client::interceptors::context::OutputOrError {
         // For streaming operations, we only hit this case if its an error
         let body = response.body().bytes().expect("body loaded");
@@ -348,6 +349,10 @@ mod get_snapshot_block_test {
             .load::<::aws_smithy_runtime_api::client::ser_de::SharedResponseDeserializer>()
             .expect("the config must have a deserializer");
 
+        // Build a config bag with the protocol for schema-based deserialization
+        #[allow(unused_mut)]
+        let mut test_cfg = ::aws_smithy_types::config_bag::ConfigBag::base();
+
         let parsed = de.deserialize_streaming(&mut http_response);
         let parsed = parsed.unwrap_or_else(|| {
             let http_response = http_response.map(|body| {
@@ -356,7 +361,7 @@ mod get_snapshot_block_test {
                     ::aws_smithy_protocol_test::MediaType::from("application/json"),
                 )))
             });
-            de.deserialize_nonstreaming(&http_response)
+            de.deserialize_nonstreaming_with_config(&http_response, &test_cfg)
         });
         let parsed = parsed.expect_err("should be error response");
         let parsed: &crate::operation::get_snapshot_block::GetSnapshotBlockError =
@@ -408,6 +413,10 @@ mod get_snapshot_block_test {
             .load::<::aws_smithy_runtime_api::client::ser_de::SharedResponseDeserializer>()
             .expect("the config must have a deserializer");
 
+        // Build a config bag with the protocol for schema-based deserialization
+        #[allow(unused_mut)]
+        let mut test_cfg = ::aws_smithy_types::config_bag::ConfigBag::base();
+
         let parsed = de.deserialize_streaming(&mut http_response);
         let parsed = parsed.unwrap_or_else(|| {
             let http_response = http_response.map(|body| {
@@ -416,7 +425,7 @@ mod get_snapshot_block_test {
                     ::aws_smithy_protocol_test::MediaType::from("application/json"),
                 )))
             });
-            de.deserialize_nonstreaming(&http_response)
+            de.deserialize_nonstreaming_with_config(&http_response, &test_cfg)
         });
         let parsed = parsed.expect_err("should be error response");
         let parsed: &crate::operation::get_snapshot_block::GetSnapshotBlockError =

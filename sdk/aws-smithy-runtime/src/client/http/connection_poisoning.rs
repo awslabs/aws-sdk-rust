@@ -12,7 +12,7 @@ use aws_smithy_runtime_api::client::interceptors::{dyn_dispatch_hint, Intercept}
 use aws_smithy_runtime_api::client::retries::classifiers::RetryAction;
 use aws_smithy_runtime_api::client::runtime_components::RuntimeComponents;
 use aws_smithy_types::config_bag::ConfigBag;
-use aws_smithy_types::retry::{ReconnectMode, RetryConfig};
+use aws_smithy_types::retry::{ReconnectMode, RetryConfig, RetrySpec};
 use tracing::{debug, error};
 
 // re-export relocated struct that used to live here
@@ -72,7 +72,16 @@ impl Intercept for ConnectionPoisoningInterceptor {
     ) -> Result<(), BoxError> {
         let reconnect_mode = cfg
             .load::<RetryConfig>()
-            .map(RetryConfig::reconnect_mode)
+            .map(|rc| {
+                if rc
+                    .retry_spec()
+                    .is_some_and(|s| s.is_at_least(RetrySpec::V2_1))
+                {
+                    ReconnectMode::ReuseAllConnections
+                } else {
+                    rc.reconnect_mode()
+                }
+            })
             .unwrap_or(ReconnectMode::ReconnectOnTransientError);
         let captured_connection = cfg.load::<CaptureSmithyConnection>().cloned();
         let retry_classifier_result =

@@ -1504,6 +1504,20 @@ impl From<&::aws_types::sdk_config::SdkConfig> for Builder {
         if let Some(cache) = input.identity_cache() {
             builder.set_identity_cache(cache);
         }
+        if let ::std::option::Option::Some(existing_rc) = input.retry_config().cloned() {
+            if existing_rc
+                .retry_spec()
+                .is_some_and(|s| s.is_at_least(::aws_smithy_types::retry::RetrySpec::V2_1))
+            {
+                let mut rc = existing_rc.with_retry_spec(
+                    ::aws_smithy_types::retry::RetrySpec::v2_1().with_non_throttling_initial_backoff(::std::time::Duration::from_millis(25)),
+                );
+                if !input.get_origin("retry_config").is_client_config() {
+                    rc = rc.with_max_attempts(4);
+                }
+                builder = builder.retry_config(rc);
+            }
+        }
         builder.set_app_name(input.app_name().cloned());
 
         builder

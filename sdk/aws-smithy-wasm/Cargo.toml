@@ -25,12 +25,12 @@ version = "1.2.14"
 [dependencies.aws-smithy-runtime-api]
 path = "../aws-smithy-runtime-api"
 features = ["http-1x", "client"]
-version = "1.12.0"
+version = "1.12.1"
 
 [dependencies.aws-smithy-types]
 path = "../aws-smithy-types"
 features = ["http-body-1-x"]
-version = "1.4.7"
+version = "1.4.8"
 
 [dependencies.sync_wrapper]
 version = "1"

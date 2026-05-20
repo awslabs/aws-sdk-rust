@@ -27,7 +27,7 @@ pub struct RequestParts<B = SdkBody> {
 pub struct Request<B = SdkBody> {
     body: B,
     uri: Uri,
-    method: http_02x::Method,
+    method: http_1x::Method,
     extensions: Extensions,
     headers: Headers,
 }
@@ -211,7 +211,10 @@ impl<B> Request<B> {
     pub fn try_into_http02x(self) -> Result<http_02x::Request<B>, HttpError> {
         let mut req = http_02x::Request::builder()
             .uri(self.uri.into_h0())
-            .method(self.method)
+            .method(
+                http_02x::Method::from_bytes(self.method.as_str().as_bytes())
+                    .expect("valid method"),
+            )
             .body(self.body)
             .expect("known valid");
         *req.headers_mut() = self.headers.http0_headermap();
@@ -227,7 +230,7 @@ impl<B> Request<B> {
     pub fn try_into_http1x(self) -> Result<http_1x::Request<B>, HttpError> {
         let mut req = http_1x::Request::builder()
             .uri(self.uri.as_string)
-            .method(self.method.as_str())
+            .method(self.method)
             .body(self.body)
             .expect("known valid");
         *req.headers_mut() = self.headers.http1_headermap();
@@ -251,7 +254,7 @@ impl<B> Request<B> {
         Self {
             body,
             uri: Uri::from_http0x_uri(http_02x::Uri::from_static("/")),
-            method: http_02x::Method::GET,
+            method: http_1x::Method::GET,
             extensions: Default::default(),
             headers: Default::default(),
         }
@@ -294,6 +297,13 @@ impl<B> Request<B> {
     /// Returns the method associated with this request
     pub fn method(&self) -> &str {
         self.method.as_str()
+    }
+
+    /// Sets the HTTP method for this request
+    pub fn set_method(&mut self, method: &str) -> Result<(), HttpError> {
+        self.method =
+            http_1x::Method::from_bytes(method.as_bytes()).map_err(HttpError::invalid_method)?;
+        Ok(())
     }
 
     /// Returns the URI associated with this request
@@ -367,7 +377,8 @@ impl<B> TryFrom<http_02x::Request<B>> for Request<B> {
         Ok(Self {
             body,
             uri: parts.uri.into(),
-            method: parts.method,
+            method: http_1x::Method::from_bytes(parts.method.as_str().as_bytes())
+                .expect("valid method"),
             extensions: parts.extensions.into(),
             headers,
         })
@@ -384,7 +395,7 @@ impl<B> TryFrom<http_1x::Request<B>> for Request<B> {
         Ok(Self {
             body,
             uri: Uri::from_http1x_uri(parts.uri),
-            method: http_02x::Method::from_bytes(parts.method.as_str().as_bytes()).expect("valid"),
+            method: parts.method,
             extensions: parts.extensions.into(),
             headers,
         })

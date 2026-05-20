@@ -20,4 +20,4 @@ urlencoding = "2.1"
 [dependencies.aws-smithy-types]
 path = "../aws-smithy-types"
 features = ["http-body-1-x"]
-version = "1.4.7"
+version = "1.4.8"

@@ -42,7 +42,8 @@ pub use aws_smithy_runtime_api::{
     shared::IntoShared,
 };
 pub use aws_smithy_types::{
-    body::SdkBody, error::display::DisplayErrorContext, timeout::TimeoutConfig,
+    body::SdkBody, config_bag::ConfigBag, error::display::DisplayErrorContext,
+    timeout::TimeoutConfig,
 };
 pub use bytes::Bytes;
 pub use pin_utils::pin_mut;

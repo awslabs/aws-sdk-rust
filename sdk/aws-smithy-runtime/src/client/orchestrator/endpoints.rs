@@ -104,7 +104,16 @@ pub(super) fn apply_endpoint(
     tracing::debug!(endpoint_prefix = ?endpoint_prefix, "will apply endpoint {:?}", endpoint);
     let request = ctx.request_mut().expect("set during serialization");
 
-    apply_endpoint_to_request(request, endpoint, endpoint_prefix)
+    // If a schema-driven protocol is in use, delegate endpoint application to it.
+    if let Some(protocol) = cfg.load::<aws_smithy_schema::protocol::SharedClientProtocol>() {
+        protocol
+            .update_endpoint(request, endpoint, cfg)
+            .map_err(BoxError::from)?;
+    } else {
+        apply_endpoint_to_request(request, endpoint, endpoint_prefix)?;
+    }
+
+    Ok(())
 }
 
 fn apply_endpoint_to_request(

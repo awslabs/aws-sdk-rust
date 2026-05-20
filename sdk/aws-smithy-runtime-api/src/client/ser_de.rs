@@ -52,13 +52,28 @@ impl Storable for SharedRequestSerializer {
 impl_shared_conversions!(convert SharedRequestSerializer from SerializeRequest using SharedRequestSerializer::new);
 
 /// Deserialization implementation that converts an [`HttpResponse`] into an [`Output`] or [`Error`].
+///
+/// This trait uses a backward-compatible versioning pattern for methods that need
+/// access to [`ConfigBag`]. Each method has a `_with_config` variant:
+///
+/// - **Legacy implementations** override the original method (without config).
+///   The default `_with_config` variant delegates to it, ignoring the config.
+/// - **New implementations** override the `_with_config` variant.
+///   The default original method delegates to it with an empty config bag.
+///
+/// The orchestrator always calls the `_with_config` variants.
 pub trait DeserializeResponse: Send + Sync + fmt::Debug {
     /// For streaming requests, deserializes the response headers.
     ///
-    /// The orchestrator will call `deserialize_streaming` first, and if it returns `None`,
-    /// then it will continue onto `deserialize_nonstreaming`. This method should only be
-    /// implemented for streaming requests where the streaming response body needs to be a part
-    /// of the deserialized output.
+    /// The orchestrator will call [`deserialize_streaming_with_config`](Self::deserialize_streaming_with_config)
+    /// first, and if it returns `None`, then it will continue onto
+    /// [`deserialize_nonstreaming_with_config`](Self::deserialize_nonstreaming_with_config).
+    ///
+    /// Override this or [`deserialize_streaming_with_config`](Self::deserialize_streaming_with_config),
+    /// but not both.
+    #[deprecated(
+        note = "Implement `deserialize_streaming_with_config` instead. This method will be removed in a future release."
+    )]
     fn deserialize_streaming(
         &self,
         response: &mut HttpResponse,
@@ -67,11 +82,47 @@ pub trait DeserializeResponse: Send + Sync + fmt::Debug {
         None
     }
 
+    /// For streaming requests, deserializes the response headers with access to the config bag.
+    ///
+    /// This is the method called by the orchestrator. The default implementation
+    /// delegates to [`deserialize_streaming`](Self::deserialize_streaming), ignoring the config.
+    fn deserialize_streaming_with_config(
+        &self,
+        response: &mut HttpResponse,
+        _cfg: &ConfigBag,
+    ) -> Option<Result<Output, OrchestratorError<Error>>> {
+        #[allow(deprecated)]
+        self.deserialize_streaming(response)
+    }
+
     /// Deserialize the entire response including its body into an output or error.
+    ///
+    /// Override this or [`deserialize_nonstreaming_with_config`](Self::deserialize_nonstreaming_with_config),
+    /// but not both.
+    #[deprecated(
+        note = "Implement `deserialize_nonstreaming_with_config` instead. This method will be removed in a future release."
+    )]
     fn deserialize_nonstreaming(
         &self,
         response: &HttpResponse,
-    ) -> Result<Output, OrchestratorError<Error>>;
+    ) -> Result<Output, OrchestratorError<Error>> {
+        self.deserialize_nonstreaming_with_config(response, &ConfigBag::base())
+    }
+
+    /// Deserialize the entire response including its body into an output or error,
+    /// with access to the config bag.
+    ///
+    /// This is the method called by the orchestrator. The default implementation
+    /// delegates to [`deserialize_nonstreaming`](Self::deserialize_nonstreaming),
+    /// ignoring the config bag.
+    fn deserialize_nonstreaming_with_config(
+        &self,
+        response: &HttpResponse,
+        _cfg: &ConfigBag,
+    ) -> Result<Output, OrchestratorError<Error>> {
+        #[allow(deprecated)]
+        self.deserialize_nonstreaming(response)
+    }
 }
 
 /// Shared response deserializer.
@@ -87,6 +138,7 @@ impl SharedResponseDeserializer {
     }
 }
 
+#[allow(deprecated)]
 impl DeserializeResponse for SharedResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
@@ -95,11 +147,27 @@ impl DeserializeResponse for SharedResponseDeserializer {
         self.0.deserialize_nonstreaming(response)
     }
 
+    fn deserialize_nonstreaming_with_config(
+        &self,
+        response: &HttpResponse,
+        cfg: &ConfigBag,
+    ) -> Result<Output, OrchestratorError<Error>> {
+        self.0.deserialize_nonstreaming_with_config(response, cfg)
+    }
+
     fn deserialize_streaming(
         &self,
         response: &mut HttpResponse,
     ) -> Option<Result<Output, OrchestratorError<Error>>> {
         self.0.deserialize_streaming(response)
+    }
+
+    fn deserialize_streaming_with_config(
+        &self,
+        response: &mut HttpResponse,
+        cfg: &ConfigBag,
+    ) -> Option<Result<Output, OrchestratorError<Error>>> {
+        self.0.deserialize_streaming_with_config(response, cfg)
     }
 }
 
