@@ -2726,8 +2726,4 @@ source_hash = 'c3f37d583942751f126155abdd5fd9a8406326c12b24824f917b0bbf1ce0145b'
 category = 'AwsRuntime'
 version = '0.0.0'
 source_hash = 'c30ceeb5bfe6ff5a5a6c8bc12c239947564ba9a143171536648c3794618d0b73'
-
-[release]
-tag = 'release-2026-05-21'
-
 [release.crates]
