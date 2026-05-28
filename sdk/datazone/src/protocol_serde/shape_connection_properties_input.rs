@@ -82,6 +82,12 @@ pub fn ser_connection_properties_input(
             crate::protocol_serde::shape_lakehouse_properties_input::ser_lakehouse_properties_input(&mut object_13, inner)?;
             object_13.finish();
         }
+        crate::types::ConnectionPropertiesInput::VpcProperties(inner) => {
+            #[allow(unused_mut)]
+            let mut object_14 = object_13.key("vpcProperties").start_object();
+            crate::protocol_serde::shape_vpc_properties_input::ser_vpc_properties_input(&mut object_14, inner)?;
+            object_14.finish();
+        }
         crate::types::ConnectionPropertiesInput::Unknown => {
             return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
                 "ConnectionPropertiesInput",

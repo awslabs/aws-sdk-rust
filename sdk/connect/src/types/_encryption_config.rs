@@ -8,7 +8,7 @@ pub struct EncryptionConfig {
     pub encryption_type: crate::types::EncryptionType,
     /// <p>The full ARN of the encryption key.</p><note>
     /// <p>Be sure to provide the full ARN of the encryption key, not just the ID.</p>
-    /// <p>Amazon Connect supports only KMS keys with the default key spec of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/asymmetric-key-specs.html#key-spec-symmetric-default"> <code>SYMMETRIC_DEFAULT</code> </a>.</p>
+    /// <p>Connect Customer supports only KMS keys with the default key spec of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/asymmetric-key-specs.html#key-spec-symmetric-default"> <code>SYMMETRIC_DEFAULT</code> </a>.</p>
     /// </note>
     pub key_id: ::std::string::String,
 }
@@ -19,7 +19,7 @@ impl EncryptionConfig {
     }
     /// <p>The full ARN of the encryption key.</p><note>
     /// <p>Be sure to provide the full ARN of the encryption key, not just the ID.</p>
-    /// <p>Amazon Connect supports only KMS keys with the default key spec of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/asymmetric-key-specs.html#key-spec-symmetric-default"> <code>SYMMETRIC_DEFAULT</code> </a>.</p>
+    /// <p>Connect Customer supports only KMS keys with the default key spec of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/asymmetric-key-specs.html#key-spec-symmetric-default"> <code>SYMMETRIC_DEFAULT</code> </a>.</p>
     /// </note>
     pub fn key_id(&self) -> &str {
         use std::ops::Deref;
@@ -58,7 +58,7 @@ impl EncryptionConfigBuilder {
     }
     /// <p>The full ARN of the encryption key.</p><note>
     /// <p>Be sure to provide the full ARN of the encryption key, not just the ID.</p>
-    /// <p>Amazon Connect supports only KMS keys with the default key spec of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/asymmetric-key-specs.html#key-spec-symmetric-default"> <code>SYMMETRIC_DEFAULT</code> </a>.</p>
+    /// <p>Connect Customer supports only KMS keys with the default key spec of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/asymmetric-key-specs.html#key-spec-symmetric-default"> <code>SYMMETRIC_DEFAULT</code> </a>.</p>
     /// </note>
     /// This field is required.
     pub fn key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -67,7 +67,7 @@ impl EncryptionConfigBuilder {
     }
     /// <p>The full ARN of the encryption key.</p><note>
     /// <p>Be sure to provide the full ARN of the encryption key, not just the ID.</p>
-    /// <p>Amazon Connect supports only KMS keys with the default key spec of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/asymmetric-key-specs.html#key-spec-symmetric-default"> <code>SYMMETRIC_DEFAULT</code> </a>.</p>
+    /// <p>Connect Customer supports only KMS keys with the default key spec of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/asymmetric-key-specs.html#key-spec-symmetric-default"> <code>SYMMETRIC_DEFAULT</code> </a>.</p>
     /// </note>
     pub fn set_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key_id = input;
@@ -75,7 +75,7 @@ impl EncryptionConfigBuilder {
     }
     /// <p>The full ARN of the encryption key.</p><note>
     /// <p>Be sure to provide the full ARN of the encryption key, not just the ID.</p>
-    /// <p>Amazon Connect supports only KMS keys with the default key spec of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/asymmetric-key-specs.html#key-spec-symmetric-default"> <code>SYMMETRIC_DEFAULT</code> </a>.</p>
+    /// <p>Connect Customer supports only KMS keys with the default key spec of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/asymmetric-key-specs.html#key-spec-symmetric-default"> <code>SYMMETRIC_DEFAULT</code> </a>.</p>
     /// </note>
     pub fn get_key_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.key_id

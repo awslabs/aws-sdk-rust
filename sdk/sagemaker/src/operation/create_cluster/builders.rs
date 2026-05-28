@@ -165,6 +165,23 @@ impl CreateClusterFluentBuilder {
     ) -> &::std::option::Option<::std::vec::Vec<crate::types::ClusterRestrictedInstanceGroupSpecification>> {
         self.inner.get_restricted_instance_groups()
     }
+    /// <p>The configuration for the restricted instance groups (RIG) in the SageMaker HyperPod cluster.</p>
+    pub fn restricted_instance_groups_config(mut self, input: crate::types::ClusterRestrictedInstanceGroupsConfig) -> Self {
+        self.inner = self.inner.restricted_instance_groups_config(input);
+        self
+    }
+    /// <p>The configuration for the restricted instance groups (RIG) in the SageMaker HyperPod cluster.</p>
+    pub fn set_restricted_instance_groups_config(
+        mut self,
+        input: ::std::option::Option<crate::types::ClusterRestrictedInstanceGroupsConfig>,
+    ) -> Self {
+        self.inner = self.inner.set_restricted_instance_groups_config(input);
+        self
+    }
+    /// <p>The configuration for the restricted instance groups (RIG) in the SageMaker HyperPod cluster.</p>
+    pub fn get_restricted_instance_groups_config(&self) -> &::std::option::Option<crate::types::ClusterRestrictedInstanceGroupsConfig> {
+        self.inner.get_restricted_instance_groups_config()
+    }
     /// <p>Specifies the Amazon Virtual Private Cloud (VPC) that is associated with the Amazon SageMaker HyperPod cluster. You can control access to and from your resources by configuring your VPC. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/infrastructure-give-access.html">Give SageMaker access to resources in your Amazon VPC</a>.</p><note>
     /// <p>When your Amazon VPC and subnets support IPv6, network communications differ based on the cluster orchestration platform:</p>
     /// <ul>

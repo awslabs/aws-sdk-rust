@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EvaluationSearchMetadata {
-    /// <p>The identifier of the contact in this instance of Amazon Connect.</p>
+    /// <p>The identifier of the contact in this instance of Connect Customer.</p>
     pub contact_id: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of the person who evaluated the contact.</p>
     pub evaluator_arn: ::std::string::String,
@@ -38,7 +38,7 @@ pub struct EvaluationSearchMetadata {
     pub contact_participant_id: ::std::option::Option<::std::string::String>,
 }
 impl EvaluationSearchMetadata {
-    /// <p>The identifier of the contact in this instance of Amazon Connect.</p>
+    /// <p>The identifier of the contact in this instance of Connect Customer.</p>
     pub fn contact_id(&self) -> &str {
         use std::ops::Deref;
         self.contact_id.deref()
@@ -134,18 +134,18 @@ pub struct EvaluationSearchMetadataBuilder {
     pub(crate) contact_participant_id: ::std::option::Option<::std::string::String>,
 }
 impl EvaluationSearchMetadataBuilder {
-    /// <p>The identifier of the contact in this instance of Amazon Connect.</p>
+    /// <p>The identifier of the contact in this instance of Connect Customer.</p>
     /// This field is required.
     pub fn contact_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.contact_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier of the contact in this instance of Amazon Connect.</p>
+    /// <p>The identifier of the contact in this instance of Connect Customer.</p>
     pub fn set_contact_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.contact_id = input;
         self
     }
-    /// <p>The identifier of the contact in this instance of Amazon Connect.</p>
+    /// <p>The identifier of the contact in this instance of Connect Customer.</p>
     pub fn get_contact_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.contact_id
     }

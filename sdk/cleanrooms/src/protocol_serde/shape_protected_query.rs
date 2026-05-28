@@ -86,6 +86,13 @@ where
                                 crate::protocol_serde::shape_compute_configuration::de_compute_configuration(tokens, _value)?,
                             );
                         }
+                        "queryComputePayerAccountId" => {
+                            builder = builder.set_query_compute_payer_account_id(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

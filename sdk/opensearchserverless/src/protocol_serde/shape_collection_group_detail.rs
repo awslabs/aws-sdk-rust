@@ -65,10 +65,21 @@ where
                                 crate::protocol_serde::shape_collection_group_capacity_limits::de_collection_group_capacity_limits(tokens, _value)?,
                             );
                         }
+                        "currentCapacity" => {
+                            builder =
+                                builder.set_current_capacity(crate::protocol_serde::shape_current_capacity::de_current_capacity(tokens, _value)?);
+                        }
                         "numberOfCollections" => {
                             builder = builder.set_number_of_collections(
                                 ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
                                     .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "generation" => {
+                            builder = builder.set_generation(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::ServerlessGeneration::from(u.as_ref())))
                                     .transpose()?,
                             );
                         }

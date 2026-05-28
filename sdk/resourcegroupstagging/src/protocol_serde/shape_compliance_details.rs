@@ -22,6 +22,9 @@ where
                             builder = builder
                                 .set_keys_with_noncompliant_values(crate::protocol_serde::shape_tag_key_list::de_tag_key_list(tokens, _value)?);
                         }
+                        "MissingTagKeys" => {
+                            builder = builder.set_missing_tag_keys(crate::protocol_serde::shape_tag_key_list::de_tag_key_list(tokens, _value)?);
+                        }
                         "ComplianceStatus" => {
                             builder = builder.set_compliance_status(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }

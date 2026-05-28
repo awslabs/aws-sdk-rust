@@ -190,6 +190,9 @@ pub mod list_message_templates;
 /// Types for the `ListMessages` operation.
 pub mod list_messages;
 
+/// Types for the `ListModels` operation.
+pub mod list_models;
+
 /// Types for the `ListQuickResponses` operation.
 pub mod list_quick_responses;
 

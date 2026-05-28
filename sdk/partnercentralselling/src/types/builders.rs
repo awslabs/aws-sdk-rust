@@ -79,6 +79,8 @@ pub use crate::types::_opportunity_summary::OpportunitySummaryBuilder;
 
 pub use crate::types::_account::AccountBuilder;
 
+pub use crate::types::_expected_contract_duration::ExpectedContractDurationBuilder;
+
 pub use crate::types::_monetary_value::MonetaryValueBuilder;
 
 pub use crate::types::_contact::ContactBuilder;

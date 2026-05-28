@@ -81,6 +81,10 @@ where
                                     .transpose()?,
                             );
                         }
+                        "payerConfiguration" => {
+                            builder = builder
+                                .set_payer_configuration(crate::protocol_serde::shape_payer_configuration::de_payer_configuration(tokens, _value)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

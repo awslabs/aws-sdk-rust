@@ -133,6 +133,10 @@ pub use crate::types::_queue_blocked_reason::QueueBlockedReason;
 
 pub use crate::types::_environment_template_type::EnvironmentTemplateType;
 
+pub use crate::types::_volume_state::VolumeState;
+
+pub use crate::types::_ebs_volume_type::EbsVolumeType;
+
 pub use crate::types::_host_properties_request::HostPropertiesRequest;
 
 pub use crate::types::_host_properties_response::HostPropertiesResponse;
@@ -261,6 +265,8 @@ pub use crate::types::_queue_environment_summary::QueueEnvironmentSummary;
 
 pub use crate::types::_queue_member::QueueMember;
 
+pub use crate::types::_volume_summary::VolumeSummary;
+
 pub use crate::types::_worker_summary::WorkerSummary;
 
 pub use crate::types::_ip_addresses::IpAddresses;
@@ -340,6 +346,8 @@ pub use crate::types::_service_managed_ec2_instance_capabilities::ServiceManaged
 pub use crate::types::_service_managed_ec2_instance_market_options::ServiceManagedEc2InstanceMarketOptions;
 
 pub use crate::types::_vpc_configuration::VpcConfiguration;
+
+pub use crate::types::_persistent_volume_configuration::PersistentVolumeConfiguration;
 
 pub use crate::types::_service_managed_ec2_auto_scaling_configuration::ServiceManagedEc2AutoScalingConfiguration;
 
@@ -601,6 +609,8 @@ mod _dependency_counts;
 
 mod _desired_worker_status;
 
+mod _ebs_volume_type;
+
 mod _ec2_ebs_volume;
 
 mod _ec2_market_type;
@@ -726,6 +736,8 @@ mod _path_format;
 mod _path_mapping_rule;
 
 mod _period;
+
+mod _persistent_volume_configuration;
 
 mod _posix_user;
 
@@ -902,6 +914,10 @@ mod _v_cpu_count_range;
 mod _validation_exception_field;
 
 mod _validation_exception_reason;
+
+mod _volume_state;
+
+mod _volume_summary;
 
 mod _vpc_configuration;
 

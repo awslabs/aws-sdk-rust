@@ -24,8 +24,14 @@ pub fn ser_update_membership_input_input(
     if let Some(var_5) = &input.job_log_status {
         object.key("jobLogStatus").string(var_5.as_str());
     }
-    if let Some(var_6) = &input.query_log_status {
-        object.key("queryLogStatus").string(var_6.as_str());
+    if let Some(var_6) = &input.membership_payment_configuration {
+        #[allow(unused_mut)]
+        let mut object_7 = object.key("membershipPaymentConfiguration").start_object();
+        crate::protocol_serde::shape_update_membership_payment_configuration::ser_update_membership_payment_configuration(&mut object_7, var_6)?;
+        object_7.finish();
+    }
+    if let Some(var_8) = &input.query_log_status {
+        object.key("queryLogStatus").string(var_8.as_str());
     }
     Ok(())
 }

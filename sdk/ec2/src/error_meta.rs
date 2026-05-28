@@ -8962,6 +8962,34 @@ impl From<crate::operation::describe_ipam_policies::DescribeIpamPoliciesError> f
         }
     }
 }
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_ipam_pool_allocations::DescribeIpamPoolAllocationsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_ipam_pool_allocations::DescribeIpamPoolAllocationsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_ipam_pool_allocations::DescribeIpamPoolAllocationsError> for Error {
+    fn from(err: crate::operation::describe_ipam_pool_allocations::DescribeIpamPoolAllocationsError) -> Self {
+        match err {
+            crate::operation::describe_ipam_pool_allocations::DescribeIpamPoolAllocationsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_ipam_pools::DescribeIpamPoolsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -17116,6 +17144,30 @@ impl From<crate::operation::modify_ipam_pool::ModifyIpamPoolError> for Error {
     fn from(err: crate::operation::modify_ipam_pool::ModifyIpamPoolError) -> Self {
         match err {
             crate::operation::modify_ipam_pool::ModifyIpamPoolError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::modify_ipam_pool_allocation::ModifyIpamPoolAllocationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::modify_ipam_pool_allocation::ModifyIpamPoolAllocationError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::modify_ipam_pool_allocation::ModifyIpamPoolAllocationError> for Error {
+    fn from(err: crate::operation::modify_ipam_pool_allocation::ModifyIpamPoolAllocationError) -> Self {
+        match err {
+            crate::operation::modify_ipam_pool_allocation::ModifyIpamPoolAllocationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

@@ -196,6 +196,8 @@ mod create_group_profile;
 
 mod create_listing_change_set;
 
+mod create_notebook;
+
 mod create_project;
 
 mod create_project_membership;
@@ -277,6 +279,8 @@ mod delete_glossary_term;
 
 mod delete_listing;
 
+mod delete_notebook;
+
 mod delete_project;
 
 mod delete_project_membership;
@@ -351,6 +355,10 @@ mod get_listing;
 
 mod get_metadata_generation_run;
 
+mod get_notebook;
+
+mod get_notebook_export;
+
 mod get_notebook_run;
 
 mod get_project;
@@ -415,6 +423,8 @@ mod list_metadata_generation_runs;
 
 mod list_notebook_runs;
 
+mod list_notebooks;
+
 mod list_notifications;
 
 mod list_policy_grants;
@@ -473,6 +483,10 @@ mod start_data_source_run;
 
 mod start_metadata_generation_run;
 
+mod start_notebook_export;
+
+mod start_notebook_import;
+
 mod start_notebook_run;
 
 mod stop_notebook_run;
@@ -506,6 +520,8 @@ mod update_glossary;
 mod update_glossary_term;
 
 mod update_group_profile;
+
+mod update_notebook;
 
 mod update_project;
 

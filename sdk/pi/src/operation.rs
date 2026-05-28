@@ -28,6 +28,9 @@ pub mod list_available_resource_dimensions;
 /// Types for the `ListAvailableResourceMetrics` operation.
 pub mod list_available_resource_metrics;
 
+/// Types for the `ListPerformanceAnalysisReportRecommendations` operation.
+pub mod list_performance_analysis_report_recommendations;
+
 /// Types for the `ListPerformanceAnalysisReports` operation.
 pub mod list_performance_analysis_reports;
 

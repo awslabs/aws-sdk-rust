@@ -20,6 +20,7 @@
 ///     PostRegisterServiceSupportedService::McpServerDatadog => { /* ... */ },
 ///     PostRegisterServiceSupportedService::McpServerGrafana => { /* ... */ },
 ///     PostRegisterServiceSupportedService::McpServerNewrelic => { /* ... */ },
+///     PostRegisterServiceSupportedService::McpServerSigv4 => { /* ... */ },
 ///     PostRegisterServiceSupportedService::McpServerSplunk => { /* ... */ },
 ///     PostRegisterServiceSupportedService::Pagerduty => { /* ... */ },
 ///     PostRegisterServiceSupportedService::Servicenow => { /* ... */ },
@@ -45,13 +46,13 @@
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 ///
-/// Services that can be registered via the post-registration API (excludes OAuth 3LO services).
+/// <p>Services that can be registered via the post-registration API (excludes OAuth 3LO services).</p>
 #[non_exhaustive]
 #[derive(
     ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum PostRegisterServiceSupportedService {
-    /// Azure Service with AWS Outbound Identity Federation.
+    /// <p>Azure Service with AWS Outbound Identity Federation.</p>
     AzureIdentity,
     #[allow(missing_docs)] // documentation missing in model
     Dynatrace,
@@ -59,15 +60,17 @@ pub enum PostRegisterServiceSupportedService {
     Eventchannel,
     #[allow(missing_docs)] // documentation missing in model
     Gitlab,
-    /// Model Context Protocol server.
+    /// <p>Model Context Protocol server.</p>
     McpServer,
-    /// Datadog MCP server.
+    /// <p>Datadog MCP server.</p>
     McpServerDatadog,
-    /// Grafana MCP server.
+    /// <p>Grafana MCP server.</p>
     McpServerGrafana,
-    /// NewRelic MCP server.
+    /// <p>NewRelic MCP server.</p>
     McpServerNewrelic,
-    /// Splunk MCP server.
+    /// <p>SigV4-authenticated MCP server.</p>
+    McpServerSigv4,
+    /// <p>Splunk MCP server.</p>
     McpServerSplunk,
     #[allow(missing_docs)] // documentation missing in model
     Pagerduty,
@@ -88,6 +91,7 @@ impl ::std::convert::From<&str> for PostRegisterServiceSupportedService {
             "mcpserverdatadog" => PostRegisterServiceSupportedService::McpServerDatadog,
             "mcpservergrafana" => PostRegisterServiceSupportedService::McpServerGrafana,
             "mcpservernewrelic" => PostRegisterServiceSupportedService::McpServerNewrelic,
+            "mcpserversigv4" => PostRegisterServiceSupportedService::McpServerSigv4,
             "mcpserversplunk" => PostRegisterServiceSupportedService::McpServerSplunk,
             "pagerduty" => PostRegisterServiceSupportedService::Pagerduty,
             "servicenow" => PostRegisterServiceSupportedService::Servicenow,
@@ -114,6 +118,7 @@ impl PostRegisterServiceSupportedService {
             PostRegisterServiceSupportedService::McpServerDatadog => "mcpserverdatadog",
             PostRegisterServiceSupportedService::McpServerGrafana => "mcpservergrafana",
             PostRegisterServiceSupportedService::McpServerNewrelic => "mcpservernewrelic",
+            PostRegisterServiceSupportedService::McpServerSigv4 => "mcpserversigv4",
             PostRegisterServiceSupportedService::McpServerSplunk => "mcpserversplunk",
             PostRegisterServiceSupportedService::Pagerduty => "pagerduty",
             PostRegisterServiceSupportedService::Servicenow => "servicenow",
@@ -131,6 +136,7 @@ impl PostRegisterServiceSupportedService {
             "mcpserverdatadog",
             "mcpservergrafana",
             "mcpservernewrelic",
+            "mcpserversigv4",
             "mcpserversplunk",
             "pagerduty",
             "servicenow",
@@ -165,6 +171,7 @@ impl ::std::fmt::Display for PostRegisterServiceSupportedService {
             PostRegisterServiceSupportedService::McpServerDatadog => write!(f, "mcpserverdatadog"),
             PostRegisterServiceSupportedService::McpServerGrafana => write!(f, "mcpservergrafana"),
             PostRegisterServiceSupportedService::McpServerNewrelic => write!(f, "mcpservernewrelic"),
+            PostRegisterServiceSupportedService::McpServerSigv4 => write!(f, "mcpserversigv4"),
             PostRegisterServiceSupportedService::McpServerSplunk => write!(f, "mcpserversplunk"),
             PostRegisterServiceSupportedService::Pagerduty => write!(f, "pagerduty"),
             PostRegisterServiceSupportedService::Servicenow => write!(f, "servicenow"),

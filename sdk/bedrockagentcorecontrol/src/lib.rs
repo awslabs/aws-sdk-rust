@@ -35,7 +35,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-bedrockagentcorecontrol = "1.55.0"
+//! aws-sdk-bedrockagentcorecontrol = "1.56.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!
@@ -152,14 +152,14 @@ pub use config::Config;
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`CreateAgentRuntime`](crate::operation::create_agent_runtime) operation has
-/// a [`Client::create_agent_runtime`], function which returns a builder for that operation.
+/// For example, the [`AddDatasetExamples`](crate::operation::add_dataset_examples) operation has
+/// a [`Client::add_dataset_examples`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.create_agent_runtime()
-///     .agent_runtime_name("example")
+/// let result = client.add_dataset_examples()
+///     .dataset_id("example")
 ///     .send()
 ///     .await;
 /// ```

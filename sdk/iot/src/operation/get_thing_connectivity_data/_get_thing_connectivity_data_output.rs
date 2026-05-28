@@ -7,10 +7,28 @@ pub struct GetThingConnectivityDataOutput {
     pub thing_name: ::std::option::Option<::std::string::String>,
     /// <p>A Boolean that indicates the connectivity status.</p>
     pub connected: ::std::option::Option<bool>,
-    /// <p>The timestamp of when the event occurred.</p>
+    /// <p>The timestamp of when the event occurred. When you enable or update the indexing configuration, this value might be the Unix epoch time (0) for devices that have never connected or have been disconnected for more than an hour.</p>
     pub timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The reason why the client is disconnecting.</p>
+    /// <p>The reason why the client is disconnecting. When you enable or update the indexing configuration, this value might be <code>UNKNOWN</code> for devices that have never connected or have been disconnected for more than an hour.</p>
     pub disconnect_reason: ::std::option::Option<crate::types::DisconnectReasonValue>,
+    /// <p>The IP address of the client that initiated the connection.</p>
+    pub source_ip: ::std::option::Option<::std::string::String>,
+    /// <p>The client's source port.</p>
+    pub source_port: ::std::option::Option<i32>,
+    /// <p>The IP address of the Amazon Web Services IoT Core endpoint that the client connected to.</p>
+    pub target_ip: ::std::option::Option<::std::string::String>,
+    /// <p>The port number of the Amazon Web Services IoT Core endpoint that the client connected to.</p>
+    pub target_port: ::std::option::Option<i32>,
+    /// <p>The ID of the VPC endpoint. Present for clients connected to Amazon Web Services IoT Core via a VPC endpoint.</p>
+    pub vpc_endpoint_id: ::std::option::Option<::std::string::String>,
+    /// <p>The keep-alive interval in seconds that the client specified when establishing the connection.</p>
+    pub keep_alive_duration: ::std::option::Option<i32>,
+    /// <p>Indicates whether the client is using a clean session. Returns <code>true</code> for clean sessions.</p>
+    pub clean_session: ::std::option::Option<bool>,
+    /// <p>The session expiry interval in seconds for the MQTT client connection. This value indicates how long the session will remain active after the client disconnects.</p>
+    pub session_expiry: ::std::option::Option<i64>,
+    /// <p>The unique identifier of the MQTT client.</p>
+    pub client_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetThingConnectivityDataOutput {
@@ -22,13 +40,49 @@ impl GetThingConnectivityDataOutput {
     pub fn connected(&self) -> ::std::option::Option<bool> {
         self.connected
     }
-    /// <p>The timestamp of when the event occurred.</p>
+    /// <p>The timestamp of when the event occurred. When you enable or update the indexing configuration, this value might be the Unix epoch time (0) for devices that have never connected or have been disconnected for more than an hour.</p>
     pub fn timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.timestamp.as_ref()
     }
-    /// <p>The reason why the client is disconnecting.</p>
+    /// <p>The reason why the client is disconnecting. When you enable or update the indexing configuration, this value might be <code>UNKNOWN</code> for devices that have never connected or have been disconnected for more than an hour.</p>
     pub fn disconnect_reason(&self) -> ::std::option::Option<&crate::types::DisconnectReasonValue> {
         self.disconnect_reason.as_ref()
+    }
+    /// <p>The IP address of the client that initiated the connection.</p>
+    pub fn source_ip(&self) -> ::std::option::Option<&str> {
+        self.source_ip.as_deref()
+    }
+    /// <p>The client's source port.</p>
+    pub fn source_port(&self) -> ::std::option::Option<i32> {
+        self.source_port
+    }
+    /// <p>The IP address of the Amazon Web Services IoT Core endpoint that the client connected to.</p>
+    pub fn target_ip(&self) -> ::std::option::Option<&str> {
+        self.target_ip.as_deref()
+    }
+    /// <p>The port number of the Amazon Web Services IoT Core endpoint that the client connected to.</p>
+    pub fn target_port(&self) -> ::std::option::Option<i32> {
+        self.target_port
+    }
+    /// <p>The ID of the VPC endpoint. Present for clients connected to Amazon Web Services IoT Core via a VPC endpoint.</p>
+    pub fn vpc_endpoint_id(&self) -> ::std::option::Option<&str> {
+        self.vpc_endpoint_id.as_deref()
+    }
+    /// <p>The keep-alive interval in seconds that the client specified when establishing the connection.</p>
+    pub fn keep_alive_duration(&self) -> ::std::option::Option<i32> {
+        self.keep_alive_duration
+    }
+    /// <p>Indicates whether the client is using a clean session. Returns <code>true</code> for clean sessions.</p>
+    pub fn clean_session(&self) -> ::std::option::Option<bool> {
+        self.clean_session
+    }
+    /// <p>The session expiry interval in seconds for the MQTT client connection. This value indicates how long the session will remain active after the client disconnects.</p>
+    pub fn session_expiry(&self) -> ::std::option::Option<i64> {
+        self.session_expiry
+    }
+    /// <p>The unique identifier of the MQTT client.</p>
+    pub fn client_id(&self) -> ::std::option::Option<&str> {
+        self.client_id.as_deref()
     }
 }
 impl ::std::fmt::Debug for GetThingConnectivityDataOutput {
@@ -38,6 +92,15 @@ impl ::std::fmt::Debug for GetThingConnectivityDataOutput {
         formatter.field("connected", &self.connected);
         formatter.field("timestamp", &self.timestamp);
         formatter.field("disconnect_reason", &self.disconnect_reason);
+        formatter.field("source_ip", &"*** Sensitive Data Redacted ***");
+        formatter.field("source_port", &"*** Sensitive Data Redacted ***");
+        formatter.field("target_ip", &"*** Sensitive Data Redacted ***");
+        formatter.field("target_port", &"*** Sensitive Data Redacted ***");
+        formatter.field("vpc_endpoint_id", &"*** Sensitive Data Redacted ***");
+        formatter.field("keep_alive_duration", &self.keep_alive_duration);
+        formatter.field("clean_session", &self.clean_session);
+        formatter.field("session_expiry", &self.session_expiry);
+        formatter.field("client_id", &self.client_id);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
@@ -62,6 +125,15 @@ pub struct GetThingConnectivityDataOutputBuilder {
     pub(crate) connected: ::std::option::Option<bool>,
     pub(crate) timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) disconnect_reason: ::std::option::Option<crate::types::DisconnectReasonValue>,
+    pub(crate) source_ip: ::std::option::Option<::std::string::String>,
+    pub(crate) source_port: ::std::option::Option<i32>,
+    pub(crate) target_ip: ::std::option::Option<::std::string::String>,
+    pub(crate) target_port: ::std::option::Option<i32>,
+    pub(crate) vpc_endpoint_id: ::std::option::Option<::std::string::String>,
+    pub(crate) keep_alive_duration: ::std::option::Option<i32>,
+    pub(crate) clean_session: ::std::option::Option<bool>,
+    pub(crate) session_expiry: ::std::option::Option<i64>,
+    pub(crate) client_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetThingConnectivityDataOutputBuilder {
@@ -93,33 +165,159 @@ impl GetThingConnectivityDataOutputBuilder {
     pub fn get_connected(&self) -> &::std::option::Option<bool> {
         &self.connected
     }
-    /// <p>The timestamp of when the event occurred.</p>
+    /// <p>The timestamp of when the event occurred. When you enable or update the indexing configuration, this value might be the Unix epoch time (0) for devices that have never connected or have been disconnected for more than an hour.</p>
     pub fn timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.timestamp = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The timestamp of when the event occurred.</p>
+    /// <p>The timestamp of when the event occurred. When you enable or update the indexing configuration, this value might be the Unix epoch time (0) for devices that have never connected or have been disconnected for more than an hour.</p>
     pub fn set_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.timestamp = input;
         self
     }
-    /// <p>The timestamp of when the event occurred.</p>
+    /// <p>The timestamp of when the event occurred. When you enable or update the indexing configuration, this value might be the Unix epoch time (0) for devices that have never connected or have been disconnected for more than an hour.</p>
     pub fn get_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.timestamp
     }
-    /// <p>The reason why the client is disconnecting.</p>
+    /// <p>The reason why the client is disconnecting. When you enable or update the indexing configuration, this value might be <code>UNKNOWN</code> for devices that have never connected or have been disconnected for more than an hour.</p>
     pub fn disconnect_reason(mut self, input: crate::types::DisconnectReasonValue) -> Self {
         self.disconnect_reason = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The reason why the client is disconnecting.</p>
+    /// <p>The reason why the client is disconnecting. When you enable or update the indexing configuration, this value might be <code>UNKNOWN</code> for devices that have never connected or have been disconnected for more than an hour.</p>
     pub fn set_disconnect_reason(mut self, input: ::std::option::Option<crate::types::DisconnectReasonValue>) -> Self {
         self.disconnect_reason = input;
         self
     }
-    /// <p>The reason why the client is disconnecting.</p>
+    /// <p>The reason why the client is disconnecting. When you enable or update the indexing configuration, this value might be <code>UNKNOWN</code> for devices that have never connected or have been disconnected for more than an hour.</p>
     pub fn get_disconnect_reason(&self) -> &::std::option::Option<crate::types::DisconnectReasonValue> {
         &self.disconnect_reason
+    }
+    /// <p>The IP address of the client that initiated the connection.</p>
+    pub fn source_ip(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.source_ip = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The IP address of the client that initiated the connection.</p>
+    pub fn set_source_ip(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.source_ip = input;
+        self
+    }
+    /// <p>The IP address of the client that initiated the connection.</p>
+    pub fn get_source_ip(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_ip
+    }
+    /// <p>The client's source port.</p>
+    pub fn source_port(mut self, input: i32) -> Self {
+        self.source_port = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The client's source port.</p>
+    pub fn set_source_port(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.source_port = input;
+        self
+    }
+    /// <p>The client's source port.</p>
+    pub fn get_source_port(&self) -> &::std::option::Option<i32> {
+        &self.source_port
+    }
+    /// <p>The IP address of the Amazon Web Services IoT Core endpoint that the client connected to.</p>
+    pub fn target_ip(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.target_ip = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The IP address of the Amazon Web Services IoT Core endpoint that the client connected to.</p>
+    pub fn set_target_ip(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.target_ip = input;
+        self
+    }
+    /// <p>The IP address of the Amazon Web Services IoT Core endpoint that the client connected to.</p>
+    pub fn get_target_ip(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_ip
+    }
+    /// <p>The port number of the Amazon Web Services IoT Core endpoint that the client connected to.</p>
+    pub fn target_port(mut self, input: i32) -> Self {
+        self.target_port = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The port number of the Amazon Web Services IoT Core endpoint that the client connected to.</p>
+    pub fn set_target_port(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.target_port = input;
+        self
+    }
+    /// <p>The port number of the Amazon Web Services IoT Core endpoint that the client connected to.</p>
+    pub fn get_target_port(&self) -> &::std::option::Option<i32> {
+        &self.target_port
+    }
+    /// <p>The ID of the VPC endpoint. Present for clients connected to Amazon Web Services IoT Core via a VPC endpoint.</p>
+    pub fn vpc_endpoint_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.vpc_endpoint_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the VPC endpoint. Present for clients connected to Amazon Web Services IoT Core via a VPC endpoint.</p>
+    pub fn set_vpc_endpoint_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.vpc_endpoint_id = input;
+        self
+    }
+    /// <p>The ID of the VPC endpoint. Present for clients connected to Amazon Web Services IoT Core via a VPC endpoint.</p>
+    pub fn get_vpc_endpoint_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_endpoint_id
+    }
+    /// <p>The keep-alive interval in seconds that the client specified when establishing the connection.</p>
+    pub fn keep_alive_duration(mut self, input: i32) -> Self {
+        self.keep_alive_duration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The keep-alive interval in seconds that the client specified when establishing the connection.</p>
+    pub fn set_keep_alive_duration(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.keep_alive_duration = input;
+        self
+    }
+    /// <p>The keep-alive interval in seconds that the client specified when establishing the connection.</p>
+    pub fn get_keep_alive_duration(&self) -> &::std::option::Option<i32> {
+        &self.keep_alive_duration
+    }
+    /// <p>Indicates whether the client is using a clean session. Returns <code>true</code> for clean sessions.</p>
+    pub fn clean_session(mut self, input: bool) -> Self {
+        self.clean_session = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether the client is using a clean session. Returns <code>true</code> for clean sessions.</p>
+    pub fn set_clean_session(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.clean_session = input;
+        self
+    }
+    /// <p>Indicates whether the client is using a clean session. Returns <code>true</code> for clean sessions.</p>
+    pub fn get_clean_session(&self) -> &::std::option::Option<bool> {
+        &self.clean_session
+    }
+    /// <p>The session expiry interval in seconds for the MQTT client connection. This value indicates how long the session will remain active after the client disconnects.</p>
+    pub fn session_expiry(mut self, input: i64) -> Self {
+        self.session_expiry = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The session expiry interval in seconds for the MQTT client connection. This value indicates how long the session will remain active after the client disconnects.</p>
+    pub fn set_session_expiry(mut self, input: ::std::option::Option<i64>) -> Self {
+        self.session_expiry = input;
+        self
+    }
+    /// <p>The session expiry interval in seconds for the MQTT client connection. This value indicates how long the session will remain active after the client disconnects.</p>
+    pub fn get_session_expiry(&self) -> &::std::option::Option<i64> {
+        &self.session_expiry
+    }
+    /// <p>The unique identifier of the MQTT client.</p>
+    pub fn client_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.client_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The unique identifier of the MQTT client.</p>
+    pub fn set_client_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.client_id = input;
+        self
+    }
+    /// <p>The unique identifier of the MQTT client.</p>
+    pub fn get_client_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
@@ -137,6 +335,15 @@ impl GetThingConnectivityDataOutputBuilder {
             connected: self.connected,
             timestamp: self.timestamp,
             disconnect_reason: self.disconnect_reason,
+            source_ip: self.source_ip,
+            source_port: self.source_port,
+            target_ip: self.target_ip,
+            target_port: self.target_port,
+            vpc_endpoint_id: self.vpc_endpoint_id,
+            keep_alive_duration: self.keep_alive_duration,
+            clean_session: self.clean_session,
+            session_expiry: self.session_expiry,
+            client_id: self.client_id,
             _request_id: self._request_id,
         }
     }
@@ -148,6 +355,15 @@ impl ::std::fmt::Debug for GetThingConnectivityDataOutputBuilder {
         formatter.field("connected", &self.connected);
         formatter.field("timestamp", &self.timestamp);
         formatter.field("disconnect_reason", &self.disconnect_reason);
+        formatter.field("source_ip", &"*** Sensitive Data Redacted ***");
+        formatter.field("source_port", &"*** Sensitive Data Redacted ***");
+        formatter.field("target_ip", &"*** Sensitive Data Redacted ***");
+        formatter.field("target_port", &"*** Sensitive Data Redacted ***");
+        formatter.field("vpc_endpoint_id", &"*** Sensitive Data Redacted ***");
+        formatter.field("keep_alive_duration", &self.keep_alive_duration);
+        formatter.field("clean_session", &self.clean_session);
+        formatter.field("session_expiry", &self.session_expiry);
+        formatter.field("client_id", &self.client_id);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }

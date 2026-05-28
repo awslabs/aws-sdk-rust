@@ -8,6 +8,8 @@ pub enum OutputConfig {
     Clipping(crate::types::ClippingConfig),
     /// <p>The output config type that applies to the cropping feature.</p>
     Cropping(crate::types::CroppingConfig),
+    /// <p>The output config type that applies to the smart subtitling feature.</p>
+    Subtitling(crate::types::SubtitlingConfig),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant
     ///
@@ -44,6 +46,19 @@ impl OutputConfig {
     /// Returns true if this is a [`Cropping`](crate::types::OutputConfig::Cropping).
     pub fn is_cropping(&self) -> bool {
         self.as_cropping().is_ok()
+    }
+    /// Tries to convert the enum instance into [`Subtitling`](crate::types::OutputConfig::Subtitling), extracting the inner [`SubtitlingConfig`](crate::types::SubtitlingConfig).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_subtitling(&self) -> ::std::result::Result<&crate::types::SubtitlingConfig, &Self> {
+        if let OutputConfig::Subtitling(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`Subtitling`](crate::types::OutputConfig::Subtitling).
+    pub fn is_subtitling(&self) -> bool {
+        self.as_subtitling().is_ok()
     }
     /// Returns true if the enum instance is the `Unknown` variant.
     pub fn is_unknown(&self) -> bool {

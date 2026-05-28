@@ -4,8 +4,14 @@ pub use ::aws_types::request_id::RequestId;
 /// Types for the `AssociateFeed` operation.
 pub mod associate_feed;
 
+/// Types for the `CreateDictionary` operation.
+pub mod create_dictionary;
+
 /// Types for the `CreateFeed` operation.
 pub mod create_feed;
+
+/// Types for the `DeleteDictionary` operation.
+pub mod delete_dictionary;
 
 /// Types for the `DeleteFeed` operation.
 pub mod delete_feed;
@@ -13,8 +19,17 @@ pub mod delete_feed;
 /// Types for the `DisassociateFeed` operation.
 pub mod disassociate_feed;
 
+/// Types for the `ExportDictionaryEntries` operation.
+pub mod export_dictionary_entries;
+
+/// Types for the `GetDictionary` operation.
+pub mod get_dictionary;
+
 /// Types for the `GetFeed` operation.
 pub mod get_feed;
+
+/// Types for the `ListDictionaries` operation.
+pub mod list_dictionaries;
 
 /// Types for the `ListFeeds` operation.
 pub mod list_feeds;
@@ -27,6 +42,9 @@ pub mod tag_resource;
 
 /// Types for the `UntagResource` operation.
 pub mod untag_resource;
+
+/// Types for the `UpdateDictionary` operation.
+pub mod update_dictionary;
 
 /// Types for the `UpdateFeed` operation.
 pub mod update_feed;

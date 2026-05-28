@@ -91,6 +91,8 @@ pub use crate::types::_pager_duty_details::PagerDutyDetailsBuilder;
 
 pub use crate::types::_registered_azure_identity_details::RegisteredAzureIdentityDetailsBuilder;
 
+pub use crate::types::_mcp_server_sigv4_service_details::McpServerSigV4ServiceDetailsBuilder;
+
 pub use crate::types::_o_auth_additional_step_details::OAuthAdditionalStepDetailsBuilder;
 
 pub use crate::types::_user_reference::UserReferenceBuilder;
@@ -129,7 +131,11 @@ pub use crate::types::_mcp_server_grafana_configuration::McpServerGrafanaConfigu
 
 pub use crate::types::_pager_duty_configuration::PagerDutyConfigurationBuilder;
 
+pub use crate::types::_mcp_server_sigv4_configuration::McpServerSigV4ConfigurationBuilder;
+
 pub use crate::types::_webhook::WebhookBuilder;
+
+pub use crate::types::_mcp_server_sigv4_authorization_config::McpServerSigV4AuthorizationConfigBuilder;
 
 pub use crate::types::_registered_github_service_details::RegisteredGithubServiceDetailsBuilder;
 
@@ -148,6 +154,8 @@ pub use crate::types::_registered_azure_dev_ops_service_details::RegisteredAzure
 pub use crate::types::_registered_grafana_server_details::RegisteredGrafanaServerDetailsBuilder;
 
 pub use crate::types::_registered_pager_duty_details::RegisteredPagerDutyDetailsBuilder;
+
+pub use crate::types::_registered_mcp_server_sigv4_details::RegisteredMcpServerSigV4DetailsBuilder;
 
 pub use crate::types::_send_message_text_delta::SendMessageTextDeltaBuilder;
 

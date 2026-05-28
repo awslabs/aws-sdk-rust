@@ -19,7 +19,7 @@ pub struct ContainerOverride {
     pub memory: ::std::option::Option<i32>,
     /// <p>The soft limit (in MiB) of memory to reserve for the container, instead of the default value from the task definition. You must also specify a container name.</p>
     pub memory_reservation: ::std::option::Option<i32>,
-    /// <p>The type and amount of a resource to assign to a container, instead of the default value from the task definition. The only supported resource is a GPU.</p>
+    /// <p>The type and amount of a resource to assign to a container, instead of the default value from the task definition. The supported resources are GPUs and Neuron devices.</p>
     pub resource_requirements: ::std::option::Option<::std::vec::Vec<crate::types::ResourceRequirement>>,
 }
 impl ContainerOverride {
@@ -57,7 +57,7 @@ impl ContainerOverride {
     pub fn memory_reservation(&self) -> ::std::option::Option<i32> {
         self.memory_reservation
     }
-    /// <p>The type and amount of a resource to assign to a container, instead of the default value from the task definition. The only supported resource is a GPU.</p>
+    /// <p>The type and amount of a resource to assign to a container, instead of the default value from the task definition. The supported resources are GPUs and Neuron devices.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_requirements.is_none()`.
     pub fn resource_requirements(&self) -> &[crate::types::ResourceRequirement] {
@@ -219,19 +219,19 @@ impl ContainerOverrideBuilder {
     ///
     /// To override the contents of this collection use [`set_resource_requirements`](Self::set_resource_requirements).
     ///
-    /// <p>The type and amount of a resource to assign to a container, instead of the default value from the task definition. The only supported resource is a GPU.</p>
+    /// <p>The type and amount of a resource to assign to a container, instead of the default value from the task definition. The supported resources are GPUs and Neuron devices.</p>
     pub fn resource_requirements(mut self, input: crate::types::ResourceRequirement) -> Self {
         let mut v = self.resource_requirements.unwrap_or_default();
         v.push(input);
         self.resource_requirements = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The type and amount of a resource to assign to a container, instead of the default value from the task definition. The only supported resource is a GPU.</p>
+    /// <p>The type and amount of a resource to assign to a container, instead of the default value from the task definition. The supported resources are GPUs and Neuron devices.</p>
     pub fn set_resource_requirements(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceRequirement>>) -> Self {
         self.resource_requirements = input;
         self
     }
-    /// <p>The type and amount of a resource to assign to a container, instead of the default value from the task definition. The only supported resource is a GPU.</p>
+    /// <p>The type and amount of a resource to assign to a container, instead of the default value from the task definition. The supported resources are GPUs and Neuron devices.</p>
     pub fn get_resource_requirements(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceRequirement>> {
         &self.resource_requirements
     }

@@ -108,5 +108,14 @@ pub fn ser_create_dash_manifest_configuration(
     if let Some(var_30) = &input.uri_path_type {
         object.key("UriPathType").string(var_30.as_str());
     }
+    if let Some(var_31) = &input.availability_start_time_configuration {
+        #[allow(unused_mut)]
+        let mut object_32 = object.key("AvailabilityStartTimeConfiguration").start_object();
+        crate::protocol_serde::shape_dash_availability_start_time_configuration::ser_dash_availability_start_time_configuration(
+            &mut object_32,
+            var_31,
+        )?;
+        object_32.finish();
+    }
     Ok(())
 }

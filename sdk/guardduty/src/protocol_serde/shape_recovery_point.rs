@@ -6,5 +6,11 @@ pub fn ser_recovery_point(
     if let Some(var_1) = &input.backup_vault_name {
         object.key("backupVaultName").string(var_1.as_str());
     }
+    if let Some(var_2) = &input.continuous_scan_details {
+        #[allow(unused_mut)]
+        let mut object_3 = object.key("continuousScanDetails").start_object();
+        crate::protocol_serde::shape_continuous_scan_details::ser_continuous_scan_details(&mut object_3, var_2)?;
+        object_3.finish();
+    }
     Ok(())
 }

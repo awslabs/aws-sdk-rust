@@ -3,13 +3,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetNotebookRunInput {
-    /// <p>The identifier of the Amazon DataZone domain in which the notebook run exists.</p>
+    /// <p>The identifier of the Amazon SageMaker Unified Studio domain in which the notebook run exists.</p>
     pub domain_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the notebook run.</p>
     pub identifier: ::std::option::Option<::std::string::String>,
 }
 impl GetNotebookRunInput {
-    /// <p>The identifier of the Amazon DataZone domain in which the notebook run exists.</p>
+    /// <p>The identifier of the Amazon SageMaker Unified Studio domain in which the notebook run exists.</p>
     pub fn domain_identifier(&self) -> ::std::option::Option<&str> {
         self.domain_identifier.as_deref()
     }
@@ -33,18 +33,18 @@ pub struct GetNotebookRunInputBuilder {
     pub(crate) identifier: ::std::option::Option<::std::string::String>,
 }
 impl GetNotebookRunInputBuilder {
-    /// <p>The identifier of the Amazon DataZone domain in which the notebook run exists.</p>
+    /// <p>The identifier of the Amazon SageMaker Unified Studio domain in which the notebook run exists.</p>
     /// This field is required.
     pub fn domain_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_identifier = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier of the Amazon DataZone domain in which the notebook run exists.</p>
+    /// <p>The identifier of the Amazon SageMaker Unified Studio domain in which the notebook run exists.</p>
     pub fn set_domain_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain_identifier = input;
         self
     }
-    /// <p>The identifier of the Amazon DataZone domain in which the notebook run exists.</p>
+    /// <p>The identifier of the Amazon SageMaker Unified Studio domain in which the notebook run exists.</p>
     pub fn get_domain_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.domain_identifier
     }

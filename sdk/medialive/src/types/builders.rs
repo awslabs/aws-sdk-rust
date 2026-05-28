@@ -271,6 +271,8 @@ pub use crate::types::_automatic_input_failover_settings::AutomaticInputFailover
 
 pub use crate::types::_input_settings::InputSettingsBuilder;
 
+pub use crate::types::_audio_feed_input::AudioFeedInputBuilder;
+
 pub use crate::types::_interface_mapping_create_request::InterfaceMappingCreateRequestBuilder;
 
 pub use crate::types::_interface_mapping::InterfaceMappingBuilder;
@@ -644,6 +646,8 @@ pub use crate::types::_scte20_source_settings::Scte20SourceSettingsBuilder;
 pub use crate::types::_scte27_source_settings::Scte27SourceSettingsBuilder;
 
 pub use crate::types::_teletext_source_settings::TeletextSourceSettingsBuilder;
+
+pub use crate::types::_smart_subtitle_source_settings::SmartSubtitleSourceSettingsBuilder;
 
 pub use crate::types::_scte35_descriptor_settings::Scte35DescriptorSettingsBuilder;
 

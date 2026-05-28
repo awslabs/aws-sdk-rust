@@ -22,7 +22,7 @@ impl crate::operation::disassociate_feed::builders::DisassociateFeedInputBuilder
 }
 /// Fluent builder constructing a request to `DisassociateFeed`.
 ///
-/// <p>Releases the resource (for example, an MediaLive channel) that is associated with this feed. The outputs in the feed become disabled.</p>
+/// <p>Releases the resource (the source media) that is associated with this feed. The outputs in the feed become DISABLED.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DisassociateFeedFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -122,31 +122,34 @@ impl DisassociateFeedFluentBuilder {
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_id()
     }
-    /// <p>The name of the resource currently associated with the feed'.</p>
+    /// <p>The name of the resource currently associated with the feed.</p>
     pub fn associated_resource_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.associated_resource_name(input.into());
         self
     }
-    /// <p>The name of the resource currently associated with the feed'.</p>
+    /// <p>The name of the resource currently associated with the feed.</p>
     pub fn set_associated_resource_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_associated_resource_name(input);
         self
     }
-    /// <p>The name of the resource currently associated with the feed'.</p>
+    /// <p>The name of the resource currently associated with the feed.</p>
     pub fn get_associated_resource_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_associated_resource_name()
     }
     /// <p>Set to true if you want to do a dry run of the disassociate action.</p>
+    /// <p>Elemental Inference will validate that the real request would succeed without actually making any changes. A dry run catches errors such as missing IAM permissions. If the dry run fails, the action returns a 4xx error code.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.inner = self.inner.dry_run(input);
         self
     }
     /// <p>Set to true if you want to do a dry run of the disassociate action.</p>
+    /// <p>Elemental Inference will validate that the real request would succeed without actually making any changes. A dry run catches errors such as missing IAM permissions. If the dry run fails, the action returns a 4xx error code.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_dry_run(input);
         self
     }
     /// <p>Set to true if you want to do a dry run of the disassociate action.</p>
+    /// <p>Elemental Inference will validate that the real request would succeed without actually making any changes. A dry run catches errors such as missing IAM permissions. If the dry run fails, the action returns a 4xx error code.</p>
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
         self.inner.get_dry_run()
     }

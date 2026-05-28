@@ -15,6 +15,8 @@ pub struct CreateInvoiceUnitInput {
     pub rule: ::std::option::Option<crate::types::InvoiceUnitRule>,
     /// <p>The tag structure that contains a tag key and value.</p>
     pub resource_tags: ::std::option::Option<::std::vec::Vec<crate::types::ResourceTag>>,
+    /// <p>A unique, case-sensitive identifier that you provide to ensure idempotency of the request.</p>
+    pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl CreateInvoiceUnitInput {
     /// <p>The unique name of the invoice unit that is shown on the generated invoice. This can't be changed once it is set. To change this name, you must delete the invoice unit recreate.</p>
@@ -43,6 +45,10 @@ impl CreateInvoiceUnitInput {
     pub fn resource_tags(&self) -> &[crate::types::ResourceTag] {
         self.resource_tags.as_deref().unwrap_or_default()
     }
+    /// <p>A unique, case-sensitive identifier that you provide to ensure idempotency of the request.</p>
+    pub fn client_token(&self) -> ::std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
 }
 impl CreateInvoiceUnitInput {
     /// Creates a new builder-style object to manufacture [`CreateInvoiceUnitInput`](crate::operation::create_invoice_unit::CreateInvoiceUnitInput).
@@ -61,6 +67,7 @@ pub struct CreateInvoiceUnitInputBuilder {
     pub(crate) tax_inheritance_disabled: ::std::option::Option<bool>,
     pub(crate) rule: ::std::option::Option<crate::types::InvoiceUnitRule>,
     pub(crate) resource_tags: ::std::option::Option<::std::vec::Vec<crate::types::ResourceTag>>,
+    pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
 impl CreateInvoiceUnitInputBuilder {
     /// <p>The unique name of the invoice unit that is shown on the generated invoice. This can't be changed once it is set. To change this name, you must delete the invoice unit recreate.</p>
@@ -156,6 +163,20 @@ impl CreateInvoiceUnitInputBuilder {
     pub fn get_resource_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceTag>> {
         &self.resource_tags
     }
+    /// <p>A unique, case-sensitive identifier that you provide to ensure idempotency of the request.</p>
+    pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.client_token = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>A unique, case-sensitive identifier that you provide to ensure idempotency of the request.</p>
+    pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.client_token = input;
+        self
+    }
+    /// <p>A unique, case-sensitive identifier that you provide to ensure idempotency of the request.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
+    }
     /// Consumes the builder and constructs a [`CreateInvoiceUnitInput`](crate::operation::create_invoice_unit::CreateInvoiceUnitInput).
     pub fn build(
         self,
@@ -167,6 +188,7 @@ impl CreateInvoiceUnitInputBuilder {
             tax_inheritance_disabled: self.tax_inheritance_disabled,
             rule: self.rule,
             resource_tags: self.resource_tags,
+            client_token: self.client_token,
         })
     }
 }

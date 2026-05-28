@@ -5,7 +5,7 @@
 pub struct CreateInstanceInput {
     /// <p>The idempotency token.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
-    /// <p>The type of identity management for your Amazon Connect users.</p>
+    /// <p>The type of identity management for your Connect Customer users.</p>
     pub identity_management_type: ::std::option::Option<crate::types::DirectoryType>,
     /// <p>The name for your instance.</p>
     pub instance_alias: ::std::option::Option<::std::string::String>,
@@ -23,7 +23,7 @@ impl CreateInstanceInput {
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
     }
-    /// <p>The type of identity management for your Amazon Connect users.</p>
+    /// <p>The type of identity management for your Connect Customer users.</p>
     pub fn identity_management_type(&self) -> ::std::option::Option<&crate::types::DirectoryType> {
         self.identity_management_type.as_ref()
     }
@@ -95,18 +95,18 @@ impl CreateInstanceInputBuilder {
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
-    /// <p>The type of identity management for your Amazon Connect users.</p>
+    /// <p>The type of identity management for your Connect Customer users.</p>
     /// This field is required.
     pub fn identity_management_type(mut self, input: crate::types::DirectoryType) -> Self {
         self.identity_management_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The type of identity management for your Amazon Connect users.</p>
+    /// <p>The type of identity management for your Connect Customer users.</p>
     pub fn set_identity_management_type(mut self, input: ::std::option::Option<crate::types::DirectoryType>) -> Self {
         self.identity_management_type = input;
         self
     }
-    /// <p>The type of identity management for your Amazon Connect users.</p>
+    /// <p>The type of identity management for your Connect Customer users.</p>
     pub fn get_identity_management_type(&self) -> &::std::option::Option<crate::types::DirectoryType> {
         &self.identity_management_type
     }

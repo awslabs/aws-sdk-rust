@@ -39,6 +39,8 @@ pub struct GetTrainedModelOutput {
     pub logs_status_details: ::std::option::Option<::std::string::String>,
     /// <p>Information about the training image container.</p>
     pub training_container_image_digest: ::std::option::Option<::std::string::String>,
+    /// <p>The account ID of the member that is responsible for paying for model training costs.</p>
+    pub ml_model_training_payer_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The time at which the trained model was created.</p>
     pub create_time: ::aws_smithy_types::DateTime,
     /// <p>The most recent time at which the trained model was updated.</p>
@@ -152,6 +154,10 @@ impl GetTrainedModelOutput {
     pub fn training_container_image_digest(&self) -> ::std::option::Option<&str> {
         self.training_container_image_digest.as_deref()
     }
+    /// <p>The account ID of the member that is responsible for paying for model training costs.</p>
+    pub fn ml_model_training_payer_account_id(&self) -> ::std::option::Option<&str> {
+        self.ml_model_training_payer_account_id.as_deref()
+    }
     /// <p>The time at which the trained model was created.</p>
     pub fn create_time(&self) -> &::aws_smithy_types::DateTime {
         &self.create_time
@@ -233,6 +239,7 @@ pub struct GetTrainedModelOutputBuilder {
     pub(crate) logs_status: ::std::option::Option<crate::types::LogsStatus>,
     pub(crate) logs_status_details: ::std::option::Option<::std::string::String>,
     pub(crate) training_container_image_digest: ::std::option::Option<::std::string::String>,
+    pub(crate) ml_model_training_payer_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) hyperparameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -512,6 +519,20 @@ impl GetTrainedModelOutputBuilder {
     pub fn get_training_container_image_digest(&self) -> &::std::option::Option<::std::string::String> {
         &self.training_container_image_digest
     }
+    /// <p>The account ID of the member that is responsible for paying for model training costs.</p>
+    pub fn ml_model_training_payer_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.ml_model_training_payer_account_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The account ID of the member that is responsible for paying for model training costs.</p>
+    pub fn set_ml_model_training_payer_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.ml_model_training_payer_account_id = input;
+        self
+    }
+    /// <p>The account ID of the member that is responsible for paying for model training costs.</p>
+    pub fn get_ml_model_training_payer_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ml_model_training_payer_account_id
+    }
     /// <p>The time at which the trained model was created.</p>
     /// This field is required.
     pub fn create_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -769,6 +790,7 @@ impl GetTrainedModelOutputBuilder {
             logs_status: self.logs_status,
             logs_status_details: self.logs_status_details,
             training_container_image_digest: self.training_container_image_digest,
+            ml_model_training_payer_account_id: self.ml_model_training_payer_account_id,
             create_time: self.create_time.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "create_time",

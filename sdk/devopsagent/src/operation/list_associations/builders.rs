@@ -22,7 +22,7 @@ impl crate::operation::list_associations::builders::ListAssociationsInputBuilder
 }
 /// Fluent builder constructing a request to `ListAssociations`.
 ///
-/// List all associations for given AgentSpace
+/// <p>List all associations for given AgentSpace</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListAssociationsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -114,59 +114,59 @@ impl ListAssociationsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_associations::paginator::ListAssociationsPaginator {
         crate::operation::list_associations::paginator::ListAssociationsPaginator::new(self.handle, self.inner)
     }
-    /// The unique identifier of the AgentSpace
+    /// <p>The unique identifier of the AgentSpace</p>
     pub fn agent_space_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.agent_space_id(input.into());
         self
     }
-    /// The unique identifier of the AgentSpace
+    /// <p>The unique identifier of the AgentSpace</p>
     pub fn set_agent_space_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_agent_space_id(input);
         self
     }
-    /// The unique identifier of the AgentSpace
+    /// <p>The unique identifier of the AgentSpace</p>
     pub fn get_agent_space_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_agent_space_id()
     }
-    /// Maximum number of results to return in a single call.
+    /// <p>Maximum number of results to return in a single call.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
         self
     }
-    /// Maximum number of results to return in a single call.
+    /// <p>Maximum number of results to return in a single call.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
-    /// Maximum number of results to return in a single call.
+    /// <p>Maximum number of results to return in a single call.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }
-    /// Token for the next page of results.
+    /// <p>Token for the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
-    /// Token for the next page of results.
+    /// <p>Token for the next page of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
-    /// Token for the next page of results.
+    /// <p>Token for the next page of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }
-    /// A comma-separated list of service types to filter list associations output
+    /// <p>A comma-separated list of service types to filter list associations output</p>
     pub fn filter_service_types(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.filter_service_types(input.into());
         self
     }
-    /// A comma-separated list of service types to filter list associations output
+    /// <p>A comma-separated list of service types to filter list associations output</p>
     pub fn set_filter_service_types(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_filter_service_types(input);
         self
     }
-    /// A comma-separated list of service types to filter list associations output
+    /// <p>A comma-separated list of service types to filter list associations output</p>
     pub fn get_filter_service_types(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_filter_service_types()
     }

@@ -12,6 +12,8 @@ pub struct ConfigurationBundleSummary {
     pub bundle_name: ::std::string::String,
     /// <p>The description of the configuration bundle.</p>
     pub description: ::std::option::Option<::std::string::String>,
+    /// <p>The timestamp when the configuration bundle was created.</p>
+    pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ConfigurationBundleSummary {
     /// <p>The Amazon Resource Name (ARN) of the configuration bundle.</p>
@@ -33,6 +35,10 @@ impl ConfigurationBundleSummary {
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
+    /// <p>The timestamp when the configuration bundle was created.</p>
+    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.created_at.as_ref()
+    }
 }
 impl ::std::fmt::Debug for ConfigurationBundleSummary {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -41,6 +47,7 @@ impl ::std::fmt::Debug for ConfigurationBundleSummary {
         formatter.field("bundle_id", &self.bundle_id);
         formatter.field("bundle_name", &self.bundle_name);
         formatter.field("description", &"*** Sensitive Data Redacted ***");
+        formatter.field("created_at", &self.created_at);
         formatter.finish()
     }
 }
@@ -59,6 +66,7 @@ pub struct ConfigurationBundleSummaryBuilder {
     pub(crate) bundle_id: ::std::option::Option<::std::string::String>,
     pub(crate) bundle_name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ConfigurationBundleSummaryBuilder {
     /// <p>The Amazon Resource Name (ARN) of the configuration bundle.</p>
@@ -120,6 +128,20 @@ impl ConfigurationBundleSummaryBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
+    /// <p>The timestamp when the configuration bundle was created.</p>
+    pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.created_at = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The timestamp when the configuration bundle was created.</p>
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.created_at = input;
+        self
+    }
+    /// <p>The timestamp when the configuration bundle was created.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
+    }
     /// Consumes the builder and constructs a [`ConfigurationBundleSummary`](crate::types::ConfigurationBundleSummary).
     /// This method will fail if any of the following fields are not set:
     /// - [`bundle_arn`](crate::types::builders::ConfigurationBundleSummaryBuilder::bundle_arn)
@@ -146,6 +168,7 @@ impl ConfigurationBundleSummaryBuilder {
                 )
             })?,
             description: self.description,
+            created_at: self.created_at,
         })
     }
 }
@@ -156,6 +179,7 @@ impl ::std::fmt::Debug for ConfigurationBundleSummaryBuilder {
         formatter.field("bundle_id", &self.bundle_id);
         formatter.field("bundle_name", &self.bundle_name);
         formatter.field("description", &"*** Sensitive Data Redacted ***");
+        formatter.field("created_at", &self.created_at);
         formatter.finish()
     }
 }

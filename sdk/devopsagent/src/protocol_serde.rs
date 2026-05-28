@@ -303,6 +303,10 @@ pub(crate) mod shape_mcp_server_grafana_configuration;
 
 pub(crate) mod shape_mcp_server_new_relic_configuration;
 
+pub(crate) mod shape_mcp_server_sigv4_configuration;
+
+pub(crate) mod shape_mcp_server_sigv4_service_details;
+
 pub(crate) mod shape_mcp_server_splunk_configuration;
 
 pub(crate) mod shape_new_relic_service_details;
@@ -361,6 +365,8 @@ pub(crate) mod shape_dynatrace_service_authorization_config;
 
 pub(crate) mod shape_mcp_server_authorization_config;
 
+pub(crate) mod shape_mcp_server_sigv4_authorization_config;
+
 pub(crate) mod shape_message;
 
 pub(crate) mod shape_new_relic_service_authorization_config;
@@ -377,6 +383,8 @@ pub(crate) mod shape_registered_grafana_server_details;
 
 pub(crate) mod shape_registered_mcp_server_details;
 
+pub(crate) mod shape_registered_mcp_server_sigv4_details;
+
 pub(crate) mod shape_registered_new_relic_details;
 
 pub(crate) mod shape_registered_pager_duty_details;
@@ -392,6 +400,8 @@ pub(crate) mod shape_slack_transmission_target;
 pub(crate) mod shape_user_reference;
 
 pub(crate) mod shape_assistant_message;
+
+pub(crate) mod shape_custom_headers;
 
 pub(crate) mod shape_dynatrace_o_auth_client_credentials_config;
 

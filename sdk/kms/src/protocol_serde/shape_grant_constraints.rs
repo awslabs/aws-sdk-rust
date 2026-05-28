@@ -23,6 +23,9 @@ pub fn ser_grant_constraints(
         }
         object_6.finish();
     }
+    if let Some(var_9) = &input.source_arn {
+        object.key("SourceArn").string(var_9.as_str());
+    }
     Ok(())
 }
 
@@ -50,6 +53,13 @@ where
                         "EncryptionContextEquals" => {
                             builder = builder.set_encryption_context_equals(
                                 crate::protocol_serde::shape_encryption_context_type::de_encryption_context_type(tokens, _value)?,
+                            );
+                        }
+                        "SourceArn" => {
+                            builder = builder.set_source_arn(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

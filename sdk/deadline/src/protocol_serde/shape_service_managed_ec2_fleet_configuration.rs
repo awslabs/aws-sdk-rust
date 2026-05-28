@@ -27,14 +27,20 @@ pub fn ser_service_managed_ec2_fleet_configuration(
     if let Some(var_7) = &input.storage_profile_id {
         object.key("storageProfileId").string(var_7.as_str());
     }
-    if let Some(var_8) = &input.auto_scaling_configuration {
+    if let Some(var_8) = &input.persistent_volume_configuration {
         #[allow(unused_mut)]
-        let mut object_9 = object.key("autoScalingConfiguration").start_object();
-        crate::protocol_serde::shape_service_managed_ec2_auto_scaling_configuration::ser_service_managed_ec2_auto_scaling_configuration(
-            &mut object_9,
-            var_8,
-        )?;
+        let mut object_9 = object.key("persistentVolumeConfiguration").start_object();
+        crate::protocol_serde::shape_persistent_volume_configuration::ser_persistent_volume_configuration(&mut object_9, var_8)?;
         object_9.finish();
+    }
+    if let Some(var_10) = &input.auto_scaling_configuration {
+        #[allow(unused_mut)]
+        let mut object_11 = object.key("autoScalingConfiguration").start_object();
+        crate::protocol_serde::shape_service_managed_ec2_auto_scaling_configuration::ser_service_managed_ec2_auto_scaling_configuration(
+            &mut object_11,
+            var_10,
+        )?;
+        object_11.finish();
     }
     Ok(())
 }
@@ -75,6 +81,11 @@ where
                                     ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                         .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                         .transpose()?,
+                                );
+                            }
+                            "persistentVolumeConfiguration" => {
+                                builder = builder.set_persistent_volume_configuration(
+                                    crate::protocol_serde::shape_persistent_volume_configuration::de_persistent_volume_configuration(tokens, _value)?,
                                 );
                             }
                             "autoScalingConfiguration" => {

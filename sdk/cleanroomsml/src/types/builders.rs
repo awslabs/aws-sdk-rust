@@ -21,6 +21,8 @@ pub use crate::types::_ml_output_configuration::MlOutputConfigurationBuilder;
 
 pub use crate::types::_input_channel::InputChannelBuilder;
 
+pub use crate::types::_payer_configuration::PayerConfigurationBuilder;
+
 pub use crate::types::_synthetic_data_configuration::SyntheticDataConfigurationBuilder;
 
 pub use crate::types::_resource_config::ResourceConfigBuilder;

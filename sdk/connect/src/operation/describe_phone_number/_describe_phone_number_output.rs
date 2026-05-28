@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribePhoneNumberOutput {
-    /// <p>Information about a phone number that's been claimed to your Amazon Connect instance or traffic distribution group.</p>
+    /// <p>Information about a phone number that's been claimed to your Connect Customer instance or traffic distribution group.</p>
     pub claimed_phone_number_summary: ::std::option::Option<crate::types::ClaimedPhoneNumberSummary>,
     _request_id: Option<String>,
 }
 impl DescribePhoneNumberOutput {
-    /// <p>Information about a phone number that's been claimed to your Amazon Connect instance or traffic distribution group.</p>
+    /// <p>Information about a phone number that's been claimed to your Connect Customer instance or traffic distribution group.</p>
     pub fn claimed_phone_number_summary(&self) -> ::std::option::Option<&crate::types::ClaimedPhoneNumberSummary> {
         self.claimed_phone_number_summary.as_ref()
     }
@@ -33,17 +33,17 @@ pub struct DescribePhoneNumberOutputBuilder {
     _request_id: Option<String>,
 }
 impl DescribePhoneNumberOutputBuilder {
-    /// <p>Information about a phone number that's been claimed to your Amazon Connect instance or traffic distribution group.</p>
+    /// <p>Information about a phone number that's been claimed to your Connect Customer instance or traffic distribution group.</p>
     pub fn claimed_phone_number_summary(mut self, input: crate::types::ClaimedPhoneNumberSummary) -> Self {
         self.claimed_phone_number_summary = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Information about a phone number that's been claimed to your Amazon Connect instance or traffic distribution group.</p>
+    /// <p>Information about a phone number that's been claimed to your Connect Customer instance or traffic distribution group.</p>
     pub fn set_claimed_phone_number_summary(mut self, input: ::std::option::Option<crate::types::ClaimedPhoneNumberSummary>) -> Self {
         self.claimed_phone_number_summary = input;
         self
     }
-    /// <p>Information about a phone number that's been claimed to your Amazon Connect instance or traffic distribution group.</p>
+    /// <p>Information about a phone number that's been claimed to your Connect Customer instance or traffic distribution group.</p>
     pub fn get_claimed_phone_number_summary(&self) -> &::std::option::Option<crate::types::ClaimedPhoneNumberSummary> {
         &self.claimed_phone_number_summary
     }

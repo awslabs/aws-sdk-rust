@@ -145,6 +145,9 @@ pub mod get_backup_vault_notifications;
 /// Types for the `GetLegalHold` operation.
 pub mod get_legal_hold;
 
+/// Types for the `GetPITRMalwareScanResults` operation.
+pub mod get_pitr_malware_scan_results;
+
 /// Types for the `GetRecoveryPointIndexDetails` operation.
 pub mod get_recovery_point_index_details;
 

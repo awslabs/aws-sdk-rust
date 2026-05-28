@@ -17,13 +17,17 @@ pub use crate::types::error::_unauthorized_exception::UnauthorizedException;
 
 pub use crate::types::error::_unsupported_document_encoding_exception::UnsupportedDocumentEncodingException;
 
-pub use crate::types::error::_conflict_exception::ConflictException;
+pub use crate::types::error::_gateway_timeout_exception::GatewayTimeoutException;
 
 pub use crate::types::error::_request_entity_too_large_exception::RequestEntityTooLargeException;
+
+pub use crate::types::error::_conflict_exception::ConflictException;
 
 mod _conflict_exception;
 
 mod _forbidden_exception;
+
+mod _gateway_timeout_exception;
 
 mod _internal_failure_exception;
 

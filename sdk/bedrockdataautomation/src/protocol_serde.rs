@@ -213,6 +213,8 @@ pub(crate) mod shape_data_automation_library_summary;
 
 pub(crate) mod shape_data_automation_project_summary;
 
+pub(crate) mod shape_document_custom_output_configuration;
+
 pub(crate) mod shape_document_override_configuration;
 
 pub(crate) mod shape_document_standard_output_configuration;
@@ -290,6 +292,8 @@ pub(crate) mod shape_document_extraction_granularity;
 pub(crate) mod shape_document_output_additional_file_format;
 
 pub(crate) mod shape_document_output_text_format;
+
+pub(crate) mod shape_fallback_blueprint_items;
 
 pub(crate) mod shape_image_bounding_box;
 

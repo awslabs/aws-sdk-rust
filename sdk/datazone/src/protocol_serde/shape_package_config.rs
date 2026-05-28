@@ -45,3 +45,16 @@ where
         )),
     }
 }
+
+pub fn ser_package_config(
+    object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
+    input: &crate::types::PackageConfig,
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("packageManager").string(input.package_manager.as_str());
+    }
+    if let Some(var_1) = &input.package_specification {
+        object.key("packageSpecification").string(var_1.as_str());
+    }
+    Ok(())
+}

@@ -22,7 +22,7 @@ impl crate::operation::associate_service::builders::AssociateServiceInputBuilder
 }
 /// Fluent builder constructing a request to `AssociateService`.
 ///
-/// Adds a specific service association to an AgentSpace. It overwrites the existing association of the same service. Returns 201 Created on success.
+/// <p>Adds a specific service association to an AgentSpace. It overwrites the existing association of the same service. Returns 201 Created on success.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AssociateServiceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,45 +108,45 @@ impl AssociateServiceFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// The unique identifier of the AgentSpace
+    /// <p>The unique identifier of the AgentSpace</p>
     pub fn agent_space_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.agent_space_id(input.into());
         self
     }
-    /// The unique identifier of the AgentSpace
+    /// <p>The unique identifier of the AgentSpace</p>
     pub fn set_agent_space_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_agent_space_id(input);
         self
     }
-    /// The unique identifier of the AgentSpace
+    /// <p>The unique identifier of the AgentSpace</p>
     pub fn get_agent_space_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_agent_space_id()
     }
-    /// The unique identifier of the service.
+    /// <p>The unique identifier of the service.</p>
     pub fn service_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.service_id(input.into());
         self
     }
-    /// The unique identifier of the service.
+    /// <p>The unique identifier of the service.</p>
     pub fn set_service_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_service_id(input);
         self
     }
-    /// The unique identifier of the service.
+    /// <p>The unique identifier of the service.</p>
     pub fn get_service_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_service_id()
     }
-    /// The configuration that directs how AgentSpace interacts with the given service.
+    /// <p>The configuration that directs how AgentSpace interacts with the given service.</p>
     pub fn configuration(mut self, input: crate::types::ServiceConfiguration) -> Self {
         self.inner = self.inner.configuration(input);
         self
     }
-    /// The configuration that directs how AgentSpace interacts with the given service.
+    /// <p>The configuration that directs how AgentSpace interacts with the given service.</p>
     pub fn set_configuration(mut self, input: ::std::option::Option<crate::types::ServiceConfiguration>) -> Self {
         self.inner = self.inner.set_configuration(input);
         self
     }
-    /// The configuration that directs how AgentSpace interacts with the given service.
+    /// <p>The configuration that directs how AgentSpace interacts with the given service.</p>
     pub fn get_configuration(&self) -> &::std::option::Option<crate::types::ServiceConfiguration> {
         self.inner.get_configuration()
     }

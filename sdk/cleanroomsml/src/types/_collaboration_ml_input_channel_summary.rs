@@ -24,6 +24,8 @@ pub struct CollaborationMlInputChannelSummary {
     pub creator_account_id: ::std::string::String,
     /// <p>The description of the ML input channel.</p>
     pub description: ::std::option::Option<::std::string::String>,
+    /// <p>The payer configuration for the ML input channel.</p>
+    pub payer_configuration: ::std::option::Option<crate::types::PayerConfiguration>,
 }
 impl CollaborationMlInputChannelSummary {
     /// <p>The time at which the ML input channel was created.</p>
@@ -72,6 +74,10 @@ impl CollaborationMlInputChannelSummary {
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
+    /// <p>The payer configuration for the ML input channel.</p>
+    pub fn payer_configuration(&self) -> ::std::option::Option<&crate::types::PayerConfiguration> {
+        self.payer_configuration.as_ref()
+    }
 }
 impl CollaborationMlInputChannelSummary {
     /// Creates a new builder-style object to manufacture [`CollaborationMlInputChannelSummary`](crate::types::CollaborationMlInputChannelSummary).
@@ -94,6 +100,7 @@ pub struct CollaborationMlInputChannelSummaryBuilder {
     pub(crate) status: ::std::option::Option<crate::types::MlInputChannelStatus>,
     pub(crate) creator_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) payer_configuration: ::std::option::Option<crate::types::PayerConfiguration>,
 }
 impl CollaborationMlInputChannelSummaryBuilder {
     /// <p>The time at which the ML input channel was created.</p>
@@ -250,6 +257,20 @@ impl CollaborationMlInputChannelSummaryBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
+    /// <p>The payer configuration for the ML input channel.</p>
+    pub fn payer_configuration(mut self, input: crate::types::PayerConfiguration) -> Self {
+        self.payer_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The payer configuration for the ML input channel.</p>
+    pub fn set_payer_configuration(mut self, input: ::std::option::Option<crate::types::PayerConfiguration>) -> Self {
+        self.payer_configuration = input;
+        self
+    }
+    /// <p>The payer configuration for the ML input channel.</p>
+    pub fn get_payer_configuration(&self) -> &::std::option::Option<crate::types::PayerConfiguration> {
+        &self.payer_configuration
+    }
     /// Consumes the builder and constructs a [`CollaborationMlInputChannelSummary`](crate::types::CollaborationMlInputChannelSummary).
     /// This method will fail if any of the following fields are not set:
     /// - [`create_time`](crate::types::builders::CollaborationMlInputChannelSummaryBuilder::create_time)
@@ -318,6 +339,7 @@ impl CollaborationMlInputChannelSummaryBuilder {
                 )
             })?,
             description: self.description,
+            payer_configuration: self.payer_configuration,
         })
     }
 }

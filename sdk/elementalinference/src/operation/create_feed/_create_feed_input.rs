@@ -3,25 +3,25 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateFeedInput {
-    /// <p>A name for this feed.</p>
+    /// <p>A user-friendly name for this feed.</p>
     pub name: ::std::option::Option<::std::string::String>,
-    /// <p>An array of outputs for this feed. Each output represents a specific Elemental Inference feature. For example, an output might represent the crop feature.</p>
+    /// <p>An array of outputs for this feed. Each output represents a specific Elemental Inference feature. For example, there is one output type for the smart crop feature. You must specify at least one output, but you can later add outputs using AssociateFeed, or add, modify, and delete outputs using UpdateFeed.</p>
     pub outputs: ::std::option::Option<::std::vec::Vec<crate::types::CreateOutput>>,
-    /// <p>If you want to include tags, add them now. You won't be able to add them later.</p>
+    /// <p>Optional tags. You can also add tags later, using TagResource.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateFeedInput {
-    /// <p>A name for this feed.</p>
+    /// <p>A user-friendly name for this feed.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>An array of outputs for this feed. Each output represents a specific Elemental Inference feature. For example, an output might represent the crop feature.</p>
+    /// <p>An array of outputs for this feed. Each output represents a specific Elemental Inference feature. For example, there is one output type for the smart crop feature. You must specify at least one output, but you can later add outputs using AssociateFeed, or add, modify, and delete outputs using UpdateFeed.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.outputs.is_none()`.
     pub fn outputs(&self) -> &[crate::types::CreateOutput] {
         self.outputs.as_deref().unwrap_or_default()
     }
-    /// <p>If you want to include tags, add them now. You won't be able to add them later.</p>
+    /// <p>Optional tags. You can also add tags later, using TagResource.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
@@ -42,18 +42,18 @@ pub struct CreateFeedInputBuilder {
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateFeedInputBuilder {
-    /// <p>A name for this feed.</p>
+    /// <p>A user-friendly name for this feed.</p>
     /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A name for this feed.</p>
+    /// <p>A user-friendly name for this feed.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// <p>A name for this feed.</p>
+    /// <p>A user-friendly name for this feed.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
@@ -61,19 +61,19 @@ impl CreateFeedInputBuilder {
     ///
     /// To override the contents of this collection use [`set_outputs`](Self::set_outputs).
     ///
-    /// <p>An array of outputs for this feed. Each output represents a specific Elemental Inference feature. For example, an output might represent the crop feature.</p>
+    /// <p>An array of outputs for this feed. Each output represents a specific Elemental Inference feature. For example, there is one output type for the smart crop feature. You must specify at least one output, but you can later add outputs using AssociateFeed, or add, modify, and delete outputs using UpdateFeed.</p>
     pub fn outputs(mut self, input: crate::types::CreateOutput) -> Self {
         let mut v = self.outputs.unwrap_or_default();
         v.push(input);
         self.outputs = ::std::option::Option::Some(v);
         self
     }
-    /// <p>An array of outputs for this feed. Each output represents a specific Elemental Inference feature. For example, an output might represent the crop feature.</p>
+    /// <p>An array of outputs for this feed. Each output represents a specific Elemental Inference feature. For example, there is one output type for the smart crop feature. You must specify at least one output, but you can later add outputs using AssociateFeed, or add, modify, and delete outputs using UpdateFeed.</p>
     pub fn set_outputs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CreateOutput>>) -> Self {
         self.outputs = input;
         self
     }
-    /// <p>An array of outputs for this feed. Each output represents a specific Elemental Inference feature. For example, an output might represent the crop feature.</p>
+    /// <p>An array of outputs for this feed. Each output represents a specific Elemental Inference feature. For example, there is one output type for the smart crop feature. You must specify at least one output, but you can later add outputs using AssociateFeed, or add, modify, and delete outputs using UpdateFeed.</p>
     pub fn get_outputs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CreateOutput>> {
         &self.outputs
     }
@@ -81,19 +81,19 @@ impl CreateFeedInputBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>If you want to include tags, add them now. You won't be able to add them later.</p>
+    /// <p>Optional tags. You can also add tags later, using TagResource.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>If you want to include tags, add them now. You won't be able to add them later.</p>
+    /// <p>Optional tags. You can also add tags later, using TagResource.</p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
-    /// <p>If you want to include tags, add them now. You won't be able to add them later.</p>
+    /// <p>Optional tags. You can also add tags later, using TagResource.</p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }

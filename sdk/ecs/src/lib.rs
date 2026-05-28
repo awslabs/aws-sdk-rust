@@ -39,7 +39,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-ecs = "1.125.0"
+//! aws-sdk-ecs = "1.126.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!
@@ -156,14 +156,14 @@ pub use config::Config;
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`CreateCapacityProvider`](crate::operation::create_capacity_provider) operation has
-/// a [`Client::create_capacity_provider`], function which returns a builder for that operation.
+/// For example, the [`ContinueServiceDeployment`](crate::operation::continue_service_deployment) operation has
+/// a [`Client::continue_service_deployment`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.create_capacity_provider()
-///     .name("example")
+/// let result = client.continue_service_deployment()
+///     .service_deployment_arn("example")
 ///     .send()
 ///     .await;
 /// ```

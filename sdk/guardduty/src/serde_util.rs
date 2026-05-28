@@ -689,6 +689,15 @@ pub(crate) fn scan_condition_correct_errors(
     builder
 }
 
+pub(crate) fn scan_configuration_continuous_scan_details_correct_errors(
+    mut builder: crate::types::builders::ScanConfigurationContinuousScanDetailsBuilder,
+) -> crate::types::builders::ScanConfigurationContinuousScanDetailsBuilder {
+    if builder.end_time.is_none() {
+        builder.end_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
 pub(crate) fn scan_condition_pair_correct_errors(
     mut builder: crate::types::builders::ScanConditionPairBuilder,
 ) -> crate::types::builders::ScanConditionPairBuilder {

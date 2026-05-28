@@ -5,7 +5,7 @@
 pub struct StopNotebookRunOutput {
     /// <p>The identifier of the notebook run.</p>
     pub id: ::std::string::String,
-    /// <p>The identifier of the Amazon DataZone domain.</p>
+    /// <p>The identifier of the Amazon SageMaker Unified Studio domain.</p>
     pub domain_id: ::std::string::String,
     /// <p>The identifier of the project that owns the notebook run.</p>
     pub owning_project_id: ::std::string::String,
@@ -19,7 +19,7 @@ impl StopNotebookRunOutput {
         use std::ops::Deref;
         self.id.deref()
     }
-    /// <p>The identifier of the Amazon DataZone domain.</p>
+    /// <p>The identifier of the Amazon SageMaker Unified Studio domain.</p>
     pub fn domain_id(&self) -> &str {
         use std::ops::Deref;
         self.domain_id.deref()
@@ -72,18 +72,18 @@ impl StopNotebookRunOutputBuilder {
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.id
     }
-    /// <p>The identifier of the Amazon DataZone domain.</p>
+    /// <p>The identifier of the Amazon SageMaker Unified Studio domain.</p>
     /// This field is required.
     pub fn domain_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier of the Amazon DataZone domain.</p>
+    /// <p>The identifier of the Amazon SageMaker Unified Studio domain.</p>
     pub fn set_domain_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain_id = input;
         self
     }
-    /// <p>The identifier of the Amazon DataZone domain.</p>
+    /// <p>The identifier of the Amazon SageMaker Unified Studio domain.</p>
     pub fn get_domain_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.domain_id
     }

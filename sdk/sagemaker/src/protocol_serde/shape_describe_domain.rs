@@ -209,6 +209,13 @@ pub(crate) fn de_describe_domain(
                             .transpose()?,
                     );
                 }
+                "HomeEfsFileSystemCreation" => {
+                    builder = builder.set_home_efs_file_system_creation(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| crate::types::HomeEfsFileSystemCreation::from(u.as_ref())))
+                            .transpose()?,
+                    );
+                }
                 "TagPropagation" => {
                     builder = builder.set_tag_propagation(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

@@ -215,7 +215,7 @@ pub struct ContainerDefinition {
     pub health_check: ::std::option::Option<crate::types::HealthCheck>,
     /// <p>A list of namespaced kernel parameters to set in the container. This parameter maps to <code>Sysctls</code> in the docker container create command and the <code>--sysctl</code> option to docker run. For example, you can configure <code>net.ipv4.tcp_keepalive_time</code> setting to maintain longer lived connections.</p>
     pub system_controls: ::std::option::Option<::std::vec::Vec<crate::types::SystemControl>>,
-    /// <p>The type and amount of a resource to assign to a container. The only supported resource is a GPU.</p>
+    /// <p>The type and amount of a resource to assign to a container. The supported resources are GPUs and Neuron devices.</p>
     pub resource_requirements: ::std::option::Option<::std::vec::Vec<crate::types::ResourceRequirement>>,
     /// <p>The FireLens configuration for the container. This is used to specify and configure a log router for container logs. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_firelens.html">Custom Log Routing</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     pub firelens_configuration: ::std::option::Option<crate::types::FirelensConfiguration>,
@@ -564,7 +564,7 @@ impl ContainerDefinition {
     pub fn system_controls(&self) -> &[crate::types::SystemControl] {
         self.system_controls.as_deref().unwrap_or_default()
     }
-    /// <p>The type and amount of a resource to assign to a container. The only supported resource is a GPU.</p>
+    /// <p>The type and amount of a resource to assign to a container. The supported resources are GPUs and Neuron devices.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_requirements.is_none()`.
     pub fn resource_requirements(&self) -> &[crate::types::ResourceRequirement] {
@@ -1758,19 +1758,19 @@ impl ContainerDefinitionBuilder {
     ///
     /// To override the contents of this collection use [`set_resource_requirements`](Self::set_resource_requirements).
     ///
-    /// <p>The type and amount of a resource to assign to a container. The only supported resource is a GPU.</p>
+    /// <p>The type and amount of a resource to assign to a container. The supported resources are GPUs and Neuron devices.</p>
     pub fn resource_requirements(mut self, input: crate::types::ResourceRequirement) -> Self {
         let mut v = self.resource_requirements.unwrap_or_default();
         v.push(input);
         self.resource_requirements = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The type and amount of a resource to assign to a container. The only supported resource is a GPU.</p>
+    /// <p>The type and amount of a resource to assign to a container. The supported resources are GPUs and Neuron devices.</p>
     pub fn set_resource_requirements(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceRequirement>>) -> Self {
         self.resource_requirements = input;
         self
     }
-    /// <p>The type and amount of a resource to assign to a container. The only supported resource is a GPU.</p>
+    /// <p>The type and amount of a resource to assign to a container. The supported resources are GPUs and Neuron devices.</p>
     pub fn get_resource_requirements(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceRequirement>> {
         &self.resource_requirements
     }

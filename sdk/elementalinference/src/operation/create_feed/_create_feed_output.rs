@@ -5,17 +5,17 @@
 pub struct CreateFeedOutput {
     /// <p>A unique ARN that Elemental Inference assigns to the feed.</p>
     pub arn: ::std::string::String,
-    /// <p>The name that you specified.</p>
+    /// <p>The name that you specified in the request.</p>
     pub name: ::std::string::String,
     /// <p>A unique ID that Elemental Inference assigns to the feed.</p>
     pub id: ::std::string::String,
-    /// <p>A unique ARN that Elemental Inference assigns to the feed.</p>
+    /// <p>An array of endpoints for the feed. Typically, there is only one endpoint. The feed receives source media at this endpoint (when the calling application calls PutMedia) and returns the resulting metadata to this endpoint (when the calling application calls GetMetadata).</p>
     pub data_endpoints: ::std::vec::Vec<::std::string::String>,
-    /// <p>Data endpoints that Elemental Inference assigns to the feed.</p>
+    /// <p>Repeats the outputs that you specified in the request.</p>
     pub outputs: ::std::vec::Vec<crate::types::GetOutput>,
     /// <p>The current status of the feed. After creation of the feed has succeeded, the status will be AVAILABLE.</p>
     pub status: crate::types::FeedStatus,
-    /// <p>The association for this feed. When you create the feed, this property is empty. You must associate a resource with the feed using AssociateFeed.</p>
+    /// <p>The association for this feed. When you create the feed, this property is empty. You must associate a resource with the feed using AssociateFeed or UpdateFeed.</p>
     pub association: ::std::option::Option<crate::types::FeedAssociation>,
     /// <p>Any tags that you included when you created the feed.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -27,7 +27,7 @@ impl CreateFeedOutput {
         use std::ops::Deref;
         self.arn.deref()
     }
-    /// <p>The name that you specified.</p>
+    /// <p>The name that you specified in the request.</p>
     pub fn name(&self) -> &str {
         use std::ops::Deref;
         self.name.deref()
@@ -37,12 +37,12 @@ impl CreateFeedOutput {
         use std::ops::Deref;
         self.id.deref()
     }
-    /// <p>A unique ARN that Elemental Inference assigns to the feed.</p>
+    /// <p>An array of endpoints for the feed. Typically, there is only one endpoint. The feed receives source media at this endpoint (when the calling application calls PutMedia) and returns the resulting metadata to this endpoint (when the calling application calls GetMetadata).</p>
     pub fn data_endpoints(&self) -> &[::std::string::String] {
         use std::ops::Deref;
         self.data_endpoints.deref()
     }
-    /// <p>Data endpoints that Elemental Inference assigns to the feed.</p>
+    /// <p>Repeats the outputs that you specified in the request.</p>
     pub fn outputs(&self) -> &[crate::types::GetOutput] {
         use std::ops::Deref;
         self.outputs.deref()
@@ -51,7 +51,7 @@ impl CreateFeedOutput {
     pub fn status(&self) -> &crate::types::FeedStatus {
         &self.status
     }
-    /// <p>The association for this feed. When you create the feed, this property is empty. You must associate a resource with the feed using AssociateFeed.</p>
+    /// <p>The association for this feed. When you create the feed, this property is empty. You must associate a resource with the feed using AssociateFeed or UpdateFeed.</p>
     pub fn association(&self) -> ::std::option::Option<&crate::types::FeedAssociation> {
         self.association.as_ref()
     }
@@ -102,18 +102,18 @@ impl CreateFeedOutputBuilder {
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }
-    /// <p>The name that you specified.</p>
+    /// <p>The name that you specified in the request.</p>
     /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name that you specified.</p>
+    /// <p>The name that you specified in the request.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// <p>The name that you specified.</p>
+    /// <p>The name that you specified in the request.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
@@ -136,19 +136,19 @@ impl CreateFeedOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_data_endpoints`](Self::set_data_endpoints).
     ///
-    /// <p>A unique ARN that Elemental Inference assigns to the feed.</p>
+    /// <p>An array of endpoints for the feed. Typically, there is only one endpoint. The feed receives source media at this endpoint (when the calling application calls PutMedia) and returns the resulting metadata to this endpoint (when the calling application calls GetMetadata).</p>
     pub fn data_endpoints(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.data_endpoints.unwrap_or_default();
         v.push(input.into());
         self.data_endpoints = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A unique ARN that Elemental Inference assigns to the feed.</p>
+    /// <p>An array of endpoints for the feed. Typically, there is only one endpoint. The feed receives source media at this endpoint (when the calling application calls PutMedia) and returns the resulting metadata to this endpoint (when the calling application calls GetMetadata).</p>
     pub fn set_data_endpoints(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.data_endpoints = input;
         self
     }
-    /// <p>A unique ARN that Elemental Inference assigns to the feed.</p>
+    /// <p>An array of endpoints for the feed. Typically, there is only one endpoint. The feed receives source media at this endpoint (when the calling application calls PutMedia) and returns the resulting metadata to this endpoint (when the calling application calls GetMetadata).</p>
     pub fn get_data_endpoints(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.data_endpoints
     }
@@ -156,19 +156,19 @@ impl CreateFeedOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_outputs`](Self::set_outputs).
     ///
-    /// <p>Data endpoints that Elemental Inference assigns to the feed.</p>
+    /// <p>Repeats the outputs that you specified in the request.</p>
     pub fn outputs(mut self, input: crate::types::GetOutput) -> Self {
         let mut v = self.outputs.unwrap_or_default();
         v.push(input);
         self.outputs = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Data endpoints that Elemental Inference assigns to the feed.</p>
+    /// <p>Repeats the outputs that you specified in the request.</p>
     pub fn set_outputs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GetOutput>>) -> Self {
         self.outputs = input;
         self
     }
-    /// <p>Data endpoints that Elemental Inference assigns to the feed.</p>
+    /// <p>Repeats the outputs that you specified in the request.</p>
     pub fn get_outputs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GetOutput>> {
         &self.outputs
     }
@@ -187,17 +187,17 @@ impl CreateFeedOutputBuilder {
     pub fn get_status(&self) -> &::std::option::Option<crate::types::FeedStatus> {
         &self.status
     }
-    /// <p>The association for this feed. When you create the feed, this property is empty. You must associate a resource with the feed using AssociateFeed.</p>
+    /// <p>The association for this feed. When you create the feed, this property is empty. You must associate a resource with the feed using AssociateFeed or UpdateFeed.</p>
     pub fn association(mut self, input: crate::types::FeedAssociation) -> Self {
         self.association = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The association for this feed. When you create the feed, this property is empty. You must associate a resource with the feed using AssociateFeed.</p>
+    /// <p>The association for this feed. When you create the feed, this property is empty. You must associate a resource with the feed using AssociateFeed or UpdateFeed.</p>
     pub fn set_association(mut self, input: ::std::option::Option<crate::types::FeedAssociation>) -> Self {
         self.association = input;
         self
     }
-    /// <p>The association for this feed. When you create the feed, this property is empty. You must associate a resource with the feed using AssociateFeed.</p>
+    /// <p>The association for this feed. When you create the feed, this property is empty. You must associate a resource with the feed using AssociateFeed or UpdateFeed.</p>
     pub fn get_association(&self) -> &::std::option::Option<crate::types::FeedAssociation> {
         &self.association
     }

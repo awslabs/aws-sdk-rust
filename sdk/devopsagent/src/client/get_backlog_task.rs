@@ -3,10 +3,10 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetBacklogTask`](crate::operation::get_backlog_task::builders::GetBacklogTaskFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`agent_space_id(impl Into<String>)`](crate::operation::get_backlog_task::builders::GetBacklogTaskFluentBuilder::agent_space_id) / [`set_agent_space_id(Option<String>)`](crate::operation::get_backlog_task::builders::GetBacklogTaskFluentBuilder::set_agent_space_id):<br>required: **true**<br>The unique identifier for the agent space containing the task<br>
-    ///   - [`task_id(impl Into<String>)`](crate::operation::get_backlog_task::builders::GetBacklogTaskFluentBuilder::task_id) / [`set_task_id(Option<String>)`](crate::operation::get_backlog_task::builders::GetBacklogTaskFluentBuilder::set_task_id):<br>required: **true**<br>The unique identifier of the task to retrieve<br>
+    ///   - [`agent_space_id(impl Into<String>)`](crate::operation::get_backlog_task::builders::GetBacklogTaskFluentBuilder::agent_space_id) / [`set_agent_space_id(Option<String>)`](crate::operation::get_backlog_task::builders::GetBacklogTaskFluentBuilder::set_agent_space_id):<br>required: **true**<br><p>The unique identifier for the agent space containing the task</p><br>
+    ///   - [`task_id(impl Into<String>)`](crate::operation::get_backlog_task::builders::GetBacklogTaskFluentBuilder::task_id) / [`set_task_id(Option<String>)`](crate::operation::get_backlog_task::builders::GetBacklogTaskFluentBuilder::set_task_id):<br>required: **true**<br><p>The unique identifier of the task to retrieve</p><br>
     /// - On success, responds with [`GetBacklogTaskOutput`](crate::operation::get_backlog_task::GetBacklogTaskOutput) with field(s):
-    ///   - [`task(Option<Task>)`](crate::operation::get_backlog_task::GetBacklogTaskOutput::task): The requested task object
+    ///   - [`task(Option<Task>)`](crate::operation::get_backlog_task::GetBacklogTaskOutput::task): <p>The requested task object</p>
     /// - On failure, responds with [`SdkError<GetBacklogTaskError>`](crate::operation::get_backlog_task::GetBacklogTaskError)
     pub fn get_backlog_task(&self) -> crate::operation::get_backlog_task::builders::GetBacklogTaskFluentBuilder {
         crate::operation::get_backlog_task::builders::GetBacklogTaskFluentBuilder::new(self.handle.clone())

@@ -13,8 +13,14 @@
 /// # let changetype = unimplemented!();
 /// match changetype {
 ///     ChangeType::AddMember => { /* ... */ },
+///     ChangeType::AddPayerCandidate => { /* ... */ },
 ///     ChangeType::EditAutoApprovedChangeTypes => { /* ... */ },
+///     ChangeType::GrantCanReceiveInferenceOutput => { /* ... */ },
+///     ChangeType::GrantCanReceiveModelOutput => { /* ... */ },
 ///     ChangeType::GrantReceiveResultsAbility => { /* ... */ },
+///     ChangeType::RemovePayerCandidate => { /* ... */ },
+///     ChangeType::RevokeCanReceiveInferenceOutput => { /* ... */ },
+///     ChangeType::RevokeCanReceiveModelOutput => { /* ... */ },
 ///     ChangeType::RevokeReceiveResultsAbility => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -47,9 +53,21 @@ pub enum ChangeType {
     #[allow(missing_docs)] // documentation missing in model
     AddMember,
     #[allow(missing_docs)] // documentation missing in model
+    AddPayerCandidate,
+    #[allow(missing_docs)] // documentation missing in model
     EditAutoApprovedChangeTypes,
     #[allow(missing_docs)] // documentation missing in model
+    GrantCanReceiveInferenceOutput,
+    #[allow(missing_docs)] // documentation missing in model
+    GrantCanReceiveModelOutput,
+    #[allow(missing_docs)] // documentation missing in model
     GrantReceiveResultsAbility,
+    #[allow(missing_docs)] // documentation missing in model
+    RemovePayerCandidate,
+    #[allow(missing_docs)] // documentation missing in model
+    RevokeCanReceiveInferenceOutput,
+    #[allow(missing_docs)] // documentation missing in model
+    RevokeCanReceiveModelOutput,
     #[allow(missing_docs)] // documentation missing in model
     RevokeReceiveResultsAbility,
     /// `Unknown` contains new variants that have been added since this code was generated.
@@ -60,8 +78,14 @@ impl ::std::convert::From<&str> for ChangeType {
     fn from(s: &str) -> Self {
         match s {
             "ADD_MEMBER" => ChangeType::AddMember,
+            "ADD_PAYER_CANDIDATE" => ChangeType::AddPayerCandidate,
             "EDIT_AUTO_APPROVED_CHANGE_TYPES" => ChangeType::EditAutoApprovedChangeTypes,
+            "GRANT_CAN_RECEIVE_INFERENCE_OUTPUT" => ChangeType::GrantCanReceiveInferenceOutput,
+            "GRANT_CAN_RECEIVE_MODEL_OUTPUT" => ChangeType::GrantCanReceiveModelOutput,
             "GRANT_RECEIVE_RESULTS_ABILITY" => ChangeType::GrantReceiveResultsAbility,
+            "REMOVE_PAYER_CANDIDATE" => ChangeType::RemovePayerCandidate,
+            "REVOKE_CAN_RECEIVE_INFERENCE_OUTPUT" => ChangeType::RevokeCanReceiveInferenceOutput,
+            "REVOKE_CAN_RECEIVE_MODEL_OUTPUT" => ChangeType::RevokeCanReceiveModelOutput,
             "REVOKE_RECEIVE_RESULTS_ABILITY" => ChangeType::RevokeReceiveResultsAbility,
             other => ChangeType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -79,8 +103,14 @@ impl ChangeType {
     pub fn as_str(&self) -> &str {
         match self {
             ChangeType::AddMember => "ADD_MEMBER",
+            ChangeType::AddPayerCandidate => "ADD_PAYER_CANDIDATE",
             ChangeType::EditAutoApprovedChangeTypes => "EDIT_AUTO_APPROVED_CHANGE_TYPES",
+            ChangeType::GrantCanReceiveInferenceOutput => "GRANT_CAN_RECEIVE_INFERENCE_OUTPUT",
+            ChangeType::GrantCanReceiveModelOutput => "GRANT_CAN_RECEIVE_MODEL_OUTPUT",
             ChangeType::GrantReceiveResultsAbility => "GRANT_RECEIVE_RESULTS_ABILITY",
+            ChangeType::RemovePayerCandidate => "REMOVE_PAYER_CANDIDATE",
+            ChangeType::RevokeCanReceiveInferenceOutput => "REVOKE_CAN_RECEIVE_INFERENCE_OUTPUT",
+            ChangeType::RevokeCanReceiveModelOutput => "REVOKE_CAN_RECEIVE_MODEL_OUTPUT",
             ChangeType::RevokeReceiveResultsAbility => "REVOKE_RECEIVE_RESULTS_ABILITY",
             ChangeType::Unknown(value) => value.as_str(),
         }
@@ -89,8 +119,14 @@ impl ChangeType {
     pub const fn values() -> &'static [&'static str] {
         &[
             "ADD_MEMBER",
+            "ADD_PAYER_CANDIDATE",
             "EDIT_AUTO_APPROVED_CHANGE_TYPES",
+            "GRANT_CAN_RECEIVE_INFERENCE_OUTPUT",
+            "GRANT_CAN_RECEIVE_MODEL_OUTPUT",
             "GRANT_RECEIVE_RESULTS_ABILITY",
+            "REMOVE_PAYER_CANDIDATE",
+            "REVOKE_CAN_RECEIVE_INFERENCE_OUTPUT",
+            "REVOKE_CAN_RECEIVE_MODEL_OUTPUT",
             "REVOKE_RECEIVE_RESULTS_ABILITY",
         ]
     }
@@ -116,8 +152,14 @@ impl ::std::fmt::Display for ChangeType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ChangeType::AddMember => write!(f, "ADD_MEMBER"),
+            ChangeType::AddPayerCandidate => write!(f, "ADD_PAYER_CANDIDATE"),
             ChangeType::EditAutoApprovedChangeTypes => write!(f, "EDIT_AUTO_APPROVED_CHANGE_TYPES"),
+            ChangeType::GrantCanReceiveInferenceOutput => write!(f, "GRANT_CAN_RECEIVE_INFERENCE_OUTPUT"),
+            ChangeType::GrantCanReceiveModelOutput => write!(f, "GRANT_CAN_RECEIVE_MODEL_OUTPUT"),
             ChangeType::GrantReceiveResultsAbility => write!(f, "GRANT_RECEIVE_RESULTS_ABILITY"),
+            ChangeType::RemovePayerCandidate => write!(f, "REMOVE_PAYER_CANDIDATE"),
+            ChangeType::RevokeCanReceiveInferenceOutput => write!(f, "REVOKE_CAN_RECEIVE_INFERENCE_OUTPUT"),
+            ChangeType::RevokeCanReceiveModelOutput => write!(f, "REVOKE_CAN_RECEIVE_MODEL_OUTPUT"),
             ChangeType::RevokeReceiveResultsAbility => write!(f, "REVOKE_RECEIVE_RESULTS_ABILITY"),
             ChangeType::Unknown(value) => write!(f, "{value}"),
         }

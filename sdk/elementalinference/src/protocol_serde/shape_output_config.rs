@@ -16,6 +16,12 @@ pub fn ser_output_config(
             crate::protocol_serde::shape_clipping_config::ser_clipping_config(&mut object_2, inner)?;
             object_2.finish();
         }
+        crate::types::OutputConfig::Subtitling(inner) => {
+            #[allow(unused_mut)]
+            let mut object_3 = object_2.key("subtitling").start_object();
+            crate::protocol_serde::shape_subtitling_config::ser_subtitling_config(&mut object_3, inner)?;
+            object_3.finish();
+        }
         crate::types::OutputConfig::Unknown => return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant("OutputConfig")),
     }
     Ok(())
@@ -60,6 +66,11 @@ where
                         "clipping" => Some(crate::types::OutputConfig::Clipping(
                             crate::protocol_serde::shape_clipping_config::de_clipping_config(tokens, _value)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'clipping' cannot be null")
+                            })?,
+                        )),
+                        "subtitling" => Some(crate::types::OutputConfig::Subtitling(
+                            crate::protocol_serde::shape_subtitling_config::de_subtitling_config(tokens, _value)?.ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'subtitling' cannot be null")
                             })?,
                         )),
                         _ => {

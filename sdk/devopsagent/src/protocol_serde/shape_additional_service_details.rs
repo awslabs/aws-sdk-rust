@@ -99,6 +99,12 @@ where
                                     ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'pagerduty' cannot be null")
                                 })?,
                         )),
+                        "mcpserversigv4" => Some(crate::types::AdditionalServiceDetails::Mcpserversigv4(
+                            crate::protocol_serde::shape_registered_mcp_server_sigv4_details::de_registered_mcp_server_sigv4_details(tokens, _value)?
+                                .ok_or_else(|| {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'mcpserversigv4' cannot be null")
+                                })?,
+                        )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
                             Some(crate::types::AdditionalServiceDetails::Unknown)

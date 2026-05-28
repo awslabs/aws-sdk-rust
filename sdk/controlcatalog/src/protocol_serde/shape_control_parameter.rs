@@ -22,6 +22,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "Requirement" => {
+                            builder = builder.set_requirement(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::ControlParameterRequirement::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

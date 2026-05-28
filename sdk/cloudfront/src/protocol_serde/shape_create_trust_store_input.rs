@@ -17,6 +17,10 @@ pub fn ser_create_trust_store_input_input_input(
         let inner_writer = scope.start_el("Tags");
         crate::protocol_serde::shape_tags::ser_tags(var_3, inner_writer)?
     }
+    if let Some(var_4) = &input.use_client_certificate_ocsp_endpoint {
+        let mut inner_writer = scope.start_el("UseClientCertificateOCSPEndpoint").finish();
+        inner_writer.data(::aws_smithy_types::primitive::Encoder::from(*var_4).encode());
+    }
     scope.finish();
     Ok(())
 }

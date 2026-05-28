@@ -74,6 +74,27 @@ pub(crate) fn associate_feed_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn create_dictionary_output_output_correct_errors(
+    mut builder: crate::operation::create_dictionary::builders::CreateDictionaryOutputBuilder,
+) -> crate::operation::create_dictionary::builders::CreateDictionaryOutputBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.language.is_none() {
+        builder.language = "no value was set".parse::<crate::types::DictionaryLanguage>().ok()
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::DictionaryStatus>().ok()
+    }
+    builder
+}
+
 pub(crate) fn create_feed_output_output_correct_errors(
     mut builder: crate::operation::create_feed::builders::CreateFeedOutputBuilder,
 ) -> crate::operation::create_feed::builders::CreateFeedOutputBuilder {
@@ -94,6 +115,21 @@ pub(crate) fn create_feed_output_output_correct_errors(
     }
     if builder.status.is_none() {
         builder.status = "no value was set".parse::<crate::types::FeedStatus>().ok()
+    }
+    builder
+}
+
+pub(crate) fn delete_dictionary_output_output_correct_errors(
+    mut builder: crate::operation::delete_dictionary::builders::DeleteDictionaryOutputBuilder,
+) -> crate::operation::delete_dictionary::builders::DeleteDictionaryOutputBuilder {
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::DictionaryStatus>().ok()
     }
     builder
 }
@@ -125,6 +161,27 @@ pub(crate) fn disassociate_feed_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn get_dictionary_output_output_correct_errors(
+    mut builder: crate::operation::get_dictionary::builders::GetDictionaryOutputBuilder,
+) -> crate::operation::get_dictionary::builders::GetDictionaryOutputBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.language.is_none() {
+        builder.language = "no value was set".parse::<crate::types::DictionaryLanguage>().ok()
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::DictionaryStatus>().ok()
+    }
+    builder
+}
+
 pub(crate) fn get_feed_output_output_correct_errors(
     mut builder: crate::operation::get_feed::builders::GetFeedOutputBuilder,
 ) -> crate::operation::get_feed::builders::GetFeedOutputBuilder {
@@ -149,11 +206,41 @@ pub(crate) fn get_feed_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn list_dictionaries_output_output_correct_errors(
+    mut builder: crate::operation::list_dictionaries::builders::ListDictionariesOutputBuilder,
+) -> crate::operation::list_dictionaries::builders::ListDictionariesOutputBuilder {
+    if builder.dictionaries.is_none() {
+        builder.dictionaries = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn list_feeds_output_output_correct_errors(
     mut builder: crate::operation::list_feeds::builders::ListFeedsOutputBuilder,
 ) -> crate::operation::list_feeds::builders::ListFeedsOutputBuilder {
     if builder.feeds.is_none() {
         builder.feeds = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn update_dictionary_output_output_correct_errors(
+    mut builder: crate::operation::update_dictionary::builders::UpdateDictionaryOutputBuilder,
+) -> crate::operation::update_dictionary::builders::UpdateDictionaryOutputBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.language.is_none() {
+        builder.language = "no value was set".parse::<crate::types::DictionaryLanguage>().ok()
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::DictionaryStatus>().ok()
     }
     builder
 }
@@ -191,6 +278,27 @@ pub(crate) fn feed_association_correct_errors(
     builder
 }
 
+pub(crate) fn dictionary_summary_correct_errors(
+    mut builder: crate::types::builders::DictionarySummaryBuilder,
+) -> crate::types::builders::DictionarySummaryBuilder {
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.language.is_none() {
+        builder.language = "no value was set".parse::<crate::types::DictionaryLanguage>().ok()
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::DictionaryStatus>().ok()
+    }
+    builder
+}
+
 pub(crate) fn feed_summary_correct_errors(mut builder: crate::types::builders::FeedSummaryBuilder) -> crate::types::builders::FeedSummaryBuilder {
     if builder.arn.is_none() {
         builder.arn = Some(Default::default())
@@ -216,6 +324,25 @@ pub(crate) fn get_output_correct_errors(mut builder: crate::types::builders::Get
     }
     if builder.status.is_none() {
         builder.status = "no value was set".parse::<crate::types::OutputStatus>().ok()
+    }
+    builder
+}
+
+pub(crate) fn subtitling_config_correct_errors(
+    mut builder: crate::types::builders::SubtitlingConfigBuilder,
+) -> crate::types::builders::SubtitlingConfigBuilder {
+    if builder.language.is_none() {
+        builder.language = "no value was set".parse::<crate::types::TranscriptionLanguage>().ok()
+    }
+    builder
+}
+
+pub(crate) fn aspect_ratio_correct_errors(mut builder: crate::types::builders::AspectRatioBuilder) -> crate::types::builders::AspectRatioBuilder {
+    if builder.width.is_none() {
+        builder.width = Some(Default::default())
+    }
+    if builder.height.is_none() {
+        builder.height = Some(Default::default())
     }
     builder
 }

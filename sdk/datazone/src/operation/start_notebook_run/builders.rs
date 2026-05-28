@@ -22,7 +22,7 @@ impl crate::operation::start_notebook_run::builders::StartNotebookRunInputBuilde
 }
 /// Fluent builder constructing a request to `StartNotebookRun`.
 ///
-/// <p>Starts a notebook run in an Amazon DataZone domain. A notebook run represents the execution of a Amazon DataZone notebook within a project. You can configure compute, network, timeout, and environment settings for the run.</p>
+/// <p>Starts a notebook run in Amazon SageMaker Unified Studio. A notebook run represents the execution of an <a href="https://docs.aws.amazon.com/sagemaker-unified-studio/latest/userguide/notebooks.html">Amazon SageMaker notebook</a> within a project. You can configure compute, network, timeout, and environment settings for the run.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartNotebookRunFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl StartNotebookRunFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The identifier of the Amazon DataZone domain in which the notebook run is started.</p>
+    /// <p>The identifier of the Amazon SageMaker Unified Studio domain in which the notebook run is started.</p>
     pub fn domain_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.domain_identifier(input.into());
         self
     }
-    /// <p>The identifier of the Amazon DataZone domain in which the notebook run is started.</p>
+    /// <p>The identifier of the Amazon SageMaker Unified Studio domain in which the notebook run is started.</p>
     pub fn set_domain_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_domain_identifier(input);
         self
     }
-    /// <p>The identifier of the Amazon DataZone domain in which the notebook run is started.</p>
+    /// <p>The identifier of the Amazon SageMaker Unified Studio domain in which the notebook run is started.</p>
     pub fn get_domain_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_domain_identifier()
     }

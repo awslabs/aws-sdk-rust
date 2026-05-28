@@ -7,6 +7,14 @@ pub struct DeletePolicyStoreAliasInput {
     /// <p>The alias name must always be prefixed with <code>policy-store-alias/</code>.</p>
     /// </note>
     pub alias_name: ::std::option::Option<::std::string::String>,
+    /// <p>Specifies the deletion mode for the policy store alias. The valid values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><b>SoftDelete</b> – The policy store alias enters the <code>PendingDeletion</code> state. This is the default behavior when no <code>deletionMode</code> is specified.</p></li>
+    /// <li>
+    /// <p><b>HardDelete</b> – The policy store alias is immediately deleted, bypassing the <code>PendingDeletion</code> state.</p></li>
+    /// </ul>
+    pub deletion_mode: ::std::option::Option<crate::types::DeletionMode>,
 }
 impl DeletePolicyStoreAliasInput {
     /// <p>Specifies the name of the policy store alias that you want to delete.</p><note>
@@ -14,6 +22,16 @@ impl DeletePolicyStoreAliasInput {
     /// </note>
     pub fn alias_name(&self) -> ::std::option::Option<&str> {
         self.alias_name.as_deref()
+    }
+    /// <p>Specifies the deletion mode for the policy store alias. The valid values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><b>SoftDelete</b> – The policy store alias enters the <code>PendingDeletion</code> state. This is the default behavior when no <code>deletionMode</code> is specified.</p></li>
+    /// <li>
+    /// <p><b>HardDelete</b> – The policy store alias is immediately deleted, bypassing the <code>PendingDeletion</code> state.</p></li>
+    /// </ul>
+    pub fn deletion_mode(&self) -> ::std::option::Option<&crate::types::DeletionMode> {
+        self.deletion_mode.as_ref()
     }
 }
 impl DeletePolicyStoreAliasInput {
@@ -28,6 +46,7 @@ impl DeletePolicyStoreAliasInput {
 #[non_exhaustive]
 pub struct DeletePolicyStoreAliasInputBuilder {
     pub(crate) alias_name: ::std::option::Option<::std::string::String>,
+    pub(crate) deletion_mode: ::std::option::Option<crate::types::DeletionMode>,
 }
 impl DeletePolicyStoreAliasInputBuilder {
     /// <p>Specifies the name of the policy store alias that you want to delete.</p><note>
@@ -51,6 +70,38 @@ impl DeletePolicyStoreAliasInputBuilder {
     pub fn get_alias_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.alias_name
     }
+    /// <p>Specifies the deletion mode for the policy store alias. The valid values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><b>SoftDelete</b> – The policy store alias enters the <code>PendingDeletion</code> state. This is the default behavior when no <code>deletionMode</code> is specified.</p></li>
+    /// <li>
+    /// <p><b>HardDelete</b> – The policy store alias is immediately deleted, bypassing the <code>PendingDeletion</code> state.</p></li>
+    /// </ul>
+    pub fn deletion_mode(mut self, input: crate::types::DeletionMode) -> Self {
+        self.deletion_mode = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies the deletion mode for the policy store alias. The valid values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><b>SoftDelete</b> – The policy store alias enters the <code>PendingDeletion</code> state. This is the default behavior when no <code>deletionMode</code> is specified.</p></li>
+    /// <li>
+    /// <p><b>HardDelete</b> – The policy store alias is immediately deleted, bypassing the <code>PendingDeletion</code> state.</p></li>
+    /// </ul>
+    pub fn set_deletion_mode(mut self, input: ::std::option::Option<crate::types::DeletionMode>) -> Self {
+        self.deletion_mode = input;
+        self
+    }
+    /// <p>Specifies the deletion mode for the policy store alias. The valid values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><b>SoftDelete</b> – The policy store alias enters the <code>PendingDeletion</code> state. This is the default behavior when no <code>deletionMode</code> is specified.</p></li>
+    /// <li>
+    /// <p><b>HardDelete</b> – The policy store alias is immediately deleted, bypassing the <code>PendingDeletion</code> state.</p></li>
+    /// </ul>
+    pub fn get_deletion_mode(&self) -> &::std::option::Option<crate::types::DeletionMode> {
+        &self.deletion_mode
+    }
     /// Consumes the builder and constructs a [`DeletePolicyStoreAliasInput`](crate::operation::delete_policy_store_alias::DeletePolicyStoreAliasInput).
     pub fn build(
         self,
@@ -58,6 +109,9 @@ impl DeletePolicyStoreAliasInputBuilder {
         crate::operation::delete_policy_store_alias::DeletePolicyStoreAliasInput,
         ::aws_smithy_types::error::operation::BuildError,
     > {
-        ::std::result::Result::Ok(crate::operation::delete_policy_store_alias::DeletePolicyStoreAliasInput { alias_name: self.alias_name })
+        ::std::result::Result::Ok(crate::operation::delete_policy_store_alias::DeletePolicyStoreAliasInput {
+            alias_name: self.alias_name,
+            deletion_mode: self.deletion_mode,
+        })
     }
 }

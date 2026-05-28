@@ -122,4 +122,18 @@ impl GetThingConnectivityDataFluentBuilder {
     pub fn get_thing_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_thing_name()
     }
+    /// <p>Specifies if socket information (sourcePort, targetPort, sourceIp, targetIp, vpcEndpointId) should be included in the GetThingConnectivityData response. Set to <code>true</code> to include socket information. Set to <code>false</code> to omit socket information. By default, this is set to <code>false</code>.</p>
+    pub fn include_socket_information(mut self, input: bool) -> Self {
+        self.inner = self.inner.include_socket_information(input);
+        self
+    }
+    /// <p>Specifies if socket information (sourcePort, targetPort, sourceIp, targetIp, vpcEndpointId) should be included in the GetThingConnectivityData response. Set to <code>true</code> to include socket information. Set to <code>false</code> to omit socket information. By default, this is set to <code>false</code>.</p>
+    pub fn set_include_socket_information(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_include_socket_information(input);
+        self
+    }
+    /// <p>Specifies if socket information (sourcePort, targetPort, sourceIp, targetIp, vpcEndpointId) should be included in the GetThingConnectivityData response. Set to <code>true</code> to include socket information. Set to <code>false</code> to omit socket information. By default, this is set to <code>false</code>.</p>
+    pub fn get_include_socket_information(&self) -> &::std::option::Option<bool> {
+        self.inner.get_include_socket_information()
+    }
 }

@@ -71,6 +71,20 @@ where
                         "Constraints" => {
                             builder = builder.set_constraints(crate::protocol_serde::shape_grant_constraints::de_grant_constraints(tokens, _value)?);
                         }
+                        "GranteeServicePrincipal" => {
+                            builder = builder.set_grantee_service_principal(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "RetiringServicePrincipal" => {
+                            builder = builder.set_retiring_service_principal(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

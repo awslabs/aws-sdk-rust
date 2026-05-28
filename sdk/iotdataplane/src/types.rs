@@ -3,9 +3,13 @@ pub use crate::types::_payload_format_indicator::PayloadFormatIndicator;
 
 pub use crate::types::_retained_message_summary::RetainedMessageSummary;
 
+pub use crate::types::_subscription_summary::SubscriptionSummary;
+
 mod _payload_format_indicator;
 
 mod _retained_message_summary;
+
+mod _subscription_summary;
 
 /// Builders
 pub mod builders;

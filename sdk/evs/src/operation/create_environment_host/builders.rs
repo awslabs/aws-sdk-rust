@@ -22,7 +22,7 @@ impl crate::operation::create_environment_host::builders::CreateEnvironmentHostI
 }
 /// Fluent builder constructing a request to `CreateEnvironmentHost`.
 ///
-/// <p>Creates an ESX host and adds it to an Amazon EVS environment. Amazon EVS supports 4-16 hosts per environment.</p>
+/// <p>Creates an ESX host and adds it to an Amazon EVS environment. Amazon EVS supports 4-32 hosts per environment.</p>
 /// <p>This action can only be used after the Amazon EVS environment is deployed.</p>
 /// <p>You can use the <code>dedicatedHostId</code> parameter to specify an Amazon EC2 Dedicated Host for ESX host creation.</p>
 /// <p>You can use the <code>placementGroupId</code> parameter to specify a cluster or partition placement group to launch EC2 instances into.</p><note>

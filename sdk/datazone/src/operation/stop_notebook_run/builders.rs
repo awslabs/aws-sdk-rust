@@ -22,7 +22,7 @@ impl crate::operation::stop_notebook_run::builders::StopNotebookRunInputBuilder 
 }
 /// Fluent builder constructing a request to `StopNotebookRun`.
 ///
-/// <p>Stops a running notebook run in an Amazon DataZone domain.</p>
+/// <p>Stops a running <a href="https://docs.aws.amazon.com/sagemaker-unified-studio/latest/userguide/notebooks.html">notebook run</a> in Amazon SageMaker Unified Studio.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StopNotebookRunFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl StopNotebookRunFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The identifier of the Amazon DataZone domain in which the notebook run is stopped.</p>
+    /// <p>The identifier of the Amazon SageMaker Unified Studio domain in which the notebook run is stopped.</p>
     pub fn domain_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.domain_identifier(input.into());
         self
     }
-    /// <p>The identifier of the Amazon DataZone domain in which the notebook run is stopped.</p>
+    /// <p>The identifier of the Amazon SageMaker Unified Studio domain in which the notebook run is stopped.</p>
     pub fn set_domain_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_domain_identifier(input);
         self
     }
-    /// <p>The identifier of the Amazon DataZone domain in which the notebook run is stopped.</p>
+    /// <p>The identifier of the Amazon SageMaker Unified Studio domain in which the notebook run is stopped.</p>
     pub fn get_domain_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_domain_identifier()
     }

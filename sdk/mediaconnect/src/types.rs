@@ -73,6 +73,8 @@ pub use crate::types::_state::State;
 
 pub use crate::types::_flow_transit_encryption::FlowTransitEncryption;
 
+pub use crate::types::_ndi_output_timecode_source::NdiOutputTimecodeSource;
+
 pub use crate::types::_output::Output;
 
 pub use crate::types::_update_gateway_bridge_source_request::UpdateGatewayBridgeSourceRequest;
@@ -680,6 +682,8 @@ mod _ndi_discovery_server_config;
 mod _ndi_media_info;
 
 mod _ndi_media_stream_info;
+
+mod _ndi_output_timecode_source;
 
 mod _ndi_source_info;
 

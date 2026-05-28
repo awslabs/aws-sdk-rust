@@ -531,6 +531,8 @@ pub use crate::types::_model_status::ModelStatus;
 
 pub use crate::types::_field::Field;
 
+pub use crate::types::_connectivity_filter::ConnectivityFilter;
+
 pub use crate::types::_metric_value::MetricValue;
 
 pub use crate::types::_violation_event_additional_info::ViolationEventAdditionalInfo;
@@ -636,6 +638,8 @@ pub use crate::types::_sigv4_authorization::SigV4Authorization;
 pub use crate::types::_kafka_action_header::KafkaActionHeader;
 
 pub use crate::types::_target_field_order::TargetFieldOrder;
+
+pub use crate::types::_fleet_indexing_api::FleetIndexingApi;
 
 pub use crate::types::_command_parameter_value_number_range::CommandParameterValueNumberRange;
 
@@ -851,6 +855,8 @@ mod _configuration_details;
 
 mod _configuration_status;
 
+mod _connectivity_filter;
+
 mod _custom_code_signing;
 
 mod _custom_metric_type;
@@ -922,6 +928,8 @@ mod _field_type;
 mod _file_location;
 
 mod _firehose_action;
+
+mod _fleet_indexing_api;
 
 mod _fleet_metric_name_and_arn;
 

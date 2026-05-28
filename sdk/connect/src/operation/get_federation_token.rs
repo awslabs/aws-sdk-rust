@@ -279,7 +279,7 @@ pub enum GetFederationTokenError {
     InvalidRequestException(crate::types::error::InvalidRequestException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
-    /// <p>No user with the specified credentials was found in the Amazon Connect instance.</p>
+    /// <p>No user with the specified credentials was found in the Connect Customer instance.</p>
     UserNotFoundException(crate::types::error::UserNotFoundException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

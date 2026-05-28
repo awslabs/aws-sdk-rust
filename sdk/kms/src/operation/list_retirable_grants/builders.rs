@@ -22,12 +22,13 @@ impl crate::operation::list_retirable_grants::builders::ListRetirableGrantsInput
 }
 /// Fluent builder constructing a request to `ListRetirableGrants`.
 ///
-/// <p>Returns information about all grants in the Amazon Web Services account and Region that have the specified retiring principal.</p>
+/// <p>Returns information about all grants in the Amazon Web Services account and Region that have the specified retiring principal or retiring service principal.</p>
 /// <p>You can specify any principal in your Amazon Web Services account. The grants that are returned include grants for KMS keys in your Amazon Web Services account and other Amazon Web Services accounts. You might use this operation to determine which grants you may retire. To retire a grant, use the <code>RetireGrant</code> operation.</p>
 /// <p>For detailed information about grants, including grant terminology, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html">Grants in KMS</a> in the <i> <i>Key Management Service Developer Guide</i> </i>. For examples of creating grants in several programming languages, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/example_kms_CreateGrant_section.html">Use CreateGrant with an Amazon Web Services SDK or CLI</a>.</p>
 /// <p><b>Cross-account use</b>: You must specify a principal in your Amazon Web Services account. This operation returns a list of grants where the retiring principal specified in the <code>ListRetirableGrants</code> request is the same retiring principal on the grant. This can include grants on KMS keys owned by other Amazon Web Services accounts, but you do not need <code>kms:ListRetirableGrants</code> permission (or any other additional permission) in any Amazon Web Services account other than your own.</p>
 /// <p><b>Required permissions</b>: <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:ListRetirableGrants</a> (IAM policy) in your Amazon Web Services account.</p><note>
-/// <p>KMS authorizes <code>ListRetirableGrants</code> requests by evaluating the caller account's kms:ListRetirableGrants permissions. The authorized resource in <code>ListRetirableGrants</code> calls is the retiring principal specified in the request. KMS does not evaluate the caller's permissions to verify their access to any KMS keys or grants that might be returned by the <code>ListRetirableGrants</code> call.</p>
+/// <p>When listing retirable grants by <code>RetiringPrincipal</code>, KMS authorizes <code>ListRetirableGrants</code> requests by evaluating the caller account's kms:ListRetirableGrants permissions. The authorized resource in <code>ListRetirableGrants</code> calls is the retiring principal specified in the request. KMS does not evaluate the caller's permissions to verify their access to any KMS keys or grants that might be returned by the <code>ListRetirableGrants</code> call.</p>
+/// <p>The <code>RetiringServicePrincipal</code> filter is only usable by callers in a service principal.</p>
 /// </note>
 /// <p><b>Related operations:</b></p>
 /// <ul>
@@ -165,19 +166,39 @@ impl ListRetirableGrantsFluentBuilder {
     }
     /// <p>The retiring principal for which to list grants. Enter a principal in your Amazon Web Services account.</p>
     /// <p>To specify the retiring principal, use the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of an Amazon Web Services principal. Valid principals include Amazon Web Services accounts, IAM users, IAM roles, federated users, and assumed role users. For help with the ARN syntax for a principal, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns">IAM ARNs</a> in the <i> <i>Identity and Access Management User Guide</i> </i>.</p>
+    /// <p>You must specify either <code>RetiringPrincipal</code> or <code>RetiringServicePrincipal</code>, but not both.</p>
     pub fn retiring_principal(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.retiring_principal(input.into());
         self
     }
     /// <p>The retiring principal for which to list grants. Enter a principal in your Amazon Web Services account.</p>
     /// <p>To specify the retiring principal, use the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of an Amazon Web Services principal. Valid principals include Amazon Web Services accounts, IAM users, IAM roles, federated users, and assumed role users. For help with the ARN syntax for a principal, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns">IAM ARNs</a> in the <i> <i>Identity and Access Management User Guide</i> </i>.</p>
+    /// <p>You must specify either <code>RetiringPrincipal</code> or <code>RetiringServicePrincipal</code>, but not both.</p>
     pub fn set_retiring_principal(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_retiring_principal(input);
         self
     }
     /// <p>The retiring principal for which to list grants. Enter a principal in your Amazon Web Services account.</p>
     /// <p>To specify the retiring principal, use the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of an Amazon Web Services principal. Valid principals include Amazon Web Services accounts, IAM users, IAM roles, federated users, and assumed role users. For help with the ARN syntax for a principal, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns">IAM ARNs</a> in the <i> <i>Identity and Access Management User Guide</i> </i>.</p>
+    /// <p>You must specify either <code>RetiringPrincipal</code> or <code>RetiringServicePrincipal</code>, but not both.</p>
     pub fn get_retiring_principal(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_retiring_principal()
+    }
+    /// <p>The retiring service principal for which to list grants. This filter is only usable by callers in a service principal.</p>
+    /// <p>You must specify either <code>RetiringPrincipal</code> or <code>RetiringServicePrincipal</code>, but not both.</p>
+    pub fn retiring_service_principal(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.retiring_service_principal(input.into());
+        self
+    }
+    /// <p>The retiring service principal for which to list grants. This filter is only usable by callers in a service principal.</p>
+    /// <p>You must specify either <code>RetiringPrincipal</code> or <code>RetiringServicePrincipal</code>, but not both.</p>
+    pub fn set_retiring_service_principal(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_retiring_service_principal(input);
+        self
+    }
+    /// <p>The retiring service principal for which to list grants. This filter is only usable by callers in a service principal.</p>
+    /// <p>You must specify either <code>RetiringPrincipal</code> or <code>RetiringServicePrincipal</code>, but not both.</p>
+    pub fn get_retiring_service_principal(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_retiring_service_principal()
     }
 }

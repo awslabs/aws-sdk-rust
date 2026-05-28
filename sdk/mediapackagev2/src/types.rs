@@ -97,6 +97,8 @@ pub use crate::types::_dash_compactness::DashCompactness;
 
 pub use crate::types::_dash_subtitle_configuration::DashSubtitleConfiguration;
 
+pub use crate::types::_dash_availability_start_time_configuration::DashAvailabilityStartTimeConfiguration;
+
 pub use crate::types::_mss_manifest_layout::MssManifestLayout;
 
 pub use crate::types::_endpoint_error_condition::EndpointErrorCondition;
@@ -174,6 +176,8 @@ mod _create_low_latency_hls_manifest_configuration;
 mod _create_mss_manifest_configuration;
 
 mod _custom_ad_type;
+
+mod _dash_availability_start_time_configuration;
 
 mod _dash_base_url;
 

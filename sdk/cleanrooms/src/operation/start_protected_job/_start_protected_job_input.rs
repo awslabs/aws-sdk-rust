@@ -13,6 +13,8 @@ pub struct StartProtectedJobInput {
     pub result_configuration: ::std::option::Option<crate::types::ProtectedJobResultConfigurationInput>,
     /// <p>The compute configuration for the protected job.</p>
     pub compute_configuration: ::std::option::Option<crate::types::ProtectedJobComputeConfiguration>,
+    /// <p>The account ID of the member that pays for the job compute costs.</p>
+    pub job_compute_payer_account_id: ::std::option::Option<::std::string::String>,
 }
 impl StartProtectedJobInput {
     /// <p>The type of protected job to start.</p>
@@ -35,6 +37,10 @@ impl StartProtectedJobInput {
     pub fn compute_configuration(&self) -> ::std::option::Option<&crate::types::ProtectedJobComputeConfiguration> {
         self.compute_configuration.as_ref()
     }
+    /// <p>The account ID of the member that pays for the job compute costs.</p>
+    pub fn job_compute_payer_account_id(&self) -> ::std::option::Option<&str> {
+        self.job_compute_payer_account_id.as_deref()
+    }
 }
 impl StartProtectedJobInput {
     /// Creates a new builder-style object to manufacture [`StartProtectedJobInput`](crate::operation::start_protected_job::StartProtectedJobInput).
@@ -52,6 +58,7 @@ pub struct StartProtectedJobInputBuilder {
     pub(crate) job_parameters: ::std::option::Option<crate::types::ProtectedJobParameters>,
     pub(crate) result_configuration: ::std::option::Option<crate::types::ProtectedJobResultConfigurationInput>,
     pub(crate) compute_configuration: ::std::option::Option<crate::types::ProtectedJobComputeConfiguration>,
+    pub(crate) job_compute_payer_account_id: ::std::option::Option<::std::string::String>,
 }
 impl StartProtectedJobInputBuilder {
     /// <p>The type of protected job to start.</p>
@@ -127,6 +134,20 @@ impl StartProtectedJobInputBuilder {
     pub fn get_compute_configuration(&self) -> &::std::option::Option<crate::types::ProtectedJobComputeConfiguration> {
         &self.compute_configuration
     }
+    /// <p>The account ID of the member that pays for the job compute costs.</p>
+    pub fn job_compute_payer_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.job_compute_payer_account_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The account ID of the member that pays for the job compute costs.</p>
+    pub fn set_job_compute_payer_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.job_compute_payer_account_id = input;
+        self
+    }
+    /// <p>The account ID of the member that pays for the job compute costs.</p>
+    pub fn get_job_compute_payer_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_compute_payer_account_id
+    }
     /// Consumes the builder and constructs a [`StartProtectedJobInput`](crate::operation::start_protected_job::StartProtectedJobInput).
     pub fn build(
         self,
@@ -137,6 +158,7 @@ impl StartProtectedJobInputBuilder {
             job_parameters: self.job_parameters,
             result_configuration: self.result_configuration,
             compute_configuration: self.compute_configuration,
+            job_compute_payer_account_id: self.job_compute_payer_account_id,
         })
     }
 }

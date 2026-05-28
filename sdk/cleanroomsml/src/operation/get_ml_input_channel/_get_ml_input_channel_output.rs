@@ -27,6 +27,8 @@ pub struct GetMlInputChannelOutput {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The synthetic data configuration for this ML input channel, including parameters for generating privacy-preserving synthetic data and evaluation scores for measuring the privacy of the generated data.</p>
     pub synthetic_data_configuration: ::std::option::Option<crate::types::SyntheticDataConfiguration>,
+    /// <p>The payer configuration for the ML input channel.</p>
+    pub payer_configuration: ::std::option::Option<crate::types::PayerConfiguration>,
     /// <p>The time at which the ML input channel was created.</p>
     pub create_time: ::aws_smithy_types::DateTime,
     /// <p>The most recent time at which the ML input channel was updated.</p>
@@ -116,6 +118,10 @@ impl GetMlInputChannelOutput {
     pub fn synthetic_data_configuration(&self) -> ::std::option::Option<&crate::types::SyntheticDataConfiguration> {
         self.synthetic_data_configuration.as_ref()
     }
+    /// <p>The payer configuration for the ML input channel.</p>
+    pub fn payer_configuration(&self) -> ::std::option::Option<&crate::types::PayerConfiguration> {
+        self.payer_configuration.as_ref()
+    }
     /// <p>The time at which the ML input channel was created.</p>
     pub fn create_time(&self) -> &::aws_smithy_types::DateTime {
         &self.create_time
@@ -194,6 +200,7 @@ pub struct GetMlInputChannelOutputBuilder {
     pub(crate) privacy_budgets: ::std::option::Option<crate::types::PrivacyBudgets>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) synthetic_data_configuration: ::std::option::Option<crate::types::SyntheticDataConfiguration>,
+    pub(crate) payer_configuration: ::std::option::Option<crate::types::PayerConfiguration>,
     pub(crate) create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) input_channel: ::std::option::Option<crate::types::InputChannel>,
@@ -384,6 +391,20 @@ impl GetMlInputChannelOutputBuilder {
     /// <p>The synthetic data configuration for this ML input channel, including parameters for generating privacy-preserving synthetic data and evaluation scores for measuring the privacy of the generated data.</p>
     pub fn get_synthetic_data_configuration(&self) -> &::std::option::Option<crate::types::SyntheticDataConfiguration> {
         &self.synthetic_data_configuration
+    }
+    /// <p>The payer configuration for the ML input channel.</p>
+    pub fn payer_configuration(mut self, input: crate::types::PayerConfiguration) -> Self {
+        self.payer_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The payer configuration for the ML input channel.</p>
+    pub fn set_payer_configuration(mut self, input: ::std::option::Option<crate::types::PayerConfiguration>) -> Self {
+        self.payer_configuration = input;
+        self
+    }
+    /// <p>The payer configuration for the ML input channel.</p>
+    pub fn get_payer_configuration(&self) -> &::std::option::Option<crate::types::PayerConfiguration> {
+        &self.payer_configuration
     }
     /// <p>The time at which the ML input channel was created.</p>
     /// This field is required.
@@ -629,6 +650,7 @@ impl GetMlInputChannelOutputBuilder {
             privacy_budgets: self.privacy_budgets,
             description: self.description,
             synthetic_data_configuration: self.synthetic_data_configuration,
+            payer_configuration: self.payer_configuration,
             create_time: self.create_time.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "create_time",

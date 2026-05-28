@@ -28,6 +28,8 @@ pub struct CollaborationTrainedModelSummary {
     pub configured_model_algorithm_association_arn: ::std::string::String,
     /// <p>The account ID of the member that created the trained model.</p>
     pub creator_account_id: ::std::string::String,
+    /// <p>The account ID of the member that is responsible for paying for model training costs.</p>
+    pub ml_model_training_payer_account_id: ::std::option::Option<::std::string::String>,
 }
 impl CollaborationTrainedModelSummary {
     /// <p>The time at which the trained model was created.</p>
@@ -86,6 +88,10 @@ impl CollaborationTrainedModelSummary {
         use std::ops::Deref;
         self.creator_account_id.deref()
     }
+    /// <p>The account ID of the member that is responsible for paying for model training costs.</p>
+    pub fn ml_model_training_payer_account_id(&self) -> ::std::option::Option<&str> {
+        self.ml_model_training_payer_account_id.as_deref()
+    }
 }
 impl CollaborationTrainedModelSummary {
     /// Creates a new builder-style object to manufacture [`CollaborationTrainedModelSummary`](crate::types::CollaborationTrainedModelSummary).
@@ -110,6 +116,7 @@ pub struct CollaborationTrainedModelSummaryBuilder {
     pub(crate) status: ::std::option::Option<crate::types::TrainedModelStatus>,
     pub(crate) configured_model_algorithm_association_arn: ::std::option::Option<::std::string::String>,
     pub(crate) creator_account_id: ::std::option::Option<::std::string::String>,
+    pub(crate) ml_model_training_payer_account_id: ::std::option::Option<::std::string::String>,
 }
 impl CollaborationTrainedModelSummaryBuilder {
     /// <p>The time at which the trained model was created.</p>
@@ -300,6 +307,20 @@ impl CollaborationTrainedModelSummaryBuilder {
     pub fn get_creator_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.creator_account_id
     }
+    /// <p>The account ID of the member that is responsible for paying for model training costs.</p>
+    pub fn ml_model_training_payer_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.ml_model_training_payer_account_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The account ID of the member that is responsible for paying for model training costs.</p>
+    pub fn set_ml_model_training_payer_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.ml_model_training_payer_account_id = input;
+        self
+    }
+    /// <p>The account ID of the member that is responsible for paying for model training costs.</p>
+    pub fn get_ml_model_training_payer_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ml_model_training_payer_account_id
+    }
     /// Consumes the builder and constructs a [`CollaborationTrainedModelSummary`](crate::types::CollaborationTrainedModelSummary).
     /// This method will fail if any of the following fields are not set:
     /// - [`create_time`](crate::types::builders::CollaborationTrainedModelSummaryBuilder::create_time)
@@ -370,6 +391,7 @@ impl CollaborationTrainedModelSummaryBuilder {
                     "creator_account_id was not specified but it is required when building CollaborationTrainedModelSummary",
                 )
             })?,
+            ml_model_training_payer_account_id: self.ml_model_training_payer_account_id,
         })
     }
 }

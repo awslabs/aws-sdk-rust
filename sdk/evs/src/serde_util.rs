@@ -35,6 +35,18 @@ pub(crate) fn validation_exception_correct_errors(
     builder
 }
 
+pub(crate) fn get_depot_url_output_output_correct_errors(
+    mut builder: crate::operation::get_depot_url::builders::GetDepotUrlOutputBuilder,
+) -> crate::operation::get_depot_url::builders::GetDepotUrlOutputBuilder {
+    if builder.depot_url.is_none() {
+        builder.depot_url = Some(Default::default())
+    }
+    if builder.token.is_none() {
+        builder.token = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn internal_server_exception_correct_errors(
     mut builder: crate::types::error::builders::InternalServerExceptionBuilder,
 ) -> crate::types::error::builders::InternalServerExceptionBuilder {

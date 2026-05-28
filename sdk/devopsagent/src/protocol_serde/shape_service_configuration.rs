@@ -100,6 +100,12 @@ pub fn ser_service_configuration(
             crate::protocol_serde::shape_pager_duty_configuration::ser_pager_duty_configuration(&mut object_16, inner)?;
             object_16.finish();
         }
+        crate::types::ServiceConfiguration::Mcpserversigv4(inner) => {
+            #[allow(unused_mut)]
+            let mut object_17 = object_2.key("mcpserversigv4").start_object();
+            crate::protocol_serde::shape_mcp_server_sigv4_configuration::ser_mcp_server_sigv4_configuration(&mut object_17, inner)?;
+            object_17.finish();
+        }
         crate::types::ServiceConfiguration::Unknown => {
             return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
                 "ServiceConfiguration",
@@ -220,6 +226,12 @@ where
                             crate::protocol_serde::shape_pager_duty_configuration::de_pager_duty_configuration(tokens, _value)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'pagerduty' cannot be null")
                             })?,
+                        )),
+                        "mcpserversigv4" => Some(crate::types::ServiceConfiguration::Mcpserversigv4(
+                            crate::protocol_serde::shape_mcp_server_sigv4_configuration::de_mcp_server_sigv4_configuration(tokens, _value)?
+                                .ok_or_else(|| {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'mcpserversigv4' cannot be null")
+                                })?,
                         )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;

@@ -3,10 +3,10 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetAssociation`](crate::operation::get_association::builders::GetAssociationFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`agent_space_id(impl Into<String>)`](crate::operation::get_association::builders::GetAssociationFluentBuilder::agent_space_id) / [`set_agent_space_id(Option<String>)`](crate::operation::get_association::builders::GetAssociationFluentBuilder::set_agent_space_id):<br>required: **true**<br>The unique identifier of the AgentSpace<br>
-    ///   - [`association_id(impl Into<String>)`](crate::operation::get_association::builders::GetAssociationFluentBuilder::association_id) / [`set_association_id(Option<String>)`](crate::operation::get_association::builders::GetAssociationFluentBuilder::set_association_id):<br>required: **true**<br>The unique identifier of the given association.<br>
+    ///   - [`agent_space_id(impl Into<String>)`](crate::operation::get_association::builders::GetAssociationFluentBuilder::agent_space_id) / [`set_agent_space_id(Option<String>)`](crate::operation::get_association::builders::GetAssociationFluentBuilder::set_agent_space_id):<br>required: **true**<br><p>The unique identifier of the AgentSpace</p><br>
+    ///   - [`association_id(impl Into<String>)`](crate::operation::get_association::builders::GetAssociationFluentBuilder::association_id) / [`set_association_id(Option<String>)`](crate::operation::get_association::builders::GetAssociationFluentBuilder::set_association_id):<br>required: **true**<br><p>The unique identifier of the given association.</p><br>
     /// - On success, responds with [`GetAssociationOutput`](crate::operation::get_association::GetAssociationOutput) with field(s):
-    ///   - [`association(Option<Association>)`](crate::operation::get_association::GetAssociationOutput::association): Represents a service association within an AgentSpace, defining how the agent interacts with external services.
+    ///   - [`association(Option<Association>)`](crate::operation::get_association::GetAssociationOutput::association): <p>Represents a service association within an AgentSpace, defining how the agent interacts with external services.</p>
     /// - On failure, responds with [`SdkError<GetAssociationError>`](crate::operation::get_association::GetAssociationError)
     pub fn get_association(&self) -> crate::operation::get_association::builders::GetAssociationFluentBuilder {
         crate::operation::get_association::builders::GetAssociationFluentBuilder::new(self.handle.clone())

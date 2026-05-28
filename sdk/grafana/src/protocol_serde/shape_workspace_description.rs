@@ -165,8 +165,22 @@ where
                                     .transpose()?,
                             );
                         }
+                        "ipAddressType" => {
+                            builder = builder.set_ip_address_type(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::IpAddressType::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
                         "kmsKeyId" => {
                             builder = builder.set_kms_key_id(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "degradedWorkspaceReason" => {
+                            builder = builder.set_degraded_workspace_reason(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,

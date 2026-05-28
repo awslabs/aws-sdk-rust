@@ -22,7 +22,7 @@ impl crate::operation::list_services::builders::ListServicesInputBuilder {
 }
 /// Fluent builder constructing a request to `ListServices`.
 ///
-/// List a list of registered service on the account level.
+/// <p>List a list of registered service on the account level.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListServicesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -114,45 +114,45 @@ impl ListServicesFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_services::paginator::ListServicesPaginator {
         crate::operation::list_services::paginator::ListServicesPaginator::new(self.handle, self.inner)
     }
-    /// Maximum number of results to return in a single call.
+    /// <p>Maximum number of results to return in a single call.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
         self
     }
-    /// Maximum number of results to return in a single call.
+    /// <p>Maximum number of results to return in a single call.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
-    /// Maximum number of results to return in a single call.
+    /// <p>Maximum number of results to return in a single call.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }
-    /// Token for the next page of results.
+    /// <p>Token for the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
-    /// Token for the next page of results.
+    /// <p>Token for the next page of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
-    /// Token for the next page of results.
+    /// <p>Token for the next page of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }
-    /// Optional filter to list only services of a specific type.
+    /// <p>Optional filter to list only services of a specific type.</p>
     pub fn filter_service_type(mut self, input: crate::types::Service) -> Self {
         self.inner = self.inner.filter_service_type(input);
         self
     }
-    /// Optional filter to list only services of a specific type.
+    /// <p>Optional filter to list only services of a specific type.</p>
     pub fn set_filter_service_type(mut self, input: ::std::option::Option<crate::types::Service>) -> Self {
         self.inner = self.inner.set_filter_service_type(input);
         self
     }
-    /// Optional filter to list only services of a specific type.
+    /// <p>Optional filter to list only services of a specific type.</p>
     pub fn get_filter_service_type(&self) -> &::std::option::Option<crate::types::Service> {
         self.inner.get_filter_service_type()
     }

@@ -56,33 +56,36 @@ pub fn ser_create_trained_model_input_input(
     if let Some(var_19) = &input.kms_key_arn {
         object.key("kmsKeyArn").string(var_19.as_str());
     }
-    if let Some(var_20) = &input.name {
-        object.key("name").string(var_20.as_str());
+    if let Some(var_20) = &input.ml_model_training_payer_account_id {
+        object.key("mlModelTrainingPayerAccountId").string(var_20.as_str());
     }
-    if let Some(var_21) = &input.resource_config {
-        #[allow(unused_mut)]
-        let mut object_22 = object.key("resourceConfig").start_object();
-        crate::protocol_serde::shape_resource_config::ser_resource_config(&mut object_22, var_21)?;
-        object_22.finish();
+    if let Some(var_21) = &input.name {
+        object.key("name").string(var_21.as_str());
     }
-    if let Some(var_23) = &input.stopping_condition {
+    if let Some(var_22) = &input.resource_config {
         #[allow(unused_mut)]
-        let mut object_24 = object.key("stoppingCondition").start_object();
-        crate::protocol_serde::shape_stopping_condition::ser_stopping_condition(&mut object_24, var_23)?;
-        object_24.finish();
+        let mut object_23 = object.key("resourceConfig").start_object();
+        crate::protocol_serde::shape_resource_config::ser_resource_config(&mut object_23, var_22)?;
+        object_23.finish();
     }
-    if let Some(var_25) = &input.tags {
+    if let Some(var_24) = &input.stopping_condition {
         #[allow(unused_mut)]
-        let mut object_26 = object.key("tags").start_object();
-        for (key_27, value_28) in var_25 {
+        let mut object_25 = object.key("stoppingCondition").start_object();
+        crate::protocol_serde::shape_stopping_condition::ser_stopping_condition(&mut object_25, var_24)?;
+        object_25.finish();
+    }
+    if let Some(var_26) = &input.tags {
+        #[allow(unused_mut)]
+        let mut object_27 = object.key("tags").start_object();
+        for (key_28, value_29) in var_26 {
             {
-                object_26.key(key_27.as_str()).string(value_28.as_str());
+                object_27.key(key_28.as_str()).string(value_29.as_str());
             }
         }
-        object_26.finish();
+        object_27.finish();
     }
-    if let Some(var_29) = &input.training_input_mode {
-        object.key("trainingInputMode").string(var_29.as_str());
+    if let Some(var_30) = &input.training_input_mode {
+        object.key("trainingInputMode").string(var_30.as_str());
     }
     Ok(())
 }

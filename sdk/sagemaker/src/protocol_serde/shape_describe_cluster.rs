@@ -120,6 +120,11 @@ pub(crate) fn de_describe_cluster(
                             crate::protocol_serde::shape_cluster_restricted_instance_group_details_list::de_cluster_restricted_instance_group_details_list(tokens, _value)?
                         );
                 }
+                "RestrictedInstanceGroupsConfig" => {
+                    builder = builder.set_restricted_instance_groups_config(
+                            crate::protocol_serde::shape_cluster_restricted_instance_groups_config_output::de_cluster_restricted_instance_groups_config_output(tokens, _value)?
+                        );
+                }
                 "VpcConfig" => {
                     builder = builder.set_vpc_config(crate::protocol_serde::shape_vpc_config::de_vpc_config(tokens, _value)?);
                 }

@@ -1773,6 +1773,10 @@ pub(crate) mod shape_cluster_restricted_instance_group_details_list;
 
 pub(crate) mod shape_cluster_restricted_instance_group_specification;
 
+pub(crate) mod shape_cluster_restricted_instance_groups_config;
+
+pub(crate) mod shape_cluster_restricted_instance_groups_config_output;
+
 pub(crate) mod shape_cluster_scheduler_config_summary_list;
 
 pub(crate) mod shape_cluster_summaries;
@@ -2622,6 +2626,10 @@ pub(crate) mod shape_cluster_orchestrator_slurm_config;
 pub(crate) mod shape_cluster_restricted_instance_group_details;
 
 pub(crate) mod shape_cluster_scheduler_config_summary;
+
+pub(crate) mod shape_cluster_shared_environment_config;
+
+pub(crate) mod shape_cluster_shared_environment_config_details;
 
 pub(crate) mod shape_cluster_slurm_config;
 

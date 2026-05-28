@@ -27,6 +27,8 @@ pub use crate::types::_policy_store_alias_filter::PolicyStoreAliasFilter;
 
 pub use crate::types::_alias_state::AliasState;
 
+pub use crate::types::_deletion_mode::DeletionMode;
+
 pub use crate::types::_validation_exception_field::ValidationExceptionField;
 
 pub use crate::types::_configuration::Configuration;
@@ -224,6 +226,8 @@ mod _configuration_item;
 mod _context_definition;
 
 mod _decision;
+
+mod _deletion_mode;
 
 mod _deletion_protection;
 

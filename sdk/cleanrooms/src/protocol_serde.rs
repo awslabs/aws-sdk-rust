@@ -443,6 +443,8 @@ pub(crate) mod shape_table_reference;
 
 pub(crate) mod shape_tag_map;
 
+pub(crate) mod shape_update_membership_payment_configuration;
+
 pub(crate) mod shape_validation_exception_field_list;
 
 pub(crate) mod shape_access_budgets_privacy_template_parameters_input;

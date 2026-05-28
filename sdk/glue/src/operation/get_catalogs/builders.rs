@@ -181,4 +181,18 @@ impl GetCatalogsFluentBuilder {
     pub fn get_include_root(&self) -> &::std::option::Option<bool> {
         self.inner.get_include_root()
     }
+    /// <p>When <code>true</code>, the response only includes catalogs that can contain databases. Some catalogs are organizational containers that hold only other catalogs, not databases. When this parameter is set to <code>true</code>, those container-only catalogs are excluded, and only catalogs capable of containing databases are returned. Defaults to <code>false</code>.</p>
+    pub fn has_databases(mut self, input: bool) -> Self {
+        self.inner = self.inner.has_databases(input);
+        self
+    }
+    /// <p>When <code>true</code>, the response only includes catalogs that can contain databases. Some catalogs are organizational containers that hold only other catalogs, not databases. When this parameter is set to <code>true</code>, those container-only catalogs are excluded, and only catalogs capable of containing databases are returned. Defaults to <code>false</code>.</p>
+    pub fn set_has_databases(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_has_databases(input);
+        self
+    }
+    /// <p>When <code>true</code>, the response only includes catalogs that can contain databases. Some catalogs are organizational containers that hold only other catalogs, not databases. When this parameter is set to <code>true</code>, those container-only catalogs are excluded, and only catalogs capable of containing databases are returned. Defaults to <code>false</code>.</p>
+    pub fn get_has_databases(&self) -> &::std::option::Option<bool> {
+        self.inner.get_has_databases()
+    }
 }

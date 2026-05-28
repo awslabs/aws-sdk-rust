@@ -2,7 +2,7 @@
 
 /// <p>The license information that Amazon EVS requires to create an environment. Amazon EVS requires two license keys: a VCF solution key and a vSAN license key.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct LicenseInfo {
     /// <p>The VCF solution key. This license unlocks VMware VCF product features, including vSphere, NSX, SDDC Manager, and vCenter Server. The VCF solution key must meet the instance-type-specific minimum core requirements.</p>
     pub solution_key: ::std::string::String,
@@ -21,6 +21,14 @@ impl LicenseInfo {
         self.vsan_key.deref()
     }
 }
+impl ::std::fmt::Debug for LicenseInfo {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("LicenseInfo");
+        formatter.field("solution_key", &"*** Sensitive Data Redacted ***");
+        formatter.field("vsan_key", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl LicenseInfo {
     /// Creates a new builder-style object to manufacture [`LicenseInfo`](crate::types::LicenseInfo).
     pub fn builder() -> crate::types::builders::LicenseInfoBuilder {
@@ -29,7 +37,7 @@ impl LicenseInfo {
 }
 
 /// A builder for [`LicenseInfo`](crate::types::LicenseInfo).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct LicenseInfoBuilder {
     pub(crate) solution_key: ::std::option::Option<::std::string::String>,
@@ -85,5 +93,13 @@ impl LicenseInfoBuilder {
                 )
             })?,
         })
+    }
+}
+impl ::std::fmt::Debug for LicenseInfoBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("LicenseInfoBuilder");
+        formatter.field("solution_key", &"*** Sensitive Data Redacted ***");
+        formatter.field("vsan_key", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

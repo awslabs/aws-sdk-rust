@@ -3,17 +3,17 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribePrivateConnection`](crate::operation::describe_private_connection::builders::DescribePrivateConnectionFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::operation::describe_private_connection::builders::DescribePrivateConnectionFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::describe_private_connection::builders::DescribePrivateConnectionFluentBuilder::set_name):<br>required: **true**<br>The name of the Private Connection.<br>
+    ///   - [`name(impl Into<String>)`](crate::operation::describe_private_connection::builders::DescribePrivateConnectionFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::describe_private_connection::builders::DescribePrivateConnectionFluentBuilder::set_name):<br>required: **true**<br><p>The name of the Private Connection.</p><br>
     /// - On success, responds with [`DescribePrivateConnectionOutput`](crate::operation::describe_private_connection::DescribePrivateConnectionOutput) with field(s):
-    ///   - [`name(String)`](crate::operation::describe_private_connection::DescribePrivateConnectionOutput::name): The name of the Private Connection.
-    ///   - [`r#type(PrivateConnectionType)`](crate::operation::describe_private_connection::DescribePrivateConnectionOutput::type): The type of the Private Connection.
-    ///   - [`resource_gateway_id(Option<String>)`](crate::operation::describe_private_connection::DescribePrivateConnectionOutput::resource_gateway_id): The service-managed Resource Gateway ARN. Only present for service-managed Private Connections.
-    ///   - [`host_address(Option<String>)`](crate::operation::describe_private_connection::DescribePrivateConnectionOutput::host_address): IP address or DNS name of the target resource. Only present for service-managed Private Connections.
-    ///   - [`vpc_id(Option<String>)`](crate::operation::describe_private_connection::DescribePrivateConnectionOutput::vpc_id): VPC identifier of the service-managed Resource Gateway. Only present for service-managed Private Connections.
-    ///   - [`resource_configuration_id(Option<String>)`](crate::operation::describe_private_connection::DescribePrivateConnectionOutput::resource_configuration_id): The Resource Configuration ARN. Only present for self-managed Private Connections.
-    ///   - [`status(PrivateConnectionStatus)`](crate::operation::describe_private_connection::DescribePrivateConnectionOutput::status): The status of the Private Connection.
-    ///   - [`certificate_expiry_time(Option<DateTime>)`](crate::operation::describe_private_connection::DescribePrivateConnectionOutput::certificate_expiry_time): The expiry time of the certificate associated with the Private Connection. Only present when a certificate is associated.
-    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::describe_private_connection::DescribePrivateConnectionOutput::tags): Tags associated with the Private Connection.
+    ///   - [`name(String)`](crate::operation::describe_private_connection::DescribePrivateConnectionOutput::name): <p>The name of the Private Connection.</p>
+    ///   - [`r#type(PrivateConnectionType)`](crate::operation::describe_private_connection::DescribePrivateConnectionOutput::type): <p>The type of the Private Connection.</p>
+    ///   - [`resource_gateway_id(Option<String>)`](crate::operation::describe_private_connection::DescribePrivateConnectionOutput::resource_gateway_id): <p>The service-managed Resource Gateway ARN. Only present for service-managed Private Connections.</p>
+    ///   - [`host_address(Option<String>)`](crate::operation::describe_private_connection::DescribePrivateConnectionOutput::host_address): <p>IP address or DNS name of the target resource. Only present for service-managed Private Connections.</p>
+    ///   - [`vpc_id(Option<String>)`](crate::operation::describe_private_connection::DescribePrivateConnectionOutput::vpc_id): <p>VPC identifier of the service-managed Resource Gateway. Only present for service-managed Private Connections.</p>
+    ///   - [`resource_configuration_id(Option<String>)`](crate::operation::describe_private_connection::DescribePrivateConnectionOutput::resource_configuration_id): <p>The Resource Configuration ARN. Only present for self-managed Private Connections.</p>
+    ///   - [`status(PrivateConnectionStatus)`](crate::operation::describe_private_connection::DescribePrivateConnectionOutput::status): <p>The status of the Private Connection.</p>
+    ///   - [`certificate_expiry_time(Option<DateTime>)`](crate::operation::describe_private_connection::DescribePrivateConnectionOutput::certificate_expiry_time): <p>The expiry time of the certificate associated with the Private Connection. Only present when a certificate is associated.</p>
+    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::describe_private_connection::DescribePrivateConnectionOutput::tags): <p>Tags associated with the Private Connection.</p>
     /// - On failure, responds with [`SdkError<DescribePrivateConnectionError>`](crate::operation::describe_private_connection::DescribePrivateConnectionError)
     pub fn describe_private_connection(&self) -> crate::operation::describe_private_connection::builders::DescribePrivateConnectionFluentBuilder {
         crate::operation::describe_private_connection::builders::DescribePrivateConnectionFluentBuilder::new(self.handle.clone())

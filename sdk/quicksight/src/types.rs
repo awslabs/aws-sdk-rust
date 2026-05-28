@@ -663,6 +663,8 @@ pub use crate::types::_destination_table::DestinationTable;
 
 pub use crate::types::_semantic_table::SemanticTable;
 
+pub use crate::types::_data_set_semantic_metadata::DataSetSemanticMetadata;
+
 pub use crate::types::_identity_center_configuration::IdentityCenterConfiguration;
 
 pub use crate::types::_redshift_iam_parameters::RedshiftIamParameters;
@@ -939,6 +941,10 @@ pub use crate::types::_destination_table_source::DestinationTableSource;
 
 pub use crate::types::_row_level_permission_configuration::RowLevelPermissionConfiguration;
 
+pub use crate::types::_table_semantic_metadata::TableSemanticMetadata;
+
+pub use crate::types::_data_set_semantic_description::DataSetSemanticDescription;
+
 pub use crate::types::_day_of_week::DayOfWeek;
 
 pub use crate::types::_data_set_schema::DataSetSchema;
@@ -1134,6 +1140,8 @@ pub use crate::types::_join_operand_properties::JoinOperandProperties;
 pub use crate::types::_value_column_configuration::ValueColumnConfiguration;
 
 pub use crate::types::_pivot_configuration::PivotConfiguration;
+
+pub use crate::types::_custom_instruction::CustomInstruction;
 
 pub use crate::types::_column_group_schema::ColumnGroupSchema;
 
@@ -1360,6 +1368,10 @@ pub use crate::types::_data_prep_aggregation_function::DataPrepAggregationFuncti
 pub use crate::types::_column_to_unpivot::ColumnToUnpivot;
 
 pub use crate::types::_appended_column::AppendedColumn;
+
+pub use crate::types::_shared_column_semantic_metadata::SharedColumnSemanticMetadata;
+
+pub use crate::types::_inline_custom_instruction::InlineCustomInstruction;
 
 pub use crate::types::_column_schema::ColumnSchema;
 
@@ -1598,6 +1610,8 @@ pub use crate::types::_data_prep_simple_aggregation_function::DataPrepSimpleAggr
 pub use crate::types::_data_prep_list_aggregation_function::DataPrepListAggregationFunction;
 
 pub use crate::types::_pivoted_label::PivotedLabel;
+
+pub use crate::types::_uploaded_document_metadata::UploadedDocumentMetadata;
 
 pub use crate::types::_column_group_column_schema::ColumnGroupColumnSchema;
 
@@ -1895,6 +1909,8 @@ pub use crate::types::_column_description::ColumnDescription;
 
 pub use crate::types::_data_prep_simple_aggregation_function_type::DataPrepSimpleAggregationFunctionType;
 
+pub use crate::types::_column_semantic_property::ColumnSemanticProperty;
+
 pub use crate::types::_collective_constant::CollectiveConstant;
 
 pub use crate::types::_range_constant::RangeConstant;
@@ -2168,6 +2184,10 @@ pub use crate::types::_numeric_separator_symbol::NumericSeparatorSymbol;
 pub use crate::types::_thousand_separator_options::ThousandSeparatorOptions;
 
 pub use crate::types::_negative_value_display_mode::NegativeValueDisplayMode;
+
+pub use crate::types::_additional_notes::AdditionalNotes;
+
+pub use crate::types::_column_semantic_type::ColumnSemanticType;
 
 pub use crate::types::_named_entity_agg_type::NamedEntityAggType;
 
@@ -2689,6 +2709,8 @@ mod _active_iam_policy_assignment;
 
 mod _ad_hoc_filtering_option;
 
+mod _additional_notes;
+
 mod _agg_function;
 
 mod _agg_type;
@@ -3135,6 +3157,10 @@ mod _column_role;
 
 mod _column_schema;
 
+mod _column_semantic_property;
+
+mod _column_semantic_type;
+
 mod _column_sort;
 
 mod _column_tag;
@@ -3258,6 +3284,8 @@ mod _custom_content_visual;
 mod _custom_filter_configuration;
 
 mod _custom_filter_list_configuration;
+
+mod _custom_instruction;
 
 mod _custom_instructions;
 
@@ -3406,6 +3434,10 @@ mod _data_set_refresh_properties;
 mod _data_set_schema;
 
 mod _data_set_search_filter;
+
+mod _data_set_semantic_description;
+
+mod _data_set_semantic_metadata;
 
 mod _data_set_string_comparison_filter_condition;
 
@@ -3992,6 +4024,8 @@ mod _ingestion_request_type;
 mod _ingestion_status;
 
 mod _ingestion_type;
+
+mod _inline_custom_instruction;
 
 mod _inner_filter;
 
@@ -4715,6 +4749,8 @@ mod _set_parameter_value_configuration;
 
 mod _shape_conditional_format;
 
+mod _shared_column_semantic_metadata;
+
 mod _shared_view_configurations;
 
 mod _sharing_model;
@@ -4954,6 +4990,8 @@ mod _table_path_element;
 mod _table_pinned_field_options;
 
 mod _table_row_conditional_formatting;
+
+mod _table_semantic_metadata;
 
 mod _table_side_border_options;
 
@@ -5210,6 +5248,8 @@ mod _unpivot_operation;
 mod _untag_column_operation;
 
 mod _upload_settings;
+
+mod _uploaded_document_metadata;
 
 mod _url_target_configuration;
 

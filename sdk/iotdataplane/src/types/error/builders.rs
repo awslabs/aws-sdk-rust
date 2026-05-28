@@ -17,6 +17,8 @@ pub use crate::types::error::_unauthorized_exception::UnauthorizedExceptionBuild
 
 pub use crate::types::error::_unsupported_document_encoding_exception::UnsupportedDocumentEncodingExceptionBuilder;
 
-pub use crate::types::error::_conflict_exception::ConflictExceptionBuilder;
+pub use crate::types::error::_gateway_timeout_exception::GatewayTimeoutExceptionBuilder;
 
 pub use crate::types::error::_request_entity_too_large_exception::RequestEntityTooLargeExceptionBuilder;
+
+pub use crate::types::error::_conflict_exception::ConflictExceptionBuilder;

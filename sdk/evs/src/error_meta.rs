@@ -344,6 +344,30 @@ impl From<crate::operation::disassociate_eip_from_vlan::DisassociateEipFromVlanE
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_depot_url::GetDepotUrlError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_depot_url::GetDepotUrlError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_depot_url::GetDepotUrlError> for Error {
+    fn from(err: crate::operation::get_depot_url::GetDepotUrlError) -> Self {
+        match err {
+            crate::operation::get_depot_url::GetDepotUrlError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_depot_url::GetDepotUrlError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_depot_url::GetDepotUrlError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_depot_url::GetDepotUrlError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_environment::GetEnvironmentError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

@@ -354,4 +354,18 @@ impl StartTrainedModelInferenceJobFluentBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
+    /// <p>The account ID of the member that is responsible for paying for model inference costs.</p>
+    pub fn ml_model_inference_payer_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.ml_model_inference_payer_account_id(input.into());
+        self
+    }
+    /// <p>The account ID of the member that is responsible for paying for model inference costs.</p>
+    pub fn set_ml_model_inference_payer_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_ml_model_inference_payer_account_id(input);
+        self
+    }
+    /// <p>The account ID of the member that is responsible for paying for model inference costs.</p>
+    pub fn get_ml_model_inference_payer_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_ml_model_inference_payer_account_id()
+    }
 }

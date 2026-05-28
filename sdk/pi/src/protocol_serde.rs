@@ -41,6 +41,8 @@ pub(crate) mod shape_list_available_resource_dimensions;
 
 pub(crate) mod shape_list_available_resource_metrics;
 
+pub(crate) mod shape_list_performance_analysis_report_recommendations;
+
 pub(crate) mod shape_list_performance_analysis_reports;
 
 pub(crate) mod shape_list_tags_for_resource;
@@ -79,6 +81,8 @@ pub(crate) mod shape_list_available_resource_dimensions_input;
 
 pub(crate) mod shape_list_available_resource_metrics_input;
 
+pub(crate) mod shape_list_performance_analysis_report_recommendations_input;
+
 pub(crate) mod shape_list_performance_analysis_reports_input;
 
 pub(crate) mod shape_list_tags_for_resource_input;
@@ -107,6 +111,8 @@ pub(crate) mod shape_metric_key_data_points_list;
 
 pub(crate) mod shape_metric_query;
 
+pub(crate) mod shape_recommendation_list;
+
 pub(crate) mod shape_response_partition_key_list;
 
 pub(crate) mod shape_response_resource_metric_list;
@@ -128,6 +134,8 @@ pub(crate) mod shape_insight_list;
 pub(crate) mod shape_metric_dimension_groups;
 
 pub(crate) mod shape_metric_key_data_points;
+
+pub(crate) mod shape_recommendation;
 
 pub(crate) mod shape_response_partition_key;
 
@@ -153,13 +161,9 @@ pub(crate) mod shape_data_point;
 
 pub(crate) mod shape_dimension_group_detail;
 
-pub(crate) mod shape_recommendation_list;
-
 pub(crate) mod shape_data;
 
 pub(crate) mod shape_dimension_detail_list;
-
-pub(crate) mod shape_recommendation;
 
 pub(crate) mod shape_dimension_detail;
 

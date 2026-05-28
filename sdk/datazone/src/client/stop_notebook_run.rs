@@ -3,12 +3,12 @@ impl super::Client {
     /// Constructs a fluent builder for the [`StopNotebookRun`](crate::operation::stop_notebook_run::builders::StopNotebookRunFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`domain_identifier(impl Into<String>)`](crate::operation::stop_notebook_run::builders::StopNotebookRunFluentBuilder::domain_identifier) / [`set_domain_identifier(Option<String>)`](crate::operation::stop_notebook_run::builders::StopNotebookRunFluentBuilder::set_domain_identifier):<br>required: **true**<br><p>The identifier of the Amazon DataZone domain in which the notebook run is stopped.</p><br>
+    ///   - [`domain_identifier(impl Into<String>)`](crate::operation::stop_notebook_run::builders::StopNotebookRunFluentBuilder::domain_identifier) / [`set_domain_identifier(Option<String>)`](crate::operation::stop_notebook_run::builders::StopNotebookRunFluentBuilder::set_domain_identifier):<br>required: **true**<br><p>The identifier of the Amazon SageMaker Unified Studio domain in which the notebook run is stopped.</p><br>
     ///   - [`identifier(impl Into<String>)`](crate::operation::stop_notebook_run::builders::StopNotebookRunFluentBuilder::identifier) / [`set_identifier(Option<String>)`](crate::operation::stop_notebook_run::builders::StopNotebookRunFluentBuilder::set_identifier):<br>required: **true**<br><p>The identifier of the notebook run to stop.</p><br>
     ///   - [`client_token(impl Into<String>)`](crate::operation::stop_notebook_run::builders::StopNotebookRunFluentBuilder::client_token) / [`set_client_token(Option<String>)`](crate::operation::stop_notebook_run::builders::StopNotebookRunFluentBuilder::set_client_token):<br>required: **false**<br><p>A unique, case-sensitive identifier to ensure idempotency of the request. This field is automatically populated if not provided.</p><br>
     /// - On success, responds with [`StopNotebookRunOutput`](crate::operation::stop_notebook_run::StopNotebookRunOutput) with field(s):
     ///   - [`id(String)`](crate::operation::stop_notebook_run::StopNotebookRunOutput::id): <p>The identifier of the notebook run.</p>
-    ///   - [`domain_id(String)`](crate::operation::stop_notebook_run::StopNotebookRunOutput::domain_id): <p>The identifier of the Amazon DataZone domain.</p>
+    ///   - [`domain_id(String)`](crate::operation::stop_notebook_run::StopNotebookRunOutput::domain_id): <p>The identifier of the Amazon SageMaker Unified Studio domain.</p>
     ///   - [`owning_project_id(String)`](crate::operation::stop_notebook_run::StopNotebookRunOutput::owning_project_id): <p>The identifier of the project that owns the notebook run.</p>
     ///   - [`status(NotebookRunStatus)`](crate::operation::stop_notebook_run::StopNotebookRunOutput::status): <p>The status of the notebook run.</p>
     /// - On failure, responds with [`SdkError<StopNotebookRunError>`](crate::operation::stop_notebook_run::StopNotebookRunError)

@@ -4,13 +4,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ContactDataRequest {
-    /// <p>Endpoint associated with the Amazon Connect instance from which outbound contact will be initiated for the campaign.</p>
+    /// <p>Endpoint associated with the Connect Customer instance from which outbound contact will be initiated for the campaign.</p>
     pub system_endpoint: ::std::option::Option<crate::types::Endpoint>,
     /// <p>Endpoint of the customer for which contact will be initiated.</p>
     pub customer_endpoint: ::std::option::Option<crate::types::Endpoint>,
     /// <p>Identifier to uniquely identify individual requests in the batch.</p>
     pub request_identifier: ::std::option::Option<::std::string::String>,
-    /// <p>The identifier of the queue associated with the Amazon Connect instance in which contacts that are created will be queued.</p>
+    /// <p>The identifier of the queue associated with the Connect Customer instance in which contacts that are created will be queued.</p>
     pub queue_id: ::std::option::Option<::std::string::String>,
     /// <p>List of attributes to be stored in a contact.</p>
     pub attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -20,7 +20,7 @@ pub struct ContactDataRequest {
     pub outbound_strategy: ::std::option::Option<crate::types::OutboundStrategy>,
 }
 impl ContactDataRequest {
-    /// <p>Endpoint associated with the Amazon Connect instance from which outbound contact will be initiated for the campaign.</p>
+    /// <p>Endpoint associated with the Connect Customer instance from which outbound contact will be initiated for the campaign.</p>
     pub fn system_endpoint(&self) -> ::std::option::Option<&crate::types::Endpoint> {
         self.system_endpoint.as_ref()
     }
@@ -32,7 +32,7 @@ impl ContactDataRequest {
     pub fn request_identifier(&self) -> ::std::option::Option<&str> {
         self.request_identifier.as_deref()
     }
-    /// <p>The identifier of the queue associated with the Amazon Connect instance in which contacts that are created will be queued.</p>
+    /// <p>The identifier of the queue associated with the Connect Customer instance in which contacts that are created will be queued.</p>
     pub fn queue_id(&self) -> ::std::option::Option<&str> {
         self.queue_id.as_deref()
     }
@@ -69,17 +69,17 @@ pub struct ContactDataRequestBuilder {
     pub(crate) outbound_strategy: ::std::option::Option<crate::types::OutboundStrategy>,
 }
 impl ContactDataRequestBuilder {
-    /// <p>Endpoint associated with the Amazon Connect instance from which outbound contact will be initiated for the campaign.</p>
+    /// <p>Endpoint associated with the Connect Customer instance from which outbound contact will be initiated for the campaign.</p>
     pub fn system_endpoint(mut self, input: crate::types::Endpoint) -> Self {
         self.system_endpoint = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Endpoint associated with the Amazon Connect instance from which outbound contact will be initiated for the campaign.</p>
+    /// <p>Endpoint associated with the Connect Customer instance from which outbound contact will be initiated for the campaign.</p>
     pub fn set_system_endpoint(mut self, input: ::std::option::Option<crate::types::Endpoint>) -> Self {
         self.system_endpoint = input;
         self
     }
-    /// <p>Endpoint associated with the Amazon Connect instance from which outbound contact will be initiated for the campaign.</p>
+    /// <p>Endpoint associated with the Connect Customer instance from which outbound contact will be initiated for the campaign.</p>
     pub fn get_system_endpoint(&self) -> &::std::option::Option<crate::types::Endpoint> {
         &self.system_endpoint
     }
@@ -111,17 +111,17 @@ impl ContactDataRequestBuilder {
     pub fn get_request_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.request_identifier
     }
-    /// <p>The identifier of the queue associated with the Amazon Connect instance in which contacts that are created will be queued.</p>
+    /// <p>The identifier of the queue associated with the Connect Customer instance in which contacts that are created will be queued.</p>
     pub fn queue_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.queue_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier of the queue associated with the Amazon Connect instance in which contacts that are created will be queued.</p>
+    /// <p>The identifier of the queue associated with the Connect Customer instance in which contacts that are created will be queued.</p>
     pub fn set_queue_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.queue_id = input;
         self
     }
-    /// <p>The identifier of the queue associated with the Amazon Connect instance in which contacts that are created will be queued.</p>
+    /// <p>The identifier of the queue associated with the Connect Customer instance in which contacts that are created will be queued.</p>
     pub fn get_queue_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.queue_id
     }

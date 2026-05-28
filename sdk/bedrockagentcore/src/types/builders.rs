@@ -61,6 +61,8 @@ pub use crate::types::_harness_open_ai_model_config::HarnessOpenAiModelConfigBui
 
 pub use crate::types::_harness_gemini_model_config::HarnessGeminiModelConfigBuilder;
 
+pub use crate::types::_harness_lite_llm_model_config::HarnessLiteLlmModelConfigBuilder;
+
 pub use crate::types::_harness_tool::HarnessToolBuilder;
 
 pub use crate::types::_harness_message_start_event::HarnessMessageStartEventBuilder;
@@ -193,6 +195,10 @@ pub use crate::types::_input_content_block::InputContentBlockBuilder;
 
 pub use crate::types::_tool_result_structured_content::ToolResultStructuredContentBuilder;
 
+pub use crate::types::_harness_skill_s3_source::HarnessSkillS3SourceBuilder;
+
+pub use crate::types::_harness_skill_git_source::HarnessSkillGitSourceBuilder;
+
 pub use crate::types::_harness_token_usage::HarnessTokenUsageBuilder;
 
 pub use crate::types::_harness_stream_metrics::HarnessStreamMetricsBuilder;
@@ -240,6 +246,8 @@ pub use crate::types::_harness_agent_core_gateway_config::HarnessAgentCoreGatewa
 pub use crate::types::_harness_inline_function_config::HarnessInlineFunctionConfigBuilder;
 
 pub use crate::types::_harness_agent_core_code_interpreter_config::HarnessAgentCoreCodeInterpreterConfigBuilder;
+
+pub use crate::types::_harness_skill_git_auth::HarnessSkillGitAuthBuilder;
 
 pub use crate::types::_harness_tool_use_block_start::HarnessToolUseBlockStartBuilder;
 

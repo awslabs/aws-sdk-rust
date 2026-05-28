@@ -33,6 +33,7 @@
 ///     ConnectionType::Sqlserver => { /* ... */ },
 ///     ConnectionType::Teradata => { /* ... */ },
 ///     ConnectionType::Vertica => { /* ... */ },
+///     ConnectionType::Vpc => { /* ... */ },
 ///     ConnectionType::WorkflowsMwaa => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -105,6 +106,8 @@ pub enum ConnectionType {
     #[allow(missing_docs)] // documentation missing in model
     Vertica,
     #[allow(missing_docs)] // documentation missing in model
+    Vpc,
+    #[allow(missing_docs)] // documentation missing in model
     WorkflowsMwaa,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -134,6 +137,7 @@ impl ::std::convert::From<&str> for ConnectionType {
             "SQLSERVER" => ConnectionType::Sqlserver,
             "TERADATA" => ConnectionType::Teradata,
             "VERTICA" => ConnectionType::Vertica,
+            "VPC" => ConnectionType::Vpc,
             "WORKFLOWS_MWAA" => ConnectionType::WorkflowsMwaa,
             other => ConnectionType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -171,6 +175,7 @@ impl ConnectionType {
             ConnectionType::Sqlserver => "SQLSERVER",
             ConnectionType::Teradata => "TERADATA",
             ConnectionType::Vertica => "VERTICA",
+            ConnectionType::Vpc => "VPC",
             ConnectionType::WorkflowsMwaa => "WORKFLOWS_MWAA",
             ConnectionType::Unknown(value) => value.as_str(),
         }
@@ -199,6 +204,7 @@ impl ConnectionType {
             "SQLSERVER",
             "TERADATA",
             "VERTICA",
+            "VPC",
             "WORKFLOWS_MWAA",
         ]
     }
@@ -244,6 +250,7 @@ impl ::std::fmt::Display for ConnectionType {
             ConnectionType::Sqlserver => write!(f, "SQLSERVER"),
             ConnectionType::Teradata => write!(f, "TERADATA"),
             ConnectionType::Vertica => write!(f, "VERTICA"),
+            ConnectionType::Vpc => write!(f, "VPC"),
             ConnectionType::WorkflowsMwaa => write!(f, "WORKFLOWS_MWAA"),
             ConnectionType::Unknown(value) => write!(f, "{value}"),
         }

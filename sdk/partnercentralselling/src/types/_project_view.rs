@@ -8,6 +8,8 @@ pub struct ProjectView {
     pub delivery_models: ::std::option::Option<::std::vec::Vec<crate::types::DeliveryModel>>,
     /// <p>Provides information about the anticipated customer spend related to this project. This may include details such as amount, frequency, and currency of expected expenditure.</p>
     pub expected_customer_spend: ::std::option::Option<::std::vec::Vec<crate::types::ExpectedCustomerSpend>>,
+    /// <p>Optional. The expected contract duration for this opportunity, representing the anticipated length of the contract in the unit specified by <code>Term</code>.</p>
+    pub expected_contract_duration: ::std::option::Option<crate::types::ExpectedContractDuration>,
     /// <p>Specifies the proposed solution focus or type of workload for the project.</p>
     pub customer_use_case: ::std::option::Option<::std::string::String>,
     /// <p>Lists the pre-sales activities that have occurred with the end-customer related to the opportunity. This field is conditionally mandatory when the project is qualified for Co-Sell and helps drive assignment priority on the AWS side. It provides insight into the engagement level with the customer.</p>
@@ -27,6 +29,10 @@ impl ProjectView {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.expected_customer_spend.is_none()`.
     pub fn expected_customer_spend(&self) -> &[crate::types::ExpectedCustomerSpend] {
         self.expected_customer_spend.as_deref().unwrap_or_default()
+    }
+    /// <p>Optional. The expected contract duration for this opportunity, representing the anticipated length of the contract in the unit specified by <code>Term</code>.</p>
+    pub fn expected_contract_duration(&self) -> ::std::option::Option<&crate::types::ExpectedContractDuration> {
+        self.expected_contract_duration.as_ref()
     }
     /// <p>Specifies the proposed solution focus or type of workload for the project.</p>
     pub fn customer_use_case(&self) -> ::std::option::Option<&str> {
@@ -48,6 +54,7 @@ impl ::std::fmt::Debug for ProjectView {
         let mut formatter = f.debug_struct("ProjectView");
         formatter.field("delivery_models", &self.delivery_models);
         formatter.field("expected_customer_spend", &self.expected_customer_spend);
+        formatter.field("expected_contract_duration", &self.expected_contract_duration);
         formatter.field("customer_use_case", &self.customer_use_case);
         formatter.field("sales_activities", &self.sales_activities);
         formatter.field("other_solution_description", &"*** Sensitive Data Redacted ***");
@@ -67,6 +74,7 @@ impl ProjectView {
 pub struct ProjectViewBuilder {
     pub(crate) delivery_models: ::std::option::Option<::std::vec::Vec<crate::types::DeliveryModel>>,
     pub(crate) expected_customer_spend: ::std::option::Option<::std::vec::Vec<crate::types::ExpectedCustomerSpend>>,
+    pub(crate) expected_contract_duration: ::std::option::Option<crate::types::ExpectedContractDuration>,
     pub(crate) customer_use_case: ::std::option::Option<::std::string::String>,
     pub(crate) sales_activities: ::std::option::Option<::std::vec::Vec<crate::types::SalesActivity>>,
     pub(crate) other_solution_description: ::std::option::Option<::std::string::String>,
@@ -111,6 +119,20 @@ impl ProjectViewBuilder {
     /// <p>Provides information about the anticipated customer spend related to this project. This may include details such as amount, frequency, and currency of expected expenditure.</p>
     pub fn get_expected_customer_spend(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ExpectedCustomerSpend>> {
         &self.expected_customer_spend
+    }
+    /// <p>Optional. The expected contract duration for this opportunity, representing the anticipated length of the contract in the unit specified by <code>Term</code>.</p>
+    pub fn expected_contract_duration(mut self, input: crate::types::ExpectedContractDuration) -> Self {
+        self.expected_contract_duration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Optional. The expected contract duration for this opportunity, representing the anticipated length of the contract in the unit specified by <code>Term</code>.</p>
+    pub fn set_expected_contract_duration(mut self, input: ::std::option::Option<crate::types::ExpectedContractDuration>) -> Self {
+        self.expected_contract_duration = input;
+        self
+    }
+    /// <p>Optional. The expected contract duration for this opportunity, representing the anticipated length of the contract in the unit specified by <code>Term</code>.</p>
+    pub fn get_expected_contract_duration(&self) -> &::std::option::Option<crate::types::ExpectedContractDuration> {
+        &self.expected_contract_duration
     }
     /// <p>Specifies the proposed solution focus or type of workload for the project.</p>
     pub fn customer_use_case(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -165,6 +187,7 @@ impl ProjectViewBuilder {
         crate::types::ProjectView {
             delivery_models: self.delivery_models,
             expected_customer_spend: self.expected_customer_spend,
+            expected_contract_duration: self.expected_contract_duration,
             customer_use_case: self.customer_use_case,
             sales_activities: self.sales_activities,
             other_solution_description: self.other_solution_description,
@@ -176,6 +199,7 @@ impl ::std::fmt::Debug for ProjectViewBuilder {
         let mut formatter = f.debug_struct("ProjectViewBuilder");
         formatter.field("delivery_models", &self.delivery_models);
         formatter.field("expected_customer_spend", &self.expected_customer_spend);
+        formatter.field("expected_contract_duration", &self.expected_contract_duration);
         formatter.field("customer_use_case", &self.customer_use_case);
         formatter.field("sales_activities", &self.sales_activities);
         formatter.field("other_solution_description", &"*** Sensitive Data Redacted ***");

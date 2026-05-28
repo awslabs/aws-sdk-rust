@@ -7,6 +7,18 @@ pub fn ser_harness_skill(
         crate::types::HarnessSkill::Path(inner) => {
             object_16.key("path").string(inner.as_str());
         }
+        crate::types::HarnessSkill::S3(inner) => {
+            #[allow(unused_mut)]
+            let mut object_1 = object_16.key("s3").start_object();
+            crate::protocol_serde::shape_harness_skill_s3_source::ser_harness_skill_s3_source(&mut object_1, inner)?;
+            object_1.finish();
+        }
+        crate::types::HarnessSkill::Git(inner) => {
+            #[allow(unused_mut)]
+            let mut object_2 = object_16.key("git").start_object();
+            crate::protocol_serde::shape_harness_skill_git_source::ser_harness_skill_git_source(&mut object_2, inner)?;
+            object_2.finish();
+        }
         crate::types::HarnessSkill::Unknown => return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant("HarnessSkill")),
     }
     Ok(())

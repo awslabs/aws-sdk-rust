@@ -20,10 +20,14 @@ pub struct EnvironmentBlueprintConfigurationItem {
     pub regional_parameters: ::std::option::Option<
         ::std::collections::HashMap<::std::string::String, ::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     >,
+    /// <p>Specifies whether user-provided resource configurations are allowed for the environment blueprint.</p>
+    pub allow_user_provided_configurations: ::std::option::Option<bool>,
     /// <p>The timestamp of when an environment blueprint was created.</p>
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The timestamp of when the environment blueprint was updated.</p>
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The resource configurations of the environment blueprint.</p>
+    pub resource_configurations: ::std::option::Option<::std::vec::Vec<crate::types::ResourceConfiguration>>,
     /// <p>The provisioning configuration of a blueprint.</p>
     pub provisioning_configurations: ::std::option::Option<::std::vec::Vec<crate::types::ProvisioningConfiguration>>,
 }
@@ -64,6 +68,10 @@ impl EnvironmentBlueprintConfigurationItem {
     > {
         self.regional_parameters.as_ref()
     }
+    /// <p>Specifies whether user-provided resource configurations are allowed for the environment blueprint.</p>
+    pub fn allow_user_provided_configurations(&self) -> ::std::option::Option<bool> {
+        self.allow_user_provided_configurations
+    }
     /// <p>The timestamp of when an environment blueprint was created.</p>
     pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
@@ -71,6 +79,12 @@ impl EnvironmentBlueprintConfigurationItem {
     /// <p>The timestamp of when the environment blueprint was updated.</p>
     pub fn updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
+    }
+    /// <p>The resource configurations of the environment blueprint.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_configurations.is_none()`.
+    pub fn resource_configurations(&self) -> &[crate::types::ResourceConfiguration] {
+        self.resource_configurations.as_deref().unwrap_or_default()
     }
     /// <p>The provisioning configuration of a blueprint.</p>
     ///
@@ -99,8 +113,10 @@ pub struct EnvironmentBlueprintConfigurationItemBuilder {
     pub(crate) regional_parameters: ::std::option::Option<
         ::std::collections::HashMap<::std::string::String, ::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     >,
+    pub(crate) allow_user_provided_configurations: ::std::option::Option<bool>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) resource_configurations: ::std::option::Option<::std::vec::Vec<crate::types::ResourceConfiguration>>,
     pub(crate) provisioning_configurations: ::std::option::Option<::std::vec::Vec<crate::types::ProvisioningConfiguration>>,
 }
 impl EnvironmentBlueprintConfigurationItemBuilder {
@@ -229,6 +245,20 @@ impl EnvironmentBlueprintConfigurationItemBuilder {
     > {
         &self.regional_parameters
     }
+    /// <p>Specifies whether user-provided resource configurations are allowed for the environment blueprint.</p>
+    pub fn allow_user_provided_configurations(mut self, input: bool) -> Self {
+        self.allow_user_provided_configurations = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether user-provided resource configurations are allowed for the environment blueprint.</p>
+    pub fn set_allow_user_provided_configurations(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.allow_user_provided_configurations = input;
+        self
+    }
+    /// <p>Specifies whether user-provided resource configurations are allowed for the environment blueprint.</p>
+    pub fn get_allow_user_provided_configurations(&self) -> &::std::option::Option<bool> {
+        &self.allow_user_provided_configurations
+    }
     /// <p>The timestamp of when an environment blueprint was created.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
@@ -256,6 +286,26 @@ impl EnvironmentBlueprintConfigurationItemBuilder {
     /// <p>The timestamp of when the environment blueprint was updated.</p>
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.updated_at
+    }
+    /// Appends an item to `resource_configurations`.
+    ///
+    /// To override the contents of this collection use [`set_resource_configurations`](Self::set_resource_configurations).
+    ///
+    /// <p>The resource configurations of the environment blueprint.</p>
+    pub fn resource_configurations(mut self, input: crate::types::ResourceConfiguration) -> Self {
+        let mut v = self.resource_configurations.unwrap_or_default();
+        v.push(input);
+        self.resource_configurations = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The resource configurations of the environment blueprint.</p>
+    pub fn set_resource_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceConfiguration>>) -> Self {
+        self.resource_configurations = input;
+        self
+    }
+    /// <p>The resource configurations of the environment blueprint.</p>
+    pub fn get_resource_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceConfiguration>> {
+        &self.resource_configurations
     }
     /// Appends an item to `provisioning_configurations`.
     ///
@@ -302,8 +352,10 @@ impl EnvironmentBlueprintConfigurationItemBuilder {
             manage_access_role_arn: self.manage_access_role_arn,
             enabled_regions: self.enabled_regions,
             regional_parameters: self.regional_parameters,
+            allow_user_provided_configurations: self.allow_user_provided_configurations,
             created_at: self.created_at,
             updated_at: self.updated_at,
+            resource_configurations: self.resource_configurations,
             provisioning_configurations: self.provisioning_configurations,
         })
     }

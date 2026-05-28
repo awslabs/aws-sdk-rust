@@ -22,7 +22,7 @@ impl crate::operation::get_payment_instrument::builders::GetPaymentInstrumentInp
 }
 /// Fluent builder constructing a request to `GetPaymentInstrument`.
 ///
-/// Get a payment instrument by ID
+/// <p>Get a payment instrument by ID.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetPaymentInstrumentFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,73 +108,73 @@ impl GetPaymentInstrumentFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// The user ID associated with this payment instrument.
+    /// <p>The user ID associated with this payment instrument.</p>
     pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.user_id(input.into());
         self
     }
-    /// The user ID associated with this payment instrument.
+    /// <p>The user ID associated with this payment instrument.</p>
     pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_user_id(input);
         self
     }
-    /// The user ID associated with this payment instrument.
+    /// <p>The user ID associated with this payment instrument.</p>
     pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_user_id()
     }
-    /// The agent name associated with this request, used for observability.
+    /// <p>The agent name associated with this request, used for observability.</p>
     pub fn agent_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.agent_name(input.into());
         self
     }
-    /// The agent name associated with this request, used for observability.
+    /// <p>The agent name associated with this request, used for observability.</p>
     pub fn set_agent_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_agent_name(input);
         self
     }
-    /// The agent name associated with this request, used for observability.
+    /// <p>The agent name associated with this request, used for observability.</p>
     pub fn get_agent_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_agent_name()
     }
-    /// The ARN of the payment manager that owns this payment instrument.
+    /// <p>The ARN of the payment manager that owns this payment instrument.</p>
     pub fn payment_manager_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.payment_manager_arn(input.into());
         self
     }
-    /// The ARN of the payment manager that owns this payment instrument.
+    /// <p>The ARN of the payment manager that owns this payment instrument.</p>
     pub fn set_payment_manager_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_payment_manager_arn(input);
         self
     }
-    /// The ARN of the payment manager that owns this payment instrument.
+    /// <p>The ARN of the payment manager that owns this payment instrument.</p>
     pub fn get_payment_manager_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_payment_manager_arn()
     }
-    /// The ID of the payment connector.
+    /// <p>The ID of the payment connector.</p>
     pub fn payment_connector_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.payment_connector_id(input.into());
         self
     }
-    /// The ID of the payment connector.
+    /// <p>The ID of the payment connector.</p>
     pub fn set_payment_connector_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_payment_connector_id(input);
         self
     }
-    /// The ID of the payment connector.
+    /// <p>The ID of the payment connector.</p>
     pub fn get_payment_connector_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_payment_connector_id()
     }
-    /// The ID of the payment instrument to retrieve.
+    /// <p>The ID of the payment instrument to retrieve.</p>
     pub fn payment_instrument_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.payment_instrument_id(input.into());
         self
     }
-    /// The ID of the payment instrument to retrieve.
+    /// <p>The ID of the payment instrument to retrieve.</p>
     pub fn set_payment_instrument_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_payment_instrument_id(input);
         self
     }
-    /// The ID of the payment instrument to retrieve.
+    /// <p>The ID of the payment instrument to retrieve.</p>
     pub fn get_payment_instrument_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_payment_instrument_id()
     }

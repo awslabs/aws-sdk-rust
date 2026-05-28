@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteView`](crate::operation::delete_view::builders::DeleteViewFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`instance_id(impl Into<String>)`](crate::operation::delete_view::builders::DeleteViewFluentBuilder::instance_id) / [`set_instance_id(Option<String>)`](crate::operation::delete_view::builders::DeleteViewFluentBuilder::set_instance_id):<br>required: **true**<br><p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p><br>
+    ///   - [`instance_id(impl Into<String>)`](crate::operation::delete_view::builders::DeleteViewFluentBuilder::instance_id) / [`set_instance_id(Option<String>)`](crate::operation::delete_view::builders::DeleteViewFluentBuilder::set_instance_id):<br>required: **true**<br><p>The identifier of the Connect Customer instance. You can find the instanceId in the ARN of the instance.</p><br>
     ///   - [`view_id(impl Into<String>)`](crate::operation::delete_view::builders::DeleteViewFluentBuilder::view_id) / [`set_view_id(Option<String>)`](crate::operation::delete_view::builders::DeleteViewFluentBuilder::set_view_id):<br>required: **true**<br><p>The identifier of the view. Both <code>ViewArn</code> and <code>ViewId</code> can be used.</p><br>
     /// - On success, responds with [`DeleteViewOutput`](crate::operation::delete_view::DeleteViewOutput)
     /// - On failure, responds with [`SdkError<DeleteViewError>`](crate::operation::delete_view::DeleteViewError)

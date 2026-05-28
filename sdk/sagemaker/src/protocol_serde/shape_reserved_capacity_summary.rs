@@ -71,6 +71,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "AvailabilityZoneId" => {
+                            builder = builder.set_availability_zone_id(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         "DurationHours" => {
                             builder = builder.set_duration_hours(
                                 ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?

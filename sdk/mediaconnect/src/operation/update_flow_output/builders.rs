@@ -437,4 +437,36 @@ impl UpdateFlowOutputFluentBuilder {
     pub fn get_router_integration_transit_encryption(&self) -> &::std::option::Option<crate::types::FlowTransitEncryption> {
         self.inner.get_router_integration_transit_encryption()
     }
+    /// <p>Controls how MediaConnect generates timecodes for NDI output frames. If you don't specify this field, MediaConnect leaves the value unchanged.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>EMBEDDED_TIMECODE</code> - Preserves timecodes from the input transport stream. The timecodes must be embedded in the video stream as SEI timing messages. If no embedded timecode is detected, MediaConnect uses the UTC system time instead.</p></li>
+    /// <li>
+    /// <p><code>UTC_SYSTEM_TIME</code> - Generates timecodes based on the system clock time when each frame is sent.</p></li>
+    /// </ul>
+    pub fn ndi_output_timecode_source(mut self, input: crate::types::NdiOutputTimecodeSource) -> Self {
+        self.inner = self.inner.ndi_output_timecode_source(input);
+        self
+    }
+    /// <p>Controls how MediaConnect generates timecodes for NDI output frames. If you don't specify this field, MediaConnect leaves the value unchanged.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>EMBEDDED_TIMECODE</code> - Preserves timecodes from the input transport stream. The timecodes must be embedded in the video stream as SEI timing messages. If no embedded timecode is detected, MediaConnect uses the UTC system time instead.</p></li>
+    /// <li>
+    /// <p><code>UTC_SYSTEM_TIME</code> - Generates timecodes based on the system clock time when each frame is sent.</p></li>
+    /// </ul>
+    pub fn set_ndi_output_timecode_source(mut self, input: ::std::option::Option<crate::types::NdiOutputTimecodeSource>) -> Self {
+        self.inner = self.inner.set_ndi_output_timecode_source(input);
+        self
+    }
+    /// <p>Controls how MediaConnect generates timecodes for NDI output frames. If you don't specify this field, MediaConnect leaves the value unchanged.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>EMBEDDED_TIMECODE</code> - Preserves timecodes from the input transport stream. The timecodes must be embedded in the video stream as SEI timing messages. If no embedded timecode is detected, MediaConnect uses the UTC system time instead.</p></li>
+    /// <li>
+    /// <p><code>UTC_SYSTEM_TIME</code> - Generates timecodes based on the system clock time when each frame is sent.</p></li>
+    /// </ul>
+    pub fn get_ndi_output_timecode_source(&self) -> &::std::option::Option<crate::types::NdiOutputTimecodeSource> {
+        self.inner.get_ndi_output_timecode_source()
+    }
 }

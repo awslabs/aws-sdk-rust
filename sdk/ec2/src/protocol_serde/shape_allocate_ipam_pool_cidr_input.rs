@@ -69,6 +69,19 @@ pub fn ser_allocate_ipam_pool_cidr_input_input_input(
             list_23.finish();
         }
     }
+    #[allow(unused_mut)]
+    let mut scope_25 = writer.prefix("TagSpecification");
+    if let Some(var_26) = &input.tag_specifications {
+        if !var_26.is_empty() {
+            let mut list_28 = scope_25.start_list(true, Some("item"));
+            for item_27 in var_26 {
+                #[allow(unused_mut)]
+                let mut entry_29 = list_28.entry();
+                crate::protocol_serde::shape_tag_specification::ser_tag_specification(entry_29, item_27)?;
+            }
+            list_28.finish();
+        }
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

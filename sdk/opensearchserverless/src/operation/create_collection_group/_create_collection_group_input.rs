@@ -13,6 +13,8 @@ pub struct CreateCollectionGroupInput {
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The capacity limits for the collection group, in OpenSearch Compute Units (OCUs). These limits control the maximum and minimum capacity for collections within the group.</p>
     pub capacity_limits: ::std::option::Option<crate::types::CollectionGroupCapacityLimits>,
+    /// <p>The generation of Amazon OpenSearch Serverless for the collection group. Valid values are <code>CLASSIC</code> and <code>NEXTGEN</code>.</p>
+    pub generation: ::std::option::Option<crate::types::ServerlessGeneration>,
     /// <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
@@ -39,6 +41,10 @@ impl CreateCollectionGroupInput {
     pub fn capacity_limits(&self) -> ::std::option::Option<&crate::types::CollectionGroupCapacityLimits> {
         self.capacity_limits.as_ref()
     }
+    /// <p>The generation of Amazon OpenSearch Serverless for the collection group. Valid values are <code>CLASSIC</code> and <code>NEXTGEN</code>.</p>
+    pub fn generation(&self) -> ::std::option::Option<&crate::types::ServerlessGeneration> {
+        self.generation.as_ref()
+    }
     /// <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
@@ -60,6 +66,7 @@ pub struct CreateCollectionGroupInputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) capacity_limits: ::std::option::Option<crate::types::CollectionGroupCapacityLimits>,
+    pub(crate) generation: ::std::option::Option<crate::types::ServerlessGeneration>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
 impl CreateCollectionGroupInputBuilder {
@@ -141,6 +148,20 @@ impl CreateCollectionGroupInputBuilder {
     pub fn get_capacity_limits(&self) -> &::std::option::Option<crate::types::CollectionGroupCapacityLimits> {
         &self.capacity_limits
     }
+    /// <p>The generation of Amazon OpenSearch Serverless for the collection group. Valid values are <code>CLASSIC</code> and <code>NEXTGEN</code>.</p>
+    pub fn generation(mut self, input: crate::types::ServerlessGeneration) -> Self {
+        self.generation = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The generation of Amazon OpenSearch Serverless for the collection group. Valid values are <code>CLASSIC</code> and <code>NEXTGEN</code>.</p>
+    pub fn set_generation(mut self, input: ::std::option::Option<crate::types::ServerlessGeneration>) -> Self {
+        self.generation = input;
+        self
+    }
+    /// <p>The generation of Amazon OpenSearch Serverless for the collection group. Valid values are <code>CLASSIC</code> and <code>NEXTGEN</code>.</p>
+    pub fn get_generation(&self) -> &::std::option::Option<crate::types::ServerlessGeneration> {
+        &self.generation
+    }
     /// <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -166,6 +187,7 @@ impl CreateCollectionGroupInputBuilder {
             description: self.description,
             tags: self.tags,
             capacity_limits: self.capacity_limits,
+            generation: self.generation,
             client_token: self.client_token,
         })
     }

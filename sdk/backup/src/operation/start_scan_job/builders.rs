@@ -125,6 +125,20 @@ impl StartScanJobFluentBuilder {
     pub fn get_backup_vault_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_backup_vault_name()
     }
+    /// <p>The point in time the scan job will scan up to for a continuous backup.</p>
+    pub fn continuous_scan_end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.inner = self.inner.continuous_scan_end_time(input);
+        self
+    }
+    /// <p>The point in time the scan job will scan up to for a continuous backup.</p>
+    pub fn set_continuous_scan_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.inner = self.inner.set_continuous_scan_end_time(input);
+        self
+    }
+    /// <p>The point in time the scan job will scan up to for a continuous backup.</p>
+    pub fn get_continuous_scan_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_continuous_scan_end_time()
+    }
     /// <p>Specifies the IAM role ARN used to create the target recovery point; for example, <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
     pub fn iam_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.iam_role_arn(input.into());

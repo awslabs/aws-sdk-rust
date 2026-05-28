@@ -83,6 +83,14 @@ pub use crate::types::_configuration_bundle_status::ConfigurationBundleStatus;
 
 pub use crate::types::_version_filter::VersionFilter;
 
+pub use crate::types::_data_source_type::DataSourceType;
+
+pub use crate::types::_dataset_schema_type::DatasetSchemaType;
+
+pub use crate::types::_dataset_status::DatasetStatus;
+
+pub use crate::types::_draft_status::DraftStatus;
+
 pub use crate::types::_evaluator_config::EvaluatorConfig;
 
 pub use crate::types::_evaluator_level::EvaluatorLevel;
@@ -261,6 +269,14 @@ pub use crate::types::_component_configuration::ComponentConfiguration;
 
 pub use crate::types::_configuration_bundle_version_summary::ConfigurationBundleVersionSummary;
 
+pub use crate::types::_dataset_summary::DatasetSummary;
+
+pub use crate::types::_inline_examples_source::InlineExamplesSource;
+
+pub use crate::types::_s3_source::S3Source;
+
+pub use crate::types::_dataset_version_summary::DatasetVersionSummary;
+
 pub use crate::types::_evaluator_summary::EvaluatorSummary;
 
 pub use crate::types::_llm_as_a_judge_evaluator_config::LlmAsAJudgeEvaluatorConfig;
@@ -306,6 +322,8 @@ pub use crate::types::_harness_bedrock_model_config::HarnessBedrockModelConfig;
 pub use crate::types::_harness_open_ai_model_config::HarnessOpenAiModelConfig;
 
 pub use crate::types::_harness_gemini_model_config::HarnessGeminiModelConfig;
+
+pub use crate::types::_harness_lite_llm_model_config::HarnessLiteLlmModelConfig;
 
 pub use crate::types::_harness_system_content_block::HarnessSystemContentBlock;
 
@@ -477,9 +495,17 @@ pub use crate::types::_credential_provider::CredentialProvider;
 
 pub use crate::types::_endpoint_ip_address_type::EndpointIpAddressType;
 
+pub use crate::types::_harness_bedrock_api_format::HarnessBedrockApiFormat;
+
+pub use crate::types::_harness_open_ai_api_format::HarnessOpenAiApiFormat;
+
 pub use crate::types::_harness_tool_type::HarnessToolType;
 
 pub use crate::types::_harness_tool_configuration::HarnessToolConfiguration;
+
+pub use crate::types::_harness_skill_s3_source::HarnessSkillS3Source;
+
+pub use crate::types::_harness_skill_git_source::HarnessSkillGitSource;
 
 pub use crate::types::_harness_sliding_window_configuration::HarnessSlidingWindowConfiguration;
 
@@ -574,6 +600,8 @@ pub use crate::types::_harness_agent_core_gateway_config::HarnessAgentCoreGatewa
 pub use crate::types::_harness_inline_function_config::HarnessInlineFunctionConfig;
 
 pub use crate::types::_harness_agent_core_code_interpreter_config::HarnessAgentCoreCodeInterpreterConfig;
+
+pub use crate::types::_harness_skill_git_auth::HarnessSkillGitAuth;
 
 pub use crate::types::_harness_agent_core_memory_retrieval_config::HarnessAgentCoreMemoryRetrievalConfig;
 
@@ -959,11 +987,23 @@ mod _custom_reflection_configuration_input;
 
 mod _data_source_config;
 
+mod _data_source_type;
+
+mod _dataset_schema_type;
+
+mod _dataset_status;
+
+mod _dataset_summary;
+
+mod _dataset_version_summary;
+
 mod _delete_memory_strategy_input;
 
 mod _descriptor_type;
 
 mod _descriptors;
+
+mod _draft_status;
 
 mod _efs_access_point_configuration;
 
@@ -1071,6 +1111,8 @@ mod _harness_agent_core_runtime_environment;
 
 mod _harness_agent_core_runtime_environment_request;
 
+mod _harness_bedrock_api_format;
+
 mod _harness_bedrock_model_config;
 
 mod _harness_environment_artifact;
@@ -1085,15 +1127,25 @@ mod _harness_gemini_model_config;
 
 mod _harness_inline_function_config;
 
+mod _harness_lite_llm_model_config;
+
 mod _harness_memory_configuration;
 
 mod _harness_model_configuration;
+
+mod _harness_open_ai_api_format;
 
 mod _harness_open_ai_model_config;
 
 mod _harness_remote_mcp_config;
 
 mod _harness_skill;
+
+mod _harness_skill_git_auth;
+
+mod _harness_skill_git_source;
+
+mod _harness_skill_s3_source;
 
 mod _harness_sliding_window_configuration;
 
@@ -1134,6 +1186,8 @@ mod _included_oauth2_provider_config_output;
 mod _indexed_key;
 
 mod _inference_configuration;
+
+mod _inline_examples_source;
 
 mod _interceptor_configuration;
 
@@ -1380,6 +1434,8 @@ mod _s3_configuration;
 mod _s3_files_access_point_configuration;
 
 mod _s3_location;
+
+mod _s3_source;
 
 mod _salesforce_oauth2_provider_config_input;
 

@@ -15,8 +15,20 @@ pub fn ser_member_change_specification(
         }
         array_1.finish();
     }
-    if let Some(var_3) = &input.display_name {
-        object.key("displayName").string(var_3.as_str());
+    if let Some(var_3) = &input.ml_member_abilities {
+        #[allow(unused_mut)]
+        let mut object_4 = object.key("mlMemberAbilities").start_object();
+        crate::protocol_serde::shape_ml_member_abilities::ser_ml_member_abilities(&mut object_4, var_3)?;
+        object_4.finish();
+    }
+    if let Some(var_5) = &input.payment_configuration {
+        #[allow(unused_mut)]
+        let mut object_6 = object.key("paymentConfiguration").start_object();
+        crate::protocol_serde::shape_payment_configuration::ser_payment_configuration(&mut object_6, var_5)?;
+        object_6.finish();
+    }
+    if let Some(var_7) = &input.display_name {
+        object.key("displayName").string(var_7.as_str());
     }
     Ok(())
 }
@@ -47,6 +59,15 @@ where
                         "memberAbilities" => {
                             builder =
                                 builder.set_member_abilities(crate::protocol_serde::shape_member_abilities::de_member_abilities(tokens, _value)?);
+                        }
+                        "mlMemberAbilities" => {
+                            builder = builder
+                                .set_ml_member_abilities(crate::protocol_serde::shape_ml_member_abilities::de_ml_member_abilities(tokens, _value)?);
+                        }
+                        "paymentConfiguration" => {
+                            builder = builder.set_payment_configuration(
+                                crate::protocol_serde::shape_payment_configuration::de_payment_configuration(tokens, _value)?,
+                            );
                         }
                         "displayName" => {
                             builder = builder.set_display_name(

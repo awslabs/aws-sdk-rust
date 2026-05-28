@@ -120,6 +120,11 @@ where
                                     .transpose()?,
                             );
                         }
+                        "AvailabilityStartTimeConfiguration" => {
+                            builder = builder.set_availability_start_time_configuration(
+                                    crate::protocol_serde::shape_dash_availability_start_time_configuration::de_dash_availability_start_time_configuration(tokens, _value)?
+                                );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

@@ -531,6 +531,8 @@ pub use crate::types::_destination_table::DestinationTableBuilder;
 
 pub use crate::types::_semantic_table::SemanticTableBuilder;
 
+pub use crate::types::_data_set_semantic_metadata::DataSetSemanticMetadataBuilder;
+
 pub use crate::types::_identity_center_configuration::IdentityCenterConfigurationBuilder;
 
 pub use crate::types::_redshift_iam_parameters::RedshiftIamParametersBuilder;
@@ -729,6 +731,10 @@ pub use crate::types::_destination_table_source::DestinationTableSourceBuilder;
 
 pub use crate::types::_row_level_permission_configuration::RowLevelPermissionConfigurationBuilder;
 
+pub use crate::types::_table_semantic_metadata::TableSemanticMetadataBuilder;
+
+pub use crate::types::_data_set_semantic_description::DataSetSemanticDescriptionBuilder;
+
 pub use crate::types::_data_set_schema::DataSetSchemaBuilder;
 
 pub use crate::types::_border_style::BorderStyleBuilder;
@@ -884,6 +890,8 @@ pub use crate::types::_join_operand_properties::JoinOperandPropertiesBuilder;
 pub use crate::types::_value_column_configuration::ValueColumnConfigurationBuilder;
 
 pub use crate::types::_pivot_configuration::PivotConfigurationBuilder;
+
+pub use crate::types::_custom_instruction::CustomInstructionBuilder;
 
 pub use crate::types::_column_group_schema::ColumnGroupSchemaBuilder;
 
@@ -1073,6 +1081,10 @@ pub use crate::types::_column_to_unpivot::ColumnToUnpivotBuilder;
 
 pub use crate::types::_appended_column::AppendedColumnBuilder;
 
+pub use crate::types::_shared_column_semantic_metadata::SharedColumnSemanticMetadataBuilder;
+
+pub use crate::types::_inline_custom_instruction::InlineCustomInstructionBuilder;
+
 pub use crate::types::_column_schema::ColumnSchemaBuilder;
 
 pub use crate::types::_topic_category_filter::TopicCategoryFilterBuilder;
@@ -1258,6 +1270,8 @@ pub use crate::types::_data_prep_simple_aggregation_function::DataPrepSimpleAggr
 pub use crate::types::_data_prep_list_aggregation_function::DataPrepListAggregationFunctionBuilder;
 
 pub use crate::types::_pivoted_label::PivotedLabelBuilder;
+
+pub use crate::types::_uploaded_document_metadata::UploadedDocumentMetadataBuilder;
 
 pub use crate::types::_column_group_column_schema::ColumnGroupColumnSchemaBuilder;
 
@@ -1493,6 +1507,8 @@ pub use crate::types::_data_set_date_filter_value::DataSetDateFilterValueBuilder
 
 pub use crate::types::_column_description::ColumnDescriptionBuilder;
 
+pub use crate::types::_column_semantic_property::ColumnSemanticPropertyBuilder;
+
 pub use crate::types::_collective_constant::CollectiveConstantBuilder;
 
 pub use crate::types::_range_constant::RangeConstantBuilder;
@@ -1694,6 +1710,10 @@ pub use crate::types::_default_relative_date_time_control_options::DefaultRelati
 pub use crate::types::_percentile_aggregation::PercentileAggregationBuilder;
 
 pub use crate::types::_thousand_separator_options::ThousandSeparatorOptionsBuilder;
+
+pub use crate::types::_additional_notes::AdditionalNotesBuilder;
+
+pub use crate::types::_column_semantic_type::ColumnSemanticTypeBuilder;
 
 pub use crate::types::_snapshot_job_result_error_info::SnapshotJobResultErrorInfoBuilder;
 

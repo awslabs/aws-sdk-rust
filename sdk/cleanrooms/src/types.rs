@@ -107,6 +107,8 @@ pub use crate::types::_membership_payment_configuration::MembershipPaymentConfig
 
 pub use crate::types::_membership::Membership;
 
+pub use crate::types::_update_membership_payment_configuration::UpdateMembershipPaymentConfiguration;
+
 pub use crate::types::_protected_job::ProtectedJob;
 
 pub use crate::types::_protected_query::ProtectedQuery;
@@ -1008,6 +1010,8 @@ mod _table_reference;
 mod _target_protected_job_status;
 
 mod _target_protected_query_status;
+
+mod _update_membership_payment_configuration;
 
 mod _validation_exception_field;
 

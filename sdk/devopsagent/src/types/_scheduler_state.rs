@@ -36,15 +36,15 @@
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 ///
-/// State of Goal Schedule. Mirrors EventBridge Scheduler State
+/// <p>State of Goal Schedule. Mirrors EventBridge Scheduler State</p>
 #[non_exhaustive]
 #[derive(
     ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum SchedulerState {
-    /// Schedule is disabled and will not trigger goal evaluations
+    /// <p>Schedule is disabled and will not trigger goal evaluations</p>
     Disabled,
-    /// Schedule is enabled and will trigger goal evaluations
+    /// <p>Schedule is enabled and will trigger goal evaluations</p>
     Enabled,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]

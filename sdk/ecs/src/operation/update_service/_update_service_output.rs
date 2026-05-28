@@ -4,11 +4,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateServiceOutput {
     /// <p>The full description of your service following the update call.</p>
+    /// <p>The response includes a <code>lifecycleHookDetails</code> field, which is an empty array when the service is created or updated. The values are populated when a lifecycle hook executes and are available as part of the service deployment details (<a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DescribeServiceDeployments.html">DescribeServiceDeployments</a>).</p>
     pub service: ::std::option::Option<crate::types::Service>,
     _request_id: Option<String>,
 }
 impl UpdateServiceOutput {
     /// <p>The full description of your service following the update call.</p>
+    /// <p>The response includes a <code>lifecycleHookDetails</code> field, which is an empty array when the service is created or updated. The values are populated when a lifecycle hook executes and are available as part of the service deployment details (<a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DescribeServiceDeployments.html">DescribeServiceDeployments</a>).</p>
     pub fn service(&self) -> ::std::option::Option<&crate::types::Service> {
         self.service.as_ref()
     }
@@ -34,16 +36,19 @@ pub struct UpdateServiceOutputBuilder {
 }
 impl UpdateServiceOutputBuilder {
     /// <p>The full description of your service following the update call.</p>
+    /// <p>The response includes a <code>lifecycleHookDetails</code> field, which is an empty array when the service is created or updated. The values are populated when a lifecycle hook executes and are available as part of the service deployment details (<a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DescribeServiceDeployments.html">DescribeServiceDeployments</a>).</p>
     pub fn service(mut self, input: crate::types::Service) -> Self {
         self.service = ::std::option::Option::Some(input);
         self
     }
     /// <p>The full description of your service following the update call.</p>
+    /// <p>The response includes a <code>lifecycleHookDetails</code> field, which is an empty array when the service is created or updated. The values are populated when a lifecycle hook executes and are available as part of the service deployment details (<a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DescribeServiceDeployments.html">DescribeServiceDeployments</a>).</p>
     pub fn set_service(mut self, input: ::std::option::Option<crate::types::Service>) -> Self {
         self.service = input;
         self
     }
     /// <p>The full description of your service following the update call.</p>
+    /// <p>The response includes a <code>lifecycleHookDetails</code> field, which is an empty array when the service is created or updated. The values are populated when a lifecycle hook executes and are available as part of the service deployment details (<a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DescribeServiceDeployments.html">DescribeServiceDeployments</a>).</p>
     pub fn get_service(&self) -> &::std::option::Option<crate::types::Service> {
         &self.service
     }

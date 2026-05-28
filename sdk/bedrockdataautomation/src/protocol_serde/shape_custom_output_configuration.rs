@@ -15,6 +15,12 @@ pub fn ser_custom_output_configuration(
         }
         array_2.finish();
     }
+    if let Some(var_5) = &input.document {
+        #[allow(unused_mut)]
+        let mut object_6 = object.key("document").start_object();
+        crate::protocol_serde::shape_document_custom_output_configuration::ser_document_custom_output_configuration(&mut object_6, var_5)?;
+        object_6.finish();
+    }
     Ok(())
 }
 
@@ -36,6 +42,13 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "blueprints" => {
                             builder = builder.set_blueprints(crate::protocol_serde::shape_blueprint_items::de_blueprint_items(tokens, _value)?);
+                        }
+                        "document" => {
+                            builder = builder.set_document(
+                                crate::protocol_serde::shape_document_custom_output_configuration::de_document_custom_output_configuration(
+                                    tokens, _value,
+                                )?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

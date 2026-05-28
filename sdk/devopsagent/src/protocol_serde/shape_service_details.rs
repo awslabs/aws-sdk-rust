@@ -70,6 +70,12 @@ pub fn ser_service_details(
             crate::protocol_serde::shape_registered_azure_identity_details::ser_registered_azure_identity_details(&mut object_11, inner)?;
             object_11.finish();
         }
+        crate::types::ServiceDetails::Mcpserversigv4(inner) => {
+            #[allow(unused_mut)]
+            let mut object_12 = object_5.key("mcpserversigv4").start_object();
+            crate::protocol_serde::shape_mcp_server_sigv4_service_details::ser_mcp_server_sigv4_service_details(&mut object_12, inner)?;
+            object_12.finish();
+        }
         crate::types::ServiceDetails::Unknown => {
             return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
                 "ServiceDetails",

@@ -47,6 +47,8 @@ pub struct GetDashManifestConfiguration {
     pub subtitle_configuration: ::std::option::Option<crate::types::DashSubtitleConfiguration>,
     /// <p>The type of path used in manifest URIs. <code>LEAF</code> indicates leaf-relative paths. <code>ROOT</code> indicates root-relative paths that include the full path from root.</p>
     pub uri_path_type: ::std::option::Option<crate::types::UriPathType>,
+    /// <p>The configuration for the DASH <code>availabilityStartTime</code> attribute of the Media Presentation Description (MPD).</p>
+    pub availability_start_time_configuration: ::std::option::Option<crate::types::DashAvailabilityStartTimeConfiguration>,
 }
 impl GetDashManifestConfiguration {
     /// <p>A short string that's appended to the endpoint URL. The manifest name creates a unique path to this endpoint. If you don't enter a value, MediaPackage uses the default manifest name, index.</p>
@@ -138,6 +140,10 @@ impl GetDashManifestConfiguration {
     pub fn uri_path_type(&self) -> ::std::option::Option<&crate::types::UriPathType> {
         self.uri_path_type.as_ref()
     }
+    /// <p>The configuration for the DASH <code>availabilityStartTime</code> attribute of the Media Presentation Description (MPD).</p>
+    pub fn availability_start_time_configuration(&self) -> ::std::option::Option<&crate::types::DashAvailabilityStartTimeConfiguration> {
+        self.availability_start_time_configuration.as_ref()
+    }
 }
 impl GetDashManifestConfiguration {
     /// Creates a new builder-style object to manufacture [`GetDashManifestConfiguration`](crate::types::GetDashManifestConfiguration).
@@ -169,6 +175,7 @@ pub struct GetDashManifestConfigurationBuilder {
     pub(crate) compactness: ::std::option::Option<crate::types::DashCompactness>,
     pub(crate) subtitle_configuration: ::std::option::Option<crate::types::DashSubtitleConfiguration>,
     pub(crate) uri_path_type: ::std::option::Option<crate::types::UriPathType>,
+    pub(crate) availability_start_time_configuration: ::std::option::Option<crate::types::DashAvailabilityStartTimeConfiguration>,
 }
 impl GetDashManifestConfigurationBuilder {
     /// <p>A short string that's appended to the endpoint URL. The manifest name creates a unique path to this endpoint. If you don't enter a value, MediaPackage uses the default manifest name, index.</p>
@@ -472,6 +479,23 @@ impl GetDashManifestConfigurationBuilder {
     pub fn get_uri_path_type(&self) -> &::std::option::Option<crate::types::UriPathType> {
         &self.uri_path_type
     }
+    /// <p>The configuration for the DASH <code>availabilityStartTime</code> attribute of the Media Presentation Description (MPD).</p>
+    pub fn availability_start_time_configuration(mut self, input: crate::types::DashAvailabilityStartTimeConfiguration) -> Self {
+        self.availability_start_time_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The configuration for the DASH <code>availabilityStartTime</code> attribute of the Media Presentation Description (MPD).</p>
+    pub fn set_availability_start_time_configuration(
+        mut self,
+        input: ::std::option::Option<crate::types::DashAvailabilityStartTimeConfiguration>,
+    ) -> Self {
+        self.availability_start_time_configuration = input;
+        self
+    }
+    /// <p>The configuration for the DASH <code>availabilityStartTime</code> attribute of the Media Presentation Description (MPD).</p>
+    pub fn get_availability_start_time_configuration(&self) -> &::std::option::Option<crate::types::DashAvailabilityStartTimeConfiguration> {
+        &self.availability_start_time_configuration
+    }
     /// Consumes the builder and constructs a [`GetDashManifestConfiguration`](crate::types::GetDashManifestConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`manifest_name`](crate::types::builders::GetDashManifestConfigurationBuilder::manifest_name)
@@ -507,6 +531,7 @@ impl GetDashManifestConfigurationBuilder {
             compactness: self.compactness,
             subtitle_configuration: self.subtitle_configuration,
             uri_path_type: self.uri_path_type,
+            availability_start_time_configuration: self.availability_start_time_configuration,
         })
     }
 }

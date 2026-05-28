@@ -155,16 +155,10 @@ mod test {
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
                 .url("https://123456789012.cloudfront-kvs.global.api.aws")
-                .property(
-                    "authSchemes",
-                    vec![{
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("signingName".to_string(), "cloudfront-keyvaluestore".to_string().into());
-                        out.insert("name".to_string(), "sigv4a".to_string().into());
-                        out.insert("signingRegionSet".to_string(), vec!["*".to_string().into()].into());
-                        out
-                    }
-                    .into()]
+                .auth_scheme(
+                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4a", 2)
+                        .put("signingName", "cloudfront-keyvaluestore".to_string())
+                        .put("signingRegionSet", vec!["*".to_string().into()])
                 )
                 .build()
         );
@@ -185,16 +179,10 @@ mod test {
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
                 .url("https://123456789012.cloudfront-kvs.global.api.aws")
-                .property(
-                    "authSchemes",
-                    vec![{
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("signingName".to_string(), "cloudfront-keyvaluestore".to_string().into());
-                        out.insert("name".to_string(), "sigv4a".to_string().into());
-                        out.insert("signingRegionSet".to_string(), vec!["*".to_string().into()].into());
-                        out
-                    }
-                    .into()]
+                .auth_scheme(
+                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4a", 2)
+                        .put("signingName", "cloudfront-keyvaluestore".to_string())
+                        .put("signingRegionSet", vec!["*".to_string().into()])
                 )
                 .build()
         );
@@ -250,16 +238,10 @@ mod test {
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
                 .url("https://123456789012.my-override.example.com")
-                .property(
-                    "authSchemes",
-                    vec![{
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("signingName".to_string(), "cloudfront-keyvaluestore".to_string().into());
-                        out.insert("name".to_string(), "sigv4a".to_string().into());
-                        out.insert("signingRegionSet".to_string(), vec!["*".to_string().into()].into());
-                        out
-                    }
-                    .into()]
+                .auth_scheme(
+                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4a", 2)
+                        .put("signingName", "cloudfront-keyvaluestore".to_string())
+                        .put("signingRegionSet", vec!["*".to_string().into()])
                 )
                 .build()
         );
@@ -280,16 +262,10 @@ mod test {
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
                 .url("http://123456789012.my-override.example.com/custom-path")
-                .property(
-                    "authSchemes",
-                    vec![{
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("signingName".to_string(), "cloudfront-keyvaluestore".to_string().into());
-                        out.insert("name".to_string(), "sigv4a".to_string().into());
-                        out.insert("signingRegionSet".to_string(), vec!["*".to_string().into()].into());
-                        out
-                    }
-                    .into()]
+                .auth_scheme(
+                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4a", 2)
+                        .put("signingName", "cloudfront-keyvaluestore".to_string())
+                        .put("signingRegionSet", vec!["*".to_string().into()])
                 )
                 .build()
         );
@@ -348,36 +324,400 @@ where
     }
 }
 
-/// The default endpoint resolver
-#[derive(Debug, Default)]
+#[derive(Debug)]
+/// The default endpoint resolver.
 pub struct DefaultResolver {
-    partition_resolver: crate::endpoint_lib::partition::PartitionResolver,
+    partition_resolver: &'static crate::endpoint_lib::partition::PartitionResolver,
+    endpoint_cache: ::arc_swap::ArcSwap<::std::option::Option<(Params, ::aws_smithy_types::endpoint::Endpoint)>>,
+}
+
+impl Default for DefaultResolver {
+    fn default() -> Self {
+        Self::new()
+    }
 }
 
 impl DefaultResolver {
-    /// Create a new endpoint resolver with default settings
+    /// Create a new DefaultResolver
     pub fn new() -> Self {
         Self {
-            partition_resolver: crate::endpoint_lib::DEFAULT_PARTITION_RESOLVER.clone(),
+            partition_resolver: &crate::endpoint_lib::DEFAULT_PARTITION_RESOLVER,
+            endpoint_cache: ::arc_swap::ArcSwap::from_pointee(None),
         }
     }
 
-    fn resolve_endpoint(
-        &self,
-        params: &crate::config::endpoint::Params,
+    #[allow(
+        unused_variables,
+        unused_parens,
+        clippy::double_parens,
+        clippy::useless_conversion,
+        clippy::bool_comparison,
+        clippy::comparison_to_empty,
+        clippy::needless_borrow,
+        clippy::useless_asref,
+        clippy::redundant_closure_call,
+        clippy::clone_on_copy
+    )]
+    fn resolve_endpoint<'a>(
+        &'a self,
+        params: &'a crate::config::endpoint::Params,
     ) -> ::std::result::Result<::aws_smithy_types::endpoint::Endpoint, ::aws_smithy_runtime_api::box_error::BoxError> {
-        let mut diagnostic_collector = crate::endpoint_lib::diagnostic::DiagnosticCollector::new();
-        Ok(
-            crate::config::endpoint::internals::resolve_endpoint(params, &mut diagnostic_collector, &self.partition_resolver)
-                .map_err(|err| err.with_source(diagnostic_collector.take_last_error()))?,
-        )
+        let mut _diagnostic_collector = crate::endpoint_lib::diagnostic::DiagnosticCollector::new();
+        #[allow(unused_mut)]
+        let mut context = ConditionContext::default();
+
+        // Param bindings
+        let kvs_arn = &params.kvs_arn;
+        let region = &params.region;
+        let use_fips = &params.use_fips;
+        let endpoint = &params.endpoint;
+
+        let mut current_ref: i32 = 2;
+        loop {
+            match current_ref {
+                ref_val if ref_val >= 100_000_000 => {
+                    return match (ref_val - 100_000_000) as usize {
+                        0 => ::std::result::Result::Err(Box::new(::aws_smithy_http::endpoint::ResolveEndpointError::message(
+                            "No endpoint rule matched",
+                        )) as ::aws_smithy_runtime_api::box_error::BoxError),
+                        1 => {
+                            let parsed_arn = context.parsed_arn.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            let url = context.url.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            ::std::result::Result::Ok(
+                                ::aws_smithy_types::endpoint::Endpoint::builder()
+                                    .url({
+                                        let mut out = String::new();
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&url.scheme());
+                                        out.push_str("://");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&parsed_arn.account_id());
+                                        out.push('.');
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&url.authority());
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&url.path());
+                                        out
+                                    })
+                                    .auth_scheme(
+                                        ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4a".to_string(), 2)
+                                            .put("signingName", "cloudfront-keyvaluestore")
+                                            .put("signingRegionSet", vec![::aws_smithy_types::Document::from("*".to_string())]),
+                                    )
+                                    .build(),
+                            )
+                        }
+                        2 => ::std::result::Result::Err(Box::new(::aws_smithy_http::endpoint::ResolveEndpointError::message(
+                            "Provided endpoint is not a valid URL".to_string(),
+                        )) as ::aws_smithy_runtime_api::box_error::BoxError),
+                        3 => {
+                            let parsed_arn = context.parsed_arn.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            ::std::result::Result::Ok(
+                                ::aws_smithy_types::endpoint::Endpoint::builder()
+                                    .url({
+                                        let mut out = String::new();
+                                        out.push_str("https://");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&parsed_arn.account_id());
+                                        out.push_str(".cloudfront-kvs.global.api.aws");
+                                        out
+                                    })
+                                    .auth_scheme(
+                                        ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4a".to_string(), 2)
+                                            .put("signingName", "cloudfront-keyvaluestore")
+                                            .put("signingRegionSet", vec![::aws_smithy_types::Document::from("*".to_string())]),
+                                    )
+                                    .build(),
+                            )
+                        }
+                        4 => {
+                            let parsed_arn = context.parsed_arn.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            let partition_result = context.partition_result.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            ::std::result::Result::Err(Box::new(::aws_smithy_http::endpoint::ResolveEndpointError::message({
+                                let mut out = String::new();
+                                out.push_str("Client was configured for partition `");
+                                #[allow(clippy::needless_borrow)]
+                                out.push_str(&partition_result.name());
+                                out.push_str("` but Kvs ARN has `");
+                                #[allow(clippy::needless_borrow)]
+                                out.push_str(&parsed_arn.partition());
+                                out.push('`');
+                                out
+                            })) as ::aws_smithy_runtime_api::box_error::BoxError)
+                        }
+                        5 => {
+                            let parsed_arn = context.parsed_arn.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            ::std::result::Result::Err(Box::new(::aws_smithy_http::endpoint::ResolveEndpointError::message({
+                                let mut out = String::new();
+                                out.push_str("CloudFront-KeyValueStore is not supported in partition `");
+                                #[allow(clippy::needless_borrow)]
+                                out.push_str(&parsed_arn.partition());
+                                out.push('`');
+                                out
+                            })) as ::aws_smithy_runtime_api::box_error::BoxError)
+                        }
+                        6 => {
+                            let arn_type = context.arn_type.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            ::std::result::Result::Err(Box::new(::aws_smithy_http::endpoint::ResolveEndpointError::message({
+                                let mut out = String::new();
+                                out.push_str("ARN resource type is invalid. Expected `key-value-store`, found: `");
+                                #[allow(clippy::needless_borrow)]
+                                out.push_str(&arn_type.as_ref());
+                                out.push('`');
+                                out
+                            })) as ::aws_smithy_runtime_api::box_error::BoxError)
+                        }
+                        7 => ::std::result::Result::Err(Box::new(::aws_smithy_http::endpoint::ResolveEndpointError::message(
+                            "No resource type found in the KVS ARN. Resource type must be `key-value-store`.".to_string(),
+                        )) as ::aws_smithy_runtime_api::box_error::BoxError),
+                        8 => {
+                            let parsed_arn = context.parsed_arn.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            ::std::result::Result::Err(Box::new(::aws_smithy_http::endpoint::ResolveEndpointError::message({
+                                let mut out = String::new();
+                                out.push_str("Provided ARN must be a global resource ARN. Found: `");
+                                #[allow(clippy::needless_borrow)]
+                                out.push_str(&parsed_arn.region());
+                                out.push('`');
+                                out
+                            })) as ::aws_smithy_runtime_api::box_error::BoxError)
+                        }
+                        9 => {
+                            let parsed_arn = context.parsed_arn.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            ::std::result::Result::Err(Box::new(::aws_smithy_http::endpoint::ResolveEndpointError::message({
+                                let mut out = String::new();
+                                out.push_str("Provided ARN is not a valid CloudFront Service ARN. Found: `");
+                                #[allow(clippy::needless_borrow)]
+                                out.push_str(&parsed_arn.service());
+                                out.push('`');
+                                out
+                            })) as ::aws_smithy_runtime_api::box_error::BoxError)
+                        }
+                        10 => ::std::result::Result::Err(Box::new(::aws_smithy_http::endpoint::ResolveEndpointError::message(
+                            "KVS ARN must be a valid ARN".to_string(),
+                        )) as ::aws_smithy_runtime_api::box_error::BoxError),
+                        11 => ::std::result::Result::Err(Box::new(::aws_smithy_http::endpoint::ResolveEndpointError::message(
+                            "KVS ARN must be provided to use this service".to_string(),
+                        )) as ::aws_smithy_runtime_api::box_error::BoxError),
+                        12 => ::std::result::Result::Err(Box::new(::aws_smithy_http::endpoint::ResolveEndpointError::message(
+                            "Invalid Configuration: FIPS is not supported with CloudFront-KeyValueStore.".to_string(),
+                        )) as ::aws_smithy_runtime_api::box_error::BoxError),
+                        _ => ::std::result::Result::Err(Box::new(::aws_smithy_http::endpoint::ResolveEndpointError::message(
+                            "No endpoint rule matched",
+                        )) as ::aws_smithy_runtime_api::box_error::BoxError),
+                    };
+                }
+                1 | -1 => {
+                    return ::std::result::Result::Err(
+                        Box::new(::aws_smithy_http::endpoint::ResolveEndpointError::message("No endpoint rule matched"))
+                            as ::aws_smithy_runtime_api::box_error::BoxError,
+                    )
+                }
+                ref_val => {
+                    let is_complement = ref_val < 0;
+                    let node = &NODES[(ref_val.unsigned_abs() as usize) - 1];
+                    let condition_result = match node.condition_index {
+                        0 => (use_fips) == (&true),
+                        1 => kvs_arn.is_some(),
+                        2 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let parsed_arn = &mut context.parsed_arn;
+                            let partition_resolver = &self.partition_resolver;
+                            {
+                                *parsed_arn = crate::endpoint_lib::arn::parse_arn(
+                                    if let Some(param) = kvs_arn { param } else { return false },
+                                    _diagnostic_collector,
+                                )
+                                .map(|inner| inner.into());
+                                parsed_arn.is_some()
+                            }
+                        })(&mut _diagnostic_collector),
+                        3 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let parsed_arn = &context.parsed_arn;
+                            let partition_resolver = &self.partition_resolver;
+                            (if let Some(inner) = parsed_arn { inner.service() } else { return false }) == ("cloudfront")
+                        })(&mut _diagnostic_collector),
+                        4 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let parsed_arn = &context.parsed_arn;
+                            let partition_resolver = &self.partition_resolver;
+                            (if let Some(inner) = parsed_arn { inner.region() } else { return false }) == ("")
+                        })(&mut _diagnostic_collector),
+                        5 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let parsed_arn = &context.parsed_arn;
+                            let arn_type = &mut context.arn_type;
+                            let partition_resolver = &self.partition_resolver;
+                            {
+                                *arn_type = if let Some(inner) = parsed_arn {
+                                    inner.resource_id().first().cloned()
+                                } else {
+                                    return false;
+                                }
+                                .map(|inner| inner.into());
+                                arn_type.is_some()
+                            }
+                        })(&mut _diagnostic_collector),
+                        6 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let arn_type = &context.arn_type;
+                            let partition_resolver = &self.partition_resolver;
+                            (arn_type) == &mut Some(("".to_string().into()))
+                        })(&mut _diagnostic_collector),
+                        7 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let arn_type = &context.arn_type;
+                            let partition_resolver = &self.partition_resolver;
+                            (arn_type) == &mut Some(("key-value-store".to_string().into()))
+                        })(&mut _diagnostic_collector),
+                        8 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let parsed_arn = &context.parsed_arn;
+                            let partition_resolver = &self.partition_resolver;
+                            (if let Some(inner) = parsed_arn { inner.partition() } else { return false }) == ("aws")
+                        })(&mut _diagnostic_collector),
+                        9 => region.is_some(),
+                        10 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let partition_result = &mut context.partition_result;
+                            let partition_resolver = &self.partition_resolver;
+                            {
+                                *partition_result = partition_resolver
+                                    .resolve_partition(if let Some(param) = region { param } else { return false }, _diagnostic_collector)
+                                    .map(|inner| inner.into());
+                                partition_result.is_some()
+                            }
+                        })(&mut _diagnostic_collector),
+                        11 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let parsed_arn = &context.parsed_arn;
+                            let partition_result = &context.partition_result;
+                            let partition_resolver = &self.partition_resolver;
+                            (if let Some(inner) = parsed_arn { inner.partition() } else { return false })
+                                == (if let Some(inner) = partition_result {
+                                    inner.name()
+                                } else {
+                                    return false;
+                                })
+                        })(&mut _diagnostic_collector),
+                        12 => endpoint.is_some(),
+                        13 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let url = &mut context.url;
+                            let partition_resolver = &self.partition_resolver;
+                            {
+                                *url = crate::endpoint_lib::parse_url::parse_url(
+                                    if let Some(param) = endpoint { param } else { return false },
+                                    _diagnostic_collector,
+                                )
+                                .map(|inner| inner.into());
+                                url.is_some()
+                            }
+                        })(&mut _diagnostic_collector),
+                        _ => unreachable!("Invalid condition index"),
+                    };
+                    current_ref = if is_complement ^ condition_result { node.high_ref } else { node.low_ref };
+                }
+            }
+        }
     }
 }
 
 impl crate::config::endpoint::ResolveEndpoint for DefaultResolver {
-    fn resolve_endpoint(&self, params: &crate::config::endpoint::Params) -> ::aws_smithy_runtime_api::client::endpoint::EndpointFuture<'_> {
-        ::aws_smithy_runtime_api::client::endpoint::EndpointFuture::ready(self.resolve_endpoint(params))
+    fn resolve_endpoint<'a>(&'a self, params: &'a crate::config::endpoint::Params) -> ::aws_smithy_runtime_api::client::endpoint::EndpointFuture<'a> {
+        // Check single-entry cache (lock-free read via ArcSwap)
+        let cached = self.endpoint_cache.load();
+        if let Some((cached_params, cached_endpoint)) = cached.as_ref() {
+            if cached_params == params {
+                return ::aws_smithy_runtime_api::client::endpoint::EndpointFuture::ready(::std::result::Result::Ok(cached_endpoint.clone()));
+            }
+        }
+        drop(cached);
+        let result = self.resolve_endpoint(params);
+        if let ::std::result::Result::Ok(ref endpoint) = result {
+            self.endpoint_cache.store(::std::sync::Arc::new(Some((params.clone(), endpoint.clone()))));
+        }
+        ::aws_smithy_runtime_api::client::endpoint::EndpointFuture::ready(result)
     }
+}
+const NODES: [crate::endpoint_lib::bdd_interpreter::BddNode; 15] = [
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: -1,
+        high_ref: 1,
+        low_ref: -1,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 0,
+        high_ref: 100000012,
+        low_ref: 3,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 1,
+        high_ref: 4,
+        low_ref: 100000011,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 2,
+        high_ref: 5,
+        low_ref: 100000010,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 3,
+        high_ref: 6,
+        low_ref: 100000009,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 4,
+        high_ref: 7,
+        low_ref: 100000008,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 5,
+        high_ref: 8,
+        low_ref: 100000007,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 6,
+        high_ref: 100000007,
+        low_ref: 9,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 7,
+        high_ref: 10,
+        low_ref: 100000006,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 8,
+        high_ref: 11,
+        low_ref: 100000005,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 9,
+        high_ref: 12,
+        low_ref: 14,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 10,
+        high_ref: 13,
+        low_ref: 14,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 11,
+        high_ref: 14,
+        low_ref: 100000004,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 12,
+        high_ref: 15,
+        low_ref: 100000003,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 13,
+        high_ref: 100000001,
+        low_ref: 100000002,
+    },
+];
+// These are all optional since they are set by conditions and will
+// all be unset when we start evaluation
+#[derive(Default)]
+#[allow(unused_lifetimes)]
+pub(crate) struct ConditionContext<'a> {
+    pub(crate) parsed_arn: Option<crate::endpoint_lib::arn::Arn<'a>>,
+    pub(crate) arn_type: ::std::option::Option<::std::string::String>,
+    pub(crate) partition_result: Option<crate::endpoint_lib::partition::Partition<'a>>,
+    pub(crate) url: Option<crate::endpoint_lib::parse_url::Url<'a>>,
+    // Sometimes none of the members reference the lifetime, this makes it still valid
+    phantom: std::marker::PhantomData<&'a ()>,
 }
 
 #[non_exhaustive]
@@ -558,5 +898,3 @@ impl std::fmt::Display for InvalidParams {
 }
 
 impl std::error::Error for InvalidParams {}
-
-mod internals;

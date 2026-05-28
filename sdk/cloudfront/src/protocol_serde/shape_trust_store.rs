@@ -102,6 +102,21 @@ pub fn de_trust_store(
                 builder = builder.set_reason(var_7);
             }
             ,
+            s if s.matches("UseClientCertificateOCSPEndpoint") /* UseClientCertificateOCSPEndpoint com.amazonaws.cloudfront#TrustStore$UseClientCertificateOCSPEndpoint */ =>  {
+                let var_8 =
+                    Some(
+                         {
+                            <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (boolean: `com.amazonaws.cloudfront#boolean`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_use_client_certificate_ocsp_endpoint(var_8);
+            }
+            ,
             _ => {}
         }
     }

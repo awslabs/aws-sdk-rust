@@ -22,7 +22,7 @@ impl crate::operation::create_chat::builders::CreateChatInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateChat`.
 ///
-/// Creates a new chat execution in the specified agent space
+/// <p>Creates a new chat execution in the specified agent space</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateChatFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,48 +108,48 @@ impl CreateChatFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// Unique identifier for an agent space (allows alphanumeric characters and hyphens; 1-64 characters)
+    /// <p>Unique identifier for an agent space (allows alphanumeric characters and hyphens; 1-64 characters)</p>
     pub fn agent_space_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.agent_space_id(input.into());
         self
     }
-    /// Unique identifier for an agent space (allows alphanumeric characters and hyphens; 1-64 characters)
+    /// <p>Unique identifier for an agent space (allows alphanumeric characters and hyphens; 1-64 characters)</p>
     pub fn set_agent_space_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_agent_space_id(input);
         self
     }
-    /// Unique identifier for an agent space (allows alphanumeric characters and hyphens; 1-64 characters)
+    /// <p>Unique identifier for an agent space (allows alphanumeric characters and hyphens; 1-64 characters)</p>
     pub fn get_agent_space_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_agent_space_id()
     }
-    /// The user identifier for the chat. This field is deprecated and will be ignored — the service resolves user identity from the authenticated session.
+    /// <p>The user identifier for the chat. This field is deprecated and will be ignored — the service resolves user identity from the authenticated session.</p>
     #[deprecated(note = "userId is managed by the service and should not be provided by the caller", since = "2026-04-15")]
     pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.user_id(input.into());
         self
     }
-    /// The user identifier for the chat. This field is deprecated and will be ignored — the service resolves user identity from the authenticated session.
+    /// <p>The user identifier for the chat. This field is deprecated and will be ignored — the service resolves user identity from the authenticated session.</p>
     #[deprecated(note = "userId is managed by the service and should not be provided by the caller", since = "2026-04-15")]
     pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_user_id(input);
         self
     }
-    /// The user identifier for the chat. This field is deprecated and will be ignored — the service resolves user identity from the authenticated session.
+    /// <p>The user identifier for the chat. This field is deprecated and will be ignored — the service resolves user identity from the authenticated session.</p>
     #[deprecated(note = "userId is managed by the service and should not be provided by the caller", since = "2026-04-15")]
     pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_user_id()
     }
-    /// The authentication type of the user
+    /// <p>The authentication type of the user</p>
     pub fn user_type(mut self, input: crate::types::UserType) -> Self {
         self.inner = self.inner.user_type(input);
         self
     }
-    /// The authentication type of the user
+    /// <p>The authentication type of the user</p>
     pub fn set_user_type(mut self, input: ::std::option::Option<crate::types::UserType>) -> Self {
         self.inner = self.inner.set_user_type(input);
         self
     }
-    /// The authentication type of the user
+    /// <p>The authentication type of the user</p>
     pub fn get_user_type(&self) -> &::std::option::Option<crate::types::UserType> {
         self.inner.get_user_type()
     }

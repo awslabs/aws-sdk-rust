@@ -1,8 +1,8 @@
 [workspace]
 resolver = "2"
 exclude = [
-    "tests/webassembly-no-os",
     "tests/telemetry",
+    "tests/webassembly-no-os",
     "tests/no-default-features",
     "tests/webassembly-wstd"
 ]
@@ -361,6 +361,7 @@ members = [
     "sdk/rekognition",
     "sdk/repostspace",
     "sdk/resiliencehub",
+    "sdk/resiliencehubv2",
     "sdk/resourceexplorer2",
     "sdk/resourcegroups",
     "sdk/resourcegroupstagging",

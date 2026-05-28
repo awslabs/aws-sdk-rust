@@ -1110,6 +1110,8 @@ mod describe_ipam_external_resource_verification_tokens;
 
 mod describe_ipam_policies;
 
+mod describe_ipam_pool_allocations;
+
 mod describe_ipam_pools;
 
 mod describe_ipam_prefix_list_resolver_targets;
@@ -1695,6 +1697,8 @@ mod modify_ipam;
 mod modify_ipam_policy_allocation_rules;
 
 mod modify_ipam_pool;
+
+mod modify_ipam_pool_allocation;
 
 mod modify_ipam_prefix_list_resolver;
 

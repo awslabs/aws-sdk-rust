@@ -29,7 +29,7 @@ impl crate::operation::generate_mac_emv_pin_change::builders::GenerateMacEmvPinC
 /// <p>This operation supports Amex, EMV2000, EMVCommon, Mastercard and Visa derivation methods, each requiring specific input parameters. Users must follow the specific derivation method and input parameters defined by the respective payment card scheme.</p><note>
 /// <p>Use <code>GenerateMac</code> operation when sending a script update to an EMV card that does not involve PIN change. When assigning IAM permissions, it is important to understand that <code>EncryptData</code> using EMV keys and <code>GenerateMac</code> perform similar functions to this command.</p>
 /// </note>
-/// <p><b>Cross-account use</b>: This operation can't be used across different Amazon Web Services accounts.</p>
+/// <p><b>Cross-account use</b>: This operation supports cross-account use when the key has a resource-based policy that grants access. For more information, see <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/security_iam_resource-based-policies.html">Resource-based policies</a>.</p>
 /// <p><b>Related operations:</b></p>
 /// <ul>
 /// <li>

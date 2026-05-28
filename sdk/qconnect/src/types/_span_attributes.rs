@@ -72,8 +72,10 @@ pub struct SpanAttributes {
     pub prompt_name: ::std::option::Option<::std::string::String>,
     /// <p>AI prompt version number</p>
     pub prompt_version: ::std::option::Option<i32>,
-    /// Time to first token in milliseconds, measured from when Amazon Bedrock was invoked to when the first token was returned
+    /// <p>Time to first token in milliseconds, measured from when Amazon Bedrock was invoked to when the first token was returned</p>
     pub time_to_first_token_ms: ::std::option::Option<i32>,
+    /// <p>Guardrail assessments for the inference span. Absent on other span types and when no AI Guardrail is attached to the AI Agent.</p>
+    pub guardrail_assessments: ::std::option::Option<::std::vec::Vec<crate::types::SpanGuardrailAssessment>>,
 }
 impl SpanAttributes {
     /// <p>Action being performed</p>
@@ -220,9 +222,15 @@ impl SpanAttributes {
     pub fn prompt_version(&self) -> ::std::option::Option<i32> {
         self.prompt_version
     }
-    /// Time to first token in milliseconds, measured from when Amazon Bedrock was invoked to when the first token was returned
+    /// <p>Time to first token in milliseconds, measured from when Amazon Bedrock was invoked to when the first token was returned</p>
     pub fn time_to_first_token_ms(&self) -> ::std::option::Option<i32> {
         self.time_to_first_token_ms
+    }
+    /// <p>Guardrail assessments for the inference span. Absent on other span types and when no AI Guardrail is attached to the AI Agent.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.guardrail_assessments.is_none()`.
+    pub fn guardrail_assessments(&self) -> &[crate::types::SpanGuardrailAssessment] {
+        self.guardrail_assessments.as_deref().unwrap_or_default()
     }
 }
 impl SpanAttributes {
@@ -271,6 +279,7 @@ pub struct SpanAttributesBuilder {
     pub(crate) prompt_name: ::std::option::Option<::std::string::String>,
     pub(crate) prompt_version: ::std::option::Option<i32>,
     pub(crate) time_to_first_token_ms: ::std::option::Option<i32>,
+    pub(crate) guardrail_assessments: ::std::option::Option<::std::vec::Vec<crate::types::SpanGuardrailAssessment>>,
 }
 impl SpanAttributesBuilder {
     /// <p>Action being performed</p>
@@ -773,19 +782,39 @@ impl SpanAttributesBuilder {
     pub fn get_prompt_version(&self) -> &::std::option::Option<i32> {
         &self.prompt_version
     }
-    /// Time to first token in milliseconds, measured from when Amazon Bedrock was invoked to when the first token was returned
+    /// <p>Time to first token in milliseconds, measured from when Amazon Bedrock was invoked to when the first token was returned</p>
     pub fn time_to_first_token_ms(mut self, input: i32) -> Self {
         self.time_to_first_token_ms = ::std::option::Option::Some(input);
         self
     }
-    /// Time to first token in milliseconds, measured from when Amazon Bedrock was invoked to when the first token was returned
+    /// <p>Time to first token in milliseconds, measured from when Amazon Bedrock was invoked to when the first token was returned</p>
     pub fn set_time_to_first_token_ms(mut self, input: ::std::option::Option<i32>) -> Self {
         self.time_to_first_token_ms = input;
         self
     }
-    /// Time to first token in milliseconds, measured from when Amazon Bedrock was invoked to when the first token was returned
+    /// <p>Time to first token in milliseconds, measured from when Amazon Bedrock was invoked to when the first token was returned</p>
     pub fn get_time_to_first_token_ms(&self) -> &::std::option::Option<i32> {
         &self.time_to_first_token_ms
+    }
+    /// Appends an item to `guardrail_assessments`.
+    ///
+    /// To override the contents of this collection use [`set_guardrail_assessments`](Self::set_guardrail_assessments).
+    ///
+    /// <p>Guardrail assessments for the inference span. Absent on other span types and when no AI Guardrail is attached to the AI Agent.</p>
+    pub fn guardrail_assessments(mut self, input: crate::types::SpanGuardrailAssessment) -> Self {
+        let mut v = self.guardrail_assessments.unwrap_or_default();
+        v.push(input);
+        self.guardrail_assessments = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Guardrail assessments for the inference span. Absent on other span types and when no AI Guardrail is attached to the AI Agent.</p>
+    pub fn set_guardrail_assessments(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SpanGuardrailAssessment>>) -> Self {
+        self.guardrail_assessments = input;
+        self
+    }
+    /// <p>Guardrail assessments for the inference span. Absent on other span types and when no AI Guardrail is attached to the AI Agent.</p>
+    pub fn get_guardrail_assessments(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SpanGuardrailAssessment>> {
+        &self.guardrail_assessments
     }
     /// Consumes the builder and constructs a [`SpanAttributes`](crate::types::SpanAttributes).
     pub fn build(self) -> crate::types::SpanAttributes {
@@ -825,6 +854,7 @@ impl SpanAttributesBuilder {
             prompt_name: self.prompt_name,
             prompt_version: self.prompt_version,
             time_to_first_token_ms: self.time_to_first_token_ms,
+            guardrail_assessments: self.guardrail_assessments,
         }
     }
 }

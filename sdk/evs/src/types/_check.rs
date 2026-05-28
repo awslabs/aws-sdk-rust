@@ -14,7 +14,7 @@ pub struct Check {
     /// <p><code>REACHABILITY</code>: checks that the Amazon EVS control plane has a persistent connection to SDDC Manager. If Amazon EVS cannot reach the environment, this check fails.</p></li>
     /// <li>
     /// <p><code>HOST_COUNT</code>: Checks that your environment has a minimum of 4 hosts.</p>
-    /// <p>If this check fails, you will need to add hosts so that your environment meets this minimum requirement. Amazon EVS only supports environments with 4-16 hosts.</p></li>
+    /// <p>If this check fails, you will need to add hosts so that your environment meets this minimum requirement. Amazon EVS only supports environments with 4-32 hosts.</p></li>
     /// </ul>
     pub r#type: ::std::option::Option<crate::types::CheckType>,
     /// <p>The check result.</p>
@@ -33,7 +33,7 @@ impl Check {
     /// <p><code>REACHABILITY</code>: checks that the Amazon EVS control plane has a persistent connection to SDDC Manager. If Amazon EVS cannot reach the environment, this check fails.</p></li>
     /// <li>
     /// <p><code>HOST_COUNT</code>: Checks that your environment has a minimum of 4 hosts.</p>
-    /// <p>If this check fails, you will need to add hosts so that your environment meets this minimum requirement. Amazon EVS only supports environments with 4-16 hosts.</p></li>
+    /// <p>If this check fails, you will need to add hosts so that your environment meets this minimum requirement. Amazon EVS only supports environments with 4-32 hosts.</p></li>
     /// </ul>
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::CheckType> {
         self.r#type.as_ref()
@@ -73,7 +73,7 @@ impl CheckBuilder {
     /// <p><code>REACHABILITY</code>: checks that the Amazon EVS control plane has a persistent connection to SDDC Manager. If Amazon EVS cannot reach the environment, this check fails.</p></li>
     /// <li>
     /// <p><code>HOST_COUNT</code>: Checks that your environment has a minimum of 4 hosts.</p>
-    /// <p>If this check fails, you will need to add hosts so that your environment meets this minimum requirement. Amazon EVS only supports environments with 4-16 hosts.</p></li>
+    /// <p>If this check fails, you will need to add hosts so that your environment meets this minimum requirement. Amazon EVS only supports environments with 4-32 hosts.</p></li>
     /// </ul>
     pub fn r#type(mut self, input: crate::types::CheckType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -89,7 +89,7 @@ impl CheckBuilder {
     /// <p><code>REACHABILITY</code>: checks that the Amazon EVS control plane has a persistent connection to SDDC Manager. If Amazon EVS cannot reach the environment, this check fails.</p></li>
     /// <li>
     /// <p><code>HOST_COUNT</code>: Checks that your environment has a minimum of 4 hosts.</p>
-    /// <p>If this check fails, you will need to add hosts so that your environment meets this minimum requirement. Amazon EVS only supports environments with 4-16 hosts.</p></li>
+    /// <p>If this check fails, you will need to add hosts so that your environment meets this minimum requirement. Amazon EVS only supports environments with 4-32 hosts.</p></li>
     /// </ul>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::CheckType>) -> Self {
         self.r#type = input;
@@ -105,7 +105,7 @@ impl CheckBuilder {
     /// <p><code>REACHABILITY</code>: checks that the Amazon EVS control plane has a persistent connection to SDDC Manager. If Amazon EVS cannot reach the environment, this check fails.</p></li>
     /// <li>
     /// <p><code>HOST_COUNT</code>: Checks that your environment has a minimum of 4 hosts.</p>
-    /// <p>If this check fails, you will need to add hosts so that your environment meets this minimum requirement. Amazon EVS only supports environments with 4-16 hosts.</p></li>
+    /// <p>If this check fails, you will need to add hosts so that your environment meets this minimum requirement. Amazon EVS only supports environments with 4-32 hosts.</p></li>
     /// </ul>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::CheckType> {
         &self.r#type

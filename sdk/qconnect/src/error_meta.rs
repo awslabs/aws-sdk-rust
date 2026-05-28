@@ -2031,6 +2031,33 @@ impl From<crate::operation::list_message_template_versions::ListMessageTemplateV
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_models::ListModelsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_models::ListModelsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_models::ListModelsError> for Error {
+    fn from(err: crate::operation::list_models::ListModelsError) -> Self {
+        match err {
+            crate::operation::list_models::ListModelsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_models::ListModelsError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::list_models::ListModelsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_models::ListModelsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_models::ListModelsError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::list_models::ListModelsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_models::ListModelsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_quick_responses::ListQuickResponsesError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

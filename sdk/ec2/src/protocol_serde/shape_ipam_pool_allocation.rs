@@ -99,6 +99,16 @@ pub fn de_ipam_pool_allocation(
                 builder = builder.set_resource_owner(var_7);
             }
             ,
+            s if s.matches("tagSet") /* Tags com.amazonaws.ec2#IpamPoolAllocation$Tags */ =>  {
+                let var_8 =
+                    Some(
+                        crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_tags(var_8);
+            }
+            ,
             _ => {}
         }
     }

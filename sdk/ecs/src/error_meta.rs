@@ -170,6 +170,44 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::continue_service_deployment::ContinueServiceDeploymentError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::continue_service_deployment::ContinueServiceDeploymentError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::continue_service_deployment::ContinueServiceDeploymentError> for Error {
+    fn from(err: crate::operation::continue_service_deployment::ContinueServiceDeploymentError) -> Self {
+        match err {
+            crate::operation::continue_service_deployment::ContinueServiceDeploymentError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::continue_service_deployment::ContinueServiceDeploymentError::ClientException(inner) => Error::ClientException(inner),
+            crate::operation::continue_service_deployment::ContinueServiceDeploymentError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::continue_service_deployment::ContinueServiceDeploymentError::ServerException(inner) => Error::ServerException(inner),
+            crate::operation::continue_service_deployment::ContinueServiceDeploymentError::ServiceDeploymentNotFoundException(inner) => {
+                Error::ServiceDeploymentNotFoundException(inner)
+            }
+            crate::operation::continue_service_deployment::ContinueServiceDeploymentError::UnsupportedFeatureException(inner) => {
+                Error::UnsupportedFeatureException(inner)
+            }
+            crate::operation::continue_service_deployment::ContinueServiceDeploymentError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_capacity_provider::CreateCapacityProviderError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

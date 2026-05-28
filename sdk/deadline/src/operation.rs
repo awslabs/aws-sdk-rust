@@ -133,6 +133,9 @@ pub mod delete_queue_limit_association;
 /// Types for the `DeleteStorageProfile` operation.
 pub mod delete_storage_profile;
 
+/// Types for the `DeleteVolume` operation.
+pub mod delete_volume;
+
 /// Types for the `DeleteWorker` operation.
 pub mod delete_worker;
 
@@ -204,6 +207,9 @@ pub mod get_storage_profile_for_queue;
 
 /// Types for the `GetTask` operation.
 pub mod get_task;
+
+/// Types for the `GetVolume` operation.
+pub mod get_volume;
 
 /// Types for the `GetWorker` operation.
 pub mod get_worker;
@@ -291,6 +297,9 @@ pub mod list_tags_for_resource;
 
 /// Types for the `ListTasks` operation.
 pub mod list_tasks;
+
+/// Types for the `ListVolumes` operation.
+pub mod list_volumes;
 
 /// Types for the `ListWorkers` operation.
 pub mod list_workers;

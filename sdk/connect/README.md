@@ -1,15 +1,15 @@
 # aws-sdk-connect
 
-  - [Amazon Connect actions](https://docs.aws.amazon.com/connect/latest/APIReference/API_Operations_Amazon_Connect_Service.html)
-  - [Amazon Connect data types](https://docs.aws.amazon.com/connect/latest/APIReference/API_Types_Amazon_Connect_Service.html)
+  - [Connect Customer actions](https://docs.aws.amazon.com/connect/latest/APIReference/API_Operations_Amazon_Connect_Service.html)
+  - [Connect Customer data types](https://docs.aws.amazon.com/connect/latest/APIReference/API_Types_Amazon_Connect_Service.html)
 
-Amazon Connect is a cloud-based contact center solution that you use to set up and manage a customer contact center and provide reliable customer engagement at any scale.
+Connect Customer is a cloud-based contact center solution that you use to set up and manage a customer contact center and provide reliable customer engagement at any scale.
 
-Amazon Connect provides metrics and real-time reporting that enable you to optimize contact routing. You can also resolve customer issues more efficiently by getting customers in touch with the appropriate agents.
+Connect Customer provides metrics and real-time reporting that enable you to optimize contact routing. You can also resolve customer issues more efficiently by getting customers in touch with the appropriate agents.
 
-There are limits to the number of Amazon Connect resources that you can create. There are also limits to the number of requests that you can make per second. For more information, see [Amazon Connect Service Quotas](https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html) in the _Amazon Connect Administrator Guide_.
+There are limits to the number of Connect Customer resources that you can create. There are also limits to the number of requests that you can make per second. For more information, see [Connect Customer Service Quotas](https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html) in the _Connect Customer Administrator Guide_.
 
-You can use an endpoint to connect programmatically to an Amazon Web Services service. For a list of Amazon Connect endpoints, see [Amazon Connect Endpoints](https://docs.aws.amazon.com/general/latest/gr/connect_region.html).
+You can use an endpoint to connect programmatically to an Amazon Web Services service. For a list of Connect Customer endpoints, see [Connect Customer Endpoints](https://docs.aws.amazon.com/general/latest/gr/connect_region.html).
 
 ## Getting Started
 
@@ -23,7 +23,7 @@ your project, add the following to your **Cargo.toml** file:
 ```toml
 [dependencies]
 aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-aws-sdk-connect = "1.174.0"
+aws-sdk-connect = "1.175.0"
 tokio = { version = "1", features = ["full"] }
 ```
 

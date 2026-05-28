@@ -22,7 +22,7 @@ impl crate::operation::get_payment_instrument_balance::builders::GetPaymentInstr
 }
 /// Fluent builder constructing a request to `GetPaymentInstrumentBalance`.
 ///
-/// Get the balance of a payment instrument
+/// <p>Get the balance of a payment instrument.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetPaymentInstrumentBalanceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,101 +108,101 @@ impl GetPaymentInstrumentBalanceFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// The user ID associated with this payment instrument.
+    /// <p>The user ID associated with this payment instrument.</p>
     pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.user_id(input.into());
         self
     }
-    /// The user ID associated with this payment instrument.
+    /// <p>The user ID associated with this payment instrument.</p>
     pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_user_id(input);
         self
     }
-    /// The user ID associated with this payment instrument.
+    /// <p>The user ID associated with this payment instrument.</p>
     pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_user_id()
     }
-    /// The agent name associated with this request, used for observability.
+    /// <p>The agent name associated with this request, used for observability.</p>
     pub fn agent_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.agent_name(input.into());
         self
     }
-    /// The agent name associated with this request, used for observability.
+    /// <p>The agent name associated with this request, used for observability.</p>
     pub fn set_agent_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_agent_name(input);
         self
     }
-    /// The agent name associated with this request, used for observability.
+    /// <p>The agent name associated with this request, used for observability.</p>
     pub fn get_agent_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_agent_name()
     }
-    /// The ARN of the payment manager that owns this payment instrument.
+    /// <p>The ARN of the payment manager that owns this payment instrument.</p>
     pub fn payment_manager_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.payment_manager_arn(input.into());
         self
     }
-    /// The ARN of the payment manager that owns this payment instrument.
+    /// <p>The ARN of the payment manager that owns this payment instrument.</p>
     pub fn set_payment_manager_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_payment_manager_arn(input);
         self
     }
-    /// The ARN of the payment manager that owns this payment instrument.
+    /// <p>The ARN of the payment manager that owns this payment instrument.</p>
     pub fn get_payment_manager_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_payment_manager_arn()
     }
-    /// The ID of the payment connector associated with this instrument.
+    /// <p>The ID of the payment connector associated with this instrument.</p>
     pub fn payment_connector_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.payment_connector_id(input.into());
         self
     }
-    /// The ID of the payment connector associated with this instrument.
+    /// <p>The ID of the payment connector associated with this instrument.</p>
     pub fn set_payment_connector_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_payment_connector_id(input);
         self
     }
-    /// The ID of the payment connector associated with this instrument.
+    /// <p>The ID of the payment connector associated with this instrument.</p>
     pub fn get_payment_connector_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_payment_connector_id()
     }
-    /// The ID of the payment instrument to query balance for.
+    /// <p>The ID of the payment instrument to query balance for.</p>
     pub fn payment_instrument_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.payment_instrument_id(input.into());
         self
     }
-    /// The ID of the payment instrument to query balance for.
+    /// <p>The ID of the payment instrument to query balance for.</p>
     pub fn set_payment_instrument_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_payment_instrument_id(input);
         self
     }
-    /// The ID of the payment instrument to query balance for.
+    /// <p>The ID of the payment instrument to query balance for.</p>
     pub fn get_payment_instrument_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_payment_instrument_id()
     }
-    /// The specific blockchain chain to query balance on. Required because balances are chain-specific — the same wallet address may hold different token balances on different chains.
+    /// <p>The specific blockchain chain to query balance on. Required because balances are chain-specific.</p>
     pub fn chain(mut self, input: crate::types::BlockchainChainId) -> Self {
         self.inner = self.inner.chain(input);
         self
     }
-    /// The specific blockchain chain to query balance on. Required because balances are chain-specific — the same wallet address may hold different token balances on different chains.
+    /// <p>The specific blockchain chain to query balance on. Required because balances are chain-specific.</p>
     pub fn set_chain(mut self, input: ::std::option::Option<crate::types::BlockchainChainId>) -> Self {
         self.inner = self.inner.set_chain(input);
         self
     }
-    /// The specific blockchain chain to query balance on. Required because balances are chain-specific — the same wallet address may hold different token balances on different chains.
+    /// <p>The specific blockchain chain to query balance on. Required because balances are chain-specific.</p>
     pub fn get_chain(&self) -> &::std::option::Option<crate::types::BlockchainChainId> {
         self.inner.get_chain()
     }
-    /// The token to query balance for. Required to specify which supported token's balance to return.
+    /// <p>The token to query balance for. Only tokens supported for X402 payments are returned.</p>
     pub fn token(mut self, input: crate::types::InstrumentBalanceToken) -> Self {
         self.inner = self.inner.token(input);
         self
     }
-    /// The token to query balance for. Required to specify which supported token's balance to return.
+    /// <p>The token to query balance for. Only tokens supported for X402 payments are returned.</p>
     pub fn set_token(mut self, input: ::std::option::Option<crate::types::InstrumentBalanceToken>) -> Self {
         self.inner = self.inner.set_token(input);
         self
     }
-    /// The token to query balance for. Required to specify which supported token's balance to return.
+    /// <p>The token to query balance for. Only tokens supported for X402 payments are returned.</p>
     pub fn get_token(&self) -> &::std::option::Option<crate::types::InstrumentBalanceToken> {
         self.inner.get_token()
     }

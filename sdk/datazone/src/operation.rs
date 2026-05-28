@@ -91,6 +91,9 @@ pub mod create_group_profile;
 /// Types for the `CreateListingChangeSet` operation.
 pub mod create_listing_change_set;
 
+/// Types for the `CreateNotebook` operation.
+pub mod create_notebook;
+
 /// Types for the `CreateProject` operation.
 pub mod create_project;
 
@@ -171,6 +174,9 @@ pub mod delete_glossary_term;
 
 /// Types for the `DeleteListing` operation.
 pub mod delete_listing;
+
+/// Types for the `DeleteNotebook` operation.
+pub mod delete_notebook;
 
 /// Types for the `DeleteProject` operation.
 pub mod delete_project;
@@ -283,6 +289,12 @@ pub mod get_listing;
 /// Types for the `GetMetadataGenerationRun` operation.
 pub mod get_metadata_generation_run;
 
+/// Types for the `GetNotebook` operation.
+pub mod get_notebook;
+
+/// Types for the `GetNotebookExport` operation.
+pub mod get_notebook_export;
+
 /// Types for the `GetNotebookRun` operation.
 pub mod get_notebook_run;
 
@@ -379,6 +391,9 @@ pub mod list_metadata_generation_runs;
 /// Types for the `ListNotebookRuns` operation.
 pub mod list_notebook_runs;
 
+/// Types for the `ListNotebooks` operation.
+pub mod list_notebooks;
+
 /// Types for the `ListNotifications` operation.
 pub mod list_notifications;
 
@@ -466,6 +481,12 @@ pub mod start_data_source_run;
 /// Types for the `StartMetadataGenerationRun` operation.
 pub mod start_metadata_generation_run;
 
+/// Types for the `StartNotebookExport` operation.
+pub mod start_notebook_export;
+
+/// Types for the `StartNotebookImport` operation.
+pub mod start_notebook_import;
+
 /// Types for the `StartNotebookRun` operation.
 pub mod start_notebook_run;
 
@@ -516,6 +537,9 @@ pub mod update_glossary_term;
 
 /// Types for the `UpdateGroupProfile` operation.
 pub mod update_group_profile;
+
+/// Types for the `UpdateNotebook` operation.
+pub mod update_notebook;
 
 /// Types for the `UpdateProject` operation.
 pub mod update_project;

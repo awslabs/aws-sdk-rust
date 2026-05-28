@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum SpanMessageValue {
-    /// Model reasoning and it's internal decision making process
+    /// <p>Model reasoning and it's internal decision making process</p>
     Reasoning(crate::types::SpanReasoningValue),
     /// <p>Text message content</p>
     Text(crate::types::SpanTextValue),

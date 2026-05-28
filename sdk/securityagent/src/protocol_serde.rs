@@ -513,6 +513,8 @@ pub(crate) mod shape_member_metadata;
 
 pub(crate) mod shape_step_list;
 
+pub(crate) mod shape_verification_script;
+
 pub(crate) mod shape_category;
 
 pub(crate) mod shape_code_location;
@@ -537,4 +539,8 @@ pub(crate) mod shape_uri_list;
 
 pub(crate) mod shape_user_metadata;
 
+pub(crate) mod shape_verification_script_env_var_list;
+
 pub(crate) mod shape_code_remediation_task_details;
+
+pub(crate) mod shape_verification_script_env_var;

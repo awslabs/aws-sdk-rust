@@ -249,6 +249,20 @@ impl UpdateDomainFluentBuilder {
     pub fn get_tag_propagation(&self) -> &::std::option::Option<crate::types::TagPropagation> {
         self.inner.get_tag_propagation()
     }
+    /// <p>Indicates whether to create a home EFS file system for the domain. You can change from <code>Disabled</code> to <code>Enabled</code> to provision EFS on demand, but you cannot change from <code>Enabled</code> to <code>Disabled</code>.</p>
+    pub fn home_efs_file_system_creation(mut self, input: crate::types::HomeEfsFileSystemCreation) -> Self {
+        self.inner = self.inner.home_efs_file_system_creation(input);
+        self
+    }
+    /// <p>Indicates whether to create a home EFS file system for the domain. You can change from <code>Disabled</code> to <code>Enabled</code> to provision EFS on demand, but you cannot change from <code>Enabled</code> to <code>Disabled</code>.</p>
+    pub fn set_home_efs_file_system_creation(mut self, input: ::std::option::Option<crate::types::HomeEfsFileSystemCreation>) -> Self {
+        self.inner = self.inner.set_home_efs_file_system_creation(input);
+        self
+    }
+    /// <p>Indicates whether to create a home EFS file system for the domain. You can change from <code>Disabled</code> to <code>Enabled</code> to provision EFS on demand, but you cannot change from <code>Enabled</code> to <code>Disabled</code>.</p>
+    pub fn get_home_efs_file_system_creation(&self) -> &::std::option::Option<crate::types::HomeEfsFileSystemCreation> {
+        self.inner.get_home_efs_file_system_creation()
+    }
     /// <p>The identifier for the VPC used by the domain for network communication. Use this field only when adding VPC configuration to a SageMaker AI domain used in Amazon SageMaker Unified Studio that was created without VPC settings. SageMaker AI doesn't automatically apply VPC updates to existing applications. Stop and restart your applications to apply the changes.</p>
     pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.vpc_id(input.into());

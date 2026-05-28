@@ -22,7 +22,7 @@ impl crate::operation::update_agent_space::builders::UpdateAgentSpaceInputBuilde
 }
 /// Fluent builder constructing a request to `UpdateAgentSpace`.
 ///
-/// Updates the information of an existing AgentSpace.
+/// <p>Updates the information of an existing AgentSpace.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateAgentSpaceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,59 +108,59 @@ impl UpdateAgentSpaceFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// The unique identifier of the AgentSpace
+    /// <p>The unique identifier of the AgentSpace</p>
     pub fn agent_space_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.agent_space_id(input.into());
         self
     }
-    /// The unique identifier of the AgentSpace
+    /// <p>The unique identifier of the AgentSpace</p>
     pub fn set_agent_space_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_agent_space_id(input);
         self
     }
-    /// The unique identifier of the AgentSpace
+    /// <p>The unique identifier of the AgentSpace</p>
     pub fn get_agent_space_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_agent_space_id()
     }
-    /// The updated name of the AgentSpace.
+    /// <p>The updated name of the AgentSpace.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
-    /// The updated name of the AgentSpace.
+    /// <p>The updated name of the AgentSpace.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
-    /// The updated name of the AgentSpace.
+    /// <p>The updated name of the AgentSpace.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }
-    /// The updated description of the AgentSpace.
+    /// <p>The updated description of the AgentSpace.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
-    /// The updated description of the AgentSpace.
+    /// <p>The updated description of the AgentSpace.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
-    /// The updated description of the AgentSpace.
+    /// <p>The updated description of the AgentSpace.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }
-    /// The updated locale for the AgentSpace, which determines the language used in agent responses.
+    /// <p>The updated locale for the AgentSpace, which determines the language used in agent responses.</p>
     pub fn locale(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.locale(input.into());
         self
     }
-    /// The updated locale for the AgentSpace, which determines the language used in agent responses.
+    /// <p>The updated locale for the AgentSpace, which determines the language used in agent responses.</p>
     pub fn set_locale(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_locale(input);
         self
     }
-    /// The updated locale for the AgentSpace, which determines the language used in agent responses.
+    /// <p>The updated locale for the AgentSpace, which determines the language used in agent responses.</p>
     pub fn get_locale(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_locale()
     }

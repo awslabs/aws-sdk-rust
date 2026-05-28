@@ -136,9 +136,13 @@ impl Client {
     }
 }
 
+mod batch_delete_advanced_prompt_optimization_job;
+
 mod batch_delete_evaluation_job;
 
 mod cancel_automated_reasoning_policy_build_workflow;
+
+mod create_advanced_prompt_optimization_job;
 
 mod create_automated_reasoning_policy;
 
@@ -185,7 +189,7 @@ mod create_provisioned_model_throughput;
 /// # let client: aws_sdk_bedrock::Client = unimplemented!();
 /// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
-/// let result = client.batch_delete_evaluation_job()
+/// let result = client.batch_delete_advanced_prompt_optimization_job()
 ///     .customize()
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
@@ -234,6 +238,8 @@ mod delete_resource_policy;
 mod deregister_marketplace_model_endpoint;
 
 mod export_automated_reasoning_policy_version;
+
+mod get_advanced_prompt_optimization_job;
 
 mod get_automated_reasoning_policy;
 
@@ -284,6 +290,8 @@ mod get_provisioned_model_throughput;
 mod get_resource_policy;
 
 mod get_use_case_for_model_access;
+
+mod list_advanced_prompt_optimization_jobs;
 
 mod list_automated_reasoning_policies;
 
@@ -340,6 +348,8 @@ mod register_marketplace_model_endpoint;
 mod start_automated_reasoning_policy_build_workflow;
 
 mod start_automated_reasoning_policy_test_workflow;
+
+mod stop_advanced_prompt_optimization_job;
 
 mod stop_evaluation_job;
 

@@ -627,6 +627,8 @@ pub use crate::types::_load_permission_modifications::LoadPermissionModification
 
 pub use crate::types::_launch_permission_modifications::LaunchPermissionModifications;
 
+pub use crate::types::_enclave_options_request::EnclaveOptionsRequest;
+
 pub use crate::types::_blob_attribute_value::BlobAttributeValue;
 
 pub use crate::types::_capacity_reservation_specification::CapacityReservationSpecification;
@@ -780,8 +782,6 @@ pub use crate::types::_cpu_options_request::CpuOptionsRequest;
 pub use crate::types::_hibernation_options_request::HibernationOptionsRequest;
 
 pub use crate::types::_instance_metadata_options_request::InstanceMetadataOptionsRequest;
-
-pub use crate::types::_enclave_options_request::EnclaveOptionsRequest;
 
 pub use crate::types::_private_dns_name_options_request::PrivateDnsNameOptionsRequest;
 

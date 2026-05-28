@@ -129,6 +129,12 @@ pub use crate::types::_batch_get_profile_error::BatchGetProfileError;
 
 pub use crate::types::_profile::Profile;
 
+pub use crate::types::_batch_put_profile_object_request_item::BatchPutProfileObjectRequestItem;
+
+pub use crate::types::_batch_put_profile_object_response_item::BatchPutProfileObjectResponseItem;
+
+pub use crate::types::_batch_put_profile_object_error_item::BatchPutProfileObjectErrorItem;
+
 pub use crate::types::_range::Range;
 
 pub use crate::types::_threshold::Threshold;
@@ -428,6 +434,12 @@ mod _batch;
 mod _batch_get_calculated_attribute_for_profile_error;
 
 mod _batch_get_profile_error;
+
+mod _batch_put_profile_object_error_item;
+
+mod _batch_put_profile_object_request_item;
+
+mod _batch_put_profile_object_response_item;
 
 mod _calculated_attribute_dimension;
 

@@ -4,6 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`invoice_unit_arn(impl Into<String>)`](crate::operation::delete_invoice_unit::builders::DeleteInvoiceUnitFluentBuilder::invoice_unit_arn) / [`set_invoice_unit_arn(Option<String>)`](crate::operation::delete_invoice_unit::builders::DeleteInvoiceUnitFluentBuilder::set_invoice_unit_arn):<br>required: **true**<br><p>The ARN to identify an invoice unit. This information can't be modified or deleted.</p><br>
+    ///   - [`client_token(impl Into<String>)`](crate::operation::delete_invoice_unit::builders::DeleteInvoiceUnitFluentBuilder::client_token) / [`set_client_token(Option<String>)`](crate::operation::delete_invoice_unit::builders::DeleteInvoiceUnitFluentBuilder::set_client_token):<br>required: **false**<br><p>A unique, case-sensitive identifier that you provide to ensure idempotency of the request.</p><br>
     /// - On success, responds with [`DeleteInvoiceUnitOutput`](crate::operation::delete_invoice_unit::DeleteInvoiceUnitOutput) with field(s):
     ///   - [`invoice_unit_arn(Option<String>)`](crate::operation::delete_invoice_unit::DeleteInvoiceUnitOutput::invoice_unit_arn): <p>The ARN to identify an invoice unit. This information can't be modified or deleted.</p>
     /// - On failure, responds with [`SdkError<DeleteInvoiceUnitError>`](crate::operation::delete_invoice_unit::DeleteInvoiceUnitError)

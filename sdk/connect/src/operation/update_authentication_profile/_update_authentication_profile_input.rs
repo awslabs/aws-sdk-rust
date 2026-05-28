@@ -5,17 +5,17 @@
 pub struct UpdateAuthenticationProfileInput {
     /// <p>A unique identifier for the authentication profile.</p>
     pub authentication_profile_id: ::std::option::Option<::std::string::String>,
-    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    /// <p>The identifier of the Connect Customer instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The name for the authentication profile.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The description for the authentication profile.</p>
     pub description: ::std::option::Option<::std::string::String>,
-    /// <p>A list of IP address range strings that are allowed to access the instance. For more information on how to configure IP addresses, see<a href="https://docs.aws.amazon.com/connect/latest/adminguide/authentication-profiles.html#configure-session-timeouts">Configure session timeouts</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+    /// <p>A list of IP address range strings that are allowed to access the instance. For more information on how to configure IP addresses, see<a href="https://docs.aws.amazon.com/connect/latest/adminguide/authentication-profiles.html#configure-session-timeouts">Configure session timeouts</a> in the <i>Connect Customer Administrator Guide</i>.</p>
     pub allowed_ips: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>A list of IP address range strings that are blocked from accessing the instance. For more information on how to configure IP addresses, For more information on how to configure IP addresses, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/authentication-profiles.html#configure-ip-based-ac">Configure IP-based access control</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+    /// <p>A list of IP address range strings that are blocked from accessing the instance. For more information on how to configure IP addresses, For more information on how to configure IP addresses, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/authentication-profiles.html#configure-ip-based-ac">Configure IP-based access control</a> in the <i>Connect Customer Administrator Guide</i>.</p>
     pub blocked_ips: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>The short lived session duration configuration for users logged in to Amazon Connect, in minutes. This value determines the maximum possible time before an agent is authenticated. For more information, For more information on how to configure IP addresses, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/authentication-profiles.html#configure-session-timeouts">Configure session timeouts</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+    /// <p>The short lived session duration configuration for users logged in to Connect Customer, in minutes. This value determines the maximum possible time before an agent is authenticated. For more information, For more information on how to configure IP addresses, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/authentication-profiles.html#configure-session-timeouts">Configure session timeouts</a> in the <i>Connect Customer Administrator Guide</i>.</p>
     #[deprecated(
         note = "PeriodicSessionDuration is deprecated. Use SessionInactivityDuration instead.",
         since = "10/31/2025"
@@ -31,7 +31,7 @@ impl UpdateAuthenticationProfileInput {
     pub fn authentication_profile_id(&self) -> ::std::option::Option<&str> {
         self.authentication_profile_id.as_deref()
     }
-    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    /// <p>The identifier of the Connect Customer instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn instance_id(&self) -> ::std::option::Option<&str> {
         self.instance_id.as_deref()
     }
@@ -43,19 +43,19 @@ impl UpdateAuthenticationProfileInput {
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>A list of IP address range strings that are allowed to access the instance. For more information on how to configure IP addresses, see<a href="https://docs.aws.amazon.com/connect/latest/adminguide/authentication-profiles.html#configure-session-timeouts">Configure session timeouts</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+    /// <p>A list of IP address range strings that are allowed to access the instance. For more information on how to configure IP addresses, see<a href="https://docs.aws.amazon.com/connect/latest/adminguide/authentication-profiles.html#configure-session-timeouts">Configure session timeouts</a> in the <i>Connect Customer Administrator Guide</i>.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.allowed_ips.is_none()`.
     pub fn allowed_ips(&self) -> &[::std::string::String] {
         self.allowed_ips.as_deref().unwrap_or_default()
     }
-    /// <p>A list of IP address range strings that are blocked from accessing the instance. For more information on how to configure IP addresses, For more information on how to configure IP addresses, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/authentication-profiles.html#configure-ip-based-ac">Configure IP-based access control</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+    /// <p>A list of IP address range strings that are blocked from accessing the instance. For more information on how to configure IP addresses, For more information on how to configure IP addresses, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/authentication-profiles.html#configure-ip-based-ac">Configure IP-based access control</a> in the <i>Connect Customer Administrator Guide</i>.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.blocked_ips.is_none()`.
     pub fn blocked_ips(&self) -> &[::std::string::String] {
         self.blocked_ips.as_deref().unwrap_or_default()
     }
-    /// <p>The short lived session duration configuration for users logged in to Amazon Connect, in minutes. This value determines the maximum possible time before an agent is authenticated. For more information, For more information on how to configure IP addresses, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/authentication-profiles.html#configure-session-timeouts">Configure session timeouts</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+    /// <p>The short lived session duration configuration for users logged in to Connect Customer, in minutes. This value determines the maximum possible time before an agent is authenticated. For more information, For more information on how to configure IP addresses, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/authentication-profiles.html#configure-session-timeouts">Configure session timeouts</a> in the <i>Connect Customer Administrator Guide</i>.</p>
     #[deprecated(
         note = "PeriodicSessionDuration is deprecated. Use SessionInactivityDuration instead.",
         since = "10/31/2025"
@@ -109,18 +109,18 @@ impl UpdateAuthenticationProfileInputBuilder {
     pub fn get_authentication_profile_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.authentication_profile_id
     }
-    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    /// <p>The identifier of the Connect Customer instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     /// This field is required.
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    /// <p>The identifier of the Connect Customer instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_id = input;
         self
     }
-    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    /// <p>The identifier of the Connect Customer instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.instance_id
     }
@@ -156,19 +156,19 @@ impl UpdateAuthenticationProfileInputBuilder {
     ///
     /// To override the contents of this collection use [`set_allowed_ips`](Self::set_allowed_ips).
     ///
-    /// <p>A list of IP address range strings that are allowed to access the instance. For more information on how to configure IP addresses, see<a href="https://docs.aws.amazon.com/connect/latest/adminguide/authentication-profiles.html#configure-session-timeouts">Configure session timeouts</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+    /// <p>A list of IP address range strings that are allowed to access the instance. For more information on how to configure IP addresses, see<a href="https://docs.aws.amazon.com/connect/latest/adminguide/authentication-profiles.html#configure-session-timeouts">Configure session timeouts</a> in the <i>Connect Customer Administrator Guide</i>.</p>
     pub fn allowed_ips(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.allowed_ips.unwrap_or_default();
         v.push(input.into());
         self.allowed_ips = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of IP address range strings that are allowed to access the instance. For more information on how to configure IP addresses, see<a href="https://docs.aws.amazon.com/connect/latest/adminguide/authentication-profiles.html#configure-session-timeouts">Configure session timeouts</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+    /// <p>A list of IP address range strings that are allowed to access the instance. For more information on how to configure IP addresses, see<a href="https://docs.aws.amazon.com/connect/latest/adminguide/authentication-profiles.html#configure-session-timeouts">Configure session timeouts</a> in the <i>Connect Customer Administrator Guide</i>.</p>
     pub fn set_allowed_ips(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.allowed_ips = input;
         self
     }
-    /// <p>A list of IP address range strings that are allowed to access the instance. For more information on how to configure IP addresses, see<a href="https://docs.aws.amazon.com/connect/latest/adminguide/authentication-profiles.html#configure-session-timeouts">Configure session timeouts</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+    /// <p>A list of IP address range strings that are allowed to access the instance. For more information on how to configure IP addresses, see<a href="https://docs.aws.amazon.com/connect/latest/adminguide/authentication-profiles.html#configure-session-timeouts">Configure session timeouts</a> in the <i>Connect Customer Administrator Guide</i>.</p>
     pub fn get_allowed_ips(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.allowed_ips
     }
@@ -176,23 +176,23 @@ impl UpdateAuthenticationProfileInputBuilder {
     ///
     /// To override the contents of this collection use [`set_blocked_ips`](Self::set_blocked_ips).
     ///
-    /// <p>A list of IP address range strings that are blocked from accessing the instance. For more information on how to configure IP addresses, For more information on how to configure IP addresses, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/authentication-profiles.html#configure-ip-based-ac">Configure IP-based access control</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+    /// <p>A list of IP address range strings that are blocked from accessing the instance. For more information on how to configure IP addresses, For more information on how to configure IP addresses, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/authentication-profiles.html#configure-ip-based-ac">Configure IP-based access control</a> in the <i>Connect Customer Administrator Guide</i>.</p>
     pub fn blocked_ips(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.blocked_ips.unwrap_or_default();
         v.push(input.into());
         self.blocked_ips = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of IP address range strings that are blocked from accessing the instance. For more information on how to configure IP addresses, For more information on how to configure IP addresses, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/authentication-profiles.html#configure-ip-based-ac">Configure IP-based access control</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+    /// <p>A list of IP address range strings that are blocked from accessing the instance. For more information on how to configure IP addresses, For more information on how to configure IP addresses, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/authentication-profiles.html#configure-ip-based-ac">Configure IP-based access control</a> in the <i>Connect Customer Administrator Guide</i>.</p>
     pub fn set_blocked_ips(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.blocked_ips = input;
         self
     }
-    /// <p>A list of IP address range strings that are blocked from accessing the instance. For more information on how to configure IP addresses, For more information on how to configure IP addresses, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/authentication-profiles.html#configure-ip-based-ac">Configure IP-based access control</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+    /// <p>A list of IP address range strings that are blocked from accessing the instance. For more information on how to configure IP addresses, For more information on how to configure IP addresses, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/authentication-profiles.html#configure-ip-based-ac">Configure IP-based access control</a> in the <i>Connect Customer Administrator Guide</i>.</p>
     pub fn get_blocked_ips(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.blocked_ips
     }
-    /// <p>The short lived session duration configuration for users logged in to Amazon Connect, in minutes. This value determines the maximum possible time before an agent is authenticated. For more information, For more information on how to configure IP addresses, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/authentication-profiles.html#configure-session-timeouts">Configure session timeouts</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+    /// <p>The short lived session duration configuration for users logged in to Connect Customer, in minutes. This value determines the maximum possible time before an agent is authenticated. For more information, For more information on how to configure IP addresses, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/authentication-profiles.html#configure-session-timeouts">Configure session timeouts</a> in the <i>Connect Customer Administrator Guide</i>.</p>
     #[deprecated(
         note = "PeriodicSessionDuration is deprecated. Use SessionInactivityDuration instead.",
         since = "10/31/2025"
@@ -201,7 +201,7 @@ impl UpdateAuthenticationProfileInputBuilder {
         self.periodic_session_duration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The short lived session duration configuration for users logged in to Amazon Connect, in minutes. This value determines the maximum possible time before an agent is authenticated. For more information, For more information on how to configure IP addresses, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/authentication-profiles.html#configure-session-timeouts">Configure session timeouts</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+    /// <p>The short lived session duration configuration for users logged in to Connect Customer, in minutes. This value determines the maximum possible time before an agent is authenticated. For more information, For more information on how to configure IP addresses, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/authentication-profiles.html#configure-session-timeouts">Configure session timeouts</a> in the <i>Connect Customer Administrator Guide</i>.</p>
     #[deprecated(
         note = "PeriodicSessionDuration is deprecated. Use SessionInactivityDuration instead.",
         since = "10/31/2025"
@@ -210,7 +210,7 @@ impl UpdateAuthenticationProfileInputBuilder {
         self.periodic_session_duration = input;
         self
     }
-    /// <p>The short lived session duration configuration for users logged in to Amazon Connect, in minutes. This value determines the maximum possible time before an agent is authenticated. For more information, For more information on how to configure IP addresses, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/authentication-profiles.html#configure-session-timeouts">Configure session timeouts</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+    /// <p>The short lived session duration configuration for users logged in to Connect Customer, in minutes. This value determines the maximum possible time before an agent is authenticated. For more information, For more information on how to configure IP addresses, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/authentication-profiles.html#configure-session-timeouts">Configure session timeouts</a> in the <i>Connect Customer Administrator Guide</i>.</p>
     #[deprecated(
         note = "PeriodicSessionDuration is deprecated. Use SessionInactivityDuration instead.",
         since = "10/31/2025"

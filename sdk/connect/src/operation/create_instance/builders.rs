@@ -22,10 +22,10 @@ impl crate::operation::create_instance::builders::CreateInstanceInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateInstance`.
 ///
-/// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
-/// <p>Initiates an Amazon Connect instance with all the supported channels enabled. It does not attach any storage, such as Amazon Simple Storage Service (Amazon S3) or Amazon Kinesis. It also does not allow for any configurations on features, such as Contact Lens for Amazon Connect.</p>
-/// <p>For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-instances.html">Create an Amazon Connect instance</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
-/// <p>Amazon Connect enforces a limit on the total number of instances that you can create or delete in 30 days. If you exceed this limit, you will get an error message indicating there has been an excessive number of attempts at creating or deleting instances. You must wait 30 days before you can restart creating and deleting instances in your account.</p>
+/// <p>This API is in preview release for Connect Customer and is subject to change.</p>
+/// <p>Initiates an Connect Customer instance with all the supported channels enabled. It does not attach any storage, such as Amazon Simple Storage Service (Amazon S3) or Amazon Kinesis. It also does not allow for any configurations on features, such as Contact Lens for Connect Customer.</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-instances.html">Create an Connect Customer instance</a> in the <i>Connect Customer Administrator Guide</i>.</p>
+/// <p>Connect Customer enforces a limit on the total number of instances that you can create or delete in 30 days. If you exceed this limit, you will get an error message indicating there has been an excessive number of attempts at creating or deleting instances. You must wait 30 days before you can restart creating and deleting instances in your account.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateInstanceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -125,17 +125,17 @@ impl CreateInstanceFluentBuilder {
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_token()
     }
-    /// <p>The type of identity management for your Amazon Connect users.</p>
+    /// <p>The type of identity management for your Connect Customer users.</p>
     pub fn identity_management_type(mut self, input: crate::types::DirectoryType) -> Self {
         self.inner = self.inner.identity_management_type(input);
         self
     }
-    /// <p>The type of identity management for your Amazon Connect users.</p>
+    /// <p>The type of identity management for your Connect Customer users.</p>
     pub fn set_identity_management_type(mut self, input: ::std::option::Option<crate::types::DirectoryType>) -> Self {
         self.inner = self.inner.set_identity_management_type(input);
         self
     }
-    /// <p>The type of identity management for your Amazon Connect users.</p>
+    /// <p>The type of identity management for your Connect Customer users.</p>
     pub fn get_identity_management_type(&self) -> &::std::option::Option<crate::types::DirectoryType> {
         self.inner.get_identity_management_type()
     }

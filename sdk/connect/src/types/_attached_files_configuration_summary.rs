@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AttachedFilesConfigurationSummary {
-    /// <p>The identifier of the Amazon Connect instance.</p>
+    /// <p>The identifier of the Connect Customer instance.</p>
     pub instance_id: ::std::string::String,
     /// <p>The scope of the attachment. Valid values are <code>EMAIL</code>, <code>CHAT</code>, <code>CASE</code>, and <code>TASK</code>.</p>
     pub attachment_scope: crate::types::AttachmentScope,
@@ -14,7 +14,7 @@ pub struct AttachedFilesConfigurationSummary {
     pub extension_configuration: ::std::option::Option<crate::types::ExtensionConfiguration>,
 }
 impl AttachedFilesConfigurationSummary {
-    /// <p>The identifier of the Amazon Connect instance.</p>
+    /// <p>The identifier of the Connect Customer instance.</p>
     pub fn instance_id(&self) -> &str {
         use std::ops::Deref;
         self.instance_id.deref()
@@ -49,18 +49,18 @@ pub struct AttachedFilesConfigurationSummaryBuilder {
     pub(crate) extension_configuration: ::std::option::Option<crate::types::ExtensionConfiguration>,
 }
 impl AttachedFilesConfigurationSummaryBuilder {
-    /// <p>The identifier of the Amazon Connect instance.</p>
+    /// <p>The identifier of the Connect Customer instance.</p>
     /// This field is required.
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier of the Amazon Connect instance.</p>
+    /// <p>The identifier of the Connect Customer instance.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_id = input;
         self
     }
-    /// <p>The identifier of the Amazon Connect instance.</p>
+    /// <p>The identifier of the Connect Customer instance.</p>
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.instance_id
     }

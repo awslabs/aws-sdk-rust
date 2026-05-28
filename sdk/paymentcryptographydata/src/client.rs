@@ -169,6 +169,8 @@ mod encrypt_data;
 
 mod generate_as2805_kek_validation;
 
+mod generate_auth_request_cryptogram;
+
 mod generate_card_validation_data;
 
 mod generate_mac;

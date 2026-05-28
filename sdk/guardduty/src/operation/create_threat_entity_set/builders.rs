@@ -22,7 +22,7 @@ impl crate::operation::create_threat_entity_set::builders::CreateThreatEntitySet
 }
 /// Fluent builder constructing a request to `CreateThreatEntitySet`.
 ///
-/// <p>Creates a new threat entity set. In a threat entity set, you can provide known malicious IP addresses and domains for your Amazon Web Services environment. GuardDuty generates findings based on the entries in the threat entity sets. Only users of the administrator account can manage entity sets, which automatically apply to member accounts.</p>
+/// <p>Creates a new threat entity set. In a threat entity set, you can provide known malicious threat entities for your Amazon Web Services environment. GuardDuty generates findings based on the entries in the threat entity sets. Only users of the administrator account can manage entity sets, which automatically apply to member accounts.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateThreatEntitySetFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

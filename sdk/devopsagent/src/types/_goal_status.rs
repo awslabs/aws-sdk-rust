@@ -37,17 +37,17 @@
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 ///
-/// Possible states of a goal throughout its lifecycle
+/// <p>Possible states of a goal throughout its lifecycle</p>
 #[non_exhaustive]
 #[derive(
     ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum GoalStatus {
-    /// Goal is active and being evaluated according to schedule
+    /// <p>Goal is active and being evaluated according to schedule</p>
     Active,
-    /// Goal has been marked as completed
+    /// <p>Goal has been marked as completed</p>
     Complete,
-    /// Goal evaluations are temporarily paused
+    /// <p>Goal evaluations are temporarily paused</p>
     Paused,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]

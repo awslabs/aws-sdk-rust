@@ -48,6 +48,14 @@ pub struct AddOutputRequest {
     pub router_integration_state: ::std::option::Option<crate::types::State>,
     /// <p>The configuration that defines how content is encrypted during transit between the MediaConnect router and a MediaConnect flow.</p>
     pub router_integration_transit_encryption: ::std::option::Option<crate::types::FlowTransitEncryption>,
+    /// <p>Controls how MediaConnect generates timecodes for NDI output frames. If you don't specify this field, MediaConnect uses <code>EMBEDDED_TIMECODE</code>.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>EMBEDDED_TIMECODE</code> (default) - Preserves timecodes from the input transport stream. The timecodes must be embedded in the video stream as SEI timing messages. If no embedded timecode is detected, MediaConnect uses the UTC system time instead.</p></li>
+    /// <li>
+    /// <p><code>UTC_SYSTEM_TIME</code> - Generates timecodes based on the system clock time when each frame is sent.</p></li>
+    /// </ul>
+    pub ndi_output_timecode_source: ::std::option::Option<crate::types::NdiOutputTimecodeSource>,
 }
 impl AddOutputRequest {
     /// <p>The range of IP addresses that should be allowed to initiate output requests to this flow. These IP addresses should be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.</p>
@@ -140,6 +148,16 @@ impl AddOutputRequest {
     pub fn router_integration_transit_encryption(&self) -> ::std::option::Option<&crate::types::FlowTransitEncryption> {
         self.router_integration_transit_encryption.as_ref()
     }
+    /// <p>Controls how MediaConnect generates timecodes for NDI output frames. If you don't specify this field, MediaConnect uses <code>EMBEDDED_TIMECODE</code>.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>EMBEDDED_TIMECODE</code> (default) - Preserves timecodes from the input transport stream. The timecodes must be embedded in the video stream as SEI timing messages. If no embedded timecode is detected, MediaConnect uses the UTC system time instead.</p></li>
+    /// <li>
+    /// <p><code>UTC_SYSTEM_TIME</code> - Generates timecodes based on the system clock time when each frame is sent.</p></li>
+    /// </ul>
+    pub fn ndi_output_timecode_source(&self) -> ::std::option::Option<&crate::types::NdiOutputTimecodeSource> {
+        self.ndi_output_timecode_source.as_ref()
+    }
 }
 impl AddOutputRequest {
     /// Creates a new builder-style object to manufacture [`AddOutputRequest`](crate::types::AddOutputRequest).
@@ -173,6 +191,7 @@ pub struct AddOutputRequestBuilder {
     pub(crate) output_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) router_integration_state: ::std::option::Option<crate::types::State>,
     pub(crate) router_integration_transit_encryption: ::std::option::Option<crate::types::FlowTransitEncryption>,
+    pub(crate) ndi_output_timecode_source: ::std::option::Option<crate::types::NdiOutputTimecodeSource>,
 }
 impl AddOutputRequestBuilder {
     /// Appends an item to `cidr_allow_list`.
@@ -501,6 +520,38 @@ impl AddOutputRequestBuilder {
     pub fn get_router_integration_transit_encryption(&self) -> &::std::option::Option<crate::types::FlowTransitEncryption> {
         &self.router_integration_transit_encryption
     }
+    /// <p>Controls how MediaConnect generates timecodes for NDI output frames. If you don't specify this field, MediaConnect uses <code>EMBEDDED_TIMECODE</code>.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>EMBEDDED_TIMECODE</code> (default) - Preserves timecodes from the input transport stream. The timecodes must be embedded in the video stream as SEI timing messages. If no embedded timecode is detected, MediaConnect uses the UTC system time instead.</p></li>
+    /// <li>
+    /// <p><code>UTC_SYSTEM_TIME</code> - Generates timecodes based on the system clock time when each frame is sent.</p></li>
+    /// </ul>
+    pub fn ndi_output_timecode_source(mut self, input: crate::types::NdiOutputTimecodeSource) -> Self {
+        self.ndi_output_timecode_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Controls how MediaConnect generates timecodes for NDI output frames. If you don't specify this field, MediaConnect uses <code>EMBEDDED_TIMECODE</code>.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>EMBEDDED_TIMECODE</code> (default) - Preserves timecodes from the input transport stream. The timecodes must be embedded in the video stream as SEI timing messages. If no embedded timecode is detected, MediaConnect uses the UTC system time instead.</p></li>
+    /// <li>
+    /// <p><code>UTC_SYSTEM_TIME</code> - Generates timecodes based on the system clock time when each frame is sent.</p></li>
+    /// </ul>
+    pub fn set_ndi_output_timecode_source(mut self, input: ::std::option::Option<crate::types::NdiOutputTimecodeSource>) -> Self {
+        self.ndi_output_timecode_source = input;
+        self
+    }
+    /// <p>Controls how MediaConnect generates timecodes for NDI output frames. If you don't specify this field, MediaConnect uses <code>EMBEDDED_TIMECODE</code>.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>EMBEDDED_TIMECODE</code> (default) - Preserves timecodes from the input transport stream. The timecodes must be embedded in the video stream as SEI timing messages. If no embedded timecode is detected, MediaConnect uses the UTC system time instead.</p></li>
+    /// <li>
+    /// <p><code>UTC_SYSTEM_TIME</code> - Generates timecodes based on the system clock time when each frame is sent.</p></li>
+    /// </ul>
+    pub fn get_ndi_output_timecode_source(&self) -> &::std::option::Option<crate::types::NdiOutputTimecodeSource> {
+        &self.ndi_output_timecode_source
+    }
     /// Consumes the builder and constructs a [`AddOutputRequest`](crate::types::AddOutputRequest).
     pub fn build(self) -> crate::types::AddOutputRequest {
         crate::types::AddOutputRequest {
@@ -525,6 +576,7 @@ impl AddOutputRequestBuilder {
             output_tags: self.output_tags,
             router_integration_state: self.router_integration_state,
             router_integration_transit_encryption: self.router_integration_transit_encryption,
+            ndi_output_timecode_source: self.ndi_output_timecode_source,
         }
     }
 }

@@ -224,17 +224,17 @@ impl RegisterContainerInstanceFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_platform_devices`](Self::set_platform_devices).
     ///
-    /// <p>The devices that are available on the container instance. The only supported device type is a GPU.</p>
+    /// <p>The devices that are available on the container instance. The supported device types are GPUs and Neuron devices.</p>
     pub fn platform_devices(mut self, input: crate::types::PlatformDevice) -> Self {
         self.inner = self.inner.platform_devices(input);
         self
     }
-    /// <p>The devices that are available on the container instance. The only supported device type is a GPU.</p>
+    /// <p>The devices that are available on the container instance. The supported device types are GPUs and Neuron devices.</p>
     pub fn set_platform_devices(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PlatformDevice>>) -> Self {
         self.inner = self.inner.set_platform_devices(input);
         self
     }
-    /// <p>The devices that are available on the container instance. The only supported device type is a GPU.</p>
+    /// <p>The devices that are available on the container instance. The supported device types are GPUs and Neuron devices.</p>
     pub fn get_platform_devices(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PlatformDevice>> {
         self.inner.get_platform_devices()
     }

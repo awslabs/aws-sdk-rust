@@ -22,7 +22,7 @@ impl crate::operation::update_recommendation::builders::UpdateRecommendationInpu
 }
 /// Fluent builder constructing a request to `UpdateRecommendation`.
 ///
-/// Updates an existing recommendation with new content, status, or metadata
+/// <p>Updates an existing recommendation with new content, status, or metadata</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateRecommendationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,73 +108,73 @@ impl UpdateRecommendationFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// The unique identifier for the agent space containing the recommendation
+    /// <p>The unique identifier for the agent space containing the recommendation</p>
     pub fn agent_space_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.agent_space_id(input.into());
         self
     }
-    /// The unique identifier for the agent space containing the recommendation
+    /// <p>The unique identifier for the agent space containing the recommendation</p>
     pub fn set_agent_space_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_agent_space_id(input);
         self
     }
-    /// The unique identifier for the agent space containing the recommendation
+    /// <p>The unique identifier for the agent space containing the recommendation</p>
     pub fn get_agent_space_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_agent_space_id()
     }
-    /// The unique identifier for the recommendation to update
+    /// <p>The unique identifier for the recommendation to update</p>
     pub fn recommendation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.recommendation_id(input.into());
         self
     }
-    /// The unique identifier for the recommendation to update
+    /// <p>The unique identifier for the recommendation to update</p>
     pub fn set_recommendation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_recommendation_id(input);
         self
     }
-    /// The unique identifier for the recommendation to update
+    /// <p>The unique identifier for the recommendation to update</p>
     pub fn get_recommendation_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_recommendation_id()
     }
-    /// Current status of the recommendation
+    /// <p>Current status of the recommendation</p>
     pub fn status(mut self, input: crate::types::RecommendationStatus) -> Self {
         self.inner = self.inner.status(input);
         self
     }
-    /// Current status of the recommendation
+    /// <p>Current status of the recommendation</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::RecommendationStatus>) -> Self {
         self.inner = self.inner.set_status(input);
         self
     }
-    /// Current status of the recommendation
+    /// <p>Current status of the recommendation</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::RecommendationStatus> {
         self.inner.get_status()
     }
-    /// Additional context for recommendation
+    /// <p>Additional context for recommendation</p>
     pub fn additional_context(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.additional_context(input.into());
         self
     }
-    /// Additional context for recommendation
+    /// <p>Additional context for recommendation</p>
     pub fn set_additional_context(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_additional_context(input);
         self
     }
-    /// Additional context for recommendation
+    /// <p>Additional context for recommendation</p>
     pub fn get_additional_context(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_additional_context()
     }
-    /// A unique token that ensures idempotency of the request
+    /// <p>A unique token that ensures idempotency of the request</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
         self
     }
-    /// A unique token that ensures idempotency of the request
+    /// <p>A unique token that ensures idempotency of the request</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
     }
-    /// A unique token that ensures idempotency of the request
+    /// <p>A unique token that ensures idempotency of the request</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_token()
     }

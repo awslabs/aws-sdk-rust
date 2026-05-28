@@ -11,6 +11,8 @@ pub struct UpdateInvoiceUnitInput {
     pub tax_inheritance_disabled: ::std::option::Option<bool>,
     /// <p>The <code>InvoiceUnitRule</code> object used to update invoice units.</p>
     pub rule: ::std::option::Option<crate::types::InvoiceUnitRule>,
+    /// <p>A unique, case-sensitive identifier that you provide to ensure idempotency of the request.</p>
+    pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl UpdateInvoiceUnitInput {
     /// <p>The ARN to identify an invoice unit. This information can't be modified or deleted.</p>
@@ -29,6 +31,10 @@ impl UpdateInvoiceUnitInput {
     pub fn rule(&self) -> ::std::option::Option<&crate::types::InvoiceUnitRule> {
         self.rule.as_ref()
     }
+    /// <p>A unique, case-sensitive identifier that you provide to ensure idempotency of the request.</p>
+    pub fn client_token(&self) -> ::std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
 }
 impl UpdateInvoiceUnitInput {
     /// Creates a new builder-style object to manufacture [`UpdateInvoiceUnitInput`](crate::operation::update_invoice_unit::UpdateInvoiceUnitInput).
@@ -45,6 +51,7 @@ pub struct UpdateInvoiceUnitInputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) tax_inheritance_disabled: ::std::option::Option<bool>,
     pub(crate) rule: ::std::option::Option<crate::types::InvoiceUnitRule>,
+    pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
 impl UpdateInvoiceUnitInputBuilder {
     /// <p>The ARN to identify an invoice unit. This information can't be modified or deleted.</p>
@@ -104,6 +111,20 @@ impl UpdateInvoiceUnitInputBuilder {
     pub fn get_rule(&self) -> &::std::option::Option<crate::types::InvoiceUnitRule> {
         &self.rule
     }
+    /// <p>A unique, case-sensitive identifier that you provide to ensure idempotency of the request.</p>
+    pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.client_token = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>A unique, case-sensitive identifier that you provide to ensure idempotency of the request.</p>
+    pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.client_token = input;
+        self
+    }
+    /// <p>A unique, case-sensitive identifier that you provide to ensure idempotency of the request.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
+    }
     /// Consumes the builder and constructs a [`UpdateInvoiceUnitInput`](crate::operation::update_invoice_unit::UpdateInvoiceUnitInput).
     pub fn build(
         self,
@@ -113,6 +134,7 @@ impl UpdateInvoiceUnitInputBuilder {
             description: self.description,
             tax_inheritance_disabled: self.tax_inheritance_disabled,
             rule: self.rule,
+            client_token: self.client_token,
         })
     }
 }

@@ -19,6 +19,10 @@ pub struct PutEnvironmentBlueprintConfigurationInput {
     pub regional_parameters: ::std::option::Option<
         ::std::collections::HashMap<::std::string::String, ::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     >,
+    /// <p>The resource configurations of the environment blueprint.</p>
+    pub resource_configurations: ::std::option::Option<::std::vec::Vec<crate::types::PutResourceConfiguration>>,
+    /// <p>Specifies whether user-provided resource configurations are allowed for the environment blueprint.</p>
+    pub allow_user_provided_configurations: ::std::option::Option<bool>,
     /// <p>Region-agnostic environment blueprint parameters.</p>
     pub global_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The provisioning configuration of a blueprint.</p>
@@ -59,6 +63,16 @@ impl PutEnvironmentBlueprintConfigurationInput {
     > {
         self.regional_parameters.as_ref()
     }
+    /// <p>The resource configurations of the environment blueprint.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_configurations.is_none()`.
+    pub fn resource_configurations(&self) -> &[crate::types::PutResourceConfiguration] {
+        self.resource_configurations.as_deref().unwrap_or_default()
+    }
+    /// <p>Specifies whether user-provided resource configurations are allowed for the environment blueprint.</p>
+    pub fn allow_user_provided_configurations(&self) -> ::std::option::Option<bool> {
+        self.allow_user_provided_configurations
+    }
     /// <p>Region-agnostic environment blueprint parameters.</p>
     pub fn global_parameters(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.global_parameters.as_ref()
@@ -90,6 +104,8 @@ pub struct PutEnvironmentBlueprintConfigurationInputBuilder {
     pub(crate) regional_parameters: ::std::option::Option<
         ::std::collections::HashMap<::std::string::String, ::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     >,
+    pub(crate) resource_configurations: ::std::option::Option<::std::vec::Vec<crate::types::PutResourceConfiguration>>,
+    pub(crate) allow_user_provided_configurations: ::std::option::Option<bool>,
     pub(crate) global_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) provisioning_configurations: ::std::option::Option<::std::vec::Vec<crate::types::ProvisioningConfiguration>>,
 }
@@ -219,6 +235,40 @@ impl PutEnvironmentBlueprintConfigurationInputBuilder {
     > {
         &self.regional_parameters
     }
+    /// Appends an item to `resource_configurations`.
+    ///
+    /// To override the contents of this collection use [`set_resource_configurations`](Self::set_resource_configurations).
+    ///
+    /// <p>The resource configurations of the environment blueprint.</p>
+    pub fn resource_configurations(mut self, input: crate::types::PutResourceConfiguration) -> Self {
+        let mut v = self.resource_configurations.unwrap_or_default();
+        v.push(input);
+        self.resource_configurations = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The resource configurations of the environment blueprint.</p>
+    pub fn set_resource_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PutResourceConfiguration>>) -> Self {
+        self.resource_configurations = input;
+        self
+    }
+    /// <p>The resource configurations of the environment blueprint.</p>
+    pub fn get_resource_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PutResourceConfiguration>> {
+        &self.resource_configurations
+    }
+    /// <p>Specifies whether user-provided resource configurations are allowed for the environment blueprint.</p>
+    pub fn allow_user_provided_configurations(mut self, input: bool) -> Self {
+        self.allow_user_provided_configurations = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether user-provided resource configurations are allowed for the environment blueprint.</p>
+    pub fn set_allow_user_provided_configurations(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.allow_user_provided_configurations = input;
+        self
+    }
+    /// <p>Specifies whether user-provided resource configurations are allowed for the environment blueprint.</p>
+    pub fn get_allow_user_provided_configurations(&self) -> &::std::option::Option<bool> {
+        &self.allow_user_provided_configurations
+    }
     /// Adds a key-value pair to `global_parameters`.
     ///
     /// To override the contents of this collection use [`set_global_parameters`](Self::set_global_parameters).
@@ -282,6 +332,8 @@ impl PutEnvironmentBlueprintConfigurationInputBuilder {
                 environment_role_permission_boundary: self.environment_role_permission_boundary,
                 enabled_regions: self.enabled_regions,
                 regional_parameters: self.regional_parameters,
+                resource_configurations: self.resource_configurations,
+                allow_user_provided_configurations: self.allow_user_provided_configurations,
                 global_parameters: self.global_parameters,
                 provisioning_configurations: self.provisioning_configurations,
             },

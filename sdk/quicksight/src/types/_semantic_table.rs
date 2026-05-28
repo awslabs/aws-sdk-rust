@@ -10,6 +10,8 @@ pub struct SemanticTable {
     pub destination_table_id: ::std::string::String,
     /// <p>Configuration for row level security that control data access for this semantic table.</p>
     pub row_level_permission_configuration: ::std::option::Option<crate::types::RowLevelPermissionConfiguration>,
+    /// <p>The column-level semantic metadata for this semantic table.</p>
+    pub semantic_metadata: ::std::option::Option<crate::types::TableSemanticMetadata>,
 }
 impl SemanticTable {
     /// <p>Alias for the semantic table.</p>
@@ -26,6 +28,10 @@ impl SemanticTable {
     pub fn row_level_permission_configuration(&self) -> ::std::option::Option<&crate::types::RowLevelPermissionConfiguration> {
         self.row_level_permission_configuration.as_ref()
     }
+    /// <p>The column-level semantic metadata for this semantic table.</p>
+    pub fn semantic_metadata(&self) -> ::std::option::Option<&crate::types::TableSemanticMetadata> {
+        self.semantic_metadata.as_ref()
+    }
 }
 impl SemanticTable {
     /// Creates a new builder-style object to manufacture [`SemanticTable`](crate::types::SemanticTable).
@@ -41,6 +47,7 @@ pub struct SemanticTableBuilder {
     pub(crate) alias: ::std::option::Option<::std::string::String>,
     pub(crate) destination_table_id: ::std::option::Option<::std::string::String>,
     pub(crate) row_level_permission_configuration: ::std::option::Option<crate::types::RowLevelPermissionConfiguration>,
+    pub(crate) semantic_metadata: ::std::option::Option<crate::types::TableSemanticMetadata>,
 }
 impl SemanticTableBuilder {
     /// <p>Alias for the semantic table.</p>
@@ -87,6 +94,20 @@ impl SemanticTableBuilder {
     pub fn get_row_level_permission_configuration(&self) -> &::std::option::Option<crate::types::RowLevelPermissionConfiguration> {
         &self.row_level_permission_configuration
     }
+    /// <p>The column-level semantic metadata for this semantic table.</p>
+    pub fn semantic_metadata(mut self, input: crate::types::TableSemanticMetadata) -> Self {
+        self.semantic_metadata = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The column-level semantic metadata for this semantic table.</p>
+    pub fn set_semantic_metadata(mut self, input: ::std::option::Option<crate::types::TableSemanticMetadata>) -> Self {
+        self.semantic_metadata = input;
+        self
+    }
+    /// <p>The column-level semantic metadata for this semantic table.</p>
+    pub fn get_semantic_metadata(&self) -> &::std::option::Option<crate::types::TableSemanticMetadata> {
+        &self.semantic_metadata
+    }
     /// Consumes the builder and constructs a [`SemanticTable`](crate::types::SemanticTable).
     /// This method will fail if any of the following fields are not set:
     /// - [`alias`](crate::types::builders::SemanticTableBuilder::alias)
@@ -106,6 +127,7 @@ impl SemanticTableBuilder {
                 )
             })?,
             row_level_permission_configuration: self.row_level_permission_configuration,
+            semantic_metadata: self.semantic_metadata,
         })
     }
 }

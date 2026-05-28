@@ -7,6 +7,8 @@ pub enum Error {
     ConflictException(crate::types::error::ConflictException),
     /// <p>The caller isn't authorized to make the request.</p>
     ForbiddenException(crate::types::error::ForbiddenException),
+    /// <p>The delivery confirmation was not received from the client within the specified timeout period.</p>
+    GatewayTimeoutException(crate::types::error::GatewayTimeoutException),
     /// <p>An unexpected error has occurred.</p>
     InternalFailureException(crate::types::error::InternalFailureException),
     /// <p>The request is not valid.</p>
@@ -39,6 +41,7 @@ impl ::std::fmt::Display for Error {
         match self {
             Error::ConflictException(inner) => inner.fmt(f),
             Error::ForbiddenException(inner) => inner.fmt(f),
+            Error::GatewayTimeoutException(inner) => inner.fmt(f),
             Error::InternalFailureException(inner) => inner.fmt(f),
             Error::InvalidRequestException(inner) => inner.fmt(f),
             Error::MethodNotAllowedException(inner) => inner.fmt(f),
@@ -71,6 +74,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
         match self {
             Self::ConflictException(inner) => inner.meta(),
             Self::ForbiddenException(inner) => inner.meta(),
+            Self::GatewayTimeoutException(inner) => inner.meta(),
             Self::InternalFailureException(inner) => inner.meta(),
             Self::InvalidRequestException(inner) => inner.meta(),
             Self::MethodNotAllowedException(inner) => inner.meta(),
@@ -144,6 +148,32 @@ impl From<crate::operation::delete_thing_shadow::DeleteThingShadowError> for Err
                 Error::UnsupportedDocumentEncodingException(inner)
             }
             crate::operation::delete_thing_shadow::DeleteThingShadowError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_connection::GetConnectionError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_connection::GetConnectionError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_connection::GetConnectionError> for Error {
+    fn from(err: crate::operation::get_connection::GetConnectionError) -> Self {
+        match err {
+            crate::operation::get_connection::GetConnectionError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::get_connection::GetConnectionError::InternalFailureException(inner) => Error::InternalFailureException(inner),
+            crate::operation::get_connection::GetConnectionError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::get_connection::GetConnectionError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_connection::GetConnectionError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_connection::GetConnectionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -294,6 +324,32 @@ impl From<crate::operation::list_retained_messages::ListRetainedMessagesError> f
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_subscriptions::ListSubscriptionsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_subscriptions::ListSubscriptionsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_subscriptions::ListSubscriptionsError> for Error {
+    fn from(err: crate::operation::list_subscriptions::ListSubscriptionsError) -> Self {
+        match err {
+            crate::operation::list_subscriptions::ListSubscriptionsError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::list_subscriptions::ListSubscriptionsError::InternalFailureException(inner) => Error::InternalFailureException(inner),
+            crate::operation::list_subscriptions::ListSubscriptionsError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::list_subscriptions::ListSubscriptionsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_subscriptions::ListSubscriptionsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_subscriptions::ListSubscriptionsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::publish::PublishError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -317,6 +373,39 @@ impl From<crate::operation::publish::PublishError> for Error {
             crate::operation::publish::PublishError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::publish::PublishError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
             crate::operation::publish::PublishError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::send_direct_message::SendDirectMessageError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::send_direct_message::SendDirectMessageError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::send_direct_message::SendDirectMessageError> for Error {
+    fn from(err: crate::operation::send_direct_message::SendDirectMessageError) -> Self {
+        match err {
+            crate::operation::send_direct_message::SendDirectMessageError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::send_direct_message::SendDirectMessageError::GatewayTimeoutException(inner) => Error::GatewayTimeoutException(inner),
+            crate::operation::send_direct_message::SendDirectMessageError::InternalFailureException(inner) => Error::InternalFailureException(inner),
+            crate::operation::send_direct_message::SendDirectMessageError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::send_direct_message::SendDirectMessageError::RequestEntityTooLargeException(inner) => {
+                Error::RequestEntityTooLargeException(inner)
+            }
+            crate::operation::send_direct_message::SendDirectMessageError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::send_direct_message::SendDirectMessageError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::send_direct_message::SendDirectMessageError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::send_direct_message::SendDirectMessageError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -363,6 +452,7 @@ impl ::std::error::Error for Error {
         match self {
             Error::ConflictException(inner) => inner.source(),
             Error::ForbiddenException(inner) => inner.source(),
+            Error::GatewayTimeoutException(inner) => inner.source(),
             Error::InternalFailureException(inner) => inner.source(),
             Error::InvalidRequestException(inner) => inner.source(),
             Error::MethodNotAllowedException(inner) => inner.source(),
@@ -381,6 +471,7 @@ impl ::aws_types::request_id::RequestId for Error {
         match self {
             Self::ConflictException(e) => e.request_id(),
             Self::ForbiddenException(e) => e.request_id(),
+            Self::GatewayTimeoutException(e) => e.request_id(),
             Self::InternalFailureException(e) => e.request_id(),
             Self::InvalidRequestException(e) => e.request_id(),
             Self::MethodNotAllowedException(e) => e.request_id(),

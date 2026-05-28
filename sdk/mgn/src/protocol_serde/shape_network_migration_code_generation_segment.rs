@@ -72,6 +72,11 @@ where
                                     crate::protocol_serde::shape_network_migration_code_generation_artifacts::de_network_migration_code_generation_artifacts(tokens, _value)?
                                 );
                         }
+                        "referencedSegments" => {
+                            builder = builder.set_referenced_segments(
+                                crate::protocol_serde::shape_referenced_segments_list::de_referenced_segments_list(tokens, _value)?,
+                            );
+                        }
                         "createdAt" => {
                             builder = builder.set_created_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                                 tokens.next(),

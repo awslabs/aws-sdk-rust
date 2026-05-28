@@ -89,6 +89,8 @@ pub use crate::types::_log_location::LogLocationBuilder;
 
 pub use crate::types::_code_remediation_task::CodeRemediationTaskBuilder;
 
+pub use crate::types::_verification_script::VerificationScriptBuilder;
+
 pub use crate::types::_endpoint::EndpointBuilder;
 
 pub use crate::types::_actor::ActorBuilder;
@@ -122,3 +124,5 @@ pub use crate::types::_user_metadata::UserMetadataBuilder;
 pub use crate::types::_git_hub_repository_resource::GitHubRepositoryResourceBuilder;
 
 pub use crate::types::_code_remediation_task_details::CodeRemediationTaskDetailsBuilder;
+
+pub use crate::types::_verification_script_env_var::VerificationScriptEnvVarBuilder;

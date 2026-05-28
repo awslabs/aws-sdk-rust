@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeregisterService`](crate::operation::deregister_service::builders::DeregisterServiceFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`service_id(impl Into<String>)`](crate::operation::deregister_service::builders::DeregisterServiceFluentBuilder::service_id) / [`set_service_id(Option<String>)`](crate::operation::deregister_service::builders::DeregisterServiceFluentBuilder::set_service_id):<br>required: **true**<br>The service id to deregister. A service can only be deregistered if it is not associated with any AgentSpace.<br>
+    ///   - [`service_id(impl Into<String>)`](crate::operation::deregister_service::builders::DeregisterServiceFluentBuilder::service_id) / [`set_service_id(Option<String>)`](crate::operation::deregister_service::builders::DeregisterServiceFluentBuilder::set_service_id):<br>required: **true**<br><p>The service id to deregister. A service can only be deregistered if it is not associated with any AgentSpace.</p><br>
     /// - On success, responds with [`DeregisterServiceOutput`](crate::operation::deregister_service::DeregisterServiceOutput)
     /// - On failure, responds with [`SdkError<DeregisterServiceError>`](crate::operation::deregister_service::DeregisterServiceError)
     pub fn deregister_service(&self) -> crate::operation::deregister_service::builders::DeregisterServiceFluentBuilder {

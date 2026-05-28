@@ -5,7 +5,7 @@
 pub struct ListPhoneNumbersV2Output {
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
-    /// <p>Information about phone numbers that have been claimed to your Amazon Connect instances or traffic distribution groups.</p>
+    /// <p>Information about phone numbers that have been claimed to your Connect Customer instances or traffic distribution groups.</p>
     pub list_phone_numbers_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::ListPhoneNumbersSummary>>,
     _request_id: Option<String>,
 }
@@ -14,7 +14,7 @@ impl ListPhoneNumbersV2Output {
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>Information about phone numbers that have been claimed to your Amazon Connect instances or traffic distribution groups.</p>
+    /// <p>Information about phone numbers that have been claimed to your Connect Customer instances or traffic distribution groups.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.list_phone_numbers_summary_list.is_none()`.
     pub fn list_phone_numbers_summary_list(&self) -> &[crate::types::ListPhoneNumbersSummary] {
@@ -60,14 +60,14 @@ impl ListPhoneNumbersV2OutputBuilder {
     ///
     /// To override the contents of this collection use [`set_list_phone_numbers_summary_list`](Self::set_list_phone_numbers_summary_list).
     ///
-    /// <p>Information about phone numbers that have been claimed to your Amazon Connect instances or traffic distribution groups.</p>
+    /// <p>Information about phone numbers that have been claimed to your Connect Customer instances or traffic distribution groups.</p>
     pub fn list_phone_numbers_summary_list(mut self, input: crate::types::ListPhoneNumbersSummary) -> Self {
         let mut v = self.list_phone_numbers_summary_list.unwrap_or_default();
         v.push(input);
         self.list_phone_numbers_summary_list = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Information about phone numbers that have been claimed to your Amazon Connect instances or traffic distribution groups.</p>
+    /// <p>Information about phone numbers that have been claimed to your Connect Customer instances or traffic distribution groups.</p>
     pub fn set_list_phone_numbers_summary_list(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::ListPhoneNumbersSummary>>,
@@ -75,7 +75,7 @@ impl ListPhoneNumbersV2OutputBuilder {
         self.list_phone_numbers_summary_list = input;
         self
     }
-    /// <p>Information about phone numbers that have been claimed to your Amazon Connect instances or traffic distribution groups.</p>
+    /// <p>Information about phone numbers that have been claimed to your Connect Customer instances or traffic distribution groups.</p>
     pub fn get_list_phone_numbers_summary_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ListPhoneNumbersSummary>> {
         &self.list_phone_numbers_summary_list
     }

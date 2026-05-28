@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DisassociateService`](crate::operation::disassociate_service::builders::DisassociateServiceFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`agent_space_id(impl Into<String>)`](crate::operation::disassociate_service::builders::DisassociateServiceFluentBuilder::agent_space_id) / [`set_agent_space_id(Option<String>)`](crate::operation::disassociate_service::builders::DisassociateServiceFluentBuilder::set_agent_space_id):<br>required: **true**<br>The unique identifier of the AgentSpace<br>
-    ///   - [`association_id(impl Into<String>)`](crate::operation::disassociate_service::builders::DisassociateServiceFluentBuilder::association_id) / [`set_association_id(Option<String>)`](crate::operation::disassociate_service::builders::DisassociateServiceFluentBuilder::set_association_id):<br>required: **true**<br>The unique identifier of the given association.<br>
+    ///   - [`agent_space_id(impl Into<String>)`](crate::operation::disassociate_service::builders::DisassociateServiceFluentBuilder::agent_space_id) / [`set_agent_space_id(Option<String>)`](crate::operation::disassociate_service::builders::DisassociateServiceFluentBuilder::set_agent_space_id):<br>required: **true**<br><p>The unique identifier of the AgentSpace</p><br>
+    ///   - [`association_id(impl Into<String>)`](crate::operation::disassociate_service::builders::DisassociateServiceFluentBuilder::association_id) / [`set_association_id(Option<String>)`](crate::operation::disassociate_service::builders::DisassociateServiceFluentBuilder::set_association_id):<br>required: **true**<br><p>The unique identifier of the given association.</p><br>
     /// - On success, responds with [`DisassociateServiceOutput`](crate::operation::disassociate_service::DisassociateServiceOutput)
     /// - On failure, responds with [`SdkError<DisassociateServiceError>`](crate::operation::disassociate_service::DisassociateServiceError)
     pub fn disassociate_service(&self) -> crate::operation::disassociate_service::builders::DisassociateServiceFluentBuilder {

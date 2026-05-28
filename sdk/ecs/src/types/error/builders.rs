@@ -7,6 +7,10 @@ pub use crate::types::error::_invalid_parameter_exception::InvalidParameterExcep
 
 pub use crate::types::error::_server_exception::ServerExceptionBuilder;
 
+pub use crate::types::error::_service_deployment_not_found_exception::ServiceDeploymentNotFoundExceptionBuilder;
+
+pub use crate::types::error::_unsupported_feature_exception::UnsupportedFeatureExceptionBuilder;
+
 pub use crate::types::error::_namespace_not_found_exception::NamespaceNotFoundExceptionBuilder;
 
 pub use crate::types::error::_cluster_not_found_exception::ClusterNotFoundExceptionBuilder;
@@ -14,8 +18,6 @@ pub use crate::types::error::_cluster_not_found_exception::ClusterNotFoundExcept
 pub use crate::types::error::_limit_exceeded_exception::LimitExceededExceptionBuilder;
 
 pub use crate::types::error::_resource_not_found_exception::ResourceNotFoundExceptionBuilder;
-
-pub use crate::types::error::_unsupported_feature_exception::UnsupportedFeatureExceptionBuilder;
 
 pub use crate::types::error::_update_in_progress_exception::UpdateInProgressExceptionBuilder;
 
@@ -54,7 +56,5 @@ pub use crate::types::error::_task_set_not_found_exception::TaskSetNotFoundExcep
 pub use crate::types::error::_platform_task_definition_incompatibility_exception::PlatformTaskDefinitionIncompatibilityExceptionBuilder;
 
 pub use crate::types::error::_conflict_exception::ConflictExceptionBuilder;
-
-pub use crate::types::error::_service_deployment_not_found_exception::ServiceDeploymentNotFoundExceptionBuilder;
 
 pub use crate::types::error::_blocked_exception::BlockedExceptionBuilder;

@@ -42,8 +42,11 @@ pub fn ser_update_domain_input_input(
     if let Some(var_13) = &input.tag_propagation {
         object.key("TagPropagation").string(var_13.as_str());
     }
-    if let Some(var_14) = &input.vpc_id {
-        object.key("VpcId").string(var_14.as_str());
+    if let Some(var_14) = &input.home_efs_file_system_creation {
+        object.key("HomeEfsFileSystemCreation").string(var_14.as_str());
+    }
+    if let Some(var_15) = &input.vpc_id {
+        object.key("VpcId").string(var_15.as_str());
     }
     Ok(())
 }

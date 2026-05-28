@@ -53,6 +53,21 @@ pub(crate) fn generate_as2805_kek_validation_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn generate_auth_request_cryptogram_output_output_correct_errors(
+    mut builder: crate::operation::generate_auth_request_cryptogram::builders::GenerateAuthRequestCryptogramOutputBuilder,
+) -> crate::operation::generate_auth_request_cryptogram::builders::GenerateAuthRequestCryptogramOutputBuilder {
+    if builder.key_arn.is_none() {
+        builder.key_arn = Some(Default::default())
+    }
+    if builder.key_check_value.is_none() {
+        builder.key_check_value = Some(Default::default())
+    }
+    if builder.auth_request_cryptogram.is_none() {
+        builder.auth_request_cryptogram = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn generate_card_validation_data_output_output_correct_errors(
     mut builder: crate::operation::generate_card_validation_data::builders::GenerateCardValidationDataOutputBuilder,
 ) -> crate::operation::generate_card_validation_data::builders::GenerateCardValidationDataOutputBuilder {

@@ -45,6 +45,12 @@ pub fn ser_caption_selector_settings(
         crate::protocol_serde::shape_teletext_source_settings::ser_teletext_source_settings(&mut object_14, var_13)?;
         object_14.finish();
     }
+    if let Some(var_15) = &input.smart_subtitle_source_settings {
+        #[allow(unused_mut)]
+        let mut object_16 = object.key("smartSubtitleSourceSettings").start_object();
+        crate::protocol_serde::shape_smart_subtitle_source_settings::ser_smart_subtitle_source_settings(&mut object_16, var_15)?;
+        object_16.finish();
+    }
     Ok(())
 }
 
@@ -97,6 +103,11 @@ where
                         "teletextSourceSettings" => {
                             builder = builder.set_teletext_source_settings(
                                 crate::protocol_serde::shape_teletext_source_settings::de_teletext_source_settings(tokens, _value)?,
+                            );
+                        }
+                        "smartSubtitleSourceSettings" => {
+                            builder = builder.set_smart_subtitle_source_settings(
+                                crate::protocol_serde::shape_smart_subtitle_source_settings::de_smart_subtitle_source_settings(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

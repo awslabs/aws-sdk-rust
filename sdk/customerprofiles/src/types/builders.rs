@@ -81,6 +81,12 @@ pub use crate::types::_batch_get_profile_error::BatchGetProfileErrorBuilder;
 
 pub use crate::types::_profile::ProfileBuilder;
 
+pub use crate::types::_batch_put_profile_object_request_item::BatchPutProfileObjectRequestItemBuilder;
+
+pub use crate::types::_batch_put_profile_object_response_item::BatchPutProfileObjectResponseItemBuilder;
+
+pub use crate::types::_batch_put_profile_object_error_item::BatchPutProfileObjectErrorItemBuilder;
+
 pub use crate::types::_range::RangeBuilder;
 
 pub use crate::types::_threshold::ThresholdBuilder;

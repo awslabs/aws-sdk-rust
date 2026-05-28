@@ -276,25 +276,25 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for EnableOperato
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum EnableOperatorAppError {
-    /// Calls to the customer Identity Center have failed
+    /// <p>Calls to the customer Identity Center have failed</p>
     IdentityCenterServiceException(crate::types::error::IdentityCenterServiceException),
-    /// This exception is thrown when an unexpected error occurs in the processing of a request.
+    /// <p>This exception is thrown when an unexpected error occurs in the processing of a request.</p>
     InternalServerException(crate::types::error::InternalServerException),
-    /// The request was throttled due to too many requests. Please slow down and try again.
+    /// <p>The request was throttled due to too many requests. Please slow down and try again.</p>
     ThrottlingException(crate::types::error::ThrottlingException),
-    /// A standard error for input validation failures. This should be thrown by services when a member of the input structure falls outside of the modeled or documented constraints.
+    /// <p>The input fails to satisfy the constraints specified by the service.</p>
     ValidationException(crate::types::error::ValidationException),
-    /// Access to the requested resource is denied due to insufficient permissions.
+    /// <p>Access to the requested resource is denied due to insufficient permissions.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
-    /// The request conflicts with the current state of the resource.
+    /// <p>The request conflicts with the current state of the resource.</p>
     ConflictException(crate::types::error::ConflictException),
-    /// This exception is thrown when the content size exceeds the allowed limit.
+    /// <p>This exception is thrown when the content size exceeds the allowed limit.</p>
     ContentSizeExceededException(crate::types::error::ContentSizeExceededException),
-    /// One or more parameters provided in the request are invalid.
+    /// <p>One or more parameters provided in the request are invalid.</p>
     InvalidParameterException(crate::types::error::InvalidParameterException),
-    /// The requested resource could not be found.
+    /// <p>The requested resource could not be found.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
-    /// The request would exceed the service quota limit.
+    /// <p>The request would exceed the service quota limit.</p>
     ServiceQuotaExceededException(crate::types::error::ServiceQuotaExceededException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

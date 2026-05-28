@@ -25,6 +25,10 @@ where
                                 tokens, _value,
                             )?);
                         }
+                        "connectivity" => {
+                            builder =
+                                builder.set_connectivity(crate::protocol_serde::shape_connectivity_filter::de_connectivity_filter(tokens, _value)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {
@@ -66,6 +70,12 @@ pub fn ser_indexing_filter(
             }
         }
         array_5.finish();
+    }
+    if let Some(var_8) = &input.connectivity {
+        #[allow(unused_mut)]
+        let mut object_9 = object.key("connectivity").start_object();
+        crate::protocol_serde::shape_connectivity_filter::ser_connectivity_filter(&mut object_9, var_8)?;
+        object_9.finish();
     }
     Ok(())
 }

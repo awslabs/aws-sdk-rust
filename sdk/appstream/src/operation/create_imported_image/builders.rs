@@ -122,19 +122,33 @@ impl CreateImportedImageFluentBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }
-    /// <p>The ID of the EC2 AMI to import. The AMI must meet specific requirements including Windows Server 2022 Full Base, UEFI boot mode, TPM 2.0 support, and proper drivers.</p>
+    /// <p>The ID of the EC2 AMI to import.</p>
     pub fn source_ami_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.source_ami_id(input.into());
         self
     }
-    /// <p>The ID of the EC2 AMI to import. The AMI must meet specific requirements including Windows Server 2022 Full Base, UEFI boot mode, TPM 2.0 support, and proper drivers.</p>
+    /// <p>The ID of the EC2 AMI to import.</p>
     pub fn set_source_ami_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_source_ami_id(input);
         self
     }
-    /// <p>The ID of the EC2 AMI to import. The AMI must meet specific requirements including Windows Server 2022 Full Base, UEFI boot mode, TPM 2.0 support, and proper drivers.</p>
+    /// <p>The ID of the EC2 AMI to import.</p>
     pub fn get_source_ami_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_source_ami_id()
+    }
+    /// <p>The ID of the Workspaces Image to import.</p>
+    pub fn workspace_image_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.workspace_image_id(input.into());
+        self
+    }
+    /// <p>The ID of the Workspaces Image to import.</p>
+    pub fn set_workspace_image_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_workspace_image_id(input);
+        self
+    }
+    /// <p>The ID of the Workspaces Image to import.</p>
+    pub fn get_workspace_image_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_workspace_image_id()
     }
     /// <p>The ARN of the IAM role that allows WorkSpaces Applications to access your AMI. The role must have permissions to modify image attributes and describe images, with a trust relationship allowing appstream.amazonaws.com to assume the role.</p>
     pub fn iam_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

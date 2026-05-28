@@ -12,6 +12,7 @@
 /// ```text
 /// # let disconnectreasonvalue = unimplemented!();
 /// match disconnectreasonvalue {
+///     DisconnectReasonValue::ApiInitiatedDisconnect => { /* ... */ },
 ///     DisconnectReasonValue::AuthError => { /* ... */ },
 ///     DisconnectReasonValue::ClientError => { /* ... */ },
 ///     DisconnectReasonValue::ClientInitiatedDisconnect => { /* ... */ },
@@ -56,6 +57,8 @@
 )]
 pub enum DisconnectReasonValue {
     #[allow(missing_docs)] // documentation missing in model
+    ApiInitiatedDisconnect,
+    #[allow(missing_docs)] // documentation missing in model
     AuthError,
     #[allow(missing_docs)] // documentation missing in model
     ClientError,
@@ -91,6 +94,7 @@ pub enum DisconnectReasonValue {
 impl ::std::convert::From<&str> for DisconnectReasonValue {
     fn from(s: &str) -> Self {
         match s {
+            "API_INITIATED_DISCONNECT" => DisconnectReasonValue::ApiInitiatedDisconnect,
             "AUTH_ERROR" => DisconnectReasonValue::AuthError,
             "CLIENT_ERROR" => DisconnectReasonValue::ClientError,
             "CLIENT_INITIATED_DISCONNECT" => DisconnectReasonValue::ClientInitiatedDisconnect,
@@ -120,6 +124,7 @@ impl DisconnectReasonValue {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            DisconnectReasonValue::ApiInitiatedDisconnect => "API_INITIATED_DISCONNECT",
             DisconnectReasonValue::AuthError => "AUTH_ERROR",
             DisconnectReasonValue::ClientError => "CLIENT_ERROR",
             DisconnectReasonValue::ClientInitiatedDisconnect => "CLIENT_INITIATED_DISCONNECT",
@@ -140,6 +145,7 @@ impl DisconnectReasonValue {
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
+            "API_INITIATED_DISCONNECT",
             "AUTH_ERROR",
             "CLIENT_ERROR",
             "CLIENT_INITIATED_DISCONNECT",
@@ -177,6 +183,7 @@ impl DisconnectReasonValue {
 impl ::std::fmt::Display for DisconnectReasonValue {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            DisconnectReasonValue::ApiInitiatedDisconnect => write!(f, "API_INITIATED_DISCONNECT"),
             DisconnectReasonValue::AuthError => write!(f, "AUTH_ERROR"),
             DisconnectReasonValue::ClientError => write!(f, "CLIENT_ERROR"),
             DisconnectReasonValue::ClientInitiatedDisconnect => write!(f, "CLIENT_INITIATED_DISCONNECT"),

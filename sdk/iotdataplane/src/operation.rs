@@ -7,6 +7,9 @@ pub mod delete_connection;
 /// Types for the `DeleteThingShadow` operation.
 pub mod delete_thing_shadow;
 
+/// Types for the `GetConnection` operation.
+pub mod get_connection;
+
 /// Types for the `GetRetainedMessage` operation.
 pub mod get_retained_message;
 
@@ -19,8 +22,14 @@ pub mod list_named_shadows_for_thing;
 /// Types for the `ListRetainedMessages` operation.
 pub mod list_retained_messages;
 
+/// Types for the `ListSubscriptions` operation.
+pub mod list_subscriptions;
+
 /// Types for the `Publish` operation.
 pub mod publish;
+
+/// Types for the `SendDirectMessage` operation.
+pub mod send_direct_message;
 
 /// Types for the `UpdateThingShadow` operation.
 pub mod update_thing_shadow;

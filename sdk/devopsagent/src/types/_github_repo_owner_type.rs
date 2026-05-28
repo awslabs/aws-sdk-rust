@@ -36,15 +36,15 @@
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 ///
-/// Type of GitHub repository owner.
+/// <p>Type of GitHub repository owner.</p>
 #[non_exhaustive]
 #[derive(
     ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum GithubRepoOwnerType {
-    /// Repository owned by a GitHub organization.
+    /// <p>Repository owned by a GitHub organization.</p>
     Organization,
-    /// Repository owned by an individual GitHub user.
+    /// <p>Repository owned by an individual GitHub user.</p>
     User,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]

@@ -21,6 +21,8 @@ pub struct ReservedCapacitySummary {
     pub status: ::std::option::Option<crate::types::ReservedCapacityStatus>,
     /// <p>The availability zone for the reserved capacity.</p>
     pub availability_zone: ::std::option::Option<::std::string::String>,
+    /// <p>The Availability Zone ID of the reserved capacity.</p>
+    pub availability_zone_id: ::std::option::Option<::std::string::String>,
     /// <p>The number of whole hours in the total duration for this reserved capacity.</p>
     pub duration_hours: ::std::option::Option<i64>,
     /// <p>The additional minutes beyond whole hours in the total duration for this reserved capacity.</p>
@@ -63,6 +65,10 @@ impl ReservedCapacitySummary {
     pub fn availability_zone(&self) -> ::std::option::Option<&str> {
         self.availability_zone.as_deref()
     }
+    /// <p>The Availability Zone ID of the reserved capacity.</p>
+    pub fn availability_zone_id(&self) -> ::std::option::Option<&str> {
+        self.availability_zone_id.as_deref()
+    }
     /// <p>The number of whole hours in the total duration for this reserved capacity.</p>
     pub fn duration_hours(&self) -> ::std::option::Option<i64> {
         self.duration_hours
@@ -99,6 +105,7 @@ pub struct ReservedCapacitySummaryBuilder {
     pub(crate) total_instance_count: ::std::option::Option<i32>,
     pub(crate) status: ::std::option::Option<crate::types::ReservedCapacityStatus>,
     pub(crate) availability_zone: ::std::option::Option<::std::string::String>,
+    pub(crate) availability_zone_id: ::std::option::Option<::std::string::String>,
     pub(crate) duration_hours: ::std::option::Option<i64>,
     pub(crate) duration_minutes: ::std::option::Option<i64>,
     pub(crate) start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -221,6 +228,20 @@ impl ReservedCapacitySummaryBuilder {
     pub fn get_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
         &self.availability_zone
     }
+    /// <p>The Availability Zone ID of the reserved capacity.</p>
+    pub fn availability_zone_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.availability_zone_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Availability Zone ID of the reserved capacity.</p>
+    pub fn set_availability_zone_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.availability_zone_id = input;
+        self
+    }
+    /// <p>The Availability Zone ID of the reserved capacity.</p>
+    pub fn get_availability_zone_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.availability_zone_id
+    }
     /// <p>The number of whole hours in the total duration for this reserved capacity.</p>
     pub fn duration_hours(mut self, input: i64) -> Self {
         self.duration_hours = ::std::option::Option::Some(input);
@@ -288,6 +309,7 @@ impl ReservedCapacitySummaryBuilder {
             total_instance_count: self.total_instance_count,
             status: self.status,
             availability_zone: self.availability_zone,
+            availability_zone_id: self.availability_zone_id,
             duration_hours: self.duration_hours,
             duration_minutes: self.duration_minutes,
             start_time: self.start_time,

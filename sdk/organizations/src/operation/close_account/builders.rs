@@ -41,6 +41,7 @@ impl crate::operation::close_account::builders::CloseAccountInputBuilder {
 /// <p>If the Amazon Web Services account you attempt to close is linked to an Amazon Web Services GovCloud (US) account, the <code>CloseAccount</code> request will close both accounts. To learn important pre-closure details, see <a href="https://docs.aws.amazon.com/govcloud-us/latest/UserGuide/Closing-govcloud-account.html"> Closing an Amazon Web Services GovCloud (US) account</a> in the <i> Amazon Web Services GovCloud User Guide</i>.</p></li>
 /// </ul>
 /// </note>
+/// <p>After the permanent termination of the account after the 90-day waiting period, Organizations logs a membership event in CloudTrail. The event is an <code>AccountDepartedOrganization</code> event with <code>departedMethod:Cleaned</code> and <code>departedTime</code>. This event is available only in the management account's event history.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CloseAccountFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

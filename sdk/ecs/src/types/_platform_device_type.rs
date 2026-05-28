@@ -13,6 +13,7 @@
 /// # let platformdevicetype = unimplemented!();
 /// match platformdevicetype {
 ///     PlatformDeviceType::Gpu => { /* ... */ },
+///     PlatformDeviceType::NeuronDevice => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -43,6 +44,8 @@
 pub enum PlatformDeviceType {
     #[allow(missing_docs)] // documentation missing in model
     Gpu,
+    #[allow(missing_docs)] // documentation missing in model
+    NeuronDevice,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -51,6 +54,7 @@ impl ::std::convert::From<&str> for PlatformDeviceType {
     fn from(s: &str) -> Self {
         match s {
             "GPU" => PlatformDeviceType::Gpu,
+            "NEURON_DEVICE" => PlatformDeviceType::NeuronDevice,
             other => PlatformDeviceType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -67,12 +71,13 @@ impl PlatformDeviceType {
     pub fn as_str(&self) -> &str {
         match self {
             PlatformDeviceType::Gpu => "GPU",
+            PlatformDeviceType::NeuronDevice => "NEURON_DEVICE",
             PlatformDeviceType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["GPU"]
+        &["GPU", "NEURON_DEVICE"]
     }
 }
 impl ::std::convert::AsRef<str> for PlatformDeviceType {
@@ -96,6 +101,7 @@ impl ::std::fmt::Display for PlatformDeviceType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             PlatformDeviceType::Gpu => write!(f, "GPU"),
+            PlatformDeviceType::NeuronDevice => write!(f, "NEURON_DEVICE"),
             PlatformDeviceType::Unknown(value) => write!(f, "{value}"),
         }
     }

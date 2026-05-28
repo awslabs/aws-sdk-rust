@@ -1246,6 +1246,9 @@ impl From<crate::operation::invoke_agent_runtime::InvokeAgentRuntimeError> for E
             crate::operation::invoke_agent_runtime::InvokeAgentRuntimeError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
+            crate::operation::invoke_agent_runtime::InvokeAgentRuntimeError::RetryableConflictException(inner) => {
+                Error::RetryableConflictException(inner)
+            }
             crate::operation::invoke_agent_runtime::InvokeAgentRuntimeError::RuntimeClientError(inner) => Error::RuntimeClientError(inner),
             crate::operation::invoke_agent_runtime::InvokeAgentRuntimeError::ServiceQuotaExceededException(inner) => {
                 Error::ServiceQuotaExceededException(inner)
@@ -1386,9 +1389,9 @@ impl From<crate::operation::invoke_harness::InvokeHarnessError> for Error {
             crate::operation::invoke_harness::InvokeHarnessError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::invoke_harness::InvokeHarnessError::InternalServerException(inner) => Error::InternalServerException(inner),
             crate::operation::invoke_harness::InvokeHarnessError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::invoke_harness::InvokeHarnessError::RuntimeClientError(inner) => Error::RuntimeClientError(inner),
             crate::operation::invoke_harness::InvokeHarnessError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::invoke_harness::InvokeHarnessError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::operation::invoke_harness::InvokeHarnessError::RuntimeClientError(inner) => Error::RuntimeClientError(inner),
             crate::operation::invoke_harness::InvokeHarnessError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -2220,6 +2223,9 @@ impl From<crate::operation::stop_runtime_session::StopRuntimeSessionError> for E
             crate::operation::stop_runtime_session::StopRuntimeSessionError::InternalServerException(inner) => Error::InternalServerException(inner),
             crate::operation::stop_runtime_session::StopRuntimeSessionError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::stop_runtime_session::StopRuntimeSessionError::RetryableConflictException(inner) => {
+                Error::RetryableConflictException(inner)
             }
             crate::operation::stop_runtime_session::StopRuntimeSessionError::RuntimeClientError(inner) => Error::RuntimeClientError(inner),
             crate::operation::stop_runtime_session::StopRuntimeSessionError::ServiceQuotaExceededException(inner) => {

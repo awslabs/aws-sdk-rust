@@ -51,7 +51,7 @@ version = "1.7.4"
 [dependencies.aws-sdk-sts]
 path = "../sts"
 default-features = false
-version = "1.104.0"
+version = "1.105.0"
 
 [dependencies.aws-smithy-async]
 path = "../aws-smithy-async"
@@ -102,7 +102,7 @@ version = "0.1"
 path = "../sso"
 default-features = false
 optional = true
-version = "1.99.0"
+version = "1.100.0"
 
 [dependencies.sha1]
 version = "0.10"
@@ -120,7 +120,7 @@ optional = true
 path = "../ssooidc"
 default-features = false
 optional = true
-version = "1.101.0"
+version = "1.102.0"
 
 [dependencies.p256]
 version = "0.13.2"
@@ -134,7 +134,7 @@ optional = true
 path = "../signin"
 default-features = false
 optional = true
-version = "1.10.0"
+version = "1.11.0"
 
 [dependencies.base64-simd]
 version = "0.8.0"

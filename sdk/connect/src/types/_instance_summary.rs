@@ -22,7 +22,7 @@ pub struct InstanceSummary {
     pub inbound_calls_enabled: ::std::option::Option<bool>,
     /// <p>Whether outbound calls are enabled.</p>
     pub outbound_calls_enabled: ::std::option::Option<bool>,
-    /// <p>This URL allows contact center users to access the Amazon Connect admin website.</p>
+    /// <p>This URL allows contact center users to access the Connect Customer admin website.</p>
     pub instance_access_url: ::std::option::Option<::std::string::String>,
 }
 impl InstanceSummary {
@@ -62,7 +62,7 @@ impl InstanceSummary {
     pub fn outbound_calls_enabled(&self) -> ::std::option::Option<bool> {
         self.outbound_calls_enabled
     }
-    /// <p>This URL allows contact center users to access the Amazon Connect admin website.</p>
+    /// <p>This URL allows contact center users to access the Connect Customer admin website.</p>
     pub fn instance_access_url(&self) -> ::std::option::Option<&str> {
         self.instance_access_url.as_deref()
     }
@@ -232,17 +232,17 @@ impl InstanceSummaryBuilder {
     pub fn get_outbound_calls_enabled(&self) -> &::std::option::Option<bool> {
         &self.outbound_calls_enabled
     }
-    /// <p>This URL allows contact center users to access the Amazon Connect admin website.</p>
+    /// <p>This URL allows contact center users to access the Connect Customer admin website.</p>
     pub fn instance_access_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_access_url = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>This URL allows contact center users to access the Amazon Connect admin website.</p>
+    /// <p>This URL allows contact center users to access the Connect Customer admin website.</p>
     pub fn set_instance_access_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_access_url = input;
         self
     }
-    /// <p>This URL allows contact center users to access the Amazon Connect admin website.</p>
+    /// <p>This URL allows contact center users to access the Connect Customer admin website.</p>
     pub fn get_instance_access_url(&self) -> &::std::option::Option<::std::string::String> {
         &self.instance_access_url
     }

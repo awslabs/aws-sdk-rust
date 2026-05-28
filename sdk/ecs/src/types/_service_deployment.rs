@@ -70,6 +70,8 @@ pub struct ServiceDeployment {
     /// <p>The stage when the blue service revision has completely scaled down to 0 running tasks. The green service revision is now the production service revision after this stage.</p></li>
     /// </ul>
     pub lifecycle_stage: ::std::option::Option<crate::types::ServiceDeploymentLifecycleStage>,
+    /// <p>The details of the lifecycle hooks for the current service deployment.</p>
+    pub lifecycle_hook_details: ::std::option::Option<::std::vec::Vec<crate::types::DeploymentLifecycleHookDetail>>,
     /// <p>Optional deployment parameters that control how many tasks run during a deployment and the ordering of stopping and starting tasks.</p>
     pub deployment_configuration: ::std::option::Option<crate::types::DeploymentConfiguration>,
     /// <p>The rollback options the service deployment uses when the deployment fails.</p>
@@ -173,6 +175,12 @@ impl ServiceDeployment {
     pub fn lifecycle_stage(&self) -> ::std::option::Option<&crate::types::ServiceDeploymentLifecycleStage> {
         self.lifecycle_stage.as_ref()
     }
+    /// <p>The details of the lifecycle hooks for the current service deployment.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.lifecycle_hook_details.is_none()`.
+    pub fn lifecycle_hook_details(&self) -> &[crate::types::DeploymentLifecycleHookDetail] {
+        self.lifecycle_hook_details.as_deref().unwrap_or_default()
+    }
     /// <p>Optional deployment parameters that control how many tasks run during a deployment and the ordering of stopping and starting tasks.</p>
     pub fn deployment_configuration(&self) -> ::std::option::Option<&crate::types::DeploymentConfiguration> {
         self.deployment_configuration.as_ref()
@@ -214,6 +222,7 @@ pub struct ServiceDeploymentBuilder {
     pub(crate) status: ::std::option::Option<crate::types::ServiceDeploymentStatus>,
     pub(crate) status_reason: ::std::option::Option<::std::string::String>,
     pub(crate) lifecycle_stage: ::std::option::Option<crate::types::ServiceDeploymentLifecycleStage>,
+    pub(crate) lifecycle_hook_details: ::std::option::Option<::std::vec::Vec<crate::types::DeploymentLifecycleHookDetail>>,
     pub(crate) deployment_configuration: ::std::option::Option<crate::types::DeploymentConfiguration>,
     pub(crate) rollback: ::std::option::Option<crate::types::Rollback>,
     pub(crate) deployment_circuit_breaker: ::std::option::Option<crate::types::ServiceDeploymentCircuitBreaker>,
@@ -525,6 +534,26 @@ impl ServiceDeploymentBuilder {
     pub fn get_lifecycle_stage(&self) -> &::std::option::Option<crate::types::ServiceDeploymentLifecycleStage> {
         &self.lifecycle_stage
     }
+    /// Appends an item to `lifecycle_hook_details`.
+    ///
+    /// To override the contents of this collection use [`set_lifecycle_hook_details`](Self::set_lifecycle_hook_details).
+    ///
+    /// <p>The details of the lifecycle hooks for the current service deployment.</p>
+    pub fn lifecycle_hook_details(mut self, input: crate::types::DeploymentLifecycleHookDetail) -> Self {
+        let mut v = self.lifecycle_hook_details.unwrap_or_default();
+        v.push(input);
+        self.lifecycle_hook_details = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The details of the lifecycle hooks for the current service deployment.</p>
+    pub fn set_lifecycle_hook_details(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DeploymentLifecycleHookDetail>>) -> Self {
+        self.lifecycle_hook_details = input;
+        self
+    }
+    /// <p>The details of the lifecycle hooks for the current service deployment.</p>
+    pub fn get_lifecycle_hook_details(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DeploymentLifecycleHookDetail>> {
+        &self.lifecycle_hook_details
+    }
     /// <p>Optional deployment parameters that control how many tasks run during a deployment and the ordering of stopping and starting tasks.</p>
     pub fn deployment_configuration(mut self, input: crate::types::DeploymentConfiguration) -> Self {
         self.deployment_configuration = ::std::option::Option::Some(input);
@@ -597,6 +626,7 @@ impl ServiceDeploymentBuilder {
             status: self.status,
             status_reason: self.status_reason,
             lifecycle_stage: self.lifecycle_stage,
+            lifecycle_hook_details: self.lifecycle_hook_details,
             deployment_configuration: self.deployment_configuration,
             rollback: self.rollback,
             deployment_circuit_breaker: self.deployment_circuit_breaker,

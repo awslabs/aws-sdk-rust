@@ -9,5 +9,14 @@ pub fn ser_control_filter(
         crate::protocol_serde::shape_implementation_filter::ser_implementation_filter(&mut object_2, var_1)?;
         object_2.finish();
     }
+    if let Some(var_3) = &input.governed_providers {
+        let mut array_4 = object.key("GovernedProviders").start_array();
+        for item_5 in var_3 {
+            {
+                array_4.value().string(item_5.as_str());
+            }
+        }
+        array_4.finish();
+    }
     Ok(())
 }

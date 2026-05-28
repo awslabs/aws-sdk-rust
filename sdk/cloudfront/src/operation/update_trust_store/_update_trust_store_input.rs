@@ -7,6 +7,8 @@ pub struct UpdateTrustStoreInput {
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The CA certificates bundle source.</p>
     pub ca_certificates_bundle_source: ::std::option::Option<crate::types::CaCertificatesBundleSource>,
+    /// <p>A Boolean that determines whether to use the CA certificate's OCSP endpoint to check certificate revocation status.</p>
+    pub use_client_certificate_ocsp_endpoint: ::std::option::Option<bool>,
     /// <p>The current version (<code>ETag</code> value) of the trust store you are updating.</p>
     pub if_match: ::std::option::Option<::std::string::String>,
 }
@@ -18,6 +20,10 @@ impl UpdateTrustStoreInput {
     /// <p>The CA certificates bundle source.</p>
     pub fn ca_certificates_bundle_source(&self) -> ::std::option::Option<&crate::types::CaCertificatesBundleSource> {
         self.ca_certificates_bundle_source.as_ref()
+    }
+    /// <p>A Boolean that determines whether to use the CA certificate's OCSP endpoint to check certificate revocation status.</p>
+    pub fn use_client_certificate_ocsp_endpoint(&self) -> ::std::option::Option<bool> {
+        self.use_client_certificate_ocsp_endpoint
     }
     /// <p>The current version (<code>ETag</code> value) of the trust store you are updating.</p>
     pub fn if_match(&self) -> ::std::option::Option<&str> {
@@ -37,6 +43,7 @@ impl UpdateTrustStoreInput {
 pub struct UpdateTrustStoreInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) ca_certificates_bundle_source: ::std::option::Option<crate::types::CaCertificatesBundleSource>,
+    pub(crate) use_client_certificate_ocsp_endpoint: ::std::option::Option<bool>,
     pub(crate) if_match: ::std::option::Option<::std::string::String>,
 }
 impl UpdateTrustStoreInputBuilder {
@@ -56,7 +63,6 @@ impl UpdateTrustStoreInputBuilder {
         &self.id
     }
     /// <p>The CA certificates bundle source.</p>
-    /// This field is required.
     pub fn ca_certificates_bundle_source(mut self, input: crate::types::CaCertificatesBundleSource) -> Self {
         self.ca_certificates_bundle_source = ::std::option::Option::Some(input);
         self
@@ -69,6 +75,20 @@ impl UpdateTrustStoreInputBuilder {
     /// <p>The CA certificates bundle source.</p>
     pub fn get_ca_certificates_bundle_source(&self) -> &::std::option::Option<crate::types::CaCertificatesBundleSource> {
         &self.ca_certificates_bundle_source
+    }
+    /// <p>A Boolean that determines whether to use the CA certificate's OCSP endpoint to check certificate revocation status.</p>
+    pub fn use_client_certificate_ocsp_endpoint(mut self, input: bool) -> Self {
+        self.use_client_certificate_ocsp_endpoint = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A Boolean that determines whether to use the CA certificate's OCSP endpoint to check certificate revocation status.</p>
+    pub fn set_use_client_certificate_ocsp_endpoint(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.use_client_certificate_ocsp_endpoint = input;
+        self
+    }
+    /// <p>A Boolean that determines whether to use the CA certificate's OCSP endpoint to check certificate revocation status.</p>
+    pub fn get_use_client_certificate_ocsp_endpoint(&self) -> &::std::option::Option<bool> {
+        &self.use_client_certificate_ocsp_endpoint
     }
     /// <p>The current version (<code>ETag</code> value) of the trust store you are updating.</p>
     /// This field is required.
@@ -92,6 +112,7 @@ impl UpdateTrustStoreInputBuilder {
         ::std::result::Result::Ok(crate::operation::update_trust_store::UpdateTrustStoreInput {
             id: self.id,
             ca_certificates_bundle_source: self.ca_certificates_bundle_source,
+            use_client_certificate_ocsp_endpoint: self.use_client_certificate_ocsp_endpoint,
             if_match: self.if_match,
         })
     }

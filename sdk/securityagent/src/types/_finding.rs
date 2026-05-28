@@ -42,6 +42,8 @@ pub struct Finding {
     pub last_updated_by: ::std::option::Option<::std::string::String>,
     /// <p>The file locations involved in the vulnerability, as reported by the code scanner.</p>
     pub code_locations: ::std::option::Option<::std::vec::Vec<crate::types::CodeLocation>>,
+    /// <p>The verification script metadata for reproducing the finding, including download URL, instructions, and required environment variables.</p>
+    pub verification_script: ::std::option::Option<crate::types::VerificationScript>,
     /// <p>The date and time the finding was created, in UTC format.</p>
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time the finding was last updated, in UTC format.</p>
@@ -128,6 +130,10 @@ impl Finding {
     pub fn code_locations(&self) -> &[crate::types::CodeLocation] {
         self.code_locations.as_deref().unwrap_or_default()
     }
+    /// <p>The verification script metadata for reproducing the finding, including download URL, instructions, and required environment variables.</p>
+    pub fn verification_script(&self) -> ::std::option::Option<&crate::types::VerificationScript> {
+        self.verification_script.as_ref()
+    }
     /// <p>The date and time the finding was created, in UTC format.</p>
     pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
@@ -167,6 +173,7 @@ pub struct FindingBuilder {
     pub(crate) code_remediation_task: ::std::option::Option<crate::types::CodeRemediationTask>,
     pub(crate) last_updated_by: ::std::option::Option<::std::string::String>,
     pub(crate) code_locations: ::std::option::Option<::std::vec::Vec<crate::types::CodeLocation>>,
+    pub(crate) verification_script: ::std::option::Option<crate::types::VerificationScript>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
@@ -445,6 +452,20 @@ impl FindingBuilder {
     pub fn get_code_locations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CodeLocation>> {
         &self.code_locations
     }
+    /// <p>The verification script metadata for reproducing the finding, including download URL, instructions, and required environment variables.</p>
+    pub fn verification_script(mut self, input: crate::types::VerificationScript) -> Self {
+        self.verification_script = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The verification script metadata for reproducing the finding, including download URL, instructions, and required environment variables.</p>
+    pub fn set_verification_script(mut self, input: ::std::option::Option<crate::types::VerificationScript>) -> Self {
+        self.verification_script = input;
+        self
+    }
+    /// <p>The verification script metadata for reproducing the finding, including download URL, instructions, and required environment variables.</p>
+    pub fn get_verification_script(&self) -> &::std::option::Option<crate::types::VerificationScript> {
+        &self.verification_script
+    }
     /// <p>The date and time the finding was created, in UTC format.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
@@ -508,6 +529,7 @@ impl FindingBuilder {
             code_remediation_task: self.code_remediation_task,
             last_updated_by: self.last_updated_by,
             code_locations: self.code_locations,
+            verification_script: self.verification_script,
             created_at: self.created_at,
             updated_at: self.updated_at,
         })

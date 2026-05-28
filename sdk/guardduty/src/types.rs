@@ -259,6 +259,8 @@ pub use crate::types::_scanned_resource_details::ScannedResourceDetails;
 
 pub use crate::types::_trigger_type::TriggerType;
 
+pub use crate::types::_scan_configuration_continuous_scan_details::ScanConfigurationContinuousScanDetails;
+
 pub use crate::types::_scan_result_threat::ScanResultThreat;
 
 pub use crate::types::_scan_criterion_key::ScanCriterionKey;
@@ -286,6 +288,8 @@ pub use crate::types::_coverage_resource_details::CoverageResourceDetails;
 pub use crate::types::_list_malware_scans_filter_criterion::ListMalwareScansFilterCriterion;
 
 pub use crate::types::_admin_status::AdminStatus;
+
+pub use crate::types::_continuous_scan_details::ContinuousScanDetails;
 
 pub use crate::types::_organization_kubernetes_audit_logs_configuration::OrganizationKubernetesAuditLogsConfiguration;
 
@@ -704,6 +708,8 @@ mod _container;
 mod _container_finding_resource;
 
 mod _container_instance_details;
+
+mod _continuous_scan_details;
 
 mod _country;
 
@@ -1146,6 +1152,8 @@ mod _scan_condition;
 mod _scan_condition_pair;
 
 mod _scan_configuration;
+
+mod _scan_configuration_continuous_scan_details;
 
 mod _scan_configuration_recovery_point;
 

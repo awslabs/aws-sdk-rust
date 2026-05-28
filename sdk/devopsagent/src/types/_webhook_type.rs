@@ -38,19 +38,19 @@
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 ///
-/// Webhook authentication type.
+/// <p>Webhook authentication type.</p>
 #[non_exhaustive]
 #[derive(
     ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum WebhookType {
-    /// API key-based webhook authentication
+    /// <p>API key-based webhook authentication</p>
     ApiKey,
-    /// GitLab-specific webhook authentication
+    /// <p>GitLab-specific webhook authentication</p>
     Gitlab,
-    /// HMAC-based webhook authentication
+    /// <p>HMAC-based webhook authentication</p>
     Hmac,
-    /// pagerduty-specific webhook authentication
+    /// <p>pagerduty-specific webhook authentication</p>
     Pagerduty,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]

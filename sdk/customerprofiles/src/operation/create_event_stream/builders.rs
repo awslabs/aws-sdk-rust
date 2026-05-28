@@ -22,7 +22,7 @@ impl crate::operation::create_event_stream::builders::CreateEventStreamInputBuil
 }
 /// Fluent builder constructing a request to `CreateEventStream`.
 ///
-/// <p>Creates an event stream, which is a subscription to real-time events, such as when profiles are created and updated through Amazon Connect Customer Profiles.</p>
+/// <p>Creates an event stream, which is a subscription to real-time events, such as when profiles are created and updated through Connect Customer Customer Profiles.</p>
 /// <p>Each event stream can be associated with only one Kinesis Data Stream destination in the same region and Amazon Web Services account as the customer profiles domain</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateEventStreamFluentBuilder {

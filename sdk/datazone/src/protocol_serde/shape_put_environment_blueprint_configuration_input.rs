@@ -3,62 +3,77 @@ pub fn ser_put_environment_blueprint_configuration_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::put_environment_blueprint_configuration::PutEnvironmentBlueprintConfigurationInput,
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    if let Some(var_1) = &input.enabled_regions {
-        let mut array_2 = object.key("enabledRegions").start_array();
-        for item_3 in var_1 {
+    if let Some(var_1) = &input.allow_user_provided_configurations {
+        object.key("allowUserProvidedConfigurations").boolean(*var_1);
+    }
+    if let Some(var_2) = &input.enabled_regions {
+        let mut array_3 = object.key("enabledRegions").start_array();
+        for item_4 in var_2 {
             {
-                array_2.value().string(item_3.as_str());
+                array_3.value().string(item_4.as_str());
             }
         }
-        array_2.finish();
+        array_3.finish();
     }
-    if let Some(var_4) = &input.environment_role_permission_boundary {
-        object.key("environmentRolePermissionBoundary").string(var_4.as_str());
+    if let Some(var_5) = &input.environment_role_permission_boundary {
+        object.key("environmentRolePermissionBoundary").string(var_5.as_str());
     }
-    if let Some(var_5) = &input.global_parameters {
+    if let Some(var_6) = &input.global_parameters {
         #[allow(unused_mut)]
-        let mut object_6 = object.key("globalParameters").start_object();
-        for (key_7, value_8) in var_5 {
+        let mut object_7 = object.key("globalParameters").start_object();
+        for (key_8, value_9) in var_6 {
             {
-                object_6.key(key_7.as_str()).string(value_8.as_str());
+                object_7.key(key_8.as_str()).string(value_9.as_str());
             }
         }
-        object_6.finish();
+        object_7.finish();
     }
-    if let Some(var_9) = &input.manage_access_role_arn {
-        object.key("manageAccessRoleArn").string(var_9.as_str());
+    if let Some(var_10) = &input.manage_access_role_arn {
+        object.key("manageAccessRoleArn").string(var_10.as_str());
     }
-    if let Some(var_10) = &input.provisioning_configurations {
-        let mut array_11 = object.key("provisioningConfigurations").start_array();
-        for item_12 in var_10 {
+    if let Some(var_11) = &input.provisioning_configurations {
+        let mut array_12 = object.key("provisioningConfigurations").start_array();
+        for item_13 in var_11 {
             {
                 #[allow(unused_mut)]
-                let mut object_13 = array_11.value().start_object();
-                crate::protocol_serde::shape_provisioning_configuration::ser_provisioning_configuration(&mut object_13, item_12)?;
-                object_13.finish();
+                let mut object_14 = array_12.value().start_object();
+                crate::protocol_serde::shape_provisioning_configuration::ser_provisioning_configuration(&mut object_14, item_13)?;
+                object_14.finish();
             }
         }
-        array_11.finish();
+        array_12.finish();
     }
-    if let Some(var_14) = &input.provisioning_role_arn {
-        object.key("provisioningRoleArn").string(var_14.as_str());
+    if let Some(var_15) = &input.provisioning_role_arn {
+        object.key("provisioningRoleArn").string(var_15.as_str());
     }
-    if let Some(var_15) = &input.regional_parameters {
+    if let Some(var_16) = &input.regional_parameters {
         #[allow(unused_mut)]
-        let mut object_16 = object.key("regionalParameters").start_object();
-        for (key_17, value_18) in var_15 {
+        let mut object_17 = object.key("regionalParameters").start_object();
+        for (key_18, value_19) in var_16 {
             {
                 #[allow(unused_mut)]
-                let mut object_19 = object_16.key(key_17.as_str()).start_object();
-                for (key_20, value_21) in value_18 {
+                let mut object_20 = object_17.key(key_18.as_str()).start_object();
+                for (key_21, value_22) in value_19 {
                     {
-                        object_19.key(key_20.as_str()).string(value_21.as_str());
+                        object_20.key(key_21.as_str()).string(value_22.as_str());
                     }
                 }
-                object_19.finish();
+                object_20.finish();
             }
         }
-        object_16.finish();
+        object_17.finish();
+    }
+    if let Some(var_23) = &input.resource_configurations {
+        let mut array_24 = object.key("resourceConfigurations").start_array();
+        for item_25 in var_23 {
+            {
+                #[allow(unused_mut)]
+                let mut object_26 = array_24.value().start_object();
+                crate::protocol_serde::shape_put_resource_configuration::ser_put_resource_configuration(&mut object_26, item_25)?;
+                object_26.finish();
+            }
+        }
+        array_24.finish();
     }
     Ok(())
 }

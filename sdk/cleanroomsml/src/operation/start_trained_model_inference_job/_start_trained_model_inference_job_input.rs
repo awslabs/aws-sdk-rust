@@ -46,6 +46,8 @@ pub struct StartTrainedModelInferenceJobInput {
     /// <p>Do not use aws:, AWS:, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has aws as its prefix but the key does not, then Clean Rooms ML considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of aws do not count against your tags per resource limit.</p></li>
     /// </ul>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p>The account ID of the member that is responsible for paying for model inference costs.</p>
+    pub ml_model_inference_payer_account_id: ::std::option::Option<::std::string::String>,
 }
 impl StartTrainedModelInferenceJobInput {
     /// <p>The membership ID of the membership that contains the trained model inference job.</p>
@@ -117,6 +119,10 @@ impl StartTrainedModelInferenceJobInput {
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
+    /// <p>The account ID of the member that is responsible for paying for model inference costs.</p>
+    pub fn ml_model_inference_payer_account_id(&self) -> ::std::option::Option<&str> {
+        self.ml_model_inference_payer_account_id.as_deref()
+    }
 }
 impl StartTrainedModelInferenceJobInput {
     /// Creates a new builder-style object to manufacture [`StartTrainedModelInferenceJobInput`](crate::operation::start_trained_model_inference_job::StartTrainedModelInferenceJobInput).
@@ -142,6 +148,7 @@ pub struct StartTrainedModelInferenceJobInputBuilder {
     pub(crate) environment: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) kms_key_arn: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) ml_model_inference_payer_account_id: ::std::option::Option<::std::string::String>,
 }
 impl StartTrainedModelInferenceJobInputBuilder {
     /// <p>The membership ID of the membership that contains the trained model inference job.</p>
@@ -398,6 +405,20 @@ impl StartTrainedModelInferenceJobInputBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
+    /// <p>The account ID of the member that is responsible for paying for model inference costs.</p>
+    pub fn ml_model_inference_payer_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.ml_model_inference_payer_account_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The account ID of the member that is responsible for paying for model inference costs.</p>
+    pub fn set_ml_model_inference_payer_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.ml_model_inference_payer_account_id = input;
+        self
+    }
+    /// <p>The account ID of the member that is responsible for paying for model inference costs.</p>
+    pub fn get_ml_model_inference_payer_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ml_model_inference_payer_account_id
+    }
     /// Consumes the builder and constructs a [`StartTrainedModelInferenceJobInput`](crate::operation::start_trained_model_inference_job::StartTrainedModelInferenceJobInput).
     pub fn build(
         self,
@@ -419,6 +440,7 @@ impl StartTrainedModelInferenceJobInputBuilder {
             environment: self.environment,
             kms_key_arn: self.kms_key_arn,
             tags: self.tags,
+            ml_model_inference_payer_account_id: self.ml_model_inference_payer_account_id,
         })
     }
 }

@@ -15,6 +15,12 @@ pub fn ser_semantic_table(
         crate::protocol_serde::shape_row_level_permission_configuration::ser_row_level_permission_configuration(&mut object_2, var_1)?;
         object_2.finish();
     }
+    if let Some(var_3) = &input.semantic_metadata {
+        #[allow(unused_mut)]
+        let mut object_4 = object.key("SemanticMetadata").start_object();
+        crate::protocol_serde::shape_table_semantic_metadata::ser_table_semantic_metadata(&mut object_4, var_3)?;
+        object_4.finish();
+    }
     Ok(())
 }
 
@@ -53,6 +59,11 @@ where
                                 crate::protocol_serde::shape_row_level_permission_configuration::de_row_level_permission_configuration(
                                     tokens, _value,
                                 )?,
+                            );
+                        }
+                        "SemanticMetadata" => {
+                            builder = builder.set_semantic_metadata(
+                                crate::protocol_serde::shape_table_semantic_metadata::de_table_semantic_metadata(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

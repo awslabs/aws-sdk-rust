@@ -3,11 +3,11 @@ impl super::Client {
     /// Constructs a fluent builder for the [`UpdateOperatorAppIdpConfig`](crate::operation::update_operator_app_idp_config::builders::UpdateOperatorAppIdpConfigFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`agent_space_id(impl Into<String>)`](crate::operation::update_operator_app_idp_config::builders::UpdateOperatorAppIdpConfigFluentBuilder::agent_space_id) / [`set_agent_space_id(Option<String>)`](crate::operation::update_operator_app_idp_config::builders::UpdateOperatorAppIdpConfigFluentBuilder::set_agent_space_id):<br>required: **true**<br>The unique identifier of the AgentSpace<br>
-    ///   - [`idp_client_secret(impl Into<String>)`](crate::operation::update_operator_app_idp_config::builders::UpdateOperatorAppIdpConfigFluentBuilder::idp_client_secret) / [`set_idp_client_secret(Option<String>)`](crate::operation::update_operator_app_idp_config::builders::UpdateOperatorAppIdpConfigFluentBuilder::set_idp_client_secret):<br>required: **false**<br>The OIDC client secret for the IdP application<br>
+    ///   - [`agent_space_id(impl Into<String>)`](crate::operation::update_operator_app_idp_config::builders::UpdateOperatorAppIdpConfigFluentBuilder::agent_space_id) / [`set_agent_space_id(Option<String>)`](crate::operation::update_operator_app_idp_config::builders::UpdateOperatorAppIdpConfigFluentBuilder::set_agent_space_id):<br>required: **true**<br><p>The unique identifier of the AgentSpace</p><br>
+    ///   - [`idp_client_secret(impl Into<String>)`](crate::operation::update_operator_app_idp_config::builders::UpdateOperatorAppIdpConfigFluentBuilder::idp_client_secret) / [`set_idp_client_secret(Option<String>)`](crate::operation::update_operator_app_idp_config::builders::UpdateOperatorAppIdpConfigFluentBuilder::set_idp_client_secret):<br>required: **false**<br><p>The OIDC client secret for the IdP application</p><br>
     /// - On success, responds with [`UpdateOperatorAppIdpConfigOutput`](crate::operation::update_operator_app_idp_config::UpdateOperatorAppIdpConfigOutput) with field(s):
-    ///   - [`agent_space_id(String)`](crate::operation::update_operator_app_idp_config::UpdateOperatorAppIdpConfigOutput::agent_space_id): The unique identifier of the AgentSpace
-    ///   - [`idp(Option<IdpAuthConfiguration>)`](crate::operation::update_operator_app_idp_config::UpdateOperatorAppIdpConfigOutput::idp): Configuration for external Identity Provider OIDC authentication flow for the Operator App.
+    ///   - [`agent_space_id(String)`](crate::operation::update_operator_app_idp_config::UpdateOperatorAppIdpConfigOutput::agent_space_id): <p>The unique identifier of the AgentSpace</p>
+    ///   - [`idp(Option<IdpAuthConfiguration>)`](crate::operation::update_operator_app_idp_config::UpdateOperatorAppIdpConfigOutput::idp): <p>Configuration for external Identity Provider OIDC authentication flow for the Operator App.</p>
     /// - On failure, responds with [`SdkError<UpdateOperatorAppIdpConfigError>`](crate::operation::update_operator_app_idp_config::UpdateOperatorAppIdpConfigError)
     pub fn update_operator_app_idp_config(
         &self,

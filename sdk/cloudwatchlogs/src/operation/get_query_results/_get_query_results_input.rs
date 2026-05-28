@@ -7,7 +7,7 @@ pub struct GetQueryResultsInput {
     pub query_id: ::std::option::Option<::std::string::String>,
     /// <p>The token for the next set of items to return. The token expires after 1 hour.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
-    /// <p>The maximum number of log events to return in the response. The maximum is 10,000 log events.</p>
+    /// <p>The maximum number of log events to return in the response. The maximum is 10,000 log events per request. You can retrieve up to 100,000 log event results from a query by paginating with the <code>nextToken</code>.</p>
     pub max_items: ::std::option::Option<i32>,
 }
 impl GetQueryResultsInput {
@@ -19,7 +19,7 @@ impl GetQueryResultsInput {
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of log events to return in the response. The maximum is 10,000 log events.</p>
+    /// <p>The maximum number of log events to return in the response. The maximum is 10,000 log events per request. You can retrieve up to 100,000 log event results from a query by paginating with the <code>nextToken</code>.</p>
     pub fn max_items(&self) -> ::std::option::Option<i32> {
         self.max_items
     }
@@ -69,17 +69,17 @@ impl GetQueryResultsInputBuilder {
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
-    /// <p>The maximum number of log events to return in the response. The maximum is 10,000 log events.</p>
+    /// <p>The maximum number of log events to return in the response. The maximum is 10,000 log events per request. You can retrieve up to 100,000 log event results from a query by paginating with the <code>nextToken</code>.</p>
     pub fn max_items(mut self, input: i32) -> Self {
         self.max_items = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The maximum number of log events to return in the response. The maximum is 10,000 log events.</p>
+    /// <p>The maximum number of log events to return in the response. The maximum is 10,000 log events per request. You can retrieve up to 100,000 log event results from a query by paginating with the <code>nextToken</code>.</p>
     pub fn set_max_items(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_items = input;
         self
     }
-    /// <p>The maximum number of log events to return in the response. The maximum is 10,000 log events.</p>
+    /// <p>The maximum number of log events to return in the response. The maximum is 10,000 log events per request. You can retrieve up to 100,000 log event results from a query by paginating with the <code>nextToken</code>.</p>
     pub fn get_max_items(&self) -> &::std::option::Option<i32> {
         &self.max_items
     }

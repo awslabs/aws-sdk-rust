@@ -4,8 +4,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum HarnessSkill {
+    /// <p>A git repository containing the skill.</p>
+    Git(crate::types::HarnessSkillGitSource),
     /// <p>The filesystem path to the skill definition.</p>
     Path(::std::string::String),
+    /// <p>An S3 source containing the skill.</p>
+    S3(crate::types::HarnessSkillS3Source),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant
     ///
@@ -17,7 +21,19 @@ pub enum HarnessSkill {
     Unknown,
 }
 impl HarnessSkill {
-    #[allow(irrefutable_let_patterns)]
+    /// Tries to convert the enum instance into [`Git`](crate::types::HarnessSkill::Git), extracting the inner [`HarnessSkillGitSource`](crate::types::HarnessSkillGitSource).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_git(&self) -> ::std::result::Result<&crate::types::HarnessSkillGitSource, &Self> {
+        if let HarnessSkill::Git(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`Git`](crate::types::HarnessSkill::Git).
+    pub fn is_git(&self) -> bool {
+        self.as_git().is_ok()
+    }
     /// Tries to convert the enum instance into [`Path`](crate::types::HarnessSkill::Path), extracting the inner [`String`](::std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_path(&self) -> ::std::result::Result<&::std::string::String, &Self> {
@@ -30,6 +46,19 @@ impl HarnessSkill {
     /// Returns true if this is a [`Path`](crate::types::HarnessSkill::Path).
     pub fn is_path(&self) -> bool {
         self.as_path().is_ok()
+    }
+    /// Tries to convert the enum instance into [`S3`](crate::types::HarnessSkill::S3), extracting the inner [`HarnessSkillS3Source`](crate::types::HarnessSkillS3Source).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_s3(&self) -> ::std::result::Result<&crate::types::HarnessSkillS3Source, &Self> {
+        if let HarnessSkill::S3(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`S3`](crate::types::HarnessSkill::S3).
+    pub fn is_s3(&self) -> bool {
+        self.as_s3().is_ok()
     }
     /// Returns true if the enum instance is the `Unknown` variant.
     pub fn is_unknown(&self) -> bool {

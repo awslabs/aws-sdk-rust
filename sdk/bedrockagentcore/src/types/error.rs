@@ -17,6 +17,8 @@ pub use crate::types::error::_service_quota_exceeded_exception::ServiceQuotaExce
 
 pub use crate::types::error::_runtime_client_error::RuntimeClientError;
 
+pub use crate::types::error::_retryable_conflict_exception::RetryableConflictException;
+
 pub use crate::types::error::_duplicate_id_exception::DuplicateIdException;
 
 pub use crate::types::error::_service_exception::ServiceException;
@@ -24,8 +26,6 @@ pub use crate::types::error::_service_exception::ServiceException;
 pub use crate::types::error::_throttled_exception::ThrottledException;
 
 pub use crate::types::error::_invalid_input_exception::InvalidInputException;
-
-pub use crate::types::error::_retryable_conflict_exception::RetryableConflictException;
 
 /// Error type for the `CodeInterpreterStreamOutputError` operation.
 #[non_exhaustive]

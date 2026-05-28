@@ -22,7 +22,7 @@ impl crate::operation::send_message::builders::SendMessageInputBuilder {
 }
 /// Fluent builder constructing a request to `SendMessage`.
 ///
-/// Sends a chat message and streams the response for the specified agent space execution
+/// <p>Sends a chat message and streams the response for the specified agent space execution</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct SendMessageFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -138,75 +138,75 @@ impl SendMessageFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// The agent space identifier
+    /// <p>The agent space identifier</p>
     pub fn agent_space_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.agent_space_id(input.into());
         self
     }
-    /// The agent space identifier
+    /// <p>The agent space identifier</p>
     pub fn set_agent_space_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_agent_space_id(input);
         self
     }
-    /// The agent space identifier
+    /// <p>The agent space identifier</p>
     pub fn get_agent_space_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_agent_space_id()
     }
-    /// The execution identifier for the chat session
+    /// <p>The execution identifier for the chat session</p>
     pub fn execution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.execution_id(input.into());
         self
     }
-    /// The execution identifier for the chat session
+    /// <p>The execution identifier for the chat session</p>
     pub fn set_execution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_execution_id(input);
         self
     }
-    /// The execution identifier for the chat session
+    /// <p>The execution identifier for the chat session</p>
     pub fn get_execution_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_execution_id()
     }
-    /// The user message content
+    /// <p>The user message content</p>
     pub fn content(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.content(input.into());
         self
     }
-    /// The user message content
+    /// <p>The user message content</p>
     pub fn set_content(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_content(input);
         self
     }
-    /// The user message content
+    /// <p>The user message content</p>
     pub fn get_content(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_content()
     }
-    /// Optional context for the message
+    /// <p>Optional context for the message</p>
     pub fn context(mut self, input: crate::types::SendMessageContext) -> Self {
         self.inner = self.inner.context(input);
         self
     }
-    /// Optional context for the message
+    /// <p>Optional context for the message</p>
     pub fn set_context(mut self, input: ::std::option::Option<crate::types::SendMessageContext>) -> Self {
         self.inner = self.inner.set_context(input);
         self
     }
-    /// Optional context for the message
+    /// <p>Optional context for the message</p>
     pub fn get_context(&self) -> &::std::option::Option<crate::types::SendMessageContext> {
         self.inner.get_context()
     }
-    /// User identifier. This field is deprecated and will be ignored — the service resolves user identity from the authenticated session.
+    /// <p>User identifier. This field is deprecated and will be ignored — the service resolves user identity from the authenticated session.</p>
     #[deprecated(note = "userId is managed by the service and should not be provided by the caller", since = "2026-04-15")]
     pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.user_id(input.into());
         self
     }
-    /// User identifier. This field is deprecated and will be ignored — the service resolves user identity from the authenticated session.
+    /// <p>User identifier. This field is deprecated and will be ignored — the service resolves user identity from the authenticated session.</p>
     #[deprecated(note = "userId is managed by the service and should not be provided by the caller", since = "2026-04-15")]
     pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_user_id(input);
         self
     }
-    /// User identifier. This field is deprecated and will be ignored — the service resolves user identity from the authenticated session.
+    /// <p>User identifier. This field is deprecated and will be ignored — the service resolves user identity from the authenticated session.</p>
     #[deprecated(note = "userId is managed by the service and should not be provided by the caller", since = "2026-04-15")]
     pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_user_id()

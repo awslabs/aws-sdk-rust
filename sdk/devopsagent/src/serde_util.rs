@@ -956,6 +956,15 @@ pub(crate) fn mcp_server_new_relic_configuration_correct_errors(
     builder
 }
 
+pub(crate) fn mcp_server_sigv4_configuration_correct_errors(
+    mut builder: crate::types::builders::McpServerSigV4ConfigurationBuilder,
+) -> crate::types::builders::McpServerSigV4ConfigurationBuilder {
+    if builder.tools.is_none() {
+        builder.tools = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn pager_duty_configuration_correct_errors(
     mut builder: crate::types::builders::PagerDutyConfigurationBuilder,
 ) -> crate::types::builders::PagerDutyConfigurationBuilder {
@@ -1042,6 +1051,27 @@ pub(crate) fn registered_mcp_server_details_correct_errors(
     }
     if builder.authorization_method.is_none() {
         builder.authorization_method = "no value was set".parse::<crate::types::McpServerAuthorizationMethod>().ok()
+    }
+    builder
+}
+
+pub(crate) fn registered_mcp_server_sigv4_details_correct_errors(
+    mut builder: crate::types::builders::RegisteredMcpServerSigV4DetailsBuilder,
+) -> crate::types::builders::RegisteredMcpServerSigV4DetailsBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.endpoint.is_none() {
+        builder.endpoint = Some(Default::default())
+    }
+    if builder.region.is_none() {
+        builder.region = Some(Default::default())
+    }
+    if builder.service.is_none() {
+        builder.service = Some(Default::default())
+    }
+    if builder.role_arn.is_none() {
+        builder.role_arn = Some(Default::default())
     }
     builder
 }

@@ -166,6 +166,20 @@ impl InvokeHarnessFluentBuilder {
     pub fn get_runtime_session_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_runtime_session_id()
     }
+    /// <p>An identifier for the end user making the request. This value is passed through to the runtime container.</p>
+    pub fn runtime_user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.runtime_user_id(input.into());
+        self
+    }
+    /// <p>An identifier for the end user making the request. This value is passed through to the runtime container.</p>
+    pub fn set_runtime_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_runtime_user_id(input);
+        self
+    }
+    /// <p>An identifier for the end user making the request. This value is passed through to the runtime container.</p>
+    pub fn get_runtime_user_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_runtime_user_id()
+    }
     ///
     /// Appends an item to `messages`.
     ///

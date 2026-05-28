@@ -190,4 +190,18 @@ impl UpdateMembershipFluentBuilder {
     pub fn get_default_job_result_configuration(&self) -> &::std::option::Option<crate::types::MembershipProtectedJobResultConfiguration> {
         self.inner.get_default_job_result_configuration()
     }
+    /// <p>The payment configuration to update for the membership.</p>
+    pub fn membership_payment_configuration(mut self, input: crate::types::UpdateMembershipPaymentConfiguration) -> Self {
+        self.inner = self.inner.membership_payment_configuration(input);
+        self
+    }
+    /// <p>The payment configuration to update for the membership.</p>
+    pub fn set_membership_payment_configuration(mut self, input: ::std::option::Option<crate::types::UpdateMembershipPaymentConfiguration>) -> Self {
+        self.inner = self.inner.set_membership_payment_configuration(input);
+        self
+    }
+    /// <p>The payment configuration to update for the membership.</p>
+    pub fn get_membership_payment_configuration(&self) -> &::std::option::Option<crate::types::UpdateMembershipPaymentConfiguration> {
+        self.inner.get_membership_payment_configuration()
+    }
 }

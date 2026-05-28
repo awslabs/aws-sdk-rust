@@ -6,19 +6,21 @@
 pub struct RecommenderConfig {
     /// <p>Configuration settings for how the recommender processes and uses events.</p>
     pub events_config: ::std::option::Option<crate::types::EventsConfig>,
-    /// <p>How often the recommender should retrain its model with new data.</p>
+    /// <p>How often the recommender should retrain its model with new data. If set to 0, automatic retraining will not be enabled.</p>
     pub training_frequency: ::std::option::Option<i32>,
     /// <p>Configuration settings for how the recommender handles inference requests.</p>
     pub inference_config: ::std::option::Option<crate::types::InferenceConfig>,
-    /// <p>A map of dataset type to a list of column names to train on. The column names must be a subset of the columns defined in the recommender schema. If not specified, all columns in the schema are used for training. The following columns are always included and do not need to be specified: <code>Item.Id</code>, <code>ItemList\[\].Id</code>, <code>EventTimestamp</code>, <code>EventType</code>, and <code>EventValue</code>.</p>
+    /// <p>A map of dataset type to a list of column names to train on. The <code>_webAnalytics</code> and <code>_catalogItem</code> keys are supported. The column names must be a subset of the columns defined in the recommender schema. If not specified, all columns in the schema are used for training. The following columns are always included in training and do not need to be specified: <code>Item.Id</code>, <code>EventTimestamp</code>, and <code>EventType</code> for <code>_webAnalytics</code>; <code>Id</code> for <code>_catalogItem</code>. Mutually exclusive with ExcludedColumns — both cannot be specified in the same request.</p>
     pub included_columns: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
+    /// <p>A map of dataset type to a list of column names to exclude from training. The <code>_webAnalytics</code> and <code>_catalogItem</code> keys are supported. The column names must be valid columns defined in the recommender schema. All columns in the schema except the listed columns will be used for training. The following columns are mandatory and cannot be excluded: <code>Item.Id</code>, <code>EventTimestamp</code>, and <code>EventType</code> for <code>_webAnalytics</code>; <code>Id</code> for <code>_catalogItem</code>. Mutually exclusive with IncludedColumns — both cannot be specified in the same request.</p>
+    pub excluded_columns: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
 }
 impl RecommenderConfig {
     /// <p>Configuration settings for how the recommender processes and uses events.</p>
     pub fn events_config(&self) -> ::std::option::Option<&crate::types::EventsConfig> {
         self.events_config.as_ref()
     }
-    /// <p>How often the recommender should retrain its model with new data.</p>
+    /// <p>How often the recommender should retrain its model with new data. If set to 0, automatic retraining will not be enabled.</p>
     pub fn training_frequency(&self) -> ::std::option::Option<i32> {
         self.training_frequency
     }
@@ -26,11 +28,17 @@ impl RecommenderConfig {
     pub fn inference_config(&self) -> ::std::option::Option<&crate::types::InferenceConfig> {
         self.inference_config.as_ref()
     }
-    /// <p>A map of dataset type to a list of column names to train on. The column names must be a subset of the columns defined in the recommender schema. If not specified, all columns in the schema are used for training. The following columns are always included and do not need to be specified: <code>Item.Id</code>, <code>ItemList\[\].Id</code>, <code>EventTimestamp</code>, <code>EventType</code>, and <code>EventValue</code>.</p>
+    /// <p>A map of dataset type to a list of column names to train on. The <code>_webAnalytics</code> and <code>_catalogItem</code> keys are supported. The column names must be a subset of the columns defined in the recommender schema. If not specified, all columns in the schema are used for training. The following columns are always included in training and do not need to be specified: <code>Item.Id</code>, <code>EventTimestamp</code>, and <code>EventType</code> for <code>_webAnalytics</code>; <code>Id</code> for <code>_catalogItem</code>. Mutually exclusive with ExcludedColumns — both cannot be specified in the same request.</p>
     pub fn included_columns(
         &self,
     ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
         self.included_columns.as_ref()
+    }
+    /// <p>A map of dataset type to a list of column names to exclude from training. The <code>_webAnalytics</code> and <code>_catalogItem</code> keys are supported. The column names must be valid columns defined in the recommender schema. All columns in the schema except the listed columns will be used for training. The following columns are mandatory and cannot be excluded: <code>Item.Id</code>, <code>EventTimestamp</code>, and <code>EventType</code> for <code>_webAnalytics</code>; <code>Id</code> for <code>_catalogItem</code>. Mutually exclusive with IncludedColumns — both cannot be specified in the same request.</p>
+    pub fn excluded_columns(
+        &self,
+    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
+        self.excluded_columns.as_ref()
     }
 }
 impl RecommenderConfig {
@@ -48,6 +56,7 @@ pub struct RecommenderConfigBuilder {
     pub(crate) training_frequency: ::std::option::Option<i32>,
     pub(crate) inference_config: ::std::option::Option<crate::types::InferenceConfig>,
     pub(crate) included_columns: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
+    pub(crate) excluded_columns: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
 }
 impl RecommenderConfigBuilder {
     /// <p>Configuration settings for how the recommender processes and uses events.</p>
@@ -64,17 +73,17 @@ impl RecommenderConfigBuilder {
     pub fn get_events_config(&self) -> &::std::option::Option<crate::types::EventsConfig> {
         &self.events_config
     }
-    /// <p>How often the recommender should retrain its model with new data.</p>
+    /// <p>How often the recommender should retrain its model with new data. If set to 0, automatic retraining will not be enabled.</p>
     pub fn training_frequency(mut self, input: i32) -> Self {
         self.training_frequency = ::std::option::Option::Some(input);
         self
     }
-    /// <p>How often the recommender should retrain its model with new data.</p>
+    /// <p>How often the recommender should retrain its model with new data. If set to 0, automatic retraining will not be enabled.</p>
     pub fn set_training_frequency(mut self, input: ::std::option::Option<i32>) -> Self {
         self.training_frequency = input;
         self
     }
-    /// <p>How often the recommender should retrain its model with new data.</p>
+    /// <p>How often the recommender should retrain its model with new data. If set to 0, automatic retraining will not be enabled.</p>
     pub fn get_training_frequency(&self) -> &::std::option::Option<i32> {
         &self.training_frequency
     }
@@ -96,14 +105,14 @@ impl RecommenderConfigBuilder {
     ///
     /// To override the contents of this collection use [`set_included_columns`](Self::set_included_columns).
     ///
-    /// <p>A map of dataset type to a list of column names to train on. The column names must be a subset of the columns defined in the recommender schema. If not specified, all columns in the schema are used for training. The following columns are always included and do not need to be specified: <code>Item.Id</code>, <code>ItemList\[\].Id</code>, <code>EventTimestamp</code>, <code>EventType</code>, and <code>EventValue</code>.</p>
+    /// <p>A map of dataset type to a list of column names to train on. The <code>_webAnalytics</code> and <code>_catalogItem</code> keys are supported. The column names must be a subset of the columns defined in the recommender schema. If not specified, all columns in the schema are used for training. The following columns are always included in training and do not need to be specified: <code>Item.Id</code>, <code>EventTimestamp</code>, and <code>EventType</code> for <code>_webAnalytics</code>; <code>Id</code> for <code>_catalogItem</code>. Mutually exclusive with ExcludedColumns — both cannot be specified in the same request.</p>
     pub fn included_columns(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::vec::Vec<::std::string::String>) -> Self {
         let mut hash_map = self.included_columns.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.included_columns = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>A map of dataset type to a list of column names to train on. The column names must be a subset of the columns defined in the recommender schema. If not specified, all columns in the schema are used for training. The following columns are always included and do not need to be specified: <code>Item.Id</code>, <code>ItemList\[\].Id</code>, <code>EventTimestamp</code>, <code>EventType</code>, and <code>EventValue</code>.</p>
+    /// <p>A map of dataset type to a list of column names to train on. The <code>_webAnalytics</code> and <code>_catalogItem</code> keys are supported. The column names must be a subset of the columns defined in the recommender schema. If not specified, all columns in the schema are used for training. The following columns are always included in training and do not need to be specified: <code>Item.Id</code>, <code>EventTimestamp</code>, and <code>EventType</code> for <code>_webAnalytics</code>; <code>Id</code> for <code>_catalogItem</code>. Mutually exclusive with ExcludedColumns — both cannot be specified in the same request.</p>
     pub fn set_included_columns(
         mut self,
         input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
@@ -111,11 +120,36 @@ impl RecommenderConfigBuilder {
         self.included_columns = input;
         self
     }
-    /// <p>A map of dataset type to a list of column names to train on. The column names must be a subset of the columns defined in the recommender schema. If not specified, all columns in the schema are used for training. The following columns are always included and do not need to be specified: <code>Item.Id</code>, <code>ItemList\[\].Id</code>, <code>EventTimestamp</code>, <code>EventType</code>, and <code>EventValue</code>.</p>
+    /// <p>A map of dataset type to a list of column names to train on. The <code>_webAnalytics</code> and <code>_catalogItem</code> keys are supported. The column names must be a subset of the columns defined in the recommender schema. If not specified, all columns in the schema are used for training. The following columns are always included in training and do not need to be specified: <code>Item.Id</code>, <code>EventTimestamp</code>, and <code>EventType</code> for <code>_webAnalytics</code>; <code>Id</code> for <code>_catalogItem</code>. Mutually exclusive with ExcludedColumns — both cannot be specified in the same request.</p>
     pub fn get_included_columns(
         &self,
     ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
         &self.included_columns
+    }
+    /// Adds a key-value pair to `excluded_columns`.
+    ///
+    /// To override the contents of this collection use [`set_excluded_columns`](Self::set_excluded_columns).
+    ///
+    /// <p>A map of dataset type to a list of column names to exclude from training. The <code>_webAnalytics</code> and <code>_catalogItem</code> keys are supported. The column names must be valid columns defined in the recommender schema. All columns in the schema except the listed columns will be used for training. The following columns are mandatory and cannot be excluded: <code>Item.Id</code>, <code>EventTimestamp</code>, and <code>EventType</code> for <code>_webAnalytics</code>; <code>Id</code> for <code>_catalogItem</code>. Mutually exclusive with IncludedColumns — both cannot be specified in the same request.</p>
+    pub fn excluded_columns(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::vec::Vec<::std::string::String>) -> Self {
+        let mut hash_map = self.excluded_columns.unwrap_or_default();
+        hash_map.insert(k.into(), v);
+        self.excluded_columns = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>A map of dataset type to a list of column names to exclude from training. The <code>_webAnalytics</code> and <code>_catalogItem</code> keys are supported. The column names must be valid columns defined in the recommender schema. All columns in the schema except the listed columns will be used for training. The following columns are mandatory and cannot be excluded: <code>Item.Id</code>, <code>EventTimestamp</code>, and <code>EventType</code> for <code>_webAnalytics</code>; <code>Id</code> for <code>_catalogItem</code>. Mutually exclusive with IncludedColumns — both cannot be specified in the same request.</p>
+    pub fn set_excluded_columns(
+        mut self,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
+    ) -> Self {
+        self.excluded_columns = input;
+        self
+    }
+    /// <p>A map of dataset type to a list of column names to exclude from training. The <code>_webAnalytics</code> and <code>_catalogItem</code> keys are supported. The column names must be valid columns defined in the recommender schema. All columns in the schema except the listed columns will be used for training. The following columns are mandatory and cannot be excluded: <code>Item.Id</code>, <code>EventTimestamp</code>, and <code>EventType</code> for <code>_webAnalytics</code>; <code>Id</code> for <code>_catalogItem</code>. Mutually exclusive with IncludedColumns — both cannot be specified in the same request.</p>
+    pub fn get_excluded_columns(
+        &self,
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
+        &self.excluded_columns
     }
     /// Consumes the builder and constructs a [`RecommenderConfig`](crate::types::RecommenderConfig).
     pub fn build(self) -> crate::types::RecommenderConfig {
@@ -124,6 +158,7 @@ impl RecommenderConfigBuilder {
             training_frequency: self.training_frequency,
             inference_config: self.inference_config,
             included_columns: self.included_columns,
+            excluded_columns: self.excluded_columns,
         }
     }
 }

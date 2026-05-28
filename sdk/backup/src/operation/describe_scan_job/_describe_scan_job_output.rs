@@ -13,6 +13,10 @@ pub struct DescribeScanJobOutput {
     pub backup_vault_name: ::std::string::String,
     /// <p>The date and time that a backup index finished creation, in Unix format and Coordinated Universal Time (UTC). The value of <code>CompletionDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
     pub completion_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The point in time the scan job scanned up to for a continuous backup.</p>
+    pub continuous_scan_end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The point in time the scan job started scan from for a continuous backup.</p>
+    pub continuous_scan_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Contains identifying information about the creation of a scan job, including the backup plan and rule that initiated the scan.</p>
     pub created_by: ::std::option::Option<crate::types::ScanJobCreator>,
     /// <p>The date and time that a backup index finished creation, in Unix format and Coordinated Universal Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
@@ -69,6 +73,14 @@ impl DescribeScanJobOutput {
     /// <p>The date and time that a backup index finished creation, in Unix format and Coordinated Universal Time (UTC). The value of <code>CompletionDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
     pub fn completion_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.completion_date.as_ref()
+    }
+    /// <p>The point in time the scan job scanned up to for a continuous backup.</p>
+    pub fn continuous_scan_end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.continuous_scan_end_time.as_ref()
+    }
+    /// <p>The point in time the scan job started scan from for a continuous backup.</p>
+    pub fn continuous_scan_start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.continuous_scan_start_time.as_ref()
     }
     /// <p>Contains identifying information about the creation of a scan job, including the backup plan and rule that initiated the scan.</p>
     pub fn created_by(&self) -> ::std::option::Option<&crate::types::ScanJobCreator> {
@@ -162,6 +174,8 @@ pub struct DescribeScanJobOutputBuilder {
     pub(crate) backup_vault_arn: ::std::option::Option<::std::string::String>,
     pub(crate) backup_vault_name: ::std::option::Option<::std::string::String>,
     pub(crate) completion_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) continuous_scan_end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) continuous_scan_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) created_by: ::std::option::Option<crate::types::ScanJobCreator>,
     pub(crate) creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) iam_role_arn: ::std::option::Option<::std::string::String>,
@@ -245,6 +259,34 @@ impl DescribeScanJobOutputBuilder {
     /// <p>The date and time that a backup index finished creation, in Unix format and Coordinated Universal Time (UTC). The value of <code>CompletionDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
     pub fn get_completion_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.completion_date
+    }
+    /// <p>The point in time the scan job scanned up to for a continuous backup.</p>
+    pub fn continuous_scan_end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.continuous_scan_end_time = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The point in time the scan job scanned up to for a continuous backup.</p>
+    pub fn set_continuous_scan_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.continuous_scan_end_time = input;
+        self
+    }
+    /// <p>The point in time the scan job scanned up to for a continuous backup.</p>
+    pub fn get_continuous_scan_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.continuous_scan_end_time
+    }
+    /// <p>The point in time the scan job started scan from for a continuous backup.</p>
+    pub fn continuous_scan_start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.continuous_scan_start_time = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The point in time the scan job started scan from for a continuous backup.</p>
+    pub fn set_continuous_scan_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.continuous_scan_start_time = input;
+        self
+    }
+    /// <p>The point in time the scan job started scan from for a continuous backup.</p>
+    pub fn get_continuous_scan_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.continuous_scan_start_time
     }
     /// <p>Contains identifying information about the creation of a scan job, including the backup plan and rule that initiated the scan.</p>
     /// This field is required.
@@ -533,6 +575,8 @@ impl DescribeScanJobOutputBuilder {
                 )
             })?,
             completion_date: self.completion_date,
+            continuous_scan_end_time: self.continuous_scan_end_time,
+            continuous_scan_start_time: self.continuous_scan_start_time,
             created_by: self.created_by,
             creation_date: self.creation_date.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(

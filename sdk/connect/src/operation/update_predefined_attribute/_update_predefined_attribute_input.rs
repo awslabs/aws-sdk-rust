@@ -3,19 +3,19 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdatePredefinedAttributeInput {
-    /// <p>The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance.</p>
+    /// <p>The identifier of the Connect Customer instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance.</p>
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the predefined attribute.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The values of the predefined attribute.</p>
     pub values: ::std::option::Option<crate::types::PredefinedAttributeValues>,
-    /// <p>Values that enable you to categorize your predefined attributes. You can use them in custom UI elements across the Amazon Connect admin website.</p>
+    /// <p>Values that enable you to categorize your predefined attributes. You can use them in custom UI elements across the Connect Customer admin website.</p>
     pub purposes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>Custom metadata that is associated to predefined attributes to control behavior in upstream services, such as controlling how a predefined attribute should be displayed in the Amazon Connect admin website.</p>
+    /// <p>Custom metadata that is associated to predefined attributes to control behavior in upstream services, such as controlling how a predefined attribute should be displayed in the Connect Customer admin website.</p>
     pub attribute_configuration: ::std::option::Option<crate::types::InputPredefinedAttributeConfiguration>,
 }
 impl UpdatePredefinedAttributeInput {
-    /// <p>The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance.</p>
+    /// <p>The identifier of the Connect Customer instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn instance_id(&self) -> ::std::option::Option<&str> {
         self.instance_id.as_deref()
     }
@@ -27,13 +27,13 @@ impl UpdatePredefinedAttributeInput {
     pub fn values(&self) -> ::std::option::Option<&crate::types::PredefinedAttributeValues> {
         self.values.as_ref()
     }
-    /// <p>Values that enable you to categorize your predefined attributes. You can use them in custom UI elements across the Amazon Connect admin website.</p>
+    /// <p>Values that enable you to categorize your predefined attributes. You can use them in custom UI elements across the Connect Customer admin website.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.purposes.is_none()`.
     pub fn purposes(&self) -> &[::std::string::String] {
         self.purposes.as_deref().unwrap_or_default()
     }
-    /// <p>Custom metadata that is associated to predefined attributes to control behavior in upstream services, such as controlling how a predefined attribute should be displayed in the Amazon Connect admin website.</p>
+    /// <p>Custom metadata that is associated to predefined attributes to control behavior in upstream services, such as controlling how a predefined attribute should be displayed in the Connect Customer admin website.</p>
     pub fn attribute_configuration(&self) -> ::std::option::Option<&crate::types::InputPredefinedAttributeConfiguration> {
         self.attribute_configuration.as_ref()
     }
@@ -56,18 +56,18 @@ pub struct UpdatePredefinedAttributeInputBuilder {
     pub(crate) attribute_configuration: ::std::option::Option<crate::types::InputPredefinedAttributeConfiguration>,
 }
 impl UpdatePredefinedAttributeInputBuilder {
-    /// <p>The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance.</p>
+    /// <p>The identifier of the Connect Customer instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance.</p>
     /// This field is required.
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance.</p>
+    /// <p>The identifier of the Connect Customer instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_id = input;
         self
     }
-    /// <p>The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance.</p>
+    /// <p>The identifier of the Connect Customer instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.instance_id
     }
@@ -104,33 +104,33 @@ impl UpdatePredefinedAttributeInputBuilder {
     ///
     /// To override the contents of this collection use [`set_purposes`](Self::set_purposes).
     ///
-    /// <p>Values that enable you to categorize your predefined attributes. You can use them in custom UI elements across the Amazon Connect admin website.</p>
+    /// <p>Values that enable you to categorize your predefined attributes. You can use them in custom UI elements across the Connect Customer admin website.</p>
     pub fn purposes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.purposes.unwrap_or_default();
         v.push(input.into());
         self.purposes = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Values that enable you to categorize your predefined attributes. You can use them in custom UI elements across the Amazon Connect admin website.</p>
+    /// <p>Values that enable you to categorize your predefined attributes. You can use them in custom UI elements across the Connect Customer admin website.</p>
     pub fn set_purposes(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.purposes = input;
         self
     }
-    /// <p>Values that enable you to categorize your predefined attributes. You can use them in custom UI elements across the Amazon Connect admin website.</p>
+    /// <p>Values that enable you to categorize your predefined attributes. You can use them in custom UI elements across the Connect Customer admin website.</p>
     pub fn get_purposes(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.purposes
     }
-    /// <p>Custom metadata that is associated to predefined attributes to control behavior in upstream services, such as controlling how a predefined attribute should be displayed in the Amazon Connect admin website.</p>
+    /// <p>Custom metadata that is associated to predefined attributes to control behavior in upstream services, such as controlling how a predefined attribute should be displayed in the Connect Customer admin website.</p>
     pub fn attribute_configuration(mut self, input: crate::types::InputPredefinedAttributeConfiguration) -> Self {
         self.attribute_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Custom metadata that is associated to predefined attributes to control behavior in upstream services, such as controlling how a predefined attribute should be displayed in the Amazon Connect admin website.</p>
+    /// <p>Custom metadata that is associated to predefined attributes to control behavior in upstream services, such as controlling how a predefined attribute should be displayed in the Connect Customer admin website.</p>
     pub fn set_attribute_configuration(mut self, input: ::std::option::Option<crate::types::InputPredefinedAttributeConfiguration>) -> Self {
         self.attribute_configuration = input;
         self
     }
-    /// <p>Custom metadata that is associated to predefined attributes to control behavior in upstream services, such as controlling how a predefined attribute should be displayed in the Amazon Connect admin website.</p>
+    /// <p>Custom metadata that is associated to predefined attributes to control behavior in upstream services, such as controlling how a predefined attribute should be displayed in the Connect Customer admin website.</p>
     pub fn get_attribute_configuration(&self) -> &::std::option::Option<crate::types::InputPredefinedAttributeConfiguration> {
         &self.attribute_configuration
     }

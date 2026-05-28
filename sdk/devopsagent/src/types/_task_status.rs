@@ -43,29 +43,29 @@
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 ///
-/// Possible states of a task throughout its lifecycle
+/// <p>Possible states of a task throughout its lifecycle</p>
 #[non_exhaustive]
 #[derive(
     ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum TaskStatus {
-    /// Task has been canceled
+    /// <p>Task has been canceled</p>
     Canceled,
-    /// Task has been completed successfully
+    /// <p>Task has been completed successfully</p>
     Completed,
-    /// Task has failed
+    /// <p>Task has failed</p>
     Failed,
-    /// Task is currently being worked on
+    /// <p>Task is currently being worked on</p>
     InProgress,
-    /// Task has been linked to another task
+    /// <p>Task has been linked to another task</p>
     Linked,
-    /// Task is completed but awaiting customer approval (not in use)
+    /// <p>Task is completed but awaiting customer approval (not in use)</p>
     PendingCustomerApproval,
-    /// Task is created but not yet started
+    /// <p>Task is created but not yet started</p>
     PendingStart,
-    /// Task is awaiting triage analysis
+    /// <p>Task is awaiting triage analysis</p>
     PendingTriage,
-    /// Task has exceeded its time limit
+    /// <p>Task has exceeded its time limit</p>
     TimedOut,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]

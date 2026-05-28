@@ -7,6 +7,8 @@ pub struct CreateTrustStoreInput {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The CA certificates bundle source for the trust store.</p>
     pub ca_certificates_bundle_source: ::std::option::Option<crate::types::CaCertificatesBundleSource>,
+    /// <p>A Boolean that determines whether to use the CA certificate's OCSP endpoint to check certificate revocation status.</p>
+    pub use_client_certificate_ocsp_endpoint: ::std::option::Option<bool>,
     /// <p>A complex type that contains zero or more <code>Tag</code> elements.</p>
     pub tags: ::std::option::Option<crate::types::Tags>,
 }
@@ -18,6 +20,10 @@ impl CreateTrustStoreInput {
     /// <p>The CA certificates bundle source for the trust store.</p>
     pub fn ca_certificates_bundle_source(&self) -> ::std::option::Option<&crate::types::CaCertificatesBundleSource> {
         self.ca_certificates_bundle_source.as_ref()
+    }
+    /// <p>A Boolean that determines whether to use the CA certificate's OCSP endpoint to check certificate revocation status.</p>
+    pub fn use_client_certificate_ocsp_endpoint(&self) -> ::std::option::Option<bool> {
+        self.use_client_certificate_ocsp_endpoint
     }
     /// <p>A complex type that contains zero or more <code>Tag</code> elements.</p>
     pub fn tags(&self) -> ::std::option::Option<&crate::types::Tags> {
@@ -37,6 +43,7 @@ impl CreateTrustStoreInput {
 pub struct CreateTrustStoreInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) ca_certificates_bundle_source: ::std::option::Option<crate::types::CaCertificatesBundleSource>,
+    pub(crate) use_client_certificate_ocsp_endpoint: ::std::option::Option<bool>,
     pub(crate) tags: ::std::option::Option<crate::types::Tags>,
 }
 impl CreateTrustStoreInputBuilder {
@@ -70,6 +77,20 @@ impl CreateTrustStoreInputBuilder {
     pub fn get_ca_certificates_bundle_source(&self) -> &::std::option::Option<crate::types::CaCertificatesBundleSource> {
         &self.ca_certificates_bundle_source
     }
+    /// <p>A Boolean that determines whether to use the CA certificate's OCSP endpoint to check certificate revocation status.</p>
+    pub fn use_client_certificate_ocsp_endpoint(mut self, input: bool) -> Self {
+        self.use_client_certificate_ocsp_endpoint = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A Boolean that determines whether to use the CA certificate's OCSP endpoint to check certificate revocation status.</p>
+    pub fn set_use_client_certificate_ocsp_endpoint(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.use_client_certificate_ocsp_endpoint = input;
+        self
+    }
+    /// <p>A Boolean that determines whether to use the CA certificate's OCSP endpoint to check certificate revocation status.</p>
+    pub fn get_use_client_certificate_ocsp_endpoint(&self) -> &::std::option::Option<bool> {
+        &self.use_client_certificate_ocsp_endpoint
+    }
     /// <p>A complex type that contains zero or more <code>Tag</code> elements.</p>
     pub fn tags(mut self, input: crate::types::Tags) -> Self {
         self.tags = ::std::option::Option::Some(input);
@@ -91,6 +112,7 @@ impl CreateTrustStoreInputBuilder {
         ::std::result::Result::Ok(crate::operation::create_trust_store::CreateTrustStoreInput {
             name: self.name,
             ca_certificates_bundle_source: self.ca_certificates_bundle_source,
+            use_client_certificate_ocsp_endpoint: self.use_client_certificate_ocsp_endpoint,
             tags: self.tags,
         })
     }

@@ -4,11 +4,11 @@ impl super::Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_agent_spaces::builders::ListAgentSpacesFluentBuilder::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`max_results(i32)`](crate::operation::list_agent_spaces::builders::ListAgentSpacesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_agent_spaces::builders::ListAgentSpacesFluentBuilder::set_max_results):<br>required: **false**<br>Maximum number of results to return in a single call.<br>
-    ///   - [`next_token(impl Into<String>)`](crate::operation::list_agent_spaces::builders::ListAgentSpacesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_agent_spaces::builders::ListAgentSpacesFluentBuilder::set_next_token):<br>required: **false**<br>Token for the next page of results.<br>
+    ///   - [`max_results(i32)`](crate::operation::list_agent_spaces::builders::ListAgentSpacesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_agent_spaces::builders::ListAgentSpacesFluentBuilder::set_max_results):<br>required: **false**<br><p>Maximum number of results to return in a single call.</p><br>
+    ///   - [`next_token(impl Into<String>)`](crate::operation::list_agent_spaces::builders::ListAgentSpacesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_agent_spaces::builders::ListAgentSpacesFluentBuilder::set_next_token):<br>required: **false**<br><p>Token for the next page of results.</p><br>
     /// - On success, responds with [`ListAgentSpacesOutput`](crate::operation::list_agent_spaces::ListAgentSpacesOutput) with field(s):
-    ///   - [`next_token(Option<String>)`](crate::operation::list_agent_spaces::ListAgentSpacesOutput::next_token): Token to retrieve the next page of results, if there are more results.
-    ///   - [`agent_spaces(Vec::<AgentSpace>)`](crate::operation::list_agent_spaces::ListAgentSpacesOutput::agent_spaces): The list of AgentSpaces.
+    ///   - [`next_token(Option<String>)`](crate::operation::list_agent_spaces::ListAgentSpacesOutput::next_token): <p>Token to retrieve the next page of results, if there are more results.</p>
+    ///   - [`agent_spaces(Vec::<AgentSpace>)`](crate::operation::list_agent_spaces::ListAgentSpacesOutput::agent_spaces): <p>The list of AgentSpaces.</p>
     /// - On failure, responds with [`SdkError<ListAgentSpacesError>`](crate::operation::list_agent_spaces::ListAgentSpacesError)
     pub fn list_agent_spaces(&self) -> crate::operation::list_agent_spaces::builders::ListAgentSpacesFluentBuilder {
         crate::operation::list_agent_spaces::builders::ListAgentSpacesFluentBuilder::new(self.handle.clone())

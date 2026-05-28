@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetResourcePaymentTokenOutput {
-    /// Vendor-specific token response output Contains all response data in a type-safe, vendor-specific structure
+    /// <p>Vendor-specific token response output. Contains all response data in a type-safe, vendor-specific structure.</p>
     pub payment_token_response: ::std::option::Option<crate::types::PaymentTokenResponseOutput>,
     _request_id: Option<String>,
 }
 impl GetResourcePaymentTokenOutput {
-    /// Vendor-specific token response output Contains all response data in a type-safe, vendor-specific structure
+    /// <p>Vendor-specific token response output. Contains all response data in a type-safe, vendor-specific structure.</p>
     pub fn payment_token_response(&self) -> ::std::option::Option<&crate::types::PaymentTokenResponseOutput> {
         self.payment_token_response.as_ref()
     }
@@ -33,18 +33,18 @@ pub struct GetResourcePaymentTokenOutputBuilder {
     _request_id: Option<String>,
 }
 impl GetResourcePaymentTokenOutputBuilder {
-    /// Vendor-specific token response output Contains all response data in a type-safe, vendor-specific structure
+    /// <p>Vendor-specific token response output. Contains all response data in a type-safe, vendor-specific structure.</p>
     /// This field is required.
     pub fn payment_token_response(mut self, input: crate::types::PaymentTokenResponseOutput) -> Self {
         self.payment_token_response = ::std::option::Option::Some(input);
         self
     }
-    /// Vendor-specific token response output Contains all response data in a type-safe, vendor-specific structure
+    /// <p>Vendor-specific token response output. Contains all response data in a type-safe, vendor-specific structure.</p>
     pub fn set_payment_token_response(mut self, input: ::std::option::Option<crate::types::PaymentTokenResponseOutput>) -> Self {
         self.payment_token_response = input;
         self
     }
-    /// Vendor-specific token response output Contains all response data in a type-safe, vendor-specific structure
+    /// <p>Vendor-specific token response output. Contains all response data in a type-safe, vendor-specific structure.</p>
     pub fn get_payment_token_response(&self) -> &::std::option::Option<crate::types::PaymentTokenResponseOutput> {
         &self.payment_token_response
     }

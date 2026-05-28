@@ -349,6 +349,8 @@ pub(crate) mod shape_engagement_resource_association_summary;
 
 pub(crate) mod shape_engagement_summary;
 
+pub(crate) mod shape_expected_contract_duration;
+
 pub(crate) mod shape_expected_customer_spend;
 
 pub(crate) mod shape_expected_customer_spend_list;

@@ -388,7 +388,9 @@ pub enum EnablePolicyTypeError {
     /// <li>
     /// <p>END_DATE_NOT_END_OF_MONTH: You provided an invalid end date. The end date must be the end of the last day of the month (23.59.59.999).</p></li>
     /// <li>
-    /// <p>END_DATE_TOO_EARLY: You provided an invalid end date. It is too early for the transfer to end.</p></li>
+    /// <p>END_DATE_TOO_EARLY: You provided an invalid end date. The end date is too early.</p></li>
+    /// <li>
+    /// <p>END_DATE_TOO_LATE: You provided an invalid end date. The end date is too late.</p></li>
     /// <li>
     /// <p>IMMUTABLE_POLICY: You specified a policy that is managed by Amazon Web Services and can't be modified.</p></li>
     /// <li>

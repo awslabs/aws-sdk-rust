@@ -36,6 +36,8 @@ pub struct CreateDomainInput {
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The entity that creates and manages the required security groups for inter-app communication in <code>VPCOnly</code> mode. Required when <code>CreateDomain.AppNetworkAccessType</code> is <code>VPCOnly</code> and <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code> is provided. If setting up the domain for use with RStudio, this value must be set to <code>Service</code>.</p>
     pub app_security_group_management: ::std::option::Option<crate::types::AppSecurityGroupManagement>,
+    /// <p>Indicates whether to create a home EFS file system for the domain. Defaults to <code>Enabled</code>. Set to <code>Disabled</code> to skip EFS creation and reduce domain creation time. You can enable EFS later by calling <code>UpdateDomain</code>.</p>
+    pub home_efs_file_system_creation: ::std::option::Option<crate::types::HomeEfsFileSystemCreation>,
     /// <p>Indicates whether custom tag propagation is supported for the domain. Defaults to <code>DISABLED</code>.</p>
     pub tag_propagation: ::std::option::Option<crate::types::TagPropagation>,
     /// <p>The default settings for shared spaces that users create in the domain.</p>
@@ -101,6 +103,10 @@ impl CreateDomainInput {
     pub fn app_security_group_management(&self) -> ::std::option::Option<&crate::types::AppSecurityGroupManagement> {
         self.app_security_group_management.as_ref()
     }
+    /// <p>Indicates whether to create a home EFS file system for the domain. Defaults to <code>Enabled</code>. Set to <code>Disabled</code> to skip EFS creation and reduce domain creation time. You can enable EFS later by calling <code>UpdateDomain</code>.</p>
+    pub fn home_efs_file_system_creation(&self) -> ::std::option::Option<&crate::types::HomeEfsFileSystemCreation> {
+        self.home_efs_file_system_creation.as_ref()
+    }
     /// <p>Indicates whether custom tag propagation is supported for the domain. Defaults to <code>DISABLED</code>.</p>
     pub fn tag_propagation(&self) -> ::std::option::Option<&crate::types::TagPropagation> {
         self.tag_propagation.as_ref()
@@ -132,6 +138,7 @@ pub struct CreateDomainInputBuilder {
     pub(crate) home_efs_file_system_kms_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) app_security_group_management: ::std::option::Option<crate::types::AppSecurityGroupManagement>,
+    pub(crate) home_efs_file_system_creation: ::std::option::Option<crate::types::HomeEfsFileSystemCreation>,
     pub(crate) tag_propagation: ::std::option::Option<crate::types::TagPropagation>,
     pub(crate) default_space_settings: ::std::option::Option<crate::types::DefaultSpaceSettings>,
 }
@@ -338,6 +345,20 @@ impl CreateDomainInputBuilder {
     pub fn get_app_security_group_management(&self) -> &::std::option::Option<crate::types::AppSecurityGroupManagement> {
         &self.app_security_group_management
     }
+    /// <p>Indicates whether to create a home EFS file system for the domain. Defaults to <code>Enabled</code>. Set to <code>Disabled</code> to skip EFS creation and reduce domain creation time. You can enable EFS later by calling <code>UpdateDomain</code>.</p>
+    pub fn home_efs_file_system_creation(mut self, input: crate::types::HomeEfsFileSystemCreation) -> Self {
+        self.home_efs_file_system_creation = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether to create a home EFS file system for the domain. Defaults to <code>Enabled</code>. Set to <code>Disabled</code> to skip EFS creation and reduce domain creation time. You can enable EFS later by calling <code>UpdateDomain</code>.</p>
+    pub fn set_home_efs_file_system_creation(mut self, input: ::std::option::Option<crate::types::HomeEfsFileSystemCreation>) -> Self {
+        self.home_efs_file_system_creation = input;
+        self
+    }
+    /// <p>Indicates whether to create a home EFS file system for the domain. Defaults to <code>Enabled</code>. Set to <code>Disabled</code> to skip EFS creation and reduce domain creation time. You can enable EFS later by calling <code>UpdateDomain</code>.</p>
+    pub fn get_home_efs_file_system_creation(&self) -> &::std::option::Option<crate::types::HomeEfsFileSystemCreation> {
+        &self.home_efs_file_system_creation
+    }
     /// <p>Indicates whether custom tag propagation is supported for the domain. Defaults to <code>DISABLED</code>.</p>
     pub fn tag_propagation(mut self, input: crate::types::TagPropagation) -> Self {
         self.tag_propagation = ::std::option::Option::Some(input);
@@ -382,6 +403,7 @@ impl CreateDomainInputBuilder {
             home_efs_file_system_kms_key_id: self.home_efs_file_system_kms_key_id,
             kms_key_id: self.kms_key_id,
             app_security_group_management: self.app_security_group_management,
+            home_efs_file_system_creation: self.home_efs_file_system_creation,
             tag_propagation: self.tag_propagation,
             default_space_settings: self.default_space_settings,
         })

@@ -27,6 +27,8 @@ pub(crate) mod shape_delete_connection;
 
 pub(crate) mod shape_delete_thing_shadow;
 
+pub(crate) mod shape_get_connection;
+
 pub(crate) mod shape_get_retained_message;
 
 pub(crate) mod shape_get_thing_shadow;
@@ -35,9 +37,15 @@ pub(crate) mod shape_list_named_shadows_for_thing;
 
 pub(crate) mod shape_list_retained_messages;
 
+pub(crate) mod shape_list_subscriptions;
+
 pub(crate) mod shape_publish;
 
 pub(crate) mod shape_publish_input;
+
+pub(crate) mod shape_send_direct_message;
+
+pub(crate) mod shape_send_direct_message_input;
 
 pub(crate) mod shape_update_thing_shadow;
 
@@ -56,6 +64,8 @@ pub(crate) mod shape_conflict_exception;
 pub(crate) mod shape_delete_thing_shadow_output;
 
 pub(crate) mod shape_forbidden_exception;
+
+pub(crate) mod shape_gateway_timeout_exception;
 
 pub(crate) mod shape_get_thing_shadow_output;
 
@@ -83,4 +93,8 @@ pub(crate) mod shape_named_shadow_list;
 
 pub(crate) mod shape_retained_message_list;
 
+pub(crate) mod shape_subscription_list;
+
 pub(crate) mod shape_retained_message_summary;
+
+pub(crate) mod shape_subscription_summary;

@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EvaluationReferenceInput {
-    /// <p>The contextual information associated with an evaluation, including span context details that identify the specific traces and sessions being evaluated within the agent's execution flow.</p>
+    /// <p>The span context that identifies which session or trace this reference input applies to, used for correlating ground truth with agent output.</p>
     pub context: ::std::option::Option<crate::types::Context>,
     /// <p>The expected response for trace-level evaluation. Built-in evaluators that support this field compare the agent's actual response against this value for assessment. Custom evaluators can access it through the <code>{expected_response}</code> placeholder in their instructions.</p>
     pub expected_response: ::std::option::Option<crate::types::EvaluationContent>,
@@ -14,7 +14,7 @@ pub struct EvaluationReferenceInput {
     pub expected_trajectory: ::std::option::Option<crate::types::EvaluationExpectedTrajectory>,
 }
 impl EvaluationReferenceInput {
-    /// <p>The contextual information associated with an evaluation, including span context details that identify the specific traces and sessions being evaluated within the agent's execution flow.</p>
+    /// <p>The span context that identifies which session or trace this reference input applies to, used for correlating ground truth with agent output.</p>
     pub fn context(&self) -> ::std::option::Option<&crate::types::Context> {
         self.context.as_ref()
     }
@@ -50,18 +50,18 @@ pub struct EvaluationReferenceInputBuilder {
     pub(crate) expected_trajectory: ::std::option::Option<crate::types::EvaluationExpectedTrajectory>,
 }
 impl EvaluationReferenceInputBuilder {
-    /// <p>The contextual information associated with an evaluation, including span context details that identify the specific traces and sessions being evaluated within the agent's execution flow.</p>
+    /// <p>The span context that identifies which session or trace this reference input applies to, used for correlating ground truth with agent output.</p>
     /// This field is required.
     pub fn context(mut self, input: crate::types::Context) -> Self {
         self.context = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The contextual information associated with an evaluation, including span context details that identify the specific traces and sessions being evaluated within the agent's execution flow.</p>
+    /// <p>The span context that identifies which session or trace this reference input applies to, used for correlating ground truth with agent output.</p>
     pub fn set_context(mut self, input: ::std::option::Option<crate::types::Context>) -> Self {
         self.context = input;
         self
     }
-    /// <p>The contextual information associated with an evaluation, including span context details that identify the specific traces and sessions being evaluated within the agent's execution flow.</p>
+    /// <p>The span context that identifies which session or trace this reference input applies to, used for correlating ground truth with agent output.</p>
     pub fn get_context(&self) -> &::std::option::Option<crate::types::Context> {
         &self.context
     }

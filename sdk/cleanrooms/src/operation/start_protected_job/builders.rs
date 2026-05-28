@@ -178,4 +178,18 @@ impl StartProtectedJobFluentBuilder {
     pub fn get_compute_configuration(&self) -> &::std::option::Option<crate::types::ProtectedJobComputeConfiguration> {
         self.inner.get_compute_configuration()
     }
+    /// <p>The account ID of the member that pays for the job compute costs.</p>
+    pub fn job_compute_payer_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.job_compute_payer_account_id(input.into());
+        self
+    }
+    /// <p>The account ID of the member that pays for the job compute costs.</p>
+    pub fn set_job_compute_payer_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_job_compute_payer_account_id(input);
+        self
+    }
+    /// <p>The account ID of the member that pays for the job compute costs.</p>
+    pub fn get_job_compute_payer_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_job_compute_payer_account_id()
+    }
 }

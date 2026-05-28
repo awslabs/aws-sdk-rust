@@ -22,6 +22,8 @@ pub struct UpdateCollectionDetail {
     pub created_date: ::std::option::Option<i64>,
     /// <p>The date and time when the collection was last modified.</p>
     pub last_modified_date: ::std::option::Option<i64>,
+    /// <p>Indicates whether deletion protection is <code>ENABLED</code> or <code>DISABLED</code> for the collection.</p>
+    pub deletion_protection: ::std::option::Option<crate::types::DeletionProtection>,
 }
 impl UpdateCollectionDetail {
     /// <p>The unique identifier of the collection.</p>
@@ -60,6 +62,10 @@ impl UpdateCollectionDetail {
     pub fn last_modified_date(&self) -> ::std::option::Option<i64> {
         self.last_modified_date
     }
+    /// <p>Indicates whether deletion protection is <code>ENABLED</code> or <code>DISABLED</code> for the collection.</p>
+    pub fn deletion_protection(&self) -> ::std::option::Option<&crate::types::DeletionProtection> {
+        self.deletion_protection.as_ref()
+    }
 }
 impl UpdateCollectionDetail {
     /// Creates a new builder-style object to manufacture [`UpdateCollectionDetail`](crate::types::UpdateCollectionDetail).
@@ -81,6 +87,7 @@ pub struct UpdateCollectionDetailBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) created_date: ::std::option::Option<i64>,
     pub(crate) last_modified_date: ::std::option::Option<i64>,
+    pub(crate) deletion_protection: ::std::option::Option<crate::types::DeletionProtection>,
 }
 impl UpdateCollectionDetailBuilder {
     /// <p>The unique identifier of the collection.</p>
@@ -209,6 +216,20 @@ impl UpdateCollectionDetailBuilder {
     pub fn get_last_modified_date(&self) -> &::std::option::Option<i64> {
         &self.last_modified_date
     }
+    /// <p>Indicates whether deletion protection is <code>ENABLED</code> or <code>DISABLED</code> for the collection.</p>
+    pub fn deletion_protection(mut self, input: crate::types::DeletionProtection) -> Self {
+        self.deletion_protection = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether deletion protection is <code>ENABLED</code> or <code>DISABLED</code> for the collection.</p>
+    pub fn set_deletion_protection(mut self, input: ::std::option::Option<crate::types::DeletionProtection>) -> Self {
+        self.deletion_protection = input;
+        self
+    }
+    /// <p>Indicates whether deletion protection is <code>ENABLED</code> or <code>DISABLED</code> for the collection.</p>
+    pub fn get_deletion_protection(&self) -> &::std::option::Option<crate::types::DeletionProtection> {
+        &self.deletion_protection
+    }
     /// Consumes the builder and constructs a [`UpdateCollectionDetail`](crate::types::UpdateCollectionDetail).
     pub fn build(self) -> crate::types::UpdateCollectionDetail {
         crate::types::UpdateCollectionDetail {
@@ -221,6 +242,7 @@ impl UpdateCollectionDetailBuilder {
             arn: self.arn,
             created_date: self.created_date,
             last_modified_date: self.last_modified_date,
+            deletion_protection: self.deletion_protection,
         }
     }
 }

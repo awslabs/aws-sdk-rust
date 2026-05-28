@@ -42,6 +42,18 @@ where
                                 ::aws_smithy_types::date_time::Format::EpochSeconds,
                             )?);
                         }
+                        "ContinuousScanEndTime" => {
+                            builder = builder.set_continuous_scan_end_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                                tokens.next(),
+                                ::aws_smithy_types::date_time::Format::EpochSeconds,
+                            )?);
+                        }
+                        "ContinuousScanStartTime" => {
+                            builder = builder.set_continuous_scan_start_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                                tokens.next(),
+                                ::aws_smithy_types::date_time::Format::EpochSeconds,
+                            )?);
+                        }
                         "CreatedBy" => {
                             builder = builder.set_created_by(crate::protocol_serde::shape_scan_job_creator::de_scan_job_creator(tokens, _value)?);
                         }

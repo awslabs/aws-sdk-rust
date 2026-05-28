@@ -1021,6 +1021,9 @@ pub mod describe_ipam_external_resource_verification_tokens;
 /// Types for the `DescribeIpamPolicies` operation.
 pub mod describe_ipam_policies;
 
+/// Types for the `DescribeIpamPoolAllocations` operation.
+pub mod describe_ipam_pool_allocations;
+
 /// Types for the `DescribeIpamPools` operation.
 pub mod describe_ipam_pools;
 
@@ -1899,6 +1902,9 @@ pub mod modify_ipam_policy_allocation_rules;
 
 /// Types for the `ModifyIpamPool` operation.
 pub mod modify_ipam_pool;
+
+/// Types for the `ModifyIpamPoolAllocation` operation.
+pub mod modify_ipam_pool_allocation;
 
 /// Types for the `ModifyIpamPrefixListResolver` operation.
 pub mod modify_ipam_prefix_list_resolver;

@@ -22,7 +22,8 @@ impl crate::operation::create_feed::builders::CreateFeedInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateFeed`.
 ///
-/// <p>Creates a feed. The feed is the target for live streams being sent by the calling application. An example of a calling application is AWS Elemental MediaLive. After you create the feed, you can associate a resource with the feed.</p>
+/// <p>Creates a feed. The feed is the target for the live media stream that is being sent by the calling application. An example of a calling application is AWS Elemental MediaLive.</p>
+/// <p>The key contents of the feed is an array of outputs. Each output represents an Elemental Inference feature. After you create the feed, you must associate a resource with the feed. At that point, you will have a useable feed: resource - feed - output or outputs.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateFeedFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +109,17 @@ impl CreateFeedFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>A name for this feed.</p>
+    /// <p>A user-friendly name for this feed.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
-    /// <p>A name for this feed.</p>
+    /// <p>A user-friendly name for this feed.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
-    /// <p>A name for this feed.</p>
+    /// <p>A user-friendly name for this feed.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }
@@ -127,17 +128,17 @@ impl CreateFeedFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_outputs`](Self::set_outputs).
     ///
-    /// <p>An array of outputs for this feed. Each output represents a specific Elemental Inference feature. For example, an output might represent the crop feature.</p>
+    /// <p>An array of outputs for this feed. Each output represents a specific Elemental Inference feature. For example, there is one output type for the smart crop feature. You must specify at least one output, but you can later add outputs using AssociateFeed, or add, modify, and delete outputs using UpdateFeed.</p>
     pub fn outputs(mut self, input: crate::types::CreateOutput) -> Self {
         self.inner = self.inner.outputs(input);
         self
     }
-    /// <p>An array of outputs for this feed. Each output represents a specific Elemental Inference feature. For example, an output might represent the crop feature.</p>
+    /// <p>An array of outputs for this feed. Each output represents a specific Elemental Inference feature. For example, there is one output type for the smart crop feature. You must specify at least one output, but you can later add outputs using AssociateFeed, or add, modify, and delete outputs using UpdateFeed.</p>
     pub fn set_outputs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CreateOutput>>) -> Self {
         self.inner = self.inner.set_outputs(input);
         self
     }
-    /// <p>An array of outputs for this feed. Each output represents a specific Elemental Inference feature. For example, an output might represent the crop feature.</p>
+    /// <p>An array of outputs for this feed. Each output represents a specific Elemental Inference feature. For example, there is one output type for the smart crop feature. You must specify at least one output, but you can later add outputs using AssociateFeed, or add, modify, and delete outputs using UpdateFeed.</p>
     pub fn get_outputs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CreateOutput>> {
         self.inner.get_outputs()
     }
@@ -146,17 +147,17 @@ impl CreateFeedFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>If you want to include tags, add them now. You won't be able to add them later.</p>
+    /// <p>Optional tags. You can also add tags later, using TagResource.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
-    /// <p>If you want to include tags, add them now. You won't be able to add them later.</p>
+    /// <p>Optional tags. You can also add tags later, using TagResource.</p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
-    /// <p>If you want to include tags, add them now. You won't be able to add them later.</p>
+    /// <p>Optional tags. You can also add tags later, using TagResource.</p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }

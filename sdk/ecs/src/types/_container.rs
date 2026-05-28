@@ -38,6 +38,8 @@ pub struct Container {
     pub memory_reservation: ::std::option::Option<::std::string::String>,
     /// <p>The IDs of each GPU assigned to the container.</p>
     pub gpu_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>The IDs of each Neuron device assigned to the container.</p>
+    pub neuron_device_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl Container {
     /// <p>The Amazon Resource Name (ARN) of the container.</p>
@@ -116,6 +118,12 @@ impl Container {
     pub fn gpu_ids(&self) -> &[::std::string::String] {
         self.gpu_ids.as_deref().unwrap_or_default()
     }
+    /// <p>The IDs of each Neuron device assigned to the container.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.neuron_device_ids.is_none()`.
+    pub fn neuron_device_ids(&self) -> &[::std::string::String] {
+        self.neuron_device_ids.as_deref().unwrap_or_default()
+    }
 }
 impl Container {
     /// Creates a new builder-style object to manufacture [`Container`](crate::types::Container).
@@ -145,6 +153,7 @@ pub struct ContainerBuilder {
     pub(crate) memory: ::std::option::Option<::std::string::String>,
     pub(crate) memory_reservation: ::std::option::Option<::std::string::String>,
     pub(crate) gpu_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) neuron_device_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ContainerBuilder {
     /// <p>The Amazon Resource Name (ARN) of the container.</p>
@@ -409,6 +418,26 @@ impl ContainerBuilder {
     pub fn get_gpu_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.gpu_ids
     }
+    /// Appends an item to `neuron_device_ids`.
+    ///
+    /// To override the contents of this collection use [`set_neuron_device_ids`](Self::set_neuron_device_ids).
+    ///
+    /// <p>The IDs of each Neuron device assigned to the container.</p>
+    pub fn neuron_device_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.neuron_device_ids.unwrap_or_default();
+        v.push(input.into());
+        self.neuron_device_ids = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The IDs of each Neuron device assigned to the container.</p>
+    pub fn set_neuron_device_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.neuron_device_ids = input;
+        self
+    }
+    /// <p>The IDs of each Neuron device assigned to the container.</p>
+    pub fn get_neuron_device_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.neuron_device_ids
+    }
     /// Consumes the builder and constructs a [`Container`](crate::types::Container).
     pub fn build(self) -> crate::types::Container {
         crate::types::Container {
@@ -429,6 +458,7 @@ impl ContainerBuilder {
             memory: self.memory,
             memory_reservation: self.memory_reservation,
             gpu_ids: self.gpu_ids,
+            neuron_device_ids: self.neuron_device_ids,
         }
     }
 }

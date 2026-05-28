@@ -149,6 +149,8 @@ pub use crate::types::_queue_environment_summary::QueueEnvironmentSummaryBuilder
 
 pub use crate::types::_queue_member::QueueMemberBuilder;
 
+pub use crate::types::_volume_summary::VolumeSummaryBuilder;
+
 pub use crate::types::_worker_summary::WorkerSummaryBuilder;
 
 pub use crate::types::_ip_addresses::IpAddressesBuilder;
@@ -206,6 +208,8 @@ pub use crate::types::_service_managed_ec2_instance_capabilities::ServiceManaged
 pub use crate::types::_service_managed_ec2_instance_market_options::ServiceManagedEc2InstanceMarketOptionsBuilder;
 
 pub use crate::types::_vpc_configuration::VpcConfigurationBuilder;
+
+pub use crate::types::_persistent_volume_configuration::PersistentVolumeConfigurationBuilder;
 
 pub use crate::types::_service_managed_ec2_auto_scaling_configuration::ServiceManagedEc2AutoScalingConfigurationBuilder;
 

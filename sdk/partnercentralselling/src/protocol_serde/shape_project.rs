@@ -24,50 +24,56 @@ pub fn ser_project(
         }
         array_5.finish();
     }
-    if let Some(var_8) = &input.title {
-        object.key("Title").string(var_8.as_str());
+    if let Some(var_8) = &input.expected_contract_duration {
+        #[allow(unused_mut)]
+        let mut object_9 = object.key("ExpectedContractDuration").start_object();
+        crate::protocol_serde::shape_expected_contract_duration::ser_expected_contract_duration(&mut object_9, var_8)?;
+        object_9.finish();
     }
-    if let Some(var_9) = &input.apn_programs {
-        let mut array_10 = object.key("ApnPrograms").start_array();
-        for item_11 in var_9 {
+    if let Some(var_10) = &input.title {
+        object.key("Title").string(var_10.as_str());
+    }
+    if let Some(var_11) = &input.apn_programs {
+        let mut array_12 = object.key("ApnPrograms").start_array();
+        for item_13 in var_11 {
             {
-                array_10.value().string(item_11.as_str());
+                array_12.value().string(item_13.as_str());
             }
         }
-        array_10.finish();
+        array_12.finish();
     }
-    if let Some(var_12) = &input.customer_business_problem {
-        object.key("CustomerBusinessProblem").string(var_12.as_str());
+    if let Some(var_14) = &input.customer_business_problem {
+        object.key("CustomerBusinessProblem").string(var_14.as_str());
     }
-    if let Some(var_13) = &input.customer_use_case {
-        object.key("CustomerUseCase").string(var_13.as_str());
+    if let Some(var_15) = &input.customer_use_case {
+        object.key("CustomerUseCase").string(var_15.as_str());
     }
-    if let Some(var_14) = &input.related_opportunity_identifier {
-        object.key("RelatedOpportunityIdentifier").string(var_14.as_str());
+    if let Some(var_16) = &input.related_opportunity_identifier {
+        object.key("RelatedOpportunityIdentifier").string(var_16.as_str());
     }
-    if let Some(var_15) = &input.sales_activities {
-        let mut array_16 = object.key("SalesActivities").start_array();
-        for item_17 in var_15 {
+    if let Some(var_17) = &input.sales_activities {
+        let mut array_18 = object.key("SalesActivities").start_array();
+        for item_19 in var_17 {
             {
-                array_16.value().string(item_17.as_str());
+                array_18.value().string(item_19.as_str());
             }
         }
-        array_16.finish();
+        array_18.finish();
     }
-    if let Some(var_18) = &input.competitor_name {
-        object.key("CompetitorName").string(var_18.as_str());
+    if let Some(var_20) = &input.competitor_name {
+        object.key("CompetitorName").string(var_20.as_str());
     }
-    if let Some(var_19) = &input.other_competitor_names {
-        object.key("OtherCompetitorNames").string(var_19.as_str());
+    if let Some(var_21) = &input.other_competitor_names {
+        object.key("OtherCompetitorNames").string(var_21.as_str());
     }
-    if let Some(var_20) = &input.other_solution_description {
-        object.key("OtherSolutionDescription").string(var_20.as_str());
+    if let Some(var_22) = &input.other_solution_description {
+        object.key("OtherSolutionDescription").string(var_22.as_str());
     }
-    if let Some(var_21) = &input.additional_comments {
-        object.key("AdditionalComments").string(var_21.as_str());
+    if let Some(var_23) = &input.additional_comments {
+        object.key("AdditionalComments").string(var_23.as_str());
     }
-    if let Some(var_22) = &input.aws_partition {
-        object.key("AwsPartition").string(var_22.as_str());
+    if let Some(var_24) = &input.aws_partition {
+        object.key("AwsPartition").string(var_24.as_str());
     }
     Ok(())
 }
@@ -94,6 +100,11 @@ where
                         "ExpectedCustomerSpend" => {
                             builder = builder.set_expected_customer_spend(
                                 crate::protocol_serde::shape_expected_customer_spend_list::de_expected_customer_spend_list(tokens, _value)?,
+                            );
+                        }
+                        "ExpectedContractDuration" => {
+                            builder = builder.set_expected_contract_duration(
+                                crate::protocol_serde::shape_expected_contract_duration::de_expected_contract_duration(tokens, _value)?,
                             );
                         }
                         "Title" => {

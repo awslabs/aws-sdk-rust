@@ -3,23 +3,23 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct GetResourcePaymentTokenInput {
-    /// Workload access token for authorization. Named workloadIdentityToken for consistency with APIKey and OAuth2CredentialProvider.
+    /// <p>Workload access token for authorization.</p>
     pub workload_identity_token: ::std::option::Option<::std::string::String>,
-    /// Name of the payment credential provider to use
+    /// <p>Name of the payment credential provider to use.</p>
     pub resource_credential_provider_name: ::std::option::Option<::std::string::String>,
-    /// Vendor-specific token request input Contains all request parameters in a type-safe, vendor-specific structure
+    /// <p>Vendor-specific token request input. Contains all request parameters in a type-safe, vendor-specific structure.</p>
     pub payment_token_request: ::std::option::Option<crate::types::PaymentTokenRequestInput>,
 }
 impl GetResourcePaymentTokenInput {
-    /// Workload access token for authorization. Named workloadIdentityToken for consistency with APIKey and OAuth2CredentialProvider.
+    /// <p>Workload access token for authorization.</p>
     pub fn workload_identity_token(&self) -> ::std::option::Option<&str> {
         self.workload_identity_token.as_deref()
     }
-    /// Name of the payment credential provider to use
+    /// <p>Name of the payment credential provider to use.</p>
     pub fn resource_credential_provider_name(&self) -> ::std::option::Option<&str> {
         self.resource_credential_provider_name.as_deref()
     }
-    /// Vendor-specific token request input Contains all request parameters in a type-safe, vendor-specific structure
+    /// <p>Vendor-specific token request input. Contains all request parameters in a type-safe, vendor-specific structure.</p>
     pub fn payment_token_request(&self) -> ::std::option::Option<&crate::types::PaymentTokenRequestInput> {
         self.payment_token_request.as_ref()
     }
@@ -49,48 +49,48 @@ pub struct GetResourcePaymentTokenInputBuilder {
     pub(crate) payment_token_request: ::std::option::Option<crate::types::PaymentTokenRequestInput>,
 }
 impl GetResourcePaymentTokenInputBuilder {
-    /// Workload access token for authorization. Named workloadIdentityToken for consistency with APIKey and OAuth2CredentialProvider.
+    /// <p>Workload access token for authorization.</p>
     /// This field is required.
     pub fn workload_identity_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workload_identity_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// Workload access token for authorization. Named workloadIdentityToken for consistency with APIKey and OAuth2CredentialProvider.
+    /// <p>Workload access token for authorization.</p>
     pub fn set_workload_identity_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.workload_identity_token = input;
         self
     }
-    /// Workload access token for authorization. Named workloadIdentityToken for consistency with APIKey and OAuth2CredentialProvider.
+    /// <p>Workload access token for authorization.</p>
     pub fn get_workload_identity_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.workload_identity_token
     }
-    /// Name of the payment credential provider to use
+    /// <p>Name of the payment credential provider to use.</p>
     /// This field is required.
     pub fn resource_credential_provider_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_credential_provider_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// Name of the payment credential provider to use
+    /// <p>Name of the payment credential provider to use.</p>
     pub fn set_resource_credential_provider_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_credential_provider_name = input;
         self
     }
-    /// Name of the payment credential provider to use
+    /// <p>Name of the payment credential provider to use.</p>
     pub fn get_resource_credential_provider_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_credential_provider_name
     }
-    /// Vendor-specific token request input Contains all request parameters in a type-safe, vendor-specific structure
+    /// <p>Vendor-specific token request input. Contains all request parameters in a type-safe, vendor-specific structure.</p>
     /// This field is required.
     pub fn payment_token_request(mut self, input: crate::types::PaymentTokenRequestInput) -> Self {
         self.payment_token_request = ::std::option::Option::Some(input);
         self
     }
-    /// Vendor-specific token request input Contains all request parameters in a type-safe, vendor-specific structure
+    /// <p>Vendor-specific token request input. Contains all request parameters in a type-safe, vendor-specific structure.</p>
     pub fn set_payment_token_request(mut self, input: ::std::option::Option<crate::types::PaymentTokenRequestInput>) -> Self {
         self.payment_token_request = input;
         self
     }
-    /// Vendor-specific token request input Contains all request parameters in a type-safe, vendor-specific structure
+    /// <p>Vendor-specific token request input. Contains all request parameters in a type-safe, vendor-specific structure.</p>
     pub fn get_payment_token_request(&self) -> &::std::option::Option<crate::types::PaymentTokenRequestInput> {
         &self.payment_token_request
     }

@@ -180,6 +180,10 @@ pub(crate) fn de_get_collaboration_ml_input_channel(
                             .transpose()?,
                     );
                 }
+                "payerConfiguration" => {
+                    builder =
+                        builder.set_payer_configuration(crate::protocol_serde::shape_payer_configuration::de_payer_configuration(tokens, _value)?);
+                }
                 "privacyBudgets" => {
                     builder = builder.set_privacy_budgets(crate::protocol_serde::shape_privacy_budgets::de_privacy_budgets(tokens, _value)?);
                 }

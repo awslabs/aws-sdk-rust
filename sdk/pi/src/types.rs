@@ -33,6 +33,8 @@ pub use crate::types::_metric_dimension_groups::MetricDimensionGroups;
 
 pub use crate::types::_response_resource_metric::ResponseResourceMetric;
 
+pub use crate::types::_recommendation::Recommendation;
+
 pub use crate::types::_analysis_report_summary::AnalysisReportSummary;
 
 pub use crate::types::_detail_status::DetailStatus;
@@ -50,8 +52,6 @@ pub use crate::types::_severity::Severity;
 pub use crate::types::_data_point::DataPoint;
 
 pub use crate::types::_dimension_group_detail::DimensionGroupDetail;
-
-pub use crate::types::_recommendation::Recommendation;
 
 pub use crate::types::_data::Data;
 

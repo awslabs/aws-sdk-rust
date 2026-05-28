@@ -51,62 +51,65 @@ pub fn ser_update_flow_output_input_input(
             ::aws_smithy_types::Number::NegInt((*var_13).into()),
         );
     }
-    if let Some(var_14) = &input.ndi_program_name {
-        object.key("ndiProgramName").string(var_14.as_str());
+    if let Some(var_14) = &input.ndi_output_timecode_source {
+        object.key("ndiOutputTimecodeSource").string(var_14.as_str());
     }
-    if let Some(var_15) = &input.ndi_speed_hq_quality {
+    if let Some(var_15) = &input.ndi_program_name {
+        object.key("ndiProgramName").string(var_15.as_str());
+    }
+    if let Some(var_16) = &input.ndi_speed_hq_quality {
         object.key("ndiSpeedHqQuality").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_15).into()),
+            ::aws_smithy_types::Number::NegInt((*var_16).into()),
         );
     }
-    if let Some(var_16) = &input.output_status {
-        object.key("outputStatus").string(var_16.as_str());
+    if let Some(var_17) = &input.output_status {
+        object.key("outputStatus").string(var_17.as_str());
     }
-    if let Some(var_17) = &input.port {
+    if let Some(var_18) = &input.port {
         object.key("port").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_17).into()),
+            ::aws_smithy_types::Number::NegInt((*var_18).into()),
         );
     }
-    if let Some(var_18) = &input.protocol {
-        object.key("protocol").string(var_18.as_str());
+    if let Some(var_19) = &input.protocol {
+        object.key("protocol").string(var_19.as_str());
     }
-    if let Some(var_19) = &input.remote_id {
-        object.key("remoteId").string(var_19.as_str());
+    if let Some(var_20) = &input.remote_id {
+        object.key("remoteId").string(var_20.as_str());
     }
-    if let Some(var_20) = &input.router_integration_state {
-        object.key("routerIntegrationState").string(var_20.as_str());
+    if let Some(var_21) = &input.router_integration_state {
+        object.key("routerIntegrationState").string(var_21.as_str());
     }
-    if let Some(var_21) = &input.router_integration_transit_encryption {
+    if let Some(var_22) = &input.router_integration_transit_encryption {
         #[allow(unused_mut)]
-        let mut object_22 = object.key("routerIntegrationTransitEncryption").start_object();
-        crate::protocol_serde::shape_flow_transit_encryption::ser_flow_transit_encryption(&mut object_22, var_21)?;
-        object_22.finish();
+        let mut object_23 = object.key("routerIntegrationTransitEncryption").start_object();
+        crate::protocol_serde::shape_flow_transit_encryption::ser_flow_transit_encryption(&mut object_23, var_22)?;
+        object_23.finish();
     }
-    if let Some(var_23) = &input.sender_control_port {
+    if let Some(var_24) = &input.sender_control_port {
         object.key("senderControlPort").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_23).into()),
+            ::aws_smithy_types::Number::NegInt((*var_24).into()),
         );
     }
-    if let Some(var_24) = &input.sender_ip_address {
-        object.key("senderIpAddress").string(var_24.as_str());
+    if let Some(var_25) = &input.sender_ip_address {
+        object.key("senderIpAddress").string(var_25.as_str());
     }
-    if let Some(var_25) = &input.smoothing_latency {
+    if let Some(var_26) = &input.smoothing_latency {
         object.key("smoothingLatency").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_25).into()),
+            ::aws_smithy_types::Number::NegInt((*var_26).into()),
         );
     }
-    if let Some(var_26) = &input.stream_id {
-        object.key("streamId").string(var_26.as_str());
+    if let Some(var_27) = &input.stream_id {
+        object.key("streamId").string(var_27.as_str());
     }
-    if let Some(var_27) = &input.vpc_interface_attachment {
+    if let Some(var_28) = &input.vpc_interface_attachment {
         #[allow(unused_mut)]
-        let mut object_28 = object.key("vpcInterfaceAttachment").start_object();
-        crate::protocol_serde::shape_vpc_interface_attachment::ser_vpc_interface_attachment(&mut object_28, var_27)?;
-        object_28.finish();
+        let mut object_29 = object.key("vpcInterfaceAttachment").start_object();
+        crate::protocol_serde::shape_vpc_interface_attachment::ser_vpc_interface_attachment(&mut object_29, var_28)?;
+        object_29.finish();
     }
     Ok(())
 }

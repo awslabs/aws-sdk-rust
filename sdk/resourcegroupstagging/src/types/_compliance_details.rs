@@ -8,6 +8,8 @@ pub struct ComplianceDetails {
     pub noncompliant_keys: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>These are keys defined in the effective policy that are on the resource with either incorrect case treatment or noncompliant values.</p>
     pub keys_with_noncompliant_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>These tag keys are defined as required in the <code>report_required_tag_for</code> block of the effective tag policy, but are missing from the resource.</p>
+    pub missing_tag_keys: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Whether a resource is compliant with the effective tag policy.</p>
     pub compliance_status: ::std::option::Option<bool>,
 }
@@ -23,6 +25,12 @@ impl ComplianceDetails {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.keys_with_noncompliant_values.is_none()`.
     pub fn keys_with_noncompliant_values(&self) -> &[::std::string::String] {
         self.keys_with_noncompliant_values.as_deref().unwrap_or_default()
+    }
+    /// <p>These tag keys are defined as required in the <code>report_required_tag_for</code> block of the effective tag policy, but are missing from the resource.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.missing_tag_keys.is_none()`.
+    pub fn missing_tag_keys(&self) -> &[::std::string::String] {
+        self.missing_tag_keys.as_deref().unwrap_or_default()
     }
     /// <p>Whether a resource is compliant with the effective tag policy.</p>
     pub fn compliance_status(&self) -> ::std::option::Option<bool> {
@@ -42,6 +50,7 @@ impl ComplianceDetails {
 pub struct ComplianceDetailsBuilder {
     pub(crate) noncompliant_keys: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) keys_with_noncompliant_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) missing_tag_keys: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) compliance_status: ::std::option::Option<bool>,
 }
 impl ComplianceDetailsBuilder {
@@ -85,6 +94,26 @@ impl ComplianceDetailsBuilder {
     pub fn get_keys_with_noncompliant_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.keys_with_noncompliant_values
     }
+    /// Appends an item to `missing_tag_keys`.
+    ///
+    /// To override the contents of this collection use [`set_missing_tag_keys`](Self::set_missing_tag_keys).
+    ///
+    /// <p>These tag keys are defined as required in the <code>report_required_tag_for</code> block of the effective tag policy, but are missing from the resource.</p>
+    pub fn missing_tag_keys(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.missing_tag_keys.unwrap_or_default();
+        v.push(input.into());
+        self.missing_tag_keys = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>These tag keys are defined as required in the <code>report_required_tag_for</code> block of the effective tag policy, but are missing from the resource.</p>
+    pub fn set_missing_tag_keys(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.missing_tag_keys = input;
+        self
+    }
+    /// <p>These tag keys are defined as required in the <code>report_required_tag_for</code> block of the effective tag policy, but are missing from the resource.</p>
+    pub fn get_missing_tag_keys(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.missing_tag_keys
+    }
     /// <p>Whether a resource is compliant with the effective tag policy.</p>
     pub fn compliance_status(mut self, input: bool) -> Self {
         self.compliance_status = ::std::option::Option::Some(input);
@@ -104,6 +133,7 @@ impl ComplianceDetailsBuilder {
         crate::types::ComplianceDetails {
             noncompliant_keys: self.noncompliant_keys,
             keys_with_noncompliant_values: self.keys_with_noncompliant_values,
+            missing_tag_keys: self.missing_tag_keys,
             compliance_status: self.compliance_status,
         }
     }

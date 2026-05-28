@@ -93,6 +93,8 @@ pub use crate::types::_video_standard_output_configuration::VideoStandardOutputC
 
 pub use crate::types::_audio_standard_output_configuration::AudioStandardOutputConfiguration;
 
+pub use crate::types::_document_custom_output_configuration::DocumentCustomOutputConfiguration;
+
 pub use crate::types::_document_override_configuration::DocumentOverrideConfiguration;
 
 pub use crate::types::_image_override_configuration::ImageOverrideConfiguration;
@@ -286,6 +288,8 @@ mod _delete_entities_info;
 mod _desired_modality;
 
 mod _document_bounding_box;
+
+mod _document_custom_output_configuration;
 
 mod _document_extraction_granularity;
 

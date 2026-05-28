@@ -57,7 +57,7 @@ pub enum Error {
     ThrottlingException(crate::types::error::ThrottlingException),
     /// <p>Displayed when rate-related API limits are exceeded.</p>
     TooManyRequestsException(crate::types::error::TooManyRequestsException),
-    /// <p>No user with the specified credentials was found in the Amazon Connect instance.</p>
+    /// <p>No user with the specified credentials was found in the Connect Customer instance.</p>
     UserNotFoundException(crate::types::error::UserNotFoundException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

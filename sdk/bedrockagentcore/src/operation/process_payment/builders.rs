@@ -22,7 +22,7 @@ impl crate::operation::process_payment::builders::ProcessPaymentInputBuilder {
 }
 /// Fluent builder constructing a request to `ProcessPayment`.
 ///
-/// Process a payment transaction
+/// <p>Processes a payment using a payment instrument within a payment session.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ProcessPaymentFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,115 +108,115 @@ impl ProcessPaymentFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// The user ID associated with this payment.
+    /// <p>The user ID associated with this payment.</p>
     pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.user_id(input.into());
         self
     }
-    /// The user ID associated with this payment.
+    /// <p>The user ID associated with this payment.</p>
     pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_user_id(input);
         self
     }
-    /// The user ID associated with this payment.
+    /// <p>The user ID associated with this payment.</p>
     pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_user_id()
     }
-    /// The agent name associated with this request, used for observability.
+    /// <p>The agent name associated with this request, used for observability.</p>
     pub fn agent_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.agent_name(input.into());
         self
     }
-    /// The agent name associated with this request, used for observability.
+    /// <p>The agent name associated with this request, used for observability.</p>
     pub fn set_agent_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_agent_name(input);
         self
     }
-    /// The agent name associated with this request, used for observability.
+    /// <p>The agent name associated with this request, used for observability.</p>
     pub fn get_agent_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_agent_name()
     }
-    /// The ARN of the payment manager handling this payment.
+    /// <p>The ARN of the payment manager.</p>
     pub fn payment_manager_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.payment_manager_arn(input.into());
         self
     }
-    /// The ARN of the payment manager handling this payment.
+    /// <p>The ARN of the payment manager.</p>
     pub fn set_payment_manager_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_payment_manager_arn(input);
         self
     }
-    /// The ARN of the payment manager handling this payment.
+    /// <p>The ARN of the payment manager.</p>
     pub fn get_payment_manager_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_payment_manager_arn()
     }
-    /// The ID of the payment session for this transaction.
+    /// <p>The ID of the payment session.</p>
     pub fn payment_session_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.payment_session_id(input.into());
         self
     }
-    /// The ID of the payment session for this transaction.
+    /// <p>The ID of the payment session.</p>
     pub fn set_payment_session_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_payment_session_id(input);
         self
     }
-    /// The ID of the payment session for this transaction.
+    /// <p>The ID of the payment session.</p>
     pub fn get_payment_session_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_payment_session_id()
     }
-    /// The ID of the payment instrument to use for this transaction.
+    /// <p>The ID of the payment instrument to use.</p>
     pub fn payment_instrument_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.payment_instrument_id(input.into());
         self
     }
-    /// The ID of the payment instrument to use for this transaction.
+    /// <p>The ID of the payment instrument to use.</p>
     pub fn set_payment_instrument_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_payment_instrument_id(input);
         self
     }
-    /// The ID of the payment instrument to use for this transaction.
+    /// <p>The ID of the payment instrument to use.</p>
     pub fn get_payment_instrument_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_payment_instrument_id()
     }
-    /// The type of payment being processed.
+    /// <p>The type of payment to process.</p>
     pub fn payment_type(mut self, input: crate::types::PaymentType) -> Self {
         self.inner = self.inner.payment_type(input);
         self
     }
-    /// The type of payment being processed.
+    /// <p>The type of payment to process.</p>
     pub fn set_payment_type(mut self, input: ::std::option::Option<crate::types::PaymentType>) -> Self {
         self.inner = self.inner.set_payment_type(input);
         self
     }
-    /// The type of payment being processed.
+    /// <p>The type of payment to process.</p>
     pub fn get_payment_type(&self) -> &::std::option::Option<crate::types::PaymentType> {
         self.inner.get_payment_type()
     }
-    /// The payment input details specific to the payment type.
+    /// <p>The payment input details specific to the payment type.</p>
     pub fn payment_input(mut self, input: crate::types::PaymentInput) -> Self {
         self.inner = self.inner.payment_input(input);
         self
     }
-    /// The payment input details specific to the payment type.
+    /// <p>The payment input details specific to the payment type.</p>
     pub fn set_payment_input(mut self, input: ::std::option::Option<crate::types::PaymentInput>) -> Self {
         self.inner = self.inner.set_payment_input(input);
         self
     }
-    /// The payment input details specific to the payment type.
+    /// <p>The payment input details specific to the payment type.</p>
     pub fn get_payment_input(&self) -> &::std::option::Option<crate::types::PaymentInput> {
         self.inner.get_payment_input()
     }
-    /// Idempotency token to ensure request uniqueness.
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
         self
     }
-    /// Idempotency token to ensure request uniqueness.
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
     }
-    /// Idempotency token to ensure request uniqueness.
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_token()
     }

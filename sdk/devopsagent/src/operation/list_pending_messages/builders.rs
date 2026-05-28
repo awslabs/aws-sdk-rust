@@ -22,7 +22,7 @@ impl crate::operation::list_pending_messages::builders::ListPendingMessagesInput
 }
 /// Fluent builder constructing a request to `ListPendingMessages`.
 ///
-/// List pending messages for a specific execution.
+/// <p>List pending messages for a specific execution.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListPendingMessagesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,31 +108,31 @@ impl ListPendingMessagesFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// Unique identifier for an agent space (allows alphanumeric characters and hyphens; 1-64 characters)
+    /// <p>Unique identifier for an agent space (allows alphanumeric characters and hyphens; 1-64 characters)</p>
     pub fn agent_space_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.agent_space_id(input.into());
         self
     }
-    /// Unique identifier for an agent space (allows alphanumeric characters and hyphens; 1-64 characters)
+    /// <p>Unique identifier for an agent space (allows alphanumeric characters and hyphens; 1-64 characters)</p>
     pub fn set_agent_space_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_agent_space_id(input);
         self
     }
-    /// Unique identifier for an agent space (allows alphanumeric characters and hyphens; 1-64 characters)
+    /// <p>Unique identifier for an agent space (allows alphanumeric characters and hyphens; 1-64 characters)</p>
     pub fn get_agent_space_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_agent_space_id()
     }
-    /// The unique identifier of the execution whose journal records to retrieve
+    /// <p>The unique identifier of the execution whose journal records to retrieve</p>
     pub fn execution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.execution_id(input.into());
         self
     }
-    /// The unique identifier of the execution whose journal records to retrieve
+    /// <p>The unique identifier of the execution whose journal records to retrieve</p>
     pub fn set_execution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_execution_id(input);
         self
     }
-    /// The unique identifier of the execution whose journal records to retrieve
+    /// <p>The unique identifier of the execution whose journal records to retrieve</p>
     pub fn get_execution_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_execution_id()
     }

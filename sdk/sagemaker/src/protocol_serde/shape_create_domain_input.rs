@@ -57,14 +57,17 @@ pub fn ser_create_domain_input_input(
     if let Some(var_18) = &input.app_security_group_management {
         object.key("AppSecurityGroupManagement").string(var_18.as_str());
     }
-    if let Some(var_19) = &input.tag_propagation {
-        object.key("TagPropagation").string(var_19.as_str());
+    if let Some(var_19) = &input.home_efs_file_system_creation {
+        object.key("HomeEfsFileSystemCreation").string(var_19.as_str());
     }
-    if let Some(var_20) = &input.default_space_settings {
+    if let Some(var_20) = &input.tag_propagation {
+        object.key("TagPropagation").string(var_20.as_str());
+    }
+    if let Some(var_21) = &input.default_space_settings {
         #[allow(unused_mut)]
-        let mut object_21 = object.key("DefaultSpaceSettings").start_object();
-        crate::protocol_serde::shape_default_space_settings::ser_default_space_settings(&mut object_21, var_20)?;
-        object_21.finish();
+        let mut object_22 = object.key("DefaultSpaceSettings").start_object();
+        crate::protocol_serde::shape_default_space_settings::ser_default_space_settings(&mut object_22, var_21)?;
+        object_22.finish();
     }
     Ok(())
 }

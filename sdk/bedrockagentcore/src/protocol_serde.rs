@@ -533,6 +533,8 @@ pub(crate) mod shape_harness_content_block_stop_event;
 
 pub(crate) mod shape_harness_gemini_model_config;
 
+pub(crate) mod shape_harness_lite_llm_model_config;
+
 pub(crate) mod shape_harness_message_start_event;
 
 pub(crate) mod shape_harness_message_stop_event;
@@ -540,6 +542,10 @@ pub(crate) mod shape_harness_message_stop_event;
 pub(crate) mod shape_harness_metadata_event;
 
 pub(crate) mod shape_harness_open_ai_model_config;
+
+pub(crate) mod shape_harness_skill_git_source;
+
+pub(crate) mod shape_harness_skill_s3_source;
 
 pub(crate) mod shape_harness_tool_configuration;
 
@@ -678,6 +684,8 @@ pub(crate) mod shape_harness_inline_function_config;
 pub(crate) mod shape_harness_reasoning_content_block;
 
 pub(crate) mod shape_harness_remote_mcp_config;
+
+pub(crate) mod shape_harness_skill_git_auth;
 
 pub(crate) mod shape_harness_tool_result_block;
 

@@ -120,6 +120,10 @@ where
                         "gpuIds" => {
                             builder = builder.set_gpu_ids(crate::protocol_serde::shape_gpu_ids::de_gpu_ids(tokens, _value)?);
                         }
+                        "neuronDeviceIds" => {
+                            builder =
+                                builder.set_neuron_device_ids(crate::protocol_serde::shape_neuron_device_ids::de_neuron_device_ids(tokens, _value)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

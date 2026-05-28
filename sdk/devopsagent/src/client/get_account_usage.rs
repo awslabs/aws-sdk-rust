@@ -4,12 +4,12 @@ impl super::Client {
     ///
     /// - The fluent builder takes no input, just [`send`](crate::operation::get_account_usage::builders::GetAccountUsageFluentBuilder::send) it.
     /// - On success, responds with [`GetAccountUsageOutput`](crate::operation::get_account_usage::GetAccountUsageOutput) with field(s):
-    ///   - [`monthly_account_investigation_hours(Option<UsageMetric>)`](crate::operation::get_account_usage::GetAccountUsageOutput::monthly_account_investigation_hours): Monthly investigation hours usage and limit for an account
-    ///   - [`monthly_account_evaluation_hours(Option<UsageMetric>)`](crate::operation::get_account_usage::GetAccountUsageOutput::monthly_account_evaluation_hours): Monthly evaluation hours usage and limit for an account
-    ///   - [`monthly_account_system_learning_hours(Option<UsageMetric>)`](crate::operation::get_account_usage::GetAccountUsageOutput::monthly_account_system_learning_hours): Monthly system learning hours usage and limit for an account
-    ///   - [`monthly_account_on_demand_hours(Option<UsageMetric>)`](crate::operation::get_account_usage::GetAccountUsageOutput::monthly_account_on_demand_hours): Monthly on-demand hours usage and limit for an account
-    ///   - [`usage_period_start_time(DateTime)`](crate::operation::get_account_usage::GetAccountUsageOutput::usage_period_start_time): The start time of the usage tracking period
-    ///   - [`usage_period_end_time(DateTime)`](crate::operation::get_account_usage::GetAccountUsageOutput::usage_period_end_time): The end time of the usage tracking period
+    ///   - [`monthly_account_investigation_hours(Option<UsageMetric>)`](crate::operation::get_account_usage::GetAccountUsageOutput::monthly_account_investigation_hours): <p>Monthly investigation hours usage and limit for an account</p>
+    ///   - [`monthly_account_evaluation_hours(Option<UsageMetric>)`](crate::operation::get_account_usage::GetAccountUsageOutput::monthly_account_evaluation_hours): <p>Monthly evaluation hours usage and limit for an account</p>
+    ///   - [`monthly_account_system_learning_hours(Option<UsageMetric>)`](crate::operation::get_account_usage::GetAccountUsageOutput::monthly_account_system_learning_hours): <p>Monthly system learning hours usage and limit for an account</p>
+    ///   - [`monthly_account_on_demand_hours(Option<UsageMetric>)`](crate::operation::get_account_usage::GetAccountUsageOutput::monthly_account_on_demand_hours): <p>Monthly on-demand hours usage and limit for an account</p>
+    ///   - [`usage_period_start_time(DateTime)`](crate::operation::get_account_usage::GetAccountUsageOutput::usage_period_start_time): <p>The start time of the usage tracking period</p>
+    ///   - [`usage_period_end_time(DateTime)`](crate::operation::get_account_usage::GetAccountUsageOutput::usage_period_end_time): <p>The end time of the usage tracking period</p>
     /// - On failure, responds with [`SdkError<GetAccountUsageError>`](crate::operation::get_account_usage::GetAccountUsageError)
     pub fn get_account_usage(&self) -> crate::operation::get_account_usage::builders::GetAccountUsageFluentBuilder {
         crate::operation::get_account_usage::builders::GetAccountUsageFluentBuilder::new(self.handle.clone())

@@ -22,7 +22,7 @@ impl crate::operation::list_payment_instruments::builders::ListPaymentInstrument
 }
 /// Fluent builder constructing a request to `ListPaymentInstruments`.
 ///
-/// List payment instruments for a manager
+/// <p>List payment instruments for a manager.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListPaymentInstrumentsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -114,87 +114,87 @@ impl ListPaymentInstrumentsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_payment_instruments::paginator::ListPaymentInstrumentsPaginator {
         crate::operation::list_payment_instruments::paginator::ListPaymentInstrumentsPaginator::new(self.handle, self.inner)
     }
-    /// The user ID associated with the payment instruments.
+    /// <p>The user ID associated with the payment instruments.</p>
     pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.user_id(input.into());
         self
     }
-    /// The user ID associated with the payment instruments.
+    /// <p>The user ID associated with the payment instruments.</p>
     pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_user_id(input);
         self
     }
-    /// The user ID associated with the payment instruments.
+    /// <p>The user ID associated with the payment instruments.</p>
     pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_user_id()
     }
-    /// The agent name associated with this request, used for observability.
+    /// <p>The agent name associated with this request, used for observability.</p>
     pub fn agent_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.agent_name(input.into());
         self
     }
-    /// The agent name associated with this request, used for observability.
+    /// <p>The agent name associated with this request, used for observability.</p>
     pub fn set_agent_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_agent_name(input);
         self
     }
-    /// The agent name associated with this request, used for observability.
+    /// <p>The agent name associated with this request, used for observability.</p>
     pub fn get_agent_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_agent_name()
     }
-    /// The ARN of the payment manager that owns the payment instruments.
+    /// <p>The ARN of the payment manager that owns the payment instruments.</p>
     pub fn payment_manager_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.payment_manager_arn(input.into());
         self
     }
-    /// The ARN of the payment manager that owns the payment instruments.
+    /// <p>The ARN of the payment manager that owns the payment instruments.</p>
     pub fn set_payment_manager_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_payment_manager_arn(input);
         self
     }
-    /// The ARN of the payment manager that owns the payment instruments.
+    /// <p>The ARN of the payment manager that owns the payment instruments.</p>
     pub fn get_payment_manager_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_payment_manager_arn()
     }
-    /// The ID of the payment connector to filter by.
+    /// <p>The ID of the payment connector to filter by.</p>
     pub fn payment_connector_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.payment_connector_id(input.into());
         self
     }
-    /// The ID of the payment connector to filter by.
+    /// <p>The ID of the payment connector to filter by.</p>
     pub fn set_payment_connector_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_payment_connector_id(input);
         self
     }
-    /// The ID of the payment connector to filter by.
+    /// <p>The ID of the payment connector to filter by.</p>
     pub fn get_payment_connector_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_payment_connector_id()
     }
-    /// Token for pagination to retrieve the next set of results.
+    /// <p>Token for pagination to retrieve the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
-    /// Token for pagination to retrieve the next set of results.
+    /// <p>Token for pagination to retrieve the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
-    /// Token for pagination to retrieve the next set of results.
+    /// <p>Token for pagination to retrieve the next set of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }
-    /// Maximum number of results to return in a single response.
+    /// <p>Maximum number of results to return in a single response.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
         self
     }
-    /// Maximum number of results to return in a single response.
+    /// <p>Maximum number of results to return in a single response.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
-    /// Maximum number of results to return in a single response.
+    /// <p>Maximum number of results to return in a single response.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }

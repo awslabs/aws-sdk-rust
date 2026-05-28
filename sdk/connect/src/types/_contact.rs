@@ -46,9 +46,9 @@ pub struct Contact {
     pub scheduled_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The contactId that is <a href="https://docs.aws.amazon.com/connect/latest/adminguide/chat-persistence.html#relatedcontactid">related</a> to this contact.</p>
     pub related_contact_id: ::std::option::Option<::std::string::String>,
-    /// <p>Information about Amazon Connect Wisdom.</p>
+    /// <p>Information about Connect Customer Wisdom.</p>
     pub wisdom_info: ::std::option::Option<crate::types::WisdomInfo>,
-    /// <p>The customer's identification number. For example, the <code>CustomerId</code> may be a customer number from your CRM. You can create a Lambda function to pull the unique customer ID of the caller from your CRM system. If you enable Amazon Connect Voice ID capability, this attribute is populated with the <code>CustomerSpeakerId</code> of the caller.</p>
+    /// <p>The customer's identification number. For example, the <code>CustomerId</code> may be a customer number from your CRM. You can create a Lambda function to pull the unique customer ID of the caller from your CRM system. If you enable Connect Customer Voice ID capability, this attribute is populated with the <code>CustomerSpeakerId</code> of the caller.</p>
     pub customer_id: ::std::option::Option<::std::string::String>,
     /// <p>The customer or external third party participant endpoint.</p>
     pub customer_endpoint: ::std::option::Option<crate::types::EndpointInfo>,
@@ -60,7 +60,7 @@ pub struct Contact {
     pub queue_priority: ::std::option::Option<i64>,
     /// <p>Tags associated with the contact. This contains both Amazon Web Services generated and user-defined tags.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    /// <p>The timestamp when customer endpoint connected to Amazon Connect.</p>
+    /// <p>The timestamp when customer endpoint connected to Connect Customer.</p>
     pub connected_to_system_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Latest routing criteria on the contact.</p>
     pub routing_criteria: ::std::option::Option<crate::types::RoutingCriteria>,
@@ -68,7 +68,7 @@ pub struct Contact {
     pub customer: ::std::option::Option<crate::types::Customer>,
     /// <p>Information associated with a campaign.</p>
     pub campaign: ::std::option::Option<crate::types::Campaign>,
-    /// <p>Indicates how an <a href="https://docs.aws.amazon.com/connect/latest/adminguide/how-to-create-campaigns.html">outbound campaign</a> call is actually disposed if the contact is connected to Amazon Connect.</p>
+    /// <p>Indicates how an <a href="https://docs.aws.amazon.com/connect/latest/adminguide/how-to-create-campaigns.html">outbound campaign</a> call is actually disposed if the contact is connected to Connect Customer.</p>
     pub answering_machine_detection_status: ::std::option::Option<crate::types::AnsweringMachineDetectionStatus>,
     /// <p>Information about customer’s voice activity.</p>
     pub customer_voice_activity: ::std::option::Option<crate::types::CustomerVoiceActivity>,
@@ -80,11 +80,11 @@ pub struct Contact {
     pub disconnect_details: ::std::option::Option<crate::types::DisconnectDetails>,
     /// <p>List of additional email addresses for an email contact.</p>
     pub additional_email_recipients: ::std::option::Option<crate::types::AdditionalEmailRecipients>,
-    /// <p>A set of system defined key-value pairs stored on individual contact segments using an attribute map. The attributes are standard Amazon Connect attributes and can be accessed in flows. Attribute keys can include only alphanumeric, -, and _ characters. This field can be used to show channel subtype. For example, <code>connect:Guide</code> or <code>connect:SMS</code>.</p>
+    /// <p>A set of system defined key-value pairs stored on individual contact segments using an attribute map. The attributes are standard Connect Customer attributes and can be accessed in flows. Attribute keys can include only alphanumeric, -, and _ characters. This field can be used to show channel subtype. For example, <code>connect:Guide</code> or <code>connect:SMS</code>.</p>
     pub segment_attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::SegmentAttributeValue>>,
     /// <p>If recording was enabled, this is information about the recordings.</p>
     pub recordings: ::std::option::Option<::std::vec::Vec<crate::types::RecordingInfo>>,
-    /// <p>The disconnect reason for the contact. For a list and description of all the possible disconnect reasons by channel, see DisconnectReason under <a href="https://docs.aws.amazon.com/connect/latest/adminguide/ctr-data-model.html#ctr-ContactTraceRecord">ContactTraceRecord</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+    /// <p>The disconnect reason for the contact. For a list and description of all the possible disconnect reasons by channel, see DisconnectReason under <a href="https://docs.aws.amazon.com/connect/latest/adminguide/ctr-data-model.html#ctr-ContactTraceRecord">ContactTraceRecord</a> in the <i>Connect Customer Administrator Guide</i>.</p>
     pub disconnect_reason: ::std::option::Option<::std::string::String>,
     /// <p>Information about the contact evaluations where the key is the FormId, which is a unique identifier for the form.</p>
     pub contact_evaluations: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ContactEvaluation>>,
@@ -186,11 +186,11 @@ impl Contact {
     pub fn related_contact_id(&self) -> ::std::option::Option<&str> {
         self.related_contact_id.as_deref()
     }
-    /// <p>Information about Amazon Connect Wisdom.</p>
+    /// <p>Information about Connect Customer Wisdom.</p>
     pub fn wisdom_info(&self) -> ::std::option::Option<&crate::types::WisdomInfo> {
         self.wisdom_info.as_ref()
     }
-    /// <p>The customer's identification number. For example, the <code>CustomerId</code> may be a customer number from your CRM. You can create a Lambda function to pull the unique customer ID of the caller from your CRM system. If you enable Amazon Connect Voice ID capability, this attribute is populated with the <code>CustomerSpeakerId</code> of the caller.</p>
+    /// <p>The customer's identification number. For example, the <code>CustomerId</code> may be a customer number from your CRM. You can create a Lambda function to pull the unique customer ID of the caller from your CRM system. If you enable Connect Customer Voice ID capability, this attribute is populated with the <code>CustomerSpeakerId</code> of the caller.</p>
     pub fn customer_id(&self) -> ::std::option::Option<&str> {
         self.customer_id.as_deref()
     }
@@ -214,7 +214,7 @@ impl Contact {
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
-    /// <p>The timestamp when customer endpoint connected to Amazon Connect.</p>
+    /// <p>The timestamp when customer endpoint connected to Connect Customer.</p>
     pub fn connected_to_system_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.connected_to_system_timestamp.as_ref()
     }
@@ -230,7 +230,7 @@ impl Contact {
     pub fn campaign(&self) -> ::std::option::Option<&crate::types::Campaign> {
         self.campaign.as_ref()
     }
-    /// <p>Indicates how an <a href="https://docs.aws.amazon.com/connect/latest/adminguide/how-to-create-campaigns.html">outbound campaign</a> call is actually disposed if the contact is connected to Amazon Connect.</p>
+    /// <p>Indicates how an <a href="https://docs.aws.amazon.com/connect/latest/adminguide/how-to-create-campaigns.html">outbound campaign</a> call is actually disposed if the contact is connected to Connect Customer.</p>
     pub fn answering_machine_detection_status(&self) -> ::std::option::Option<&crate::types::AnsweringMachineDetectionStatus> {
         self.answering_machine_detection_status.as_ref()
     }
@@ -254,7 +254,7 @@ impl Contact {
     pub fn additional_email_recipients(&self) -> ::std::option::Option<&crate::types::AdditionalEmailRecipients> {
         self.additional_email_recipients.as_ref()
     }
-    /// <p>A set of system defined key-value pairs stored on individual contact segments using an attribute map. The attributes are standard Amazon Connect attributes and can be accessed in flows. Attribute keys can include only alphanumeric, -, and _ characters. This field can be used to show channel subtype. For example, <code>connect:Guide</code> or <code>connect:SMS</code>.</p>
+    /// <p>A set of system defined key-value pairs stored on individual contact segments using an attribute map. The attributes are standard Connect Customer attributes and can be accessed in flows. Attribute keys can include only alphanumeric, -, and _ characters. This field can be used to show channel subtype. For example, <code>connect:Guide</code> or <code>connect:SMS</code>.</p>
     pub fn segment_attributes(
         &self,
     ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::SegmentAttributeValue>> {
@@ -266,7 +266,7 @@ impl Contact {
     pub fn recordings(&self) -> &[crate::types::RecordingInfo] {
         self.recordings.as_deref().unwrap_or_default()
     }
-    /// <p>The disconnect reason for the contact. For a list and description of all the possible disconnect reasons by channel, see DisconnectReason under <a href="https://docs.aws.amazon.com/connect/latest/adminguide/ctr-data-model.html#ctr-ContactTraceRecord">ContactTraceRecord</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+    /// <p>The disconnect reason for the contact. For a list and description of all the possible disconnect reasons by channel, see DisconnectReason under <a href="https://docs.aws.amazon.com/connect/latest/adminguide/ctr-data-model.html#ctr-ContactTraceRecord">ContactTraceRecord</a> in the <i>Connect Customer Administrator Guide</i>.</p>
     pub fn disconnect_reason(&self) -> ::std::option::Option<&str> {
         self.disconnect_reason.as_deref()
     }
@@ -710,31 +710,31 @@ impl ContactBuilder {
     pub fn get_related_contact_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.related_contact_id
     }
-    /// <p>Information about Amazon Connect Wisdom.</p>
+    /// <p>Information about Connect Customer Wisdom.</p>
     pub fn wisdom_info(mut self, input: crate::types::WisdomInfo) -> Self {
         self.wisdom_info = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Information about Amazon Connect Wisdom.</p>
+    /// <p>Information about Connect Customer Wisdom.</p>
     pub fn set_wisdom_info(mut self, input: ::std::option::Option<crate::types::WisdomInfo>) -> Self {
         self.wisdom_info = input;
         self
     }
-    /// <p>Information about Amazon Connect Wisdom.</p>
+    /// <p>Information about Connect Customer Wisdom.</p>
     pub fn get_wisdom_info(&self) -> &::std::option::Option<crate::types::WisdomInfo> {
         &self.wisdom_info
     }
-    /// <p>The customer's identification number. For example, the <code>CustomerId</code> may be a customer number from your CRM. You can create a Lambda function to pull the unique customer ID of the caller from your CRM system. If you enable Amazon Connect Voice ID capability, this attribute is populated with the <code>CustomerSpeakerId</code> of the caller.</p>
+    /// <p>The customer's identification number. For example, the <code>CustomerId</code> may be a customer number from your CRM. You can create a Lambda function to pull the unique customer ID of the caller from your CRM system. If you enable Connect Customer Voice ID capability, this attribute is populated with the <code>CustomerSpeakerId</code> of the caller.</p>
     pub fn customer_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.customer_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The customer's identification number. For example, the <code>CustomerId</code> may be a customer number from your CRM. You can create a Lambda function to pull the unique customer ID of the caller from your CRM system. If you enable Amazon Connect Voice ID capability, this attribute is populated with the <code>CustomerSpeakerId</code> of the caller.</p>
+    /// <p>The customer's identification number. For example, the <code>CustomerId</code> may be a customer number from your CRM. You can create a Lambda function to pull the unique customer ID of the caller from your CRM system. If you enable Connect Customer Voice ID capability, this attribute is populated with the <code>CustomerSpeakerId</code> of the caller.</p>
     pub fn set_customer_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.customer_id = input;
         self
     }
-    /// <p>The customer's identification number. For example, the <code>CustomerId</code> may be a customer number from your CRM. You can create a Lambda function to pull the unique customer ID of the caller from your CRM system. If you enable Amazon Connect Voice ID capability, this attribute is populated with the <code>CustomerSpeakerId</code> of the caller.</p>
+    /// <p>The customer's identification number. For example, the <code>CustomerId</code> may be a customer number from your CRM. You can create a Lambda function to pull the unique customer ID of the caller from your CRM system. If you enable Connect Customer Voice ID capability, this attribute is populated with the <code>CustomerSpeakerId</code> of the caller.</p>
     pub fn get_customer_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.customer_id
     }
@@ -814,17 +814,17 @@ impl ContactBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
-    /// <p>The timestamp when customer endpoint connected to Amazon Connect.</p>
+    /// <p>The timestamp when customer endpoint connected to Connect Customer.</p>
     pub fn connected_to_system_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.connected_to_system_timestamp = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The timestamp when customer endpoint connected to Amazon Connect.</p>
+    /// <p>The timestamp when customer endpoint connected to Connect Customer.</p>
     pub fn set_connected_to_system_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.connected_to_system_timestamp = input;
         self
     }
-    /// <p>The timestamp when customer endpoint connected to Amazon Connect.</p>
+    /// <p>The timestamp when customer endpoint connected to Connect Customer.</p>
     pub fn get_connected_to_system_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.connected_to_system_timestamp
     }
@@ -870,17 +870,17 @@ impl ContactBuilder {
     pub fn get_campaign(&self) -> &::std::option::Option<crate::types::Campaign> {
         &self.campaign
     }
-    /// <p>Indicates how an <a href="https://docs.aws.amazon.com/connect/latest/adminguide/how-to-create-campaigns.html">outbound campaign</a> call is actually disposed if the contact is connected to Amazon Connect.</p>
+    /// <p>Indicates how an <a href="https://docs.aws.amazon.com/connect/latest/adminguide/how-to-create-campaigns.html">outbound campaign</a> call is actually disposed if the contact is connected to Connect Customer.</p>
     pub fn answering_machine_detection_status(mut self, input: crate::types::AnsweringMachineDetectionStatus) -> Self {
         self.answering_machine_detection_status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Indicates how an <a href="https://docs.aws.amazon.com/connect/latest/adminguide/how-to-create-campaigns.html">outbound campaign</a> call is actually disposed if the contact is connected to Amazon Connect.</p>
+    /// <p>Indicates how an <a href="https://docs.aws.amazon.com/connect/latest/adminguide/how-to-create-campaigns.html">outbound campaign</a> call is actually disposed if the contact is connected to Connect Customer.</p>
     pub fn set_answering_machine_detection_status(mut self, input: ::std::option::Option<crate::types::AnsweringMachineDetectionStatus>) -> Self {
         self.answering_machine_detection_status = input;
         self
     }
-    /// <p>Indicates how an <a href="https://docs.aws.amazon.com/connect/latest/adminguide/how-to-create-campaigns.html">outbound campaign</a> call is actually disposed if the contact is connected to Amazon Connect.</p>
+    /// <p>Indicates how an <a href="https://docs.aws.amazon.com/connect/latest/adminguide/how-to-create-campaigns.html">outbound campaign</a> call is actually disposed if the contact is connected to Connect Customer.</p>
     pub fn get_answering_machine_detection_status(&self) -> &::std::option::Option<crate::types::AnsweringMachineDetectionStatus> {
         &self.answering_machine_detection_status
     }
@@ -958,14 +958,14 @@ impl ContactBuilder {
     ///
     /// To override the contents of this collection use [`set_segment_attributes`](Self::set_segment_attributes).
     ///
-    /// <p>A set of system defined key-value pairs stored on individual contact segments using an attribute map. The attributes are standard Amazon Connect attributes and can be accessed in flows. Attribute keys can include only alphanumeric, -, and _ characters. This field can be used to show channel subtype. For example, <code>connect:Guide</code> or <code>connect:SMS</code>.</p>
+    /// <p>A set of system defined key-value pairs stored on individual contact segments using an attribute map. The attributes are standard Connect Customer attributes and can be accessed in flows. Attribute keys can include only alphanumeric, -, and _ characters. This field can be used to show channel subtype. For example, <code>connect:Guide</code> or <code>connect:SMS</code>.</p>
     pub fn segment_attributes(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::SegmentAttributeValue) -> Self {
         let mut hash_map = self.segment_attributes.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.segment_attributes = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>A set of system defined key-value pairs stored on individual contact segments using an attribute map. The attributes are standard Amazon Connect attributes and can be accessed in flows. Attribute keys can include only alphanumeric, -, and _ characters. This field can be used to show channel subtype. For example, <code>connect:Guide</code> or <code>connect:SMS</code>.</p>
+    /// <p>A set of system defined key-value pairs stored on individual contact segments using an attribute map. The attributes are standard Connect Customer attributes and can be accessed in flows. Attribute keys can include only alphanumeric, -, and _ characters. This field can be used to show channel subtype. For example, <code>connect:Guide</code> or <code>connect:SMS</code>.</p>
     pub fn set_segment_attributes(
         mut self,
         input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::SegmentAttributeValue>>,
@@ -973,7 +973,7 @@ impl ContactBuilder {
         self.segment_attributes = input;
         self
     }
-    /// <p>A set of system defined key-value pairs stored on individual contact segments using an attribute map. The attributes are standard Amazon Connect attributes and can be accessed in flows. Attribute keys can include only alphanumeric, -, and _ characters. This field can be used to show channel subtype. For example, <code>connect:Guide</code> or <code>connect:SMS</code>.</p>
+    /// <p>A set of system defined key-value pairs stored on individual contact segments using an attribute map. The attributes are standard Connect Customer attributes and can be accessed in flows. Attribute keys can include only alphanumeric, -, and _ characters. This field can be used to show channel subtype. For example, <code>connect:Guide</code> or <code>connect:SMS</code>.</p>
     pub fn get_segment_attributes(
         &self,
     ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::SegmentAttributeValue>> {
@@ -999,17 +999,17 @@ impl ContactBuilder {
     pub fn get_recordings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RecordingInfo>> {
         &self.recordings
     }
-    /// <p>The disconnect reason for the contact. For a list and description of all the possible disconnect reasons by channel, see DisconnectReason under <a href="https://docs.aws.amazon.com/connect/latest/adminguide/ctr-data-model.html#ctr-ContactTraceRecord">ContactTraceRecord</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+    /// <p>The disconnect reason for the contact. For a list and description of all the possible disconnect reasons by channel, see DisconnectReason under <a href="https://docs.aws.amazon.com/connect/latest/adminguide/ctr-data-model.html#ctr-ContactTraceRecord">ContactTraceRecord</a> in the <i>Connect Customer Administrator Guide</i>.</p>
     pub fn disconnect_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.disconnect_reason = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The disconnect reason for the contact. For a list and description of all the possible disconnect reasons by channel, see DisconnectReason under <a href="https://docs.aws.amazon.com/connect/latest/adminguide/ctr-data-model.html#ctr-ContactTraceRecord">ContactTraceRecord</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+    /// <p>The disconnect reason for the contact. For a list and description of all the possible disconnect reasons by channel, see DisconnectReason under <a href="https://docs.aws.amazon.com/connect/latest/adminguide/ctr-data-model.html#ctr-ContactTraceRecord">ContactTraceRecord</a> in the <i>Connect Customer Administrator Guide</i>.</p>
     pub fn set_disconnect_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.disconnect_reason = input;
         self
     }
-    /// <p>The disconnect reason for the contact. For a list and description of all the possible disconnect reasons by channel, see DisconnectReason under <a href="https://docs.aws.amazon.com/connect/latest/adminguide/ctr-data-model.html#ctr-ContactTraceRecord">ContactTraceRecord</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+    /// <p>The disconnect reason for the contact. For a list and description of all the possible disconnect reasons by channel, see DisconnectReason under <a href="https://docs.aws.amazon.com/connect/latest/adminguide/ctr-data-model.html#ctr-ContactTraceRecord">ContactTraceRecord</a> in the <i>Connect Customer Administrator Guide</i>.</p>
     pub fn get_disconnect_reason(&self) -> &::std::option::Option<::std::string::String> {
         &self.disconnect_reason
     }

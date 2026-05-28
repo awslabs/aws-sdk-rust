@@ -39,22 +39,21 @@
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 ///
-/// Supported blockchain chain identifiers for balance queries.
-/// Each value maps to a specific chain supported by the underlying providers (Privy, Coinbase).
+/// <p>Supported blockchain chain identifiers for balance queries. Each value maps to a specific chain supported by the underlying providers (Privy, Coinbase).</p>
 #[non_exhaustive]
 #[derive(
     ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum BlockchainChainId {
-    /// Base Mainnet (EVM L2)
+    /// <p>Base Mainnet (EVM L2)</p>
     Base,
-    /// Base Sepolia testnet (EVM L2)
+    /// <p>Base Sepolia testnet (EVM L2)</p>
     BaseSepolia,
-    /// Ethereum Mainnet (EVM L1)
+    /// <p>Ethereum Mainnet (EVM L1)</p>
     Ethereum,
-    /// Solana Mainnet
+    /// <p>Solana Mainnet</p>
     Solana,
-    /// Solana Devnet testnet
+    /// <p>Solana Devnet testnet</p>
     SolanaDevnet,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]

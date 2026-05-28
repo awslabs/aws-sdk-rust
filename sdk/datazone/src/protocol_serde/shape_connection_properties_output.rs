@@ -103,6 +103,11 @@ where
                                 || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'lakehouseProperties' cannot be null"),
                             )?,
                         )),
+                        "vpcProperties" => Some(crate::types::ConnectionPropertiesOutput::VpcProperties(
+                            crate::protocol_serde::shape_vpc_properties_output::de_vpc_properties_output(tokens, _value)?.ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'vpcProperties' cannot be null")
+                            })?,
+                        )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
                             Some(crate::types::ConnectionPropertiesOutput::Unknown)

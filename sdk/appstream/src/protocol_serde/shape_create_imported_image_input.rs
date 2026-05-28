@@ -9,48 +9,51 @@ pub fn ser_create_imported_image_input_input(
     if let Some(var_2) = &input.source_ami_id {
         object.key("SourceAmiId").string(var_2.as_str());
     }
-    if let Some(var_3) = &input.iam_role_arn {
-        object.key("IamRoleArn").string(var_3.as_str());
+    if let Some(var_3) = &input.workspace_image_id {
+        object.key("WorkspaceImageId").string(var_3.as_str());
     }
-    if let Some(var_4) = &input.description {
-        object.key("Description").string(var_4.as_str());
+    if let Some(var_4) = &input.iam_role_arn {
+        object.key("IamRoleArn").string(var_4.as_str());
     }
-    if let Some(var_5) = &input.display_name {
-        object.key("DisplayName").string(var_5.as_str());
+    if let Some(var_5) = &input.description {
+        object.key("Description").string(var_5.as_str());
     }
-    if let Some(var_6) = &input.tags {
+    if let Some(var_6) = &input.display_name {
+        object.key("DisplayName").string(var_6.as_str());
+    }
+    if let Some(var_7) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_7 = object.key("Tags").start_object();
-        for (key_8, value_9) in var_6 {
+        let mut object_8 = object.key("Tags").start_object();
+        for (key_9, value_10) in var_7 {
             {
-                object_7.key(key_8.as_str()).string(value_9.as_str());
+                object_8.key(key_9.as_str()).string(value_10.as_str());
             }
         }
-        object_7.finish();
+        object_8.finish();
     }
-    if let Some(var_10) = &input.runtime_validation_config {
+    if let Some(var_11) = &input.runtime_validation_config {
         #[allow(unused_mut)]
-        let mut object_11 = object.key("RuntimeValidationConfig").start_object();
-        crate::protocol_serde::shape_runtime_validation_config::ser_runtime_validation_config(&mut object_11, var_10)?;
-        object_11.finish();
+        let mut object_12 = object.key("RuntimeValidationConfig").start_object();
+        crate::protocol_serde::shape_runtime_validation_config::ser_runtime_validation_config(&mut object_12, var_11)?;
+        object_12.finish();
     }
-    if let Some(var_12) = &input.agent_software_version {
-        object.key("AgentSoftwareVersion").string(var_12.as_str());
+    if let Some(var_13) = &input.agent_software_version {
+        object.key("AgentSoftwareVersion").string(var_13.as_str());
     }
-    if let Some(var_13) = &input.app_catalog_config {
-        let mut array_14 = object.key("AppCatalogConfig").start_array();
-        for item_15 in var_13 {
+    if let Some(var_14) = &input.app_catalog_config {
+        let mut array_15 = object.key("AppCatalogConfig").start_array();
+        for item_16 in var_14 {
             {
                 #[allow(unused_mut)]
-                let mut object_16 = array_14.value().start_object();
-                crate::protocol_serde::shape_application_config::ser_application_config(&mut object_16, item_15)?;
-                object_16.finish();
+                let mut object_17 = array_15.value().start_object();
+                crate::protocol_serde::shape_application_config::ser_application_config(&mut object_17, item_16)?;
+                object_17.finish();
             }
         }
-        array_14.finish();
+        array_15.finish();
     }
-    if let Some(var_17) = &input.dry_run {
-        object.key("DryRun").boolean(*var_17);
+    if let Some(var_18) = &input.dry_run {
+        object.key("DryRun").boolean(*var_18);
     }
     Ok(())
 }

@@ -129,6 +129,8 @@ pub use crate::types::_log_location::LogLocation;
 
 pub use crate::types::_code_remediation_task::CodeRemediationTask;
 
+pub use crate::types::_verification_script::VerificationScript;
+
 pub use crate::types::_endpoint::Endpoint;
 
 pub use crate::types::_actor::Actor;
@@ -186,6 +188,8 @@ pub use crate::types::_step_status::StepStatus;
 pub use crate::types::_context_type::ContextType;
 
 pub use crate::types::_code_remediation_task_details::CodeRemediationTaskDetails;
+
+pub use crate::types::_verification_script_env_var::VerificationScriptEnvVar;
 
 pub use crate::types::_authentication_provider_type::AuthenticationProviderType;
 
@@ -380,6 +384,10 @@ mod _user_role;
 mod _validation_exception_field;
 
 mod _verification_details;
+
+mod _verification_script;
+
+mod _verification_script_env_var;
 
 mod _vpc_config;
 

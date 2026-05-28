@@ -11,6 +11,30 @@ pub(crate) fn validation_exception_correct_errors(
     builder
 }
 
+pub(crate) fn add_dataset_examples_output_output_correct_errors(
+    mut builder: crate::operation::add_dataset_examples::builders::AddDatasetExamplesOutputBuilder,
+) -> crate::operation::add_dataset_examples::builders::AddDatasetExamplesOutputBuilder {
+    if builder.dataset_arn.is_none() {
+        builder.dataset_arn = Some(Default::default())
+    }
+    if builder.dataset_id.is_none() {
+        builder.dataset_id = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::DatasetStatus>().ok()
+    }
+    if builder.added_count.is_none() {
+        builder.added_count = Some(Default::default())
+    }
+    if builder.updated_at.is_none() {
+        builder.updated_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.example_ids.is_none() {
+        builder.example_ids = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn create_agent_runtime_output_output_correct_errors(
     mut builder: crate::operation::create_agent_runtime::builders::CreateAgentRuntimeOutputBuilder,
 ) -> crate::operation::create_agent_runtime::builders::CreateAgentRuntimeOutputBuilder {
@@ -154,6 +178,45 @@ pub(crate) fn create_configuration_bundle_output_output_correct_errors(
     }
     if builder.version_id.is_none() {
         builder.version_id = Some(Default::default())
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
+pub(crate) fn create_dataset_output_output_correct_errors(
+    mut builder: crate::operation::create_dataset::builders::CreateDatasetOutputBuilder,
+) -> crate::operation::create_dataset::builders::CreateDatasetOutputBuilder {
+    if builder.dataset_arn.is_none() {
+        builder.dataset_arn = Some(Default::default())
+    }
+    if builder.dataset_id.is_none() {
+        builder.dataset_id = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::DatasetStatus>().ok()
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
+pub(crate) fn create_dataset_version_output_output_correct_errors(
+    mut builder: crate::operation::create_dataset_version::builders::CreateDatasetVersionOutputBuilder,
+) -> crate::operation::create_dataset_version::builders::CreateDatasetVersionOutputBuilder {
+    if builder.dataset_arn.is_none() {
+        builder.dataset_arn = Some(Default::default())
+    }
+    if builder.dataset_id.is_none() {
+        builder.dataset_id = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::DatasetStatus>().ok()
+    }
+    if builder.dataset_version.is_none() {
+        builder.dataset_version = Some(Default::default())
     }
     if builder.created_at.is_none() {
         builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
@@ -554,6 +617,48 @@ pub(crate) fn delete_configuration_bundle_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn delete_dataset_output_output_correct_errors(
+    mut builder: crate::operation::delete_dataset::builders::DeleteDatasetOutputBuilder,
+) -> crate::operation::delete_dataset::builders::DeleteDatasetOutputBuilder {
+    if builder.dataset_arn.is_none() {
+        builder.dataset_arn = Some(Default::default())
+    }
+    if builder.dataset_id.is_none() {
+        builder.dataset_id = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::DatasetStatus>().ok()
+    }
+    if builder.dataset_version.is_none() {
+        builder.dataset_version = Some(Default::default())
+    }
+    if builder.updated_at.is_none() {
+        builder.updated_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
+pub(crate) fn delete_dataset_examples_output_output_correct_errors(
+    mut builder: crate::operation::delete_dataset_examples::builders::DeleteDatasetExamplesOutputBuilder,
+) -> crate::operation::delete_dataset_examples::builders::DeleteDatasetExamplesOutputBuilder {
+    if builder.dataset_arn.is_none() {
+        builder.dataset_arn = Some(Default::default())
+    }
+    if builder.dataset_id.is_none() {
+        builder.dataset_id = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::DatasetStatus>().ok()
+    }
+    if builder.deleted_count.is_none() {
+        builder.deleted_count = Some(Default::default())
+    }
+    if builder.updated_at.is_none() {
+        builder.updated_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
 pub(crate) fn delete_evaluator_output_output_correct_errors(
     mut builder: crate::operation::delete_evaluator::builders::DeleteEvaluatorOutputBuilder,
 ) -> crate::operation::delete_evaluator::builders::DeleteEvaluatorOutputBuilder {
@@ -946,6 +1051,39 @@ pub(crate) fn get_configuration_bundle_version_output_output_correct_errors(
     }
     if builder.version_created_at.is_none() {
         builder.version_created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
+pub(crate) fn get_dataset_output_output_correct_errors(
+    mut builder: crate::operation::get_dataset::builders::GetDatasetOutputBuilder,
+) -> crate::operation::get_dataset::builders::GetDatasetOutputBuilder {
+    if builder.dataset_arn.is_none() {
+        builder.dataset_arn = Some(Default::default())
+    }
+    if builder.dataset_id.is_none() {
+        builder.dataset_id = Some(Default::default())
+    }
+    if builder.dataset_version.is_none() {
+        builder.dataset_version = Some(Default::default())
+    }
+    if builder.dataset_name.is_none() {
+        builder.dataset_name = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::DatasetStatus>().ok()
+    }
+    if builder.schema_type.is_none() {
+        builder.schema_type = "no value was set".parse::<crate::types::DatasetSchemaType>().ok()
+    }
+    if builder.example_count.is_none() {
+        builder.example_count = Some(Default::default())
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.updated_at.is_none() {
+        builder.updated_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
     }
     builder
 }
@@ -1586,6 +1724,42 @@ pub(crate) fn list_configuration_bundles_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn list_dataset_examples_output_output_correct_errors(
+    mut builder: crate::operation::list_dataset_examples::builders::ListDatasetExamplesOutputBuilder,
+) -> crate::operation::list_dataset_examples::builders::ListDatasetExamplesOutputBuilder {
+    if builder.dataset_arn.is_none() {
+        builder.dataset_arn = Some(Default::default())
+    }
+    if builder.dataset_id.is_none() {
+        builder.dataset_id = Some(Default::default())
+    }
+    if builder.dataset_version.is_none() {
+        builder.dataset_version = Some(Default::default())
+    }
+    if builder.examples.is_none() {
+        builder.examples = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn list_dataset_versions_output_output_correct_errors(
+    mut builder: crate::operation::list_dataset_versions::builders::ListDatasetVersionsOutputBuilder,
+) -> crate::operation::list_dataset_versions::builders::ListDatasetVersionsOutputBuilder {
+    if builder.versions.is_none() {
+        builder.versions = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn list_datasets_output_output_correct_errors(
+    mut builder: crate::operation::list_datasets::builders::ListDatasetsOutputBuilder,
+) -> crate::operation::list_datasets::builders::ListDatasetsOutputBuilder {
+    if builder.datasets.is_none() {
+        builder.datasets = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn list_evaluators_output_output_correct_errors(
     mut builder: crate::operation::list_evaluators::builders::ListEvaluatorsOutputBuilder,
 ) -> crate::operation::list_evaluators::builders::ListEvaluatorsOutputBuilder {
@@ -1936,6 +2110,42 @@ pub(crate) fn update_configuration_bundle_output_output_correct_errors(
     }
     if builder.version_id.is_none() {
         builder.version_id = Some(Default::default())
+    }
+    if builder.updated_at.is_none() {
+        builder.updated_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
+pub(crate) fn update_dataset_output_output_correct_errors(
+    mut builder: crate::operation::update_dataset::builders::UpdateDatasetOutputBuilder,
+) -> crate::operation::update_dataset::builders::UpdateDatasetOutputBuilder {
+    if builder.dataset_arn.is_none() {
+        builder.dataset_arn = Some(Default::default())
+    }
+    if builder.dataset_id.is_none() {
+        builder.dataset_id = Some(Default::default())
+    }
+    if builder.updated_at.is_none() {
+        builder.updated_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
+pub(crate) fn update_dataset_examples_output_output_correct_errors(
+    mut builder: crate::operation::update_dataset_examples::builders::UpdateDatasetExamplesOutputBuilder,
+) -> crate::operation::update_dataset_examples::builders::UpdateDatasetExamplesOutputBuilder {
+    if builder.dataset_arn.is_none() {
+        builder.dataset_arn = Some(Default::default())
+    }
+    if builder.dataset_id.is_none() {
+        builder.dataset_id = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::DatasetStatus>().ok()
+    }
+    if builder.updated_count.is_none() {
+        builder.updated_count = Some(Default::default())
     }
     if builder.updated_at.is_none() {
         builder.updated_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
@@ -2854,6 +3064,51 @@ pub(crate) fn custom_oauth2_provider_config_output_correct_errors(
     builder
 }
 
+pub(crate) fn dataset_summary_correct_errors(
+    mut builder: crate::types::builders::DatasetSummaryBuilder,
+) -> crate::types::builders::DatasetSummaryBuilder {
+    if builder.dataset_arn.is_none() {
+        builder.dataset_arn = Some(Default::default())
+    }
+    if builder.dataset_id.is_none() {
+        builder.dataset_id = Some(Default::default())
+    }
+    if builder.dataset_name.is_none() {
+        builder.dataset_name = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::DatasetStatus>().ok()
+    }
+    if builder.schema_type.is_none() {
+        builder.schema_type = "no value was set".parse::<crate::types::DatasetSchemaType>().ok()
+    }
+    if builder.example_count.is_none() {
+        builder.example_count = Some(Default::default())
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.updated_at.is_none() {
+        builder.updated_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
+pub(crate) fn dataset_version_summary_correct_errors(
+    mut builder: crate::types::builders::DatasetVersionSummaryBuilder,
+) -> crate::types::builders::DatasetVersionSummaryBuilder {
+    if builder.dataset_version.is_none() {
+        builder.dataset_version = Some(Default::default())
+    }
+    if builder.example_count.is_none() {
+        builder.example_count = Some(Default::default())
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
 pub(crate) fn evaluator_summary_correct_errors(
     mut builder: crate::types::builders::EvaluatorSummaryBuilder,
 ) -> crate::types::builders::EvaluatorSummaryBuilder {
@@ -3705,6 +3960,15 @@ pub(crate) fn harness_gemini_model_config_correct_errors(
     builder
 }
 
+pub(crate) fn harness_lite_llm_model_config_correct_errors(
+    mut builder: crate::types::builders::HarnessLiteLlmModelConfigBuilder,
+) -> crate::types::builders::HarnessLiteLlmModelConfigBuilder {
+    if builder.model_id.is_none() {
+        builder.model_id = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn harness_open_ai_model_config_correct_errors(
     mut builder: crate::types::builders::HarnessOpenAiModelConfigBuilder,
 ) -> crate::types::builders::HarnessOpenAiModelConfigBuilder {
@@ -3903,6 +4167,24 @@ pub(crate) fn gateway_api_key_credential_provider_correct_errors(
     builder
 }
 
+pub(crate) fn harness_skill_git_source_correct_errors(
+    mut builder: crate::types::builders::HarnessSkillGitSourceBuilder,
+) -> crate::types::builders::HarnessSkillGitSourceBuilder {
+    if builder.url.is_none() {
+        builder.url = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn harness_skill_s3_source_correct_errors(
+    mut builder: crate::types::builders::HarnessSkillS3SourceBuilder,
+) -> crate::types::builders::HarnessSkillS3SourceBuilder {
+    if builder.uri.is_none() {
+        builder.uri = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn iam_credential_provider_correct_errors(
     mut builder: crate::types::builders::IamCredentialProviderBuilder,
 ) -> crate::types::builders::IamCredentialProviderBuilder {
@@ -4077,6 +4359,15 @@ pub(crate) fn harness_remote_mcp_config_correct_errors(
 ) -> crate::types::builders::HarnessRemoteMcpConfigBuilder {
     if builder.url.is_none() {
         builder.url = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn harness_skill_git_auth_correct_errors(
+    mut builder: crate::types::builders::HarnessSkillGitAuthBuilder,
+) -> crate::types::builders::HarnessSkillGitAuthBuilder {
+    if builder.credential_arn.is_none() {
+        builder.credential_arn = Some(Default::default())
     }
     builder
 }

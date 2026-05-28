@@ -184,6 +184,13 @@ pub(crate) fn de_get_responder_gateway(
                             .transpose()?,
                     );
                 }
+                "linksRequestedCount" => {
+                    builder = builder.set_links_requested_count(
+                        ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                            .map(i32::try_from)
+                            .transpose()?,
+                    );
+                }
                 "listenerConfig" => {
                     builder = builder.set_listener_config(crate::protocol_serde::shape_listener_config::de_listener_config(tokens, _value)?);
                 }

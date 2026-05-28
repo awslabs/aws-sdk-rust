@@ -133,6 +133,7 @@ The AWS SDK for Rust contains one crate for each AWS service, as well as [aws-co
 | AWS Proton | [aws-sdk-proton](https://crates.io/crates/aws-sdk-proton) ([docs](https://docs.rs/aws-sdk-proton)) |
 | AWS RDS DataService | [aws-sdk-rdsdata](https://crates.io/crates/aws-sdk-rdsdata) ([docs](https://docs.rs/aws-sdk-rdsdata)) |
 | AWS Resilience Hub | [aws-sdk-resiliencehub](https://crates.io/crates/aws-sdk-resiliencehub) ([docs](https://docs.rs/aws-sdk-resiliencehub)) |
+| AWS Resilience Hub V2 | [aws-sdk-resiliencehubv2](https://crates.io/crates/aws-sdk-resiliencehubv2) ([docs](https://docs.rs/aws-sdk-resiliencehubv2)) |
 | AWS Resource Access Manager | [aws-sdk-ram](https://crates.io/crates/aws-sdk-ram) ([docs](https://docs.rs/aws-sdk-ram)) |
 | AWS Resource Explorer | [aws-sdk-resourceexplorer2](https://crates.io/crates/aws-sdk-resourceexplorer2) ([docs](https://docs.rs/aws-sdk-resourceexplorer2)) |
 | AWS Resource Groups | [aws-sdk-resourcegroups](https://crates.io/crates/aws-sdk-resourcegroups) ([docs](https://docs.rs/aws-sdk-resourcegroups)) |

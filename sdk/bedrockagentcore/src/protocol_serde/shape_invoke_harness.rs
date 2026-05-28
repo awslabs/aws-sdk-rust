@@ -83,6 +83,21 @@ pub fn de_invoke_harness_http_error(
             }
             tmp
         }),
+        "RuntimeClientError" => crate::operation::invoke_harness::InvokeHarnessError::RuntimeClientError({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::RuntimeClientErrorBuilder::default();
+                output = crate::protocol_serde::shape_runtime_client_error::de_runtime_client_error_json_err(_response_body, output)
+                    .map_err(crate::operation::invoke_harness::InvokeHarnessError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "ThrottlingException" => crate::operation::invoke_harness::InvokeHarnessError::ThrottlingException({
             #[allow(unused_mut)]
             let mut tmp = {
@@ -112,21 +127,6 @@ pub fn de_invoke_harness_http_error(
             };
             tmp
         }),
-        "RuntimeClientError" => crate::operation::invoke_harness::InvokeHarnessError::RuntimeClientError({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::types::error::builders::RuntimeClientErrorBuilder::default();
-                output = crate::protocol_serde::shape_runtime_client_error::de_runtime_client_error_json_err(_response_body, output)
-                    .map_err(crate::operation::invoke_harness::InvokeHarnessError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
         _ => crate::operation::invoke_harness::InvokeHarnessError::generic(generic),
     })
 }
@@ -145,6 +145,17 @@ pub fn ser_invoke_harness_headers(
             )
         })?;
         builder = builder.header("X-Amzn-Bedrock-AgentCore-Runtime-Session-Id", header_value);
+    }
+    if let ::std::option::Option::Some(inner_3) = &input.runtime_user_id {
+        let formatted_4 = inner_3.as_str();
+        let header_value = formatted_4;
+        let header_value: ::http_1x::HeaderValue = header_value.parse().map_err(|err| {
+            ::aws_smithy_types::error::operation::BuildError::invalid_field(
+                "runtime_user_id",
+                format!("`{}` cannot be used as a header value: {}", &header_value, err),
+            )
+        })?;
+        builder = builder.header("X-Amzn-Bedrock-AgentCore-Runtime-User-Id", header_value);
     }
     Ok(builder)
 }

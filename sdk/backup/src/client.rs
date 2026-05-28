@@ -259,6 +259,8 @@ mod get_backup_vault_notifications;
 
 mod get_legal_hold;
 
+mod get_pitr_malware_scan_results;
+
 mod get_recovery_point_index_details;
 
 mod get_recovery_point_restore_metadata;

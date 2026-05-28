@@ -219,6 +219,16 @@ pub(crate) fn reflens_list_notebook_runs_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_notebooks_output_output_next_token(
+    input: &crate::operation::list_notebooks::ListNotebooksOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_notifications_output_output_next_token(
     input: &crate::operation::list_notifications::ListNotificationsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -539,6 +549,13 @@ pub(crate) fn lens_list_metadata_generation_runs_output_output_items(
 pub(crate) fn lens_list_notebook_runs_output_output_items(
     input: crate::operation::list_notebook_runs::ListNotebookRunsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::NotebookRunSummary>> {
+    let input = input.items?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_notebooks_output_output_items(
+    input: crate::operation::list_notebooks::ListNotebooksOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::NotebookSummary>> {
     let input = input.items?;
     ::std::option::Option::Some(input)
 }

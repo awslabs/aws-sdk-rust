@@ -18,5 +18,8 @@ pub fn ser_update_invoice_unit_input_input(
         crate::protocol_serde::shape_invoice_unit_rule::ser_invoice_unit_rule(&mut object_5, var_4)?;
         object_5.finish();
     }
+    if let Some(var_6) = &input.client_token {
+        object.key("ClientToken").string(var_6.as_str());
+    }
     Ok(())
 }

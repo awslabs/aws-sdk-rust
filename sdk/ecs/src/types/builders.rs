@@ -299,6 +299,10 @@ pub use crate::types::_container_dependency::ContainerDependencyBuilder;
 
 pub use crate::types::_system_control::SystemControlBuilder;
 
+pub use crate::types::_deployment_lifecycle_hook_detail::DeploymentLifecycleHookDetailBuilder;
+
+pub use crate::types::_deployment_lifecycle_hook_timeout_configuration::DeploymentLifecycleHookTimeoutConfigurationBuilder;
+
 pub use crate::types::_timeout_configuration::TimeoutConfigurationBuilder;
 
 pub use crate::types::_service_connect_tls_configuration::ServiceConnectTlsConfigurationBuilder;

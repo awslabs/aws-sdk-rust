@@ -22,11 +22,12 @@ impl crate::operation::generate_as2805_kek_validation::builders::GenerateAs2805K
 }
 /// Fluent builder constructing a request to `GenerateAs2805KekValidation`.
 ///
-/// <p>Establishes node-to-node initialization between payment processing nodes such as an acquirer, issuer or payment network using Australian Standard 2805 (AS2805).</p>
+/// <p>Generates a <code>KekValidationRequest</code> or a <code>KekValidationResponse</code> for node-to-node initialization between payment processing nodes using <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/as2805.html">Australian Standard 2805 (AS2805)</a>.</p>
 /// <p>During node-to-node initialization, both communicating nodes must validate that they possess the correct Key Encrypting Keys (KEKs) before proceeding with session key exchange. In AS2805, the sending KEK (KEKs) of one node corresponds to the receiving KEK (KEKr) of its partner node. Each node uses its KEK to encrypt and decrypt session keys exchanged between the nodes. A KEK can be created or imported into Amazon Web Services Payment Cryptography using either the <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_CreateKey.html">CreateKey</a> or <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_ImportKey.html">ImportKey</a> operations.</p>
-/// <p>The node initiating communication can use <code>GenerateAS2805KekValidation</code> to generate a combined KEK validation request and KEK validation response to send to the partnering node for validation. When invoked, the API internally generates a random sending key encrypted under KEKs and provides a receiving key encrypted under KEKr as response. The initiating node sends the response returned by this API to its partner for validation.</p>
+/// <p>To use <code>GenerateAs2805KekValidation</code> to generate a KEK validation request, set <code>KekValidationType</code> to <code>KekValidationRequest</code>. This operation returns both <code>RandomKeySend</code> (KRs) and <code>RandomKeyReceive</code> (KRr) as response values. The partnering node receives the KRs, uses its KEKr to decrypt it, and generates a KRr which is an inverted value of KRs. The node receiving the KRr validates it against its own KRr generated during KEK validation request outside of Amazon Web Services Payment Cryptography.</p>
+/// <p>You can also use this operation to generate a KEK validation response, by setting <code>KekValidationType</code> to <code>KekValidationResponse</code> and providing the incoming KRs. This operation then calculates a KRr. To learn more about more about node-to-node initialization, see <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/as2805.kekvalidation.html">Validation of KEK</a> in the <i>Amazon Web Services Payment Cryptography User Guide</i>.</p>
 /// <p>For information about valid keys for this operation, see <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/keys-validattributes.html">Understanding key attributes</a> and <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/crypto-ops-validkeys-ops.html">Key types for specific data operations</a> in the <i>Amazon Web Services Payment Cryptography User Guide</i>.</p>
-/// <p><b>Cross-account use</b>: This operation can't be used across different Amazon Web Services accounts.</p>
+/// <p><b>Cross-account use</b>: This operation supports cross-account use when the key has a resource-based policy that grants access. For more information, see <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/security_iam_resource-based-policies.html">Resource-based policies</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GenerateAs2805KekValidationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -126,17 +127,17 @@ impl GenerateAs2805KekValidationFluentBuilder {
     pub fn get_key_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_key_identifier()
     }
-    /// <p>Parameter information for generating a random key for KEK validation to perform node-to-node initialization.</p>
+    /// <p>Defines whether to generate a KEK validation request or KEK validation response for node-to-node initialization.</p>
     pub fn kek_validation_type(mut self, input: crate::types::As2805KekValidationType) -> Self {
         self.inner = self.inner.kek_validation_type(input);
         self
     }
-    /// <p>Parameter information for generating a random key for KEK validation to perform node-to-node initialization.</p>
+    /// <p>Defines whether to generate a KEK validation request or KEK validation response for node-to-node initialization.</p>
     pub fn set_kek_validation_type(mut self, input: ::std::option::Option<crate::types::As2805KekValidationType>) -> Self {
         self.inner = self.inner.set_kek_validation_type(input);
         self
     }
-    /// <p>Parameter information for generating a random key for KEK validation to perform node-to-node initialization.</p>
+    /// <p>Defines whether to generate a KEK validation request or KEK validation response for node-to-node initialization.</p>
     pub fn get_kek_validation_type(&self) -> &::std::option::Option<crate::types::As2805KekValidationType> {
         self.inner.get_kek_validation_type()
     }

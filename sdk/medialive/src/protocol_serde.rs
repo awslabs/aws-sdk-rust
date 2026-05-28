@@ -633,6 +633,8 @@ pub(crate) mod shape_vpc_output_settings_description;
 
 pub(crate) mod shape_audio_description;
 
+pub(crate) mod shape_audio_feed_input;
+
 pub(crate) mod shape_automatic_input_failover_settings;
 
 pub(crate) mod shape_avail_blanking;
@@ -708,6 +710,8 @@ pub(crate) mod shape_interface_mapping_update_request;
 pub(crate) mod shape_ip_pool;
 
 pub(crate) mod shape_list_of_audio_description;
+
+pub(crate) mod shape_list_of_audio_feed_input;
 
 pub(crate) mod shape_list_of_caption_description;
 
@@ -1154,6 +1158,8 @@ pub(crate) mod shape_scte20_source_settings;
 pub(crate) mod shape_scte27_source_settings;
 
 pub(crate) mod shape_scte35_descriptor;
+
+pub(crate) mod shape_smart_subtitle_source_settings;
 
 pub(crate) mod shape_srt_output_settings;
 

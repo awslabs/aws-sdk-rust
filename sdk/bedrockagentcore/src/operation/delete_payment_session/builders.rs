@@ -22,7 +22,7 @@ impl crate::operation::delete_payment_session::builders::DeletePaymentSessionInp
 }
 /// Fluent builder constructing a request to `DeletePaymentSession`.
 ///
-/// Delete a payment manager session Permanently removes a payment session record from the database. This is a hard delete operation that removes the session completely. Deleting a non-existent or already-deleted session returns ResourceNotFoundException (404). Authorization: The caller must own the session (accountId, userId, and paymentManagerId must match). If authorization fails, a 403 Forbidden error is returned. Errors: - ResourceNotFoundException: The session does not exist or has already been deleted - AccessDeniedException: The caller is not authorized to delete this session - ValidationException: Required fields are missing or invalid - InternalServerException: An unexpected server error occurred
+/// <p>Deletes a payment session. This permanently removes the payment session record.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeletePaymentSessionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,45 +108,45 @@ impl DeletePaymentSessionFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// The user ID making the delete request. Must match the session's userId.
+    /// <p>The user ID making the delete request. Must match the session's userId.</p>
     pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.user_id(input.into());
         self
     }
-    /// The user ID making the delete request. Must match the session's userId.
+    /// <p>The user ID making the delete request. Must match the session's userId.</p>
     pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_user_id(input);
         self
     }
-    /// The user ID making the delete request. Must match the session's userId.
+    /// <p>The user ID making the delete request. Must match the session's userId.</p>
     pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_user_id()
     }
-    /// The payment manager ARN. Must match the session's paymentManagerArn.
+    /// <p>The payment manager ARN. Must match the session's paymentManagerArn.</p>
     pub fn payment_manager_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.payment_manager_arn(input.into());
         self
     }
-    /// The payment manager ARN. Must match the session's paymentManagerArn.
+    /// <p>The payment manager ARN. Must match the session's paymentManagerArn.</p>
     pub fn set_payment_manager_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_payment_manager_arn(input);
         self
     }
-    /// The payment manager ARN. Must match the session's paymentManagerArn.
+    /// <p>The payment manager ARN. Must match the session's paymentManagerArn.</p>
     pub fn get_payment_manager_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_payment_manager_arn()
     }
-    /// The payment session ID to delete.
+    /// <p>The payment session ID to delete.</p>
     pub fn payment_session_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.payment_session_id(input.into());
         self
     }
-    /// The payment session ID to delete.
+    /// <p>The payment session ID to delete.</p>
     pub fn set_payment_session_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_payment_session_id(input);
         self
     }
-    /// The payment session ID to delete.
+    /// <p>The payment session ID to delete.</p>
     pub fn get_payment_session_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_payment_session_id()
     }

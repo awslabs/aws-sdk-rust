@@ -34,36 +34,39 @@ pub fn ser_start_trained_model_inference_job_input_input(
     if let Some(var_11) = &input.kms_key_arn {
         object.key("kmsKeyArn").string(var_11.as_str());
     }
-    if let Some(var_12) = &input.name {
-        object.key("name").string(var_12.as_str());
+    if let Some(var_12) = &input.ml_model_inference_payer_account_id {
+        object.key("mlModelInferencePayerAccountId").string(var_12.as_str());
     }
-    if let Some(var_13) = &input.output_configuration {
-        #[allow(unused_mut)]
-        let mut object_14 = object.key("outputConfiguration").start_object();
-        crate::protocol_serde::shape_inference_output_configuration::ser_inference_output_configuration(&mut object_14, var_13)?;
-        object_14.finish();
+    if let Some(var_13) = &input.name {
+        object.key("name").string(var_13.as_str());
     }
-    if let Some(var_15) = &input.resource_config {
+    if let Some(var_14) = &input.output_configuration {
         #[allow(unused_mut)]
-        let mut object_16 = object.key("resourceConfig").start_object();
-        crate::protocol_serde::shape_inference_resource_config::ser_inference_resource_config(&mut object_16, var_15)?;
-        object_16.finish();
+        let mut object_15 = object.key("outputConfiguration").start_object();
+        crate::protocol_serde::shape_inference_output_configuration::ser_inference_output_configuration(&mut object_15, var_14)?;
+        object_15.finish();
     }
-    if let Some(var_17) = &input.tags {
+    if let Some(var_16) = &input.resource_config {
         #[allow(unused_mut)]
-        let mut object_18 = object.key("tags").start_object();
-        for (key_19, value_20) in var_17 {
+        let mut object_17 = object.key("resourceConfig").start_object();
+        crate::protocol_serde::shape_inference_resource_config::ser_inference_resource_config(&mut object_17, var_16)?;
+        object_17.finish();
+    }
+    if let Some(var_18) = &input.tags {
+        #[allow(unused_mut)]
+        let mut object_19 = object.key("tags").start_object();
+        for (key_20, value_21) in var_18 {
             {
-                object_18.key(key_19.as_str()).string(value_20.as_str());
+                object_19.key(key_20.as_str()).string(value_21.as_str());
             }
         }
-        object_18.finish();
+        object_19.finish();
     }
-    if let Some(var_21) = &input.trained_model_arn {
-        object.key("trainedModelArn").string(var_21.as_str());
+    if let Some(var_22) = &input.trained_model_arn {
+        object.key("trainedModelArn").string(var_22.as_str());
     }
-    if let Some(var_22) = &input.trained_model_version_identifier {
-        object.key("trainedModelVersionIdentifier").string(var_22.as_str());
+    if let Some(var_23) = &input.trained_model_version_identifier {
+        object.key("trainedModelVersionIdentifier").string(var_23.as_str());
     }
     Ok(())
 }

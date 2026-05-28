@@ -94,3 +94,7 @@ pub use crate::types::_security_policy_summary::SecurityPolicySummaryBuilder;
 pub use crate::types::_vpc_endpoint_summary::VpcEndpointSummaryBuilder;
 
 pub use crate::types::_fips_endpoints::FipsEndpointsBuilder;
+
+pub use crate::types::_current_capacity::CurrentCapacityBuilder;
+
+pub use crate::types::_capacity_details::CapacityDetailsBuilder;

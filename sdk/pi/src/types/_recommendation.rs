@@ -8,6 +8,8 @@ pub struct Recommendation {
     pub recommendation_id: ::std::option::Option<::std::string::String>,
     /// <p>The recommendation details to help resolve the performance issue. For example, <code>Investigate the following SQLs that contributed to 100% of the total DBLoad during that time period: sql-id</code></p>
     pub recommendation_description: ::std::option::Option<::std::string::String>,
+    /// <p>Detailed information about the recommendation, including steps to resolve the performance issue.</p>
+    pub recommendation_details: ::std::option::Option<::std::string::String>,
 }
 impl Recommendation {
     /// <p>The unique identifier for the recommendation.</p>
@@ -18,12 +20,17 @@ impl Recommendation {
     pub fn recommendation_description(&self) -> ::std::option::Option<&str> {
         self.recommendation_description.as_deref()
     }
+    /// <p>Detailed information about the recommendation, including steps to resolve the performance issue.</p>
+    pub fn recommendation_details(&self) -> ::std::option::Option<&str> {
+        self.recommendation_details.as_deref()
+    }
 }
 impl ::std::fmt::Debug for Recommendation {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("Recommendation");
         formatter.field("recommendation_id", &self.recommendation_id);
         formatter.field("recommendation_description", &"*** Sensitive Data Redacted ***");
+        formatter.field("recommendation_details", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
@@ -40,6 +47,7 @@ impl Recommendation {
 pub struct RecommendationBuilder {
     pub(crate) recommendation_id: ::std::option::Option<::std::string::String>,
     pub(crate) recommendation_description: ::std::option::Option<::std::string::String>,
+    pub(crate) recommendation_details: ::std::option::Option<::std::string::String>,
 }
 impl RecommendationBuilder {
     /// <p>The unique identifier for the recommendation.</p>
@@ -70,11 +78,26 @@ impl RecommendationBuilder {
     pub fn get_recommendation_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.recommendation_description
     }
+    /// <p>Detailed information about the recommendation, including steps to resolve the performance issue.</p>
+    pub fn recommendation_details(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.recommendation_details = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Detailed information about the recommendation, including steps to resolve the performance issue.</p>
+    pub fn set_recommendation_details(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.recommendation_details = input;
+        self
+    }
+    /// <p>Detailed information about the recommendation, including steps to resolve the performance issue.</p>
+    pub fn get_recommendation_details(&self) -> &::std::option::Option<::std::string::String> {
+        &self.recommendation_details
+    }
     /// Consumes the builder and constructs a [`Recommendation`](crate::types::Recommendation).
     pub fn build(self) -> crate::types::Recommendation {
         crate::types::Recommendation {
             recommendation_id: self.recommendation_id,
             recommendation_description: self.recommendation_description,
+            recommendation_details: self.recommendation_details,
         }
     }
 }
@@ -83,6 +106,7 @@ impl ::std::fmt::Debug for RecommendationBuilder {
         let mut formatter = f.debug_struct("RecommendationBuilder");
         formatter.field("recommendation_id", &self.recommendation_id);
         formatter.field("recommendation_description", &"*** Sensitive Data Redacted ***");
+        formatter.field("recommendation_details", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }

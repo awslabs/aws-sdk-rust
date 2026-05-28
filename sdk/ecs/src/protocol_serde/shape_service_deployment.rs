@@ -97,6 +97,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "lifecycleHookDetails" => {
+                            builder = builder.set_lifecycle_hook_details(
+                                crate::protocol_serde::shape_deployment_lifecycle_hook_detail_list::de_deployment_lifecycle_hook_detail_list(
+                                    tokens, _value,
+                                )?,
+                            );
+                        }
                         "deploymentConfiguration" => {
                             builder = builder.set_deployment_configuration(
                                 crate::protocol_serde::shape_deployment_configuration::de_deployment_configuration(tokens, _value)?,

@@ -23,6 +23,8 @@ pub fn parse_http_error_metadata(
     crate::json_errors::parse_error_metadata(response_body, response_headers)
 }
 
+pub(crate) mod shape_add_dataset_examples;
+
 pub(crate) mod shape_create_agent_runtime;
 
 pub(crate) mod shape_create_agent_runtime_endpoint;
@@ -36,6 +38,10 @@ pub(crate) mod shape_create_browser_profile;
 pub(crate) mod shape_create_code_interpreter;
 
 pub(crate) mod shape_create_configuration_bundle;
+
+pub(crate) mod shape_create_dataset;
+
+pub(crate) mod shape_create_dataset_version;
 
 pub(crate) mod shape_create_evaluator;
 
@@ -82,6 +88,10 @@ pub(crate) mod shape_delete_browser_profile;
 pub(crate) mod shape_delete_code_interpreter;
 
 pub(crate) mod shape_delete_configuration_bundle;
+
+pub(crate) mod shape_delete_dataset;
+
+pub(crate) mod shape_delete_dataset_examples;
 
 pub(crate) mod shape_delete_evaluator;
 
@@ -132,6 +142,8 @@ pub(crate) mod shape_get_code_interpreter;
 pub(crate) mod shape_get_configuration_bundle;
 
 pub(crate) mod shape_get_configuration_bundle_version;
+
+pub(crate) mod shape_get_dataset;
 
 pub(crate) mod shape_get_evaluator;
 
@@ -194,6 +206,12 @@ pub(crate) mod shape_list_code_interpreters;
 pub(crate) mod shape_list_configuration_bundle_versions;
 
 pub(crate) mod shape_list_configuration_bundles;
+
+pub(crate) mod shape_list_dataset_examples;
+
+pub(crate) mod shape_list_dataset_versions;
+
+pub(crate) mod shape_list_datasets;
 
 pub(crate) mod shape_list_evaluators;
 
@@ -261,6 +279,10 @@ pub(crate) mod shape_update_api_key_credential_provider;
 
 pub(crate) mod shape_update_configuration_bundle;
 
+pub(crate) mod shape_update_dataset;
+
+pub(crate) mod shape_update_dataset_examples;
+
 pub(crate) mod shape_update_evaluator;
 
 pub(crate) mod shape_update_gateway;
@@ -305,6 +327,8 @@ pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
 
 pub(crate) mod shape_access_denied_exception;
 
+pub(crate) mod shape_add_dataset_examples_input;
+
 pub(crate) mod shape_concurrent_modification_exception;
 
 pub(crate) mod shape_conflict_exception;
@@ -322,6 +346,10 @@ pub(crate) mod shape_create_browser_profile_input;
 pub(crate) mod shape_create_code_interpreter_input;
 
 pub(crate) mod shape_create_configuration_bundle_input;
+
+pub(crate) mod shape_create_dataset_input;
+
+pub(crate) mod shape_create_dataset_version_input;
 
 pub(crate) mod shape_create_evaluator_input;
 
@@ -358,6 +386,8 @@ pub(crate) mod shape_create_workload_identity_input;
 pub(crate) mod shape_decryption_failure;
 
 pub(crate) mod shape_delete_api_key_credential_provider_input;
+
+pub(crate) mod shape_delete_dataset_examples_input;
 
 pub(crate) mod shape_delete_oauth2_credential_provider_input;
 
@@ -424,6 +454,10 @@ pub(crate) mod shape_update_agent_runtime_input;
 pub(crate) mod shape_update_api_key_credential_provider_input;
 
 pub(crate) mod shape_update_configuration_bundle_input;
+
+pub(crate) mod shape_update_dataset_examples_input;
+
+pub(crate) mod shape_update_dataset_input;
 
 pub(crate) mod shape_update_evaluator_input;
 
@@ -525,6 +559,14 @@ pub(crate) mod shape_credentials_provider_configurations;
 
 pub(crate) mod shape_data_source_config;
 
+pub(crate) mod shape_data_source_type;
+
+pub(crate) mod shape_dataset_example_list;
+
+pub(crate) mod shape_dataset_summary_list;
+
+pub(crate) mod shape_dataset_version_summary_list;
+
 pub(crate) mod shape_descriptors;
 
 pub(crate) mod shape_environment_variables_map;
@@ -536,6 +578,8 @@ pub(crate) mod shape_evaluator_list;
 pub(crate) mod shape_evaluator_reference;
 
 pub(crate) mod shape_evaluator_summary_list;
+
+pub(crate) mod shape_example_id_list;
 
 pub(crate) mod shape_filesystem_configuration;
 
@@ -761,6 +805,10 @@ pub(crate) mod shape_custom_oauth2_provider_config_input;
 
 pub(crate) mod shape_custom_oauth2_provider_config_output;
 
+pub(crate) mod shape_dataset_summary;
+
+pub(crate) mod shape_dataset_version_summary;
+
 pub(crate) mod shape_delete_memory_strategy_input;
 
 pub(crate) mod shape_efs_access_point_configuration;
@@ -801,7 +849,13 @@ pub(crate) mod shape_harness_environment_provider;
 
 pub(crate) mod shape_harness_gemini_model_config;
 
+pub(crate) mod shape_harness_lite_llm_model_config;
+
 pub(crate) mod shape_harness_open_ai_model_config;
+
+pub(crate) mod shape_harness_skill_git_source;
+
+pub(crate) mod shape_harness_skill_s3_source;
 
 pub(crate) mod shape_harness_skills;
 
@@ -822,6 +876,8 @@ pub(crate) mod shape_included_oauth2_provider_config_input;
 pub(crate) mod shape_included_oauth2_provider_config_output;
 
 pub(crate) mod shape_indexed_keys_list;
+
+pub(crate) mod shape_inline_examples_source;
 
 pub(crate) mod shape_interceptor_configuration;
 
@@ -900,6 +956,8 @@ pub(crate) mod shape_route_to_target_action;
 pub(crate) mod shape_s3_files_access_point_configuration;
 
 pub(crate) mod shape_s3_location;
+
+pub(crate) mod shape_s3_source;
 
 pub(crate) mod shape_salesforce_oauth2_provider_config_input;
 
@@ -986,6 +1044,8 @@ pub(crate) mod shape_harness_agent_core_runtime_environment;
 pub(crate) mod shape_harness_inline_function_config;
 
 pub(crate) mod shape_harness_remote_mcp_config;
+
+pub(crate) mod shape_harness_skill_git_auth;
 
 pub(crate) mod shape_harness_sliding_window_configuration;
 

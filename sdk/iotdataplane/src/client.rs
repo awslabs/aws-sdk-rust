@@ -167,6 +167,8 @@ mod delete_connection;
 
 mod delete_thing_shadow;
 
+mod get_connection;
+
 mod get_retained_message;
 
 mod get_thing_shadow;
@@ -175,6 +177,10 @@ mod list_named_shadows_for_thing;
 
 mod list_retained_messages;
 
+mod list_subscriptions;
+
 mod publish;
+
+mod send_direct_message;
 
 mod update_thing_shadow;

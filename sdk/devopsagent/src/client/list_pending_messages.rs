@@ -3,13 +3,13 @@ impl super::Client {
     /// Constructs a fluent builder for the [`ListPendingMessages`](crate::operation::list_pending_messages::builders::ListPendingMessagesFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`agent_space_id(impl Into<String>)`](crate::operation::list_pending_messages::builders::ListPendingMessagesFluentBuilder::agent_space_id) / [`set_agent_space_id(Option<String>)`](crate::operation::list_pending_messages::builders::ListPendingMessagesFluentBuilder::set_agent_space_id):<br>required: **true**<br>Unique identifier for an agent space (allows alphanumeric characters and hyphens; 1-64 characters)<br>
-    ///   - [`execution_id(impl Into<String>)`](crate::operation::list_pending_messages::builders::ListPendingMessagesFluentBuilder::execution_id) / [`set_execution_id(Option<String>)`](crate::operation::list_pending_messages::builders::ListPendingMessagesFluentBuilder::set_execution_id):<br>required: **true**<br>The unique identifier of the execution whose journal records to retrieve<br>
+    ///   - [`agent_space_id(impl Into<String>)`](crate::operation::list_pending_messages::builders::ListPendingMessagesFluentBuilder::agent_space_id) / [`set_agent_space_id(Option<String>)`](crate::operation::list_pending_messages::builders::ListPendingMessagesFluentBuilder::set_agent_space_id):<br>required: **true**<br><p>Unique identifier for an agent space (allows alphanumeric characters and hyphens; 1-64 characters)</p><br>
+    ///   - [`execution_id(impl Into<String>)`](crate::operation::list_pending_messages::builders::ListPendingMessagesFluentBuilder::execution_id) / [`set_execution_id(Option<String>)`](crate::operation::list_pending_messages::builders::ListPendingMessagesFluentBuilder::set_execution_id):<br>required: **true**<br><p>The unique identifier of the execution whose journal records to retrieve</p><br>
     /// - On success, responds with [`ListPendingMessagesOutput`](crate::operation::list_pending_messages::ListPendingMessagesOutput) with field(s):
-    ///   - [`agent_space_id(String)`](crate::operation::list_pending_messages::ListPendingMessagesOutput::agent_space_id): Unique identifier for an agent space (allows alphanumeric characters and hyphens; 1-64 characters)
-    ///   - [`execution_id(String)`](crate::operation::list_pending_messages::ListPendingMessagesOutput::execution_id): The unique identifier for the execution.
-    ///   - [`messages(Vec::<PendingMessage>)`](crate::operation::list_pending_messages::ListPendingMessagesOutput::messages): The list of pending messages for the execution.
-    ///   - [`created_at(DateTime)`](crate::operation::list_pending_messages::ListPendingMessagesOutput::created_at): Timestamp when the pending messages were created.
+    ///   - [`agent_space_id(String)`](crate::operation::list_pending_messages::ListPendingMessagesOutput::agent_space_id): <p>Unique identifier for an agent space (allows alphanumeric characters and hyphens; 1-64 characters)</p>
+    ///   - [`execution_id(String)`](crate::operation::list_pending_messages::ListPendingMessagesOutput::execution_id): <p>The unique identifier for the execution.</p>
+    ///   - [`messages(Vec::<PendingMessage>)`](crate::operation::list_pending_messages::ListPendingMessagesOutput::messages): <p>The list of pending messages for the execution.</p>
+    ///   - [`created_at(DateTime)`](crate::operation::list_pending_messages::ListPendingMessagesOutput::created_at): <p>Timestamp when the pending messages were created.</p>
     /// - On failure, responds with [`SdkError<ListPendingMessagesError>`](crate::operation::list_pending_messages::ListPendingMessagesError)
     pub fn list_pending_messages(&self) -> crate::operation::list_pending_messages::builders::ListPendingMessagesFluentBuilder {
         crate::operation::list_pending_messages::builders::ListPendingMessagesFluentBuilder::new(self.handle.clone())

@@ -22,7 +22,7 @@ impl crate::operation::list_notebook_runs::builders::ListNotebookRunsInputBuilde
 }
 /// Fluent builder constructing a request to `ListNotebookRuns`.
 ///
-/// <p>Lists notebook runs in an Amazon DataZone domain.</p>
+/// <p>Lists <a href="https://docs.aws.amazon.com/sagemaker-unified-studio/latest/userguide/notebooks.html">notebook runs</a> in Amazon SageMaker Unified Studio.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListNotebookRunsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -114,17 +114,17 @@ impl ListNotebookRunsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_notebook_runs::paginator::ListNotebookRunsPaginator {
         crate::operation::list_notebook_runs::paginator::ListNotebookRunsPaginator::new(self.handle, self.inner)
     }
-    /// <p>The identifier of the Amazon DataZone domain in which to list notebook runs.</p>
+    /// <p>The identifier of the Amazon SageMaker Unified Studio domain in which to list notebook runs.</p>
     pub fn domain_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.domain_identifier(input.into());
         self
     }
-    /// <p>The identifier of the Amazon DataZone domain in which to list notebook runs.</p>
+    /// <p>The identifier of the Amazon SageMaker Unified Studio domain in which to list notebook runs.</p>
     pub fn set_domain_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_domain_identifier(input);
         self
     }
-    /// <p>The identifier of the Amazon DataZone domain in which to list notebook runs.</p>
+    /// <p>The identifier of the Amazon SageMaker Unified Studio domain in which to list notebook runs.</p>
     pub fn get_domain_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_domain_identifier()
     }

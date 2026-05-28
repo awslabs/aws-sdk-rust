@@ -9,6 +9,8 @@ pub struct UpdateCollectionInput {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Configuration options for vector search capabilities in the collection.</p>
     pub vector_options: ::std::option::Option<crate::types::VectorOptions>,
+    /// <p>Indicates whether to enable or disable deletion protection for the collection. When set to <code>ENABLED</code>, the collection cannot be deleted.</p>
+    pub deletion_protection: ::std::option::Option<crate::types::DeletionProtection>,
     /// <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
@@ -24,6 +26,10 @@ impl UpdateCollectionInput {
     /// <p>Configuration options for vector search capabilities in the collection.</p>
     pub fn vector_options(&self) -> ::std::option::Option<&crate::types::VectorOptions> {
         self.vector_options.as_ref()
+    }
+    /// <p>Indicates whether to enable or disable deletion protection for the collection. When set to <code>ENABLED</code>, the collection cannot be deleted.</p>
+    pub fn deletion_protection(&self) -> ::std::option::Option<&crate::types::DeletionProtection> {
+        self.deletion_protection.as_ref()
     }
     /// <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
@@ -44,6 +50,7 @@ pub struct UpdateCollectionInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) vector_options: ::std::option::Option<crate::types::VectorOptions>,
+    pub(crate) deletion_protection: ::std::option::Option<crate::types::DeletionProtection>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
 impl UpdateCollectionInputBuilder {
@@ -90,6 +97,20 @@ impl UpdateCollectionInputBuilder {
     pub fn get_vector_options(&self) -> &::std::option::Option<crate::types::VectorOptions> {
         &self.vector_options
     }
+    /// <p>Indicates whether to enable or disable deletion protection for the collection. When set to <code>ENABLED</code>, the collection cannot be deleted.</p>
+    pub fn deletion_protection(mut self, input: crate::types::DeletionProtection) -> Self {
+        self.deletion_protection = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether to enable or disable deletion protection for the collection. When set to <code>ENABLED</code>, the collection cannot be deleted.</p>
+    pub fn set_deletion_protection(mut self, input: ::std::option::Option<crate::types::DeletionProtection>) -> Self {
+        self.deletion_protection = input;
+        self
+    }
+    /// <p>Indicates whether to enable or disable deletion protection for the collection. When set to <code>ENABLED</code>, the collection cannot be deleted.</p>
+    pub fn get_deletion_protection(&self) -> &::std::option::Option<crate::types::DeletionProtection> {
+        &self.deletion_protection
+    }
     /// <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -112,6 +133,7 @@ impl UpdateCollectionInputBuilder {
             id: self.id,
             description: self.description,
             vector_options: self.vector_options,
+            deletion_protection: self.deletion_protection,
             client_token: self.client_token,
         })
     }

@@ -177,6 +177,8 @@ pub use crate::types::_severity_statistics::SeverityStatisticsBuilder;
 
 pub use crate::types::_scanned_resource_details::ScannedResourceDetailsBuilder;
 
+pub use crate::types::_scan_configuration_continuous_scan_details::ScanConfigurationContinuousScanDetailsBuilder;
+
 pub use crate::types::_scan_result_threat::ScanResultThreatBuilder;
 
 pub use crate::types::_scan_condition::ScanConditionBuilder;
@@ -196,6 +198,8 @@ pub use crate::types::_usage_feature_result::UsageFeatureResultBuilder;
 pub use crate::types::_coverage_resource_details::CoverageResourceDetailsBuilder;
 
 pub use crate::types::_list_malware_scans_filter_criterion::ListMalwareScansFilterCriterionBuilder;
+
+pub use crate::types::_continuous_scan_details::ContinuousScanDetailsBuilder;
 
 pub use crate::types::_organization_kubernetes_audit_logs_configuration::OrganizationKubernetesAuditLogsConfigurationBuilder;
 

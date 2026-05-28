@@ -86,6 +86,21 @@ pub(crate) fn describe_scan_job_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn get_pitr_malware_scan_results_output_output_correct_errors(
+    mut builder: crate::operation::get_pitr_malware_scan_results::builders::GetPitrMalwareScanResultsOutputBuilder,
+) -> crate::operation::get_pitr_malware_scan_results::builders::GetPitrMalwareScanResultsOutputBuilder {
+    if builder.scan_end_time.is_none() {
+        builder.scan_end_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.scan_result.is_none() {
+        builder.scan_result = {
+            let builder = crate::types::builders::ScanResultInfoBuilder::default();
+            crate::serde_util::scan_result_info_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
 pub(crate) fn get_restore_testing_inferred_metadata_output_output_correct_errors(
     mut builder: crate::operation::get_restore_testing_inferred_metadata::builders::GetRestoreTestingInferredMetadataOutputBuilder,
 ) -> crate::operation::get_restore_testing_inferred_metadata::builders::GetRestoreTestingInferredMetadataOutputBuilder {
@@ -215,6 +230,15 @@ pub(crate) fn scan_job_creator_correct_errors(
     builder
 }
 
+pub(crate) fn scan_result_info_correct_errors(
+    mut builder: crate::types::builders::ScanResultInfoBuilder,
+) -> crate::types::builders::ScanResultInfoBuilder {
+    if builder.scan_result_status.is_none() {
+        builder.scan_result_status = "no value was set".parse::<crate::types::ScanResultStatus>().ok()
+    }
+    builder
+}
+
 pub(crate) fn restore_testing_plan_for_get_correct_errors(
     mut builder: crate::types::builders::RestoreTestingPlanForGetBuilder,
 ) -> crate::types::builders::RestoreTestingPlanForGetBuilder {
@@ -278,15 +302,6 @@ pub(crate) fn backup_selection_correct_errors(
     }
     if builder.iam_role_arn.is_none() {
         builder.iam_role_arn = Some(Default::default())
-    }
-    builder
-}
-
-pub(crate) fn scan_result_info_correct_errors(
-    mut builder: crate::types::builders::ScanResultInfoBuilder,
-) -> crate::types::builders::ScanResultInfoBuilder {
-    if builder.scan_result_status.is_none() {
-        builder.scan_result_status = "no value was set".parse::<crate::types::ScanResultStatus>().ok()
     }
     builder
 }

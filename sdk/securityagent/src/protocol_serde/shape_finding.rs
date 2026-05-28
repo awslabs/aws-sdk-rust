@@ -143,6 +143,10 @@ where
                             builder =
                                 builder.set_code_locations(crate::protocol_serde::shape_code_location_list::de_code_location_list(tokens, _value)?);
                         }
+                        "verificationScript" => {
+                            builder = builder
+                                .set_verification_script(crate::protocol_serde::shape_verification_script::de_verification_script(tokens, _value)?);
+                        }
                         "createdAt" => {
                             builder = builder.set_created_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                                 tokens.next(),

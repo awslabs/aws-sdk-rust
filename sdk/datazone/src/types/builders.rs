@@ -17,13 +17,17 @@ pub use crate::types::_term_relations::TermRelationsBuilder;
 
 pub use crate::types::_metadata_generation_run_target::MetadataGenerationRunTargetBuilder;
 
+pub use crate::types::_environment_config::EnvironmentConfigBuilder;
+
+pub use crate::types::_notebook_error::NotebookErrorBuilder;
+
+pub use crate::types::_notebook_export_error::NotebookExportErrorBuilder;
+
 pub use crate::types::_compute_config::ComputeConfigBuilder;
 
 pub use crate::types::_network_config::NetworkConfigBuilder;
 
 pub use crate::types::_timeout_config::TimeoutConfigBuilder;
-
-pub use crate::types::_environment_config::EnvironmentConfigBuilder;
 
 pub use crate::types::_storage_config::StorageConfigBuilder;
 
@@ -80,6 +84,8 @@ pub use crate::types::_data_product_listing::DataProductListingBuilder;
 pub use crate::types::_cell_information::CellInformationBuilder;
 
 pub use crate::types::_package_config::PackageConfigBuilder;
+
+pub use crate::types::_s3_destination::S3DestinationBuilder;
 
 pub use crate::types::_domain_unit_target::DomainUnitTargetBuilder;
 
@@ -181,6 +187,8 @@ pub use crate::types::_workflows_serverless_properties_input::WorkflowsServerles
 
 pub use crate::types::_lakehouse_properties_input::LakehousePropertiesInputBuilder;
 
+pub use crate::types::_vpc_properties_input::VpcPropertiesInputBuilder;
+
 pub use crate::types::_physical_endpoint::PhysicalEndpointBuilder;
 
 pub use crate::types::_athena_properties_output::AthenaPropertiesOutputBuilder;
@@ -208,6 +216,8 @@ pub use crate::types::_workflows_mwaa_properties_output::WorkflowsMwaaProperties
 pub use crate::types::_workflows_serverless_properties_output::WorkflowsServerlessPropertiesOutputBuilder;
 
 pub use crate::types::_lakehouse_properties_output::LakehousePropertiesOutputBuilder;
+
+pub use crate::types::_vpc_properties_output::VpcPropertiesOutputBuilder;
 
 pub use crate::types::_environment_parameter::EnvironmentParameterBuilder;
 
@@ -335,6 +345,8 @@ pub use crate::types::_mlflow_properties_patch::MlflowPropertiesPatchBuilder;
 
 pub use crate::types::_lakehouse_properties_patch::LakehousePropertiesPatchBuilder;
 
+pub use crate::types::_vpc_properties_patch::VpcPropertiesPatchBuilder;
+
 pub use crate::types::_domain_unit_user_properties::DomainUnitUserPropertiesBuilder;
 
 pub use crate::types::_domain_unit_group_properties::DomainUnitGroupPropertiesBuilder;
@@ -367,11 +379,17 @@ pub use crate::types::_domain_unit_summary::DomainUnitSummaryBuilder;
 
 pub use crate::types::_environment_blueprint_configuration_item::EnvironmentBlueprintConfigurationItemBuilder;
 
+pub use crate::types::_put_resource_configuration::PutResourceConfigurationBuilder;
+
+pub use crate::types::_resource_configuration::ResourceConfigurationBuilder;
+
 pub use crate::types::_import::ImportBuilder;
 
 pub use crate::types::_metadata_generation_run_item::MetadataGenerationRunItemBuilder;
 
 pub use crate::types::_metadata_generation_run_type_stat::MetadataGenerationRunTypeStatBuilder;
+
+pub use crate::types::_notebook_summary::NotebookSummaryBuilder;
 
 pub use crate::types::_notebook_run_summary::NotebookRunSummaryBuilder;
 

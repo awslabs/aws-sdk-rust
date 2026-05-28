@@ -16,6 +16,8 @@ pub struct IndexingFilter {
     pub named_shadow_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The list of geolocation targets that you select to index. The default maximum number of geolocation targets for indexing is <code>1</code>. To increase the limit, see <a href="https://docs.aws.amazon.com/general/latest/gr/iot_device_management.html#fleet-indexing-limits">Amazon Web Services IoT Device Management Quotas</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub geo_locations: ::std::option::Option<::std::vec::Vec<crate::types::GeoLocationTarget>>,
+    /// <p>Provides additional connectivity filter selections for the fleet indexing configuration.</p>
+    pub connectivity: ::std::option::Option<crate::types::ConnectivityFilter>,
 }
 impl IndexingFilter {
     /// <p>The shadow names that you select to index. The default maximum number of shadow names for indexing is 10. To increase the limit, see <a href="https://docs.aws.amazon.com/general/latest/gr/iot_device_management.html#fleet-indexing-limits">Amazon Web Services IoT Device Management Quotas</a> in the <i>Amazon Web Services General Reference</i>.</p>
@@ -29,6 +31,10 @@ impl IndexingFilter {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.geo_locations.is_none()`.
     pub fn geo_locations(&self) -> &[crate::types::GeoLocationTarget] {
         self.geo_locations.as_deref().unwrap_or_default()
+    }
+    /// <p>Provides additional connectivity filter selections for the fleet indexing configuration.</p>
+    pub fn connectivity(&self) -> ::std::option::Option<&crate::types::ConnectivityFilter> {
+        self.connectivity.as_ref()
     }
 }
 impl IndexingFilter {
@@ -44,6 +50,7 @@ impl IndexingFilter {
 pub struct IndexingFilterBuilder {
     pub(crate) named_shadow_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) geo_locations: ::std::option::Option<::std::vec::Vec<crate::types::GeoLocationTarget>>,
+    pub(crate) connectivity: ::std::option::Option<crate::types::ConnectivityFilter>,
 }
 impl IndexingFilterBuilder {
     /// Appends an item to `named_shadow_names`.
@@ -86,11 +93,26 @@ impl IndexingFilterBuilder {
     pub fn get_geo_locations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GeoLocationTarget>> {
         &self.geo_locations
     }
+    /// <p>Provides additional connectivity filter selections for the fleet indexing configuration.</p>
+    pub fn connectivity(mut self, input: crate::types::ConnectivityFilter) -> Self {
+        self.connectivity = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Provides additional connectivity filter selections for the fleet indexing configuration.</p>
+    pub fn set_connectivity(mut self, input: ::std::option::Option<crate::types::ConnectivityFilter>) -> Self {
+        self.connectivity = input;
+        self
+    }
+    /// <p>Provides additional connectivity filter selections for the fleet indexing configuration.</p>
+    pub fn get_connectivity(&self) -> &::std::option::Option<crate::types::ConnectivityFilter> {
+        &self.connectivity
+    }
     /// Consumes the builder and constructs a [`IndexingFilter`](crate::types::IndexingFilter).
     pub fn build(self) -> crate::types::IndexingFilter {
         crate::types::IndexingFilter {
             named_shadow_names: self.named_shadow_names,
             geo_locations: self.geo_locations,
+            connectivity: self.connectivity,
         }
     }
 }

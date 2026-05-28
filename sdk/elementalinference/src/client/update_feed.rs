@@ -12,9 +12,9 @@ impl super::Client {
     ///   - [`id(String)`](crate::operation::update_feed::UpdateFeedOutput::id): <p>The ID of the feed.</p>
     ///   - [`data_endpoints(Vec::<String>)`](crate::operation::update_feed::UpdateFeedOutput::data_endpoints): <p>The data endpoints of the feed.</p>
     ///   - [`outputs(Vec::<GetOutput>)`](crate::operation::update_feed::UpdateFeedOutput::outputs): <p>The array of outputs in the feed. You might have left this array unchanged, or you might have changed it.</p>
-    ///   - [`status(FeedStatus)`](crate::operation::update_feed::UpdateFeedOutput::status): <p>The status of the output.</p>
-    ///   - [`association(Option<FeedAssociation>)`](crate::operation::update_feed::UpdateFeedOutput::association): <p>True means that the output was originally created in the feed by the AssociateFeed operation. False means it was created using CreateFeed or UpdateFeed. You will need this value if you use the UpdateFeed operation to modify the list of outputs in the feed.</p>
-    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::update_feed::UpdateFeedOutput::tags): <p>The name of the resource currently associated with the feed, if any.</p>
+    ///   - [`status(FeedStatus)`](crate::operation::update_feed::UpdateFeedOutput::status): <p>The status of the feed.</p>
+    ///   - [`association(Option<FeedAssociation>)`](crate::operation::update_feed::UpdateFeedOutput::association): <p>Information about the resource that is associated with the feed, if any.</p>
+    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::update_feed::UpdateFeedOutput::tags): <p>The tags associated with the feed.</p>
     /// - On failure, responds with [`SdkError<UpdateFeedError>`](crate::operation::update_feed::UpdateFeedError)
     pub fn update_feed(&self) -> crate::operation::update_feed::builders::UpdateFeedFluentBuilder {
         crate::operation::update_feed::builders::UpdateFeedFluentBuilder::new(self.handle.clone())

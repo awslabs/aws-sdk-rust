@@ -5,11 +5,17 @@
 pub struct DeleteProcurementPortalPreferenceInput {
     /// <p>The Amazon Resource Name (ARN) of the procurement portal preference to delete.</p>
     pub procurement_portal_preference_arn: ::std::option::Option<::std::string::String>,
+    /// <p>A unique, case-sensitive identifier that you provide to ensure idempotency of the request.</p>
+    pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl DeleteProcurementPortalPreferenceInput {
     /// <p>The Amazon Resource Name (ARN) of the procurement portal preference to delete.</p>
     pub fn procurement_portal_preference_arn(&self) -> ::std::option::Option<&str> {
         self.procurement_portal_preference_arn.as_deref()
+    }
+    /// <p>A unique, case-sensitive identifier that you provide to ensure idempotency of the request.</p>
+    pub fn client_token(&self) -> ::std::option::Option<&str> {
+        self.client_token.as_deref()
     }
 }
 impl DeleteProcurementPortalPreferenceInput {
@@ -24,6 +30,7 @@ impl DeleteProcurementPortalPreferenceInput {
 #[non_exhaustive]
 pub struct DeleteProcurementPortalPreferenceInputBuilder {
     pub(crate) procurement_portal_preference_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
 impl DeleteProcurementPortalPreferenceInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the procurement portal preference to delete.</p>
@@ -41,6 +48,20 @@ impl DeleteProcurementPortalPreferenceInputBuilder {
     pub fn get_procurement_portal_preference_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.procurement_portal_preference_arn
     }
+    /// <p>A unique, case-sensitive identifier that you provide to ensure idempotency of the request.</p>
+    pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.client_token = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>A unique, case-sensitive identifier that you provide to ensure idempotency of the request.</p>
+    pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.client_token = input;
+        self
+    }
+    /// <p>A unique, case-sensitive identifier that you provide to ensure idempotency of the request.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
+    }
     /// Consumes the builder and constructs a [`DeleteProcurementPortalPreferenceInput`](crate::operation::delete_procurement_portal_preference::DeleteProcurementPortalPreferenceInput).
     pub fn build(
         self,
@@ -51,6 +72,7 @@ impl DeleteProcurementPortalPreferenceInputBuilder {
         ::std::result::Result::Ok(
             crate::operation::delete_procurement_portal_preference::DeleteProcurementPortalPreferenceInput {
                 procurement_portal_preference_arn: self.procurement_portal_preference_arn,
+                client_token: self.client_token,
             },
         )
     }

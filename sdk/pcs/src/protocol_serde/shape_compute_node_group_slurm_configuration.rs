@@ -15,6 +15,13 @@ where
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "scaleDownIdleTimeInSeconds" => {
+                            builder = builder.set_scale_down_idle_time_in_seconds(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
                         "slurmCustomSettings" => {
                             builder = builder.set_slurm_custom_settings(
                                 crate::protocol_serde::shape_slurm_custom_settings::de_slurm_custom_settings(tokens, _value)?,

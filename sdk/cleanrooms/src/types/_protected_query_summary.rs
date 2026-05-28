@@ -16,6 +16,8 @@ pub struct ProtectedQuerySummary {
     pub status: crate::types::ProtectedQueryStatus,
     /// <p>The receiver configuration.</p>
     pub receiver_configurations: ::std::vec::Vec<crate::types::ReceiverConfiguration>,
+    /// <p>The account ID of the member that pays for the query compute costs.</p>
+    pub query_compute_payer_account_id: ::std::option::Option<::std::string::String>,
 }
 impl ProtectedQuerySummary {
     /// <p>The unique ID of the protected query.</p>
@@ -46,6 +48,10 @@ impl ProtectedQuerySummary {
         use std::ops::Deref;
         self.receiver_configurations.deref()
     }
+    /// <p>The account ID of the member that pays for the query compute costs.</p>
+    pub fn query_compute_payer_account_id(&self) -> ::std::option::Option<&str> {
+        self.query_compute_payer_account_id.as_deref()
+    }
 }
 impl ProtectedQuerySummary {
     /// Creates a new builder-style object to manufacture [`ProtectedQuerySummary`](crate::types::ProtectedQuerySummary).
@@ -64,6 +70,7 @@ pub struct ProtectedQuerySummaryBuilder {
     pub(crate) create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) status: ::std::option::Option<crate::types::ProtectedQueryStatus>,
     pub(crate) receiver_configurations: ::std::option::Option<::std::vec::Vec<crate::types::ReceiverConfiguration>>,
+    pub(crate) query_compute_payer_account_id: ::std::option::Option<::std::string::String>,
 }
 impl ProtectedQuerySummaryBuilder {
     /// <p>The unique ID of the protected query.</p>
@@ -161,6 +168,20 @@ impl ProtectedQuerySummaryBuilder {
     pub fn get_receiver_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReceiverConfiguration>> {
         &self.receiver_configurations
     }
+    /// <p>The account ID of the member that pays for the query compute costs.</p>
+    pub fn query_compute_payer_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.query_compute_payer_account_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The account ID of the member that pays for the query compute costs.</p>
+    pub fn set_query_compute_payer_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.query_compute_payer_account_id = input;
+        self
+    }
+    /// <p>The account ID of the member that pays for the query compute costs.</p>
+    pub fn get_query_compute_payer_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.query_compute_payer_account_id
+    }
     /// Consumes the builder and constructs a [`ProtectedQuerySummary`](crate::types::ProtectedQuerySummary).
     /// This method will fail if any of the following fields are not set:
     /// - [`id`](crate::types::builders::ProtectedQuerySummaryBuilder::id)
@@ -201,6 +222,7 @@ impl ProtectedQuerySummaryBuilder {
                 )
             })?,
             receiver_configurations: self.receiver_configurations.unwrap_or_default(),
+            query_compute_payer_account_id: self.query_compute_payer_account_id,
         })
     }
 }

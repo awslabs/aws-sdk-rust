@@ -59,6 +59,10 @@ where
                                 crate::protocol_serde::shape_regional_parameter_map::de_regional_parameter_map(tokens, _value)?,
                             );
                         }
+                        "allowUserProvidedConfigurations" => {
+                            builder = builder
+                                .set_allow_user_provided_configurations(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
                         "createdAt" => {
                             builder = builder.set_created_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                                 tokens.next(),
@@ -70,6 +74,11 @@ where
                                 tokens.next(),
                                 ::aws_smithy_types::date_time::Format::DateTimeWithOffset,
                             )?);
+                        }
+                        "resourceConfigurations" => {
+                            builder = builder.set_resource_configurations(
+                                crate::protocol_serde::shape_resource_configurations::de_resource_configurations(tokens, _value)?,
+                            );
                         }
                         "provisioningConfigurations" => {
                             builder = builder.set_provisioning_configurations(

@@ -22,7 +22,7 @@ impl crate::operation::list_view_versions::builders::ListViewVersionsInputBuilde
 }
 /// Fluent builder constructing a request to `ListViewVersions`.
 ///
-/// <p>Returns all the available versions for the specified Amazon Connect instance and view identifier.</p>
+/// <p>Returns all the available versions for the specified Connect Customer instance and view identifier.</p>
 /// <p>Results will be sorted from highest to lowest.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListViewVersionsFluentBuilder {
@@ -115,17 +115,17 @@ impl ListViewVersionsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_view_versions::paginator::ListViewVersionsPaginator {
         crate::operation::list_view_versions::paginator::ListViewVersionsPaginator::new(self.handle, self.inner)
     }
-    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    /// <p>The identifier of the Connect Customer instance. You can find the instanceId in the ARN of the instance.</p>
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.instance_id(input.into());
         self
     }
-    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    /// <p>The identifier of the Connect Customer instance. You can find the instanceId in the ARN of the instance.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_instance_id(input);
         self
     }
-    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    /// <p>The identifier of the Connect Customer instance. You can find the instanceId in the ARN of the instance.</p>
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_instance_id()
     }

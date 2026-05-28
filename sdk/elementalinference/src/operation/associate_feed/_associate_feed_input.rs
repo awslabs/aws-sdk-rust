@@ -5,11 +5,13 @@
 pub struct AssociateFeedInput {
     /// <p>The ID of the feed.</p>
     pub id: ::std::option::Option<::std::string::String>,
-    /// <p>An identifier for the resource. If the resource is from an AWS service, this identifier must be the full ARN of that resource. Otherwise, the identifier is a name that you assign and that is appropriate for the application that owns the resource. This name must not resemble an ARN.</p>
+    /// <p>An identifier for the resource. This name must not resemble an ARN.</p>
+    /// <p>The resource is the source media that the feed will process. The name you assign should help you to later identify the source media that belongs to the feed. In this way, you will know which source media to push to the feed (using PutMedia).</p>
     pub associated_resource_name: ::std::option::Option<::std::string::String>,
-    /// <p>The outputs to add to this feed. You must specify at least one output. You can later use the UpdateFeed action to change the list of outputs.</p>
+    /// <p>An array of one or more outputs that you want to add to this feed now, to supplement any outputs that you specified when you created or updated the feed.</p>
     pub outputs: ::std::option::Option<::std::vec::Vec<crate::types::CreateOutput>>,
     /// <p>Set to true if you want to do a dry run of the associate action.</p>
+    /// <p>Elemental Inference will validate that the real request would succeed without actually making any changes. A dry run catches errors such as missing IAM permissions, quota limits exceeded, conflicting outputs, and so on. If the dry run fails, the action returns a 4xx error code. After you've fixed the errors, resubmit the request.</p>
     pub dry_run: ::std::option::Option<bool>,
 }
 impl AssociateFeedInput {
@@ -17,17 +19,19 @@ impl AssociateFeedInput {
     pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
-    /// <p>An identifier for the resource. If the resource is from an AWS service, this identifier must be the full ARN of that resource. Otherwise, the identifier is a name that you assign and that is appropriate for the application that owns the resource. This name must not resemble an ARN.</p>
+    /// <p>An identifier for the resource. This name must not resemble an ARN.</p>
+    /// <p>The resource is the source media that the feed will process. The name you assign should help you to later identify the source media that belongs to the feed. In this way, you will know which source media to push to the feed (using PutMedia).</p>
     pub fn associated_resource_name(&self) -> ::std::option::Option<&str> {
         self.associated_resource_name.as_deref()
     }
-    /// <p>The outputs to add to this feed. You must specify at least one output. You can later use the UpdateFeed action to change the list of outputs.</p>
+    /// <p>An array of one or more outputs that you want to add to this feed now, to supplement any outputs that you specified when you created or updated the feed.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.outputs.is_none()`.
     pub fn outputs(&self) -> &[crate::types::CreateOutput] {
         self.outputs.as_deref().unwrap_or_default()
     }
     /// <p>Set to true if you want to do a dry run of the associate action.</p>
+    /// <p>Elemental Inference will validate that the real request would succeed without actually making any changes. A dry run catches errors such as missing IAM permissions, quota limits exceeded, conflicting outputs, and so on. If the dry run fails, the action returns a 4xx error code. After you've fixed the errors, resubmit the request.</p>
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
         self.dry_run
     }
@@ -64,18 +68,21 @@ impl AssociateFeedInputBuilder {
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.id
     }
-    /// <p>An identifier for the resource. If the resource is from an AWS service, this identifier must be the full ARN of that resource. Otherwise, the identifier is a name that you assign and that is appropriate for the application that owns the resource. This name must not resemble an ARN.</p>
+    /// <p>An identifier for the resource. This name must not resemble an ARN.</p>
+    /// <p>The resource is the source media that the feed will process. The name you assign should help you to later identify the source media that belongs to the feed. In this way, you will know which source media to push to the feed (using PutMedia).</p>
     /// This field is required.
     pub fn associated_resource_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.associated_resource_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>An identifier for the resource. If the resource is from an AWS service, this identifier must be the full ARN of that resource. Otherwise, the identifier is a name that you assign and that is appropriate for the application that owns the resource. This name must not resemble an ARN.</p>
+    /// <p>An identifier for the resource. This name must not resemble an ARN.</p>
+    /// <p>The resource is the source media that the feed will process. The name you assign should help you to later identify the source media that belongs to the feed. In this way, you will know which source media to push to the feed (using PutMedia).</p>
     pub fn set_associated_resource_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.associated_resource_name = input;
         self
     }
-    /// <p>An identifier for the resource. If the resource is from an AWS service, this identifier must be the full ARN of that resource. Otherwise, the identifier is a name that you assign and that is appropriate for the application that owns the resource. This name must not resemble an ARN.</p>
+    /// <p>An identifier for the resource. This name must not resemble an ARN.</p>
+    /// <p>The resource is the source media that the feed will process. The name you assign should help you to later identify the source media that belongs to the feed. In this way, you will know which source media to push to the feed (using PutMedia).</p>
     pub fn get_associated_resource_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.associated_resource_name
     }
@@ -83,33 +90,36 @@ impl AssociateFeedInputBuilder {
     ///
     /// To override the contents of this collection use [`set_outputs`](Self::set_outputs).
     ///
-    /// <p>The outputs to add to this feed. You must specify at least one output. You can later use the UpdateFeed action to change the list of outputs.</p>
+    /// <p>An array of one or more outputs that you want to add to this feed now, to supplement any outputs that you specified when you created or updated the feed.</p>
     pub fn outputs(mut self, input: crate::types::CreateOutput) -> Self {
         let mut v = self.outputs.unwrap_or_default();
         v.push(input);
         self.outputs = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The outputs to add to this feed. You must specify at least one output. You can later use the UpdateFeed action to change the list of outputs.</p>
+    /// <p>An array of one or more outputs that you want to add to this feed now, to supplement any outputs that you specified when you created or updated the feed.</p>
     pub fn set_outputs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CreateOutput>>) -> Self {
         self.outputs = input;
         self
     }
-    /// <p>The outputs to add to this feed. You must specify at least one output. You can later use the UpdateFeed action to change the list of outputs.</p>
+    /// <p>An array of one or more outputs that you want to add to this feed now, to supplement any outputs that you specified when you created or updated the feed.</p>
     pub fn get_outputs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CreateOutput>> {
         &self.outputs
     }
     /// <p>Set to true if you want to do a dry run of the associate action.</p>
+    /// <p>Elemental Inference will validate that the real request would succeed without actually making any changes. A dry run catches errors such as missing IAM permissions, quota limits exceeded, conflicting outputs, and so on. If the dry run fails, the action returns a 4xx error code. After you've fixed the errors, resubmit the request.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.dry_run = ::std::option::Option::Some(input);
         self
     }
     /// <p>Set to true if you want to do a dry run of the associate action.</p>
+    /// <p>Elemental Inference will validate that the real request would succeed without actually making any changes. A dry run catches errors such as missing IAM permissions, quota limits exceeded, conflicting outputs, and so on. If the dry run fails, the action returns a 4xx error code. After you've fixed the errors, resubmit the request.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.dry_run = input;
         self
     }
     /// <p>Set to true if you want to do a dry run of the associate action.</p>
+    /// <p>Elemental Inference will validate that the real request would succeed without actually making any changes. A dry run catches errors such as missing IAM permissions, quota limits exceeded, conflicting outputs, and so on. If the dry run fails, the action returns a 4xx error code. After you've fixed the errors, resubmit the request.</p>
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
         &self.dry_run
     }

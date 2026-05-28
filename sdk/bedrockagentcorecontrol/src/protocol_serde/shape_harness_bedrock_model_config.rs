@@ -24,6 +24,12 @@ pub fn ser_harness_bedrock_model_config(
             ::aws_smithy_types::Number::Float((*var_3).into()),
         );
     }
+    if let Some(var_4) = &input.api_format {
+        object.key("apiFormat").string(var_4.as_str());
+    }
+    if let Some(var_5) = &input.additional_params {
+        object.key("additionalParams").document(var_5);
+    }
     Ok(())
 }
 
@@ -65,6 +71,16 @@ where
                         "topP" => {
                             builder = builder
                                 .set_top_p(::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?.map(|v| v.to_f32_lossy()));
+                        }
+                        "apiFormat" => {
+                            builder = builder.set_api_format(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::HarnessBedrockApiFormat::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "additionalParams" => {
+                            builder = builder.set_additional_params(Some(::aws_smithy_json::deserialize::token::expect_document(tokens)?));
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

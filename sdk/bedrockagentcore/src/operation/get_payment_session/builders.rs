@@ -22,7 +22,7 @@ impl crate::operation::get_payment_session::builders::GetPaymentSessionInputBuil
 }
 /// Fluent builder constructing a request to `GetPaymentSession`.
 ///
-/// Get a payment session
+/// <p>Get a payment session.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetPaymentSessionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,59 +108,59 @@ impl GetPaymentSessionFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// The user ID associated with this payment session.
+    /// <p>The user ID associated with this payment session.</p>
     pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.user_id(input.into());
         self
     }
-    /// The user ID associated with this payment session.
+    /// <p>The user ID associated with this payment session.</p>
     pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_user_id(input);
         self
     }
-    /// The user ID associated with this payment session.
+    /// <p>The user ID associated with this payment session.</p>
     pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_user_id()
     }
-    /// The agent name associated with this request, used for observability.
+    /// <p>The agent name associated with this request, used for observability.</p>
     pub fn agent_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.agent_name(input.into());
         self
     }
-    /// The agent name associated with this request, used for observability.
+    /// <p>The agent name associated with this request, used for observability.</p>
     pub fn set_agent_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_agent_name(input);
         self
     }
-    /// The agent name associated with this request, used for observability.
+    /// <p>The agent name associated with this request, used for observability.</p>
     pub fn get_agent_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_agent_name()
     }
-    /// The ARN of the payment manager that owns this session.
+    /// <p>The ARN of the payment manager that owns this session.</p>
     pub fn payment_manager_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.payment_manager_arn(input.into());
         self
     }
-    /// The ARN of the payment manager that owns this session.
+    /// <p>The ARN of the payment manager that owns this session.</p>
     pub fn set_payment_manager_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_payment_manager_arn(input);
         self
     }
-    /// The ARN of the payment manager that owns this session.
+    /// <p>The ARN of the payment manager that owns this session.</p>
     pub fn get_payment_manager_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_payment_manager_arn()
     }
-    /// The ID of the payment session to retrieve.
+    /// <p>The ID of the payment session to retrieve.</p>
     pub fn payment_session_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.payment_session_id(input.into());
         self
     }
-    /// The ID of the payment session to retrieve.
+    /// <p>The ID of the payment session to retrieve.</p>
     pub fn set_payment_session_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_payment_session_id(input);
         self
     }
-    /// The ID of the payment session to retrieve.
+    /// <p>The ID of the payment session to retrieve.</p>
     pub fn get_payment_session_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_payment_session_id()
     }

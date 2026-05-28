@@ -261,6 +261,18 @@ pub(crate) fn engagement_resource_association_summary_correct_errors(
     builder
 }
 
+pub(crate) fn expected_contract_duration_correct_errors(
+    mut builder: crate::types::builders::ExpectedContractDurationBuilder,
+) -> crate::types::builders::ExpectedContractDurationBuilder {
+    if builder.term.is_none() {
+        builder.term = "no value was set".parse::<crate::types::ExpectedContractDurationTerm>().ok()
+    }
+    if builder.value.is_none() {
+        builder.value = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn lead_invitation_payload_correct_errors(
     mut builder: crate::types::builders::LeadInvitationPayloadBuilder,
 ) -> crate::types::builders::LeadInvitationPayloadBuilder {

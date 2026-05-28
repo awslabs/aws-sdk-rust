@@ -6,11 +6,19 @@
 pub struct InferenceSettings {
     /// The ARN of the feed resource that is associated with this channel. The feed is a resource in the Elemental Inference service.
     pub feed_arn: ::std::option::Option<::std::string::String>,
+    /// A list of audio feed inputs that map audio selectors in the channel to feed inputs on the associated Elemental Inference feed.
+    pub audio_feed_inputs: ::std::option::Option<::std::vec::Vec<crate::types::AudioFeedInput>>,
 }
 impl InferenceSettings {
     /// The ARN of the feed resource that is associated with this channel. The feed is a resource in the Elemental Inference service.
     pub fn feed_arn(&self) -> ::std::option::Option<&str> {
         self.feed_arn.as_deref()
+    }
+    /// A list of audio feed inputs that map audio selectors in the channel to feed inputs on the associated Elemental Inference feed.
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.audio_feed_inputs.is_none()`.
+    pub fn audio_feed_inputs(&self) -> &[crate::types::AudioFeedInput] {
+        self.audio_feed_inputs.as_deref().unwrap_or_default()
     }
 }
 impl InferenceSettings {
@@ -25,6 +33,7 @@ impl InferenceSettings {
 #[non_exhaustive]
 pub struct InferenceSettingsBuilder {
     pub(crate) feed_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) audio_feed_inputs: ::std::option::Option<::std::vec::Vec<crate::types::AudioFeedInput>>,
 }
 impl InferenceSettingsBuilder {
     /// The ARN of the feed resource that is associated with this channel. The feed is a resource in the Elemental Inference service.
@@ -41,8 +50,31 @@ impl InferenceSettingsBuilder {
     pub fn get_feed_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.feed_arn
     }
+    /// Appends an item to `audio_feed_inputs`.
+    ///
+    /// To override the contents of this collection use [`set_audio_feed_inputs`](Self::set_audio_feed_inputs).
+    ///
+    /// A list of audio feed inputs that map audio selectors in the channel to feed inputs on the associated Elemental Inference feed.
+    pub fn audio_feed_inputs(mut self, input: crate::types::AudioFeedInput) -> Self {
+        let mut v = self.audio_feed_inputs.unwrap_or_default();
+        v.push(input);
+        self.audio_feed_inputs = ::std::option::Option::Some(v);
+        self
+    }
+    /// A list of audio feed inputs that map audio selectors in the channel to feed inputs on the associated Elemental Inference feed.
+    pub fn set_audio_feed_inputs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AudioFeedInput>>) -> Self {
+        self.audio_feed_inputs = input;
+        self
+    }
+    /// A list of audio feed inputs that map audio selectors in the channel to feed inputs on the associated Elemental Inference feed.
+    pub fn get_audio_feed_inputs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AudioFeedInput>> {
+        &self.audio_feed_inputs
+    }
     /// Consumes the builder and constructs a [`InferenceSettings`](crate::types::InferenceSettings).
     pub fn build(self) -> crate::types::InferenceSettings {
-        crate::types::InferenceSettings { feed_arn: self.feed_arn }
+        crate::types::InferenceSettings {
+            feed_arn: self.feed_arn,
+            audio_feed_inputs: self.audio_feed_inputs,
+        }
     }
 }

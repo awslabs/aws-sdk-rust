@@ -6,11 +6,19 @@
 pub struct ControlFilter {
     /// <p>A filter that narrows the results to controls with specific implementation types or identifiers. This field allows you to find controls that are implemented by specific Amazon Web Services services or with specific service identifiers.</p>
     pub implementations: ::std::option::Option<crate::types::ImplementationFilter>,
+    /// <p>A filter that narrows the results to controls that govern a specific provider's resources.</p>
+    pub governed_providers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ControlFilter {
     /// <p>A filter that narrows the results to controls with specific implementation types or identifiers. This field allows you to find controls that are implemented by specific Amazon Web Services services or with specific service identifiers.</p>
     pub fn implementations(&self) -> ::std::option::Option<&crate::types::ImplementationFilter> {
         self.implementations.as_ref()
+    }
+    /// <p>A filter that narrows the results to controls that govern a specific provider's resources.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.governed_providers.is_none()`.
+    pub fn governed_providers(&self) -> &[::std::string::String] {
+        self.governed_providers.as_deref().unwrap_or_default()
     }
 }
 impl ControlFilter {
@@ -25,6 +33,7 @@ impl ControlFilter {
 #[non_exhaustive]
 pub struct ControlFilterBuilder {
     pub(crate) implementations: ::std::option::Option<crate::types::ImplementationFilter>,
+    pub(crate) governed_providers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ControlFilterBuilder {
     /// <p>A filter that narrows the results to controls with specific implementation types or identifiers. This field allows you to find controls that are implemented by specific Amazon Web Services services or with specific service identifiers.</p>
@@ -41,10 +50,31 @@ impl ControlFilterBuilder {
     pub fn get_implementations(&self) -> &::std::option::Option<crate::types::ImplementationFilter> {
         &self.implementations
     }
+    /// Appends an item to `governed_providers`.
+    ///
+    /// To override the contents of this collection use [`set_governed_providers`](Self::set_governed_providers).
+    ///
+    /// <p>A filter that narrows the results to controls that govern a specific provider's resources.</p>
+    pub fn governed_providers(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.governed_providers.unwrap_or_default();
+        v.push(input.into());
+        self.governed_providers = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A filter that narrows the results to controls that govern a specific provider's resources.</p>
+    pub fn set_governed_providers(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.governed_providers = input;
+        self
+    }
+    /// <p>A filter that narrows the results to controls that govern a specific provider's resources.</p>
+    pub fn get_governed_providers(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.governed_providers
+    }
     /// Consumes the builder and constructs a [`ControlFilter`](crate::types::ControlFilter).
     pub fn build(self) -> crate::types::ControlFilter {
         crate::types::ControlFilter {
             implementations: self.implementations,
+            governed_providers: self.governed_providers,
         }
     }
 }

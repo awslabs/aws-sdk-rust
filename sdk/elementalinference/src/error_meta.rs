@@ -96,6 +96,37 @@ impl From<crate::operation::associate_feed::AssociateFeedError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_dictionary::CreateDictionaryError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_dictionary::CreateDictionaryError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_dictionary::CreateDictionaryError> for Error {
+    fn from(err: crate::operation::create_dictionary::CreateDictionaryError) -> Self {
+        match err {
+            crate::operation::create_dictionary::CreateDictionaryError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_dictionary::CreateDictionaryError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_dictionary::CreateDictionaryError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::create_dictionary::CreateDictionaryError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::create_dictionary::CreateDictionaryError::TooManyRequestException(inner) => Error::TooManyRequestException(inner),
+            crate::operation::create_dictionary::CreateDictionaryError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::create_dictionary::CreateDictionaryError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_feed::CreateFeedError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -120,6 +151,35 @@ impl From<crate::operation::create_feed::CreateFeedError> for Error {
             crate::operation::create_feed::CreateFeedError::TooManyRequestException(inner) => Error::TooManyRequestException(inner),
             crate::operation::create_feed::CreateFeedError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::create_feed::CreateFeedError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_dictionary::DeleteDictionaryError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_dictionary::DeleteDictionaryError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_dictionary::DeleteDictionaryError> for Error {
+    fn from(err: crate::operation::delete_dictionary::DeleteDictionaryError) -> Self {
+        match err {
+            crate::operation::delete_dictionary::DeleteDictionaryError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_dictionary::DeleteDictionaryError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::delete_dictionary::DeleteDictionaryError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::delete_dictionary::DeleteDictionaryError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_dictionary::DeleteDictionaryError::TooManyRequestException(inner) => Error::TooManyRequestException(inner),
+            crate::operation::delete_dictionary::DeleteDictionaryError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_dictionary::DeleteDictionaryError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -179,6 +239,71 @@ impl From<crate::operation::disassociate_feed::DisassociateFeedError> for Error 
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::export_dictionary_entries::ExportDictionaryEntriesError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::export_dictionary_entries::ExportDictionaryEntriesError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::export_dictionary_entries::ExportDictionaryEntriesError> for Error {
+    fn from(err: crate::operation::export_dictionary_entries::ExportDictionaryEntriesError) -> Self {
+        match err {
+            crate::operation::export_dictionary_entries::ExportDictionaryEntriesError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::export_dictionary_entries::ExportDictionaryEntriesError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::export_dictionary_entries::ExportDictionaryEntriesError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::export_dictionary_entries::ExportDictionaryEntriesError::TooManyRequestException(inner) => {
+                Error::TooManyRequestException(inner)
+            }
+            crate::operation::export_dictionary_entries::ExportDictionaryEntriesError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::export_dictionary_entries::ExportDictionaryEntriesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_dictionary::GetDictionaryError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_dictionary::GetDictionaryError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_dictionary::GetDictionaryError> for Error {
+    fn from(err: crate::operation::get_dictionary::GetDictionaryError) -> Self {
+        match err {
+            crate::operation::get_dictionary::GetDictionaryError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_dictionary::GetDictionaryError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::get_dictionary::GetDictionaryError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_dictionary::GetDictionaryError::TooManyRequestException(inner) => Error::TooManyRequestException(inner),
+            crate::operation::get_dictionary::GetDictionaryError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_dictionary::GetDictionaryError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_feed::GetFeedError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -201,6 +326,33 @@ impl From<crate::operation::get_feed::GetFeedError> for Error {
             crate::operation::get_feed::GetFeedError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::get_feed::GetFeedError::TooManyRequestException(inner) => Error::TooManyRequestException(inner),
             crate::operation::get_feed::GetFeedError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_dictionaries::ListDictionariesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_dictionaries::ListDictionariesError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_dictionaries::ListDictionariesError> for Error {
+    fn from(err: crate::operation::list_dictionaries::ListDictionariesError) -> Self {
+        match err {
+            crate::operation::list_dictionaries::ListDictionariesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_dictionaries::ListDictionariesError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::list_dictionaries::ListDictionariesError::TooManyRequestException(inner) => Error::TooManyRequestException(inner),
+            crate::operation::list_dictionaries::ListDictionariesError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_dictionaries::ListDictionariesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -313,6 +465,35 @@ impl From<crate::operation::untag_resource::UntagResourceError> for Error {
             crate::operation::untag_resource::UntagResourceError::TooManyRequestException(inner) => Error::TooManyRequestException(inner),
             crate::operation::untag_resource::UntagResourceError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::untag_resource::UntagResourceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_dictionary::UpdateDictionaryError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_dictionary::UpdateDictionaryError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_dictionary::UpdateDictionaryError> for Error {
+    fn from(err: crate::operation::update_dictionary::UpdateDictionaryError) -> Self {
+        match err {
+            crate::operation::update_dictionary::UpdateDictionaryError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_dictionary::UpdateDictionaryError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::update_dictionary::UpdateDictionaryError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::update_dictionary::UpdateDictionaryError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_dictionary::UpdateDictionaryError::TooManyRequestException(inner) => Error::TooManyRequestException(inner),
+            crate::operation::update_dictionary::UpdateDictionaryError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::update_dictionary::UpdateDictionaryError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

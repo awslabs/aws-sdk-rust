@@ -197,6 +197,15 @@ pub(crate) fn list_messages_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn list_models_output_output_correct_errors(
+    mut builder: crate::operation::list_models::builders::ListModelsOutputBuilder,
+) -> crate::operation::list_models::builders::ListModelsOutputBuilder {
+    if builder.model_summaries.is_none() {
+        builder.model_summaries = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn list_quick_responses_output_output_correct_errors(
     mut builder: crate::operation::list_quick_responses::builders::ListQuickResponsesOutputBuilder,
 ) -> crate::operation::list_quick_responses::builders::ListQuickResponsesOutputBuilder {
@@ -1167,6 +1176,16 @@ pub(crate) fn message_template_version_summary_correct_errors(
     builder
 }
 
+pub(crate) fn model_summary_correct_errors(mut builder: crate::types::builders::ModelSummaryBuilder) -> crate::types::builders::ModelSummaryBuilder {
+    if builder.model_id.is_none() {
+        builder.model_id = Some(Default::default())
+    }
+    if builder.display_name.is_none() {
+        builder.display_name = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn quick_response_search_result_data_correct_errors(
     mut builder: crate::types::builders::QuickResponseSearchResultDataBuilder,
 ) -> crate::types::builders::QuickResponseSearchResultDataBuilder {
@@ -1755,6 +1774,24 @@ pub(crate) fn source_content_data_details_correct_errors(
     builder
 }
 
+pub(crate) fn span_guardrail_assessment_correct_errors(
+    mut builder: crate::types::builders::SpanGuardrailAssessmentBuilder,
+) -> crate::types::builders::SpanGuardrailAssessmentBuilder {
+    if builder.guardrail_id.is_none() {
+        builder.guardrail_id = Some(Default::default())
+    }
+    if builder.guardrail_name.is_none() {
+        builder.guardrail_name = Some(Default::default())
+    }
+    if builder.source.is_none() {
+        builder.source = "no value was set".parse::<crate::types::GuardrailSource>().ok()
+    }
+    if builder.action.is_none() {
+        builder.action = "no value was set".parse::<crate::types::GuardrailAction>().ok()
+    }
+    builder
+}
+
 pub(crate) fn span_message_correct_errors(mut builder: crate::types::builders::SpanMessageBuilder) -> crate::types::builders::SpanMessageBuilder {
     if builder.message_id.is_none() {
         builder.message_id = Some(Default::default())
@@ -1854,6 +1891,18 @@ pub(crate) fn span_tool_use_value_correct_errors(
     }
     if builder.arguments.is_none() {
         builder.arguments = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn guardrail_policy_result_correct_errors(
+    mut builder: crate::types::builders::GuardrailPolicyResultBuilder,
+) -> crate::types::builders::GuardrailPolicyResultBuilder {
+    if builder.policy_type.is_none() {
+        builder.policy_type = "no value was set".parse::<crate::types::GuardrailPolicyType>().ok()
+    }
+    if builder.action.is_none() {
+        builder.action = "no value was set".parse::<crate::types::GuardrailAction>().ok()
     }
     builder
 }

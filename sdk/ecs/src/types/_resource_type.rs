@@ -14,6 +14,7 @@
 /// match resourcetype {
 ///     ResourceType::Gpu => { /* ... */ },
 ///     ResourceType::InferenceAccelerator => { /* ... */ },
+///     ResourceType::NeuronDevice => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -46,6 +47,8 @@ pub enum ResourceType {
     Gpu,
     #[allow(missing_docs)] // documentation missing in model
     InferenceAccelerator,
+    #[allow(missing_docs)] // documentation missing in model
+    NeuronDevice,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -55,6 +58,7 @@ impl ::std::convert::From<&str> for ResourceType {
         match s {
             "GPU" => ResourceType::Gpu,
             "InferenceAccelerator" => ResourceType::InferenceAccelerator,
+            "NeuronDevice" => ResourceType::NeuronDevice,
             other => ResourceType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -72,12 +76,13 @@ impl ResourceType {
         match self {
             ResourceType::Gpu => "GPU",
             ResourceType::InferenceAccelerator => "InferenceAccelerator",
+            ResourceType::NeuronDevice => "NeuronDevice",
             ResourceType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["GPU", "InferenceAccelerator"]
+        &["GPU", "InferenceAccelerator", "NeuronDevice"]
     }
 }
 impl ::std::convert::AsRef<str> for ResourceType {
@@ -102,6 +107,7 @@ impl ::std::fmt::Display for ResourceType {
         match self {
             ResourceType::Gpu => write!(f, "GPU"),
             ResourceType::InferenceAccelerator => write!(f, "InferenceAccelerator"),
+            ResourceType::NeuronDevice => write!(f, "NeuronDevice"),
             ResourceType::Unknown(value) => write!(f, "{value}"),
         }
     }

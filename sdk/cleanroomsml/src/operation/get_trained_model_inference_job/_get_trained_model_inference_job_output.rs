@@ -66,6 +66,8 @@ pub struct GetTrainedModelInferenceJobOutput {
     /// <p>Do not use aws:, AWS:, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has aws as its prefix but the key does not, then Clean Rooms ML considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of aws do not count against your tags per resource limit.</p></li>
     /// </ul>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p>The account ID of the member that is responsible for paying for model inference costs.</p>
+    pub ml_model_inference_payer_account_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetTrainedModelInferenceJobOutput {
@@ -182,6 +184,10 @@ impl GetTrainedModelInferenceJobOutput {
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
+    /// <p>The account ID of the member that is responsible for paying for model inference costs.</p>
+    pub fn ml_model_inference_payer_account_id(&self) -> ::std::option::Option<&str> {
+        self.ml_model_inference_payer_account_id.as_deref()
+    }
 }
 impl ::aws_types::request_id::RequestId for GetTrainedModelInferenceJobOutput {
     fn request_id(&self) -> Option<&str> {
@@ -222,6 +228,7 @@ pub struct GetTrainedModelInferenceJobOutputBuilder {
     pub(crate) logs_status: ::std::option::Option<crate::types::LogsStatus>,
     pub(crate) logs_status_details: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) ml_model_inference_payer_account_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetTrainedModelInferenceJobOutputBuilder {
@@ -623,6 +630,20 @@ impl GetTrainedModelInferenceJobOutputBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
+    /// <p>The account ID of the member that is responsible for paying for model inference costs.</p>
+    pub fn ml_model_inference_payer_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.ml_model_inference_payer_account_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The account ID of the member that is responsible for paying for model inference costs.</p>
+    pub fn set_ml_model_inference_payer_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.ml_model_inference_payer_account_id = input;
+        self
+    }
+    /// <p>The account ID of the member that is responsible for paying for model inference costs.</p>
+    pub fn get_ml_model_inference_payer_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ml_model_inference_payer_account_id
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -706,6 +727,7 @@ impl GetTrainedModelInferenceJobOutputBuilder {
             logs_status: self.logs_status,
             logs_status_details: self.logs_status_details,
             tags: self.tags,
+            ml_model_inference_payer_account_id: self.ml_model_inference_payer_account_id,
             _request_id: self._request_id,
         })
     }

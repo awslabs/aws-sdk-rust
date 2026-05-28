@@ -10,7 +10,11 @@ pub struct BatchConfig {
     pub max_batch_size: ::std::option::Option<i32>,
     /// <p>Maximum size of a message batch, in bytes.</p>
     pub max_batch_size_bytes: ::std::option::Option<i32>,
-    /// <p>Whether to allow batching messages from different MQTT topics into a single HTTP request. By default, only messages from the same topic are batched together. The default value is <code>false</code>.</p>
+    /// <p>Whether to allow batching messages from different MQTT topics into a single HTTP request. By default, only messages from the same topic are batched together. The default value is <code>false</code>.</p><note>
+    /// <p>When <code>batchAcrossTopics</code> is enabled, the error payload format changes: the <code>topic</code> field moves from the top level to inside each entry in the <code>payloadsWithMetadata</code> array, since each message in the batch may originate from a different topic.</p>
+    /// </note> <note>
+    /// <p>Messages are always batched within the scope of the same account, rule name, target HTTP endpoint URL, and billing group. Messages that differ in any of these attributes are never combined into the same batch, regardless of the <code>batchAcrossTopics</code> setting.</p>
+    /// </note>
     pub batch_across_topics: bool,
 }
 impl BatchConfig {
@@ -26,7 +30,11 @@ impl BatchConfig {
     pub fn max_batch_size_bytes(&self) -> ::std::option::Option<i32> {
         self.max_batch_size_bytes
     }
-    /// <p>Whether to allow batching messages from different MQTT topics into a single HTTP request. By default, only messages from the same topic are batched together. The default value is <code>false</code>.</p>
+    /// <p>Whether to allow batching messages from different MQTT topics into a single HTTP request. By default, only messages from the same topic are batched together. The default value is <code>false</code>.</p><note>
+    /// <p>When <code>batchAcrossTopics</code> is enabled, the error payload format changes: the <code>topic</code> field moves from the top level to inside each entry in the <code>payloadsWithMetadata</code> array, since each message in the batch may originate from a different topic.</p>
+    /// </note> <note>
+    /// <p>Messages are always batched within the scope of the same account, rule name, target HTTP endpoint URL, and billing group. Messages that differ in any of these attributes are never combined into the same batch, regardless of the <code>batchAcrossTopics</code> setting.</p>
+    /// </note>
     pub fn batch_across_topics(&self) -> bool {
         self.batch_across_topics
     }
@@ -90,17 +98,29 @@ impl BatchConfigBuilder {
     pub fn get_max_batch_size_bytes(&self) -> &::std::option::Option<i32> {
         &self.max_batch_size_bytes
     }
-    /// <p>Whether to allow batching messages from different MQTT topics into a single HTTP request. By default, only messages from the same topic are batched together. The default value is <code>false</code>.</p>
+    /// <p>Whether to allow batching messages from different MQTT topics into a single HTTP request. By default, only messages from the same topic are batched together. The default value is <code>false</code>.</p><note>
+    /// <p>When <code>batchAcrossTopics</code> is enabled, the error payload format changes: the <code>topic</code> field moves from the top level to inside each entry in the <code>payloadsWithMetadata</code> array, since each message in the batch may originate from a different topic.</p>
+    /// </note> <note>
+    /// <p>Messages are always batched within the scope of the same account, rule name, target HTTP endpoint URL, and billing group. Messages that differ in any of these attributes are never combined into the same batch, regardless of the <code>batchAcrossTopics</code> setting.</p>
+    /// </note>
     pub fn batch_across_topics(mut self, input: bool) -> Self {
         self.batch_across_topics = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Whether to allow batching messages from different MQTT topics into a single HTTP request. By default, only messages from the same topic are batched together. The default value is <code>false</code>.</p>
+    /// <p>Whether to allow batching messages from different MQTT topics into a single HTTP request. By default, only messages from the same topic are batched together. The default value is <code>false</code>.</p><note>
+    /// <p>When <code>batchAcrossTopics</code> is enabled, the error payload format changes: the <code>topic</code> field moves from the top level to inside each entry in the <code>payloadsWithMetadata</code> array, since each message in the batch may originate from a different topic.</p>
+    /// </note> <note>
+    /// <p>Messages are always batched within the scope of the same account, rule name, target HTTP endpoint URL, and billing group. Messages that differ in any of these attributes are never combined into the same batch, regardless of the <code>batchAcrossTopics</code> setting.</p>
+    /// </note>
     pub fn set_batch_across_topics(mut self, input: ::std::option::Option<bool>) -> Self {
         self.batch_across_topics = input;
         self
     }
-    /// <p>Whether to allow batching messages from different MQTT topics into a single HTTP request. By default, only messages from the same topic are batched together. The default value is <code>false</code>.</p>
+    /// <p>Whether to allow batching messages from different MQTT topics into a single HTTP request. By default, only messages from the same topic are batched together. The default value is <code>false</code>.</p><note>
+    /// <p>When <code>batchAcrossTopics</code> is enabled, the error payload format changes: the <code>topic</code> field moves from the top level to inside each entry in the <code>payloadsWithMetadata</code> array, since each message in the batch may originate from a different topic.</p>
+    /// </note> <note>
+    /// <p>Messages are always batched within the scope of the same account, rule name, target HTTP endpoint URL, and billing group. Messages that differ in any of these attributes are never combined into the same batch, regardless of the <code>batchAcrossTopics</code> setting.</p>
+    /// </note>
     pub fn get_batch_across_topics(&self) -> &::std::option::Option<bool> {
         &self.batch_across_topics
     }

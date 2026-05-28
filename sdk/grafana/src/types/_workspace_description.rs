@@ -64,8 +64,12 @@ pub struct WorkspaceDescription {
     pub network_access_control: ::std::option::Option<crate::types::NetworkAccessConfiguration>,
     /// <p>The token that ties this workspace to a Grafana Labs account. For more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/upgrade-to-Grafana-Enterprise.html#AMG-workspace-register-enterprise">Link your account with Grafana Labs</a>.</p>
     pub grafana_token: ::std::option::Option<::std::string::String>,
+    /// <p>The type of IP addresses supported for connection to the workspace. Valid values are <code>IPv4</code> and <code>DualStack</code>.</p>
+    pub ip_address_type: ::std::option::Option<crate::types::IpAddressType>,
     /// <p>The ID or ARN of the Key Management Service key used for encrypting workspace data.</p>
     pub kms_key_id: ::std::option::Option<::std::string::String>,
+    /// <p>If the workspace is in the <code>DEGRADED</code> status, this field describes the reason the workspace is degraded.</p>
+    pub degraded_workspace_reason: ::std::option::Option<::std::string::String>,
 }
 impl WorkspaceDescription {
     /// <p>Specifies whether the workspace can access Amazon Web Services resources in this Amazon Web Services account only, or whether it can also access Amazon Web Services resources in other accounts in the same organization. If this is <code>ORGANIZATION</code>, the <code>workspaceOrganizationalUnits</code> parameter specifies which organizational units the workspace can access.</p>
@@ -186,9 +190,17 @@ impl WorkspaceDescription {
     pub fn grafana_token(&self) -> ::std::option::Option<&str> {
         self.grafana_token.as_deref()
     }
+    /// <p>The type of IP addresses supported for connection to the workspace. Valid values are <code>IPv4</code> and <code>DualStack</code>.</p>
+    pub fn ip_address_type(&self) -> ::std::option::Option<&crate::types::IpAddressType> {
+        self.ip_address_type.as_ref()
+    }
     /// <p>The ID or ARN of the Key Management Service key used for encrypting workspace data.</p>
     pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
         self.kms_key_id.as_deref()
+    }
+    /// <p>If the workspace is in the <code>DEGRADED</code> status, this field describes the reason the workspace is degraded.</p>
+    pub fn degraded_workspace_reason(&self) -> ::std::option::Option<&str> {
+        self.degraded_workspace_reason.as_deref()
     }
 }
 impl ::std::fmt::Debug for WorkspaceDescription {
@@ -219,7 +231,9 @@ impl ::std::fmt::Debug for WorkspaceDescription {
         formatter.field("vpc_configuration", &self.vpc_configuration);
         formatter.field("network_access_control", &self.network_access_control);
         formatter.field("grafana_token", &self.grafana_token);
+        formatter.field("ip_address_type", &self.ip_address_type);
         formatter.field("kms_key_id", &self.kms_key_id);
+        formatter.field("degraded_workspace_reason", &self.degraded_workspace_reason);
         formatter.finish()
     }
 }
@@ -259,7 +273,9 @@ pub struct WorkspaceDescriptionBuilder {
     pub(crate) vpc_configuration: ::std::option::Option<crate::types::VpcConfiguration>,
     pub(crate) network_access_control: ::std::option::Option<crate::types::NetworkAccessConfiguration>,
     pub(crate) grafana_token: ::std::option::Option<::std::string::String>,
+    pub(crate) ip_address_type: ::std::option::Option<crate::types::IpAddressType>,
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
+    pub(crate) degraded_workspace_reason: ::std::option::Option<::std::string::String>,
 }
 impl WorkspaceDescriptionBuilder {
     /// <p>Specifies whether the workspace can access Amazon Web Services resources in this Amazon Web Services account only, or whether it can also access Amazon Web Services resources in other accounts in the same organization. If this is <code>ORGANIZATION</code>, the <code>workspaceOrganizationalUnits</code> parameter specifies which organizational units the workspace can access.</p>
@@ -673,6 +689,20 @@ impl WorkspaceDescriptionBuilder {
     pub fn get_grafana_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.grafana_token
     }
+    /// <p>The type of IP addresses supported for connection to the workspace. Valid values are <code>IPv4</code> and <code>DualStack</code>.</p>
+    pub fn ip_address_type(mut self, input: crate::types::IpAddressType) -> Self {
+        self.ip_address_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The type of IP addresses supported for connection to the workspace. Valid values are <code>IPv4</code> and <code>DualStack</code>.</p>
+    pub fn set_ip_address_type(mut self, input: ::std::option::Option<crate::types::IpAddressType>) -> Self {
+        self.ip_address_type = input;
+        self
+    }
+    /// <p>The type of IP addresses supported for connection to the workspace. Valid values are <code>IPv4</code> and <code>DualStack</code>.</p>
+    pub fn get_ip_address_type(&self) -> &::std::option::Option<crate::types::IpAddressType> {
+        &self.ip_address_type
+    }
     /// <p>The ID or ARN of the Key Management Service key used for encrypting workspace data.</p>
     pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kms_key_id = ::std::option::Option::Some(input.into());
@@ -686,6 +716,20 @@ impl WorkspaceDescriptionBuilder {
     /// <p>The ID or ARN of the Key Management Service key used for encrypting workspace data.</p>
     pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.kms_key_id
+    }
+    /// <p>If the workspace is in the <code>DEGRADED</code> status, this field describes the reason the workspace is degraded.</p>
+    pub fn degraded_workspace_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.degraded_workspace_reason = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>If the workspace is in the <code>DEGRADED</code> status, this field describes the reason the workspace is degraded.</p>
+    pub fn set_degraded_workspace_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.degraded_workspace_reason = input;
+        self
+    }
+    /// <p>If the workspace is in the <code>DEGRADED</code> status, this field describes the reason the workspace is degraded.</p>
+    pub fn get_degraded_workspace_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.degraded_workspace_reason
     }
     /// Consumes the builder and constructs a [`WorkspaceDescription`](crate::types::WorkspaceDescription).
     /// This method will fail if any of the following fields are not set:
@@ -758,7 +802,9 @@ impl WorkspaceDescriptionBuilder {
             vpc_configuration: self.vpc_configuration,
             network_access_control: self.network_access_control,
             grafana_token: self.grafana_token,
+            ip_address_type: self.ip_address_type,
             kms_key_id: self.kms_key_id,
+            degraded_workspace_reason: self.degraded_workspace_reason,
         })
     }
 }
@@ -790,7 +836,9 @@ impl ::std::fmt::Debug for WorkspaceDescriptionBuilder {
         formatter.field("vpc_configuration", &self.vpc_configuration);
         formatter.field("network_access_control", &self.network_access_control);
         formatter.field("grafana_token", &self.grafana_token);
+        formatter.field("ip_address_type", &self.ip_address_type);
         formatter.field("kms_key_id", &self.kms_key_id);
+        formatter.field("degraded_workspace_reason", &self.degraded_workspace_reason);
         formatter.finish()
     }
 }

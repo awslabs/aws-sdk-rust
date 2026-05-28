@@ -423,6 +423,8 @@ pub use crate::types::_input_settings::InputSettings;
 
 pub use crate::types::_linked_channel_type::LinkedChannelType;
 
+pub use crate::types::_audio_feed_input::AudioFeedInput;
+
 pub use crate::types::_interface_mapping_create_request::InterfaceMappingCreateRequest;
 
 pub use crate::types::_interface_mapping::InterfaceMapping;
@@ -1209,6 +1211,8 @@ pub use crate::types::_scte27_source_settings::Scte27SourceSettings;
 
 pub use crate::types::_teletext_source_settings::TeletextSourceSettings;
 
+pub use crate::types::_smart_subtitle_source_settings::SmartSubtitleSourceSettings;
+
 pub use crate::types::_last_frame_clipping_behavior::LastFrameClippingBehavior;
 
 pub use crate::types::_pipeline_id::PipelineId;
@@ -1274,6 +1278,8 @@ pub use crate::types::_scte20_convert608_to708::Scte20Convert608To708;
 pub use crate::types::_scte27_ocr_language::Scte27OcrLanguage;
 
 pub use crate::types::_caption_rectangle::CaptionRectangle;
+
+pub use crate::types::_caption_synchronization_mode::CaptionSynchronizationMode;
 
 pub use crate::types::_scte35_segmentation_descriptor::Scte35SegmentationDescriptor;
 
@@ -1451,6 +1457,8 @@ mod _audio_description_language_code_control;
 
 mod _audio_dolby_e_decode;
 
+mod _audio_feed_input;
+
 mod _audio_hls_rendition_selection;
 
 mod _audio_language_selection;
@@ -1570,6 +1578,8 @@ mod _caption_rectangle;
 mod _caption_selector;
 
 mod _caption_selector_settings;
+
+mod _caption_synchronization_mode;
 
 mod _cdi_input_resolution;
 
@@ -2598,6 +2608,8 @@ mod _signal_map_monitor_deployment_status;
 mod _signal_map_status;
 
 mod _signal_map_summary;
+
+mod _smart_subtitle_source_settings;
 
 mod _smooth_group_audio_only_timecode_control;
 

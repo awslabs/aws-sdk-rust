@@ -23,7 +23,7 @@ impl crate::operation::create_policy_store::builders::CreatePolicyStoreInputBuil
 /// Fluent builder constructing a request to `CreatePolicyStore`.
 ///
 /// <p>Creates a policy store. A policy store is a container for policy resources.</p><note>
-/// <p>Although <a href="https://docs.cedarpolicy.com/schema/schema.html#namespace">Cedar supports multiple namespaces</a>, Verified Permissions currently supports only one namespace per policy store.</p>
+/// <p>As of May 2026, Verified Permissions has aligned with Cedar and now supports multiple namespaces.</p>
 /// </note> <note>
 /// <p>Verified Permissions is <i> <a href="https://wikipedia.org/wiki/Eventual_consistency">eventually consistent</a> </i>. It can take a few seconds for a new or changed element to propagate through the service and be visible in the results of other Verified Permissions operations.</p>
 /// </note>

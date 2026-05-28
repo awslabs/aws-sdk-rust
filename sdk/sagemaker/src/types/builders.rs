@@ -47,6 +47,8 @@ pub use crate::types::_auto_ml_data_split_config::AutoMlDataSplitConfigBuilder;
 
 pub use crate::types::_auto_ml_compute_config::AutoMlComputeConfigBuilder;
 
+pub use crate::types::_cluster_restricted_instance_groups_config::ClusterRestrictedInstanceGroupsConfigBuilder;
+
 pub use crate::types::_vpc_config::VpcConfigBuilder;
 
 pub use crate::types::_cluster_orchestrator::ClusterOrchestratorBuilder;
@@ -313,6 +315,8 @@ pub use crate::types::_model_deploy_result::ModelDeployResultBuilder;
 
 pub use crate::types::_auto_ml_resolved_attributes::AutoMlResolvedAttributesBuilder;
 
+pub use crate::types::_cluster_restricted_instance_groups_config_output::ClusterRestrictedInstanceGroupsConfigOutputBuilder;
+
 pub use crate::types::_cluster_auto_scaling_config_output::ClusterAutoScalingConfigOutputBuilder;
 
 pub use crate::types::_cluster_event_detail::ClusterEventDetailBuilder;
@@ -500,6 +504,8 @@ pub use crate::types::_emr_serverless_compute_config::EmrServerlessComputeConfig
 pub use crate::types::_cluster_instance_group_specification::ClusterInstanceGroupSpecificationBuilder;
 
 pub use crate::types::_cluster_restricted_instance_group_specification::ClusterRestrictedInstanceGroupSpecificationBuilder;
+
+pub use crate::types::_cluster_shared_environment_config::ClusterSharedEnvironmentConfigBuilder;
 
 pub use crate::types::_cluster_orchestrator_eks_config::ClusterOrchestratorEksConfigBuilder;
 
@@ -714,6 +720,8 @@ pub use crate::types::_candidate_properties::CandidatePropertiesBuilder;
 pub use crate::types::_cluster_instance_group_details::ClusterInstanceGroupDetailsBuilder;
 
 pub use crate::types::_cluster_restricted_instance_group_details::ClusterRestrictedInstanceGroupDetailsBuilder;
+
+pub use crate::types::_cluster_shared_environment_config_details::ClusterSharedEnvironmentConfigDetailsBuilder;
 
 pub use crate::types::_event_details::EventDetailsBuilder;
 
@@ -1009,6 +1017,8 @@ pub use crate::types::_cluster_network_interface::ClusterNetworkInterfaceBuilder
 
 pub use crate::types::_environment_config::EnvironmentConfigBuilder;
 
+pub use crate::types::_f_sx_lustre_config::FSxLustreConfigBuilder;
+
 pub use crate::types::_priority_class::PriorityClassBuilder;
 
 pub use crate::types::_compute_quota_resource_config::ComputeQuotaResourceConfigBuilder;
@@ -1296,8 +1306,6 @@ pub use crate::types::_holiday_config_attributes::HolidayConfigAttributesBuilder
 pub use crate::types::_cluster_spot_options::ClusterSpotOptionsBuilder;
 
 pub use crate::types::_cluster_on_demand_options::ClusterOnDemandOptionsBuilder;
-
-pub use crate::types::_f_sx_lustre_config::FSxLustreConfigBuilder;
 
 pub use crate::types::_accelerator_partition_config::AcceleratorPartitionConfigBuilder;
 

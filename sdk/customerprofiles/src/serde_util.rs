@@ -654,6 +654,30 @@ pub(crate) fn batch_get_profile_error_correct_errors(
     builder
 }
 
+pub(crate) fn batch_put_profile_object_error_item_correct_errors(
+    mut builder: crate::types::builders::BatchPutProfileObjectErrorItemBuilder,
+) -> crate::types::builders::BatchPutProfileObjectErrorItemBuilder {
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.code.is_none() {
+        builder.code = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn batch_put_profile_object_response_item_correct_errors(
+    mut builder: crate::types::builders::BatchPutProfileObjectResponseItemBuilder,
+) -> crate::types::builders::BatchPutProfileObjectResponseItemBuilder {
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.profile_object_unique_key.is_none() {
+        builder.profile_object_unique_key = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn conflict_resolution_correct_errors(
     mut builder: crate::types::builders::ConflictResolutionBuilder,
 ) -> crate::types::builders::ConflictResolutionBuilder {

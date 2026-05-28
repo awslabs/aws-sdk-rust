@@ -57,6 +57,8 @@ pub struct CreateTrainedModelInput {
     /// <p>Do not use aws:, AWS:, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has aws as its prefix but the key does not, then Clean Rooms ML considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of aws do not count against your tags per resource limit.</p></li>
     /// </ul>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p>The account ID of the member that is responsible for paying for model training costs.</p>
+    pub ml_model_training_payer_account_id: ::std::option::Option<::std::string::String>,
 }
 impl CreateTrainedModelInput {
     /// <p>The membership ID of the member that is creating the trained model.</p>
@@ -143,6 +145,10 @@ impl CreateTrainedModelInput {
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
+    /// <p>The account ID of the member that is responsible for paying for model training costs.</p>
+    pub fn ml_model_training_payer_account_id(&self) -> ::std::option::Option<&str> {
+        self.ml_model_training_payer_account_id.as_deref()
+    }
 }
 impl CreateTrainedModelInput {
     /// Creates a new builder-style object to manufacture [`CreateTrainedModelInput`](crate::operation::create_trained_model::CreateTrainedModelInput).
@@ -168,6 +174,7 @@ pub struct CreateTrainedModelInputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) kms_key_arn: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) ml_model_training_payer_account_id: ::std::option::Option<::std::string::String>,
 }
 impl CreateTrainedModelInputBuilder {
     /// <p>The membership ID of the member that is creating the trained model.</p>
@@ -483,6 +490,20 @@ impl CreateTrainedModelInputBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
+    /// <p>The account ID of the member that is responsible for paying for model training costs.</p>
+    pub fn ml_model_training_payer_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.ml_model_training_payer_account_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The account ID of the member that is responsible for paying for model training costs.</p>
+    pub fn set_ml_model_training_payer_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.ml_model_training_payer_account_id = input;
+        self
+    }
+    /// <p>The account ID of the member that is responsible for paying for model training costs.</p>
+    pub fn get_ml_model_training_payer_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ml_model_training_payer_account_id
+    }
     /// Consumes the builder and constructs a [`CreateTrainedModelInput`](crate::operation::create_trained_model::CreateTrainedModelInput).
     pub fn build(
         self,
@@ -502,6 +523,7 @@ impl CreateTrainedModelInputBuilder {
             description: self.description,
             kms_key_arn: self.kms_key_arn,
             tags: self.tags,
+            ml_model_training_payer_account_id: self.ml_model_training_payer_account_id,
         })
     }
 }

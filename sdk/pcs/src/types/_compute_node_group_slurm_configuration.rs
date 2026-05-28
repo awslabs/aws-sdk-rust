@@ -4,10 +4,16 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ComputeNodeGroupSlurmConfiguration {
+    /// <p>The time (in seconds) before an idle node is scaled down. If not specified, the cluster-level setting applies. This overrides the cluster-level <code>scaleDownIdleTimeInSeconds</code> setting. A value of <code>-1</code> removes the override and applies the cluster-level setting to this compute node group. Requires Slurm version 25.11 or later.</p>
+    pub scale_down_idle_time_in_seconds: ::std::option::Option<i32>,
     /// <p>Additional Slurm-specific configuration that directly maps to Slurm settings.</p>
     pub slurm_custom_settings: ::std::option::Option<::std::vec::Vec<crate::types::SlurmCustomSetting>>,
 }
 impl ComputeNodeGroupSlurmConfiguration {
+    /// <p>The time (in seconds) before an idle node is scaled down. If not specified, the cluster-level setting applies. This overrides the cluster-level <code>scaleDownIdleTimeInSeconds</code> setting. A value of <code>-1</code> removes the override and applies the cluster-level setting to this compute node group. Requires Slurm version 25.11 or later.</p>
+    pub fn scale_down_idle_time_in_seconds(&self) -> ::std::option::Option<i32> {
+        self.scale_down_idle_time_in_seconds
+    }
     /// <p>Additional Slurm-specific configuration that directly maps to Slurm settings.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.slurm_custom_settings.is_none()`.
@@ -26,9 +32,24 @@ impl ComputeNodeGroupSlurmConfiguration {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct ComputeNodeGroupSlurmConfigurationBuilder {
+    pub(crate) scale_down_idle_time_in_seconds: ::std::option::Option<i32>,
     pub(crate) slurm_custom_settings: ::std::option::Option<::std::vec::Vec<crate::types::SlurmCustomSetting>>,
 }
 impl ComputeNodeGroupSlurmConfigurationBuilder {
+    /// <p>The time (in seconds) before an idle node is scaled down. If not specified, the cluster-level setting applies. This overrides the cluster-level <code>scaleDownIdleTimeInSeconds</code> setting. A value of <code>-1</code> removes the override and applies the cluster-level setting to this compute node group. Requires Slurm version 25.11 or later.</p>
+    pub fn scale_down_idle_time_in_seconds(mut self, input: i32) -> Self {
+        self.scale_down_idle_time_in_seconds = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The time (in seconds) before an idle node is scaled down. If not specified, the cluster-level setting applies. This overrides the cluster-level <code>scaleDownIdleTimeInSeconds</code> setting. A value of <code>-1</code> removes the override and applies the cluster-level setting to this compute node group. Requires Slurm version 25.11 or later.</p>
+    pub fn set_scale_down_idle_time_in_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.scale_down_idle_time_in_seconds = input;
+        self
+    }
+    /// <p>The time (in seconds) before an idle node is scaled down. If not specified, the cluster-level setting applies. This overrides the cluster-level <code>scaleDownIdleTimeInSeconds</code> setting. A value of <code>-1</code> removes the override and applies the cluster-level setting to this compute node group. Requires Slurm version 25.11 or later.</p>
+    pub fn get_scale_down_idle_time_in_seconds(&self) -> &::std::option::Option<i32> {
+        &self.scale_down_idle_time_in_seconds
+    }
     /// Appends an item to `slurm_custom_settings`.
     ///
     /// To override the contents of this collection use [`set_slurm_custom_settings`](Self::set_slurm_custom_settings).
@@ -52,6 +73,7 @@ impl ComputeNodeGroupSlurmConfigurationBuilder {
     /// Consumes the builder and constructs a [`ComputeNodeGroupSlurmConfiguration`](crate::types::ComputeNodeGroupSlurmConfiguration).
     pub fn build(self) -> crate::types::ComputeNodeGroupSlurmConfiguration {
         crate::types::ComputeNodeGroupSlurmConfiguration {
+            scale_down_idle_time_in_seconds: self.scale_down_idle_time_in_seconds,
             slurm_custom_settings: self.slurm_custom_settings,
         }
     }

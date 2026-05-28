@@ -5,11 +5,17 @@
 pub struct DeleteInvoiceUnitInput {
     /// <p>The ARN to identify an invoice unit. This information can't be modified or deleted.</p>
     pub invoice_unit_arn: ::std::option::Option<::std::string::String>,
+    /// <p>A unique, case-sensitive identifier that you provide to ensure idempotency of the request.</p>
+    pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl DeleteInvoiceUnitInput {
     /// <p>The ARN to identify an invoice unit. This information can't be modified or deleted.</p>
     pub fn invoice_unit_arn(&self) -> ::std::option::Option<&str> {
         self.invoice_unit_arn.as_deref()
+    }
+    /// <p>A unique, case-sensitive identifier that you provide to ensure idempotency of the request.</p>
+    pub fn client_token(&self) -> ::std::option::Option<&str> {
+        self.client_token.as_deref()
     }
 }
 impl DeleteInvoiceUnitInput {
@@ -24,6 +30,7 @@ impl DeleteInvoiceUnitInput {
 #[non_exhaustive]
 pub struct DeleteInvoiceUnitInputBuilder {
     pub(crate) invoice_unit_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
 impl DeleteInvoiceUnitInputBuilder {
     /// <p>The ARN to identify an invoice unit. This information can't be modified or deleted.</p>
@@ -41,12 +48,27 @@ impl DeleteInvoiceUnitInputBuilder {
     pub fn get_invoice_unit_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.invoice_unit_arn
     }
+    /// <p>A unique, case-sensitive identifier that you provide to ensure idempotency of the request.</p>
+    pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.client_token = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>A unique, case-sensitive identifier that you provide to ensure idempotency of the request.</p>
+    pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.client_token = input;
+        self
+    }
+    /// <p>A unique, case-sensitive identifier that you provide to ensure idempotency of the request.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
+    }
     /// Consumes the builder and constructs a [`DeleteInvoiceUnitInput`](crate::operation::delete_invoice_unit::DeleteInvoiceUnitInput).
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::delete_invoice_unit::DeleteInvoiceUnitInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_invoice_unit::DeleteInvoiceUnitInput {
             invoice_unit_arn: self.invoice_unit_arn,
+            client_token: self.client_token,
         })
     }
 }

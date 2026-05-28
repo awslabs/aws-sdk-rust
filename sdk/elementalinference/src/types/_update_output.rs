@@ -4,24 +4,25 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateOutput {
-    /// <p>The name start here</p>
+    /// <p>The name of the output.</p>
     pub name: ::std::string::String,
-    /// <p>A typed property for an output in a feed. It is used in the UpdateFeed action. It identifies the action for Elemental Inference to perform. It also provides a repository for the results of that action. For example, CroppingConfig output will contain the metadata for the crop feature.</p>
+    /// <p>A typed property for an output in a feed. It identifies the action for Elemental Inference to perform. It also provides a repository for the results of that action. For example, CroppingConfig output will contain the metadata for the crop feature.</p>
     pub output_config: ::std::option::Option<crate::types::OutputConfig>,
     /// <p>The status of the output.</p>
     pub status: crate::types::OutputStatus,
     /// <p>A description of the output.</p>
     pub description: ::std::option::Option<::std::string::String>,
-    /// <p>This property is set by the service when you add the output to the feed, and indicates how you added the output. True means that you used the AssociateFeed operation. False means that you used the CreateFeed or UpdateFeed operation. Use GetFeed to obtain the value. If the value is True, include this field here with a value of True. If the value is False, omit the field here.</p>
+    /// <p>Elemental Inference originally sets this parameter to True if this output was created by AssociateFeed or to False if this output was created by CreateFeed or UpdateFeed.</p>
+    /// <p>You must not change this value. Therefore, use GetFeed to determine the current value. Then in the UpdateFeed request, if the current value is True, include this parameter with a value of True. If it's False, omit the parameter.</p>
     pub from_association: ::std::option::Option<bool>,
 }
 impl UpdateOutput {
-    /// <p>The name start here</p>
+    /// <p>The name of the output.</p>
     pub fn name(&self) -> &str {
         use std::ops::Deref;
         self.name.deref()
     }
-    /// <p>A typed property for an output in a feed. It is used in the UpdateFeed action. It identifies the action for Elemental Inference to perform. It also provides a repository for the results of that action. For example, CroppingConfig output will contain the metadata for the crop feature.</p>
+    /// <p>A typed property for an output in a feed. It identifies the action for Elemental Inference to perform. It also provides a repository for the results of that action. For example, CroppingConfig output will contain the metadata for the crop feature.</p>
     pub fn output_config(&self) -> ::std::option::Option<&crate::types::OutputConfig> {
         self.output_config.as_ref()
     }
@@ -33,7 +34,8 @@ impl UpdateOutput {
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>This property is set by the service when you add the output to the feed, and indicates how you added the output. True means that you used the AssociateFeed operation. False means that you used the CreateFeed or UpdateFeed operation. Use GetFeed to obtain the value. If the value is True, include this field here with a value of True. If the value is False, omit the field here.</p>
+    /// <p>Elemental Inference originally sets this parameter to True if this output was created by AssociateFeed or to False if this output was created by CreateFeed or UpdateFeed.</p>
+    /// <p>You must not change this value. Therefore, use GetFeed to determine the current value. Then in the UpdateFeed request, if the current value is True, include this parameter with a value of True. If it's False, omit the parameter.</p>
     pub fn from_association(&self) -> ::std::option::Option<bool> {
         self.from_association
     }
@@ -56,33 +58,33 @@ pub struct UpdateOutputBuilder {
     pub(crate) from_association: ::std::option::Option<bool>,
 }
 impl UpdateOutputBuilder {
-    /// <p>The name start here</p>
+    /// <p>The name of the output.</p>
     /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name start here</p>
+    /// <p>The name of the output.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// <p>The name start here</p>
+    /// <p>The name of the output.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p>A typed property for an output in a feed. It is used in the UpdateFeed action. It identifies the action for Elemental Inference to perform. It also provides a repository for the results of that action. For example, CroppingConfig output will contain the metadata for the crop feature.</p>
+    /// <p>A typed property for an output in a feed. It identifies the action for Elemental Inference to perform. It also provides a repository for the results of that action. For example, CroppingConfig output will contain the metadata for the crop feature.</p>
     /// This field is required.
     pub fn output_config(mut self, input: crate::types::OutputConfig) -> Self {
         self.output_config = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A typed property for an output in a feed. It is used in the UpdateFeed action. It identifies the action for Elemental Inference to perform. It also provides a repository for the results of that action. For example, CroppingConfig output will contain the metadata for the crop feature.</p>
+    /// <p>A typed property for an output in a feed. It identifies the action for Elemental Inference to perform. It also provides a repository for the results of that action. For example, CroppingConfig output will contain the metadata for the crop feature.</p>
     pub fn set_output_config(mut self, input: ::std::option::Option<crate::types::OutputConfig>) -> Self {
         self.output_config = input;
         self
     }
-    /// <p>A typed property for an output in a feed. It is used in the UpdateFeed action. It identifies the action for Elemental Inference to perform. It also provides a repository for the results of that action. For example, CroppingConfig output will contain the metadata for the crop feature.</p>
+    /// <p>A typed property for an output in a feed. It identifies the action for Elemental Inference to perform. It also provides a repository for the results of that action. For example, CroppingConfig output will contain the metadata for the crop feature.</p>
     pub fn get_output_config(&self) -> &::std::option::Option<crate::types::OutputConfig> {
         &self.output_config
     }
@@ -115,17 +117,20 @@ impl UpdateOutputBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
-    /// <p>This property is set by the service when you add the output to the feed, and indicates how you added the output. True means that you used the AssociateFeed operation. False means that you used the CreateFeed or UpdateFeed operation. Use GetFeed to obtain the value. If the value is True, include this field here with a value of True. If the value is False, omit the field here.</p>
+    /// <p>Elemental Inference originally sets this parameter to True if this output was created by AssociateFeed or to False if this output was created by CreateFeed or UpdateFeed.</p>
+    /// <p>You must not change this value. Therefore, use GetFeed to determine the current value. Then in the UpdateFeed request, if the current value is True, include this parameter with a value of True. If it's False, omit the parameter.</p>
     pub fn from_association(mut self, input: bool) -> Self {
         self.from_association = ::std::option::Option::Some(input);
         self
     }
-    /// <p>This property is set by the service when you add the output to the feed, and indicates how you added the output. True means that you used the AssociateFeed operation. False means that you used the CreateFeed or UpdateFeed operation. Use GetFeed to obtain the value. If the value is True, include this field here with a value of True. If the value is False, omit the field here.</p>
+    /// <p>Elemental Inference originally sets this parameter to True if this output was created by AssociateFeed or to False if this output was created by CreateFeed or UpdateFeed.</p>
+    /// <p>You must not change this value. Therefore, use GetFeed to determine the current value. Then in the UpdateFeed request, if the current value is True, include this parameter with a value of True. If it's False, omit the parameter.</p>
     pub fn set_from_association(mut self, input: ::std::option::Option<bool>) -> Self {
         self.from_association = input;
         self
     }
-    /// <p>This property is set by the service when you add the output to the feed, and indicates how you added the output. True means that you used the AssociateFeed operation. False means that you used the CreateFeed or UpdateFeed operation. Use GetFeed to obtain the value. If the value is True, include this field here with a value of True. If the value is False, omit the field here.</p>
+    /// <p>Elemental Inference originally sets this parameter to True if this output was created by AssociateFeed or to False if this output was created by CreateFeed or UpdateFeed.</p>
+    /// <p>You must not change this value. Therefore, use GetFeed to determine the current value. Then in the UpdateFeed request, if the current value is True, include this parameter with a value of True. If it's False, omit the parameter.</p>
     pub fn get_from_association(&self) -> &::std::option::Option<bool> {
         &self.from_association
     }

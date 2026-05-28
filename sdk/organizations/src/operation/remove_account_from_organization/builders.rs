@@ -24,7 +24,8 @@ impl crate::operation::remove_account_from_organization::builders::RemoveAccount
 ///
 /// <p>Removes the specified account from the organization.</p>
 /// <p>The removed account becomes a standalone account that isn't a member of any organization. It's no longer subject to any policies and is responsible for its own bill payments. The organization's management account is no longer charged for any expenses accrued by the member account after it's removed from the organization.</p>
-/// <p>You can only call this operation from the management account. Member accounts can remove themselves with <code>LeaveOrganization</code> instead.</p><important>
+/// <p>You can only call this operation from the management account. Member accounts can remove themselves with <code>LeaveOrganization</code> instead.</p>
+/// <p>When an account is removed from an organization, Organizations logs a membership event in CloudTrail. The event is an <code>AccountDepartedOrganization</code> event with <code>departedMethod:Removed</code> and <code>departedTime</code>. This event is available only in the management account's event history.</p><important>
 /// <ul>
 /// <li>
 /// <p>You can remove an account from your organization only if the account is configured with the information required to operate as a standalone account. When you create an account in an organization using the Organizations console, API, or CLI commands, the information required of standalone accounts is <i>not</i> automatically collected. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_account-before-remove.html">Considerations before removing an account from an organization</a> in the <i>Organizations User Guide</i>.</p></li>

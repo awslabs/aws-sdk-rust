@@ -7,10 +7,14 @@ pub struct CreateCustomModelInput {
     pub model_name: ::std::option::Option<::std::string::String>,
     /// <p>The data source for the model. The Amazon S3 URI in the model source must be for the Amazon-managed Amazon S3 bucket containing your model artifacts.</p>
     pub model_source_config: ::std::option::Option<crate::types::ModelDataSource>,
+    /// <p>The data source for the custom model. Use this field to specify a SageMaker AI model package ARN as the source for your custom model. Amazon Bedrock resolves the model package to retrieve the model artifacts.</p>
+    /// <p>You can specify either <code>customModelDataSource</code> or <code>modelSourceConfig</code>, but not both.</p>
+    pub custom_model_data_source: ::std::option::Option<crate::types::CustomModelDataSource>,
     /// <p>The Amazon Resource Name (ARN) of the customer managed KMS key to encrypt the custom model. If you don't provide a KMS key, Amazon Bedrock uses an Amazon Web Services-managed KMS key to encrypt the model.</p>
     /// <p>If you provide a customer managed KMS key, your Amazon Bedrock service role must have permissions to use it. For more information see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/encryption-import-model.html">Encryption of imported models</a>.</p>
     pub model_kms_key_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of an IAM service role that Amazon Bedrock assumes to perform tasks on your behalf. This role must have permissions to access the Amazon S3 bucket containing your model artifacts and the KMS key (if specified). For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-import-iam-role.html">Setting up an IAM service role for importing models</a> in the Amazon Bedrock User Guide.</p>
+    /// <p>This field is required when you use <code>modelSourceConfig</code> with an Amazon S3 data source. It is not required when you use <code>customModelDataSource</code> with a model package ARN, because Amazon Bedrock uses its own credentials to access the model artifacts.</p>
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>A list of key-value pairs to associate with the custom model resource. You can use these tags to organize and identify your resources.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/tagging.html">Tagging resources</a> in the <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Amazon Bedrock User Guide</a>.</p>
@@ -27,12 +31,18 @@ impl CreateCustomModelInput {
     pub fn model_source_config(&self) -> ::std::option::Option<&crate::types::ModelDataSource> {
         self.model_source_config.as_ref()
     }
+    /// <p>The data source for the custom model. Use this field to specify a SageMaker AI model package ARN as the source for your custom model. Amazon Bedrock resolves the model package to retrieve the model artifacts.</p>
+    /// <p>You can specify either <code>customModelDataSource</code> or <code>modelSourceConfig</code>, but not both.</p>
+    pub fn custom_model_data_source(&self) -> ::std::option::Option<&crate::types::CustomModelDataSource> {
+        self.custom_model_data_source.as_ref()
+    }
     /// <p>The Amazon Resource Name (ARN) of the customer managed KMS key to encrypt the custom model. If you don't provide a KMS key, Amazon Bedrock uses an Amazon Web Services-managed KMS key to encrypt the model.</p>
     /// <p>If you provide a customer managed KMS key, your Amazon Bedrock service role must have permissions to use it. For more information see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/encryption-import-model.html">Encryption of imported models</a>.</p>
     pub fn model_kms_key_arn(&self) -> ::std::option::Option<&str> {
         self.model_kms_key_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM service role that Amazon Bedrock assumes to perform tasks on your behalf. This role must have permissions to access the Amazon S3 bucket containing your model artifacts and the KMS key (if specified). For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-import-iam-role.html">Setting up an IAM service role for importing models</a> in the Amazon Bedrock User Guide.</p>
+    /// <p>This field is required when you use <code>modelSourceConfig</code> with an Amazon S3 data source. It is not required when you use <code>customModelDataSource</code> with a model package ARN, because Amazon Bedrock uses its own credentials to access the model artifacts.</p>
     pub fn role_arn(&self) -> ::std::option::Option<&str> {
         self.role_arn.as_deref()
     }
@@ -61,6 +71,7 @@ impl CreateCustomModelInput {
 pub struct CreateCustomModelInputBuilder {
     pub(crate) model_name: ::std::option::Option<::std::string::String>,
     pub(crate) model_source_config: ::std::option::Option<crate::types::ModelDataSource>,
+    pub(crate) custom_model_data_source: ::std::option::Option<crate::types::CustomModelDataSource>,
     pub(crate) model_kms_key_arn: ::std::option::Option<::std::string::String>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) model_tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
@@ -83,7 +94,6 @@ impl CreateCustomModelInputBuilder {
         &self.model_name
     }
     /// <p>The data source for the model. The Amazon S3 URI in the model source must be for the Amazon-managed Amazon S3 bucket containing your model artifacts.</p>
-    /// This field is required.
     pub fn model_source_config(mut self, input: crate::types::ModelDataSource) -> Self {
         self.model_source_config = ::std::option::Option::Some(input);
         self
@@ -96,6 +106,23 @@ impl CreateCustomModelInputBuilder {
     /// <p>The data source for the model. The Amazon S3 URI in the model source must be for the Amazon-managed Amazon S3 bucket containing your model artifacts.</p>
     pub fn get_model_source_config(&self) -> &::std::option::Option<crate::types::ModelDataSource> {
         &self.model_source_config
+    }
+    /// <p>The data source for the custom model. Use this field to specify a SageMaker AI model package ARN as the source for your custom model. Amazon Bedrock resolves the model package to retrieve the model artifacts.</p>
+    /// <p>You can specify either <code>customModelDataSource</code> or <code>modelSourceConfig</code>, but not both.</p>
+    pub fn custom_model_data_source(mut self, input: crate::types::CustomModelDataSource) -> Self {
+        self.custom_model_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The data source for the custom model. Use this field to specify a SageMaker AI model package ARN as the source for your custom model. Amazon Bedrock resolves the model package to retrieve the model artifacts.</p>
+    /// <p>You can specify either <code>customModelDataSource</code> or <code>modelSourceConfig</code>, but not both.</p>
+    pub fn set_custom_model_data_source(mut self, input: ::std::option::Option<crate::types::CustomModelDataSource>) -> Self {
+        self.custom_model_data_source = input;
+        self
+    }
+    /// <p>The data source for the custom model. Use this field to specify a SageMaker AI model package ARN as the source for your custom model. Amazon Bedrock resolves the model package to retrieve the model artifacts.</p>
+    /// <p>You can specify either <code>customModelDataSource</code> or <code>modelSourceConfig</code>, but not both.</p>
+    pub fn get_custom_model_data_source(&self) -> &::std::option::Option<crate::types::CustomModelDataSource> {
+        &self.custom_model_data_source
     }
     /// <p>The Amazon Resource Name (ARN) of the customer managed KMS key to encrypt the custom model. If you don't provide a KMS key, Amazon Bedrock uses an Amazon Web Services-managed KMS key to encrypt the model.</p>
     /// <p>If you provide a customer managed KMS key, your Amazon Bedrock service role must have permissions to use it. For more information see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/encryption-import-model.html">Encryption of imported models</a>.</p>
@@ -115,16 +142,19 @@ impl CreateCustomModelInputBuilder {
         &self.model_kms_key_arn
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM service role that Amazon Bedrock assumes to perform tasks on your behalf. This role must have permissions to access the Amazon S3 bucket containing your model artifacts and the KMS key (if specified). For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-import-iam-role.html">Setting up an IAM service role for importing models</a> in the Amazon Bedrock User Guide.</p>
+    /// <p>This field is required when you use <code>modelSourceConfig</code> with an Amazon S3 data source. It is not required when you use <code>customModelDataSource</code> with a model package ARN, because Amazon Bedrock uses its own credentials to access the model artifacts.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM service role that Amazon Bedrock assumes to perform tasks on your behalf. This role must have permissions to access the Amazon S3 bucket containing your model artifacts and the KMS key (if specified). For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-import-iam-role.html">Setting up an IAM service role for importing models</a> in the Amazon Bedrock User Guide.</p>
+    /// <p>This field is required when you use <code>modelSourceConfig</code> with an Amazon S3 data source. It is not required when you use <code>customModelDataSource</code> with a model package ARN, because Amazon Bedrock uses its own credentials to access the model artifacts.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM service role that Amazon Bedrock assumes to perform tasks on your behalf. This role must have permissions to access the Amazon S3 bucket containing your model artifacts and the KMS key (if specified). For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-import-iam-role.html">Setting up an IAM service role for importing models</a> in the Amazon Bedrock User Guide.</p>
+    /// <p>This field is required when you use <code>modelSourceConfig</code> with an Amazon S3 data source. It is not required when you use <code>customModelDataSource</code> with a model package ARN, because Amazon Bedrock uses its own credentials to access the model artifacts.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.role_arn
     }
@@ -172,6 +202,7 @@ impl CreateCustomModelInputBuilder {
         ::std::result::Result::Ok(crate::operation::create_custom_model::CreateCustomModelInput {
             model_name: self.model_name,
             model_source_config: self.model_source_config,
+            custom_model_data_source: self.custom_model_data_source,
             model_kms_key_arn: self.model_kms_key_arn,
             role_arn: self.role_arn,
             model_tags: self.model_tags,

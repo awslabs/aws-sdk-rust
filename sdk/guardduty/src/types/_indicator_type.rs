@@ -21,7 +21,11 @@
 ///     IndicatorType::MaliciousDomain => { /* ... */ },
 ///     IndicatorType::MaliciousFile => { /* ... */ },
 ///     IndicatorType::MaliciousIp => { /* ... */ },
+///     IndicatorType::MaliciousPackage => { /* ... */ },
 ///     IndicatorType::MaliciousProcess => { /* ... */ },
+///     IndicatorType::Misconfiguration => { /* ... */ },
+///     IndicatorType::Reachability => { /* ... */ },
+///     IndicatorType::SensitiveData => { /* ... */ },
 ///     IndicatorType::SuspiciousNetwork => { /* ... */ },
 ///     IndicatorType::SuspiciousProcess => { /* ... */ },
 ///     IndicatorType::SuspiciousUserAgent => { /* ... */ },
@@ -29,6 +33,7 @@
 ///     IndicatorType::UnusualApiForAccount => { /* ... */ },
 ///     IndicatorType::UnusualAsnForAccount => { /* ... */ },
 ///     IndicatorType::UnusualAsnForUser => { /* ... */ },
+///     IndicatorType::Vulnerability => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -76,7 +81,15 @@ pub enum IndicatorType {
     #[allow(missing_docs)] // documentation missing in model
     MaliciousIp,
     #[allow(missing_docs)] // documentation missing in model
+    MaliciousPackage,
+    #[allow(missing_docs)] // documentation missing in model
     MaliciousProcess,
+    #[allow(missing_docs)] // documentation missing in model
+    Misconfiguration,
+    #[allow(missing_docs)] // documentation missing in model
+    Reachability,
+    #[allow(missing_docs)] // documentation missing in model
+    SensitiveData,
     #[allow(missing_docs)] // documentation missing in model
     SuspiciousNetwork,
     #[allow(missing_docs)] // documentation missing in model
@@ -91,6 +104,8 @@ pub enum IndicatorType {
     UnusualAsnForAccount,
     #[allow(missing_docs)] // documentation missing in model
     UnusualAsnForUser,
+    #[allow(missing_docs)] // documentation missing in model
+    Vulnerability,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -107,7 +122,11 @@ impl ::std::convert::From<&str> for IndicatorType {
             "MALICIOUS_DOMAIN" => IndicatorType::MaliciousDomain,
             "MALICIOUS_FILE" => IndicatorType::MaliciousFile,
             "MALICIOUS_IP" => IndicatorType::MaliciousIp,
+            "MALICIOUS_PACKAGE" => IndicatorType::MaliciousPackage,
             "MALICIOUS_PROCESS" => IndicatorType::MaliciousProcess,
+            "MISCONFIGURATION" => IndicatorType::Misconfiguration,
+            "REACHABILITY" => IndicatorType::Reachability,
+            "SENSITIVE_DATA" => IndicatorType::SensitiveData,
             "SUSPICIOUS_NETWORK" => IndicatorType::SuspiciousNetwork,
             "SUSPICIOUS_PROCESS" => IndicatorType::SuspiciousProcess,
             "SUSPICIOUS_USER_AGENT" => IndicatorType::SuspiciousUserAgent,
@@ -115,6 +134,7 @@ impl ::std::convert::From<&str> for IndicatorType {
             "UNUSUAL_API_FOR_ACCOUNT" => IndicatorType::UnusualApiForAccount,
             "UNUSUAL_ASN_FOR_ACCOUNT" => IndicatorType::UnusualAsnForAccount,
             "UNUSUAL_ASN_FOR_USER" => IndicatorType::UnusualAsnForUser,
+            "VULNERABILITY" => IndicatorType::Vulnerability,
             other => IndicatorType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -139,7 +159,11 @@ impl IndicatorType {
             IndicatorType::MaliciousDomain => "MALICIOUS_DOMAIN",
             IndicatorType::MaliciousFile => "MALICIOUS_FILE",
             IndicatorType::MaliciousIp => "MALICIOUS_IP",
+            IndicatorType::MaliciousPackage => "MALICIOUS_PACKAGE",
             IndicatorType::MaliciousProcess => "MALICIOUS_PROCESS",
+            IndicatorType::Misconfiguration => "MISCONFIGURATION",
+            IndicatorType::Reachability => "REACHABILITY",
+            IndicatorType::SensitiveData => "SENSITIVE_DATA",
             IndicatorType::SuspiciousNetwork => "SUSPICIOUS_NETWORK",
             IndicatorType::SuspiciousProcess => "SUSPICIOUS_PROCESS",
             IndicatorType::SuspiciousUserAgent => "SUSPICIOUS_USER_AGENT",
@@ -147,6 +171,7 @@ impl IndicatorType {
             IndicatorType::UnusualApiForAccount => "UNUSUAL_API_FOR_ACCOUNT",
             IndicatorType::UnusualAsnForAccount => "UNUSUAL_ASN_FOR_ACCOUNT",
             IndicatorType::UnusualAsnForUser => "UNUSUAL_ASN_FOR_USER",
+            IndicatorType::Vulnerability => "VULNERABILITY",
             IndicatorType::Unknown(value) => value.as_str(),
         }
     }
@@ -162,7 +187,11 @@ impl IndicatorType {
             "MALICIOUS_DOMAIN",
             "MALICIOUS_FILE",
             "MALICIOUS_IP",
+            "MALICIOUS_PACKAGE",
             "MALICIOUS_PROCESS",
+            "MISCONFIGURATION",
+            "REACHABILITY",
+            "SENSITIVE_DATA",
             "SUSPICIOUS_NETWORK",
             "SUSPICIOUS_PROCESS",
             "SUSPICIOUS_USER_AGENT",
@@ -170,6 +199,7 @@ impl IndicatorType {
             "UNUSUAL_API_FOR_ACCOUNT",
             "UNUSUAL_ASN_FOR_ACCOUNT",
             "UNUSUAL_ASN_FOR_USER",
+            "VULNERABILITY",
         ]
     }
 }
@@ -202,7 +232,11 @@ impl ::std::fmt::Display for IndicatorType {
             IndicatorType::MaliciousDomain => write!(f, "MALICIOUS_DOMAIN"),
             IndicatorType::MaliciousFile => write!(f, "MALICIOUS_FILE"),
             IndicatorType::MaliciousIp => write!(f, "MALICIOUS_IP"),
+            IndicatorType::MaliciousPackage => write!(f, "MALICIOUS_PACKAGE"),
             IndicatorType::MaliciousProcess => write!(f, "MALICIOUS_PROCESS"),
+            IndicatorType::Misconfiguration => write!(f, "MISCONFIGURATION"),
+            IndicatorType::Reachability => write!(f, "REACHABILITY"),
+            IndicatorType::SensitiveData => write!(f, "SENSITIVE_DATA"),
             IndicatorType::SuspiciousNetwork => write!(f, "SUSPICIOUS_NETWORK"),
             IndicatorType::SuspiciousProcess => write!(f, "SUSPICIOUS_PROCESS"),
             IndicatorType::SuspiciousUserAgent => write!(f, "SUSPICIOUS_USER_AGENT"),
@@ -210,6 +244,7 @@ impl ::std::fmt::Display for IndicatorType {
             IndicatorType::UnusualApiForAccount => write!(f, "UNUSUAL_API_FOR_ACCOUNT"),
             IndicatorType::UnusualAsnForAccount => write!(f, "UNUSUAL_ASN_FOR_ACCOUNT"),
             IndicatorType::UnusualAsnForUser => write!(f, "UNUSUAL_ASN_FOR_USER"),
+            IndicatorType::Vulnerability => write!(f, "VULNERABILITY"),
             IndicatorType::Unknown(value) => write!(f, "{value}"),
         }
     }

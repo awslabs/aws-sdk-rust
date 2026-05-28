@@ -165,6 +165,23 @@ impl UpdateClusterFluentBuilder {
     ) -> &::std::option::Option<::std::vec::Vec<crate::types::ClusterRestrictedInstanceGroupSpecification>> {
         self.inner.get_restricted_instance_groups()
     }
+    /// <p>The configuration for the restricted instance groups (RIG) in the SageMaker HyperPod cluster.</p>
+    pub fn restricted_instance_groups_config(mut self, input: crate::types::ClusterRestrictedInstanceGroupsConfig) -> Self {
+        self.inner = self.inner.restricted_instance_groups_config(input);
+        self
+    }
+    /// <p>The configuration for the restricted instance groups (RIG) in the SageMaker HyperPod cluster.</p>
+    pub fn set_restricted_instance_groups_config(
+        mut self,
+        input: ::std::option::Option<crate::types::ClusterRestrictedInstanceGroupsConfig>,
+    ) -> Self {
+        self.inner = self.inner.set_restricted_instance_groups_config(input);
+        self
+    }
+    /// <p>The configuration for the restricted instance groups (RIG) in the SageMaker HyperPod cluster.</p>
+    pub fn get_restricted_instance_groups_config(&self) -> &::std::option::Option<crate::types::ClusterRestrictedInstanceGroupsConfig> {
+        self.inner.get_restricted_instance_groups_config()
+    }
     /// <p>Updates the configuration for managed tier checkpointing on the HyperPod cluster. For example, you can enable or disable the feature and modify the percentage of cluster memory allocated for checkpoint storage.</p>
     pub fn tiered_storage_config(mut self, input: crate::types::ClusterTieredStorageConfig) -> Self {
         self.inner = self.inner.tiered_storage_config(input);

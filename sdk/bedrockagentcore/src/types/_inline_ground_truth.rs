@@ -4,21 +4,21 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InlineGroundTruth {
-    /// assertions for evaluation, reuses common model EvaluationContentList
+    /// <p>Assertions for evaluation, reuses common model EvaluationContentList.</p>
     pub assertions: ::std::option::Option<::std::vec::Vec<crate::types::EvaluationContent>>,
-    /// expectedTrajectory for evaluation, reuses common model EvaluationExpectedTrajectory
+    /// <p>The expected tool call sequence for trajectory evaluation.</p>
     pub expected_trajectory: ::std::option::Option<crate::types::EvaluationExpectedTrajectory>,
     /// <p>A list of per-turn ground truth data, each containing an input prompt and expected response.</p>
     pub turns: ::std::option::Option<::std::vec::Vec<crate::types::GroundTruthTurn>>,
 }
 impl InlineGroundTruth {
-    /// assertions for evaluation, reuses common model EvaluationContentList
+    /// <p>Assertions for evaluation, reuses common model EvaluationContentList.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.assertions.is_none()`.
     pub fn assertions(&self) -> &[crate::types::EvaluationContent] {
         self.assertions.as_deref().unwrap_or_default()
     }
-    /// expectedTrajectory for evaluation, reuses common model EvaluationExpectedTrajectory
+    /// <p>The expected tool call sequence for trajectory evaluation.</p>
     pub fn expected_trajectory(&self) -> ::std::option::Option<&crate::types::EvaluationExpectedTrajectory> {
         self.expected_trajectory.as_ref()
     }
@@ -49,33 +49,33 @@ impl InlineGroundTruthBuilder {
     ///
     /// To override the contents of this collection use [`set_assertions`](Self::set_assertions).
     ///
-    /// assertions for evaluation, reuses common model EvaluationContentList
+    /// <p>Assertions for evaluation, reuses common model EvaluationContentList.</p>
     pub fn assertions(mut self, input: crate::types::EvaluationContent) -> Self {
         let mut v = self.assertions.unwrap_or_default();
         v.push(input);
         self.assertions = ::std::option::Option::Some(v);
         self
     }
-    /// assertions for evaluation, reuses common model EvaluationContentList
+    /// <p>Assertions for evaluation, reuses common model EvaluationContentList.</p>
     pub fn set_assertions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EvaluationContent>>) -> Self {
         self.assertions = input;
         self
     }
-    /// assertions for evaluation, reuses common model EvaluationContentList
+    /// <p>Assertions for evaluation, reuses common model EvaluationContentList.</p>
     pub fn get_assertions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EvaluationContent>> {
         &self.assertions
     }
-    /// expectedTrajectory for evaluation, reuses common model EvaluationExpectedTrajectory
+    /// <p>The expected tool call sequence for trajectory evaluation.</p>
     pub fn expected_trajectory(mut self, input: crate::types::EvaluationExpectedTrajectory) -> Self {
         self.expected_trajectory = ::std::option::Option::Some(input);
         self
     }
-    /// expectedTrajectory for evaluation, reuses common model EvaluationExpectedTrajectory
+    /// <p>The expected tool call sequence for trajectory evaluation.</p>
     pub fn set_expected_trajectory(mut self, input: ::std::option::Option<crate::types::EvaluationExpectedTrajectory>) -> Self {
         self.expected_trajectory = input;
         self
     }
-    /// expectedTrajectory for evaluation, reuses common model EvaluationExpectedTrajectory
+    /// <p>The expected tool call sequence for trajectory evaluation.</p>
     pub fn get_expected_trajectory(&self) -> &::std::option::Option<crate::types::EvaluationExpectedTrajectory> {
         &self.expected_trajectory
     }

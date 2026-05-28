@@ -14,6 +14,7 @@
 /// match scanresultstatus {
 ///     ScanResultStatus::NoThreatsFound => { /* ... */ },
 ///     ScanResultStatus::ThreatsFound => { /* ... */ },
+///     ScanResultStatus::UnknownValue => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -36,7 +37,8 @@
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 ///
-#[allow(missing_docs)] // documentation missing in model
+///
+/// _Note: `ScanResultStatus::Unknown` has been renamed to `::UnknownValue`._
 #[non_exhaustive]
 #[derive(
     ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
@@ -46,6 +48,9 @@ pub enum ScanResultStatus {
     NoThreatsFound,
     #[allow(missing_docs)] // documentation missing in model
     ThreatsFound,
+    ///
+    /// _Note: `::Unknown` has been renamed to `::UnknownValue`._
+    UnknownValue,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -55,6 +60,7 @@ impl ::std::convert::From<&str> for ScanResultStatus {
         match s {
             "NO_THREATS_FOUND" => ScanResultStatus::NoThreatsFound,
             "THREATS_FOUND" => ScanResultStatus::ThreatsFound,
+            "UNKNOWN" => ScanResultStatus::UnknownValue,
             other => ScanResultStatus::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -72,12 +78,13 @@ impl ScanResultStatus {
         match self {
             ScanResultStatus::NoThreatsFound => "NO_THREATS_FOUND",
             ScanResultStatus::ThreatsFound => "THREATS_FOUND",
+            ScanResultStatus::UnknownValue => "UNKNOWN",
             ScanResultStatus::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["NO_THREATS_FOUND", "THREATS_FOUND"]
+        &["NO_THREATS_FOUND", "THREATS_FOUND", "UNKNOWN"]
     }
 }
 impl ::std::convert::AsRef<str> for ScanResultStatus {
@@ -102,6 +109,7 @@ impl ::std::fmt::Display for ScanResultStatus {
         match self {
             ScanResultStatus::NoThreatsFound => write!(f, "NO_THREATS_FOUND"),
             ScanResultStatus::ThreatsFound => write!(f, "THREATS_FOUND"),
+            ScanResultStatus::UnknownValue => write!(f, "UNKNOWN"),
             ScanResultStatus::Unknown(value) => write!(f, "{value}"),
         }
     }

@@ -189,6 +189,10 @@ pub(crate) fn de_put_environment_blueprint_configuration(
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                "allowUserProvidedConfigurations" => {
+                    builder =
+                        builder.set_allow_user_provided_configurations(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                }
                 "createdAt" => {
                     builder = builder.set_created_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                         tokens.next(),
@@ -240,6 +244,11 @@ pub(crate) fn de_put_environment_blueprint_configuration(
                 }
                 "regionalParameters" => {
                     builder = builder.set_regional_parameters(crate::protocol_serde::shape_regional_parameter_map::de_regional_parameter_map(
+                        tokens, _value,
+                    )?);
+                }
+                "resourceConfigurations" => {
+                    builder = builder.set_resource_configurations(crate::protocol_serde::shape_resource_configurations::de_resource_configurations(
                         tokens, _value,
                     )?);
                 }

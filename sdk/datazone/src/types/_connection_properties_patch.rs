@@ -22,6 +22,8 @@ pub enum ConnectionPropertiesPatch {
     S3Properties(crate::types::S3PropertiesPatch),
     /// <p>The Spark EMR properties of a connection properties patch.</p>
     SparkEmrProperties(crate::types::SparkEmrPropertiesPatch),
+    /// <p>The VPC properties of a connection properties patch.</p>
+    VpcProperties(crate::types::VpcPropertiesPatch),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant
     ///
@@ -149,6 +151,19 @@ impl ConnectionPropertiesPatch {
     /// Returns true if this is a [`SparkEmrProperties`](crate::types::ConnectionPropertiesPatch::SparkEmrProperties).
     pub fn is_spark_emr_properties(&self) -> bool {
         self.as_spark_emr_properties().is_ok()
+    }
+    /// Tries to convert the enum instance into [`VpcProperties`](crate::types::ConnectionPropertiesPatch::VpcProperties), extracting the inner [`VpcPropertiesPatch`](crate::types::VpcPropertiesPatch).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_vpc_properties(&self) -> ::std::result::Result<&crate::types::VpcPropertiesPatch, &Self> {
+        if let ConnectionPropertiesPatch::VpcProperties(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`VpcProperties`](crate::types::ConnectionPropertiesPatch::VpcProperties).
+    pub fn is_vpc_properties(&self) -> bool {
+        self.as_vpc_properties().is_ok()
     }
     /// Returns true if the enum instance is the `Unknown` variant.
     pub fn is_unknown(&self) -> bool {

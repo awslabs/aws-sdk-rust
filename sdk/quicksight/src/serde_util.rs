@@ -1881,6 +1881,15 @@ pub(crate) fn create_columns_operation_correct_errors(
     builder
 }
 
+pub(crate) fn data_set_semantic_description_correct_errors(
+    mut builder: crate::types::builders::DataSetSemanticDescriptionBuilder,
+) -> crate::types::builders::DataSetSemanticDescriptionBuilder {
+    if builder.text.is_none() {
+        builder.text = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn default_free_form_layout_configuration_correct_errors(
     mut builder: crate::types::builders::DefaultFreeFormLayoutConfigurationBuilder,
 ) -> crate::types::builders::DefaultFreeFormLayoutConfigurationBuilder {
@@ -3126,6 +3135,15 @@ pub(crate) fn image_custom_action_correct_errors(
     builder
 }
 
+pub(crate) fn inline_custom_instruction_correct_errors(
+    mut builder: crate::types::builders::InlineCustomInstructionBuilder,
+) -> crate::types::builders::InlineCustomInstructionBuilder {
+    if builder.instruction_text.is_none() {
+        builder.instruction_text = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn section_based_layout_configuration_correct_errors(
     mut builder: crate::types::builders::SectionBasedLayoutConfigurationBuilder,
 ) -> crate::types::builders::SectionBasedLayoutConfigurationBuilder {
@@ -3143,6 +3161,15 @@ pub(crate) fn section_based_layout_configuration_correct_errors(
             let builder = crate::types::builders::SectionBasedLayoutCanvasSizeOptionsBuilder::default();
             Some(builder.build())
         }
+    }
+    builder
+}
+
+pub(crate) fn shared_column_semantic_metadata_correct_errors(
+    mut builder: crate::types::builders::SharedColumnSemanticMetadataBuilder,
+) -> crate::types::builders::SharedColumnSemanticMetadataBuilder {
+    if builder.column_properties.is_none() {
+        builder.column_properties = Some(Default::default())
     }
     builder
 }

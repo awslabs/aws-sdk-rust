@@ -3,19 +3,19 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssociateFeedOutput {
-    /// <p>The AWS ARN for this association.</p>
+    /// <p>The ARN of the feed.</p>
     pub arn: ::std::string::String,
-    /// <p>An ID for this response. It is unique in Elemental Inference for this AWS account.</p>
+    /// <p>The ID of the feed.</p>
     pub id: ::std::string::String,
     _request_id: Option<String>,
 }
 impl AssociateFeedOutput {
-    /// <p>The AWS ARN for this association.</p>
+    /// <p>The ARN of the feed.</p>
     pub fn arn(&self) -> &str {
         use std::ops::Deref;
         self.arn.deref()
     }
-    /// <p>An ID for this response. It is unique in Elemental Inference for this AWS account.</p>
+    /// <p>The ID of the feed.</p>
     pub fn id(&self) -> &str {
         use std::ops::Deref;
         self.id.deref()
@@ -42,33 +42,33 @@ pub struct AssociateFeedOutputBuilder {
     _request_id: Option<String>,
 }
 impl AssociateFeedOutputBuilder {
-    /// <p>The AWS ARN for this association.</p>
+    /// <p>The ARN of the feed.</p>
     /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The AWS ARN for this association.</p>
+    /// <p>The ARN of the feed.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
-    /// <p>The AWS ARN for this association.</p>
+    /// <p>The ARN of the feed.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }
-    /// <p>An ID for this response. It is unique in Elemental Inference for this AWS account.</p>
+    /// <p>The ID of the feed.</p>
     /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>An ID for this response. It is unique in Elemental Inference for this AWS account.</p>
+    /// <p>The ID of the feed.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
-    /// <p>An ID for this response. It is unique in Elemental Inference for this AWS account.</p>
+    /// <p>The ID of the feed.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.id
     }

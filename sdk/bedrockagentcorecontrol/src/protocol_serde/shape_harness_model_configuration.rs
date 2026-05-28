@@ -22,6 +22,12 @@ pub fn ser_harness_model_configuration(
             crate::protocol_serde::shape_harness_gemini_model_config::ser_harness_gemini_model_config(&mut object_3, inner)?;
             object_3.finish();
         }
+        crate::types::HarnessModelConfiguration::LiteLlmModelConfig(inner) => {
+            #[allow(unused_mut)]
+            let mut object_4 = object_22.key("liteLlmModelConfig").start_object();
+            crate::protocol_serde::shape_harness_lite_llm_model_config::ser_harness_lite_llm_model_config(&mut object_4, inner)?;
+            object_4.finish();
+        }
         crate::types::HarnessModelConfiguration::Unknown => {
             return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
                 "HarnessModelConfiguration",
@@ -76,6 +82,12 @@ where
                             crate::protocol_serde::shape_harness_gemini_model_config::de_harness_gemini_model_config(tokens, _value)?.ok_or_else(
                                 || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'geminiModelConfig' cannot be null"),
                             )?,
+                        )),
+                        "liteLlmModelConfig" => Some(crate::types::HarnessModelConfiguration::LiteLlmModelConfig(
+                            crate::protocol_serde::shape_harness_lite_llm_model_config::de_harness_lite_llm_model_config(tokens, _value)?
+                                .ok_or_else(|| {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'liteLlmModelConfig' cannot be null")
+                                })?,
                         )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;

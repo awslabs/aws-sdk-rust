@@ -4,11 +4,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ClippingConfig {
-    /// <p>The metadata that is the result of the clip request to Elemental Inference.</p>
+    /// <p>A string that you want Elemental Inference to always include in the event clipping metadata for this output. The string might identify the sports event in the source media, for example.</p>
     pub callback_metadata: ::std::option::Option<::std::string::String>,
 }
 impl ClippingConfig {
-    /// <p>The metadata that is the result of the clip request to Elemental Inference.</p>
+    /// <p>A string that you want Elemental Inference to always include in the event clipping metadata for this output. The string might identify the sports event in the source media, for example.</p>
     pub fn callback_metadata(&self) -> ::std::option::Option<&str> {
         self.callback_metadata.as_deref()
     }
@@ -27,17 +27,17 @@ pub struct ClippingConfigBuilder {
     pub(crate) callback_metadata: ::std::option::Option<::std::string::String>,
 }
 impl ClippingConfigBuilder {
-    /// <p>The metadata that is the result of the clip request to Elemental Inference.</p>
+    /// <p>A string that you want Elemental Inference to always include in the event clipping metadata for this output. The string might identify the sports event in the source media, for example.</p>
     pub fn callback_metadata(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.callback_metadata = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The metadata that is the result of the clip request to Elemental Inference.</p>
+    /// <p>A string that you want Elemental Inference to always include in the event clipping metadata for this output. The string might identify the sports event in the source media, for example.</p>
     pub fn set_callback_metadata(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.callback_metadata = input;
         self
     }
-    /// <p>The metadata that is the result of the clip request to Elemental Inference.</p>
+    /// <p>A string that you want Elemental Inference to always include in the event clipping metadata for this output. The string might identify the sports event in the source media, for example.</p>
     pub fn get_callback_metadata(&self) -> &::std::option::Option<::std::string::String> {
         &self.callback_metadata
     }

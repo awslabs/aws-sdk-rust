@@ -135,6 +135,8 @@ pub use crate::types::_pager_duty_details::PagerDutyDetails;
 
 pub use crate::types::_registered_azure_identity_details::RegisteredAzureIdentityDetails;
 
+pub use crate::types::_mcp_server_sigv4_service_details::McpServerSigV4ServiceDetails;
+
 pub use crate::types::_o_auth_additional_step_details::OAuthAdditionalStepDetails;
 
 pub use crate::types::_additional_service_details::AdditionalServiceDetails;
@@ -181,6 +183,8 @@ pub use crate::types::_mcp_server_grafana_configuration::McpServerGrafanaConfigu
 
 pub use crate::types::_pager_duty_configuration::PagerDutyConfiguration;
 
+pub use crate::types::_mcp_server_sigv4_configuration::McpServerSigV4Configuration;
+
 pub use crate::types::_validation_status::ValidationStatus;
 
 pub use crate::types::_webhook_type::WebhookType;
@@ -205,6 +209,8 @@ pub use crate::types::_event_channel_type::EventChannelType;
 
 pub use crate::types::_pager_duty_authorization_config::PagerDutyAuthorizationConfig;
 
+pub use crate::types::_mcp_server_sigv4_authorization_config::McpServerSigV4AuthorizationConfig;
+
 pub use crate::types::_registered_github_service_details::RegisteredGithubServiceDetails;
 
 pub use crate::types::_registered_slack_service_details::RegisteredSlackServiceDetails;
@@ -222,6 +228,8 @@ pub use crate::types::_registered_azure_dev_ops_service_details::RegisteredAzure
 pub use crate::types::_registered_grafana_server_details::RegisteredGrafanaServerDetails;
 
 pub use crate::types::_registered_pager_duty_details::RegisteredPagerDutyDetails;
+
+pub use crate::types::_registered_mcp_server_sigv4_details::RegisteredMcpServerSigV4Details;
 
 pub use crate::types::_send_message_text_delta::SendMessageTextDelta;
 
@@ -365,6 +373,12 @@ mod _mcp_server_o_auth3_lo_config;
 
 mod _mcp_server_o_auth_client_credentials_config;
 
+mod _mcp_server_sigv4_authorization_config;
+
+mod _mcp_server_sigv4_configuration;
+
+mod _mcp_server_sigv4_service_details;
+
 mod _mcp_server_splunk_configuration;
 
 mod _message;
@@ -428,6 +442,8 @@ mod _registered_github_service_details;
 mod _registered_grafana_server_details;
 
 mod _registered_mcp_server_details;
+
+mod _registered_mcp_server_sigv4_details;
 
 mod _registered_new_relic_details;
 

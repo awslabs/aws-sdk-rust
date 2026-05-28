@@ -50,17 +50,11 @@ mod test {
                 .url("https://s3-outposts.us-west-2.amazonaws.com")
                 .header("x-amz-account-id", "123456789012")
                 .header("x-amz-outpost-id", "op-01234567890123456")
-                .property(
-                    "authSchemes",
-                    vec![{
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "s3-outposts".to_string().into());
-                        out.insert("signingRegion".to_string(), "us-west-2".to_string().into());
-                        out.insert("disableDoubleEncoding".to_string(), true.into());
-                        out
-                    }
-                    .into()]
+                .auth_scheme(
+                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4", 3)
+                        .put("disableDoubleEncoding", true)
+                        .put("signingName", "s3-outposts".to_string())
+                        .put("signingRegion", "us-west-2".to_string())
                 )
                 .build()
         );
@@ -87,17 +81,11 @@ mod test {
                 .url("https://s3-outposts.us-east-1.amazonaws.com")
                 .header("x-amz-account-id", "123456789012")
                 .header("x-amz-outpost-id", "op-01234567890123456")
-                .property(
-                    "authSchemes",
-                    vec![{
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "s3-outposts".to_string().into());
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
-                        out.insert("disableDoubleEncoding".to_string(), true.into());
-                        out
-                    }
-                    .into()]
+                .auth_scheme(
+                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4", 3)
+                        .put("disableDoubleEncoding", true)
+                        .put("signingName", "s3-outposts".to_string())
+                        .put("signingRegion", "us-east-1".to_string())
                 )
                 .build()
         );
@@ -124,17 +112,11 @@ mod test {
                 .url("https://s3-outposts.us-west-2.amazonaws.com")
                 .header("x-amz-account-id", "123456789012")
                 .header("x-amz-outpost-id", "op-01234567890123456")
-                .property(
-                    "authSchemes",
-                    vec![{
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "s3-outposts".to_string().into());
-                        out.insert("signingRegion".to_string(), "us-west-2".to_string().into());
-                        out.insert("disableDoubleEncoding".to_string(), true.into());
-                        out
-                    }
-                    .into()]
+                .auth_scheme(
+                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4", 3)
+                        .put("disableDoubleEncoding", true)
+                        .put("signingName", "s3-outposts".to_string())
+                        .put("signingRegion", "us-west-2".to_string())
                 )
                 .build()
         );
@@ -161,17 +143,11 @@ mod test {
                 .url("https://s3-outposts.cn-north-1.amazonaws.com.cn")
                 .header("x-amz-account-id", "123456789012")
                 .header("x-amz-outpost-id", "op-01234567890123456")
-                .property(
-                    "authSchemes",
-                    vec![{
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "s3-outposts".to_string().into());
-                        out.insert("signingRegion".to_string(), "cn-north-1".to_string().into());
-                        out.insert("disableDoubleEncoding".to_string(), true.into());
-                        out
-                    }
-                    .into()]
+                .auth_scheme(
+                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4", 3)
+                        .put("disableDoubleEncoding", true)
+                        .put("signingName", "s3-outposts".to_string())
+                        .put("signingRegion", "cn-north-1".to_string())
                 )
                 .build()
         );
@@ -198,17 +174,11 @@ mod test {
                 .url("https://s3-outposts.us-west-2.amazonaws.com")
                 .header("x-amz-account-id", "123456789012")
                 .header("x-amz-outpost-id", "op-01234567890123456")
-                .property(
-                    "authSchemes",
-                    vec![{
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "s3-outposts".to_string().into());
-                        out.insert("signingRegion".to_string(), "us-west-2".to_string().into());
-                        out.insert("disableDoubleEncoding".to_string(), true.into());
-                        out
-                    }
-                    .into()]
+                .auth_scheme(
+                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4", 3)
+                        .put("disableDoubleEncoding", true)
+                        .put("signingName", "s3-outposts".to_string())
+                        .put("signingRegion", "us-west-2".to_string())
                 )
                 .build()
         );
@@ -235,17 +205,11 @@ mod test {
                 .url("https://s3-outposts-fips.us-west-2.amazonaws.com")
                 .header("x-amz-account-id", "123456789012")
                 .header("x-amz-outpost-id", "op-01234567890123456")
-                .property(
-                    "authSchemes",
-                    vec![{
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "s3-outposts".to_string().into());
-                        out.insert("signingRegion".to_string(), "us-west-2".to_string().into());
-                        out.insert("disableDoubleEncoding".to_string(), true.into());
-                        out
-                    }
-                    .into()]
+                .auth_scheme(
+                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4", 3)
+                        .put("disableDoubleEncoding", true)
+                        .put("signingName", "s3-outposts".to_string())
+                        .put("signingRegion", "us-west-2".to_string())
                 )
                 .build()
         );
@@ -274,17 +238,11 @@ mod test {
                 .url("https://s3-outposts-fips.us-gov-east-1.amazonaws.com")
                 .header("x-amz-account-id", "123456789012")
                 .header("x-amz-outpost-id", "op-01234567890123456")
-                .property(
-                    "authSchemes",
-                    vec![{
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "s3-outposts".to_string().into());
-                        out.insert("signingRegion".to_string(), "us-gov-east-1".to_string().into());
-                        out.insert("disableDoubleEncoding".to_string(), true.into());
-                        out
-                    }
-                    .into()]
+                .auth_scheme(
+                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4", 3)
+                        .put("disableDoubleEncoding", true)
+                        .put("signingName", "s3-outposts".to_string())
+                        .put("signingRegion", "us-gov-east-1".to_string())
                 )
                 .build()
         );
@@ -311,17 +269,11 @@ mod test {
                 .url("https://s3-outposts.cn-north-1.amazonaws.com.cn")
                 .header("x-amz-account-id", "123456789012")
                 .header("x-amz-outpost-id", "op-01234567890123456")
-                .property(
-                    "authSchemes",
-                    vec![{
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "s3-outposts".to_string().into());
-                        out.insert("signingRegion".to_string(), "cn-north-1".to_string().into());
-                        out.insert("disableDoubleEncoding".to_string(), true.into());
-                        out
-                    }
-                    .into()]
+                .auth_scheme(
+                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4", 3)
+                        .put("disableDoubleEncoding", true)
+                        .put("signingName", "s3-outposts".to_string())
+                        .put("signingRegion", "cn-north-1".to_string())
                 )
                 .build()
         );
@@ -368,17 +320,11 @@ mod test {
                 .url("https://s3-outposts-fips.us-gov-east-1.amazonaws.com")
                 .header("x-amz-account-id", "123456789012")
                 .header("x-amz-outpost-id", "op-01234567890123456")
-                .property(
-                    "authSchemes",
-                    vec![{
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "s3-outposts".to_string().into());
-                        out.insert("signingRegion".to_string(), "us-gov-east-1".to_string().into());
-                        out.insert("disableDoubleEncoding".to_string(), true.into());
-                        out
-                    }
-                    .into()]
+                .auth_scheme(
+                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4", 3)
+                        .put("disableDoubleEncoding", true)
+                        .put("signingName", "s3-outposts".to_string())
+                        .put("signingRegion", "us-gov-east-1".to_string())
                 )
                 .build()
         );
@@ -405,17 +351,11 @@ mod test {
                 .url("https://s3-outposts.af-south-1.amazonaws.com")
                 .header("x-amz-account-id", "123456789012")
                 .header("x-amz-outpost-id", "op-01234567890123456")
-                .property(
-                    "authSchemes",
-                    vec![{
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "s3-outposts".to_string().into());
-                        out.insert("signingRegion".to_string(), "af-south-1".to_string().into());
-                        out.insert("disableDoubleEncoding".to_string(), true.into());
-                        out
-                    }
-                    .into()]
+                .auth_scheme(
+                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4", 3)
+                        .put("disableDoubleEncoding", true)
+                        .put("signingName", "s3-outposts".to_string())
+                        .put("signingRegion", "af-south-1".to_string())
                 )
                 .build()
         );
@@ -442,17 +382,11 @@ mod test {
                 .url("https://s3-outposts-fips.af-south-1.amazonaws.com")
                 .header("x-amz-account-id", "123456789012")
                 .header("x-amz-outpost-id", "op-01234567890123456")
-                .property(
-                    "authSchemes",
-                    vec![{
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "s3-outposts".to_string().into());
-                        out.insert("signingRegion".to_string(), "af-south-1".to_string().into());
-                        out.insert("disableDoubleEncoding".to_string(), true.into());
-                        out
-                    }
-                    .into()]
+                .auth_scheme(
+                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4", 3)
+                        .put("disableDoubleEncoding", true)
+                        .put("signingName", "s3-outposts".to_string())
+                        .put("signingRegion", "af-south-1".to_string())
                 )
                 .build()
         );
@@ -481,17 +415,11 @@ mod test {
                 .url("https://s3-outposts-fips.us-gov-east-1.amazonaws.com")
                 .header("x-amz-account-id", "123456789012")
                 .header("x-amz-outpost-id", "op-01234567890123456")
-                .property(
-                    "authSchemes",
-                    vec![{
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "s3-outposts".to_string().into());
-                        out.insert("signingRegion".to_string(), "us-gov-east-1".to_string().into());
-                        out.insert("disableDoubleEncoding".to_string(), true.into());
-                        out
-                    }
-                    .into()]
+                .auth_scheme(
+                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4", 3)
+                        .put("disableDoubleEncoding", true)
+                        .put("signingName", "s3-outposts".to_string())
+                        .put("signingRegion", "us-gov-east-1".to_string())
                 )
                 .build()
         );
@@ -516,17 +444,11 @@ mod test {
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
                 .url("https://s3-outposts.us-east-2.amazonaws.com")
-                .property(
-                    "authSchemes",
-                    vec![{
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "s3-outposts".to_string().into());
-                        out.insert("signingRegion".to_string(), "us-east-2".to_string().into());
-                        out.insert("disableDoubleEncoding".to_string(), true.into());
-                        out
-                    }
-                    .into()]
+                .auth_scheme(
+                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4", 3)
+                        .put("disableDoubleEncoding", true)
+                        .put("signingName", "s3-outposts".to_string())
+                        .put("signingRegion", "us-east-2".to_string())
                 )
                 .build()
         );
@@ -551,17 +473,11 @@ mod test {
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
                 .url("https://s3-outposts-fips.us-east-2.amazonaws.com")
-                .property(
-                    "authSchemes",
-                    vec![{
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "s3-outposts".to_string().into());
-                        out.insert("signingRegion".to_string(), "us-east-2".to_string().into());
-                        out.insert("disableDoubleEncoding".to_string(), true.into());
-                        out
-                    }
-                    .into()]
+                .auth_scheme(
+                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4", 3)
+                        .put("disableDoubleEncoding", true)
+                        .put("signingName", "s3-outposts".to_string())
+                        .put("signingRegion", "us-east-2".to_string())
                 )
                 .build()
         );
@@ -585,17 +501,11 @@ mod test {
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
                 .url("https://s3-control.us-east-2.amazonaws.com")
-                .property(
-                    "authSchemes",
-                    vec![{
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "s3".to_string().into());
-                        out.insert("signingRegion".to_string(), "us-east-2".to_string().into());
-                        out.insert("disableDoubleEncoding".to_string(), true.into());
-                        out
-                    }
-                    .into()]
+                .auth_scheme(
+                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4", 3)
+                        .put("disableDoubleEncoding", true)
+                        .put("signingName", "s3".to_string())
+                        .put("signingRegion", "us-east-2".to_string())
                 )
                 .build()
         );
@@ -620,17 +530,11 @@ mod test {
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
                 .url("https://s3-outposts.us-east-2.amazonaws.com")
-                .property(
-                    "authSchemes",
-                    vec![{
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "s3-outposts".to_string().into());
-                        out.insert("signingRegion".to_string(), "us-east-2".to_string().into());
-                        out.insert("disableDoubleEncoding".to_string(), true.into());
-                        out
-                    }
-                    .into()]
+                .auth_scheme(
+                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4", 3)
+                        .put("disableDoubleEncoding", true)
+                        .put("signingName", "s3-outposts".to_string())
+                        .put("signingRegion", "us-east-2".to_string())
                 )
                 .build()
         );
@@ -654,17 +558,11 @@ mod test {
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
                 .url("https://123456789012.s3-control.us-east-2.amazonaws.com")
-                .property(
-                    "authSchemes",
-                    vec![{
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "s3".to_string().into());
-                        out.insert("signingRegion".to_string(), "us-east-2".to_string().into());
-                        out.insert("disableDoubleEncoding".to_string(), true.into());
-                        out
-                    }
-                    .into()]
+                .auth_scheme(
+                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4", 3)
+                        .put("disableDoubleEncoding", true)
+                        .put("signingName", "s3".to_string())
+                        .put("signingRegion", "us-east-2".to_string())
                 )
                 .build()
         );
@@ -689,17 +587,11 @@ mod test {
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
                 .url("https://s3-outposts-fips.us-east-2.amazonaws.com")
-                .property(
-                    "authSchemes",
-                    vec![{
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "s3-outposts".to_string().into());
-                        out.insert("signingRegion".to_string(), "us-east-2".to_string().into());
-                        out.insert("disableDoubleEncoding".to_string(), true.into());
-                        out
-                    }
-                    .into()]
+                .auth_scheme(
+                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4", 3)
+                        .put("disableDoubleEncoding", true)
+                        .put("signingName", "s3-outposts".to_string())
+                        .put("signingRegion", "us-east-2".to_string())
                 )
                 .build()
         );
@@ -726,17 +618,11 @@ mod test {
                 .url("https://s3-outposts.us-west-2.api.aws")
                 .header("x-amz-account-id", "123456789012")
                 .header("x-amz-outpost-id", "op-01234567890123456")
-                .property(
-                    "authSchemes",
-                    vec![{
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "s3-outposts".to_string().into());
-                        out.insert("signingRegion".to_string(), "us-west-2".to_string().into());
-                        out.insert("disableDoubleEncoding".to_string(), true.into());
-                        out
-                    }
-                    .into()]
+                .auth_scheme(
+                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4", 3)
+                        .put("disableDoubleEncoding", true)
+                        .put("signingName", "s3-outposts".to_string())
+                        .put("signingRegion", "us-west-2".to_string())
                 )
                 .build()
         );
@@ -763,17 +649,11 @@ mod test {
                 .url("https://s3-outposts.af-south-1.api.aws")
                 .header("x-amz-account-id", "123456789012")
                 .header("x-amz-outpost-id", "op-01234567890123456")
-                .property(
-                    "authSchemes",
-                    vec![{
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "s3-outposts".to_string().into());
-                        out.insert("signingRegion".to_string(), "af-south-1".to_string().into());
-                        out.insert("disableDoubleEncoding".to_string(), true.into());
-                        out
-                    }
-                    .into()]
+                .auth_scheme(
+                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4", 3)
+                        .put("disableDoubleEncoding", true)
+                        .put("signingName", "s3-outposts".to_string())
+                        .put("signingRegion", "af-south-1".to_string())
                 )
                 .build()
         );
@@ -800,17 +680,11 @@ mod test {
                 .url("https://s3-outposts-fips.af-south-1.api.aws")
                 .header("x-amz-account-id", "123456789012")
                 .header("x-amz-outpost-id", "op-01234567890123456")
-                .property(
-                    "authSchemes",
-                    vec![{
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "s3-outposts".to_string().into());
-                        out.insert("signingRegion".to_string(), "af-south-1".to_string().into());
-                        out.insert("disableDoubleEncoding".to_string(), true.into());
-                        out
-                    }
-                    .into()]
+                .auth_scheme(
+                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4", 3)
+                        .put("disableDoubleEncoding", true)
+                        .put("signingName", "s3-outposts".to_string())
+                        .put("signingRegion", "af-south-1".to_string())
                 )
                 .build()
         );
@@ -889,17 +763,11 @@ mod test {
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
                 .url("https://myid-1234.s3-control.us-west-2.amazonaws.com")
-                .property(
-                    "authSchemes",
-                    vec![{
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "s3".to_string().into());
-                        out.insert("signingRegion".to_string(), "us-west-2".to_string().into());
-                        out.insert("disableDoubleEncoding".to_string(), true.into());
-                        out
-                    }
-                    .into()]
+                .auth_scheme(
+                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4", 3)
+                        .put("disableDoubleEncoding", true)
+                        .put("signingName", "s3".to_string())
+                        .put("signingRegion", "us-west-2".to_string())
                 )
                 .build()
         );
@@ -927,17 +795,11 @@ mod test {
                 .url("https://s3-outposts.us-west-2.amazonaws.com")
                 .header("x-amz-account-id", "123456789012")
                 .header("x-amz-outpost-id", "op-01234567890123456")
-                .property(
-                    "authSchemes",
-                    vec![{
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "s3-outposts".to_string().into());
-                        out.insert("signingRegion".to_string(), "us-west-2".to_string().into());
-                        out.insert("disableDoubleEncoding".to_string(), true.into());
-                        out
-                    }
-                    .into()]
+                .auth_scheme(
+                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4", 3)
+                        .put("disableDoubleEncoding", true)
+                        .put("signingName", "s3-outposts".to_string())
+                        .put("signingRegion", "us-west-2".to_string())
                 )
                 .build()
         );
@@ -985,17 +847,11 @@ mod test {
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
                 .url("https://123456789012.control.vpce-1a2b3c4d-5e6f.s3.us-west-2.vpce.amazonaws.com")
-                .property(
-                    "authSchemes",
-                    vec![{
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "s3".to_string().into());
-                        out.insert("signingRegion".to_string(), "us-west-2".to_string().into());
-                        out.insert("disableDoubleEncoding".to_string(), true.into());
-                        out
-                    }
-                    .into()]
+                .auth_scheme(
+                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4", 3)
+                        .put("disableDoubleEncoding", true)
+                        .put("signingName", "s3".to_string())
+                        .put("signingRegion", "us-west-2".to_string())
                 )
                 .build()
         );
@@ -1023,17 +879,11 @@ mod test {
                 .url("https://beta.example.com")
                 .header("x-amz-account-id", "123456789012")
                 .header("x-amz-outpost-id", "op-01234567890123456")
-                .property(
-                    "authSchemes",
-                    vec![{
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "s3-outposts".to_string().into());
-                        out.insert("signingRegion".to_string(), "us-west-2".to_string().into());
-                        out.insert("disableDoubleEncoding".to_string(), true.into());
-                        out
-                    }
-                    .into()]
+                .auth_scheme(
+                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4", 3)
+                        .put("disableDoubleEncoding", true)
+                        .put("signingName", "s3-outposts".to_string())
+                        .put("signingRegion", "us-west-2".to_string())
                 )
                 .build()
         );
@@ -1101,17 +951,11 @@ mod test {
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
                 .url("https://beta.example.com")
-                .property(
-                    "authSchemes",
-                    vec![{
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "s3-outposts".to_string().into());
-                        out.insert("signingRegion".to_string(), "us-west-2".to_string().into());
-                        out.insert("disableDoubleEncoding".to_string(), true.into());
-                        out
-                    }
-                    .into()]
+                .auth_scheme(
+                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4", 3)
+                        .put("disableDoubleEncoding", true)
+                        .put("signingName", "s3-outposts".to_string())
+                        .put("signingRegion", "us-west-2".to_string())
                 )
                 .build()
         );
@@ -1138,17 +982,11 @@ mod test {
                 .url("https://beta.example.com")
                 .header("x-amz-account-id", "123456789012")
                 .header("x-amz-outpost-id", "op-01234567890123456")
-                .property(
-                    "authSchemes",
-                    vec![{
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "s3-outposts".to_string().into());
-                        out.insert("signingRegion".to_string(), "us-west-2".to_string().into());
-                        out.insert("disableDoubleEncoding".to_string(), true.into());
-                        out
-                    }
-                    .into()]
+                .auth_scheme(
+                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4", 3)
+                        .put("disableDoubleEncoding", true)
+                        .put("signingName", "s3-outposts".to_string())
+                        .put("signingRegion", "us-west-2".to_string())
                 )
                 .build()
         );
@@ -1174,17 +1012,11 @@ mod test {
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
                 .url("https://beta.example.com")
-                .property(
-                    "authSchemes",
-                    vec![{
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "s3-outposts".to_string().into());
-                        out.insert("signingRegion".to_string(), "us-east-2".to_string().into());
-                        out.insert("disableDoubleEncoding".to_string(), true.into());
-                        out
-                    }
-                    .into()]
+                .auth_scheme(
+                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4", 3)
+                        .put("disableDoubleEncoding", true)
+                        .put("signingName", "s3-outposts".to_string())
+                        .put("signingRegion", "us-east-2".to_string())
                 )
                 .build()
         );
@@ -1210,17 +1042,11 @@ mod test {
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
                 .url("https://beta.example.com")
-                .property(
-                    "authSchemes",
-                    vec![{
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "s3-outposts".to_string().into());
-                        out.insert("signingRegion".to_string(), "us-east-2".to_string().into());
-                        out.insert("disableDoubleEncoding".to_string(), true.into());
-                        out
-                    }
-                    .into()]
+                .auth_scheme(
+                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4", 3)
+                        .put("disableDoubleEncoding", true)
+                        .put("signingName", "s3-outposts".to_string())
+                        .put("signingRegion", "us-east-2".to_string())
                 )
                 .build()
         );
@@ -1245,17 +1071,11 @@ mod test {
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
                 .url("https://s3-outposts-fips.us-east-2.api.aws")
-                .property(
-                    "authSchemes",
-                    vec![{
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "s3-outposts".to_string().into());
-                        out.insert("signingRegion".to_string(), "us-east-2".to_string().into());
-                        out.insert("disableDoubleEncoding".to_string(), true.into());
-                        out
-                    }
-                    .into()]
+                .auth_scheme(
+                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4", 3)
+                        .put("disableDoubleEncoding", true)
+                        .put("signingName", "s3-outposts".to_string())
+                        .put("signingRegion", "us-east-2".to_string())
                 )
                 .build()
         );
@@ -1281,17 +1101,11 @@ mod test {
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
                 .url("https://beta.example.com")
-                .property(
-                    "authSchemes",
-                    vec![{
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "s3-outposts".to_string().into());
-                        out.insert("signingRegion".to_string(), "us-east-2".to_string().into());
-                        out.insert("disableDoubleEncoding".to_string(), true.into());
-                        out
-                    }
-                    .into()]
+                .auth_scheme(
+                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4", 3)
+                        .put("disableDoubleEncoding", true)
+                        .put("signingName", "s3-outposts".to_string())
+                        .put("signingRegion", "us-east-2".to_string())
                 )
                 .build()
         );
@@ -1338,17 +1152,11 @@ mod test {
                 .url("https://s3-outposts.us-west-2.amazonaws.com")
                 .header("x-amz-account-id", "123456789012")
                 .header("x-amz-outpost-id", "op-01234567890123456")
-                .property(
-                    "authSchemes",
-                    vec![{
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "s3-outposts".to_string().into());
-                        out.insert("signingRegion".to_string(), "us-west-2".to_string().into());
-                        out.insert("disableDoubleEncoding".to_string(), true.into());
-                        out
-                    }
-                    .into()]
+                .auth_scheme(
+                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4", 3)
+                        .put("disableDoubleEncoding", true)
+                        .put("signingName", "s3-outposts".to_string())
+                        .put("signingRegion", "us-west-2".to_string())
                 )
                 .build()
         );
@@ -1374,17 +1182,11 @@ mod test {
                 .url("https://s3-outposts.us-east-1.amazonaws.com")
                 .header("x-amz-account-id", "123456789012")
                 .header("x-amz-outpost-id", "op-01234567890123456")
-                .property(
-                    "authSchemes",
-                    vec![{
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "s3-outposts".to_string().into());
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
-                        out.insert("disableDoubleEncoding".to_string(), true.into());
-                        out
-                    }
-                    .into()]
+                .auth_scheme(
+                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4", 3)
+                        .put("disableDoubleEncoding", true)
+                        .put("signingName", "s3-outposts".to_string())
+                        .put("signingRegion", "us-east-1".to_string())
                 )
                 .build()
         );
@@ -1410,17 +1212,11 @@ mod test {
                 .url("https://s3-outposts.us-gov-east-1.amazonaws.com")
                 .header("x-amz-account-id", "123456789012")
                 .header("x-amz-outpost-id", "op-01234567890123456")
-                .property(
-                    "authSchemes",
-                    vec![{
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "s3-outposts".to_string().into());
-                        out.insert("signingRegion".to_string(), "us-gov-east-1".to_string().into());
-                        out.insert("disableDoubleEncoding".to_string(), true.into());
-                        out
-                    }
-                    .into()]
+                .auth_scheme(
+                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4", 3)
+                        .put("disableDoubleEncoding", true)
+                        .put("signingName", "s3-outposts".to_string())
+                        .put("signingRegion", "us-gov-east-1".to_string())
                 )
                 .build()
         );
@@ -1446,17 +1242,11 @@ mod test {
                 .url("https://s3-outposts-fips.us-gov-west-1.amazonaws.com")
                 .header("x-amz-account-id", "123456789012")
                 .header("x-amz-outpost-id", "op-01234567890123456")
-                .property(
-                    "authSchemes",
-                    vec![{
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "s3-outposts".to_string().into());
-                        out.insert("signingRegion".to_string(), "us-gov-west-1".to_string().into());
-                        out.insert("disableDoubleEncoding".to_string(), true.into());
-                        out
-                    }
-                    .into()]
+                .auth_scheme(
+                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4", 3)
+                        .put("disableDoubleEncoding", true)
+                        .put("signingName", "s3-outposts".to_string())
+                        .put("signingRegion", "us-gov-west-1".to_string())
                 )
                 .build()
         );
@@ -1482,17 +1272,11 @@ mod test {
                 .url("https://s3-outposts-fips.us-east-2.amazonaws.com")
                 .header("x-amz-account-id", "123456789012")
                 .header("x-amz-outpost-id", "op-01234567890123456")
-                .property(
-                    "authSchemes",
-                    vec![{
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "s3-outposts".to_string().into());
-                        out.insert("signingRegion".to_string(), "us-east-2".to_string().into());
-                        out.insert("disableDoubleEncoding".to_string(), true.into());
-                        out
-                    }
-                    .into()]
+                .auth_scheme(
+                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4", 3)
+                        .put("disableDoubleEncoding", true)
+                        .put("signingName", "s3-outposts".to_string())
+                        .put("signingRegion", "us-east-2".to_string())
                 )
                 .build()
         );
@@ -1518,17 +1302,11 @@ mod test {
                 .url("https://s3-outposts-fips.us-east-2.api.aws")
                 .header("x-amz-account-id", "123456789012")
                 .header("x-amz-outpost-id", "op-01234567890123456")
-                .property(
-                    "authSchemes",
-                    vec![{
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "s3-outposts".to_string().into());
-                        out.insert("signingRegion".to_string(), "us-east-2".to_string().into());
-                        out.insert("disableDoubleEncoding".to_string(), true.into());
-                        out
-                    }
-                    .into()]
+                .auth_scheme(
+                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4", 3)
+                        .put("disableDoubleEncoding", true)
+                        .put("signingName", "s3-outposts".to_string())
+                        .put("signingRegion", "us-east-2".to_string())
                 )
                 .build()
         );
@@ -1554,17 +1332,11 @@ mod test {
                 .url("https://s3-outposts.cn-north-1.amazonaws.com.cn")
                 .header("x-amz-account-id", "123456789012")
                 .header("x-amz-outpost-id", "op-01234567890123456")
-                .property(
-                    "authSchemes",
-                    vec![{
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "s3-outposts".to_string().into());
-                        out.insert("signingRegion".to_string(), "cn-north-1".to_string().into());
-                        out.insert("disableDoubleEncoding".to_string(), true.into());
-                        out
-                    }
-                    .into()]
+                .auth_scheme(
+                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4", 3)
+                        .put("disableDoubleEncoding", true)
+                        .put("signingName", "s3-outposts".to_string())
+                        .put("signingRegion", "cn-north-1".to_string())
                 )
                 .build()
         );
@@ -1590,17 +1362,11 @@ mod test {
                 .url("https://s3-outposts.us-east-1.amazonaws.com")
                 .header("x-amz-account-id", "123456789012")
                 .header("x-amz-outpost-id", "op-01234567890123456")
-                .property(
-                    "authSchemes",
-                    vec![{
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "s3-outposts".to_string().into());
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
-                        out.insert("disableDoubleEncoding".to_string(), true.into());
-                        out
-                    }
-                    .into()]
+                .auth_scheme(
+                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4", 3)
+                        .put("disableDoubleEncoding", true)
+                        .put("signingName", "s3-outposts".to_string())
+                        .put("signingRegion", "us-east-1".to_string())
                 )
                 .build()
         );
@@ -1626,17 +1392,11 @@ mod test {
                 .url("https://s3-outposts.us-gov-east-1.amazonaws.com")
                 .header("x-amz-account-id", "123456789012")
                 .header("x-amz-outpost-id", "op-01234567890123456")
-                .property(
-                    "authSchemes",
-                    vec![{
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "s3-outposts".to_string().into());
-                        out.insert("signingRegion".to_string(), "us-gov-east-1".to_string().into());
-                        out.insert("disableDoubleEncoding".to_string(), true.into());
-                        out
-                    }
-                    .into()]
+                .auth_scheme(
+                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4", 3)
+                        .put("disableDoubleEncoding", true)
+                        .put("signingName", "s3-outposts".to_string())
+                        .put("signingRegion", "us-gov-east-1".to_string())
                 )
                 .build()
         );
@@ -1662,17 +1422,11 @@ mod test {
                 .url("https://s3-outposts-fips.us-gov-west-1.amazonaws.com")
                 .header("x-amz-account-id", "123456789012")
                 .header("x-amz-outpost-id", "op-01234567890123456")
-                .property(
-                    "authSchemes",
-                    vec![{
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "s3-outposts".to_string().into());
-                        out.insert("signingRegion".to_string(), "us-gov-west-1".to_string().into());
-                        out.insert("disableDoubleEncoding".to_string(), true.into());
-                        out
-                    }
-                    .into()]
+                .auth_scheme(
+                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4", 3)
+                        .put("disableDoubleEncoding", true)
+                        .put("signingName", "s3-outposts".to_string())
+                        .put("signingRegion", "us-gov-west-1".to_string())
                 )
                 .build()
         );
@@ -1698,17 +1452,11 @@ mod test {
                 .url("https://s3-outposts-fips.us-east-2.amazonaws.com")
                 .header("x-amz-account-id", "123456789012")
                 .header("x-amz-outpost-id", "op-01234567890123456")
-                .property(
-                    "authSchemes",
-                    vec![{
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "s3-outposts".to_string().into());
-                        out.insert("signingRegion".to_string(), "us-east-2".to_string().into());
-                        out.insert("disableDoubleEncoding".to_string(), true.into());
-                        out
-                    }
-                    .into()]
+                .auth_scheme(
+                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4", 3)
+                        .put("disableDoubleEncoding", true)
+                        .put("signingName", "s3-outposts".to_string())
+                        .put("signingRegion", "us-east-2".to_string())
                 )
                 .build()
         );
@@ -1734,17 +1482,11 @@ mod test {
                 .url("https://s3-outposts.us-west-2.api.aws")
                 .header("x-amz-account-id", "123456789012")
                 .header("x-amz-outpost-id", "op-01234567890123456")
-                .property(
-                    "authSchemes",
-                    vec![{
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "s3-outposts".to_string().into());
-                        out.insert("signingRegion".to_string(), "us-west-2".to_string().into());
-                        out.insert("disableDoubleEncoding".to_string(), true.into());
-                        out
-                    }
-                    .into()]
+                .auth_scheme(
+                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4", 3)
+                        .put("disableDoubleEncoding", true)
+                        .put("signingName", "s3-outposts".to_string())
+                        .put("signingRegion", "us-west-2".to_string())
                 )
                 .build()
         );
@@ -1770,17 +1512,11 @@ mod test {
                 .url("https://s3-outposts.af-south-1.amazonaws.com")
                 .header("x-amz-account-id", "123456789012")
                 .header("x-amz-outpost-id", "op-01234567890123456")
-                .property(
-                    "authSchemes",
-                    vec![{
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "s3-outposts".to_string().into());
-                        out.insert("signingRegion".to_string(), "af-south-1".to_string().into());
-                        out.insert("disableDoubleEncoding".to_string(), true.into());
-                        out
-                    }
-                    .into()]
+                .auth_scheme(
+                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4", 3)
+                        .put("disableDoubleEncoding", true)
+                        .put("signingName", "s3-outposts".to_string())
+                        .put("signingRegion", "af-south-1".to_string())
                 )
                 .build()
         );
@@ -1806,17 +1542,11 @@ mod test {
                 .url("https://s3-outposts.us-east-1.amazonaws.com")
                 .header("x-amz-account-id", "123456789012")
                 .header("x-amz-outpost-id", "op-01234567890123456")
-                .property(
-                    "authSchemes",
-                    vec![{
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "s3-outposts".to_string().into());
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
-                        out.insert("disableDoubleEncoding".to_string(), true.into());
-                        out
-                    }
-                    .into()]
+                .auth_scheme(
+                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4", 3)
+                        .put("disableDoubleEncoding", true)
+                        .put("signingName", "s3-outposts".to_string())
+                        .put("signingRegion", "us-east-1".to_string())
                 )
                 .build()
         );
@@ -1842,17 +1572,11 @@ mod test {
                 .url("https://s3-outposts.us-gov-east-1.amazonaws.com")
                 .header("x-amz-account-id", "123456789012")
                 .header("x-amz-outpost-id", "op-01234567890123456")
-                .property(
-                    "authSchemes",
-                    vec![{
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "s3-outposts".to_string().into());
-                        out.insert("signingRegion".to_string(), "us-gov-east-1".to_string().into());
-                        out.insert("disableDoubleEncoding".to_string(), true.into());
-                        out
-                    }
-                    .into()]
+                .auth_scheme(
+                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4", 3)
+                        .put("disableDoubleEncoding", true)
+                        .put("signingName", "s3-outposts".to_string())
+                        .put("signingRegion", "us-gov-east-1".to_string())
                 )
                 .build()
         );
@@ -1878,17 +1602,11 @@ mod test {
                 .url("https://s3-outposts-fips.us-gov-west-1.amazonaws.com")
                 .header("x-amz-account-id", "123456789012")
                 .header("x-amz-outpost-id", "op-01234567890123456")
-                .property(
-                    "authSchemes",
-                    vec![{
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "s3-outposts".to_string().into());
-                        out.insert("signingRegion".to_string(), "us-gov-west-1".to_string().into());
-                        out.insert("disableDoubleEncoding".to_string(), true.into());
-                        out
-                    }
-                    .into()]
+                .auth_scheme(
+                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4", 3)
+                        .put("disableDoubleEncoding", true)
+                        .put("signingName", "s3-outposts".to_string())
+                        .put("signingRegion", "us-gov-west-1".to_string())
                 )
                 .build()
         );
@@ -1914,17 +1632,11 @@ mod test {
                 .url("https://s3-outposts-fips.us-east-2.amazonaws.com")
                 .header("x-amz-account-id", "123456789012")
                 .header("x-amz-outpost-id", "op-01234567890123456")
-                .property(
-                    "authSchemes",
-                    vec![{
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "s3-outposts".to_string().into());
-                        out.insert("signingRegion".to_string(), "us-east-2".to_string().into());
-                        out.insert("disableDoubleEncoding".to_string(), true.into());
-                        out
-                    }
-                    .into()]
+                .auth_scheme(
+                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4", 3)
+                        .put("disableDoubleEncoding", true)
+                        .put("signingName", "s3-outposts".to_string())
+                        .put("signingRegion", "us-east-2".to_string())
                 )
                 .build()
         );
@@ -2018,17 +1730,11 @@ mod test {
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
                 .url("https://1234567890.s3-control.us-west-2.amazonaws.com")
-                .property(
-                    "authSchemes",
-                    vec![{
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "s3".to_string().into());
-                        out.insert("signingRegion".to_string(), "us-west-2".to_string().into());
-                        out.insert("disableDoubleEncoding".to_string(), true.into());
-                        out
-                    }
-                    .into()]
+                .auth_scheme(
+                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4", 3)
+                        .put("disableDoubleEncoding", true)
+                        .put("signingName", "s3".to_string())
+                        .put("signingRegion", "us-west-2".to_string())
                 )
                 .build()
         );
@@ -2052,17 +1758,11 @@ mod test {
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
                 .url("https://1234567890.s3-control.dualstack.us-east-1.amazonaws.com")
-                .property(
-                    "authSchemes",
-                    vec![{
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "s3".to_string().into());
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
-                        out.insert("disableDoubleEncoding".to_string(), true.into());
-                        out
-                    }
-                    .into()]
+                .auth_scheme(
+                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4", 3)
+                        .put("disableDoubleEncoding", true)
+                        .put("signingName", "s3".to_string())
+                        .put("signingRegion", "us-east-1".to_string())
                 )
                 .build()
         );
@@ -2086,17 +1786,11 @@ mod test {
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
                 .url("https://1234567890.s3-control-fips.us-east-1.amazonaws.com")
-                .property(
-                    "authSchemes",
-                    vec![{
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "s3".to_string().into());
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
-                        out.insert("disableDoubleEncoding".to_string(), true.into());
-                        out
-                    }
-                    .into()]
+                .auth_scheme(
+                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4", 3)
+                        .put("disableDoubleEncoding", true)
+                        .put("signingName", "s3".to_string())
+                        .put("signingRegion", "us-east-1".to_string())
                 )
                 .build()
         );
@@ -2120,17 +1814,11 @@ mod test {
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
                 .url("https://123456789012.s3-control-fips.us-east-1.amazonaws.com")
-                .property(
-                    "authSchemes",
-                    vec![{
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "s3".to_string().into());
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
-                        out.insert("disableDoubleEncoding".to_string(), true.into());
-                        out
-                    }
-                    .into()]
+                .auth_scheme(
+                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4", 3)
+                        .put("disableDoubleEncoding", true)
+                        .put("signingName", "s3".to_string())
+                        .put("signingRegion", "us-east-1".to_string())
                 )
                 .build()
         );
@@ -2150,17 +1838,11 @@ mod test {
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
                 .url("https://s3-control.us-east-1.amazonaws.com")
-                .property(
-                    "authSchemes",
-                    vec![{
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "s3".to_string().into());
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
-                        out.insert("disableDoubleEncoding".to_string(), true.into());
-                        out
-                    }
-                    .into()]
+                .auth_scheme(
+                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4", 3)
+                        .put("disableDoubleEncoding", true)
+                        .put("signingName", "s3".to_string())
+                        .put("signingRegion", "us-east-1".to_string())
                 )
                 .build()
         );
@@ -2181,17 +1863,11 @@ mod test {
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
                 .url("https://s3-control-fips.us-east-1.amazonaws.com")
-                .property(
-                    "authSchemes",
-                    vec![{
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "s3".to_string().into());
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
-                        out.insert("disableDoubleEncoding".to_string(), true.into());
-                        out
-                    }
-                    .into()]
+                .auth_scheme(
+                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4", 3)
+                        .put("disableDoubleEncoding", true)
+                        .put("signingName", "s3".to_string())
+                        .put("signingRegion", "us-east-1".to_string())
                 )
                 .build()
         );
@@ -2212,17 +1888,11 @@ mod test {
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
                 .url("https://s3-control.dualstack.us-east-1.amazonaws.com")
-                .property(
-                    "authSchemes",
-                    vec![{
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "s3".to_string().into());
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
-                        out.insert("disableDoubleEncoding".to_string(), true.into());
-                        out
-                    }
-                    .into()]
+                .auth_scheme(
+                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4", 3)
+                        .put("disableDoubleEncoding", true)
+                        .put("signingName", "s3".to_string())
+                        .put("signingRegion", "us-east-1".to_string())
                 )
                 .build()
         );
@@ -2244,17 +1914,11 @@ mod test {
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
                 .url("https://s3-control-fips.dualstack.us-east-1.amazonaws.com")
-                .property(
-                    "authSchemes",
-                    vec![{
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "s3".to_string().into());
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
-                        out.insert("disableDoubleEncoding".to_string(), true.into());
-                        out
-                    }
-                    .into()]
+                .auth_scheme(
+                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4", 3)
+                        .put("disableDoubleEncoding", true)
+                        .put("signingName", "s3".to_string())
+                        .put("signingRegion", "us-east-1".to_string())
                 )
                 .build()
         );
@@ -2274,17 +1938,11 @@ mod test {
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
                 .url("https://s3-control.cn-north-1.amazonaws.com.cn")
-                .property(
-                    "authSchemes",
-                    vec![{
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "s3".to_string().into());
-                        out.insert("signingRegion".to_string(), "cn-north-1".to_string().into());
-                        out.insert("disableDoubleEncoding".to_string(), true.into());
-                        out
-                    }
-                    .into()]
+                .auth_scheme(
+                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4", 3)
+                        .put("disableDoubleEncoding", true)
+                        .put("signingName", "s3".to_string())
+                        .put("signingRegion", "cn-north-1".to_string())
                 )
                 .build()
         );
@@ -2323,17 +1981,11 @@ mod test {
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
                 .url("https://123456789012.s3-control.us-east-1.amazonaws.com")
-                .property(
-                    "authSchemes",
-                    vec![{
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "s3".to_string().into());
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
-                        out.insert("disableDoubleEncoding".to_string(), true.into());
-                        out
-                    }
-                    .into()]
+                .auth_scheme(
+                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4", 3)
+                        .put("disableDoubleEncoding", true)
+                        .put("signingName", "s3".to_string())
+                        .put("signingRegion", "us-east-1".to_string())
                 )
                 .build()
         );
@@ -2374,17 +2026,11 @@ mod test {
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
                 .url("https://123456789012.s3-control-fips.us-east-1.amazonaws.com")
-                .property(
-                    "authSchemes",
-                    vec![{
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "s3".to_string().into());
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
-                        out.insert("disableDoubleEncoding".to_string(), true.into());
-                        out
-                    }
-                    .into()]
+                .auth_scheme(
+                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4", 3)
+                        .put("disableDoubleEncoding", true)
+                        .put("signingName", "s3".to_string())
+                        .put("signingRegion", "us-east-1".to_string())
                 )
                 .build()
         );
@@ -2408,17 +2054,11 @@ mod test {
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
                 .url("https://123456789012.s3-control-fips.dualstack.us-east-1.amazonaws.com")
-                .property(
-                    "authSchemes",
-                    vec![{
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "s3".to_string().into());
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
-                        out.insert("disableDoubleEncoding".to_string(), true.into());
-                        out
-                    }
-                    .into()]
+                .auth_scheme(
+                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4", 3)
+                        .put("disableDoubleEncoding", true)
+                        .put("signingName", "s3".to_string())
+                        .put("signingRegion", "us-east-1".to_string())
                 )
                 .build()
         );
@@ -2441,17 +2081,11 @@ mod test {
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
                 .url("https://123456789012.example.com")
-                .property(
-                    "authSchemes",
-                    vec![{
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "s3".to_string().into());
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
-                        out.insert("disableDoubleEncoding".to_string(), true.into());
-                        out
-                    }
-                    .into()]
+                .auth_scheme(
+                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4", 3)
+                        .put("disableDoubleEncoding", true)
+                        .put("signingName", "s3".to_string())
+                        .put("signingRegion", "us-east-1".to_string())
                 )
                 .build()
         );
@@ -2523,17 +2157,11 @@ mod test {
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
                 .url("https://123456789012.example.com")
-                .property(
-                    "authSchemes",
-                    vec![{
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "s3".to_string().into());
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
-                        out.insert("disableDoubleEncoding".to_string(), true.into());
-                        out
-                    }
-                    .into()]
+                .auth_scheme(
+                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4", 3)
+                        .put("disableDoubleEncoding", true)
+                        .put("signingName", "s3".to_string())
+                        .put("signingRegion", "us-east-1".to_string())
                 )
                 .build()
         );
@@ -2555,17 +2183,11 @@ mod test {
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
                 .url("https://example.com")
-                .property(
-                    "authSchemes",
-                    vec![{
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "s3".to_string().into());
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
-                        out.insert("disableDoubleEncoding".to_string(), true.into());
-                        out
-                    }
-                    .into()]
+                .auth_scheme(
+                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4", 3)
+                        .put("disableDoubleEncoding", true)
+                        .put("signingName", "s3".to_string())
+                        .put("signingRegion", "us-east-1".to_string())
                 )
                 .build()
         );
@@ -2587,17 +2209,11 @@ mod test {
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
                 .url("https://example.com")
-                .property(
-                    "authSchemes",
-                    vec![{
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "s3".to_string().into());
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
-                        out.insert("disableDoubleEncoding".to_string(), true.into());
-                        out
-                    }
-                    .into()]
+                .auth_scheme(
+                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4", 3)
+                        .put("disableDoubleEncoding", true)
+                        .put("signingName", "s3".to_string())
+                        .put("signingRegion", "us-east-1".to_string())
                 )
                 .build()
         );
@@ -2754,17 +2370,11 @@ mod test {
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
                 .url("https://123456789012.beta.example.com")
-                .property(
-                    "authSchemes",
-                    vec![{
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "s3".to_string().into());
-                        out.insert("signingRegion".to_string(), "us-west-2".to_string().into());
-                        out.insert("disableDoubleEncoding".to_string(), true.into());
-                        out
-                    }
-                    .into()]
+                .auth_scheme(
+                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4", 3)
+                        .put("disableDoubleEncoding", true)
+                        .put("signingName", "s3".to_string())
+                        .put("signingRegion", "us-west-2".to_string())
                 )
                 .build()
         );
@@ -2791,17 +2401,11 @@ mod test {
                 .url("https://beta.example.com")
                 .header("x-amz-account-id", "123456789012")
                 .header("x-amz-outpost-id", "op-01234567890123456")
-                .property(
-                    "authSchemes",
-                    vec![{
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "s3-outposts".to_string().into());
-                        out.insert("signingRegion".to_string(), "us-west-2".to_string().into());
-                        out.insert("disableDoubleEncoding".to_string(), true.into());
-                        out
-                    }
-                    .into()]
+                .auth_scheme(
+                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4", 3)
+                        .put("disableDoubleEncoding", true)
+                        .put("signingName", "s3-outposts".to_string())
+                        .put("signingRegion", "us-west-2".to_string())
                 )
                 .build()
         );
@@ -2943,17 +2547,11 @@ mod test {
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
                 .url("https://s3-outposts.us-west-2.amazonaws.com")
-                .property(
-                    "authSchemes",
-                    vec![{
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "s3-outposts".to_string().into());
-                        out.insert("signingRegion".to_string(), "us-west-2".to_string().into());
-                        out.insert("disableDoubleEncoding".to_string(), true.into());
-                        out
-                    }
-                    .into()]
+                .auth_scheme(
+                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4", 3)
+                        .put("disableDoubleEncoding", true)
+                        .put("signingName", "s3-outposts".to_string())
+                        .put("signingRegion", "us-west-2".to_string())
                 )
                 .build()
         );
@@ -3024,17 +2622,11 @@ mod test {
                 .url("https://s3-outposts.us-east-1.amazonaws.com")
                 .header("x-amz-account-id", "123456789012")
                 .header("x-amz-outpost-id", "op-01234567890123456")
-                .property(
-                    "authSchemes",
-                    vec![{
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "s3-outposts".to_string().into());
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
-                        out.insert("disableDoubleEncoding".to_string(), true.into());
-                        out
-                    }
-                    .into()]
+                .auth_scheme(
+                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4", 3)
+                        .put("disableDoubleEncoding", true)
+                        .put("signingName", "s3-outposts".to_string())
+                        .put("signingRegion", "us-east-1".to_string())
                 )
                 .build()
         );
@@ -3060,17 +2652,11 @@ mod test {
                 .url("https://s3-outposts.us-east-1.amazonaws.com")
                 .header("x-amz-account-id", "123456789012")
                 .header("x-amz-outpost-id", "op-01234567890123456")
-                .property(
-                    "authSchemes",
-                    vec![{
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "s3-outposts".to_string().into());
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
-                        out.insert("disableDoubleEncoding".to_string(), true.into());
-                        out
-                    }
-                    .into()]
+                .auth_scheme(
+                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4", 3)
+                        .put("disableDoubleEncoding", true)
+                        .put("signingName", "s3-outposts".to_string())
+                        .put("signingRegion", "us-east-1".to_string())
                 )
                 .build()
         );
@@ -3155,17 +2741,11 @@ mod test {
                 .url("https://s3-outposts.us-west-2.amazonaws.com")
                 .header("x-amz-account-id", "123456789012")
                 .header("x-amz-outpost-id", "op-01234567890123456")
-                .property(
-                    "authSchemes",
-                    vec![{
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "s3-outposts".to_string().into());
-                        out.insert("signingRegion".to_string(), "us-west-2".to_string().into());
-                        out.insert("disableDoubleEncoding".to_string(), true.into());
-                        out
-                    }
-                    .into()]
+                .auth_scheme(
+                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4", 3)
+                        .put("disableDoubleEncoding", true)
+                        .put("signingName", "s3-outposts".to_string())
+                        .put("signingRegion", "us-west-2".to_string())
                 )
                 .build()
         );
@@ -3189,17 +2769,11 @@ mod test {
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
                 .url("https://10.0.1.12:433")
-                .property(
-                    "authSchemes",
-                    vec![{
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "s3".to_string().into());
-                        out.insert("signingRegion".to_string(), "snow".to_string().into());
-                        out.insert("disableDoubleEncoding".to_string(), true.into());
-                        out
-                    }
-                    .into()]
+                .auth_scheme(
+                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4", 3)
+                        .put("disableDoubleEncoding", true)
+                        .put("signingName", "s3".to_string())
+                        .put("signingRegion", "snow".to_string())
                 )
                 .build()
         );
@@ -3222,17 +2796,11 @@ mod test {
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
                 .url("https://10.0.1.12:433")
-                .property(
-                    "authSchemes",
-                    vec![{
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "s3".to_string().into());
-                        out.insert("signingRegion".to_string(), "snow".to_string().into());
-                        out.insert("disableDoubleEncoding".to_string(), true.into());
-                        out
-                    }
-                    .into()]
+                .auth_scheme(
+                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4", 3)
+                        .put("disableDoubleEncoding", true)
+                        .put("signingName", "s3".to_string())
+                        .put("signingRegion", "snow".to_string())
                 )
                 .build()
         );
@@ -3256,17 +2824,11 @@ mod test {
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
                 .url("https://10.0.1.12")
-                .property(
-                    "authSchemes",
-                    vec![{
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "s3".to_string().into());
-                        out.insert("signingRegion".to_string(), "snow".to_string().into());
-                        out.insert("disableDoubleEncoding".to_string(), true.into());
-                        out
-                    }
-                    .into()]
+                .auth_scheme(
+                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4", 3)
+                        .put("disableDoubleEncoding", true)
+                        .put("signingName", "s3".to_string())
+                        .put("signingRegion", "snow".to_string())
                 )
                 .build()
         );
@@ -3290,17 +2852,11 @@ mod test {
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
                 .url("http://s3snow.com")
-                .property(
-                    "authSchemes",
-                    vec![{
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "s3".to_string().into());
-                        out.insert("signingRegion".to_string(), "snow".to_string().into());
-                        out.insert("disableDoubleEncoding".to_string(), true.into());
-                        out
-                    }
-                    .into()]
+                .auth_scheme(
+                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4", 3)
+                        .put("disableDoubleEncoding", true)
+                        .put("signingName", "s3".to_string())
+                        .put("signingRegion", "snow".to_string())
                 )
                 .build()
         );
@@ -3359,17 +2915,11 @@ mod test {
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
                 .url("https://s3express-control.us-east-1.amazonaws.com")
-                .property(
-                    "authSchemes",
-                    vec![{
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "s3express".to_string().into());
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
-                        out.insert("disableDoubleEncoding".to_string(), true.into());
-                        out
-                    }
-                    .into()]
+                .auth_scheme(
+                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4", 3)
+                        .put("disableDoubleEncoding", true)
+                        .put("signingName", "s3express".to_string())
+                        .put("signingRegion", "us-east-1".to_string())
                 )
                 .build()
         );
@@ -3394,17 +2944,11 @@ mod test {
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
                 .url("https://s3express-control.us-east-1.amazonaws.com")
-                .property(
-                    "authSchemes",
-                    vec![{
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "s3express".to_string().into());
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
-                        out.insert("disableDoubleEncoding".to_string(), true.into());
-                        out
-                    }
-                    .into()]
+                .auth_scheme(
+                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4", 3)
+                        .put("disableDoubleEncoding", true)
+                        .put("signingName", "s3express".to_string())
+                        .put("signingRegion", "us-east-1".to_string())
                 )
                 .build()
         );
@@ -3429,17 +2973,11 @@ mod test {
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
                 .url("https://s3express-control-fips.us-east-1.amazonaws.com")
-                .property(
-                    "authSchemes",
-                    vec![{
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "s3express".to_string().into());
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
-                        out.insert("disableDoubleEncoding".to_string(), true.into());
-                        out
-                    }
-                    .into()]
+                .auth_scheme(
+                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4", 3)
+                        .put("disableDoubleEncoding", true)
+                        .put("signingName", "s3express".to_string())
+                        .put("signingRegion", "us-east-1".to_string())
                 )
                 .build()
         );
@@ -3464,17 +3002,11 @@ mod test {
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
                 .url("https://s3express-control.cn-north-1.amazonaws.com.cn")
-                .property(
-                    "authSchemes",
-                    vec![{
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "s3express".to_string().into());
-                        out.insert("signingRegion".to_string(), "cn-north-1".to_string().into());
-                        out.insert("disableDoubleEncoding".to_string(), true.into());
-                        out
-                    }
-                    .into()]
+                .auth_scheme(
+                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4", 3)
+                        .put("disableDoubleEncoding", true)
+                        .put("signingName", "s3express".to_string())
+                        .put("signingRegion", "cn-north-1".to_string())
                 )
                 .build()
         );
@@ -3520,17 +3052,11 @@ mod test {
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
                 .url("https://my-endpoint.express-control.s3.aws.dev")
-                .property(
-                    "authSchemes",
-                    vec![{
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "s3express".to_string().into());
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
-                        out.insert("disableDoubleEncoding".to_string(), true.into());
-                        out
-                    }
-                    .into()]
+                .auth_scheme(
+                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4", 3)
+                        .put("disableDoubleEncoding", true)
+                        .put("signingName", "s3express".to_string())
+                        .put("signingRegion", "us-east-1".to_string())
                 )
                 .build()
         );
@@ -3556,17 +3082,11 @@ mod test {
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
                 .url("https://my-endpoint.express-control.s3.aws.dev")
-                .property(
-                    "authSchemes",
-                    vec![{
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "s3express".to_string().into());
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
-                        out.insert("disableDoubleEncoding".to_string(), true.into());
-                        out
-                    }
-                    .into()]
+                .auth_scheme(
+                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4", 3)
+                        .put("disableDoubleEncoding", true)
+                        .put("signingName", "s3express".to_string())
+                        .put("signingRegion", "us-east-1".to_string())
                 )
                 .build()
         );
@@ -3613,17 +3133,11 @@ mod test {
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
                 .url("https://s3express-control.us-east-1.amazonaws.com")
-                .property(
-                    "authSchemes",
-                    vec![{
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "s3express".to_string().into());
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
-                        out.insert("disableDoubleEncoding".to_string(), true.into());
-                        out
-                    }
-                    .into()]
+                .auth_scheme(
+                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4", 3)
+                        .put("disableDoubleEncoding", true)
+                        .put("signingName", "s3express".to_string())
+                        .put("signingRegion", "us-east-1".to_string())
                 )
                 .build()
         );
@@ -3648,17 +3162,11 @@ mod test {
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
                 .url("https://s3express-control.us-east-1.amazonaws.com")
-                .property(
-                    "authSchemes",
-                    vec![{
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "s3express".to_string().into());
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
-                        out.insert("disableDoubleEncoding".to_string(), true.into());
-                        out
-                    }
-                    .into()]
+                .auth_scheme(
+                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4", 3)
+                        .put("disableDoubleEncoding", true)
+                        .put("signingName", "s3express".to_string())
+                        .put("signingRegion", "us-east-1".to_string())
                 )
                 .build()
         );
@@ -3683,17 +3191,11 @@ mod test {
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
                 .url("https://s3express-control-fips.us-east-1.amazonaws.com")
-                .property(
-                    "authSchemes",
-                    vec![{
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "s3express".to_string().into());
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
-                        out.insert("disableDoubleEncoding".to_string(), true.into());
-                        out
-                    }
-                    .into()]
+                .auth_scheme(
+                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4", 3)
+                        .put("disableDoubleEncoding", true)
+                        .put("signingName", "s3express".to_string())
+                        .put("signingRegion", "us-east-1".to_string())
                 )
                 .build()
         );
@@ -3718,17 +3220,11 @@ mod test {
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
                 .url("https://s3express-control-fips.us-east-1.amazonaws.com")
-                .property(
-                    "authSchemes",
-                    vec![{
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "s3express".to_string().into());
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
-                        out.insert("disableDoubleEncoding".to_string(), true.into());
-                        out
-                    }
-                    .into()]
+                .auth_scheme(
+                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4", 3)
+                        .put("disableDoubleEncoding", true)
+                        .put("signingName", "s3express".to_string())
+                        .put("signingRegion", "us-east-1".to_string())
                 )
                 .build()
         );
@@ -3753,17 +3249,11 @@ mod test {
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
                 .url("https://s3express-control.cn-north-1.amazonaws.com.cn")
-                .property(
-                    "authSchemes",
-                    vec![{
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "s3express".to_string().into());
-                        out.insert("signingRegion".to_string(), "cn-north-1".to_string().into());
-                        out.insert("disableDoubleEncoding".to_string(), true.into());
-                        out
-                    }
-                    .into()]
+                .auth_scheme(
+                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4", 3)
+                        .put("disableDoubleEncoding", true)
+                        .put("signingName", "s3express".to_string())
+                        .put("signingRegion", "cn-north-1".to_string())
                 )
                 .build()
         );
@@ -3788,17 +3278,11 @@ mod test {
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
                 .url("https://s3express-control.cn-north-1.amazonaws.com.cn")
-                .property(
-                    "authSchemes",
-                    vec![{
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "s3express".to_string().into());
-                        out.insert("signingRegion".to_string(), "cn-north-1".to_string().into());
-                        out.insert("disableDoubleEncoding".to_string(), true.into());
-                        out
-                    }
-                    .into()]
+                .auth_scheme(
+                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4", 3)
+                        .put("disableDoubleEncoding", true)
+                        .put("signingName", "s3express".to_string())
+                        .put("signingRegion", "cn-north-1".to_string())
                 )
                 .build()
         );
@@ -3859,17 +3343,11 @@ mod test {
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
                 .url("https://my-endpoint.express-control.s3.aws.dev")
-                .property(
-                    "authSchemes",
-                    vec![{
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "s3express".to_string().into());
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
-                        out.insert("disableDoubleEncoding".to_string(), true.into());
-                        out
-                    }
-                    .into()]
+                .auth_scheme(
+                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4", 3)
+                        .put("disableDoubleEncoding", true)
+                        .put("signingName", "s3express".to_string())
+                        .put("signingRegion", "us-east-1".to_string())
                 )
                 .build()
         );
@@ -3895,17 +3373,11 @@ mod test {
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
                 .url("https://my-endpoint.express-control.s3.aws.dev")
-                .property(
-                    "authSchemes",
-                    vec![{
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "s3express".to_string().into());
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
-                        out.insert("disableDoubleEncoding".to_string(), true.into());
-                        out
-                    }
-                    .into()]
+                .auth_scheme(
+                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4", 3)
+                        .put("disableDoubleEncoding", true)
+                        .put("signingName", "s3express".to_string())
+                        .put("signingRegion", "us-east-1".to_string())
                 )
                 .build()
         );
@@ -4028,36 +3500,3977 @@ where
     }
 }
 
-/// The default endpoint resolver
-#[derive(Debug, Default)]
+#[derive(Debug)]
+/// The default endpoint resolver.
 pub struct DefaultResolver {
-    partition_resolver: crate::endpoint_lib::partition::PartitionResolver,
+    partition_resolver: &'static crate::endpoint_lib::partition::PartitionResolver,
+    endpoint_cache: ::arc_swap::ArcSwap<::std::option::Option<(Params, ::aws_smithy_types::endpoint::Endpoint)>>,
+}
+
+impl Default for DefaultResolver {
+    fn default() -> Self {
+        Self::new()
+    }
 }
 
 impl DefaultResolver {
-    /// Create a new endpoint resolver with default settings
+    /// Create a new DefaultResolver
     pub fn new() -> Self {
         Self {
-            partition_resolver: crate::endpoint_lib::DEFAULT_PARTITION_RESOLVER.clone(),
+            partition_resolver: &crate::endpoint_lib::DEFAULT_PARTITION_RESOLVER,
+            endpoint_cache: ::arc_swap::ArcSwap::from_pointee(None),
         }
     }
 
-    fn resolve_endpoint(
-        &self,
-        params: &crate::config::endpoint::Params,
+    #[allow(
+        unused_variables,
+        unused_parens,
+        clippy::double_parens,
+        clippy::useless_conversion,
+        clippy::bool_comparison,
+        clippy::comparison_to_empty,
+        clippy::needless_borrow,
+        clippy::useless_asref,
+        clippy::redundant_closure_call,
+        clippy::clone_on_copy
+    )]
+    fn resolve_endpoint<'a>(
+        &'a self,
+        params: &'a crate::config::endpoint::Params,
     ) -> ::std::result::Result<::aws_smithy_types::endpoint::Endpoint, ::aws_smithy_runtime_api::box_error::BoxError> {
-        let mut diagnostic_collector = crate::endpoint_lib::diagnostic::DiagnosticCollector::new();
-        Ok(
-            crate::config::endpoint::internals::resolve_endpoint(params, &mut diagnostic_collector, &self.partition_resolver)
-                .map_err(|err| err.with_source(diagnostic_collector.take_last_error()))?,
-        )
+        let mut _diagnostic_collector = crate::endpoint_lib::diagnostic::DiagnosticCollector::new();
+        #[allow(unused_mut)]
+        let mut context = ConditionContext::default();
+
+        // Param bindings
+        let region = &params.region;
+        let use_fips = &params.use_fips;
+        let use_dual_stack = &params.use_dual_stack;
+        let endpoint = &params.endpoint;
+        let account_id = &params.account_id;
+        let requires_account_id = &params.requires_account_id;
+        let outpost_id = &params.outpost_id;
+        let bucket = &params.bucket;
+        let access_point_name = &params.access_point_name;
+        let use_arn_region = &params.use_arn_region;
+        let resource_arn = &params.resource_arn;
+        let use_s3_express_control_endpoint = &params.use_s3_express_control_endpoint;
+
+        let mut current_ref: i32 = 2;
+        loop {
+            match current_ref {
+                ref_val if ref_val >= 100_000_000 => {
+                    return match (ref_val - 100_000_000) as usize {
+                        0 => ::std::result::Result::Err(Box::new(::aws_smithy_http::endpoint::ResolveEndpointError::message(
+                            "No endpoint rule matched",
+                        )) as ::aws_smithy_runtime_api::box_error::BoxError),
+                        1 => ::std::result::Result::Err(Box::new(::aws_smithy_http::endpoint::ResolveEndpointError::message(
+                            "Partition does not support FIPS".to_string(),
+                        )) as ::aws_smithy_runtime_api::box_error::BoxError),
+                        2 => ::std::result::Result::Err(Box::new(::aws_smithy_http::endpoint::ResolveEndpointError::message(
+                            "AccountId is required but not set".to_string(),
+                        )) as ::aws_smithy_runtime_api::box_error::BoxError),
+                        3 => ::std::result::Result::Err(Box::new(::aws_smithy_http::endpoint::ResolveEndpointError::message(
+                            "AccountId must only contain a-z, A-Z, 0-9 and `-`.".to_string(),
+                        )) as ::aws_smithy_runtime_api::box_error::BoxError),
+                        4 => ::std::result::Result::Err(Box::new(::aws_smithy_http::endpoint::ResolveEndpointError::message(
+                            "OutpostId must only contain a-z, A-Z, 0-9 and `-`.".to_string(),
+                        )) as ::aws_smithy_runtime_api::box_error::BoxError),
+                        5 => ::std::result::Result::Err(Box::new(::aws_smithy_http::endpoint::ResolveEndpointError::message(
+                            "Invalid Configuration: DualStack and custom endpoint are not supported".to_string(),
+                        )) as ::aws_smithy_runtime_api::box_error::BoxError),
+                        6 => {
+                            let region = params.region.as_deref().unwrap_or_default();
+                            let url = context.url.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            ::std::result::Result::Ok(
+                                ::aws_smithy_types::endpoint::Endpoint::builder()
+                                    .url({
+                                        let mut out = String::new();
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&url.scheme());
+                                        out.push_str("://");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&url.authority());
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&url.path());
+                                        out
+                                    })
+                                    .auth_scheme(
+                                        ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4".to_string(), 3)
+                                            .put("disableDoubleEncoding", true)
+                                            .put("signingName", "s3-outposts")
+                                            .put("signingRegion", region.as_ref()),
+                                    )
+                                    .build(),
+                            )
+                        }
+                        7 => {
+                            let region = params.region.as_deref().unwrap_or_default();
+                            let partition_result = context.partition_result.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            ::std::result::Result::Ok(
+                                ::aws_smithy_types::endpoint::Endpoint::builder()
+                                    .url({
+                                        let mut out = String::new();
+                                        out.push_str("https://s3-outposts-fips.");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&region.as_ref());
+                                        out.push('.');
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&partition_result.dual_stack_dns_suffix());
+                                        out
+                                    })
+                                    .auth_scheme(
+                                        ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4".to_string(), 3)
+                                            .put("disableDoubleEncoding", true)
+                                            .put("signingName", "s3-outposts")
+                                            .put("signingRegion", region.as_ref()),
+                                    )
+                                    .build(),
+                            )
+                        }
+                        8 => {
+                            let region = params.region.as_deref().unwrap_or_default();
+                            let partition_result = context.partition_result.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            ::std::result::Result::Ok(
+                                ::aws_smithy_types::endpoint::Endpoint::builder()
+                                    .url({
+                                        let mut out = String::new();
+                                        out.push_str("https://s3-outposts-fips.");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&region.as_ref());
+                                        out.push('.');
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&partition_result.dns_suffix());
+                                        out
+                                    })
+                                    .auth_scheme(
+                                        ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4".to_string(), 3)
+                                            .put("disableDoubleEncoding", true)
+                                            .put("signingName", "s3-outposts")
+                                            .put("signingRegion", region.as_ref()),
+                                    )
+                                    .build(),
+                            )
+                        }
+                        9 => {
+                            let region = params.region.as_deref().unwrap_or_default();
+                            let partition_result = context.partition_result.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            ::std::result::Result::Ok(
+                                ::aws_smithy_types::endpoint::Endpoint::builder()
+                                    .url({
+                                        let mut out = String::new();
+                                        out.push_str("https://s3-outposts.");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&region.as_ref());
+                                        out.push('.');
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&partition_result.dual_stack_dns_suffix());
+                                        out
+                                    })
+                                    .auth_scheme(
+                                        ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4".to_string(), 3)
+                                            .put("disableDoubleEncoding", true)
+                                            .put("signingName", "s3-outposts")
+                                            .put("signingRegion", region.as_ref()),
+                                    )
+                                    .build(),
+                            )
+                        }
+                        10 => {
+                            let region = params.region.as_deref().unwrap_or_default();
+                            let partition_result = context.partition_result.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            ::std::result::Result::Ok(
+                                ::aws_smithy_types::endpoint::Endpoint::builder()
+                                    .url({
+                                        let mut out = String::new();
+                                        out.push_str("https://s3-outposts.");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&region.as_ref());
+                                        out.push('.');
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&partition_result.dns_suffix());
+                                        out
+                                    })
+                                    .auth_scheme(
+                                        ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4".to_string(), 3)
+                                            .put("disableDoubleEncoding", true)
+                                            .put("signingName", "s3-outposts")
+                                            .put("signingRegion", region.as_ref()),
+                                    )
+                                    .build(),
+                            )
+                        }
+                        11 => ::std::result::Result::Err(Box::new(::aws_smithy_http::endpoint::ResolveEndpointError::message(
+                            "Invalid region: region was not a valid DNS name.".to_string(),
+                        )) as ::aws_smithy_runtime_api::box_error::BoxError),
+                        12 => {
+                            let region = params.region.as_deref().unwrap_or_default();
+                            let resource_arn_ctx_1 = context
+                                .resource_arn_ctx_1
+                                .as_ref()
+                                .expect("Guaranteed to have a value by earlier checks.");
+                            ::std::result::Result::Err(Box::new(::aws_smithy_http::endpoint::ResolveEndpointError::message({
+                                let mut out = String::new();
+                                out.push_str("Invalid configuration: region from ARN `");
+                                #[allow(clippy::needless_borrow)]
+                                out.push_str(&resource_arn_ctx_1.region());
+                                out.push_str("` does not match client region `");
+                                #[allow(clippy::needless_borrow)]
+                                out.push_str(&region.as_ref());
+                                out.push_str("` and UseArnRegion is `false`");
+                                out
+                            })) as ::aws_smithy_runtime_api::box_error::BoxError)
+                        }
+                        13 => ::std::result::Result::Err(Box::new(::aws_smithy_http::endpoint::ResolveEndpointError::message(
+                            "S3Express does not support Dual-stack.".to_string(),
+                        )) as ::aws_smithy_runtime_api::box_error::BoxError),
+                        14 => {
+                            let region = params.region.as_deref().unwrap_or_default();
+                            let url = context.url.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            ::std::result::Result::Ok(
+                                ::aws_smithy_types::endpoint::Endpoint::builder()
+                                    .url({
+                                        let mut out = String::new();
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&url.scheme());
+                                        out.push_str("://");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&url.authority());
+                                        out
+                                    })
+                                    .auth_scheme(
+                                        ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4".to_string(), 3)
+                                            .put("disableDoubleEncoding", true)
+                                            .put("signingName", "s3express")
+                                            .put("signingRegion", region.as_ref()),
+                                    )
+                                    .build(),
+                            )
+                        }
+                        15 => {
+                            let region = params.region.as_deref().unwrap_or_default();
+                            let partition_result = context.partition_result.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            ::std::result::Result::Ok(
+                                ::aws_smithy_types::endpoint::Endpoint::builder()
+                                    .url({
+                                        let mut out = String::new();
+                                        out.push_str("https://s3express-control-fips.");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&region.as_ref());
+                                        out.push('.');
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&partition_result.dns_suffix());
+                                        out
+                                    })
+                                    .auth_scheme(
+                                        ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4".to_string(), 3)
+                                            .put("disableDoubleEncoding", true)
+                                            .put("signingName", "s3express")
+                                            .put("signingRegion", region.as_ref()),
+                                    )
+                                    .build(),
+                            )
+                        }
+                        16 => {
+                            let region = params.region.as_deref().unwrap_or_default();
+                            let partition_result = context.partition_result.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            ::std::result::Result::Ok(
+                                ::aws_smithy_types::endpoint::Endpoint::builder()
+                                    .url({
+                                        let mut out = String::new();
+                                        out.push_str("https://s3express-control.");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&region.as_ref());
+                                        out.push('.');
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&partition_result.dns_suffix());
+                                        out
+                                    })
+                                    .auth_scheme(
+                                        ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4".to_string(), 3)
+                                            .put("disableDoubleEncoding", true)
+                                            .put("signingName", "s3express")
+                                            .put("signingRegion", region.as_ref()),
+                                    )
+                                    .build(),
+                            )
+                        }
+                        17 => {
+                            let partition_result = context.partition_result.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            let arn_partition_ssa_3 = context
+                                .arn_partition_ssa_3
+                                .as_ref()
+                                .expect("Guaranteed to have a value by earlier checks.");
+                            ::std::result::Result::Err(Box::new(::aws_smithy_http::endpoint::ResolveEndpointError::message({
+                                let mut out = String::new();
+                                out.push_str("Client was configured for partition `");
+                                #[allow(clippy::needless_borrow)]
+                                out.push_str(&partition_result.name());
+                                out.push_str("` but ARN has `");
+                                #[allow(clippy::needless_borrow)]
+                                out.push_str(&arn_partition_ssa_3.name());
+                                out.push('`');
+                                out
+                            })) as ::aws_smithy_runtime_api::box_error::BoxError)
+                        }
+                        18 => ::std::result::Result::Err(Box::new(::aws_smithy_http::endpoint::ResolveEndpointError::message(
+                            "Unrecognized S3Express Access Point name format.".to_string(),
+                        )) as ::aws_smithy_runtime_api::box_error::BoxError),
+                        19 => ::std::result::Result::Err(Box::new(::aws_smithy_http::endpoint::ResolveEndpointError::message(
+                            "S3 Snow does not support DualStack".to_string(),
+                        )) as ::aws_smithy_runtime_api::box_error::BoxError),
+                        20 => ::std::result::Result::Err(Box::new(::aws_smithy_http::endpoint::ResolveEndpointError::message(
+                            "S3 Snow does not support FIPS".to_string(),
+                        )) as ::aws_smithy_runtime_api::box_error::BoxError),
+                        21 => {
+                            let region = params.region.as_deref().unwrap_or_default();
+                            let url = context.url.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            ::std::result::Result::Ok(
+                                ::aws_smithy_types::endpoint::Endpoint::builder()
+                                    .url({
+                                        let mut out = String::new();
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&url.scheme());
+                                        out.push_str("://");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&url.authority());
+                                        out
+                                    })
+                                    .auth_scheme(
+                                        ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4".to_string(), 3)
+                                            .put("disableDoubleEncoding", true)
+                                            .put("signingName", "s3")
+                                            .put("signingRegion", region.as_ref()),
+                                    )
+                                    .build(),
+                            )
+                        }
+                        22 => {
+                            let region = params.region.as_deref().unwrap_or_default();
+                            let access_point_arn = context.access_point_arn.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            ::std::result::Result::Err(Box::new(::aws_smithy_http::endpoint::ResolveEndpointError::message({
+                                let mut out = String::new();
+                                out.push_str("Invalid configuration: region from ARN `");
+                                #[allow(clippy::needless_borrow)]
+                                out.push_str(&access_point_arn.region());
+                                out.push_str("` does not match client region `");
+                                #[allow(clippy::needless_borrow)]
+                                out.push_str(&region.as_ref());
+                                out.push_str("` and UseArnRegion is `false`");
+                                out
+                            })) as ::aws_smithy_runtime_api::box_error::BoxError)
+                        }
+                        23 => {
+                            let account_id = params.account_id.as_deref().unwrap_or_default();
+                            let access_point_arn = context.access_point_arn.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            ::std::result::Result::Err(Box::new(::aws_smithy_http::endpoint::ResolveEndpointError::message({
+                                let mut out = String::new();
+                                out.push_str("Invalid ARN: the accountId specified in the ARN (`");
+                                #[allow(clippy::needless_borrow)]
+                                out.push_str(&access_point_arn.account_id());
+                                out.push_str("`) does not match the parameter (`");
+                                #[allow(clippy::needless_borrow)]
+                                out.push_str(&account_id.as_ref());
+                                out.push_str("`)");
+                                out
+                            })) as ::aws_smithy_runtime_api::box_error::BoxError)
+                        }
+                        24 => {
+                            let access_point_arn = context.access_point_arn.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            let outpost_id_ssa_1 = context.outpost_id_ssa_1.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            let arn_partition_ssa_1 = context
+                                .arn_partition_ssa_1
+                                .as_ref()
+                                .expect("Guaranteed to have a value by earlier checks.");
+                            ::std::result::Result::Ok(
+                                ::aws_smithy_types::endpoint::Endpoint::builder()
+                                    .url({
+                                        let mut out = String::new();
+                                        out.push_str("https://s3-outposts-fips.");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&access_point_arn.region());
+                                        out.push('.');
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&arn_partition_ssa_1.dual_stack_dns_suffix());
+                                        out
+                                    })
+                                    .header("x-amz-account-id", access_point_arn.account_id().to_owned())
+                                    .header("x-amz-outpost-id", outpost_id_ssa_1.to_owned())
+                                    .auth_scheme(
+                                        ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4".to_string(), 3)
+                                            .put("disableDoubleEncoding", true)
+                                            .put("signingName", "s3-outposts")
+                                            .put("signingRegion", access_point_arn.region()),
+                                    )
+                                    .build(),
+                            )
+                        }
+                        25 => {
+                            let access_point_arn = context.access_point_arn.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            let outpost_id_ssa_1 = context.outpost_id_ssa_1.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            let arn_partition_ssa_1 = context
+                                .arn_partition_ssa_1
+                                .as_ref()
+                                .expect("Guaranteed to have a value by earlier checks.");
+                            ::std::result::Result::Ok(
+                                ::aws_smithy_types::endpoint::Endpoint::builder()
+                                    .url({
+                                        let mut out = String::new();
+                                        out.push_str("https://s3-outposts-fips.");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&access_point_arn.region());
+                                        out.push('.');
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&arn_partition_ssa_1.dns_suffix());
+                                        out
+                                    })
+                                    .header("x-amz-account-id", access_point_arn.account_id().to_owned())
+                                    .header("x-amz-outpost-id", outpost_id_ssa_1.to_owned())
+                                    .auth_scheme(
+                                        ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4".to_string(), 3)
+                                            .put("disableDoubleEncoding", true)
+                                            .put("signingName", "s3-outposts")
+                                            .put("signingRegion", access_point_arn.region()),
+                                    )
+                                    .build(),
+                            )
+                        }
+                        26 => {
+                            let access_point_arn = context.access_point_arn.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            let outpost_id_ssa_1 = context.outpost_id_ssa_1.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            let arn_partition_ssa_1 = context
+                                .arn_partition_ssa_1
+                                .as_ref()
+                                .expect("Guaranteed to have a value by earlier checks.");
+                            ::std::result::Result::Ok(
+                                ::aws_smithy_types::endpoint::Endpoint::builder()
+                                    .url({
+                                        let mut out = String::new();
+                                        out.push_str("https://s3-outposts.");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&access_point_arn.region());
+                                        out.push('.');
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&arn_partition_ssa_1.dual_stack_dns_suffix());
+                                        out
+                                    })
+                                    .header("x-amz-account-id", access_point_arn.account_id().to_owned())
+                                    .header("x-amz-outpost-id", outpost_id_ssa_1.to_owned())
+                                    .auth_scheme(
+                                        ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4".to_string(), 3)
+                                            .put("disableDoubleEncoding", true)
+                                            .put("signingName", "s3-outposts")
+                                            .put("signingRegion", access_point_arn.region()),
+                                    )
+                                    .build(),
+                            )
+                        }
+                        27 => {
+                            let url = context.url.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            let access_point_arn = context.access_point_arn.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            let outpost_id_ssa_1 = context.outpost_id_ssa_1.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            ::std::result::Result::Ok(
+                                ::aws_smithy_types::endpoint::Endpoint::builder()
+                                    .url({
+                                        let mut out = String::new();
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&url.scheme());
+                                        out.push_str("://");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&url.authority());
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&url.path());
+                                        out
+                                    })
+                                    .header("x-amz-account-id", access_point_arn.account_id().to_owned())
+                                    .header("x-amz-outpost-id", outpost_id_ssa_1.to_owned())
+                                    .auth_scheme(
+                                        ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4".to_string(), 3)
+                                            .put("disableDoubleEncoding", true)
+                                            .put("signingName", "s3-outposts")
+                                            .put("signingRegion", access_point_arn.region()),
+                                    )
+                                    .build(),
+                            )
+                        }
+                        28 => {
+                            let access_point_arn = context.access_point_arn.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            let outpost_id_ssa_1 = context.outpost_id_ssa_1.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            let arn_partition_ssa_1 = context
+                                .arn_partition_ssa_1
+                                .as_ref()
+                                .expect("Guaranteed to have a value by earlier checks.");
+                            ::std::result::Result::Ok(
+                                ::aws_smithy_types::endpoint::Endpoint::builder()
+                                    .url({
+                                        let mut out = String::new();
+                                        out.push_str("https://s3-outposts.");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&access_point_arn.region());
+                                        out.push('.');
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&arn_partition_ssa_1.dns_suffix());
+                                        out
+                                    })
+                                    .header("x-amz-account-id", access_point_arn.account_id().to_owned())
+                                    .header("x-amz-outpost-id", outpost_id_ssa_1.to_owned())
+                                    .auth_scheme(
+                                        ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4".to_string(), 3)
+                                            .put("disableDoubleEncoding", true)
+                                            .put("signingName", "s3-outposts")
+                                            .put("signingRegion", access_point_arn.region()),
+                                    )
+                                    .build(),
+                            )
+                        }
+                        29 => {
+                            let outpost_type_ssa_1 = context
+                                .outpost_type_ssa_1
+                                .as_ref()
+                                .expect("Guaranteed to have a value by earlier checks.");
+                            ::std::result::Result::Err(Box::new(::aws_smithy_http::endpoint::ResolveEndpointError::message({
+                                let mut out = String::new();
+                                out.push_str("Expected an outpost type `accesspoint`, found `");
+                                #[allow(clippy::needless_borrow)]
+                                out.push_str(&outpost_type_ssa_1.as_ref());
+                                out.push('`');
+                                out
+                            })) as ::aws_smithy_runtime_api::box_error::BoxError)
+                        }
+                        30 => ::std::result::Result::Err(Box::new(::aws_smithy_http::endpoint::ResolveEndpointError::message(
+                            "Invalid ARN: expected an access point name".to_string(),
+                        )) as ::aws_smithy_runtime_api::box_error::BoxError),
+                        31 => ::std::result::Result::Err(Box::new(::aws_smithy_http::endpoint::ResolveEndpointError::message(
+                            "Invalid ARN: Expected a 4-component resource".to_string(),
+                        )) as ::aws_smithy_runtime_api::box_error::BoxError),
+                        32 => {
+                            let access_point_arn = context.access_point_arn.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            ::std::result::Result::Err(Box::new(::aws_smithy_http::endpoint::ResolveEndpointError::message({
+                                let mut out = String::new();
+                                out.push_str("Invalid ARN: The account id may only contain a-z, A-Z, 0-9 and `-`. Found: `");
+                                #[allow(clippy::needless_borrow)]
+                                out.push_str(&access_point_arn.account_id());
+                                out.push('`');
+                                out
+                            })) as ::aws_smithy_runtime_api::box_error::BoxError)
+                        }
+                        33 => ::std::result::Result::Err(Box::new(::aws_smithy_http::endpoint::ResolveEndpointError::message(
+                            "Invalid ARN: missing account ID".to_string(),
+                        )) as ::aws_smithy_runtime_api::box_error::BoxError),
+                        34 => {
+                            let access_point_arn = context.access_point_arn.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            ::std::result::Result::Err(Box::new(::aws_smithy_http::endpoint::ResolveEndpointError::message({
+                                let mut out = String::new();
+                                out.push_str("Invalid region in ARN: `");
+                                #[allow(clippy::needless_borrow)]
+                                out.push_str(&access_point_arn.region());
+                                out.push_str("` (invalid DNS name)");
+                                out
+                            })) as ::aws_smithy_runtime_api::box_error::BoxError)
+                        }
+                        35 => {
+                            let partition_result = context.partition_result.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            let arn_partition_ssa_1 = context
+                                .arn_partition_ssa_1
+                                .as_ref()
+                                .expect("Guaranteed to have a value by earlier checks.");
+                            ::std::result::Result::Err(Box::new(::aws_smithy_http::endpoint::ResolveEndpointError::message({
+                                let mut out = String::new();
+                                out.push_str("Client was configured for partition `");
+                                #[allow(clippy::needless_borrow)]
+                                out.push_str(&partition_result.name());
+                                out.push_str("` but ARN has `");
+                                #[allow(clippy::needless_borrow)]
+                                out.push_str(&arn_partition_ssa_1.name());
+                                out.push('`');
+                                out
+                            })) as ::aws_smithy_runtime_api::box_error::BoxError)
+                        }
+                        36 => {
+                            let outpost_id_ssa_1 = context.outpost_id_ssa_1.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            ::std::result::Result::Err(Box::new(::aws_smithy_http::endpoint::ResolveEndpointError::message({
+                                let mut out = String::new();
+                                out.push_str("Invalid ARN: The outpost Id must only contain a-z, A-Z, 0-9 and `-`., found: `");
+                                #[allow(clippy::needless_borrow)]
+                                out.push_str(&outpost_id_ssa_1.as_ref());
+                                out.push('`');
+                                out
+                            })) as ::aws_smithy_runtime_api::box_error::BoxError)
+                        }
+                        37 => ::std::result::Result::Err(Box::new(::aws_smithy_http::endpoint::ResolveEndpointError::message(
+                            "Invalid ARN: The Outpost Id was not set".to_string(),
+                        )) as ::aws_smithy_runtime_api::box_error::BoxError),
+                        38 => ::std::result::Result::Err(Box::new(::aws_smithy_http::endpoint::ResolveEndpointError::message(
+                            "Invalid ARN: No ARN type specified".to_string(),
+                        )) as ::aws_smithy_runtime_api::box_error::BoxError),
+                        39 => {
+                            let region = params.region.as_deref().unwrap_or_default();
+                            let bucket_arn = context.bucket_arn.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            ::std::result::Result::Err(Box::new(::aws_smithy_http::endpoint::ResolveEndpointError::message({
+                                let mut out = String::new();
+                                out.push_str("Invalid configuration: region from ARN `");
+                                #[allow(clippy::needless_borrow)]
+                                out.push_str(&bucket_arn.region());
+                                out.push_str("` does not match client region `");
+                                #[allow(clippy::needless_borrow)]
+                                out.push_str(&region.as_ref());
+                                out.push_str("` and UseArnRegion is `false`");
+                                out
+                            })) as ::aws_smithy_runtime_api::box_error::BoxError)
+                        }
+                        40 => {
+                            let account_id = params.account_id.as_deref().unwrap_or_default();
+                            let bucket_arn = context.bucket_arn.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            ::std::result::Result::Err(Box::new(::aws_smithy_http::endpoint::ResolveEndpointError::message({
+                                let mut out = String::new();
+                                out.push_str("Invalid ARN: the accountId specified in the ARN (`");
+                                #[allow(clippy::needless_borrow)]
+                                out.push_str(&bucket_arn.account_id());
+                                out.push_str("`) does not match the parameter (`");
+                                #[allow(clippy::needless_borrow)]
+                                out.push_str(&account_id.as_ref());
+                                out.push_str("`)");
+                                out
+                            })) as ::aws_smithy_runtime_api::box_error::BoxError)
+                        }
+                        41 => {
+                            let bucket_arn = context.bucket_arn.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            let outpost_id_ssa_2 = context.outpost_id_ssa_2.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            let arn_partition_ssa_2 = context
+                                .arn_partition_ssa_2
+                                .as_ref()
+                                .expect("Guaranteed to have a value by earlier checks.");
+                            ::std::result::Result::Ok(
+                                ::aws_smithy_types::endpoint::Endpoint::builder()
+                                    .url({
+                                        let mut out = String::new();
+                                        out.push_str("https://s3-outposts-fips.");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&bucket_arn.region());
+                                        out.push('.');
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&arn_partition_ssa_2.dual_stack_dns_suffix());
+                                        out
+                                    })
+                                    .header("x-amz-account-id", bucket_arn.account_id().to_owned())
+                                    .header("x-amz-outpost-id", outpost_id_ssa_2.to_owned())
+                                    .auth_scheme(
+                                        ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4".to_string(), 3)
+                                            .put("disableDoubleEncoding", true)
+                                            .put("signingName", "s3-outposts")
+                                            .put("signingRegion", bucket_arn.region()),
+                                    )
+                                    .build(),
+                            )
+                        }
+                        42 => {
+                            let bucket_arn = context.bucket_arn.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            let outpost_id_ssa_2 = context.outpost_id_ssa_2.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            let arn_partition_ssa_2 = context
+                                .arn_partition_ssa_2
+                                .as_ref()
+                                .expect("Guaranteed to have a value by earlier checks.");
+                            ::std::result::Result::Ok(
+                                ::aws_smithy_types::endpoint::Endpoint::builder()
+                                    .url({
+                                        let mut out = String::new();
+                                        out.push_str("https://s3-outposts-fips.");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&bucket_arn.region());
+                                        out.push('.');
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&arn_partition_ssa_2.dns_suffix());
+                                        out
+                                    })
+                                    .header("x-amz-account-id", bucket_arn.account_id().to_owned())
+                                    .header("x-amz-outpost-id", outpost_id_ssa_2.to_owned())
+                                    .auth_scheme(
+                                        ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4".to_string(), 3)
+                                            .put("disableDoubleEncoding", true)
+                                            .put("signingName", "s3-outposts")
+                                            .put("signingRegion", bucket_arn.region()),
+                                    )
+                                    .build(),
+                            )
+                        }
+                        43 => {
+                            let bucket_arn = context.bucket_arn.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            let outpost_id_ssa_2 = context.outpost_id_ssa_2.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            let arn_partition_ssa_2 = context
+                                .arn_partition_ssa_2
+                                .as_ref()
+                                .expect("Guaranteed to have a value by earlier checks.");
+                            ::std::result::Result::Ok(
+                                ::aws_smithy_types::endpoint::Endpoint::builder()
+                                    .url({
+                                        let mut out = String::new();
+                                        out.push_str("https://s3-outposts.");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&bucket_arn.region());
+                                        out.push('.');
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&arn_partition_ssa_2.dual_stack_dns_suffix());
+                                        out
+                                    })
+                                    .header("x-amz-account-id", bucket_arn.account_id().to_owned())
+                                    .header("x-amz-outpost-id", outpost_id_ssa_2.to_owned())
+                                    .auth_scheme(
+                                        ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4".to_string(), 3)
+                                            .put("disableDoubleEncoding", true)
+                                            .put("signingName", "s3-outposts")
+                                            .put("signingRegion", bucket_arn.region()),
+                                    )
+                                    .build(),
+                            )
+                        }
+                        44 => {
+                            let url = context.url.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            let bucket_arn = context.bucket_arn.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            let outpost_id_ssa_2 = context.outpost_id_ssa_2.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            ::std::result::Result::Ok(
+                                ::aws_smithy_types::endpoint::Endpoint::builder()
+                                    .url({
+                                        let mut out = String::new();
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&url.scheme());
+                                        out.push_str("://");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&url.authority());
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&url.path());
+                                        out
+                                    })
+                                    .header("x-amz-account-id", bucket_arn.account_id().to_owned())
+                                    .header("x-amz-outpost-id", outpost_id_ssa_2.to_owned())
+                                    .auth_scheme(
+                                        ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4".to_string(), 3)
+                                            .put("disableDoubleEncoding", true)
+                                            .put("signingName", "s3-outposts")
+                                            .put("signingRegion", bucket_arn.region()),
+                                    )
+                                    .build(),
+                            )
+                        }
+                        45 => {
+                            let bucket_arn = context.bucket_arn.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            let outpost_id_ssa_2 = context.outpost_id_ssa_2.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            let arn_partition_ssa_2 = context
+                                .arn_partition_ssa_2
+                                .as_ref()
+                                .expect("Guaranteed to have a value by earlier checks.");
+                            ::std::result::Result::Ok(
+                                ::aws_smithy_types::endpoint::Endpoint::builder()
+                                    .url({
+                                        let mut out = String::new();
+                                        out.push_str("https://s3-outposts.");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&bucket_arn.region());
+                                        out.push('.');
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&arn_partition_ssa_2.dns_suffix());
+                                        out
+                                    })
+                                    .header("x-amz-account-id", bucket_arn.account_id().to_owned())
+                                    .header("x-amz-outpost-id", outpost_id_ssa_2.to_owned())
+                                    .auth_scheme(
+                                        ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4".to_string(), 3)
+                                            .put("disableDoubleEncoding", true)
+                                            .put("signingName", "s3-outposts")
+                                            .put("signingRegion", bucket_arn.region()),
+                                    )
+                                    .build(),
+                            )
+                        }
+                        46 => {
+                            let outpost_type_ssa_2 = context
+                                .outpost_type_ssa_2
+                                .as_ref()
+                                .expect("Guaranteed to have a value by earlier checks.");
+                            ::std::result::Result::Err(Box::new(::aws_smithy_http::endpoint::ResolveEndpointError::message({
+                                let mut out = String::new();
+                                out.push_str("Invalid ARN: Expected an outpost type `bucket`, found `");
+                                #[allow(clippy::needless_borrow)]
+                                out.push_str(&outpost_type_ssa_2.as_ref());
+                                out.push('`');
+                                out
+                            })) as ::aws_smithy_runtime_api::box_error::BoxError)
+                        }
+                        47 => ::std::result::Result::Err(Box::new(::aws_smithy_http::endpoint::ResolveEndpointError::message(
+                            "Invalid ARN: expected a bucket name".to_string(),
+                        )) as ::aws_smithy_runtime_api::box_error::BoxError),
+                        48 => {
+                            let bucket_arn = context.bucket_arn.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            ::std::result::Result::Err(Box::new(::aws_smithy_http::endpoint::ResolveEndpointError::message({
+                                let mut out = String::new();
+                                out.push_str("Invalid ARN: The account id may only contain a-z, A-Z, 0-9 and `-`. Found: `");
+                                #[allow(clippy::needless_borrow)]
+                                out.push_str(&bucket_arn.account_id());
+                                out.push('`');
+                                out
+                            })) as ::aws_smithy_runtime_api::box_error::BoxError)
+                        }
+                        49 => {
+                            let bucket_arn = context.bucket_arn.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            ::std::result::Result::Err(Box::new(::aws_smithy_http::endpoint::ResolveEndpointError::message({
+                                let mut out = String::new();
+                                out.push_str("Invalid region in ARN: `");
+                                #[allow(clippy::needless_borrow)]
+                                out.push_str(&bucket_arn.region());
+                                out.push_str("` (invalid DNS name)");
+                                out
+                            })) as ::aws_smithy_runtime_api::box_error::BoxError)
+                        }
+                        50 => {
+                            let partition_result = context.partition_result.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            let arn_partition_ssa_2 = context
+                                .arn_partition_ssa_2
+                                .as_ref()
+                                .expect("Guaranteed to have a value by earlier checks.");
+                            ::std::result::Result::Err(Box::new(::aws_smithy_http::endpoint::ResolveEndpointError::message({
+                                let mut out = String::new();
+                                out.push_str("Client was configured for partition `");
+                                #[allow(clippy::needless_borrow)]
+                                out.push_str(&partition_result.name());
+                                out.push_str("` but ARN has `");
+                                #[allow(clippy::needless_borrow)]
+                                out.push_str(&arn_partition_ssa_2.name());
+                                out.push('`');
+                                out
+                            })) as ::aws_smithy_runtime_api::box_error::BoxError)
+                        }
+                        51 => {
+                            let outpost_id_ssa_2 = context.outpost_id_ssa_2.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            ::std::result::Result::Err(Box::new(::aws_smithy_http::endpoint::ResolveEndpointError::message({
+                                let mut out = String::new();
+                                out.push_str("Invalid ARN: The outpost Id must only contain a-z, A-Z, 0-9 and `-`., found: `");
+                                #[allow(clippy::needless_borrow)]
+                                out.push_str(&outpost_id_ssa_2.as_ref());
+                                out.push('`');
+                                out
+                            })) as ::aws_smithy_runtime_api::box_error::BoxError)
+                        }
+                        52 => {
+                            let region = params.region.as_deref().unwrap_or_default();
+                            let account_id = params.account_id.as_deref().unwrap_or_default();
+                            let url = context.url.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            ::std::result::Result::Ok(
+                                ::aws_smithy_types::endpoint::Endpoint::builder()
+                                    .url({
+                                        let mut out = String::new();
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&url.scheme());
+                                        out.push_str("://");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&account_id.as_ref());
+                                        out.push('.');
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&url.authority());
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&url.path());
+                                        out
+                                    })
+                                    .auth_scheme(
+                                        ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4".to_string(), 3)
+                                            .put("disableDoubleEncoding", true)
+                                            .put("signingName", "s3")
+                                            .put("signingRegion", region.as_ref()),
+                                    )
+                                    .build(),
+                            )
+                        }
+                        53 => {
+                            let region = params.region.as_deref().unwrap_or_default();
+                            let url = context.url.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            ::std::result::Result::Ok(
+                                ::aws_smithy_types::endpoint::Endpoint::builder()
+                                    .url({
+                                        let mut out = String::new();
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&url.scheme());
+                                        out.push_str("://");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&url.authority());
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&url.path());
+                                        out
+                                    })
+                                    .auth_scheme(
+                                        ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4".to_string(), 3)
+                                            .put("disableDoubleEncoding", true)
+                                            .put("signingName", "s3")
+                                            .put("signingRegion", region.as_ref()),
+                                    )
+                                    .build(),
+                            )
+                        }
+                        54 => {
+                            let region = params.region.as_deref().unwrap_or_default();
+                            let account_id = params.account_id.as_deref().unwrap_or_default();
+                            let partition_result = context.partition_result.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            ::std::result::Result::Ok(
+                                ::aws_smithy_types::endpoint::Endpoint::builder()
+                                    .url({
+                                        let mut out = String::new();
+                                        out.push_str("https://");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&account_id.as_ref());
+                                        out.push_str(".s3-control-fips.dualstack.");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&region.as_ref());
+                                        out.push('.');
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&partition_result.dns_suffix());
+                                        out
+                                    })
+                                    .auth_scheme(
+                                        ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4".to_string(), 3)
+                                            .put("disableDoubleEncoding", true)
+                                            .put("signingName", "s3")
+                                            .put("signingRegion", region.as_ref()),
+                                    )
+                                    .build(),
+                            )
+                        }
+                        55 => {
+                            let region = params.region.as_deref().unwrap_or_default();
+                            let partition_result = context.partition_result.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            ::std::result::Result::Ok(
+                                ::aws_smithy_types::endpoint::Endpoint::builder()
+                                    .url({
+                                        let mut out = String::new();
+                                        out.push_str("https://s3-control-fips.dualstack.");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&region.as_ref());
+                                        out.push('.');
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&partition_result.dns_suffix());
+                                        out
+                                    })
+                                    .auth_scheme(
+                                        ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4".to_string(), 3)
+                                            .put("disableDoubleEncoding", true)
+                                            .put("signingName", "s3")
+                                            .put("signingRegion", region.as_ref()),
+                                    )
+                                    .build(),
+                            )
+                        }
+                        56 => {
+                            let region = params.region.as_deref().unwrap_or_default();
+                            let account_id = params.account_id.as_deref().unwrap_or_default();
+                            let partition_result = context.partition_result.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            ::std::result::Result::Ok(
+                                ::aws_smithy_types::endpoint::Endpoint::builder()
+                                    .url({
+                                        let mut out = String::new();
+                                        out.push_str("https://");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&account_id.as_ref());
+                                        out.push_str(".s3-control-fips.");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&region.as_ref());
+                                        out.push('.');
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&partition_result.dns_suffix());
+                                        out
+                                    })
+                                    .auth_scheme(
+                                        ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4".to_string(), 3)
+                                            .put("disableDoubleEncoding", true)
+                                            .put("signingName", "s3")
+                                            .put("signingRegion", region.as_ref()),
+                                    )
+                                    .build(),
+                            )
+                        }
+                        57 => {
+                            let region = params.region.as_deref().unwrap_or_default();
+                            let partition_result = context.partition_result.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            ::std::result::Result::Ok(
+                                ::aws_smithy_types::endpoint::Endpoint::builder()
+                                    .url({
+                                        let mut out = String::new();
+                                        out.push_str("https://s3-control-fips.");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&region.as_ref());
+                                        out.push('.');
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&partition_result.dns_suffix());
+                                        out
+                                    })
+                                    .auth_scheme(
+                                        ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4".to_string(), 3)
+                                            .put("disableDoubleEncoding", true)
+                                            .put("signingName", "s3")
+                                            .put("signingRegion", region.as_ref()),
+                                    )
+                                    .build(),
+                            )
+                        }
+                        58 => {
+                            let region = params.region.as_deref().unwrap_or_default();
+                            let account_id = params.account_id.as_deref().unwrap_or_default();
+                            let partition_result = context.partition_result.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            ::std::result::Result::Ok(
+                                ::aws_smithy_types::endpoint::Endpoint::builder()
+                                    .url({
+                                        let mut out = String::new();
+                                        out.push_str("https://");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&account_id.as_ref());
+                                        out.push_str(".s3-control.dualstack.");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&region.as_ref());
+                                        out.push('.');
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&partition_result.dns_suffix());
+                                        out
+                                    })
+                                    .auth_scheme(
+                                        ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4".to_string(), 3)
+                                            .put("disableDoubleEncoding", true)
+                                            .put("signingName", "s3")
+                                            .put("signingRegion", region.as_ref()),
+                                    )
+                                    .build(),
+                            )
+                        }
+                        59 => {
+                            let region = params.region.as_deref().unwrap_or_default();
+                            let partition_result = context.partition_result.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            ::std::result::Result::Ok(
+                                ::aws_smithy_types::endpoint::Endpoint::builder()
+                                    .url({
+                                        let mut out = String::new();
+                                        out.push_str("https://s3-control.dualstack.");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&region.as_ref());
+                                        out.push('.');
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&partition_result.dns_suffix());
+                                        out
+                                    })
+                                    .auth_scheme(
+                                        ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4".to_string(), 3)
+                                            .put("disableDoubleEncoding", true)
+                                            .put("signingName", "s3")
+                                            .put("signingRegion", region.as_ref()),
+                                    )
+                                    .build(),
+                            )
+                        }
+                        60 => {
+                            let region = params.region.as_deref().unwrap_or_default();
+                            let account_id = params.account_id.as_deref().unwrap_or_default();
+                            let partition_result = context.partition_result.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            ::std::result::Result::Ok(
+                                ::aws_smithy_types::endpoint::Endpoint::builder()
+                                    .url({
+                                        let mut out = String::new();
+                                        out.push_str("https://");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&account_id.as_ref());
+                                        out.push_str(".s3-control.");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&region.as_ref());
+                                        out.push('.');
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&partition_result.dns_suffix());
+                                        out
+                                    })
+                                    .auth_scheme(
+                                        ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4".to_string(), 3)
+                                            .put("disableDoubleEncoding", true)
+                                            .put("signingName", "s3")
+                                            .put("signingRegion", region.as_ref()),
+                                    )
+                                    .build(),
+                            )
+                        }
+                        61 => {
+                            let region = params.region.as_deref().unwrap_or_default();
+                            let partition_result = context.partition_result.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            ::std::result::Result::Ok(
+                                ::aws_smithy_types::endpoint::Endpoint::builder()
+                                    .url({
+                                        let mut out = String::new();
+                                        out.push_str("https://s3-control.");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&region.as_ref());
+                                        out.push('.');
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&partition_result.dns_suffix());
+                                        out
+                                    })
+                                    .auth_scheme(
+                                        ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4".to_string(), 3)
+                                            .put("disableDoubleEncoding", true)
+                                            .put("signingName", "s3")
+                                            .put("signingRegion", region.as_ref()),
+                                    )
+                                    .build(),
+                            )
+                        }
+                        62 => ::std::result::Result::Err(Box::new(::aws_smithy_http::endpoint::ResolveEndpointError::message(
+                            "Region must be set".to_string(),
+                        )) as ::aws_smithy_runtime_api::box_error::BoxError),
+                        _ => ::std::result::Result::Err(Box::new(::aws_smithy_http::endpoint::ResolveEndpointError::message(
+                            "No endpoint rule matched",
+                        )) as ::aws_smithy_runtime_api::box_error::BoxError),
+                    };
+                }
+                1 | -1 => {
+                    return ::std::result::Result::Err(
+                        Box::new(::aws_smithy_http::endpoint::ResolveEndpointError::message("No endpoint rule matched"))
+                            as ::aws_smithy_runtime_api::box_error::BoxError,
+                    )
+                }
+                ref_val => {
+                    let is_complement = ref_val < 0;
+                    let node = &NODES[(ref_val.unsigned_abs() as usize) - 1];
+                    let condition_result = match node.condition_index {
+                        0 => region.is_some(),
+                        1 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let partition_result = &mut context.partition_result;
+                            let partition_resolver = &self.partition_resolver;
+                            {
+                                *partition_result = partition_resolver
+                                    .resolve_partition(if let Some(param) = region { param } else { return false }, _diagnostic_collector)
+                                    .map(|inner| inner.into());
+                                partition_result.is_some()
+                            }
+                        })(&mut _diagnostic_collector),
+                        2 => (use_fips) == (&true),
+                        3 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let partition_result = &context.partition_result;
+                            let partition_resolver = &self.partition_resolver;
+                            (if let Some(inner) = partition_result {
+                                inner.name()
+                            } else {
+                                return false;
+                            }) == ("aws-cn")
+                        })(&mut _diagnostic_collector),
+                        4 => outpost_id.is_some(),
+                        5 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let partition_resolver = &self.partition_resolver;
+                            crate::endpoint_lib::host::is_valid_host_label(
+                                if let Some(param) = outpost_id { param } else { return false },
+                                false,
+                                _diagnostic_collector,
+                            )
+                        })(&mut _diagnostic_collector),
+                        6 => resource_arn.is_some(),
+                        7 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let resource_arn_ctx_1 = &mut context.resource_arn_ctx_1;
+                            let partition_resolver = &self.partition_resolver;
+                            {
+                                *resource_arn_ctx_1 = crate::endpoint_lib::arn::parse_arn(
+                                    if let Some(param) = resource_arn { param } else { return false },
+                                    _diagnostic_collector,
+                                )
+                                .map(|inner| inner.into());
+                                resource_arn_ctx_1.is_some()
+                            }
+                        })(&mut _diagnostic_collector),
+                        8 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let resource_arn_ctx_1 = &context.resource_arn_ctx_1;
+                            let partition_resolver = &self.partition_resolver;
+                            (if let Some(inner) = resource_arn_ctx_1 {
+                                inner.service()
+                            } else {
+                                return false;
+                            }) == ("s3express")
+                        })(&mut _diagnostic_collector),
+                        9 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let resource_arn_ctx_1 = &context.resource_arn_ctx_1;
+                            let arn_partition_ssa_3 = &mut context.arn_partition_ssa_3;
+                            let partition_resolver = &self.partition_resolver;
+                            {
+                                *arn_partition_ssa_3 = partition_resolver
+                                    .resolve_partition(
+                                        if let Some(inner) = resource_arn_ctx_1 {
+                                            inner.region()
+                                        } else {
+                                            return false;
+                                        },
+                                        _diagnostic_collector,
+                                    )
+                                    .map(|inner| inner.into());
+                                arn_partition_ssa_3.is_some()
+                            }
+                        })(&mut _diagnostic_collector),
+                        10 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let partition_result = &context.partition_result;
+                            let arn_partition_ssa_3 = &context.arn_partition_ssa_3;
+                            let partition_resolver = &self.partition_resolver;
+                            (if let Some(inner) = arn_partition_ssa_3 {
+                                inner.name()
+                            } else {
+                                return false;
+                            }) == (if let Some(inner) = partition_result {
+                                inner.name()
+                            } else {
+                                return false;
+                            })
+                        })(&mut _diagnostic_collector),
+                        11 => endpoint.is_some(),
+                        12 => (use_dual_stack) == (&true),
+                        13 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let partition_resolver = &self.partition_resolver;
+                            (crate::endpoint_lib::coalesce::coalesce!(use_s3_express_control_endpoint.clone(), false)) == (true)
+                        })(&mut _diagnostic_collector),
+                        14 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let url = &mut context.url;
+                            let partition_resolver = &self.partition_resolver;
+                            {
+                                *url = crate::endpoint_lib::parse_url::parse_url(
+                                    if let Some(param) = endpoint { param } else { return false },
+                                    _diagnostic_collector,
+                                )
+                                .map(|inner| inner.into());
+                                url.is_some()
+                            }
+                        })(&mut _diagnostic_collector),
+                        15 => access_point_name.is_some(),
+                        16 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let partition_resolver = &self.partition_resolver;
+                            (crate::endpoint_lib::coalesce::coalesce!(
+                                if let Some(inner) = crate::endpoint_lib::substring::substring(
+                                    if let Some(param) = access_point_name { param } else { return false },
+                                    0,
+                                    7,
+                                    true,
+                                    _diagnostic_collector
+                                ) {
+                                    inner
+                                } else {
+                                    return false;
+                                },
+                                "".to_string()
+                            )) == ("--xa-s3")
+                        })(&mut _diagnostic_collector),
+                        17 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let partition_resolver = &self.partition_resolver;
+                            (crate::endpoint_lib::substring::substring(
+                                if let Some(param) = access_point_name { param } else { return false },
+                                7,
+                                15,
+                                true,
+                                _diagnostic_collector,
+                            ))
+                            .is_some()
+                        })(&mut _diagnostic_collector),
+                        18 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let partition_resolver = &self.partition_resolver;
+                            (crate::endpoint_lib::coalesce::coalesce!(
+                                if let Some(inner) = crate::endpoint_lib::substring::substring(
+                                    if let Some(param) = access_point_name { param } else { return false },
+                                    15,
+                                    17,
+                                    true,
+                                    _diagnostic_collector
+                                ) {
+                                    inner
+                                } else {
+                                    return false;
+                                },
+                                "".to_string()
+                            )) == ("--")
+                        })(&mut _diagnostic_collector),
+                        19 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let partition_resolver = &self.partition_resolver;
+                            (crate::endpoint_lib::substring::substring(
+                                if let Some(param) = access_point_name { param } else { return false },
+                                7,
+                                16,
+                                true,
+                                _diagnostic_collector,
+                            ))
+                            .is_some()
+                        })(&mut _diagnostic_collector),
+                        20 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let partition_resolver = &self.partition_resolver;
+                            (region) == &mut Some(("snow".to_string().into()))
+                        })(&mut _diagnostic_collector),
+                        21 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let access_point_arn = &mut context.access_point_arn;
+                            let partition_resolver = &self.partition_resolver;
+                            {
+                                *access_point_arn = crate::endpoint_lib::arn::parse_arn(
+                                    if let Some(param) = access_point_name { param } else { return false },
+                                    _diagnostic_collector,
+                                )
+                                .map(|inner| inner.into());
+                                access_point_arn.is_some()
+                            }
+                        })(&mut _diagnostic_collector),
+                        22 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let access_point_arn = &context.access_point_arn;
+                            let arn_type_ssa_1 = &mut context.arn_type_ssa_1;
+                            let partition_resolver = &self.partition_resolver;
+                            {
+                                *arn_type_ssa_1 = if let Some(inner) = access_point_arn {
+                                    inner.resource_id().first().cloned()
+                                } else {
+                                    return false;
+                                }
+                                .map(|inner| inner.into());
+                                arn_type_ssa_1.is_some()
+                            }
+                        })(&mut _diagnostic_collector),
+                        23 => bucket.is_some(),
+                        24 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let bucket_arn = &mut context.bucket_arn;
+                            let partition_resolver = &self.partition_resolver;
+                            {
+                                *bucket_arn = crate::endpoint_lib::arn::parse_arn(
+                                    if let Some(param) = bucket { param } else { return false },
+                                    _diagnostic_collector,
+                                )
+                                .map(|inner| inner.into());
+                                bucket_arn.is_some()
+                            }
+                        })(&mut _diagnostic_collector),
+                        25 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let bucket_arn = &context.bucket_arn;
+                            let arn_type_ssa_2 = &mut context.arn_type_ssa_2;
+                            let partition_resolver = &self.partition_resolver;
+                            {
+                                *arn_type_ssa_2 = if let Some(inner) = bucket_arn {
+                                    inner.resource_id().first().cloned()
+                                } else {
+                                    return false;
+                                }
+                                .map(|inner| inner.into());
+                                arn_type_ssa_2.is_some()
+                            }
+                        })(&mut _diagnostic_collector),
+                        26 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let arn_type_ssa_2 = &context.arn_type_ssa_2;
+                            let partition_resolver = &self.partition_resolver;
+                            (arn_type_ssa_2) == &mut Some(("".to_string().into()))
+                        })(&mut _diagnostic_collector),
+                        27 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let bucket_arn = &context.bucket_arn;
+                            let partition_resolver = &self.partition_resolver;
+                            (if let Some(inner) = bucket_arn { inner.service() } else { return false }) == ("s3-outposts")
+                        })(&mut _diagnostic_collector),
+                        28 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let bucket_arn = &context.bucket_arn;
+                            let outpost_id_ssa_2 = &mut context.outpost_id_ssa_2;
+                            let partition_resolver = &self.partition_resolver;
+                            {
+                                *outpost_id_ssa_2 = if let Some(inner) = bucket_arn {
+                                    inner.resource_id().get(1).cloned()
+                                } else {
+                                    return false;
+                                }
+                                .map(|inner| inner.into());
+                                outpost_id_ssa_2.is_some()
+                            }
+                        })(&mut _diagnostic_collector),
+                        29 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let partition_resolver = &self.partition_resolver;
+                            (crate::endpoint_lib::coalesce::coalesce!(
+                                if let Some(inner) = crate::endpoint_lib::substring::substring(
+                                    if let Some(param) = access_point_name { param } else { return false },
+                                    16,
+                                    18,
+                                    true,
+                                    _diagnostic_collector
+                                ) {
+                                    inner
+                                } else {
+                                    return false;
+                                },
+                                "".to_string()
+                            )) == ("--")
+                        })(&mut _diagnostic_collector),
+                        30 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let arn_type_ssa_1 = &context.arn_type_ssa_1;
+                            let partition_resolver = &self.partition_resolver;
+                            (arn_type_ssa_1) == &mut Some(("".to_string().into()))
+                        })(&mut _diagnostic_collector),
+                        31 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let access_point_arn = &context.access_point_arn;
+                            let partition_resolver = &self.partition_resolver;
+                            (if let Some(inner) = access_point_arn {
+                                inner.service()
+                            } else {
+                                return false;
+                            }) == ("s3-outposts")
+                        })(&mut _diagnostic_collector),
+                        32 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let access_point_arn = &context.access_point_arn;
+                            let outpost_id_ssa_1 = &mut context.outpost_id_ssa_1;
+                            let partition_resolver = &self.partition_resolver;
+                            {
+                                *outpost_id_ssa_1 = if let Some(inner) = access_point_arn {
+                                    inner.resource_id().get(1).cloned()
+                                } else {
+                                    return false;
+                                }
+                                .map(|inner| inner.into());
+                                outpost_id_ssa_1.is_some()
+                            }
+                        })(&mut _diagnostic_collector),
+                        33 => account_id.is_some(),
+                        34 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let partition_resolver = &self.partition_resolver;
+                            crate::endpoint_lib::host::is_valid_host_label(
+                                if let Some(param) = account_id { param } else { return false },
+                                false,
+                                _diagnostic_collector,
+                            )
+                        })(&mut _diagnostic_collector),
+                        35 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let partition_resolver = &self.partition_resolver;
+                            (crate::endpoint_lib::coalesce::coalesce!(requires_account_id.clone(), false)) == (true)
+                        })(&mut _diagnostic_collector),
+                        36 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let access_point_arn = &context.access_point_arn;
+                            let partition_resolver = &self.partition_resolver;
+                            (account_id)
+                                == &mut Some(
+                                    (if let Some(inner) = access_point_arn {
+                                        inner.account_id()
+                                    } else {
+                                        return false;
+                                    }
+                                    .into()),
+                                )
+                        })(&mut _diagnostic_collector),
+                        37 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let partition_resolver = &self.partition_resolver;
+                            crate::endpoint_lib::host::is_valid_host_label(
+                                if let Some(param) = region { param } else { return false },
+                                true,
+                                _diagnostic_collector,
+                            )
+                        })(&mut _diagnostic_collector),
+                        38 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let bucket_arn = &context.bucket_arn;
+                            let partition_resolver = &self.partition_resolver;
+                            (account_id)
+                                == &mut Some(
+                                    (if let Some(inner) = bucket_arn {
+                                        inner.account_id()
+                                    } else {
+                                        return false;
+                                    }
+                                    .into()),
+                                )
+                        })(&mut _diagnostic_collector),
+                        39 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let partition_resolver = &self.partition_resolver;
+                            (crate::endpoint_lib::coalesce::coalesce!(use_arn_region.clone(), true)) == (true)
+                        })(&mut _diagnostic_collector),
+                        40 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let outpost_id_ssa_2 = &context.outpost_id_ssa_2;
+                            let partition_resolver = &self.partition_resolver;
+                            crate::endpoint_lib::host::is_valid_host_label(
+                                if let Some(param) = outpost_id_ssa_2 { param } else { return false },
+                                false,
+                                _diagnostic_collector,
+                            )
+                        })(&mut _diagnostic_collector),
+                        41 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let access_point_arn = &context.access_point_arn;
+                            let partition_resolver = &self.partition_resolver;
+                            (region)
+                                == &mut Some(
+                                    (if let Some(inner) = access_point_arn {
+                                        inner.region()
+                                    } else {
+                                        return false;
+                                    }
+                                    .into()),
+                                )
+                        })(&mut _diagnostic_collector),
+                        42 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let bucket_arn = &context.bucket_arn;
+                            let partition_resolver = &self.partition_resolver;
+                            (region) == &mut Some((if let Some(inner) = bucket_arn { inner.region() } else { return false }.into()))
+                        })(&mut _diagnostic_collector),
+                        43 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let bucket_arn = &context.bucket_arn;
+                            let arn_partition_ssa_2 = &mut context.arn_partition_ssa_2;
+                            let partition_resolver = &self.partition_resolver;
+                            {
+                                *arn_partition_ssa_2 = partition_resolver
+                                    .resolve_partition(
+                                        if let Some(inner) = bucket_arn { inner.region() } else { return false },
+                                        _diagnostic_collector,
+                                    )
+                                    .map(|inner| inner.into());
+                                arn_partition_ssa_2.is_some()
+                            }
+                        })(&mut _diagnostic_collector),
+                        44 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let partition_result = &context.partition_result;
+                            let arn_partition_ssa_2 = &context.arn_partition_ssa_2;
+                            let partition_resolver = &self.partition_resolver;
+                            (if let Some(inner) = arn_partition_ssa_2 {
+                                inner.name()
+                            } else {
+                                return false;
+                            }) == (if let Some(inner) = partition_result {
+                                inner.name()
+                            } else {
+                                return false;
+                            })
+                        })(&mut _diagnostic_collector),
+                        45 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let bucket_arn = &context.bucket_arn;
+                            let partition_resolver = &self.partition_resolver;
+                            crate::endpoint_lib::host::is_valid_host_label(
+                                if let Some(inner) = bucket_arn { inner.region() } else { return false },
+                                true,
+                                _diagnostic_collector,
+                            )
+                        })(&mut _diagnostic_collector),
+                        46 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let bucket_arn = &context.bucket_arn;
+                            let partition_resolver = &self.partition_resolver;
+                            (if let Some(inner) = bucket_arn {
+                                inner.account_id()
+                            } else {
+                                return false;
+                            }) == ("")
+                        })(&mut _diagnostic_collector),
+                        47 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let bucket_arn = &context.bucket_arn;
+                            let partition_resolver = &self.partition_resolver;
+                            crate::endpoint_lib::host::is_valid_host_label(
+                                if let Some(inner) = bucket_arn {
+                                    inner.account_id()
+                                } else {
+                                    return false;
+                                },
+                                false,
+                                _diagnostic_collector,
+                            )
+                        })(&mut _diagnostic_collector),
+                        48 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let outpost_id_ssa_1 = &context.outpost_id_ssa_1;
+                            let partition_resolver = &self.partition_resolver;
+                            crate::endpoint_lib::host::is_valid_host_label(
+                                if let Some(param) = outpost_id_ssa_1 { param } else { return false },
+                                false,
+                                _diagnostic_collector,
+                            )
+                        })(&mut _diagnostic_collector),
+                        49 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let access_point_arn = &context.access_point_arn;
+                            let arn_partition_ssa_1 = &mut context.arn_partition_ssa_1;
+                            let partition_resolver = &self.partition_resolver;
+                            {
+                                *arn_partition_ssa_1 = partition_resolver
+                                    .resolve_partition(
+                                        if let Some(inner) = access_point_arn {
+                                            inner.region()
+                                        } else {
+                                            return false;
+                                        },
+                                        _diagnostic_collector,
+                                    )
+                                    .map(|inner| inner.into());
+                                arn_partition_ssa_1.is_some()
+                            }
+                        })(&mut _diagnostic_collector),
+                        50 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let partition_result = &context.partition_result;
+                            let arn_partition_ssa_1 = &context.arn_partition_ssa_1;
+                            let partition_resolver = &self.partition_resolver;
+                            (if let Some(inner) = arn_partition_ssa_1 {
+                                inner.name()
+                            } else {
+                                return false;
+                            }) == (if let Some(inner) = partition_result {
+                                inner.name()
+                            } else {
+                                return false;
+                            })
+                        })(&mut _diagnostic_collector),
+                        51 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let access_point_arn = &context.access_point_arn;
+                            let partition_resolver = &self.partition_resolver;
+                            crate::endpoint_lib::host::is_valid_host_label(
+                                if let Some(inner) = access_point_arn {
+                                    inner.region()
+                                } else {
+                                    return false;
+                                },
+                                true,
+                                _diagnostic_collector,
+                            )
+                        })(&mut _diagnostic_collector),
+                        52 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let access_point_arn = &context.access_point_arn;
+                            let partition_resolver = &self.partition_resolver;
+                            (if let Some(inner) = access_point_arn {
+                                inner.account_id()
+                            } else {
+                                return false;
+                            }) == ("")
+                        })(&mut _diagnostic_collector),
+                        53 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let access_point_arn = &context.access_point_arn;
+                            let partition_resolver = &self.partition_resolver;
+                            crate::endpoint_lib::host::is_valid_host_label(
+                                if let Some(inner) = access_point_arn {
+                                    inner.account_id()
+                                } else {
+                                    return false;
+                                },
+                                false,
+                                _diagnostic_collector,
+                            )
+                        })(&mut _diagnostic_collector),
+                        54 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let partition_resolver = &self.partition_resolver;
+                            (crate::endpoint_lib::substring::substring(
+                                if let Some(param) = access_point_name { param } else { return false },
+                                7,
+                                20,
+                                true,
+                                _diagnostic_collector,
+                            ))
+                            .is_some()
+                        })(&mut _diagnostic_collector),
+                        55 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let partition_resolver = &self.partition_resolver;
+                            (crate::endpoint_lib::coalesce::coalesce!(
+                                if let Some(inner) = crate::endpoint_lib::substring::substring(
+                                    if let Some(param) = access_point_name { param } else { return false },
+                                    20,
+                                    22,
+                                    true,
+                                    _diagnostic_collector
+                                ) {
+                                    inner
+                                } else {
+                                    return false;
+                                },
+                                "".to_string()
+                            )) == ("--")
+                        })(&mut _diagnostic_collector),
+                        56 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let partition_resolver = &self.partition_resolver;
+                            (crate::endpoint_lib::substring::substring(
+                                if let Some(param) = access_point_name { param } else { return false },
+                                7,
+                                21,
+                                true,
+                                _diagnostic_collector,
+                            ))
+                            .is_some()
+                        })(&mut _diagnostic_collector),
+                        57 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let partition_resolver = &self.partition_resolver;
+                            (crate::endpoint_lib::coalesce::coalesce!(
+                                if let Some(inner) = crate::endpoint_lib::substring::substring(
+                                    if let Some(param) = access_point_name { param } else { return false },
+                                    21,
+                                    23,
+                                    true,
+                                    _diagnostic_collector
+                                ) {
+                                    inner
+                                } else {
+                                    return false;
+                                },
+                                "".to_string()
+                            )) == ("--")
+                        })(&mut _diagnostic_collector),
+                        58 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let access_point_arn = &context.access_point_arn;
+                            let outpost_type_ssa_1 = &mut context.outpost_type_ssa_1;
+                            let partition_resolver = &self.partition_resolver;
+                            {
+                                *outpost_type_ssa_1 = if let Some(inner) = access_point_arn {
+                                    inner.resource_id().get(2).cloned()
+                                } else {
+                                    return false;
+                                }
+                                .map(|inner| inner.into());
+                                outpost_type_ssa_1.is_some()
+                            }
+                        })(&mut _diagnostic_collector),
+                        59 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let access_point_arn = &context.access_point_arn;
+                            let partition_resolver = &self.partition_resolver;
+                            if let Some(inner) = access_point_arn {
+                                inner.resource_id().get(3).cloned()
+                            } else {
+                                return false;
+                            }
+                            .is_some()
+                        })(&mut _diagnostic_collector),
+                        60 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let outpost_type_ssa_1 = &context.outpost_type_ssa_1;
+                            let partition_resolver = &self.partition_resolver;
+                            (outpost_type_ssa_1) == &mut Some(("accesspoint".to_string().into()))
+                        })(&mut _diagnostic_collector),
+                        61 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let partition_resolver = &self.partition_resolver;
+                            (crate::endpoint_lib::substring::substring(
+                                if let Some(param) = access_point_name { param } else { return false },
+                                7,
+                                27,
+                                true,
+                                _diagnostic_collector,
+                            ))
+                            .is_some()
+                        })(&mut _diagnostic_collector),
+                        62 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let partition_resolver = &self.partition_resolver;
+                            (crate::endpoint_lib::coalesce::coalesce!(
+                                if let Some(inner) = crate::endpoint_lib::substring::substring(
+                                    if let Some(param) = access_point_name { param } else { return false },
+                                    27,
+                                    29,
+                                    true,
+                                    _diagnostic_collector
+                                ) {
+                                    inner
+                                } else {
+                                    return false;
+                                },
+                                "".to_string()
+                            )) == ("--")
+                        })(&mut _diagnostic_collector),
+                        63 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let bucket_arn = &context.bucket_arn;
+                            let outpost_type_ssa_2 = &mut context.outpost_type_ssa_2;
+                            let partition_resolver = &self.partition_resolver;
+                            {
+                                *outpost_type_ssa_2 = if let Some(inner) = bucket_arn {
+                                    inner.resource_id().get(2).cloned()
+                                } else {
+                                    return false;
+                                }
+                                .map(|inner| inner.into());
+                                outpost_type_ssa_2.is_some()
+                            }
+                        })(&mut _diagnostic_collector),
+                        64 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let bucket_arn = &context.bucket_arn;
+                            let partition_resolver = &self.partition_resolver;
+                            if let Some(inner) = bucket_arn {
+                                inner.resource_id().get(3).cloned()
+                            } else {
+                                return false;
+                            }
+                            .is_some()
+                        })(&mut _diagnostic_collector),
+                        65 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let outpost_type_ssa_2 = &context.outpost_type_ssa_2;
+                            let partition_resolver = &self.partition_resolver;
+                            (outpost_type_ssa_2) == &mut Some(("bucket".to_string().into()))
+                        })(&mut _diagnostic_collector),
+                        66 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let resource_arn_ctx_1 = &context.resource_arn_ctx_1;
+                            let partition_resolver = &self.partition_resolver;
+                            (region)
+                                == &mut Some(
+                                    (if let Some(inner) = resource_arn_ctx_1 {
+                                        inner.region()
+                                    } else {
+                                        return false;
+                                    }
+                                    .into()),
+                                )
+                        })(&mut _diagnostic_collector),
+                        _ => unreachable!("Invalid condition index"),
+                    };
+                    current_ref = if is_complement ^ condition_result { node.high_ref } else { node.low_ref };
+                }
+            }
+        }
     }
 }
 
 impl crate::config::endpoint::ResolveEndpoint for DefaultResolver {
-    fn resolve_endpoint(&self, params: &crate::config::endpoint::Params) -> ::aws_smithy_runtime_api::client::endpoint::EndpointFuture<'_> {
-        ::aws_smithy_runtime_api::client::endpoint::EndpointFuture::ready(self.resolve_endpoint(params))
+    fn resolve_endpoint<'a>(&'a self, params: &'a crate::config::endpoint::Params) -> ::aws_smithy_runtime_api::client::endpoint::EndpointFuture<'a> {
+        // Check single-entry cache (lock-free read via ArcSwap)
+        let cached = self.endpoint_cache.load();
+        if let Some((cached_params, cached_endpoint)) = cached.as_ref() {
+            if cached_params == params {
+                return ::aws_smithy_runtime_api::client::endpoint::EndpointFuture::ready(::std::result::Result::Ok(cached_endpoint.clone()));
+            }
+        }
+        drop(cached);
+        let result = self.resolve_endpoint(params);
+        if let ::std::result::Result::Ok(ref endpoint) = result {
+            self.endpoint_cache.store(::std::sync::Arc::new(Some((params.clone(), endpoint.clone()))));
+        }
+        ::aws_smithy_runtime_api::client::endpoint::EndpointFuture::ready(result)
     }
+}
+const NODES: [crate::endpoint_lib::bdd_interpreter::BddNode; 428] = [
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: -1,
+        high_ref: 1,
+        low_ref: -1,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 0,
+        high_ref: 3,
+        low_ref: 100000062,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 1,
+        high_ref: 27,
+        low_ref: 4,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 11,
+        high_ref: 5,
+        low_ref: 6,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 12,
+        high_ref: 23,
+        low_ref: 6,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 15,
+        high_ref: 7,
+        low_ref: 8,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 21,
+        high_ref: 17,
+        low_ref: 8,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 23,
+        high_ref: 9,
+        low_ref: 100000062,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 24,
+        high_ref: 10,
+        low_ref: 100000062,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 25,
+        high_ref: 11,
+        low_ref: 100000038,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 26,
+        high_ref: 100000038,
+        low_ref: 12,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 27,
+        high_ref: 13,
+        low_ref: 100000038,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 28,
+        high_ref: 14,
+        low_ref: 100000037,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 39,
+        high_ref: 100000051,
+        low_ref: 15,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 40,
+        high_ref: 16,
+        low_ref: 100000051,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 42,
+        high_ref: 100000051,
+        low_ref: 100000039,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 22,
+        high_ref: 18,
+        low_ref: 100000038,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 30,
+        high_ref: 100000038,
+        low_ref: 19,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 31,
+        high_ref: 20,
+        low_ref: 100000038,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 32,
+        high_ref: 21,
+        low_ref: 100000037,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 39,
+        high_ref: 100000036,
+        low_ref: 22,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 41,
+        high_ref: 100000036,
+        low_ref: 334,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 15,
+        high_ref: 24,
+        low_ref: 25,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 21,
+        high_ref: 388,
+        low_ref: 25,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 23,
+        high_ref: 26,
+        low_ref: 100000062,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 24,
+        high_ref: 383,
+        low_ref: 100000062,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 2,
+        high_ref: 214,
+        low_ref: 28,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 4,
+        high_ref: 201,
+        low_ref: 29,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 6,
+        high_ref: 30,
+        low_ref: 33,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 7,
+        high_ref: 31,
+        low_ref: 33,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 8,
+        high_ref: 32,
+        low_ref: 33,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 9,
+        high_ref: 194,
+        low_ref: 33,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 11,
+        high_ref: 77,
+        low_ref: 34,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 12,
+        high_ref: 36,
+        low_ref: 35,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 13,
+        high_ref: 169,
+        low_ref: 80,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 13,
+        high_ref: 100000013,
+        low_ref: 37,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 15,
+        high_ref: 38,
+        low_ref: 40,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 16,
+        high_ref: 100000013,
+        low_ref: 39,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 21,
+        high_ref: 60,
+        low_ref: 40,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 23,
+        high_ref: 41,
+        low_ref: 188,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 24,
+        high_ref: 42,
+        low_ref: 188,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 25,
+        high_ref: 43,
+        low_ref: 100000038,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 26,
+        high_ref: 100000038,
+        low_ref: 44,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 27,
+        high_ref: 45,
+        low_ref: 100000038,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 28,
+        high_ref: 46,
+        low_ref: 100000037,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 33,
+        high_ref: 47,
+        low_ref: 48,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 38,
+        high_ref: 48,
+        low_ref: 297,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 39,
+        high_ref: 51,
+        low_ref: 49,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 40,
+        high_ref: 50,
+        low_ref: 100000051,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 42,
+        high_ref: 52,
+        low_ref: 100000039,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 40,
+        high_ref: 52,
+        low_ref: 100000051,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 43,
+        high_ref: 53,
+        low_ref: 100000051,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 44,
+        high_ref: 54,
+        low_ref: 100000050,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 45,
+        high_ref: 55,
+        low_ref: 100000049,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 46,
+        high_ref: 100000033,
+        low_ref: 56,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 47,
+        high_ref: 57,
+        low_ref: 100000048,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 63,
+        high_ref: 58,
+        low_ref: 100000031,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 64,
+        high_ref: 59,
+        low_ref: 100000047,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 65,
+        high_ref: 100000043,
+        low_ref: 100000046,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 22,
+        high_ref: 61,
+        low_ref: 100000038,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 30,
+        high_ref: 100000038,
+        low_ref: 62,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 31,
+        high_ref: 63,
+        low_ref: 100000038,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 32,
+        high_ref: 64,
+        low_ref: 100000037,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 33,
+        high_ref: 65,
+        low_ref: 66,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 36,
+        high_ref: 66,
+        low_ref: 324,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 39,
+        high_ref: 68,
+        low_ref: 67,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 41,
+        high_ref: 68,
+        low_ref: 334,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 48,
+        high_ref: 69,
+        low_ref: 100000036,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 49,
+        high_ref: 70,
+        low_ref: 100000036,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 50,
+        high_ref: 71,
+        low_ref: 100000035,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 51,
+        high_ref: 72,
+        low_ref: 100000034,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 52,
+        high_ref: 100000033,
+        low_ref: 73,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 53,
+        high_ref: 74,
+        low_ref: 100000032,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 58,
+        high_ref: 75,
+        low_ref: 100000031,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 59,
+        high_ref: 76,
+        low_ref: 100000030,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 60,
+        high_ref: 100000026,
+        low_ref: 100000029,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 12,
+        high_ref: 181,
+        low_ref: 78,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 13,
+        high_ref: 168,
+        low_ref: 79,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 14,
+        high_ref: 126,
+        low_ref: 80,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 15,
+        high_ref: 81,
+        low_ref: 83,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 16,
+        high_ref: 171,
+        low_ref: 82,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 21,
+        high_ref: 109,
+        low_ref: 83,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 23,
+        high_ref: 84,
+        low_ref: 85,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 24,
+        high_ref: 91,
+        low_ref: 85,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 33,
+        high_ref: 87,
+        low_ref: 86,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 35,
+        high_ref: 379,
+        low_ref: 89,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 34,
+        high_ref: 88,
+        low_ref: 381,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 35,
+        high_ref: 90,
+        low_ref: 89,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 37,
+        high_ref: 100000061,
+        low_ref: 100000011,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 37,
+        high_ref: 100000060,
+        low_ref: 100000011,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 25,
+        high_ref: 92,
+        low_ref: 100000038,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 26,
+        high_ref: 100000038,
+        low_ref: 93,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 27,
+        high_ref: 94,
+        low_ref: 100000038,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 28,
+        high_ref: 95,
+        low_ref: 100000037,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 33,
+        high_ref: 96,
+        low_ref: 97,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 38,
+        high_ref: 97,
+        low_ref: 297,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 39,
+        high_ref: 100,
+        low_ref: 98,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 40,
+        high_ref: 99,
+        low_ref: 100000051,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 42,
+        high_ref: 101,
+        low_ref: 100000039,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 40,
+        high_ref: 101,
+        low_ref: 100000051,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 43,
+        high_ref: 102,
+        low_ref: 100000051,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 44,
+        high_ref: 103,
+        low_ref: 100000050,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 45,
+        high_ref: 104,
+        low_ref: 100000049,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 46,
+        high_ref: 100000033,
+        low_ref: 105,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 47,
+        high_ref: 106,
+        low_ref: 100000048,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 63,
+        high_ref: 107,
+        low_ref: 100000031,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 64,
+        high_ref: 108,
+        low_ref: 100000047,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 65,
+        high_ref: 100000045,
+        low_ref: 100000046,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 22,
+        high_ref: 110,
+        low_ref: 100000038,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 30,
+        high_ref: 100000038,
+        low_ref: 111,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 31,
+        high_ref: 112,
+        low_ref: 100000038,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 32,
+        high_ref: 113,
+        low_ref: 100000037,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 33,
+        high_ref: 114,
+        low_ref: 115,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 36,
+        high_ref: 115,
+        low_ref: 324,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 39,
+        high_ref: 117,
+        low_ref: 116,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 41,
+        high_ref: 117,
+        low_ref: 334,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 48,
+        high_ref: 118,
+        low_ref: 100000036,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 49,
+        high_ref: 119,
+        low_ref: 100000036,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 50,
+        high_ref: 120,
+        low_ref: 100000035,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 51,
+        high_ref: 121,
+        low_ref: 100000034,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 52,
+        high_ref: 100000033,
+        low_ref: 122,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 53,
+        high_ref: 123,
+        low_ref: 100000032,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 58,
+        high_ref: 124,
+        low_ref: 100000031,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 59,
+        high_ref: 125,
+        low_ref: 100000030,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 60,
+        high_ref: 100000028,
+        low_ref: 100000029,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 15,
+        high_ref: 128,
+        low_ref: 127,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 20,
+        high_ref: 100000021,
+        low_ref: 131,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 16,
+        high_ref: 100000014,
+        low_ref: 129,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 20,
+        high_ref: 100000021,
+        low_ref: 130,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 21,
+        high_ref: 151,
+        low_ref: 131,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 23,
+        high_ref: 132,
+        low_ref: 285,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 24,
+        high_ref: 133,
+        low_ref: 285,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 25,
+        high_ref: 134,
+        low_ref: 100000038,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 26,
+        high_ref: 100000038,
+        low_ref: 135,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 27,
+        high_ref: 136,
+        low_ref: 100000038,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 28,
+        high_ref: 137,
+        low_ref: 100000037,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 33,
+        high_ref: 138,
+        low_ref: 139,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 38,
+        high_ref: 139,
+        low_ref: 297,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 39,
+        high_ref: 142,
+        low_ref: 140,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 40,
+        high_ref: 141,
+        low_ref: 100000051,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 42,
+        high_ref: 143,
+        low_ref: 100000039,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 40,
+        high_ref: 143,
+        low_ref: 100000051,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 43,
+        high_ref: 144,
+        low_ref: 100000051,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 44,
+        high_ref: 145,
+        low_ref: 100000050,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 45,
+        high_ref: 146,
+        low_ref: 100000049,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 46,
+        high_ref: 100000033,
+        low_ref: 147,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 47,
+        high_ref: 148,
+        low_ref: 100000048,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 63,
+        high_ref: 149,
+        low_ref: 100000031,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 64,
+        high_ref: 150,
+        low_ref: 100000047,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 65,
+        high_ref: 100000044,
+        low_ref: 100000046,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 22,
+        high_ref: 152,
+        low_ref: 100000038,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 30,
+        high_ref: 100000038,
+        low_ref: 153,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 31,
+        high_ref: 154,
+        low_ref: 100000038,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 32,
+        high_ref: 155,
+        low_ref: 100000037,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 33,
+        high_ref: 156,
+        low_ref: 157,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 36,
+        high_ref: 157,
+        low_ref: 324,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 39,
+        high_ref: 159,
+        low_ref: 158,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 41,
+        high_ref: 159,
+        low_ref: 334,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 48,
+        high_ref: 160,
+        low_ref: 100000036,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 49,
+        high_ref: 161,
+        low_ref: 100000036,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 50,
+        high_ref: 162,
+        low_ref: 100000035,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 51,
+        high_ref: 163,
+        low_ref: 100000034,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 52,
+        high_ref: 100000033,
+        low_ref: 164,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 53,
+        high_ref: 165,
+        low_ref: 100000032,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 58,
+        high_ref: 166,
+        low_ref: 100000031,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 59,
+        high_ref: 167,
+        low_ref: 100000030,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 60,
+        high_ref: 100000027,
+        low_ref: 100000029,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 14,
+        high_ref: 100000014,
+        low_ref: 169,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 15,
+        high_ref: 170,
+        low_ref: 100000016,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 16,
+        high_ref: 171,
+        low_ref: 100000016,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 17,
+        high_ref: 172,
+        low_ref: 173,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 18,
+        high_ref: 100000016,
+        low_ref: 173,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 19,
+        high_ref: 174,
+        low_ref: 175,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 29,
+        high_ref: 100000016,
+        low_ref: 175,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 54,
+        high_ref: 176,
+        low_ref: 177,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 55,
+        high_ref: 100000016,
+        low_ref: 177,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 56,
+        high_ref: 178,
+        low_ref: 179,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 57,
+        high_ref: 100000016,
+        low_ref: 179,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 61,
+        high_ref: 180,
+        low_ref: 100000018,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 62,
+        high_ref: 100000016,
+        low_ref: 100000018,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 13,
+        high_ref: 100000005,
+        low_ref: 182,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 14,
+        high_ref: 370,
+        low_ref: 183,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 15,
+        high_ref: 184,
+        low_ref: 186,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 16,
+        high_ref: 100000005,
+        low_ref: 185,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 21,
+        high_ref: 388,
+        low_ref: 186,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 23,
+        high_ref: 187,
+        low_ref: 188,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 24,
+        high_ref: 383,
+        low_ref: 188,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 33,
+        high_ref: 190,
+        low_ref: 189,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 35,
+        high_ref: 379,
+        low_ref: 192,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 34,
+        high_ref: 191,
+        low_ref: 381,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 35,
+        high_ref: 193,
+        low_ref: 192,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 37,
+        high_ref: 100000059,
+        low_ref: 100000011,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 37,
+        high_ref: 100000058,
+        low_ref: 100000011,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 10,
+        high_ref: 195,
+        low_ref: 100000017,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 11,
+        high_ref: 197,
+        low_ref: 196,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 12,
+        high_ref: 396,
+        low_ref: 199,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 12,
+        high_ref: 404,
+        low_ref: 198,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 14,
+        high_ref: 402,
+        low_ref: 199,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 39,
+        high_ref: 100000016,
+        low_ref: 200,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 66,
+        high_ref: 100000016,
+        low_ref: 100000012,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 5,
+        high_ref: 202,
+        low_ref: 407,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 11,
+        high_ref: 208,
+        low_ref: 203,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 12,
+        high_ref: 204,
+        low_ref: 210,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 33,
+        high_ref: 206,
+        low_ref: 205,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 35,
+        high_ref: 100000002,
+        low_ref: 207,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 34,
+        high_ref: 207,
+        low_ref: 100000003,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 37,
+        high_ref: 100000009,
+        low_ref: 100000011,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 12,
+        high_ref: 426,
+        low_ref: 209,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 14,
+        high_ref: 422,
+        low_ref: 210,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 33,
+        high_ref: 212,
+        low_ref: 211,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 35,
+        high_ref: 100000002,
+        low_ref: 213,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 34,
+        high_ref: 213,
+        low_ref: 100000003,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 37,
+        high_ref: 100000010,
+        low_ref: 100000011,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 3,
+        high_ref: 100000001,
+        low_ref: 215,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 4,
+        high_ref: 406,
+        low_ref: 216,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 6,
+        high_ref: 217,
+        low_ref: 220,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 7,
+        high_ref: 218,
+        low_ref: 220,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 8,
+        high_ref: 219,
+        low_ref: 220,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 9,
+        high_ref: 393,
+        low_ref: 220,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 11,
+        high_ref: 264,
+        low_ref: 221,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 12,
+        high_ref: 223,
+        low_ref: 222,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 13,
+        high_ref: 345,
+        low_ref: 267,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 13,
+        high_ref: 100000013,
+        low_ref: 224,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 15,
+        high_ref: 225,
+        low_ref: 227,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 16,
+        high_ref: 100000013,
+        low_ref: 226,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 21,
+        high_ref: 247,
+        low_ref: 227,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 23,
+        high_ref: 228,
+        low_ref: 364,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 24,
+        high_ref: 229,
+        low_ref: 364,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 25,
+        high_ref: 230,
+        low_ref: 100000038,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 26,
+        high_ref: 100000038,
+        low_ref: 231,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 27,
+        high_ref: 232,
+        low_ref: 100000038,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 28,
+        high_ref: 233,
+        low_ref: 100000037,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 33,
+        high_ref: 234,
+        low_ref: 235,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 38,
+        high_ref: 235,
+        low_ref: 297,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 39,
+        high_ref: 238,
+        low_ref: 236,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 40,
+        high_ref: 237,
+        low_ref: 100000051,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 42,
+        high_ref: 239,
+        low_ref: 100000039,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 40,
+        high_ref: 239,
+        low_ref: 100000051,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 43,
+        high_ref: 240,
+        low_ref: 100000051,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 44,
+        high_ref: 241,
+        low_ref: 100000050,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 45,
+        high_ref: 242,
+        low_ref: 100000049,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 46,
+        high_ref: 100000033,
+        low_ref: 243,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 47,
+        high_ref: 244,
+        low_ref: 100000048,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 63,
+        high_ref: 245,
+        low_ref: 100000031,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 64,
+        high_ref: 246,
+        low_ref: 100000047,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 65,
+        high_ref: 100000041,
+        low_ref: 100000046,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 22,
+        high_ref: 248,
+        low_ref: 100000038,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 30,
+        high_ref: 100000038,
+        low_ref: 249,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 31,
+        high_ref: 250,
+        low_ref: 100000038,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 32,
+        high_ref: 251,
+        low_ref: 100000037,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 33,
+        high_ref: 252,
+        low_ref: 253,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 36,
+        high_ref: 253,
+        low_ref: 324,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 39,
+        high_ref: 255,
+        low_ref: 254,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 41,
+        high_ref: 255,
+        low_ref: 334,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 48,
+        high_ref: 256,
+        low_ref: 100000036,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 49,
+        high_ref: 257,
+        low_ref: 100000036,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 50,
+        high_ref: 258,
+        low_ref: 100000035,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 51,
+        high_ref: 259,
+        low_ref: 100000034,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 52,
+        high_ref: 100000033,
+        low_ref: 260,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 53,
+        high_ref: 261,
+        low_ref: 100000032,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 58,
+        high_ref: 262,
+        low_ref: 100000031,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 59,
+        high_ref: 263,
+        low_ref: 100000030,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 60,
+        high_ref: 100000024,
+        low_ref: 100000029,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 12,
+        high_ref: 357,
+        low_ref: 265,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 13,
+        high_ref: 344,
+        low_ref: 266,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 14,
+        high_ref: 278,
+        low_ref: 267,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 15,
+        high_ref: 268,
+        low_ref: 270,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 16,
+        high_ref: 347,
+        low_ref: 269,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 21,
+        high_ref: 318,
+        low_ref: 270,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 23,
+        high_ref: 271,
+        low_ref: 272,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 24,
+        high_ref: 291,
+        low_ref: 272,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 33,
+        high_ref: 274,
+        low_ref: 273,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 35,
+        high_ref: 379,
+        low_ref: 276,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 34,
+        high_ref: 275,
+        low_ref: 381,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 35,
+        high_ref: 277,
+        low_ref: 276,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 37,
+        high_ref: 100000057,
+        low_ref: 100000011,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 37,
+        high_ref: 100000056,
+        low_ref: 100000011,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 15,
+        high_ref: 280,
+        low_ref: 279,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 20,
+        high_ref: 100000020,
+        low_ref: 283,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 16,
+        high_ref: 100000014,
+        low_ref: 281,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 20,
+        high_ref: 100000020,
+        low_ref: 282,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 21,
+        high_ref: 318,
+        low_ref: 283,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 23,
+        high_ref: 284,
+        low_ref: 285,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 24,
+        high_ref: 291,
+        low_ref: 285,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 33,
+        high_ref: 287,
+        low_ref: 286,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 35,
+        high_ref: 379,
+        low_ref: 289,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 34,
+        high_ref: 288,
+        low_ref: 381,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 35,
+        high_ref: 290,
+        low_ref: 289,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 37,
+        high_ref: 100000053,
+        low_ref: 100000011,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 37,
+        high_ref: 100000052,
+        low_ref: 100000011,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 25,
+        high_ref: 292,
+        low_ref: 100000038,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 26,
+        high_ref: 100000038,
+        low_ref: 293,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 27,
+        high_ref: 294,
+        low_ref: 100000038,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 28,
+        high_ref: 295,
+        low_ref: 100000037,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 33,
+        high_ref: 296,
+        low_ref: 306,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 38,
+        high_ref: 306,
+        low_ref: 297,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 39,
+        high_ref: 300,
+        low_ref: 298,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 40,
+        high_ref: 299,
+        low_ref: 100000051,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 42,
+        high_ref: 301,
+        low_ref: 100000039,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 40,
+        high_ref: 301,
+        low_ref: 100000051,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 43,
+        high_ref: 302,
+        low_ref: 100000051,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 44,
+        high_ref: 303,
+        low_ref: 100000050,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 45,
+        high_ref: 304,
+        low_ref: 100000049,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 46,
+        high_ref: 100000033,
+        low_ref: 305,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 47,
+        high_ref: 100000040,
+        low_ref: 100000048,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 39,
+        high_ref: 309,
+        low_ref: 307,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 40,
+        high_ref: 308,
+        low_ref: 100000051,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 42,
+        high_ref: 310,
+        low_ref: 100000039,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 40,
+        high_ref: 310,
+        low_ref: 100000051,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 43,
+        high_ref: 311,
+        low_ref: 100000051,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 44,
+        high_ref: 312,
+        low_ref: 100000050,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 45,
+        high_ref: 313,
+        low_ref: 100000049,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 46,
+        high_ref: 100000033,
+        low_ref: 314,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 47,
+        high_ref: 315,
+        low_ref: 100000048,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 63,
+        high_ref: 316,
+        low_ref: 100000031,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 64,
+        high_ref: 317,
+        low_ref: 100000047,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 65,
+        high_ref: 100000042,
+        low_ref: 100000046,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 22,
+        high_ref: 319,
+        low_ref: 100000038,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 30,
+        high_ref: 100000038,
+        low_ref: 320,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 31,
+        high_ref: 321,
+        low_ref: 100000038,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 32,
+        high_ref: 322,
+        low_ref: 100000037,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 33,
+        high_ref: 323,
+        low_ref: 332,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 36,
+        high_ref: 332,
+        low_ref: 324,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 39,
+        high_ref: 326,
+        low_ref: 325,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 41,
+        high_ref: 326,
+        low_ref: 334,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 48,
+        high_ref: 327,
+        low_ref: 100000036,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 49,
+        high_ref: 328,
+        low_ref: 100000036,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 50,
+        high_ref: 329,
+        low_ref: 100000035,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 51,
+        high_ref: 330,
+        low_ref: 100000034,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 52,
+        high_ref: 100000033,
+        low_ref: 331,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 53,
+        high_ref: 100000023,
+        low_ref: 100000032,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 39,
+        high_ref: 335,
+        low_ref: 333,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 41,
+        high_ref: 335,
+        low_ref: 334,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 48,
+        high_ref: 100000022,
+        low_ref: 100000036,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 48,
+        high_ref: 336,
+        low_ref: 100000036,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 49,
+        high_ref: 337,
+        low_ref: 100000036,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 50,
+        high_ref: 338,
+        low_ref: 100000035,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 51,
+        high_ref: 339,
+        low_ref: 100000034,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 52,
+        high_ref: 100000033,
+        low_ref: 340,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 53,
+        high_ref: 341,
+        low_ref: 100000032,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 58,
+        high_ref: 342,
+        low_ref: 100000031,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 59,
+        high_ref: 343,
+        low_ref: 100000030,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 60,
+        high_ref: 100000025,
+        low_ref: 100000029,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 14,
+        high_ref: 100000014,
+        low_ref: 345,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 15,
+        high_ref: 346,
+        low_ref: 100000015,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 16,
+        high_ref: 347,
+        low_ref: 100000015,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 17,
+        high_ref: 348,
+        low_ref: 349,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 18,
+        high_ref: 100000015,
+        low_ref: 349,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 19,
+        high_ref: 350,
+        low_ref: 351,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 29,
+        high_ref: 100000015,
+        low_ref: 351,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 54,
+        high_ref: 352,
+        low_ref: 353,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 55,
+        high_ref: 100000015,
+        low_ref: 353,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 56,
+        high_ref: 354,
+        low_ref: 355,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 57,
+        high_ref: 100000015,
+        low_ref: 355,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 61,
+        high_ref: 356,
+        low_ref: 100000018,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 62,
+        high_ref: 100000015,
+        low_ref: 100000018,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 13,
+        high_ref: 100000005,
+        low_ref: 358,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 14,
+        high_ref: 370,
+        low_ref: 359,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 15,
+        high_ref: 360,
+        low_ref: 362,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 16,
+        high_ref: 100000005,
+        low_ref: 361,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 21,
+        high_ref: 388,
+        low_ref: 362,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 23,
+        high_ref: 363,
+        low_ref: 364,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 24,
+        high_ref: 383,
+        low_ref: 364,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 33,
+        high_ref: 366,
+        low_ref: 365,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 35,
+        high_ref: 379,
+        low_ref: 368,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 34,
+        high_ref: 367,
+        low_ref: 381,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 35,
+        high_ref: 369,
+        low_ref: 368,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 37,
+        high_ref: 100000055,
+        low_ref: 100000011,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 37,
+        high_ref: 100000054,
+        low_ref: 100000011,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 15,
+        high_ref: 372,
+        low_ref: 371,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 20,
+        high_ref: 100000019,
+        low_ref: 375,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 16,
+        high_ref: 100000005,
+        low_ref: 373,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 20,
+        high_ref: 100000019,
+        low_ref: 374,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 21,
+        high_ref: 388,
+        low_ref: 375,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 23,
+        high_ref: 376,
+        low_ref: 377,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 24,
+        high_ref: 383,
+        low_ref: 377,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 33,
+        high_ref: 380,
+        low_ref: 378,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 35,
+        high_ref: 379,
+        low_ref: 382,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 37,
+        high_ref: 100000002,
+        low_ref: 100000011,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 34,
+        high_ref: 382,
+        low_ref: 381,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 37,
+        high_ref: 100000003,
+        low_ref: 100000011,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 37,
+        high_ref: 100000005,
+        low_ref: 100000011,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 25,
+        high_ref: 384,
+        low_ref: 100000038,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 26,
+        high_ref: 100000038,
+        low_ref: 385,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 27,
+        high_ref: 386,
+        low_ref: 100000038,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 28,
+        high_ref: 387,
+        low_ref: 100000037,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 40,
+        high_ref: 100000005,
+        low_ref: 100000051,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 22,
+        high_ref: 389,
+        low_ref: 100000038,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 30,
+        high_ref: 100000038,
+        low_ref: 390,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 31,
+        high_ref: 391,
+        low_ref: 100000038,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 32,
+        high_ref: 392,
+        low_ref: 100000037,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 48,
+        high_ref: 100000005,
+        low_ref: 100000036,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 10,
+        high_ref: 394,
+        low_ref: 100000017,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 11,
+        high_ref: 398,
+        low_ref: 395,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 12,
+        high_ref: 396,
+        low_ref: 400,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 39,
+        high_ref: 100000013,
+        low_ref: 397,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 66,
+        high_ref: 100000013,
+        low_ref: 100000012,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 12,
+        high_ref: 404,
+        low_ref: 399,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 14,
+        high_ref: 402,
+        low_ref: 400,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 39,
+        high_ref: 100000015,
+        low_ref: 401,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 66,
+        high_ref: 100000015,
+        low_ref: 100000012,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 39,
+        high_ref: 100000014,
+        low_ref: 403,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 66,
+        high_ref: 100000014,
+        low_ref: 100000012,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 39,
+        high_ref: 100000005,
+        low_ref: 405,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 66,
+        high_ref: 100000005,
+        low_ref: 100000012,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 5,
+        high_ref: 410,
+        low_ref: 407,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 33,
+        high_ref: 409,
+        low_ref: 408,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 35,
+        high_ref: 100000002,
+        low_ref: 100000004,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 34,
+        high_ref: 100000004,
+        low_ref: 100000003,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 11,
+        high_ref: 416,
+        low_ref: 411,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 12,
+        high_ref: 412,
+        low_ref: 418,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 33,
+        high_ref: 414,
+        low_ref: 413,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 35,
+        high_ref: 100000002,
+        low_ref: 415,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 34,
+        high_ref: 415,
+        low_ref: 100000003,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 37,
+        high_ref: 100000007,
+        low_ref: 100000011,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 12,
+        high_ref: 426,
+        low_ref: 417,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 14,
+        high_ref: 422,
+        low_ref: 418,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 33,
+        high_ref: 420,
+        low_ref: 419,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 35,
+        high_ref: 100000002,
+        low_ref: 421,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 34,
+        high_ref: 421,
+        low_ref: 100000003,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 37,
+        high_ref: 100000008,
+        low_ref: 100000011,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 33,
+        high_ref: 424,
+        low_ref: 423,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 35,
+        high_ref: 100000002,
+        low_ref: 425,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 34,
+        high_ref: 425,
+        low_ref: 100000003,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 37,
+        high_ref: 100000006,
+        low_ref: 100000011,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 33,
+        high_ref: 428,
+        low_ref: 427,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 35,
+        high_ref: 100000002,
+        low_ref: 100000005,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 34,
+        high_ref: 100000005,
+        low_ref: 100000003,
+    },
+];
+// These are all optional since they are set by conditions and will
+// all be unset when we start evaluation
+#[derive(Default)]
+#[allow(unused_lifetimes)]
+pub(crate) struct ConditionContext<'a> {
+    pub(crate) partition_result: Option<crate::endpoint_lib::partition::Partition<'a>>,
+    pub(crate) resource_arn_ctx_1: Option<crate::endpoint_lib::arn::Arn<'a>>,
+    pub(crate) arn_partition_ssa_3: Option<crate::endpoint_lib::partition::Partition<'a>>,
+    pub(crate) url: Option<crate::endpoint_lib::parse_url::Url<'a>>,
+    pub(crate) access_point_arn: Option<crate::endpoint_lib::arn::Arn<'a>>,
+    pub(crate) arn_type_ssa_1: ::std::option::Option<::std::string::String>,
+    pub(crate) bucket_arn: Option<crate::endpoint_lib::arn::Arn<'a>>,
+    pub(crate) arn_type_ssa_2: ::std::option::Option<::std::string::String>,
+    pub(crate) outpost_id_ssa_2: ::std::option::Option<::std::string::String>,
+    pub(crate) outpost_id_ssa_1: ::std::option::Option<::std::string::String>,
+    pub(crate) arn_partition_ssa_2: Option<crate::endpoint_lib::partition::Partition<'a>>,
+    pub(crate) arn_partition_ssa_1: Option<crate::endpoint_lib::partition::Partition<'a>>,
+    pub(crate) outpost_type_ssa_1: ::std::option::Option<::std::string::String>,
+    pub(crate) outpost_type_ssa_2: ::std::option::Option<::std::string::String>,
+    // Sometimes none of the members reference the lifetime, this makes it still valid
+    phantom: std::marker::PhantomData<&'a ()>,
 }
 
 #[non_exhaustive]
@@ -4415,5 +7828,3 @@ impl std::fmt::Display for InvalidParams {
 }
 
 impl std::error::Error for InvalidParams {}
-
-mod internals;

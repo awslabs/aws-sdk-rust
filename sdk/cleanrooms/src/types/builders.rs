@@ -55,6 +55,8 @@ pub use crate::types::_membership_payment_configuration::MembershipPaymentConfig
 
 pub use crate::types::_membership::MembershipBuilder;
 
+pub use crate::types::_update_membership_payment_configuration::UpdateMembershipPaymentConfigurationBuilder;
+
 pub use crate::types::_protected_job::ProtectedJobBuilder;
 
 pub use crate::types::_protected_query::ProtectedQueryBuilder;

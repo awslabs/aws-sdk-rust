@@ -22,7 +22,7 @@ impl crate::operation::list_private_connections::builders::ListPrivateConnection
 }
 /// Fluent builder constructing a request to `ListPrivateConnections`.
 ///
-/// Lists all Private Connections in the caller's account.
+/// <p>Lists all Private Connections in the caller's account.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListPrivateConnectionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

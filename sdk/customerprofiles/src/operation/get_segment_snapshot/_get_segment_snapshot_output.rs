@@ -15,7 +15,7 @@ pub struct GetSegmentSnapshotOutput {
     pub encryption_key: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role that allows Customer Profiles service principal to assume the role for conducting KMS and S3 operations.</p>
     pub role_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The destination to which the segment will be exported. This field must be provided if the request is not submitted from the Amazon Connect Admin Website.</p>
+    /// <p>The destination to which the segment will be exported. This field must be provided if the request is not submitted from the Connect Customer Admin Website.</p>
     pub destination_uri: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -45,7 +45,7 @@ impl GetSegmentSnapshotOutput {
     pub fn role_arn(&self) -> ::std::option::Option<&str> {
         self.role_arn.as_deref()
     }
-    /// <p>The destination to which the segment will be exported. This field must be provided if the request is not submitted from the Amazon Connect Admin Website.</p>
+    /// <p>The destination to which the segment will be exported. This field must be provided if the request is not submitted from the Connect Customer Admin Website.</p>
     pub fn destination_uri(&self) -> ::std::option::Option<&str> {
         self.destination_uri.as_deref()
     }
@@ -163,17 +163,17 @@ impl GetSegmentSnapshotOutputBuilder {
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.role_arn
     }
-    /// <p>The destination to which the segment will be exported. This field must be provided if the request is not submitted from the Amazon Connect Admin Website.</p>
+    /// <p>The destination to which the segment will be exported. This field must be provided if the request is not submitted from the Connect Customer Admin Website.</p>
     pub fn destination_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_uri = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The destination to which the segment will be exported. This field must be provided if the request is not submitted from the Amazon Connect Admin Website.</p>
+    /// <p>The destination to which the segment will be exported. This field must be provided if the request is not submitted from the Connect Customer Admin Website.</p>
     pub fn set_destination_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.destination_uri = input;
         self
     }
-    /// <p>The destination to which the segment will be exported. This field must be provided if the request is not submitted from the Amazon Connect Admin Website.</p>
+    /// <p>The destination to which the segment will be exported. This field must be provided if the request is not submitted from the Connect Customer Admin Website.</p>
     pub fn get_destination_uri(&self) -> &::std::option::Option<::std::string::String> {
         &self.destination_uri
     }

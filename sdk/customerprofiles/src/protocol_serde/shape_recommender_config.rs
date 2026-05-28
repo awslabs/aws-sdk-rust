@@ -37,6 +37,22 @@ pub fn ser_recommender_config(
         }
         object_7.finish();
     }
+    if let Some(var_12) = &input.excluded_columns {
+        #[allow(unused_mut)]
+        let mut object_13 = object.key("ExcludedColumns").start_object();
+        for (key_14, value_15) in var_12 {
+            {
+                let mut array_16 = object_13.key(key_14.as_str()).start_array();
+                for item_17 in value_15 {
+                    {
+                        array_16.value().string(item_17.as_str());
+                    }
+                }
+                array_16.finish();
+            }
+        }
+        object_13.finish();
+    }
     Ok(())
 }
 
@@ -73,6 +89,10 @@ where
                         "IncludedColumns" => {
                             builder =
                                 builder.set_included_columns(crate::protocol_serde::shape_included_columns::de_included_columns(tokens, _value)?);
+                        }
+                        "ExcludedColumns" => {
+                            builder =
+                                builder.set_excluded_columns(crate::protocol_serde::shape_included_columns::de_included_columns(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

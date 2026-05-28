@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StopNotebookRunInput {
-    /// <p>The identifier of the Amazon DataZone domain in which the notebook run is stopped.</p>
+    /// <p>The identifier of the Amazon SageMaker Unified Studio domain in which the notebook run is stopped.</p>
     pub domain_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the notebook run to stop.</p>
     pub identifier: ::std::option::Option<::std::string::String>,
@@ -11,7 +11,7 @@ pub struct StopNotebookRunInput {
     pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl StopNotebookRunInput {
-    /// <p>The identifier of the Amazon DataZone domain in which the notebook run is stopped.</p>
+    /// <p>The identifier of the Amazon SageMaker Unified Studio domain in which the notebook run is stopped.</p>
     pub fn domain_identifier(&self) -> ::std::option::Option<&str> {
         self.domain_identifier.as_deref()
     }
@@ -40,18 +40,18 @@ pub struct StopNotebookRunInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
 impl StopNotebookRunInputBuilder {
-    /// <p>The identifier of the Amazon DataZone domain in which the notebook run is stopped.</p>
+    /// <p>The identifier of the Amazon SageMaker Unified Studio domain in which the notebook run is stopped.</p>
     /// This field is required.
     pub fn domain_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_identifier = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier of the Amazon DataZone domain in which the notebook run is stopped.</p>
+    /// <p>The identifier of the Amazon SageMaker Unified Studio domain in which the notebook run is stopped.</p>
     pub fn set_domain_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain_identifier = input;
         self
     }
-    /// <p>The identifier of the Amazon DataZone domain in which the notebook run is stopped.</p>
+    /// <p>The identifier of the Amazon SageMaker Unified Studio domain in which the notebook run is stopped.</p>
     pub fn get_domain_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.domain_identifier
     }

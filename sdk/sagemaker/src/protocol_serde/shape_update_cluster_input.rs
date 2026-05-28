@@ -33,41 +33,50 @@ pub fn ser_update_cluster_input_input(
         }
         array_7.finish();
     }
-    if let Some(var_10) = &input.tiered_storage_config {
+    if let Some(var_10) = &input.restricted_instance_groups_config {
         #[allow(unused_mut)]
-        let mut object_11 = object.key("TieredStorageConfig").start_object();
-        crate::protocol_serde::shape_cluster_tiered_storage_config::ser_cluster_tiered_storage_config(&mut object_11, var_10)?;
+        let mut object_11 = object.key("RestrictedInstanceGroupsConfig").start_object();
+        crate::protocol_serde::shape_cluster_restricted_instance_groups_config::ser_cluster_restricted_instance_groups_config(
+            &mut object_11,
+            var_10,
+        )?;
         object_11.finish();
     }
-    if let Some(var_12) = &input.node_recovery {
-        object.key("NodeRecovery").string(var_12.as_str());
+    if let Some(var_12) = &input.tiered_storage_config {
+        #[allow(unused_mut)]
+        let mut object_13 = object.key("TieredStorageConfig").start_object();
+        crate::protocol_serde::shape_cluster_tiered_storage_config::ser_cluster_tiered_storage_config(&mut object_13, var_12)?;
+        object_13.finish();
     }
-    if let Some(var_13) = &input.instance_groups_to_delete {
-        let mut array_14 = object.key("InstanceGroupsToDelete").start_array();
-        for item_15 in var_13 {
+    if let Some(var_14) = &input.node_recovery {
+        object.key("NodeRecovery").string(var_14.as_str());
+    }
+    if let Some(var_15) = &input.instance_groups_to_delete {
+        let mut array_16 = object.key("InstanceGroupsToDelete").start_array();
+        for item_17 in var_15 {
             {
-                array_14.value().string(item_15.as_str());
+                array_16.value().string(item_17.as_str());
             }
         }
-        array_14.finish();
+        array_16.finish();
     }
-    if let Some(var_16) = &input.node_provisioning_mode {
-        object.key("NodeProvisioningMode").string(var_16.as_str());
+    if let Some(var_18) = &input.node_provisioning_mode {
+        object.key("NodeProvisioningMode").string(var_18.as_str());
     }
-    if let Some(var_17) = &input.cluster_role {
-        object.key("ClusterRole").string(var_17.as_str());
+    if let Some(var_19) = &input.cluster_role {
+        object.key("ClusterRole").string(var_19.as_str());
     }
-    if let Some(var_18) = &input.auto_scaling {
+    if let Some(var_20) = &input.auto_scaling {
         #[allow(unused_mut)]
-        let mut object_19 = object.key("AutoScaling").start_object();
-        crate::protocol_serde::shape_cluster_auto_scaling_config::ser_cluster_auto_scaling_config(&mut object_19, var_18)?;
-        object_19.finish();
-    }
-    if let Some(var_20) = &input.orchestrator {
-        #[allow(unused_mut)]
-        let mut object_21 = object.key("Orchestrator").start_object();
-        crate::protocol_serde::shape_cluster_orchestrator::ser_cluster_orchestrator(&mut object_21, var_20)?;
+        let mut object_21 = object.key("AutoScaling").start_object();
+        crate::protocol_serde::shape_cluster_auto_scaling_config::ser_cluster_auto_scaling_config(&mut object_21, var_20)?;
         object_21.finish();
+    }
+    if let Some(var_22) = &input.orchestrator {
+        #[allow(unused_mut)]
+        let mut object_23 = object.key("Orchestrator").start_object();
+        crate::protocol_serde::shape_cluster_orchestrator::ser_cluster_orchestrator(&mut object_23, var_22)?;
+        object_23.finish();
     }
     Ok(())
 }

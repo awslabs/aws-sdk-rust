@@ -16,6 +16,18 @@ pub fn ser_semantic_model_configuration(
         }
         object_2.finish();
     }
+    if let Some(var_6) = &input.semantic_metadata {
+        let mut array_7 = object.key("SemanticMetadata").start_array();
+        for item_8 in var_6 {
+            {
+                #[allow(unused_mut)]
+                let mut object_9 = array_7.value().start_object();
+                crate::protocol_serde::shape_data_set_semantic_metadata::ser_data_set_semantic_metadata(&mut object_9, item_8)?;
+                object_9.finish();
+            }
+        }
+        array_7.finish();
+    }
     Ok(())
 }
 
@@ -37,6 +49,11 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "TableMap" => {
                             builder = builder.set_table_map(crate::protocol_serde::shape_semantic_table_map::de_semantic_table_map(tokens, _value)?);
+                        }
+                        "SemanticMetadata" => {
+                            builder = builder.set_semantic_metadata(
+                                crate::protocol_serde::shape_data_set_semantic_metadata_list::de_data_set_semantic_metadata_list(tokens, _value)?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

@@ -797,6 +797,36 @@ pub(crate) fn get_task_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn get_volume_output_output_correct_errors(
+    mut builder: crate::operation::get_volume::builders::GetVolumeOutputBuilder,
+) -> crate::operation::get_volume::builders::GetVolumeOutputBuilder {
+    if builder.volume_id.is_none() {
+        builder.volume_id = Some(Default::default())
+    }
+    if builder.farm_id.is_none() {
+        builder.farm_id = Some(Default::default())
+    }
+    if builder.fleet_id.is_none() {
+        builder.fleet_id = Some(Default::default())
+    }
+    if builder.state.is_none() {
+        builder.state = "no value was set".parse::<crate::types::VolumeState>().ok()
+    }
+    if builder.size_gib.is_none() {
+        builder.size_gib = Some(Default::default())
+    }
+    if builder.availability_zone_id.is_none() {
+        builder.availability_zone_id = Some(Default::default())
+    }
+    if builder.volume_type.is_none() {
+        builder.volume_type = "no value was set".parse::<crate::types::EbsVolumeType>().ok()
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
 pub(crate) fn get_worker_output_output_correct_errors(
     mut builder: crate::operation::get_worker::builders::GetWorkerOutputBuilder,
 ) -> crate::operation::get_worker::builders::GetWorkerOutputBuilder {
@@ -1060,6 +1090,15 @@ pub(crate) fn list_tasks_output_output_correct_errors(
 ) -> crate::operation::list_tasks::builders::ListTasksOutputBuilder {
     if builder.tasks.is_none() {
         builder.tasks = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn list_volumes_output_output_correct_errors(
+    mut builder: crate::operation::list_volumes::builders::ListVolumesOutputBuilder,
+) -> crate::operation::list_volumes::builders::ListVolumesOutputBuilder {
+    if builder.volumes.is_none() {
+        builder.volumes = Some(Default::default())
     }
     builder
 }
@@ -2285,6 +2324,30 @@ pub(crate) fn validation_exception_field_correct_errors(
     builder
 }
 
+pub(crate) fn volume_summary_correct_errors(
+    mut builder: crate::types::builders::VolumeSummaryBuilder,
+) -> crate::types::builders::VolumeSummaryBuilder {
+    if builder.volume_id.is_none() {
+        builder.volume_id = Some(Default::default())
+    }
+    if builder.farm_id.is_none() {
+        builder.farm_id = Some(Default::default())
+    }
+    if builder.fleet_id.is_none() {
+        builder.fleet_id = Some(Default::default())
+    }
+    if builder.state.is_none() {
+        builder.state = "no value was set".parse::<crate::types::VolumeState>().ok()
+    }
+    if builder.size_gib.is_none() {
+        builder.size_gib = Some(Default::default())
+    }
+    if builder.availability_zone_id.is_none() {
+        builder.availability_zone_id = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn windows_user_correct_errors(mut builder: crate::types::builders::WindowsUserBuilder) -> crate::types::builders::WindowsUserBuilder {
     if builder.user.is_none() {
         builder.user = Some(Default::default())
@@ -2492,6 +2555,15 @@ pub(crate) fn manifest_properties_correct_errors(
     }
     if builder.root_path_format.is_none() {
         builder.root_path_format = "no value was set".parse::<crate::types::PathFormat>().ok()
+    }
+    builder
+}
+
+pub(crate) fn persistent_volume_configuration_correct_errors(
+    mut builder: crate::types::builders::PersistentVolumeConfigurationBuilder,
+) -> crate::types::builders::PersistentVolumeConfigurationBuilder {
+    if builder.mount_path.is_none() {
+        builder.mount_path = Some(Default::default())
     }
     builder
 }

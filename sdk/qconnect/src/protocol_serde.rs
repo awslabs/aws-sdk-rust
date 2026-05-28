@@ -149,6 +149,8 @@ pub(crate) mod shape_list_message_templates;
 
 pub(crate) mod shape_list_messages;
 
+pub(crate) mod shape_list_models;
+
 pub(crate) mod shape_list_quick_responses;
 
 pub(crate) mod shape_list_spans;
@@ -437,6 +439,8 @@ pub(crate) mod shape_message_template_summary_list;
 
 pub(crate) mod shape_message_template_version_summary_list;
 
+pub(crate) mod shape_model_summary_list;
+
 pub(crate) mod shape_notify_recommendations_received_error_list;
 
 pub(crate) mod shape_orchestrator_configuration_entry;
@@ -597,6 +601,8 @@ pub(crate) mod shape_message_template_summary;
 
 pub(crate) mod shape_message_template_version_summary;
 
+pub(crate) mod shape_model_summary;
+
 pub(crate) mod shape_note_taking_ai_agent_configuration;
 
 pub(crate) mod shape_notify_recommendations_received_error;
@@ -662,6 +668,8 @@ pub(crate) mod shape_whats_app_message_template_content;
 pub(crate) mod shape_whats_app_message_template_source_configuration;
 
 pub(crate) mod shape_whats_app_message_template_source_configuration_summary;
+
+pub(crate) mod shape_ai_prompt_type_list;
 
 pub(crate) mod shape_and_conditions;
 
@@ -773,6 +781,8 @@ pub(crate) mod shape_query_recommendation_trigger_data;
 
 pub(crate) mod shape_span_finish_reason_list;
 
+pub(crate) mod shape_span_guardrail_assessment_list;
+
 pub(crate) mod shape_span_message_list;
 
 pub(crate) mod shape_span_message_value_list;
@@ -829,6 +839,8 @@ pub(crate) mod shape_seed_url;
 
 pub(crate) mod shape_source_content_data_details;
 
+pub(crate) mod shape_span_guardrail_assessment;
+
 pub(crate) mod shape_span_message;
 
 pub(crate) mod shape_span_message_value;
@@ -844,6 +856,8 @@ pub(crate) mod shape_tool_override_input_value_configuration;
 pub(crate) mod shape_url_filter_list;
 
 pub(crate) mod shape_data_summary_list;
+
+pub(crate) mod shape_guardrail_policy_result_list;
 
 pub(crate) mod shape_highlight;
 
@@ -866,6 +880,8 @@ pub(crate) mod shape_tool_output_filter_list;
 pub(crate) mod shape_tool_override_constant_input_value;
 
 pub(crate) mod shape_tool_override_input_value_list;
+
+pub(crate) mod shape_guardrail_policy_result;
 
 pub(crate) mod shape_span_citation_list;
 

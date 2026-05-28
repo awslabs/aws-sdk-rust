@@ -41,3 +41,19 @@ where
         )),
     }
 }
+
+pub fn ser_environment_config(
+    object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
+    input: &crate::types::EnvironmentConfig,
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    if let Some(var_1) = &input.image_version {
+        object.key("imageVersion").string(var_1.as_str());
+    }
+    if let Some(var_2) = &input.package_config {
+        #[allow(unused_mut)]
+        let mut object_3 = object.key("packageConfig").start_object();
+        crate::protocol_serde::shape_package_config::ser_package_config(&mut object_3, var_2)?;
+        object_3.finish();
+    }
+    Ok(())
+}

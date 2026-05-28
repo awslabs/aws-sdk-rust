@@ -3122,6 +3122,18 @@ pub(crate) fn cluster_event_detail_correct_errors(
     builder
 }
 
+pub(crate) fn cluster_restricted_instance_groups_config_output_correct_errors(
+    mut builder: crate::types::builders::ClusterRestrictedInstanceGroupsConfigOutputBuilder,
+) -> crate::types::builders::ClusterRestrictedInstanceGroupsConfigOutputBuilder {
+    if builder.shared_environment_config.is_none() {
+        builder.shared_environment_config = {
+            let builder = crate::types::builders::ClusterSharedEnvironmentConfigDetailsBuilder::default();
+            Some(builder.build())
+        }
+    }
+    builder
+}
+
 pub(crate) fn cluster_tiered_storage_config_correct_errors(
     mut builder: crate::types::builders::ClusterTieredStorageConfigBuilder,
 ) -> crate::types::builders::ClusterTieredStorageConfigBuilder {
@@ -6093,6 +6105,18 @@ pub(crate) fn endpoint_output_configuration_correct_errors(
     builder
 }
 
+pub(crate) fn f_sx_lustre_config_correct_errors(
+    mut builder: crate::types::builders::FSxLustreConfigBuilder,
+) -> crate::types::builders::FSxLustreConfigBuilder {
+    if builder.size_in_gib.is_none() {
+        builder.size_in_gib = Some(Default::default())
+    }
+    if builder.per_unit_storage_throughput.is_none() {
+        builder.per_unit_storage_throughput = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn file_source_correct_errors(mut builder: crate::types::builders::FileSourceBuilder) -> crate::types::builders::FileSourceBuilder {
     if builder.s3_uri.is_none() {
         builder.s3_uri = Some(Default::default())
@@ -6771,18 +6795,6 @@ pub(crate) fn efs_file_system_config_correct_errors(
 ) -> crate::types::builders::EfsFileSystemConfigBuilder {
     if builder.file_system_id.is_none() {
         builder.file_system_id = Some(Default::default())
-    }
-    builder
-}
-
-pub(crate) fn f_sx_lustre_config_correct_errors(
-    mut builder: crate::types::builders::FSxLustreConfigBuilder,
-) -> crate::types::builders::FSxLustreConfigBuilder {
-    if builder.size_in_gib.is_none() {
-        builder.size_in_gib = Some(Default::default())
-    }
-    if builder.per_unit_storage_throughput.is_none() {
-        builder.per_unit_storage_throughput = Some(Default::default())
     }
     builder
 }

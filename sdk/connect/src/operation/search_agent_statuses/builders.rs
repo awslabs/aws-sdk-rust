@@ -22,7 +22,7 @@ impl crate::operation::search_agent_statuses::builders::SearchAgentStatusesInput
 }
 /// Fluent builder constructing a request to `SearchAgentStatuses`.
 ///
-/// <p>Searches AgentStatuses in an Amazon Connect instance, with optional filtering.</p>
+/// <p>Searches AgentStatuses in an Connect Customer instance, with optional filtering.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct SearchAgentStatusesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -114,17 +114,17 @@ impl SearchAgentStatusesFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::search_agent_statuses::paginator::SearchAgentStatusesPaginator {
         crate::operation::search_agent_statuses::paginator::SearchAgentStatusesPaginator::new(self.handle, self.inner)
     }
-    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    /// <p>The identifier of the Connect Customer instance. You can find the instanceId in the ARN of the instance.</p>
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.instance_id(input.into());
         self
     }
-    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    /// <p>The identifier of the Connect Customer instance. You can find the instanceId in the ARN of the instance.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_instance_id(input);
         self
     }
-    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    /// <p>The identifier of the Connect Customer instance. You can find the instanceId in the ARN of the instance.</p>
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_instance_id()
     }

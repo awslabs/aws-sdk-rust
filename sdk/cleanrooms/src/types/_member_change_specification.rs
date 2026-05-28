@@ -12,6 +12,10 @@ pub struct MemberChangeSpecification {
     /// <p>Set the value of <code>memberAbilities</code> to <code>\[CAN_RECEIVE_RESULTS\]</code> to allow a member to contribute data and receive results.</p>
     /// </note>
     pub member_abilities: ::std::vec::Vec<crate::types::MemberAbility>,
+    /// <p>The ML member abilities for a collaboration member.</p>
+    pub ml_member_abilities: ::std::option::Option<crate::types::MlMemberAbilities>,
+    /// <p>An object representing the collaboration member's payment responsibilities set by the collaboration creator.</p>
+    pub payment_configuration: ::std::option::Option<crate::types::PaymentConfiguration>,
     /// <p>Specifies the display name that will be shown for this member in the collaboration. While this field is required when inviting new members, it becomes optional when modifying abilities of existing collaboration members.</p>
     pub display_name: ::std::option::Option<::std::string::String>,
 }
@@ -29,6 +33,14 @@ impl MemberChangeSpecification {
     pub fn member_abilities(&self) -> &[crate::types::MemberAbility] {
         use std::ops::Deref;
         self.member_abilities.deref()
+    }
+    /// <p>The ML member abilities for a collaboration member.</p>
+    pub fn ml_member_abilities(&self) -> ::std::option::Option<&crate::types::MlMemberAbilities> {
+        self.ml_member_abilities.as_ref()
+    }
+    /// <p>An object representing the collaboration member's payment responsibilities set by the collaboration creator.</p>
+    pub fn payment_configuration(&self) -> ::std::option::Option<&crate::types::PaymentConfiguration> {
+        self.payment_configuration.as_ref()
     }
     /// <p>Specifies the display name that will be shown for this member in the collaboration. While this field is required when inviting new members, it becomes optional when modifying abilities of existing collaboration members.</p>
     pub fn display_name(&self) -> ::std::option::Option<&str> {
@@ -48,6 +60,8 @@ impl MemberChangeSpecification {
 pub struct MemberChangeSpecificationBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) member_abilities: ::std::option::Option<::std::vec::Vec<crate::types::MemberAbility>>,
+    pub(crate) ml_member_abilities: ::std::option::Option<crate::types::MlMemberAbilities>,
+    pub(crate) payment_configuration: ::std::option::Option<crate::types::PaymentConfiguration>,
     pub(crate) display_name: ::std::option::Option<::std::string::String>,
 }
 impl MemberChangeSpecificationBuilder {
@@ -98,6 +112,34 @@ impl MemberChangeSpecificationBuilder {
     pub fn get_member_abilities(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MemberAbility>> {
         &self.member_abilities
     }
+    /// <p>The ML member abilities for a collaboration member.</p>
+    pub fn ml_member_abilities(mut self, input: crate::types::MlMemberAbilities) -> Self {
+        self.ml_member_abilities = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ML member abilities for a collaboration member.</p>
+    pub fn set_ml_member_abilities(mut self, input: ::std::option::Option<crate::types::MlMemberAbilities>) -> Self {
+        self.ml_member_abilities = input;
+        self
+    }
+    /// <p>The ML member abilities for a collaboration member.</p>
+    pub fn get_ml_member_abilities(&self) -> &::std::option::Option<crate::types::MlMemberAbilities> {
+        &self.ml_member_abilities
+    }
+    /// <p>An object representing the collaboration member's payment responsibilities set by the collaboration creator.</p>
+    pub fn payment_configuration(mut self, input: crate::types::PaymentConfiguration) -> Self {
+        self.payment_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>An object representing the collaboration member's payment responsibilities set by the collaboration creator.</p>
+    pub fn set_payment_configuration(mut self, input: ::std::option::Option<crate::types::PaymentConfiguration>) -> Self {
+        self.payment_configuration = input;
+        self
+    }
+    /// <p>An object representing the collaboration member's payment responsibilities set by the collaboration creator.</p>
+    pub fn get_payment_configuration(&self) -> &::std::option::Option<crate::types::PaymentConfiguration> {
+        &self.payment_configuration
+    }
     /// <p>Specifies the display name that will be shown for this member in the collaboration. While this field is required when inviting new members, it becomes optional when modifying abilities of existing collaboration members.</p>
     pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.display_name = ::std::option::Option::Some(input.into());
@@ -130,6 +172,8 @@ impl MemberChangeSpecificationBuilder {
                     "member_abilities was not specified but it is required when building MemberChangeSpecification",
                 )
             })?,
+            ml_member_abilities: self.ml_member_abilities,
+            payment_configuration: self.payment_configuration,
             display_name: self.display_name,
         })
     }

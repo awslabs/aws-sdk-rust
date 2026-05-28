@@ -337,5 +337,16 @@ pub fn ser_invoke_model_with_response_stream_headers(
         })?;
         builder = builder.header("X-Amzn-Bedrock-Service-Tier", header_value);
     }
+    if let ::std::option::Option::Some(inner_15) = &input.request_metadata {
+        let formatted_16 = inner_15.as_str();
+        let header_value = formatted_16;
+        let header_value: ::http_1x::HeaderValue = header_value.parse().map_err(|err| {
+            ::aws_smithy_types::error::operation::BuildError::invalid_field(
+                "request_metadata",
+                format!("`{}` cannot be used as a header value: {}", &"*** Sensitive Data Redacted ***", err),
+            )
+        })?;
+        builder = builder.header("X-Amzn-Bedrock-Request-Metadata", header_value);
+    }
     Ok(builder)
 }

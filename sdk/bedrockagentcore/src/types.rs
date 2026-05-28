@@ -143,6 +143,8 @@ pub use crate::types::_harness_open_ai_model_config::HarnessOpenAiModelConfig;
 
 pub use crate::types::_harness_gemini_model_config::HarnessGeminiModelConfig;
 
+pub use crate::types::_harness_lite_llm_model_config::HarnessLiteLlmModelConfig;
+
 pub use crate::types::_harness_system_content_block::HarnessSystemContentBlock;
 
 pub use crate::types::_harness_tool::HarnessTool;
@@ -295,9 +297,17 @@ pub use crate::types::_tool_result_structured_content::ToolResultStructuredConte
 
 pub use crate::types::_harness_conversation_role::HarnessConversationRole;
 
+pub use crate::types::_harness_bedrock_api_format::HarnessBedrockApiFormat;
+
+pub use crate::types::_harness_open_ai_api_format::HarnessOpenAiApiFormat;
+
 pub use crate::types::_harness_tool_type::HarnessToolType;
 
 pub use crate::types::_harness_tool_configuration::HarnessToolConfiguration;
+
+pub use crate::types::_harness_skill_s3_source::HarnessSkillS3Source;
+
+pub use crate::types::_harness_skill_git_source::HarnessSkillGitSource;
 
 pub use crate::types::_harness_content_block_start::HarnessContentBlockStart;
 
@@ -400,6 +410,8 @@ pub use crate::types::_harness_agent_core_gateway_config::HarnessAgentCoreGatewa
 pub use crate::types::_harness_inline_function_config::HarnessInlineFunctionConfig;
 
 pub use crate::types::_harness_agent_core_code_interpreter_config::HarnessAgentCoreCodeInterpreterConfig;
+
+pub use crate::types::_harness_skill_git_auth::HarnessSkillGitAuth;
 
 pub use crate::types::_harness_tool_use_block_start::HarnessToolUseBlockStart;
 
@@ -739,6 +751,8 @@ mod _harness_agent_core_code_interpreter_config;
 
 mod _harness_agent_core_gateway_config;
 
+mod _harness_bedrock_api_format;
+
 mod _harness_bedrock_model_config;
 
 mod _harness_content_block;
@@ -761,6 +775,8 @@ mod _harness_gemini_model_config;
 
 mod _harness_inline_function_config;
 
+mod _harness_lite_llm_model_config;
+
 mod _harness_message;
 
 mod _harness_message_start_event;
@@ -770,6 +786,8 @@ mod _harness_message_stop_event;
 mod _harness_metadata_event;
 
 mod _harness_model_configuration;
+
+mod _harness_open_ai_api_format;
 
 mod _harness_open_ai_model_config;
 
@@ -782,6 +800,12 @@ mod _harness_reasoning_text_block;
 mod _harness_remote_mcp_config;
 
 mod _harness_skill;
+
+mod _harness_skill_git_auth;
+
+mod _harness_skill_git_source;
+
+mod _harness_skill_s3_source;
 
 mod _harness_stop_reason;
 

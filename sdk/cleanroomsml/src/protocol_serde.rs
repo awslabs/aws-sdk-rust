@@ -265,6 +265,8 @@ pub(crate) mod shape_model_training_data_channel;
 
 pub(crate) mod shape_model_training_data_channels;
 
+pub(crate) mod shape_payer_configuration;
+
 pub(crate) mod shape_privacy_budgets;
 
 pub(crate) mod shape_privacy_configuration;

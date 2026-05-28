@@ -551,6 +551,8 @@ pub(crate) mod shape_usage_top_accounts_result_list;
 
 pub(crate) mod shape_account_statistics;
 
+pub(crate) mod shape_continuous_scan_details;
+
 pub(crate) mod shape_coverage_filter_condition;
 
 pub(crate) mod shape_coverage_resource_details;
@@ -594,6 +596,8 @@ pub(crate) mod shape_resource_details;
 pub(crate) mod shape_resource_statistics;
 
 pub(crate) mod shape_scan_condition_pair;
+
+pub(crate) mod shape_scan_configuration_continuous_scan_details;
 
 pub(crate) mod shape_scan_ec2_instance_with_findings;
 

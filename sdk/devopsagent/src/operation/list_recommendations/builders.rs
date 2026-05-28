@@ -22,7 +22,7 @@ impl crate::operation::list_recommendations::builders::ListRecommendationsInputB
 }
 /// Fluent builder constructing a request to `ListRecommendations`.
 ///
-/// Lists recommendations for the specified agent space
+/// <p>Lists recommendations for the specified agent space</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListRecommendationsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,101 +108,101 @@ impl ListRecommendationsFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// The unique identifier for the agent space containing the recommendations
+    /// <p>The unique identifier for the agent space containing the recommendations</p>
     pub fn agent_space_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.agent_space_id(input.into());
         self
     }
-    /// The unique identifier for the agent space containing the recommendations
+    /// <p>The unique identifier for the agent space containing the recommendations</p>
     pub fn set_agent_space_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_agent_space_id(input);
         self
     }
-    /// The unique identifier for the agent space containing the recommendations
+    /// <p>The unique identifier for the agent space containing the recommendations</p>
     pub fn get_agent_space_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_agent_space_id()
     }
-    /// Optional task ID to filter recommendations by specific task
+    /// <p>Optional task ID to filter recommendations by specific task</p>
     pub fn task_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.task_id(input.into());
         self
     }
-    /// Optional task ID to filter recommendations by specific task
+    /// <p>Optional task ID to filter recommendations by specific task</p>
     pub fn set_task_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_task_id(input);
         self
     }
-    /// Optional task ID to filter recommendations by specific task
+    /// <p>Optional task ID to filter recommendations by specific task</p>
     pub fn get_task_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_task_id()
     }
-    /// Optional goal ID to filter recommendations by specific goal
+    /// <p>Optional goal ID to filter recommendations by specific goal</p>
     pub fn goal_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.goal_id(input.into());
         self
     }
-    /// Optional goal ID to filter recommendations by specific goal
+    /// <p>Optional goal ID to filter recommendations by specific goal</p>
     pub fn set_goal_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_goal_id(input);
         self
     }
-    /// Optional goal ID to filter recommendations by specific goal
+    /// <p>Optional goal ID to filter recommendations by specific goal</p>
     pub fn get_goal_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_goal_id()
     }
-    /// Optional status to filter recommendations by their current status
+    /// <p>Optional status to filter recommendations by their current status</p>
     pub fn status(mut self, input: crate::types::RecommendationStatus) -> Self {
         self.inner = self.inner.status(input);
         self
     }
-    /// Optional status to filter recommendations by their current status
+    /// <p>Optional status to filter recommendations by their current status</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::RecommendationStatus>) -> Self {
         self.inner = self.inner.set_status(input);
         self
     }
-    /// Optional status to filter recommendations by their current status
+    /// <p>Optional status to filter recommendations by their current status</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::RecommendationStatus> {
         self.inner.get_status()
     }
-    /// Optional priority to filter recommendations by priority level
+    /// <p>Optional priority to filter recommendations by priority level</p>
     pub fn priority(mut self, input: crate::types::RecommendationPriority) -> Self {
         self.inner = self.inner.priority(input);
         self
     }
-    /// Optional priority to filter recommendations by priority level
+    /// <p>Optional priority to filter recommendations by priority level</p>
     pub fn set_priority(mut self, input: ::std::option::Option<crate::types::RecommendationPriority>) -> Self {
         self.inner = self.inner.set_priority(input);
         self
     }
-    /// Optional priority to filter recommendations by priority level
+    /// <p>Optional priority to filter recommendations by priority level</p>
     pub fn get_priority(&self) -> &::std::option::Option<crate::types::RecommendationPriority> {
         self.inner.get_priority()
     }
-    /// Maximum number of recommendations to return in a single response
+    /// <p>Maximum number of recommendations to return in a single response</p>
     pub fn limit(mut self, input: i32) -> Self {
         self.inner = self.inner.limit(input);
         self
     }
-    /// Maximum number of recommendations to return in a single response
+    /// <p>Maximum number of recommendations to return in a single response</p>
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_limit(input);
         self
     }
-    /// Maximum number of recommendations to return in a single response
+    /// <p>Maximum number of recommendations to return in a single response</p>
     pub fn get_limit(&self) -> &::std::option::Option<i32> {
         self.inner.get_limit()
     }
-    /// Token for retrieving the next page of results
+    /// <p>Token for retrieving the next page of results</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
-    /// Token for retrieving the next page of results
+    /// <p>Token for retrieving the next page of results</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
-    /// Token for retrieving the next page of results
+    /// <p>Token for retrieving the next page of results</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }

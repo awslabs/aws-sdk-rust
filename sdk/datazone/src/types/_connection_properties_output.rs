@@ -26,6 +26,8 @@ pub enum ConnectionPropertiesOutput {
     SparkEmrProperties(crate::types::SparkEmrPropertiesOutput),
     /// <p>The Spark Amazon Web Services Glue properties of a connection.</p>
     SparkGlueProperties(crate::types::SparkGluePropertiesOutput),
+    /// <p>The VPC properties of a connection.</p>
+    VpcProperties(crate::types::VpcPropertiesOutput),
     /// <p>The Amazon MWAA properties of a connection.</p>
     WorkflowsMwaaProperties(crate::types::WorkflowsMwaaPropertiesOutput),
     /// <p>The MWAA serverless properties of a connection.</p>
@@ -183,6 +185,19 @@ impl ConnectionPropertiesOutput {
     /// Returns true if this is a [`SparkGlueProperties`](crate::types::ConnectionPropertiesOutput::SparkGlueProperties).
     pub fn is_spark_glue_properties(&self) -> bool {
         self.as_spark_glue_properties().is_ok()
+    }
+    /// Tries to convert the enum instance into [`VpcProperties`](crate::types::ConnectionPropertiesOutput::VpcProperties), extracting the inner [`VpcPropertiesOutput`](crate::types::VpcPropertiesOutput).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_vpc_properties(&self) -> ::std::result::Result<&crate::types::VpcPropertiesOutput, &Self> {
+        if let ConnectionPropertiesOutput::VpcProperties(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`VpcProperties`](crate::types::ConnectionPropertiesOutput::VpcProperties).
+    pub fn is_vpc_properties(&self) -> bool {
+        self.as_vpc_properties().is_ok()
     }
     /// Tries to convert the enum instance into [`WorkflowsMwaaProperties`](crate::types::ConnectionPropertiesOutput::WorkflowsMwaaProperties), extracting the inner [`WorkflowsMwaaPropertiesOutput`](crate::types::WorkflowsMwaaPropertiesOutput).
     /// Returns `Err(&Self)` if it can't be converted.

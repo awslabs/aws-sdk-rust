@@ -393,6 +393,8 @@ pub use crate::types::_scheduled_job_rollout::ScheduledJobRolloutBuilder;
 
 pub use crate::types::_field::FieldBuilder;
 
+pub use crate::types::_connectivity_filter::ConnectivityFilterBuilder;
+
 pub use crate::types::_metric_value::MetricValueBuilder;
 
 pub use crate::types::_violation_event_additional_info::ViolationEventAdditionalInfoBuilder;

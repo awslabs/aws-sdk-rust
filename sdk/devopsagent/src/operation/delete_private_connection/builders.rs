@@ -22,7 +22,7 @@ impl crate::operation::delete_private_connection::builders::DeletePrivateConnect
 }
 /// Fluent builder constructing a request to `DeletePrivateConnection`.
 ///
-/// Deletes a Private Connection. The deletion is asynchronous and returns DELETE_IN_PROGRESS status.
+/// <p>Deletes a Private Connection. The deletion is asynchronous and returns DELETE_IN_PROGRESS status.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeletePrivateConnectionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl DeletePrivateConnectionFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// The name of the Private Connection.
+    /// <p>The name of the Private Connection.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
-    /// The name of the Private Connection.
+    /// <p>The name of the Private Connection.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
-    /// The name of the Private Connection.
+    /// <p>The name of the Private Connection.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }

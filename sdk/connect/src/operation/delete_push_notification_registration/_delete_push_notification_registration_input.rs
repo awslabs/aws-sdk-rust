@@ -7,7 +7,7 @@ pub struct DeletePushNotificationRegistrationInput {
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier for the registration.</p>
     pub registration_id: ::std::option::Option<::std::string::String>,
-    /// <p>The identifier of the contact within the Amazon Connect instance.</p>
+    /// <p>The identifier of the contact within the Connect Customer instance.</p>
     pub contact_id: ::std::option::Option<::std::string::String>,
 }
 impl DeletePushNotificationRegistrationInput {
@@ -19,7 +19,7 @@ impl DeletePushNotificationRegistrationInput {
     pub fn registration_id(&self) -> ::std::option::Option<&str> {
         self.registration_id.as_deref()
     }
-    /// <p>The identifier of the contact within the Amazon Connect instance.</p>
+    /// <p>The identifier of the contact within the Connect Customer instance.</p>
     pub fn contact_id(&self) -> ::std::option::Option<&str> {
         self.contact_id.as_deref()
     }
@@ -70,18 +70,18 @@ impl DeletePushNotificationRegistrationInputBuilder {
     pub fn get_registration_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.registration_id
     }
-    /// <p>The identifier of the contact within the Amazon Connect instance.</p>
+    /// <p>The identifier of the contact within the Connect Customer instance.</p>
     /// This field is required.
     pub fn contact_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.contact_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier of the contact within the Amazon Connect instance.</p>
+    /// <p>The identifier of the contact within the Connect Customer instance.</p>
     pub fn set_contact_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.contact_id = input;
         self
     }
-    /// <p>The identifier of the contact within the Amazon Connect instance.</p>
+    /// <p>The identifier of the contact within the Connect Customer instance.</p>
     pub fn get_contact_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.contact_id
     }

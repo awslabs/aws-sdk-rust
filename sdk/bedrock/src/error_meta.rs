@@ -80,6 +80,42 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::batch_delete_advanced_prompt_optimization_job::BatchDeleteAdvancedPromptOptimizationJobError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::batch_delete_advanced_prompt_optimization_job::BatchDeleteAdvancedPromptOptimizationJobError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::batch_delete_advanced_prompt_optimization_job::BatchDeleteAdvancedPromptOptimizationJobError> for Error {
+    fn from(err: crate::operation::batch_delete_advanced_prompt_optimization_job::BatchDeleteAdvancedPromptOptimizationJobError) -> Self {
+        match err {
+            crate::operation::batch_delete_advanced_prompt_optimization_job::BatchDeleteAdvancedPromptOptimizationJobError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::batch_delete_advanced_prompt_optimization_job::BatchDeleteAdvancedPromptOptimizationJobError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::batch_delete_advanced_prompt_optimization_job::BatchDeleteAdvancedPromptOptimizationJobError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::batch_delete_advanced_prompt_optimization_job::BatchDeleteAdvancedPromptOptimizationJobError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::batch_delete_advanced_prompt_optimization_job::BatchDeleteAdvancedPromptOptimizationJobError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::batch_delete_evaluation_job::BatchDeleteEvaluationJobError, R>>
     for Error
 where
@@ -154,6 +190,64 @@ impl From<crate::operation::cancel_automated_reasoning_policy_build_workflow::Ca
             crate::operation::cancel_automated_reasoning_policy_build_workflow::CancelAutomatedReasoningPolicyBuildWorkflowError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::cancel_automated_reasoning_policy_build_workflow::CancelAutomatedReasoningPolicyBuildWorkflowError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::cancel_automated_reasoning_policy_build_workflow::CancelAutomatedReasoningPolicyBuildWorkflowError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_advanced_prompt_optimization_job::CreateAdvancedPromptOptimizationJobError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_advanced_prompt_optimization_job::CreateAdvancedPromptOptimizationJobError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_advanced_prompt_optimization_job::CreateAdvancedPromptOptimizationJobError> for Error {
+    fn from(err: crate::operation::create_advanced_prompt_optimization_job::CreateAdvancedPromptOptimizationJobError) -> Self {
+        match err {
+            crate::operation::create_advanced_prompt_optimization_job::CreateAdvancedPromptOptimizationJobError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::create_advanced_prompt_optimization_job::CreateAdvancedPromptOptimizationJobError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::create_advanced_prompt_optimization_job::CreateAdvancedPromptOptimizationJobError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::create_advanced_prompt_optimization_job::CreateAdvancedPromptOptimizationJobError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::create_advanced_prompt_optimization_job::CreateAdvancedPromptOptimizationJobError::ServiceQuotaExceededException(
+                inner,
+            ) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::create_advanced_prompt_optimization_job::CreateAdvancedPromptOptimizationJobError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::create_advanced_prompt_optimization_job::CreateAdvancedPromptOptimizationJobError::TooManyTagsException(inner) => {
+                Error::TooManyTagsException(inner)
+            }
+            crate::operation::create_advanced_prompt_optimization_job::CreateAdvancedPromptOptimizationJobError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::create_advanced_prompt_optimization_job::CreateAdvancedPromptOptimizationJobError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }
@@ -1573,6 +1667,55 @@ impl From<crate::operation::export_automated_reasoning_policy_version::ExportAut
     }
 }
 impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_advanced_prompt_optimization_job::GetAdvancedPromptOptimizationJobError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_advanced_prompt_optimization_job::GetAdvancedPromptOptimizationJobError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_advanced_prompt_optimization_job::GetAdvancedPromptOptimizationJobError> for Error {
+    fn from(err: crate::operation::get_advanced_prompt_optimization_job::GetAdvancedPromptOptimizationJobError) -> Self {
+        match err {
+            crate::operation::get_advanced_prompt_optimization_job::GetAdvancedPromptOptimizationJobError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_advanced_prompt_optimization_job::GetAdvancedPromptOptimizationJobError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::get_advanced_prompt_optimization_job::GetAdvancedPromptOptimizationJobError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_advanced_prompt_optimization_job::GetAdvancedPromptOptimizationJobError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::get_advanced_prompt_optimization_job::GetAdvancedPromptOptimizationJobError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::get_advanced_prompt_optimization_job::GetAdvancedPromptOptimizationJobError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
     From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_automated_reasoning_policy::GetAutomatedReasoningPolicyError, R>>
     for Error
 where
@@ -2469,6 +2612,52 @@ impl From<crate::operation::get_use_case_for_model_access::GetUseCaseForModelAcc
                 Error::ValidationException(inner)
             }
             crate::operation::get_use_case_for_model_access::GetUseCaseForModelAccessError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_advanced_prompt_optimization_jobs::ListAdvancedPromptOptimizationJobsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_advanced_prompt_optimization_jobs::ListAdvancedPromptOptimizationJobsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_advanced_prompt_optimization_jobs::ListAdvancedPromptOptimizationJobsError> for Error {
+    fn from(err: crate::operation::list_advanced_prompt_optimization_jobs::ListAdvancedPromptOptimizationJobsError) -> Self {
+        match err {
+            crate::operation::list_advanced_prompt_optimization_jobs::ListAdvancedPromptOptimizationJobsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_advanced_prompt_optimization_jobs::ListAdvancedPromptOptimizationJobsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_advanced_prompt_optimization_jobs::ListAdvancedPromptOptimizationJobsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::list_advanced_prompt_optimization_jobs::ListAdvancedPromptOptimizationJobsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::list_advanced_prompt_optimization_jobs::ListAdvancedPromptOptimizationJobsError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }
@@ -3491,6 +3680,58 @@ impl From<crate::operation::start_automated_reasoning_policy_test_workflow::Star
             crate::operation::start_automated_reasoning_policy_test_workflow::StartAutomatedReasoningPolicyTestWorkflowError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::start_automated_reasoning_policy_test_workflow::StartAutomatedReasoningPolicyTestWorkflowError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::start_automated_reasoning_policy_test_workflow::StartAutomatedReasoningPolicyTestWorkflowError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::stop_advanced_prompt_optimization_job::StopAdvancedPromptOptimizationJobError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::stop_advanced_prompt_optimization_job::StopAdvancedPromptOptimizationJobError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::stop_advanced_prompt_optimization_job::StopAdvancedPromptOptimizationJobError> for Error {
+    fn from(err: crate::operation::stop_advanced_prompt_optimization_job::StopAdvancedPromptOptimizationJobError) -> Self {
+        match err {
+            crate::operation::stop_advanced_prompt_optimization_job::StopAdvancedPromptOptimizationJobError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::stop_advanced_prompt_optimization_job::StopAdvancedPromptOptimizationJobError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::stop_advanced_prompt_optimization_job::StopAdvancedPromptOptimizationJobError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::stop_advanced_prompt_optimization_job::StopAdvancedPromptOptimizationJobError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::stop_advanced_prompt_optimization_job::StopAdvancedPromptOptimizationJobError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::stop_advanced_prompt_optimization_job::StopAdvancedPromptOptimizationJobError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::stop_advanced_prompt_optimization_job::StopAdvancedPromptOptimizationJobError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }

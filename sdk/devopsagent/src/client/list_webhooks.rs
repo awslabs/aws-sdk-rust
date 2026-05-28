@@ -3,10 +3,10 @@ impl super::Client {
     /// Constructs a fluent builder for the [`ListWebhooks`](crate::operation::list_webhooks::builders::ListWebhooksFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`agent_space_id(impl Into<String>)`](crate::operation::list_webhooks::builders::ListWebhooksFluentBuilder::agent_space_id) / [`set_agent_space_id(Option<String>)`](crate::operation::list_webhooks::builders::ListWebhooksFluentBuilder::set_agent_space_id):<br>required: **true**<br>The unique identifier of the AgentSpace<br>
-    ///   - [`association_id(impl Into<String>)`](crate::operation::list_webhooks::builders::ListWebhooksFluentBuilder::association_id) / [`set_association_id(Option<String>)`](crate::operation::list_webhooks::builders::ListWebhooksFluentBuilder::set_association_id):<br>required: **true**<br>The unique identifier of the given association.<br>
+    ///   - [`agent_space_id(impl Into<String>)`](crate::operation::list_webhooks::builders::ListWebhooksFluentBuilder::agent_space_id) / [`set_agent_space_id(Option<String>)`](crate::operation::list_webhooks::builders::ListWebhooksFluentBuilder::set_agent_space_id):<br>required: **true**<br><p>The unique identifier of the AgentSpace</p><br>
+    ///   - [`association_id(impl Into<String>)`](crate::operation::list_webhooks::builders::ListWebhooksFluentBuilder::association_id) / [`set_association_id(Option<String>)`](crate::operation::list_webhooks::builders::ListWebhooksFluentBuilder::set_association_id):<br>required: **true**<br><p>The unique identifier of the given association.</p><br>
     /// - On success, responds with [`ListWebhooksOutput`](crate::operation::list_webhooks::ListWebhooksOutput) with field(s):
-    ///   - [`webhooks(Vec::<Webhook>)`](crate::operation::list_webhooks::ListWebhooksOutput::webhooks): The list of association webhooks.
+    ///   - [`webhooks(Vec::<Webhook>)`](crate::operation::list_webhooks::ListWebhooksOutput::webhooks): <p>The list of association webhooks.</p>
     /// - On failure, responds with [`SdkError<ListWebhooksError>`](crate::operation::list_webhooks::ListWebhooksError)
     pub fn list_webhooks(&self) -> crate::operation::list_webhooks::builders::ListWebhooksFluentBuilder {
         crate::operation::list_webhooks::builders::ListWebhooksFluentBuilder::new(self.handle.clone())

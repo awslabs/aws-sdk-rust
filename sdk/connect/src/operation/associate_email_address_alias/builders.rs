@@ -22,7 +22,7 @@ impl crate::operation::associate_email_address_alias::builders::AssociateEmailAd
 }
 /// Fluent builder constructing a request to `AssociateEmailAddressAlias`.
 ///
-/// <p>Associates an email address alias with an existing email address in an Amazon Connect instance. This creates a forwarding relationship where emails sent to the alias email address are automatically forwarded to the primary email address.</p>
+/// <p>Associates an email address alias with an existing email address in an Connect Customer instance. This creates a forwarding relationship where emails sent to the alias email address are automatically forwarded to the primary email address.</p>
 /// <p><b>Use cases</b></p>
 /// <p>Following are common uses cases for this API:</p>
 /// <ul>
@@ -31,7 +31,7 @@ impl crate::operation::associate_email_address_alias::builders::AssociateEmailAd
 /// <li>
 /// <p><b>Department consolidation</b>: Forward emails from legacy department addresses (for example, sales@example.com, info@example.com) to a centralized customer service email during organizational restructuring.</p></li>
 /// <li>
-/// <p><b>Brand management</b>: Enable you to use familiar brand-specific email addresses that forward to the appropriate Amazon Connect instance email address.</p></li>
+/// <p><b>Brand management</b>: Enable you to use familiar brand-specific email addresses that forward to the appropriate Connect Customer instance email address.</p></li>
 /// </ul>
 /// <p><b>Important things to know</b></p>
 /// <ul>
@@ -51,11 +51,11 @@ impl crate::operation::associate_email_address_alias::builders::AssociateEmailAd
 /// <li>
 /// <p>The status of the forwarding configuration.</p></li>
 /// </ul>
-/// <p><b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon Connect endpoints and quotas</a>.</p>
+/// <p><b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Connect Customer endpoints and quotas</a>.</p>
 /// <p><b>Related operations</b></p>
 /// <ul>
 /// <li>
-/// <p><a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DisassociateEmailAddressAlias.html">DisassociateEmailAddressAlias</a>: Removes the alias association between two email addresses in an Amazon Connect instance.</p></li>
+/// <p><a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DisassociateEmailAddressAlias.html">DisassociateEmailAddressAlias</a>: Removes the alias association between two email addresses in an Connect Customer instance.</p></li>
 /// <li>
 /// <p><a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeEmailAddress.html">DescribeEmailAddress</a>: View current alias configurations for an email address.</p></li>
 /// <li>
@@ -166,31 +166,31 @@ impl AssociateEmailAddressAliasFluentBuilder {
     pub fn get_email_address_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_email_address_id()
     }
-    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    /// <p>The identifier of the Connect Customer instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.instance_id(input.into());
         self
     }
-    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    /// <p>The identifier of the Connect Customer instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_instance_id(input);
         self
     }
-    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    /// <p>The identifier of the Connect Customer instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_instance_id()
     }
-    /// <p>Configuration object that specifies which email address will serve as the alias. The specified email address must already exist in the Amazon Connect instance and cannot already be configured as an alias or have an alias of its own.</p>
+    /// <p>Configuration object that specifies which email address will serve as the alias. The specified email address must already exist in the Connect Customer instance and cannot already be configured as an alias or have an alias of its own.</p>
     pub fn alias_configuration(mut self, input: crate::types::AliasConfiguration) -> Self {
         self.inner = self.inner.alias_configuration(input);
         self
     }
-    /// <p>Configuration object that specifies which email address will serve as the alias. The specified email address must already exist in the Amazon Connect instance and cannot already be configured as an alias or have an alias of its own.</p>
+    /// <p>Configuration object that specifies which email address will serve as the alias. The specified email address must already exist in the Connect Customer instance and cannot already be configured as an alias or have an alias of its own.</p>
     pub fn set_alias_configuration(mut self, input: ::std::option::Option<crate::types::AliasConfiguration>) -> Self {
         self.inner = self.inner.set_alias_configuration(input);
         self
     }
-    /// <p>Configuration object that specifies which email address will serve as the alias. The specified email address must already exist in the Amazon Connect instance and cannot already be configured as an alias or have an alias of its own.</p>
+    /// <p>Configuration object that specifies which email address will serve as the alias. The specified email address must already exist in the Connect Customer instance and cannot already be configured as an alias or have an alias of its own.</p>
     pub fn get_alias_configuration(&self) -> &::std::option::Option<crate::types::AliasConfiguration> {
         self.inner.get_alias_configuration()
     }

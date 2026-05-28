@@ -46,6 +46,8 @@ pub struct CreateDashManifestConfiguration {
     pub subtitle_configuration: ::std::option::Option<crate::types::DashSubtitleConfiguration>,
     /// <p>The type of path to use in manifest URIs. <code>LEAF</code> uses leaf-relative paths (for example, <code>index_1.mpd</code>). <code>ROOT</code> uses root-relative paths that include the full path from root (for example, <code>/out/v1/channel-group/channel/endpoint/index_1.mpd</code>). If you don't specify a value, the default is <code>LEAF</code>.</p>
     pub uri_path_type: ::std::option::Option<crate::types::UriPathType>,
+    /// <p>The configuration for the DASH <code>availabilityStartTime</code> attribute of the Media Presentation Description (MPD). If you don't specify a value, MediaPackage uses the default availability start time of <code>2024-01-01T00:00:00Z</code>.</p>
+    pub availability_start_time_configuration: ::std::option::Option<crate::types::DashAvailabilityStartTimeConfiguration>,
 }
 impl CreateDashManifestConfiguration {
     /// <p>A short string that's appended to the endpoint URL. The child manifest name creates a unique path to this endpoint.</p>
@@ -133,6 +135,10 @@ impl CreateDashManifestConfiguration {
     pub fn uri_path_type(&self) -> ::std::option::Option<&crate::types::UriPathType> {
         self.uri_path_type.as_ref()
     }
+    /// <p>The configuration for the DASH <code>availabilityStartTime</code> attribute of the Media Presentation Description (MPD). If you don't specify a value, MediaPackage uses the default availability start time of <code>2024-01-01T00:00:00Z</code>.</p>
+    pub fn availability_start_time_configuration(&self) -> ::std::option::Option<&crate::types::DashAvailabilityStartTimeConfiguration> {
+        self.availability_start_time_configuration.as_ref()
+    }
 }
 impl CreateDashManifestConfiguration {
     /// Creates a new builder-style object to manufacture [`CreateDashManifestConfiguration`](crate::types::CreateDashManifestConfiguration).
@@ -163,6 +169,7 @@ pub struct CreateDashManifestConfigurationBuilder {
     pub(crate) compactness: ::std::option::Option<crate::types::DashCompactness>,
     pub(crate) subtitle_configuration: ::std::option::Option<crate::types::DashSubtitleConfiguration>,
     pub(crate) uri_path_type: ::std::option::Option<crate::types::UriPathType>,
+    pub(crate) availability_start_time_configuration: ::std::option::Option<crate::types::DashAvailabilityStartTimeConfiguration>,
 }
 impl CreateDashManifestConfigurationBuilder {
     /// <p>A short string that's appended to the endpoint URL. The child manifest name creates a unique path to this endpoint.</p>
@@ -454,6 +461,23 @@ impl CreateDashManifestConfigurationBuilder {
     pub fn get_uri_path_type(&self) -> &::std::option::Option<crate::types::UriPathType> {
         &self.uri_path_type
     }
+    /// <p>The configuration for the DASH <code>availabilityStartTime</code> attribute of the Media Presentation Description (MPD). If you don't specify a value, MediaPackage uses the default availability start time of <code>2024-01-01T00:00:00Z</code>.</p>
+    pub fn availability_start_time_configuration(mut self, input: crate::types::DashAvailabilityStartTimeConfiguration) -> Self {
+        self.availability_start_time_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The configuration for the DASH <code>availabilityStartTime</code> attribute of the Media Presentation Description (MPD). If you don't specify a value, MediaPackage uses the default availability start time of <code>2024-01-01T00:00:00Z</code>.</p>
+    pub fn set_availability_start_time_configuration(
+        mut self,
+        input: ::std::option::Option<crate::types::DashAvailabilityStartTimeConfiguration>,
+    ) -> Self {
+        self.availability_start_time_configuration = input;
+        self
+    }
+    /// <p>The configuration for the DASH <code>availabilityStartTime</code> attribute of the Media Presentation Description (MPD). If you don't specify a value, MediaPackage uses the default availability start time of <code>2024-01-01T00:00:00Z</code>.</p>
+    pub fn get_availability_start_time_configuration(&self) -> &::std::option::Option<crate::types::DashAvailabilityStartTimeConfiguration> {
+        &self.availability_start_time_configuration
+    }
     /// Consumes the builder and constructs a [`CreateDashManifestConfiguration`](crate::types::CreateDashManifestConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`manifest_name`](crate::types::builders::CreateDashManifestConfigurationBuilder::manifest_name)
@@ -482,6 +506,7 @@ impl CreateDashManifestConfigurationBuilder {
             compactness: self.compactness,
             subtitle_configuration: self.subtitle_configuration,
             uri_path_type: self.uri_path_type,
+            availability_start_time_configuration: self.availability_start_time_configuration,
         })
     }
 }

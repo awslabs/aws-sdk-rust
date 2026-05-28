@@ -1467,6 +1467,33 @@ impl From<crate::operation::delete_storage_profile::DeleteStorageProfileError> f
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_volume::DeleteVolumeError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_volume::DeleteVolumeError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_volume::DeleteVolumeError> for Error {
+    fn from(err: crate::operation::delete_volume::DeleteVolumeError) -> Self {
+        match err {
+            crate::operation::delete_volume::DeleteVolumeError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_volume::DeleteVolumeError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::delete_volume::DeleteVolumeError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::delete_volume::DeleteVolumeError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_volume::DeleteVolumeError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_volume::DeleteVolumeError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_volume::DeleteVolumeError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_worker::DeleteWorkerError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -2233,6 +2260,32 @@ impl From<crate::operation::get_task::GetTaskError> for Error {
             crate::operation::get_task::GetTaskError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::get_task::GetTaskError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::get_task::GetTaskError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_volume::GetVolumeError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_volume::GetVolumeError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_volume::GetVolumeError> for Error {
+    fn from(err: crate::operation::get_volume::GetVolumeError) -> Self {
+        match err {
+            crate::operation::get_volume::GetVolumeError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_volume::GetVolumeError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::get_volume::GetVolumeError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_volume::GetVolumeError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_volume::GetVolumeError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_volume::GetVolumeError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -3099,6 +3152,32 @@ impl From<crate::operation::list_tasks::ListTasksError> for Error {
             crate::operation::list_tasks::ListTasksError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::list_tasks::ListTasksError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_tasks::ListTasksError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_volumes::ListVolumesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_volumes::ListVolumesError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_volumes::ListVolumesError> for Error {
+    fn from(err: crate::operation::list_volumes::ListVolumesError) -> Self {
+        match err {
+            crate::operation::list_volumes::ListVolumesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_volumes::ListVolumesError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::list_volumes::ListVolumesError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_volumes::ListVolumesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_volumes::ListVolumesError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_volumes::ListVolumesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

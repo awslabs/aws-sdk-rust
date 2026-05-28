@@ -139,6 +139,8 @@ pub use crate::types::_primary_need_from_aws::PrimaryNeedFromAws;
 
 pub use crate::types::_account::Account;
 
+pub use crate::types::_expected_contract_duration::ExpectedContractDuration;
+
 pub use crate::types::_competitor_name::CompetitorName;
 
 pub use crate::types::_aws_partition::AwsPartition;
@@ -214,6 +216,8 @@ pub use crate::types::_address::Address;
 pub use crate::types::_delivery_model::DeliveryModel;
 
 pub use crate::types::_expected_customer_spend::ExpectedCustomerSpend;
+
+pub use crate::types::_expected_contract_duration_term::ExpectedContractDurationTerm;
 
 pub use crate::types::_sales_activity::SalesActivity;
 
@@ -350,6 +354,10 @@ mod _engagement_sort;
 mod _engagement_sort_name;
 
 mod _engagement_summary;
+
+mod _expected_contract_duration;
+
+mod _expected_contract_duration_term;
 
 mod _expected_customer_spend;
 

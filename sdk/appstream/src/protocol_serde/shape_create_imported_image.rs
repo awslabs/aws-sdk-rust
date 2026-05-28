@@ -68,6 +68,27 @@ pub fn de_create_imported_image_http_error(
             }
             tmp
         }),
+        "InvalidParameterCombinationException" => {
+            crate::operation::create_imported_image::CreateImportedImageError::InvalidParameterCombinationException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::InvalidParameterCombinationExceptionBuilder::default();
+                    output =
+                        crate::protocol_serde::shape_invalid_parameter_combination_exception::de_invalid_parameter_combination_exception_json_err(
+                            _response_body,
+                            output,
+                        )
+                        .map_err(crate::operation::create_imported_image::CreateImportedImageError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         "InvalidRoleException" => crate::operation::create_imported_image::CreateImportedImageError::InvalidRoleException({
             #[allow(unused_mut)]
             let mut tmp = {

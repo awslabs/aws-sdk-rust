@@ -175,6 +175,8 @@ pub(crate) mod shape_channel_group_list_configuration;
 
 pub(crate) mod shape_channel_list_configuration;
 
+pub(crate) mod shape_dash_availability_start_time_configuration;
+
 pub(crate) mod shape_dash_base_url;
 
 pub(crate) mod shape_dash_dvb_settings;

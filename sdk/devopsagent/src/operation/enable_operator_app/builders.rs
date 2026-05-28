@@ -22,7 +22,7 @@ impl crate::operation::enable_operator_app::builders::EnableOperatorAppInputBuil
 }
 /// Fluent builder constructing a request to `EnableOperatorApp`.
 ///
-/// Enable the Operator App to access the given AgentSpace
+/// <p>Enable the Operator App to access the given AgentSpace</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct EnableOperatorAppFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,115 +108,115 @@ impl EnableOperatorAppFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// The unique identifier of the AgentSpace
+    /// <p>The unique identifier of the AgentSpace</p>
     pub fn agent_space_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.agent_space_id(input.into());
         self
     }
-    /// The unique identifier of the AgentSpace
+    /// <p>The unique identifier of the AgentSpace</p>
     pub fn set_agent_space_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_agent_space_id(input);
         self
     }
-    /// The unique identifier of the AgentSpace
+    /// <p>The unique identifier of the AgentSpace</p>
     pub fn get_agent_space_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_agent_space_id()
     }
-    /// The authentication flow configured for the operator App. e.g. iam or idc
+    /// <p>The authentication flow configured for the operator App. e.g. iam or idc</p>
     pub fn auth_flow(mut self, input: crate::types::AuthFlow) -> Self {
         self.inner = self.inner.auth_flow(input);
         self
     }
-    /// The authentication flow configured for the operator App. e.g. iam or idc
+    /// <p>The authentication flow configured for the operator App. e.g. iam or idc</p>
     pub fn set_auth_flow(mut self, input: ::std::option::Option<crate::types::AuthFlow>) -> Self {
         self.inner = self.inner.set_auth_flow(input);
         self
     }
-    /// The authentication flow configured for the operator App. e.g. iam or idc
+    /// <p>The authentication flow configured for the operator App. e.g. iam or idc</p>
     pub fn get_auth_flow(&self) -> &::std::option::Option<crate::types::AuthFlow> {
         self.inner.get_auth_flow()
     }
-    /// The IAM role end users assume to access AIDevOps APIs
+    /// <p>The IAM role end users assume to access AIDevOps APIs</p>
     pub fn operator_app_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.operator_app_role_arn(input.into());
         self
     }
-    /// The IAM role end users assume to access AIDevOps APIs
+    /// <p>The IAM role end users assume to access AIDevOps APIs</p>
     pub fn set_operator_app_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_operator_app_role_arn(input);
         self
     }
-    /// The IAM role end users assume to access AIDevOps APIs
+    /// <p>The IAM role end users assume to access AIDevOps APIs</p>
     pub fn get_operator_app_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_operator_app_role_arn()
     }
-    /// The IdC instance Arn used to create an IdC auth application
+    /// <p>The IdC instance Arn used to create an IdC auth application</p>
     pub fn idc_instance_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.idc_instance_arn(input.into());
         self
     }
-    /// The IdC instance Arn used to create an IdC auth application
+    /// <p>The IdC instance Arn used to create an IdC auth application</p>
     pub fn set_idc_instance_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_idc_instance_arn(input);
         self
     }
-    /// The IdC instance Arn used to create an IdC auth application
+    /// <p>The IdC instance Arn used to create an IdC auth application</p>
     pub fn get_idc_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_idc_instance_arn()
     }
-    /// The OIDC issuer URL of the external Identity Provider
+    /// <p>The OIDC issuer URL of the external Identity Provider</p>
     pub fn issuer_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.issuer_url(input.into());
         self
     }
-    /// The OIDC issuer URL of the external Identity Provider
+    /// <p>The OIDC issuer URL of the external Identity Provider</p>
     pub fn set_issuer_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_issuer_url(input);
         self
     }
-    /// The OIDC issuer URL of the external Identity Provider
+    /// <p>The OIDC issuer URL of the external Identity Provider</p>
     pub fn get_issuer_url(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_issuer_url()
     }
-    /// The OIDC client ID for the IdP application
+    /// <p>The OIDC client ID for the IdP application</p>
     pub fn idp_client_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.idp_client_id(input.into());
         self
     }
-    /// The OIDC client ID for the IdP application
+    /// <p>The OIDC client ID for the IdP application</p>
     pub fn set_idp_client_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_idp_client_id(input);
         self
     }
-    /// The OIDC client ID for the IdP application
+    /// <p>The OIDC client ID for the IdP application</p>
     pub fn get_idp_client_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_idp_client_id()
     }
-    /// The OIDC client secret for the IdP application
+    /// <p>The OIDC client secret for the IdP application</p>
     pub fn idp_client_secret(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.idp_client_secret(input.into());
         self
     }
-    /// The OIDC client secret for the IdP application
+    /// <p>The OIDC client secret for the IdP application</p>
     pub fn set_idp_client_secret(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_idp_client_secret(input);
         self
     }
-    /// The OIDC client secret for the IdP application
+    /// <p>The OIDC client secret for the IdP application</p>
     pub fn get_idp_client_secret(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_idp_client_secret()
     }
-    /// The Identity Provider name (e.g., Entra, Okta, Google)
+    /// <p>The Identity Provider name (e.g., Entra, Okta, Google)</p>
     pub fn provider(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.provider(input.into());
         self
     }
-    /// The Identity Provider name (e.g., Entra, Okta, Google)
+    /// <p>The Identity Provider name (e.g., Entra, Okta, Google)</p>
     pub fn set_provider(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_provider(input);
         self
     }
-    /// The Identity Provider name (e.g., Entra, Okta, Google)
+    /// <p>The Identity Provider name (e.g., Entra, Okta, Google)</p>
     pub fn get_provider(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_provider()
     }

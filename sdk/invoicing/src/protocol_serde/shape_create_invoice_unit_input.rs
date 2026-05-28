@@ -33,5 +33,8 @@ pub fn ser_create_invoice_unit_input_input(
         }
         array_8.finish();
     }
+    if let Some(var_11) = &input.client_token {
+        object.key("ClientToken").string(var_11.as_str());
+    }
     Ok(())
 }

@@ -15,6 +15,7 @@
 ///     ExportImageTaskState::Completed => { /* ... */ },
 ///     ExportImageTaskState::Exporting => { /* ... */ },
 ///     ExportImageTaskState::Failed => { /* ... */ },
+///     ExportImageTaskState::TimedOut => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -49,6 +50,8 @@ pub enum ExportImageTaskState {
     Exporting,
     #[allow(missing_docs)] // documentation missing in model
     Failed,
+    #[allow(missing_docs)] // documentation missing in model
+    TimedOut,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -59,6 +62,7 @@ impl ::std::convert::From<&str> for ExportImageTaskState {
             "COMPLETED" => ExportImageTaskState::Completed,
             "EXPORTING" => ExportImageTaskState::Exporting,
             "FAILED" => ExportImageTaskState::Failed,
+            "TIMED_OUT" => ExportImageTaskState::TimedOut,
             other => ExportImageTaskState::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -77,12 +81,13 @@ impl ExportImageTaskState {
             ExportImageTaskState::Completed => "COMPLETED",
             ExportImageTaskState::Exporting => "EXPORTING",
             ExportImageTaskState::Failed => "FAILED",
+            ExportImageTaskState::TimedOut => "TIMED_OUT",
             ExportImageTaskState::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["COMPLETED", "EXPORTING", "FAILED"]
+        &["COMPLETED", "EXPORTING", "FAILED", "TIMED_OUT"]
     }
 }
 impl ::std::convert::AsRef<str> for ExportImageTaskState {
@@ -108,6 +113,7 @@ impl ::std::fmt::Display for ExportImageTaskState {
             ExportImageTaskState::Completed => write!(f, "COMPLETED"),
             ExportImageTaskState::Exporting => write!(f, "EXPORTING"),
             ExportImageTaskState::Failed => write!(f, "FAILED"),
+            ExportImageTaskState::TimedOut => write!(f, "TIMED_OUT"),
             ExportImageTaskState::Unknown(value) => write!(f, "{value}"),
         }
     }

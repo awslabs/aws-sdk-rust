@@ -22,7 +22,7 @@ impl crate::operation::register_service::builders::RegisterServiceInputBuilder {
 }
 /// Fluent builder constructing a request to `RegisterService`.
 ///
-/// This operation registers the specified service
+/// <p>This operation registers the specified service</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RegisterServiceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,73 +108,73 @@ impl RegisterServiceFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// Services that can be registered via the post-registration API (excludes OAuth 3LO services).
+    /// <p>Services that can be registered via the post-registration API (excludes OAuth 3LO services).</p>
     pub fn service(mut self, input: crate::types::PostRegisterServiceSupportedService) -> Self {
         self.inner = self.inner.service(input);
         self
     }
-    /// Services that can be registered via the post-registration API (excludes OAuth 3LO services).
+    /// <p>Services that can be registered via the post-registration API (excludes OAuth 3LO services).</p>
     pub fn set_service(mut self, input: ::std::option::Option<crate::types::PostRegisterServiceSupportedService>) -> Self {
         self.inner = self.inner.set_service(input);
         self
     }
-    /// Services that can be registered via the post-registration API (excludes OAuth 3LO services).
+    /// <p>Services that can be registered via the post-registration API (excludes OAuth 3LO services).</p>
     pub fn get_service(&self) -> &::std::option::Option<crate::types::PostRegisterServiceSupportedService> {
         self.inner.get_service()
     }
-    /// Service-specific authorization configuration parameters
+    /// <p>Service-specific authorization configuration parameters</p>
     pub fn service_details(mut self, input: crate::types::ServiceDetails) -> Self {
         self.inner = self.inner.service_details(input);
         self
     }
-    /// Service-specific authorization configuration parameters
+    /// <p>Service-specific authorization configuration parameters</p>
     pub fn set_service_details(mut self, input: ::std::option::Option<crate::types::ServiceDetails>) -> Self {
         self.inner = self.inner.set_service_details(input);
         self
     }
-    /// Service-specific authorization configuration parameters
+    /// <p>Service-specific authorization configuration parameters</p>
     pub fn get_service_details(&self) -> &::std::option::Option<crate::types::ServiceDetails> {
         self.inner.get_service_details()
     }
-    /// The ARN of the AWS Key Management Service (AWS KMS) customer managed key that's used to encrypt resources.
+    /// <p>The ARN of the AWS Key Management Service (AWS KMS) customer managed key that's used to encrypt resources.</p>
     pub fn kms_key_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.kms_key_arn(input.into());
         self
     }
-    /// The ARN of the AWS Key Management Service (AWS KMS) customer managed key that's used to encrypt resources.
+    /// <p>The ARN of the AWS Key Management Service (AWS KMS) customer managed key that's used to encrypt resources.</p>
     pub fn set_kms_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_kms_key_arn(input);
         self
     }
-    /// The ARN of the AWS Key Management Service (AWS KMS) customer managed key that's used to encrypt resources.
+    /// <p>The ARN of the AWS Key Management Service (AWS KMS) customer managed key that's used to encrypt resources.</p>
     pub fn get_kms_key_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_kms_key_arn()
     }
-    /// The name of the private connection to use for VPC connectivity.
+    /// <p>The name of the private connection to use for VPC connectivity.</p>
     pub fn private_connection_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.private_connection_name(input.into());
         self
     }
-    /// The name of the private connection to use for VPC connectivity.
+    /// <p>The name of the private connection to use for VPC connectivity.</p>
     pub fn set_private_connection_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_private_connection_name(input);
         self
     }
-    /// The name of the private connection to use for VPC connectivity.
+    /// <p>The name of the private connection to use for VPC connectivity.</p>
     pub fn get_private_connection_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_private_connection_name()
     }
-    /// The display name for the service registration.
+    /// <p>The display name for the service registration.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
-    /// The display name for the service registration.
+    /// <p>The display name for the service registration.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
-    /// The display name for the service registration.
+    /// <p>The display name for the service registration.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }
@@ -183,17 +183,17 @@ impl RegisterServiceFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// Tags to add to the Service at registration time.
+    /// <p>Tags to add to the Service at registration time.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
-    /// Tags to add to the Service at registration time.
+    /// <p>Tags to add to the Service at registration time.</p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
-    /// Tags to add to the Service at registration time.
+    /// <p>Tags to add to the Service at registration time.</p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }

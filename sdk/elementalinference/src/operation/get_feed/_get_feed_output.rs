@@ -5,19 +5,19 @@
 pub struct GetFeedOutput {
     /// <p>The ARN of the feed.</p>
     pub arn: ::std::string::String,
-    /// <p>The name of the feed being queried.</p>
+    /// <p>The name of the feed.</p>
     pub name: ::std::string::String,
-    /// <p>The ID of the feed being queried.</p>
+    /// <p>The ID of the feed.</p>
     pub id: ::std::string::String,
-    /// <p>The dataEndpoints of the feed being queried.</p>
+    /// <p>The dataEndpoints of the feed.</p>
     pub data_endpoints: ::std::vec::Vec<::std::string::String>,
-    /// <p>An array of the outputs in the feed being queried.</p>
+    /// <p>An array of the outputs in the feed.</p>
     pub outputs: ::std::vec::Vec<crate::types::GetOutput>,
-    /// <p>The status of the feed being queried.</p>
+    /// <p>The status of the feed.</p>
     pub status: crate::types::FeedStatus,
-    /// <p>Information about the resource, if any, associated with the feed being queried.</p>
+    /// <p>Information about the resource that is associated with the feed. It's possible that there is no associated resource. This is not an error.</p>
     pub association: ::std::option::Option<crate::types::FeedAssociation>,
-    /// <p>A list of the tags, if any, for the feed being queried.</p>
+    /// <p>A list of the tags, if any, for the feed.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
@@ -27,35 +27,35 @@ impl GetFeedOutput {
         use std::ops::Deref;
         self.arn.deref()
     }
-    /// <p>The name of the feed being queried.</p>
+    /// <p>The name of the feed.</p>
     pub fn name(&self) -> &str {
         use std::ops::Deref;
         self.name.deref()
     }
-    /// <p>The ID of the feed being queried.</p>
+    /// <p>The ID of the feed.</p>
     pub fn id(&self) -> &str {
         use std::ops::Deref;
         self.id.deref()
     }
-    /// <p>The dataEndpoints of the feed being queried.</p>
+    /// <p>The dataEndpoints of the feed.</p>
     pub fn data_endpoints(&self) -> &[::std::string::String] {
         use std::ops::Deref;
         self.data_endpoints.deref()
     }
-    /// <p>An array of the outputs in the feed being queried.</p>
+    /// <p>An array of the outputs in the feed.</p>
     pub fn outputs(&self) -> &[crate::types::GetOutput] {
         use std::ops::Deref;
         self.outputs.deref()
     }
-    /// <p>The status of the feed being queried.</p>
+    /// <p>The status of the feed.</p>
     pub fn status(&self) -> &crate::types::FeedStatus {
         &self.status
     }
-    /// <p>Information about the resource, if any, associated with the feed being queried.</p>
+    /// <p>Information about the resource that is associated with the feed. It's possible that there is no associated resource. This is not an error.</p>
     pub fn association(&self) -> ::std::option::Option<&crate::types::FeedAssociation> {
         self.association.as_ref()
     }
-    /// <p>A list of the tags, if any, for the feed being queried.</p>
+    /// <p>A list of the tags, if any, for the feed.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
@@ -102,33 +102,33 @@ impl GetFeedOutputBuilder {
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }
-    /// <p>The name of the feed being queried.</p>
+    /// <p>The name of the feed.</p>
     /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the feed being queried.</p>
+    /// <p>The name of the feed.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// <p>The name of the feed being queried.</p>
+    /// <p>The name of the feed.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p>The ID of the feed being queried.</p>
+    /// <p>The ID of the feed.</p>
     /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the feed being queried.</p>
+    /// <p>The ID of the feed.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
-    /// <p>The ID of the feed being queried.</p>
+    /// <p>The ID of the feed.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.id
     }
@@ -136,19 +136,19 @@ impl GetFeedOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_data_endpoints`](Self::set_data_endpoints).
     ///
-    /// <p>The dataEndpoints of the feed being queried.</p>
+    /// <p>The dataEndpoints of the feed.</p>
     pub fn data_endpoints(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.data_endpoints.unwrap_or_default();
         v.push(input.into());
         self.data_endpoints = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The dataEndpoints of the feed being queried.</p>
+    /// <p>The dataEndpoints of the feed.</p>
     pub fn set_data_endpoints(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.data_endpoints = input;
         self
     }
-    /// <p>The dataEndpoints of the feed being queried.</p>
+    /// <p>The dataEndpoints of the feed.</p>
     pub fn get_data_endpoints(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.data_endpoints
     }
@@ -156,48 +156,48 @@ impl GetFeedOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_outputs`](Self::set_outputs).
     ///
-    /// <p>An array of the outputs in the feed being queried.</p>
+    /// <p>An array of the outputs in the feed.</p>
     pub fn outputs(mut self, input: crate::types::GetOutput) -> Self {
         let mut v = self.outputs.unwrap_or_default();
         v.push(input);
         self.outputs = ::std::option::Option::Some(v);
         self
     }
-    /// <p>An array of the outputs in the feed being queried.</p>
+    /// <p>An array of the outputs in the feed.</p>
     pub fn set_outputs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GetOutput>>) -> Self {
         self.outputs = input;
         self
     }
-    /// <p>An array of the outputs in the feed being queried.</p>
+    /// <p>An array of the outputs in the feed.</p>
     pub fn get_outputs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GetOutput>> {
         &self.outputs
     }
-    /// <p>The status of the feed being queried.</p>
+    /// <p>The status of the feed.</p>
     /// This field is required.
     pub fn status(mut self, input: crate::types::FeedStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The status of the feed being queried.</p>
+    /// <p>The status of the feed.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::FeedStatus>) -> Self {
         self.status = input;
         self
     }
-    /// <p>The status of the feed being queried.</p>
+    /// <p>The status of the feed.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::FeedStatus> {
         &self.status
     }
-    /// <p>Information about the resource, if any, associated with the feed being queried.</p>
+    /// <p>Information about the resource that is associated with the feed. It's possible that there is no associated resource. This is not an error.</p>
     pub fn association(mut self, input: crate::types::FeedAssociation) -> Self {
         self.association = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Information about the resource, if any, associated with the feed being queried.</p>
+    /// <p>Information about the resource that is associated with the feed. It's possible that there is no associated resource. This is not an error.</p>
     pub fn set_association(mut self, input: ::std::option::Option<crate::types::FeedAssociation>) -> Self {
         self.association = input;
         self
     }
-    /// <p>Information about the resource, if any, associated with the feed being queried.</p>
+    /// <p>Information about the resource that is associated with the feed. It's possible that there is no associated resource. This is not an error.</p>
     pub fn get_association(&self) -> &::std::option::Option<crate::types::FeedAssociation> {
         &self.association
     }
@@ -205,19 +205,19 @@ impl GetFeedOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>A list of the tags, if any, for the feed being queried.</p>
+    /// <p>A list of the tags, if any, for the feed.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>A list of the tags, if any, for the feed being queried.</p>
+    /// <p>A list of the tags, if any, for the feed.</p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
-    /// <p>A list of the tags, if any, for the feed being queried.</p>
+    /// <p>A list of the tags, if any, for the feed.</p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }

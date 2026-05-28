@@ -167,6 +167,8 @@ impl Client {
 
 mod associate_feed;
 
+mod create_dictionary;
+
 mod create_feed;
 
 /// Operation customization and supporting types.
@@ -196,11 +198,19 @@ mod create_feed;
 /// ```
 pub mod customize;
 
+mod delete_dictionary;
+
 mod delete_feed;
 
 mod disassociate_feed;
 
+mod export_dictionary_entries;
+
+mod get_dictionary;
+
 mod get_feed;
+
+mod list_dictionaries;
 
 mod list_feeds;
 
@@ -209,5 +219,7 @@ mod list_tags_for_resource;
 mod tag_resource;
 
 mod untag_resource;
+
+mod update_dictionary;
 
 mod update_feed;

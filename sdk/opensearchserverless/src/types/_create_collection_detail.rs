@@ -20,6 +20,8 @@ pub struct CreateCollectionDetail {
     pub kms_key_arn: ::std::option::Option<::std::string::String>,
     /// <p>Creates details about an OpenSearch Serverless collection.</p>
     pub standby_replicas: ::std::option::Option<crate::types::StandbyReplicas>,
+    /// <p>Indicates whether deletion protection is <code>ENABLED</code> or <code>DISABLED</code> for the collection.</p>
+    pub deletion_protection: ::std::option::Option<crate::types::DeletionProtection>,
     /// <p>Configuration options for vector search capabilities in the collection.</p>
     pub vector_options: ::std::option::Option<crate::types::VectorOptions>,
     /// <p>The Epoch time when the collection was created.</p>
@@ -62,6 +64,10 @@ impl CreateCollectionDetail {
     pub fn standby_replicas(&self) -> ::std::option::Option<&crate::types::StandbyReplicas> {
         self.standby_replicas.as_ref()
     }
+    /// <p>Indicates whether deletion protection is <code>ENABLED</code> or <code>DISABLED</code> for the collection.</p>
+    pub fn deletion_protection(&self) -> ::std::option::Option<&crate::types::DeletionProtection> {
+        self.deletion_protection.as_ref()
+    }
     /// <p>Configuration options for vector search capabilities in the collection.</p>
     pub fn vector_options(&self) -> ::std::option::Option<&crate::types::VectorOptions> {
         self.vector_options.as_ref()
@@ -98,6 +104,7 @@ pub struct CreateCollectionDetailBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) kms_key_arn: ::std::option::Option<::std::string::String>,
     pub(crate) standby_replicas: ::std::option::Option<crate::types::StandbyReplicas>,
+    pub(crate) deletion_protection: ::std::option::Option<crate::types::DeletionProtection>,
     pub(crate) vector_options: ::std::option::Option<crate::types::VectorOptions>,
     pub(crate) created_date: ::std::option::Option<i64>,
     pub(crate) last_modified_date: ::std::option::Option<i64>,
@@ -216,6 +223,20 @@ impl CreateCollectionDetailBuilder {
     pub fn get_standby_replicas(&self) -> &::std::option::Option<crate::types::StandbyReplicas> {
         &self.standby_replicas
     }
+    /// <p>Indicates whether deletion protection is <code>ENABLED</code> or <code>DISABLED</code> for the collection.</p>
+    pub fn deletion_protection(mut self, input: crate::types::DeletionProtection) -> Self {
+        self.deletion_protection = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether deletion protection is <code>ENABLED</code> or <code>DISABLED</code> for the collection.</p>
+    pub fn set_deletion_protection(mut self, input: ::std::option::Option<crate::types::DeletionProtection>) -> Self {
+        self.deletion_protection = input;
+        self
+    }
+    /// <p>Indicates whether deletion protection is <code>ENABLED</code> or <code>DISABLED</code> for the collection.</p>
+    pub fn get_deletion_protection(&self) -> &::std::option::Option<crate::types::DeletionProtection> {
+        &self.deletion_protection
+    }
     /// <p>Configuration options for vector search capabilities in the collection.</p>
     pub fn vector_options(mut self, input: crate::types::VectorOptions) -> Self {
         self.vector_options = ::std::option::Option::Some(input);
@@ -283,6 +304,7 @@ impl CreateCollectionDetailBuilder {
             arn: self.arn,
             kms_key_arn: self.kms_key_arn,
             standby_replicas: self.standby_replicas,
+            deletion_protection: self.deletion_protection,
             vector_options: self.vector_options,
             created_date: self.created_date,
             last_modified_date: self.last_modified_date,

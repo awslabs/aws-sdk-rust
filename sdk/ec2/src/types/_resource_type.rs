@@ -43,6 +43,7 @@
 ///     ResourceType::IpamExternalResourceVerificationToken => { /* ... */ },
 ///     ResourceType::IpamPolicy => { /* ... */ },
 ///     ResourceType::IpamPool => { /* ... */ },
+///     ResourceType::IpamPoolAllocation => { /* ... */ },
 ///     ResourceType::IpamPrefixListResolver => { /* ... */ },
 ///     ResourceType::IpamPrefixListResolverTarget => { /* ... */ },
 ///     ResourceType::IpamResourceDiscovery => { /* ... */ },
@@ -209,6 +210,8 @@ pub enum ResourceType {
     IpamPolicy,
     #[allow(missing_docs)] // documentation missing in model
     IpamPool,
+    #[allow(missing_docs)] // documentation missing in model
+    IpamPoolAllocation,
     #[allow(missing_docs)] // documentation missing in model
     IpamPrefixListResolver,
     #[allow(missing_docs)] // documentation missing in model
@@ -399,6 +402,7 @@ impl ::std::convert::From<&str> for ResourceType {
             "ipam-external-resource-verification-token" => ResourceType::IpamExternalResourceVerificationToken,
             "ipam-policy" => ResourceType::IpamPolicy,
             "ipam-pool" => ResourceType::IpamPool,
+            "ipam-pool-allocation" => ResourceType::IpamPoolAllocation,
             "ipam-prefix-list-resolver" => ResourceType::IpamPrefixListResolver,
             "ipam-prefix-list-resolver-target" => ResourceType::IpamPrefixListResolverTarget,
             "ipam-resource-discovery" => ResourceType::IpamResourceDiscovery,
@@ -521,6 +525,7 @@ impl ResourceType {
             ResourceType::IpamExternalResourceVerificationToken => "ipam-external-resource-verification-token",
             ResourceType::IpamPolicy => "ipam-policy",
             ResourceType::IpamPool => "ipam-pool",
+            ResourceType::IpamPoolAllocation => "ipam-pool-allocation",
             ResourceType::IpamPrefixListResolver => "ipam-prefix-list-resolver",
             ResourceType::IpamPrefixListResolverTarget => "ipam-prefix-list-resolver-target",
             ResourceType::IpamResourceDiscovery => "ipam-resource-discovery",
@@ -634,6 +639,7 @@ impl ResourceType {
             "ipam-external-resource-verification-token",
             "ipam-policy",
             "ipam-pool",
+            "ipam-pool-allocation",
             "ipam-prefix-list-resolver",
             "ipam-prefix-list-resolver-target",
             "ipam-resource-discovery",
@@ -764,6 +770,7 @@ impl ::std::fmt::Display for ResourceType {
             ResourceType::IpamExternalResourceVerificationToken => write!(f, "ipam-external-resource-verification-token"),
             ResourceType::IpamPolicy => write!(f, "ipam-policy"),
             ResourceType::IpamPool => write!(f, "ipam-pool"),
+            ResourceType::IpamPoolAllocation => write!(f, "ipam-pool-allocation"),
             ResourceType::IpamPrefixListResolver => write!(f, "ipam-prefix-list-resolver"),
             ResourceType::IpamPrefixListResolverTarget => write!(f, "ipam-prefix-list-resolver-target"),
             ResourceType::IpamResourceDiscovery => write!(f, "ipam-resource-discovery"),

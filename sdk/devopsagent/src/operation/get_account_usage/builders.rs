@@ -22,7 +22,7 @@ impl crate::operation::get_account_usage::builders::GetAccountUsageInputBuilder 
 }
 /// Fluent builder constructing a request to `GetAccountUsage`.
 ///
-/// Retrieves monthly account usage metrics and limits for the AWS account.
+/// <p>Retrieves monthly account usage metrics and limits for the AWS account.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetAccountUsageFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

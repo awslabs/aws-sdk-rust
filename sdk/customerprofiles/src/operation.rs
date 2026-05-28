@@ -10,6 +10,9 @@ pub mod batch_get_calculated_attribute_for_profile;
 /// Types for the `BatchGetProfile` operation.
 pub mod batch_get_profile;
 
+/// Types for the `BatchPutProfileObject` operation.
+pub mod batch_put_profile_object;
+
 /// Types for the `CreateCalculatedAttributeDefinition` operation.
 pub mod create_calculated_attribute_definition;
 

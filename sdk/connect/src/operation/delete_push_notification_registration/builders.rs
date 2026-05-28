@@ -136,17 +136,17 @@ impl DeletePushNotificationRegistrationFluentBuilder {
     pub fn get_registration_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_registration_id()
     }
-    /// <p>The identifier of the contact within the Amazon Connect instance.</p>
+    /// <p>The identifier of the contact within the Connect Customer instance.</p>
     pub fn contact_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.contact_id(input.into());
         self
     }
-    /// <p>The identifier of the contact within the Amazon Connect instance.</p>
+    /// <p>The identifier of the contact within the Connect Customer instance.</p>
     pub fn set_contact_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_contact_id(input);
         self
     }
-    /// <p>The identifier of the contact within the Amazon Connect instance.</p>
+    /// <p>The identifier of the contact within the Connect Customer instance.</p>
     pub fn get_contact_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_contact_id()
     }

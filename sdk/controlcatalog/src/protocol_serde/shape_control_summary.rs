@@ -53,6 +53,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "ParameterRequirementSummary" => {
+                            builder = builder.set_parameter_requirement_summary(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::ParameterRequirementSummary::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
                         "Implementation" => {
                             builder = builder.set_implementation(crate::protocol_serde::shape_implementation_summary::de_implementation_summary(
                                 tokens, _value,
@@ -67,6 +74,10 @@ where
                         "GovernedResources" => {
                             builder = builder
                                 .set_governed_resources(crate::protocol_serde::shape_governed_resources::de_governed_resources(tokens, _value)?);
+                        }
+                        "GovernedProviders" => {
+                            builder = builder
+                                .set_governed_providers(crate::protocol_serde::shape_governed_providers::de_governed_providers(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

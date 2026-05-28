@@ -23,7 +23,7 @@ impl crate::operation::delete_traffic_distribution_group::builders::DeleteTraffi
 /// Fluent builder constructing a request to `DeleteTrafficDistributionGroup`.
 ///
 /// <p>Deletes a traffic distribution group. This API can be called only in the Region where the traffic distribution group is created.</p>
-/// <p>For more information about deleting traffic distribution groups, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/delete-traffic-distribution-groups.html">Delete traffic distribution groups</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+/// <p>For more information about deleting traffic distribution groups, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/delete-traffic-distribution-groups.html">Delete traffic distribution groups</a> in the <i>Connect Customer Administrator Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteTrafficDistributionGroupFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

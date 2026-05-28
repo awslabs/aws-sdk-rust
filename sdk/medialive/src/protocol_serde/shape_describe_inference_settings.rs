@@ -22,6 +22,11 @@ where
                                     .transpose()?,
                             );
                         }
+                        "audioFeedInputs" => {
+                            builder = builder.set_audio_feed_inputs(
+                                crate::protocol_serde::shape_list_of_audio_feed_input::de_list_of_audio_feed_input(tokens, _value)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

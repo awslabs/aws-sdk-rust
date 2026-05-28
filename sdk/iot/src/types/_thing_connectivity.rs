@@ -6,23 +6,47 @@
 pub struct ThingConnectivity {
     /// <p>True if the thing is connected to the Amazon Web Services IoT Core service; false if it is not connected.</p>
     pub connected: ::std::option::Option<bool>,
-    /// <p>The epoch time (in milliseconds) when the thing last connected or disconnected. If the thing has been disconnected for approximately an hour, the time value might be missing.</p>
+    /// <p>The epoch time (in milliseconds) when the thing last connected or disconnected. If the thing has been disconnected for approximately an hour, the time value might be missing. When you enable or update the indexing configuration, this value might be <code>0</code> (the Unix epoch time) for devices that have never connected or have been disconnected for more than an hour.</p>
     pub timestamp: ::std::option::Option<i64>,
-    /// <p>The reason why the client is disconnected. If the thing has been disconnected for approximately an hour, the <code>disconnectReason</code> value might be missing.</p>
+    /// <p>The reason why the client is disconnected. When you enable or update the indexing configuration, this value might be missing for devices that have never connected or have been disconnected for more than an hour.</p>
     pub disconnect_reason: ::std::option::Option<::std::string::String>,
+    /// <p>The keep-alive interval in seconds that the client specified when establishing the connection.</p>
+    pub keep_alive_duration: ::std::option::Option<i32>,
+    /// <p>Indicates whether the client is using a clean session. Returns <code>true</code> for clean sessions.</p>
+    pub clean_session: ::std::option::Option<bool>,
+    /// <p>The session expiry interval in seconds for the MQTT client connection. This value indicates how long the session will remain active after the client disconnects.</p>
+    pub session_expiry: ::std::option::Option<i64>,
+    /// <p>The unique identifier of the MQTT client.</p>
+    pub client_id: ::std::option::Option<::std::string::String>,
 }
 impl ThingConnectivity {
     /// <p>True if the thing is connected to the Amazon Web Services IoT Core service; false if it is not connected.</p>
     pub fn connected(&self) -> ::std::option::Option<bool> {
         self.connected
     }
-    /// <p>The epoch time (in milliseconds) when the thing last connected or disconnected. If the thing has been disconnected for approximately an hour, the time value might be missing.</p>
+    /// <p>The epoch time (in milliseconds) when the thing last connected or disconnected. If the thing has been disconnected for approximately an hour, the time value might be missing. When you enable or update the indexing configuration, this value might be <code>0</code> (the Unix epoch time) for devices that have never connected or have been disconnected for more than an hour.</p>
     pub fn timestamp(&self) -> ::std::option::Option<i64> {
         self.timestamp
     }
-    /// <p>The reason why the client is disconnected. If the thing has been disconnected for approximately an hour, the <code>disconnectReason</code> value might be missing.</p>
+    /// <p>The reason why the client is disconnected. When you enable or update the indexing configuration, this value might be missing for devices that have never connected or have been disconnected for more than an hour.</p>
     pub fn disconnect_reason(&self) -> ::std::option::Option<&str> {
         self.disconnect_reason.as_deref()
+    }
+    /// <p>The keep-alive interval in seconds that the client specified when establishing the connection.</p>
+    pub fn keep_alive_duration(&self) -> ::std::option::Option<i32> {
+        self.keep_alive_duration
+    }
+    /// <p>Indicates whether the client is using a clean session. Returns <code>true</code> for clean sessions.</p>
+    pub fn clean_session(&self) -> ::std::option::Option<bool> {
+        self.clean_session
+    }
+    /// <p>The session expiry interval in seconds for the MQTT client connection. This value indicates how long the session will remain active after the client disconnects.</p>
+    pub fn session_expiry(&self) -> ::std::option::Option<i64> {
+        self.session_expiry
+    }
+    /// <p>The unique identifier of the MQTT client.</p>
+    pub fn client_id(&self) -> ::std::option::Option<&str> {
+        self.client_id.as_deref()
     }
 }
 impl ThingConnectivity {
@@ -39,6 +63,10 @@ pub struct ThingConnectivityBuilder {
     pub(crate) connected: ::std::option::Option<bool>,
     pub(crate) timestamp: ::std::option::Option<i64>,
     pub(crate) disconnect_reason: ::std::option::Option<::std::string::String>,
+    pub(crate) keep_alive_duration: ::std::option::Option<i32>,
+    pub(crate) clean_session: ::std::option::Option<bool>,
+    pub(crate) session_expiry: ::std::option::Option<i64>,
+    pub(crate) client_id: ::std::option::Option<::std::string::String>,
 }
 impl ThingConnectivityBuilder {
     /// <p>True if the thing is connected to the Amazon Web Services IoT Core service; false if it is not connected.</p>
@@ -55,33 +83,89 @@ impl ThingConnectivityBuilder {
     pub fn get_connected(&self) -> &::std::option::Option<bool> {
         &self.connected
     }
-    /// <p>The epoch time (in milliseconds) when the thing last connected or disconnected. If the thing has been disconnected for approximately an hour, the time value might be missing.</p>
+    /// <p>The epoch time (in milliseconds) when the thing last connected or disconnected. If the thing has been disconnected for approximately an hour, the time value might be missing. When you enable or update the indexing configuration, this value might be <code>0</code> (the Unix epoch time) for devices that have never connected or have been disconnected for more than an hour.</p>
     pub fn timestamp(mut self, input: i64) -> Self {
         self.timestamp = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The epoch time (in milliseconds) when the thing last connected or disconnected. If the thing has been disconnected for approximately an hour, the time value might be missing.</p>
+    /// <p>The epoch time (in milliseconds) when the thing last connected or disconnected. If the thing has been disconnected for approximately an hour, the time value might be missing. When you enable or update the indexing configuration, this value might be <code>0</code> (the Unix epoch time) for devices that have never connected or have been disconnected for more than an hour.</p>
     pub fn set_timestamp(mut self, input: ::std::option::Option<i64>) -> Self {
         self.timestamp = input;
         self
     }
-    /// <p>The epoch time (in milliseconds) when the thing last connected or disconnected. If the thing has been disconnected for approximately an hour, the time value might be missing.</p>
+    /// <p>The epoch time (in milliseconds) when the thing last connected or disconnected. If the thing has been disconnected for approximately an hour, the time value might be missing. When you enable or update the indexing configuration, this value might be <code>0</code> (the Unix epoch time) for devices that have never connected or have been disconnected for more than an hour.</p>
     pub fn get_timestamp(&self) -> &::std::option::Option<i64> {
         &self.timestamp
     }
-    /// <p>The reason why the client is disconnected. If the thing has been disconnected for approximately an hour, the <code>disconnectReason</code> value might be missing.</p>
+    /// <p>The reason why the client is disconnected. When you enable or update the indexing configuration, this value might be missing for devices that have never connected or have been disconnected for more than an hour.</p>
     pub fn disconnect_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.disconnect_reason = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The reason why the client is disconnected. If the thing has been disconnected for approximately an hour, the <code>disconnectReason</code> value might be missing.</p>
+    /// <p>The reason why the client is disconnected. When you enable or update the indexing configuration, this value might be missing for devices that have never connected or have been disconnected for more than an hour.</p>
     pub fn set_disconnect_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.disconnect_reason = input;
         self
     }
-    /// <p>The reason why the client is disconnected. If the thing has been disconnected for approximately an hour, the <code>disconnectReason</code> value might be missing.</p>
+    /// <p>The reason why the client is disconnected. When you enable or update the indexing configuration, this value might be missing for devices that have never connected or have been disconnected for more than an hour.</p>
     pub fn get_disconnect_reason(&self) -> &::std::option::Option<::std::string::String> {
         &self.disconnect_reason
+    }
+    /// <p>The keep-alive interval in seconds that the client specified when establishing the connection.</p>
+    pub fn keep_alive_duration(mut self, input: i32) -> Self {
+        self.keep_alive_duration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The keep-alive interval in seconds that the client specified when establishing the connection.</p>
+    pub fn set_keep_alive_duration(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.keep_alive_duration = input;
+        self
+    }
+    /// <p>The keep-alive interval in seconds that the client specified when establishing the connection.</p>
+    pub fn get_keep_alive_duration(&self) -> &::std::option::Option<i32> {
+        &self.keep_alive_duration
+    }
+    /// <p>Indicates whether the client is using a clean session. Returns <code>true</code> for clean sessions.</p>
+    pub fn clean_session(mut self, input: bool) -> Self {
+        self.clean_session = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether the client is using a clean session. Returns <code>true</code> for clean sessions.</p>
+    pub fn set_clean_session(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.clean_session = input;
+        self
+    }
+    /// <p>Indicates whether the client is using a clean session. Returns <code>true</code> for clean sessions.</p>
+    pub fn get_clean_session(&self) -> &::std::option::Option<bool> {
+        &self.clean_session
+    }
+    /// <p>The session expiry interval in seconds for the MQTT client connection. This value indicates how long the session will remain active after the client disconnects.</p>
+    pub fn session_expiry(mut self, input: i64) -> Self {
+        self.session_expiry = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The session expiry interval in seconds for the MQTT client connection. This value indicates how long the session will remain active after the client disconnects.</p>
+    pub fn set_session_expiry(mut self, input: ::std::option::Option<i64>) -> Self {
+        self.session_expiry = input;
+        self
+    }
+    /// <p>The session expiry interval in seconds for the MQTT client connection. This value indicates how long the session will remain active after the client disconnects.</p>
+    pub fn get_session_expiry(&self) -> &::std::option::Option<i64> {
+        &self.session_expiry
+    }
+    /// <p>The unique identifier of the MQTT client.</p>
+    pub fn client_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.client_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The unique identifier of the MQTT client.</p>
+    pub fn set_client_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.client_id = input;
+        self
+    }
+    /// <p>The unique identifier of the MQTT client.</p>
+    pub fn get_client_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_id
     }
     /// Consumes the builder and constructs a [`ThingConnectivity`](crate::types::ThingConnectivity).
     pub fn build(self) -> crate::types::ThingConnectivity {
@@ -89,6 +173,10 @@ impl ThingConnectivityBuilder {
             connected: self.connected,
             timestamp: self.timestamp,
             disconnect_reason: self.disconnect_reason,
+            keep_alive_duration: self.keep_alive_duration,
+            clean_session: self.clean_session,
+            session_expiry: self.session_expiry,
+            client_id: self.client_id,
         }
     }
 }

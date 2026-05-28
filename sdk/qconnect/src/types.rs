@@ -7,6 +7,10 @@ pub use crate::types::_assistant_data::AssistantData;
 
 pub use crate::types::_recommendation_type::RecommendationType;
 
+pub use crate::types::_ai_prompt_type::AiPromptType;
+
+pub use crate::types::_model_lifecycle::ModelLifecycle;
+
 pub use crate::types::_target_type::TargetType;
 
 pub use crate::types::_content_feedback_data::ContentFeedbackData;
@@ -62,8 +66,6 @@ pub use crate::types::_ai_guardrail_sensitive_information_policy_config::AiGuard
 pub use crate::types::_ai_guardrail_contextual_grounding_policy_config::AiGuardrailContextualGroundingPolicyConfig;
 
 pub use crate::types::_ai_guardrail_data::AiGuardrailData;
-
-pub use crate::types::_ai_prompt_type::AiPromptType;
 
 pub use crate::types::_ai_prompt_template_configuration::AiPromptTemplateConfiguration;
 
@@ -140,6 +142,8 @@ pub use crate::types::_assistant_capability_configuration::AssistantCapabilityCo
 pub use crate::types::_recommendation_data::RecommendationData;
 
 pub use crate::types::_recommendation_trigger::RecommendationTrigger;
+
+pub use crate::types::_model_summary::ModelSummary;
 
 pub use crate::types::_notify_recommendations_received_error::NotifyRecommendationsReceivedError;
 
@@ -300,6 +304,8 @@ pub use crate::types::_recommendation_trigger_type::RecommendationTriggerType;
 pub use crate::types::_recommendation_source_type::RecommendationSourceType;
 
 pub use crate::types::_recommendation_trigger_data::RecommendationTriggerData;
+
+pub use crate::types::_cross_region_status::CrossRegionStatus;
 
 pub use crate::types::_relevance::Relevance;
 
@@ -505,6 +511,8 @@ pub use crate::types::_span_message::SpanMessage;
 
 pub use crate::types::_span_message_value::SpanMessageValue;
 
+pub use crate::types::_span_guardrail_assessment::SpanGuardrailAssessment;
+
 pub use crate::types::_highlight::Highlight;
 
 pub use crate::types::_text_data::TextData;
@@ -531,13 +539,21 @@ pub use crate::types::_span_tool_result_value::SpanToolResultValue;
 
 pub use crate::types::_span_reasoning_value::SpanReasoningValue;
 
+pub use crate::types::_guardrail_source::GuardrailSource;
+
+pub use crate::types::_guardrail_action::GuardrailAction;
+
 pub use crate::types::_tool_override_input_value_configuration::ToolOverrideInputValueConfiguration;
 
 pub use crate::types::_tool_output_configuration::ToolOutputConfiguration;
 
+pub use crate::types::_guardrail_policy_result::GuardrailPolicyResult;
+
 pub use crate::types::_tool_override_constant_input_value::ToolOverrideConstantInputValue;
 
 pub use crate::types::_span_citation::SpanCitation;
+
+pub use crate::types::_guardrail_policy_type::GuardrailPolicyType;
 
 pub use crate::types::_tool_override_input_value_type::ToolOverrideInputValueType;
 
@@ -679,6 +695,8 @@ mod _conversation_status;
 
 mod _conversation_status_reason;
 
+mod _cross_region_status;
+
 mod _customer_profile_attributes;
 
 mod _data_details;
@@ -737,6 +755,8 @@ mod _generative_reference;
 
 mod _grouping_configuration;
 
+mod _guardrail_action;
+
 mod _guardrail_content_filter_config;
 
 mod _guardrail_content_filter_type;
@@ -755,9 +775,15 @@ mod _guardrail_pii_entity_config;
 
 mod _guardrail_pii_entity_type;
 
+mod _guardrail_policy_result;
+
+mod _guardrail_policy_type;
+
 mod _guardrail_regex_config;
 
 mod _guardrail_sensitive_information_action;
+
+mod _guardrail_source;
 
 mod _guardrail_topic_config;
 
@@ -848,6 +874,10 @@ mod _message_template_summary;
 mod _message_template_version_summary;
 
 mod _message_type;
+
+mod _model_lifecycle;
+
+mod _model_summary;
 
 mod _note_taking_ai_agent_configuration;
 
@@ -1000,6 +1030,8 @@ mod _span;
 mod _span_attributes;
 
 mod _span_citation;
+
+mod _span_guardrail_assessment;
 
 mod _span_message;
 

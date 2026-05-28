@@ -10,6 +10,8 @@ pub struct DeleteCollectionDetail {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the collection.</p>
     pub status: ::std::option::Option<crate::types::CollectionStatus>,
+    /// <p>Indicates whether deletion protection is <code>ENABLED</code> or <code>DISABLED</code> for the collection.</p>
+    pub deletion_protection: ::std::option::Option<crate::types::DeletionProtection>,
 }
 impl DeleteCollectionDetail {
     /// <p>The unique identifier of the collection.</p>
@@ -23,6 +25,10 @@ impl DeleteCollectionDetail {
     /// <p>The current status of the collection.</p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::CollectionStatus> {
         self.status.as_ref()
+    }
+    /// <p>Indicates whether deletion protection is <code>ENABLED</code> or <code>DISABLED</code> for the collection.</p>
+    pub fn deletion_protection(&self) -> ::std::option::Option<&crate::types::DeletionProtection> {
+        self.deletion_protection.as_ref()
     }
 }
 impl DeleteCollectionDetail {
@@ -39,6 +45,7 @@ pub struct DeleteCollectionDetailBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::CollectionStatus>,
+    pub(crate) deletion_protection: ::std::option::Option<crate::types::DeletionProtection>,
 }
 impl DeleteCollectionDetailBuilder {
     /// <p>The unique identifier of the collection.</p>
@@ -83,12 +90,27 @@ impl DeleteCollectionDetailBuilder {
     pub fn get_status(&self) -> &::std::option::Option<crate::types::CollectionStatus> {
         &self.status
     }
+    /// <p>Indicates whether deletion protection is <code>ENABLED</code> or <code>DISABLED</code> for the collection.</p>
+    pub fn deletion_protection(mut self, input: crate::types::DeletionProtection) -> Self {
+        self.deletion_protection = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether deletion protection is <code>ENABLED</code> or <code>DISABLED</code> for the collection.</p>
+    pub fn set_deletion_protection(mut self, input: ::std::option::Option<crate::types::DeletionProtection>) -> Self {
+        self.deletion_protection = input;
+        self
+    }
+    /// <p>Indicates whether deletion protection is <code>ENABLED</code> or <code>DISABLED</code> for the collection.</p>
+    pub fn get_deletion_protection(&self) -> &::std::option::Option<crate::types::DeletionProtection> {
+        &self.deletion_protection
+    }
     /// Consumes the builder and constructs a [`DeleteCollectionDetail`](crate::types::DeleteCollectionDetail).
     pub fn build(self) -> crate::types::DeleteCollectionDetail {
         crate::types::DeleteCollectionDetail {
             id: self.id,
             name: self.name,
             status: self.status,
+            deletion_protection: self.deletion_protection,
         }
     }
 }

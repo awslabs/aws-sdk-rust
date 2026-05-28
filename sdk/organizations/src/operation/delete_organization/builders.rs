@@ -23,6 +23,7 @@ impl crate::operation::delete_organization::builders::DeleteOrganizationInputBui
 /// Fluent builder constructing a request to `DeleteOrganization`.
 ///
 /// <p>Deletes the organization. You can delete an organization only by using credentials from the management account. The organization must be empty of member accounts.</p>
+/// <p>When an organization is deleted, Organizations logs a membership event in CloudTrail. The event is an <code>AccountDepartedOrganization</code> event with <code>departedMethod:Left</code> and <code>departedTime</code>. This event is available only in the management account's event history.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteOrganizationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

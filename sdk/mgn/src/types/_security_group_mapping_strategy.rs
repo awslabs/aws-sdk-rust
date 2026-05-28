@@ -13,6 +13,7 @@
 /// # let securitygroupmappingstrategy = unimplemented!();
 /// match securitygroupmappingstrategy {
 ///     SecurityGroupMappingStrategy::Map => { /* ... */ },
+///     SecurityGroupMappingStrategy::MapDhcp => { /* ... */ },
 ///     SecurityGroupMappingStrategy::Skip => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -45,6 +46,8 @@ pub enum SecurityGroupMappingStrategy {
     #[allow(missing_docs)] // documentation missing in model
     Map,
     #[allow(missing_docs)] // documentation missing in model
+    MapDhcp,
+    #[allow(missing_docs)] // documentation missing in model
     Skip,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -54,6 +57,7 @@ impl ::std::convert::From<&str> for SecurityGroupMappingStrategy {
     fn from(s: &str) -> Self {
         match s {
             "MAP" => SecurityGroupMappingStrategy::Map,
+            "MAP_DHCP" => SecurityGroupMappingStrategy::MapDhcp,
             "SKIP" => SecurityGroupMappingStrategy::Skip,
             other => SecurityGroupMappingStrategy::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -71,13 +75,14 @@ impl SecurityGroupMappingStrategy {
     pub fn as_str(&self) -> &str {
         match self {
             SecurityGroupMappingStrategy::Map => "MAP",
+            SecurityGroupMappingStrategy::MapDhcp => "MAP_DHCP",
             SecurityGroupMappingStrategy::Skip => "SKIP",
             SecurityGroupMappingStrategy::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["MAP", "SKIP"]
+        &["MAP", "MAP_DHCP", "SKIP"]
     }
 }
 impl ::std::convert::AsRef<str> for SecurityGroupMappingStrategy {
@@ -101,6 +106,7 @@ impl ::std::fmt::Display for SecurityGroupMappingStrategy {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             SecurityGroupMappingStrategy::Map => write!(f, "MAP"),
+            SecurityGroupMappingStrategy::MapDhcp => write!(f, "MAP_DHCP"),
             SecurityGroupMappingStrategy::Skip => write!(f, "SKIP"),
             SecurityGroupMappingStrategy::Unknown(value) => write!(f, "{value}"),
         }

@@ -114,17 +114,17 @@ impl SearchHoursOfOperationOverridesFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::search_hours_of_operation_overrides::paginator::SearchHoursOfOperationOverridesPaginator {
         crate::operation::search_hours_of_operation_overrides::paginator::SearchHoursOfOperationOverridesPaginator::new(self.handle, self.inner)
     }
-    /// <p>The identifier of the Amazon Connect instance.</p>
+    /// <p>The identifier of the Connect Customer instance.</p>
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.instance_id(input.into());
         self
     }
-    /// <p>The identifier of the Amazon Connect instance.</p>
+    /// <p>The identifier of the Connect Customer instance.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_instance_id(input);
         self
     }
-    /// <p>The identifier of the Amazon Connect instance.</p>
+    /// <p>The identifier of the Connect Customer instance.</p>
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_instance_id()
     }

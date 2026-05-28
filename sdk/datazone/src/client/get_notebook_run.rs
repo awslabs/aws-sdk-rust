@@ -3,11 +3,11 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetNotebookRun`](crate::operation::get_notebook_run::builders::GetNotebookRunFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`domain_identifier(impl Into<String>)`](crate::operation::get_notebook_run::builders::GetNotebookRunFluentBuilder::domain_identifier) / [`set_domain_identifier(Option<String>)`](crate::operation::get_notebook_run::builders::GetNotebookRunFluentBuilder::set_domain_identifier):<br>required: **true**<br><p>The identifier of the Amazon DataZone domain in which the notebook run exists.</p><br>
+    ///   - [`domain_identifier(impl Into<String>)`](crate::operation::get_notebook_run::builders::GetNotebookRunFluentBuilder::domain_identifier) / [`set_domain_identifier(Option<String>)`](crate::operation::get_notebook_run::builders::GetNotebookRunFluentBuilder::set_domain_identifier):<br>required: **true**<br><p>The identifier of the Amazon SageMaker Unified Studio domain in which the notebook run exists.</p><br>
     ///   - [`identifier(impl Into<String>)`](crate::operation::get_notebook_run::builders::GetNotebookRunFluentBuilder::identifier) / [`set_identifier(Option<String>)`](crate::operation::get_notebook_run::builders::GetNotebookRunFluentBuilder::set_identifier):<br>required: **true**<br><p>The identifier of the notebook run.</p><br>
     /// - On success, responds with [`GetNotebookRunOutput`](crate::operation::get_notebook_run::GetNotebookRunOutput) with field(s):
     ///   - [`id(String)`](crate::operation::get_notebook_run::GetNotebookRunOutput::id): <p>The identifier of the notebook run.</p>
-    ///   - [`domain_id(String)`](crate::operation::get_notebook_run::GetNotebookRunOutput::domain_id): <p>The identifier of the Amazon DataZone domain.</p>
+    ///   - [`domain_id(String)`](crate::operation::get_notebook_run::GetNotebookRunOutput::domain_id): <p>The identifier of the Amazon SageMaker Unified Studio domain.</p>
     ///   - [`owning_project_id(String)`](crate::operation::get_notebook_run::GetNotebookRunOutput::owning_project_id): <p>The identifier of the project that owns the notebook run.</p>
     ///   - [`notebook_id(String)`](crate::operation::get_notebook_run::GetNotebookRunOutput::notebook_id): <p>The identifier of the notebook.</p>
     ///   - [`schedule_id(Option<String>)`](crate::operation::get_notebook_run::GetNotebookRunOutput::schedule_id): <p>The identifier of the schedule associated with the notebook run.</p>

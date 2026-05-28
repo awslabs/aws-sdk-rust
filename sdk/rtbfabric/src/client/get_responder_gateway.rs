@@ -22,7 +22,8 @@ impl super::Client {
     ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::get_responder_gateway::GetResponderGatewayOutput::tags): <p>A map of the key-value pairs for the tag or tags assigned to the specified resource.</p>
     ///   - [`active_links_count(Option<i32>)`](crate::operation::get_responder_gateway::GetResponderGatewayOutput::active_links_count): <p>The count of active links for the responder gateway.</p>
     ///   - [`total_links_count(Option<i32>)`](crate::operation::get_responder_gateway::GetResponderGatewayOutput::total_links_count): <p>The total count of links for the responder gateway.</p>
-    ///   - [`inbound_links_count(Option<i32>)`](crate::operation::get_responder_gateway::GetResponderGatewayOutput::inbound_links_count): <p>The count of inbound links for the responder gateway.</p>
+    ///   - [`inbound_links_count(Option<i32>)`](crate::operation::get_responder_gateway::GetResponderGatewayOutput::inbound_links_count): <p>Deprecated. Use 'linksRequestedCount' instead.</p>
+    ///   - [`links_requested_count(Option<i32>)`](crate::operation::get_responder_gateway::GetResponderGatewayOutput::links_requested_count): <p>The count of requested links waiting for the responder gateway to accept or reject.</p>
     ///   - [`gateway_type(Option<GatewayType>)`](crate::operation::get_responder_gateway::GetResponderGatewayOutput::gateway_type): <p>The type of gateway. Valid values are <code>EXTERNAL</code> or <code>INTERNAL</code>.</p>
     ///   - [`external_inbound_endpoint(Option<String>)`](crate::operation::get_responder_gateway::GetResponderGatewayOutput::external_inbound_endpoint): <p>The external inbound endpoint for the responder gateway.</p>
     /// - On failure, responds with [`SdkError<GetResponderGatewayError>`](crate::operation::get_responder_gateway::GetResponderGatewayError)

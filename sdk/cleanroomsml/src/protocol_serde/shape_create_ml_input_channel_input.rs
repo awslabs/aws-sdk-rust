@@ -27,21 +27,27 @@ pub fn ser_create_ml_input_channel_input_input(
     if let Some(var_8) = &input.name {
         object.key("name").string(var_8.as_str());
     }
-    if let Some(var_9) = &input.retention_in_days {
+    if let Some(var_9) = &input.payer_configuration {
+        #[allow(unused_mut)]
+        let mut object_10 = object.key("payerConfiguration").start_object();
+        crate::protocol_serde::shape_payer_configuration::ser_payer_configuration(&mut object_10, var_9)?;
+        object_10.finish();
+    }
+    if let Some(var_11) = &input.retention_in_days {
         object.key("retentionInDays").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_9).into()),
+            ::aws_smithy_types::Number::NegInt((*var_11).into()),
         );
     }
-    if let Some(var_10) = &input.tags {
+    if let Some(var_12) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_11 = object.key("tags").start_object();
-        for (key_12, value_13) in var_10 {
+        let mut object_13 = object.key("tags").start_object();
+        for (key_14, value_15) in var_12 {
             {
-                object_11.key(key_12.as_str()).string(value_13.as_str());
+                object_13.key(key_14.as_str()).string(value_15.as_str());
             }
         }
-        object_11.finish();
+        object_13.finish();
     }
     Ok(())
 }

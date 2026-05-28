@@ -245,6 +245,11 @@ where
                                     .transpose()?,
                             );
                         }
+                        "guardrailAssessments" => {
+                            builder = builder.set_guardrail_assessments(
+                                crate::protocol_serde::shape_span_guardrail_assessment_list::de_span_guardrail_assessment_list(tokens, _value)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

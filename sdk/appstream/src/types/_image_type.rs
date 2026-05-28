@@ -12,6 +12,7 @@
 /// ```text
 /// # let imagetype = unimplemented!();
 /// match imagetype {
+///     ImageType::Byol => { /* ... */ },
 ///     ImageType::Custom => { /* ... */ },
 ///     ImageType::Native => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -43,6 +44,8 @@
 )]
 pub enum ImageType {
     #[allow(missing_docs)] // documentation missing in model
+    Byol,
+    #[allow(missing_docs)] // documentation missing in model
     Custom,
     #[allow(missing_docs)] // documentation missing in model
     Native,
@@ -53,6 +56,7 @@ pub enum ImageType {
 impl ::std::convert::From<&str> for ImageType {
     fn from(s: &str) -> Self {
         match s {
+            "BYOL" => ImageType::Byol,
             "CUSTOM" => ImageType::Custom,
             "NATIVE" => ImageType::Native,
             other => ImageType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -70,6 +74,7 @@ impl ImageType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            ImageType::Byol => "BYOL",
             ImageType::Custom => "CUSTOM",
             ImageType::Native => "NATIVE",
             ImageType::Unknown(value) => value.as_str(),
@@ -77,7 +82,7 @@ impl ImageType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CUSTOM", "NATIVE"]
+        &["BYOL", "CUSTOM", "NATIVE"]
     }
 }
 impl ::std::convert::AsRef<str> for ImageType {
@@ -100,6 +105,7 @@ impl ImageType {
 impl ::std::fmt::Display for ImageType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            ImageType::Byol => write!(f, "BYOL"),
             ImageType::Custom => write!(f, "CUSTOM"),
             ImageType::Native => write!(f, "NATIVE"),
             ImageType::Unknown(value) => write!(f, "{value}"),

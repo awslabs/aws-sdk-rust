@@ -65,6 +65,8 @@ pub use crate::types::_auto_ml_data_split_config::AutoMlDataSplitConfig;
 
 pub use crate::types::_auto_ml_compute_config::AutoMlComputeConfig;
 
+pub use crate::types::_cluster_restricted_instance_groups_config::ClusterRestrictedInstanceGroupsConfig;
+
 pub use crate::types::_vpc_config::VpcConfig;
 
 pub use crate::types::_cluster_orchestrator::ClusterOrchestrator;
@@ -122,6 +124,8 @@ pub use crate::types::_domain_settings::DomainSettings;
 pub use crate::types::_app_network_access_type::AppNetworkAccessType;
 
 pub use crate::types::_app_security_group_management::AppSecurityGroupManagement;
+
+pub use crate::types::_home_efs_file_system_creation::HomeEfsFileSystemCreation;
 
 pub use crate::types::_tag_propagation::TagPropagation;
 
@@ -410,6 +414,8 @@ pub use crate::types::_auto_ml_problem_type_config_name::AutoMlProblemTypeConfig
 pub use crate::types::_auto_ml_resolved_attributes::AutoMlResolvedAttributes;
 
 pub use crate::types::_cluster_status::ClusterStatus;
+
+pub use crate::types::_cluster_restricted_instance_groups_config_output::ClusterRestrictedInstanceGroupsConfigOutput;
 
 pub use crate::types::_cluster_auto_scaling_config_output::ClusterAutoScalingConfigOutput;
 
@@ -887,6 +893,8 @@ pub use crate::types::_cluster_instance_group_specification::ClusterInstanceGrou
 
 pub use crate::types::_cluster_restricted_instance_group_specification::ClusterRestrictedInstanceGroupSpecification;
 
+pub use crate::types::_cluster_shared_environment_config::ClusterSharedEnvironmentConfig;
+
 pub use crate::types::_cluster_orchestrator_eks_config::ClusterOrchestratorEksConfig;
 
 pub use crate::types::_cluster_orchestrator_slurm_config::ClusterOrchestratorSlurmConfig;
@@ -1190,6 +1198,8 @@ pub use crate::types::_auto_ml_problem_type_resolved_attributes::AutoMlProblemTy
 pub use crate::types::_cluster_instance_group_details::ClusterInstanceGroupDetails;
 
 pub use crate::types::_cluster_restricted_instance_group_details::ClusterRestrictedInstanceGroupDetails;
+
+pub use crate::types::_cluster_shared_environment_config_details::ClusterSharedEnvironmentConfigDetails;
 
 pub use crate::types::_cluster_auto_scaling_status::ClusterAutoScalingStatus;
 
@@ -1532,6 +1542,10 @@ pub use crate::types::_cluster_capacity_requirements::ClusterCapacityRequirement
 pub use crate::types::_cluster_network_interface::ClusterNetworkInterface;
 
 pub use crate::types::_environment_config::EnvironmentConfig;
+
+pub use crate::types::_cluster_f_sx_lustre_deletion_policy::ClusterFSxLustreDeletionPolicy;
+
+pub use crate::types::_f_sx_lustre_config::FSxLustreConfig;
 
 pub use crate::types::_cluster_slurm_config_strategy::ClusterSlurmConfigStrategy;
 
@@ -1918,8 +1932,6 @@ pub use crate::types::_cluster_slurm_node_type::ClusterSlurmNodeType;
 pub use crate::types::_cluster_spot_options::ClusterSpotOptions;
 
 pub use crate::types::_cluster_on_demand_options::ClusterOnDemandOptions;
-
-pub use crate::types::_f_sx_lustre_config::FSxLustreConfig;
 
 pub use crate::types::_accelerator_partition_config::AcceleratorPartitionConfig;
 
@@ -2705,6 +2717,8 @@ mod _cluster_event_resource_type;
 
 mod _cluster_event_summary;
 
+mod _cluster_f_sx_lustre_deletion_policy;
+
 mod _cluster_fsx_lustre_config;
 
 mod _cluster_fsx_open_zfs_config;
@@ -2771,7 +2785,15 @@ mod _cluster_restricted_instance_group_details;
 
 mod _cluster_restricted_instance_group_specification;
 
+mod _cluster_restricted_instance_groups_config;
+
+mod _cluster_restricted_instance_groups_config_output;
+
 mod _cluster_scheduler_config_summary;
+
+mod _cluster_shared_environment_config;
+
+mod _cluster_shared_environment_config_details;
 
 mod _cluster_slurm_config;
 
@@ -3148,6 +3170,8 @@ mod _git_config_for_update;
 mod _hidden_sage_maker_image;
 
 mod _holiday_config_attributes;
+
+mod _home_efs_file_system_creation;
 
 mod _hub_access_config;
 

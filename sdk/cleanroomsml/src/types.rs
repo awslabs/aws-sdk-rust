@@ -31,6 +31,8 @@ pub use crate::types::_ml_output_configuration::MlOutputConfiguration;
 
 pub use crate::types::_input_channel::InputChannel;
 
+pub use crate::types::_payer_configuration::PayerConfiguration;
+
 pub use crate::types::_ml_input_channel_status::MlInputChannelStatus;
 
 pub use crate::types::_privacy_budgets::PrivacyBudgets;
@@ -350,6 +352,8 @@ mod _model_inference_data_source;
 mod _model_training_data_channel;
 
 mod _noise_level_type;
+
+mod _payer_configuration;
 
 mod _policy_existence_condition;
 

@@ -5,7 +5,7 @@ impl super::Client {
     /// - The fluent builder is configurable:
     ///   - [`phone_number_id(impl Into<String>)`](crate::operation::describe_phone_number::builders::DescribePhoneNumberFluentBuilder::phone_number_id) / [`set_phone_number_id(Option<String>)`](crate::operation::describe_phone_number::builders::DescribePhoneNumberFluentBuilder::set_phone_number_id):<br>required: **true**<br><p>A unique identifier for the phone number.</p><br>
     /// - On success, responds with [`DescribePhoneNumberOutput`](crate::operation::describe_phone_number::DescribePhoneNumberOutput) with field(s):
-    ///   - [`claimed_phone_number_summary(Option<ClaimedPhoneNumberSummary>)`](crate::operation::describe_phone_number::DescribePhoneNumberOutput::claimed_phone_number_summary): <p>Information about a phone number that's been claimed to your Amazon Connect instance or traffic distribution group.</p>
+    ///   - [`claimed_phone_number_summary(Option<ClaimedPhoneNumberSummary>)`](crate::operation::describe_phone_number::DescribePhoneNumberOutput::claimed_phone_number_summary): <p>Information about a phone number that's been claimed to your Connect Customer instance or traffic distribution group.</p>
     /// - On failure, responds with [`SdkError<DescribePhoneNumberError>`](crate::operation::describe_phone_number::DescribePhoneNumberError)
     pub fn describe_phone_number(&self) -> crate::operation::describe_phone_number::builders::DescribePhoneNumberFluentBuilder {
         crate::operation::describe_phone_number::builders::DescribePhoneNumberFluentBuilder::new(self.handle.clone())

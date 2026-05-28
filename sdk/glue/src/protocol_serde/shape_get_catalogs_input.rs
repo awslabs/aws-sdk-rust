@@ -21,5 +21,8 @@ pub fn ser_get_catalogs_input_input(
     if let Some(var_5) = &input.include_root {
         object.key("IncludeRoot").boolean(*var_5);
     }
+    if let Some(var_6) = &input.has_databases {
+        object.key("HasDatabases").boolean(*var_6);
+    }
     Ok(())
 }

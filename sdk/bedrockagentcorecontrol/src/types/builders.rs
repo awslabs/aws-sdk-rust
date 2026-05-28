@@ -129,6 +129,14 @@ pub use crate::types::_component_configuration::ComponentConfigurationBuilder;
 
 pub use crate::types::_configuration_bundle_version_summary::ConfigurationBundleVersionSummaryBuilder;
 
+pub use crate::types::_dataset_summary::DatasetSummaryBuilder;
+
+pub use crate::types::_inline_examples_source::InlineExamplesSourceBuilder;
+
+pub use crate::types::_s3_source::S3SourceBuilder;
+
+pub use crate::types::_dataset_version_summary::DatasetVersionSummaryBuilder;
+
 pub use crate::types::_evaluator_summary::EvaluatorSummaryBuilder;
 
 pub use crate::types::_llm_as_a_judge_evaluator_config::LlmAsAJudgeEvaluatorConfigBuilder;
@@ -160,6 +168,8 @@ pub use crate::types::_harness_bedrock_model_config::HarnessBedrockModelConfigBu
 pub use crate::types::_harness_open_ai_model_config::HarnessOpenAiModelConfigBuilder;
 
 pub use crate::types::_harness_gemini_model_config::HarnessGeminiModelConfigBuilder;
+
+pub use crate::types::_harness_lite_llm_model_config::HarnessLiteLlmModelConfigBuilder;
 
 pub use crate::types::_harness_tool::HarnessToolBuilder;
 
@@ -279,6 +289,10 @@ pub use crate::types::_api_gateway_target_configuration::ApiGatewayTargetConfigu
 
 pub use crate::types::_runtime_target_configuration::RuntimeTargetConfigurationBuilder;
 
+pub use crate::types::_harness_skill_s3_source::HarnessSkillS3SourceBuilder;
+
+pub use crate::types::_harness_skill_git_source::HarnessSkillGitSourceBuilder;
+
 pub use crate::types::_harness_sliding_window_configuration::HarnessSlidingWindowConfigurationBuilder;
 
 pub use crate::types::_harness_summarization_configuration::HarnessSummarizationConfigurationBuilder;
@@ -358,6 +372,8 @@ pub use crate::types::_harness_agent_core_gateway_config::HarnessAgentCoreGatewa
 pub use crate::types::_harness_inline_function_config::HarnessInlineFunctionConfigBuilder;
 
 pub use crate::types::_harness_agent_core_code_interpreter_config::HarnessAgentCoreCodeInterpreterConfigBuilder;
+
+pub use crate::types::_harness_skill_git_auth::HarnessSkillGitAuthBuilder;
 
 pub use crate::types::_harness_agent_core_memory_retrieval_config::HarnessAgentCoreMemoryRetrievalConfigBuilder;
 

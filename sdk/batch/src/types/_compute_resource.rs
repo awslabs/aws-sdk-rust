@@ -11,6 +11,8 @@ pub struct ComputeResource {
     pub r#type: ::std::option::Option<crate::types::CrType>,
     /// <p>The allocation strategy to use for the compute resource if not enough instances of the best fitting instance type can be allocated. This might be because of availability of the instance type in the Region or <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-resource-limits.html">Amazon EC2 service limits</a>. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/allocation-strategies.html">Allocation strategies</a> in the <i>Batch User Guide</i>.</p><note>
     /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.</p>
+    /// </note> <note>
+    /// <p>This parameter is required for Amazon EKS compute environments. For Amazon ECS compute environments, if this parameter isn't specified, the <code>BEST_FIT</code> allocation strategy is used by default.</p>
     /// </note>
     /// <dl>
     /// <dt>
@@ -56,14 +58,12 @@ pub struct ComputeResource {
     /// <p>Batch can select the instance type for you if you choose one of the following:</p>
     /// <ul>
     /// <li>
-    /// <p><code>optimal</code> to select instance types (from the <code>c4</code>, <code>m4</code>, <code>r4</code>, <code>c5</code>, <code>m5</code>, and <code>r5</code> instance families) that match the demand of your job queues.</p></li>
-    /// <li>
     /// <p><code>default_x86_64</code> to choose x86 based instance types (from the <code>m6i</code>, <code>c6i</code>, <code>r6i</code>, and <code>c7i</code> instance families) that matches the resource demands of the job queue.</p></li>
     /// <li>
     /// <p><code>default_arm64</code> to choose ARM based instance types (from the <code>m6g</code>, <code>c6g</code>, <code>r6g</code>, and <code>c7g</code> instance families) that matches the resource demands of the job queue.</p></li>
+    /// <li>
+    /// <p><code>optimal</code> Semantically equivalent to <code>default_x86_64</code>, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/optimal-default-instance-troubleshooting.html">Optimal instance type configuration to receive automatic instance family updates</a> for details.</p></li>
     /// </ul><note>
-    /// <p>Starting on 11/01/2025 the behavior of <code>optimal</code> is going to be changed to match <code>default_x86_64</code>. During the change your instance families could be updated to a newer generation. You do not need to perform any actions for the upgrade to happen. For more information about change, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/optimal-default-instance-troubleshooting.html">Optimal instance type configuration to receive automatic instance family updates</a>.</p>
-    /// </note> <note>
     /// <p>Instance family availability varies by Amazon Web Services Region. For example, some Amazon Web Services Regions may not have any fourth generation instance families but have fifth and sixth generation instance families.</p>
     /// <p>When using <code>default_x86_64</code> or <code>default_arm64</code> instance bundles, Batch selects instance families based on a balance of cost-effectiveness and performance. While newer generation instances often provide better price-performance, Batch may choose an earlier generation instance family if it provides the optimal combination of availability, cost, and performance for your workload. For example, in an Amazon Web Services Region where both c6i and c7i instances are available, Batch might select c6i instances if they offer better cost-effectiveness for your specific job requirements. For more information on Batch instance types and Amazon Web Services Region availability, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/instance-type-compute-table.html">Instance type compute table</a> in the <i>Batch User Guide</i>.</p>
     /// <p>Batch periodically updates your instances in default bundles to newer, more cost-effective options. Updates happen automatically without requiring any action from you. Your workloads continue running during updates with no interruption</p>
@@ -137,6 +137,8 @@ impl ComputeResource {
     }
     /// <p>The allocation strategy to use for the compute resource if not enough instances of the best fitting instance type can be allocated. This might be because of availability of the instance type in the Region or <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-resource-limits.html">Amazon EC2 service limits</a>. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/allocation-strategies.html">Allocation strategies</a> in the <i>Batch User Guide</i>.</p><note>
     /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.</p>
+    /// </note> <note>
+    /// <p>This parameter is required for Amazon EKS compute environments. For Amazon ECS compute environments, if this parameter isn't specified, the <code>BEST_FIT</code> allocation strategy is used by default.</p>
     /// </note>
     /// <dl>
     /// <dt>
@@ -190,14 +192,12 @@ impl ComputeResource {
     /// <p>Batch can select the instance type for you if you choose one of the following:</p>
     /// <ul>
     /// <li>
-    /// <p><code>optimal</code> to select instance types (from the <code>c4</code>, <code>m4</code>, <code>r4</code>, <code>c5</code>, <code>m5</code>, and <code>r5</code> instance families) that match the demand of your job queues.</p></li>
-    /// <li>
     /// <p><code>default_x86_64</code> to choose x86 based instance types (from the <code>m6i</code>, <code>c6i</code>, <code>r6i</code>, and <code>c7i</code> instance families) that matches the resource demands of the job queue.</p></li>
     /// <li>
     /// <p><code>default_arm64</code> to choose ARM based instance types (from the <code>m6g</code>, <code>c6g</code>, <code>r6g</code>, and <code>c7g</code> instance families) that matches the resource demands of the job queue.</p></li>
+    /// <li>
+    /// <p><code>optimal</code> Semantically equivalent to <code>default_x86_64</code>, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/optimal-default-instance-troubleshooting.html">Optimal instance type configuration to receive automatic instance family updates</a> for details.</p></li>
     /// </ul><note>
-    /// <p>Starting on 11/01/2025 the behavior of <code>optimal</code> is going to be changed to match <code>default_x86_64</code>. During the change your instance families could be updated to a newer generation. You do not need to perform any actions for the upgrade to happen. For more information about change, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/optimal-default-instance-troubleshooting.html">Optimal instance type configuration to receive automatic instance family updates</a>.</p>
-    /// </note> <note>
     /// <p>Instance family availability varies by Amazon Web Services Region. For example, some Amazon Web Services Regions may not have any fourth generation instance families but have fifth and sixth generation instance families.</p>
     /// <p>When using <code>default_x86_64</code> or <code>default_arm64</code> instance bundles, Batch selects instance families based on a balance of cost-effectiveness and performance. While newer generation instances often provide better price-performance, Batch may choose an earlier generation instance family if it provides the optimal combination of availability, cost, and performance for your workload. For example, in an Amazon Web Services Region where both c6i and c7i instances are available, Batch might select c6i instances if they offer better cost-effectiveness for your specific job requirements. For more information on Batch instance types and Amazon Web Services Region availability, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/instance-type-compute-table.html">Instance type compute table</a> in the <i>Batch User Guide</i>.</p>
     /// <p>Batch periodically updates your instances in default bundles to newer, more cost-effective options. Updates happen automatically without requiring any action from you. Your workloads continue running during updates with no interruption</p>
@@ -352,6 +352,8 @@ impl ComputeResourceBuilder {
     }
     /// <p>The allocation strategy to use for the compute resource if not enough instances of the best fitting instance type can be allocated. This might be because of availability of the instance type in the Region or <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-resource-limits.html">Amazon EC2 service limits</a>. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/allocation-strategies.html">Allocation strategies</a> in the <i>Batch User Guide</i>.</p><note>
     /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.</p>
+    /// </note> <note>
+    /// <p>This parameter is required for Amazon EKS compute environments. For Amazon ECS compute environments, if this parameter isn't specified, the <code>BEST_FIT</code> allocation strategy is used by default.</p>
     /// </note>
     /// <dl>
     /// <dt>
@@ -386,6 +388,8 @@ impl ComputeResourceBuilder {
     }
     /// <p>The allocation strategy to use for the compute resource if not enough instances of the best fitting instance type can be allocated. This might be because of availability of the instance type in the Region or <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-resource-limits.html">Amazon EC2 service limits</a>. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/allocation-strategies.html">Allocation strategies</a> in the <i>Batch User Guide</i>.</p><note>
     /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.</p>
+    /// </note> <note>
+    /// <p>This parameter is required for Amazon EKS compute environments. For Amazon ECS compute environments, if this parameter isn't specified, the <code>BEST_FIT</code> allocation strategy is used by default.</p>
     /// </note>
     /// <dl>
     /// <dt>
@@ -420,6 +424,8 @@ impl ComputeResourceBuilder {
     }
     /// <p>The allocation strategy to use for the compute resource if not enough instances of the best fitting instance type can be allocated. This might be because of availability of the instance type in the Region or <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-resource-limits.html">Amazon EC2 service limits</a>. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/allocation-strategies.html">Allocation strategies</a> in the <i>Batch User Guide</i>.</p><note>
     /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.</p>
+    /// </note> <note>
+    /// <p>This parameter is required for Amazon EKS compute environments. For Amazon ECS compute environments, if this parameter isn't specified, the <code>BEST_FIT</code> allocation strategy is used by default.</p>
     /// </note>
     /// <dl>
     /// <dt>
@@ -520,14 +526,12 @@ impl ComputeResourceBuilder {
     /// <p>Batch can select the instance type for you if you choose one of the following:</p>
     /// <ul>
     /// <li>
-    /// <p><code>optimal</code> to select instance types (from the <code>c4</code>, <code>m4</code>, <code>r4</code>, <code>c5</code>, <code>m5</code>, and <code>r5</code> instance families) that match the demand of your job queues.</p></li>
-    /// <li>
     /// <p><code>default_x86_64</code> to choose x86 based instance types (from the <code>m6i</code>, <code>c6i</code>, <code>r6i</code>, and <code>c7i</code> instance families) that matches the resource demands of the job queue.</p></li>
     /// <li>
     /// <p><code>default_arm64</code> to choose ARM based instance types (from the <code>m6g</code>, <code>c6g</code>, <code>r6g</code>, and <code>c7g</code> instance families) that matches the resource demands of the job queue.</p></li>
+    /// <li>
+    /// <p><code>optimal</code> Semantically equivalent to <code>default_x86_64</code>, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/optimal-default-instance-troubleshooting.html">Optimal instance type configuration to receive automatic instance family updates</a> for details.</p></li>
     /// </ul><note>
-    /// <p>Starting on 11/01/2025 the behavior of <code>optimal</code> is going to be changed to match <code>default_x86_64</code>. During the change your instance families could be updated to a newer generation. You do not need to perform any actions for the upgrade to happen. For more information about change, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/optimal-default-instance-troubleshooting.html">Optimal instance type configuration to receive automatic instance family updates</a>.</p>
-    /// </note> <note>
     /// <p>Instance family availability varies by Amazon Web Services Region. For example, some Amazon Web Services Regions may not have any fourth generation instance families but have fifth and sixth generation instance families.</p>
     /// <p>When using <code>default_x86_64</code> or <code>default_arm64</code> instance bundles, Batch selects instance families based on a balance of cost-effectiveness and performance. While newer generation instances often provide better price-performance, Batch may choose an earlier generation instance family if it provides the optimal combination of availability, cost, and performance for your workload. For example, in an Amazon Web Services Region where both c6i and c7i instances are available, Batch might select c6i instances if they offer better cost-effectiveness for your specific job requirements. For more information on Batch instance types and Amazon Web Services Region availability, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/instance-type-compute-table.html">Instance type compute table</a> in the <i>Batch User Guide</i>.</p>
     /// <p>Batch periodically updates your instances in default bundles to newer, more cost-effective options. Updates happen automatically without requiring any action from you. Your workloads continue running during updates with no interruption</p>
@@ -546,14 +550,12 @@ impl ComputeResourceBuilder {
     /// <p>Batch can select the instance type for you if you choose one of the following:</p>
     /// <ul>
     /// <li>
-    /// <p><code>optimal</code> to select instance types (from the <code>c4</code>, <code>m4</code>, <code>r4</code>, <code>c5</code>, <code>m5</code>, and <code>r5</code> instance families) that match the demand of your job queues.</p></li>
-    /// <li>
     /// <p><code>default_x86_64</code> to choose x86 based instance types (from the <code>m6i</code>, <code>c6i</code>, <code>r6i</code>, and <code>c7i</code> instance families) that matches the resource demands of the job queue.</p></li>
     /// <li>
     /// <p><code>default_arm64</code> to choose ARM based instance types (from the <code>m6g</code>, <code>c6g</code>, <code>r6g</code>, and <code>c7g</code> instance families) that matches the resource demands of the job queue.</p></li>
+    /// <li>
+    /// <p><code>optimal</code> Semantically equivalent to <code>default_x86_64</code>, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/optimal-default-instance-troubleshooting.html">Optimal instance type configuration to receive automatic instance family updates</a> for details.</p></li>
     /// </ul><note>
-    /// <p>Starting on 11/01/2025 the behavior of <code>optimal</code> is going to be changed to match <code>default_x86_64</code>. During the change your instance families could be updated to a newer generation. You do not need to perform any actions for the upgrade to happen. For more information about change, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/optimal-default-instance-troubleshooting.html">Optimal instance type configuration to receive automatic instance family updates</a>.</p>
-    /// </note> <note>
     /// <p>Instance family availability varies by Amazon Web Services Region. For example, some Amazon Web Services Regions may not have any fourth generation instance families but have fifth and sixth generation instance families.</p>
     /// <p>When using <code>default_x86_64</code> or <code>default_arm64</code> instance bundles, Batch selects instance families based on a balance of cost-effectiveness and performance. While newer generation instances often provide better price-performance, Batch may choose an earlier generation instance family if it provides the optimal combination of availability, cost, and performance for your workload. For example, in an Amazon Web Services Region where both c6i and c7i instances are available, Batch might select c6i instances if they offer better cost-effectiveness for your specific job requirements. For more information on Batch instance types and Amazon Web Services Region availability, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/instance-type-compute-table.html">Instance type compute table</a> in the <i>Batch User Guide</i>.</p>
     /// <p>Batch periodically updates your instances in default bundles to newer, more cost-effective options. Updates happen automatically without requiring any action from you. Your workloads continue running during updates with no interruption</p>
@@ -570,14 +572,12 @@ impl ComputeResourceBuilder {
     /// <p>Batch can select the instance type for you if you choose one of the following:</p>
     /// <ul>
     /// <li>
-    /// <p><code>optimal</code> to select instance types (from the <code>c4</code>, <code>m4</code>, <code>r4</code>, <code>c5</code>, <code>m5</code>, and <code>r5</code> instance families) that match the demand of your job queues.</p></li>
-    /// <li>
     /// <p><code>default_x86_64</code> to choose x86 based instance types (from the <code>m6i</code>, <code>c6i</code>, <code>r6i</code>, and <code>c7i</code> instance families) that matches the resource demands of the job queue.</p></li>
     /// <li>
     /// <p><code>default_arm64</code> to choose ARM based instance types (from the <code>m6g</code>, <code>c6g</code>, <code>r6g</code>, and <code>c7g</code> instance families) that matches the resource demands of the job queue.</p></li>
+    /// <li>
+    /// <p><code>optimal</code> Semantically equivalent to <code>default_x86_64</code>, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/optimal-default-instance-troubleshooting.html">Optimal instance type configuration to receive automatic instance family updates</a> for details.</p></li>
     /// </ul><note>
-    /// <p>Starting on 11/01/2025 the behavior of <code>optimal</code> is going to be changed to match <code>default_x86_64</code>. During the change your instance families could be updated to a newer generation. You do not need to perform any actions for the upgrade to happen. For more information about change, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/optimal-default-instance-troubleshooting.html">Optimal instance type configuration to receive automatic instance family updates</a>.</p>
-    /// </note> <note>
     /// <p>Instance family availability varies by Amazon Web Services Region. For example, some Amazon Web Services Regions may not have any fourth generation instance families but have fifth and sixth generation instance families.</p>
     /// <p>When using <code>default_x86_64</code> or <code>default_arm64</code> instance bundles, Batch selects instance families based on a balance of cost-effectiveness and performance. While newer generation instances often provide better price-performance, Batch may choose an earlier generation instance family if it provides the optimal combination of availability, cost, and performance for your workload. For example, in an Amazon Web Services Region where both c6i and c7i instances are available, Batch might select c6i instances if they offer better cost-effectiveness for your specific job requirements. For more information on Batch instance types and Amazon Web Services Region availability, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/instance-type-compute-table.html">Instance type compute table</a> in the <i>Batch User Guide</i>.</p>
     /// <p>Batch periodically updates your instances in default bundles to newer, more cost-effective options. Updates happen automatically without requiring any action from you. Your workloads continue running during updates with no interruption</p>

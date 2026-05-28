@@ -22,7 +22,7 @@ impl crate::operation::validate_aws_associations::builders::ValidateAwsAssociati
 }
 /// Fluent builder constructing a request to `ValidateAwsAssociations`.
 ///
-/// Validates an aws association and set status and returns a 204 No Content response on success.
+/// <p>Validates an aws association and set status and returns a 204 No Content response on success.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ValidateAwsAssociationsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl ValidateAwsAssociationsFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// The unique identifier of the AgentSpace
+    /// <p>The unique identifier of the AgentSpace</p>
     pub fn agent_space_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.agent_space_id(input.into());
         self
     }
-    /// The unique identifier of the AgentSpace
+    /// <p>The unique identifier of the AgentSpace</p>
     pub fn set_agent_space_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_agent_space_id(input);
         self
     }
-    /// The unique identifier of the AgentSpace
+    /// <p>The unique identifier of the AgentSpace</p>
     pub fn get_agent_space_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_agent_space_id()
     }

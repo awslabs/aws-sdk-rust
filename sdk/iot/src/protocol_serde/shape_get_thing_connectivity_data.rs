@@ -153,6 +153,16 @@ pub fn de_get_thing_connectivity_data_http_response(
     })
 }
 
+pub fn ser_get_thing_connectivity_data_input(
+    input: &crate::operation::get_thing_connectivity_data::GetThingConnectivityDataInput,
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+    let mut out = String::new();
+    let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
+    crate::protocol_serde::shape_get_thing_connectivity_data_input::ser_get_thing_connectivity_data_input_input(&mut object, input)?;
+    object.finish();
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
+}
+
 pub(crate) fn de_get_thing_connectivity_data(
     _value: &[u8],
     mut builder: crate::operation::get_thing_connectivity_data::builders::GetThingConnectivityDataOutputBuilder,
@@ -167,6 +177,16 @@ pub(crate) fn de_get_thing_connectivity_data(
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                "cleanSession" => {
+                    builder = builder.set_clean_session(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                }
+                "clientId" => {
+                    builder = builder.set_client_id(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
                 "connected" => {
                     builder = builder.set_connected(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                 }
@@ -174,6 +194,48 @@ pub(crate) fn de_get_thing_connectivity_data(
                     builder = builder.set_disconnect_reason(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                             .map(|s| s.to_unescaped().map(|u| crate::types::DisconnectReasonValue::from(u.as_ref())))
+                            .transpose()?,
+                    );
+                }
+                "keepAliveDuration" => {
+                    builder = builder.set_keep_alive_duration(
+                        ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                            .map(i32::try_from)
+                            .transpose()?,
+                    );
+                }
+                "sessionExpiry" => {
+                    builder = builder.set_session_expiry(
+                        ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                            .map(i64::try_from)
+                            .transpose()?,
+                    );
+                }
+                "sourceIp" => {
+                    builder = builder.set_source_ip(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
+                "sourcePort" => {
+                    builder = builder.set_source_port(
+                        ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                            .map(i32::try_from)
+                            .transpose()?,
+                    );
+                }
+                "targetIp" => {
+                    builder = builder.set_target_ip(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
+                "targetPort" => {
+                    builder = builder.set_target_port(
+                        ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                            .map(i32::try_from)
                             .transpose()?,
                     );
                 }
@@ -189,6 +251,13 @@ pub(crate) fn de_get_thing_connectivity_data(
                         tokens.next(),
                         ::aws_smithy_types::date_time::Format::EpochSeconds,
                     )?);
+                }
+                "vpcEndpointId" => {
+                    builder = builder.set_vpc_endpoint_id(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

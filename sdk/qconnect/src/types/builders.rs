@@ -81,6 +81,8 @@ pub use crate::types::_recommendation_data::RecommendationDataBuilder;
 
 pub use crate::types::_recommendation_trigger::RecommendationTriggerBuilder;
 
+pub use crate::types::_model_summary::ModelSummaryBuilder;
+
 pub use crate::types::_notify_recommendations_received_error::NotifyRecommendationsReceivedErrorBuilder;
 
 pub use crate::types::_generative_content_feedback_data::GenerativeContentFeedbackDataBuilder;
@@ -321,6 +323,8 @@ pub use crate::types::_citation::CitationBuilder;
 
 pub use crate::types::_span_message::SpanMessageBuilder;
 
+pub use crate::types::_span_guardrail_assessment::SpanGuardrailAssessmentBuilder;
+
 pub use crate::types::_highlight::HighlightBuilder;
 
 pub use crate::types::_text_data::TextDataBuilder;
@@ -346,6 +350,8 @@ pub use crate::types::_span_tool_result_value::SpanToolResultValueBuilder;
 pub use crate::types::_span_reasoning_value::SpanReasoningValueBuilder;
 
 pub use crate::types::_tool_output_configuration::ToolOutputConfigurationBuilder;
+
+pub use crate::types::_guardrail_policy_result::GuardrailPolicyResultBuilder;
 
 pub use crate::types::_tool_override_constant_input_value::ToolOverrideConstantInputValueBuilder;
 

@@ -23,6 +23,8 @@ pub fn parse_http_error_metadata(
     crate::json_errors::parse_error_metadata(response_body, response_headers)
 }
 
+pub(crate) mod shape_continue_service_deployment;
+
 pub(crate) mod shape_create_capacity_provider;
 
 pub(crate) mod shape_create_cluster;
@@ -202,6 +204,8 @@ pub(crate) mod shape_cluster_contains_tasks_exception;
 pub(crate) mod shape_cluster_not_found_exception;
 
 pub(crate) mod shape_conflict_exception;
+
+pub(crate) mod shape_continue_service_deployment_input;
 
 pub(crate) mod shape_create_capacity_provider_input;
 
@@ -751,7 +755,11 @@ pub(crate) mod shape_daemon_rollback;
 
 pub(crate) mod shape_deployment;
 
+pub(crate) mod shape_deployment_lifecycle_hook_detail_list;
+
 pub(crate) mod shape_deployment_lifecycle_hook_list;
+
+pub(crate) mod shape_deployment_lifecycle_hook_timeout_configuration;
 
 pub(crate) mod shape_device;
 
@@ -831,6 +839,8 @@ pub(crate) mod shape_daemon_container_image;
 
 pub(crate) mod shape_daemon_deployment_capacity_provider_list;
 
+pub(crate) mod shape_deployment_lifecycle_hook_detail;
+
 pub(crate) mod shape_docker_labels_map;
 
 pub(crate) mod shape_environment_files;
@@ -870,6 +880,8 @@ pub(crate) mod shape_network_bindings;
 pub(crate) mod shape_network_interface_count_request;
 
 pub(crate) mod shape_network_interfaces;
+
+pub(crate) mod shape_neuron_device_ids;
 
 pub(crate) mod shape_port_mapping_list;
 

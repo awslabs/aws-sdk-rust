@@ -59,14 +59,14 @@ pub(crate) struct Handle {
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`CreateAgentRuntime`](crate::operation::create_agent_runtime) operation has
-/// a [`Client::create_agent_runtime`], function which returns a builder for that operation.
+/// For example, the [`AddDatasetExamples`](crate::operation::add_dataset_examples) operation has
+/// a [`Client::add_dataset_examples`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.create_agent_runtime()
-///     .agent_runtime_name("example")
+/// let result = client.add_dataset_examples()
+///     .dataset_id("example")
 ///     .send()
 ///     .await;
 /// ```
@@ -190,6 +190,8 @@ impl Client {
     }
 }
 
+mod add_dataset_examples;
+
 mod create_agent_runtime;
 
 mod create_agent_runtime_endpoint;
@@ -203,6 +205,10 @@ mod create_browser_profile;
 mod create_code_interpreter;
 
 mod create_configuration_bundle;
+
+mod create_dataset;
+
+mod create_dataset_version;
 
 mod create_evaluator;
 
@@ -247,7 +253,7 @@ mod create_workload_identity;
 /// # let client: aws_sdk_bedrockagentcorecontrol::Client = unimplemented!();
 /// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
-/// let result = client.create_agent_runtime()
+/// let result = client.add_dataset_examples()
 ///     .customize()
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
@@ -276,6 +282,10 @@ mod delete_browser_profile;
 mod delete_code_interpreter;
 
 mod delete_configuration_bundle;
+
+mod delete_dataset;
+
+mod delete_dataset_examples;
 
 mod delete_evaluator;
 
@@ -326,6 +336,8 @@ mod get_code_interpreter;
 mod get_configuration_bundle;
 
 mod get_configuration_bundle_version;
+
+mod get_dataset;
 
 mod get_evaluator;
 
@@ -388,6 +400,12 @@ mod list_code_interpreters;
 mod list_configuration_bundle_versions;
 
 mod list_configuration_bundles;
+
+mod list_dataset_examples;
+
+mod list_dataset_versions;
+
+mod list_datasets;
 
 mod list_evaluators;
 
@@ -454,6 +472,10 @@ mod update_agent_runtime_endpoint;
 mod update_api_key_credential_provider;
 
 mod update_configuration_bundle;
+
+mod update_dataset;
+
+mod update_dataset_examples;
 
 mod update_evaluator;
 

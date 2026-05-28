@@ -22,7 +22,7 @@ impl crate::operation::create_payment_session::builders::CreatePaymentSessionInp
 }
 /// Fluent builder constructing a request to `CreatePaymentSession`.
 ///
-/// Create a new payment manager session
+/// <p>Create a new payment session.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreatePaymentSessionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,87 +108,87 @@ impl CreatePaymentSessionFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// The user ID associated with this payment session.
+    /// <p>The user ID associated with this payment session.</p>
     pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.user_id(input.into());
         self
     }
-    /// The user ID associated with this payment session.
+    /// <p>The user ID associated with this payment session.</p>
     pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_user_id(input);
         self
     }
-    /// The user ID associated with this payment session.
+    /// <p>The user ID associated with this payment session.</p>
     pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_user_id()
     }
-    /// The agent name associated with this request, used for observability.
+    /// <p>The agent name associated with this request, used for observability.</p>
     pub fn agent_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.agent_name(input.into());
         self
     }
-    /// The agent name associated with this request, used for observability.
+    /// <p>The agent name associated with this request, used for observability.</p>
     pub fn set_agent_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_agent_name(input);
         self
     }
-    /// The agent name associated with this request, used for observability.
+    /// <p>The agent name associated with this request, used for observability.</p>
     pub fn get_agent_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_agent_name()
     }
-    /// The ARN of the payment manager that owns this session.
+    /// <p>The ARN of the payment manager that owns this session.</p>
     pub fn payment_manager_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.payment_manager_arn(input.into());
         self
     }
-    /// The ARN of the payment manager that owns this session.
+    /// <p>The ARN of the payment manager that owns this session.</p>
     pub fn set_payment_manager_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_payment_manager_arn(input);
         self
     }
-    /// The ARN of the payment manager that owns this session.
+    /// <p>The ARN of the payment manager that owns this session.</p>
     pub fn get_payment_manager_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_payment_manager_arn()
     }
-    /// The spending limits for this payment session.
+    /// <p>The spending limits for this payment session.</p>
     pub fn limits(mut self, input: crate::types::SessionLimits) -> Self {
         self.inner = self.inner.limits(input);
         self
     }
-    /// The spending limits for this payment session.
+    /// <p>The spending limits for this payment session.</p>
     pub fn set_limits(mut self, input: ::std::option::Option<crate::types::SessionLimits>) -> Self {
         self.inner = self.inner.set_limits(input);
         self
     }
-    /// The spending limits for this payment session.
+    /// <p>The spending limits for this payment session.</p>
     pub fn get_limits(&self) -> &::std::option::Option<crate::types::SessionLimits> {
         self.inner.get_limits()
     }
-    /// The session expiry time in minutes. Must be between 15 and 480 minutes.
+    /// <p>The session expiry time in minutes. Must be between 15 and 480 minutes.</p>
     pub fn expiry_time_in_minutes(mut self, input: i32) -> Self {
         self.inner = self.inner.expiry_time_in_minutes(input);
         self
     }
-    /// The session expiry time in minutes. Must be between 15 and 480 minutes.
+    /// <p>The session expiry time in minutes. Must be between 15 and 480 minutes.</p>
     pub fn set_expiry_time_in_minutes(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_expiry_time_in_minutes(input);
         self
     }
-    /// The session expiry time in minutes. Must be between 15 and 480 minutes.
+    /// <p>The session expiry time in minutes. Must be between 15 and 480 minutes.</p>
     pub fn get_expiry_time_in_minutes(&self) -> &::std::option::Option<i32> {
         self.inner.get_expiry_time_in_minutes()
     }
-    /// Idempotency token to ensure request uniqueness.
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
         self
     }
-    /// Idempotency token to ensure request uniqueness.
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
     }
-    /// Idempotency token to ensure request uniqueness.
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_token()
     }

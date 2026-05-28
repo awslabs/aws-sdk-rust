@@ -204,6 +204,13 @@ pub(crate) fn de_get_trained_model_inference_job(
                             .transpose()?,
                     );
                 }
+                "mlModelInferencePayerAccountId" => {
+                    builder = builder.set_ml_model_inference_payer_account_id(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
                 "name" => {
                     builder = builder.set_name(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

@@ -35,6 +35,8 @@ pub use crate::types::_vector_options::VectorOptions;
 
 pub use crate::types::_encryption_config::EncryptionConfig;
 
+pub use crate::types::_deletion_protection::DeletionProtection;
+
 pub use crate::types::_create_collection_detail::CreateCollectionDetail;
 
 pub use crate::types::_update_collection_detail::UpdateCollectionDetail;
@@ -42,6 +44,8 @@ pub use crate::types::_update_collection_detail::UpdateCollectionDetail;
 pub use crate::types::_delete_collection_detail::DeleteCollectionDetail;
 
 pub use crate::types::_collection_group_capacity_limits::CollectionGroupCapacityLimits;
+
+pub use crate::types::_serverless_generation::ServerlessGeneration;
 
 pub use crate::types::_create_collection_group_detail::CreateCollectionGroupDetail;
 
@@ -117,7 +121,13 @@ pub use crate::types::_vpc_endpoint_summary::VpcEndpointSummary;
 
 pub use crate::types::_fips_endpoints::FipsEndpoints;
 
+pub use crate::types::_current_capacity::CurrentCapacity;
+
 pub use crate::types::_resource_type::ResourceType;
+
+pub use crate::types::_capacity_details::CapacityDetails;
+
+pub use crate::types::_autoscaling_status::AutoscalingStatus;
 
 mod _access_policy_detail;
 
@@ -128,6 +138,10 @@ mod _access_policy_summary;
 mod _access_policy_type;
 
 mod _account_settings_detail;
+
+mod _autoscaling_status;
+
+mod _capacity_details;
 
 mod _capacity_limits;
 
@@ -159,9 +173,13 @@ mod _create_iam_identity_center_config_options;
 
 mod _create_vpc_endpoint_detail;
 
+mod _current_capacity;
+
 mod _delete_collection_detail;
 
 mod _delete_vpc_endpoint_detail;
+
+mod _deletion_protection;
 
 mod _effective_lifecycle_policy_detail;
 
@@ -212,6 +230,8 @@ mod _security_policy_stats;
 mod _security_policy_summary;
 
 mod _security_policy_type;
+
+mod _serverless_generation;
 
 mod _serverless_vector_acceleration_status;
 

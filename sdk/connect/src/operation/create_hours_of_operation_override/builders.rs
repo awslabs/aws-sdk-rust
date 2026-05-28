@@ -22,7 +22,7 @@ impl crate::operation::create_hours_of_operation_override::builders::CreateHours
 }
 /// Fluent builder constructing a request to `CreateHoursOfOperationOverride`.
 ///
-/// <p>Creates an hours of operation override in an Amazon Connect hours of operation resource.</p>
+/// <p>Creates an hours of operation override in an Connect Customer hours of operation resource.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateHoursOfOperationOverrideFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl CreateHoursOfOperationOverrideFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The identifier of the Amazon Connect instance.</p>
+    /// <p>The identifier of the Connect Customer instance.</p>
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.instance_id(input.into());
         self
     }
-    /// <p>The identifier of the Amazon Connect instance.</p>
+    /// <p>The identifier of the Connect Customer instance.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_instance_id(input);
         self
     }
-    /// <p>The identifier of the Amazon Connect instance.</p>
+    /// <p>The identifier of the Connect Customer instance.</p>
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_instance_id()
     }

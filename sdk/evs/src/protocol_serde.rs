@@ -43,6 +43,8 @@ pub(crate) mod shape_delete_environment_host;
 
 pub(crate) mod shape_disassociate_eip_from_vlan;
 
+pub(crate) mod shape_get_depot_url;
+
 pub(crate) mod shape_get_environment;
 
 pub(crate) mod shape_get_versions;
@@ -92,6 +94,8 @@ pub(crate) mod shape_delete_environment_host_input;
 pub(crate) mod shape_delete_environment_input;
 
 pub(crate) mod shape_disassociate_eip_from_vlan_input;
+
+pub(crate) mod shape_get_depot_url_input;
 
 pub(crate) mod shape_get_environment_input;
 

@@ -5,6 +5,15 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeploymentLifecycleHook {
+    /// <p>The type of action the lifecycle hook performs. Valid values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>AWS_LAMBDA</code> - Invokes a Lambda function at the specified lifecycle stage. This is the default value.</p></li>
+    /// <li>
+    /// <p><code>PAUSE</code> - Pauses the deployment at the specified lifecycle stage until you call <code>ContinueServiceDeployment</code> to continue or roll back.</p></li>
+    /// </ul>
+    /// <p>This field is optional. If not specified, the default value is <code>AWS_LAMBDA</code>.</p>
+    pub target_type: ::std::option::Option<crate::types::DeploymentLifecycleHookTargetType>,
     /// <p>The Amazon Resource Name (ARN) of the hook target. Currently, only Lambda function ARNs are supported.</p>
     /// <p>You must provide this parameter when configuring a deployment lifecycle hook.</p>
     pub hook_target_arn: ::std::option::Option<::std::string::String>,
@@ -46,8 +55,21 @@ pub struct DeploymentLifecycleHook {
     pub lifecycle_stages: ::std::option::Option<::std::vec::Vec<crate::types::DeploymentLifecycleHookStage>>,
     /// <p>Use this field to specify custom parameters that Amazon ECS will pass to your hook target invocations (such as a Lambda function).</p>
     pub hook_details: ::std::option::Option<::aws_smithy_types::Document>,
+    /// <p>The timeout configuration for the lifecycle hook. This specifies how long Amazon ECS waits before taking the timeout action if the hook is not resolved.</p>
+    pub timeout_configuration: ::std::option::Option<crate::types::DeploymentLifecycleHookTimeoutConfiguration>,
 }
 impl DeploymentLifecycleHook {
+    /// <p>The type of action the lifecycle hook performs. Valid values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>AWS_LAMBDA</code> - Invokes a Lambda function at the specified lifecycle stage. This is the default value.</p></li>
+    /// <li>
+    /// <p><code>PAUSE</code> - Pauses the deployment at the specified lifecycle stage until you call <code>ContinueServiceDeployment</code> to continue or roll back.</p></li>
+    /// </ul>
+    /// <p>This field is optional. If not specified, the default value is <code>AWS_LAMBDA</code>.</p>
+    pub fn target_type(&self) -> ::std::option::Option<&crate::types::DeploymentLifecycleHookTargetType> {
+        self.target_type.as_ref()
+    }
     /// <p>The Amazon Resource Name (ARN) of the hook target. Currently, only Lambda function ARNs are supported.</p>
     /// <p>You must provide this parameter when configuring a deployment lifecycle hook.</p>
     pub fn hook_target_arn(&self) -> ::std::option::Option<&str> {
@@ -99,6 +121,10 @@ impl DeploymentLifecycleHook {
     pub fn hook_details(&self) -> ::std::option::Option<&::aws_smithy_types::Document> {
         self.hook_details.as_ref()
     }
+    /// <p>The timeout configuration for the lifecycle hook. This specifies how long Amazon ECS waits before taking the timeout action if the hook is not resolved.</p>
+    pub fn timeout_configuration(&self) -> ::std::option::Option<&crate::types::DeploymentLifecycleHookTimeoutConfiguration> {
+        self.timeout_configuration.as_ref()
+    }
 }
 impl DeploymentLifecycleHook {
     /// Creates a new builder-style object to manufacture [`DeploymentLifecycleHook`](crate::types::DeploymentLifecycleHook).
@@ -111,12 +137,49 @@ impl DeploymentLifecycleHook {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct DeploymentLifecycleHookBuilder {
+    pub(crate) target_type: ::std::option::Option<crate::types::DeploymentLifecycleHookTargetType>,
     pub(crate) hook_target_arn: ::std::option::Option<::std::string::String>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) lifecycle_stages: ::std::option::Option<::std::vec::Vec<crate::types::DeploymentLifecycleHookStage>>,
     pub(crate) hook_details: ::std::option::Option<::aws_smithy_types::Document>,
+    pub(crate) timeout_configuration: ::std::option::Option<crate::types::DeploymentLifecycleHookTimeoutConfiguration>,
 }
 impl DeploymentLifecycleHookBuilder {
+    /// <p>The type of action the lifecycle hook performs. Valid values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>AWS_LAMBDA</code> - Invokes a Lambda function at the specified lifecycle stage. This is the default value.</p></li>
+    /// <li>
+    /// <p><code>PAUSE</code> - Pauses the deployment at the specified lifecycle stage until you call <code>ContinueServiceDeployment</code> to continue or roll back.</p></li>
+    /// </ul>
+    /// <p>This field is optional. If not specified, the default value is <code>AWS_LAMBDA</code>.</p>
+    pub fn target_type(mut self, input: crate::types::DeploymentLifecycleHookTargetType) -> Self {
+        self.target_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The type of action the lifecycle hook performs. Valid values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>AWS_LAMBDA</code> - Invokes a Lambda function at the specified lifecycle stage. This is the default value.</p></li>
+    /// <li>
+    /// <p><code>PAUSE</code> - Pauses the deployment at the specified lifecycle stage until you call <code>ContinueServiceDeployment</code> to continue or roll back.</p></li>
+    /// </ul>
+    /// <p>This field is optional. If not specified, the default value is <code>AWS_LAMBDA</code>.</p>
+    pub fn set_target_type(mut self, input: ::std::option::Option<crate::types::DeploymentLifecycleHookTargetType>) -> Self {
+        self.target_type = input;
+        self
+    }
+    /// <p>The type of action the lifecycle hook performs. Valid values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>AWS_LAMBDA</code> - Invokes a Lambda function at the specified lifecycle stage. This is the default value.</p></li>
+    /// <li>
+    /// <p><code>PAUSE</code> - Pauses the deployment at the specified lifecycle stage until you call <code>ContinueServiceDeployment</code> to continue or roll back.</p></li>
+    /// </ul>
+    /// <p>This field is optional. If not specified, the default value is <code>AWS_LAMBDA</code>.</p>
+    pub fn get_target_type(&self) -> &::std::option::Option<crate::types::DeploymentLifecycleHookTargetType> {
+        &self.target_type
+    }
     /// <p>The Amazon Resource Name (ARN) of the hook target. Currently, only Lambda function ARNs are supported.</p>
     /// <p>You must provide this parameter when configuring a deployment lifecycle hook.</p>
     pub fn hook_target_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -278,13 +341,29 @@ impl DeploymentLifecycleHookBuilder {
     pub fn get_hook_details(&self) -> &::std::option::Option<::aws_smithy_types::Document> {
         &self.hook_details
     }
+    /// <p>The timeout configuration for the lifecycle hook. This specifies how long Amazon ECS waits before taking the timeout action if the hook is not resolved.</p>
+    pub fn timeout_configuration(mut self, input: crate::types::DeploymentLifecycleHookTimeoutConfiguration) -> Self {
+        self.timeout_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The timeout configuration for the lifecycle hook. This specifies how long Amazon ECS waits before taking the timeout action if the hook is not resolved.</p>
+    pub fn set_timeout_configuration(mut self, input: ::std::option::Option<crate::types::DeploymentLifecycleHookTimeoutConfiguration>) -> Self {
+        self.timeout_configuration = input;
+        self
+    }
+    /// <p>The timeout configuration for the lifecycle hook. This specifies how long Amazon ECS waits before taking the timeout action if the hook is not resolved.</p>
+    pub fn get_timeout_configuration(&self) -> &::std::option::Option<crate::types::DeploymentLifecycleHookTimeoutConfiguration> {
+        &self.timeout_configuration
+    }
     /// Consumes the builder and constructs a [`DeploymentLifecycleHook`](crate::types::DeploymentLifecycleHook).
     pub fn build(self) -> crate::types::DeploymentLifecycleHook {
         crate::types::DeploymentLifecycleHook {
+            target_type: self.target_type,
             hook_target_arn: self.hook_target_arn,
             role_arn: self.role_arn,
             lifecycle_stages: self.lifecycle_stages,
             hook_details: self.hook_details,
+            timeout_configuration: self.timeout_configuration,
         }
     }
 }

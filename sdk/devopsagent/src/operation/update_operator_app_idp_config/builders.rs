@@ -22,7 +22,7 @@ impl crate::operation::update_operator_app_idp_config::builders::UpdateOperatorA
 }
 /// Fluent builder constructing a request to `UpdateOperatorAppIdpConfig`.
 ///
-/// Update the external Identity Provider configuration for the Operator App
+/// <p>Update the external Identity Provider configuration for the Operator App</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateOperatorAppIdpConfigFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,31 +108,31 @@ impl UpdateOperatorAppIdpConfigFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// The unique identifier of the AgentSpace
+    /// <p>The unique identifier of the AgentSpace</p>
     pub fn agent_space_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.agent_space_id(input.into());
         self
     }
-    /// The unique identifier of the AgentSpace
+    /// <p>The unique identifier of the AgentSpace</p>
     pub fn set_agent_space_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_agent_space_id(input);
         self
     }
-    /// The unique identifier of the AgentSpace
+    /// <p>The unique identifier of the AgentSpace</p>
     pub fn get_agent_space_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_agent_space_id()
     }
-    /// The OIDC client secret for the IdP application
+    /// <p>The OIDC client secret for the IdP application</p>
     pub fn idp_client_secret(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.idp_client_secret(input.into());
         self
     }
-    /// The OIDC client secret for the IdP application
+    /// <p>The OIDC client secret for the IdP application</p>
     pub fn set_idp_client_secret(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_idp_client_secret(input);
         self
     }
-    /// The OIDC client secret for the IdP application
+    /// <p>The OIDC client secret for the IdP application</p>
     pub fn get_idp_client_secret(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_idp_client_secret()
     }

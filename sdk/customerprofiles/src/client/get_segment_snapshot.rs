@@ -13,7 +13,7 @@ impl super::Client {
     ///   - [`data_format(DataFormat)`](crate::operation::get_segment_snapshot::GetSegmentSnapshotOutput::data_format): <p>The format in which the segment will be exported.</p>
     ///   - [`encryption_key(Option<String>)`](crate::operation::get_segment_snapshot::GetSegmentSnapshotOutput::encryption_key): <p>The Amazon Resource Name (ARN) of the KMS key used to encrypt the exported segment.</p>
     ///   - [`role_arn(Option<String>)`](crate::operation::get_segment_snapshot::GetSegmentSnapshotOutput::role_arn): <p>The Amazon Resource Name (ARN) of the IAM role that allows Customer Profiles service principal to assume the role for conducting KMS and S3 operations.</p>
-    ///   - [`destination_uri(Option<String>)`](crate::operation::get_segment_snapshot::GetSegmentSnapshotOutput::destination_uri): <p>The destination to which the segment will be exported. This field must be provided if the request is not submitted from the Amazon Connect Admin Website.</p>
+    ///   - [`destination_uri(Option<String>)`](crate::operation::get_segment_snapshot::GetSegmentSnapshotOutput::destination_uri): <p>The destination to which the segment will be exported. This field must be provided if the request is not submitted from the Connect Customer Admin Website.</p>
     /// - On failure, responds with [`SdkError<GetSegmentSnapshotError>`](crate::operation::get_segment_snapshot::GetSegmentSnapshotError)
     pub fn get_segment_snapshot(&self) -> crate::operation::get_segment_snapshot::builders::GetSegmentSnapshotFluentBuilder {
         crate::operation::get_segment_snapshot::builders::GetSegmentSnapshotFluentBuilder::new(self.handle.clone())

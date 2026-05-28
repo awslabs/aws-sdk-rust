@@ -25,13 +25,23 @@ pub fn parse_http_error_metadata(
 
 pub(crate) mod shape_associate_feed;
 
+pub(crate) mod shape_create_dictionary;
+
 pub(crate) mod shape_create_feed;
+
+pub(crate) mod shape_delete_dictionary;
 
 pub(crate) mod shape_delete_feed;
 
 pub(crate) mod shape_disassociate_feed;
 
+pub(crate) mod shape_export_dictionary_entries;
+
+pub(crate) mod shape_get_dictionary;
+
 pub(crate) mod shape_get_feed;
+
+pub(crate) mod shape_list_dictionaries;
 
 pub(crate) mod shape_list_feeds;
 
@@ -40,6 +50,8 @@ pub(crate) mod shape_list_tags_for_resource;
 pub(crate) mod shape_tag_resource;
 
 pub(crate) mod shape_untag_resource;
+
+pub(crate) mod shape_update_dictionary;
 
 pub(crate) mod shape_update_feed;
 
@@ -57,6 +69,8 @@ pub(crate) mod shape_associate_feed_input;
 
 pub(crate) mod shape_conflict_exception;
 
+pub(crate) mod shape_create_dictionary_input;
+
 pub(crate) mod shape_create_feed_input;
 
 pub(crate) mod shape_disassociate_feed_input;
@@ -71,13 +85,19 @@ pub(crate) mod shape_tag_resource_input;
 
 pub(crate) mod shape_too_many_request_exception;
 
+pub(crate) mod shape_update_dictionary_input;
+
 pub(crate) mod shape_update_feed_input;
 
 pub(crate) mod shape_validation_exception;
 
 pub(crate) mod shape_create_output;
 
+pub(crate) mod shape_dictionary_summary_list;
+
 pub(crate) mod shape_feed_association;
+
+pub(crate) mod shape_feed_references;
 
 pub(crate) mod shape_feed_summary_list;
 
@@ -89,6 +109,8 @@ pub(crate) mod shape_tag_map;
 
 pub(crate) mod shape_update_output;
 
+pub(crate) mod shape_dictionary_summary;
+
 pub(crate) mod shape_feed_summary;
 
 pub(crate) mod shape_get_output;
@@ -98,3 +120,7 @@ pub(crate) mod shape_output_config;
 pub(crate) mod shape_clipping_config;
 
 pub(crate) mod shape_cropping_config;
+
+pub(crate) mod shape_subtitling_config;
+
+pub(crate) mod shape_aspect_ratio;

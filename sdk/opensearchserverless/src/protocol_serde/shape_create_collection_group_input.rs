@@ -30,8 +30,11 @@ pub fn ser_create_collection_group_input_input(
         crate::protocol_serde::shape_collection_group_capacity_limits::ser_collection_group_capacity_limits(&mut object_9, var_8)?;
         object_9.finish();
     }
-    if let Some(var_10) = &input.client_token {
-        object.key("clientToken").string(var_10.as_str());
+    if let Some(var_10) = &input.generation {
+        object.key("generation").string(var_10.as_str());
+    }
+    if let Some(var_11) = &input.client_token {
+        object.key("clientToken").string(var_11.as_str());
     }
     Ok(())
 }

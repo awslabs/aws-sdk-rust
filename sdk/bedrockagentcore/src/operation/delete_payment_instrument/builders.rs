@@ -22,7 +22,7 @@ impl crate::operation::delete_payment_instrument::builders::DeletePaymentInstrum
 }
 /// Fluent builder constructing a request to `DeletePaymentInstrument`.
 ///
-/// Delete a payment instrument Marks a payment instrument as deleted by updating its status to DELETED. This is a soft delete operation that preserves the record in the database for audit and compliance purposes. The record remains queryable for audit purposes but is excluded from normal list and get operations. Deleting an already-deleted or non-existent instrument returns ResourceNotFoundException (404). Authorization: The caller must own the instrument (accountId, userId, and paymentManagerId must match). If authorization fails, a 403 Forbidden error is returned. Timestamp Management: The updatedAt timestamp is set to the current time, while createdAt is preserved. The version field is incremented for optimistic locking. Errors: - ResourceNotFoundException: The instrument does not exist or is already deleted - AccessDeniedException: The caller is not authorized to delete this instrument - ValidationException: Required fields are missing or invalid - InternalServerException: An unexpected server error occurred
+/// <p>Deletes a payment instrument. This is a soft delete operation that preserves the record for audit and compliance purposes.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeletePaymentInstrumentFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,59 +108,59 @@ impl DeletePaymentInstrumentFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// The user ID making the delete request. Must match the instrument's userId.
+    /// <p>The user ID making the delete request. Must match the instrument's userId.</p>
     pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.user_id(input.into());
         self
     }
-    /// The user ID making the delete request. Must match the instrument's userId.
+    /// <p>The user ID making the delete request. Must match the instrument's userId.</p>
     pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_user_id(input);
         self
     }
-    /// The user ID making the delete request. Must match the instrument's userId.
+    /// <p>The user ID making the delete request. Must match the instrument's userId.</p>
     pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_user_id()
     }
-    /// The payment manager ARN. Must match the instrument's paymentManagerArn.
+    /// <p>The payment manager ARN. Must match the instrument's paymentManagerArn.</p>
     pub fn payment_manager_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.payment_manager_arn(input.into());
         self
     }
-    /// The payment manager ARN. Must match the instrument's paymentManagerArn.
+    /// <p>The payment manager ARN. Must match the instrument's paymentManagerArn.</p>
     pub fn set_payment_manager_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_payment_manager_arn(input);
         self
     }
-    /// The payment manager ARN. Must match the instrument's paymentManagerArn.
+    /// <p>The payment manager ARN. Must match the instrument's paymentManagerArn.</p>
     pub fn get_payment_manager_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_payment_manager_arn()
     }
-    /// The payment connector ID. Must match the instrument's paymentConnectorId.
+    /// <p>The payment connector ID. Must match the instrument's paymentConnectorId.</p>
     pub fn payment_connector_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.payment_connector_id(input.into());
         self
     }
-    /// The payment connector ID. Must match the instrument's paymentConnectorId.
+    /// <p>The payment connector ID. Must match the instrument's paymentConnectorId.</p>
     pub fn set_payment_connector_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_payment_connector_id(input);
         self
     }
-    /// The payment connector ID. Must match the instrument's paymentConnectorId.
+    /// <p>The payment connector ID. Must match the instrument's paymentConnectorId.</p>
     pub fn get_payment_connector_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_payment_connector_id()
     }
-    /// The payment instrument ID to delete.
+    /// <p>The payment instrument ID to delete.</p>
     pub fn payment_instrument_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.payment_instrument_id(input.into());
         self
     }
-    /// The payment instrument ID to delete.
+    /// <p>The payment instrument ID to delete.</p>
     pub fn set_payment_instrument_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_payment_instrument_id(input);
         self
     }
-    /// The payment instrument ID to delete.
+    /// <p>The payment instrument ID to delete.</p>
     pub fn get_payment_instrument_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_payment_instrument_id()
     }

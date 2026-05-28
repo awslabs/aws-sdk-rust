@@ -274,6 +274,8 @@ pub enum CreateImportedImageError {
     IncompatibleImageException(crate::types::error::IncompatibleImageException),
     /// <p>The resource cannot be created because your AWS account is suspended. For assistance, contact AWS Support.</p>
     InvalidAccountStatusException(crate::types::error::InvalidAccountStatusException),
+    /// <p>Indicates an incorrect combination of parameters, or a missing parameter.</p>
+    InvalidParameterCombinationException(crate::types::error::InvalidParameterCombinationException),
     /// <p>The specified role is invalid.</p>
     InvalidRoleException(crate::types::error::InvalidRoleException),
     /// <p>The requested limit exceeds the permitted limit for an account.</p>
@@ -320,6 +322,7 @@ impl CreateImportedImageError {
             Self::DryRunOperationException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::IncompatibleImageException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidAccountStatusException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::InvalidParameterCombinationException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidRoleException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::LimitExceededException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::OperationNotPermittedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
@@ -339,6 +342,10 @@ impl CreateImportedImageError {
     /// Returns `true` if the error kind is `CreateImportedImageError::InvalidAccountStatusException`.
     pub fn is_invalid_account_status_exception(&self) -> bool {
         matches!(self, Self::InvalidAccountStatusException(_))
+    }
+    /// Returns `true` if the error kind is `CreateImportedImageError::InvalidParameterCombinationException`.
+    pub fn is_invalid_parameter_combination_exception(&self) -> bool {
+        matches!(self, Self::InvalidParameterCombinationException(_))
     }
     /// Returns `true` if the error kind is `CreateImportedImageError::InvalidRoleException`.
     pub fn is_invalid_role_exception(&self) -> bool {
@@ -367,6 +374,7 @@ impl ::std::error::Error for CreateImportedImageError {
             Self::DryRunOperationException(_inner) => ::std::option::Option::Some(_inner),
             Self::IncompatibleImageException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidAccountStatusException(_inner) => ::std::option::Option::Some(_inner),
+            Self::InvalidParameterCombinationException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidRoleException(_inner) => ::std::option::Option::Some(_inner),
             Self::LimitExceededException(_inner) => ::std::option::Option::Some(_inner),
             Self::OperationNotPermittedException(_inner) => ::std::option::Option::Some(_inner),
@@ -382,6 +390,7 @@ impl ::std::fmt::Display for CreateImportedImageError {
             Self::DryRunOperationException(_inner) => _inner.fmt(f),
             Self::IncompatibleImageException(_inner) => _inner.fmt(f),
             Self::InvalidAccountStatusException(_inner) => _inner.fmt(f),
+            Self::InvalidParameterCombinationException(_inner) => _inner.fmt(f),
             Self::InvalidRoleException(_inner) => _inner.fmt(f),
             Self::LimitExceededException(_inner) => _inner.fmt(f),
             Self::OperationNotPermittedException(_inner) => _inner.fmt(f),
@@ -411,6 +420,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for CreateImporte
             Self::DryRunOperationException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::IncompatibleImageException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidAccountStatusException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InvalidParameterCombinationException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidRoleException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::LimitExceededException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::OperationNotPermittedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),

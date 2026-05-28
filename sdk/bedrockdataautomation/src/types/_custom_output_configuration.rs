@@ -6,6 +6,8 @@
 pub struct CustomOutputConfiguration {
     /// List of Blueprint Item
     pub blueprints: ::std::option::Option<::std::vec::Vec<crate::types::BlueprintItem>>,
+    /// Custom Configuration of Document
+    pub document: ::std::option::Option<crate::types::DocumentCustomOutputConfiguration>,
 }
 impl CustomOutputConfiguration {
     /// List of Blueprint Item
@@ -13,6 +15,10 @@ impl CustomOutputConfiguration {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.blueprints.is_none()`.
     pub fn blueprints(&self) -> &[crate::types::BlueprintItem] {
         self.blueprints.as_deref().unwrap_or_default()
+    }
+    /// Custom Configuration of Document
+    pub fn document(&self) -> ::std::option::Option<&crate::types::DocumentCustomOutputConfiguration> {
+        self.document.as_ref()
     }
 }
 impl CustomOutputConfiguration {
@@ -27,6 +33,7 @@ impl CustomOutputConfiguration {
 #[non_exhaustive]
 pub struct CustomOutputConfigurationBuilder {
     pub(crate) blueprints: ::std::option::Option<::std::vec::Vec<crate::types::BlueprintItem>>,
+    pub(crate) document: ::std::option::Option<crate::types::DocumentCustomOutputConfiguration>,
 }
 impl CustomOutputConfigurationBuilder {
     /// Appends an item to `blueprints`.
@@ -49,8 +56,25 @@ impl CustomOutputConfigurationBuilder {
     pub fn get_blueprints(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BlueprintItem>> {
         &self.blueprints
     }
+    /// Custom Configuration of Document
+    pub fn document(mut self, input: crate::types::DocumentCustomOutputConfiguration) -> Self {
+        self.document = ::std::option::Option::Some(input);
+        self
+    }
+    /// Custom Configuration of Document
+    pub fn set_document(mut self, input: ::std::option::Option<crate::types::DocumentCustomOutputConfiguration>) -> Self {
+        self.document = input;
+        self
+    }
+    /// Custom Configuration of Document
+    pub fn get_document(&self) -> &::std::option::Option<crate::types::DocumentCustomOutputConfiguration> {
+        &self.document
+    }
     /// Consumes the builder and constructs a [`CustomOutputConfiguration`](crate::types::CustomOutputConfiguration).
     pub fn build(self) -> crate::types::CustomOutputConfiguration {
-        crate::types::CustomOutputConfiguration { blueprints: self.blueprints }
+        crate::types::CustomOutputConfiguration {
+            blueprints: self.blueprints,
+            document: self.document,
+        }
     }
 }

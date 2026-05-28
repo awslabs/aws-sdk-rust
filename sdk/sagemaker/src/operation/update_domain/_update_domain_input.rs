@@ -27,6 +27,8 @@ pub struct UpdateDomainInput {
     pub app_network_access_type: ::std::option::Option<crate::types::AppNetworkAccessType>,
     /// <p>Indicates whether custom tag propagation is supported for the domain. Defaults to <code>DISABLED</code>.</p>
     pub tag_propagation: ::std::option::Option<crate::types::TagPropagation>,
+    /// <p>Indicates whether to create a home EFS file system for the domain. You can change from <code>Disabled</code> to <code>Enabled</code> to provision EFS on demand, but you cannot change from <code>Enabled</code> to <code>Disabled</code>.</p>
+    pub home_efs_file_system_creation: ::std::option::Option<crate::types::HomeEfsFileSystemCreation>,
     /// <p>The identifier for the VPC used by the domain for network communication. Use this field only when adding VPC configuration to a SageMaker AI domain used in Amazon SageMaker Unified Studio that was created without VPC settings. SageMaker AI doesn't automatically apply VPC updates to existing applications. Stop and restart your applications to apply the changes.</p>
     pub vpc_id: ::std::option::Option<::std::string::String>,
 }
@@ -73,6 +75,10 @@ impl UpdateDomainInput {
     pub fn tag_propagation(&self) -> ::std::option::Option<&crate::types::TagPropagation> {
         self.tag_propagation.as_ref()
     }
+    /// <p>Indicates whether to create a home EFS file system for the domain. You can change from <code>Disabled</code> to <code>Enabled</code> to provision EFS on demand, but you cannot change from <code>Enabled</code> to <code>Disabled</code>.</p>
+    pub fn home_efs_file_system_creation(&self) -> ::std::option::Option<&crate::types::HomeEfsFileSystemCreation> {
+        self.home_efs_file_system_creation.as_ref()
+    }
     /// <p>The identifier for the VPC used by the domain for network communication. Use this field only when adding VPC configuration to a SageMaker AI domain used in Amazon SageMaker Unified Studio that was created without VPC settings. SageMaker AI doesn't automatically apply VPC updates to existing applications. Stop and restart your applications to apply the changes.</p>
     pub fn vpc_id(&self) -> ::std::option::Option<&str> {
         self.vpc_id.as_deref()
@@ -97,6 +103,7 @@ pub struct UpdateDomainInputBuilder {
     pub(crate) subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) app_network_access_type: ::std::option::Option<crate::types::AppNetworkAccessType>,
     pub(crate) tag_propagation: ::std::option::Option<crate::types::TagPropagation>,
+    pub(crate) home_efs_file_system_creation: ::std::option::Option<crate::types::HomeEfsFileSystemCreation>,
     pub(crate) vpc_id: ::std::option::Option<::std::string::String>,
 }
 impl UpdateDomainInputBuilder {
@@ -243,6 +250,20 @@ impl UpdateDomainInputBuilder {
     pub fn get_tag_propagation(&self) -> &::std::option::Option<crate::types::TagPropagation> {
         &self.tag_propagation
     }
+    /// <p>Indicates whether to create a home EFS file system for the domain. You can change from <code>Disabled</code> to <code>Enabled</code> to provision EFS on demand, but you cannot change from <code>Enabled</code> to <code>Disabled</code>.</p>
+    pub fn home_efs_file_system_creation(mut self, input: crate::types::HomeEfsFileSystemCreation) -> Self {
+        self.home_efs_file_system_creation = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether to create a home EFS file system for the domain. You can change from <code>Disabled</code> to <code>Enabled</code> to provision EFS on demand, but you cannot change from <code>Enabled</code> to <code>Disabled</code>.</p>
+    pub fn set_home_efs_file_system_creation(mut self, input: ::std::option::Option<crate::types::HomeEfsFileSystemCreation>) -> Self {
+        self.home_efs_file_system_creation = input;
+        self
+    }
+    /// <p>Indicates whether to create a home EFS file system for the domain. You can change from <code>Disabled</code> to <code>Enabled</code> to provision EFS on demand, but you cannot change from <code>Enabled</code> to <code>Disabled</code>.</p>
+    pub fn get_home_efs_file_system_creation(&self) -> &::std::option::Option<crate::types::HomeEfsFileSystemCreation> {
+        &self.home_efs_file_system_creation
+    }
     /// <p>The identifier for the VPC used by the domain for network communication. Use this field only when adding VPC configuration to a SageMaker AI domain used in Amazon SageMaker Unified Studio that was created without VPC settings. SageMaker AI doesn't automatically apply VPC updates to existing applications. Stop and restart your applications to apply the changes.</p>
     pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_id = ::std::option::Option::Some(input.into());
@@ -270,6 +291,7 @@ impl UpdateDomainInputBuilder {
             subnet_ids: self.subnet_ids,
             app_network_access_type: self.app_network_access_type,
             tag_propagation: self.tag_propagation,
+            home_efs_file_system_creation: self.home_efs_file_system_creation,
             vpc_id: self.vpc_id,
         })
     }

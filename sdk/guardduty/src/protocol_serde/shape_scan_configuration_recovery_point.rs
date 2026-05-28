@@ -22,6 +22,11 @@ where
                                     .transpose()?,
                             );
                         }
+                        "continuousScanDetails" => {
+                            builder = builder.set_continuous_scan_details(
+                                    crate::protocol_serde::shape_scan_configuration_continuous_scan_details::de_scan_configuration_continuous_scan_details(tokens, _value)?
+                                );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

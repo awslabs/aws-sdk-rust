@@ -37,8 +37,11 @@ pub struct GetResponderGatewayOutput {
     pub active_links_count: ::std::option::Option<i32>,
     /// <p>The total count of links for the responder gateway.</p>
     pub total_links_count: ::std::option::Option<i32>,
-    /// <p>The count of inbound links for the responder gateway.</p>
+    /// <p>Deprecated. Use 'linksRequestedCount' instead.</p>
+    #[deprecated(note = "Use linksRequestedCount instead", since = "2026-05-11")]
     pub inbound_links_count: ::std::option::Option<i32>,
+    /// <p>The count of requested links waiting for the responder gateway to accept or reject.</p>
+    pub links_requested_count: ::std::option::Option<i32>,
     /// <p>The type of gateway. Valid values are <code>EXTERNAL</code> or <code>INTERNAL</code>.</p>
     pub gateway_type: ::std::option::Option<crate::types::GatewayType>,
     /// <p>The external inbound endpoint for the responder gateway.</p>
@@ -118,9 +121,14 @@ impl GetResponderGatewayOutput {
     pub fn total_links_count(&self) -> ::std::option::Option<i32> {
         self.total_links_count
     }
-    /// <p>The count of inbound links for the responder gateway.</p>
+    /// <p>Deprecated. Use 'linksRequestedCount' instead.</p>
+    #[deprecated(note = "Use linksRequestedCount instead", since = "2026-05-11")]
     pub fn inbound_links_count(&self) -> ::std::option::Option<i32> {
         self.inbound_links_count
+    }
+    /// <p>The count of requested links waiting for the responder gateway to accept or reject.</p>
+    pub fn links_requested_count(&self) -> ::std::option::Option<i32> {
+        self.links_requested_count
     }
     /// <p>The type of gateway. Valid values are <code>EXTERNAL</code> or <code>INTERNAL</code>.</p>
     pub fn gateway_type(&self) -> ::std::option::Option<&crate::types::GatewayType> {
@@ -165,6 +173,7 @@ pub struct GetResponderGatewayOutputBuilder {
     pub(crate) active_links_count: ::std::option::Option<i32>,
     pub(crate) total_links_count: ::std::option::Option<i32>,
     pub(crate) inbound_links_count: ::std::option::Option<i32>,
+    pub(crate) links_requested_count: ::std::option::Option<i32>,
     pub(crate) gateway_type: ::std::option::Option<crate::types::GatewayType>,
     pub(crate) external_inbound_endpoint: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -431,19 +440,36 @@ impl GetResponderGatewayOutputBuilder {
     pub fn get_total_links_count(&self) -> &::std::option::Option<i32> {
         &self.total_links_count
     }
-    /// <p>The count of inbound links for the responder gateway.</p>
+    /// <p>Deprecated. Use 'linksRequestedCount' instead.</p>
+    #[deprecated(note = "Use linksRequestedCount instead", since = "2026-05-11")]
     pub fn inbound_links_count(mut self, input: i32) -> Self {
         self.inbound_links_count = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The count of inbound links for the responder gateway.</p>
+    /// <p>Deprecated. Use 'linksRequestedCount' instead.</p>
+    #[deprecated(note = "Use linksRequestedCount instead", since = "2026-05-11")]
     pub fn set_inbound_links_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inbound_links_count = input;
         self
     }
-    /// <p>The count of inbound links for the responder gateway.</p>
+    /// <p>Deprecated. Use 'linksRequestedCount' instead.</p>
+    #[deprecated(note = "Use linksRequestedCount instead", since = "2026-05-11")]
     pub fn get_inbound_links_count(&self) -> &::std::option::Option<i32> {
         &self.inbound_links_count
+    }
+    /// <p>The count of requested links waiting for the responder gateway to accept or reject.</p>
+    pub fn links_requested_count(mut self, input: i32) -> Self {
+        self.links_requested_count = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The count of requested links waiting for the responder gateway to accept or reject.</p>
+    pub fn set_links_requested_count(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.links_requested_count = input;
+        self
+    }
+    /// <p>The count of requested links waiting for the responder gateway to accept or reject.</p>
+    pub fn get_links_requested_count(&self) -> &::std::option::Option<i32> {
+        &self.links_requested_count
     }
     /// <p>The type of gateway. Valid values are <code>EXTERNAL</code> or <code>INTERNAL</code>.</p>
     pub fn gateway_type(mut self, input: crate::types::GatewayType) -> Self {
@@ -549,6 +575,7 @@ impl GetResponderGatewayOutputBuilder {
             active_links_count: self.active_links_count,
             total_links_count: self.total_links_count,
             inbound_links_count: self.inbound_links_count,
+            links_requested_count: self.links_requested_count,
             gateway_type: self.gateway_type,
             external_inbound_endpoint: self.external_inbound_endpoint,
             _request_id: self._request_id,

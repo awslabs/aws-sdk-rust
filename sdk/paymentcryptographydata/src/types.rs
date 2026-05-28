@@ -7,6 +7,10 @@ pub use crate::types::_as2805_kek_validation_type::As2805KekValidationType;
 
 pub use crate::types::_random_key_send_variant_mask::RandomKeySendVariantMask;
 
+pub use crate::types::_major_key_derivation_mode::MajorKeyDerivationMode;
+
+pub use crate::types::_session_key_derivation::SessionKeyDerivation;
+
 pub use crate::types::_card_generation_attributes::CardGenerationAttributes;
 
 pub use crate::types::_mac_attributes::MacAttributes;
@@ -39,10 +43,6 @@ pub use crate::types::_dukpt_derivation_attributes::DukptDerivationAttributes;
 
 pub use crate::types::_as2805_pek_derivation_attributes::As2805PekDerivationAttributes;
 
-pub use crate::types::_major_key_derivation_mode::MajorKeyDerivationMode;
-
-pub use crate::types::_session_key_derivation::SessionKeyDerivation;
-
 pub use crate::types::_cryptogram_auth_response::CryptogramAuthResponse;
 
 pub use crate::types::_verification_failed_reason::VerificationFailedReason;
@@ -68,6 +68,16 @@ pub use crate::types::_validation_exception_field::ValidationExceptionField;
 pub use crate::types::_kek_validation_request::KekValidationRequest;
 
 pub use crate::types::_kek_validation_response::KekValidationResponse;
+
+pub use crate::types::_session_key_emv_common::SessionKeyEmvCommon;
+
+pub use crate::types::_session_key_mastercard::SessionKeyMastercard;
+
+pub use crate::types::_session_key_emv2000::SessionKeyEmv2000;
+
+pub use crate::types::_session_key_amex::SessionKeyAmex;
+
+pub use crate::types::_session_key_visa::SessionKeyVisa;
 
 pub use crate::types::_amex_card_security_code_version1::AmexCardSecurityCodeVersion1;
 
@@ -127,16 +137,6 @@ pub use crate::types::_dukpt_derivation_type::DukptDerivationType;
 
 pub use crate::types::_dukpt_key_variant::DukptKeyVariant;
 
-pub use crate::types::_session_key_emv_common::SessionKeyEmvCommon;
-
-pub use crate::types::_session_key_mastercard::SessionKeyMastercard;
-
-pub use crate::types::_session_key_emv2000::SessionKeyEmv2000;
-
-pub use crate::types::_session_key_amex::SessionKeyAmex;
-
-pub use crate::types::_session_key_visa::SessionKeyVisa;
-
 pub use crate::types::_cryptogram_verification_arpc_method1::CryptogramVerificationArpcMethod1;
 
 pub use crate::types::_cryptogram_verification_arpc_method2::CryptogramVerificationArpcMethod2;
@@ -160,6 +160,8 @@ pub use crate::types::_emv_encryption_mode::EmvEncryptionMode;
 pub use crate::types::_ecdh_derivation_attributes::EcdhDerivationAttributes;
 
 pub use crate::types::_symmetric_key_algorithm::SymmetricKeyAlgorithm;
+
+pub use crate::types::_random_key_max_length::RandomKeyMaxLength;
 
 pub use crate::types::_session_key_derivation_mode::SessionKeyDerivationMode;
 
@@ -300,6 +302,8 @@ mod _pin_data;
 mod _pin_generation_attributes;
 
 mod _pin_verification_attributes;
+
+mod _random_key_max_length;
 
 mod _random_key_send_variant_mask;
 

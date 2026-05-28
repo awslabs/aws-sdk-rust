@@ -36,15 +36,15 @@
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 ///
-/// Type of goal based on its origin
+/// <p>Type of goal based on its origin</p>
 #[non_exhaustive]
 #[derive(
     ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum GoalType {
-    /// Goal defined by customer
+    /// <p>Goal defined by customer</p>
     CustomerDefined,
-    /// Goal related to on-call reporting activities
+    /// <p>Goal related to on-call reporting activities</p>
     OncallReport,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]

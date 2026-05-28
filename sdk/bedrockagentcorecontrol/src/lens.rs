@@ -89,6 +89,36 @@ pub(crate) fn reflens_list_configuration_bundles_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_dataset_examples_output_output_next_token(
+    input: &crate::operation::list_dataset_examples::ListDatasetExamplesOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_dataset_versions_output_output_next_token(
+    input: &crate::operation::list_dataset_versions::ListDatasetVersionsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_datasets_output_output_next_token(
+    input: &crate::operation::list_datasets::ListDatasetsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_evaluators_output_output_next_token(
     input: &crate::operation::list_evaluators::ListEvaluatorsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -359,6 +389,27 @@ pub(crate) fn lens_list_configuration_bundles_output_output_bundles(
     input: crate::operation::list_configuration_bundles::ListConfigurationBundlesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ConfigurationBundleSummary>> {
     let input = input.bundles;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_dataset_examples_output_output_examples(
+    input: crate::operation::list_dataset_examples::ListDatasetExamplesOutput,
+) -> ::std::option::Option<::std::vec::Vec<::aws_smithy_types::Document>> {
+    let input = input.examples;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_dataset_versions_output_output_versions(
+    input: crate::operation::list_dataset_versions::ListDatasetVersionsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::DatasetVersionSummary>> {
+    let input = input.versions;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_datasets_output_output_datasets(
+    input: crate::operation::list_datasets::ListDatasetsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::DatasetSummary>> {
+    let input = input.datasets;
     ::std::option::Option::Some(input)
 }
 

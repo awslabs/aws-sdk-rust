@@ -22,7 +22,7 @@ impl crate::operation::get_resource_payment_token::builders::GetResourcePaymentT
 }
 /// Fluent builder constructing a request to `GetResourcePaymentToken`.
 ///
-/// Generates authentication tokens for payment providers that use vendor-specific authentication mechanisms.
+/// <p>Generates authentication tokens for payment providers that use vendor-specific authentication mechanisms.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetResourcePaymentTokenFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,45 +108,45 @@ impl GetResourcePaymentTokenFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// Workload access token for authorization. Named workloadIdentityToken for consistency with APIKey and OAuth2CredentialProvider.
+    /// <p>Workload access token for authorization.</p>
     pub fn workload_identity_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.workload_identity_token(input.into());
         self
     }
-    /// Workload access token for authorization. Named workloadIdentityToken for consistency with APIKey and OAuth2CredentialProvider.
+    /// <p>Workload access token for authorization.</p>
     pub fn set_workload_identity_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_workload_identity_token(input);
         self
     }
-    /// Workload access token for authorization. Named workloadIdentityToken for consistency with APIKey and OAuth2CredentialProvider.
+    /// <p>Workload access token for authorization.</p>
     pub fn get_workload_identity_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_workload_identity_token()
     }
-    /// Name of the payment credential provider to use
+    /// <p>Name of the payment credential provider to use.</p>
     pub fn resource_credential_provider_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_credential_provider_name(input.into());
         self
     }
-    /// Name of the payment credential provider to use
+    /// <p>Name of the payment credential provider to use.</p>
     pub fn set_resource_credential_provider_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_credential_provider_name(input);
         self
     }
-    /// Name of the payment credential provider to use
+    /// <p>Name of the payment credential provider to use.</p>
     pub fn get_resource_credential_provider_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_resource_credential_provider_name()
     }
-    /// Vendor-specific token request input Contains all request parameters in a type-safe, vendor-specific structure
+    /// <p>Vendor-specific token request input. Contains all request parameters in a type-safe, vendor-specific structure.</p>
     pub fn payment_token_request(mut self, input: crate::types::PaymentTokenRequestInput) -> Self {
         self.inner = self.inner.payment_token_request(input);
         self
     }
-    /// Vendor-specific token request input Contains all request parameters in a type-safe, vendor-specific structure
+    /// <p>Vendor-specific token request input. Contains all request parameters in a type-safe, vendor-specific structure.</p>
     pub fn set_payment_token_request(mut self, input: ::std::option::Option<crate::types::PaymentTokenRequestInput>) -> Self {
         self.inner = self.inner.set_payment_token_request(input);
         self
     }
-    /// Vendor-specific token request input Contains all request parameters in a type-safe, vendor-specific structure
+    /// <p>Vendor-specific token request input. Contains all request parameters in a type-safe, vendor-specific structure.</p>
     pub fn get_payment_token_request(&self) -> &::std::option::Option<crate::types::PaymentTokenRequestInput> {
         self.inner.get_payment_token_request()
     }

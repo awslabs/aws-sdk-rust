@@ -111,6 +111,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "mlModelInferencePayerAccountId" => {
+                            builder = builder.set_ml_model_inference_payer_account_id(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         "createTime" => {
                             builder = builder.set_create_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                                 tokens.next(),

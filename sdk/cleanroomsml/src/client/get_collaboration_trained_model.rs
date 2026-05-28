@@ -25,6 +25,7 @@ impl super::Client {
     ///   - [`logs_status(Option<LogsStatus>)`](crate::operation::get_collaboration_trained_model::GetCollaborationTrainedModelOutput::logs_status): <p>Status information for the logs.</p>
     ///   - [`logs_status_details(Option<String>)`](crate::operation::get_collaboration_trained_model::GetCollaborationTrainedModelOutput::logs_status_details): <p>Details about the status information for the logs.</p>
     ///   - [`training_container_image_digest(Option<String>)`](crate::operation::get_collaboration_trained_model::GetCollaborationTrainedModelOutput::training_container_image_digest): <p>Information about the training container image.</p>
+    ///   - [`ml_model_training_payer_account_id(Option<String>)`](crate::operation::get_collaboration_trained_model::GetCollaborationTrainedModelOutput::ml_model_training_payer_account_id): <p>The account ID of the member that is responsible for paying for model training costs.</p>
     ///   - [`create_time(DateTime)`](crate::operation::get_collaboration_trained_model::GetCollaborationTrainedModelOutput::create_time): <p>The time at which the trained model was created.</p>
     ///   - [`update_time(DateTime)`](crate::operation::get_collaboration_trained_model::GetCollaborationTrainedModelOutput::update_time): <p>The most recent time at which the trained model was updated.</p>
     ///   - [`creator_account_id(String)`](crate::operation::get_collaboration_trained_model::GetCollaborationTrainedModelOutput::creator_account_id): <p>The account ID of the member that created the trained model.</p>

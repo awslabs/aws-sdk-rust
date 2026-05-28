@@ -1383,6 +1383,10 @@ pub(crate) mod shape_describe_ipam_policies;
 
 pub(crate) mod shape_describe_ipam_policies_input;
 
+pub(crate) mod shape_describe_ipam_pool_allocations;
+
+pub(crate) mod shape_describe_ipam_pool_allocations_input;
+
 pub(crate) mod shape_describe_ipam_pools;
 
 pub(crate) mod shape_describe_ipam_pools_input;
@@ -2552,6 +2556,10 @@ pub(crate) mod shape_modify_ipam_policy_allocation_rules;
 pub(crate) mod shape_modify_ipam_policy_allocation_rules_input;
 
 pub(crate) mod shape_modify_ipam_pool;
+
+pub(crate) mod shape_modify_ipam_pool_allocation;
+
+pub(crate) mod shape_modify_ipam_pool_allocation_input;
 
 pub(crate) mod shape_modify_ipam_pool_input;
 

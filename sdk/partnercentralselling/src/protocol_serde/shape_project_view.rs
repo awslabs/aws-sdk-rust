@@ -23,6 +23,11 @@ where
                                 crate::protocol_serde::shape_expected_customer_spend_list::de_expected_customer_spend_list(tokens, _value)?,
                             );
                         }
+                        "ExpectedContractDuration" => {
+                            builder = builder.set_expected_contract_duration(
+                                crate::protocol_serde::shape_expected_contract_duration::de_expected_contract_duration(tokens, _value)?,
+                            );
+                        }
                         "CustomerUseCase" => {
                             builder = builder.set_customer_use_case(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

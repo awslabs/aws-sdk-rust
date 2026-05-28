@@ -166,6 +166,9 @@ pub(crate) fn de_get_control(
                             .transpose()?,
                     );
                 }
+                "GovernedProviders" => {
+                    builder = builder.set_governed_providers(crate::protocol_serde::shape_governed_providers::de_governed_providers(tokens, _value)?);
+                }
                 "GovernedResources" => {
                     builder = builder.set_governed_resources(crate::protocol_serde::shape_governed_resources::de_governed_resources(tokens, _value)?);
                 }
@@ -178,6 +181,13 @@ pub(crate) fn de_get_control(
                     builder = builder.set_name(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
+                "ParameterRequirementSummary" => {
+                    builder = builder.set_parameter_requirement_summary(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| crate::types::ParameterRequirementSummary::from(u.as_ref())))
                             .transpose()?,
                     );
                 }

@@ -39,6 +39,7 @@ impl crate::operation::accept_handshake::builders::AcceptHandshakeInputBuilder {
 /// <p>Approve all features request (<code>ENABLE_ALL_FEATURES</code>)</p></li>
 /// </ul>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_accept-decline-invite.html">Responding to invitations</a> and <a href="https://docs.aws.amazon.com/organizations/latest/userguide/manage-begin-all-features-standard-migration.html#manage-approve-all-features-invite">Enabling all features</a> in the <i>Organizations User Guide</i>.</p>
+/// <p>When a handshake is accepted, Organizations logs membership events in CloudTrail, available only in the management account's event history. If the account was standalone and joined a new organization, an <code>AccountJoinedOrganization</code> event is logged with <code>joinedMethod:Invited</code> and <code>joinedTime</code> fields. If the account departed one organization and joined another, both an <code>AccountDepartedOrganization</code> event with <code>departedMethod:Left</code> and <code>departedTime</code> and an <code>AccountJoinedOrganization</code> event with <code>joinedMethod:Invited</code> and <code>joinedTime</code> are logged in their respective management accounts.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AcceptHandshakeFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
