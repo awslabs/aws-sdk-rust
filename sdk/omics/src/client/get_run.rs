@@ -46,6 +46,7 @@ impl super::Client {
     ///   - [`networking_mode(Option<NetworkingMode>)`](crate::operation::get_run::GetRunOutput::networking_mode): <p>Configuration for run networking behavior. If absent, this will default to RESTRICTED.</p>
     ///   - [`configuration(Option<ConfigurationDetails>)`](crate::operation::get_run::GetRunOutput::configuration): <p>Configuration details for the workflow run.</p>
     ///   - [`vpc_config(Option<VpcConfigResponse>)`](crate::operation::get_run::GetRunOutput::vpc_config): <p>VPC configuration for the workflow run.</p>
+    ///   - [`engine_settings(Option<Document>)`](crate::operation::get_run::GetRunOutput::engine_settings): <p>The engine-specific settings for the workflow run.</p>
     /// - On failure, responds with [`SdkError<GetRunError>`](crate::operation::get_run::GetRunError)
     pub fn get_run(&self) -> crate::operation::get_run::builders::GetRunFluentBuilder {
         crate::operation::get_run::builders::GetRunFluentBuilder::new(self.handle.clone())

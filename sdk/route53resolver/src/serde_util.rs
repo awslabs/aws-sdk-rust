@@ -17,3 +17,72 @@ pub(crate) fn tag_correct_errors(mut builder: crate::types::builders::TagBuilder
     }
     builder
 }
+
+pub(crate) fn create_firewall_rule_entry_correct_errors(
+    mut builder: crate::types::builders::CreateFirewallRuleEntryBuilder,
+) -> crate::types::builders::CreateFirewallRuleEntryBuilder {
+    if builder.creator_request_id.is_none() {
+        builder.creator_request_id = Some(Default::default())
+    }
+    if builder.firewall_rule_group_id.is_none() {
+        builder.firewall_rule_group_id = Some(Default::default())
+    }
+    if builder.priority.is_none() {
+        builder.priority = Some(Default::default())
+    }
+    if builder.action.is_none() {
+        builder.action = "no value was set".parse::<crate::types::Action>().ok()
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn delete_firewall_rule_entry_correct_errors(
+    mut builder: crate::types::builders::DeleteFirewallRuleEntryBuilder,
+) -> crate::types::builders::DeleteFirewallRuleEntryBuilder {
+    if builder.firewall_rule_group_id.is_none() {
+        builder.firewall_rule_group_id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn dns_threat_protection_rule_type_config_correct_errors(
+    mut builder: crate::types::builders::DnsThreatProtectionRuleTypeConfigBuilder,
+) -> crate::types::builders::DnsThreatProtectionRuleTypeConfigBuilder {
+    if builder.value.is_none() {
+        builder.value = Some(Default::default())
+    }
+    if builder.confidence_threshold.is_none() {
+        builder.confidence_threshold = "no value was set".parse::<crate::types::ConfidenceThreshold>().ok()
+    }
+    builder
+}
+
+pub(crate) fn firewall_advanced_content_category_config_correct_errors(
+    mut builder: crate::types::builders::FirewallAdvancedContentCategoryConfigBuilder,
+) -> crate::types::builders::FirewallAdvancedContentCategoryConfigBuilder {
+    if builder.category.is_none() {
+        builder.category = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn firewall_advanced_threat_category_config_correct_errors(
+    mut builder: crate::types::builders::FirewallAdvancedThreatCategoryConfigBuilder,
+) -> crate::types::builders::FirewallAdvancedThreatCategoryConfigBuilder {
+    if builder.category.is_none() {
+        builder.category = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn update_firewall_rule_entry_correct_errors(
+    mut builder: crate::types::builders::UpdateFirewallRuleEntryBuilder,
+) -> crate::types::builders::UpdateFirewallRuleEntryBuilder {
+    if builder.firewall_rule_group_id.is_none() {
+        builder.firewall_rule_group_id = Some(Default::default())
+    }
+    builder
+}

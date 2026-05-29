@@ -77,7 +77,7 @@ pub struct CreateFirewallRuleInput {
     /// <li>
     /// <p>TXT: Verifies email senders and application-specific values.</p></li>
     /// <li>
-    /// <p>A query type you define by using the DNS type ID, for example 28 for AAAA. The values must be defined as TYPENUMBER, where the NUMBER can be 1-65334, for example, TYPE28. For more information, see <a href="https://en.wikipedia.org/wiki/List_of_DNS_record_types">List of DNS record types</a>.</p></li>
+    /// <p>A query type you define by using the DNS type ID, for example 28 for AAAA. The values must be defined as TYPENUMBER, where the NUMBER can be 1-65534, for example, TYPE28. For more information, see <a href="https://en.wikipedia.org/wiki/List_of_DNS_record_types">List of DNS record types</a>.</p></li>
     /// </ul>
     pub qtype: ::std::option::Option<::std::string::String>,
     /// <p>Use to create a DNS Firewall Advanced rule.</p>
@@ -92,6 +92,8 @@ pub struct CreateFirewallRuleInput {
     /// <p><code>HIGH</code>: Detects only the most well corroborated threats with a low rate of false positives.</p></li>
     /// </ul>
     pub confidence_threshold: ::std::option::Option<crate::types::ConfidenceThreshold>,
+    /// <p>The rule type configuration for the firewall rule. This setting is mutually exclusive with the top-level <code>FirewallDomainListId</code> and <code>DnsThreatProtection</code> fields.</p>
+    pub firewall_rule_type: ::std::option::Option<crate::types::FirewallRuleType>,
 }
 impl CreateFirewallRuleInput {
     /// <p>A unique string that identifies the request and that allows you to retry failed requests without the risk of running the operation twice. <code>CreatorRequestId</code> can be any unique string, for example, a date/time stamp.</p>
@@ -190,7 +192,7 @@ impl CreateFirewallRuleInput {
     /// <li>
     /// <p>TXT: Verifies email senders and application-specific values.</p></li>
     /// <li>
-    /// <p>A query type you define by using the DNS type ID, for example 28 for AAAA. The values must be defined as TYPENUMBER, where the NUMBER can be 1-65334, for example, TYPE28. For more information, see <a href="https://en.wikipedia.org/wiki/List_of_DNS_record_types">List of DNS record types</a>.</p></li>
+    /// <p>A query type you define by using the DNS type ID, for example 28 for AAAA. The values must be defined as TYPENUMBER, where the NUMBER can be 1-65534, for example, TYPE28. For more information, see <a href="https://en.wikipedia.org/wiki/List_of_DNS_record_types">List of DNS record types</a>.</p></li>
     /// </ul>
     pub fn qtype(&self) -> ::std::option::Option<&str> {
         self.qtype.as_deref()
@@ -210,6 +212,10 @@ impl CreateFirewallRuleInput {
     /// </ul>
     pub fn confidence_threshold(&self) -> ::std::option::Option<&crate::types::ConfidenceThreshold> {
         self.confidence_threshold.as_ref()
+    }
+    /// <p>The rule type configuration for the firewall rule. This setting is mutually exclusive with the top-level <code>FirewallDomainListId</code> and <code>DnsThreatProtection</code> fields.</p>
+    pub fn firewall_rule_type(&self) -> ::std::option::Option<&crate::types::FirewallRuleType> {
+        self.firewall_rule_type.as_ref()
     }
 }
 impl CreateFirewallRuleInput {
@@ -237,6 +243,7 @@ pub struct CreateFirewallRuleInputBuilder {
     pub(crate) qtype: ::std::option::Option<::std::string::String>,
     pub(crate) dns_threat_protection: ::std::option::Option<crate::types::DnsThreatProtection>,
     pub(crate) confidence_threshold: ::std::option::Option<crate::types::ConfidenceThreshold>,
+    pub(crate) firewall_rule_type: ::std::option::Option<crate::types::FirewallRuleType>,
 }
 impl CreateFirewallRuleInputBuilder {
     /// <p>A unique string that identifies the request and that allows you to retry failed requests without the risk of running the operation twice. <code>CreatorRequestId</code> can be any unique string, for example, a date/time stamp.</p>
@@ -496,7 +503,7 @@ impl CreateFirewallRuleInputBuilder {
     /// <li>
     /// <p>TXT: Verifies email senders and application-specific values.</p></li>
     /// <li>
-    /// <p>A query type you define by using the DNS type ID, for example 28 for AAAA. The values must be defined as TYPENUMBER, where the NUMBER can be 1-65334, for example, TYPE28. For more information, see <a href="https://en.wikipedia.org/wiki/List_of_DNS_record_types">List of DNS record types</a>.</p></li>
+    /// <p>A query type you define by using the DNS type ID, for example 28 for AAAA. The values must be defined as TYPENUMBER, where the NUMBER can be 1-65534, for example, TYPE28. For more information, see <a href="https://en.wikipedia.org/wiki/List_of_DNS_record_types">List of DNS record types</a>.</p></li>
     /// </ul>
     pub fn qtype(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.qtype = ::std::option::Option::Some(input.into());
@@ -531,7 +538,7 @@ impl CreateFirewallRuleInputBuilder {
     /// <li>
     /// <p>TXT: Verifies email senders and application-specific values.</p></li>
     /// <li>
-    /// <p>A query type you define by using the DNS type ID, for example 28 for AAAA. The values must be defined as TYPENUMBER, where the NUMBER can be 1-65334, for example, TYPE28. For more information, see <a href="https://en.wikipedia.org/wiki/List_of_DNS_record_types">List of DNS record types</a>.</p></li>
+    /// <p>A query type you define by using the DNS type ID, for example 28 for AAAA. The values must be defined as TYPENUMBER, where the NUMBER can be 1-65534, for example, TYPE28. For more information, see <a href="https://en.wikipedia.org/wiki/List_of_DNS_record_types">List of DNS record types</a>.</p></li>
     /// </ul>
     pub fn set_qtype(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.qtype = input;
@@ -566,7 +573,7 @@ impl CreateFirewallRuleInputBuilder {
     /// <li>
     /// <p>TXT: Verifies email senders and application-specific values.</p></li>
     /// <li>
-    /// <p>A query type you define by using the DNS type ID, for example 28 for AAAA. The values must be defined as TYPENUMBER, where the NUMBER can be 1-65334, for example, TYPE28. For more information, see <a href="https://en.wikipedia.org/wiki/List_of_DNS_record_types">List of DNS record types</a>.</p></li>
+    /// <p>A query type you define by using the DNS type ID, for example 28 for AAAA. The values must be defined as TYPENUMBER, where the NUMBER can be 1-65534, for example, TYPE28. For more information, see <a href="https://en.wikipedia.org/wiki/List_of_DNS_record_types">List of DNS record types</a>.</p></li>
     /// </ul>
     pub fn get_qtype(&self) -> &::std::option::Option<::std::string::String> {
         &self.qtype
@@ -623,6 +630,20 @@ impl CreateFirewallRuleInputBuilder {
     pub fn get_confidence_threshold(&self) -> &::std::option::Option<crate::types::ConfidenceThreshold> {
         &self.confidence_threshold
     }
+    /// <p>The rule type configuration for the firewall rule. This setting is mutually exclusive with the top-level <code>FirewallDomainListId</code> and <code>DnsThreatProtection</code> fields.</p>
+    pub fn firewall_rule_type(mut self, input: crate::types::FirewallRuleType) -> Self {
+        self.firewall_rule_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The rule type configuration for the firewall rule. This setting is mutually exclusive with the top-level <code>FirewallDomainListId</code> and <code>DnsThreatProtection</code> fields.</p>
+    pub fn set_firewall_rule_type(mut self, input: ::std::option::Option<crate::types::FirewallRuleType>) -> Self {
+        self.firewall_rule_type = input;
+        self
+    }
+    /// <p>The rule type configuration for the firewall rule. This setting is mutually exclusive with the top-level <code>FirewallDomainListId</code> and <code>DnsThreatProtection</code> fields.</p>
+    pub fn get_firewall_rule_type(&self) -> &::std::option::Option<crate::types::FirewallRuleType> {
+        &self.firewall_rule_type
+    }
     /// Consumes the builder and constructs a [`CreateFirewallRuleInput`](crate::operation::create_firewall_rule::CreateFirewallRuleInput).
     pub fn build(
         self,
@@ -643,6 +664,7 @@ impl CreateFirewallRuleInputBuilder {
             qtype: self.qtype,
             dns_threat_protection: self.dns_threat_protection,
             confidence_threshold: self.confidence_threshold,
+            firewall_rule_type: self.firewall_rule_type,
         })
     }
 }

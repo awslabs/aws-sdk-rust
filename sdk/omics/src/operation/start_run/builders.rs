@@ -436,4 +436,18 @@ impl StartRunFluentBuilder {
     pub fn get_configuration_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_configuration_name()
     }
+    /// <p>Engine-specific settings for the workflow run. Use this field to specify configuration options that are specific to the workflow engine (for example, Nextflow profiles).</p>
+    pub fn engine_settings(mut self, input: ::aws_smithy_types::Document) -> Self {
+        self.inner = self.inner.engine_settings(input);
+        self
+    }
+    /// <p>Engine-specific settings for the workflow run. Use this field to specify configuration options that are specific to the workflow engine (for example, Nextflow profiles).</p>
+    pub fn set_engine_settings(mut self, input: ::std::option::Option<::aws_smithy_types::Document>) -> Self {
+        self.inner = self.inner.set_engine_settings(input);
+        self
+    }
+    /// <p>Engine-specific settings for the workflow run. Use this field to specify configuration options that are specific to the workflow engine (for example, Nextflow profiles).</p>
+    pub fn get_engine_settings(&self) -> &::std::option::Option<::aws_smithy_types::Document> {
+        self.inner.get_engine_settings()
+    }
 }

@@ -2,7 +2,10 @@
 pub(crate) fn de_array_of_array<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
-) -> ::std::result::Result<Option<::std::vec::Vec<crate::types::ArrayValue>>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<
+    Option<::std::vec::Vec<::std::option::Option<crate::types::ArrayValue>>>,
+    ::aws_smithy_json::deserialize::error::DeserializeError,
+>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
@@ -17,14 +20,7 @@ where
                         break;
                     }
                     _ => {
-                        let value = crate::protocol_serde::shape_array_value::de_array_value(tokens, _value)?;
-                        if let Some(value) = value {
-                            items.push(value);
-                        } else {
-                            return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                "dense list cannot contain null values",
-                            ));
-                        }
+                        items.push(crate::protocol_serde::shape_array_value::de_array_value(tokens, _value)?);
                     }
                 }
             }

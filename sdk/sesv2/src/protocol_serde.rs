@@ -215,6 +215,8 @@ pub(crate) mod shape_put_email_identity_mail_from_attributes;
 
 pub(crate) mod shape_put_suppressed_destination;
 
+pub(crate) mod shape_put_tenant_suppression_attributes;
+
 pub(crate) mod shape_send_bulk_email;
 
 pub(crate) mod shape_send_custom_verification_email;
@@ -372,6 +374,8 @@ pub(crate) mod shape_put_email_identity_feedback_attributes_input;
 pub(crate) mod shape_put_email_identity_mail_from_attributes_input;
 
 pub(crate) mod shape_put_suppressed_destination_input;
+
+pub(crate) mod shape_put_tenant_suppression_attributes_input;
 
 pub(crate) mod shape_send_bulk_email_input;
 
@@ -552,6 +556,8 @@ pub(crate) mod shape_tenant;
 pub(crate) mod shape_tenant_info_list;
 
 pub(crate) mod shape_tenant_resource_list;
+
+pub(crate) mod shape_tenant_suppression_attributes;
 
 pub(crate) mod shape_topic;
 

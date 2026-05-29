@@ -15,32 +15,41 @@ pub fn ser_custom_oauth2_provider_config_input(
     {
         object.key("clientSecret").string(input.client_secret.as_str());
     }
-    if let Some(var_3) = &input.private_endpoint {
+    if let Some(var_3) = &input.client_secret_config {
         #[allow(unused_mut)]
-        let mut object_4 = object.key("privateEndpoint").start_object();
-        crate::protocol_serde::shape_private_endpoint::ser_private_endpoint(&mut object_4, var_3)?;
+        let mut object_4 = object.key("clientSecretConfig").start_object();
+        crate::protocol_serde::shape_secret_reference::ser_secret_reference(&mut object_4, var_3)?;
         object_4.finish();
     }
-    if let Some(var_5) = &input.private_endpoint_overrides {
-        let mut array_6 = object.key("privateEndpointOverrides").start_array();
-        for item_7 in var_5 {
-            {
-                #[allow(unused_mut)]
-                let mut object_8 = array_6.value().start_object();
-                crate::protocol_serde::shape_private_endpoint_override::ser_private_endpoint_override(&mut object_8, item_7)?;
-                object_8.finish();
-            }
-        }
-        array_6.finish();
+    if let Some(var_5) = &input.client_secret_source {
+        object.key("clientSecretSource").string(var_5.as_str());
     }
-    if let Some(var_9) = &input.on_behalf_of_token_exchange_config {
+    if let Some(var_6) = &input.on_behalf_of_token_exchange_config {
         #[allow(unused_mut)]
-        let mut object_10 = object.key("onBehalfOfTokenExchangeConfig").start_object();
-        crate::protocol_serde::shape_on_behalf_of_token_exchange_config_type::ser_on_behalf_of_token_exchange_config_type(&mut object_10, var_9)?;
+        let mut object_7 = object.key("onBehalfOfTokenExchangeConfig").start_object();
+        crate::protocol_serde::shape_on_behalf_of_token_exchange_config_type::ser_on_behalf_of_token_exchange_config_type(&mut object_7, var_6)?;
+        object_7.finish();
+    }
+    if let Some(var_8) = &input.client_authentication_method {
+        object.key("clientAuthenticationMethod").string(var_8.as_str());
+    }
+    if let Some(var_9) = &input.private_endpoint {
+        #[allow(unused_mut)]
+        let mut object_10 = object.key("privateEndpoint").start_object();
+        crate::protocol_serde::shape_private_endpoint::ser_private_endpoint(&mut object_10, var_9)?;
         object_10.finish();
     }
-    if let Some(var_11) = &input.client_authentication_method {
-        object.key("clientAuthenticationMethod").string(var_11.as_str());
+    if let Some(var_11) = &input.private_endpoint_overrides {
+        let mut array_12 = object.key("privateEndpointOverrides").start_array();
+        for item_13 in var_11 {
+            {
+                #[allow(unused_mut)]
+                let mut object_14 = array_12.value().start_object();
+                crate::protocol_serde::shape_private_endpoint_override::ser_private_endpoint_override(&mut object_14, item_13)?;
+                object_14.finish();
+            }
+        }
+        array_12.finish();
     }
     Ok(())
 }

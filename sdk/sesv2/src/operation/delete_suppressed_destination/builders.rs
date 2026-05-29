@@ -22,7 +22,7 @@ impl crate::operation::delete_suppressed_destination::builders::DeleteSuppressed
 }
 /// Fluent builder constructing a request to `DeleteSuppressedDestination`.
 ///
-/// <p>Removes an email address from the suppression list for your account.</p>
+/// <p>Removes an email address from the suppression list for your account or for a specific tenant. To target a tenant's suppression list, specify the <code>TenantName</code> parameter. If you omit <code>TenantName</code>, the address is removed from the account-level suppression list.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteSuppressedDestinationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,18 +108,32 @@ impl DeleteSuppressedDestinationFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The suppressed email destination to remove from the account suppression list.</p>
+    /// <p>The suppressed email destination to remove from the suppression list for your account or for the specified tenant.</p>
     pub fn email_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.email_address(input.into());
         self
     }
-    /// <p>The suppressed email destination to remove from the account suppression list.</p>
+    /// <p>The suppressed email destination to remove from the suppression list for your account or for the specified tenant.</p>
     pub fn set_email_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_email_address(input);
         self
     }
-    /// <p>The suppressed email destination to remove from the account suppression list.</p>
+    /// <p>The suppressed email destination to remove from the suppression list for your account or for the specified tenant.</p>
     pub fn get_email_address(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_email_address()
+    }
+    /// <p>The name of the tenant whose suppression list you want to remove the address from. If you omit this parameter, the address is removed from the account-level suppression list.</p>
+    pub fn tenant_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.tenant_name(input.into());
+        self
+    }
+    /// <p>The name of the tenant whose suppression list you want to remove the address from. If you omit this parameter, the address is removed from the account-level suppression list.</p>
+    pub fn set_tenant_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_tenant_name(input);
+        self
+    }
+    /// <p>The name of the tenant whose suppression list you want to remove the address from. If you omit this parameter, the address is removed from the account-level suppression list.</p>
+    pub fn get_tenant_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_tenant_name()
     }
 }

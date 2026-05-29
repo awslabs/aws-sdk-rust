@@ -197,17 +197,17 @@ impl CreateConfigurationSetFluentBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         self.inner.get_tags()
     }
-    /// <p>An object that contains information about the suppression list preferences for your account.</p>
+    /// <p>An object that contains information about the suppression list preferences for the configuration set. You can optionally include a <code>SuppressionScope</code> to override the tenant or account suppression scope for emails sent using this configuration set.</p>
     pub fn suppression_options(mut self, input: crate::types::SuppressionOptions) -> Self {
         self.inner = self.inner.suppression_options(input);
         self
     }
-    /// <p>An object that contains information about the suppression list preferences for your account.</p>
+    /// <p>An object that contains information about the suppression list preferences for the configuration set. You can optionally include a <code>SuppressionScope</code> to override the tenant or account suppression scope for emails sent using this configuration set.</p>
     pub fn set_suppression_options(mut self, input: ::std::option::Option<crate::types::SuppressionOptions>) -> Self {
         self.inner = self.inner.set_suppression_options(input);
         self
     }
-    /// <p>An object that contains information about the suppression list preferences for your account.</p>
+    /// <p>An object that contains information about the suppression list preferences for the configuration set. You can optionally include a <code>SuppressionScope</code> to override the tenant or account suppression scope for emails sent using this configuration set.</p>
     pub fn get_suppression_options(&self) -> &::std::option::Option<crate::types::SuppressionOptions> {
         self.inner.get_suppression_options()
     }

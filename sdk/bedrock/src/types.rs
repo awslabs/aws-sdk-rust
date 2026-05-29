@@ -331,6 +331,8 @@ pub use crate::types::_automated_reasoning_policy_build_workflow_repair_content:
 
 pub use crate::types::_automated_reasoning_policy_generate_fidelity_report_content::AutomatedReasoningPolicyGenerateFidelityReportContent;
 
+pub use crate::types::_automated_reasoning_policy_iterative_refinement_content::AutomatedReasoningPolicyIterativeRefinementContent;
+
 pub use crate::types::_invocation_log_source::InvocationLogSource;
 
 pub use crate::types::_request_metadata_filters::RequestMetadataFilters;
@@ -822,6 +824,8 @@ mod _automated_reasoning_policy_generated_test_case;
 mod _automated_reasoning_policy_generated_test_cases;
 
 mod _automated_reasoning_policy_ingest_content_annotation;
+
+mod _automated_reasoning_policy_iterative_refinement_content;
 
 mod _automated_reasoning_policy_mutation;
 

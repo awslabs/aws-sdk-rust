@@ -751,6 +751,8 @@ pub(crate) mod shape_automated_reasoning_policy_generate_fidelity_report_content
 
 pub(crate) mod shape_automated_reasoning_policy_generated_test_case_list;
 
+pub(crate) mod shape_automated_reasoning_policy_iterative_refinement_content;
+
 pub(crate) mod shape_automated_reasoning_policy_report_source_document_list;
 
 pub(crate) mod shape_automated_reasoning_policy_rule_report_map;

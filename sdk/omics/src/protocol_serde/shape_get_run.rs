@@ -223,6 +223,9 @@ pub(crate) fn de_get_run(
                             .transpose()?,
                     );
                 }
+                "engineSettings" => {
+                    builder = builder.set_engine_settings(Some(::aws_smithy_json::deserialize::token::expect_document(tokens)?));
+                }
                 "engineVersion" => {
                     builder = builder.set_engine_version(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

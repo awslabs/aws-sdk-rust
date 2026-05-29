@@ -199,37 +199,42 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListSuppress
                 mut output: &mut ::std::string::String,
             ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::BuildError> {
                 let mut query = ::aws_smithy_http::query::Writer::new(output);
-                if let ::std::option::Option::Some(inner_1) = &_input.reasons {
+                if let ::std::option::Option::Some(inner_1) = &_input.tenant_name {
                     {
-                        for inner_2 in inner_1 {
-                            query.push_kv("Reason", &::aws_smithy_http::query::fmt_string(inner_2.as_str()));
+                        query.push_kv("TenantName", &::aws_smithy_http::query::fmt_string(inner_1));
+                    }
+                }
+                if let ::std::option::Option::Some(inner_2) = &_input.reasons {
+                    {
+                        for inner_3 in inner_2 {
+                            query.push_kv("Reason", &::aws_smithy_http::query::fmt_string(inner_3.as_str()));
                         }
                     }
                 }
-                if let ::std::option::Option::Some(inner_3) = &_input.start_date {
+                if let ::std::option::Option::Some(inner_4) = &_input.start_date {
                     {
                         query.push_kv(
                             "StartDate",
-                            &::aws_smithy_http::query::fmt_timestamp(inner_3, ::aws_smithy_types::date_time::Format::DateTime)?,
-                        );
-                    }
-                }
-                if let ::std::option::Option::Some(inner_4) = &_input.end_date {
-                    {
-                        query.push_kv(
-                            "EndDate",
                             &::aws_smithy_http::query::fmt_timestamp(inner_4, ::aws_smithy_types::date_time::Format::DateTime)?,
                         );
                     }
                 }
-                if let ::std::option::Option::Some(inner_5) = &_input.next_token {
+                if let ::std::option::Option::Some(inner_5) = &_input.end_date {
                     {
-                        query.push_kv("NextToken", &::aws_smithy_http::query::fmt_string(inner_5));
+                        query.push_kv(
+                            "EndDate",
+                            &::aws_smithy_http::query::fmt_timestamp(inner_5, ::aws_smithy_types::date_time::Format::DateTime)?,
+                        );
                     }
                 }
-                if let ::std::option::Option::Some(inner_6) = &_input.page_size {
+                if let ::std::option::Option::Some(inner_6) = &_input.next_token {
                     {
-                        query.push_kv("PageSize", ::aws_smithy_types::primitive::Encoder::from(*inner_6).encode());
+                        query.push_kv("NextToken", &::aws_smithy_http::query::fmt_string(inner_6));
+                    }
+                }
+                if let ::std::option::Option::Some(inner_7) = &_input.page_size {
+                    {
+                        query.push_kv("PageSize", ::aws_smithy_types::primitive::Encoder::from(*inner_7).encode());
                     }
                 }
                 ::std::result::Result::Ok(())
@@ -302,6 +307,8 @@ pub enum ListSuppressedDestinationsError {
     BadRequestException(crate::types::error::BadRequestException),
     /// <p>The specified request includes an invalid or expired token.</p>
     InvalidNextTokenException(crate::types::error::InvalidNextTokenException),
+    /// <p>The resource you attempted to access doesn't exist.</p>
+    NotFoundException(crate::types::error::NotFoundException),
     /// <p>Too many requests have been made to the operation.</p>
     TooManyRequestsException(crate::types::error::TooManyRequestsException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
@@ -339,6 +346,7 @@ impl ListSuppressedDestinationsError {
         match self {
             Self::BadRequestException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidNextTokenException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::NotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::TooManyRequestsException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
@@ -351,6 +359,10 @@ impl ListSuppressedDestinationsError {
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(self, Self::InvalidNextTokenException(_))
     }
+    /// Returns `true` if the error kind is `ListSuppressedDestinationsError::NotFoundException`.
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(self, Self::NotFoundException(_))
+    }
     /// Returns `true` if the error kind is `ListSuppressedDestinationsError::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(self, Self::TooManyRequestsException(_))
@@ -361,6 +373,7 @@ impl ::std::error::Error for ListSuppressedDestinationsError {
         match self {
             Self::BadRequestException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidNextTokenException(_inner) => ::std::option::Option::Some(_inner),
+            Self::NotFoundException(_inner) => ::std::option::Option::Some(_inner),
             Self::TooManyRequestsException(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
         }
@@ -371,6 +384,7 @@ impl ::std::fmt::Display for ListSuppressedDestinationsError {
         match self {
             Self::BadRequestException(_inner) => _inner.fmt(f),
             Self::InvalidNextTokenException(_inner) => _inner.fmt(f),
+            Self::NotFoundException(_inner) => _inner.fmt(f),
             Self::TooManyRequestsException(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => {
                 if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
@@ -395,6 +409,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for ListSuppresse
         match self {
             Self::BadRequestException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidNextTokenException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::NotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::TooManyRequestsException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => &_inner.meta,
         }

@@ -9,8 +9,26 @@ pub fn ser_stripe_privy_configuration_input(
     {
         object.key("appSecret").string(input.app_secret.as_str());
     }
+    if let Some(var_1) = &input.app_secret_source {
+        object.key("appSecretSource").string(var_1.as_str());
+    }
+    if let Some(var_2) = &input.app_secret_config {
+        #[allow(unused_mut)]
+        let mut object_3 = object.key("appSecretConfig").start_object();
+        crate::protocol_serde::shape_secret_reference::ser_secret_reference(&mut object_3, var_2)?;
+        object_3.finish();
+    }
     {
         object.key("authorizationPrivateKey").string(input.authorization_private_key.as_str());
+    }
+    if let Some(var_4) = &input.authorization_private_key_source {
+        object.key("authorizationPrivateKeySource").string(var_4.as_str());
+    }
+    if let Some(var_5) = &input.authorization_private_key_config {
+        #[allow(unused_mut)]
+        let mut object_6 = object.key("authorizationPrivateKeyConfig").start_object();
+        crate::protocol_serde::shape_secret_reference::ser_secret_reference(&mut object_6, var_5)?;
+        object_6.finish();
     }
     {
         object.key("authorizationId").string(input.authorization_id.as_str());

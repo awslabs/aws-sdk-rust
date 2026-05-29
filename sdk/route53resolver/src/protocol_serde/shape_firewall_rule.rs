@@ -134,6 +134,10 @@ where
                                     .transpose()?,
                             );
                         }
+                        "FirewallRuleType" => {
+                            builder = builder
+                                .set_firewall_rule_type(crate::protocol_serde::shape_firewall_rule_type::de_firewall_rule_type(tokens, _value)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

@@ -8,6 +8,10 @@ pub struct LinkedinOauth2ProviderConfigInput {
     pub client_id: ::std::string::String,
     /// <p>The client secret for the LinkedIn OAuth2 provider. This secret is assigned by LinkedIn and used along with the client ID to authenticate your application.</p>
     pub client_secret: ::std::string::String,
+    /// <p>A reference to the AWS Secrets Manager secret that stores the client secret. This includes the secret ID and the JSON key used to extract the client secret value from the secret. Required when <code>clientSecretSource</code> is set to <code>EXTERNAL</code>.</p>
+    pub client_secret_config: ::std::option::Option<crate::types::SecretReference>,
+    /// <p>The source type of the client secret. Use <code>MANAGED</code> if the secret is managed by the service, or <code>EXTERNAL</code> if you manage the secret yourself in AWS Secrets Manager.</p>
+    pub client_secret_source: ::std::option::Option<crate::types::SecretSourceType>,
 }
 impl LinkedinOauth2ProviderConfigInput {
     /// <p>The client ID for the LinkedIn OAuth2 provider. This identifier is assigned by LinkedIn when you register your application.</p>
@@ -20,12 +24,22 @@ impl LinkedinOauth2ProviderConfigInput {
         use std::ops::Deref;
         self.client_secret.deref()
     }
+    /// <p>A reference to the AWS Secrets Manager secret that stores the client secret. This includes the secret ID and the JSON key used to extract the client secret value from the secret. Required when <code>clientSecretSource</code> is set to <code>EXTERNAL</code>.</p>
+    pub fn client_secret_config(&self) -> ::std::option::Option<&crate::types::SecretReference> {
+        self.client_secret_config.as_ref()
+    }
+    /// <p>The source type of the client secret. Use <code>MANAGED</code> if the secret is managed by the service, or <code>EXTERNAL</code> if you manage the secret yourself in AWS Secrets Manager.</p>
+    pub fn client_secret_source(&self) -> ::std::option::Option<&crate::types::SecretSourceType> {
+        self.client_secret_source.as_ref()
+    }
 }
 impl ::std::fmt::Debug for LinkedinOauth2ProviderConfigInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("LinkedinOauth2ProviderConfigInput");
         formatter.field("client_id", &self.client_id);
         formatter.field("client_secret", &"*** Sensitive Data Redacted ***");
+        formatter.field("client_secret_config", &self.client_secret_config);
+        formatter.field("client_secret_source", &self.client_secret_source);
         formatter.finish()
     }
 }
@@ -42,6 +56,8 @@ impl LinkedinOauth2ProviderConfigInput {
 pub struct LinkedinOauth2ProviderConfigInputBuilder {
     pub(crate) client_id: ::std::option::Option<::std::string::String>,
     pub(crate) client_secret: ::std::option::Option<::std::string::String>,
+    pub(crate) client_secret_config: ::std::option::Option<crate::types::SecretReference>,
+    pub(crate) client_secret_source: ::std::option::Option<crate::types::SecretSourceType>,
 }
 impl LinkedinOauth2ProviderConfigInputBuilder {
     /// <p>The client ID for the LinkedIn OAuth2 provider. This identifier is assigned by LinkedIn when you register your application.</p>
@@ -60,7 +76,6 @@ impl LinkedinOauth2ProviderConfigInputBuilder {
         &self.client_id
     }
     /// <p>The client secret for the LinkedIn OAuth2 provider. This secret is assigned by LinkedIn and used along with the client ID to authenticate your application.</p>
-    /// This field is required.
     pub fn client_secret(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_secret = ::std::option::Option::Some(input.into());
         self
@@ -74,10 +89,37 @@ impl LinkedinOauth2ProviderConfigInputBuilder {
     pub fn get_client_secret(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_secret
     }
+    /// <p>A reference to the AWS Secrets Manager secret that stores the client secret. This includes the secret ID and the JSON key used to extract the client secret value from the secret. Required when <code>clientSecretSource</code> is set to <code>EXTERNAL</code>.</p>
+    pub fn client_secret_config(mut self, input: crate::types::SecretReference) -> Self {
+        self.client_secret_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A reference to the AWS Secrets Manager secret that stores the client secret. This includes the secret ID and the JSON key used to extract the client secret value from the secret. Required when <code>clientSecretSource</code> is set to <code>EXTERNAL</code>.</p>
+    pub fn set_client_secret_config(mut self, input: ::std::option::Option<crate::types::SecretReference>) -> Self {
+        self.client_secret_config = input;
+        self
+    }
+    /// <p>A reference to the AWS Secrets Manager secret that stores the client secret. This includes the secret ID and the JSON key used to extract the client secret value from the secret. Required when <code>clientSecretSource</code> is set to <code>EXTERNAL</code>.</p>
+    pub fn get_client_secret_config(&self) -> &::std::option::Option<crate::types::SecretReference> {
+        &self.client_secret_config
+    }
+    /// <p>The source type of the client secret. Use <code>MANAGED</code> if the secret is managed by the service, or <code>EXTERNAL</code> if you manage the secret yourself in AWS Secrets Manager.</p>
+    pub fn client_secret_source(mut self, input: crate::types::SecretSourceType) -> Self {
+        self.client_secret_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The source type of the client secret. Use <code>MANAGED</code> if the secret is managed by the service, or <code>EXTERNAL</code> if you manage the secret yourself in AWS Secrets Manager.</p>
+    pub fn set_client_secret_source(mut self, input: ::std::option::Option<crate::types::SecretSourceType>) -> Self {
+        self.client_secret_source = input;
+        self
+    }
+    /// <p>The source type of the client secret. Use <code>MANAGED</code> if the secret is managed by the service, or <code>EXTERNAL</code> if you manage the secret yourself in AWS Secrets Manager.</p>
+    pub fn get_client_secret_source(&self) -> &::std::option::Option<crate::types::SecretSourceType> {
+        &self.client_secret_source
+    }
     /// Consumes the builder and constructs a [`LinkedinOauth2ProviderConfigInput`](crate::types::LinkedinOauth2ProviderConfigInput).
     /// This method will fail if any of the following fields are not set:
     /// - [`client_id`](crate::types::builders::LinkedinOauth2ProviderConfigInputBuilder::client_id)
-    /// - [`client_secret`](crate::types::builders::LinkedinOauth2ProviderConfigInputBuilder::client_secret)
     pub fn build(self) -> ::std::result::Result<crate::types::LinkedinOauth2ProviderConfigInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::LinkedinOauth2ProviderConfigInput {
             client_id: self.client_id.ok_or_else(|| {
@@ -86,12 +128,9 @@ impl LinkedinOauth2ProviderConfigInputBuilder {
                     "client_id was not specified but it is required when building LinkedinOauth2ProviderConfigInput",
                 )
             })?,
-            client_secret: self.client_secret.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "client_secret",
-                    "client_secret was not specified but it is required when building LinkedinOauth2ProviderConfigInput",
-                )
-            })?,
+            client_secret: self.client_secret.unwrap_or_default(),
+            client_secret_config: self.client_secret_config,
+            client_secret_source: self.client_secret_source,
         })
     }
 }
@@ -100,6 +139,8 @@ impl ::std::fmt::Debug for LinkedinOauth2ProviderConfigInputBuilder {
         let mut formatter = f.debug_struct("LinkedinOauth2ProviderConfigInputBuilder");
         formatter.field("client_id", &self.client_id);
         formatter.field("client_secret", &"*** Sensitive Data Redacted ***");
+        formatter.field("client_secret_config", &self.client_secret_config);
+        formatter.field("client_secret_source", &self.client_secret_source);
         formatter.finish()
     }
 }

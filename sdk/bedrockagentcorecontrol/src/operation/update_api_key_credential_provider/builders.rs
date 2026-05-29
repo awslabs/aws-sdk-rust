@@ -136,4 +136,32 @@ impl UpdateApiKeyCredentialProviderFluentBuilder {
     pub fn get_api_key(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_api_key()
     }
+    /// <p>A reference to the AWS Secrets Manager secret that stores the API key. This includes the secret ID and the JSON key used to extract the API key value from the secret. Required when <code>apiKeySecretSource</code> is set to <code>EXTERNAL</code>.</p>
+    pub fn api_key_secret_config(mut self, input: crate::types::SecretReference) -> Self {
+        self.inner = self.inner.api_key_secret_config(input);
+        self
+    }
+    /// <p>A reference to the AWS Secrets Manager secret that stores the API key. This includes the secret ID and the JSON key used to extract the API key value from the secret. Required when <code>apiKeySecretSource</code> is set to <code>EXTERNAL</code>.</p>
+    pub fn set_api_key_secret_config(mut self, input: ::std::option::Option<crate::types::SecretReference>) -> Self {
+        self.inner = self.inner.set_api_key_secret_config(input);
+        self
+    }
+    /// <p>A reference to the AWS Secrets Manager secret that stores the API key. This includes the secret ID and the JSON key used to extract the API key value from the secret. Required when <code>apiKeySecretSource</code> is set to <code>EXTERNAL</code>.</p>
+    pub fn get_api_key_secret_config(&self) -> &::std::option::Option<crate::types::SecretReference> {
+        self.inner.get_api_key_secret_config()
+    }
+    /// <p>The source type of the API key secret. Use <code>MANAGED</code> if the secret is managed by the service, or <code>EXTERNAL</code> if you manage the secret yourself in AWS Secrets Manager.</p>
+    pub fn api_key_secret_source(mut self, input: crate::types::SecretSourceType) -> Self {
+        self.inner = self.inner.api_key_secret_source(input);
+        self
+    }
+    /// <p>The source type of the API key secret. Use <code>MANAGED</code> if the secret is managed by the service, or <code>EXTERNAL</code> if you manage the secret yourself in AWS Secrets Manager.</p>
+    pub fn set_api_key_secret_source(mut self, input: ::std::option::Option<crate::types::SecretSourceType>) -> Self {
+        self.inner = self.inner.set_api_key_secret_source(input);
+        self
+    }
+    /// <p>The source type of the API key secret. Use <code>MANAGED</code> if the secret is managed by the service, or <code>EXTERNAL</code> if you manage the secret yourself in AWS Secrets Manager.</p>
+    pub fn get_api_key_secret_source(&self) -> &::std::option::Option<crate::types::SecretSourceType> {
+        self.inner.get_api_key_secret_source()
+    }
 }

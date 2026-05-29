@@ -11,6 +11,8 @@ pub use crate::types::_resolver_rule_association::ResolverRuleAssociationBuilder
 
 pub use crate::types::_firewall_domain_list::FirewallDomainListBuilder;
 
+pub use crate::types::_firewall_rule_type::FirewallRuleTypeBuilder;
+
 pub use crate::types::_firewall_rule::FirewallRuleBuilder;
 
 pub use crate::types::_firewall_rule_group::FirewallRuleGroupBuilder;
@@ -31,6 +33,24 @@ pub use crate::types::_resolver_rule_config::ResolverRuleConfigBuilder;
 
 pub use crate::types::_tag::TagBuilder;
 
+pub use crate::types::_create_firewall_rule_entry::CreateFirewallRuleEntryBuilder;
+
+pub use crate::types::_batch_create_firewall_rule_error::BatchCreateFirewallRuleErrorBuilder;
+
+pub use crate::types::_delete_firewall_rule_entry::DeleteFirewallRuleEntryBuilder;
+
+pub use crate::types::_batch_delete_firewall_rule_error::BatchDeleteFirewallRuleErrorBuilder;
+
+pub use crate::types::_update_firewall_rule_entry::UpdateFirewallRuleEntryBuilder;
+
+pub use crate::types::_batch_update_firewall_rule_error::BatchUpdateFirewallRuleErrorBuilder;
+
+pub use crate::types::_firewall_advanced_content_category_config::FirewallAdvancedContentCategoryConfigBuilder;
+
+pub use crate::types::_firewall_advanced_threat_category_config::FirewallAdvancedThreatCategoryConfigBuilder;
+
+pub use crate::types::_dns_threat_protection_rule_type_config::DnsThreatProtectionRuleTypeConfigBuilder;
+
 pub use crate::types::_ip_address_request::IpAddressRequestBuilder;
 
 pub use crate::types::_target_address::TargetAddressBuilder;
@@ -38,6 +58,8 @@ pub use crate::types::_target_address::TargetAddressBuilder;
 pub use crate::types::_firewall_domain_list_metadata::FirewallDomainListMetadataBuilder;
 
 pub use crate::types::_firewall_rule_group_metadata::FirewallRuleGroupMetadataBuilder;
+
+pub use crate::types::_firewall_rule_type_definition::FirewallRuleTypeDefinitionBuilder;
 
 pub use crate::types::_filter::FilterBuilder;
 

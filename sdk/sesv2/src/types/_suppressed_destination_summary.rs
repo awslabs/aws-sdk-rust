@@ -4,20 +4,20 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SuppressedDestinationSummary {
-    /// <p>The email address that's on the suppression list for your account.</p>
+    /// <p>The email address that's on the suppression list for your account or for a specific tenant.</p>
     pub email_address: ::std::string::String,
-    /// <p>The reason that the address was added to the suppression list for your account.</p>
+    /// <p>The reason that the address was added to the suppression list for your account or for a specific tenant.</p>
     pub reason: crate::types::SuppressionListReason,
     /// <p>The date and time when the suppressed destination was last updated, shown in Unix time format.</p>
     pub last_update_time: ::aws_smithy_types::DateTime,
 }
 impl SuppressedDestinationSummary {
-    /// <p>The email address that's on the suppression list for your account.</p>
+    /// <p>The email address that's on the suppression list for your account or for a specific tenant.</p>
     pub fn email_address(&self) -> &str {
         use std::ops::Deref;
         self.email_address.deref()
     }
-    /// <p>The reason that the address was added to the suppression list for your account.</p>
+    /// <p>The reason that the address was added to the suppression list for your account or for a specific tenant.</p>
     pub fn reason(&self) -> &crate::types::SuppressionListReason {
         &self.reason
     }
@@ -42,33 +42,33 @@ pub struct SuppressedDestinationSummaryBuilder {
     pub(crate) last_update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl SuppressedDestinationSummaryBuilder {
-    /// <p>The email address that's on the suppression list for your account.</p>
+    /// <p>The email address that's on the suppression list for your account or for a specific tenant.</p>
     /// This field is required.
     pub fn email_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.email_address = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The email address that's on the suppression list for your account.</p>
+    /// <p>The email address that's on the suppression list for your account or for a specific tenant.</p>
     pub fn set_email_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.email_address = input;
         self
     }
-    /// <p>The email address that's on the suppression list for your account.</p>
+    /// <p>The email address that's on the suppression list for your account or for a specific tenant.</p>
     pub fn get_email_address(&self) -> &::std::option::Option<::std::string::String> {
         &self.email_address
     }
-    /// <p>The reason that the address was added to the suppression list for your account.</p>
+    /// <p>The reason that the address was added to the suppression list for your account or for a specific tenant.</p>
     /// This field is required.
     pub fn reason(mut self, input: crate::types::SuppressionListReason) -> Self {
         self.reason = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The reason that the address was added to the suppression list for your account.</p>
+    /// <p>The reason that the address was added to the suppression list for your account or for a specific tenant.</p>
     pub fn set_reason(mut self, input: ::std::option::Option<crate::types::SuppressionListReason>) -> Self {
         self.reason = input;
         self
     }
-    /// <p>The reason that the address was added to the suppression list for your account.</p>
+    /// <p>The reason that the address was added to the suppression list for your account or for a specific tenant.</p>
     pub fn get_reason(&self) -> &::std::option::Option<crate::types::SuppressionListReason> {
         &self.reason
     }

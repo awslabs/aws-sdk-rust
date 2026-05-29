@@ -9,5 +9,14 @@ pub fn ser_atlassian_oauth2_provider_config_input(
     {
         object.key("clientSecret").string(input.client_secret.as_str());
     }
+    if let Some(var_1) = &input.client_secret_config {
+        #[allow(unused_mut)]
+        let mut object_2 = object.key("clientSecretConfig").start_object();
+        crate::protocol_serde::shape_secret_reference::ser_secret_reference(&mut object_2, var_1)?;
+        object_2.finish();
+    }
+    if let Some(var_3) = &input.client_secret_source {
+        object.key("clientSecretSource").string(var_3.as_str());
+    }
     Ok(())
 }

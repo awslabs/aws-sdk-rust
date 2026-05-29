@@ -7,6 +7,10 @@ pub struct CreateApiKeyCredentialProviderInput {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The API key to use for authentication. This value is encrypted and stored securely.</p>
     pub api_key: ::std::option::Option<::std::string::String>,
+    /// <p>A reference to the AWS Secrets Manager secret that stores the API key. This includes the secret ID and the JSON key used to extract the API key value from the secret. Required when <code>apiKeySecretSource</code> is set to <code>EXTERNAL</code>.</p>
+    pub api_key_secret_config: ::std::option::Option<crate::types::SecretReference>,
+    /// <p>The source type of the API key secret. Use <code>MANAGED</code> if the secret is managed by the service, or <code>EXTERNAL</code> if you manage the secret yourself in AWS Secrets Manager.</p>
+    pub api_key_secret_source: ::std::option::Option<crate::types::SecretSourceType>,
     /// <p>A map of tag keys and values to assign to the API key credential provider. Tags enable you to categorize your resources in different ways, for example, by purpose, owner, or environment.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
@@ -19,6 +23,14 @@ impl CreateApiKeyCredentialProviderInput {
     pub fn api_key(&self) -> ::std::option::Option<&str> {
         self.api_key.as_deref()
     }
+    /// <p>A reference to the AWS Secrets Manager secret that stores the API key. This includes the secret ID and the JSON key used to extract the API key value from the secret. Required when <code>apiKeySecretSource</code> is set to <code>EXTERNAL</code>.</p>
+    pub fn api_key_secret_config(&self) -> ::std::option::Option<&crate::types::SecretReference> {
+        self.api_key_secret_config.as_ref()
+    }
+    /// <p>The source type of the API key secret. Use <code>MANAGED</code> if the secret is managed by the service, or <code>EXTERNAL</code> if you manage the secret yourself in AWS Secrets Manager.</p>
+    pub fn api_key_secret_source(&self) -> ::std::option::Option<&crate::types::SecretSourceType> {
+        self.api_key_secret_source.as_ref()
+    }
     /// <p>A map of tag keys and values to assign to the API key credential provider. Tags enable you to categorize your resources in different ways, for example, by purpose, owner, or environment.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
@@ -29,6 +41,8 @@ impl ::std::fmt::Debug for CreateApiKeyCredentialProviderInput {
         let mut formatter = f.debug_struct("CreateApiKeyCredentialProviderInput");
         formatter.field("name", &self.name);
         formatter.field("api_key", &"*** Sensitive Data Redacted ***");
+        formatter.field("api_key_secret_config", &self.api_key_secret_config);
+        formatter.field("api_key_secret_source", &self.api_key_secret_source);
         formatter.field("tags", &self.tags);
         formatter.finish()
     }
@@ -46,6 +60,8 @@ impl CreateApiKeyCredentialProviderInput {
 pub struct CreateApiKeyCredentialProviderInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) api_key: ::std::option::Option<::std::string::String>,
+    pub(crate) api_key_secret_config: ::std::option::Option<crate::types::SecretReference>,
+    pub(crate) api_key_secret_source: ::std::option::Option<crate::types::SecretSourceType>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateApiKeyCredentialProviderInputBuilder {
@@ -65,7 +81,6 @@ impl CreateApiKeyCredentialProviderInputBuilder {
         &self.name
     }
     /// <p>The API key to use for authentication. This value is encrypted and stored securely.</p>
-    /// This field is required.
     pub fn api_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.api_key = ::std::option::Option::Some(input.into());
         self
@@ -78,6 +93,34 @@ impl CreateApiKeyCredentialProviderInputBuilder {
     /// <p>The API key to use for authentication. This value is encrypted and stored securely.</p>
     pub fn get_api_key(&self) -> &::std::option::Option<::std::string::String> {
         &self.api_key
+    }
+    /// <p>A reference to the AWS Secrets Manager secret that stores the API key. This includes the secret ID and the JSON key used to extract the API key value from the secret. Required when <code>apiKeySecretSource</code> is set to <code>EXTERNAL</code>.</p>
+    pub fn api_key_secret_config(mut self, input: crate::types::SecretReference) -> Self {
+        self.api_key_secret_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A reference to the AWS Secrets Manager secret that stores the API key. This includes the secret ID and the JSON key used to extract the API key value from the secret. Required when <code>apiKeySecretSource</code> is set to <code>EXTERNAL</code>.</p>
+    pub fn set_api_key_secret_config(mut self, input: ::std::option::Option<crate::types::SecretReference>) -> Self {
+        self.api_key_secret_config = input;
+        self
+    }
+    /// <p>A reference to the AWS Secrets Manager secret that stores the API key. This includes the secret ID and the JSON key used to extract the API key value from the secret. Required when <code>apiKeySecretSource</code> is set to <code>EXTERNAL</code>.</p>
+    pub fn get_api_key_secret_config(&self) -> &::std::option::Option<crate::types::SecretReference> {
+        &self.api_key_secret_config
+    }
+    /// <p>The source type of the API key secret. Use <code>MANAGED</code> if the secret is managed by the service, or <code>EXTERNAL</code> if you manage the secret yourself in AWS Secrets Manager.</p>
+    pub fn api_key_secret_source(mut self, input: crate::types::SecretSourceType) -> Self {
+        self.api_key_secret_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The source type of the API key secret. Use <code>MANAGED</code> if the secret is managed by the service, or <code>EXTERNAL</code> if you manage the secret yourself in AWS Secrets Manager.</p>
+    pub fn set_api_key_secret_source(mut self, input: ::std::option::Option<crate::types::SecretSourceType>) -> Self {
+        self.api_key_secret_source = input;
+        self
+    }
+    /// <p>The source type of the API key secret. Use <code>MANAGED</code> if the secret is managed by the service, or <code>EXTERNAL</code> if you manage the secret yourself in AWS Secrets Manager.</p>
+    pub fn get_api_key_secret_source(&self) -> &::std::option::Option<crate::types::SecretSourceType> {
+        &self.api_key_secret_source
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -110,6 +153,8 @@ impl CreateApiKeyCredentialProviderInputBuilder {
             crate::operation::create_api_key_credential_provider::CreateApiKeyCredentialProviderInput {
                 name: self.name,
                 api_key: self.api_key,
+                api_key_secret_config: self.api_key_secret_config,
+                api_key_secret_source: self.api_key_secret_source,
                 tags: self.tags,
             },
         )
@@ -120,6 +165,8 @@ impl ::std::fmt::Debug for CreateApiKeyCredentialProviderInputBuilder {
         let mut formatter = f.debug_struct("CreateApiKeyCredentialProviderInputBuilder");
         formatter.field("name", &self.name);
         formatter.field("api_key", &"*** Sensitive Data Redacted ***");
+        formatter.field("api_key_secret_config", &self.api_key_secret_config);
+        formatter.field("api_key_secret_source", &self.api_key_secret_source);
         formatter.field("tags", &self.tags);
         formatter.finish()
     }

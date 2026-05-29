@@ -61,6 +61,8 @@ pub(crate) mod shape_create_ingestion;
 
 pub(crate) mod shape_create_namespace;
 
+pub(crate) mod shape_create_o_auth_client_application;
+
 pub(crate) mod shape_create_refresh_schedule;
 
 pub(crate) mod shape_create_role_membership;
@@ -118,6 +120,8 @@ pub(crate) mod shape_delete_iam_policy_assignment;
 pub(crate) mod shape_delete_identity_propagation_config;
 
 pub(crate) mod shape_delete_namespace;
+
+pub(crate) mod shape_delete_o_auth_client_application;
 
 pub(crate) mod shape_delete_refresh_schedule;
 
@@ -221,6 +225,8 @@ pub(crate) mod shape_describe_key_registration;
 
 pub(crate) mod shape_describe_namespace;
 
+pub(crate) mod shape_describe_o_auth_client_application;
+
 pub(crate) mod shape_describe_q_personalization_configuration;
 
 pub(crate) mod shape_describe_quick_sight_q_search_configuration;
@@ -314,6 +320,8 @@ pub(crate) mod shape_list_identity_propagation_configs;
 pub(crate) mod shape_list_ingestions;
 
 pub(crate) mod shape_list_namespaces;
+
+pub(crate) mod shape_list_o_auth_client_applications;
 
 pub(crate) mod shape_list_refresh_schedules;
 
@@ -447,6 +455,8 @@ pub(crate) mod shape_update_ip_restriction;
 
 pub(crate) mod shape_update_key_registration;
 
+pub(crate) mod shape_update_o_auth_client_application;
+
 pub(crate) mod shape_update_public_sharing_settings;
 
 pub(crate) mod shape_update_q_personalization_configuration;
@@ -532,6 +542,8 @@ pub(crate) mod shape_create_iam_policy_assignment_input;
 pub(crate) mod shape_create_ingestion_input;
 
 pub(crate) mod shape_create_namespace_input;
+
+pub(crate) mod shape_create_o_auth_client_application_input;
 
 pub(crate) mod shape_create_refresh_schedule_input;
 
@@ -686,6 +698,8 @@ pub(crate) mod shape_update_identity_propagation_config_input;
 pub(crate) mod shape_update_ip_restriction_input;
 
 pub(crate) mod shape_update_key_registration_input;
+
+pub(crate) mod shape_update_o_auth_client_application_input;
 
 pub(crate) mod shape_update_public_sharing_settings_input;
 
@@ -908,6 +922,10 @@ pub(crate) mod shape_logical_table;
 pub(crate) mod shape_namespace_info_v2;
 
 pub(crate) mod shape_namespaces;
+
+pub(crate) mod shape_o_auth_client_application;
+
+pub(crate) mod shape_o_auth_client_application_summary_list;
 
 pub(crate) mod shape_parameters;
 
@@ -1366,6 +1384,8 @@ pub(crate) mod shape_my_sql_parameters;
 pub(crate) mod shape_namespace_error;
 
 pub(crate) mod shape_network_interface_list;
+
+pub(crate) mod shape_o_auth_client_application_summary;
 
 pub(crate) mod shape_o_auth_client_credentials;
 

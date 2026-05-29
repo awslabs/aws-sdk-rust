@@ -256,6 +256,20 @@ pub(crate) fn de_create_oauth2_credential_provider(
                 "clientSecretArn" => {
                     builder = builder.set_client_secret_arn(crate::protocol_serde::shape_secret::de_secret(tokens, _value)?);
                 }
+                "clientSecretJsonKey" => {
+                    builder = builder.set_client_secret_json_key(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
+                "clientSecretSource" => {
+                    builder = builder.set_client_secret_source(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| crate::types::SecretSourceType::from(u.as_ref())))
+                            .transpose()?,
+                    );
+                }
                 "credentialProviderArn" => {
                     builder = builder.set_credential_provider_arn(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

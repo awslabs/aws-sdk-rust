@@ -236,6 +236,20 @@ pub(crate) fn de_update_oauth2_credential_provider(
                 "clientSecretArn" => {
                     builder = builder.set_client_secret_arn(crate::protocol_serde::shape_secret::de_secret(tokens, _value)?);
                 }
+                "clientSecretJsonKey" => {
+                    builder = builder.set_client_secret_json_key(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
+                "clientSecretSource" => {
+                    builder = builder.set_client_secret_source(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| crate::types::SecretSourceType::from(u.as_ref())))
+                            .transpose()?,
+                    );
+                }
                 "createdTime" => {
                     builder = builder.set_created_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                         tokens.next(),

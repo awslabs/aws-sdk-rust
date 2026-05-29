@@ -10,14 +10,18 @@ pub struct CustomOauth2ProviderConfigInput {
     pub client_id: ::std::string::String,
     /// <p>The client secret for the custom OAuth2 provider.</p>
     pub client_secret: ::std::string::String,
-    /// <p>The default private endpoint for the custom OAuth2 provider, enabling secure connectivity through a VPC Lattice resource configuration.</p>
-    pub private_endpoint: ::std::option::Option<crate::types::PrivateEndpoint>,
-    /// <p>The private endpoint overrides for the custom OAuth2 provider configuration.</p>
-    pub private_endpoint_overrides: ::std::option::Option<::std::vec::Vec<crate::types::PrivateEndpointOverride>>,
+    /// <p>A reference to the AWS Secrets Manager secret that stores the client secret. This includes the secret ID and the JSON key used to extract the client secret value from the secret. Required when <code>clientSecretSource</code> is set to <code>EXTERNAL</code>.</p>
+    pub client_secret_config: ::std::option::Option<crate::types::SecretReference>,
+    /// <p>The source type of the client secret. Use <code>MANAGED</code> if the secret is managed by the service, or <code>EXTERNAL</code> if you manage the secret yourself in AWS Secrets Manager.</p>
+    pub client_secret_source: ::std::option::Option<crate::types::SecretSourceType>,
     /// <p>The configuration for on-behalf-of token exchange. This enables authentication flows that use RFC 8693 token exchange or RFC 7523 JWT authorization grants.</p>
     pub on_behalf_of_token_exchange_config: ::std::option::Option<crate::types::OnBehalfOfTokenExchangeConfigType>,
     /// <p>The client authentication method to use when authenticating with the token endpoint.</p>
     pub client_authentication_method: ::std::option::Option<crate::types::ClientAuthenticationMethodType>,
+    /// <p>The default private endpoint for the custom OAuth2 provider, enabling secure connectivity through a VPC Lattice resource configuration.</p>
+    pub private_endpoint: ::std::option::Option<crate::types::PrivateEndpoint>,
+    /// <p>The private endpoint overrides for the custom OAuth2 provider configuration.</p>
+    pub private_endpoint_overrides: ::std::option::Option<::std::vec::Vec<crate::types::PrivateEndpointOverride>>,
 }
 impl CustomOauth2ProviderConfigInput {
     /// <p>The OAuth2 discovery information for the custom provider.</p>
@@ -34,6 +38,22 @@ impl CustomOauth2ProviderConfigInput {
         use std::ops::Deref;
         self.client_secret.deref()
     }
+    /// <p>A reference to the AWS Secrets Manager secret that stores the client secret. This includes the secret ID and the JSON key used to extract the client secret value from the secret. Required when <code>clientSecretSource</code> is set to <code>EXTERNAL</code>.</p>
+    pub fn client_secret_config(&self) -> ::std::option::Option<&crate::types::SecretReference> {
+        self.client_secret_config.as_ref()
+    }
+    /// <p>The source type of the client secret. Use <code>MANAGED</code> if the secret is managed by the service, or <code>EXTERNAL</code> if you manage the secret yourself in AWS Secrets Manager.</p>
+    pub fn client_secret_source(&self) -> ::std::option::Option<&crate::types::SecretSourceType> {
+        self.client_secret_source.as_ref()
+    }
+    /// <p>The configuration for on-behalf-of token exchange. This enables authentication flows that use RFC 8693 token exchange or RFC 7523 JWT authorization grants.</p>
+    pub fn on_behalf_of_token_exchange_config(&self) -> ::std::option::Option<&crate::types::OnBehalfOfTokenExchangeConfigType> {
+        self.on_behalf_of_token_exchange_config.as_ref()
+    }
+    /// <p>The client authentication method to use when authenticating with the token endpoint.</p>
+    pub fn client_authentication_method(&self) -> ::std::option::Option<&crate::types::ClientAuthenticationMethodType> {
+        self.client_authentication_method.as_ref()
+    }
     /// <p>The default private endpoint for the custom OAuth2 provider, enabling secure connectivity through a VPC Lattice resource configuration.</p>
     pub fn private_endpoint(&self) -> ::std::option::Option<&crate::types::PrivateEndpoint> {
         self.private_endpoint.as_ref()
@@ -44,14 +64,6 @@ impl CustomOauth2ProviderConfigInput {
     pub fn private_endpoint_overrides(&self) -> &[crate::types::PrivateEndpointOverride] {
         self.private_endpoint_overrides.as_deref().unwrap_or_default()
     }
-    /// <p>The configuration for on-behalf-of token exchange. This enables authentication flows that use RFC 8693 token exchange or RFC 7523 JWT authorization grants.</p>
-    pub fn on_behalf_of_token_exchange_config(&self) -> ::std::option::Option<&crate::types::OnBehalfOfTokenExchangeConfigType> {
-        self.on_behalf_of_token_exchange_config.as_ref()
-    }
-    /// <p>The client authentication method to use when authenticating with the token endpoint.</p>
-    pub fn client_authentication_method(&self) -> ::std::option::Option<&crate::types::ClientAuthenticationMethodType> {
-        self.client_authentication_method.as_ref()
-    }
 }
 impl ::std::fmt::Debug for CustomOauth2ProviderConfigInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -59,10 +71,12 @@ impl ::std::fmt::Debug for CustomOauth2ProviderConfigInput {
         formatter.field("oauth_discovery", &self.oauth_discovery);
         formatter.field("client_id", &self.client_id);
         formatter.field("client_secret", &"*** Sensitive Data Redacted ***");
-        formatter.field("private_endpoint", &self.private_endpoint);
-        formatter.field("private_endpoint_overrides", &self.private_endpoint_overrides);
+        formatter.field("client_secret_config", &self.client_secret_config);
+        formatter.field("client_secret_source", &self.client_secret_source);
         formatter.field("on_behalf_of_token_exchange_config", &self.on_behalf_of_token_exchange_config);
         formatter.field("client_authentication_method", &self.client_authentication_method);
+        formatter.field("private_endpoint", &self.private_endpoint);
+        formatter.field("private_endpoint_overrides", &self.private_endpoint_overrides);
         formatter.finish()
     }
 }
@@ -80,10 +94,12 @@ pub struct CustomOauth2ProviderConfigInputBuilder {
     pub(crate) oauth_discovery: ::std::option::Option<crate::types::Oauth2Discovery>,
     pub(crate) client_id: ::std::option::Option<::std::string::String>,
     pub(crate) client_secret: ::std::option::Option<::std::string::String>,
-    pub(crate) private_endpoint: ::std::option::Option<crate::types::PrivateEndpoint>,
-    pub(crate) private_endpoint_overrides: ::std::option::Option<::std::vec::Vec<crate::types::PrivateEndpointOverride>>,
+    pub(crate) client_secret_config: ::std::option::Option<crate::types::SecretReference>,
+    pub(crate) client_secret_source: ::std::option::Option<crate::types::SecretSourceType>,
     pub(crate) on_behalf_of_token_exchange_config: ::std::option::Option<crate::types::OnBehalfOfTokenExchangeConfigType>,
     pub(crate) client_authentication_method: ::std::option::Option<crate::types::ClientAuthenticationMethodType>,
+    pub(crate) private_endpoint: ::std::option::Option<crate::types::PrivateEndpoint>,
+    pub(crate) private_endpoint_overrides: ::std::option::Option<::std::vec::Vec<crate::types::PrivateEndpointOverride>>,
 }
 impl CustomOauth2ProviderConfigInputBuilder {
     /// <p>The OAuth2 discovery information for the custom provider.</p>
@@ -129,6 +145,62 @@ impl CustomOauth2ProviderConfigInputBuilder {
     pub fn get_client_secret(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_secret
     }
+    /// <p>A reference to the AWS Secrets Manager secret that stores the client secret. This includes the secret ID and the JSON key used to extract the client secret value from the secret. Required when <code>clientSecretSource</code> is set to <code>EXTERNAL</code>.</p>
+    pub fn client_secret_config(mut self, input: crate::types::SecretReference) -> Self {
+        self.client_secret_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A reference to the AWS Secrets Manager secret that stores the client secret. This includes the secret ID and the JSON key used to extract the client secret value from the secret. Required when <code>clientSecretSource</code> is set to <code>EXTERNAL</code>.</p>
+    pub fn set_client_secret_config(mut self, input: ::std::option::Option<crate::types::SecretReference>) -> Self {
+        self.client_secret_config = input;
+        self
+    }
+    /// <p>A reference to the AWS Secrets Manager secret that stores the client secret. This includes the secret ID and the JSON key used to extract the client secret value from the secret. Required when <code>clientSecretSource</code> is set to <code>EXTERNAL</code>.</p>
+    pub fn get_client_secret_config(&self) -> &::std::option::Option<crate::types::SecretReference> {
+        &self.client_secret_config
+    }
+    /// <p>The source type of the client secret. Use <code>MANAGED</code> if the secret is managed by the service, or <code>EXTERNAL</code> if you manage the secret yourself in AWS Secrets Manager.</p>
+    pub fn client_secret_source(mut self, input: crate::types::SecretSourceType) -> Self {
+        self.client_secret_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The source type of the client secret. Use <code>MANAGED</code> if the secret is managed by the service, or <code>EXTERNAL</code> if you manage the secret yourself in AWS Secrets Manager.</p>
+    pub fn set_client_secret_source(mut self, input: ::std::option::Option<crate::types::SecretSourceType>) -> Self {
+        self.client_secret_source = input;
+        self
+    }
+    /// <p>The source type of the client secret. Use <code>MANAGED</code> if the secret is managed by the service, or <code>EXTERNAL</code> if you manage the secret yourself in AWS Secrets Manager.</p>
+    pub fn get_client_secret_source(&self) -> &::std::option::Option<crate::types::SecretSourceType> {
+        &self.client_secret_source
+    }
+    /// <p>The configuration for on-behalf-of token exchange. This enables authentication flows that use RFC 8693 token exchange or RFC 7523 JWT authorization grants.</p>
+    pub fn on_behalf_of_token_exchange_config(mut self, input: crate::types::OnBehalfOfTokenExchangeConfigType) -> Self {
+        self.on_behalf_of_token_exchange_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The configuration for on-behalf-of token exchange. This enables authentication flows that use RFC 8693 token exchange or RFC 7523 JWT authorization grants.</p>
+    pub fn set_on_behalf_of_token_exchange_config(mut self, input: ::std::option::Option<crate::types::OnBehalfOfTokenExchangeConfigType>) -> Self {
+        self.on_behalf_of_token_exchange_config = input;
+        self
+    }
+    /// <p>The configuration for on-behalf-of token exchange. This enables authentication flows that use RFC 8693 token exchange or RFC 7523 JWT authorization grants.</p>
+    pub fn get_on_behalf_of_token_exchange_config(&self) -> &::std::option::Option<crate::types::OnBehalfOfTokenExchangeConfigType> {
+        &self.on_behalf_of_token_exchange_config
+    }
+    /// <p>The client authentication method to use when authenticating with the token endpoint.</p>
+    pub fn client_authentication_method(mut self, input: crate::types::ClientAuthenticationMethodType) -> Self {
+        self.client_authentication_method = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The client authentication method to use when authenticating with the token endpoint.</p>
+    pub fn set_client_authentication_method(mut self, input: ::std::option::Option<crate::types::ClientAuthenticationMethodType>) -> Self {
+        self.client_authentication_method = input;
+        self
+    }
+    /// <p>The client authentication method to use when authenticating with the token endpoint.</p>
+    pub fn get_client_authentication_method(&self) -> &::std::option::Option<crate::types::ClientAuthenticationMethodType> {
+        &self.client_authentication_method
+    }
     /// <p>The default private endpoint for the custom OAuth2 provider, enabling secure connectivity through a VPC Lattice resource configuration.</p>
     pub fn private_endpoint(mut self, input: crate::types::PrivateEndpoint) -> Self {
         self.private_endpoint = ::std::option::Option::Some(input);
@@ -163,44 +235,18 @@ impl CustomOauth2ProviderConfigInputBuilder {
     pub fn get_private_endpoint_overrides(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PrivateEndpointOverride>> {
         &self.private_endpoint_overrides
     }
-    /// <p>The configuration for on-behalf-of token exchange. This enables authentication flows that use RFC 8693 token exchange or RFC 7523 JWT authorization grants.</p>
-    pub fn on_behalf_of_token_exchange_config(mut self, input: crate::types::OnBehalfOfTokenExchangeConfigType) -> Self {
-        self.on_behalf_of_token_exchange_config = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>The configuration for on-behalf-of token exchange. This enables authentication flows that use RFC 8693 token exchange or RFC 7523 JWT authorization grants.</p>
-    pub fn set_on_behalf_of_token_exchange_config(mut self, input: ::std::option::Option<crate::types::OnBehalfOfTokenExchangeConfigType>) -> Self {
-        self.on_behalf_of_token_exchange_config = input;
-        self
-    }
-    /// <p>The configuration for on-behalf-of token exchange. This enables authentication flows that use RFC 8693 token exchange or RFC 7523 JWT authorization grants.</p>
-    pub fn get_on_behalf_of_token_exchange_config(&self) -> &::std::option::Option<crate::types::OnBehalfOfTokenExchangeConfigType> {
-        &self.on_behalf_of_token_exchange_config
-    }
-    /// <p>The client authentication method to use when authenticating with the token endpoint.</p>
-    pub fn client_authentication_method(mut self, input: crate::types::ClientAuthenticationMethodType) -> Self {
-        self.client_authentication_method = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>The client authentication method to use when authenticating with the token endpoint.</p>
-    pub fn set_client_authentication_method(mut self, input: ::std::option::Option<crate::types::ClientAuthenticationMethodType>) -> Self {
-        self.client_authentication_method = input;
-        self
-    }
-    /// <p>The client authentication method to use when authenticating with the token endpoint.</p>
-    pub fn get_client_authentication_method(&self) -> &::std::option::Option<crate::types::ClientAuthenticationMethodType> {
-        &self.client_authentication_method
-    }
     /// Consumes the builder and constructs a [`CustomOauth2ProviderConfigInput`](crate::types::CustomOauth2ProviderConfigInput).
     pub fn build(self) -> crate::types::CustomOauth2ProviderConfigInput {
         crate::types::CustomOauth2ProviderConfigInput {
             oauth_discovery: self.oauth_discovery,
             client_id: self.client_id.unwrap_or_default(),
             client_secret: self.client_secret.unwrap_or_default(),
-            private_endpoint: self.private_endpoint,
-            private_endpoint_overrides: self.private_endpoint_overrides,
+            client_secret_config: self.client_secret_config,
+            client_secret_source: self.client_secret_source,
             on_behalf_of_token_exchange_config: self.on_behalf_of_token_exchange_config,
             client_authentication_method: self.client_authentication_method,
+            private_endpoint: self.private_endpoint,
+            private_endpoint_overrides: self.private_endpoint_overrides,
         }
     }
 }
@@ -210,10 +256,12 @@ impl ::std::fmt::Debug for CustomOauth2ProviderConfigInputBuilder {
         formatter.field("oauth_discovery", &self.oauth_discovery);
         formatter.field("client_id", &self.client_id);
         formatter.field("client_secret", &"*** Sensitive Data Redacted ***");
-        formatter.field("private_endpoint", &self.private_endpoint);
-        formatter.field("private_endpoint_overrides", &self.private_endpoint_overrides);
+        formatter.field("client_secret_config", &self.client_secret_config);
+        formatter.field("client_secret_source", &self.client_secret_source);
         formatter.field("on_behalf_of_token_exchange_config", &self.on_behalf_of_token_exchange_config);
         formatter.field("client_authentication_method", &self.client_authentication_method);
+        formatter.field("private_endpoint", &self.private_endpoint);
+        formatter.field("private_endpoint_overrides", &self.private_endpoint_overrides);
         formatter.finish()
     }
 }

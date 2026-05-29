@@ -699,6 +699,8 @@ pub(crate) mod shape_runtime_metadata_configuration;
 
 pub(crate) mod shape_secret;
 
+pub(crate) mod shape_secret_reference;
+
 pub(crate) mod shape_status_reasons;
 
 pub(crate) mod shape_stream_delivery_resources;

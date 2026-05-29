@@ -58,6 +58,9 @@ pub mod create_ingestion;
 /// Types for the `CreateNamespace` operation.
 pub mod create_namespace;
 
+/// Types for the `CreateOAuthClientApplication` operation.
+pub mod create_o_auth_client_application;
+
 /// Types for the `CreateRefreshSchedule` operation.
 pub mod create_refresh_schedule;
 
@@ -144,6 +147,9 @@ pub mod delete_identity_propagation_config;
 
 /// Types for the `DeleteNamespace` operation.
 pub mod delete_namespace;
+
+/// Types for the `DeleteOAuthClientApplication` operation.
+pub mod delete_o_auth_client_application;
 
 /// Types for the `DeleteRefreshSchedule` operation.
 pub mod delete_refresh_schedule;
@@ -298,6 +304,9 @@ pub mod describe_key_registration;
 /// Types for the `DescribeNamespace` operation.
 pub mod describe_namespace;
 
+/// Types for the `DescribeOAuthClientApplication` operation.
+pub mod describe_o_auth_client_application;
+
 /// Types for the `DescribeQPersonalizationConfiguration` operation.
 pub mod describe_q_personalization_configuration;
 
@@ -438,6 +447,9 @@ pub mod list_ingestions;
 
 /// Types for the `ListNamespaces` operation.
 pub mod list_namespaces;
+
+/// Types for the `ListOAuthClientApplications` operation.
+pub mod list_o_auth_client_applications;
 
 /// Types for the `ListRefreshSchedules` operation.
 pub mod list_refresh_schedules;
@@ -636,6 +648,9 @@ pub mod update_ip_restriction;
 
 /// Types for the `UpdateKeyRegistration` operation.
 pub mod update_key_registration;
+
+/// Types for the `UpdateOAuthClientApplication` operation.
+pub mod update_o_auth_client_application;
 
 /// Types for the `UpdatePublicSharingSettings` operation.
 pub mod update_public_sharing_settings;

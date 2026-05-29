@@ -360,7 +360,7 @@ impl CreateFirewallRuleFluentBuilder {
     /// <li>
     /// <p>TXT: Verifies email senders and application-specific values.</p></li>
     /// <li>
-    /// <p>A query type you define by using the DNS type ID, for example 28 for AAAA. The values must be defined as TYPENUMBER, where the NUMBER can be 1-65334, for example, TYPE28. For more information, see <a href="https://en.wikipedia.org/wiki/List_of_DNS_record_types">List of DNS record types</a>.</p></li>
+    /// <p>A query type you define by using the DNS type ID, for example 28 for AAAA. The values must be defined as TYPENUMBER, where the NUMBER can be 1-65534, for example, TYPE28. For more information, see <a href="https://en.wikipedia.org/wiki/List_of_DNS_record_types">List of DNS record types</a>.</p></li>
     /// </ul>
     pub fn qtype(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.qtype(input.into());
@@ -395,7 +395,7 @@ impl CreateFirewallRuleFluentBuilder {
     /// <li>
     /// <p>TXT: Verifies email senders and application-specific values.</p></li>
     /// <li>
-    /// <p>A query type you define by using the DNS type ID, for example 28 for AAAA. The values must be defined as TYPENUMBER, where the NUMBER can be 1-65334, for example, TYPE28. For more information, see <a href="https://en.wikipedia.org/wiki/List_of_DNS_record_types">List of DNS record types</a>.</p></li>
+    /// <p>A query type you define by using the DNS type ID, for example 28 for AAAA. The values must be defined as TYPENUMBER, where the NUMBER can be 1-65534, for example, TYPE28. For more information, see <a href="https://en.wikipedia.org/wiki/List_of_DNS_record_types">List of DNS record types</a>.</p></li>
     /// </ul>
     pub fn set_qtype(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_qtype(input);
@@ -430,7 +430,7 @@ impl CreateFirewallRuleFluentBuilder {
     /// <li>
     /// <p>TXT: Verifies email senders and application-specific values.</p></li>
     /// <li>
-    /// <p>A query type you define by using the DNS type ID, for example 28 for AAAA. The values must be defined as TYPENUMBER, where the NUMBER can be 1-65334, for example, TYPE28. For more information, see <a href="https://en.wikipedia.org/wiki/List_of_DNS_record_types">List of DNS record types</a>.</p></li>
+    /// <p>A query type you define by using the DNS type ID, for example 28 for AAAA. The values must be defined as TYPENUMBER, where the NUMBER can be 1-65534, for example, TYPE28. For more information, see <a href="https://en.wikipedia.org/wiki/List_of_DNS_record_types">List of DNS record types</a>.</p></li>
     /// </ul>
     pub fn get_qtype(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_qtype()
@@ -486,5 +486,19 @@ impl CreateFirewallRuleFluentBuilder {
     /// </ul>
     pub fn get_confidence_threshold(&self) -> &::std::option::Option<crate::types::ConfidenceThreshold> {
         self.inner.get_confidence_threshold()
+    }
+    /// <p>The rule type configuration for the firewall rule. This setting is mutually exclusive with the top-level <code>FirewallDomainListId</code> and <code>DnsThreatProtection</code> fields.</p>
+    pub fn firewall_rule_type(mut self, input: crate::types::FirewallRuleType) -> Self {
+        self.inner = self.inner.firewall_rule_type(input);
+        self
+    }
+    /// <p>The rule type configuration for the firewall rule. This setting is mutually exclusive with the top-level <code>FirewallDomainListId</code> and <code>DnsThreatProtection</code> fields.</p>
+    pub fn set_firewall_rule_type(mut self, input: ::std::option::Option<crate::types::FirewallRuleType>) -> Self {
+        self.inner = self.inner.set_firewall_rule_type(input);
+        self
+    }
+    /// <p>The rule type configuration for the firewall rule. This setting is mutually exclusive with the top-level <code>FirewallDomainListId</code> and <code>DnsThreatProtection</code> fields.</p>
+    pub fn get_firewall_rule_type(&self) -> &::std::option::Option<crate::types::FirewallRuleType> {
+        self.inner.get_firewall_rule_type()
     }
 }

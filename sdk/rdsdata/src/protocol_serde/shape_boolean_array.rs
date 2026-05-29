@@ -2,7 +2,7 @@
 pub(crate) fn de_boolean_array<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
     _value: &'a [u8],
-) -> ::std::result::Result<Option<::std::vec::Vec<bool>>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<::std::vec::Vec<::std::option::Option<bool>>>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
@@ -17,14 +17,7 @@ where
                         break;
                     }
                     _ => {
-                        let value = ::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?;
-                        if let Some(value) = value {
-                            items.push(value);
-                        } else {
-                            return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                "dense list cannot contain null values",
-                            ));
-                        }
+                        items.push(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                     }
                 }
             }

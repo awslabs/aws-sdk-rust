@@ -8,6 +8,10 @@ pub struct MicrosoftOauth2ProviderConfigInput {
     pub client_id: ::std::string::String,
     /// <p>The client secret for the Microsoft OAuth2 provider.</p>
     pub client_secret: ::std::string::String,
+    /// <p>A reference to the AWS Secrets Manager secret that stores the client secret. This includes the secret ID and the JSON key used to extract the client secret value from the secret. Required when <code>clientSecretSource</code> is set to <code>EXTERNAL</code>.</p>
+    pub client_secret_config: ::std::option::Option<crate::types::SecretReference>,
+    /// <p>The source type of the client secret. Use <code>MANAGED</code> if the secret is managed by the service, or <code>EXTERNAL</code> if you manage the secret yourself in AWS Secrets Manager.</p>
+    pub client_secret_source: ::std::option::Option<crate::types::SecretSourceType>,
     /// <p>The Microsoft Entra ID (formerly Azure AD) tenant ID for your organization. This identifies the specific tenant within Microsoft's identity platform where your application is registered.</p>
     pub tenant_id: ::std::option::Option<::std::string::String>,
 }
@@ -22,6 +26,14 @@ impl MicrosoftOauth2ProviderConfigInput {
         use std::ops::Deref;
         self.client_secret.deref()
     }
+    /// <p>A reference to the AWS Secrets Manager secret that stores the client secret. This includes the secret ID and the JSON key used to extract the client secret value from the secret. Required when <code>clientSecretSource</code> is set to <code>EXTERNAL</code>.</p>
+    pub fn client_secret_config(&self) -> ::std::option::Option<&crate::types::SecretReference> {
+        self.client_secret_config.as_ref()
+    }
+    /// <p>The source type of the client secret. Use <code>MANAGED</code> if the secret is managed by the service, or <code>EXTERNAL</code> if you manage the secret yourself in AWS Secrets Manager.</p>
+    pub fn client_secret_source(&self) -> ::std::option::Option<&crate::types::SecretSourceType> {
+        self.client_secret_source.as_ref()
+    }
     /// <p>The Microsoft Entra ID (formerly Azure AD) tenant ID for your organization. This identifies the specific tenant within Microsoft's identity platform where your application is registered.</p>
     pub fn tenant_id(&self) -> ::std::option::Option<&str> {
         self.tenant_id.as_deref()
@@ -32,6 +44,8 @@ impl ::std::fmt::Debug for MicrosoftOauth2ProviderConfigInput {
         let mut formatter = f.debug_struct("MicrosoftOauth2ProviderConfigInput");
         formatter.field("client_id", &self.client_id);
         formatter.field("client_secret", &"*** Sensitive Data Redacted ***");
+        formatter.field("client_secret_config", &self.client_secret_config);
+        formatter.field("client_secret_source", &self.client_secret_source);
         formatter.field("tenant_id", &self.tenant_id);
         formatter.finish()
     }
@@ -49,6 +63,8 @@ impl MicrosoftOauth2ProviderConfigInput {
 pub struct MicrosoftOauth2ProviderConfigInputBuilder {
     pub(crate) client_id: ::std::option::Option<::std::string::String>,
     pub(crate) client_secret: ::std::option::Option<::std::string::String>,
+    pub(crate) client_secret_config: ::std::option::Option<crate::types::SecretReference>,
+    pub(crate) client_secret_source: ::std::option::Option<crate::types::SecretSourceType>,
     pub(crate) tenant_id: ::std::option::Option<::std::string::String>,
 }
 impl MicrosoftOauth2ProviderConfigInputBuilder {
@@ -68,7 +84,6 @@ impl MicrosoftOauth2ProviderConfigInputBuilder {
         &self.client_id
     }
     /// <p>The client secret for the Microsoft OAuth2 provider.</p>
-    /// This field is required.
     pub fn client_secret(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_secret = ::std::option::Option::Some(input.into());
         self
@@ -81,6 +96,34 @@ impl MicrosoftOauth2ProviderConfigInputBuilder {
     /// <p>The client secret for the Microsoft OAuth2 provider.</p>
     pub fn get_client_secret(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_secret
+    }
+    /// <p>A reference to the AWS Secrets Manager secret that stores the client secret. This includes the secret ID and the JSON key used to extract the client secret value from the secret. Required when <code>clientSecretSource</code> is set to <code>EXTERNAL</code>.</p>
+    pub fn client_secret_config(mut self, input: crate::types::SecretReference) -> Self {
+        self.client_secret_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A reference to the AWS Secrets Manager secret that stores the client secret. This includes the secret ID and the JSON key used to extract the client secret value from the secret. Required when <code>clientSecretSource</code> is set to <code>EXTERNAL</code>.</p>
+    pub fn set_client_secret_config(mut self, input: ::std::option::Option<crate::types::SecretReference>) -> Self {
+        self.client_secret_config = input;
+        self
+    }
+    /// <p>A reference to the AWS Secrets Manager secret that stores the client secret. This includes the secret ID and the JSON key used to extract the client secret value from the secret. Required when <code>clientSecretSource</code> is set to <code>EXTERNAL</code>.</p>
+    pub fn get_client_secret_config(&self) -> &::std::option::Option<crate::types::SecretReference> {
+        &self.client_secret_config
+    }
+    /// <p>The source type of the client secret. Use <code>MANAGED</code> if the secret is managed by the service, or <code>EXTERNAL</code> if you manage the secret yourself in AWS Secrets Manager.</p>
+    pub fn client_secret_source(mut self, input: crate::types::SecretSourceType) -> Self {
+        self.client_secret_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The source type of the client secret. Use <code>MANAGED</code> if the secret is managed by the service, or <code>EXTERNAL</code> if you manage the secret yourself in AWS Secrets Manager.</p>
+    pub fn set_client_secret_source(mut self, input: ::std::option::Option<crate::types::SecretSourceType>) -> Self {
+        self.client_secret_source = input;
+        self
+    }
+    /// <p>The source type of the client secret. Use <code>MANAGED</code> if the secret is managed by the service, or <code>EXTERNAL</code> if you manage the secret yourself in AWS Secrets Manager.</p>
+    pub fn get_client_secret_source(&self) -> &::std::option::Option<crate::types::SecretSourceType> {
+        &self.client_secret_source
     }
     /// <p>The Microsoft Entra ID (formerly Azure AD) tenant ID for your organization. This identifies the specific tenant within Microsoft's identity platform where your application is registered.</p>
     pub fn tenant_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -99,7 +142,6 @@ impl MicrosoftOauth2ProviderConfigInputBuilder {
     /// Consumes the builder and constructs a [`MicrosoftOauth2ProviderConfigInput`](crate::types::MicrosoftOauth2ProviderConfigInput).
     /// This method will fail if any of the following fields are not set:
     /// - [`client_id`](crate::types::builders::MicrosoftOauth2ProviderConfigInputBuilder::client_id)
-    /// - [`client_secret`](crate::types::builders::MicrosoftOauth2ProviderConfigInputBuilder::client_secret)
     pub fn build(self) -> ::std::result::Result<crate::types::MicrosoftOauth2ProviderConfigInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::MicrosoftOauth2ProviderConfigInput {
             client_id: self.client_id.ok_or_else(|| {
@@ -108,12 +150,9 @@ impl MicrosoftOauth2ProviderConfigInputBuilder {
                     "client_id was not specified but it is required when building MicrosoftOauth2ProviderConfigInput",
                 )
             })?,
-            client_secret: self.client_secret.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "client_secret",
-                    "client_secret was not specified but it is required when building MicrosoftOauth2ProviderConfigInput",
-                )
-            })?,
+            client_secret: self.client_secret.unwrap_or_default(),
+            client_secret_config: self.client_secret_config,
+            client_secret_source: self.client_secret_source,
             tenant_id: self.tenant_id,
         })
     }
@@ -123,6 +162,8 @@ impl ::std::fmt::Debug for MicrosoftOauth2ProviderConfigInputBuilder {
         let mut formatter = f.debug_struct("MicrosoftOauth2ProviderConfigInputBuilder");
         formatter.field("client_id", &self.client_id);
         formatter.field("client_secret", &"*** Sensitive Data Redacted ***");
+        formatter.field("client_secret_config", &self.client_secret_config);
+        formatter.field("client_secret_source", &self.client_secret_source);
         formatter.field("tenant_id", &self.tenant_id);
         formatter.finish()
     }

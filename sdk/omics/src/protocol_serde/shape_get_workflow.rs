@@ -251,6 +251,16 @@ pub(crate) fn de_get_workflow(
                         crate::protocol_serde::shape_workflow_parameter_template::de_workflow_parameter_template(tokens, _value)?,
                     );
                 }
+                "profileParameterTemplates" => {
+                    builder = builder.set_profile_parameter_templates(
+                        crate::protocol_serde::shape_workflow_profile_parameter_templates::de_workflow_profile_parameter_templates(tokens, _value)?,
+                    );
+                }
+                "profiles" => {
+                    builder = builder.set_profiles(crate::protocol_serde::shape_workflow_profile_list::de_workflow_profile_list(
+                        tokens, _value,
+                    )?);
+                }
                 "readme" => {
                     builder = builder.set_readme(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

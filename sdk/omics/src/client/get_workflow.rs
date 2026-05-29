@@ -31,6 +31,8 @@ impl super::Client {
     ///   - [`readme(Option<String>)`](crate::operation::get_workflow::GetWorkflowOutput::readme): <p>The README content for the workflow, providing documentation and usage information.</p>
     ///   - [`definition_repository_details(Option<DefinitionRepositoryDetails>)`](crate::operation::get_workflow::GetWorkflowOutput::definition_repository_details): <p>Details about the source code repository that hosts the workflow definition files.</p>
     ///   - [`readme_path(Option<String>)`](crate::operation::get_workflow::GetWorkflowOutput::readme_path): <p>The path to the workflow README markdown file within the repository. This file provides documentation and usage information for the workflow. If not specified, the <code>README.md</code> file from the root directory of the repository will be used.</p>
+    ///   - [`profiles(Option<Vec::<String>>)`](crate::operation::get_workflow::GetWorkflowOutput::profiles): <p>The list of Nextflow profiles that are available for this workflow. Profiles allow you to select predefined configuration settings at runtime.</p>
+    ///   - [`profile_parameter_templates(Option<HashMap::<String, HashMap::<String, WorkflowParameter>>>)`](crate::operation::get_workflow::GetWorkflowOutput::profile_parameter_templates): <p>A mapping of profile names to their parameter templates. Each profile defines its own set of parameters that you can use when starting a run with that profile.</p>
     /// - On failure, responds with [`SdkError<GetWorkflowError>`](crate::operation::get_workflow::GetWorkflowError)
     pub fn get_workflow(&self) -> crate::operation::get_workflow::builders::GetWorkflowFluentBuilder {
         crate::operation::get_workflow::builders::GetWorkflowFluentBuilder::new(self.handle.clone())

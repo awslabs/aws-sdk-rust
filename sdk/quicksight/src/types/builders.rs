@@ -119,6 +119,8 @@ pub use crate::types::_q_data_key::QDataKeyBuilder;
 
 pub use crate::types::_namespace_info_v2::NamespaceInfoV2Builder;
 
+pub use crate::types::_o_auth_client_application::OAuthClientApplicationBuilder;
+
 pub use crate::types::_self_upgrade_configuration::SelfUpgradeConfigurationBuilder;
 
 pub use crate::types::_template::TemplateBuilder;
@@ -396,6 +398,8 @@ pub use crate::types::_iam_policy_assignment_summary::IamPolicyAssignmentSummary
 pub use crate::types::_active_iam_policy_assignment::ActiveIamPolicyAssignmentBuilder;
 
 pub use crate::types::_authorized_targets_by_service::AuthorizedTargetsByServiceBuilder;
+
+pub use crate::types::_o_auth_client_application_summary::OAuthClientApplicationSummaryBuilder;
 
 pub use crate::types::_template_summary::TemplateSummaryBuilder;
 

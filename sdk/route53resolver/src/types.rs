@@ -25,6 +25,8 @@ pub use crate::types::_dns_threat_protection::DnsThreatProtection;
 
 pub use crate::types::_confidence_threshold::ConfidenceThreshold;
 
+pub use crate::types::_firewall_rule_type::FirewallRuleType;
+
 pub use crate::types::_firewall_rule::FirewallRule;
 
 pub use crate::types::_firewall_rule_group::FirewallRuleGroup;
@@ -75,6 +77,26 @@ pub use crate::types::_resolver_query_log_config_association_error::ResolverQuer
 
 pub use crate::types::_resolver_rule_association_status::ResolverRuleAssociationStatus;
 
+pub use crate::types::_create_firewall_rule_entry::CreateFirewallRuleEntry;
+
+pub use crate::types::_batch_create_firewall_rule_error::BatchCreateFirewallRuleError;
+
+pub use crate::types::_delete_firewall_rule_entry::DeleteFirewallRuleEntry;
+
+pub use crate::types::_batch_delete_firewall_rule_error::BatchDeleteFirewallRuleError;
+
+pub use crate::types::_update_firewall_rule_entry::UpdateFirewallRuleEntry;
+
+pub use crate::types::_batch_update_firewall_rule_error::BatchUpdateFirewallRuleError;
+
+pub use crate::types::_domain_list_type::DomainListType;
+
+pub use crate::types::_firewall_advanced_content_category_config::FirewallAdvancedContentCategoryConfig;
+
+pub use crate::types::_firewall_advanced_threat_category_config::FirewallAdvancedThreatCategoryConfig;
+
+pub use crate::types::_dns_threat_protection_rule_type_config::DnsThreatProtectionRuleTypeConfig;
+
 pub use crate::types::_firewall_rule_group_status::FirewallRuleGroupStatus;
 
 pub use crate::types::_share_status::ShareStatus;
@@ -99,6 +121,8 @@ pub use crate::types::_firewall_domain_list_metadata::FirewallDomainListMetadata
 
 pub use crate::types::_firewall_rule_group_metadata::FirewallRuleGroupMetadata;
 
+pub use crate::types::_firewall_rule_type_definition::FirewallRuleTypeDefinition;
+
 pub use crate::types::_filter::Filter;
 
 pub use crate::types::_ip_address_response::IpAddressResponse;
@@ -111,15 +135,33 @@ mod _action;
 
 mod _autodefined_reverse_flag;
 
+mod _batch_create_firewall_rule_error;
+
+mod _batch_delete_firewall_rule_error;
+
+mod _batch_update_firewall_rule_error;
+
 mod _block_override_dns_type;
 
 mod _block_response;
 
 mod _confidence_threshold;
 
+mod _create_firewall_rule_entry;
+
+mod _delete_firewall_rule_entry;
+
 mod _dns_threat_protection;
 
+mod _dns_threat_protection_rule_type_config;
+
+mod _domain_list_type;
+
 mod _filter;
+
+mod _firewall_advanced_content_category_config;
+
+mod _firewall_advanced_threat_category_config;
 
 mod _firewall_config;
 
@@ -148,6 +190,10 @@ mod _firewall_rule_group_association_status;
 mod _firewall_rule_group_metadata;
 
 mod _firewall_rule_group_status;
+
+mod _firewall_rule_type;
+
+mod _firewall_rule_type_definition;
 
 mod _ip_address_request;
 
@@ -210,6 +256,8 @@ mod _sort_order;
 mod _tag;
 
 mod _target_address;
+
+mod _update_firewall_rule_entry;
 
 mod _update_ip_address;
 

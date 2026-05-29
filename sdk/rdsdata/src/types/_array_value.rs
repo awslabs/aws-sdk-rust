@@ -4,16 +4,16 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum ArrayValue {
-    /// <p>An array of arrays.</p>
-    ArrayValues(::std::vec::Vec<crate::types::ArrayValue>),
-    /// <p>An array of Boolean values.</p>
-    BooleanValues(::std::vec::Vec<bool>),
-    /// <p>An array of floating-point numbers.</p>
-    DoubleValues(::std::vec::Vec<f64>),
-    /// <p>An array of integers.</p>
-    LongValues(::std::vec::Vec<i64>),
-    /// <p>An array of strings.</p>
-    StringValues(::std::vec::Vec<::std::string::String>),
+    /// <p>An array of arrays. Can contain null values.</p>
+    ArrayValues(::std::vec::Vec<::std::option::Option<crate::types::ArrayValue>>),
+    /// <p>An array of Boolean values. Can contain null values.</p>
+    BooleanValues(::std::vec::Vec<::std::option::Option<bool>>),
+    /// <p>An array of floating-point numbers. Can contain null values.</p>
+    DoubleValues(::std::vec::Vec<::std::option::Option<f64>>),
+    /// <p>An array of integers. Can contain null values.</p>
+    LongValues(::std::vec::Vec<::std::option::Option<i64>>),
+    /// <p>An array of strings. Can contain null values.</p>
+    StringValues(::std::vec::Vec<::std::option::Option<::std::string::String>>),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant
     ///
@@ -27,7 +27,7 @@ pub enum ArrayValue {
 impl ArrayValue {
     /// Tries to convert the enum instance into [`ArrayValues`](crate::types::ArrayValue::ArrayValues), extracting the inner [`Vec`](::std::vec::Vec).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_array_values(&self) -> ::std::result::Result<&::std::vec::Vec<crate::types::ArrayValue>, &Self> {
+    pub fn as_array_values(&self) -> ::std::result::Result<&::std::vec::Vec<::std::option::Option<crate::types::ArrayValue>>, &Self> {
         if let ArrayValue::ArrayValues(val) = &self {
             ::std::result::Result::Ok(val)
         } else {
@@ -40,7 +40,7 @@ impl ArrayValue {
     }
     /// Tries to convert the enum instance into [`BooleanValues`](crate::types::ArrayValue::BooleanValues), extracting the inner [`Vec`](::std::vec::Vec).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_boolean_values(&self) -> ::std::result::Result<&::std::vec::Vec<bool>, &Self> {
+    pub fn as_boolean_values(&self) -> ::std::result::Result<&::std::vec::Vec<::std::option::Option<bool>>, &Self> {
         if let ArrayValue::BooleanValues(val) = &self {
             ::std::result::Result::Ok(val)
         } else {
@@ -53,7 +53,7 @@ impl ArrayValue {
     }
     /// Tries to convert the enum instance into [`DoubleValues`](crate::types::ArrayValue::DoubleValues), extracting the inner [`Vec`](::std::vec::Vec).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_double_values(&self) -> ::std::result::Result<&::std::vec::Vec<f64>, &Self> {
+    pub fn as_double_values(&self) -> ::std::result::Result<&::std::vec::Vec<::std::option::Option<f64>>, &Self> {
         if let ArrayValue::DoubleValues(val) = &self {
             ::std::result::Result::Ok(val)
         } else {
@@ -66,7 +66,7 @@ impl ArrayValue {
     }
     /// Tries to convert the enum instance into [`LongValues`](crate::types::ArrayValue::LongValues), extracting the inner [`Vec`](::std::vec::Vec).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_long_values(&self) -> ::std::result::Result<&::std::vec::Vec<i64>, &Self> {
+    pub fn as_long_values(&self) -> ::std::result::Result<&::std::vec::Vec<::std::option::Option<i64>>, &Self> {
         if let ArrayValue::LongValues(val) = &self {
             ::std::result::Result::Ok(val)
         } else {
@@ -79,7 +79,7 @@ impl ArrayValue {
     }
     /// Tries to convert the enum instance into [`StringValues`](crate::types::ArrayValue::StringValues), extracting the inner [`Vec`](::std::vec::Vec).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_string_values(&self) -> ::std::result::Result<&::std::vec::Vec<::std::string::String>, &Self> {
+    pub fn as_string_values(&self) -> ::std::result::Result<&::std::vec::Vec<::std::option::Option<::std::string::String>>, &Self> {
         if let ArrayValue::StringValues(val) = &self {
             ::std::result::Result::Ok(val)
         } else {

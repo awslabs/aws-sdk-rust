@@ -221,6 +221,8 @@ pub use crate::types::_automated_reasoning_policy_ingest_content_annotation::Aut
 
 pub use crate::types::_automated_reasoning_policy_build_workflow_repair_content::AutomatedReasoningPolicyBuildWorkflowRepairContentBuilder;
 
+pub use crate::types::_automated_reasoning_policy_iterative_refinement_content::AutomatedReasoningPolicyIterativeRefinementContentBuilder;
+
 pub use crate::types::_validator::ValidatorBuilder;
 
 pub use crate::types::_teacher_model_config::TeacherModelConfigBuilder;

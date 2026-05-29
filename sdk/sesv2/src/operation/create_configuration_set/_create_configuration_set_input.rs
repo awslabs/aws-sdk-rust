@@ -16,7 +16,7 @@ pub struct CreateConfigurationSetInput {
     pub sending_options: ::std::option::Option<crate::types::SendingOptions>,
     /// <p>An array of objects that define the tags (keys and values) to associate with the configuration set.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    /// <p>An object that contains information about the suppression list preferences for your account.</p>
+    /// <p>An object that contains information about the suppression list preferences for the configuration set. You can optionally include a <code>SuppressionScope</code> to override the tenant or account suppression scope for emails sent using this configuration set.</p>
     pub suppression_options: ::std::option::Option<crate::types::SuppressionOptions>,
     /// <p>An object that defines the VDM options for emails that you send using the configuration set.</p>
     pub vdm_options: ::std::option::Option<crate::types::VdmOptions>,
@@ -50,7 +50,7 @@ impl CreateConfigurationSetInput {
     pub fn tags(&self) -> &[crate::types::Tag] {
         self.tags.as_deref().unwrap_or_default()
     }
-    /// <p>An object that contains information about the suppression list preferences for your account.</p>
+    /// <p>An object that contains information about the suppression list preferences for the configuration set. You can optionally include a <code>SuppressionScope</code> to override the tenant or account suppression scope for emails sent using this configuration set.</p>
     pub fn suppression_options(&self) -> ::std::option::Option<&crate::types::SuppressionOptions> {
         self.suppression_options.as_ref()
     }
@@ -176,17 +176,17 @@ impl CreateConfigurationSetInputBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags
     }
-    /// <p>An object that contains information about the suppression list preferences for your account.</p>
+    /// <p>An object that contains information about the suppression list preferences for the configuration set. You can optionally include a <code>SuppressionScope</code> to override the tenant or account suppression scope for emails sent using this configuration set.</p>
     pub fn suppression_options(mut self, input: crate::types::SuppressionOptions) -> Self {
         self.suppression_options = ::std::option::Option::Some(input);
         self
     }
-    /// <p>An object that contains information about the suppression list preferences for your account.</p>
+    /// <p>An object that contains information about the suppression list preferences for the configuration set. You can optionally include a <code>SuppressionScope</code> to override the tenant or account suppression scope for emails sent using this configuration set.</p>
     pub fn set_suppression_options(mut self, input: ::std::option::Option<crate::types::SuppressionOptions>) -> Self {
         self.suppression_options = input;
         self
     }
-    /// <p>An object that contains information about the suppression list preferences for your account.</p>
+    /// <p>An object that contains information about the suppression list preferences for the configuration set. You can optionally include a <code>SuppressionScope</code> to override the tenant or account suppression scope for emails sent using this configuration set.</p>
     pub fn get_suppression_options(&self) -> &::std::option::Option<crate::types::SuppressionOptions> {
         &self.suppression_options
     }

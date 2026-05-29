@@ -47,6 +47,8 @@ pub struct StartRunInput {
     pub networking_mode: ::std::option::Option<crate::types::NetworkingMode>,
     /// <p>Optional configuration name to use for the workflow run.</p>
     pub configuration_name: ::std::option::Option<::std::string::String>,
+    /// <p>Engine-specific settings for the workflow run. Use this field to specify configuration options that are specific to the workflow engine (for example, Nextflow profiles).</p>
+    pub engine_settings: ::std::option::Option<::aws_smithy_types::Document>,
 }
 impl StartRunInput {
     /// <p>The run's workflow ID. The <code>workflowId</code> is not the UUID.</p>
@@ -135,6 +137,10 @@ impl StartRunInput {
     pub fn configuration_name(&self) -> ::std::option::Option<&str> {
         self.configuration_name.as_deref()
     }
+    /// <p>Engine-specific settings for the workflow run. Use this field to specify configuration options that are specific to the workflow engine (for example, Nextflow profiles).</p>
+    pub fn engine_settings(&self) -> ::std::option::Option<&::aws_smithy_types::Document> {
+        self.engine_settings.as_ref()
+    }
 }
 impl StartRunInput {
     /// Creates a new builder-style object to manufacture [`StartRunInput`](crate::operation::start_run::StartRunInput).
@@ -168,6 +174,7 @@ pub struct StartRunInputBuilder {
     pub(crate) workflow_version_name: ::std::option::Option<::std::string::String>,
     pub(crate) networking_mode: ::std::option::Option<crate::types::NetworkingMode>,
     pub(crate) configuration_name: ::std::option::Option<::std::string::String>,
+    pub(crate) engine_settings: ::std::option::Option<::aws_smithy_types::Document>,
 }
 impl StartRunInputBuilder {
     /// <p>The run's workflow ID. The <code>workflowId</code> is not the UUID.</p>
@@ -479,6 +486,20 @@ impl StartRunInputBuilder {
     pub fn get_configuration_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.configuration_name
     }
+    /// <p>Engine-specific settings for the workflow run. Use this field to specify configuration options that are specific to the workflow engine (for example, Nextflow profiles).</p>
+    pub fn engine_settings(mut self, input: ::aws_smithy_types::Document) -> Self {
+        self.engine_settings = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Engine-specific settings for the workflow run. Use this field to specify configuration options that are specific to the workflow engine (for example, Nextflow profiles).</p>
+    pub fn set_engine_settings(mut self, input: ::std::option::Option<::aws_smithy_types::Document>) -> Self {
+        self.engine_settings = input;
+        self
+    }
+    /// <p>Engine-specific settings for the workflow run. Use this field to specify configuration options that are specific to the workflow engine (for example, Nextflow profiles).</p>
+    pub fn get_engine_settings(&self) -> &::std::option::Option<::aws_smithy_types::Document> {
+        &self.engine_settings
+    }
     /// Consumes the builder and constructs a [`StartRunInput`](crate::operation::start_run::StartRunInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::start_run::StartRunInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_run::StartRunInput {
@@ -503,6 +524,7 @@ impl StartRunInputBuilder {
             workflow_version_name: self.workflow_version_name,
             networking_mode: self.networking_mode,
             configuration_name: self.configuration_name,
+            engine_settings: self.engine_settings,
         })
     }
 }

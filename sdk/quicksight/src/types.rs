@@ -85,6 +85,8 @@ pub use crate::types::_identity_store::IdentityStore;
 
 pub use crate::types::_namespace_status::NamespaceStatus;
 
+pub use crate::types::_o_auth_client_authentication_type::OAuthClientAuthenticationType;
+
 pub use crate::types::_refresh_schedule::RefreshSchedule;
 
 pub use crate::types::_role::Role;
@@ -176,6 +178,8 @@ pub use crate::types::_ingestion::Ingestion;
 pub use crate::types::_q_data_key::QDataKey;
 
 pub use crate::types::_namespace_info_v2::NamespaceInfoV2;
+
+pub use crate::types::_o_auth_client_application::OAuthClientApplication;
 
 pub use crate::types::_personalization_mode::PersonalizationMode;
 
@@ -512,6 +516,8 @@ pub use crate::types::_iam_policy_assignment_summary::IamPolicyAssignmentSummary
 pub use crate::types::_active_iam_policy_assignment::ActiveIamPolicyAssignment;
 
 pub use crate::types::_authorized_targets_by_service::AuthorizedTargetsByService;
+
+pub use crate::types::_o_auth_client_application_summary::OAuthClientApplicationSummary;
 
 pub use crate::types::_template_summary::TemplateSummary;
 
@@ -4286,6 +4292,12 @@ mod _numerical_aggregation_function;
 mod _numerical_dimension_field;
 
 mod _numerical_measure_field;
+
+mod _o_auth_client_application;
+
+mod _o_auth_client_application_summary;
+
+mod _o_auth_client_authentication_type;
 
 mod _o_auth_client_credentials;
 

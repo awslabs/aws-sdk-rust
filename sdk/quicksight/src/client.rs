@@ -174,6 +174,8 @@ mod create_ingestion;
 
 mod create_namespace;
 
+mod create_o_auth_client_application;
+
 mod create_refresh_schedule;
 
 mod create_role_membership;
@@ -258,6 +260,8 @@ mod delete_iam_policy_assignment;
 mod delete_identity_propagation_config;
 
 mod delete_namespace;
+
+mod delete_o_auth_client_application;
 
 mod delete_refresh_schedule;
 
@@ -361,6 +365,8 @@ mod describe_key_registration;
 
 mod describe_namespace;
 
+mod describe_o_auth_client_application;
+
 mod describe_q_personalization_configuration;
 
 mod describe_quick_sight_q_search_configuration;
@@ -454,6 +460,8 @@ mod list_identity_propagation_configs;
 mod list_ingestions;
 
 mod list_namespaces;
+
+mod list_o_auth_client_applications;
 
 mod list_refresh_schedules;
 
@@ -586,6 +594,8 @@ mod update_identity_propagation_config;
 mod update_ip_restriction;
 
 mod update_key_registration;
+
+mod update_o_auth_client_application;
 
 mod update_public_sharing_settings;
 

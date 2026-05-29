@@ -144,6 +144,12 @@ mod associate_resolver_query_log_config;
 
 mod associate_resolver_rule;
 
+mod batch_create_firewall_rule;
+
+mod batch_delete_firewall_rule;
+
+mod batch_update_firewall_rule;
+
 mod create_firewall_domain_list;
 
 mod create_firewall_rule;
@@ -248,6 +254,8 @@ mod list_firewall_domains;
 mod list_firewall_rule_group_associations;
 
 mod list_firewall_rule_groups;
+
+mod list_firewall_rule_types;
 
 mod list_firewall_rules;
 

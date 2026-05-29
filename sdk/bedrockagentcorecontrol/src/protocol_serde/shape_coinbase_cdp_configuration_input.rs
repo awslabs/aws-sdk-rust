@@ -9,8 +9,26 @@ pub fn ser_coinbase_cdp_configuration_input(
     {
         object.key("apiKeySecret").string(input.api_key_secret.as_str());
     }
+    if let Some(var_1) = &input.api_key_secret_source {
+        object.key("apiKeySecretSource").string(var_1.as_str());
+    }
+    if let Some(var_2) = &input.api_key_secret_config {
+        #[allow(unused_mut)]
+        let mut object_3 = object.key("apiKeySecretConfig").start_object();
+        crate::protocol_serde::shape_secret_reference::ser_secret_reference(&mut object_3, var_2)?;
+        object_3.finish();
+    }
     {
         object.key("walletSecret").string(input.wallet_secret.as_str());
+    }
+    if let Some(var_4) = &input.wallet_secret_source {
+        object.key("walletSecretSource").string(var_4.as_str());
+    }
+    if let Some(var_5) = &input.wallet_secret_config {
+        #[allow(unused_mut)]
+        let mut object_6 = object.key("walletSecretConfig").start_object();
+        crate::protocol_serde::shape_secret_reference::ser_secret_reference(&mut object_6, var_5)?;
+        object_6.finish();
     }
     Ok(())
 }

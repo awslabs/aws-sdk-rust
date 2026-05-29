@@ -178,6 +178,20 @@ pub(crate) fn de_get_api_key_credential_provider(
                 "apiKeySecretArn" => {
                     builder = builder.set_api_key_secret_arn(crate::protocol_serde::shape_secret::de_secret(tokens, _value)?);
                 }
+                "apiKeySecretJsonKey" => {
+                    builder = builder.set_api_key_secret_json_key(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
+                "apiKeySecretSource" => {
+                    builder = builder.set_api_key_secret_source(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| crate::types::SecretSourceType::from(u.as_ref())))
+                            .transpose()?,
+                    );
+                }
                 "createdTime" => {
                     builder = builder.set_created_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                         tokens.next(),

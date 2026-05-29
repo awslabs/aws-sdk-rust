@@ -134,6 +134,11 @@ pub(crate) fn de_create_tenant(
                             .transpose()?,
                     );
                 }
+                "SuppressionAttributes" => {
+                    builder = builder.set_suppression_attributes(
+                        crate::protocol_serde::shape_tenant_suppression_attributes::de_tenant_suppression_attributes(tokens, _value)?,
+                    );
+                }
                 "Tags" => {
                     builder = builder.set_tags(crate::protocol_serde::shape_tag_list::de_tag_list(tokens, _value)?);
                 }

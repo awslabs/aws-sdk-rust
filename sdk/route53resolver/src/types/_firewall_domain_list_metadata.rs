@@ -15,6 +15,10 @@ pub struct FirewallDomainListMetadata {
     pub creator_request_id: ::std::option::Option<::std::string::String>,
     /// <p>The owner of the list, used only for lists that are not managed by you. For example, the managed domain list <code>AWSManagedDomainsMalwareDomainList</code> has the managed owner name <code>Route 53 Resolver DNS Firewall</code>.</p>
     pub managed_owner_name: ::std::option::Option<::std::string::String>,
+    /// <p>The type of the managed domain list, for example <code>THREAT</code>.</p>
+    pub managed_list_type: ::std::option::Option<crate::types::DomainListType>,
+    /// <p>The category of the domain list.</p>
+    pub category: ::std::option::Option<::std::string::String>,
 }
 impl FirewallDomainListMetadata {
     /// <p>The ID of the domain list.</p>
@@ -37,6 +41,14 @@ impl FirewallDomainListMetadata {
     pub fn managed_owner_name(&self) -> ::std::option::Option<&str> {
         self.managed_owner_name.as_deref()
     }
+    /// <p>The type of the managed domain list, for example <code>THREAT</code>.</p>
+    pub fn managed_list_type(&self) -> ::std::option::Option<&crate::types::DomainListType> {
+        self.managed_list_type.as_ref()
+    }
+    /// <p>The category of the domain list.</p>
+    pub fn category(&self) -> ::std::option::Option<&str> {
+        self.category.as_deref()
+    }
 }
 impl FirewallDomainListMetadata {
     /// Creates a new builder-style object to manufacture [`FirewallDomainListMetadata`](crate::types::FirewallDomainListMetadata).
@@ -54,6 +66,8 @@ pub struct FirewallDomainListMetadataBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) creator_request_id: ::std::option::Option<::std::string::String>,
     pub(crate) managed_owner_name: ::std::option::Option<::std::string::String>,
+    pub(crate) managed_list_type: ::std::option::Option<crate::types::DomainListType>,
+    pub(crate) category: ::std::option::Option<::std::string::String>,
 }
 impl FirewallDomainListMetadataBuilder {
     /// <p>The ID of the domain list.</p>
@@ -126,6 +140,34 @@ impl FirewallDomainListMetadataBuilder {
     pub fn get_managed_owner_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.managed_owner_name
     }
+    /// <p>The type of the managed domain list, for example <code>THREAT</code>.</p>
+    pub fn managed_list_type(mut self, input: crate::types::DomainListType) -> Self {
+        self.managed_list_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The type of the managed domain list, for example <code>THREAT</code>.</p>
+    pub fn set_managed_list_type(mut self, input: ::std::option::Option<crate::types::DomainListType>) -> Self {
+        self.managed_list_type = input;
+        self
+    }
+    /// <p>The type of the managed domain list, for example <code>THREAT</code>.</p>
+    pub fn get_managed_list_type(&self) -> &::std::option::Option<crate::types::DomainListType> {
+        &self.managed_list_type
+    }
+    /// <p>The category of the domain list.</p>
+    pub fn category(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.category = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The category of the domain list.</p>
+    pub fn set_category(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.category = input;
+        self
+    }
+    /// <p>The category of the domain list.</p>
+    pub fn get_category(&self) -> &::std::option::Option<::std::string::String> {
+        &self.category
+    }
     /// Consumes the builder and constructs a [`FirewallDomainListMetadata`](crate::types::FirewallDomainListMetadata).
     pub fn build(self) -> crate::types::FirewallDomainListMetadata {
         crate::types::FirewallDomainListMetadata {
@@ -134,6 +176,8 @@ impl FirewallDomainListMetadataBuilder {
             name: self.name,
             creator_request_id: self.creator_request_id,
             managed_owner_name: self.managed_owner_name,
+            managed_list_type: self.managed_list_type,
+            category: self.category,
         }
     }
 }

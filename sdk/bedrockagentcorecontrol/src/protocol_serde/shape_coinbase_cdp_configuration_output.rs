@@ -25,8 +25,36 @@ where
                         "apiKeySecretArn" => {
                             builder = builder.set_api_key_secret_arn(crate::protocol_serde::shape_secret::de_secret(tokens, _value)?);
                         }
+                        "apiKeySecretJsonKey" => {
+                            builder = builder.set_api_key_secret_json_key(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "apiKeySecretSource" => {
+                            builder = builder.set_api_key_secret_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::SecretSourceType::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
                         "walletSecretArn" => {
                             builder = builder.set_wallet_secret_arn(crate::protocol_serde::shape_secret::de_secret(tokens, _value)?);
+                        }
+                        "walletSecretJsonKey" => {
+                            builder = builder.set_wallet_secret_json_key(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "walletSecretSource" => {
+                            builder = builder.set_wallet_secret_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::SecretSourceType::from(u.as_ref())))
+                                    .transpose()?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

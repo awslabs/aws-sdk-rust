@@ -265,6 +265,8 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for PutSuppressed
 pub enum PutSuppressedDestinationError {
     /// <p>The input you provided is invalid.</p>
     BadRequestException(crate::types::error::BadRequestException),
+    /// <p>The resource you attempted to access doesn't exist.</p>
+    NotFoundException(crate::types::error::NotFoundException),
     /// <p>Too many requests have been made to the operation.</p>
     TooManyRequestsException(crate::types::error::TooManyRequestsException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
@@ -301,6 +303,7 @@ impl PutSuppressedDestinationError {
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
             Self::BadRequestException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::NotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::TooManyRequestsException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
@@ -308,6 +311,10 @@ impl PutSuppressedDestinationError {
     /// Returns `true` if the error kind is `PutSuppressedDestinationError::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(self, Self::BadRequestException(_))
+    }
+    /// Returns `true` if the error kind is `PutSuppressedDestinationError::NotFoundException`.
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(self, Self::NotFoundException(_))
     }
     /// Returns `true` if the error kind is `PutSuppressedDestinationError::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
@@ -318,6 +325,7 @@ impl ::std::error::Error for PutSuppressedDestinationError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
             Self::BadRequestException(_inner) => ::std::option::Option::Some(_inner),
+            Self::NotFoundException(_inner) => ::std::option::Option::Some(_inner),
             Self::TooManyRequestsException(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
         }
@@ -327,6 +335,7 @@ impl ::std::fmt::Display for PutSuppressedDestinationError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
             Self::BadRequestException(_inner) => _inner.fmt(f),
+            Self::NotFoundException(_inner) => _inner.fmt(f),
             Self::TooManyRequestsException(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => {
                 if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
@@ -350,6 +359,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for PutSuppressed
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
             Self::BadRequestException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::NotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::TooManyRequestsException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => &_inner.meta,
         }

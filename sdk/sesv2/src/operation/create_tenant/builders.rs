@@ -24,6 +24,7 @@ impl crate::operation::create_tenant::builders::CreateTenantInputBuilder {
 ///
 /// <p>Create a tenant.</p>
 /// <p><i>Tenants</i> are logical containers that group related SES resources together. Each tenant can have its own set of resources like email identities, configuration sets, and templates, along with reputation metrics and sending status. This helps isolate and manage email sending for different customers or business units within your Amazon SES API v2 account.</p>
+/// <p>You can optionally specify <code>SuppressionAttributes</code> to configure tenant-level suppression at creation time. When tenant-level suppression is enabled, Amazon SES maintains a separate suppression list for the tenant instead of using the account-level suppression list.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateTenantFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -141,5 +142,19 @@ impl CreateTenantFluentBuilder {
     /// <p>An array of objects that define the tags (keys and values) to associate with the tenant</p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         self.inner.get_tags()
+    }
+    /// <p>An object that contains information about the suppression list preferences for the tenant. Use this to configure tenant-level suppression at creation time.</p>
+    pub fn suppression_attributes(mut self, input: crate::types::TenantSuppressionAttributes) -> Self {
+        self.inner = self.inner.suppression_attributes(input);
+        self
+    }
+    /// <p>An object that contains information about the suppression list preferences for the tenant. Use this to configure tenant-level suppression at creation time.</p>
+    pub fn set_suppression_attributes(mut self, input: ::std::option::Option<crate::types::TenantSuppressionAttributes>) -> Self {
+        self.inner = self.inner.set_suppression_attributes(input);
+        self
+    }
+    /// <p>An object that contains information about the suppression list preferences for the tenant. Use this to configure tenant-level suppression at creation time.</p>
+    pub fn get_suppression_attributes(&self) -> &::std::option::Option<crate::types::TenantSuppressionAttributes> {
+        self.inner.get_suppression_attributes()
     }
 }

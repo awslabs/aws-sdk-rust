@@ -310,6 +310,123 @@ impl From<crate::operation::associate_resolver_rule::AssociateResolverRuleError>
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::batch_create_firewall_rule::BatchCreateFirewallRuleError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::batch_create_firewall_rule::BatchCreateFirewallRuleError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::batch_create_firewall_rule::BatchCreateFirewallRuleError> for Error {
+    fn from(err: crate::operation::batch_create_firewall_rule::BatchCreateFirewallRuleError) -> Self {
+        match err {
+            crate::operation::batch_create_firewall_rule::BatchCreateFirewallRuleError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::batch_create_firewall_rule::BatchCreateFirewallRuleError::InternalServiceErrorException(inner) => {
+                Error::InternalServiceErrorException(inner)
+            }
+            crate::operation::batch_create_firewall_rule::BatchCreateFirewallRuleError::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
+            crate::operation::batch_create_firewall_rule::BatchCreateFirewallRuleError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::batch_create_firewall_rule::BatchCreateFirewallRuleError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::batch_create_firewall_rule::BatchCreateFirewallRuleError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::batch_delete_firewall_rule::BatchDeleteFirewallRuleError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::batch_delete_firewall_rule::BatchDeleteFirewallRuleError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::batch_delete_firewall_rule::BatchDeleteFirewallRuleError> for Error {
+    fn from(err: crate::operation::batch_delete_firewall_rule::BatchDeleteFirewallRuleError) -> Self {
+        match err {
+            crate::operation::batch_delete_firewall_rule::BatchDeleteFirewallRuleError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::batch_delete_firewall_rule::BatchDeleteFirewallRuleError::InternalServiceErrorException(inner) => {
+                Error::InternalServiceErrorException(inner)
+            }
+            crate::operation::batch_delete_firewall_rule::BatchDeleteFirewallRuleError::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
+            crate::operation::batch_delete_firewall_rule::BatchDeleteFirewallRuleError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::batch_delete_firewall_rule::BatchDeleteFirewallRuleError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::batch_delete_firewall_rule::BatchDeleteFirewallRuleError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::batch_update_firewall_rule::BatchUpdateFirewallRuleError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::batch_update_firewall_rule::BatchUpdateFirewallRuleError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::batch_update_firewall_rule::BatchUpdateFirewallRuleError> for Error {
+    fn from(err: crate::operation::batch_update_firewall_rule::BatchUpdateFirewallRuleError) -> Self {
+        match err {
+            crate::operation::batch_update_firewall_rule::BatchUpdateFirewallRuleError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::batch_update_firewall_rule::BatchUpdateFirewallRuleError::InternalServiceErrorException(inner) => {
+                Error::InternalServiceErrorException(inner)
+            }
+            crate::operation::batch_update_firewall_rule::BatchUpdateFirewallRuleError::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
+            crate::operation::batch_update_firewall_rule::BatchUpdateFirewallRuleError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::batch_update_firewall_rule::BatchUpdateFirewallRuleError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::batch_update_firewall_rule::BatchUpdateFirewallRuleError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_firewall_domain_list::CreateFirewallDomainListError, R>>
     for Error
 where
@@ -1812,6 +1929,37 @@ impl From<crate::operation::list_firewall_rules::ListFirewallRulesError> for Err
             crate::operation::list_firewall_rules::ListFirewallRulesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::list_firewall_rules::ListFirewallRulesError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_firewall_rules::ListFirewallRulesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_firewall_rule_types::ListFirewallRuleTypesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_firewall_rule_types::ListFirewallRuleTypesError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_firewall_rule_types::ListFirewallRuleTypesError> for Error {
+    fn from(err: crate::operation::list_firewall_rule_types::ListFirewallRuleTypesError) -> Self {
+        match err {
+            crate::operation::list_firewall_rule_types::ListFirewallRuleTypesError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_firewall_rule_types::ListFirewallRuleTypesError::InternalServiceErrorException(inner) => {
+                Error::InternalServiceErrorException(inner)
+            }
+            crate::operation::list_firewall_rule_types::ListFirewallRuleTypesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_firewall_rule_types::ListFirewallRuleTypesError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_firewall_rule_types::ListFirewallRuleTypesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

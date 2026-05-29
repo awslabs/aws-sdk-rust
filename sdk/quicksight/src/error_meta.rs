@@ -870,6 +870,58 @@ impl From<crate::operation::create_namespace::CreateNamespaceError> for Error {
         }
     }
 }
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_o_auth_client_application::CreateOAuthClientApplicationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_o_auth_client_application::CreateOAuthClientApplicationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_o_auth_client_application::CreateOAuthClientApplicationError> for Error {
+    fn from(err: crate::operation::create_o_auth_client_application::CreateOAuthClientApplicationError) -> Self {
+        match err {
+            crate::operation::create_o_auth_client_application::CreateOAuthClientApplicationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::create_o_auth_client_application::CreateOAuthClientApplicationError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::create_o_auth_client_application::CreateOAuthClientApplicationError::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
+            }
+            crate::operation::create_o_auth_client_application::CreateOAuthClientApplicationError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::create_o_auth_client_application::CreateOAuthClientApplicationError::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
+            crate::operation::create_o_auth_client_application::CreateOAuthClientApplicationError::ResourceExistsException(inner) => {
+                Error::ResourceExistsException(inner)
+            }
+            crate::operation::create_o_auth_client_application::CreateOAuthClientApplicationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::create_o_auth_client_application::CreateOAuthClientApplicationError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::create_o_auth_client_application::CreateOAuthClientApplicationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_refresh_schedule::CreateRefreshScheduleError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1969,6 +2021,52 @@ impl From<crate::operation::delete_namespace::DeleteNamespaceError> for Error {
             }
             crate::operation::delete_namespace::DeleteNamespaceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::delete_namespace::DeleteNamespaceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_o_auth_client_application::DeleteOAuthClientApplicationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_o_auth_client_application::DeleteOAuthClientApplicationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_o_auth_client_application::DeleteOAuthClientApplicationError> for Error {
+    fn from(err: crate::operation::delete_o_auth_client_application::DeleteOAuthClientApplicationError) -> Self {
+        match err {
+            crate::operation::delete_o_auth_client_application::DeleteOAuthClientApplicationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::delete_o_auth_client_application::DeleteOAuthClientApplicationError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::delete_o_auth_client_application::DeleteOAuthClientApplicationError::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
+            }
+            crate::operation::delete_o_auth_client_application::DeleteOAuthClientApplicationError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::delete_o_auth_client_application::DeleteOAuthClientApplicationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_o_auth_client_application::DeleteOAuthClientApplicationError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::delete_o_auth_client_application::DeleteOAuthClientApplicationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -4007,6 +4105,53 @@ impl From<crate::operation::describe_namespace::DescribeNamespaceError> for Erro
 impl<R>
     From<
         ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_o_auth_client_application::DescribeOAuthClientApplicationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_o_auth_client_application::DescribeOAuthClientApplicationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_o_auth_client_application::DescribeOAuthClientApplicationError> for Error {
+    fn from(err: crate::operation::describe_o_auth_client_application::DescribeOAuthClientApplicationError) -> Self {
+        match err {
+            crate::operation::describe_o_auth_client_application::DescribeOAuthClientApplicationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::describe_o_auth_client_application::DescribeOAuthClientApplicationError::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
+            }
+            crate::operation::describe_o_auth_client_application::DescribeOAuthClientApplicationError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::describe_o_auth_client_application::DescribeOAuthClientApplicationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::describe_o_auth_client_application::DescribeOAuthClientApplicationError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::describe_o_auth_client_application::DescribeOAuthClientApplicationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::describe_q_personalization_configuration::DescribeQPersonalizationConfigurationError,
             R,
         >,
@@ -5748,6 +5893,52 @@ impl From<crate::operation::list_namespaces::ListNamespacesError> for Error {
             crate::operation::list_namespaces::ListNamespacesError::ResourceUnavailableException(inner) => Error::ResourceUnavailableException(inner),
             crate::operation::list_namespaces::ListNamespacesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::list_namespaces::ListNamespacesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_o_auth_client_applications::ListOAuthClientApplicationsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_o_auth_client_applications::ListOAuthClientApplicationsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_o_auth_client_applications::ListOAuthClientApplicationsError> for Error {
+    fn from(err: crate::operation::list_o_auth_client_applications::ListOAuthClientApplicationsError) -> Self {
+        match err {
+            crate::operation::list_o_auth_client_applications::ListOAuthClientApplicationsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_o_auth_client_applications::ListOAuthClientApplicationsError::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
+            }
+            crate::operation::list_o_auth_client_applications::ListOAuthClientApplicationsError::InvalidNextTokenException(inner) => {
+                Error::InvalidNextTokenException(inner)
+            }
+            crate::operation::list_o_auth_client_applications::ListOAuthClientApplicationsError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::list_o_auth_client_applications::ListOAuthClientApplicationsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_o_auth_client_applications::ListOAuthClientApplicationsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::list_o_auth_client_applications::ListOAuthClientApplicationsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -8206,6 +8397,55 @@ impl From<crate::operation::update_key_registration::UpdateKeyRegistrationError>
             }
             crate::operation::update_key_registration::UpdateKeyRegistrationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::update_key_registration::UpdateKeyRegistrationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_o_auth_client_application::UpdateOAuthClientApplicationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_o_auth_client_application::UpdateOAuthClientApplicationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_o_auth_client_application::UpdateOAuthClientApplicationError> for Error {
+    fn from(err: crate::operation::update_o_auth_client_application::UpdateOAuthClientApplicationError) -> Self {
+        match err {
+            crate::operation::update_o_auth_client_application::UpdateOAuthClientApplicationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::update_o_auth_client_application::UpdateOAuthClientApplicationError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::update_o_auth_client_application::UpdateOAuthClientApplicationError::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
+            }
+            crate::operation::update_o_auth_client_application::UpdateOAuthClientApplicationError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::update_o_auth_client_application::UpdateOAuthClientApplicationError::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
+            crate::operation::update_o_auth_client_application::UpdateOAuthClientApplicationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_o_auth_client_application::UpdateOAuthClientApplicationError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::update_o_auth_client_application::UpdateOAuthClientApplicationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

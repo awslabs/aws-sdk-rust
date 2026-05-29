@@ -8,6 +8,10 @@ pub struct IncludedOauth2ProviderConfigInput {
     pub client_id: ::std::string::String,
     /// <p>The client secret for the supported OAuth2 provider. This secret is assigned by the OAuth2 provider and used along with the client ID to authenticate your application.</p>
     pub client_secret: ::std::string::String,
+    /// <p>A reference to the AWS Secrets Manager secret that stores the client secret. This includes the secret ID and the JSON key used to extract the client secret value from the secret. Required when <code>clientSecretSource</code> is set to <code>EXTERNAL</code>.</p>
+    pub client_secret_config: ::std::option::Option<crate::types::SecretReference>,
+    /// <p>The source type of the client secret. Use <code>MANAGED</code> if the secret is managed by the service, or <code>EXTERNAL</code> if you manage the secret yourself in AWS Secrets Manager.</p>
+    pub client_secret_source: ::std::option::Option<crate::types::SecretSourceType>,
     /// <p>Token issuer of your isolated OAuth2 application tenant. This URL identifies the authorization server that issues tokens for this provider.</p>
     pub issuer: ::std::option::Option<::std::string::String>,
     /// <p>OAuth2 authorization endpoint for your isolated OAuth2 application tenant. This is where users are redirected to authenticate and authorize access to their resources.</p>
@@ -25,6 +29,14 @@ impl IncludedOauth2ProviderConfigInput {
     pub fn client_secret(&self) -> &str {
         use std::ops::Deref;
         self.client_secret.deref()
+    }
+    /// <p>A reference to the AWS Secrets Manager secret that stores the client secret. This includes the secret ID and the JSON key used to extract the client secret value from the secret. Required when <code>clientSecretSource</code> is set to <code>EXTERNAL</code>.</p>
+    pub fn client_secret_config(&self) -> ::std::option::Option<&crate::types::SecretReference> {
+        self.client_secret_config.as_ref()
+    }
+    /// <p>The source type of the client secret. Use <code>MANAGED</code> if the secret is managed by the service, or <code>EXTERNAL</code> if you manage the secret yourself in AWS Secrets Manager.</p>
+    pub fn client_secret_source(&self) -> ::std::option::Option<&crate::types::SecretSourceType> {
+        self.client_secret_source.as_ref()
     }
     /// <p>Token issuer of your isolated OAuth2 application tenant. This URL identifies the authorization server that issues tokens for this provider.</p>
     pub fn issuer(&self) -> ::std::option::Option<&str> {
@@ -44,6 +56,8 @@ impl ::std::fmt::Debug for IncludedOauth2ProviderConfigInput {
         let mut formatter = f.debug_struct("IncludedOauth2ProviderConfigInput");
         formatter.field("client_id", &self.client_id);
         formatter.field("client_secret", &"*** Sensitive Data Redacted ***");
+        formatter.field("client_secret_config", &self.client_secret_config);
+        formatter.field("client_secret_source", &self.client_secret_source);
         formatter.field("issuer", &self.issuer);
         formatter.field("authorization_endpoint", &self.authorization_endpoint);
         formatter.field("token_endpoint", &self.token_endpoint);
@@ -63,6 +77,8 @@ impl IncludedOauth2ProviderConfigInput {
 pub struct IncludedOauth2ProviderConfigInputBuilder {
     pub(crate) client_id: ::std::option::Option<::std::string::String>,
     pub(crate) client_secret: ::std::option::Option<::std::string::String>,
+    pub(crate) client_secret_config: ::std::option::Option<crate::types::SecretReference>,
+    pub(crate) client_secret_source: ::std::option::Option<crate::types::SecretSourceType>,
     pub(crate) issuer: ::std::option::Option<::std::string::String>,
     pub(crate) authorization_endpoint: ::std::option::Option<::std::string::String>,
     pub(crate) token_endpoint: ::std::option::Option<::std::string::String>,
@@ -84,7 +100,6 @@ impl IncludedOauth2ProviderConfigInputBuilder {
         &self.client_id
     }
     /// <p>The client secret for the supported OAuth2 provider. This secret is assigned by the OAuth2 provider and used along with the client ID to authenticate your application.</p>
-    /// This field is required.
     pub fn client_secret(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_secret = ::std::option::Option::Some(input.into());
         self
@@ -97,6 +112,34 @@ impl IncludedOauth2ProviderConfigInputBuilder {
     /// <p>The client secret for the supported OAuth2 provider. This secret is assigned by the OAuth2 provider and used along with the client ID to authenticate your application.</p>
     pub fn get_client_secret(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_secret
+    }
+    /// <p>A reference to the AWS Secrets Manager secret that stores the client secret. This includes the secret ID and the JSON key used to extract the client secret value from the secret. Required when <code>clientSecretSource</code> is set to <code>EXTERNAL</code>.</p>
+    pub fn client_secret_config(mut self, input: crate::types::SecretReference) -> Self {
+        self.client_secret_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A reference to the AWS Secrets Manager secret that stores the client secret. This includes the secret ID and the JSON key used to extract the client secret value from the secret. Required when <code>clientSecretSource</code> is set to <code>EXTERNAL</code>.</p>
+    pub fn set_client_secret_config(mut self, input: ::std::option::Option<crate::types::SecretReference>) -> Self {
+        self.client_secret_config = input;
+        self
+    }
+    /// <p>A reference to the AWS Secrets Manager secret that stores the client secret. This includes the secret ID and the JSON key used to extract the client secret value from the secret. Required when <code>clientSecretSource</code> is set to <code>EXTERNAL</code>.</p>
+    pub fn get_client_secret_config(&self) -> &::std::option::Option<crate::types::SecretReference> {
+        &self.client_secret_config
+    }
+    /// <p>The source type of the client secret. Use <code>MANAGED</code> if the secret is managed by the service, or <code>EXTERNAL</code> if you manage the secret yourself in AWS Secrets Manager.</p>
+    pub fn client_secret_source(mut self, input: crate::types::SecretSourceType) -> Self {
+        self.client_secret_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The source type of the client secret. Use <code>MANAGED</code> if the secret is managed by the service, or <code>EXTERNAL</code> if you manage the secret yourself in AWS Secrets Manager.</p>
+    pub fn set_client_secret_source(mut self, input: ::std::option::Option<crate::types::SecretSourceType>) -> Self {
+        self.client_secret_source = input;
+        self
+    }
+    /// <p>The source type of the client secret. Use <code>MANAGED</code> if the secret is managed by the service, or <code>EXTERNAL</code> if you manage the secret yourself in AWS Secrets Manager.</p>
+    pub fn get_client_secret_source(&self) -> &::std::option::Option<crate::types::SecretSourceType> {
+        &self.client_secret_source
     }
     /// <p>Token issuer of your isolated OAuth2 application tenant. This URL identifies the authorization server that issues tokens for this provider.</p>
     pub fn issuer(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -143,7 +186,6 @@ impl IncludedOauth2ProviderConfigInputBuilder {
     /// Consumes the builder and constructs a [`IncludedOauth2ProviderConfigInput`](crate::types::IncludedOauth2ProviderConfigInput).
     /// This method will fail if any of the following fields are not set:
     /// - [`client_id`](crate::types::builders::IncludedOauth2ProviderConfigInputBuilder::client_id)
-    /// - [`client_secret`](crate::types::builders::IncludedOauth2ProviderConfigInputBuilder::client_secret)
     pub fn build(self) -> ::std::result::Result<crate::types::IncludedOauth2ProviderConfigInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::IncludedOauth2ProviderConfigInput {
             client_id: self.client_id.ok_or_else(|| {
@@ -152,12 +194,9 @@ impl IncludedOauth2ProviderConfigInputBuilder {
                     "client_id was not specified but it is required when building IncludedOauth2ProviderConfigInput",
                 )
             })?,
-            client_secret: self.client_secret.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "client_secret",
-                    "client_secret was not specified but it is required when building IncludedOauth2ProviderConfigInput",
-                )
-            })?,
+            client_secret: self.client_secret.unwrap_or_default(),
+            client_secret_config: self.client_secret_config,
+            client_secret_source: self.client_secret_source,
             issuer: self.issuer,
             authorization_endpoint: self.authorization_endpoint,
             token_endpoint: self.token_endpoint,
@@ -169,6 +208,8 @@ impl ::std::fmt::Debug for IncludedOauth2ProviderConfigInputBuilder {
         let mut formatter = f.debug_struct("IncludedOauth2ProviderConfigInputBuilder");
         formatter.field("client_id", &self.client_id);
         formatter.field("client_secret", &"*** Sensitive Data Redacted ***");
+        formatter.field("client_secret_config", &self.client_secret_config);
+        formatter.field("client_secret_source", &self.client_secret_source);
         formatter.field("issuer", &self.issuer);
         formatter.field("authorization_endpoint", &self.authorization_endpoint);
         formatter.field("token_endpoint", &self.token_endpoint);

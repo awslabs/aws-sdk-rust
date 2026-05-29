@@ -8,8 +8,16 @@ pub struct CoinbaseCdpConfigurationOutput {
     pub api_key_id: ::std::string::String,
     /// <p>Contains information about a secret in AWS Secrets Manager.</p>
     pub api_key_secret_arn: ::std::option::Option<crate::types::Secret>,
+    /// <p>The JSON key used to extract the API key secret value from the AWS Secrets Manager secret.</p>
+    pub api_key_secret_json_key: ::std::option::Option<::std::string::String>,
+    /// <p>The source type of the API key secret. Either <code>MANAGED</code> if the secret is managed by the service, or <code>EXTERNAL</code> if managed by the user in AWS Secrets Manager.</p>
+    pub api_key_secret_source: ::std::option::Option<crate::types::SecretSourceType>,
     /// <p>Contains information about a secret in AWS Secrets Manager.</p>
     pub wallet_secret_arn: ::std::option::Option<crate::types::Secret>,
+    /// <p>The JSON key used to extract the wallet secret value from the AWS Secrets Manager secret.</p>
+    pub wallet_secret_json_key: ::std::option::Option<::std::string::String>,
+    /// <p>The source type of the wallet secret. Either <code>MANAGED</code> if the secret is managed by the service, or <code>EXTERNAL</code> if managed by the user in AWS Secrets Manager.</p>
+    pub wallet_secret_source: ::std::option::Option<crate::types::SecretSourceType>,
 }
 impl CoinbaseCdpConfigurationOutput {
     /// <p>The API key identifier provided by Coinbase Developer Platform.</p>
@@ -21,9 +29,25 @@ impl CoinbaseCdpConfigurationOutput {
     pub fn api_key_secret_arn(&self) -> ::std::option::Option<&crate::types::Secret> {
         self.api_key_secret_arn.as_ref()
     }
+    /// <p>The JSON key used to extract the API key secret value from the AWS Secrets Manager secret.</p>
+    pub fn api_key_secret_json_key(&self) -> ::std::option::Option<&str> {
+        self.api_key_secret_json_key.as_deref()
+    }
+    /// <p>The source type of the API key secret. Either <code>MANAGED</code> if the secret is managed by the service, or <code>EXTERNAL</code> if managed by the user in AWS Secrets Manager.</p>
+    pub fn api_key_secret_source(&self) -> ::std::option::Option<&crate::types::SecretSourceType> {
+        self.api_key_secret_source.as_ref()
+    }
     /// <p>Contains information about a secret in AWS Secrets Manager.</p>
     pub fn wallet_secret_arn(&self) -> ::std::option::Option<&crate::types::Secret> {
         self.wallet_secret_arn.as_ref()
+    }
+    /// <p>The JSON key used to extract the wallet secret value from the AWS Secrets Manager secret.</p>
+    pub fn wallet_secret_json_key(&self) -> ::std::option::Option<&str> {
+        self.wallet_secret_json_key.as_deref()
+    }
+    /// <p>The source type of the wallet secret. Either <code>MANAGED</code> if the secret is managed by the service, or <code>EXTERNAL</code> if managed by the user in AWS Secrets Manager.</p>
+    pub fn wallet_secret_source(&self) -> ::std::option::Option<&crate::types::SecretSourceType> {
+        self.wallet_secret_source.as_ref()
     }
 }
 impl CoinbaseCdpConfigurationOutput {
@@ -39,7 +63,11 @@ impl CoinbaseCdpConfigurationOutput {
 pub struct CoinbaseCdpConfigurationOutputBuilder {
     pub(crate) api_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) api_key_secret_arn: ::std::option::Option<crate::types::Secret>,
+    pub(crate) api_key_secret_json_key: ::std::option::Option<::std::string::String>,
+    pub(crate) api_key_secret_source: ::std::option::Option<crate::types::SecretSourceType>,
     pub(crate) wallet_secret_arn: ::std::option::Option<crate::types::Secret>,
+    pub(crate) wallet_secret_json_key: ::std::option::Option<::std::string::String>,
+    pub(crate) wallet_secret_source: ::std::option::Option<crate::types::SecretSourceType>,
 }
 impl CoinbaseCdpConfigurationOutputBuilder {
     /// <p>The API key identifier provided by Coinbase Developer Platform.</p>
@@ -72,6 +100,34 @@ impl CoinbaseCdpConfigurationOutputBuilder {
     pub fn get_api_key_secret_arn(&self) -> &::std::option::Option<crate::types::Secret> {
         &self.api_key_secret_arn
     }
+    /// <p>The JSON key used to extract the API key secret value from the AWS Secrets Manager secret.</p>
+    pub fn api_key_secret_json_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.api_key_secret_json_key = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The JSON key used to extract the API key secret value from the AWS Secrets Manager secret.</p>
+    pub fn set_api_key_secret_json_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.api_key_secret_json_key = input;
+        self
+    }
+    /// <p>The JSON key used to extract the API key secret value from the AWS Secrets Manager secret.</p>
+    pub fn get_api_key_secret_json_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.api_key_secret_json_key
+    }
+    /// <p>The source type of the API key secret. Either <code>MANAGED</code> if the secret is managed by the service, or <code>EXTERNAL</code> if managed by the user in AWS Secrets Manager.</p>
+    pub fn api_key_secret_source(mut self, input: crate::types::SecretSourceType) -> Self {
+        self.api_key_secret_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The source type of the API key secret. Either <code>MANAGED</code> if the secret is managed by the service, or <code>EXTERNAL</code> if managed by the user in AWS Secrets Manager.</p>
+    pub fn set_api_key_secret_source(mut self, input: ::std::option::Option<crate::types::SecretSourceType>) -> Self {
+        self.api_key_secret_source = input;
+        self
+    }
+    /// <p>The source type of the API key secret. Either <code>MANAGED</code> if the secret is managed by the service, or <code>EXTERNAL</code> if managed by the user in AWS Secrets Manager.</p>
+    pub fn get_api_key_secret_source(&self) -> &::std::option::Option<crate::types::SecretSourceType> {
+        &self.api_key_secret_source
+    }
     /// <p>Contains information about a secret in AWS Secrets Manager.</p>
     /// This field is required.
     pub fn wallet_secret_arn(mut self, input: crate::types::Secret) -> Self {
@@ -87,6 +143,34 @@ impl CoinbaseCdpConfigurationOutputBuilder {
     pub fn get_wallet_secret_arn(&self) -> &::std::option::Option<crate::types::Secret> {
         &self.wallet_secret_arn
     }
+    /// <p>The JSON key used to extract the wallet secret value from the AWS Secrets Manager secret.</p>
+    pub fn wallet_secret_json_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.wallet_secret_json_key = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The JSON key used to extract the wallet secret value from the AWS Secrets Manager secret.</p>
+    pub fn set_wallet_secret_json_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.wallet_secret_json_key = input;
+        self
+    }
+    /// <p>The JSON key used to extract the wallet secret value from the AWS Secrets Manager secret.</p>
+    pub fn get_wallet_secret_json_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.wallet_secret_json_key
+    }
+    /// <p>The source type of the wallet secret. Either <code>MANAGED</code> if the secret is managed by the service, or <code>EXTERNAL</code> if managed by the user in AWS Secrets Manager.</p>
+    pub fn wallet_secret_source(mut self, input: crate::types::SecretSourceType) -> Self {
+        self.wallet_secret_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The source type of the wallet secret. Either <code>MANAGED</code> if the secret is managed by the service, or <code>EXTERNAL</code> if managed by the user in AWS Secrets Manager.</p>
+    pub fn set_wallet_secret_source(mut self, input: ::std::option::Option<crate::types::SecretSourceType>) -> Self {
+        self.wallet_secret_source = input;
+        self
+    }
+    /// <p>The source type of the wallet secret. Either <code>MANAGED</code> if the secret is managed by the service, or <code>EXTERNAL</code> if managed by the user in AWS Secrets Manager.</p>
+    pub fn get_wallet_secret_source(&self) -> &::std::option::Option<crate::types::SecretSourceType> {
+        &self.wallet_secret_source
+    }
     /// Consumes the builder and constructs a [`CoinbaseCdpConfigurationOutput`](crate::types::CoinbaseCdpConfigurationOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`api_key_id`](crate::types::builders::CoinbaseCdpConfigurationOutputBuilder::api_key_id)
@@ -99,7 +183,11 @@ impl CoinbaseCdpConfigurationOutputBuilder {
                 )
             })?,
             api_key_secret_arn: self.api_key_secret_arn,
+            api_key_secret_json_key: self.api_key_secret_json_key,
+            api_key_secret_source: self.api_key_secret_source,
             wallet_secret_arn: self.wallet_secret_arn,
+            wallet_secret_json_key: self.wallet_secret_json_key,
+            wallet_secret_source: self.wallet_secret_source,
         })
     }
 }

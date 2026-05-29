@@ -13,6 +13,15 @@ pub mod associate_resolver_query_log_config;
 /// Types for the `AssociateResolverRule` operation.
 pub mod associate_resolver_rule;
 
+/// Types for the `BatchCreateFirewallRule` operation.
+pub mod batch_create_firewall_rule;
+
+/// Types for the `BatchDeleteFirewallRule` operation.
+pub mod batch_delete_firewall_rule;
+
+/// Types for the `BatchUpdateFirewallRule` operation.
+pub mod batch_update_firewall_rule;
+
 /// Types for the `CreateFirewallDomainList` operation.
 pub mod create_firewall_domain_list;
 
@@ -129,6 +138,9 @@ pub mod list_firewall_rule_group_associations;
 
 /// Types for the `ListFirewallRuleGroups` operation.
 pub mod list_firewall_rule_groups;
+
+/// Types for the `ListFirewallRuleTypes` operation.
+pub mod list_firewall_rule_types;
 
 /// Types for the `ListFirewallRules` operation.
 pub mod list_firewall_rules;

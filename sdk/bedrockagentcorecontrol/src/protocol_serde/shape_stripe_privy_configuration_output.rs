@@ -25,8 +25,36 @@ where
                         "appSecretArn" => {
                             builder = builder.set_app_secret_arn(crate::protocol_serde::shape_secret::de_secret(tokens, _value)?);
                         }
+                        "appSecretJsonKey" => {
+                            builder = builder.set_app_secret_json_key(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "appSecretSource" => {
+                            builder = builder.set_app_secret_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::SecretSourceType::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
                         "authorizationPrivateKeyArn" => {
                             builder = builder.set_authorization_private_key_arn(crate::protocol_serde::shape_secret::de_secret(tokens, _value)?);
+                        }
+                        "authorizationPrivateKeyJsonKey" => {
+                            builder = builder.set_authorization_private_key_json_key(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "authorizationPrivateKeySource" => {
+                            builder = builder.set_authorization_private_key_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::SecretSourceType::from(u.as_ref())))
+                                    .transpose()?,
+                            );
                         }
                         "authorizationId" => {
                             builder = builder.set_authorization_id(

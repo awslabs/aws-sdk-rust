@@ -41,6 +41,8 @@ pub use crate::types::_details::Details;
 
 pub use crate::types::_status::Status;
 
+pub use crate::types::_tenant_suppression_attributes::TenantSuppressionAttributes;
+
 pub use crate::types::_sending_status::SendingStatus;
 
 pub use crate::types::_send_quota::SendQuota;
@@ -100,6 +102,8 @@ pub use crate::types::_contact_language::ContactLanguage;
 pub use crate::types::_suppression_validation_attributes::SuppressionValidationAttributes;
 
 pub use crate::types::_tls_policy::TlsPolicy;
+
+pub use crate::types::_suppression_list_scope::SuppressionListScope;
 
 pub use crate::types::_suppression_validation_options::SuppressionValidationOptions;
 
@@ -611,6 +615,8 @@ mod _suppression_list_import_action;
 
 mod _suppression_list_reason;
 
+mod _suppression_list_scope;
+
 mod _suppression_options;
 
 mod _suppression_validation_attributes;
@@ -626,6 +632,8 @@ mod _tenant;
 mod _tenant_info;
 
 mod _tenant_resource;
+
+mod _tenant_suppression_attributes;
 
 mod _tls_policy;
 

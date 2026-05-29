@@ -543,6 +543,10 @@ pub(crate) mod shape_workflow_parameter;
 
 pub(crate) mod shape_workflow_parameter_template;
 
+pub(crate) mod shape_workflow_profile_list;
+
+pub(crate) mod shape_workflow_profile_parameter_templates;
+
 pub(crate) mod shape_workflow_version_list;
 
 pub(crate) mod shape_activate_read_set_job_item;

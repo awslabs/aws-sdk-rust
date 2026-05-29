@@ -8,8 +8,16 @@ pub struct StripePrivyConfigurationOutput {
     pub app_id: ::std::string::String,
     /// <p>Contains information about a secret in AWS Secrets Manager.</p>
     pub app_secret_arn: ::std::option::Option<crate::types::Secret>,
+    /// <p>The JSON key used to extract the app secret value from the AWS Secrets Manager secret.</p>
+    pub app_secret_json_key: ::std::option::Option<::std::string::String>,
+    /// <p>The source type of the app secret. Either <code>MANAGED</code> if the secret is managed by the service, or <code>EXTERNAL</code> if managed by the user in AWS Secrets Manager.</p>
+    pub app_secret_source: ::std::option::Option<crate::types::SecretSourceType>,
     /// <p>Contains information about a secret in AWS Secrets Manager.</p>
     pub authorization_private_key_arn: ::std::option::Option<crate::types::Secret>,
+    /// <p>The JSON key used to extract the authorization private key value from the AWS Secrets Manager secret.</p>
+    pub authorization_private_key_json_key: ::std::option::Option<::std::string::String>,
+    /// <p>The source type of the authorization private key. Either <code>MANAGED</code> if the secret is managed by the service, or <code>EXTERNAL</code> if managed by the user in AWS Secrets Manager.</p>
+    pub authorization_private_key_source: ::std::option::Option<crate::types::SecretSourceType>,
     /// <p>The authorization ID for the Stripe Privy integration.</p>
     pub authorization_id: ::std::string::String,
 }
@@ -23,9 +31,25 @@ impl StripePrivyConfigurationOutput {
     pub fn app_secret_arn(&self) -> ::std::option::Option<&crate::types::Secret> {
         self.app_secret_arn.as_ref()
     }
+    /// <p>The JSON key used to extract the app secret value from the AWS Secrets Manager secret.</p>
+    pub fn app_secret_json_key(&self) -> ::std::option::Option<&str> {
+        self.app_secret_json_key.as_deref()
+    }
+    /// <p>The source type of the app secret. Either <code>MANAGED</code> if the secret is managed by the service, or <code>EXTERNAL</code> if managed by the user in AWS Secrets Manager.</p>
+    pub fn app_secret_source(&self) -> ::std::option::Option<&crate::types::SecretSourceType> {
+        self.app_secret_source.as_ref()
+    }
     /// <p>Contains information about a secret in AWS Secrets Manager.</p>
     pub fn authorization_private_key_arn(&self) -> ::std::option::Option<&crate::types::Secret> {
         self.authorization_private_key_arn.as_ref()
+    }
+    /// <p>The JSON key used to extract the authorization private key value from the AWS Secrets Manager secret.</p>
+    pub fn authorization_private_key_json_key(&self) -> ::std::option::Option<&str> {
+        self.authorization_private_key_json_key.as_deref()
+    }
+    /// <p>The source type of the authorization private key. Either <code>MANAGED</code> if the secret is managed by the service, or <code>EXTERNAL</code> if managed by the user in AWS Secrets Manager.</p>
+    pub fn authorization_private_key_source(&self) -> ::std::option::Option<&crate::types::SecretSourceType> {
+        self.authorization_private_key_source.as_ref()
     }
     /// <p>The authorization ID for the Stripe Privy integration.</p>
     pub fn authorization_id(&self) -> &str {
@@ -46,7 +70,11 @@ impl StripePrivyConfigurationOutput {
 pub struct StripePrivyConfigurationOutputBuilder {
     pub(crate) app_id: ::std::option::Option<::std::string::String>,
     pub(crate) app_secret_arn: ::std::option::Option<crate::types::Secret>,
+    pub(crate) app_secret_json_key: ::std::option::Option<::std::string::String>,
+    pub(crate) app_secret_source: ::std::option::Option<crate::types::SecretSourceType>,
     pub(crate) authorization_private_key_arn: ::std::option::Option<crate::types::Secret>,
+    pub(crate) authorization_private_key_json_key: ::std::option::Option<::std::string::String>,
+    pub(crate) authorization_private_key_source: ::std::option::Option<crate::types::SecretSourceType>,
     pub(crate) authorization_id: ::std::option::Option<::std::string::String>,
 }
 impl StripePrivyConfigurationOutputBuilder {
@@ -80,6 +108,34 @@ impl StripePrivyConfigurationOutputBuilder {
     pub fn get_app_secret_arn(&self) -> &::std::option::Option<crate::types::Secret> {
         &self.app_secret_arn
     }
+    /// <p>The JSON key used to extract the app secret value from the AWS Secrets Manager secret.</p>
+    pub fn app_secret_json_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.app_secret_json_key = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The JSON key used to extract the app secret value from the AWS Secrets Manager secret.</p>
+    pub fn set_app_secret_json_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.app_secret_json_key = input;
+        self
+    }
+    /// <p>The JSON key used to extract the app secret value from the AWS Secrets Manager secret.</p>
+    pub fn get_app_secret_json_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_secret_json_key
+    }
+    /// <p>The source type of the app secret. Either <code>MANAGED</code> if the secret is managed by the service, or <code>EXTERNAL</code> if managed by the user in AWS Secrets Manager.</p>
+    pub fn app_secret_source(mut self, input: crate::types::SecretSourceType) -> Self {
+        self.app_secret_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The source type of the app secret. Either <code>MANAGED</code> if the secret is managed by the service, or <code>EXTERNAL</code> if managed by the user in AWS Secrets Manager.</p>
+    pub fn set_app_secret_source(mut self, input: ::std::option::Option<crate::types::SecretSourceType>) -> Self {
+        self.app_secret_source = input;
+        self
+    }
+    /// <p>The source type of the app secret. Either <code>MANAGED</code> if the secret is managed by the service, or <code>EXTERNAL</code> if managed by the user in AWS Secrets Manager.</p>
+    pub fn get_app_secret_source(&self) -> &::std::option::Option<crate::types::SecretSourceType> {
+        &self.app_secret_source
+    }
     /// <p>Contains information about a secret in AWS Secrets Manager.</p>
     /// This field is required.
     pub fn authorization_private_key_arn(mut self, input: crate::types::Secret) -> Self {
@@ -94,6 +150,34 @@ impl StripePrivyConfigurationOutputBuilder {
     /// <p>Contains information about a secret in AWS Secrets Manager.</p>
     pub fn get_authorization_private_key_arn(&self) -> &::std::option::Option<crate::types::Secret> {
         &self.authorization_private_key_arn
+    }
+    /// <p>The JSON key used to extract the authorization private key value from the AWS Secrets Manager secret.</p>
+    pub fn authorization_private_key_json_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.authorization_private_key_json_key = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The JSON key used to extract the authorization private key value from the AWS Secrets Manager secret.</p>
+    pub fn set_authorization_private_key_json_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.authorization_private_key_json_key = input;
+        self
+    }
+    /// <p>The JSON key used to extract the authorization private key value from the AWS Secrets Manager secret.</p>
+    pub fn get_authorization_private_key_json_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.authorization_private_key_json_key
+    }
+    /// <p>The source type of the authorization private key. Either <code>MANAGED</code> if the secret is managed by the service, or <code>EXTERNAL</code> if managed by the user in AWS Secrets Manager.</p>
+    pub fn authorization_private_key_source(mut self, input: crate::types::SecretSourceType) -> Self {
+        self.authorization_private_key_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The source type of the authorization private key. Either <code>MANAGED</code> if the secret is managed by the service, or <code>EXTERNAL</code> if managed by the user in AWS Secrets Manager.</p>
+    pub fn set_authorization_private_key_source(mut self, input: ::std::option::Option<crate::types::SecretSourceType>) -> Self {
+        self.authorization_private_key_source = input;
+        self
+    }
+    /// <p>The source type of the authorization private key. Either <code>MANAGED</code> if the secret is managed by the service, or <code>EXTERNAL</code> if managed by the user in AWS Secrets Manager.</p>
+    pub fn get_authorization_private_key_source(&self) -> &::std::option::Option<crate::types::SecretSourceType> {
+        &self.authorization_private_key_source
     }
     /// <p>The authorization ID for the Stripe Privy integration.</p>
     /// This field is required.
@@ -123,7 +207,11 @@ impl StripePrivyConfigurationOutputBuilder {
                 )
             })?,
             app_secret_arn: self.app_secret_arn,
+            app_secret_json_key: self.app_secret_json_key,
+            app_secret_source: self.app_secret_source,
             authorization_private_key_arn: self.authorization_private_key_arn,
+            authorization_private_key_json_key: self.authorization_private_key_json_key,
+            authorization_private_key_source: self.authorization_private_key_source,
             authorization_id: self.authorization_id.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "authorization_id",

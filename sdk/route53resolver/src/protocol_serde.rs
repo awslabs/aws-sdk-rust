@@ -31,6 +31,12 @@ pub(crate) mod shape_associate_resolver_query_log_config;
 
 pub(crate) mod shape_associate_resolver_rule;
 
+pub(crate) mod shape_batch_create_firewall_rule;
+
+pub(crate) mod shape_batch_delete_firewall_rule;
+
+pub(crate) mod shape_batch_update_firewall_rule;
+
 pub(crate) mod shape_create_firewall_domain_list;
 
 pub(crate) mod shape_create_firewall_rule;
@@ -109,6 +115,8 @@ pub(crate) mod shape_list_firewall_rule_group_associations;
 
 pub(crate) mod shape_list_firewall_rule_groups;
 
+pub(crate) mod shape_list_firewall_rule_types;
+
 pub(crate) mod shape_list_firewall_rules;
 
 pub(crate) mod shape_list_outpost_resolvers;
@@ -176,6 +184,12 @@ pub(crate) mod shape_associate_resolver_endpoint_ip_address_input;
 pub(crate) mod shape_associate_resolver_query_log_config_input;
 
 pub(crate) mod shape_associate_resolver_rule_input;
+
+pub(crate) mod shape_batch_create_firewall_rule_input;
+
+pub(crate) mod shape_batch_delete_firewall_rule_input;
+
+pub(crate) mod shape_batch_update_firewall_rule_input;
 
 pub(crate) mod shape_conflict_exception;
 
@@ -271,6 +285,8 @@ pub(crate) mod shape_list_firewall_rule_group_associations_input;
 
 pub(crate) mod shape_list_firewall_rule_groups_input;
 
+pub(crate) mod shape_list_firewall_rule_types_input;
+
 pub(crate) mod shape_list_firewall_rules_input;
 
 pub(crate) mod shape_list_outpost_resolvers_input;
@@ -337,6 +353,16 @@ pub(crate) mod shape_update_resolver_rule_input;
 
 pub(crate) mod shape_validation_exception;
 
+pub(crate) mod shape_batch_create_firewall_rule_errors;
+
+pub(crate) mod shape_batch_delete_firewall_rule_errors;
+
+pub(crate) mod shape_batch_update_firewall_rule_errors;
+
+pub(crate) mod shape_create_firewall_rule_entry;
+
+pub(crate) mod shape_delete_firewall_rule_entry;
+
 pub(crate) mod shape_filter;
 
 pub(crate) mod shape_firewall_config;
@@ -358,6 +384,10 @@ pub(crate) mod shape_firewall_rule_group_association;
 pub(crate) mod shape_firewall_rule_group_associations;
 
 pub(crate) mod shape_firewall_rule_group_metadata_list;
+
+pub(crate) mod shape_firewall_rule_type;
+
+pub(crate) mod shape_firewall_rule_type_definitions;
 
 pub(crate) mod shape_firewall_rules;
 
@@ -407,11 +437,27 @@ pub(crate) mod shape_tag_list;
 
 pub(crate) mod shape_target_address;
 
+pub(crate) mod shape_update_firewall_rule_entry;
+
 pub(crate) mod shape_update_ip_address;
+
+pub(crate) mod shape_batch_create_firewall_rule_error;
+
+pub(crate) mod shape_batch_delete_firewall_rule_error;
+
+pub(crate) mod shape_batch_update_firewall_rule_error;
+
+pub(crate) mod shape_dns_threat_protection_rule_type_config;
+
+pub(crate) mod shape_firewall_advanced_content_category_config;
+
+pub(crate) mod shape_firewall_advanced_threat_category_config;
 
 pub(crate) mod shape_firewall_domain_list_metadata;
 
 pub(crate) mod shape_firewall_rule_group_metadata;
+
+pub(crate) mod shape_firewall_rule_type_definition;
 
 pub(crate) mod shape_ip_address_response;
 

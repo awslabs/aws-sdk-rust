@@ -33,6 +33,8 @@ pub use crate::types::_import_data_source::ImportDataSourceBuilder;
 
 pub use crate::types::_details::DetailsBuilder;
 
+pub use crate::types::_tenant_suppression_attributes::TenantSuppressionAttributesBuilder;
+
 pub use crate::types::_send_quota::SendQuotaBuilder;
 
 pub use crate::types::_suppression_attributes::SuppressionAttributesBuilder;

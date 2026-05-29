@@ -52,6 +52,11 @@ where
                                     .transpose()?,
                             );
                         }
+                        "SuppressionAttributes" => {
+                            builder = builder.set_suppression_attributes(
+                                crate::protocol_serde::shape_tenant_suppression_attributes::de_tenant_suppression_attributes(tokens, _value)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

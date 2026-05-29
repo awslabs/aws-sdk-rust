@@ -7,6 +7,10 @@ pub struct UpdateApiKeyCredentialProviderInput {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The new API key to use for authentication. This value replaces the existing API key and is encrypted and stored securely.</p>
     pub api_key: ::std::option::Option<::std::string::String>,
+    /// <p>A reference to the AWS Secrets Manager secret that stores the API key. This includes the secret ID and the JSON key used to extract the API key value from the secret. Required when <code>apiKeySecretSource</code> is set to <code>EXTERNAL</code>.</p>
+    pub api_key_secret_config: ::std::option::Option<crate::types::SecretReference>,
+    /// <p>The source type of the API key secret. Use <code>MANAGED</code> if the secret is managed by the service, or <code>EXTERNAL</code> if you manage the secret yourself in AWS Secrets Manager.</p>
+    pub api_key_secret_source: ::std::option::Option<crate::types::SecretSourceType>,
 }
 impl UpdateApiKeyCredentialProviderInput {
     /// <p>The name of the API key credential provider to update.</p>
@@ -17,12 +21,22 @@ impl UpdateApiKeyCredentialProviderInput {
     pub fn api_key(&self) -> ::std::option::Option<&str> {
         self.api_key.as_deref()
     }
+    /// <p>A reference to the AWS Secrets Manager secret that stores the API key. This includes the secret ID and the JSON key used to extract the API key value from the secret. Required when <code>apiKeySecretSource</code> is set to <code>EXTERNAL</code>.</p>
+    pub fn api_key_secret_config(&self) -> ::std::option::Option<&crate::types::SecretReference> {
+        self.api_key_secret_config.as_ref()
+    }
+    /// <p>The source type of the API key secret. Use <code>MANAGED</code> if the secret is managed by the service, or <code>EXTERNAL</code> if you manage the secret yourself in AWS Secrets Manager.</p>
+    pub fn api_key_secret_source(&self) -> ::std::option::Option<&crate::types::SecretSourceType> {
+        self.api_key_secret_source.as_ref()
+    }
 }
 impl ::std::fmt::Debug for UpdateApiKeyCredentialProviderInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateApiKeyCredentialProviderInput");
         formatter.field("name", &self.name);
         formatter.field("api_key", &"*** Sensitive Data Redacted ***");
+        formatter.field("api_key_secret_config", &self.api_key_secret_config);
+        formatter.field("api_key_secret_source", &self.api_key_secret_source);
         formatter.finish()
     }
 }
@@ -39,6 +53,8 @@ impl UpdateApiKeyCredentialProviderInput {
 pub struct UpdateApiKeyCredentialProviderInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) api_key: ::std::option::Option<::std::string::String>,
+    pub(crate) api_key_secret_config: ::std::option::Option<crate::types::SecretReference>,
+    pub(crate) api_key_secret_source: ::std::option::Option<crate::types::SecretSourceType>,
 }
 impl UpdateApiKeyCredentialProviderInputBuilder {
     /// <p>The name of the API key credential provider to update.</p>
@@ -57,7 +73,6 @@ impl UpdateApiKeyCredentialProviderInputBuilder {
         &self.name
     }
     /// <p>The new API key to use for authentication. This value replaces the existing API key and is encrypted and stored securely.</p>
-    /// This field is required.
     pub fn api_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.api_key = ::std::option::Option::Some(input.into());
         self
@@ -71,6 +86,34 @@ impl UpdateApiKeyCredentialProviderInputBuilder {
     pub fn get_api_key(&self) -> &::std::option::Option<::std::string::String> {
         &self.api_key
     }
+    /// <p>A reference to the AWS Secrets Manager secret that stores the API key. This includes the secret ID and the JSON key used to extract the API key value from the secret. Required when <code>apiKeySecretSource</code> is set to <code>EXTERNAL</code>.</p>
+    pub fn api_key_secret_config(mut self, input: crate::types::SecretReference) -> Self {
+        self.api_key_secret_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A reference to the AWS Secrets Manager secret that stores the API key. This includes the secret ID and the JSON key used to extract the API key value from the secret. Required when <code>apiKeySecretSource</code> is set to <code>EXTERNAL</code>.</p>
+    pub fn set_api_key_secret_config(mut self, input: ::std::option::Option<crate::types::SecretReference>) -> Self {
+        self.api_key_secret_config = input;
+        self
+    }
+    /// <p>A reference to the AWS Secrets Manager secret that stores the API key. This includes the secret ID and the JSON key used to extract the API key value from the secret. Required when <code>apiKeySecretSource</code> is set to <code>EXTERNAL</code>.</p>
+    pub fn get_api_key_secret_config(&self) -> &::std::option::Option<crate::types::SecretReference> {
+        &self.api_key_secret_config
+    }
+    /// <p>The source type of the API key secret. Use <code>MANAGED</code> if the secret is managed by the service, or <code>EXTERNAL</code> if you manage the secret yourself in AWS Secrets Manager.</p>
+    pub fn api_key_secret_source(mut self, input: crate::types::SecretSourceType) -> Self {
+        self.api_key_secret_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The source type of the API key secret. Use <code>MANAGED</code> if the secret is managed by the service, or <code>EXTERNAL</code> if you manage the secret yourself in AWS Secrets Manager.</p>
+    pub fn set_api_key_secret_source(mut self, input: ::std::option::Option<crate::types::SecretSourceType>) -> Self {
+        self.api_key_secret_source = input;
+        self
+    }
+    /// <p>The source type of the API key secret. Use <code>MANAGED</code> if the secret is managed by the service, or <code>EXTERNAL</code> if you manage the secret yourself in AWS Secrets Manager.</p>
+    pub fn get_api_key_secret_source(&self) -> &::std::option::Option<crate::types::SecretSourceType> {
+        &self.api_key_secret_source
+    }
     /// Consumes the builder and constructs a [`UpdateApiKeyCredentialProviderInput`](crate::operation::update_api_key_credential_provider::UpdateApiKeyCredentialProviderInput).
     pub fn build(
         self,
@@ -82,6 +125,8 @@ impl UpdateApiKeyCredentialProviderInputBuilder {
             crate::operation::update_api_key_credential_provider::UpdateApiKeyCredentialProviderInput {
                 name: self.name,
                 api_key: self.api_key,
+                api_key_secret_config: self.api_key_secret_config,
+                api_key_secret_source: self.api_key_secret_source,
             },
         )
     }
@@ -91,6 +136,8 @@ impl ::std::fmt::Debug for UpdateApiKeyCredentialProviderInputBuilder {
         let mut formatter = f.debug_struct("UpdateApiKeyCredentialProviderInputBuilder");
         formatter.field("name", &self.name);
         formatter.field("api_key", &"*** Sensitive Data Redacted ***");
+        formatter.field("api_key_secret_config", &self.api_key_secret_config);
+        formatter.field("api_key_secret_source", &self.api_key_secret_source);
         formatter.finish()
     }
 }

@@ -22,7 +22,7 @@ impl crate::operation::get_tenant::builders::GetTenantInputBuilder {
 }
 /// Fluent builder constructing a request to `GetTenant`.
 ///
-/// <p>Get information about a specific tenant, including the tenant's name, ID, ARN, creation timestamp, tags, and sending status.</p>
+/// <p>Get information about a specific tenant, including the tenant's name, ID, ARN, creation timestamp, tags, sending status, and suppression attributes.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetTenantFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

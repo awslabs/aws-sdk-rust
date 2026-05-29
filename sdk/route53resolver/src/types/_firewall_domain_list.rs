@@ -25,6 +25,10 @@ pub struct FirewallDomainList {
     pub creation_time: ::std::option::Option<::std::string::String>,
     /// <p>The date and time that the domain list was last modified, in Unix time format and Coordinated Universal Time (UTC).</p>
     pub modification_time: ::std::option::Option<::std::string::String>,
+    /// <p>The category of the domain list.</p>
+    pub category: ::std::option::Option<::std::string::String>,
+    /// <p>The type of the managed domain list, for example <code>THREAT</code>.</p>
+    pub managed_list_type: ::std::option::Option<crate::types::DomainListType>,
 }
 impl FirewallDomainList {
     /// <p>The ID of the domain list.</p>
@@ -67,6 +71,14 @@ impl FirewallDomainList {
     pub fn modification_time(&self) -> ::std::option::Option<&str> {
         self.modification_time.as_deref()
     }
+    /// <p>The category of the domain list.</p>
+    pub fn category(&self) -> ::std::option::Option<&str> {
+        self.category.as_deref()
+    }
+    /// <p>The type of the managed domain list, for example <code>THREAT</code>.</p>
+    pub fn managed_list_type(&self) -> ::std::option::Option<&crate::types::DomainListType> {
+        self.managed_list_type.as_ref()
+    }
 }
 impl FirewallDomainList {
     /// Creates a new builder-style object to manufacture [`FirewallDomainList`](crate::types::FirewallDomainList).
@@ -89,6 +101,8 @@ pub struct FirewallDomainListBuilder {
     pub(crate) creator_request_id: ::std::option::Option<::std::string::String>,
     pub(crate) creation_time: ::std::option::Option<::std::string::String>,
     pub(crate) modification_time: ::std::option::Option<::std::string::String>,
+    pub(crate) category: ::std::option::Option<::std::string::String>,
+    pub(crate) managed_list_type: ::std::option::Option<crate::types::DomainListType>,
 }
 impl FirewallDomainListBuilder {
     /// <p>The ID of the domain list.</p>
@@ -231,6 +245,34 @@ impl FirewallDomainListBuilder {
     pub fn get_modification_time(&self) -> &::std::option::Option<::std::string::String> {
         &self.modification_time
     }
+    /// <p>The category of the domain list.</p>
+    pub fn category(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.category = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The category of the domain list.</p>
+    pub fn set_category(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.category = input;
+        self
+    }
+    /// <p>The category of the domain list.</p>
+    pub fn get_category(&self) -> &::std::option::Option<::std::string::String> {
+        &self.category
+    }
+    /// <p>The type of the managed domain list, for example <code>THREAT</code>.</p>
+    pub fn managed_list_type(mut self, input: crate::types::DomainListType) -> Self {
+        self.managed_list_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The type of the managed domain list, for example <code>THREAT</code>.</p>
+    pub fn set_managed_list_type(mut self, input: ::std::option::Option<crate::types::DomainListType>) -> Self {
+        self.managed_list_type = input;
+        self
+    }
+    /// <p>The type of the managed domain list, for example <code>THREAT</code>.</p>
+    pub fn get_managed_list_type(&self) -> &::std::option::Option<crate::types::DomainListType> {
+        &self.managed_list_type
+    }
     /// Consumes the builder and constructs a [`FirewallDomainList`](crate::types::FirewallDomainList).
     pub fn build(self) -> crate::types::FirewallDomainList {
         crate::types::FirewallDomainList {
@@ -244,6 +286,8 @@ impl FirewallDomainListBuilder {
             creator_request_id: self.creator_request_id,
             creation_time: self.creation_time,
             modification_time: self.modification_time,
+            category: self.category,
+            managed_list_type: self.managed_list_type,
         }
     }
 }

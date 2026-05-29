@@ -83,6 +83,8 @@ pub struct GetRunOutput {
     pub configuration: ::std::option::Option<crate::types::ConfigurationDetails>,
     /// <p>VPC configuration for the workflow run.</p>
     pub vpc_config: ::std::option::Option<crate::types::VpcConfigResponse>,
+    /// <p>The engine-specific settings for the workflow run.</p>
+    pub engine_settings: ::std::option::Option<::aws_smithy_types::Document>,
     _request_id: Option<String>,
 }
 impl GetRunOutput {
@@ -246,6 +248,10 @@ impl GetRunOutput {
     pub fn vpc_config(&self) -> ::std::option::Option<&crate::types::VpcConfigResponse> {
         self.vpc_config.as_ref()
     }
+    /// <p>The engine-specific settings for the workflow run.</p>
+    pub fn engine_settings(&self) -> ::std::option::Option<&::aws_smithy_types::Document> {
+        self.engine_settings.as_ref()
+    }
 }
 impl ::aws_types::request_id::RequestId for GetRunOutput {
     fn request_id(&self) -> Option<&str> {
@@ -303,6 +309,7 @@ pub struct GetRunOutputBuilder {
     pub(crate) networking_mode: ::std::option::Option<crate::types::NetworkingMode>,
     pub(crate) configuration: ::std::option::Option<crate::types::ConfigurationDetails>,
     pub(crate) vpc_config: ::std::option::Option<crate::types::VpcConfigResponse>,
+    pub(crate) engine_settings: ::std::option::Option<::aws_smithy_types::Document>,
     _request_id: Option<String>,
 }
 impl GetRunOutputBuilder {
@@ -885,6 +892,20 @@ impl GetRunOutputBuilder {
     pub fn get_vpc_config(&self) -> &::std::option::Option<crate::types::VpcConfigResponse> {
         &self.vpc_config
     }
+    /// <p>The engine-specific settings for the workflow run.</p>
+    pub fn engine_settings(mut self, input: ::aws_smithy_types::Document) -> Self {
+        self.engine_settings = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The engine-specific settings for the workflow run.</p>
+    pub fn set_engine_settings(mut self, input: ::std::option::Option<::aws_smithy_types::Document>) -> Self {
+        self.engine_settings = input;
+        self
+    }
+    /// <p>The engine-specific settings for the workflow run.</p>
+    pub fn get_engine_settings(&self) -> &::std::option::Option<::aws_smithy_types::Document> {
+        &self.engine_settings
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -937,6 +958,7 @@ impl GetRunOutputBuilder {
             networking_mode: self.networking_mode,
             configuration: self.configuration,
             vpc_config: self.vpc_config,
+            engine_settings: self.engine_settings,
             _request_id: self._request_id,
         }
     }

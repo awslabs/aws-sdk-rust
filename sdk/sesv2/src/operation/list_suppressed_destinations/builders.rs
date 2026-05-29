@@ -22,7 +22,7 @@ impl crate::operation::list_suppressed_destinations::builders::ListSuppressedDes
 }
 /// Fluent builder constructing a request to `ListSuppressedDestinations`.
 ///
-/// <p>Retrieves a list of email addresses that are on the suppression list for your account.</p>
+/// <p>Retrieves a list of email addresses that are on the suppression list for your account or for a specific tenant. To target a tenant's suppression list, specify the <code>TenantName</code> parameter. If you omit <code>TenantName</code>, the operation targets the account-level suppression list.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListSuppressedDestinationsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -114,22 +114,36 @@ impl ListSuppressedDestinationsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_suppressed_destinations::paginator::ListSuppressedDestinationsPaginator {
         crate::operation::list_suppressed_destinations::paginator::ListSuppressedDestinationsPaginator::new(self.handle, self.inner)
     }
+    /// <p>The name of the tenant whose suppression list you want to retrieve. If you omit this parameter, the operation targets the account-level suppression list.</p>
+    pub fn tenant_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.tenant_name(input.into());
+        self
+    }
+    /// <p>The name of the tenant whose suppression list you want to retrieve. If you omit this parameter, the operation targets the account-level suppression list.</p>
+    pub fn set_tenant_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_tenant_name(input);
+        self
+    }
+    /// <p>The name of the tenant whose suppression list you want to retrieve. If you omit this parameter, the operation targets the account-level suppression list.</p>
+    pub fn get_tenant_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_tenant_name()
+    }
     ///
     /// Appends an item to `Reasons`.
     ///
     /// To override the contents of this collection use [`set_reasons`](Self::set_reasons).
     ///
-    /// <p>The factors that caused the email address to be added to .</p>
+    /// <p>The factors that caused the email address to be added to the suppression list for your account or for a specific tenant.</p>
     pub fn reasons(mut self, input: crate::types::SuppressionListReason) -> Self {
         self.inner = self.inner.reasons(input);
         self
     }
-    /// <p>The factors that caused the email address to be added to .</p>
+    /// <p>The factors that caused the email address to be added to the suppression list for your account or for a specific tenant.</p>
     pub fn set_reasons(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SuppressionListReason>>) -> Self {
         self.inner = self.inner.set_reasons(input);
         self
     }
-    /// <p>The factors that caused the email address to be added to .</p>
+    /// <p>The factors that caused the email address to be added to the suppression list for your account or for a specific tenant.</p>
     pub fn get_reasons(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SuppressionListReason>> {
         self.inner.get_reasons()
     }

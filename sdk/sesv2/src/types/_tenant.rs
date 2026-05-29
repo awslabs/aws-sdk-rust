@@ -16,6 +16,8 @@ pub struct Tenant {
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The status of sending capability for the tenant.</p>
     pub sending_status: ::std::option::Option<crate::types::SendingStatus>,
+    /// <p>An object that contains information about the suppression list preferences for the tenant.</p>
+    pub suppression_attributes: ::std::option::Option<crate::types::TenantSuppressionAttributes>,
 }
 impl Tenant {
     /// <p>The name of the tenant.</p>
@@ -44,6 +46,10 @@ impl Tenant {
     pub fn sending_status(&self) -> ::std::option::Option<&crate::types::SendingStatus> {
         self.sending_status.as_ref()
     }
+    /// <p>An object that contains information about the suppression list preferences for the tenant.</p>
+    pub fn suppression_attributes(&self) -> ::std::option::Option<&crate::types::TenantSuppressionAttributes> {
+        self.suppression_attributes.as_ref()
+    }
 }
 impl Tenant {
     /// Creates a new builder-style object to manufacture [`Tenant`](crate::types::Tenant).
@@ -62,6 +68,7 @@ pub struct TenantBuilder {
     pub(crate) created_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) sending_status: ::std::option::Option<crate::types::SendingStatus>,
+    pub(crate) suppression_attributes: ::std::option::Option<crate::types::TenantSuppressionAttributes>,
 }
 impl TenantBuilder {
     /// <p>The name of the tenant.</p>
@@ -154,6 +161,20 @@ impl TenantBuilder {
     pub fn get_sending_status(&self) -> &::std::option::Option<crate::types::SendingStatus> {
         &self.sending_status
     }
+    /// <p>An object that contains information about the suppression list preferences for the tenant.</p>
+    pub fn suppression_attributes(mut self, input: crate::types::TenantSuppressionAttributes) -> Self {
+        self.suppression_attributes = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>An object that contains information about the suppression list preferences for the tenant.</p>
+    pub fn set_suppression_attributes(mut self, input: ::std::option::Option<crate::types::TenantSuppressionAttributes>) -> Self {
+        self.suppression_attributes = input;
+        self
+    }
+    /// <p>An object that contains information about the suppression list preferences for the tenant.</p>
+    pub fn get_suppression_attributes(&self) -> &::std::option::Option<crate::types::TenantSuppressionAttributes> {
+        &self.suppression_attributes
+    }
     /// Consumes the builder and constructs a [`Tenant`](crate::types::Tenant).
     pub fn build(self) -> crate::types::Tenant {
         crate::types::Tenant {
@@ -163,6 +184,7 @@ impl TenantBuilder {
             created_timestamp: self.created_timestamp,
             tags: self.tags,
             sending_status: self.sending_status,
+            suppression_attributes: self.suppression_attributes,
         }
     }
 }

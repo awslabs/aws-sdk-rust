@@ -39,6 +39,21 @@ pub fn de_put_suppressed_destination_http_error(
             }
             tmp
         }),
+        "NotFoundException" => crate::operation::put_suppressed_destination::PutSuppressedDestinationError::NotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::NotFoundExceptionBuilder::default();
+                output = crate::protocol_serde::shape_not_found_exception::de_not_found_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::put_suppressed_destination::PutSuppressedDestinationError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "TooManyRequestsException" => crate::operation::put_suppressed_destination::PutSuppressedDestinationError::TooManyRequestsException({
             #[allow(unused_mut)]
             let mut tmp = {
