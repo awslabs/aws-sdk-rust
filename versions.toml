@@ -1,7 +1,8 @@
 smithy_rs_revision = '62028c3457eb372f2dd13f28c760d441b155ffcb'
 
 [manual_interventions]
-crates_to_remove = []
+crates_to_remove = ["aws-sdk-panorama", "aws-sdk-simspaceweaver", "aws-sdk-ioteventsdata", "aws-sdk-iotevents"]
+
 [crates.aws-config]
 category = 'AwsRuntime'
 version = '1.8.18'
