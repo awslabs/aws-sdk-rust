@@ -144,6 +144,8 @@ pub trait Waiters {
     fn wait_until_alarm_exists(&self) -> crate::waiters::alarm_exists::AlarmExistsFluentBuilder;
     /// Wait for `composite_alarm_exists`
     fn wait_until_composite_alarm_exists(&self) -> crate::waiters::composite_alarm_exists::CompositeAlarmExistsFluentBuilder;
+    /// Wait for `log_alarm_exists`
+    fn wait_until_log_alarm_exists(&self) -> crate::waiters::log_alarm_exists::LogAlarmExistsFluentBuilder;
     /// Wait for `alarm_mute_rule_exists`
     fn wait_until_alarm_mute_rule_exists(&self) -> crate::waiters::alarm_mute_rule_exists::AlarmMuteRuleExistsFluentBuilder;
 }
@@ -153,6 +155,9 @@ impl Waiters for Client {
     }
     fn wait_until_composite_alarm_exists(&self) -> crate::waiters::composite_alarm_exists::CompositeAlarmExistsFluentBuilder {
         crate::waiters::composite_alarm_exists::CompositeAlarmExistsFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_log_alarm_exists(&self) -> crate::waiters::log_alarm_exists::LogAlarmExistsFluentBuilder {
+        crate::waiters::log_alarm_exists::LogAlarmExistsFluentBuilder::new(self.handle.clone())
     }
     fn wait_until_alarm_mute_rule_exists(&self) -> crate::waiters::alarm_mute_rule_exists::AlarmMuteRuleExistsFluentBuilder {
         crate::waiters::alarm_mute_rule_exists::AlarmMuteRuleExistsFluentBuilder::new(self.handle.clone())
@@ -277,6 +282,8 @@ mod put_composite_alarm;
 mod put_dashboard;
 
 mod put_insight_rule;
+
+mod put_log_alarm;
 
 mod put_managed_insight_rules;
 

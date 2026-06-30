@@ -220,7 +220,7 @@ pub struct CreateReplicationGroupInput {
     pub cluster_mode: ::std::option::Option<crate::types::ClusterMode>,
     /// <p>The name of the snapshot used to create a replication group. Available for Valkey, Redis OSS only.</p>
     pub serverless_cache_snapshot_name: ::std::option::Option<::std::string::String>,
-    /// <p>Specifies the durability setting for the replication group. When set to <code>default</code>, the service determines the effective durability based on the engine version, cluster mode, and other parameters. The resolved setting is reflected in the <code>EffectiveDurability</code> property of the replication group. For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/dg/Durability.html">Durability</a>.</p>
+    /// <p>Specifies the durability setting for the replication group. When set to <code>default</code>, the service determines the effective durability based on the engine version, cluster mode, and other parameters. The resolved setting is reflected in the <code>EffectiveDurability</code> property of the replication group. For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/durability.html">Durability</a>.</p>
     pub durability: ::std::option::Option<crate::types::Durability>,
 }
 impl CreateReplicationGroupInput {
@@ -534,7 +534,7 @@ impl CreateReplicationGroupInput {
     pub fn serverless_cache_snapshot_name(&self) -> ::std::option::Option<&str> {
         self.serverless_cache_snapshot_name.as_deref()
     }
-    /// <p>Specifies the durability setting for the replication group. When set to <code>default</code>, the service determines the effective durability based on the engine version, cluster mode, and other parameters. The resolved setting is reflected in the <code>EffectiveDurability</code> property of the replication group. For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/dg/Durability.html">Durability</a>.</p>
+    /// <p>Specifies the durability setting for the replication group. When set to <code>default</code>, the service determines the effective durability based on the engine version, cluster mode, and other parameters. The resolved setting is reflected in the <code>EffectiveDurability</code> property of the replication group. For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/durability.html">Durability</a>.</p>
     pub fn durability(&self) -> ::std::option::Option<&crate::types::Durability> {
         self.durability.as_ref()
     }
@@ -1605,17 +1605,17 @@ impl CreateReplicationGroupInputBuilder {
     pub fn get_serverless_cache_snapshot_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.serverless_cache_snapshot_name
     }
-    /// <p>Specifies the durability setting for the replication group. When set to <code>default</code>, the service determines the effective durability based on the engine version, cluster mode, and other parameters. The resolved setting is reflected in the <code>EffectiveDurability</code> property of the replication group. For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/dg/Durability.html">Durability</a>.</p>
+    /// <p>Specifies the durability setting for the replication group. When set to <code>default</code>, the service determines the effective durability based on the engine version, cluster mode, and other parameters. The resolved setting is reflected in the <code>EffectiveDurability</code> property of the replication group. For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/durability.html">Durability</a>.</p>
     pub fn durability(mut self, input: crate::types::Durability) -> Self {
         self.durability = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies the durability setting for the replication group. When set to <code>default</code>, the service determines the effective durability based on the engine version, cluster mode, and other parameters. The resolved setting is reflected in the <code>EffectiveDurability</code> property of the replication group. For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/dg/Durability.html">Durability</a>.</p>
+    /// <p>Specifies the durability setting for the replication group. When set to <code>default</code>, the service determines the effective durability based on the engine version, cluster mode, and other parameters. The resolved setting is reflected in the <code>EffectiveDurability</code> property of the replication group. For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/durability.html">Durability</a>.</p>
     pub fn set_durability(mut self, input: ::std::option::Option<crate::types::Durability>) -> Self {
         self.durability = input;
         self
     }
-    /// <p>Specifies the durability setting for the replication group. When set to <code>default</code>, the service determines the effective durability based on the engine version, cluster mode, and other parameters. The resolved setting is reflected in the <code>EffectiveDurability</code> property of the replication group. For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/dg/Durability.html">Durability</a>.</p>
+    /// <p>Specifies the durability setting for the replication group. When set to <code>default</code>, the service determines the effective durability based on the engine version, cluster mode, and other parameters. The resolved setting is reflected in the <code>EffectiveDurability</code> property of the replication group. For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/durability.html">Durability</a>.</p>
     pub fn get_durability(&self) -> &::std::option::Option<crate::types::Durability> {
         &self.durability
     }

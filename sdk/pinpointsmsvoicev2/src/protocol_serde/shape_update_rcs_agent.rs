@@ -212,6 +212,34 @@ pub(crate) fn de_update_rcs_agent(
                 "TwoWayEnabled" => {
                     builder = builder.set_two_way_enabled(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                 }
+                "TwoWayMediaS3BucketName" => {
+                    builder = builder.set_two_way_media_s3_bucket_name(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
+                "TwoWayMediaS3KeyPrefix" => {
+                    builder = builder.set_two_way_media_s3_key_prefix(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
+                "TwoWayMediaS3Role" => {
+                    builder = builder.set_two_way_media_s3_role(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
+                "TwoWayRcsEventsEnabled" => {
+                    builder = builder.set_two_way_rcs_events_enabled(crate::protocol_serde::shape_rcs_event_type_list::de_rcs_event_type_list(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
+                }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },
             other => {

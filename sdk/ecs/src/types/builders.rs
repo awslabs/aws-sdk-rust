@@ -233,6 +233,8 @@ pub use crate::types::_secret::SecretBuilder;
 
 pub use crate::types::_advanced_configuration::AdvancedConfigurationBuilder;
 
+pub use crate::types::_threshold_configuration::ThresholdConfigurationBuilder;
+
 pub use crate::types::_deployment_lifecycle_hook::DeploymentLifecycleHookBuilder;
 
 pub use crate::types::_service_connect_service::ServiceConnectServiceBuilder;

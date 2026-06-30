@@ -138,7 +138,7 @@ pub struct Snapshot {
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>Enables data tiering. Data tiering is only supported for replication groups using the r6gd node type. This parameter must be set to true when using r6gd nodes. For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/data-tiering.html">Data tiering</a>.</p>
     pub data_tiering: ::std::option::Option<crate::types::DataTieringStatus>,
-    /// <p>The durability setting of the cluster when the snapshot was taken. When restoring from this snapshot, the cluster uses this durability setting unless overridden in the restore request. For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/dg/Durability.html">Durability</a>.</p>
+    /// <p>The durability setting of the cluster when the snapshot was taken. When restoring from this snapshot, the cluster uses this durability setting unless overridden in the restore request. For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/durability.html">Durability</a>.</p>
     pub durability: ::std::option::Option<crate::types::Durability>,
 }
 impl Snapshot {
@@ -334,7 +334,7 @@ impl Snapshot {
     pub fn data_tiering(&self) -> ::std::option::Option<&crate::types::DataTieringStatus> {
         self.data_tiering.as_ref()
     }
-    /// <p>The durability setting of the cluster when the snapshot was taken. When restoring from this snapshot, the cluster uses this durability setting unless overridden in the restore request. For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/dg/Durability.html">Durability</a>.</p>
+    /// <p>The durability setting of the cluster when the snapshot was taken. When restoring from this snapshot, the cluster uses this durability setting unless overridden in the restore request. For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/durability.html">Durability</a>.</p>
     pub fn durability(&self) -> ::std::option::Option<&crate::types::Durability> {
         self.durability.as_ref()
     }
@@ -1013,17 +1013,17 @@ impl SnapshotBuilder {
     pub fn get_data_tiering(&self) -> &::std::option::Option<crate::types::DataTieringStatus> {
         &self.data_tiering
     }
-    /// <p>The durability setting of the cluster when the snapshot was taken. When restoring from this snapshot, the cluster uses this durability setting unless overridden in the restore request. For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/dg/Durability.html">Durability</a>.</p>
+    /// <p>The durability setting of the cluster when the snapshot was taken. When restoring from this snapshot, the cluster uses this durability setting unless overridden in the restore request. For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/durability.html">Durability</a>.</p>
     pub fn durability(mut self, input: crate::types::Durability) -> Self {
         self.durability = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The durability setting of the cluster when the snapshot was taken. When restoring from this snapshot, the cluster uses this durability setting unless overridden in the restore request. For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/dg/Durability.html">Durability</a>.</p>
+    /// <p>The durability setting of the cluster when the snapshot was taken. When restoring from this snapshot, the cluster uses this durability setting unless overridden in the restore request. For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/durability.html">Durability</a>.</p>
     pub fn set_durability(mut self, input: ::std::option::Option<crate::types::Durability>) -> Self {
         self.durability = input;
         self
     }
-    /// <p>The durability setting of the cluster when the snapshot was taken. When restoring from this snapshot, the cluster uses this durability setting unless overridden in the restore request. For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/dg/Durability.html">Durability</a>.</p>
+    /// <p>The durability setting of the cluster when the snapshot was taken. When restoring from this snapshot, the cluster uses this durability setting unless overridden in the restore request. For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/durability.html">Durability</a>.</p>
     pub fn get_durability(&self) -> &::std::option::Option<crate::types::Durability> {
         &self.durability
     }

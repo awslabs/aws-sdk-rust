@@ -18,7 +18,7 @@ pub struct SourceStatistics {
     pub intent: ::std::option::Option<::std::string::String>,
     /// <p>The organization associated with the AI bot.</p>
     pub organization: ::std::option::Option<::std::string::String>,
-    /// <p>Whether the AI bot's identity was verified.</p>
+    /// <p>Indicates whether the AI bot's identity was verified — for example, through a cryptographically signed request (Web Bot Auth) or another published verification method. This value is meaningful only when GroupBy is NAME, where each result represents a single, identifiable bot. For all other GroupBy values (CATEGORY, INTENT, ORGANIZATION, or WEBACL), a result aggregates multiple bots that may have different verification states, so Verified is always returned as false and should be ignored. Type and required-ness are unchanged (Boolean, optional).</p>
     pub verified: bool,
     /// <p>The value for the group-by dimension, when grouping is applied.</p>
     pub group_by_value: ::std::option::Option<::std::string::String>,
@@ -54,7 +54,7 @@ impl SourceStatistics {
     pub fn organization(&self) -> ::std::option::Option<&str> {
         self.organization.as_deref()
     }
-    /// <p>Whether the AI bot's identity was verified.</p>
+    /// <p>Indicates whether the AI bot's identity was verified — for example, through a cryptographically signed request (Web Bot Auth) or another published verification method. This value is meaningful only when GroupBy is NAME, where each result represents a single, identifiable bot. For all other GroupBy values (CATEGORY, INTENT, ORGANIZATION, or WEBACL), a result aggregates multiple bots that may have different verification states, so Verified is always returned as false and should be ignored. Type and required-ness are unchanged (Boolean, optional).</p>
     pub fn verified(&self) -> bool {
         self.verified
     }
@@ -187,17 +187,17 @@ impl SourceStatisticsBuilder {
     pub fn get_organization(&self) -> &::std::option::Option<::std::string::String> {
         &self.organization
     }
-    /// <p>Whether the AI bot's identity was verified.</p>
+    /// <p>Indicates whether the AI bot's identity was verified — for example, through a cryptographically signed request (Web Bot Auth) or another published verification method. This value is meaningful only when GroupBy is NAME, where each result represents a single, identifiable bot. For all other GroupBy values (CATEGORY, INTENT, ORGANIZATION, or WEBACL), a result aggregates multiple bots that may have different verification states, so Verified is always returned as false and should be ignored. Type and required-ness are unchanged (Boolean, optional).</p>
     pub fn verified(mut self, input: bool) -> Self {
         self.verified = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Whether the AI bot's identity was verified.</p>
+    /// <p>Indicates whether the AI bot's identity was verified — for example, through a cryptographically signed request (Web Bot Auth) or another published verification method. This value is meaningful only when GroupBy is NAME, where each result represents a single, identifiable bot. For all other GroupBy values (CATEGORY, INTENT, ORGANIZATION, or WEBACL), a result aggregates multiple bots that may have different verification states, so Verified is always returned as false and should be ignored. Type and required-ness are unchanged (Boolean, optional).</p>
     pub fn set_verified(mut self, input: ::std::option::Option<bool>) -> Self {
         self.verified = input;
         self
     }
-    /// <p>Whether the AI bot's identity was verified.</p>
+    /// <p>Indicates whether the AI bot's identity was verified — for example, through a cryptographically signed request (Web Bot Auth) or another published verification method. This value is meaningful only when GroupBy is NAME, where each result represents a single, identifiable bot. For all other GroupBy values (CATEGORY, INTENT, ORGANIZATION, or WEBACL), a result aggregates multiple bots that may have different verification states, so Verified is always returned as false and should be ignored. Type and required-ness are unchanged (Boolean, optional).</p>
     pub fn get_verified(&self) -> &::std::option::Option<bool> {
         &self.verified
     }

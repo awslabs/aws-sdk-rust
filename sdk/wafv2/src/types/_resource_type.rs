@@ -12,6 +12,7 @@
 /// ```text
 /// # let resourcetype = unimplemented!();
 /// match resourcetype {
+///     ResourceType::AgentcoreGateway => { /* ... */ },
 ///     ResourceType::Amplify => { /* ... */ },
 ///     ResourceType::ApiGateway => { /* ... */ },
 ///     ResourceType::ApplicationLoadBalancer => { /* ... */ },
@@ -48,6 +49,8 @@
 )]
 pub enum ResourceType {
     #[allow(missing_docs)] // documentation missing in model
+    AgentcoreGateway,
+    #[allow(missing_docs)] // documentation missing in model
     Amplify,
     #[allow(missing_docs)] // documentation missing in model
     ApiGateway,
@@ -68,6 +71,7 @@ pub enum ResourceType {
 impl ::std::convert::From<&str> for ResourceType {
     fn from(s: &str) -> Self {
         match s {
+            "AGENTCORE_GATEWAY" => ResourceType::AgentcoreGateway,
             "AMPLIFY" => ResourceType::Amplify,
             "API_GATEWAY" => ResourceType::ApiGateway,
             "APPLICATION_LOAD_BALANCER" => ResourceType::ApplicationLoadBalancer,
@@ -90,6 +94,7 @@ impl ResourceType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            ResourceType::AgentcoreGateway => "AGENTCORE_GATEWAY",
             ResourceType::Amplify => "AMPLIFY",
             ResourceType::ApiGateway => "API_GATEWAY",
             ResourceType::ApplicationLoadBalancer => "APPLICATION_LOAD_BALANCER",
@@ -103,6 +108,7 @@ impl ResourceType {
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
+            "AGENTCORE_GATEWAY",
             "AMPLIFY",
             "API_GATEWAY",
             "APPLICATION_LOAD_BALANCER",
@@ -133,6 +139,7 @@ impl ResourceType {
 impl ::std::fmt::Display for ResourceType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            ResourceType::AgentcoreGateway => write!(f, "AGENTCORE_GATEWAY"),
             ResourceType::Amplify => write!(f, "AMPLIFY"),
             ResourceType::ApiGateway => write!(f, "API_GATEWAY"),
             ResourceType::ApplicationLoadBalancer => write!(f, "APPLICATION_LOAD_BALANCER"),

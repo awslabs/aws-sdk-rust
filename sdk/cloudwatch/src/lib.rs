@@ -21,11 +21,39 @@
 #![forbid(unsafe_code)]
 #![warn(missing_docs)]
 #![cfg_attr(docsrs, feature(doc_cfg))]
-//! Amazon CloudWatch monitors your Amazon Web Services (Amazon Web Services) resources and the applications you run on Amazon Web Services in real time. You can use CloudWatch to collect and track metrics, which are the variables you want to measure for your resources and applications.
+//! Amazon CloudWatch enables you to publish, monitor, and manage various metrics, as well as configure alarm actions based on data from metrics. This guide provides detailed information about CloudWatch actions, data types, parameters, and errors. For more information about CloudWatch features, see [Amazon CloudWatch](https://aws.amazon.com/cloudwatch) and the _Amazon CloudWatch User Guide_.
 //!
-//! CloudWatch alarms send notifications or automatically change the resources you are monitoring based on rules that you define. For example, you can monitor the CPU usage and disk reads and writes of your Amazon EC2 instances. Then, use this data to determine whether you should launch additional instances to handle increased load. You can also use this data to stop under-used instances to save money.
+//! For information about the metrics that other Amazon Web Services products send to CloudWatch, see the [Amazon CloudWatch Metrics and Dimensions Reference](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/aws-services-cloudwatch-metrics.html) in the _Amazon CloudWatch User Guide_.
 //!
-//! In addition to monitoring the built-in metrics that come with Amazon Web Services, you can monitor your own custom metrics. With CloudWatch, you gain system-wide visibility into resource utilization, application performance, and operational health.
+//! Use the following links to get started using the CloudWatch Query API:
+//!
+//! : An alphabetical list of all CloudWatch actions.
+//!
+//! : An alphabetical list of all CloudWatch data types.
+//!
+//! CommonParameters: Parameters that all Query actions can use.
+//!
+//! CommonErrors: Client and server errors that all actions can return.
+//!
+//! [Regions and Endpoints](https://docs.aws.amazon.com/general/latest/gr/rande.html#cw_region): Supported regions and endpoints for all Amazon Web Services products.
+//!
+//! Alternatively, you can use one of the [Amazon Web Services SDKs](https://aws.amazon.com/tools/#sdk) to access CloudWatch using an API tailored to your programming language or platform.
+//!
+//! Developers in the Amazon Web Services developer community also provide their own libraries, which you can find at the following Amazon Web Services developer centers:
+//!
+//! [Java Developer Center](http://aws.amazon.com/java/)
+//!
+//! [JavaScript Developer Center](http://aws.amazon.com/javascript/)
+//!
+//! [Amazon Web Services Mobile Services](http://aws.amazon.com/mobile/)
+//!
+//! [PHP Developer Center](http://aws.amazon.com/php/)
+//!
+//! [Python Developer Center](http://aws.amazon.com/python/)
+//!
+//! [Ruby Developer Center](http://aws.amazon.com/ruby/)
+//!
+//! [Windows and .NET Developer Center](http://aws.amazon.com/net/)
 //!
 //! ## Getting Started
 //!
@@ -39,7 +67,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-cloudwatch = "1.116.0"
+//! aws-sdk-cloudwatch = "1.117.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

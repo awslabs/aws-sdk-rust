@@ -17,6 +17,8 @@ pub use crate::types::_validation_exception_field::ValidationExceptionFieldBuild
 
 pub use crate::types::_region_status::RegionStatusBuilder;
 
+pub use crate::types::_service_linked_recorder_info::ServiceLinkedRecorderInfoBuilder;
+
 pub use crate::types::_member_index::MemberIndexBuilder;
 
 pub use crate::types::_resource::ResourceBuilder;

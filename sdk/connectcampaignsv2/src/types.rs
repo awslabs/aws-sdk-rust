@@ -133,6 +133,8 @@ pub use crate::types::_channel_subtype_parameters::ChannelSubtypeParameters;
 
 pub use crate::types::_failure_code::FailureCode;
 
+pub use crate::types::_event_trigger_context::EventTriggerContext;
+
 pub use crate::types::_profile_outbound_request_failure_code::ProfileOutboundRequestFailureCode;
 
 pub use crate::types::_progressive_config::ProgressiveConfig;
@@ -159,6 +161,8 @@ pub use crate::types::_email_channel_subtype_parameters::EmailChannelSubtypePara
 
 pub use crate::types::_whats_app_channel_subtype_parameters::WhatsAppChannelSubtypeParameters;
 
+pub use crate::types::_channel_context::ChannelContext;
+
 pub use crate::types::_timeout_config::TimeoutConfig;
 
 pub use crate::types::_day_of_week::DayOfWeek;
@@ -166,6 +170,8 @@ pub use crate::types::_day_of_week::DayOfWeek;
 pub use crate::types::_restricted_period::RestrictedPeriod;
 
 pub use crate::types::_communication_limit_time_unit::CommunicationLimitTimeUnit;
+
+pub use crate::types::_web_notification_context::WebNotificationContext;
 
 pub use crate::types::_agent_action::AgentAction;
 
@@ -186,6 +192,8 @@ mod _campaign_filters;
 mod _campaign_state;
 
 mod _campaign_summary;
+
+mod _channel_context;
 
 mod _channel_subtype;
 
@@ -230,6 +238,8 @@ mod _encryption_type;
 mod _entry_limits_config;
 
 mod _event_trigger;
+
+mod _event_trigger_context;
 
 mod _event_type;
 
@@ -334,6 +344,8 @@ mod _time_range;
 mod _time_window;
 
 mod _timeout_config;
+
+mod _web_notification_context;
 
 mod _whats_app_channel_subtype_config;
 

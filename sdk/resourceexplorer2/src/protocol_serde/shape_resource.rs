@@ -56,6 +56,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "CfnResourceType" => {
+                            builder = builder.set_cfn_resource_type(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         "LastReportedAt" => {
                             builder = builder.set_last_reported_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                                 tokens.next(),

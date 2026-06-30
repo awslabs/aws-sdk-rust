@@ -49,11 +49,27 @@ where
                                     .transpose()?,
                             );
                         }
+                        "ResolvedS3Object" => {
+                            builder = builder.set_resolved_s3_object(crate::protocol_serde::shape_resolved_s3_object::de_resolved_s3_object(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
+                        }
                         "SourceKMSKeyArn" => {
                             builder = builder.set_source_kms_key_arn(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
+                            );
+                        }
+                        "Error" => {
+                            builder = builder.set_error(
+                                crate::protocol_serde::shape_function_code_location_error::de_function_code_location_error(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

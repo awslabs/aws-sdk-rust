@@ -18,6 +18,10 @@ impl super::Client {
     ///   - [`two_way_channel_arn(Option<String>)`](crate::operation::create_rcs_agent::CreateRcsAgentOutput::two_way_channel_arn): <p>The Amazon Resource Name (ARN) of the two way channel.</p>
     ///   - [`two_way_channel_role(Option<String>)`](crate::operation::create_rcs_agent::CreateRcsAgentOutput::two_way_channel_role): <p>An optional IAM Role Arn for a service to assume, to be able to post inbound SMS messages.</p>
     ///   - [`two_way_enabled(bool)`](crate::operation::create_rcs_agent::CreateRcsAgentOutput::two_way_enabled): <p>By default this is set to false. When set to true you can receive incoming text messages from your end recipients.</p>
+    ///   - [`two_way_media_s3_bucket_name(Option<String>)`](crate::operation::create_rcs_agent::CreateRcsAgentOutput::two_way_media_s3_bucket_name): <p>The name of the S3 bucket where inbound RCS media files are stored.</p>
+    ///   - [`two_way_media_s3_key_prefix(Option<String>)`](crate::operation::create_rcs_agent::CreateRcsAgentOutput::two_way_media_s3_key_prefix): <p>The key prefix used for inbound RCS media objects in the S3 bucket.</p>
+    ///   - [`two_way_media_s3_role(Option<String>)`](crate::operation::create_rcs_agent::CreateRcsAgentOutput::two_way_media_s3_role): <p>The ARN of the IAM role used to write inbound RCS media files to the S3 bucket. The role must have <code>s3:PutObject</code> permission on the bucket and a trust policy allowing <code>sms-voice.amazonaws.com</code> to assume it.</p>
+    ///   - [`two_way_rcs_events_enabled(Option<Vec::<String>>)`](crate::operation::create_rcs_agent::CreateRcsAgentOutput::two_way_rcs_events_enabled): <p>The list of RCS event types enabled for two-way messaging on the agent.</p>
     ///   - [`tags(Option<Vec::<Tag>>)`](crate::operation::create_rcs_agent::CreateRcsAgentOutput::tags): <p>An array of tags (key and value pairs) associated with the RCS agent.</p>
     /// - On failure, responds with [`SdkError<CreateRcsAgentError>`](crate::operation::create_rcs_agent::CreateRcsAgentError)
     pub fn create_rcs_agent(&self) -> crate::operation::create_rcs_agent::builders::CreateRcsAgentFluentBuilder {

@@ -24,5 +24,23 @@ pub fn ser_update_rcs_agent_input_input(
     if let Some(var_7) = &input.two_way_enabled {
         object.key("TwoWayEnabled").boolean(*var_7);
     }
+    if let Some(var_8) = &input.two_way_media_s3_bucket_name {
+        object.key("TwoWayMediaS3BucketName").string(var_8.as_str());
+    }
+    if let Some(var_9) = &input.two_way_media_s3_key_prefix {
+        object.key("TwoWayMediaS3KeyPrefix").string(var_9.as_str());
+    }
+    if let Some(var_10) = &input.two_way_media_s3_role {
+        object.key("TwoWayMediaS3Role").string(var_10.as_str());
+    }
+    if let Some(var_11) = &input.two_way_rcs_events_enabled {
+        let mut array_12 = object.key("TwoWayRcsEventsEnabled").start_array();
+        for item_13 in var_11 {
+            {
+                array_12.value().string(item_13.as_str());
+            }
+        }
+        array_12.finish();
+    }
     Ok(())
 }

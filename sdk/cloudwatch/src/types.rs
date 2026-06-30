@@ -31,6 +31,8 @@ pub use crate::types::_anomaly_detector_configuration::AnomalyDetectorConfigurat
 
 pub use crate::types::_metric_characteristics::MetricCharacteristics;
 
+pub use crate::types::_scheduled_query_configuration::ScheduledQueryConfiguration;
+
 pub use crate::types::_comparison_operator::ComparisonOperator;
 
 pub use crate::types::_evaluation_criteria::EvaluationCriteria;
@@ -48,6 +50,8 @@ pub use crate::types::_alarm_history_item::AlarmHistoryItem;
 pub use crate::types::_composite_alarm::CompositeAlarm;
 
 pub use crate::types::_metric_alarm::MetricAlarm;
+
+pub use crate::types::_log_alarm::LogAlarm;
 
 pub use crate::types::_anomaly_detector_type::AnomalyDetectorType;
 
@@ -88,6 +92,8 @@ pub use crate::types::_metric_stream_entry::MetricStreamEntry;
 pub use crate::types::_tag::Tag;
 
 pub use crate::types::_dashboard_validation_message::DashboardValidationMessage;
+
+pub use crate::types::_schedule_configuration::ScheduleConfiguration;
 
 pub use crate::types::_managed_rule::ManagedRule;
 
@@ -175,6 +181,8 @@ mod _insight_rule_metric_datapoint;
 
 mod _label_options;
 
+mod _log_alarm;
+
 mod _managed_rule;
 
 mod _managed_rule_description;
@@ -224,6 +232,10 @@ mod _rule;
 mod _scan_by;
 
 mod _schedule;
+
+mod _schedule_configuration;
+
+mod _scheduled_query_configuration;
 
 mod _single_metric_anomaly_detector;
 

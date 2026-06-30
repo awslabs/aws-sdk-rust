@@ -91,6 +91,9 @@ pub mod delete_protect_configuration_rule_set_number_override;
 /// Types for the `DeleteRcsAgent` operation.
 pub mod delete_rcs_agent;
 
+/// Types for the `DeleteRcsMessageSpendLimitOverride` operation.
+pub mod delete_rcs_message_spend_limit_override;
+
 /// Types for the `DeleteRegistration` operation.
 pub mod delete_registration;
 
@@ -253,6 +256,9 @@ pub mod send_notify_text_message;
 /// Types for the `SendNotifyVoiceMessage` operation.
 pub mod send_notify_voice_message;
 
+/// Types for the `SendRcsMessage` operation.
+pub mod send_rcs_message;
+
 /// Types for the `SendTextMessage` operation.
 pub mod send_text_message;
 
@@ -276,6 +282,9 @@ pub mod set_media_message_spend_limit_override;
 
 /// Types for the `SetNotifyMessageSpendLimitOverride` operation.
 pub mod set_notify_message_spend_limit_override;
+
+/// Types for the `SetRcsMessageSpendLimitOverride` operation.
+pub mod set_rcs_message_spend_limit_override;
 
 /// Types for the `SetTextMessageSpendLimitOverride` operation.
 pub mod set_text_message_spend_limit_override;

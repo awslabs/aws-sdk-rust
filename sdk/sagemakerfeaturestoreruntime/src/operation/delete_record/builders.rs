@@ -30,7 +30,7 @@ impl crate::operation::delete_record::builders::DeleteRecordInputBuilder {
 /// <li>
 /// <p><code>HardDelete</code> returns <code>EventTime</code>: <code>400 ValidationException</code> to indicate that the delete operation failed. No delete record marker is written to the <code>OfflineStore</code>.</p></li>
 /// </ul>
-/// <p>When a record is deleted from the <code>OnlineStore</code>, the deleted record marker is appended to the <code>OfflineStore</code>. If you have the Iceberg table format enabled for your <code>OfflineStore</code>, you can remove all history of a record from the <code>OfflineStore</code> using Amazon Athena or Apache Spark. For information on how to hard delete a record from the <code>OfflineStore</code> with the Iceberg table format enabled, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/feature-store-delete-records-offline-store.html#feature-store-delete-records-offline-store">Delete records from the offline store</a>.</p>
+/// <p>When a record is deleted from the <code>OnlineStore</code>, the deleted record marker is appended to the <code>OfflineStore</code>. If you have the Iceberg table format enabled for your <code>OfflineStore</code>, you can remove all history of a record from the <code>OfflineStore</code> using Amazon Athena or Apache Spark. For information on how to hard delete a record from the <code>OfflineStore</code> with the Iceberg table format enabled, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/feature-store-delete-records.html#feature-store-delete-records-offline-store">Delete records from the offline store</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteRecordFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

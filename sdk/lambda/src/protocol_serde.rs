@@ -585,6 +585,8 @@ pub(crate) mod shape_filter;
 
 pub(crate) mod shape_filter_list;
 
+pub(crate) mod shape_function_code_location_error;
+
 pub(crate) mod shape_function_event_invoke_config;
 
 pub(crate) mod shape_function_url_config;
@@ -614,6 +616,8 @@ pub(crate) mod shape_on_success;
 pub(crate) mod shape_operation;
 
 pub(crate) mod shape_provisioned_concurrency_config_list_item;
+
+pub(crate) mod shape_resolved_s3_object;
 
 pub(crate) mod shape_runtime_version_error;
 

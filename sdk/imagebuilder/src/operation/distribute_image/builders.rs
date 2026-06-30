@@ -22,7 +22,7 @@ impl crate::operation::distribute_image::builders::DistributeImageInputBuilder {
 }
 /// Fluent builder constructing a request to `DistributeImage`.
 ///
-/// <p>DistributeImage distributes existing AMIs to additional regions and accounts without rebuilding the image.</p>
+/// <p>Distributes an existing AMI to target Regions and accounts without running the full image build process. This operation only runs the distribution phase on an image that has already been built.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DistributeImageFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,45 +108,45 @@ impl DistributeImageFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The source image Amazon Resource Name (ARN) to distribute.</p>
+    /// <p>The source image to distribute. Specify an AMI identifier, SSM parameter path, or Image Builder image Amazon Resource Name (ARN). When you specify an Image Builder image Amazon Resource Name (ARN), the image must be in the <code>AVAILABLE</code> state.</p>
     pub fn source_image(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.source_image(input.into());
         self
     }
-    /// <p>The source image Amazon Resource Name (ARN) to distribute.</p>
+    /// <p>The source image to distribute. Specify an AMI identifier, SSM parameter path, or Image Builder image Amazon Resource Name (ARN). When you specify an Image Builder image Amazon Resource Name (ARN), the image must be in the <code>AVAILABLE</code> state.</p>
     pub fn set_source_image(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_source_image(input);
         self
     }
-    /// <p>The source image Amazon Resource Name (ARN) to distribute.</p>
+    /// <p>The source image to distribute. Specify an AMI identifier, SSM parameter path, or Image Builder image Amazon Resource Name (ARN). When you specify an Image Builder image Amazon Resource Name (ARN), the image must be in the <code>AVAILABLE</code> state.</p>
     pub fn get_source_image(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_source_image()
     }
-    /// <p>The Amazon Resource Name (ARN) of the distribution configuration to use.</p>
+    /// <p>The Amazon Resource Name (ARN) of the distribution configuration. The configuration defines target Regions, accounts, and AMI settings. The distribution configuration must be in the same Region as this operation.</p>
     pub fn distribution_configuration_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.distribution_configuration_arn(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the distribution configuration to use.</p>
+    /// <p>The Amazon Resource Name (ARN) of the distribution configuration. The configuration defines target Regions, accounts, and AMI settings. The distribution configuration must be in the same Region as this operation.</p>
     pub fn set_distribution_configuration_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_distribution_configuration_arn(input);
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the distribution configuration to use.</p>
+    /// <p>The Amazon Resource Name (ARN) of the distribution configuration. The configuration defines target Regions, accounts, and AMI settings. The distribution configuration must be in the same Region as this operation.</p>
     pub fn get_distribution_configuration_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_distribution_configuration_arn()
     }
-    /// <p>The IAM role to use for the distribution.</p>
+    /// <p>The name or Amazon Resource Name (ARN) of the IAM role that Image Builder assumes to distribute the image.</p>
     pub fn execution_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.execution_role(input.into());
         self
     }
-    /// <p>The IAM role to use for the distribution.</p>
+    /// <p>The name or Amazon Resource Name (ARN) of the IAM role that Image Builder assumes to distribute the image.</p>
     pub fn set_execution_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_execution_role(input);
         self
     }
-    /// <p>The IAM role to use for the distribution.</p>
+    /// <p>The name or Amazon Resource Name (ARN) of the IAM role that Image Builder assumes to distribute the image.</p>
     pub fn get_execution_role(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_execution_role()
     }

@@ -9,6 +9,8 @@ pub use crate::types::error::_kms_key_not_found_exception::KmsKeyNotFoundExcepti
 
 pub use crate::types::error::_resource_not_found_exception::ResourceNotFoundException;
 
+pub use crate::types::error::_resource_conflict::ResourceConflict;
+
 pub use crate::types::error::_resource_not_found::ResourceNotFound;
 
 pub use crate::types::error::_internal_service_fault::InternalServiceFault;
@@ -62,6 +64,8 @@ mod _limit_exceeded_exception;
 mod _limit_exceeded_fault;
 
 mod _missing_required_parameter_exception;
+
+mod _resource_conflict;
 
 mod _resource_not_found;
 

@@ -10,6 +10,8 @@ pub struct LayerVersionContentInput {
     pub s3_key: ::std::option::Option<::std::string::String>,
     /// <p>For versioned objects, the version of the layer archive object to use.</p>
     pub s3_object_version: ::std::option::Option<::std::string::String>,
+    /// <p>The storage mode for a function's deployment package.</p>
+    pub s3_object_storage_mode: ::std::option::Option<crate::types::S3ObjectStorageMode>,
     /// <p>The base64-encoded contents of the layer archive. Amazon Web Services SDK and Amazon Web Services CLI clients handle the encoding for you.</p>
     pub zip_file: ::std::option::Option<::aws_smithy_types::Blob>,
 }
@@ -26,6 +28,10 @@ impl LayerVersionContentInput {
     pub fn s3_object_version(&self) -> ::std::option::Option<&str> {
         self.s3_object_version.as_deref()
     }
+    /// <p>The storage mode for a function's deployment package.</p>
+    pub fn s3_object_storage_mode(&self) -> ::std::option::Option<&crate::types::S3ObjectStorageMode> {
+        self.s3_object_storage_mode.as_ref()
+    }
     /// <p>The base64-encoded contents of the layer archive. Amazon Web Services SDK and Amazon Web Services CLI clients handle the encoding for you.</p>
     pub fn zip_file(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
         self.zip_file.as_ref()
@@ -37,6 +43,7 @@ impl ::std::fmt::Debug for LayerVersionContentInput {
         formatter.field("s3_bucket", &self.s3_bucket);
         formatter.field("s3_key", &self.s3_key);
         formatter.field("s3_object_version", &self.s3_object_version);
+        formatter.field("s3_object_storage_mode", &self.s3_object_storage_mode);
         formatter.field("zip_file", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
@@ -55,6 +62,7 @@ pub struct LayerVersionContentInputBuilder {
     pub(crate) s3_bucket: ::std::option::Option<::std::string::String>,
     pub(crate) s3_key: ::std::option::Option<::std::string::String>,
     pub(crate) s3_object_version: ::std::option::Option<::std::string::String>,
+    pub(crate) s3_object_storage_mode: ::std::option::Option<crate::types::S3ObjectStorageMode>,
     pub(crate) zip_file: ::std::option::Option<::aws_smithy_types::Blob>,
 }
 impl LayerVersionContentInputBuilder {
@@ -100,6 +108,20 @@ impl LayerVersionContentInputBuilder {
     pub fn get_s3_object_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.s3_object_version
     }
+    /// <p>The storage mode for a function's deployment package.</p>
+    pub fn s3_object_storage_mode(mut self, input: crate::types::S3ObjectStorageMode) -> Self {
+        self.s3_object_storage_mode = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The storage mode for a function's deployment package.</p>
+    pub fn set_s3_object_storage_mode(mut self, input: ::std::option::Option<crate::types::S3ObjectStorageMode>) -> Self {
+        self.s3_object_storage_mode = input;
+        self
+    }
+    /// <p>The storage mode for a function's deployment package.</p>
+    pub fn get_s3_object_storage_mode(&self) -> &::std::option::Option<crate::types::S3ObjectStorageMode> {
+        &self.s3_object_storage_mode
+    }
     /// <p>The base64-encoded contents of the layer archive. Amazon Web Services SDK and Amazon Web Services CLI clients handle the encoding for you.</p>
     pub fn zip_file(mut self, input: ::aws_smithy_types::Blob) -> Self {
         self.zip_file = ::std::option::Option::Some(input);
@@ -120,6 +142,7 @@ impl LayerVersionContentInputBuilder {
             s3_bucket: self.s3_bucket,
             s3_key: self.s3_key,
             s3_object_version: self.s3_object_version,
+            s3_object_storage_mode: self.s3_object_storage_mode,
             zip_file: self.zip_file,
         }
     }
@@ -130,6 +153,7 @@ impl ::std::fmt::Debug for LayerVersionContentInputBuilder {
         formatter.field("s3_bucket", &self.s3_bucket);
         formatter.field("s3_key", &self.s3_key);
         formatter.field("s3_object_version", &self.s3_object_version);
+        formatter.field("s3_object_storage_mode", &self.s3_object_storage_mode);
         formatter.field("zip_file", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }

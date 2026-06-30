@@ -182,6 +182,8 @@ mod create_deployment_strategy;
 
 mod create_environment;
 
+mod create_experiment_definition;
+
 mod create_extension;
 
 mod create_extension_association;
@@ -223,6 +225,8 @@ mod delete_deployment_strategy;
 
 mod delete_environment;
 
+mod delete_experiment_definition;
+
 mod delete_extension;
 
 mod delete_extension_association;
@@ -243,6 +247,10 @@ mod get_deployment_strategy;
 
 mod get_environment;
 
+mod get_experiment_definition;
+
+mod get_experiment_run;
+
 mod get_extension;
 
 mod get_extension_association;
@@ -259,6 +267,12 @@ mod list_deployments;
 
 mod list_environments;
 
+mod list_experiment_definitions;
+
+mod list_experiment_run_events;
+
+mod list_experiment_runs;
+
 mod list_extension_associations;
 
 mod list_extensions;
@@ -269,7 +283,11 @@ mod list_tags_for_resource;
 
 mod start_deployment;
 
+mod start_experiment_run;
+
 mod stop_deployment;
+
+mod stop_experiment_run;
 
 mod tag_resource;
 
@@ -284,6 +302,10 @@ mod update_configuration_profile;
 mod update_deployment_strategy;
 
 mod update_environment;
+
+mod update_experiment_definition;
+
+mod update_experiment_run;
 
 mod update_extension;
 

@@ -109,6 +109,8 @@ pub use crate::types::_snap_start_response::SnapStartResponse;
 
 pub use crate::types::_runtime_version_config::RuntimeVersionConfig;
 
+pub use crate::types::_s3_object_storage_mode::S3ObjectStorageMode;
+
 pub use crate::types::_function_url_auth_type::FunctionUrlAuthType;
 
 pub use crate::types::_cors::Cors;
@@ -208,6 +210,10 @@ pub use crate::types::_snap_start_optimization_status::SnapStartOptimizationStat
 pub use crate::types::_runtime_version_error::RuntimeVersionError;
 
 pub use crate::types::_provisioned_concurrency_config_list_item::ProvisionedConcurrencyConfigListItem;
+
+pub use crate::types::_resolved_s3_object::ResolvedS3Object;
+
+pub use crate::types::_function_code_location_error::FunctionCodeLocationError;
 
 pub use crate::types::_invoke_response_stream_update::InvokeResponseStreamUpdate;
 
@@ -481,6 +487,8 @@ mod _function_code;
 
 mod _function_code_location;
 
+mod _function_code_location_error;
+
 mod _function_configuration;
 
 mod _function_event_invoke_config;
@@ -579,6 +587,8 @@ mod _provisioned_poller_config;
 
 mod _recursive_loop;
 
+mod _resolved_s3_object;
+
 mod _response_streaming_invocation_type;
 
 mod _retry_details;
@@ -588,6 +598,8 @@ mod _runtime;
 mod _runtime_version_config;
 
 mod _runtime_version_error;
+
+mod _s3_object_storage_mode;
 
 mod _scaling_config;
 

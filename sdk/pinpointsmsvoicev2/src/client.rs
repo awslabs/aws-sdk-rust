@@ -223,6 +223,8 @@ mod delete_protect_configuration_rule_set_number_override;
 
 mod delete_rcs_agent;
 
+mod delete_rcs_message_spend_limit_override;
+
 mod delete_registration;
 
 mod delete_registration_attachment;
@@ -331,6 +333,8 @@ mod send_notify_text_message;
 
 mod send_notify_voice_message;
 
+mod send_rcs_message;
+
 mod send_text_message;
 
 mod send_voice_message;
@@ -346,6 +350,8 @@ mod set_default_sender_id;
 mod set_media_message_spend_limit_override;
 
 mod set_notify_message_spend_limit_override;
+
+mod set_rcs_message_spend_limit_override;
 
 mod set_text_message_spend_limit_override;
 

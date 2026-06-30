@@ -17,6 +17,8 @@ pub struct CreateServiceOutput {
     pub status: ::std::option::Option<crate::types::ServiceStatus>,
     /// <p>The type of IAM policy.</p>
     pub auth_type: ::std::option::Option<crate::types::AuthType>,
+    /// <p>The amount of time, in seconds, that a connection can remain idle before VPC Lattice closes it.</p>
+    pub idle_timeout_seconds: ::std::option::Option<i32>,
     /// <p>The public DNS name of the service.</p>
     pub dns_entry: ::std::option::Option<crate::types::DnsEntry>,
     _request_id: Option<String>,
@@ -50,6 +52,10 @@ impl CreateServiceOutput {
     pub fn auth_type(&self) -> ::std::option::Option<&crate::types::AuthType> {
         self.auth_type.as_ref()
     }
+    /// <p>The amount of time, in seconds, that a connection can remain idle before VPC Lattice closes it.</p>
+    pub fn idle_timeout_seconds(&self) -> ::std::option::Option<i32> {
+        self.idle_timeout_seconds
+    }
     /// <p>The public DNS name of the service.</p>
     pub fn dns_entry(&self) -> ::std::option::Option<&crate::types::DnsEntry> {
         self.dns_entry.as_ref()
@@ -78,6 +84,7 @@ pub struct CreateServiceOutputBuilder {
     pub(crate) certificate_arn: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::ServiceStatus>,
     pub(crate) auth_type: ::std::option::Option<crate::types::AuthType>,
+    pub(crate) idle_timeout_seconds: ::std::option::Option<i32>,
     pub(crate) dns_entry: ::std::option::Option<crate::types::DnsEntry>,
     _request_id: Option<String>,
 }
@@ -180,6 +187,20 @@ impl CreateServiceOutputBuilder {
     pub fn get_auth_type(&self) -> &::std::option::Option<crate::types::AuthType> {
         &self.auth_type
     }
+    /// <p>The amount of time, in seconds, that a connection can remain idle before VPC Lattice closes it.</p>
+    pub fn idle_timeout_seconds(mut self, input: i32) -> Self {
+        self.idle_timeout_seconds = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The amount of time, in seconds, that a connection can remain idle before VPC Lattice closes it.</p>
+    pub fn set_idle_timeout_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.idle_timeout_seconds = input;
+        self
+    }
+    /// <p>The amount of time, in seconds, that a connection can remain idle before VPC Lattice closes it.</p>
+    pub fn get_idle_timeout_seconds(&self) -> &::std::option::Option<i32> {
+        &self.idle_timeout_seconds
+    }
     /// <p>The public DNS name of the service.</p>
     pub fn dns_entry(mut self, input: crate::types::DnsEntry) -> Self {
         self.dns_entry = ::std::option::Option::Some(input);
@@ -213,6 +234,7 @@ impl CreateServiceOutputBuilder {
             certificate_arn: self.certificate_arn,
             status: self.status,
             auth_type: self.auth_type,
+            idle_timeout_seconds: self.idle_timeout_seconds,
             dns_entry: self.dns_entry,
             _request_id: self._request_id,
         }

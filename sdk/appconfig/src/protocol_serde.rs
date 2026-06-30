@@ -31,6 +31,8 @@ pub(crate) mod shape_create_deployment_strategy;
 
 pub(crate) mod shape_create_environment;
 
+pub(crate) mod shape_create_experiment_definition;
+
 pub(crate) mod shape_create_extension;
 
 pub(crate) mod shape_create_extension_association;
@@ -46,6 +48,8 @@ pub(crate) mod shape_delete_configuration_profile;
 pub(crate) mod shape_delete_deployment_strategy;
 
 pub(crate) mod shape_delete_environment;
+
+pub(crate) mod shape_delete_experiment_definition;
 
 pub(crate) mod shape_delete_extension;
 
@@ -67,6 +71,10 @@ pub(crate) mod shape_get_deployment_strategy;
 
 pub(crate) mod shape_get_environment;
 
+pub(crate) mod shape_get_experiment_definition;
+
+pub(crate) mod shape_get_experiment_run;
+
 pub(crate) mod shape_get_extension;
 
 pub(crate) mod shape_get_extension_association;
@@ -83,6 +91,12 @@ pub(crate) mod shape_list_deployments;
 
 pub(crate) mod shape_list_environments;
 
+pub(crate) mod shape_list_experiment_definitions;
+
+pub(crate) mod shape_list_experiment_run_events;
+
+pub(crate) mod shape_list_experiment_runs;
+
 pub(crate) mod shape_list_extension_associations;
 
 pub(crate) mod shape_list_extensions;
@@ -93,7 +107,11 @@ pub(crate) mod shape_list_tags_for_resource;
 
 pub(crate) mod shape_start_deployment;
 
+pub(crate) mod shape_start_experiment_run;
+
 pub(crate) mod shape_stop_deployment;
+
+pub(crate) mod shape_stop_experiment_run;
 
 pub(crate) mod shape_tag_resource;
 
@@ -108,6 +126,10 @@ pub(crate) mod shape_update_configuration_profile;
 pub(crate) mod shape_update_deployment_strategy;
 
 pub(crate) mod shape_update_environment;
+
+pub(crate) mod shape_update_experiment_definition;
+
+pub(crate) mod shape_update_experiment_run;
 
 pub(crate) mod shape_update_extension;
 
@@ -135,6 +157,8 @@ pub(crate) mod shape_create_deployment_strategy_input;
 
 pub(crate) mod shape_create_environment_input;
 
+pub(crate) mod shape_create_experiment_definition_input;
+
 pub(crate) mod shape_create_extension_association_input;
 
 pub(crate) mod shape_create_extension_input;
@@ -155,6 +179,10 @@ pub(crate) mod shape_service_quota_exceeded_exception;
 
 pub(crate) mod shape_start_deployment_input;
 
+pub(crate) mod shape_start_experiment_run_input;
+
+pub(crate) mod shape_stop_experiment_run_input;
+
 pub(crate) mod shape_tag_resource_input;
 
 pub(crate) mod shape_update_account_settings_input;
@@ -166,6 +194,10 @@ pub(crate) mod shape_update_configuration_profile_input;
 pub(crate) mod shape_update_deployment_strategy_input;
 
 pub(crate) mod shape_update_environment_input;
+
+pub(crate) mod shape_update_experiment_definition_input;
+
+pub(crate) mod shape_update_experiment_run_input;
 
 pub(crate) mod shape_update_extension_association_input;
 
@@ -189,9 +221,21 @@ pub(crate) mod shape_deployment_events;
 
 pub(crate) mod shape_deployment_list;
 
+pub(crate) mod shape_deployment_parameters;
+
 pub(crate) mod shape_deployment_strategy_list;
 
 pub(crate) mod shape_environment_list;
+
+pub(crate) mod shape_experiment_definition_list;
+
+pub(crate) mod shape_experiment_definition_snapshot;
+
+pub(crate) mod shape_experiment_run_event_list;
+
+pub(crate) mod shape_experiment_run_result;
+
+pub(crate) mod shape_experiment_run_summary_list;
 
 pub(crate) mod shape_extension_association_summaries;
 
@@ -211,9 +255,19 @@ pub(crate) mod shape_parameter_value_map;
 
 pub(crate) mod shape_tag_map;
 
+pub(crate) mod shape_treatment;
+
+pub(crate) mod shape_treatment_input;
+
+pub(crate) mod shape_treatment_list;
+
+pub(crate) mod shape_treatment_overrides;
+
 pub(crate) mod shape_validator;
 
 pub(crate) mod shape_validator_list;
+
+pub(crate) mod shape_vended_metrics_settings;
 
 pub(crate) mod shape_action_list;
 
@@ -231,18 +285,36 @@ pub(crate) mod shape_deployment_summary;
 
 pub(crate) mod shape_environment;
 
+pub(crate) mod shape_experiment_definition_summary;
+
+pub(crate) mod shape_experiment_run_event;
+
+pub(crate) mod shape_experiment_run_summary;
+
 pub(crate) mod shape_extension_association_summary;
 
 pub(crate) mod shape_extension_summary;
+
+pub(crate) mod shape_flag_value;
 
 pub(crate) mod shape_hosted_configuration_version_summary;
 
 pub(crate) mod shape_invalid_configuration_detail_list;
 
+pub(crate) mod shape_treatment_override_map;
+
 pub(crate) mod shape_action_invocations;
+
+pub(crate) mod shape_attribute_value;
+
+pub(crate) mod shape_attribute_value_map;
 
 pub(crate) mod shape_invalid_configuration_detail;
 
 pub(crate) mod shape_validator_type_list;
 
 pub(crate) mod shape_action_invocation;
+
+pub(crate) mod shape_number_list;
+
+pub(crate) mod shape_string_list;

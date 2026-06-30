@@ -67,6 +67,10 @@ pub use crate::types::_language_code::LanguageCode;
 
 pub use crate::types::_voice_id::VoiceId;
 
+pub use crate::types::_rcs_message_content::RcsMessageContent;
+
+pub use crate::types::_rcs_fallback_configuration::RcsFallbackConfiguration;
+
 pub use crate::types::_voice_message_body_text_type::VoiceMessageBodyTextType;
 
 pub use crate::types::_validation_exception_field::ValidationExceptionField;
@@ -173,6 +177,10 @@ pub use crate::types::_registration_association_metadata::RegistrationAssociatio
 
 pub use crate::types::_destination_country_parameter_key::DestinationCountryParameterKey;
 
+pub use crate::types::_rcs_content::RcsContent;
+
+pub use crate::types::_rcs_fallback_channel::RcsFallbackChannel;
+
 pub use crate::types::_account_attribute_name::AccountAttributeName;
 
 pub use crate::types::_account_limit_name::AccountLimitName;
@@ -241,6 +249,16 @@ pub use crate::types::_protect_configuration_rule_set_number_override_filter_nam
 
 pub use crate::types::_registration_association_filter_name::RegistrationAssociationFilterName;
 
+pub use crate::types::_rcs_text_message::RcsTextMessage;
+
+pub use crate::types::_rcs_file_message::RcsFileMessage;
+
+pub use crate::types::_rcs_standalone_card::RcsStandaloneCard;
+
+pub use crate::types::_rcs_carousel::RcsCarousel;
+
+pub use crate::types::_rcs_suggested_action::RcsSuggestedAction;
+
 pub use crate::types::_template_variable_metadata::TemplateVariableMetadata;
 
 pub use crate::types::_carrier_status_information::CarrierStatusInformation;
@@ -250,6 +268,20 @@ pub use crate::types::_testing_agent_status::TestingAgentStatus;
 pub use crate::types::_supported_association::SupportedAssociation;
 
 pub use crate::types::_registration_denied_reason_information::RegistrationDeniedReasonInformation;
+
+pub use crate::types::_rcs_card_content::RcsCardContent;
+
+pub use crate::types::_rcs_reply_action::RcsReplyAction;
+
+pub use crate::types::_rcs_open_url_action::RcsOpenUrlAction;
+
+pub use crate::types::_rcs_dial_phone_action::RcsDialPhoneAction;
+
+pub use crate::types::_rcs_show_location_action::RcsShowLocationAction;
+
+pub use crate::types::_rcs_request_location_action::RcsRequestLocationAction;
+
+pub use crate::types::_rcs_create_calendar_event_action::RcsCreateCalendarEventAction;
 
 pub use crate::types::_template_variable_type::TemplateVariableType;
 
@@ -262,6 +294,12 @@ pub use crate::types::_select_option_description::SelectOptionDescription;
 pub use crate::types::_registration_association_behavior::RegistrationAssociationBehavior;
 
 pub use crate::types::_registration_disassociation_behavior::RegistrationDisassociationBehavior;
+
+pub use crate::types::_rcs_card_media::RcsCardMedia;
+
+pub use crate::types::_rcs_carousel_card_content::RcsCarouselCardContent;
+
+pub use crate::types::_rcs_carousel_card_media::RcsCarouselCardMedia;
 
 mod _access_denied_exception_reason;
 
@@ -412,6 +450,44 @@ mod _rcs_agent_filter_name;
 mod _rcs_agent_information;
 
 mod _rcs_agent_status;
+
+mod _rcs_card_content;
+
+mod _rcs_card_media;
+
+mod _rcs_carousel;
+
+mod _rcs_carousel_card_content;
+
+mod _rcs_carousel_card_media;
+
+mod _rcs_content;
+
+mod _rcs_create_calendar_event_action;
+
+mod _rcs_dial_phone_action;
+
+mod _rcs_fallback_channel;
+
+mod _rcs_fallback_configuration;
+
+mod _rcs_file_message;
+
+mod _rcs_message_content;
+
+mod _rcs_open_url_action;
+
+mod _rcs_reply_action;
+
+mod _rcs_request_location_action;
+
+mod _rcs_show_location_action;
+
+mod _rcs_standalone_card;
+
+mod _rcs_suggested_action;
+
+mod _rcs_text_message;
 
 mod _registration_association_behavior;
 

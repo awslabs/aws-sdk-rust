@@ -9,6 +9,8 @@ pub use crate::types::error::_kms_key_not_found_exception::KmsKeyNotFoundExcepti
 
 pub use crate::types::error::_resource_not_found_exception::ResourceNotFoundExceptionBuilder;
 
+pub use crate::types::error::_resource_conflict::ResourceConflictBuilder;
+
 pub use crate::types::error::_resource_not_found::ResourceNotFoundBuilder;
 
 pub use crate::types::error::_internal_service_fault::InternalServiceFaultBuilder;

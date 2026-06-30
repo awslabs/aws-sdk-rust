@@ -138,6 +138,8 @@ impl Client {
 
 mod batch_get_record;
 
+mod batch_write_record;
+
 /// Operation customization and supporting types.
 ///
 /// The underlying HTTP requests made during an operation can be customized
@@ -168,5 +170,7 @@ pub mod customize;
 mod delete_record;
 
 mod get_record;
+
+mod list_records;
 
 mod put_record;

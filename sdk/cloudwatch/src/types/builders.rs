@@ -13,6 +13,8 @@ pub use crate::types::_anomaly_detector_configuration::AnomalyDetectorConfigurat
 
 pub use crate::types::_metric_characteristics::MetricCharacteristicsBuilder;
 
+pub use crate::types::_scheduled_query_configuration::ScheduledQueryConfigurationBuilder;
+
 pub use crate::types::_dimension::DimensionBuilder;
 
 pub use crate::types::_partial_failure::PartialFailureBuilder;
@@ -24,6 +26,8 @@ pub use crate::types::_alarm_history_item::AlarmHistoryItemBuilder;
 pub use crate::types::_composite_alarm::CompositeAlarmBuilder;
 
 pub use crate::types::_metric_alarm::MetricAlarmBuilder;
+
+pub use crate::types::_log_alarm::LogAlarmBuilder;
 
 pub use crate::types::_anomaly_detector::AnomalyDetectorBuilder;
 
@@ -62,6 +66,8 @@ pub use crate::types::_metric_stream_entry::MetricStreamEntryBuilder;
 pub use crate::types::_tag::TagBuilder;
 
 pub use crate::types::_dashboard_validation_message::DashboardValidationMessageBuilder;
+
+pub use crate::types::_schedule_configuration::ScheduleConfigurationBuilder;
 
 pub use crate::types::_managed_rule::ManagedRuleBuilder;
 

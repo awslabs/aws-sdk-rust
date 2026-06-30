@@ -104,6 +104,8 @@ pub(crate) mod shape_put_dashboard;
 
 pub(crate) mod shape_put_insight_rule;
 
+pub(crate) mod shape_put_log_alarm;
+
 pub(crate) mod shape_put_managed_insight_rules;
 
 pub(crate) mod shape_put_metric_alarm;
@@ -232,6 +234,8 @@ pub(crate) mod shape_put_dashboard_input;
 
 pub(crate) mod shape_put_insight_rule_input;
 
+pub(crate) mod shape_put_log_alarm_input;
+
 pub(crate) mod shape_put_managed_insight_rules_input;
 
 pub(crate) mod shape_put_metric_alarm_input;
@@ -239,6 +243,8 @@ pub(crate) mod shape_put_metric_alarm_input;
 pub(crate) mod shape_put_metric_data_input;
 
 pub(crate) mod shape_put_metric_stream_input;
+
+pub(crate) mod shape_resource_conflict;
 
 pub(crate) mod shape_resource_not_found;
 
@@ -296,6 +302,8 @@ pub(crate) mod shape_insight_rules;
 
 pub(crate) mod shape_label_options;
 
+pub(crate) mod shape_log_alarms;
+
 pub(crate) mod shape_managed_rule;
 
 pub(crate) mod shape_managed_rule_descriptions;
@@ -332,6 +340,8 @@ pub(crate) mod shape_owning_accounts;
 
 pub(crate) mod shape_rule;
 
+pub(crate) mod shape_scheduled_query_configuration;
+
 pub(crate) mod shape_single_metric_anomaly_detector;
 
 pub(crate) mod shape_tag;
@@ -364,6 +374,8 @@ pub(crate) mod shape_insight_rule_contributor;
 
 pub(crate) mod shape_insight_rule_metric_datapoint;
 
+pub(crate) mod shape_log_alarm;
+
 pub(crate) mod shape_managed_rule_description;
 
 pub(crate) mod shape_message_data;
@@ -387,6 +399,8 @@ pub(crate) mod shape_partial_failure;
 pub(crate) mod shape_range;
 
 pub(crate) mod shape_schedule;
+
+pub(crate) mod shape_schedule_configuration;
 
 pub(crate) mod shape_statistic_set;
 
@@ -419,3 +433,5 @@ pub(crate) mod shape_timestamps;
 pub(crate) mod shape_anomaly_detector_excluded_time_ranges;
 
 pub(crate) mod shape_insight_rule_contributor_datapoint;
+
+pub(crate) mod shape_log_group_identifiers;

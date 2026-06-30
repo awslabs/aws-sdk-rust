@@ -365,6 +365,8 @@ pub use crate::types::_express_gateway_service_status_code::ExpressGatewayServic
 
 pub use crate::types::_advanced_configuration::AdvancedConfiguration;
 
+pub use crate::types::_threshold_configuration::ThresholdConfiguration;
+
 pub use crate::types::_deployment_lifecycle_hook::DeploymentLifecycleHook;
 
 pub use crate::types::_placement_constraint_type::PlacementConstraintType;
@@ -466,6 +468,8 @@ pub use crate::types::_system_control::SystemControl;
 pub use crate::types::_deployment_lifecycle_hook_detail::DeploymentLifecycleHookDetail;
 
 pub use crate::types::_service_deployment_rollback_monitors_status::ServiceDeploymentRollbackMonitorsStatus;
+
+pub use crate::types::_threshold_type::ThresholdType;
 
 pub use crate::types::_deployment_lifecycle_hook_target_type::DeploymentLifecycleHookTargetType;
 
@@ -1154,6 +1158,10 @@ mod _task_set_field;
 mod _task_stop_code;
 
 mod _task_volume_configuration;
+
+mod _threshold_configuration;
+
+mod _threshold_type;
 
 mod _timeout_configuration;
 

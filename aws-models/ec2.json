@@ -22769,7 +22769,7 @@
                 "target": "com.amazonaws.ec2#CreatePlacementGroupResult"
             },
             "traits": {
-                "smithy.api#documentation": "<p>Creates a placement group in which to launch instances. The strategy of the placement\n            group determines how the instances are organized within the group. </p>\n         <p>A <code>cluster</code> placement group is a logical grouping of instances within a\n            single Availability Zone that benefit from low network latency, high network throughput.\n            A <code>spread</code> placement group places instances on distinct hardware. A\n                <code>partition</code> placement group places groups of instances in different\n            partitions, where instances in one partition do not share the same hardware with\n            instances in another partition.</p>\n         <p>For more information, see <a href=\"https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html\">Placement groups</a> in the\n                <i>Amazon EC2 User Guide</i>.</p>",
+                "smithy.api#documentation": "<p>Creates a placement group in which to launch instances. The strategy of the placement\n            group determines how the instances are organized within the group. </p>\n         <p>A <code>cluster</code> placement group is a logical grouping of instances within a\n            single Availability Zone that benefit from low network latency, high network throughput.\n            A <code>spread</code> placement group places instances on distinct hardware. A\n                <code>partition</code> placement group places groups of instances in different\n            partitions, where instances in one partition do not share the same hardware with\n            instances in another partition. A <code>precision-time</code> placement group places\n            instances on supported hardware with direct access to high-precision time sources in\n            AWS infrastructure.</p>\n         <p>For more information, see <a href=\"https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html\">Placement groups</a> in the\n                <i>Amazon EC2 User Guide</i>.</p>",
                 "smithy.api#examples": [
                     {
                         "title": "To create a placement group",
@@ -22815,6 +22815,12 @@
                     "target": "com.amazonaws.ec2#OperatorRequest",
                     "traits": {
                         "smithy.api#documentation": "<p>Reserved for internal use.</p>"
+                    }
+                },
+                "ParentGroupId": {
+                    "target": "com.amazonaws.ec2#PlacementGroupId",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The ID of a parent placement group. Valid only when <b>Strategy</b>\n            is set to <code>cluster</code>.</p>"
                     }
                 },
                 "DryRun": {
@@ -31163,7 +31169,7 @@
                 "target": "smithy.api#Unit"
             },
             "traits": {
-                "smithy.api#documentation": "<p>Deletes the specified placement group. You must terminate all instances in the\n            placement group before you can delete the placement group. For more information, see\n                <a href=\"https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html\">Placement groups</a> in the <i>Amazon EC2 User Guide</i>.</p>",
+                "smithy.api#documentation": "<p>Deletes the specified placement group. You must terminate all instances in the\n            placement group before you can delete the placement group. You cannot delete a\n            placement group that is a parent of a cluster placement group. Delete the cluster\n            placement groups first. For more information, see\n                <a href=\"https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html\">Placement groups</a> in the <i>Amazon EC2 User Guide</i>.</p>",
                 "smithy.api#examples": [
                     {
                         "title": "To delete a placement group",
@@ -45205,7 +45211,7 @@
                 "Filters": {
                     "target": "com.amazonaws.ec2#FilterList",
                     "traits": {
-                        "smithy.api#documentation": "<p>The filters.</p>\n         <ul>\n            <li>\n               <p>\n                  <code>group-name</code> - The name of the placement group.</p>\n            </li>\n            <li>\n               <p>\n                  <code>group-arn</code> - The Amazon Resource Name (ARN) of the placement\n                    group.</p>\n            </li>\n            <li>\n               <p>\n                  <code>spread-level</code> - The spread level for the placement group\n                        (<code>host</code> | <code>rack</code>). </p>\n            </li>\n            <li>\n               <p>\n                  <code>state</code> - The state of the placement group (<code>pending</code> |\n                        <code>available</code> | <code>deleting</code> |\n                    <code>deleted</code>).</p>\n            </li>\n            <li>\n               <p>\n                  <code>strategy</code> - The strategy of the placement group\n                        (<code>cluster</code> | <code>spread</code> |\n                    <code>partition</code>).</p>\n            </li>\n            <li>\n               <p>\n                  <code>tag:<key></code> - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value.\n    For example, to find all resources that have a tag with the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter value.</p>\n            </li>\n            <li>\n               <p>\n                  <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources that have a tag with a specific key, regardless of the tag value.</p>\n            </li>\n         </ul>",
+                        "smithy.api#documentation": "<p>The filters.</p>\n         <ul>\n            <li>\n               <p>\n                  <code>group-name</code> - The name of the placement group.</p>\n            </li>\n            <li>\n               <p>\n                  <code>group-arn</code> - The Amazon Resource Name (ARN) of the placement\n                    group.</p>\n            </li>\n            <li>\n               <p>\n                  <code>spread-level</code> - The spread level for the placement group\n                        (<code>host</code> | <code>rack</code>). </p>\n            </li>\n            <li>\n               <p>\n                  <code>state</code> - The state of the placement group (<code>pending</code> |\n                        <code>available</code> | <code>deleting</code> |\n                    <code>deleted</code>).</p>\n            </li>\n            <li>\n               <p>\n                  <code>strategy</code> - The strategy of the placement group\n                        (<code>cluster</code> | <code>spread</code> |\n                    <code>partition</code> | <code>precision-time</code>).</p>\n            </li>\n            <li>\n               <p>\n                  <code>tag:<key></code> - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value.\n    For example, to find all resources that have a tag with the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter value.</p>\n            </li>\n            <li>\n               <p>\n                  <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources that have a tag with a specific key, regardless of the tag value.</p>\n            </li>\n         </ul>",
                         "smithy.api#xmlName": "Filter"
                     }
                 }
@@ -107817,6 +107823,14 @@
                         "smithy.api#documentation": "<p>The service provider that manages the Placement Group.</p>",
                         "smithy.api#xmlName": "operator"
                     }
+                },
+                "ParentGroupId": {
+                    "target": "com.amazonaws.ec2#PlacementGroupId",
+                    "traits": {
+                        "aws.protocols#ec2QueryName": "ParentGroupId",
+                        "smithy.api#documentation": "<p>The ID of the parent placement group.</p>",
+                        "smithy.api#xmlName": "parentGroupId"
+                    }
                 }
             },
             "traits": {
@@ -107974,6 +107988,12 @@
                     "target": "smithy.api#Unit",
                     "traits": {
                         "smithy.api#enumValue": "partition"
+                    }
+                },
+                "precision_time": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "precision-time"
                     }
                 }
             }

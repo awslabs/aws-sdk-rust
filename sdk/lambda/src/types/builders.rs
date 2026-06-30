@@ -139,6 +139,10 @@ pub use crate::types::_runtime_version_error::RuntimeVersionErrorBuilder;
 
 pub use crate::types::_provisioned_concurrency_config_list_item::ProvisionedConcurrencyConfigListItemBuilder;
 
+pub use crate::types::_resolved_s3_object::ResolvedS3ObjectBuilder;
+
+pub use crate::types::_function_code_location_error::FunctionCodeLocationErrorBuilder;
+
 pub use crate::types::_invoke_response_stream_update::InvokeResponseStreamUpdateBuilder;
 
 pub use crate::types::_invoke_with_response_stream_complete_event::InvokeWithResponseStreamCompleteEventBuilder;

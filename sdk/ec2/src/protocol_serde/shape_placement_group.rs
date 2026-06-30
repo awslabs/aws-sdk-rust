@@ -140,6 +140,19 @@ pub fn de_placement_group(
                 builder = builder.set_operator(var_10);
             }
             ,
+            s if s.matches("parentGroupId") /* ParentGroupId com.amazonaws.ec2#PlacementGroup$ParentGroupId */ =>  {
+                let var_11 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_parent_group_id(var_11);
+            }
+            ,
             _ => {}
         }
     }

@@ -22,6 +22,8 @@ pub struct AssociateWebAclInput {
     /// <p>For an Amazon Web Services Verified Access instance: <code>arn:<i>partition</i>:ec2:<i>region</i>:<i>account-id</i>:verified-access-instance/<i>instance-id</i> </code></p></li>
     /// <li>
     /// <p>For an Amplify application: <code>arn:<i>partition</i>:amplify:<i>region</i>:<i>account-id</i>:apps/<i>app-id</i> </code></p></li>
+    /// <li>
+    /// <p>For an Amazon Bedrock AgentCore Gateway: <code>arn:<i>partition</i>:bedrock-agentcore:<i>region</i>:<i>account-id</i>:gateway/<i>gateway-id</i> </code></p></li>
     /// </ul>
     pub resource_arn: ::std::option::Option<::std::string::String>,
 }
@@ -47,6 +49,8 @@ impl AssociateWebAclInput {
     /// <p>For an Amazon Web Services Verified Access instance: <code>arn:<i>partition</i>:ec2:<i>region</i>:<i>account-id</i>:verified-access-instance/<i>instance-id</i> </code></p></li>
     /// <li>
     /// <p>For an Amplify application: <code>arn:<i>partition</i>:amplify:<i>region</i>:<i>account-id</i>:apps/<i>app-id</i> </code></p></li>
+    /// <li>
+    /// <p>For an Amazon Bedrock AgentCore Gateway: <code>arn:<i>partition</i>:bedrock-agentcore:<i>region</i>:<i>account-id</i>:gateway/<i>gateway-id</i> </code></p></li>
     /// </ul>
     pub fn resource_arn(&self) -> ::std::option::Option<&str> {
         self.resource_arn.as_deref()
@@ -99,6 +103,8 @@ impl AssociateWebAclInputBuilder {
     /// <p>For an Amazon Web Services Verified Access instance: <code>arn:<i>partition</i>:ec2:<i>region</i>:<i>account-id</i>:verified-access-instance/<i>instance-id</i> </code></p></li>
     /// <li>
     /// <p>For an Amplify application: <code>arn:<i>partition</i>:amplify:<i>region</i>:<i>account-id</i>:apps/<i>app-id</i> </code></p></li>
+    /// <li>
+    /// <p>For an Amazon Bedrock AgentCore Gateway: <code>arn:<i>partition</i>:bedrock-agentcore:<i>region</i>:<i>account-id</i>:gateway/<i>gateway-id</i> </code></p></li>
     /// </ul>
     /// This field is required.
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -122,6 +128,8 @@ impl AssociateWebAclInputBuilder {
     /// <p>For an Amazon Web Services Verified Access instance: <code>arn:<i>partition</i>:ec2:<i>region</i>:<i>account-id</i>:verified-access-instance/<i>instance-id</i> </code></p></li>
     /// <li>
     /// <p>For an Amplify application: <code>arn:<i>partition</i>:amplify:<i>region</i>:<i>account-id</i>:apps/<i>app-id</i> </code></p></li>
+    /// <li>
+    /// <p>For an Amazon Bedrock AgentCore Gateway: <code>arn:<i>partition</i>:bedrock-agentcore:<i>region</i>:<i>account-id</i>:gateway/<i>gateway-id</i> </code></p></li>
     /// </ul>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_arn = input;
@@ -144,6 +152,8 @@ impl AssociateWebAclInputBuilder {
     /// <p>For an Amazon Web Services Verified Access instance: <code>arn:<i>partition</i>:ec2:<i>region</i>:<i>account-id</i>:verified-access-instance/<i>instance-id</i> </code></p></li>
     /// <li>
     /// <p>For an Amplify application: <code>arn:<i>partition</i>:amplify:<i>region</i>:<i>account-id</i>:apps/<i>app-id</i> </code></p></li>
+    /// <li>
+    /// <p>For an Amazon Bedrock AgentCore Gateway: <code>arn:<i>partition</i>:bedrock-agentcore:<i>region</i>:<i>account-id</i>:gateway/<i>gateway-id</i> </code></p></li>
     /// </ul>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_arn

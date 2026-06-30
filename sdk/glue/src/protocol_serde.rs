@@ -553,6 +553,8 @@ pub(crate) mod shape_test_connection;
 
 pub(crate) mod shape_untag_resource;
 
+pub(crate) mod shape_update_asset;
+
 pub(crate) mod shape_update_blueprint;
 
 pub(crate) mod shape_update_catalog;
@@ -1240,6 +1242,8 @@ pub(crate) mod shape_test_connection_input;
 pub(crate) mod shape_throttling_exception;
 
 pub(crate) mod shape_untag_resource_input;
+
+pub(crate) mod shape_update_asset_input;
 
 pub(crate) mod shape_update_blueprint_input;
 

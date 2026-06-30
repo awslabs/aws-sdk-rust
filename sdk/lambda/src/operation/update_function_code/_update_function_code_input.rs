@@ -23,6 +23,8 @@ pub struct UpdateFunctionCodeInput {
     pub s3_key: ::std::option::Option<::std::string::String>,
     /// <p>For versioned objects, the version of the deployment package object to use.</p>
     pub s3_object_version: ::std::option::Option<::std::string::String>,
+    /// <p>Specifies how the deployment package is stored. Use <code>COPY</code> (default) to upload a copy of your deployment package to Lambda. Use <code>REFERENCE</code> to have Lambda reference the deployment package from the specified Amazon S3 bucket.</p>
+    pub s3_object_storage_mode: ::std::option::Option<crate::types::S3ObjectStorageMode>,
     /// <p>URI of a container image in the Amazon ECR registry. Do not use for a function defined with a .zip file archive.</p>
     pub image_uri: ::std::option::Option<::std::string::String>,
     /// <p>The instruction set architecture that the function supports. Enter a string array with one of the valid values (arm64 or x86_64). The default value is <code>x86_64</code>.</p>
@@ -69,6 +71,10 @@ impl UpdateFunctionCodeInput {
     pub fn s3_object_version(&self) -> ::std::option::Option<&str> {
         self.s3_object_version.as_deref()
     }
+    /// <p>Specifies how the deployment package is stored. Use <code>COPY</code> (default) to upload a copy of your deployment package to Lambda. Use <code>REFERENCE</code> to have Lambda reference the deployment package from the specified Amazon S3 bucket.</p>
+    pub fn s3_object_storage_mode(&self) -> ::std::option::Option<&crate::types::S3ObjectStorageMode> {
+        self.s3_object_storage_mode.as_ref()
+    }
     /// <p>URI of a container image in the Amazon ECR registry. Do not use for a function defined with a .zip file archive.</p>
     pub fn image_uri(&self) -> ::std::option::Option<&str> {
         self.image_uri.as_deref()
@@ -108,6 +114,7 @@ impl ::std::fmt::Debug for UpdateFunctionCodeInput {
         formatter.field("s3_bucket", &self.s3_bucket);
         formatter.field("s3_key", &self.s3_key);
         formatter.field("s3_object_version", &self.s3_object_version);
+        formatter.field("s3_object_storage_mode", &self.s3_object_storage_mode);
         formatter.field("image_uri", &self.image_uri);
         formatter.field("architectures", &self.architectures);
         formatter.field("publish", &self.publish);
@@ -134,6 +141,7 @@ pub struct UpdateFunctionCodeInputBuilder {
     pub(crate) s3_bucket: ::std::option::Option<::std::string::String>,
     pub(crate) s3_key: ::std::option::Option<::std::string::String>,
     pub(crate) s3_object_version: ::std::option::Option<::std::string::String>,
+    pub(crate) s3_object_storage_mode: ::std::option::Option<crate::types::S3ObjectStorageMode>,
     pub(crate) image_uri: ::std::option::Option<::std::string::String>,
     pub(crate) architectures: ::std::option::Option<::std::vec::Vec<crate::types::Architecture>>,
     pub(crate) publish: ::std::option::Option<bool>,
@@ -243,6 +251,20 @@ impl UpdateFunctionCodeInputBuilder {
     /// <p>For versioned objects, the version of the deployment package object to use.</p>
     pub fn get_s3_object_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.s3_object_version
+    }
+    /// <p>Specifies how the deployment package is stored. Use <code>COPY</code> (default) to upload a copy of your deployment package to Lambda. Use <code>REFERENCE</code> to have Lambda reference the deployment package from the specified Amazon S3 bucket.</p>
+    pub fn s3_object_storage_mode(mut self, input: crate::types::S3ObjectStorageMode) -> Self {
+        self.s3_object_storage_mode = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies how the deployment package is stored. Use <code>COPY</code> (default) to upload a copy of your deployment package to Lambda. Use <code>REFERENCE</code> to have Lambda reference the deployment package from the specified Amazon S3 bucket.</p>
+    pub fn set_s3_object_storage_mode(mut self, input: ::std::option::Option<crate::types::S3ObjectStorageMode>) -> Self {
+        self.s3_object_storage_mode = input;
+        self
+    }
+    /// <p>Specifies how the deployment package is stored. Use <code>COPY</code> (default) to upload a copy of your deployment package to Lambda. Use <code>REFERENCE</code> to have Lambda reference the deployment package from the specified Amazon S3 bucket.</p>
+    pub fn get_s3_object_storage_mode(&self) -> &::std::option::Option<crate::types::S3ObjectStorageMode> {
+        &self.s3_object_storage_mode
     }
     /// <p>URI of a container image in the Amazon ECR registry. Do not use for a function defined with a .zip file archive.</p>
     pub fn image_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -359,6 +381,7 @@ impl UpdateFunctionCodeInputBuilder {
             s3_bucket: self.s3_bucket,
             s3_key: self.s3_key,
             s3_object_version: self.s3_object_version,
+            s3_object_storage_mode: self.s3_object_storage_mode,
             image_uri: self.image_uri,
             architectures: self.architectures,
             publish: self.publish,
@@ -377,6 +400,7 @@ impl ::std::fmt::Debug for UpdateFunctionCodeInputBuilder {
         formatter.field("s3_bucket", &self.s3_bucket);
         formatter.field("s3_key", &self.s3_key);
         formatter.field("s3_object_version", &self.s3_object_version);
+        formatter.field("s3_object_storage_mode", &self.s3_object_storage_mode);
         formatter.field("image_uri", &self.image_uri);
         formatter.field("architectures", &self.architectures);
         formatter.field("publish", &self.publish);

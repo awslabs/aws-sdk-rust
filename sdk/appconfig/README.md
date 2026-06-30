@@ -1,48 +1,37 @@
 # aws-sdk-appconfig
 
-AppConfig feature flags and dynamic configurations help software builders quickly and securely adjust application behavior in production environments without full code deployments. AppConfig speeds up software release frequency, improves application resiliency, and helps you address emergent issues more quickly. With feature flags, you can gradually release new capabilities to users and measure the impact of those changes before fully deploying the new capabilities to all users. With operational flags and dynamic configurations, you can update block lists, allow lists, throttling limits, logging verbosity, and perform other operational tuning to quickly respond to issues in production environments.
+AppConfig helps you safely change application behavior in production without redeploying code. Using feature flags and dynamic free-form configurations, you can control how your application runs in real time. This approach reduces risk, accelerates releases, and enables faster responses to issues. You can gradually roll out new features to specific users, monitor their impact, and expand availability with confidence. You can also update block lists, allow lists, throttling limits, and logging levels instantly, allowing you to mitigate issues and fine-tune performance without a deployment.
 
-Despite the fact that application configuration content can vary greatly from application to application, AppConfig supports the following use cases, which cover a broad spectrum of customer needs:
-  - __Feature flags and toggles__ - Safely release new capabilities to your customers in a controlled environment. Instantly roll back changes if you experience a problem.
-  - __Application tuning__ - Carefully introduce application changes while testing the impact of those changes with users in production environments.
-  - __Allow list or block list__ - Control access to premium features or instantly block specific users without deploying new code.
-  - __Centralized configuration storage__ - Keep your configuration data organized and consistent across all of your workloads. You can use AppConfig to deploy configuration data stored in the AppConfig hosted configuration store, Secrets Manager, Systems Manager, Parameter Store, or Amazon S3.
+AppConfig supports a broad spectrum of use cases:
+  - __Feature flags and toggles__ – Gradually release new capabilities to targeted users, monitor impact, and instantly roll back changes if issues occur.
+  - __Application tuning__ – Introduce changes safely in production, measure their effects, and refine behavior without redeploying code.
+  - __Allow list or block list__ – Control access to features or restrict specific users in real time, without modifying application code.
+  - __Centralized configuration storage__ – Manage configuration data consistently across workloads. AppConfig can deploy configuration from the AppConfig hosted configuration store, Secrets Manager, Systems Manager, Systems Manager Parameter Store, or Amazon S3.
 
 __How AppConfig works__
 
 This section provides a high-level description of how AppConfig works and how you get started.
 
-__1. Identify configuration values in code you want to manage in the cloud__
+__1. Identify configuration data to manage in AppConfig__
 
-Before you start creating AppConfig artifacts, we recommend you identify configuration data in your code that you want to dynamically manage using AppConfig. Good examples include feature flags or toggles, allow and block lists, logging verbosity, service limits, and throttling rules, to name a few. If your configuration data already exists in the cloud, you can take advantage of AppConfig validation, deployment, and extension features to further streamline configuration data management.
+Before creating a configuration profile, identify the configuration data in your code that you want to manage dynamically using AppConfig. Common examples include feature flags, allow and block lists, logging levels, service limits, and throttling rules. These values tend to change frequently and can cause issues if misconfigured. If your configuration data already exists in cloud services such as Systems Manager Parameter Store or Amazon S3, you can use AppConfig to validate, deploy, and manage that data more effectively.
 
-__2. Create an application namespace__
+__2. Create a configuration profile in AppConfig__
 
-To create a namespace, you create an AppConfig artifact called an application. An application is simply an organizational construct like a folder.
+A configuration profile defines how AppConfig locates and manages your configuration data. It includes a URI that points to the data source and a profile type. AppConfig supports two profile types   - __Feature flags__ – Enable controlled feature releases, gradual rollouts, and testing in production.
+  - __Free-form configurations__ – Store and retrieve configuration data from external sources and update it without redeploying code.
+Both profile types help decouple configuration from code, support continuous delivery, and reduce deployment risk. You can also add optional validators to ensure that configuration data is syntactically and semantically correct. During deployment, AppConfig evaluates these validators and automatically rolls back changes if validation fails. Each configuration profile is associated with an application, which acts as a logical container for your configuration resources. For more information about creating a configuration profile, see [Creating a configuration profile in AppConfig](http://docs.aws.amazon.com/appconfig/latest/userguide/appconfig-creating-configuration-profile.html) in the the _AppConfig User Guide_.
 
-__3. Create environments__
+__3. Deploy configuration data__
 
-For each AppConfig application, you define one or more environments. An environment is a logical grouping of targets, such as applications in a Beta or Production environment, Lambda functions, or containers. You can also define environments for application subcomponents, such as the Web, Mobile, and Back-end. You can configure Amazon CloudWatch alarms for each environment. The system monitors alarms during a configuration deployment. If an alarm is triggered, the system rolls back the configuration.
+When you start a deployment, AppConfig:   1. Retrieves configuration data from the source defined in the configuration profile
+  1. Validates the data using the configured validators
+  1. Delivers the validated configuration to AppConfig Agent
+The delivered configuration becomes the deployed version used by your application. For more information about deploying a configuration, see [Deploying feature flags and configuration data in AppConfig](http://docs.aws.amazon.com/appconfig/latest/userguide/deploying-feature-flags.html).
 
-__4. Create a configuration profile__
+__4. Retrieve configuration data__
 
-A configuration profile includes, among other things, a URI that enables AppConfig to locate your configuration data in its stored location and a profile type. AppConfig supports two configuration profile types: feature flags and freeform configurations. Feature flag configuration profiles store their data in the AppConfig hosted configuration store and the URI is simply hosted. For freeform configuration profiles, you can store your data in the AppConfig hosted configuration store or any Amazon Web Services service that integrates with AppConfig, as described in [Creating a free form configuration profile](http://docs.aws.amazon.com/appconfig/latest/userguide/appconfig-free-form-configurations-creating.html) in the the _AppConfig User Guide_. A configuration profile can also include optional validators to ensure your configuration data is syntactically and semantically correct. AppConfig performs a check using the validators when you start a deployment. If any errors are detected, the deployment rolls back to the previous configuration data.
-
-__5. Deploy configuration data__
-
-When you create a new deployment, you specify the following:   - An application ID
-  - A configuration profile ID
-  - A configuration version
-  - An environment ID where you want to deploy the configuration data
-  - A deployment strategy ID that defines how fast you want the changes to take effect
-When you call the [StartDeployment](https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_StartDeployment.html) API action, AppConfig performs the following tasks:   1. Retrieves the configuration data from the underlying data store by using the location URI in the configuration profile.
-  1. Verifies the configuration data is syntactically and semantically correct by using the validators you specified when you created your configuration profile.
-  1. Caches a copy of the data so it is ready to be retrieved by your application. This cached copy is called the _deployed data_.
-
-
-__6. Retrieve the configuration__
-
-You can configure AppConfig Agent as a local host and have the agent poll AppConfig for configuration updates. The agent calls the [StartConfigurationSession](https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_appconfigdata_StartConfigurationSession.html) and [GetLatestConfiguration](https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_appconfigdata_GetLatestConfiguration.html) API actions and caches your configuration data locally. To retrieve the data, your application makes an HTTP call to the localhost server. AppConfig Agent supports several use cases, as described in [Simplified retrieval methods](http://docs.aws.amazon.com/appconfig/latest/userguide/appconfig-retrieving-simplified-methods.html) in the the _AppConfig User Guide_. If AppConfig Agent isn't supported for your use case, you can configure your application to poll AppConfig for configuration updates by directly calling the [StartConfigurationSession](https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_appconfigdata_StartConfigurationSession.html) and [GetLatestConfiguration](https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_appconfigdata_GetLatestConfiguration.html) API actions.
+Your application retrieves configuration data by calling a local endpoint exposed by AppConfig Agent, which caches the deployed configuration. Retrieving data is a metered event. AppConfig Agent supports a variety of use cases, as described in [How to use AppConfig Agent to retrieve configuration data](http://docs.aws.amazon.com/appconfig/latest/userguide/appconfig-agent-how-to-use.html). If the agent is not suitable for your use case, your application can retrieve configuration data directly from AppConfig by calling the [StartConfigurationSession](https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_appconfigdata_StartConfigurationSession.html) and [GetLatestConfiguration](https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_appconfigdata_GetLatestConfiguration.html) API actions. For more information about retrieving a configuration, see [Retrieving feature flags and configuration data in AppConfig](http://docs.aws.amazon.com/appconfig/latest/userguide/retrieving-feature-flags.html).
 
 
 This reference is intended to be used with the [AppConfig User Guide](http://docs.aws.amazon.com/appconfig/latest/userguide/what-is-appconfig.html).
@@ -59,7 +48,7 @@ your project, add the following to your **Cargo.toml** file:
 ```toml
 [dependencies]
 aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-aws-sdk-appconfig = "1.107.0"
+aws-sdk-appconfig = "1.108.0"
 tokio = { version = "1", features = ["full"] }
 ```
 

@@ -819,6 +819,8 @@ pub(crate) mod shape_service_volume_configurations;
 
 pub(crate) mod shape_task_managed_ebs_volume_termination_policy;
 
+pub(crate) mod shape_threshold_configuration;
+
 pub(crate) mod shape_timeout_configuration;
 
 pub(crate) mod shape_tmpfs;

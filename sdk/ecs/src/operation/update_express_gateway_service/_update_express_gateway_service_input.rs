@@ -23,7 +23,7 @@ pub struct UpdateExpressGatewayServiceInput {
     pub scaling_target: ::std::option::Option<crate::types::ExpressGatewayScalingTarget>,
     /// <p>The Amazon Resource Name (ARN) of a task definition to use to update the Express Gateway service. This allows you to manage your own task definition, giving you more control over the service configuration such as adding sidecar containers.</p>
     /// <p>The task definition must have a container named <code>Main</code> with a single TCP port mapping that includes a container port and port name. The task definition must also have <code>FARGATE</code> compatibility.</p>
-    /// <p>If you provide a task definition ARN, you cannot also specify <code>primaryContainer</code>, <code>taskRoleArn</code>, <code>cpu</code>, or <code>memory</code>.</p>
+    /// <p>If you provide a task definition ARN, you cannot also specify <code>primaryContainer</code>, <code>executionRoleArn</code>, <code>taskRoleArn</code>, <code>cpu</code>, or <code>memory</code>.</p>
     pub task_definition_arn: ::std::option::Option<::std::string::String>,
 }
 impl UpdateExpressGatewayServiceInput {
@@ -65,7 +65,7 @@ impl UpdateExpressGatewayServiceInput {
     }
     /// <p>The Amazon Resource Name (ARN) of a task definition to use to update the Express Gateway service. This allows you to manage your own task definition, giving you more control over the service configuration such as adding sidecar containers.</p>
     /// <p>The task definition must have a container named <code>Main</code> with a single TCP port mapping that includes a container port and port name. The task definition must also have <code>FARGATE</code> compatibility.</p>
-    /// <p>If you provide a task definition ARN, you cannot also specify <code>primaryContainer</code>, <code>taskRoleArn</code>, <code>cpu</code>, or <code>memory</code>.</p>
+    /// <p>If you provide a task definition ARN, you cannot also specify <code>primaryContainer</code>, <code>executionRoleArn</code>, <code>taskRoleArn</code>, <code>cpu</code>, or <code>memory</code>.</p>
     pub fn task_definition_arn(&self) -> ::std::option::Option<&str> {
         self.task_definition_arn.as_deref()
     }
@@ -222,21 +222,21 @@ impl UpdateExpressGatewayServiceInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of a task definition to use to update the Express Gateway service. This allows you to manage your own task definition, giving you more control over the service configuration such as adding sidecar containers.</p>
     /// <p>The task definition must have a container named <code>Main</code> with a single TCP port mapping that includes a container port and port name. The task definition must also have <code>FARGATE</code> compatibility.</p>
-    /// <p>If you provide a task definition ARN, you cannot also specify <code>primaryContainer</code>, <code>taskRoleArn</code>, <code>cpu</code>, or <code>memory</code>.</p>
+    /// <p>If you provide a task definition ARN, you cannot also specify <code>primaryContainer</code>, <code>executionRoleArn</code>, <code>taskRoleArn</code>, <code>cpu</code>, or <code>memory</code>.</p>
     pub fn task_definition_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.task_definition_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of a task definition to use to update the Express Gateway service. This allows you to manage your own task definition, giving you more control over the service configuration such as adding sidecar containers.</p>
     /// <p>The task definition must have a container named <code>Main</code> with a single TCP port mapping that includes a container port and port name. The task definition must also have <code>FARGATE</code> compatibility.</p>
-    /// <p>If you provide a task definition ARN, you cannot also specify <code>primaryContainer</code>, <code>taskRoleArn</code>, <code>cpu</code>, or <code>memory</code>.</p>
+    /// <p>If you provide a task definition ARN, you cannot also specify <code>primaryContainer</code>, <code>executionRoleArn</code>, <code>taskRoleArn</code>, <code>cpu</code>, or <code>memory</code>.</p>
     pub fn set_task_definition_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.task_definition_arn = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of a task definition to use to update the Express Gateway service. This allows you to manage your own task definition, giving you more control over the service configuration such as adding sidecar containers.</p>
     /// <p>The task definition must have a container named <code>Main</code> with a single TCP port mapping that includes a container port and port name. The task definition must also have <code>FARGATE</code> compatibility.</p>
-    /// <p>If you provide a task definition ARN, you cannot also specify <code>primaryContainer</code>, <code>taskRoleArn</code>, <code>cpu</code>, or <code>memory</code>.</p>
+    /// <p>If you provide a task definition ARN, you cannot also specify <code>primaryContainer</code>, <code>executionRoleArn</code>, <code>taskRoleArn</code>, <code>cpu</code>, or <code>memory</code>.</p>
     pub fn get_task_definition_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.task_definition_arn
     }

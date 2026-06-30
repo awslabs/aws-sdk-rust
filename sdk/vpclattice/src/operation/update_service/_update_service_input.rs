@@ -15,6 +15,8 @@ pub struct UpdateServiceInput {
     /// <p><code>AWS_IAM</code>: The resource uses an IAM policy. When this type is used, auth is enabled and an auth policy is required.</p></li>
     /// </ul>
     pub auth_type: ::std::option::Option<crate::types::AuthType>,
+    /// <p>The amount of time, in seconds, that a connection can remain idle (no data sent) before VPC Lattice closes it. The valid range is 60 to 600 seconds. If you don't specify a value, the default is 60 seconds. This setting does not change the maximum connection duration of 10 minutes; connections are still closed when they reach that limit.</p>
+    pub idle_timeout_seconds: ::std::option::Option<i32>,
 }
 impl UpdateServiceInput {
     /// <p>The ID or ARN of the service.</p>
@@ -35,6 +37,10 @@ impl UpdateServiceInput {
     pub fn auth_type(&self) -> ::std::option::Option<&crate::types::AuthType> {
         self.auth_type.as_ref()
     }
+    /// <p>The amount of time, in seconds, that a connection can remain idle (no data sent) before VPC Lattice closes it. The valid range is 60 to 600 seconds. If you don't specify a value, the default is 60 seconds. This setting does not change the maximum connection duration of 10 minutes; connections are still closed when they reach that limit.</p>
+    pub fn idle_timeout_seconds(&self) -> ::std::option::Option<i32> {
+        self.idle_timeout_seconds
+    }
 }
 impl UpdateServiceInput {
     /// Creates a new builder-style object to manufacture [`UpdateServiceInput`](crate::operation::update_service::UpdateServiceInput).
@@ -50,6 +56,7 @@ pub struct UpdateServiceInputBuilder {
     pub(crate) service_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) certificate_arn: ::std::option::Option<::std::string::String>,
     pub(crate) auth_type: ::std::option::Option<crate::types::AuthType>,
+    pub(crate) idle_timeout_seconds: ::std::option::Option<i32>,
 }
 impl UpdateServiceInputBuilder {
     /// <p>The ID or ARN of the service.</p>
@@ -113,6 +120,20 @@ impl UpdateServiceInputBuilder {
     pub fn get_auth_type(&self) -> &::std::option::Option<crate::types::AuthType> {
         &self.auth_type
     }
+    /// <p>The amount of time, in seconds, that a connection can remain idle (no data sent) before VPC Lattice closes it. The valid range is 60 to 600 seconds. If you don't specify a value, the default is 60 seconds. This setting does not change the maximum connection duration of 10 minutes; connections are still closed when they reach that limit.</p>
+    pub fn idle_timeout_seconds(mut self, input: i32) -> Self {
+        self.idle_timeout_seconds = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The amount of time, in seconds, that a connection can remain idle (no data sent) before VPC Lattice closes it. The valid range is 60 to 600 seconds. If you don't specify a value, the default is 60 seconds. This setting does not change the maximum connection duration of 10 minutes; connections are still closed when they reach that limit.</p>
+    pub fn set_idle_timeout_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.idle_timeout_seconds = input;
+        self
+    }
+    /// <p>The amount of time, in seconds, that a connection can remain idle (no data sent) before VPC Lattice closes it. The valid range is 60 to 600 seconds. If you don't specify a value, the default is 60 seconds. This setting does not change the maximum connection duration of 10 minutes; connections are still closed when they reach that limit.</p>
+    pub fn get_idle_timeout_seconds(&self) -> &::std::option::Option<i32> {
+        &self.idle_timeout_seconds
+    }
     /// Consumes the builder and constructs a [`UpdateServiceInput`](crate::operation::update_service::UpdateServiceInput).
     pub fn build(
         self,
@@ -121,6 +142,7 @@ impl UpdateServiceInputBuilder {
             service_identifier: self.service_identifier,
             certificate_arn: self.certificate_arn,
             auth_type: self.auth_type,
+            idle_timeout_seconds: self.idle_timeout_seconds,
         })
     }
 }

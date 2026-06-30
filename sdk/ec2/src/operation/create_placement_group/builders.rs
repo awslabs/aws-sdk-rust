@@ -23,7 +23,7 @@ impl crate::operation::create_placement_group::builders::CreatePlacementGroupInp
 /// Fluent builder constructing a request to `CreatePlacementGroup`.
 ///
 /// <p>Creates a placement group in which to launch instances. The strategy of the placement group determines how the instances are organized within the group.</p>
-/// <p>A <code>cluster</code> placement group is a logical grouping of instances within a single Availability Zone that benefit from low network latency, high network throughput. A <code>spread</code> placement group places instances on distinct hardware. A <code>partition</code> placement group places groups of instances in different partitions, where instances in one partition do not share the same hardware with instances in another partition.</p>
+/// <p>A <code>cluster</code> placement group is a logical grouping of instances within a single Availability Zone that benefit from low network latency, high network throughput. A <code>spread</code> placement group places instances on distinct hardware. A <code>partition</code> placement group places groups of instances in different partitions, where instances in one partition do not share the same hardware with instances in another partition. A <code>precision-time</code> placement group places instances on supported hardware with direct access to high-precision time sources in AWS infrastructure.</p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement groups</a> in the <i>Amazon EC2 User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreatePlacementGroupFluentBuilder {
@@ -202,6 +202,20 @@ impl CreatePlacementGroupFluentBuilder {
     /// <p>Reserved for internal use.</p>
     pub fn get_operator(&self) -> &::std::option::Option<crate::types::OperatorRequest> {
         self.inner.get_operator()
+    }
+    /// <p>The ID of a parent placement group. Valid only when <b>Strategy</b> is set to <code>cluster</code>.</p>
+    pub fn parent_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.parent_group_id(input.into());
+        self
+    }
+    /// <p>The ID of a parent placement group. Valid only when <b>Strategy</b> is set to <code>cluster</code>.</p>
+    pub fn set_parent_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_parent_group_id(input);
+        self
+    }
+    /// <p>The ID of a parent placement group. Valid only when <b>Strategy</b> is set to <code>cluster</code>.</p>
+    pub fn get_parent_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_parent_group_id()
     }
     /// <p>Checks whether you have the required permissions for the operation, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {

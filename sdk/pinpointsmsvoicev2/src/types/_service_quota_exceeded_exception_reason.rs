@@ -21,6 +21,7 @@
 ///     ServiceQuotaExceededExceptionReason::KeywordsPerPool => { /* ... */ },
 ///     ServiceQuotaExceededExceptionReason::MonthlySpendLimitReachedForMedia => { /* ... */ },
 ///     ServiceQuotaExceededExceptionReason::MonthlySpendLimitReachedForNotify => { /* ... */ },
+///     ServiceQuotaExceededExceptionReason::MonthlySpendLimitReachedForRcs => { /* ... */ },
 ///     ServiceQuotaExceededExceptionReason::MonthlySpendLimitReachedForText => { /* ... */ },
 ///     ServiceQuotaExceededExceptionReason::MonthlySpendLimitReachedForVoice => { /* ... */ },
 ///     ServiceQuotaExceededExceptionReason::NotifyConfigurationsPerAccount => { /* ... */ },
@@ -86,6 +87,8 @@ pub enum ServiceQuotaExceededExceptionReason {
     #[allow(missing_docs)] // documentation missing in model
     MonthlySpendLimitReachedForNotify,
     #[allow(missing_docs)] // documentation missing in model
+    MonthlySpendLimitReachedForRcs,
+    #[allow(missing_docs)] // documentation missing in model
     MonthlySpendLimitReachedForText,
     #[allow(missing_docs)] // documentation missing in model
     MonthlySpendLimitReachedForVoice,
@@ -137,6 +140,7 @@ impl ::std::convert::From<&str> for ServiceQuotaExceededExceptionReason {
             "KEYWORDS_PER_POOL" => ServiceQuotaExceededExceptionReason::KeywordsPerPool,
             "MONTHLY_SPEND_LIMIT_REACHED_FOR_MEDIA" => ServiceQuotaExceededExceptionReason::MonthlySpendLimitReachedForMedia,
             "MONTHLY_SPEND_LIMIT_REACHED_FOR_NOTIFY" => ServiceQuotaExceededExceptionReason::MonthlySpendLimitReachedForNotify,
+            "MONTHLY_SPEND_LIMIT_REACHED_FOR_RCS" => ServiceQuotaExceededExceptionReason::MonthlySpendLimitReachedForRcs,
             "MONTHLY_SPEND_LIMIT_REACHED_FOR_TEXT" => ServiceQuotaExceededExceptionReason::MonthlySpendLimitReachedForText,
             "MONTHLY_SPEND_LIMIT_REACHED_FOR_VOICE" => ServiceQuotaExceededExceptionReason::MonthlySpendLimitReachedForVoice,
             "NOTIFY_CONFIGURATIONS_PER_ACCOUNT" => ServiceQuotaExceededExceptionReason::NotifyConfigurationsPerAccount,
@@ -179,6 +183,7 @@ impl ServiceQuotaExceededExceptionReason {
             ServiceQuotaExceededExceptionReason::KeywordsPerPool => "KEYWORDS_PER_POOL",
             ServiceQuotaExceededExceptionReason::MonthlySpendLimitReachedForMedia => "MONTHLY_SPEND_LIMIT_REACHED_FOR_MEDIA",
             ServiceQuotaExceededExceptionReason::MonthlySpendLimitReachedForNotify => "MONTHLY_SPEND_LIMIT_REACHED_FOR_NOTIFY",
+            ServiceQuotaExceededExceptionReason::MonthlySpendLimitReachedForRcs => "MONTHLY_SPEND_LIMIT_REACHED_FOR_RCS",
             ServiceQuotaExceededExceptionReason::MonthlySpendLimitReachedForText => "MONTHLY_SPEND_LIMIT_REACHED_FOR_TEXT",
             ServiceQuotaExceededExceptionReason::MonthlySpendLimitReachedForVoice => "MONTHLY_SPEND_LIMIT_REACHED_FOR_VOICE",
             ServiceQuotaExceededExceptionReason::NotifyConfigurationsPerAccount => "NOTIFY_CONFIGURATIONS_PER_ACCOUNT",
@@ -212,6 +217,7 @@ impl ServiceQuotaExceededExceptionReason {
             "KEYWORDS_PER_POOL",
             "MONTHLY_SPEND_LIMIT_REACHED_FOR_MEDIA",
             "MONTHLY_SPEND_LIMIT_REACHED_FOR_NOTIFY",
+            "MONTHLY_SPEND_LIMIT_REACHED_FOR_RCS",
             "MONTHLY_SPEND_LIMIT_REACHED_FOR_TEXT",
             "MONTHLY_SPEND_LIMIT_REACHED_FOR_VOICE",
             "NOTIFY_CONFIGURATIONS_PER_ACCOUNT",
@@ -262,6 +268,7 @@ impl ::std::fmt::Display for ServiceQuotaExceededExceptionReason {
             ServiceQuotaExceededExceptionReason::KeywordsPerPool => write!(f, "KEYWORDS_PER_POOL"),
             ServiceQuotaExceededExceptionReason::MonthlySpendLimitReachedForMedia => write!(f, "MONTHLY_SPEND_LIMIT_REACHED_FOR_MEDIA"),
             ServiceQuotaExceededExceptionReason::MonthlySpendLimitReachedForNotify => write!(f, "MONTHLY_SPEND_LIMIT_REACHED_FOR_NOTIFY"),
+            ServiceQuotaExceededExceptionReason::MonthlySpendLimitReachedForRcs => write!(f, "MONTHLY_SPEND_LIMIT_REACHED_FOR_RCS"),
             ServiceQuotaExceededExceptionReason::MonthlySpendLimitReachedForText => write!(f, "MONTHLY_SPEND_LIMIT_REACHED_FOR_TEXT"),
             ServiceQuotaExceededExceptionReason::MonthlySpendLimitReachedForVoice => write!(f, "MONTHLY_SPEND_LIMIT_REACHED_FOR_VOICE"),
             ServiceQuotaExceededExceptionReason::NotifyConfigurationsPerAccount => write!(f, "NOTIFY_CONFIGURATIONS_PER_ACCOUNT"),

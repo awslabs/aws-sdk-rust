@@ -5,11 +5,17 @@
 pub struct UpdateAccountSettingsInput {
     /// <p>A parameter to configure deletion protection. Deletion protection prevents a user from deleting a configuration profile or an environment if AppConfig has called either <a href="https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_appconfigdata_GetLatestConfiguration.html">GetLatestConfiguration</a> or for the configuration profile or from the environment during the specified interval. The default interval for <code>ProtectionPeriodInMinutes</code> is 60.</p>
     pub deletion_protection: ::std::option::Option<crate::types::DeletionProtectionSettings>,
+    /// <p>Configuration for vended metrics in the account.</p>
+    pub vended_metrics: ::std::option::Option<crate::types::VendedMetricsSettings>,
 }
 impl UpdateAccountSettingsInput {
     /// <p>A parameter to configure deletion protection. Deletion protection prevents a user from deleting a configuration profile or an environment if AppConfig has called either <a href="https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_appconfigdata_GetLatestConfiguration.html">GetLatestConfiguration</a> or for the configuration profile or from the environment during the specified interval. The default interval for <code>ProtectionPeriodInMinutes</code> is 60.</p>
     pub fn deletion_protection(&self) -> ::std::option::Option<&crate::types::DeletionProtectionSettings> {
         self.deletion_protection.as_ref()
+    }
+    /// <p>Configuration for vended metrics in the account.</p>
+    pub fn vended_metrics(&self) -> ::std::option::Option<&crate::types::VendedMetricsSettings> {
+        self.vended_metrics.as_ref()
     }
 }
 impl UpdateAccountSettingsInput {
@@ -24,6 +30,7 @@ impl UpdateAccountSettingsInput {
 #[non_exhaustive]
 pub struct UpdateAccountSettingsInputBuilder {
     pub(crate) deletion_protection: ::std::option::Option<crate::types::DeletionProtectionSettings>,
+    pub(crate) vended_metrics: ::std::option::Option<crate::types::VendedMetricsSettings>,
 }
 impl UpdateAccountSettingsInputBuilder {
     /// <p>A parameter to configure deletion protection. Deletion protection prevents a user from deleting a configuration profile or an environment if AppConfig has called either <a href="https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_appconfigdata_GetLatestConfiguration.html">GetLatestConfiguration</a> or for the configuration profile or from the environment during the specified interval. The default interval for <code>ProtectionPeriodInMinutes</code> is 60.</p>
@@ -40,6 +47,20 @@ impl UpdateAccountSettingsInputBuilder {
     pub fn get_deletion_protection(&self) -> &::std::option::Option<crate::types::DeletionProtectionSettings> {
         &self.deletion_protection
     }
+    /// <p>Configuration for vended metrics in the account.</p>
+    pub fn vended_metrics(mut self, input: crate::types::VendedMetricsSettings) -> Self {
+        self.vended_metrics = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Configuration for vended metrics in the account.</p>
+    pub fn set_vended_metrics(mut self, input: ::std::option::Option<crate::types::VendedMetricsSettings>) -> Self {
+        self.vended_metrics = input;
+        self
+    }
+    /// <p>Configuration for vended metrics in the account.</p>
+    pub fn get_vended_metrics(&self) -> &::std::option::Option<crate::types::VendedMetricsSettings> {
+        &self.vended_metrics
+    }
     /// Consumes the builder and constructs a [`UpdateAccountSettingsInput`](crate::operation::update_account_settings::UpdateAccountSettingsInput).
     pub fn build(
         self,
@@ -47,6 +68,7 @@ impl UpdateAccountSettingsInputBuilder {
     {
         ::std::result::Result::Ok(crate::operation::update_account_settings::UpdateAccountSettingsInput {
             deletion_protection: self.deletion_protection,
+            vended_metrics: self.vended_metrics,
         })
     }
 }

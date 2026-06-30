@@ -9,6 +9,8 @@ pub use crate::types::_cluster::ClusterBuilder;
 
 pub use crate::types::_update_cluster_slurm_configuration_request::UpdateClusterSlurmConfigurationRequestBuilder;
 
+pub use crate::types::_update_scheduler_request::UpdateSchedulerRequestBuilder;
+
 pub use crate::types::_custom_launch_template::CustomLaunchTemplateBuilder;
 
 pub use crate::types::_scaling_configuration_request::ScalingConfigurationRequestBuilder;

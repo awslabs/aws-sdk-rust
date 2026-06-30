@@ -82,9 +82,9 @@ pub struct ReplicationGroup {
     pub cluster_mode: ::std::option::Option<crate::types::ClusterMode>,
     /// <p>The engine used in a replication group. The options are valkey, memcached or redis.</p>
     pub engine: ::std::option::Option<::std::string::String>,
-    /// <p>The durability setting of the replication group. For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/dg/Durability.html">Durability</a>.</p>
+    /// <p>The durability setting of the replication group. For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/durability.html">Durability</a>.</p>
     pub durability: ::std::option::Option<crate::types::Durability>,
-    /// <p>The effective durability of the replication group. When <code>Durability</code> is set to <code>default</code>, the service resolves the actual durability based on the engine version, cluster mode, and other parameters. This field reflects the resolved value. For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/dg/ConfiguringDurability.html">Configuring Durability</a>.</p>
+    /// <p>The effective durability of the replication group. When <code>Durability</code> is set to <code>default</code>, the service resolves the actual durability based on the engine version, cluster mode, and other parameters. This field reflects the resolved value. For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/Durability.Configuring.html">Configuring Durability</a>.</p>
     pub effective_durability: ::std::option::Option<crate::types::EffectiveDurability>,
 }
 impl ReplicationGroup {
@@ -242,11 +242,11 @@ impl ReplicationGroup {
     pub fn engine(&self) -> ::std::option::Option<&str> {
         self.engine.as_deref()
     }
-    /// <p>The durability setting of the replication group. For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/dg/Durability.html">Durability</a>.</p>
+    /// <p>The durability setting of the replication group. For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/durability.html">Durability</a>.</p>
     pub fn durability(&self) -> ::std::option::Option<&crate::types::Durability> {
         self.durability.as_ref()
     }
-    /// <p>The effective durability of the replication group. When <code>Durability</code> is set to <code>default</code>, the service resolves the actual durability based on the engine version, cluster mode, and other parameters. This field reflects the resolved value. For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/dg/ConfiguringDurability.html">Configuring Durability</a>.</p>
+    /// <p>The effective durability of the replication group. When <code>Durability</code> is set to <code>default</code>, the service resolves the actual durability based on the engine version, cluster mode, and other parameters. This field reflects the resolved value. For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/Durability.Configuring.html">Configuring Durability</a>.</p>
     pub fn effective_durability(&self) -> ::std::option::Option<&crate::types::EffectiveDurability> {
         self.effective_durability.as_ref()
     }
@@ -827,31 +827,31 @@ impl ReplicationGroupBuilder {
     pub fn get_engine(&self) -> &::std::option::Option<::std::string::String> {
         &self.engine
     }
-    /// <p>The durability setting of the replication group. For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/dg/Durability.html">Durability</a>.</p>
+    /// <p>The durability setting of the replication group. For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/durability.html">Durability</a>.</p>
     pub fn durability(mut self, input: crate::types::Durability) -> Self {
         self.durability = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The durability setting of the replication group. For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/dg/Durability.html">Durability</a>.</p>
+    /// <p>The durability setting of the replication group. For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/durability.html">Durability</a>.</p>
     pub fn set_durability(mut self, input: ::std::option::Option<crate::types::Durability>) -> Self {
         self.durability = input;
         self
     }
-    /// <p>The durability setting of the replication group. For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/dg/Durability.html">Durability</a>.</p>
+    /// <p>The durability setting of the replication group. For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/durability.html">Durability</a>.</p>
     pub fn get_durability(&self) -> &::std::option::Option<crate::types::Durability> {
         &self.durability
     }
-    /// <p>The effective durability of the replication group. When <code>Durability</code> is set to <code>default</code>, the service resolves the actual durability based on the engine version, cluster mode, and other parameters. This field reflects the resolved value. For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/dg/ConfiguringDurability.html">Configuring Durability</a>.</p>
+    /// <p>The effective durability of the replication group. When <code>Durability</code> is set to <code>default</code>, the service resolves the actual durability based on the engine version, cluster mode, and other parameters. This field reflects the resolved value. For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/Durability.Configuring.html">Configuring Durability</a>.</p>
     pub fn effective_durability(mut self, input: crate::types::EffectiveDurability) -> Self {
         self.effective_durability = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The effective durability of the replication group. When <code>Durability</code> is set to <code>default</code>, the service resolves the actual durability based on the engine version, cluster mode, and other parameters. This field reflects the resolved value. For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/dg/ConfiguringDurability.html">Configuring Durability</a>.</p>
+    /// <p>The effective durability of the replication group. When <code>Durability</code> is set to <code>default</code>, the service resolves the actual durability based on the engine version, cluster mode, and other parameters. This field reflects the resolved value. For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/Durability.Configuring.html">Configuring Durability</a>.</p>
     pub fn set_effective_durability(mut self, input: ::std::option::Option<crate::types::EffectiveDurability>) -> Self {
         self.effective_durability = input;
         self
     }
-    /// <p>The effective durability of the replication group. When <code>Durability</code> is set to <code>default</code>, the service resolves the actual durability based on the engine version, cluster mode, and other parameters. This field reflects the resolved value. For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/dg/ConfiguringDurability.html">Configuring Durability</a>.</p>
+    /// <p>The effective durability of the replication group. When <code>Durability</code> is set to <code>default</code>, the service resolves the actual durability based on the engine version, cluster mode, and other parameters. This field reflects the resolved value. For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/Durability.Configuring.html">Configuring Durability</a>.</p>
     pub fn get_effective_durability(&self) -> &::std::option::Option<crate::types::EffectiveDurability> {
         &self.effective_durability
     }

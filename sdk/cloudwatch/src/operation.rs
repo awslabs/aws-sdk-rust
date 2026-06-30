@@ -115,6 +115,9 @@ pub mod put_dashboard;
 /// Types for the `PutInsightRule` operation.
 pub mod put_insight_rule;
 
+/// Types for the `PutLogAlarm` operation.
+pub mod put_log_alarm;
+
 /// Types for the `PutManagedInsightRules` operation.
 pub mod put_managed_insight_rules;
 

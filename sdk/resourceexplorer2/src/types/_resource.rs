@@ -14,6 +14,8 @@ pub struct Resource {
     pub resource_type: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services service that owns the resource and is responsible for creating and updating it.</p>
     pub service: ::std::option::Option<::std::string::String>,
+    /// <p>The CloudFormation resource type identifier for the resource, such as <code>AWS::EC2::Instance</code> or <code>AWS::S3::Bucket</code>.</p>
+    pub cfn_resource_type: ::std::option::Option<::std::string::String>,
     /// <p>The date and time that Resource Explorer last queried this resource and updated the index with the latest information about the resource.</p>
     pub last_reported_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A structure with additional type-specific details about the resource. These properties can be added by turning on integration between Resource Explorer and other Amazon Web Services services.</p>
@@ -39,6 +41,10 @@ impl Resource {
     /// <p>The Amazon Web Services service that owns the resource and is responsible for creating and updating it.</p>
     pub fn service(&self) -> ::std::option::Option<&str> {
         self.service.as_deref()
+    }
+    /// <p>The CloudFormation resource type identifier for the resource, such as <code>AWS::EC2::Instance</code> or <code>AWS::S3::Bucket</code>.</p>
+    pub fn cfn_resource_type(&self) -> ::std::option::Option<&str> {
+        self.cfn_resource_type.as_deref()
     }
     /// <p>The date and time that Resource Explorer last queried this resource and updated the index with the latest information about the resource.</p>
     pub fn last_reported_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -67,6 +73,7 @@ pub struct ResourceBuilder {
     pub(crate) region: ::std::option::Option<::std::string::String>,
     pub(crate) resource_type: ::std::option::Option<::std::string::String>,
     pub(crate) service: ::std::option::Option<::std::string::String>,
+    pub(crate) cfn_resource_type: ::std::option::Option<::std::string::String>,
     pub(crate) last_reported_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) properties: ::std::option::Option<::std::vec::Vec<crate::types::ResourceProperty>>,
 }
@@ -141,6 +148,20 @@ impl ResourceBuilder {
     pub fn get_service(&self) -> &::std::option::Option<::std::string::String> {
         &self.service
     }
+    /// <p>The CloudFormation resource type identifier for the resource, such as <code>AWS::EC2::Instance</code> or <code>AWS::S3::Bucket</code>.</p>
+    pub fn cfn_resource_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.cfn_resource_type = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The CloudFormation resource type identifier for the resource, such as <code>AWS::EC2::Instance</code> or <code>AWS::S3::Bucket</code>.</p>
+    pub fn set_cfn_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.cfn_resource_type = input;
+        self
+    }
+    /// <p>The CloudFormation resource type identifier for the resource, such as <code>AWS::EC2::Instance</code> or <code>AWS::S3::Bucket</code>.</p>
+    pub fn get_cfn_resource_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cfn_resource_type
+    }
     /// <p>The date and time that Resource Explorer last queried this resource and updated the index with the latest information about the resource.</p>
     pub fn last_reported_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_reported_at = ::std::option::Option::Some(input);
@@ -183,6 +204,7 @@ impl ResourceBuilder {
             region: self.region,
             resource_type: self.resource_type,
             service: self.service,
+            cfn_resource_type: self.cfn_resource_type,
             last_reported_at: self.last_reported_at,
             properties: self.properties,
         }

@@ -57,6 +57,15 @@ where
                                     .transpose()?,
                             );
                         }
+                        "ServiceLinkedRecorder" => {
+                            builder = builder.set_service_linked_recorder(
+                                crate::protocol_serde::shape_service_linked_recorder_info::de_service_linked_recorder_info(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

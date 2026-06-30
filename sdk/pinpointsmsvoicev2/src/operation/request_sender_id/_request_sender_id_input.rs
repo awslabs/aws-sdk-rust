@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RequestSenderIdInput {
-    /// <p>The sender ID string to request.</p>
+    /// <p>The sender ID string to request. The sender ID can be 1-11 alphanumeric characters including letters (A-Z, a-z), numbers (0-9), or hyphens (-). The sender ID must contain at least one letter and cannot start or end with a hyphen.</p>
     pub sender_id: ::std::option::Option<::std::string::String>,
     /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region.</p>
     pub iso_country_code: ::std::option::Option<::std::string::String>,
@@ -17,7 +17,7 @@ pub struct RequestSenderIdInput {
     pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl RequestSenderIdInput {
-    /// <p>The sender ID string to request.</p>
+    /// <p>The sender ID string to request. The sender ID can be 1-11 alphanumeric characters including letters (A-Z, a-z), numbers (0-9), or hyphens (-). The sender ID must contain at least one letter and cannot start or end with a hyphen.</p>
     pub fn sender_id(&self) -> ::std::option::Option<&str> {
         self.sender_id.as_deref()
     }
@@ -65,18 +65,18 @@ pub struct RequestSenderIdInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
 impl RequestSenderIdInputBuilder {
-    /// <p>The sender ID string to request.</p>
+    /// <p>The sender ID string to request. The sender ID can be 1-11 alphanumeric characters including letters (A-Z, a-z), numbers (0-9), or hyphens (-). The sender ID must contain at least one letter and cannot start or end with a hyphen.</p>
     /// This field is required.
     pub fn sender_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sender_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The sender ID string to request.</p>
+    /// <p>The sender ID string to request. The sender ID can be 1-11 alphanumeric characters including letters (A-Z, a-z), numbers (0-9), or hyphens (-). The sender ID must contain at least one letter and cannot start or end with a hyphen.</p>
     pub fn set_sender_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sender_id = input;
         self
     }
-    /// <p>The sender ID string to request.</p>
+    /// <p>The sender ID string to request. The sender ID can be 1-11 alphanumeric characters including letters (A-Z, a-z), numbers (0-9), or hyphens (-). The sender ID must contain at least one letter and cannot start or end with a hyphen.</p>
     pub fn get_sender_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.sender_id
     }

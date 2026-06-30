@@ -56,6 +56,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "ResolvedS3Object" => {
+                            builder = builder.set_resolved_s3_object(crate::protocol_serde::shape_resolved_s3_object::de_resolved_s3_object(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

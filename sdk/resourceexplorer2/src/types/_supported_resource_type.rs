@@ -8,6 +8,8 @@ pub struct SupportedResourceType {
     pub service: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the resource type.</p>
     pub resource_type: ::std::option::Option<::std::string::String>,
+    /// <p>The CloudFormation resource type identifiers for this resource type, such as <code>AWS::EC2::Instance</code>.</p>
+    pub cfn_resource_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl SupportedResourceType {
     /// <p>The Amazon Web Services service that is associated with the resource type. This is the primary service that lets you create and interact with resources of this type.</p>
@@ -17,6 +19,12 @@ impl SupportedResourceType {
     /// <p>The unique identifier of the resource type.</p>
     pub fn resource_type(&self) -> ::std::option::Option<&str> {
         self.resource_type.as_deref()
+    }
+    /// <p>The CloudFormation resource type identifiers for this resource type, such as <code>AWS::EC2::Instance</code>.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cfn_resource_types.is_none()`.
+    pub fn cfn_resource_types(&self) -> &[::std::string::String] {
+        self.cfn_resource_types.as_deref().unwrap_or_default()
     }
 }
 impl SupportedResourceType {
@@ -32,6 +40,7 @@ impl SupportedResourceType {
 pub struct SupportedResourceTypeBuilder {
     pub(crate) service: ::std::option::Option<::std::string::String>,
     pub(crate) resource_type: ::std::option::Option<::std::string::String>,
+    pub(crate) cfn_resource_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl SupportedResourceTypeBuilder {
     /// <p>The Amazon Web Services service that is associated with the resource type. This is the primary service that lets you create and interact with resources of this type.</p>
@@ -62,11 +71,32 @@ impl SupportedResourceTypeBuilder {
     pub fn get_resource_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_type
     }
+    /// Appends an item to `cfn_resource_types`.
+    ///
+    /// To override the contents of this collection use [`set_cfn_resource_types`](Self::set_cfn_resource_types).
+    ///
+    /// <p>The CloudFormation resource type identifiers for this resource type, such as <code>AWS::EC2::Instance</code>.</p>
+    pub fn cfn_resource_types(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.cfn_resource_types.unwrap_or_default();
+        v.push(input.into());
+        self.cfn_resource_types = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The CloudFormation resource type identifiers for this resource type, such as <code>AWS::EC2::Instance</code>.</p>
+    pub fn set_cfn_resource_types(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.cfn_resource_types = input;
+        self
+    }
+    /// <p>The CloudFormation resource type identifiers for this resource type, such as <code>AWS::EC2::Instance</code>.</p>
+    pub fn get_cfn_resource_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.cfn_resource_types
+    }
     /// Consumes the builder and constructs a [`SupportedResourceType`](crate::types::SupportedResourceType).
     pub fn build(self) -> crate::types::SupportedResourceType {
         crate::types::SupportedResourceType {
             service: self.service,
             resource_type: self.resource_type,
+            cfn_resource_types: self.cfn_resource_types,
         }
     }
 }

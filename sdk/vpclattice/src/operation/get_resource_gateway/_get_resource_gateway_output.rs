@@ -15,9 +15,9 @@ pub struct GetResourceGatewayOutput {
     pub vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>The IDs of the VPC subnets for resource gateway.</p>
     pub subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>Indicates whether the resource gateway is managed by an AWS service.</p>
+    /// <p>Indicates whether the resource gateway is managed by an Amazon Web Services service.</p>
     pub service_managed: ::std::option::Option<bool>,
-    /// <p>The AWS service that manages the resource gateway.</p>
+    /// <p>The Amazon Web Services service that manages the resource gateway.</p>
     pub managed_by: ::std::option::Option<::std::string::String>,
     /// <p>The security group IDs associated with the resource gateway.</p>
     pub security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -60,11 +60,11 @@ impl GetResourceGatewayOutput {
     pub fn subnet_ids(&self) -> &[::std::string::String] {
         self.subnet_ids.as_deref().unwrap_or_default()
     }
-    /// <p>Indicates whether the resource gateway is managed by an AWS service.</p>
+    /// <p>Indicates whether the resource gateway is managed by an Amazon Web Services service.</p>
     pub fn service_managed(&self) -> ::std::option::Option<bool> {
         self.service_managed
     }
-    /// <p>The AWS service that manages the resource gateway.</p>
+    /// <p>The Amazon Web Services service that manages the resource gateway.</p>
     pub fn managed_by(&self) -> ::std::option::Option<&str> {
         self.managed_by.as_deref()
     }
@@ -218,31 +218,31 @@ impl GetResourceGatewayOutputBuilder {
     pub fn get_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.subnet_ids
     }
-    /// <p>Indicates whether the resource gateway is managed by an AWS service.</p>
+    /// <p>Indicates whether the resource gateway is managed by an Amazon Web Services service.</p>
     pub fn service_managed(mut self, input: bool) -> Self {
         self.service_managed = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Indicates whether the resource gateway is managed by an AWS service.</p>
+    /// <p>Indicates whether the resource gateway is managed by an Amazon Web Services service.</p>
     pub fn set_service_managed(mut self, input: ::std::option::Option<bool>) -> Self {
         self.service_managed = input;
         self
     }
-    /// <p>Indicates whether the resource gateway is managed by an AWS service.</p>
+    /// <p>Indicates whether the resource gateway is managed by an Amazon Web Services service.</p>
     pub fn get_service_managed(&self) -> &::std::option::Option<bool> {
         &self.service_managed
     }
-    /// <p>The AWS service that manages the resource gateway.</p>
+    /// <p>The Amazon Web Services service that manages the resource gateway.</p>
     pub fn managed_by(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.managed_by = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The AWS service that manages the resource gateway.</p>
+    /// <p>The Amazon Web Services service that manages the resource gateway.</p>
     pub fn set_managed_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.managed_by = input;
         self
     }
-    /// <p>The AWS service that manages the resource gateway.</p>
+    /// <p>The Amazon Web Services service that manages the resource gateway.</p>
     pub fn get_managed_by(&self) -> &::std::option::Option<::std::string::String> {
         &self.managed_by
     }

@@ -136,17 +136,23 @@ impl CreateDeploymentStrategyFluentBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }
-    /// <p>Total amount of time for a deployment to last.</p>
+    /// <p>Total amount of time for a deployment to last.</p><note>
+    /// <p>AppConfig Agent supports deploying feature flag or free-form configuration data to specific segments or individual users during a gradual rollout. Entity-based gradual deployments ensure that once a user or segment receives a configuration version, they continue to receive that same version throughout the deployment period, regardless of which compute resource serves their requests. For more information, see <a href="https://docs.aws.amazon.com/appconfig/latest/userguide/appconfig-agent-how-to-use.html#appconfig-entity-based-gradual-deployments">Using AppConfig Agent for user-based or entity-based gradual deployments</a></p>
+    /// </note>
     pub fn deployment_duration_in_minutes(mut self, input: i32) -> Self {
         self.inner = self.inner.deployment_duration_in_minutes(input);
         self
     }
-    /// <p>Total amount of time for a deployment to last.</p>
+    /// <p>Total amount of time for a deployment to last.</p><note>
+    /// <p>AppConfig Agent supports deploying feature flag or free-form configuration data to specific segments or individual users during a gradual rollout. Entity-based gradual deployments ensure that once a user or segment receives a configuration version, they continue to receive that same version throughout the deployment period, regardless of which compute resource serves their requests. For more information, see <a href="https://docs.aws.amazon.com/appconfig/latest/userguide/appconfig-agent-how-to-use.html#appconfig-entity-based-gradual-deployments">Using AppConfig Agent for user-based or entity-based gradual deployments</a></p>
+    /// </note>
     pub fn set_deployment_duration_in_minutes(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_deployment_duration_in_minutes(input);
         self
     }
-    /// <p>Total amount of time for a deployment to last.</p>
+    /// <p>Total amount of time for a deployment to last.</p><note>
+    /// <p>AppConfig Agent supports deploying feature flag or free-form configuration data to specific segments or individual users during a gradual rollout. Entity-based gradual deployments ensure that once a user or segment receives a configuration version, they continue to receive that same version throughout the deployment period, regardless of which compute resource serves their requests. For more information, see <a href="https://docs.aws.amazon.com/appconfig/latest/userguide/appconfig-agent-how-to-use.html#appconfig-entity-based-gradual-deployments">Using AppConfig Agent for user-based or entity-based gradual deployments</a></p>
+    /// </note>
     pub fn get_deployment_duration_in_minutes(&self) -> &::std::option::Option<i32> {
         self.inner.get_deployment_duration_in_minutes()
     }

@@ -9,17 +9,39 @@ pub use crate::types::_replicate_to::ReplicateTo;
 
 pub use crate::types::_environment_state::EnvironmentState;
 
+pub use crate::types::_treatment_input::TreatmentInput;
+
+pub use crate::types::_experiment_definition_status::ExperimentDefinitionStatus;
+
+pub use crate::types::_treatment::Treatment;
+
 pub use crate::types::_bytes_measure::BytesMeasure;
 
 pub use crate::types::_deletion_protection_check::DeletionProtectionCheck;
 
+pub use crate::types::_delete_type::DeleteType;
+
 pub use crate::types::_deletion_protection_settings::DeletionProtectionSettings;
 
+pub use crate::types::_vended_metrics_settings::VendedMetricsSettings;
+
 pub use crate::types::_deployment_state::DeploymentState;
+
+pub use crate::types::_experiment_run_status::ExperimentRunStatus;
+
+pub use crate::types::_treatment_overrides::TreatmentOverrides;
+
+pub use crate::types::_experiment_run_result::ExperimentRunResult;
+
+pub use crate::types::_experiment_definition_snapshot::ExperimentDefinitionSnapshot;
+
+pub use crate::types::_deployment_parameters::DeploymentParameters;
 
 pub use crate::types::_validator::Validator;
 
 pub use crate::types::_monitor::Monitor;
+
+pub use crate::types::_flag_value::FlagValue;
 
 pub use crate::types::_action_point::ActionPoint;
 
@@ -39,6 +61,12 @@ pub use crate::types::_deployment_strategy::DeploymentStrategy;
 
 pub use crate::types::_environment::Environment;
 
+pub use crate::types::_experiment_definition_summary::ExperimentDefinitionSummary;
+
+pub use crate::types::_experiment_run_event::ExperimentRunEvent;
+
+pub use crate::types::_experiment_run_summary::ExperimentRunSummary;
+
 pub use crate::types::_extension_association_summary::ExtensionAssociationSummary;
 
 pub use crate::types::_extension_summary::ExtensionSummary;
@@ -55,6 +83,12 @@ pub use crate::types::_deployment_event_type::DeploymentEventType;
 
 pub use crate::types::_triggered_by::TriggeredBy;
 
+pub use crate::types::_deployment_type::DeploymentType;
+
+pub use crate::types::_experiment_run_event_type::ExperimentRunEventType;
+
+pub use crate::types::_attribute_value::AttributeValue;
+
 pub use crate::types::_action_invocation::ActionInvocation;
 
 mod _action;
@@ -67,6 +101,8 @@ mod _application;
 
 mod _applied_extension;
 
+mod _attribute_value;
+
 mod _bad_request_details;
 
 mod _bad_request_reason;
@@ -74,6 +110,8 @@ mod _bad_request_reason;
 mod _bytes_measure;
 
 mod _configuration_profile_summary;
+
+mod _delete_type;
 
 mod _deletion_protection_check;
 
@@ -83,19 +121,41 @@ mod _deployment_event;
 
 mod _deployment_event_type;
 
+mod _deployment_parameters;
+
 mod _deployment_state;
 
 mod _deployment_strategy;
 
 mod _deployment_summary;
 
+mod _deployment_type;
+
 mod _environment;
 
 mod _environment_state;
 
+mod _experiment_definition_snapshot;
+
+mod _experiment_definition_status;
+
+mod _experiment_definition_summary;
+
+mod _experiment_run_event;
+
+mod _experiment_run_event_type;
+
+mod _experiment_run_result;
+
+mod _experiment_run_status;
+
+mod _experiment_run_summary;
+
 mod _extension_association_summary;
 
 mod _extension_summary;
+
+mod _flag_value;
 
 mod _growth_type;
 
@@ -109,11 +169,19 @@ mod _parameter;
 
 mod _replicate_to;
 
+mod _treatment;
+
+mod _treatment_input;
+
+mod _treatment_overrides;
+
 mod _triggered_by;
 
 mod _validator;
 
 mod _validator_type;
+
+mod _vended_metrics_settings;
 
 /// Builders
 pub mod builders;

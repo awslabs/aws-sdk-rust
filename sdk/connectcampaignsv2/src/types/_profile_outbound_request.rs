@@ -10,6 +10,8 @@ pub struct ProfileOutboundRequest {
     pub profile_id: ::std::string::String,
     /// Timestamp with no UTC offset or timezone
     pub expiration_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// Event trigger context data
+    pub event_trigger_context: ::std::option::Option<crate::types::EventTriggerContext>,
 }
 impl ProfileOutboundRequest {
     /// Client provided parameter used for idempotency. Its value must be unique for each request.
@@ -26,6 +28,10 @@ impl ProfileOutboundRequest {
     pub fn expiration_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.expiration_time.as_ref()
     }
+    /// Event trigger context data
+    pub fn event_trigger_context(&self) -> ::std::option::Option<&crate::types::EventTriggerContext> {
+        self.event_trigger_context.as_ref()
+    }
 }
 impl ProfileOutboundRequest {
     /// Creates a new builder-style object to manufacture [`ProfileOutboundRequest`](crate::types::ProfileOutboundRequest).
@@ -41,6 +47,7 @@ pub struct ProfileOutboundRequestBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) profile_id: ::std::option::Option<::std::string::String>,
     pub(crate) expiration_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) event_trigger_context: ::std::option::Option<crate::types::EventTriggerContext>,
 }
 impl ProfileOutboundRequestBuilder {
     /// Client provided parameter used for idempotency. Its value must be unique for each request.
@@ -87,6 +94,20 @@ impl ProfileOutboundRequestBuilder {
     pub fn get_expiration_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.expiration_time
     }
+    /// Event trigger context data
+    pub fn event_trigger_context(mut self, input: crate::types::EventTriggerContext) -> Self {
+        self.event_trigger_context = ::std::option::Option::Some(input);
+        self
+    }
+    /// Event trigger context data
+    pub fn set_event_trigger_context(mut self, input: ::std::option::Option<crate::types::EventTriggerContext>) -> Self {
+        self.event_trigger_context = input;
+        self
+    }
+    /// Event trigger context data
+    pub fn get_event_trigger_context(&self) -> &::std::option::Option<crate::types::EventTriggerContext> {
+        &self.event_trigger_context
+    }
     /// Consumes the builder and constructs a [`ProfileOutboundRequest`](crate::types::ProfileOutboundRequest).
     /// This method will fail if any of the following fields are not set:
     /// - [`client_token`](crate::types::builders::ProfileOutboundRequestBuilder::client_token)
@@ -106,6 +127,7 @@ impl ProfileOutboundRequestBuilder {
                 )
             })?,
             expiration_time: self.expiration_time,
+            event_trigger_context: self.event_trigger_context,
         })
     }
 }

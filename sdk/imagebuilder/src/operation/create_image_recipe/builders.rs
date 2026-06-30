@@ -346,6 +346,31 @@ impl CreateImageRecipeFluentBuilder {
     pub fn get_ami_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_ami_tags()
     }
+    ///
+    /// Appends an item to `amiWatermarks`.
+    ///
+    /// To override the contents of this collection use [`set_ami_watermarks`](Self::set_ami_watermarks).
+    ///
+    /// <p>The AMI watermark names to attach to the output AMI from this recipe. AMI watermarks are lineage markers. They automatically propagate to derivative AMIs when the source AMI is copied or distributed across Regions or accounts.</p><note>
+    /// <p>AMI watermarks are supported only for image recipes. AMIs with watermarks cannot be made public.</p>
+    /// </note>
+    pub fn ami_watermarks(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.ami_watermarks(input.into());
+        self
+    }
+    /// <p>The AMI watermark names to attach to the output AMI from this recipe. AMI watermarks are lineage markers. They automatically propagate to derivative AMIs when the source AMI is copied or distributed across Regions or accounts.</p><note>
+    /// <p>AMI watermarks are supported only for image recipes. AMIs with watermarks cannot be made public.</p>
+    /// </note>
+    pub fn set_ami_watermarks(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.inner = self.inner.set_ami_watermarks(input);
+        self
+    }
+    /// <p>The AMI watermark names to attach to the output AMI from this recipe. AMI watermarks are lineage markers. They automatically propagate to derivative AMIs when the source AMI is copied or distributed across Regions or accounts.</p><note>
+    /// <p>AMI watermarks are supported only for image recipes. AMIs with watermarks cannot be made public.</p>
+    /// </note>
+    pub fn get_ami_watermarks(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_ami_watermarks()
+    }
     /// <p>Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());

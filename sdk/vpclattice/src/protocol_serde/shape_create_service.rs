@@ -212,6 +212,13 @@ pub(crate) fn de_create_service(
                             .transpose()?,
                     );
                 }
+                "idleTimeoutSeconds" => {
+                    builder = builder.set_idle_timeout_seconds(
+                        ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                            .map(i32::try_from)
+                            .transpose()?,
+                    );
+                }
                 "name" => {
                     builder = builder.set_name(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

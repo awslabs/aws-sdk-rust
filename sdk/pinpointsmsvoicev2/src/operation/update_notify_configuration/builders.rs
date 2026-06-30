@@ -122,31 +122,31 @@ impl UpdateNotifyConfigurationFluentBuilder {
     pub fn get_notify_configuration_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_notify_configuration_id()
     }
-    /// The template ID to set as the default, or the special value UNSET_DEFAULT_TEMPLATE to clear the current default template.
+    /// <p>The default template identifier to associate with the notify configuration. If specified, this template is used when sending messages without an explicit template identifier. Pass the special value <code>UNSET_DEFAULT_TEMPLATE</code> to clear the current default template from the notify configuration.</p>
     pub fn default_template_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.default_template_id(input.into());
         self
     }
-    /// The template ID to set as the default, or the special value UNSET_DEFAULT_TEMPLATE to clear the current default template.
+    /// <p>The default template identifier to associate with the notify configuration. If specified, this template is used when sending messages without an explicit template identifier. Pass the special value <code>UNSET_DEFAULT_TEMPLATE</code> to clear the current default template from the notify configuration.</p>
     pub fn set_default_template_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_default_template_id(input);
         self
     }
-    /// The template ID to set as the default, or the special value UNSET_DEFAULT_TEMPLATE to clear the current default template.
+    /// <p>The default template identifier to associate with the notify configuration. If specified, this template is used when sending messages without an explicit template identifier. Pass the special value <code>UNSET_DEFAULT_TEMPLATE</code> to clear the current default template from the notify configuration.</p>
     pub fn get_default_template_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_default_template_id()
     }
-    /// The pool ID or ARN to associate, or the special value UNSET_DEFAULT_POOL_FOR_NOTIFY to clear the current default pool.
+    /// <p>The pool identifier or Amazon Resource Name (ARN) to associate with the notify configuration. Pass the special value <code>UNSET_DEFAULT_POOL_FOR_NOTIFY</code> to clear the current default pool from the notify configuration.</p>
     pub fn pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.pool_id(input.into());
         self
     }
-    /// The pool ID or ARN to associate, or the special value UNSET_DEFAULT_POOL_FOR_NOTIFY to clear the current default pool.
+    /// <p>The pool identifier or Amazon Resource Name (ARN) to associate with the notify configuration. Pass the special value <code>UNSET_DEFAULT_POOL_FOR_NOTIFY</code> to clear the current default pool from the notify configuration.</p>
     pub fn set_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_pool_id(input);
         self
     }
-    /// The pool ID or ARN to associate, or the special value UNSET_DEFAULT_POOL_FOR_NOTIFY to clear the current default pool.
+    /// <p>The pool identifier or Amazon Resource Name (ARN) to associate with the notify configuration. Pass the special value <code>UNSET_DEFAULT_POOL_FOR_NOTIFY</code> to clear the current default pool from the notify configuration.</p>
     pub fn get_pool_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_pool_id()
     }

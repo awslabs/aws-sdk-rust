@@ -15,6 +15,7 @@ impl super::Client {
     ///   - [`two_way_channel_arn(Option<String>)`](crate::operation::delete_rcs_agent::DeleteRcsAgentOutput::two_way_channel_arn): <p>The Amazon Resource Name (ARN) of the two way channel.</p>
     ///   - [`two_way_channel_role(Option<String>)`](crate::operation::delete_rcs_agent::DeleteRcsAgentOutput::two_way_channel_role): <p>An optional IAM Role Arn for a service to assume, to be able to post inbound SMS messages.</p>
     ///   - [`two_way_enabled(bool)`](crate::operation::delete_rcs_agent::DeleteRcsAgentOutput::two_way_enabled): <p>By default this is set to false. When set to true you can receive incoming text messages from your end recipients.</p>
+    ///   - [`two_way_rcs_events_enabled(Option<Vec::<String>>)`](crate::operation::delete_rcs_agent::DeleteRcsAgentOutput::two_way_rcs_events_enabled): <p>The list of RCS event types that were enabled for two-way messaging on the deleted agent.</p>
     /// - On failure, responds with [`SdkError<DeleteRcsAgentError>`](crate::operation::delete_rcs_agent::DeleteRcsAgentError)
     pub fn delete_rcs_agent(&self) -> crate::operation::delete_rcs_agent::builders::DeleteRcsAgentFluentBuilder {
         crate::operation::delete_rcs_agent::builders::DeleteRcsAgentFluentBuilder::new(self.handle.clone())

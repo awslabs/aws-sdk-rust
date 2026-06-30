@@ -94,6 +94,13 @@ pub(crate) fn de_get_account_settings(
                         crate::protocol_serde::shape_deletion_protection_settings::de_deletion_protection_settings(tokens, _value, depth + 1)?,
                     );
                 }
+                "VendedMetrics" => {
+                    builder = builder.set_vended_metrics(crate::protocol_serde::shape_vended_metrics_settings::de_vended_metrics_settings(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
+                }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },
             other => {

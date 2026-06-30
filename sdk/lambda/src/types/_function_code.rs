@@ -12,6 +12,8 @@ pub struct FunctionCode {
     pub s3_key: ::std::option::Option<::std::string::String>,
     /// <p>For versioned objects, the version of the deployment package object to use.</p>
     pub s3_object_version: ::std::option::Option<::std::string::String>,
+    /// <p>Specifies how the deployment package is stored. Use <code>COPY</code> (default) to upload a copy of your deployment package to Lambda. Use <code>REFERENCE</code> to have Lambda reference the deployment package from the specified Amazon S3 bucket.</p>
+    pub s3_object_storage_mode: ::std::option::Option<crate::types::S3ObjectStorageMode>,
     /// <p>URI of a <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-images.html">container image</a> in the Amazon ECR registry.</p>
     pub image_uri: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the Key Management Service (KMS) customer managed key that's used to encrypt your function's .zip deployment package. If you don't provide a customer managed key, Lambda uses an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-owned-cmk">Amazon Web Services owned key</a>.</p>
@@ -34,6 +36,10 @@ impl FunctionCode {
     pub fn s3_object_version(&self) -> ::std::option::Option<&str> {
         self.s3_object_version.as_deref()
     }
+    /// <p>Specifies how the deployment package is stored. Use <code>COPY</code> (default) to upload a copy of your deployment package to Lambda. Use <code>REFERENCE</code> to have Lambda reference the deployment package from the specified Amazon S3 bucket.</p>
+    pub fn s3_object_storage_mode(&self) -> ::std::option::Option<&crate::types::S3ObjectStorageMode> {
+        self.s3_object_storage_mode.as_ref()
+    }
     /// <p>URI of a <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-images.html">container image</a> in the Amazon ECR registry.</p>
     pub fn image_uri(&self) -> ::std::option::Option<&str> {
         self.image_uri.as_deref()
@@ -50,6 +56,7 @@ impl ::std::fmt::Debug for FunctionCode {
         formatter.field("s3_bucket", &self.s3_bucket);
         formatter.field("s3_key", &self.s3_key);
         formatter.field("s3_object_version", &self.s3_object_version);
+        formatter.field("s3_object_storage_mode", &self.s3_object_storage_mode);
         formatter.field("image_uri", &self.image_uri);
         formatter.field("source_kms_key_arn", &self.source_kms_key_arn);
         formatter.finish()
@@ -70,6 +77,7 @@ pub struct FunctionCodeBuilder {
     pub(crate) s3_bucket: ::std::option::Option<::std::string::String>,
     pub(crate) s3_key: ::std::option::Option<::std::string::String>,
     pub(crate) s3_object_version: ::std::option::Option<::std::string::String>,
+    pub(crate) s3_object_storage_mode: ::std::option::Option<crate::types::S3ObjectStorageMode>,
     pub(crate) image_uri: ::std::option::Option<::std::string::String>,
     pub(crate) source_kms_key_arn: ::std::option::Option<::std::string::String>,
 }
@@ -130,6 +138,20 @@ impl FunctionCodeBuilder {
     pub fn get_s3_object_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.s3_object_version
     }
+    /// <p>Specifies how the deployment package is stored. Use <code>COPY</code> (default) to upload a copy of your deployment package to Lambda. Use <code>REFERENCE</code> to have Lambda reference the deployment package from the specified Amazon S3 bucket.</p>
+    pub fn s3_object_storage_mode(mut self, input: crate::types::S3ObjectStorageMode) -> Self {
+        self.s3_object_storage_mode = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies how the deployment package is stored. Use <code>COPY</code> (default) to upload a copy of your deployment package to Lambda. Use <code>REFERENCE</code> to have Lambda reference the deployment package from the specified Amazon S3 bucket.</p>
+    pub fn set_s3_object_storage_mode(mut self, input: ::std::option::Option<crate::types::S3ObjectStorageMode>) -> Self {
+        self.s3_object_storage_mode = input;
+        self
+    }
+    /// <p>Specifies how the deployment package is stored. Use <code>COPY</code> (default) to upload a copy of your deployment package to Lambda. Use <code>REFERENCE</code> to have Lambda reference the deployment package from the specified Amazon S3 bucket.</p>
+    pub fn get_s3_object_storage_mode(&self) -> &::std::option::Option<crate::types::S3ObjectStorageMode> {
+        &self.s3_object_storage_mode
+    }
     /// <p>URI of a <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-images.html">container image</a> in the Amazon ECR registry.</p>
     pub fn image_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_uri = ::std::option::Option::Some(input.into());
@@ -165,6 +187,7 @@ impl FunctionCodeBuilder {
             s3_bucket: self.s3_bucket,
             s3_key: self.s3_key,
             s3_object_version: self.s3_object_version,
+            s3_object_storage_mode: self.s3_object_storage_mode,
             image_uri: self.image_uri,
             source_kms_key_arn: self.source_kms_key_arn,
         }
@@ -177,6 +200,7 @@ impl ::std::fmt::Debug for FunctionCodeBuilder {
         formatter.field("s3_bucket", &self.s3_bucket);
         formatter.field("s3_key", &self.s3_key);
         formatter.field("s3_object_version", &self.s3_object_version);
+        formatter.field("s3_object_storage_mode", &self.s3_object_storage_mode);
         formatter.field("image_uri", &self.image_uri);
         formatter.field("source_kms_key_arn", &self.source_kms_key_arn);
         formatter.finish()

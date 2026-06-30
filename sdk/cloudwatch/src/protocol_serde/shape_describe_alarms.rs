@@ -86,6 +86,9 @@ pub(crate) fn de_describe_alarms(
             "MetricAlarms" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(builder.set_metric_alarms(Some(crate::protocol_serde::shape_metric_alarms::de_metric_alarms(decoder, depth + 1)?)))
             })?,
+            "LogAlarms" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
+                Ok(builder.set_log_alarms(Some(crate::protocol_serde::shape_log_alarms::de_log_alarms(decoder, depth + 1)?)))
+            })?,
             "NextToken" => {
                 ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| Ok(builder.set_next_token(Some(decoder.string()?))))?
             }

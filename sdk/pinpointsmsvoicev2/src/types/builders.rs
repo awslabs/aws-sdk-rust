@@ -9,6 +9,10 @@ pub use crate::types::_event_destination::EventDestinationBuilder;
 
 pub use crate::types::_registration_version_status_history::RegistrationVersionStatusHistoryBuilder;
 
+pub use crate::types::_rcs_message_content::RcsMessageContentBuilder;
+
+pub use crate::types::_rcs_fallback_configuration::RcsFallbackConfigurationBuilder;
+
 pub use crate::types::_validation_exception_field::ValidationExceptionFieldBuilder;
 
 pub use crate::types::_tag::TagBuilder;
@@ -121,6 +125,14 @@ pub use crate::types::_registration_section_display_hints::RegistrationSectionDi
 
 pub use crate::types::_registration_type_display_hints::RegistrationTypeDisplayHintsBuilder;
 
+pub use crate::types::_rcs_text_message::RcsTextMessageBuilder;
+
+pub use crate::types::_rcs_file_message::RcsFileMessageBuilder;
+
+pub use crate::types::_rcs_standalone_card::RcsStandaloneCardBuilder;
+
+pub use crate::types::_rcs_carousel::RcsCarouselBuilder;
+
 pub use crate::types::_template_variable_metadata::TemplateVariableMetadataBuilder;
 
 pub use crate::types::_carrier_status_information::CarrierStatusInformationBuilder;
@@ -129,4 +141,24 @@ pub use crate::types::_supported_association::SupportedAssociationBuilder;
 
 pub use crate::types::_registration_denied_reason_information::RegistrationDeniedReasonInformationBuilder;
 
+pub use crate::types::_rcs_card_content::RcsCardContentBuilder;
+
+pub use crate::types::_rcs_reply_action::RcsReplyActionBuilder;
+
+pub use crate::types::_rcs_open_url_action::RcsOpenUrlActionBuilder;
+
+pub use crate::types::_rcs_dial_phone_action::RcsDialPhoneActionBuilder;
+
+pub use crate::types::_rcs_show_location_action::RcsShowLocationActionBuilder;
+
+pub use crate::types::_rcs_request_location_action::RcsRequestLocationActionBuilder;
+
+pub use crate::types::_rcs_create_calendar_event_action::RcsCreateCalendarEventActionBuilder;
+
 pub use crate::types::_select_option_description::SelectOptionDescriptionBuilder;
+
+pub use crate::types::_rcs_card_media::RcsCardMediaBuilder;
+
+pub use crate::types::_rcs_carousel_card_content::RcsCarouselCardContentBuilder;
+
+pub use crate::types::_rcs_carousel_card_media::RcsCarouselCardMediaBuilder;

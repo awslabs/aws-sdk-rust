@@ -569,7 +569,7 @@ impl ModifyCacheClusterFluentBuilder {
     }
     /// <p>If <code>true</code>, this parameter causes the modifications in this request and any pending modifications to be applied, asynchronously and as soon as possible, regardless of the <code>PreferredMaintenanceWindow</code> setting for the cluster.</p>
     /// <p>If <code>false</code>, changes to the cluster are applied on the next maintenance reboot, or the next failure reboot, whichever occurs first.</p><important>
-    /// <p>If you perform a <code>ModifyCacheCluster</code> before a pending modification is applied, the pending modification is replaced by the newer modification.</p>
+    /// <p>If you perform a <code>ModifyCacheCluster</code> before a pending modification is applied, the pending modification is replaced by the newer modification. However, a pending node-count increase on Memcached clusters cannot be superseded by a request to add fewer nodes. To change a pending node addition, first cancel it by setting <code>NumCacheNodes</code> equal to the current number of nodes in the cluster, then submit the new request. See the <code>NumCacheNodes</code> parameter for details on node scaling behavior.</p>
     /// </important>
     /// <p>Valid values: <code>true</code> | <code>false</code></p>
     /// <p>Default: <code>false</code></p>
@@ -579,7 +579,7 @@ impl ModifyCacheClusterFluentBuilder {
     }
     /// <p>If <code>true</code>, this parameter causes the modifications in this request and any pending modifications to be applied, asynchronously and as soon as possible, regardless of the <code>PreferredMaintenanceWindow</code> setting for the cluster.</p>
     /// <p>If <code>false</code>, changes to the cluster are applied on the next maintenance reboot, or the next failure reboot, whichever occurs first.</p><important>
-    /// <p>If you perform a <code>ModifyCacheCluster</code> before a pending modification is applied, the pending modification is replaced by the newer modification.</p>
+    /// <p>If you perform a <code>ModifyCacheCluster</code> before a pending modification is applied, the pending modification is replaced by the newer modification. However, a pending node-count increase on Memcached clusters cannot be superseded by a request to add fewer nodes. To change a pending node addition, first cancel it by setting <code>NumCacheNodes</code> equal to the current number of nodes in the cluster, then submit the new request. See the <code>NumCacheNodes</code> parameter for details on node scaling behavior.</p>
     /// </important>
     /// <p>Valid values: <code>true</code> | <code>false</code></p>
     /// <p>Default: <code>false</code></p>
@@ -589,7 +589,7 @@ impl ModifyCacheClusterFluentBuilder {
     }
     /// <p>If <code>true</code>, this parameter causes the modifications in this request and any pending modifications to be applied, asynchronously and as soon as possible, regardless of the <code>PreferredMaintenanceWindow</code> setting for the cluster.</p>
     /// <p>If <code>false</code>, changes to the cluster are applied on the next maintenance reboot, or the next failure reboot, whichever occurs first.</p><important>
-    /// <p>If you perform a <code>ModifyCacheCluster</code> before a pending modification is applied, the pending modification is replaced by the newer modification.</p>
+    /// <p>If you perform a <code>ModifyCacheCluster</code> before a pending modification is applied, the pending modification is replaced by the newer modification. However, a pending node-count increase on Memcached clusters cannot be superseded by a request to add fewer nodes. To change a pending node addition, first cancel it by setting <code>NumCacheNodes</code> equal to the current number of nodes in the cluster, then submit the new request. See the <code>NumCacheNodes</code> parameter for details on node scaling behavior.</p>
     /// </important>
     /// <p>Valid values: <code>true</code> | <code>false</code></p>
     /// <p>Default: <code>false</code></p>

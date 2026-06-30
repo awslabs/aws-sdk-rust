@@ -7,7 +7,9 @@ pub struct CreateHostedConfigurationVersionInput {
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>The configuration profile ID.</p>
     pub configuration_profile_id: ::std::option::Option<::std::string::String>,
-    /// <p>A description of the configuration.</p>
+    /// <p>A description of the configuration.</p><note>
+    /// <p>Due to HTTP limitations, this field only supports ASCII characters.</p>
+    /// </note>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The configuration data, as bytes.</p><note>
     /// <p>AppConfig accepts any type of data, including text formats like JSON or TOML, or binary formats like protocol buffers or compressed data.</p>
@@ -29,7 +31,9 @@ impl CreateHostedConfigurationVersionInput {
     pub fn configuration_profile_id(&self) -> ::std::option::Option<&str> {
         self.configuration_profile_id.as_deref()
     }
-    /// <p>A description of the configuration.</p>
+    /// <p>A description of the configuration.</p><note>
+    /// <p>Due to HTTP limitations, this field only supports ASCII characters.</p>
+    /// </note>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
@@ -115,17 +119,23 @@ impl CreateHostedConfigurationVersionInputBuilder {
     pub fn get_configuration_profile_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.configuration_profile_id
     }
-    /// <p>A description of the configuration.</p>
+    /// <p>A description of the configuration.</p><note>
+    /// <p>Due to HTTP limitations, this field only supports ASCII characters.</p>
+    /// </note>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A description of the configuration.</p>
+    /// <p>A description of the configuration.</p><note>
+    /// <p>Due to HTTP limitations, this field only supports ASCII characters.</p>
+    /// </note>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
-    /// <p>A description of the configuration.</p>
+    /// <p>A description of the configuration.</p><note>
+    /// <p>Due to HTTP limitations, this field only supports ASCII characters.</p>
+    /// </note>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }

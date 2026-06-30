@@ -33,6 +33,8 @@ pub enum Error {
     LimitExceededFault(crate::types::error::LimitExceededFault),
     /// <p>An input parameter that is required is missing.</p>
     MissingRequiredParameterException(crate::types::error::MissingRequiredParameterException),
+    /// <p>The operation could not be completed because the request conflicts with the current state of the alarm or its underlying scheduled query resource.</p>
+    ResourceConflict(crate::types::error::ResourceConflict),
     /// <p>The named resource does not exist.</p>
     ResourceNotFound(crate::types::error::ResourceNotFound),
     /// <p>The named resource does not exist.</p>
@@ -64,6 +66,7 @@ impl ::std::fmt::Display for Error {
             Error::LimitExceededException(inner) => inner.fmt(f),
             Error::LimitExceededFault(inner) => inner.fmt(f),
             Error::MissingRequiredParameterException(inner) => inner.fmt(f),
+            Error::ResourceConflict(inner) => inner.fmt(f),
             Error::ResourceNotFound(inner) => inner.fmt(f),
             Error::ResourceNotFoundException(inner) => inner.fmt(f),
             Error::Unhandled(_) => {
@@ -102,6 +105,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::LimitExceededException(inner) => inner.meta(),
             Self::LimitExceededFault(inner) => inner.meta(),
             Self::MissingRequiredParameterException(inner) => inner.meta(),
+            Self::ResourceConflict(inner) => inner.meta(),
             Self::ResourceNotFound(inner) => inner.meta(),
             Self::ResourceNotFoundException(inner) => inner.meta(),
             Self::Unhandled(inner) => &inner.meta,
@@ -183,6 +187,7 @@ where
 impl From<crate::operation::delete_alarms::DeleteAlarmsError> for Error {
     fn from(err: crate::operation::delete_alarms::DeleteAlarmsError) -> Self {
         match err {
+            crate::operation::delete_alarms::DeleteAlarmsError::ResourceConflict(inner) => Error::ResourceConflict(inner),
             crate::operation::delete_alarms::DeleteAlarmsError::ResourceNotFound(inner) => Error::ResourceNotFound(inner),
             crate::operation::delete_alarms::DeleteAlarmsError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -1102,6 +1107,29 @@ impl From<crate::operation::put_insight_rule::PutInsightRuleError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_log_alarm::PutLogAlarmError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_log_alarm::PutLogAlarmError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::put_log_alarm::PutLogAlarmError> for Error {
+    fn from(err: crate::operation::put_log_alarm::PutLogAlarmError) -> Self {
+        match err {
+            crate::operation::put_log_alarm::PutLogAlarmError::LimitExceededFault(inner) => Error::LimitExceededFault(inner),
+            crate::operation::put_log_alarm::PutLogAlarmError::ResourceConflict(inner) => Error::ResourceConflict(inner),
+            crate::operation::put_log_alarm::PutLogAlarmError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_managed_insight_rules::PutManagedInsightRulesError, R>>
     for Error
 where
@@ -1426,6 +1454,7 @@ impl ::std::error::Error for Error {
             Error::LimitExceededException(inner) => inner.source(),
             Error::LimitExceededFault(inner) => inner.source(),
             Error::MissingRequiredParameterException(inner) => inner.source(),
+            Error::ResourceConflict(inner) => inner.source(),
             Error::ResourceNotFound(inner) => inner.source(),
             Error::ResourceNotFoundException(inner) => inner.source(),
             Error::Unhandled(inner) => ::std::option::Option::Some(&*inner.source),
@@ -1450,6 +1479,7 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::LimitExceededException(e) => e.request_id(),
             Self::LimitExceededFault(e) => e.request_id(),
             Self::MissingRequiredParameterException(e) => e.request_id(),
+            Self::ResourceConflict(e) => e.request_id(),
             Self::ResourceNotFound(e) => e.request_id(),
             Self::ResourceNotFoundException(e) => e.request_id(),
             Self::Unhandled(e) => e.meta.request_id(),

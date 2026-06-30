@@ -796,6 +796,9 @@ pub mod test_connection;
 /// Types for the `UntagResource` operation.
 pub mod untag_resource;
 
+/// Types for the `UpdateAsset` operation.
+pub mod update_asset;
+
 /// Types for the `UpdateBlueprint` operation.
 pub mod update_blueprint;
 

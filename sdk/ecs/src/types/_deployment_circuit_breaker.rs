@@ -12,6 +12,10 @@ pub struct DeploymentCircuitBreaker {
     pub enable: bool,
     /// <p>Determines whether to configure Amazon ECS to roll back the service if a service deployment fails. If rollback is on, when a service deployment fails, the service is rolled back to the last deployment that completed successfully.</p>
     pub rollback: bool,
+    /// <p>Determines whether the deployment circuit breaker resets its failure count when a task reaches a healthy state. When set to <code>true</code>, a healthy task resets the failure count to <code>0</code>; when <code>false</code>, it doesn't.</p>
+    pub reset_on_healthy_task: ::std::option::Option<bool>,
+    /// <p>The threshold configuration that controls when the deployment circuit breaker triggers. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ThresholdConfiguration.html">ThresholdConfiguration</a>.</p>
+    pub threshold_configuration: ::std::option::Option<crate::types::ThresholdConfiguration>,
 }
 impl DeploymentCircuitBreaker {
     /// <p>Determines whether to use the deployment circuit breaker logic for the service.</p>
@@ -21,6 +25,14 @@ impl DeploymentCircuitBreaker {
     /// <p>Determines whether to configure Amazon ECS to roll back the service if a service deployment fails. If rollback is on, when a service deployment fails, the service is rolled back to the last deployment that completed successfully.</p>
     pub fn rollback(&self) -> bool {
         self.rollback
+    }
+    /// <p>Determines whether the deployment circuit breaker resets its failure count when a task reaches a healthy state. When set to <code>true</code>, a healthy task resets the failure count to <code>0</code>; when <code>false</code>, it doesn't.</p>
+    pub fn reset_on_healthy_task(&self) -> ::std::option::Option<bool> {
+        self.reset_on_healthy_task
+    }
+    /// <p>The threshold configuration that controls when the deployment circuit breaker triggers. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ThresholdConfiguration.html">ThresholdConfiguration</a>.</p>
+    pub fn threshold_configuration(&self) -> ::std::option::Option<&crate::types::ThresholdConfiguration> {
+        self.threshold_configuration.as_ref()
     }
 }
 impl DeploymentCircuitBreaker {
@@ -36,6 +48,8 @@ impl DeploymentCircuitBreaker {
 pub struct DeploymentCircuitBreakerBuilder {
     pub(crate) enable: ::std::option::Option<bool>,
     pub(crate) rollback: ::std::option::Option<bool>,
+    pub(crate) reset_on_healthy_task: ::std::option::Option<bool>,
+    pub(crate) threshold_configuration: ::std::option::Option<crate::types::ThresholdConfiguration>,
 }
 impl DeploymentCircuitBreakerBuilder {
     /// <p>Determines whether to use the deployment circuit breaker logic for the service.</p>
@@ -68,11 +82,41 @@ impl DeploymentCircuitBreakerBuilder {
     pub fn get_rollback(&self) -> &::std::option::Option<bool> {
         &self.rollback
     }
+    /// <p>Determines whether the deployment circuit breaker resets its failure count when a task reaches a healthy state. When set to <code>true</code>, a healthy task resets the failure count to <code>0</code>; when <code>false</code>, it doesn't.</p>
+    pub fn reset_on_healthy_task(mut self, input: bool) -> Self {
+        self.reset_on_healthy_task = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Determines whether the deployment circuit breaker resets its failure count when a task reaches a healthy state. When set to <code>true</code>, a healthy task resets the failure count to <code>0</code>; when <code>false</code>, it doesn't.</p>
+    pub fn set_reset_on_healthy_task(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.reset_on_healthy_task = input;
+        self
+    }
+    /// <p>Determines whether the deployment circuit breaker resets its failure count when a task reaches a healthy state. When set to <code>true</code>, a healthy task resets the failure count to <code>0</code>; when <code>false</code>, it doesn't.</p>
+    pub fn get_reset_on_healthy_task(&self) -> &::std::option::Option<bool> {
+        &self.reset_on_healthy_task
+    }
+    /// <p>The threshold configuration that controls when the deployment circuit breaker triggers. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ThresholdConfiguration.html">ThresholdConfiguration</a>.</p>
+    pub fn threshold_configuration(mut self, input: crate::types::ThresholdConfiguration) -> Self {
+        self.threshold_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The threshold configuration that controls when the deployment circuit breaker triggers. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ThresholdConfiguration.html">ThresholdConfiguration</a>.</p>
+    pub fn set_threshold_configuration(mut self, input: ::std::option::Option<crate::types::ThresholdConfiguration>) -> Self {
+        self.threshold_configuration = input;
+        self
+    }
+    /// <p>The threshold configuration that controls when the deployment circuit breaker triggers. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ThresholdConfiguration.html">ThresholdConfiguration</a>.</p>
+    pub fn get_threshold_configuration(&self) -> &::std::option::Option<crate::types::ThresholdConfiguration> {
+        &self.threshold_configuration
+    }
     /// Consumes the builder and constructs a [`DeploymentCircuitBreaker`](crate::types::DeploymentCircuitBreaker).
     pub fn build(self) -> crate::types::DeploymentCircuitBreaker {
         crate::types::DeploymentCircuitBreaker {
             enable: self.enable.unwrap_or_default(),
             rollback: self.rollback.unwrap_or_default(),
+            reset_on_healthy_task: self.reset_on_healthy_task,
+            threshold_configuration: self.threshold_configuration,
         }
     }
 }

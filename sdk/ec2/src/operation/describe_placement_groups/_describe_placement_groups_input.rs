@@ -27,7 +27,7 @@ pub struct DescribePlacementGroupsInput {
     /// <li>
     /// <p><code>state</code> - The state of the placement group (<code>pending</code> | <code>available</code> | <code>deleting</code> | <code>deleted</code>).</p></li>
     /// <li>
-    /// <p><code>strategy</code> - The strategy of the placement group (<code>cluster</code> | <code>spread</code> | <code>partition</code>).</p></li>
+    /// <p><code>strategy</code> - The strategy of the placement group (<code>cluster</code> | <code>spread</code> | <code>partition</code> | <code>precision-time</code>).</p></li>
     /// <li>
     /// <p><code>tag:<key></key></code> - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter value.</p></li>
     /// <li>
@@ -70,7 +70,7 @@ impl DescribePlacementGroupsInput {
     /// <li>
     /// <p><code>state</code> - The state of the placement group (<code>pending</code> | <code>available</code> | <code>deleting</code> | <code>deleted</code>).</p></li>
     /// <li>
-    /// <p><code>strategy</code> - The strategy of the placement group (<code>cluster</code> | <code>spread</code> | <code>partition</code>).</p></li>
+    /// <p><code>strategy</code> - The strategy of the placement group (<code>cluster</code> | <code>spread</code> | <code>partition</code> | <code>precision-time</code>).</p></li>
     /// <li>
     /// <p><code>tag:<key></key></code> - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter value.</p></li>
     /// <li>
@@ -189,7 +189,7 @@ impl DescribePlacementGroupsInputBuilder {
     /// <li>
     /// <p><code>state</code> - The state of the placement group (<code>pending</code> | <code>available</code> | <code>deleting</code> | <code>deleted</code>).</p></li>
     /// <li>
-    /// <p><code>strategy</code> - The strategy of the placement group (<code>cluster</code> | <code>spread</code> | <code>partition</code>).</p></li>
+    /// <p><code>strategy</code> - The strategy of the placement group (<code>cluster</code> | <code>spread</code> | <code>partition</code> | <code>precision-time</code>).</p></li>
     /// <li>
     /// <p><code>tag:<key></key></code> - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter value.</p></li>
     /// <li>
@@ -212,7 +212,7 @@ impl DescribePlacementGroupsInputBuilder {
     /// <li>
     /// <p><code>state</code> - The state of the placement group (<code>pending</code> | <code>available</code> | <code>deleting</code> | <code>deleted</code>).</p></li>
     /// <li>
-    /// <p><code>strategy</code> - The strategy of the placement group (<code>cluster</code> | <code>spread</code> | <code>partition</code>).</p></li>
+    /// <p><code>strategy</code> - The strategy of the placement group (<code>cluster</code> | <code>spread</code> | <code>partition</code> | <code>precision-time</code>).</p></li>
     /// <li>
     /// <p><code>tag:<key></key></code> - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter value.</p></li>
     /// <li>
@@ -233,7 +233,7 @@ impl DescribePlacementGroupsInputBuilder {
     /// <li>
     /// <p><code>state</code> - The state of the placement group (<code>pending</code> | <code>available</code> | <code>deleting</code> | <code>deleted</code>).</p></li>
     /// <li>
-    /// <p><code>strategy</code> - The strategy of the placement group (<code>cluster</code> | <code>spread</code> | <code>partition</code>).</p></li>
+    /// <p><code>strategy</code> - The strategy of the placement group (<code>cluster</code> | <code>spread</code> | <code>partition</code> | <code>precision-time</code>).</p></li>
     /// <li>
     /// <p><code>tag:<key></key></code> - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter value.</p></li>
     /// <li>

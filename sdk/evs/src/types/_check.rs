@@ -4,39 +4,79 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Check {
-    /// <p>The check type. Amazon EVS performs the following checks.</p>
+    /// <p>The check type. Amazon EVS performs the following checks:</p>
     /// <ul>
     /// <li>
-    /// <p><code>KEY_REUSE</code>: checks that the VCF license key is not used by another Amazon EVS environment. This check fails if a used license is added to the environment.</p></li>
+    /// <p><code>KEY_REUSE</code>: Verifies that the VCF license key is not used by another Amazon EVS environment.</p></li>
     /// <li>
-    /// <p><code>KEY_COVERAGE</code>: checks that your VCF license key allocates sufficient vCPU cores for all deployed hosts. The check fails when any assigned hosts in the EVS environment are not covered by license keys, or when any unassigned hosts cannot be covered by available vCPU cores in keys.</p></li>
+    /// <p><code>KEY_COVERAGE</code>: Verifies that the VCF license key allocates sufficient vCPU cores for all deployed hosts.</p></li>
     /// <li>
-    /// <p><code>REACHABILITY</code>: checks that the Amazon EVS control plane has a persistent connection to SDDC Manager. If Amazon EVS cannot reach the environment, this check fails.</p></li>
+    /// <p><code>REACHABILITY</code>: Verifies that the Amazon EVS control plane has a persistent connection to SDDC Manager.</p></li>
     /// <li>
-    /// <p><code>HOST_COUNT</code>: Checks that your environment has a minimum of 4 hosts.</p>
-    /// <p>If this check fails, you will need to add hosts so that your environment meets this minimum requirement. Amazon EVS only supports environments with 4-32 hosts.</p></li>
+    /// <p><code>HOST_COUNT</code>: Verifies that the environment meets the minimum host count.</p></li>
+    /// <li>
+    /// <p><code>VCENTER_REACHABILITY</code>: Verifies vCenter Server reachability through the vCenter connector.</p></li>
+    /// <li>
+    /// <p><code>VCENTER_VM_SYNC</code>: Verifies that the vCenter connector can synchronize VM inventory from vCenter Server.</p></li>
+    /// <li>
+    /// <p><code>VCENTER_VM_EVENT</code>: Verifies that the vCenter connector can receive VM lifecycle events from vCenter Server.</p></li>
+    /// <li>
+    /// <p><code>OPERATIONS_MANAGER_REACHABILITY</code>: Verifies Operations Manager reachability through the Operations Manager connector.</p></li>
+    /// <li>
+    /// <p><code>SDDC_MANAGER_REACHABILITY</code>: Verifies SDDC Manager reachability through the SDDC Manager connector.</p></li>
+    /// <li>
+    /// <p><code>SDDC_MANAGER_HOST_COUNT</code>: Verifies that the host count reported by SDDC Manager meets Amazon EVS minimum requirements.</p></li>
+    /// <li>
+    /// <p><code>SDDC_MANAGER_KEY_COVERAGE</code>: Verifies that the VCF license key configured in SDDC Manager covers all deployed hosts.</p></li>
+    /// <li>
+    /// <p><code>SDDC_MANAGER_KEY_REUSE</code>: Verifies that the VCF license key configured in SDDC Manager is not used by another Amazon EVS environment.</p></li>
+    /// <li>
+    /// <p><code>CONNECTOR_HEALTH</code>: Aggregate health across all connectors in the environment.</p></li>
     /// </ul>
     pub r#type: ::std::option::Option<crate::types::CheckType>,
+    /// <p>A unique ID for the check.</p>
+    pub id: ::std::option::Option<::std::string::String>,
     /// <p>The check result.</p>
     pub result: ::std::option::Option<crate::types::CheckResult>,
     /// <p>The time when environment health began to be impaired.</p>
     pub impaired_since: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl Check {
-    /// <p>The check type. Amazon EVS performs the following checks.</p>
+    /// <p>The check type. Amazon EVS performs the following checks:</p>
     /// <ul>
     /// <li>
-    /// <p><code>KEY_REUSE</code>: checks that the VCF license key is not used by another Amazon EVS environment. This check fails if a used license is added to the environment.</p></li>
+    /// <p><code>KEY_REUSE</code>: Verifies that the VCF license key is not used by another Amazon EVS environment.</p></li>
     /// <li>
-    /// <p><code>KEY_COVERAGE</code>: checks that your VCF license key allocates sufficient vCPU cores for all deployed hosts. The check fails when any assigned hosts in the EVS environment are not covered by license keys, or when any unassigned hosts cannot be covered by available vCPU cores in keys.</p></li>
+    /// <p><code>KEY_COVERAGE</code>: Verifies that the VCF license key allocates sufficient vCPU cores for all deployed hosts.</p></li>
     /// <li>
-    /// <p><code>REACHABILITY</code>: checks that the Amazon EVS control plane has a persistent connection to SDDC Manager. If Amazon EVS cannot reach the environment, this check fails.</p></li>
+    /// <p><code>REACHABILITY</code>: Verifies that the Amazon EVS control plane has a persistent connection to SDDC Manager.</p></li>
     /// <li>
-    /// <p><code>HOST_COUNT</code>: Checks that your environment has a minimum of 4 hosts.</p>
-    /// <p>If this check fails, you will need to add hosts so that your environment meets this minimum requirement. Amazon EVS only supports environments with 4-32 hosts.</p></li>
+    /// <p><code>HOST_COUNT</code>: Verifies that the environment meets the minimum host count.</p></li>
+    /// <li>
+    /// <p><code>VCENTER_REACHABILITY</code>: Verifies vCenter Server reachability through the vCenter connector.</p></li>
+    /// <li>
+    /// <p><code>VCENTER_VM_SYNC</code>: Verifies that the vCenter connector can synchronize VM inventory from vCenter Server.</p></li>
+    /// <li>
+    /// <p><code>VCENTER_VM_EVENT</code>: Verifies that the vCenter connector can receive VM lifecycle events from vCenter Server.</p></li>
+    /// <li>
+    /// <p><code>OPERATIONS_MANAGER_REACHABILITY</code>: Verifies Operations Manager reachability through the Operations Manager connector.</p></li>
+    /// <li>
+    /// <p><code>SDDC_MANAGER_REACHABILITY</code>: Verifies SDDC Manager reachability through the SDDC Manager connector.</p></li>
+    /// <li>
+    /// <p><code>SDDC_MANAGER_HOST_COUNT</code>: Verifies that the host count reported by SDDC Manager meets Amazon EVS minimum requirements.</p></li>
+    /// <li>
+    /// <p><code>SDDC_MANAGER_KEY_COVERAGE</code>: Verifies that the VCF license key configured in SDDC Manager covers all deployed hosts.</p></li>
+    /// <li>
+    /// <p><code>SDDC_MANAGER_KEY_REUSE</code>: Verifies that the VCF license key configured in SDDC Manager is not used by another Amazon EVS environment.</p></li>
+    /// <li>
+    /// <p><code>CONNECTOR_HEALTH</code>: Aggregate health across all connectors in the environment.</p></li>
     /// </ul>
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::CheckType> {
         self.r#type.as_ref()
+    }
+    /// <p>A unique ID for the check.</p>
+    pub fn id(&self) -> ::std::option::Option<&str> {
+        self.id.as_deref()
     }
     /// <p>The check result.</p>
     pub fn result(&self) -> ::std::option::Option<&crate::types::CheckResult> {
@@ -59,56 +99,122 @@ impl Check {
 #[non_exhaustive]
 pub struct CheckBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::CheckType>,
+    pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) result: ::std::option::Option<crate::types::CheckResult>,
     pub(crate) impaired_since: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl CheckBuilder {
-    /// <p>The check type. Amazon EVS performs the following checks.</p>
+    /// <p>The check type. Amazon EVS performs the following checks:</p>
     /// <ul>
     /// <li>
-    /// <p><code>KEY_REUSE</code>: checks that the VCF license key is not used by another Amazon EVS environment. This check fails if a used license is added to the environment.</p></li>
+    /// <p><code>KEY_REUSE</code>: Verifies that the VCF license key is not used by another Amazon EVS environment.</p></li>
     /// <li>
-    /// <p><code>KEY_COVERAGE</code>: checks that your VCF license key allocates sufficient vCPU cores for all deployed hosts. The check fails when any assigned hosts in the EVS environment are not covered by license keys, or when any unassigned hosts cannot be covered by available vCPU cores in keys.</p></li>
+    /// <p><code>KEY_COVERAGE</code>: Verifies that the VCF license key allocates sufficient vCPU cores for all deployed hosts.</p></li>
     /// <li>
-    /// <p><code>REACHABILITY</code>: checks that the Amazon EVS control plane has a persistent connection to SDDC Manager. If Amazon EVS cannot reach the environment, this check fails.</p></li>
+    /// <p><code>REACHABILITY</code>: Verifies that the Amazon EVS control plane has a persistent connection to SDDC Manager.</p></li>
     /// <li>
-    /// <p><code>HOST_COUNT</code>: Checks that your environment has a minimum of 4 hosts.</p>
-    /// <p>If this check fails, you will need to add hosts so that your environment meets this minimum requirement. Amazon EVS only supports environments with 4-32 hosts.</p></li>
+    /// <p><code>HOST_COUNT</code>: Verifies that the environment meets the minimum host count.</p></li>
+    /// <li>
+    /// <p><code>VCENTER_REACHABILITY</code>: Verifies vCenter Server reachability through the vCenter connector.</p></li>
+    /// <li>
+    /// <p><code>VCENTER_VM_SYNC</code>: Verifies that the vCenter connector can synchronize VM inventory from vCenter Server.</p></li>
+    /// <li>
+    /// <p><code>VCENTER_VM_EVENT</code>: Verifies that the vCenter connector can receive VM lifecycle events from vCenter Server.</p></li>
+    /// <li>
+    /// <p><code>OPERATIONS_MANAGER_REACHABILITY</code>: Verifies Operations Manager reachability through the Operations Manager connector.</p></li>
+    /// <li>
+    /// <p><code>SDDC_MANAGER_REACHABILITY</code>: Verifies SDDC Manager reachability through the SDDC Manager connector.</p></li>
+    /// <li>
+    /// <p><code>SDDC_MANAGER_HOST_COUNT</code>: Verifies that the host count reported by SDDC Manager meets Amazon EVS minimum requirements.</p></li>
+    /// <li>
+    /// <p><code>SDDC_MANAGER_KEY_COVERAGE</code>: Verifies that the VCF license key configured in SDDC Manager covers all deployed hosts.</p></li>
+    /// <li>
+    /// <p><code>SDDC_MANAGER_KEY_REUSE</code>: Verifies that the VCF license key configured in SDDC Manager is not used by another Amazon EVS environment.</p></li>
+    /// <li>
+    /// <p><code>CONNECTOR_HEALTH</code>: Aggregate health across all connectors in the environment.</p></li>
     /// </ul>
     pub fn r#type(mut self, input: crate::types::CheckType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The check type. Amazon EVS performs the following checks.</p>
+    /// <p>The check type. Amazon EVS performs the following checks:</p>
     /// <ul>
     /// <li>
-    /// <p><code>KEY_REUSE</code>: checks that the VCF license key is not used by another Amazon EVS environment. This check fails if a used license is added to the environment.</p></li>
+    /// <p><code>KEY_REUSE</code>: Verifies that the VCF license key is not used by another Amazon EVS environment.</p></li>
     /// <li>
-    /// <p><code>KEY_COVERAGE</code>: checks that your VCF license key allocates sufficient vCPU cores for all deployed hosts. The check fails when any assigned hosts in the EVS environment are not covered by license keys, or when any unassigned hosts cannot be covered by available vCPU cores in keys.</p></li>
+    /// <p><code>KEY_COVERAGE</code>: Verifies that the VCF license key allocates sufficient vCPU cores for all deployed hosts.</p></li>
     /// <li>
-    /// <p><code>REACHABILITY</code>: checks that the Amazon EVS control plane has a persistent connection to SDDC Manager. If Amazon EVS cannot reach the environment, this check fails.</p></li>
+    /// <p><code>REACHABILITY</code>: Verifies that the Amazon EVS control plane has a persistent connection to SDDC Manager.</p></li>
     /// <li>
-    /// <p><code>HOST_COUNT</code>: Checks that your environment has a minimum of 4 hosts.</p>
-    /// <p>If this check fails, you will need to add hosts so that your environment meets this minimum requirement. Amazon EVS only supports environments with 4-32 hosts.</p></li>
+    /// <p><code>HOST_COUNT</code>: Verifies that the environment meets the minimum host count.</p></li>
+    /// <li>
+    /// <p><code>VCENTER_REACHABILITY</code>: Verifies vCenter Server reachability through the vCenter connector.</p></li>
+    /// <li>
+    /// <p><code>VCENTER_VM_SYNC</code>: Verifies that the vCenter connector can synchronize VM inventory from vCenter Server.</p></li>
+    /// <li>
+    /// <p><code>VCENTER_VM_EVENT</code>: Verifies that the vCenter connector can receive VM lifecycle events from vCenter Server.</p></li>
+    /// <li>
+    /// <p><code>OPERATIONS_MANAGER_REACHABILITY</code>: Verifies Operations Manager reachability through the Operations Manager connector.</p></li>
+    /// <li>
+    /// <p><code>SDDC_MANAGER_REACHABILITY</code>: Verifies SDDC Manager reachability through the SDDC Manager connector.</p></li>
+    /// <li>
+    /// <p><code>SDDC_MANAGER_HOST_COUNT</code>: Verifies that the host count reported by SDDC Manager meets Amazon EVS minimum requirements.</p></li>
+    /// <li>
+    /// <p><code>SDDC_MANAGER_KEY_COVERAGE</code>: Verifies that the VCF license key configured in SDDC Manager covers all deployed hosts.</p></li>
+    /// <li>
+    /// <p><code>SDDC_MANAGER_KEY_REUSE</code>: Verifies that the VCF license key configured in SDDC Manager is not used by another Amazon EVS environment.</p></li>
+    /// <li>
+    /// <p><code>CONNECTOR_HEALTH</code>: Aggregate health across all connectors in the environment.</p></li>
     /// </ul>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::CheckType>) -> Self {
         self.r#type = input;
         self
     }
-    /// <p>The check type. Amazon EVS performs the following checks.</p>
+    /// <p>The check type. Amazon EVS performs the following checks:</p>
     /// <ul>
     /// <li>
-    /// <p><code>KEY_REUSE</code>: checks that the VCF license key is not used by another Amazon EVS environment. This check fails if a used license is added to the environment.</p></li>
+    /// <p><code>KEY_REUSE</code>: Verifies that the VCF license key is not used by another Amazon EVS environment.</p></li>
     /// <li>
-    /// <p><code>KEY_COVERAGE</code>: checks that your VCF license key allocates sufficient vCPU cores for all deployed hosts. The check fails when any assigned hosts in the EVS environment are not covered by license keys, or when any unassigned hosts cannot be covered by available vCPU cores in keys.</p></li>
+    /// <p><code>KEY_COVERAGE</code>: Verifies that the VCF license key allocates sufficient vCPU cores for all deployed hosts.</p></li>
     /// <li>
-    /// <p><code>REACHABILITY</code>: checks that the Amazon EVS control plane has a persistent connection to SDDC Manager. If Amazon EVS cannot reach the environment, this check fails.</p></li>
+    /// <p><code>REACHABILITY</code>: Verifies that the Amazon EVS control plane has a persistent connection to SDDC Manager.</p></li>
     /// <li>
-    /// <p><code>HOST_COUNT</code>: Checks that your environment has a minimum of 4 hosts.</p>
-    /// <p>If this check fails, you will need to add hosts so that your environment meets this minimum requirement. Amazon EVS only supports environments with 4-32 hosts.</p></li>
+    /// <p><code>HOST_COUNT</code>: Verifies that the environment meets the minimum host count.</p></li>
+    /// <li>
+    /// <p><code>VCENTER_REACHABILITY</code>: Verifies vCenter Server reachability through the vCenter connector.</p></li>
+    /// <li>
+    /// <p><code>VCENTER_VM_SYNC</code>: Verifies that the vCenter connector can synchronize VM inventory from vCenter Server.</p></li>
+    /// <li>
+    /// <p><code>VCENTER_VM_EVENT</code>: Verifies that the vCenter connector can receive VM lifecycle events from vCenter Server.</p></li>
+    /// <li>
+    /// <p><code>OPERATIONS_MANAGER_REACHABILITY</code>: Verifies Operations Manager reachability through the Operations Manager connector.</p></li>
+    /// <li>
+    /// <p><code>SDDC_MANAGER_REACHABILITY</code>: Verifies SDDC Manager reachability through the SDDC Manager connector.</p></li>
+    /// <li>
+    /// <p><code>SDDC_MANAGER_HOST_COUNT</code>: Verifies that the host count reported by SDDC Manager meets Amazon EVS minimum requirements.</p></li>
+    /// <li>
+    /// <p><code>SDDC_MANAGER_KEY_COVERAGE</code>: Verifies that the VCF license key configured in SDDC Manager covers all deployed hosts.</p></li>
+    /// <li>
+    /// <p><code>SDDC_MANAGER_KEY_REUSE</code>: Verifies that the VCF license key configured in SDDC Manager is not used by another Amazon EVS environment.</p></li>
+    /// <li>
+    /// <p><code>CONNECTOR_HEALTH</code>: Aggregate health across all connectors in the environment.</p></li>
     /// </ul>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::CheckType> {
         &self.r#type
+    }
+    /// <p>A unique ID for the check.</p>
+    pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>A unique ID for the check.</p>
+    pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.id = input;
+        self
+    }
+    /// <p>A unique ID for the check.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// <p>The check result.</p>
     pub fn result(mut self, input: crate::types::CheckResult) -> Self {
@@ -142,6 +248,7 @@ impl CheckBuilder {
     pub fn build(self) -> crate::types::Check {
         crate::types::Check {
             r#type: self.r#type,
+            id: self.id,
             result: self.result,
             impaired_since: self.impaired_since,
         }

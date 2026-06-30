@@ -693,6 +693,8 @@ mod test_connection;
 
 mod untag_resource;
 
+mod update_asset;
+
 mod update_blueprint;
 
 mod update_catalog;

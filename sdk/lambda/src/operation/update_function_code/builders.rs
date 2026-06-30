@@ -214,6 +214,20 @@ impl UpdateFunctionCodeFluentBuilder {
     pub fn get_s3_object_version(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_s3_object_version()
     }
+    /// <p>Specifies how the deployment package is stored. Use <code>COPY</code> (default) to upload a copy of your deployment package to Lambda. Use <code>REFERENCE</code> to have Lambda reference the deployment package from the specified Amazon S3 bucket.</p>
+    pub fn s3_object_storage_mode(mut self, input: crate::types::S3ObjectStorageMode) -> Self {
+        self.inner = self.inner.s3_object_storage_mode(input);
+        self
+    }
+    /// <p>Specifies how the deployment package is stored. Use <code>COPY</code> (default) to upload a copy of your deployment package to Lambda. Use <code>REFERENCE</code> to have Lambda reference the deployment package from the specified Amazon S3 bucket.</p>
+    pub fn set_s3_object_storage_mode(mut self, input: ::std::option::Option<crate::types::S3ObjectStorageMode>) -> Self {
+        self.inner = self.inner.set_s3_object_storage_mode(input);
+        self
+    }
+    /// <p>Specifies how the deployment package is stored. Use <code>COPY</code> (default) to upload a copy of your deployment package to Lambda. Use <code>REFERENCE</code> to have Lambda reference the deployment package from the specified Amazon S3 bucket.</p>
+    pub fn get_s3_object_storage_mode(&self) -> &::std::option::Option<crate::types::S3ObjectStorageMode> {
+        self.inner.get_s3_object_storage_mode()
+    }
     /// <p>URI of a container image in the Amazon ECR registry. Do not use for a function defined with a .zip file archive.</p>
     pub fn image_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.image_uri(input.into());

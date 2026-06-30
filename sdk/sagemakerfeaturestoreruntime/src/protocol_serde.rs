@@ -25,9 +25,13 @@ pub fn parse_http_error_metadata(
 
 pub(crate) mod shape_batch_get_record;
 
+pub(crate) mod shape_batch_write_record;
+
 pub(crate) mod shape_delete_record;
 
 pub(crate) mod shape_get_record;
+
+pub(crate) mod shape_list_records;
 
 pub(crate) mod shape_put_record;
 
@@ -43,7 +47,11 @@ pub(crate) mod shape_access_forbidden;
 
 pub(crate) mod shape_batch_get_record_input;
 
+pub(crate) mod shape_batch_write_record_input;
+
 pub(crate) mod shape_internal_failure;
+
+pub(crate) mod shape_list_records_input;
 
 pub(crate) mod shape_put_record_input;
 
@@ -59,11 +67,19 @@ pub(crate) mod shape_batch_get_record_identifier;
 
 pub(crate) mod shape_batch_get_record_result_details;
 
+pub(crate) mod shape_batch_write_record_entry;
+
+pub(crate) mod shape_batch_write_record_errors;
+
 pub(crate) mod shape_feature_value;
 
 pub(crate) mod shape_record;
 
+pub(crate) mod shape_record_identifier_list;
+
 pub(crate) mod shape_ttl_duration;
+
+pub(crate) mod shape_unprocessed_batch_write_record_entries;
 
 pub(crate) mod shape_unprocessed_identifiers;
 
@@ -71,8 +87,12 @@ pub(crate) mod shape_batch_get_record_error;
 
 pub(crate) mod shape_batch_get_record_result_detail;
 
+pub(crate) mod shape_batch_write_record_error;
+
 pub(crate) mod shape_feature_names;
 
 pub(crate) mod shape_record_identifiers;
+
+pub(crate) mod shape_target_stores;
 
 pub(crate) mod shape_value_as_string_list;

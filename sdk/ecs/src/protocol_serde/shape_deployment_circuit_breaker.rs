@@ -9,6 +9,15 @@ pub fn ser_deployment_circuit_breaker(
     {
         object.key("rollback").boolean(input.rollback);
     }
+    if let Some(var_1) = &input.reset_on_healthy_task {
+        object.key("resetOnHealthyTask").boolean(*var_1);
+    }
+    if let Some(var_2) = &input.threshold_configuration {
+        #[allow(unused_mut)]
+        let mut object_3 = object.key("thresholdConfiguration").start_object();
+        crate::protocol_serde::shape_threshold_configuration::ser_threshold_configuration(&mut object_3, var_2)?;
+        object_3.finish();
+    }
     Ok(())
 }
 
@@ -39,6 +48,14 @@ where
                         }
                         "rollback" => {
                             builder = builder.set_rollback(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
+                        "resetOnHealthyTask" => {
+                            builder = builder.set_reset_on_healthy_task(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
+                        "thresholdConfiguration" => {
+                            builder = builder.set_threshold_configuration(
+                                crate::protocol_serde::shape_threshold_configuration::de_threshold_configuration(tokens, _value, depth + 1)?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

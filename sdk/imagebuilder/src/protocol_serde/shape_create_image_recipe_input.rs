@@ -19,57 +19,66 @@ pub fn ser_create_image_recipe_input_input(
         }
         object_4.finish();
     }
-    if let Some(var_7) = &input.block_device_mappings {
-        let mut array_8 = object.key("blockDeviceMappings").start_array();
+    if let Some(var_7) = &input.ami_watermarks {
+        let mut array_8 = object.key("amiWatermarks").start_array();
         for item_9 in var_7 {
             {
-                #[allow(unused_mut)]
-                let mut object_10 = array_8.value().start_object();
-                crate::protocol_serde::shape_instance_block_device_mapping::ser_instance_block_device_mapping(&mut object_10, item_9)?;
-                object_10.finish();
+                array_8.value().string(item_9.as_str());
             }
         }
         array_8.finish();
     }
-    if let Some(var_11) = &input.client_token {
-        object.key("clientToken").string(var_11.as_str());
-    }
-    if let Some(var_12) = &input.components {
-        let mut array_13 = object.key("components").start_array();
-        for item_14 in var_12 {
+    if let Some(var_10) = &input.block_device_mappings {
+        let mut array_11 = object.key("blockDeviceMappings").start_array();
+        for item_12 in var_10 {
             {
                 #[allow(unused_mut)]
-                let mut object_15 = array_13.value().start_object();
-                crate::protocol_serde::shape_component_configuration::ser_component_configuration(&mut object_15, item_14)?;
-                object_15.finish();
+                let mut object_13 = array_11.value().start_object();
+                crate::protocol_serde::shape_instance_block_device_mapping::ser_instance_block_device_mapping(&mut object_13, item_12)?;
+                object_13.finish();
             }
         }
-        array_13.finish();
+        array_11.finish();
     }
-    if let Some(var_16) = &input.description {
-        object.key("description").string(var_16.as_str());
+    if let Some(var_14) = &input.client_token {
+        object.key("clientToken").string(var_14.as_str());
     }
-    if let Some(var_17) = &input.name {
-        object.key("name").string(var_17.as_str());
-    }
-    if let Some(var_18) = &input.parent_image {
-        object.key("parentImage").string(var_18.as_str());
-    }
-    if let Some(var_19) = &input.semantic_version {
-        object.key("semanticVersion").string(var_19.as_str());
-    }
-    if let Some(var_20) = &input.tags {
-        #[allow(unused_mut)]
-        let mut object_21 = object.key("tags").start_object();
-        for (key_22, value_23) in var_20 {
+    if let Some(var_15) = &input.components {
+        let mut array_16 = object.key("components").start_array();
+        for item_17 in var_15 {
             {
-                object_21.key(key_22.as_str()).string(value_23.as_str());
+                #[allow(unused_mut)]
+                let mut object_18 = array_16.value().start_object();
+                crate::protocol_serde::shape_component_configuration::ser_component_configuration(&mut object_18, item_17)?;
+                object_18.finish();
             }
         }
-        object_21.finish();
+        array_16.finish();
     }
-    if let Some(var_24) = &input.working_directory {
-        object.key("workingDirectory").string(var_24.as_str());
+    if let Some(var_19) = &input.description {
+        object.key("description").string(var_19.as_str());
+    }
+    if let Some(var_20) = &input.name {
+        object.key("name").string(var_20.as_str());
+    }
+    if let Some(var_21) = &input.parent_image {
+        object.key("parentImage").string(var_21.as_str());
+    }
+    if let Some(var_22) = &input.semantic_version {
+        object.key("semanticVersion").string(var_22.as_str());
+    }
+    if let Some(var_23) = &input.tags {
+        #[allow(unused_mut)]
+        let mut object_24 = object.key("tags").start_object();
+        for (key_25, value_26) in var_23 {
+            {
+                object_24.key(key_25.as_str()).string(value_26.as_str());
+            }
+        }
+        object_24.finish();
+    }
+    if let Some(var_27) = &input.working_directory {
+        object.key("workingDirectory").string(var_27.as_str());
     }
     Ok(())
 }

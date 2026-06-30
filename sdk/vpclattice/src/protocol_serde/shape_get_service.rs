@@ -189,6 +189,13 @@ pub(crate) fn de_get_service(
                             .transpose()?,
                     );
                 }
+                "idleTimeoutSeconds" => {
+                    builder = builder.set_idle_timeout_seconds(
+                        ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                            .map(i32::try_from)
+                            .transpose()?,
+                    );
+                }
                 "lastUpdatedAt" => {
                     builder = builder.set_last_updated_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                         tokens.next(),

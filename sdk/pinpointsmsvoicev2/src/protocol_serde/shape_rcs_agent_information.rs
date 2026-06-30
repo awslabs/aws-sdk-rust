@@ -87,6 +87,32 @@ where
                                     .transpose()?,
                             );
                         }
+                        "TwoWayMediaS3BucketName" => {
+                            builder = builder.set_two_way_media_s3_bucket_name(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "TwoWayMediaS3KeyPrefix" => {
+                            builder = builder.set_two_way_media_s3_key_prefix(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "TwoWayMediaS3Role" => {
+                            builder = builder.set_two_way_media_s3_role(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "TwoWayRcsEventsEnabled" => {
+                            builder = builder.set_two_way_rcs_events_enabled(
+                                crate::protocol_serde::shape_rcs_event_type_list::de_rcs_event_type_list(tokens, _value, depth + 1)?,
+                            );
+                        }
                         "TestingAgent" => {
                             builder = builder.set_testing_agent(
                                 crate::protocol_serde::shape_testing_agent_information::de_testing_agent_information(tokens, _value, depth + 1)?,

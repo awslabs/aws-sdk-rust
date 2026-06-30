@@ -19,6 +19,8 @@ pub struct CreatePlacementGroupInput {
     pub linked_group_id: ::std::option::Option<::std::string::String>,
     /// <p>Reserved for internal use.</p>
     pub operator: ::std::option::Option<crate::types::OperatorRequest>,
+    /// <p>The ID of a parent placement group. Valid only when <b>Strategy</b> is set to <code>cluster</code>.</p>
+    pub parent_group_id: ::std::option::Option<::std::string::String>,
     /// <p>Checks whether you have the required permissions for the operation, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
     /// <p>A name for the placement group. Must be unique within the scope of your account for the Region.</p>
@@ -56,6 +58,10 @@ impl CreatePlacementGroupInput {
     pub fn operator(&self) -> ::std::option::Option<&crate::types::OperatorRequest> {
         self.operator.as_ref()
     }
+    /// <p>The ID of a parent placement group. Valid only when <b>Strategy</b> is set to <code>cluster</code>.</p>
+    pub fn parent_group_id(&self) -> ::std::option::Option<&str> {
+        self.parent_group_id.as_deref()
+    }
     /// <p>Checks whether you have the required permissions for the operation, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
         self.dry_run
@@ -86,6 +92,7 @@ pub struct CreatePlacementGroupInputBuilder {
     pub(crate) spread_level: ::std::option::Option<crate::types::SpreadLevel>,
     pub(crate) linked_group_id: ::std::option::Option<::std::string::String>,
     pub(crate) operator: ::std::option::Option<crate::types::OperatorRequest>,
+    pub(crate) parent_group_id: ::std::option::Option<::std::string::String>,
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) group_name: ::std::option::Option<::std::string::String>,
     pub(crate) strategy: ::std::option::Option<crate::types::PlacementStrategy>,
@@ -185,6 +192,20 @@ impl CreatePlacementGroupInputBuilder {
     pub fn get_operator(&self) -> &::std::option::Option<crate::types::OperatorRequest> {
         &self.operator
     }
+    /// <p>The ID of a parent placement group. Valid only when <b>Strategy</b> is set to <code>cluster</code>.</p>
+    pub fn parent_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.parent_group_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of a parent placement group. Valid only when <b>Strategy</b> is set to <code>cluster</code>.</p>
+    pub fn set_parent_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.parent_group_id = input;
+        self
+    }
+    /// <p>The ID of a parent placement group. Valid only when <b>Strategy</b> is set to <code>cluster</code>.</p>
+    pub fn get_parent_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.parent_group_id
+    }
     /// <p>Checks whether you have the required permissions for the operation, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.dry_run = ::std::option::Option::Some(input);
@@ -241,6 +262,7 @@ impl CreatePlacementGroupInputBuilder {
             spread_level: self.spread_level,
             linked_group_id: self.linked_group_id,
             operator: self.operator,
+            parent_group_id: self.parent_group_id,
             dry_run: self.dry_run,
             group_name: self.group_name,
             strategy: self.strategy,

@@ -282,6 +282,18 @@ pub(crate) fn service_volume_configuration_correct_errors(
     builder
 }
 
+pub(crate) fn threshold_configuration_correct_errors(
+    mut builder: crate::types::builders::ThresholdConfigurationBuilder,
+) -> crate::types::builders::ThresholdConfigurationBuilder {
+    if builder.r#type.is_none() {
+        builder.r#type = "no value was set".parse::<crate::types::ThresholdType>().ok()
+    }
+    if builder.value.is_none() {
+        builder.value = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn vpc_lattice_configuration_correct_errors(
     mut builder: crate::types::builders::VpcLatticeConfigurationBuilder,
 ) -> crate::types::builders::VpcLatticeConfigurationBuilder {

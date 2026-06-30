@@ -172,6 +172,27 @@ pub(crate) fn managed_rule_state_correct_errors(
     builder
 }
 
+pub(crate) fn scheduled_query_configuration_correct_errors(
+    mut builder: crate::types::builders::ScheduledQueryConfigurationBuilder,
+) -> crate::types::builders::ScheduledQueryConfigurationBuilder {
+    if builder.query_string.is_none() {
+        builder.query_string = Some(Default::default())
+    }
+    if builder.scheduled_query_role_arn.is_none() {
+        builder.scheduled_query_role_arn = Some(Default::default())
+    }
+    if builder.schedule_configuration.is_none() {
+        builder.schedule_configuration = {
+            let builder = crate::types::builders::ScheduleConfigurationBuilder::default();
+            Some(crate::serde_util::schedule_configuration_correct_errors(builder).build())
+        }
+    }
+    if builder.aggregation_expression.is_none() {
+        builder.aggregation_expression = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn alarm_prom_ql_criteria_correct_errors(
     mut builder: crate::types::builders::AlarmPromQlCriteriaBuilder,
 ) -> crate::types::builders::AlarmPromQlCriteriaBuilder {
@@ -220,6 +241,15 @@ pub(crate) fn metric_stream_statistics_metric_correct_errors(
     }
     if builder.metric_name.is_none() {
         builder.metric_name = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn schedule_configuration_correct_errors(
+    mut builder: crate::types::builders::ScheduleConfigurationBuilder,
+) -> crate::types::builders::ScheduleConfigurationBuilder {
+    if builder.schedule_expression.is_none() {
+        builder.schedule_expression = Some(Default::default())
     }
     builder
 }

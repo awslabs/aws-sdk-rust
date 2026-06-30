@@ -14,5 +14,11 @@ pub fn ser_profile_outbound_request(
             .key("expirationTime")
             .date_time(var_1, ::aws_smithy_types::date_time::Format::DateTime)?;
     }
+    if let Some(var_2) = &input.event_trigger_context {
+        #[allow(unused_mut)]
+        let mut object_3 = object.key("eventTriggerContext").start_object();
+        crate::protocol_serde::shape_event_trigger_context::ser_event_trigger_context(&mut object_3, var_2)?;
+        object_3.finish();
+    }
     Ok(())
 }

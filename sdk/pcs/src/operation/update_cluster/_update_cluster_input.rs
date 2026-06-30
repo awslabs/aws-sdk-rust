@@ -9,6 +9,8 @@ pub struct UpdateClusterInput {
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>Additional options related to the Slurm scheduler.</p>
     pub slurm_configuration: ::std::option::Option<crate::types::UpdateClusterSlurmConfigurationRequest>,
+    /// <p>The scheduler configuration to update for the cluster. Use this to upgrade the Slurm version. For more information, see <a href="https://docs.aws.amazon.com/pcs/latest/userguide/working-with_clusters_upgrade.html">Upgrading the Slurm version on a cluster</a> in the <i>PCS User Guide</i>.</p>
+    pub scheduler: ::std::option::Option<crate::types::UpdateSchedulerRequest>,
 }
 impl UpdateClusterInput {
     /// <p>The name or ID of the cluster to update.</p>
@@ -22,6 +24,10 @@ impl UpdateClusterInput {
     /// <p>Additional options related to the Slurm scheduler.</p>
     pub fn slurm_configuration(&self) -> ::std::option::Option<&crate::types::UpdateClusterSlurmConfigurationRequest> {
         self.slurm_configuration.as_ref()
+    }
+    /// <p>The scheduler configuration to update for the cluster. Use this to upgrade the Slurm version. For more information, see <a href="https://docs.aws.amazon.com/pcs/latest/userguide/working-with_clusters_upgrade.html">Upgrading the Slurm version on a cluster</a> in the <i>PCS User Guide</i>.</p>
+    pub fn scheduler(&self) -> ::std::option::Option<&crate::types::UpdateSchedulerRequest> {
+        self.scheduler.as_ref()
     }
 }
 impl UpdateClusterInput {
@@ -38,6 +44,7 @@ pub struct UpdateClusterInputBuilder {
     pub(crate) cluster_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) slurm_configuration: ::std::option::Option<crate::types::UpdateClusterSlurmConfigurationRequest>,
+    pub(crate) scheduler: ::std::option::Option<crate::types::UpdateSchedulerRequest>,
 }
 impl UpdateClusterInputBuilder {
     /// <p>The name or ID of the cluster to update.</p>
@@ -83,6 +90,20 @@ impl UpdateClusterInputBuilder {
     pub fn get_slurm_configuration(&self) -> &::std::option::Option<crate::types::UpdateClusterSlurmConfigurationRequest> {
         &self.slurm_configuration
     }
+    /// <p>The scheduler configuration to update for the cluster. Use this to upgrade the Slurm version. For more information, see <a href="https://docs.aws.amazon.com/pcs/latest/userguide/working-with_clusters_upgrade.html">Upgrading the Slurm version on a cluster</a> in the <i>PCS User Guide</i>.</p>
+    pub fn scheduler(mut self, input: crate::types::UpdateSchedulerRequest) -> Self {
+        self.scheduler = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The scheduler configuration to update for the cluster. Use this to upgrade the Slurm version. For more information, see <a href="https://docs.aws.amazon.com/pcs/latest/userguide/working-with_clusters_upgrade.html">Upgrading the Slurm version on a cluster</a> in the <i>PCS User Guide</i>.</p>
+    pub fn set_scheduler(mut self, input: ::std::option::Option<crate::types::UpdateSchedulerRequest>) -> Self {
+        self.scheduler = input;
+        self
+    }
+    /// <p>The scheduler configuration to update for the cluster. Use this to upgrade the Slurm version. For more information, see <a href="https://docs.aws.amazon.com/pcs/latest/userguide/working-with_clusters_upgrade.html">Upgrading the Slurm version on a cluster</a> in the <i>PCS User Guide</i>.</p>
+    pub fn get_scheduler(&self) -> &::std::option::Option<crate::types::UpdateSchedulerRequest> {
+        &self.scheduler
+    }
     /// Consumes the builder and constructs a [`UpdateClusterInput`](crate::operation::update_cluster::UpdateClusterInput).
     pub fn build(
         self,
@@ -91,6 +112,7 @@ impl UpdateClusterInputBuilder {
             cluster_identifier: self.cluster_identifier,
             client_token: self.client_token,
             slurm_configuration: self.slurm_configuration,
+            scheduler: self.scheduler,
         })
     }
 }

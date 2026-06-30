@@ -21,6 +21,8 @@ pub struct StartDeploymentInput {
     pub kms_key_identifier: ::std::option::Option<::std::string::String>,
     /// <p>A map of dynamic extension parameter names to values to pass to associated extensions with <code>PRE_START_DEPLOYMENT</code> actions.</p>
     pub dynamic_extension_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p>The number of the latest deployment. Use this value to ensure that the deployment starts from the expected state and to prevent conflicting updates.</p>
+    pub latest_deployment_number: ::std::option::Option<i32>,
 }
 impl StartDeploymentInput {
     /// <p>The application ID.</p>
@@ -59,6 +61,10 @@ impl StartDeploymentInput {
     pub fn dynamic_extension_parameters(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.dynamic_extension_parameters.as_ref()
     }
+    /// <p>The number of the latest deployment. Use this value to ensure that the deployment starts from the expected state and to prevent conflicting updates.</p>
+    pub fn latest_deployment_number(&self) -> ::std::option::Option<i32> {
+        self.latest_deployment_number
+    }
 }
 impl ::std::fmt::Debug for StartDeploymentInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -72,6 +78,7 @@ impl ::std::fmt::Debug for StartDeploymentInput {
         formatter.field("tags", &self.tags);
         formatter.field("kms_key_identifier", &self.kms_key_identifier);
         formatter.field("dynamic_extension_parameters", &"*** Sensitive Data Redacted ***");
+        formatter.field("latest_deployment_number", &self.latest_deployment_number);
         formatter.finish()
     }
 }
@@ -95,6 +102,7 @@ pub struct StartDeploymentInputBuilder {
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) kms_key_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) dynamic_extension_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) latest_deployment_number: ::std::option::Option<i32>,
 }
 impl StartDeploymentInputBuilder {
     /// <p>The application ID.</p>
@@ -249,6 +257,20 @@ impl StartDeploymentInputBuilder {
     ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.dynamic_extension_parameters
     }
+    /// <p>The number of the latest deployment. Use this value to ensure that the deployment starts from the expected state and to prevent conflicting updates.</p>
+    pub fn latest_deployment_number(mut self, input: i32) -> Self {
+        self.latest_deployment_number = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The number of the latest deployment. Use this value to ensure that the deployment starts from the expected state and to prevent conflicting updates.</p>
+    pub fn set_latest_deployment_number(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.latest_deployment_number = input;
+        self
+    }
+    /// <p>The number of the latest deployment. Use this value to ensure that the deployment starts from the expected state and to prevent conflicting updates.</p>
+    pub fn get_latest_deployment_number(&self) -> &::std::option::Option<i32> {
+        &self.latest_deployment_number
+    }
     /// Consumes the builder and constructs a [`StartDeploymentInput`](crate::operation::start_deployment::StartDeploymentInput).
     pub fn build(
         self,
@@ -263,6 +285,7 @@ impl StartDeploymentInputBuilder {
             tags: self.tags,
             kms_key_identifier: self.kms_key_identifier,
             dynamic_extension_parameters: self.dynamic_extension_parameters,
+            latest_deployment_number: self.latest_deployment_number,
         })
     }
 }
@@ -278,6 +301,7 @@ impl ::std::fmt::Debug for StartDeploymentInputBuilder {
         formatter.field("tags", &self.tags);
         formatter.field("kms_key_identifier", &self.kms_key_identifier);
         formatter.field("dynamic_extension_parameters", &"*** Sensitive Data Redacted ***");
+        formatter.field("latest_deployment_number", &self.latest_deployment_number);
         formatter.finish()
     }
 }

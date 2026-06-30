@@ -14,6 +14,7 @@
 /// match placementstrategy {
 ///     PlacementStrategy::Cluster => { /* ... */ },
 ///     PlacementStrategy::Partition => { /* ... */ },
+///     PlacementStrategy::PrecisionTime => { /* ... */ },
 ///     PlacementStrategy::Spread => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -48,6 +49,8 @@ pub enum PlacementStrategy {
     #[allow(missing_docs)] // documentation missing in model
     Partition,
     #[allow(missing_docs)] // documentation missing in model
+    PrecisionTime,
+    #[allow(missing_docs)] // documentation missing in model
     Spread,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -58,6 +61,7 @@ impl ::std::convert::From<&str> for PlacementStrategy {
         match s {
             "cluster" => PlacementStrategy::Cluster,
             "partition" => PlacementStrategy::Partition,
+            "precision-time" => PlacementStrategy::PrecisionTime,
             "spread" => PlacementStrategy::Spread,
             other => PlacementStrategy::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -76,13 +80,14 @@ impl PlacementStrategy {
         match self {
             PlacementStrategy::Cluster => "cluster",
             PlacementStrategy::Partition => "partition",
+            PlacementStrategy::PrecisionTime => "precision-time",
             PlacementStrategy::Spread => "spread",
             PlacementStrategy::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["cluster", "partition", "spread"]
+        &["cluster", "partition", "precision-time", "spread"]
     }
 }
 impl ::std::convert::AsRef<str> for PlacementStrategy {
@@ -107,6 +112,7 @@ impl ::std::fmt::Display for PlacementStrategy {
         match self {
             PlacementStrategy::Cluster => write!(f, "cluster"),
             PlacementStrategy::Partition => write!(f, "partition"),
+            PlacementStrategy::PrecisionTime => write!(f, "precision-time"),
             PlacementStrategy::Spread => write!(f, "spread"),
             PlacementStrategy::Unknown(value) => write!(f, "{value}"),
         }

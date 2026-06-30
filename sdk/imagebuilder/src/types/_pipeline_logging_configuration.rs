@@ -4,17 +4,17 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PipelineLoggingConfiguration {
-    /// <p>The log group name that Image Builder uses for image creation. If not specified, the log group name defaults to <code>/aws/imagebuilder/image-name</code>.</p>
+    /// <p>Specifies the CloudWatch Logs log group name for image build logs. The log group name can contain alphanumeric characters, hyphens, underscores, forward slashes, and periods, up to 512 characters. Log group names not starting with <code>/aws/imagebuilder/</code> require an <code>executionRole</code> with CloudWatch Logs write permissions. If not specified, defaults to <code>/aws/imagebuilder/image-name</code>.</p>
     pub image_log_group_name: ::std::option::Option<::std::string::String>,
-    /// <p>The log group name that Image Builder uses for the log output during creation of a new pipeline. If not specified, the pipeline log group name defaults to <code>/aws/imagebuilder/pipeline/pipeline-name</code>.</p>
+    /// <p>Specifies the CloudWatch Logs log group name for pipeline execution logs. The log group name can contain alphanumeric characters, hyphens, underscores, forward slashes, and periods, up to 512 characters. Log group names not starting with <code>/aws/imagebuilder/</code> require an <code>executionRole</code> with CloudWatch Logs write permissions. If not specified, defaults to <code>/aws/imagebuilder/pipeline/pipeline-name</code>.</p>
     pub pipeline_log_group_name: ::std::option::Option<::std::string::String>,
 }
 impl PipelineLoggingConfiguration {
-    /// <p>The log group name that Image Builder uses for image creation. If not specified, the log group name defaults to <code>/aws/imagebuilder/image-name</code>.</p>
+    /// <p>Specifies the CloudWatch Logs log group name for image build logs. The log group name can contain alphanumeric characters, hyphens, underscores, forward slashes, and periods, up to 512 characters. Log group names not starting with <code>/aws/imagebuilder/</code> require an <code>executionRole</code> with CloudWatch Logs write permissions. If not specified, defaults to <code>/aws/imagebuilder/image-name</code>.</p>
     pub fn image_log_group_name(&self) -> ::std::option::Option<&str> {
         self.image_log_group_name.as_deref()
     }
-    /// <p>The log group name that Image Builder uses for the log output during creation of a new pipeline. If not specified, the pipeline log group name defaults to <code>/aws/imagebuilder/pipeline/pipeline-name</code>.</p>
+    /// <p>Specifies the CloudWatch Logs log group name for pipeline execution logs. The log group name can contain alphanumeric characters, hyphens, underscores, forward slashes, and periods, up to 512 characters. Log group names not starting with <code>/aws/imagebuilder/</code> require an <code>executionRole</code> with CloudWatch Logs write permissions. If not specified, defaults to <code>/aws/imagebuilder/pipeline/pipeline-name</code>.</p>
     pub fn pipeline_log_group_name(&self) -> ::std::option::Option<&str> {
         self.pipeline_log_group_name.as_deref()
     }
@@ -34,31 +34,31 @@ pub struct PipelineLoggingConfigurationBuilder {
     pub(crate) pipeline_log_group_name: ::std::option::Option<::std::string::String>,
 }
 impl PipelineLoggingConfigurationBuilder {
-    /// <p>The log group name that Image Builder uses for image creation. If not specified, the log group name defaults to <code>/aws/imagebuilder/image-name</code>.</p>
+    /// <p>Specifies the CloudWatch Logs log group name for image build logs. The log group name can contain alphanumeric characters, hyphens, underscores, forward slashes, and periods, up to 512 characters. Log group names not starting with <code>/aws/imagebuilder/</code> require an <code>executionRole</code> with CloudWatch Logs write permissions. If not specified, defaults to <code>/aws/imagebuilder/image-name</code>.</p>
     pub fn image_log_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_log_group_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The log group name that Image Builder uses for image creation. If not specified, the log group name defaults to <code>/aws/imagebuilder/image-name</code>.</p>
+    /// <p>Specifies the CloudWatch Logs log group name for image build logs. The log group name can contain alphanumeric characters, hyphens, underscores, forward slashes, and periods, up to 512 characters. Log group names not starting with <code>/aws/imagebuilder/</code> require an <code>executionRole</code> with CloudWatch Logs write permissions. If not specified, defaults to <code>/aws/imagebuilder/image-name</code>.</p>
     pub fn set_image_log_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.image_log_group_name = input;
         self
     }
-    /// <p>The log group name that Image Builder uses for image creation. If not specified, the log group name defaults to <code>/aws/imagebuilder/image-name</code>.</p>
+    /// <p>Specifies the CloudWatch Logs log group name for image build logs. The log group name can contain alphanumeric characters, hyphens, underscores, forward slashes, and periods, up to 512 characters. Log group names not starting with <code>/aws/imagebuilder/</code> require an <code>executionRole</code> with CloudWatch Logs write permissions. If not specified, defaults to <code>/aws/imagebuilder/image-name</code>.</p>
     pub fn get_image_log_group_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.image_log_group_name
     }
-    /// <p>The log group name that Image Builder uses for the log output during creation of a new pipeline. If not specified, the pipeline log group name defaults to <code>/aws/imagebuilder/pipeline/pipeline-name</code>.</p>
+    /// <p>Specifies the CloudWatch Logs log group name for pipeline execution logs. The log group name can contain alphanumeric characters, hyphens, underscores, forward slashes, and periods, up to 512 characters. Log group names not starting with <code>/aws/imagebuilder/</code> require an <code>executionRole</code> with CloudWatch Logs write permissions. If not specified, defaults to <code>/aws/imagebuilder/pipeline/pipeline-name</code>.</p>
     pub fn pipeline_log_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pipeline_log_group_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The log group name that Image Builder uses for the log output during creation of a new pipeline. If not specified, the pipeline log group name defaults to <code>/aws/imagebuilder/pipeline/pipeline-name</code>.</p>
+    /// <p>Specifies the CloudWatch Logs log group name for pipeline execution logs. The log group name can contain alphanumeric characters, hyphens, underscores, forward slashes, and periods, up to 512 characters. Log group names not starting with <code>/aws/imagebuilder/</code> require an <code>executionRole</code> with CloudWatch Logs write permissions. If not specified, defaults to <code>/aws/imagebuilder/pipeline/pipeline-name</code>.</p>
     pub fn set_pipeline_log_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pipeline_log_group_name = input;
         self
     }
-    /// <p>The log group name that Image Builder uses for the log output during creation of a new pipeline. If not specified, the pipeline log group name defaults to <code>/aws/imagebuilder/pipeline/pipeline-name</code>.</p>
+    /// <p>Specifies the CloudWatch Logs log group name for pipeline execution logs. The log group name can contain alphanumeric characters, hyphens, underscores, forward slashes, and periods, up to 512 characters. Log group names not starting with <code>/aws/imagebuilder/</code> require an <code>executionRole</code> with CloudWatch Logs write permissions. If not specified, defaults to <code>/aws/imagebuilder/pipeline/pipeline-name</code>.</p>
     pub fn get_pipeline_log_group_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.pipeline_log_group_name
     }

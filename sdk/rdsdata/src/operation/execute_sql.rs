@@ -258,7 +258,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ExecuteSqlEnd
 pub enum ExecuteSqlError {
     /// <p>You don't have sufficient access to perform this action.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
-    /// <p>There is an error in the call or in a SQL statement. (This error only appears in calls from Aurora Serverless v1 databases.)</p>
+    /// <p>There is an error in the call or in a SQL statement. This exception is deprecated.</p>
     BadRequestException(crate::types::error::BadRequestException),
     /// <p>There are insufficient privileges to make the call.</p>
     ForbiddenException(crate::types::error::ForbiddenException),

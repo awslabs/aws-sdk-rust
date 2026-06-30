@@ -216,4 +216,18 @@ impl CreateServiceFluentBuilder {
     pub fn get_auth_type(&self) -> &::std::option::Option<crate::types::AuthType> {
         self.inner.get_auth_type()
     }
+    /// <p>The amount of time, in seconds, that a connection can remain idle (no data sent) before VPC Lattice closes it. The valid range is 60 to 600 seconds. If you don't specify a value, the default is 60 seconds. This setting does not change the maximum connection duration of 10 minutes; connections are still closed when they reach that limit.</p>
+    pub fn idle_timeout_seconds(mut self, input: i32) -> Self {
+        self.inner = self.inner.idle_timeout_seconds(input);
+        self
+    }
+    /// <p>The amount of time, in seconds, that a connection can remain idle (no data sent) before VPC Lattice closes it. The valid range is 60 to 600 seconds. If you don't specify a value, the default is 60 seconds. This setting does not change the maximum connection duration of 10 minutes; connections are still closed when they reach that limit.</p>
+    pub fn set_idle_timeout_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.inner = self.inner.set_idle_timeout_seconds(input);
+        self
+    }
+    /// <p>The amount of time, in seconds, that a connection can remain idle (no data sent) before VPC Lattice closes it. The valid range is 60 to 600 seconds. If you don't specify a value, the default is 60 seconds. This setting does not change the maximum connection duration of 10 minutes; connections are still closed when they reach that limit.</p>
+    pub fn get_idle_timeout_seconds(&self) -> &::std::option::Option<i32> {
+        self.inner.get_idle_timeout_seconds()
+    }
 }

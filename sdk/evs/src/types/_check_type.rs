@@ -12,10 +12,16 @@
 /// ```text
 /// # let checktype = unimplemented!();
 /// match checktype {
+///     CheckType::ConnectorHealth => { /* ... */ },
 ///     CheckType::HostCount => { /* ... */ },
 ///     CheckType::KeyCoverage => { /* ... */ },
 ///     CheckType::KeyReuse => { /* ... */ },
+///     CheckType::OperationsManagerReachability => { /* ... */ },
 ///     CheckType::Reachability => { /* ... */ },
+///     CheckType::SddcManagerHostCount => { /* ... */ },
+///     CheckType::SddcManagerKeyCoverage => { /* ... */ },
+///     CheckType::SddcManagerKeyReuse => { /* ... */ },
+///     CheckType::SddcManagerReachability => { /* ... */ },
 ///     CheckType::VcenterReachability => { /* ... */ },
 ///     CheckType::VcenterVmEvent => { /* ... */ },
 ///     CheckType::VcenterVmSync => { /* ... */ },
@@ -48,13 +54,25 @@
 )]
 pub enum CheckType {
     #[allow(missing_docs)] // documentation missing in model
+    ConnectorHealth,
+    #[allow(missing_docs)] // documentation missing in model
     HostCount,
     #[allow(missing_docs)] // documentation missing in model
     KeyCoverage,
     #[allow(missing_docs)] // documentation missing in model
     KeyReuse,
     #[allow(missing_docs)] // documentation missing in model
+    OperationsManagerReachability,
+    #[allow(missing_docs)] // documentation missing in model
     Reachability,
+    #[allow(missing_docs)] // documentation missing in model
+    SddcManagerHostCount,
+    #[allow(missing_docs)] // documentation missing in model
+    SddcManagerKeyCoverage,
+    #[allow(missing_docs)] // documentation missing in model
+    SddcManagerKeyReuse,
+    #[allow(missing_docs)] // documentation missing in model
+    SddcManagerReachability,
     #[allow(missing_docs)] // documentation missing in model
     VcenterReachability,
     #[allow(missing_docs)] // documentation missing in model
@@ -68,10 +86,16 @@ pub enum CheckType {
 impl ::std::convert::From<&str> for CheckType {
     fn from(s: &str) -> Self {
         match s {
+            "CONNECTOR_HEALTH" => CheckType::ConnectorHealth,
             "HOST_COUNT" => CheckType::HostCount,
             "KEY_COVERAGE" => CheckType::KeyCoverage,
             "KEY_REUSE" => CheckType::KeyReuse,
+            "OPERATIONS_MANAGER_REACHABILITY" => CheckType::OperationsManagerReachability,
             "REACHABILITY" => CheckType::Reachability,
+            "SDDC_MANAGER_HOST_COUNT" => CheckType::SddcManagerHostCount,
+            "SDDC_MANAGER_KEY_COVERAGE" => CheckType::SddcManagerKeyCoverage,
+            "SDDC_MANAGER_KEY_REUSE" => CheckType::SddcManagerKeyReuse,
+            "SDDC_MANAGER_REACHABILITY" => CheckType::SddcManagerReachability,
             "VCENTER_REACHABILITY" => CheckType::VcenterReachability,
             "VCENTER_VM_EVENT" => CheckType::VcenterVmEvent,
             "VCENTER_VM_SYNC" => CheckType::VcenterVmSync,
@@ -90,10 +114,16 @@ impl CheckType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            CheckType::ConnectorHealth => "CONNECTOR_HEALTH",
             CheckType::HostCount => "HOST_COUNT",
             CheckType::KeyCoverage => "KEY_COVERAGE",
             CheckType::KeyReuse => "KEY_REUSE",
+            CheckType::OperationsManagerReachability => "OPERATIONS_MANAGER_REACHABILITY",
             CheckType::Reachability => "REACHABILITY",
+            CheckType::SddcManagerHostCount => "SDDC_MANAGER_HOST_COUNT",
+            CheckType::SddcManagerKeyCoverage => "SDDC_MANAGER_KEY_COVERAGE",
+            CheckType::SddcManagerKeyReuse => "SDDC_MANAGER_KEY_REUSE",
+            CheckType::SddcManagerReachability => "SDDC_MANAGER_REACHABILITY",
             CheckType::VcenterReachability => "VCENTER_REACHABILITY",
             CheckType::VcenterVmEvent => "VCENTER_VM_EVENT",
             CheckType::VcenterVmSync => "VCENTER_VM_SYNC",
@@ -103,10 +133,16 @@ impl CheckType {
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
+            "CONNECTOR_HEALTH",
             "HOST_COUNT",
             "KEY_COVERAGE",
             "KEY_REUSE",
+            "OPERATIONS_MANAGER_REACHABILITY",
             "REACHABILITY",
+            "SDDC_MANAGER_HOST_COUNT",
+            "SDDC_MANAGER_KEY_COVERAGE",
+            "SDDC_MANAGER_KEY_REUSE",
+            "SDDC_MANAGER_REACHABILITY",
             "VCENTER_REACHABILITY",
             "VCENTER_VM_EVENT",
             "VCENTER_VM_SYNC",
@@ -133,10 +169,16 @@ impl CheckType {
 impl ::std::fmt::Display for CheckType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            CheckType::ConnectorHealth => write!(f, "CONNECTOR_HEALTH"),
             CheckType::HostCount => write!(f, "HOST_COUNT"),
             CheckType::KeyCoverage => write!(f, "KEY_COVERAGE"),
             CheckType::KeyReuse => write!(f, "KEY_REUSE"),
+            CheckType::OperationsManagerReachability => write!(f, "OPERATIONS_MANAGER_REACHABILITY"),
             CheckType::Reachability => write!(f, "REACHABILITY"),
+            CheckType::SddcManagerHostCount => write!(f, "SDDC_MANAGER_HOST_COUNT"),
+            CheckType::SddcManagerKeyCoverage => write!(f, "SDDC_MANAGER_KEY_COVERAGE"),
+            CheckType::SddcManagerKeyReuse => write!(f, "SDDC_MANAGER_KEY_REUSE"),
+            CheckType::SddcManagerReachability => write!(f, "SDDC_MANAGER_REACHABILITY"),
             CheckType::VcenterReachability => write!(f, "VCENTER_REACHABILITY"),
             CheckType::VcenterVmEvent => write!(f, "VCENTER_VM_EVENT"),
             CheckType::VcenterVmSync => write!(f, "VCENTER_VM_SYNC"),

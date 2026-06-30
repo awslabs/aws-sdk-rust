@@ -40,41 +40,41 @@ pub fn ser_create_environment_input_input(
     if let Some(var_13) = &input.terms_accepted {
         object.key("termsAccepted").boolean(*var_13);
     }
-    if let Some(var_14) = &input.license_info {
-        let mut array_15 = object.key("licenseInfo").start_array();
-        for item_16 in var_14 {
+    if let Some(var_14) = &input.initial_vlans {
+        #[allow(unused_mut)]
+        let mut object_15 = object.key("initialVlans").start_object();
+        crate::protocol_serde::shape_initial_vlans::ser_initial_vlans(&mut object_15, var_14)?;
+        object_15.finish();
+    }
+    if let Some(var_16) = &input.connectivity_info {
+        #[allow(unused_mut)]
+        let mut object_17 = object.key("connectivityInfo").start_object();
+        crate::protocol_serde::shape_connectivity_info::ser_connectivity_info(&mut object_17, var_16)?;
+        object_17.finish();
+    }
+    if let Some(var_18) = &input.license_info {
+        let mut array_19 = object.key("licenseInfo").start_array();
+        for item_20 in var_18 {
             {
                 #[allow(unused_mut)]
-                let mut object_17 = array_15.value().start_object();
-                crate::protocol_serde::shape_license_info::ser_license_info(&mut object_17, item_16)?;
-                object_17.finish();
+                let mut object_21 = array_19.value().start_object();
+                crate::protocol_serde::shape_license_info::ser_license_info(&mut object_21, item_20)?;
+                object_21.finish();
             }
         }
-        array_15.finish();
+        array_19.finish();
     }
-    if let Some(var_18) = &input.initial_vlans {
-        #[allow(unused_mut)]
-        let mut object_19 = object.key("initialVlans").start_object();
-        crate::protocol_serde::shape_initial_vlans::ser_initial_vlans(&mut object_19, var_18)?;
-        object_19.finish();
-    }
-    if let Some(var_20) = &input.hosts {
-        let mut array_21 = object.key("hosts").start_array();
-        for item_22 in var_20 {
+    if let Some(var_22) = &input.hosts {
+        let mut array_23 = object.key("hosts").start_array();
+        for item_24 in var_22 {
             {
                 #[allow(unused_mut)]
-                let mut object_23 = array_21.value().start_object();
-                crate::protocol_serde::shape_host_info_for_create::ser_host_info_for_create(&mut object_23, item_22)?;
-                object_23.finish();
+                let mut object_25 = array_23.value().start_object();
+                crate::protocol_serde::shape_host_info_for_create::ser_host_info_for_create(&mut object_25, item_24)?;
+                object_25.finish();
             }
         }
-        array_21.finish();
-    }
-    if let Some(var_24) = &input.connectivity_info {
-        #[allow(unused_mut)]
-        let mut object_25 = object.key("connectivityInfo").start_object();
-        crate::protocol_serde::shape_connectivity_info::ser_connectivity_info(&mut object_25, var_24)?;
-        object_25.finish();
+        array_23.finish();
     }
     if let Some(var_26) = &input.vcf_hostnames {
         #[allow(unused_mut)]

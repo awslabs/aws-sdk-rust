@@ -12,8 +12,12 @@ pub struct FunctionCodeLocation {
     pub image_uri: ::std::option::Option<::std::string::String>,
     /// <p>The resolved URI for the image.</p>
     pub resolved_image_uri: ::std::option::Option<::std::string::String>,
+    /// <p>The resolved Amazon S3 object that contains the deployment package.</p>
+    pub resolved_s3_object: ::std::option::Option<crate::types::ResolvedS3Object>,
     /// <p>The ARN of the Key Management Service (KMS) customer managed key that's used to encrypt your function's .zip deployment package. If you don't provide a customer managed key, Lambda uses an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-owned-cmk">Amazon Web Services owned key</a>.</p>
     pub source_kms_key_arn: ::std::option::Option<::std::string::String>,
+    /// <p>An object that contains details about an error related to function deployment package retrieval.</p>
+    pub error: ::std::option::Option<crate::types::FunctionCodeLocationError>,
 }
 impl FunctionCodeLocation {
     /// <p>The service that's hosting the file.</p>
@@ -32,9 +36,17 @@ impl FunctionCodeLocation {
     pub fn resolved_image_uri(&self) -> ::std::option::Option<&str> {
         self.resolved_image_uri.as_deref()
     }
+    /// <p>The resolved Amazon S3 object that contains the deployment package.</p>
+    pub fn resolved_s3_object(&self) -> ::std::option::Option<&crate::types::ResolvedS3Object> {
+        self.resolved_s3_object.as_ref()
+    }
     /// <p>The ARN of the Key Management Service (KMS) customer managed key that's used to encrypt your function's .zip deployment package. If you don't provide a customer managed key, Lambda uses an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-owned-cmk">Amazon Web Services owned key</a>.</p>
     pub fn source_kms_key_arn(&self) -> ::std::option::Option<&str> {
         self.source_kms_key_arn.as_deref()
+    }
+    /// <p>An object that contains details about an error related to function deployment package retrieval.</p>
+    pub fn error(&self) -> ::std::option::Option<&crate::types::FunctionCodeLocationError> {
+        self.error.as_ref()
     }
 }
 impl FunctionCodeLocation {
@@ -52,7 +64,9 @@ pub struct FunctionCodeLocationBuilder {
     pub(crate) location: ::std::option::Option<::std::string::String>,
     pub(crate) image_uri: ::std::option::Option<::std::string::String>,
     pub(crate) resolved_image_uri: ::std::option::Option<::std::string::String>,
+    pub(crate) resolved_s3_object: ::std::option::Option<crate::types::ResolvedS3Object>,
     pub(crate) source_kms_key_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) error: ::std::option::Option<crate::types::FunctionCodeLocationError>,
 }
 impl FunctionCodeLocationBuilder {
     /// <p>The service that's hosting the file.</p>
@@ -111,6 +125,20 @@ impl FunctionCodeLocationBuilder {
     pub fn get_resolved_image_uri(&self) -> &::std::option::Option<::std::string::String> {
         &self.resolved_image_uri
     }
+    /// <p>The resolved Amazon S3 object that contains the deployment package.</p>
+    pub fn resolved_s3_object(mut self, input: crate::types::ResolvedS3Object) -> Self {
+        self.resolved_s3_object = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The resolved Amazon S3 object that contains the deployment package.</p>
+    pub fn set_resolved_s3_object(mut self, input: ::std::option::Option<crate::types::ResolvedS3Object>) -> Self {
+        self.resolved_s3_object = input;
+        self
+    }
+    /// <p>The resolved Amazon S3 object that contains the deployment package.</p>
+    pub fn get_resolved_s3_object(&self) -> &::std::option::Option<crate::types::ResolvedS3Object> {
+        &self.resolved_s3_object
+    }
     /// <p>The ARN of the Key Management Service (KMS) customer managed key that's used to encrypt your function's .zip deployment package. If you don't provide a customer managed key, Lambda uses an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-owned-cmk">Amazon Web Services owned key</a>.</p>
     pub fn source_kms_key_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_kms_key_arn = ::std::option::Option::Some(input.into());
@@ -125,6 +153,20 @@ impl FunctionCodeLocationBuilder {
     pub fn get_source_kms_key_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.source_kms_key_arn
     }
+    /// <p>An object that contains details about an error related to function deployment package retrieval.</p>
+    pub fn error(mut self, input: crate::types::FunctionCodeLocationError) -> Self {
+        self.error = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>An object that contains details about an error related to function deployment package retrieval.</p>
+    pub fn set_error(mut self, input: ::std::option::Option<crate::types::FunctionCodeLocationError>) -> Self {
+        self.error = input;
+        self
+    }
+    /// <p>An object that contains details about an error related to function deployment package retrieval.</p>
+    pub fn get_error(&self) -> &::std::option::Option<crate::types::FunctionCodeLocationError> {
+        &self.error
+    }
     /// Consumes the builder and constructs a [`FunctionCodeLocation`](crate::types::FunctionCodeLocation).
     pub fn build(self) -> crate::types::FunctionCodeLocation {
         crate::types::FunctionCodeLocation {
@@ -132,7 +174,9 @@ impl FunctionCodeLocationBuilder {
             location: self.location,
             image_uri: self.image_uri,
             resolved_image_uri: self.resolved_image_uri,
+            resolved_s3_object: self.resolved_s3_object,
             source_kms_key_arn: self.source_kms_key_arn,
+            error: self.error,
         }
     }
 }

@@ -42,19 +42,24 @@ pub fn ser_create_placement_group_input_input_input(
         crate::protocol_serde::shape_operator_request::ser_operator_request(scope_12, var_13)?;
     }
     #[allow(unused_mut)]
-    let mut scope_14 = writer.prefix("DryRun");
-    if let Some(var_15) = &input.dry_run {
-        scope_14.boolean(*var_15);
+    let mut scope_14 = writer.prefix("ParentGroupId");
+    if let Some(var_15) = &input.parent_group_id {
+        scope_14.string(var_15);
     }
     #[allow(unused_mut)]
-    let mut scope_16 = writer.prefix("GroupName");
-    if let Some(var_17) = &input.group_name {
-        scope_16.string(var_17);
+    let mut scope_16 = writer.prefix("DryRun");
+    if let Some(var_17) = &input.dry_run {
+        scope_16.boolean(*var_17);
     }
     #[allow(unused_mut)]
-    let mut scope_18 = writer.prefix("Strategy");
-    if let Some(var_19) = &input.strategy {
-        scope_18.string(var_19.as_str());
+    let mut scope_18 = writer.prefix("GroupName");
+    if let Some(var_19) = &input.group_name {
+        scope_18.string(var_19);
+    }
+    #[allow(unused_mut)]
+    let mut scope_20 = writer.prefix("Strategy");
+    if let Some(var_21) = &input.strategy {
+        scope_20.string(var_21.as_str());
     }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))

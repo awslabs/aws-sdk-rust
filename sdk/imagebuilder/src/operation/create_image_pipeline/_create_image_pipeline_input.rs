@@ -35,7 +35,7 @@ pub struct CreateImagePipelineInput {
     pub workflows: ::std::option::Option<::std::vec::Vec<crate::types::WorkflowConfiguration>>,
     /// <p>The name or Amazon Resource Name (ARN) for the IAM role you create that grants Image Builder access to perform workflow actions.</p>
     pub execution_role: ::std::option::Option<::std::string::String>,
-    /// <p>Define logging configuration for the image build process.</p>
+    /// <p>Specifies the logging configuration for the image pipeline. Use this to define custom CloudWatch Logs log groups for your pipeline execution logs and image build logs. The service manages log groups with names starting with <code>/aws/imagebuilder/</code> using the service-linked role. For custom log group names outside of this prefix, you must also provide an <code>executionRole</code>.</p>
     pub logging_configuration: ::std::option::Option<crate::types::PipelineLoggingConfiguration>,
 }
 impl CreateImagePipelineInput {
@@ -105,7 +105,7 @@ impl CreateImagePipelineInput {
     pub fn execution_role(&self) -> ::std::option::Option<&str> {
         self.execution_role.as_deref()
     }
-    /// <p>Define logging configuration for the image build process.</p>
+    /// <p>Specifies the logging configuration for the image pipeline. Use this to define custom CloudWatch Logs log groups for your pipeline execution logs and image build logs. The service manages log groups with names starting with <code>/aws/imagebuilder/</code> using the service-linked role. For custom log group names outside of this prefix, you must also provide an <code>executionRole</code>.</p>
     pub fn logging_configuration(&self) -> ::std::option::Option<&crate::types::PipelineLoggingConfiguration> {
         self.logging_configuration.as_ref()
     }
@@ -385,17 +385,17 @@ impl CreateImagePipelineInputBuilder {
     pub fn get_execution_role(&self) -> &::std::option::Option<::std::string::String> {
         &self.execution_role
     }
-    /// <p>Define logging configuration for the image build process.</p>
+    /// <p>Specifies the logging configuration for the image pipeline. Use this to define custom CloudWatch Logs log groups for your pipeline execution logs and image build logs. The service manages log groups with names starting with <code>/aws/imagebuilder/</code> using the service-linked role. For custom log group names outside of this prefix, you must also provide an <code>executionRole</code>.</p>
     pub fn logging_configuration(mut self, input: crate::types::PipelineLoggingConfiguration) -> Self {
         self.logging_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Define logging configuration for the image build process.</p>
+    /// <p>Specifies the logging configuration for the image pipeline. Use this to define custom CloudWatch Logs log groups for your pipeline execution logs and image build logs. The service manages log groups with names starting with <code>/aws/imagebuilder/</code> using the service-linked role. For custom log group names outside of this prefix, you must also provide an <code>executionRole</code>.</p>
     pub fn set_logging_configuration(mut self, input: ::std::option::Option<crate::types::PipelineLoggingConfiguration>) -> Self {
         self.logging_configuration = input;
         self
     }
-    /// <p>Define logging configuration for the image build process.</p>
+    /// <p>Specifies the logging configuration for the image pipeline. Use this to define custom CloudWatch Logs log groups for your pipeline execution logs and image build logs. The service manages log groups with names starting with <code>/aws/imagebuilder/</code> using the service-linked role. For custom log group names outside of this prefix, you must also provide an <code>executionRole</code>.</p>
     pub fn get_logging_configuration(&self) -> &::std::option::Option<crate::types::PipelineLoggingConfiguration> {
         &self.logging_configuration
     }
